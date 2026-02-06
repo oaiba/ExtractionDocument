@@ -18,7 +18,7 @@
 ## Item Categories
 
 ### 1. Weapons & Attachments
-*See: [Weapons & Combat](./09_WeaponsCombat.md) for details*
+*See: [Weapons & Combat](./Weapons.md) for details on Weapons, Attachments, and Ammunition types*
 
 **Economic Role:**
 - Primary value holders

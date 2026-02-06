@@ -216,52 +216,52 @@
 
 #### Assault Rifles
 
-| Code Name    | Display Name | Rarity   | Damage | RPM | Magazine | Range (m) | Recoil   | Penetration | Value ($) | Special Notes                     |
-| ------------ | ------------ | -------- | ------ | --- | -------- | --------- | -------- | ----------- | --------- | --------------------------------- |
-| WPN_AR_AK47  | AK-47        | Common   | 35     | 600 | 30       | 40        | High     | Medium      | 1,200     | High damage, cheap cost, reliable |
-| WPN_AR_M4A1  | M4A1         | Uncommon | 32     | 750 | 30       | 45        | Low      | Medium      | 3,500     | Very controllable, versatile      |
-| WPN_AR_SCAR  | SCAR-H       | Rare     | 40     | 625 | 20       | 50        | Medium   | High        | 7,000     | Hard-hitting, medium recoil       |
-| WPN_AR_HK416 | HK416        | Rare     | 34     | 850 | 30       | 48        | Low      | Medium      | 6,500     | High fire rate, stable            |
-| WPN_AR_AUG   | Steyr AUG    | Uncommon | 30     | 680 | 30       | 42        | Very Low | Low         | 3,000     | Built-in scope, compact           |
+| Code Name    | Display Name | Caliber | Rarity   | Damage | RPM | Magazine | Range (m) | Recoil   | Penetration | Value ($) | Special Notes                     |
+| ------------ | ------------ | :--- | -------- | ------ | --- | -------- | --------- | -------- | ----------- | --------- | --------------------------------- |
+| WPN_AR_AK47  | AK-47        | 7.62x39mm | Common   | 35     | 600 | 30       | 40        | High     | Medium      | 1,200     | High damage, cheap cost, reliable |
+| WPN_AR_M4A1  | M4A1         | 5.56x45mm | Uncommon | 32     | 750 | 30       | 45        | Low      | Medium      | 3,500     | Very controllable, versatile      |
+| WPN_AR_SCAR  | SCAR-H       | 7.62x51mm | Rare     | 40     | 625 | 20       | 50        | Medium   | High        | 7,000     | Hard-hitting, medium recoil       |
+| WPN_AR_HK416 | HK416        | 5.56x45mm | Rare     | 34     | 850 | 30       | 48        | Low      | Medium      | 6,500     | High fire rate, stable            |
+| WPN_AR_AUG   | Steyr AUG    | 5.56x45mm | Uncommon | 30     | 680 | 30       | 42        | Very Low | Low         | 3,000     | Built-in scope, compact           |
 
 #### Submachine Guns
 
-| Code Name      | Display Name | Rarity   | Damage | RPM  | Magazine | Range (m) | Recoil   | Mobility  | Value ($) | Special Notes               |
-| -------------- | ------------ | -------- | ------ | ---- | -------- | --------- | -------- | --------- | --------- | --------------------------- |
-| WPN_SMG_MP5    | MP5          | Common   | 24     | 900  | 30       | 20        | Medium   | High      | 800       | CQB standard, reliable      |
-| WPN_SMG_VECTOR | Vector .45   | Rare     | 28     | 1100 | 25       | 18        | Very Low | High      | 5,500     | Ultra-fast fire, low recoil |
-| WPN_SMG_P90    | P90          | Uncommon | 22     | 1000 | 50       | 22        | Medium   | Very High | 2,800     | Large mag, suppressive fire |
-| WPN_SMG_UMP45  | UMP-45       | Common   | 26     | 700  | 25       | 25        | Low      | High      | 1,500     | Balanced, affordable        |
-| WPN_SMG_MP7    | MP7          | Rare     | 23     | 950  | 40       | 28        | Low      | Very High | 6,000     | High penetration, compact   |
+| Code Name      | Display Name | Caliber | Rarity   | Damage | RPM  | Magazine | Range (m) | Recoil   | Mobility  | Value ($) | Special Notes               |
+| -------------- | ------------ | :--- | -------- | ------ | ---- | -------- | --------- | -------- | --------- | --------- | --------------------------- |
+| WPN_SMG_MP5    | MP5          | 9x19mm | Common   | 24     | 900  | 30       | 20        | Medium   | High      | 800       | CQB standard, reliable      |
+| WPN_SMG_VECTOR | Vector .45   | .45 ACP | Rare     | 28     | 1100 | 25       | 18        | Very Low | High      | 5,500     | Ultra-fast fire, low recoil |
+| WPN_SMG_P90    | P90          | 5.7x28mm | Uncommon | 22     | 1000 | 50       | 22        | Medium   | Very High | 2,800     | Large mag, suppressive fire |
+| WPN_SMG_UMP45  | UMP-45       | .45 ACP | Common   | 26     | 700  | 25       | 25        | Low      | High      | 1,500     | Balanced, affordable        |
+| WPN_SMG_MP7    | MP7          | 4.6x30mm | Rare     | 23     | 950  | 40       | 28        | Low      | Very High | 6,000     | High penetration, compact   |
 
 #### Shotguns
 
-| Code Name     | Display Name  | Rarity   | Damage/Pellet | Pellets | RPM | Capacity | Range (m) | Spread | Value ($) | Special Notes                   |
-| ------------- | ------------- | -------- | ------------- | ------- | --- | -------- | --------- | ------ | --------- | ------------------------------- |
-| WPN_SG_R870   | Remington 870 | Common   | 20            | 8       | 60  | 6        | 12        | Wide   | 600       | Pump-action, one-shot potential |
-| WPN_SG_M590   | Mossberg 590  | Common   | 18            | 8       | 70  | 8        | 14        | Wide   | 900       | More capacity, tactical         |
-| WPN_SG_AA12   | AA-12         | Epic     | 18            | 8       | 300 | 20       | 15        | Medium | 14,000    | Full-auto, devastating CQB      |
-| WPN_SG_SPAS12 | SPAS-12       | Rare     | 22            | 8       | 80  | 6        | 10        | Tight  | 4,500     | Pump/auto switch, tight spread  |
-| WPN_SG_SAIGA  | Saiga-12      | Uncommon | 16            | 8       | 200 | 10       | 16        | Wide   | 3,200     | Semi-auto, magazine fed         |
+| Code Name     | Display Name  | Caliber | Rarity   | Damage/Pellet | Pellets | RPM | Capacity | Range (m) | Spread | Value ($) | Special Notes                   |
+| ------------- | ------------- | :--- | -------- | ------------- | ------- | --- | -------- | --------- | ------ | --------- | ------------------------------- |
+| WPN_SG_R870   | Remington 870 | 12 Gauge | Common   | 20            | 8       | 60  | 6        | 12        | Wide   | 600       | Pump-action, one-shot potential |
+| WPN_SG_M590   | Mossberg 590  | 12 Gauge | Common   | 18            | 8       | 70  | 8        | 14        | Wide   | 900       | More capacity, tactical         |
+| WPN_SG_AA12   | AA-12         | 12 Gauge | Epic     | 18            | 8       | 300 | 20       | 15        | Medium | 14,000    | Full-auto, devastating CQB      |
+| WPN_SG_SPAS12 | SPAS-12       | 12 Gauge | Rare     | 22            | 8       | 80  | 6        | 10        | Tight  | 4,500     | Pump/auto switch, tight spread  |
+| WPN_SG_SAIGA  | Saiga-12      | 12 Gauge | Uncommon | 16            | 8       | 200 | 10       | 16        | Wide   | 3,200     | Semi-auto, magazine fed         |
 
 #### Sniper Rifles
 
-| Code Name   | Display Name | Rarity    | Damage | RPM | Magazine | Range (m) | Bullet Velocity | Value ($) | Special Notes                   |
-| ----------- | ------------ | --------- | ------ | --- | -------- | --------- | --------------- | --------- | ------------------------------- |
-| WPN_SR_M24  | M24          | Rare      | 85     | 50  | 5        | 100       | Fast            | 8,000     | Bolt-action, reliable           |
-| WPN_SR_AWP  | AWP          | Epic      | 120    | 40  | 5        | 120       | Very Fast       | 16,000    | One-shot chest kill             |
-| WPN_SR_SVD  | SVD Dragunov | Uncommon  | 75     | 180 | 10       | 80        | Medium          | 5,000     | Semi-auto, faster follow-up     |
-| WPN_SR_M107 | Barrett M107 | Legendary | 130    | 35  | 10       | 150       | Fast            | 25,000    | Anti-materiel, penetrates all   |
-| WPN_SR_VSS  | VSS Vintorez | Rare      | 65     | 120 | 20       | 60        | Medium          | 7,500     | Integrated suppressor, subsonic |
+| Code Name   | Display Name | Caliber | Rarity    | Damage | RPM | Magazine | Range (m) | Bullet Velocity | Value ($) | Special Notes                   |
+| ----------- | ------------ | :--- | --------- | ------ | --- | -------- | --------- | --------------- | --------- | ------------------------------- |
+| WPN_SR_M24  | M24          | 7.62x51mm | Rare      | 85     | 50  | 5        | 100       | Fast            | 8,000     | Bolt-action, reliable           |
+| WPN_SR_AWP  | AWP          | .338 Lapua | Epic      | 120    | 40  | 5        | 120       | Very Fast       | 16,000    | One-shot chest kill             |
+| WPN_SR_SVD  | SVD Dragunov | 7.62x54mmR | Uncommon  | 75     | 180 | 10       | 80        | Medium          | 5,000     | Semi-auto, faster follow-up     |
+| WPN_SR_M107 | Barrett M107 | .50 BMG | Legendary | 130    | 35  | 10       | 150       | Fast            | 25,000    | Anti-materiel, penetrates all   |
+| WPN_SR_VSS  | VSS Vintorez | 9x39mm | Rare      | 65     | 120 | 20       | 60        | Medium          | 7,500     | Integrated suppressor, subsonic |
 
 #### Light Machine Guns
 
-| Code Name    | Display Name | Rarity   | Damage | RPM  | Magazine | Range (m) | Bipod | Mobility | Value ($) | Special Notes                |
-| ------------ | ------------ | -------- | ------ | ---- | -------- | --------- | ----- | -------- | --------- | ---------------------------- |
-| WPN_LMG_M249 | M249 SAW     | Rare     | 32     | 750  | 100      | 55        | Yes   | Low      | 9,000     | Suppressive fire king        |
-| WPN_LMG_PKM  | PKM          | Uncommon | 38     | 650  | 75       | 60        | Yes   | Very Low | 6,000     | High damage, heavy           |
-| WPN_LMG_MG42 | MG42         | Epic     | 35     | 1200 | 100      | 50        | Yes   | Very Low | 15,000    | Extreme fire rate, "buzzsaw" |
-| WPN_LMG_RPK  | RPK-74       | Uncommon | 30     | 600  | 75       | 45        | No    | Medium   | 4,500     | Mobile LMG, no bipod needed  |
+| Code Name    | Display Name | Caliber | Rarity   | Damage | RPM  | Magazine | Range (m) | Bipod | Mobility | Value ($) | Special Notes                |
+| ------------ | ------------ | :--- | -------- | ------ | ---- | -------- | --------- | ----- | -------- | --------- | ---------------------------- |
+| WPN_LMG_M249 | M249 SAW     | 5.56x45mm | Rare     | 32     | 750  | 100      | 55        | Yes   | Low      | 9,000     | Suppressive fire king        |
+| WPN_LMG_PKM  | PKM          | 7.62x54mmR | Uncommon | 38     | 650  | 75       | 60        | Yes   | Very Low | 6,000     | High damage, heavy           |
+| WPN_LMG_MG42 | MG42         | 7.62x51mm | Epic     | 35     | 1200 | 100      | 50        | Yes   | Very Low | 15,000    | Extreme fire rate, "buzzsaw" |
+| WPN_LMG_RPK  | RPK-74       | 7.62x39mm | Uncommon | 30     | 600  | 75       | 45        | No    | Medium   | 4,500     | Mobile LMG, no bipod needed  |
 
 ---
 
@@ -269,14 +269,14 @@
 
 #### Pistols
 
-| Code Name           | Display Name | Rarity   | Damage | RPM | Magazine | Range (m) | Accuracy  | Value ($) | Special Notes                     |
-| ------------------- | ------------ | -------- | ------ | --- | -------- | --------- | --------- | --------- | --------------------------------- |
-| WPN_PISTOL_GLOCK    | Glock 19     | Common   | 25     | 400 | 17       | 25        | Medium    | 300       | Reliable sidearm, standard        |
-| WPN_PISTOL_DEAGLE   | Desert Eagle | Rare     | 55     | 200 | 7        | 35        | High      | 2,500     | Hand cannon, skill-based          |
-| WPN_PISTOL_USP      | USP-S        | Uncommon | 28     | 350 | 12       | 30        | High      | 1,200     | Silenced, stealth option          |
-| WPN_PISTOL_M1911    | M1911        | Common   | 40     | 280 | 7        | 28        | Medium    | 500       | Classic .45, reliable             |
-| WPN_PISTOL_P226     | SIG P226     | Uncommon | 30     | 380 | 15       | 32        | High      | 1,500     | Balanced, accurate                |
-| WPN_PISTOL_REVOLVER | .357 Magnum  | Rare     | 60     | 180 | 6        | 30        | Very High | 2,000     | High damage, no reload (cylinder) |
+| Code Name           | Display Name | Caliber | Rarity   | Damage | RPM | Magazine | Range (m) | Accuracy  | Value ($) | Special Notes                     |
+| ------------------- | ------------ | :--- | -------- | ------ | --- | -------- | --------- | --------- | --------- | --------------------------------- |
+| WPN_PISTOL_GLOCK    | Glock 19     | 9x19mm | Common   | 25     | 400 | 17       | 25        | Medium    | 300       | Reliable sidearm, standard        |
+| WPN_PISTOL_DEAGLE   | Desert Eagle | .50 AE | Rare     | 55     | 200 | 7        | 35        | High      | 2,500     | Hand cannon, skill-based          |
+| WPN_PISTOL_USP      | USP-S        | .45 ACP | Uncommon | 28     | 350 | 12       | 30        | High      | 1,200     | Silenced, stealth option          |
+| WPN_PISTOL_M1911    | M1911        | .45 ACP | Common   | 40     | 280 | 7        | 28        | Medium    | 500       | Classic .45, reliable             |
+| WPN_PISTOL_P226     | SIG P226     | 9x19mm | Uncommon | 30     | 380 | 15       | 32        | High      | 1,500     | Balanced, accurate                |
+| WPN_PISTOL_REVOLVER | .357 Magnum  | .357 Mag | Rare     | 60     | 180 | 6        | 30        | Very High | 2,000     | High damage, no reload (cylinder) |
 
 ---
 
@@ -328,6 +328,68 @@
 - Damage: 75 (slash), 150 (backstab)
 - Range: 2.5 meters
 - Speed: Medium
+
+---
+
+## Ammunition
+
+### Ammo System Overview
+
+**Philosophy:**
+Ammunition is the bridge between the weapon and the target. While the gun dictates handling, the **Ammo Type** dictates the result of the impact. The game features a realistic caliber system where different weapons share ammo pools, creating strategic inventory management choices.
+
+**Ammo Tiers & Variants:**
+Each caliber has multiple variants, creating a "rock-paper-scissors" dynamic against armor.
+
+1. **Standard (FMJ/Ball)**
+   - **Role:** Balanced Performance
+   - **Pros:** Cheap, reliable, moderate flesh damage, moderate penetration.
+   - **Cons:** Struggles against Level 4+ Armor.
+
+2. **Armor Piercing (AP)**
+   - **Role:** Armor Destroyer
+   - **Pros:** High penetration (ignores armor), higher velocity.
+   - **Cons:** Reduced flesh damage (over-penetration), rare/expensive.
+   - **Use Case:** Late-game PvP, Boss hunting.
+
+3. **Hollow Point (HP/RIP)**
+   - **Role:** Flesh Tearer
+   - **Pros:** Massive flesh damage, causes heavy bleeding.
+   - **Cons:** Very low penetration (stopped by Level 1-2 armor).
+   - **Use Case:** "Leg Meta" (shooting unarmored limbs), hunting mutants/AI.
+
+4. **Tracer**
+   - **Role:** Visual Feedback
+   - **Pros:** Visible flight path (helps aiming), usually mixed stats.
+   - **Cons:** Reveals shooter position.
+
+---
+
+### Ammunition Reference Table
+
+| Caliber | Type | Penetration Class | Flesh Damage | Velocity | Used By |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **9x19mm** | FMJ | Low (2) | 50 | 340 m/s | Glock, MP5, P226 |
+| | AP 6.3 | Medium (3) | 35 | 400 m/s | |
+| | RIP | None (0) | 90 | 300 m/s | |
+| **.45 ACP** | FMJ | Low (2) | 60 | 285 m/s | M1911, Vector, USP |
+| | Hydro | None (1) | 95 | 290 m/s | |
+| **5.56x45mm** | M855 (Std) | Medium (3) | 45 | 900 m/s | M4A1, HK416, AUG, M249 |
+| | M995 (AP) | High (5) | 38 | 980 m/s | |
+| | Warmage | Low (1) | 70 | 880 m/s | |
+| **7.62x39mm** | PS (Std) | Medium (3) | 55 | 700 m/s | AK-47, RPK |
+| | BP (AP) | High (5) | 48 | 730 m/s | |
+| **7.62x51mm** | M80 (Std) | High (4) | 70 | 830 m/s | SCAR-H, M24, MG42 |
+| | M61 (AP) | Extreme (6) | 60 | 850 m/s | |
+| **7.62x54mmR**| LPS (Std) | High (4) | 78 | 800 m/s | SVD, PKM |
+| | SNB (AP) | Extreme (6) | 65 | 820 m/s | |
+| **.300 Win** | Magnum AP | Extreme (6) | 90 | 900 m/s | M24 (Upgrade) |
+| **.338 Lapua**| AP | Ultimate (7) | 110 | 950 m/s | AWP |
+| **12 Gauge** | Buckshot | Low (1) | 30x8 | 380 m/s | All Shotguns |
+| | Slug | Medium (3) | 140 | 420 m/s | |
+| | Flechette | High (4) | 20x8 | 400 m/s | |
+
+*Note: M107 uses .50 BMG (Anti-Materiel), which is in a class of its own.*
 
 ---
 

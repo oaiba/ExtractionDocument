@@ -1,395 +1,1079 @@
-# Character System - Technical Specification
+# Character System - Technical Design Document
 
 **[← Back to Index](../README.md)** | **[Next: Weapon System →](./WeaponSystem.md)**
 
 ---
 
+## Related Documents
+
+| Document              | Relationship                | Link                                                                                 |
+| :-------------------- | :-------------------------- | :----------------------------------------------------------------------------------- |
+| **Operators Design**  | High-level character design | [GDD_HighLevel/Characters/Operators.md](../../GDD_HighLevel/Characters/Operators.md) |
+| **Control System**    | Input handling              | [ControlSystem.md](./ControlSystem.md)                                               |
+| **Weapon System**     | Weapon integration          | [WeaponSystem.md](./WeaponSystem.md)                                                 |
+| **Inventory System**  | Equipment & weight          | [InventorySystem.md](./InventorySystem.md)                                           |
+| **Networking System** | Character sync              | [../Core/NetworkingSystem.md](../Core/NetworkingSystem.md)                           |
+
+---
+
 ## Overview
 
-This document defines the technical implementation of the character system including operators, components, enums, and TODOs.
+### Purpose
 
-**Responsibilities:**
-- Character movement and rotation
-- Health and armor management
-- Operator abilities
-- Character state synchronization
-- Interaction system
+The **Character System** manages all aspects of player-controlled characters including health, movement, abilities, and interactions.
 
----
+### Core Functions
 
-## Enumerations
+| Function               | Description                                  |
+| :--------------------- | :------------------------------------------- |
+| **Character Spawning** | Instantiate and initialize player characters |
+| **Health Management**  | Track HP, armor, damage, death               |
+| **Movement**           | Handle walk, sprint, crouch, rotation        |
+| **Operator Abilities** | Unique class-based abilities with cooldowns  |
+| **Stamina System**     | Sprint resource management                   |
+| **Interactions**       | World object interaction (loot, doors, etc.) |
 
-### EOperatorClass
+### Design Goals
+
 ```
-None = 0
-Assault = 1       // Aggressive fragger
-Support = 2       // Team medic
-Recon = 3         // Information specialist
-Tank = 4          // Damage sponge
-Specialist = 5    // Tech expert
-```
-
-### EMovementState
-```
-Idle = 0
-Walking = 1
-Sprinting = 2
-Crouching = 3
-Dead = 4
-```
-
-### EAbilityState
-```
-Ready = 0          // Can be activated
-Active = 1         // Currently active
-Cooldown = 2       // On cooldown
-Disabled = 3       // Cannot use (EMP'd, etc.)
-```
-
-### EInteractionType
-```
-None = 0
-LootContainer = 1
-Door = 2
-ExtractionPoint = 3
-DeadBody = 4
-QuestItem = 5
-Vendor = 6
-```
-
-### ECharacterState
-```
-Alive = 0
-Downed = 1         // Can be revived
-Dead = 2
-Extracting = 3     // In extraction zone
-```
-
----
-
-## Code Names Reference
-
-### Operator Classes
-```
-OPER_CLASS_ASSAULT
-OPER_CLASS_SUPPORT
-OPER_CLASS_RECON
-OPER_CLASS_TANK
-OPER_CLASS_SPECIALIST
-```
-
-### Abilities (by Operator)
-```
-ABILITY_ASSAULT_COMBATSTEM
-ABILITY_SUPPORT_HEALINGDRONE
-ABILITY_RECON_UAVSCAN
-ABILITY_TANK_RIOTShield
-ABILITY_SPEC_EMPBLAST
-```
-
----
-
-## Character Components
-
-### Core Components
-Character is composed of modular components for maintainability:
-
-**HealthComponent**
-- Health management
-- Armor absorption
-- Damage calculation
-- Death handling
-
-**StaminaComponent**
-- Sprint stamina tracking
-- Regeneration logic
-- Exhaustion states
-
-**InventoryComponent**
-- Grid-based storage
-- Weight calculation
-- Equipment management
-
-**AbilityComponent**
-- Operator ability logic
-- Cooldown tracking
-- Effect application
-
-**MovementComponent** (Unity CharacterController)
-- Movement speed calculation
-- Sprint/crouch modifiers
-- Weight penalties
-
-**InteractionComponent**
-- Nearby interactable detection
-- Interaction validation
-- Range checking
-
----
-
-## Data Structures
-
-### CharacterStats
-```
-// Health
-MaxHealth: float           // Base: 100
-CurrentHealth: float
-
-// Armor
-MaxArmor: float            // Based on equipped armor
-CurrentArmor: float
-
-// Movement
-BaseMovementSpeed: float   // Base: 5.0 m/s
-SprintMultiplier: float    // Default: 1.5x
-CrouchMultiplier: float    // Default: 0.6x
-
-// Stamina
-MaxStamina: float          // Base: 100
-CurrentStamina: float
-StaminaDrainRate: float    // Per second while sprinting
-StaminaRegenRate: float    // Per second when not sprinting
-```
-
-### OperatorData
-```
-CodeName: string              // e.g., "OPER_CLASS_ASSAULT"
-DisplayName: string           // e.g., "Assault"
-Class: EOperatorClass
-
-// Unique ability
-AbilityCodeName: string       // e.g., "ABILITY_ASSAULT_COMBATSTEM"
-AbilityCooldown: float        // Seconds
-AbilityDuration: float        // Seconds
-
-// Passive bonuses
-MovementSpeedBonus: float     // Multiplier (e.g., 1.1 = +10%)
-HealthBonus: float            // Additive (e.g., +10 HP)
-
-// Visual
-ModelPath: string
-IconPath: string
-```
-
-### CharacterInstance
-```
-InstanceID: string           // Player unique ID
-Operator: OperatorData
-Stats: CharacterStats
-
-// Current state
-MovementState: EMovementState
-CharacterState: ECharacterState
-AbilityState: EAbilityState
-
-// Equipped items
-EquippedWeaponID: string
-EquippedArmorID: string
-EquippedBackpackID: string
-
-// Runtime tracking
-AbilityCooldownRemaining: float
-Position: Vector3
-Rotation: Quaternion
+1. RESPONSIVE - Movement feels tight and immediate
+2. BALANCED - Each operator class has clear strengths/weaknesses
+3. SYNCHRONIZED - Consistent state across network
+4. MODULAR - Components can be modified independently
+5. EXTENSIBLE - Easy to add new operators/abilities
 ```
 
 ---
 
 ## System Architecture
 
-### CharacterManager
-**Responsibilities:**
-- Character spawning
-- Operator selection
-- Character pooling
+### Component Diagram
 
-**TODO List:**
-```csharp
-// TODO(P0): Implement character spawning system
-// TODO(P0): Create operator selection UI
-// TODO(P0): Add character database loader
-// TODO(P1): Implement character pooling
-// TODO(P2): Add character customization system
-// TODO(P2): Create character preview system
 ```
+┌─────────────────────────────────────────────────────────────────────┐
+│                        CHARACTER SYSTEM                             │
+├─────────────────────────────────────────────────────────────────────┤
+│                                                                     │
+│  ┌──────────────┐    ┌──────────────┐    ┌──────────────┐          │
+│  │  CHARACTER   │    │   HEALTH     │    │  MOVEMENT    │          │
+│  │  MANAGER     │───▶│   SYSTEM     │───▶│  SYSTEM      │          │
+│  │              │    │              │    │              │          │
+│  └──────────────┘    └──────────────┘    └──────────────┘          │
+│         │                   │                   │                   │
+│         ▼                   ▼                   ▼                   │
+│  ┌──────────────┐    ┌──────────────┐    ┌──────────────┐          │
+│  │ Spawning     │    │ Damage Calc  │    │ State Machine│          │
+│  │ Operator Data│    │ Armor System │    │ Speed Mods   │          │
+│  │ Database     │    │ Death/Revive │    │ Rotation     │          │
+│  └──────────────┘    └──────────────┘    └──────────────┘          │
+│                                                                     │
+│  ┌──────────────┐    ┌──────────────┐    ┌──────────────┐          │
+│  │  ABILITY     │    │  STAMINA     │    │ INTERACTION  │          │
+│  │  SYSTEM      │    │  SYSTEM      │    │ SYSTEM       │          │
+│  │              │    │              │    │              │          │
+│  └──────────────┘    └──────────────┘    └──────────────┘          │
+│                                                                     │
+└─────────────────────────────────────────────────────────────────────┘
+```
+
+### Core Components
+
+| Component                | Responsibility                        | Dependencies      |
+| :----------------------- | :------------------------------------ | :---------------- |
+| **CharacterManager**     | Spawning, pooling, operator selection | Database          |
+| **HealthComponent**      | HP, armor, damage, death              | None              |
+| **MovementComponent**    | Walk, sprint, crouch, rotation        | StaminaComponent  |
+| **AbilityComponent**     | Operator abilities, cooldowns         | CharacterManager  |
+| **StaminaComponent**     | Sprint resource                       | MovementComponent |
+| **InteractionComponent** | World interactions                    | UI System         |
+
+---
+
+## Enums & Types
+
+### EOperatorClass
+Operator class/role classification.
+
+| Code Name       | Display Name | Playstyle    | Ability Type | Base HP | Speed Bonus | Description            |
+| :-------------- | :----------- | :----------- | :----------- | :------ | :---------- | :--------------------- |
+| `OC_None`       | None         | N/A          | N/A          | 100     | 0%          | Unassigned operator    |
+| `OC_Assault`    | Assault      | Aggressive   | Damage Buff  | 100     | +5%         | Aggressive fragger     |
+| `OC_Support`    | Support      | Team-focused | Healing      | 100     | 0%          | Team medic             |
+| `OC_Recon`      | Recon        | Information  | Reveal       | 90      | +10%        | Information specialist |
+| `OC_Tank`       | Tank         | Defensive    | Shield       | 120     | -5%         | Damage sponge          |
+| `OC_Specialist` | Specialist   | Tech         | Disable      | 100     | 0%          | Tech expert            |
+
+---
+
+### EMovementState
+Character movement state machine.
+
+| Code Name      | Display Name | Speed Mult | Stamina Drain | Noise Level | Description        |
+| :------------- | :----------- | :--------- | :------------ | :---------- | :----------------- |
+| `MS_Idle`      | Idle         | 0×         | 0/s           | Silent      | Standing still     |
+| `MS_Walking`   | Walking      | 1×         | 0/s           | Low         | Normal movement    |
+| `MS_Sprinting` | Sprinting    | 1.5×       | 10/s          | High        | Fast movement      |
+| `MS_Crouching` | Crouching    | 0.6×       | 0/s           | Very Low    | Sneaking           |
+| `MS_Sliding`   | Sliding      | 1.8×       | 15 burst      | Medium      | Quick slide        |
+| `MS_Dead`      | Dead         | 0×         | 0/s           | None        | Character deceased |
+
+---
+
+### EAbilityState
+Operator ability state.
+
+| Code Name     | Display Name | Can Activate | UI Display | Description              |
+| :------------ | :----------- | :----------- | :--------- | :----------------------- |
+| `AS_Ready`    | Ready        | Yes          | Full icon  | Can be activated         |
+| `AS_Active`   | Active       | No           | Glowing    | Currently active         |
+| `AS_Cooldown` | Cooldown     | No           | Timer      | On cooldown              |
+| `AS_Disabled` | Disabled     | No           | Grayed out | Cannot use (EMP'd, etc.) |
+
+---
+
+### EInteractionType
+Interactable object type.
+
+| Code Name             | Display Name     | Hold Time | Range | Priority | Description        |
+| :-------------------- | :--------------- | :-------- | :---- | :------- | :----------------- |
+| `INT_None`            | None             | N/A       | N/A   | 0        | No interaction     |
+| `INT_LootContainer`   | Loot Container   | 0.5s      | 2m    | 3        | Open loot box      |
+| `INT_Door`            | Door             | 0s        | 1.5m  | 2        | Open/close door    |
+| `INT_ExtractionPoint` | Extraction Point | 3s        | 5m    | 1        | Begin extraction   |
+| `INT_DeadBody`        | Dead Body        | 1s        | 2m    | 4        | Loot corpse        |
+| `INT_QuestItem`       | Quest Item       | 0.3s      | 2m    | 5        | Pick up quest item |
+| `INT_Vendor`          | Vendor           | 0s        | 3m    | 6        | Open shop UI       |
+
+---
+
+### ECharacterState
+Character life state.
+
+| Code Name       | Display Name | Can Move | Can Shoot    | Revivable | Description        |
+| :-------------- | :----------- | :------- | :----------- | :-------- | :----------------- |
+| `CS_Alive`      | Alive        | Yes      | Yes          | N/A       | Normal state       |
+| `CS_Downed`     | Downed       | No       | Sidearm only | Yes       | Can be revived     |
+| `CS_Dead`       | Dead         | No       | No           | No        | Fully deceased     |
+| `CS_Extracting` | Extracting   | Limited  | Yes          | N/A       | In extraction zone |
+
+---
+
+### EAnimationState
+Character animation state.
+
+| Code Name         | Display Name | Priority | Blend Time | Interruptible | Description        |
+| :---------------- | :----------- | :------- | :--------- | :------------ | :----------------- |
+| `ANIM_Idle`       | Idle         | 0        | 0.2s       | Yes           | Standing animation |
+| `ANIM_Walk`       | Walk         | 1        | 0.15s      | Yes           | Walking loop       |
+| `ANIM_Run`        | Run          | 2        | 0.15s      | Yes           | Running loop       |
+| `ANIM_Crouch`     | Crouch       | 1        | 0.2s       | Yes           | Crouching          |
+| `ANIM_Shoot`      | Shoot        | 5        | 0.05s      | No            | Firing weapon      |
+| `ANIM_Reload`     | Reload       | 4        | 0.1s       | Yes           | Reloading          |
+| `ANIM_UseAbility` | Use Ability  | 6        | 0.1s       | No            | Ability activation |
+| `ANIM_Death`      | Death        | 10       | 0s         | No            | Death animation    |
+
+---
+
+## Code Names
+
+### Operator Events
+
+| Code Name     | Trigger           | Parameters                           | Description                   |
+| :------------ | :---------------- | :----------------------------------- | :---------------------------- |
+| `CHAR_SPAWN`  | Character spawned | PlayerID, OperatorClass, SpawnPoint  | Character entered match       |
+| `CHAR_DEATH`  | Character died    | VictimID, KillerID, WeaponID, Damage | Character killed              |
+| `CHAR_DOWNED` | Character downed  | VictimID, AttackerID                 | Character downed (revivable)  |
+| `CHAR_REVIVE` | Character revived | VictimID, ReviverID                  | Character revived by teammate |
+
+### Movement Events
+
+| Code Name               | Trigger       | Parameters             | Description               |
+| :---------------------- | :------------ | :--------------------- | :------------------------ |
+| `MOVE_STATE_CHANGE`     | State changed | OldState, NewState     | Movement state transition |
+| `MOVE_SPRINT_START`     | Sprint begins | StaminaCurrent         | Started sprinting         |
+| `MOVE_SPRINT_END`       | Sprint ends   | StaminaCurrent, Reason | Stopped sprinting         |
+| `MOVE_STAMINA_DEPLETED` | Stamina empty | -                      | Stamina reached zero      |
+
+### Health Events
+
+| Code Name            | Trigger            | Parameters                 | Description            |
+| :------------------- | :----------------- | :------------------------- | :--------------------- |
+| `HEALTH_DAMAGE`      | Damage received    | Amount, Source, DamageType | Health reduced         |
+| `HEALTH_HEAL`        | Health restored    | Amount, Source             | Health increased       |
+| `HEALTH_ARMOR_BREAK` | Armor destroyed    | -                          | Armor reached zero     |
+| `HEALTH_LOW`         | Low health warning | CurrentHP, Threshold       | Health below threshold |
+
+### Ability Events
+
+| Code Name                | Trigger         | Parameters           | Description            |
+| :----------------------- | :-------------- | :------------------- | :--------------------- |
+| `ABILITY_ACTIVATE`       | Ability used    | AbilityID, TargetPos | Ability activated      |
+| `ABILITY_END`            | Ability ends    | AbilityID, Duration  | Ability effect ended   |
+| `ABILITY_COOLDOWN_START` | Cooldown begins | AbilityID, Duration  | Cooldown timer started |
+| `ABILITY_READY`          | Ability ready   | AbilityID            | Cooldown complete      |
+
+### Interaction Events
+
+| Code Name            | Trigger               | Parameters                | Description             |
+| :------------------- | :-------------------- | :------------------------ | :---------------------- |
+| `INTERACT_START`     | Interaction begins    | TargetID, InteractionType | Started interacting     |
+| `INTERACT_COMPLETE`  | Interaction done      | TargetID, InteractionType | Interaction finished    |
+| `INTERACT_CANCEL`    | Interaction cancelled | TargetID, Reason          | Interaction interrupted |
+| `INTERACT_AVAILABLE` | Target found          | TargetID, InteractionType | Interactable in range   |
+
+---
+
+## Data Structures
+
+### CharacterStats
+
+**Purpose:** Runtime stats for a character instance.
+
+```
+STRUCT CharacterStats:
+    // Health
+    MaxHealth: Float = 100          // Base maximum HP
+    CurrentHealth: Float            // Current HP
+    
+    // Armor
+    MaxArmor: Float = 0             // Based on equipped armor
+    CurrentArmor: Float             // Current armor value
+    ArmorAbsorption: Float = 0.7    // 70% damage absorbed by armor
+    
+    // Movement
+    BaseMovementSpeed: Float = 5.0  // Base speed in m/s
+    SprintMultiplier: Float = 1.5   // Sprint speed multiplier
+    CrouchMultiplier: Float = 0.6   // Crouch speed multiplier
+    
+    // Stamina
+    MaxStamina: Float = 100         // Maximum stamina
+    CurrentStamina: Float           // Current stamina
+    StaminaDrainRate: Float = 10.0  // Per second while sprinting
+    StaminaRegenRate: Float = 15.0  // Per second when not sprinting
+    StaminaRegenDelay: Float = 1.0  // Seconds before regen starts
+```
+
+### OperatorData
+
+**Purpose:** Static definition of an operator class.
+
+```
+STRUCT OperatorData:
+    // Identification
+    CodeName: String                // e.g., "OPER_ASSAULT_VIPER"
+    DisplayName: String             // e.g., "VIPER"
+    Class: EOperatorClass           // Class category
+    
+    // Unique ability
+    AbilityCodeName: String         // e.g., "ABILITY_ASSAULT_COMBATSTEM"
+    AbilityCooldown: Float          // Seconds
+    AbilityDuration: Float          // Seconds (0 = instant)
+    
+    // Passive bonuses
+    MovementSpeedBonus: Float       // Multiplier (e.g., 1.1 = +10%)
+    HealthBonus: Float              // Additive (e.g., +10 HP)
+    ArmorBonus: Float               // Additive armor
+    
+    // Assets
+    ModelPath: String               // 3D model path
+    IconPath: String                // Portrait icon
+    AbilityIconPath: String         // Ability icon
+```
+
+### CharacterInstance
+
+**Purpose:** Runtime instance of a player character.
+
+```
+CLASS CharacterInstance:
+    // Unique identification
+    InstanceID: String              // Player unique ID
+    Operator: OperatorData          // Selected operator
+    Stats: CharacterStats           // Current stats
+    
+    // State machines
+    MovementState: EMovementState   // Current movement state
+    CharacterState: ECharacterState // Alive/Downed/Dead
+    AbilityState: EAbilityState     // Ability availability
+    
+    // Equipment references
+    EquippedWeaponID: String        // Currently held weapon
+    EquippedArmorID: String         // Worn armor
+    EquippedBackpackID: String      // Current backpack
+    
+    // Runtime tracking
+    AbilityCooldownRemaining: Float // Time until ability ready
+    Position: Vector3               // World position
+    Rotation: Quaternion            // World rotation
+    LookDirection: Vector3          // Aim direction
+    
+    // Network
+    OwnerPlayerID: String           // Owning player
+    IsLocalPlayer: Boolean          // True if this is local client
+    LastSyncTime: Float             // Last network update time
+```
+
+---
+
+## Core Classes
+
+### CharacterManager
+
+**Purpose:** Central manager for character spawning and operator data.
+
+**Pseudocode:**
+```
+CLASS CharacterManager:
+    
+    // Singleton instance
+    STATIC instance: CharacterManager
+    
+    // Operator database
+    operatorDatabase: Map<EOperatorClass, OperatorData>
+    
+    // Active characters
+    activeCharacters: List<CharacterInstance>
+    characterPool: ObjectPool<CharacterInstance>
+    
+    // Initialize on game start
+    FUNCTION Initialize():
+        LoadOperatorDatabase()
+        CreateCharacterPool(poolSize: 20)
+    END FUNCTION
+    
+    // Load all operators from database
+    FUNCTION LoadOperatorDatabase():
+        FOR EACH operatorAsset IN Resources.Load("Operators"):
+            data = ParseOperatorData(operatorAsset)
+            operatorDatabase[data.Class] = data
+        END FOR
+        
+        // Validate all classes have data
+        FOR EACH class IN EOperatorClass.Values:
+            IF class != OC_None AND NOT operatorDatabase.Contains(class):
+                LOG ERROR "Missing operator data for: " + class
+            END IF
+        END FOR
+    END FUNCTION
+    
+    // Spawn a character for a player
+    FUNCTION SpawnCharacter(playerID: String, operatorClass: EOperatorClass, spawnPoint: Transform) -> CharacterInstance:
+        // Get operator data
+        operatorData = operatorDatabase[operatorClass]
+        
+        // Get character from pool
+        character = characterPool.Get()
+        
+        // Initialize stats
+        character.InstanceID = GenerateUUID()
+        character.Operator = operatorData
+        character.OwnerPlayerID = playerID
+        
+        // Apply operator bonuses
+        character.Stats.MaxHealth = 100 + operatorData.HealthBonus
+        character.Stats.CurrentHealth = character.Stats.MaxHealth
+        character.Stats.BaseMovementSpeed *= operatorData.MovementSpeedBonus
+        
+        // Set position
+        character.Position = spawnPoint.position
+        character.Rotation = spawnPoint.rotation
+        
+        // Initialize states
+        character.MovementState = MS_Idle
+        character.CharacterState = CS_Alive
+        character.AbilityState = AS_Ready
+        
+        // Add to active list
+        activeCharacters.Add(character)
+        
+        // Network: Spawn on all clients
+        NetworkManager.SpawnNetworkObject(character)
+        
+        EMIT EVENT "CHAR_SPAWN" WITH (playerID, operatorClass, spawnPoint)
+        
+        RETURN character
+    END FUNCTION
+    
+    // Despawn a character
+    FUNCTION DespawnCharacter(character: CharacterInstance):
+        activeCharacters.Remove(character)
+        NetworkManager.DespawnNetworkObject(character)
+        characterPool.Return(character)
+    END FUNCTION
+    
+    // Get character by player ID
+    FUNCTION GetCharacterByPlayerID(playerID: String) -> CharacterInstance?:
+        FOR EACH character IN activeCharacters:
+            IF character.OwnerPlayerID == playerID:
+                RETURN character
+            END IF
+        END FOR
+        RETURN null
+    END FUNCTION
+```
+
+---
 
 ### HealthSystem
-**Responsibilities:**
-- Health/armor calculation
-- Damage processing
-- Death handling
-- Revive mechanics (future)
 
-**TODO List:**
-```csharp
-// TODO(P0): Implement health/armor damage absorption
-// TODO(P0): Create death system with item drop
-// TODO(P0): Add headshot multiplier logic
-// TODO(P1): Implement bleeding mechanic
-// TODO(P1): Add limb-specific damage
-// TODO(P2): Create revive system (downed state)
-// TODO(P3): Add kill cam system
+**Purpose:** Manage health, armor, damage, and death.
+
+**Pseudocode:**
 ```
+CLASS HealthSystem:
+    
+    // Reference to owning character
+    character: CharacterInstance
+    
+    // Constants
+    CONST HEADSHOT_MULTIPLIER = 2.0
+    CONST LIMB_MULTIPLIER = 0.8
+    CONST LOW_HEALTH_THRESHOLD = 25
+    
+    // Apply damage to character
+    FUNCTION ApplyDamage(amount: Float, source: String, damageType: EDamageType, hitBone: String):
+        IF character.CharacterState == CS_Dead:
+            RETURN  // Can't damage dead characters
+        END IF
+        
+        // Calculate final damage with modifiers
+        finalDamage = CalculateDamage(amount, hitBone)
+        
+        // Process armor first
+        armorDamage = 0
+        healthDamage = finalDamage
+        
+        IF character.Stats.CurrentArmor > 0:
+            // Armor absorbs percentage of damage
+            absorbed = finalDamage * character.Stats.ArmorAbsorption
+            armorDamage = Min(character.Stats.CurrentArmor, absorbed)
+            healthDamage = finalDamage - armorDamage
+            
+            character.Stats.CurrentArmor -= armorDamage
+            
+            IF character.Stats.CurrentArmor <= 0:
+                character.Stats.CurrentArmor = 0
+                EMIT EVENT "HEALTH_ARMOR_BREAK"
+            END IF
+        END IF
+        
+        // Apply health damage
+        character.Stats.CurrentHealth -= healthDamage
+        
+        EMIT EVENT "HEALTH_DAMAGE" WITH (healthDamage, source, damageType)
+        
+        // Check for low health warning
+        IF character.Stats.CurrentHealth <= LOW_HEALTH_THRESHOLD:
+            EMIT EVENT "HEALTH_LOW" WITH (character.Stats.CurrentHealth, LOW_HEALTH_THRESHOLD)
+        END IF
+        
+        // Check for death
+        IF character.Stats.CurrentHealth <= 0:
+            HandleDeath(source)
+        END IF
+    END FUNCTION
+    
+    // Calculate damage with hit location modifiers
+    FUNCTION CalculateDamage(baseDamage: Float, hitBone: String) -> Float:
+        multiplier = 1.0
+        
+        SWITCH hitBone:
+            CASE "Head":
+                multiplier = HEADSHOT_MULTIPLIER
+            CASE "Arm", "Hand", "Leg", "Foot":
+                multiplier = LIMB_MULTIPLIER
+            CASE "Chest", "Stomach":
+                multiplier = 1.0
+        END SWITCH
+        
+        RETURN baseDamage * multiplier
+    END FUNCTION
+    
+    // Handle character death
+    FUNCTION HandleDeath(killerID: String):
+        character.Stats.CurrentHealth = 0
+        character.CharacterState = CS_Dead
+        character.MovementState = MS_Dead
+        
+        // Disable components
+        DisableMovement()
+        DisableInput()
+        
+        // Enable ragdoll physics
+        EnableRagdoll()
+        
+        // Spawn loot bag with inventory contents
+        SpawnLootBag()
+        
+        // Network broadcast
+        EMIT EVENT "CHAR_DEATH" WITH (character.OwnerPlayerID, killerID)
+        
+        // Notify kill feed
+        UISystem.ShowKillFeed(killerID, character.OwnerPlayerID)
+    END FUNCTION
+    
+    // Heal character
+    FUNCTION Heal(amount: Float, source: String):
+        IF character.CharacterState != CS_Alive:
+            RETURN
+        END IF
+        
+        oldHealth = character.Stats.CurrentHealth
+        character.Stats.CurrentHealth = Min(
+            character.Stats.CurrentHealth + amount,
+            character.Stats.MaxHealth
+        )
+        
+        actualHealed = character.Stats.CurrentHealth - oldHealth
+        
+        EMIT EVENT "HEALTH_HEAL" WITH (actualHealed, source)
+    END FUNCTION
+    
+    // Restore armor
+    FUNCTION RepairArmor(amount: Float):
+        character.Stats.CurrentArmor = Min(
+            character.Stats.CurrentArmor + amount,
+            character.Stats.MaxArmor
+        )
+    END FUNCTION
+```
+
+---
 
 ### MovementSystem
-**Responsibilities:**
-- Movement input handling
-- Speed calculation with modifiers
-- Sprint/crouch states
-- Top-down rotation
 
-**TODO List:**
-```csharp
-// TODO(P0): Implement basic movement (WASD)
-// TODO(P0): Add sprint system with stamina
-// TODO(P0): Create crouch mechanic
-// TODO(P0): Implement top-down mouse rotation
-// TODO(P1): Add weight-based speed penalty
-// TODO(P1): Create smoothdirection changes
-// TODO(P2): Add footstep sounds
-// TODO(P3): Implement dodge roll mechanic
+**Purpose:** Handle character movement, states, and speed modifiers.
+
+**Pseudocode:**
 ```
+CLASS MovementSystem:
+    
+    // Reference to owning character
+    character: CharacterInstance
+    staminaSystem: StaminaSystem
+    
+    // Speed modifiers
+    modifiers: Map<String, Float>
+    
+    // Process movement input each frame
+    FUNCTION ProcessMovement(moveInput: Vector2, deltaTime: Float):
+        IF character.CharacterState == CS_Dead:
+            RETURN
+        END IF
+        
+        // Calculate wish direction (camera-relative)
+        wishDirection = ConvertToWorldSpace(moveInput)
+        
+        // Calculate final speed
+        finalSpeed = CalculateFinalSpeed()
+        
+        // Apply movement
+        velocity = wishDirection * finalSpeed
+        character.Position += velocity * deltaTime
+        
+        // Update movement state
+        UpdateMovementState(moveInput)
+    END FUNCTION
+    
+    // Calculate final movement speed with all modifiers
+    FUNCTION CalculateFinalSpeed() -> Float:
+        baseSpeed = character.Stats.BaseMovementSpeed
+        
+        // Movement state multiplier
+        stateMultiplier = GetStateSpeedMultiplier()
+        
+        // Combine all modifiers
+        totalModifier = 1.0
+        FOR EACH (name, value) IN modifiers:
+            totalModifier *= value
+        END FOR
+        
+        RETURN baseSpeed * stateMultiplier * totalModifier
+    END FUNCTION
+    
+    // Get speed multiplier for current movement state
+    FUNCTION GetStateSpeedMultiplier() -> Float:
+        SWITCH character.MovementState:
+            CASE MS_Idle:
+                RETURN 0.0
+            CASE MS_Walking:
+                RETURN 1.0
+            CASE MS_Sprinting:
+                RETURN character.Stats.SprintMultiplier
+            CASE MS_Crouching:
+                RETURN character.Stats.CrouchMultiplier
+            CASE MS_Sliding:
+                RETURN 1.8
+            CASE MS_Dead:
+                RETURN 0.0
+        END SWITCH
+    END FUNCTION
+    
+    // Update movement state based on input
+    FUNCTION UpdateMovementState(moveInput: Vector2):
+        oldState = character.MovementState
+        
+        IF moveInput.Length() < 0.1:
+            // No input = idle
+            SetMovementState(MS_Idle)
+        ELSE IF InputManager.IsHeld(IA_Sprint) AND staminaSystem.HasStamina():
+            // Sprint requested and has stamina
+            SetMovementState(MS_Sprinting)
+        ELSE IF InputManager.IsHeld(IA_Crouch):
+            // Crouch requested
+            SetMovementState(MS_Crouching)
+        ELSE:
+            // Normal walking
+            SetMovementState(MS_Walking)
+        END IF
+    END FUNCTION
+    
+    // Set movement state with events
+    FUNCTION SetMovementState(newState: EMovementState):
+        IF newState == character.MovementState:
+            RETURN
+        END IF
+        
+        oldState = character.MovementState
+        character.MovementState = newState
+        
+        // Handle state transitions
+        IF oldState == MS_Sprinting:
+            EMIT EVENT "MOVE_SPRINT_END" WITH (staminaSystem.CurrentStamina, "State changed")
+        END IF
+        
+        IF newState == MS_Sprinting:
+            EMIT EVENT "MOVE_SPRINT_START" WITH (staminaSystem.CurrentStamina)
+        END IF
+        
+        EMIT EVENT "MOVE_STATE_CHANGE" WITH (oldState, newState)
+    END FUNCTION
+    
+    // Add a speed modifier
+    FUNCTION AddModifier(name: String, multiplier: Float):
+        modifiers[name] = multiplier
+    END FUNCTION
+    
+    // Remove a speed modifier
+    FUNCTION RemoveModifier(name: String):
+        modifiers.Remove(name)
+    END FUNCTION
+    
+    // Handle character rotation (top-down aiming)
+    FUNCTION ProcessRotation(lookInput: Vector2):
+        IF character.CharacterState == CS_Dead:
+            RETURN
+        END IF
+        
+        // Calculate look direction from input
+        lookDirection = Vector3(lookInput.x, 0, lookInput.y).Normalized()
+        
+        IF lookDirection.Length() > 0.1:
+            // Smoothly rotate toward look direction
+            targetRotation = LookRotation(lookDirection)
+            character.Rotation = SmoothDamp(
+                character.Rotation,
+                targetRotation,
+                rotationSpeed: 10.0
+            )
+            character.LookDirection = lookDirection
+        END IF
+    END FUNCTION
+```
+
+---
+
+### StaminaSystem
+
+**Purpose:** Manage stamina for sprinting.
+
+**Pseudocode:**
+```
+CLASS StaminaSystem:
+    
+    // Reference to owning character
+    character: CharacterInstance
+    
+    // State
+    CurrentStamina: Float
+    timeSinceStaminaUse: Float = 0
+    
+    // Update stamina each frame
+    FUNCTION Update(deltaTime: Float):
+        IF character.MovementState == MS_Sprinting:
+            // Drain stamina while sprinting
+            DrainStamina(character.Stats.StaminaDrainRate * deltaTime)
+            timeSinceStaminaUse = 0
+        ELSE:
+            // Regenerate stamina when not sprinting
+            timeSinceStaminaUse += deltaTime
+            
+            IF timeSinceStaminaUse >= character.Stats.StaminaRegenDelay:
+                RegenerateStamina(character.Stats.StaminaRegenRate * deltaTime)
+            END IF
+        END IF
+    END FUNCTION
+    
+    // Drain stamina
+    FUNCTION DrainStamina(amount: Float):
+        CurrentStamina = Max(0, CurrentStamina - amount)
+        
+        IF CurrentStamina <= 0:
+            EMIT EVENT "MOVE_STAMINA_DEPLETED"
+            // Force exit sprint state
+            MovementSystem.SetMovementState(MS_Walking)
+        END IF
+    END FUNCTION
+    
+    // Regenerate stamina
+    FUNCTION RegenerateStamina(amount: Float):
+        CurrentStamina = Min(character.Stats.MaxStamina, CurrentStamina + amount)
+    END FUNCTION
+    
+    // Check if has stamina to sprint
+    FUNCTION HasStamina() -> Boolean:
+        RETURN CurrentStamina > 0
+    END FUNCTION
+    
+    // Get stamina percentage for UI
+    FUNCTION GetStaminaPercent() -> Float:
+        RETURN CurrentStamina / character.Stats.MaxStamina
+    END FUNCTION
+```
+
+---
 
 ### AbilitySystem
-**Responsibilities:**
-- Ability activation
-- Cooldown tracking
-- Effect application
-- Network synchronization
 
-**TODO List:**
-```csharp
-// TODO(P0): Create base ability class/interface
-// TODO(P0): Implement cooldown timer system
-// TODO(P0): Add ability activation validation
-// TODO(P1): Create visual ability effects
-// TODO(P1): Implement ability upgrade system
-// TODO(P2): Add ability combo detection
-// TODO(P2): Create ability statistics tracking
-// TODO(P3): Implement ability loadout presets
+**Purpose:** Manage operator abilities and cooldowns.
+
+**Pseudocode:**
+```
+CLASS AbilitySystem:
+    
+    // Reference to owning character
+    character: CharacterInstance
+    
+    // Current ability data
+    abilityData: OperatorAbilityData
+    cooldownRemaining: Float = 0
+    activeDuration: Float = 0
+    
+    // Initialize ability for operator
+    FUNCTION Initialize(operator: OperatorData):
+        abilityData = LoadAbilityData(operator.AbilityCodeName)
+        character.AbilityState = AS_Ready
+        cooldownRemaining = 0
+    END FUNCTION
+    
+    // Try to activate ability
+    FUNCTION TryActivate() -> Boolean:
+        // Check if can activate
+        IF NOT CanActivate():
+            PlayErrorSound()
+            RETURN false
+        END IF
+        
+        // Activate ability
+        character.AbilityState = AS_Active
+        activeDuration = abilityData.Duration
+        
+        // Apply ability effect
+        ApplyAbilityEffect()
+        
+        EMIT EVENT "ABILITY_ACTIVATE" WITH (abilityData.CodeName, character.Position)
+        
+        // If instant ability (duration = 0), go straight to cooldown
+        IF abilityData.Duration <= 0:
+            StartCooldown()
+        END IF
+        
+        RETURN true
+    END FUNCTION
+    
+    // Check if ability can be activated
+    FUNCTION CanActivate() -> Boolean:
+        IF character.AbilityState != AS_Ready:
+            RETURN false
+        END IF
+        
+        IF character.CharacterState != CS_Alive:
+            RETURN false
+        END IF
+        
+        // Check for disable effects (EMP, stun, etc.)
+        IF HasStatusEffect("Disabled"):
+            RETURN false
+        END IF
+        
+        RETURN true
+    END FUNCTION
+    
+    // Update ability state each frame
+    FUNCTION Update(deltaTime: Float):
+        SWITCH character.AbilityState:
+            CASE AS_Active:
+                activeDuration -= deltaTime
+                IF activeDuration <= 0:
+                    EndAbility()
+                ELSE:
+                    UpdateAbilityEffect(deltaTime)
+                END IF
+                
+            CASE AS_Cooldown:
+                cooldownRemaining -= deltaTime
+                IF cooldownRemaining <= 0:
+                    cooldownRemaining = 0
+                    character.AbilityState = AS_Ready
+                    EMIT EVENT "ABILITY_READY" WITH (abilityData.CodeName)
+                END IF
+        END SWITCH
+    END FUNCTION
+    
+    // End active ability
+    FUNCTION EndAbility():
+        RemoveAbilityEffect()
+        character.AbilityState = AS_Cooldown
+        
+        EMIT EVENT "ABILITY_END" WITH (abilityData.CodeName, abilityData.Duration)
+        
+        StartCooldown()
+    END FUNCTION
+    
+    // Start cooldown timer
+    FUNCTION StartCooldown():
+        cooldownRemaining = abilityData.Cooldown
+        character.AbilityState = AS_Cooldown
+        
+        EMIT EVENT "ABILITY_COOLDOWN_START" WITH (abilityData.CodeName, abilityData.Cooldown)
+    END FUNCTION
+    
+    // Get cooldown percentage for UI
+    FUNCTION GetCooldownPercent() -> Float:
+        IF character.AbilityState != AS_Cooldown:
+            RETURN 0
+        END IF
+        RETURN cooldownRemaining / abilityData.Cooldown
+    END FUNCTION
+    
+    // Disable ability (from EMP, etc.)
+    FUNCTION DisableAbility(duration: Float):
+        previousState = character.AbilityState
+        character.AbilityState = AS_Disabled
+        
+        // Pause cooldown or end active effect
+        IF previousState == AS_Active:
+            EndAbility()
+        END IF
+        
+        // Schedule re-enable
+        ScheduleTask(duration, FUNCTION():
+            IF character.AbilityState == AS_Disabled:
+                character.AbilityState = AS_Ready
+            END IF
+        END FUNCTION)
+    END FUNCTION
 ```
 
-### InteractionSystem
-**Responsibilities:**
-- Detect nearby interactables
-- Validate interaction range
-- Execute interactions
-- Show UI prompts
+---
 
-**TODO List:**
-```csharp
-// TODO(P0): Implement interaction range detection
-// TODO(P0): Create interaction validation
-// TODO(P0): Add interaction UI prompt
-// TODO(P1): Implement hold-to-interact timer
-// TODO(P1): Add contextual interaction options
-// TODO(P2): Create interaction priority system
-// TODO(P2): Add interaction cooldown (prevent spam)
+### InteractionSystem
+
+**Purpose:** Detect and execute world interactions.
+
+**Pseudocode:**
+```
+CLASS InteractionSystem:
+    
+    // Reference to owning character
+    character: CharacterInstance
+    
+    // Current interaction target
+    currentTarget: IInteractable = null
+    interactionProgress: Float = 0
+    isInteracting: Boolean = false
+    
+    // Detection settings
+    CONST DETECTION_RADIUS = 3.0
+    CONST DETECTION_RATE = 0.1  // Seconds between detection checks
+    
+    // Scan for nearby interactables
+    FUNCTION DetectInteractables():
+        // Find all interactables in range
+        colliders = Physics.OverlapSphere(character.Position, DETECTION_RADIUS, InteractableLayer)
+        
+        bestTarget = null
+        bestPriority = -1
+        bestDistance = DETECTION_RADIUS + 1
+        
+        FOR EACH collider IN colliders:
+            interactable = collider.GetComponent<IInteractable>()
+            IF interactable == null:
+                CONTINUE
+            END IF
+            
+            // Check if visible (not through walls)
+            IF NOT IsVisible(interactable.Position):
+                CONTINUE
+            END IF
+            
+            // Check range for this interaction type
+            distance = Distance(character.Position, interactable.Position)
+            IF distance > interactable.InteractionRange:
+                CONTINUE
+            END IF
+            
+            // Select by priority, then distance
+            IF interactable.Priority > bestPriority:
+                bestTarget = interactable
+                bestPriority = interactable.Priority
+                bestDistance = distance
+            ELSE IF interactable.Priority == bestPriority AND distance < bestDistance:
+                bestTarget = interactable
+                bestDistance = distance
+            END IF
+        END FOR
+        
+        // Update current target
+        IF bestTarget != currentTarget:
+            currentTarget = bestTarget
+            IF currentTarget != null:
+                EMIT EVENT "INTERACT_AVAILABLE" WITH (currentTarget.ID, currentTarget.Type)
+                UISystem.ShowInteractionPrompt(currentTarget)
+            ELSE:
+                UISystem.HideInteractionPrompt()
+            END IF
+        END IF
+    END FUNCTION
+    
+    // Check visibility with raycast
+    FUNCTION IsVisible(targetPosition: Vector3) -> Boolean:
+        direction = targetPosition - character.Position
+        hit = Physics.Raycast(character.Position, direction, distance: direction.Length(), LayerMask: WallsLayer)
+        RETURN NOT hit  // No walls blocking = visible
+    END FUNCTION
+    
+    // Start interaction with current target
+    FUNCTION StartInteraction():
+        IF currentTarget == null:
+            RETURN
+        END IF
+        
+        IF isInteracting:
+            RETURN
+        END IF
+        
+        isInteracting = true
+        interactionProgress = 0
+        
+        EMIT EVENT "INTERACT_START" WITH (currentTarget.ID, currentTarget.Type)
+        
+        // If instant interaction (hold time = 0), complete immediately
+        IF currentTarget.HoldTime <= 0:
+            CompleteInteraction()
+        END IF
+    END FUNCTION
+    
+    // Update interaction progress
+    FUNCTION UpdateInteraction(deltaTime: Float):
+        IF NOT isInteracting OR currentTarget == null:
+            RETURN
+        END IF
+        
+        // Check if still in range
+        distance = Distance(character.Position, currentTarget.Position)
+        IF distance > currentTarget.InteractionRange:
+            CancelInteraction("Out of range")
+            RETURN
+        END IF
+        
+        // Progress interaction
+        interactionProgress += deltaTime
+        
+        // Update UI progress bar
+        UISystem.UpdateInteractionProgress(interactionProgress / currentTarget.HoldTime)
+        
+        // Check completion
+        IF interactionProgress >= currentTarget.HoldTime:
+            CompleteInteraction()
+        END IF
+    END FUNCTION
+    
+    // Complete the interaction
+    FUNCTION CompleteInteraction():
+        IF currentTarget == null:
+            RETURN
+        END IF
+        
+        // Execute interaction
+        currentTarget.OnInteract(character)
+        
+        EMIT EVENT "INTERACT_COMPLETE" WITH (currentTarget.ID, currentTarget.Type)
+        
+        // Reset state
+        isInteracting = false
+        interactionProgress = 0
+        UISystem.HideInteractionProgress()
+    END FUNCTION
+    
+    // Cancel interaction
+    FUNCTION CancelInteraction(reason: String):
+        IF NOT isInteracting:
+            RETURN
+        END IF
+        
+        EMIT EVENT "INTERACT_CANCEL" WITH (currentTarget?.ID, reason)
+        
+        isInteracting = false
+        interactionProgress = 0
+        UISystem.HideInteractionProgress()
+    END FUNCTION
 ```
 
 ---
 
 ## Operator Abilities
 
-### Assault - Combat Stim
-```csharp
-// Code: ABILITY_ASSAULT_COMBATSTEM
-// Effect: +25% damage, +10% speed for 10 seconds
-// Cooldown: 90 seconds
-// TODO(P1): Implement damage buff system
-// TODO(P1): Add visual orange tint effect
-// TODO(P2): Create heartbeat audio effect
+### Ability Summary Table
+
+| Operator       | Ability       | Code                           | Duration | Cooldown | Effect                                 |
+| :------------- | :------------ | :----------------------------- | :------- | :------- | :------------------------------------- |
+| **Assault**    | Combat Stim   | `ABILITY_ASSAULT_COMBATSTEM`   | 10s      | 90s      | +25% damage, +10% speed                |
+| **Support**    | Healing Drone | `ABILITY_SUPPORT_HEALINGDRONE` | 20s      | 120s     | 5 HP/sec in 10m radius                 |
+| **Recon**      | UAV Scan      | `ABILITY_RECON_UAVSCAN`        | 8s       | 100s     | Reveal enemies in 30m                  |
+| **Tank**       | Riot Shield   | `ABILITY_TANK_RIOTSHIELD`      | 15s      | 80s      | Block 100% frontal damage              |
+| **Specialist** | EMP Blast     | `ABILITY_SPEC_EMPBLAST`        | Instant  | 110s     | Disable abilities 10s, destroy gadgets |
+
+### Ability Implementation Template
+
 ```
-
-### Support - Healing Drone
-```csharp
-// Code: ABILITY_SUPPORT_HEALINGDRONE
-// Effect: Deploy drone, heals 5 HP/sec in 10m radius for 20 seconds
-// Cooldown: 120 seconds
-// TODO(P1): Create drone AI movement
-// TODO(P1): Implement area-of-effect healing
-// TODO(P2): Add drone destruction mechanic
-```
-
-### Recon - UAV Scan
-```csharp
-// Code: ABILITY_RECON_UAVSCAN
-// Effect: Reveal all enemies in 30m radius for 8 seconds
-// Cooldown: 100 seconds
-// TODO(P1): Implement enemy reveal system
-// TODO(P1): Create radar pulse animation
-// TODO(P2): Add counter-UAV ability
-```
-
-### Tank - Riot Shield
-```csharp
-// Code: ABILITY_TANK_RIOTSHIELD
-// Effect: Deploy shield, blocks 100% frontal damage for 15 seconds
-// Cooldown: 80 seconds
-// TODO(P1): Create shield blocking logic
-// TODO(P1): Implement movement penalty
-// TODO(P2): Add shield health/durability
-```
-
-### Specialist - EMP Blast
-```csharp
-// Code: ABILITY_SPEC_EMPBLAST
-// Effect: 15m radius, disable abilities for 10 seconds, destroy gadgets
-// Cooldown: 110 seconds
-// TODO(P1): Implement ability disable system
-// TODO(P1): Create gadget destruction logic
-// TODO(P2): Add electric pulse VFX
-```
-
----
-
-## Movement Modifiers
-
-### Speed Calculation
-```csharp
-FinalSpeed = BaseSpeed 
-    * MovementStateMultiplier    // Sprint/Crouch
-    * WeightMultiplier            // From inventory
-    * AbilityMultiplier           // From active abilities
-    * TerrainMultiplier           // Water, mud, etc.
-```
-
-**TODO List:**
-```csharp
-// TODO(P0): Implement movement state multipliers
-// TODO(P1): Add weight penalty from InventoryComponent
-// TODO(P1): Create ability speed modifiers
-// TODO(P2): Implement terrain-based penalties
-// TODO(P3): Add momentum system for realistic movement
-```
-
----
-
-## Health & Damage
-
-### Damage Calculation
-```csharp
-// Armor absorbs 70% of damage first
-ArmorDamage = IncomingDamage * 0.7
-RemainingDamage = IncomingDamage - ArmorDamage
-
-CurrentArmor -= ArmorDamage
-if (CurrentArmor < 0) {
-    RemainingDamage += Abs(CurrentArmor)
-    CurrentArmor = 0
-}
-
-CurrentHealth -= RemainingDamage
-```
-
-**TODO List:**
-```csharp
-// TODO(P0): Implement armor absorption logic
-// TODO(P0): Add headshot multiplier (2.0x base)
-// TODO(P1): Create limb damage modifiers
-// TODO(P1): Implement bleeding damage over time
-// TODO(P2): Add critical hit system
-// TODO(P2): Create damage resistance buffs
+CLASS OperatorAbility:
+    
+    // Ability data
+    codeName: String
+    displayName: String
+    duration: Float
+    cooldown: Float
+    
+    // References
+    owner: CharacterInstance
+    
+    // Lifecycle methods
+    FUNCTION OnActivate():
+        // Apply immediate effects
+        // Spawn visual effects
+        // Play activation sound
+    END FUNCTION
+    
+    FUNCTION OnUpdate(deltaTime: Float):
+        // Update ongoing effects
+        // Check for targets in range
+    END FUNCTION
+    
+    FUNCTION OnDeactivate():
+        // Remove effects
+        // Clean up spawned objects
+    END FUNCTION
 ```
 
 ---
@@ -397,57 +1081,38 @@ CurrentHealth -= RemainingDamage
 ## Network Synchronization
 
 ### Replicated Properties
-```csharp
-// Always replicate to all
-- Health, Armor (visible to enemies)
-- Position, Rotation
-- Current weapon
-- Movement state
 
-// Owner-only replication
-- Stamina
-- Ability cooldown
-- Inventory weight
+| Property            | Replicate To | Update Rate | Notes               |
+| :------------------ | :----------- | :---------- | :------------------ |
+| **Position**        | All          | 20Hz        | Interpolated        |
+| **Rotation**        | All          | 20Hz        | Interpolated        |
+| **Health**          | All          | On change   | Enemies see hp bars |
+| **Armor**           | All          | On change   | -                   |
+| **MovementState**   | All          | On change   | Animation sync      |
+| **CharacterState**  | All          | On change   | Death/downed        |
+| **Stamina**         | Owner only   | 10Hz        | UI only             |
+| **AbilityCooldown** | Owner only   | On change   | UI only             |
 
-// Skip owner (cosmetic)
-- Aiming state
-- Animation states
+### Movement Prediction
+
 ```
+CLIENT-SIDE PREDICTION FLOW:
 
-**TODO List:**
-```csharp
-// TODO(P0): Setup character replication
-// TODO(P0): Implement client-side prediction for movement
-// TODO(P1): Add server-authoritative validation
-// TODO(P1): Create lag compensation for hit detection
-// TODO(P2): Implement interpolation for smooth movement
-// TODO(P2): Add anti-cheat validation
-```
-
----
-
-## Animation & Visuals
-
-### Animation States
-```
-Idle = 0
-Walk = 1
-Run = 2
-Crouch = 3
-Shoot = 4
-Reload = 5
-UseAbility = 6
-Death = 7
-```
-
-**TODO List:**
-```csharp
-// TODO(P1): Create animation state machine
-// TODO(P1): Implement animation blending
-// TODO(P1): Add weapon-specific animations
-// TODO(P2): Create ability activation animations
-// TODO(P2): Implement hit reaction animations
-// TODO(P3): Add emote system
+1. Client receives input
+   → Apply movement locally (immediate response)
+   → Send input to server
+   
+2. Server receives input
+   → Validate input
+   → Apply movement authoritatively
+   → Send result to all clients
+   
+3. Client receives server result
+   → Compare local position to server position
+   → If divergence > threshold (0.1m):
+      → Snap to server position (rubber-band)
+   → Else:
+      → Continue local prediction
 ```
 
 ---
@@ -455,81 +1120,87 @@ Death = 7
 ## Performance Considerations
 
 ### Memory Budget
+
+| Asset      | Max Size | Per Character | Max Characters |
+| :--------- | :------- | :------------ | :------------- |
+| Model      | 5 MB     | 5 MB          | 20             |
+| Textures   | 2 MB     | 2 MB          | 20             |
+| Animations | 3 MB     | 3 MB          | 20             |
+| **Total**  | 10 MB    | 10 MB         | **200 MB max** |
+
+### Optimization Strategies
+
 ```
-Character Model: Max 5MB per operator
-Character Textures: Max 2MB per operator
-Animation Data: Max 3MB per operator
-Total per Character: ~10MB
-Max Characters in Scene: 20 (200MB total)
-```
-
-### Network Optimization
-```csharp
-// TODO(P1): Implement network culling (distance-based)
-// TODO(P1): Reduce update frequency for distant players
-// TODO(P2): Compress character state data
-// TODO(P2): Use delta compression for updates
-```
-
----
-
-## Testing & Debugging
-
-### Debug Commands
-```csharp
-// TODO(P2): Add character.spawn <operator> command
-// TODO(P2): Add character.kill command
-// TODO(P2): Add character.heal <amount> command
-// TODO(P2): Add character.setAbilityCooldown <seconds>
-// TODO(P3): Create character stat inspector UI
-```
-
-### Unit Tests Required
-```csharp
-// TODO(P1): Test damage calculation with armor
-// TODO(P1): Test movement speed modifiers
-// TODO(P1): Test ability cooldown system
-// TODO(P2): Test stamina consumption/regeneration
-// TODO(P2): Test interaction range validation
+1. OBJECT POOLING
+   - Pre-instantiate character objects
+   - Recycle instead of destroy/create
+   
+2. LOD SYSTEM
+   - Reduce mesh quality at distance
+   - Simplify animations for distant characters
+   
+3. NETWORK CULLING
+   - Don't sync distant characters at full rate
+   - Reduce update frequency based on distance
 ```
 
 ---
 
-## Integration Points
+## TODO: Implementation Tasks
 
-### With Weapon System
-- Weapon equipping/holstering
-- Aiming state
-- Recoil application
-- Animation triggers
+### HIGH Priority 🔴
+- [ ] Implement CharacterManager spawn system
+- [ ] Create HealthSystem damage calculation
+- [ ] Add MovementSystem state machine
+- [ ] Implement basic ability cooldown
+- [ ] Create InteractionSystem detection
 
-### With Inventory System
-- Weight penalty calculation
-- Equipment bonuses
-- Item usage
+### MEDIUM Priority 🟡
+- [ ] Add all operator abilities
+- [ ] Implement downed/revive mechanic
+- [ ] Create animation state machine
+- [ ] Add network movement prediction
+- [ ] Implement stamina sprint system
 
-### With UI System
-- Health/armor display
-- Stamina bar
-- Ability cooldown indicator
-- Interaction prompts
-
-### With Networking System
-- Character state sync
-- Movement prediction
-- Hit validation
+### LOW Priority 🟢
+- [ ] Add hit reaction animations
+- [ ] Create spectator mode
+- [ ] Implement kill replay
+- [ ] Add character leveling
+- [ ] Create emote system
 
 ---
 
-## Future Enhancements
+## System Relationships
 
-```csharp
-// TODO(P3): Character progression system (leveling)
-// TODO(P3): Operator customization (skins, emotes)
-// TODO(P3): Revive/downed state mechanic
-// TODO(P3): Character stats tracking (kills, deaths, damage)
-// TODO(P3): Spectator mode for dead players
-// TODO(P3): Kill replay system
+### Dependency Diagram
+
+```
+                    ┌────────────────────┐
+                    │  CHARACTER SYSTEM  │
+                    └─────────┬──────────┘
+                              │
+         ┌────────────────────┼────────────────────┐
+         │                    │                    │
+         ▼                    ▼                    ▼
+┌─────────────────┐  ┌─────────────────┐  ┌─────────────────┐
+│ CONTROL         │  │ WEAPON          │  │ INVENTORY       │
+│ SYSTEM          │  │ SYSTEM          │  │ SYSTEM          │
+│                 │  │                 │  │                 │
+│ • Movement input│  │ • Weapon equip  │  │ • Weight penalty│
+│ • Look input    │  │ • Firing        │  │ • Equipment     │
+│ • Ability input │  │ • Reloading     │  │ • Item use      │
+└─────────────────┘  └─────────────────┘  └─────────────────┘
+         │                    │                    │
+         ▼                    ▼                    ▼
+┌─────────────────┐  ┌─────────────────┐  ┌─────────────────┐
+│ UI              │  │ AUDIO           │  │ NETWORKING      │
+│ SYSTEM          │  │ SYSTEM          │  │ SYSTEM          │
+│                 │  │                 │  │                 │
+│ • Health/stamina│  │ • Footsteps     │  │ • State sync    │
+│ • Ability UI    │  │ • Ability sounds│  │ • Movement pred │
+│ • Interaction   │  │ • Hit sounds    │  │ • Hit validation│
+└─────────────────┘  └─────────────────┘  └─────────────────┘
 ```
 
 ---

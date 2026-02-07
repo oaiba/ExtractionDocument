@@ -1,6 +1,173 @@
 # Performance Optimization
 
-**[← Previous: Map System](./07_MapSystem.md)** | **[Technical Index](./README.md)** | **[Next: Development Roadmap →](./09_DevelopmentRoadmap.md)**
+**[← Previous: Map System](../Systems/MapSystem.md)** | **[Technical Index](../README.md)** | **[Next: Development Roadmap →](../Core/DevelopmentRoadmap.md)**
+
+---
+
+## Overview
+
+This document defines the technical implementation of performance optimization systems for mobile platforms including device profiling, rendering settings, memory management, and profiling tools.
+
+**Responsibilities:**
+- Device tier detection and auto-configuration
+- Rendering quality scaling
+- Memory budget management
+- Object pooling and tick optimization
+- Performance monitoring and profiling
+
+---
+
+## Enums & Types
+
+### EDeviceTier
+Device performance classification.
+
+| Code Name      | Display Name | RAM Range | GPU Score | Target FPS | Resolution | Description      |
+| :------------- | :----------- | :-------- | :-------- | :--------- | :--------- | :--------------- |
+| `EDT_LowEnd`   | Low End      | < 4 GB    | < 5000    | 30 FPS     | 720p       | Budget devices   |
+| `EDT_MidRange` | Mid Range    | 4-6 GB    | 5000-8000 | 45 FPS     | 900p       | Average devices  |
+| `EDT_HighEnd`  | High End     | > 6 GB    | > 8000    | 60 FPS     | 1080p+     | Premium devices  |
+| `EDT_Unknown`  | Unknown      | N/A       | N/A       | 30 FPS     | 720p       | Detection failed |
+
+---
+
+### EQualityLevel
+Graphics quality preset.
+
+| Code Name    | Display Name | Shadows  | Textures | Effects  | Post-Process | Description         |
+| :----------- | :----------- | :------- | :------- | :------- | :----------- | :------------------ |
+| `EQL_Low`    | Low          | Off      | Low      | Minimal  | Off          | Maximum performance |
+| `EQL_Medium` | Medium       | Simple   | Medium   | Reduced  | Basic        | Balanced            |
+| `EQL_High`   | High         | Soft     | High     | Full     | Enhanced     | Best visuals        |
+| `EQL_Ultra`  | Ultra        | Full     | Ultra    | Full     | Maximum      | PC/High-end only    |
+| `EQL_Custom` | Custom       | Variable | Variable | Variable | Variable     | User-defined        |
+
+---
+
+### ELODLevel
+Level of Detail tier.
+
+| Code Name     | Display Name | Distance | Triangle % | Texture Res | Tick Rate   | Description    |
+| :------------ | :----------- | :------- | :--------- | :---------- | :---------- | :------------- |
+| `ELOD_0`      | LOD 0        | 0-15m    | 100%       | Full        | Every frame | Maximum detail |
+| `ELOD_1`      | LOD 1        | 15-50m   | 50%        | 75%         | 30 Hz       | High detail    |
+| `ELOD_2`      | LOD 2        | 50-100m  | 25%        | 50%         | 10 Hz       | Medium detail  |
+| `ELOD_3`      | LOD 3        | 100-200m | 10%        | 25%         | 2 Hz        | Low detail     |
+| `ELOD_Culled` | Culled       | > 200m   | 0%         | None        | None        | Not rendered   |
+
+---
+
+### EPoolType
+Object pool category.
+
+| Code Name        | Display Name | Initial Size | Max Size | Auto-Expand | Description         |
+| :--------------- | :----------- | :----------- | :------- | :---------- | :------------------ |
+| `EPT_Projectile` | Projectile   | 100          | 500      | Yes         | Bullets, rockets    |
+| `EPT_Effect`     | Effect       | 50           | 200      | Yes         | VFX particles       |
+| `EPT_Decal`      | Decal        | 100          | 300      | No          | Bullet holes, blood |
+| `EPT_Audio`      | Audio        | 30           | 100      | Yes         | Sound emitters      |
+| `EPT_AI`         | AI           | 20           | 50       | No          | AI pawns            |
+| `EPT_Loot`       | Loot         | 50           | 200      | Yes         | Item pickups        |
+
+---
+
+### EMemoryCategory
+Memory budget category.
+
+| Code Name       | Display Name | Budget (MB) | Priority | Streamable | Description            |
+| :-------------- | :----------- | :---------- | :------- | :--------- | :--------------------- |
+| `EMC_Texture`   | Textures     | 800         | High     | Yes        | Texture data           |
+| `EMC_Mesh`      | Meshes       | 200         | High     | Yes        | Static/skeletal meshes |
+| `EMC_Audio`     | Audio        | 150         | Medium   | Yes        | Sound data             |
+| `EMC_Animation` | Animation    | 100         | High     | No         | Animation data         |
+| `EMC_Code`      | Code         | 300         | Critical | No         | Game code, shaders     |
+| `EMC_Runtime`   | Runtime      | 250         | Medium   | No         | Runtime allocations    |
+
+---
+
+### ETextureImportance
+Texture streaming priority.
+
+| Code Name       | Display Name | LOD Bias | Stream  | Max Size | Description         |
+| :-------------- | :----------- | :------- | :------ | :------- | :------------------ |
+| `ETI_Critical`  | Critical     | 0        | Never   | 2048     | Characters, weapons |
+| `ETI_Important` | Important    | 1        | Delayed | 1024     | Environment key     |
+| `ETI_Normal`    | Normal       | 2        | Always  | 512      | Props, details      |
+| `ETI_Optional`  | Optional     | 3        | Always  | 256      | Background elements |
+
+---
+
+### ETickPriority
+Actor tick rate classification.
+
+| Code Name        | Display Name | Interval | Use Case   | CPU Cost | Description       |
+| :--------------- | :----------- | :------- | :--------- | :------- | :---------------- |
+| `ETP_EveryFrame` | Every Frame  | 0        | Player     | High     | Critical gameplay |
+| `ETP_High`       | High         | 0.016s   | Nearby AI  | Medium   | 60 Hz updates     |
+| `ETP_Medium`     | Medium       | 0.1s     | Mid-range  | Low      | 10 Hz updates     |
+| `ETP_Low`        | Low          | 0.5s     | Far actors | Very Low | 2 Hz updates      |
+| `ETP_Minimal`    | Minimal      | 1.0s     | Background | Minimal  | 1 Hz updates      |
+
+---
+
+### EProfilingMode
+Performance profiling mode.
+
+| Code Name      | Display Name | Overhead | Detail         | Use Case   | Description     |
+| :------------- | :----------- | :------- | :------------- | :--------- | :-------------- |
+| `EPM_Off`      | Off          | None     | None           | Production | No profiling    |
+| `EPM_Basic`    | Basic        | < 1%     | FPS, Memory    | Dev        | Essential stats |
+| `EPM_Detailed` | Detailed     | 2-5%     | Full breakdown | Debug      | Comprehensive   |
+| `EPM_Capture`  | Capture      | 5-10%    | Frame capture  | Analysis   | Recording mode  |
+
+---
+
+## Code Names
+
+### Performance Events
+
+| Code Name               | Trigger            | Parameters                      | Description             |
+| :---------------------- | :----------------- | :------------------------------ | :---------------------- |
+| `PERF_FPS_DROP`         | FPS below target   | CurrentFPS, TargetFPS, Duration | Performance degradation |
+| `PERF_FPS_RECOVER`      | FPS recovered      | CurrentFPS, TargetFPS           | Performance restored    |
+| `PERF_QUALITY_CHANGE`   | Quality adjusted   | OldLevel, NewLevel, Reason      | Auto-quality changed    |
+| `PERF_RESOLUTION_SCALE` | Resolution changed | OldScale, NewScale              | Dynamic resolution      |
+
+### Memory Events
+
+| Code Name           | Trigger           | Parameters             | Description                |
+| :------------------ | :---------------- | :--------------------- | :------------------------- |
+| `MEM_BUDGET_WARN`   | Near budget limit | Category, Used, Budget | Memory warning             |
+| `MEM_BUDGET_EXCEED` | Budget exceeded   | Category, Used, Budget | Over budget                |
+| `MEM_GC_START`      | GC triggered      | Reason                 | Garbage collection started |
+| `MEM_GC_END`        | GC completed      | FreedMB, Duration      | Garbage collection done    |
+| `MEM_STREAM_IN`     | Asset loaded      | AssetPath, SizeMB      | Asset streamed in          |
+| `MEM_STREAM_OUT`    | Asset unloaded    | AssetPath, SizeMB      | Asset streamed out         |
+
+### Pool Events
+
+| Code Name        | Trigger         | Parameters                 | Description             |
+| :--------------- | :-------------- | :------------------------- | :---------------------- |
+| `POOL_ACQUIRE`   | Object acquired | PoolType, ActiveCount      | Object taken from pool  |
+| `POOL_RELEASE`   | Object released | PoolType, ActiveCount      | Object returned to pool |
+| `POOL_EXPAND`    | Pool expanded   | PoolType, OldSize, NewSize | Pool grew               |
+| `POOL_EXHAUSTED` | Pool empty      | PoolType, RequestCount     | No objects available    |
+
+### LOD Events
+
+| Code Name    | Trigger           | Parameters              | Description    |
+| :----------- | :---------------- | :---------------------- | :------------- |
+| `LOD_CHANGE` | LOD level changed | ActorID, OldLOD, NewLOD | LOD transition |
+| `LOD_CULL`   | Actor culled      | ActorID, Distance       | Actor hidden   |
+| `LOD_UNCULL` | Actor visible     | ActorID, Distance       | Actor shown    |
+
+### Device Events
+
+| Code Name           | Trigger         | Parameters            | Description        |
+| :------------------ | :-------------- | :-------------------- | :----------------- |
+| `DEV_TIER_DETECTED` | Tier determined | Tier, Score, RAM, GPU | Device classified  |
+| `DEV_THERMAL_WARN`  | Device heating  | Temperature, Throttle | Thermal throttling |
+| `DEV_BATTERY_LOW`   | Battery low     | Percent, PowerSaver   | Low battery mode   |
 
 ---
 

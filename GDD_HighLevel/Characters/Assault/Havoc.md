@@ -1,0 +1,368 @@
+# HAVOC - Anton Petrov
+
+**[← Back to Assault Class](./README.md)** | **[All Operators](../Operators.md)**
+
+---
+
+## Operator Profile
+
+> *"Hesitation is death. I choose violence."*
+
+### Basic Information
+
+| Attribute       | Value                     |
+| :-------------- | :------------------------ |
+| **Real Name**   | Anton Mikhailovich Petrov |
+| **Codename**    | HAVOC                     |
+| **Class**       | Assault                   |
+| **Nationality** | Russian                   |
+| **Age**         | 38                        |
+| **Height**      | 191 cm (6'3")             |
+| **Weight**      | 98 kg (216 lbs)           |
+
+### Background
+
+Anton Petrov was a legendary figure in Spetsnaz Alpha Group before a failed operation in Chechnya left him the sole survivor of his unit. Blamed for the disaster by corrupt superiors, he was dishonorably discharged and erased from official records.
+
+For years, Anton wandered Eastern Europe as a mercenary, his reputation growing as a one-man wrecking crew. He doesn't seek teammates - he seeks targets. The Exclusion Zone is just another battlefield, and Anton has never lost a fight he started.
+
+### Personality Traits
+
+- **Brutal** - No mercy, no hesitation
+- **Solitary** - Prefers working alone
+- **Haunted** - Lost his whole squad, carries survivor's guilt
+- **Respectful** - Honors worthy opponents
+
+---
+
+## Combat Statistics
+
+### Base Stats
+
+| Stat             | Value   | Class Modifier | Final    |
+| :--------------- | :------ | :------------- | :------- |
+| **Health**       | 100 HP  | -              | 100 HP   |
+| **Armor**        | 50      | -10%           | 45       |
+| **Sprint Speed** | 5.5 m/s | +10%           | 6.05 m/s |
+| **Walk Speed**   | 3.5 m/s | -              | 3.5 m/s  |
+| **Crouch Speed** | 2.0 m/s | -              | 2.0 m/s  |
+
+### Damage Modifiers
+
+| Condition                | Modifier                |
+| :----------------------- | :---------------------- |
+| Base Weapon Damage       | +5% (Class)             |
+| Berserker Active         | +35% melee, +15% weapon |
+| Berserker + Kill         | Refreshes duration      |
+| Melee Damage (Base)      | 50                      |
+| Melee Damage (Berserker) | 67                      |
+
+---
+
+## Abilities
+
+### Active Ability: Berserker Rage
+
+> *"Enter a frenzy state. Each kill extends the rage."*
+
+| Property         | Value               |
+| :--------------- | :------------------ |
+| **Cooldown**     | 100 seconds         |
+| **Duration**     | 8 seconds (base)    |
+| **Extension**    | +3 seconds per kill |
+| **Max Duration** | 20 seconds          |
+
+#### Effects
+
+| Effect         | Value  | Notes                 |
+| :------------- | :----- | :-------------------- |
+| Melee Damage   | +35%   | Makes melee viable    |
+| Weapon Damage  | +15%   | Less than VIPER stim  |
+| Movement Speed | +15%   | All movement types    |
+| Damage Taken   | +10%   | Trade-off             |
+| Kill Extension | +3 sec | Encourages aggression |
+
+#### Visual & Audio Cues
+
+**Self:**
+- Screen pulses red
+- Heavy breathing audio
+- Blood splatter on screen edges
+
+**Enemy Perspective:**
+- Red glow around Havoc
+- Audible roar on activation
+- Movements appear more aggressive
+
+#### Kill Chain Mechanic
+
+The unique aspect of Berserker Rage is the **kill extension**:
+
+```
+Base activation: 8 seconds
+Kill 1: 8 + 3 = 11 seconds remaining
+Kill 2: 11 + 3 = 14 seconds remaining
+Kill 3: 14 + 3 = 17 seconds remaining
+Kill 4+: Capped at 20 seconds
+```
+
+**Design Intent:** High risk, potentially infinite uptime if you're skilled enough.
+
+#### Upgrade Slots
+
+**Slot 1 (Level 5):**
+| Option           | Effect                                       |
+| :--------------- | :------------------------------------------- |
+| **Blood Frenzy** | Kill extension +2 seconds (5 total per kill) |
+| **Quick Rage**   | Cooldown -20 seconds (80s total)             |
+| **Iron Will**    | Damage taken penalty removed                 |
+
+**Slot 2 (Level 20):**
+| Option                | Effect                                        |
+| :-------------------- | :-------------------------------------------- |
+| **Executioner**       | Melee kills heal 20 HP                        |
+| **Unstoppable Force** | Immune to knockback/stun                      |
+| **Terror**            | Nearby enemies hear heartbeat (psychological) |
+
+**Slot 3 (Level 35):**
+| Option         | Effect                                            |
+| :------------- | :------------------------------------------------ |
+| **Last Stand** | If killed during rage, explode for 50 area damage |
+| **Rampage**    | Each kill also reduces cooldown by 5 seconds      |
+| **Predator**   | Damaged enemies are marked for 5 seconds          |
+
+---
+
+### Passive Ability: Bloodlust
+
+> *"The closer to death, the stronger he becomes."*
+
+| Health Threshold | Effect                            |
+| :--------------- | :-------------------------------- |
+| Below 50%        | +10% weapon damage                |
+| Below 30%        | +15% weapon damage, +5% movement  |
+| Below 15%        | +20% weapon damage, +10% movement |
+
+**Synergy with Berserker:** Combined with rage mode at low health = devastating damage output.
+
+**Design Intent:** Makes HAVOC terrifying when cornered. Never assume a low-health HAVOC is easy.
+
+---
+
+## Loadout
+
+### Default Loadout
+
+| Slot          | Item            | Notes               |
+| :------------ | :-------------- | :------------------ |
+| **Primary**   | SPAS-12 Shotgun | CQB dominance       |
+| **Secondary** | Desert Eagle    | High damage backup  |
+| **Tactical**  | Flashbang ×2    | Entry tool          |
+| **Armor**     | Medium Vest     | 50 armor points     |
+| **Melee**     | Combat Knife    | Enhanced by passive |
+
+### Recommended Loadouts
+
+**Full Berserker:**
+| Slot      | Item               | Why                |
+| :-------- | :----------------- | :----------------- |
+| Primary   | AA-12 Auto Shotgun | Spray and pray     |
+| Secondary | Revolver           | One-shot potential |
+| Tactical  | Stun Grenade ×2    | Close the gap      |
+| Melee     | Machete            | Higher base damage |
+
+**Controlled Aggression:**
+| Slot      | Item                   | Why                     |
+| :-------- | :--------------------- | :---------------------- |
+| Primary   | UMP-45 SMG             | More range than shotgun |
+| Secondary | G17                    | Reliable backup         |
+| Tactical  | Flashbang ×1, Smoke ×1 | Entry + escape          |
+
+---
+
+## Playstyle Guide
+
+### Role in Team
+
+**Primary Role:** CQB Specialist
+- Dominates close quarters
+- Clears rooms aggressively
+- Terrifies enemies in tight spaces
+
+**Secondary Role:** Finisher
+- Chase down wounded enemies
+- Capitalize on team damage
+- Execute distracted targets
+
+### Combat Loop
+
+```
+1. Get close (use cover, flanks, smoke)
+2. Activate Berserker Rage
+3. Engage closest enemy
+4. Secure kill -> Duration extends
+5. Immediately move to next target
+6. Chain kills to maintain rage
+7. If no kills in 8 seconds, retreat
+```
+
+### Close Quarters Dominance
+
+**Best Engagement Range:** 0-10 meters
+
+| Range  | Tactic                              |
+| :----- | :---------------------------------- |
+| 0-3m   | Melee or shotgun                    |
+| 3-10m  | Shotgun or SMG                      |
+| 10-20m | SMG only, don't engage if avoidable |
+| 20m+   | Disengage, reposition               |
+
+### When NOT to Pick HAVOC
+
+- Long-range maps (open areas)
+- Enemy team has multiple Tanks
+- Your team has no healer
+- You're not confident in CQB
+
+---
+
+## Matchups
+
+### Favorable Matchups
+
+| Opponent    | Why Favorable           | Tactic                    |
+| :---------- | :---------------------- | :------------------------ |
+| **DOC**     | Fragile up close        | Rush before drone deploys |
+| **PHANTOM** | No combat advantage     | Close distance fast       |
+| **CIPHER**  | Low combat stats        | Overwhelm with aggression |
+| **ANGEL**   | Can't escape your speed | Push through shield       |
+
+### Even Matchups
+
+| Opponent    | Notes                         | Key to Winning           |
+| :---------- | :---------------------------- | :----------------------- |
+| **VIPER**   | Both aggressive, comes to aim | Land first shot          |
+| **BLAZE**   | Fire vs Rage                  | Avoid fire while closing |
+| **SPECTER** | Traps slow you down           | Clear traps, then push   |
+
+### Unfavorable Matchups
+
+| Opponent     | Why Difficult                 | Counter Strategy        |
+| :----------- | :---------------------------- | :---------------------- |
+| **BULWARK**  | Shield completely blocks you  | Flank only, never front |
+| **FORTRESS** | Team armor absorbs your burst | Focus teammates first   |
+| **FLUX**     | Nano swarm slows you          | Wait for swarm to end   |
+
+---
+
+## Voice Lines
+
+### Combat
+
+| Trigger                  | Line                       |
+| :----------------------- | :------------------------- |
+| Ability Activation       | *War cry in Russian*       |
+| Ability Activation (Alt) | "Now you die!"             |
+| Kill                     | "Pathetic."                |
+| Kill (Melee)             | "Too slow."                |
+| Kill Chain (3+)          | "Who's next?!"             |
+| Low Health               | "You think this stops me?" |
+| Reviving                 | "Get up. We're not done."  |
+
+### Callouts
+
+| Trigger       | Line                |
+| :------------ | :------------------ |
+| Enemy Spotted | "Contact."          |
+| Pushing       | "Moving in."        |
+| Taking Fire   | "They are nothing." |
+| Reloading     | "Reloading."        |
+| Grenade       | "Grenade."          |
+
+### Personality
+
+| Trigger            | Line                           |
+| :----------------- | :----------------------------- |
+| Match Start        | "Let's finish this quickly."   |
+| Extraction Called  | "Cover me. We leave now."      |
+| Extraction Success | "Another day survived."        |
+| Squad Wipe         | "That was almost challenging." |
+
+---
+
+## Cosmetics
+
+### Default Appearance
+
+- **Outfit:** Dark gray tactical sweater, black vest
+- **Headgear:** Black balaclava
+- **Gloves:** Worn leather combat gloves
+- **Face:** Heavy scarring, cold blue eyes
+
+### Unlockable Skins
+
+| Skin            | Rarity    | Unlock               |
+| :-------------- | :-------- | :------------------- |
+| **Winter Wolf** | Common    | Level 10             |
+| **Blood Red**   | Uncommon  | 1,000 Credits        |
+| **Spetsnaz**    | Rare      | Level 25             |
+| **Executioner** | Epic      | Battle Pass S2       |
+| **Reaper**      | Legendary | Ranked Season Reward |
+
+### Signature Items
+
+| Item                | Description                           |
+| :------------------ | :------------------------------------ |
+| **Dog Tags**        | Collection from fallen squad (hidden) |
+| **Scar Pattern**    | Distinctive slash marks on face       |
+| **Knuckle Tattoos** | Cyrillic letters spelling "DEATH"     |
+
+---
+
+## Lore Connections
+
+### Relationships
+
+| Character    | Relationship                         |
+| :----------- | :----------------------------------- |
+| **VIPER**    | Mutual respect between soldiers      |
+| **FORTRESS** | Former comrade from Russian military |
+| **BULWARK**  | Considers him a worthy opponent      |
+| **BLAZE**    | Kindred spirit in chaos              |
+
+### Story Hooks
+
+- Seeking the general who ordered his squad's sacrifice
+- Has bounty on his head from Russian intelligence
+- Protects new operators from making his mistakes
+
+---
+
+## Design Notes (For Developers)
+
+### Balance Considerations
+
+- Extremely high risk, high reward
+- Damage taken penalty balances damage output
+- Kill chain mechanic rewards skill
+- CQB focus limits map versatility
+
+### Animation Requirements
+
+- Rage activation: Shoulder roll + crack neck
+- Movement during rage: More aggressive posture
+- Melee attacks: Heavy, brutal swings
+- Death: Falls to knees first, then forward
+
+### Technical Notes
+
+| System          | Notes                                  |
+| :-------------- | :------------------------------------- |
+| Kill Extension  | Server calculates, syncs to client     |
+| Duration Timer  | Visible to player, hidden from enemies |
+| Damage Modifier | Applies before armor calculation       |
+| Sounds          | Rage growl synced to all players       |
+
+---
+
+**[← Back to Assault Class](./README.md)** | **[All Operators](../Operators.md)**

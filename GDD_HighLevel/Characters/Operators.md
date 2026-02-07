@@ -1,525 +1,360 @@
-# Characters
+# Operators - Character System Overview
 
 **[← Previous: Core Gameplay](../GameDesign/CoreGameplay.md)** | **[Index](../README.md)** | **[Next: Map Design →](../World/MapDesign.md)**
 
 ---
 
-## Operator Overview
+## Introduction
 
-**Operators** are playable characters in the game. Each operator has unique abilities, visual design, and playstyle. Players unlock operators through progression and can level up each operator individually.
+**Operators** are playable characters in **Extraction Protocol**. Each Operator belongs to a specific class that defines their role in combat, but has unique abilities, visual design, backstory, and playstyle that sets them apart.
 
-**Design Philosophy:**
-- Class-based but not rigid
-- Abilities complement tactics, don't replace skill
-- Visual clarity (easy identification)
-- Balanced risk/reward
+This document serves as an **index and overview** for all Operators. For detailed information on each individual character, please refer to the linked character documents within their respective class folders.
+
+---
+
+## Design Philosophy
+
+### Core Principles
+
+| Principle               | Description                                            | Example                                  |
+| :---------------------- | :----------------------------------------------------- | :--------------------------------------- |
+| **Class Identity**      | Each class has a defined role                          | Tank = Damage absorption                 |
+| **Character Diversity** | Multiple characters per class with different abilities | 2 Assault operators with different stims |
+| **Visual Clarity**      | Instant recognition from top-down view                 | Unique silhouettes, color themes         |
+| **Balanced Power**      | Abilities complement skill, not replace it             | +25% damage, not instant kill            |
+| **Risk/Reward**         | Aggressive play has trade-offs                         | High damage = lower survivability        |
+| **Team Synergy**        | Operators work better together                         | Healer + Tank combo                      |
+
+### Reference Games
+
+Our Operator design draws inspiration from:
+
+| Game                  | Inspiration Element              | Our Implementation       |
+| :-------------------- | :------------------------------- | :----------------------- |
+| **Rainbow Six Siege** | Unique gadgets per operator      | Active abilities         |
+| **Apex Legends**      | Passive + Active ability combo   | Dual ability system      |
+| **The Finals**        | Class-based team dynamics        | 5 core classes           |
+| **Valorant**          | Ability cooldowns, not resources | Cooldown-based abilities |
+| **Tarkov**            | High-stakes, tactical gameplay   | Extraction focus         |
 
 ---
 
 ## Operator Classes
 
-### 1. ASSAULT - "Frontline Aggressor"
+### Class Overview Matrix
 
-**Role:** Aggressive entry fragger, high damage dealer
+| Class                           | Role                | Primary Stat  | Team Value | Solo Viability | Operators |
+| :------------------------------ | :------------------ | :------------ | :--------- | :------------- | :-------- |
+| [**ASSAULT**](./Assault/)       | Frontline Aggressor | Damage        | ★★★☆☆      | ★★★★☆          | 3         |
+| [**SUPPORT**](./Support/)       | Team Healer         | Healing       | ★★★★★      | ★★☆☆☆          | 2         |
+| [**RECON**](./Recon/)           | Intel Specialist    | Information   | ★★★★☆      | ★★★★★          | 3         |
+| [**TANK**](./Tank/)             | Damage Sponge       | Survivability | ★★★★☆      | ★★★☆☆          | 2         |
+| [**SPECIALIST**](./Specialist/) | Tech Disruptor      | Utility       | ★★★★☆      | ★★★★☆          | 2         |
 
-**Character Profile:**
-- Former military special forces
-- Age: 28-35
-- Personality: Confident, aggressive, direct
+### Unlock Progression
 
-**Visual Design:**
-- Tactical vest with ammo pouches
-- Combat helmet option
-- Rugged, practical gear
-- Color theme: Military green with orange accents
-
-**Ability: Combat Stim**
-- Cooldown: 90 seconds
-- Duration: 10 seconds
-- Effect: +25% damage output, +10% movement speed
-- Visual: Orange tint on operator, screen vignette
-- Audio: Heartbeat increase, adrenaline sound
-
-**Passive:** Sprint Speed
-- Effect: +10% sprint speed permanently
-- Synergy: Chasing enemies, reposition quickly
-
-**Starting Gear:**
-- Primary: Assault Rifle (mid-tier)
-- Secondary: Pistol
-- Equipment: 2x Frag Grenades
-- Armor: Medium armor (50 armor points)
-
-**Playstyle:**
-- Aggressive push
-- First into combat
-- High risk, high reward
-- Best for experienced players
-
-**Counters:**
-- Specialist's EMP cancels stim
-- Tank can absorb damage
-- Ambush tactics
-
-**Strengths:**
-- Raw combat power
-- Fast rotation
-- Intimidation factor
+```
+ACCOUNT LEVEL 1  → Assault (VIPER) - Free starter
+ACCOUNT LEVEL 1  → Support (DOC) - Free starter
+ACCOUNT LEVEL 5  → Assault (BLAZE) - 5,000 Credits or Quest
+ACCOUNT LEVEL 8  → Recon (PHANTOM) - 5,000 Credits or Quest
+ACCOUNT LEVEL 10 → Tank (BULWARK) - 7,500 Credits or Quest
+ACCOUNT LEVEL 12 → Recon (SPECTER) - 7,500 Credits or Quest
+ACCOUNT LEVEL 15 → Specialist (CIPHER) - 10,000 Credits or Quest
+ACCOUNT LEVEL 18 → Support (ANGEL) - 10,000 Credits or Quest
+ACCOUNT LEVEL 20 → Tank (FORTRESS) - 12,000 Credits or Quest
+ACCOUNT LEVEL 22 → Assault (HAVOC) - 12,000 Credits or Quest
+ACCOUNT LEVEL 25 → Recon (WRAITH) - 15,000 Credits or Quest
+ACCOUNT LEVEL 28 → Specialist (FLUX) - 15,000 Credits or Quest
+```
 
 ---
 
-### 2. SUPPORT - "Team Medic"
+## Class Details
 
-**Role:** Keep team alive, sustain in extended fights
+### 1. ASSAULT CLASS - "Frontline Aggressors"
 
-**Character Profile:**
-- Former combat medic
-- Age: 25-30
-- Personality: Caring, strategic, reliable
+**Role:** High damage dealers who lead the charge into combat.
 
-**Visual Design:**
-- Medical cross markings
-- First aid pouches visible
-- Light armor for mobility
-- Color theme: White with blue accents
+**Class Traits:**
+- +10% Base Sprint Speed
+- +5% Weapon Damage
+- -10% Maximum Armor
 
-**Ability: Healing Drone**
-- Cooldown: 120 seconds
-- Duration: 20 seconds
-- Effect: Deploys flying drone, heals 5 HP/sec in 10m radius
-- Visual: Green glow around drone, healing particles
-- Audio: Soft humming, healing sound
+**Operators:**
 
-**Passive:** Medical Expertise
-- Effect: +20% effectiveness of healing items
-- Example: Medkit heals 60 HP instead of 50 HP
+| Operator                                       | Codename | Ability         | Specialty            |
+| :--------------------------------------------- | :------- | :-------------- | :------------------- |
+| [**Marcus "Viper" Chen**](./Assault/Viper.md)  | VIPER    | Combat Stim     | Damage Amplification |
+| [**Elena "Blaze" Reyes**](./Assault/Blaze.md)  | BLAZE    | Incendiary Rush | Area Denial          |
+| [**Anton "Havoc" Petrov**](./Assault/Havoc.md) | HAVOC    | Berserker Rage  | Close Combat         |
 
-**Starting Gear:**
-- Primary: SMG (high fire rate)
-- Secondary: Pistol
-- Equipment: 3x Medkits, 1x Healing Drone
-- Armor: Light armor (30 armor points)
-
-**Playstyle:**
-- Support from mid-range
-- Prioritize team survival
-- Play near cover
-- Best for team players
-
-**Counters:**
-- Focus fire kills before healing
-- Flank to kill drone
-- Sniper one-shots
-
-**Strengths:**
-- Team sustainability
-- Economic advantage (fewer healing items needed)
-- Extended engagements
+📁 **[View All Assault Operators →](./Assault/)**
 
 ---
 
-### 3. RECON - "Information Specialist"
+### 2. SUPPORT CLASS - "Team Lifelines"
 
-**Role:** Scout enemy positions, provide intel
+**Role:** Keep teammates alive and enable sustained combat.
 
-**Character Profile:**
-- Former intelligence operative
-- Age: 30-38
-- Personality: Calculated, patient, observant
+**Class Traits:**
+- +20% Healing Item Effectiveness
+- +15% Revive Speed
+- -5% Movement Speed
 
-**Visual Design:**
-- Sleek, low-profile gear
-- Tech devices visible
-- Camouflage patterns
-- Color theme: Dark gray with cyan accents
+**Operators:**
 
-**Ability: UAV Scan**
-- Cooldown: 100 seconds
-- Duration: 8 seconds
-- Effect: Reveals all enemies in 30m radius on minimap
-- Visual: Radar pulse animation, marked enemies
-- Audio: Sonar ping sound
+| Operator                                              | Codename | Ability         | Specialty         |
+| :---------------------------------------------------- | :------- | :-------------- | :---------------- |
+| [**Dr. James "Doc" Morrison**](./Support/Doc.md)      | DOC      | Healing Drone   | Area Healing      |
+| [**Sister Maria "Angel" Santos**](./Support/Angel.md) | ANGEL    | Guardian Shield | Damage Prevention |
 
-**Passive:** Sneaky Movement
-- Effect: +15% movement speed when crouching
-- Additional: -30% footstep volume
-
-**Starting Gear:**
-- Primary: Silenced SMG
-- Secondary: Silenced Pistol
-- Equipment: 2x Sensor Mines (detect enemies)
-- Armor: Light armor (30 armor points)
-
-**Playstyle:**
-- Stealth and information gathering
-- Flank routes
-- Ambush setups
-- Best for strategic players
-
-**Counters:**
-- Assault can rush after UAV reveals
-- Tank not afraid of being revealed
-- Area denial prevents sneaking
-
-**Strengths:**
-- Information advantage
-- Ambush potential
-- Solo viability
+📁 **[View All Support Operators →](./Support/)**
 
 ---
 
-### 4. TANK - "Damage Sponge"
+### 3. RECON CLASS - "Information Specialists"
 
-**Role:** Absorb damage, hold positions, protect team
+**Role:** Gather intel, scout enemy positions, and enable ambushes.
 
-**Character Profile:**
-- Former riot control / bodyguard
-- Age: 35-45
-- Personality: Stoic, protective, disciplined
+**Class Traits:**
+- +15% Crouch Movement Speed
+- -30% Footstep Volume
+- -5% Maximum Health
 
-**Visual Design:**
-- Heavy armor plating
-- Intimidating silhouette
-- Riot shield (when ability active)
-- Color theme: Dark metal with red accents
+**Operators:**
 
-**Ability: Riot Shield Deploy**
-- Cooldown: 80 seconds
-- Duration: 15 seconds
-- Effect: Pull out riot shield, blocks frontal damage 100%
-- Downside: Cannot shoot while active, movement -40%
-- Visual: Large transparent shield with damage cracks
-- Audio: Shield deployment sound, impact clangs
+| Operator                                          | Codename | Ability        | Specialty      |
+| :------------------------------------------------ | :------- | :------------- | :------------- |
+| [**Sarah "Phantom" Kim**](./Recon/Phantom.md)     | PHANTOM  | UAV Scan       | Area Reveal    |
+| [**Viktor "Specter" Volkov**](./Recon/Specter.md) | SPECTER  | Motion Sensors | Trap Detection |
+| [**Yuki "Wraith" Tanaka**](./Recon/Wraith.md)     | WRAITH   | Smoke Screen   | Visual Denial  |
 
-**Passive:** Reinforced Armor
-- Effect: +25% maximum armor capacity (125 armor max vs 100)
-- Additional: Armor damage reduction +10%
-
-**Starting Gear:**
-- Primary: Shotgun (close range power)
-- Secondary: Revolver (high damage)
-- Equipment: 1x Flashbang, Extra Armor Plate
-- Armor: Heavy armor (75 armor points)
-
-**Playstyle:**
-- Point defense
-- Lead pushes
-- Protect teammates
-- Best for defensive players
-
-**Counters:**
-- Flanking bypasses shield
-- Specialist EMP disables shield
-- Slow movement vulnerable to kiting
-
-**Strengths:**
-- Survivability
-- Area denial
-- Extraction defense
+📁 **[View All Recon Operators →](./Recon/)**
 
 ---
 
-### 5. SPECIALIST - "Tech Expert"
+### 4. TANK CLASS - "Frontline Defenders"
 
-**Role:** Utility, control, disruption
+**Role:** Absorb damage, hold positions, and protect teammates.
 
-**Character Profile:**
-- Former engineer / hacker
-- Age: 22-28
-- Personality: Clever, unconventional, adaptable
+**Class Traits:**
+- +25% Maximum Armor Capacity
+- +10% Armor Damage Reduction
+- -15% Sprint Speed
 
-**Visual Design:**
-- Tech gadgets visible
-- Utility vest with tools
-- Fingerless gloves (hacker aesthetic)
-- Color theme: Black with yellow accents
+**Operators:**
 
-**Ability: EMP Blast**
-- Cooldown: 110 seconds
-- Duration: Instant
-- Effect: 15m radius, disables enemy abilities 10 sec, destroys gadgets
-- Visual: Blue electric pulse wave
-- Audio: Electric discharge sound
+| Operator                                           | Codename | Ability          | Specialty          |
+| :------------------------------------------------- | :------- | :--------------- | :----------------- |
+| [**Hans "Bulwark" Richter**](./Tank/Bulwark.md)    | BULWARK  | Riot Shield      | Frontal Protection |
+| [**Dmitri "Fortress" Kozlov**](./Tank/Fortress.md) | FORTRESS | Armor Overcharge | Team Defense       |
 
-**Passive:** Expanded Inventory
-- Effect: +2 inventory slots (1x2 grid)
-- Benefit: Carry more loot per run
+📁 **[View All Tank Operators →](./Tank/)**
 
-**Starting Gear:**
-- Primary: Pistol (versatile)
-- Secondary: SMG
-- Equipment: 2x EMP Grenades, Lockpick Tool
-- Armor: Medium armor (50 armor points)
+---
 
-**Playstyle:**
-- Flexible, adaptable
-- Counter enemy abilities
-- Maximize loot efficiency
-- Best for creative players
+### 5. SPECIALIST CLASS - "Tech Disruptors"
 
-**Counters:**
-- Raw combat power beats utility
-- Assault can bum-rush before EMP
-- Long range avoids EMP radius
+**Role:** Utility, control, counter enemy abilities.
 
-**Strengths:**
-- Versatility
-- Loot capacity
-- Counter-play potential
+**Class Traits:**
+- +2 Inventory Slots
+- +20% Gadget Interaction Speed
+- -10% Weapon Accuracy
+
+**Operators:**
+
+| Operator                                             | Codename | Ability    | Specialty      |
+| :--------------------------------------------------- | :------- | :--------- | :------------- |
+| [**Alex "Cipher" Nakamura**](./Specialist/Cipher.md) | CIPHER   | EMP Blast  | Ability Denial |
+| [**Maya "Flux" Okonkwo**](./Specialist/Flux.md)      | FLUX     | Nano Swarm | Area Control   |
+
+📁 **[View All Specialist Operators →](./Specialist/)**
 
 ---
 
 ## Operator Balance Matrix
 
-|                | Combat Power | Survivability | Utility | Team Value | Solo Viability |
-| -------------- | :----------: | :-----------: | :-----: | :--------: | :------------: |
-| **Assault**    |     9/10     |     6/10      |  4/10   |    6/10    |      8/10      |
-| **Support**    |     5/10     |     7/10      |  8/10   |   10/10    |      4/10      |
-| **Recon**      |     6/10     |     5/10      |  9/10   |    8/10    |      9/10      |
-| **Tank**       |     7/10     |     10/10     |  5/10   |    8/10    |      5/10      |
-| **Specialist** |     5/10     |     6/10      |  10/10  |    7/10    |      7/10      |
+### Combat Statistics
+
+| Operator | Class      | Combat Power | Survivability | Utility | Team Value | Solo Viability |
+| :------- | :--------- | :----------: | :-----------: | :-----: | :--------: | :------------: |
+| VIPER    | Assault    |     9/10     |     6/10      |  4/10   |    6/10    |      8/10      |
+| BLAZE    | Assault    |     8/10     |     5/10      |  6/10   |    7/10    |      7/10      |
+| HAVOC    | Assault    |    10/10     |     4/10      |  3/10   |    5/10    |      9/10      |
+| DOC      | Support    |     5/10     |     7/10      |  8/10   |   10/10    |      4/10      |
+| ANGEL    | Support    |     4/10     |     8/10      |  9/10   |   10/10    |      3/10      |
+| PHANTOM  | Recon      |     6/10     |     5/10      |  9/10   |    8/10    |      9/10      |
+| SPECTER  | Recon      |     7/10     |     5/10      |  8/10   |    7/10    |      8/10      |
+| WRAITH   | Recon      |     5/10     |     6/10      |  10/10  |    8/10    |      7/10      |
+| BULWARK  | Tank       |     7/10     |     10/10     |  5/10   |    8/10    |      5/10      |
+| FORTRESS | Tank       |     6/10     |     9/10      |  7/10   |    9/10    |      4/10      |
+| CIPHER   | Specialist |     5/10     |     6/10      |  10/10  |    7/10    |      7/10      |
+| FLUX     | Specialist |     6/10     |     5/10      |  9/10   |    8/10    |      6/10      |
+
+### Counter Matrix
+
+| Operator | Strong Against   | Weak Against    |
+| :------- | :--------------- | :-------------- |
+| VIPER    | PHANTOM, DOC     | BULWARK, CIPHER |
+| BLAZE    | WRAITH, FORTRESS | SPECTER, FLUX   |
+| HAVOC    | ANGEL, CIPHER    | BULWARK, DOC    |
+| DOC      | All (Sustain)    | VIPER, HAVOC    |
+| ANGEL    | BLAZE, HAVOC     | CIPHER, SPECTER |
+| PHANTOM  | FORTRESS, FLUX   | VIPER, WRAITH   |
+| SPECTER  | BLAZE, HAVOC     | CIPHER, ANGEL   |
+| WRAITH   | BULWARK, VIPER   | PHANTOM, FLUX   |
+| BULWARK  | VIPER, HAVOC     | WRAITH, CIPHER  |
+| FORTRESS | BLAZE, SPECTER   | PHANTOM, FLUX   |
+| CIPHER   | ANGEL, BULWARK   | VIPER, HAVOC    |
+| FLUX     | PHANTOM, SPECTER | BLAZE, WRAITH   |
+
+---
+
+## Team Compositions
+
+### Recommended Squad Compositions (3-Player)
+
+| Comp Name           | Composition                | Playstyle             | Strength               |
+| :------------------ | :------------------------- | :-------------------- | :--------------------- |
+| **Rush Meta**       | VIPER + HAVOC + DOC        | Aggressive push       | High damage, sustained |
+| **Intel Control**   | PHANTOM + SPECTER + CIPHER | Information dominance | Never surprised        |
+| **Fortress Hold**   | BULWARK + DOC + BLAZE      | Defensive extraction  | Hard to push           |
+| **Balanced**        | VIPER + DOC + PHANTOM      | All-around            | Flexible               |
+| **Stealth Extract** | WRAITH + SPECTER + FLUX    | Avoid combat          | Maximum loot           |
+
+### Duo Synergies
+
+| Duo              | Synergy                     | Strategy                |
+| :--------------- | :-------------------------- | :---------------------- |
+| VIPER + DOC      | Assault heals               | Aggressive with sustain |
+| BULWARK + HAVOC  | Tank leads, Assault follows | Overwhelming push       |
+| PHANTOM + CIPHER | Intel + Disable             | Information control     |
+| FORTRESS + ANGEL | Double defense              | Extraction fortress     |
+| WRAITH + SPECTER | Stealth duo                 | Avoid all combat        |
 
 ---
 
 ## Operator Progression
 
-### Leveling System
+### Individual Leveling
 
 **Max Level per Operator:** 50
 
-**XP Sources:**
-- Operator usage: XP gained in matches
-- Challenges: Operator-specific challenges
-- Achievements: Milestones
+| Level | Unlock                          |
+| :---- | :------------------------------ |
+| 1     | Base operator unlocked          |
+| 5     | Ability Upgrade Slot 1          |
+| 10    | Cosmetic Skin 1                 |
+| 15    | Stat Boost 1 (+5% Health)       |
+| 20    | Ability Upgrade Slot 2          |
+| 25    | Cosmetic Skin 2                 |
+| 30    | Stat Boost 2 (+5% Stamina)      |
+| 35    | Ability Upgrade Slot 3          |
+| 40    | Elite Cosmetic Skin             |
+| 45    | Stat Boost 3 (+5% Sprint Speed) |
+| 50    | Prestige Cosmetics + Title      |
 
-**Example Progression:**
+### Prestige System
 
-```
-Level 1: Base operator unlocked
-Level 5: Unlock ability upgrade slot 1
-Level 10: Unlock cosmetic skin 1
-Level 15: Unlock stat boost 1 (+5% health)
-Level 20: Unlock ability upgrade slot 2
-Level 25: Unlock cosmetic skin 2
-Level 30: Unlock stat boost 2 (+5% stamina)
-Level 35: Unlock ability upgrade slot 3
-Level 40: Unlock elite cosmetic skin
-Level 45: Unlock stat boost 3 (+5% sprint speed)
-Level 50: Unlock prestige cosmetics
-```
-
-### Ability Upgrades
-
-**Example (Assault Combat Stim):**
-
-**Upgrade Slot 1:**
-- Option A: Extended Duration (+5 seconds)
-- Option B: Reduced Cooldown (-20 seconds)
-- Option C: Health Regen (+10 HP over duration)
-
-**Upgrade Slot 2:**
-- Option A: Damage Boost (+30% instead of +25%)
-- Option B: Damage Resistance (+20% damage reduction)
-- Option C: Reload Speed (+50% reload speed)
-
-**Upgrade Slot 3:**
-- Option A: Team Buff (Nearby allies get +10% damage)
-- Option B: Overheal (Heal 20 HP on activation)
-- Option C: Immunity (Cannot be stunned during stim)
-
-**Design Note:** Only 1 option per slot active. Encourages build diversity.
+After reaching Level 50, operators can be **Prestiged**:
+- Reset to Level 1
+- Gain Prestige Badge (visible to other players)
+- Unlock exclusive Prestige cosmetics
+- +5% XP bonus for that operator
+- Max Prestige: 5
 
 ---
 
-## Operator Unlock Progression
+## Cosmetic System
 
-### Starting Operators (Free)
-- **Assault** - Beginner-friendly
-- **Support** - Learn teamplay
+### Customization Options
 
-### Unlock Requirements
+| Type             | Description                   | Acquisition                  |
+| :--------------- | :---------------------------- | :--------------------------- |
+| **Skins**        | Full operator visual change   | Credits, Battle Pass, Events |
+| **Headgear**     | Helmets, hats, masks          | Credits, Battle Pass         |
+| **Gloves**       | Hand cosmetics                | Credits only                 |
+| **Weapon Skins** | Applied to equipped weapons   | Credits, Battle Pass         |
+| **Emotes**       | Victory poses, taunts         | Battle Pass, Events          |
+| **Kill Effects** | Visual effect on eliminations | Premium Currency only        |
+| **Voice Packs**  | Alternate voice lines         | Premium Currency only        |
 
-**Recon:**
-- Level 5 account level
-- Complete "Scout Quest" (Deploy 10 sensor mines)
-- OR Purchase with 5,000 Credits
+### Rarity Tiers
 
-**Tank:**
-- Level 10 account level
-- Complete "Tank Quest" (Absorb 5,000 damage)
-- OR Purchase with 7,500 Credits
-
-**Specialist:**
-- Level 15 account level
-- Complete "Tech Quest" (Destroy 20 gadgets)
-- OR Purchase with 10,000 Credits
-
-**Future Operators:**
-- Season Battle Pass rewards
-- Special events
-- Purchase with Credits or Premium Currency
+| Tier      | Color  | Drop Rate | Purchase Price       |
+| :-------- | :----- | :-------- | :------------------- |
+| Common    | White  | 60%       | 500 Credits          |
+| Uncommon  | Green  | 25%       | 1,000 Credits        |
+| Rare      | Blue   | 10%       | 2,500 Credits        |
+| Epic      | Purple | 4%        | Premium only         |
+| Legendary | Gold   | 1%        | Battle Pass / Events |
 
 ---
 
-## Operator Synergies
+## Future Operators (Roadmap)
 
-### Good Combinations
+### Season 1 (Launch + 3 months)
 
-**Assault + Support:**
-- Assault pushes, Support heals
-- High aggression with sustainability
+| Operator     | Class      | Ability Preview    |
+| :----------- | :--------- | :----------------- |
+| **SHADOW**   | Recon      | Invisibility cloak |
+| **ENGINEER** | Specialist | Deployable turret  |
 
-**Recon + Specialist:**
-- Intel + Utility
-- Information control dominance
+### Season 2 (6 months)
 
-**Tank + Assault:**
-- Tank leads, Assault follows
-- Overwhelming push power
+| Operator  | Class   | Ability Preview        |
+| :-------- | :------ | :--------------------- |
+| **PYRO**  | Assault | Fire damage specialist |
+| **MERCY** | Support | Mass revive            |
 
-**Support + Anyone:**
-- Healing always valuable
+### Season 3+ (9 months+)
 
-### Counter Compositions
-
-**vs Heavy Tank Team:**
-- Use Specialist EMP + Recon flanks
-
-**vs Stealth Recon Team:**
-- Use Tank area control + Support healing
-
-**vs Aggressive Assault Team:**
-- Use Recon information + Tank defense
+- New class consideration: **COMMANDER** (tactical calldowns)
+- Community-voted operator concepts
+- Crossover event operators (licensed characters)
 
 ---
 
-## Visual Design Guidelines (For Artists)
+## Document Index
 
-### Character Silhouettes
+### Assault Class
 
-**Priority:** Instant recognition from top-down
+| File                           | Operator             | Status     |
+| :----------------------------- | :------------------- | :--------- |
+| [Viper.md](./Assault/Viper.md) | Marcus "Viper" Chen  | ✅ Complete |
+| [Blaze.md](./Assault/Blaze.md) | Elena "Blaze" Reyes  | ✅ Complete |
+| [Havoc.md](./Assault/Havoc.md) | Anton "Havoc" Petrov | ✅ Complete |
 
-**Design Rules:**
-1. Each operator must have unique silhouette
-2. Differentiate through gear and posture
-3. Size variations (Tank biggest, Recon smallest)
-4. Distinct color themes
+### Support Class
 
-### Color Coding
+| File                           | Operator                    | Status     |
+| :----------------------------- | :-------------------------- | :--------- |
+| [Doc.md](./Support/Doc.md)     | Dr. James "Doc" Morrison    | ✅ Complete |
+| [Angel.md](./Support/Angel.md) | Sister Maria "Angel" Santos | ✅ Complete |
 
-**Team Colors (Multiplayer):**
-- Your Team: Blue markers
-- Enemy Teams: Red markers
-- Neutral (AI): Yellow markers
+### Recon Class
 
-**Operator Accent Colors:**
-- Assault: Orange
-- Support: Blue
-- Recon: Cyan
-- Tank: Red
-- Specialist: Yellow
+| File                             | Operator                | Status     |
+| :------------------------------- | :---------------------- | :--------- |
+| [Phantom.md](./Recon/Phantom.md) | Sarah "Phantom" Kim     | ✅ Complete |
+| [Specter.md](./Recon/Specter.md) | Viktor "Specter" Volkov | ✅ Complete |
+| [Wraith.md](./Recon/Wraith.md)   | Yuki "Wraith" Tanaka    | ✅ Complete |
 
-### Animation Guidelines
+### Tank Class
 
-**Movement:**
-- Walk cycle: 1 second loop
-- Sprint cycle: 0.7 second loop
-- Crouch walk: 1.3 second loop
+| File                              | Operator                 | Status     |
+| :-------------------------------- | :----------------------- | :--------- |
+| [Bulwark.md](./Tank/Bulwark.md)   | Hans "Bulwark" Richter   | ✅ Complete |
+| [Fortress.md](./Tank/Fortress.md) | Dmitri "Fortress" Kozlov | ✅ Complete |
 
-**Combat:**
-- Weapon fire: Quick, snappy
-- Reload: Clear, readable
-- Ability use: Distinct, recognizable
+### Specialist Class
 
-**Hit Reactions:**
-- Light hit: Small flinch
-- Heavy hit: Larger stagger
-- Death: Dramatic but quick (mobile)
-
----
-
-## Cosmetic Customization
-
-### Cosmetic Types
-
-**1. Skins (Full Operator Reskin)**
-- Default skin: Free
-- Common skins: 500 Credits
-- Rare skins: 1,000 Credits
-- Epic skins: Premium Currency only
-- Legendary skins: Battle Pass / Events
-
-**2. Headgear**
-- Helmets, hats, masks
-- Mix and match with skins
-
-**3. Weapon Skins**
-- Applied to all weapons of operator
-- Separate from operator skins
-
-**4. Emotes**
-- Victory emotes
-- Taunt emotes (risky in-game)
-
-**5. Kill Effects**
-- Visual effect when eliminating enemy
-- Subtle, no P2W advantage
-
-### Monetization Note
-
-**All cosmetic only - No gameplay advantages**
-
----
-
-## Voice Lines & Personality
-
-### Assault Voice Examples
-- "Contact! Engaging!"
-- "Pushing in!"
-- "They're not getting away!"
-- "Extraction secured. Let's move!"
-
-### Support Voice Examples
-- "Healing up!"
-- "Cover me while I patch you!"
-- "Stay close, I've got your back!"
-- "Everyone okay?"
-
-### Recon Voice Examples
-- "Multiple contacts detected."
-- "Staying low."
-- "They won't see me coming."
-- "Intel gathered."
-
-### Tank Voice Examples
-- "I'll take point."
-- "On me! I'll cover you!"
-- "That all you got?"
-- "Position held."
-
-### Specialist Voice Examples
-- "Systems disrupted!"
-- "Got something here..."
-- "Let's see what this does."
-- "Tech advantage secured."
-
----
-
-## Future Operators (Post-Launch)
-
-### Operator 6: "SHADOW" - Stealth Assassin
-- Ability: Turn invisible for 5 seconds
-- Passive: Bonus damage from behind
-
-### Operator 7: "ENGINEER" - Deployable Turret
-- Ability: Deploy auto-turret
-- Passive: Faster interaction speed
-
-### Operator 8: "PYROMANIAC" - Fire Specialist
-- Ability: Molotov area denial
-- Passive: Fire damage immunity
-
-**Note:** Detailed design after feedback from launch operators
+| File                                | Operator               | Status     |
+| :---------------------------------- | :--------------------- | :--------- |
+| [Cipher.md](./Specialist/Cipher.md) | Alex "Cipher" Nakamura | ✅ Complete |
+| [Flux.md](./Specialist/Flux.md)     | Maya "Flux" Okonkwo    | ✅ Complete |
 
 ---
 

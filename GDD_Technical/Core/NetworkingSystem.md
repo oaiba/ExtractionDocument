@@ -1,756 +1,269 @@
-# Networking System
+# Networking System - Technical Design Document
 
-**[← Previous: Architecture](./01_Architecture.md)** | **[Technical Index](./README.md)** | **[Next: Character System →](./03_CharacterSystem.md)**
-
----
-
-## Network Architecture Overview
-
-**Model:** Dedicated Server Architecture  
-**Authority:** Server Authoritative  
-**Topology:** Client-Server (Star)  
-**Protocol:** UDP with reliability layer  
+**[← Previous: Architecture](./Architecture.md)** | **[Index](../README.md)** | **[Next: Character System →](../Gameplay/CharacterSystem.md)**
 
 ---
 
-## Server-Client Model
+## Overview
 
-### Architecture Diagram
+### Network Model
+
+| Property           | Value                                    |
+| :----------------- | :--------------------------------------- |
+| **Architecture**   | Dedicated Server with EOS Relay fallback |
+| **Authority**      | Server Authoritative                     |
+| **Topology**       | Client-Server (Star)                     |
+| **Protocol**       | UDP (Standard) / P2P (EOS Relay)         |
+| **Cross-Platform** | Epic Online Services (EOS)               |
+
+### Core Functions
+
+| Function              | Description                       |
+| :-------------------- | :-------------------------------- |
+| **Replication**       | State synchronization             |
+| **Client Prediction** | Hide latency                      |
+| **Lag Compensation**  | Fair hit detection                |
+| **Matchmaking**       | EOS Smart Sessions / Flex Match   |
+| **Lobbies**           | Persistent cross-platform lobbies |
+| **Anti-Cheat**        | Easy Anti-Cheat (EOS)             |
+
+---
+
+## System Architecture
 
 ```
-        ┌─────────┐
-        │ Master  │
-        │ Server  │  (Matchmaking, Lobbies)
-        └────┬────┘
-             │
-      ┌──────┴──────┐
-      │             │
-  ┌───▼───┐     ┌───▼───┐
-  │  Game │     │  Game │  (Dedicated Game Servers)
-  │Server1│     │Server2│
-  └───┬───┘     └───┬───┘
-      │             │
-  ┌───┼────┬────────┼────┐
-  │   │    │        │    │
-┌─▼─┐ │ ┌─▼─┐    ┌─▼─┐  │
-│C1 │ │ │C2 │    │C3 │  │  (Clients)
-└───┘ │ └───┘    └───┘  │
-    ┌─▼─┐             ┌─▼─┐
-    │C4 │             │C5 │
-    └───┘             └───┘
-```
-
----
-
-## Server Authority
-
-### Server Responsibilities
-
-**Authoritative on:**
-- All gameplay state
-- Character positions (with client prediction)
-- Combat calculations (damage, hits)
-- Loot spawning và distribution
-- Match flow (timer, events)
-- Win/loss conditions
-- Anti-cheat validation
-
-**Implementation:**
-```cpp
-// Server validates all important actions
-UFUNCTION(Server, Reliable, WithValidation)
-void AExtractionCharacter::ServerFire_Implementation(
-    const FVector& TargetLocation)
-{
-    // Server performs actual hit detection
-    FHitResult HitResult;
-    FVector Start = GetActorLocation();
-    FVector End = TargetLocation;
-    
-    GetWorld()->LineTraceSingleByChannel(
-        HitResult, Start, End, ECC_Visibility);
-    
-    if (HitResult.bBlockingHit)
-    {
-        // Server applies damage
-        if (AExtractionCharacter* HitChar = 
-            Cast<AExtractionCharacter>(HitResult.GetActor()))
-        {
-            HitChar->TakeDamage(WeaponDamage, ...);
-        }
-        
-        // Server broadcasts to all clients
-        MulticastPlayFireEffects(HitResult.Location);
-    }
-}
-
-bool AExtractionCharacter::ServerFire_Validate(
-    const FVector& TargetLocation)
-{
-    // Anti-cheat: Validate reasonable target
-    float Distance = FVector::Distance(
-        GetActorLocation(), TargetLocation);
-    
-    // Reject if beyond weapon range
-    return Distance <= CurrentWeapon->MaxRange * 1.2f;
-}
+        ┌──────────────┐
+        │  EOS Cloud   │ (Matchmaking, Auth, Relay)
+        └──────┬───────┘
+               │
+        ┌──────┴───────┐
+        │              │
+  ┌─────▼─────┐  ┌─────▼─────┐
+  │ Game Svr 1│  │ Game Svr 2│ (Dedicated Servers)
+  └─────┬─────┘  └─────┬─────┘
+        │              │
+  ┌─────┼───────┬──────┼─────┐
+  │     │       │      │     │
+┌─▼─┐ ┌─▼─┐   ┌─▼─┐  ┌─▼─┐ ┌─▼─┐
+│PC │ │PS5│   │XBX│  │iOS│ │And│ (Cross-Platform Clients)
+└───┘ └───┘   └───┘  └───┘ └───┘
 ```
 
 ---
 
-## Replication
+## Enums & Types
 
-### Replication Strategy
+### NetworkRole
 
-**High Priority (30 Hz):**
-- Character Transform (Location, Rotation)
-- Health/Armor values
-- Weapon state (firing, ammo)
-- Ability activation
+| Code Name            | Display Name     | Authority | Replication |
+| :------------------- | :--------------- | :-------- | :---------- |
+| `NR_Server`          | Dedicated Server | Full      | Source      |
+| `NR_ListenServer`    | Listen Server    | Full      | Source      |
+| `NR_Client`          | Client           | None      | Receiver    |
+| `NR_SimulatedProxy`  | Simulated Proxy  | None      | Simulated   |
+| `NR_AutonomousProxy` | Autonomous Proxy | Local     | Predicted   |
 
-**Medium Priority (10 Hz):**
-- Inventory changes
-- Quest progress
-- Match state updates
+### AuthProvider
+Authentication provider for EOS Connect.
 
-**Low Priority (On-Change):**
-- Cosmetics
-- Emotes
-- Non-critical UI data
+| Code Name   | Display Name | Platform  |
+| :---------- | :----------- | :-------- |
+| `AP_Epic`   | Epic Games   | PC        |
+| `AP_Steam`  | Steam        | PC        |
+| `AP_Google` | Google Play  | Android   |
+| `AP_Apple`  | Apple ID     | iOS       |
+| `AP_PSN`    | PlayStation  | PS5       |
+| `AP_XBL`    | Xbox Live    | Xbox      |
+| `AP_Device` | Device ID    | Guest/Dev |
+
+### LobbyPrivacy
+Visibility settings for lobbies.
+
+| Code Name    | Display Name | Searchable | Invite Only |
+| :----------- | :----------- | :--------- | :---------- |
+| `LP_Public`  | Public       | Yes        | No          |
+| `LP_Friends` | Friends Only | No         | Yes         |
+| `LP_Private` | Private      | No         | Yes         |
+
+### ConnectionState
+
+| Code Name           | Display Name   | Timeout | UI State     |
+| :------------------ | :------------- | :------ | :----------- |
+| `CS_Disconnected`   | Disconnected   | N/A     | Main Menu    |
+| `CS_Authenticating` | Authenticating | 15s     | Login Screen |
+| `CS_Connecting`     | Connecting     | 30s     | Loading      |
+| `CS_Connected`      | Connected      | N/A     | In-game      |
+| `CS_Reconnecting`   | Reconnecting   | 60s     | Overlay      |
+| `CS_TimedOut`       | Timed Out      | N/A     | Error        |
+
+### MatchmakingState
+
+| Code Name       | Display Name | Duration | Cancel |
+| :-------------- | :----------- | :------- | :----- |
+| `MMS_Idle`      | Idle         | N/A      | N/A    |
+| `MMS_InLobby`   | In Lobby     | N/A      | Yes    |
+| `MMS_Searching` | Searching    | 0-120s   | Yes    |
+| `MMS_Found`     | Match Found  | 10s      | Yes    |
+| `MMS_Joining`   | Joining      | 30s      | No     |
 
 ---
 
-### Property Replication
+## Code Names
 
-```cpp
-// Character replication
-void AExtractionCharacter::GetLifetimeReplicatedProps(
-    TArray<FLifetimeProperty>& OutLifetimeProps) const
-{
-    Super::GetLifetimeReplicatedProps(OutLifetimeProps);
-    
-    // Always replicate to all
-    DOREPLIFETIME(AExtractionCharacter, Health);
-    DOREPLIFETIME(AExtractionCharacter, Armor);
-    DOREPLIFETIME(AExtractionCharacter, CurrentWeapon);
-    
-    // Replicate only to owner
-    DOREPLIFETIME_CONDITION(AExtractionCharacter, Inventory, 
-        COND_OwnerOnly);
-    DOREPLIFETIME_CONDITION(AExtractionCharacter, Stamina, 
-        COND_OwnerOnly);
-    
-    // Skip owner (they already know)
-    DOREPLIFETIME_CONDITION(AExtractionCharacter, bIsAiming,
-        COND_SkipOwner);
-}
+### EOS Events
 
-// RepNotify for state changes
-UPROPERTY(ReplicatedUsing=OnRep_Health)
-float Health;
+| Code Name          | Trigger       | Parameters   | Description             |
+| :----------------- | :------------ | :----------- | :---------------------- |
+| `EOS_AUTH_SUCCESS` | Login success | PUID, EpikID | Authenticated with EOS  |
+| `EOS_AUTH_FAIL`    | Login fail    | ErrorCode    | Auth failed             |
+| `EOS_LOBBY_JOIN`   | Joined lobby  | LobbyID      | Entered a lobby         |
+| `EOS_LOBBY_LEFT`   | Left lobby    | LobbyID      | Exited a lobby          |
+| `EOS_LOBBY_UPDATE` | Data update   | Attr, Value  | Lobby attribute changed |
 
-UFUNCTION()
-void AExtractionCharacter::OnRep_Health()
-{
-    // Update UI
-    UpdateHealthUI();
+### Connection Events
+
+| Code Name        | Trigger            | Parameters       | Description          |
+| :--------------- | :----------------- | :--------------- | :------------------- |
+| `NET_CONNECT`    | Client connects    | ClientID, IP     | New client connected |
+| `NET_DISCONNECT` | Client disconnects | ClientID, Reason | Client disconnected  |
+| `NET_TIMEOUT`    | Connection timeout | ClientID         | Connection timed out |
+
+---
+
+## Core Classes
+
+### EOSManager
+
+**Purpose:** Wrapper for Epic Online Services platform interface.
+
+```
+CLASS EOSManager:
+    STATIC instance: EOSManager
+    productUserID: String
+    epicAccountID: String
     
-    // Play effects
-    if (Health < PreviousHealth)
-    {
-        PlayDamageEffects();
-    }
+    FUNCTION Initialize():
+        // Init platform interface
+        config = CreatePlatformConfig()
+        PlatformInterface.Initialize(config)
+    END FUNCTION
     
-    PreviousHealth = Health;
-}
+    FUNCTION Login(provider: AuthProvider, token: String):
+        credentials = NEW Credentials()
+        credentials.Type = provider
+        credentials.Token = token
+        
+        AuthInterface.Login(credentials, OnLoginComplete)
+    END FUNCTION
+    
+    FUNCTION OnLoginComplete(result: LoginCallbackInfo):
+        IF result.ResultCode == Success:
+            productUserID = result.LocalUserId
+            ConnectInterface.Login(productUserID) // Link to Product User ID
+            EMIT EVENT "EOS_AUTH_SUCCESS"
+        ELSE:
+            EMIT EVENT "EOS_AUTH_FAIL" WITH (result.ResultCode)
+        END IF
+    END FUNCTION
 ```
 
----
+### LobbyManager
 
-## Client-Side Prediction
+**Purpose:** Manages EOS Lobby lifecycle and attributes.
 
-### Movement Prediction
-
-**Why:** Immediate feedback, hide latency
-
-**Implementation:**
-```cpp
-void AExtractionCharacter::MoveForward(float Value)
-{
-    // Client predicts immediately
-    AddMovementInput(GetActorForwardVector(), Value);
+```
+CLASS LobbyManager:
+    currentLobbyID: String
+    currentLobbyDetails: LobbyDetails
+    bIsHost: Boolean
     
-    // Send to server
-    if (!HasAuthority())
-    {
-        ServerMove(Value, GetActorLocation(), 
-            GetWorld()->GetTimeSeconds());
-    }
-}
-
-UFUNCTION(Server, Unreliable)
-void AExtractionCharacter::ServerMove_Implementation(
-    float Value, FVector ClientLocation, float Timestamp)
-{
-    // Server executes move
-    AddMovementInput(GetActorForwardVector(), Value);
+    FUNCTION CreateLobby(maxPlayers: Integer, privacy: LobbyPrivacy):
+        options = NEW CreateLobbyOptions()
+        options.MaxPlayers = maxPlayers
+        options.PermissionLevel = privacy
+        options.BucketId = "ExtractionGame:Region:GameMode"
+        
+        LobbyInterface.CreateLobby(options, OnLobbyCreated)
+    END FUNCTION
     
-    // Check for significant misprediction
-    FVector ServerLocation = GetActorLocation();
-    float Error = FVector::Distance(ClientLocation, ServerLocation);
+    FUNCTION SearchLobbies(filters: List<Attribute>):
+        search = NEW LobbySearch()
+        search.SetMaxResults(10)
+        
+        FOR EACH filter IN filters:
+             search.SetParameter(filter.Key, filter.Value, filter.Op)
+        END FOR
+        
+        search.Find(OnLobbySearchComplete)
+    END FUNCTION
     
-    if (Error > 100.0f) // Threshold
-    {
-        // Force correction
-        ClientCorrectPosition(ServerLocation, Timestamp);
-    }
-}
-
-UFUNCTION(Client, Unreliable)
-void AExtractionCharacter::ClientCorrectPosition_Implementation(
-    FVector ServerLocation, float Timestamp)
-{
-    // Smoothly correct to server position
-    SetActorLocation(ServerLocation);
-    
-    // Replay inputs since correction time (advanced)
-    ReplayInputsSince(Timestamp);
-}
+    FUNCTION UpdateLobbyAttribute(key: String, value: String):
+        IF NOT bIsHost: RETURN
+        
+        modification = NEW LobbyModification(currentLobbyID)
+        modification.AddAttribute(key, value)
+        LobbyInterface.UpdateLobby(modification, OnLobbyUpdated)
+    END FUNCTION
 ```
 
----
+### NetworkManager
 
-## Lag Compensation
+**Purpose:** Central networking controller for game sessions.
 
-### Hit Registration
-
-**Problem:** Client shoots where enemy WAS, not where they ARE
-
-**Solution:** Server rewinds time for hit detection
-
-```cpp
-class ULagCompensationComponent : public UActorComponent
-{
-public:
-    // Store position history
-    struct FPositionHistory
-    {
-        FVector Location;
-        FRotator Rotation;
-        float Timestamp;
-    };
+```
+CLASS NetworkManager:
+    STATIC instance: NetworkManager
     
-    TArray<FPositionHistory> PositionHistory;
-    static constexpr float HISTORY_LENGTH = 1.0f; // 1 second
+    connectionState: ConnectionState
+    replicatedActors: Map<String, NetworkedActor>
     
-    void RecordPosition(float DeltaTime)
-    {
-        PositionHistory.Add({
-            GetOwner()->GetActorLocation(),
-            GetOwner()->GetActorRotation(),
-            GetWorld()->GetTimeSeconds()
-        });
+    // Events
+    OnClientConnected: Event<(clientID)>
+    OnClientDisconnected: Event<(clientID, reason)>
+    
+    FUNCTION ConnectToSession(sessionInfo: SessionResult):
+        connectionState = CS_Connecting
         
-        // Remove old entries
-        float MinTime = GetWorld()->GetTimeSeconds() - HISTORY_LENGTH;
-        PositionHistory.RemoveAll([MinTime](const FPositionHistory& Entry) {
-            return Entry.Timestamp < MinTime;
-        });
-    }
-    
-    FVector GetPositionAtTime(float TargetTime)
-    {
-        // Find bracketing positions
-        for (int i = 0; i < PositionHistory.Num() - 1; i++)
-        {
-            if (PositionHistory[i].Timestamp <= TargetTime &&
-                PositionHistory[i + 1].Timestamp >= TargetTime)
-            {
-                // Interpolate between positions
-                float Alpha = (TargetTime - PositionHistory[i].Timestamp) /
-                    (PositionHistory[i + 1].Timestamp - 
-                     PositionHistory[i].Timestamp);
-                
-                return FMath::Lerp(
-                    PositionHistory[i].Location,
-                    PositionHistory[i + 1].Location,
-                    Alpha
-                );
-            }
-        }
+        // Get connection string from session (IP or P2P ID)
+        connectString = sessionInfo.GetConnectionString()
         
-        return GetOwner()->GetActorLocation();
-    }
-};
+        // Attempt transport connection
+        NetworkDriver.Connect(connectString)
+    END FUNCTION
 
-// Server-side hit validation
-bool AExtractionGameMode::ValidateHit(
-    AExtractionCharacter* Shooter,
-    AExtractionCharacter* Victim,
-    const FHitResult& ClientHit,
-    float ClientTimestamp)
-{
-    // Get shooter's ping
-    float RTT = Shooter->GetPlayerState()->ExactPing / 1000.0f;
-    
-    // Rewind to when shooter fired (client time)
-    float ServerTime = GetWorld()->GetTimeSeconds();
-    float HitTime = ServerTime - RTT;
-    
-    // Get victim's position at that time
-    ULagCompensationComponent* LagComp = 
-        Victim->FindComponentByClass<ULagCompensationComponent>();
-    
-    FVector VictimPosAtHit = LagComp->GetPositionAtTime(HitTime);
-    
-    // Validate hit
-    FVector ShooterPos = Shooter->GetActorLocation();
-    FVector ToVictim = VictimPosAtHit - ShooterPos;
-    
-    // Check if hit is plausible
-    float Distance = ToVictim.Size();
-    float AngleToHit = FMath::Acos(
-        FVector::DotProduct(
-            ToVictim.GetSafeNormal(),
-            Shooter->GetActorForwardVector()
-        )
-    ) * 180.0f / PI;
-    
-    // Allow hit if within tolerance
-    bool bValidDistance = Distance <= Shooter->CurrentWeapon->MaxRange;
-    bool bValidAngle = AngleToHit <= 45.0f; // Reasonable aim cone
-    
-    return bValidDistance && bValidAngle;
-}
+    FUNCTION SpawnNetworkedActor(actorClass: Type, position: Vector3, ownerID: String) -> NetworkedActor:
+        // Spawning logic (same as previous)
+        actor = Instantiate(actorClass, position)
+        actor.actorID = GenerateNetworkID()
+        // ... replication setup ...
+        RETURN actor
+    END FUNCTION
 ```
 
 ---
 
-## Matchmaking System
-
-### Matchmaking Flow
+## Data Structures
 
 ```
-Player clicks "Play"
-    ↓
-Add to matchmaking queue
-    ↓
-Find suitable match
-    ↓
-Create game session
-    ↓
-Assign players to server
-    ↓
-Load map
-    ↓
-Start match
-```
+STRUCT NetworkedActor:
+    actorID: String
+    ownerClientID: String
+    role: NetworkRole
+    replicatedProperties: Map<String, Property>
 
----
+STRUCT LobbyDetails:
+    LobbyID: String
+    HostID: String
+    MemberCount: Integer
+    MaxMembers: Integer
+    Attributes: Map<String, String>
+    Members: List<LobbyMember>
 
-### Implementation
-
-```cpp
-UCLASS()
-class UMatchmakingSubsystem : public UGameInstanceSubsystem
-{
-    GENERATED_BODY()
-    
-public:
-    // Player joins queue
-    UFUNCTION(BlueprintCallable)
-    void JoinMatchmaking(EGameMode GameMode, ESquadSize SquadSize)
-    {
-        FMatchmakingRequest Request;
-        Request.PlayerID = GetLocalPlayerID();
-        Request.MMR = GetPlayerMMR();
-        Request.GameMode = GameMode;
-        Request.SquadSize = SquadSize;
-        Request.Timestamp = FDateTime::Now();
-        
-        // Send to matchmaking server
-        SendMatchmakingRequest(Request);
-    }
-    
-    // Called when match found
-    UFUNCTION()
-    void OnMatchFound(const FMatchInfo& MatchInfo)
-    {
-        // Connect to game server
-        UGameplayStatics::OpenLevel(
-            this, 
-            FName(*MatchInfo.ServerIP),
-            true,
-            TEXT("?SessionID=") + MatchInfo.SessionID
-        );
-    }
-    
-private:
-    // MMR calculation
-    float CalculateMMR()
-    {
-        float BaseMMR = 1000.0f;
-        
-        // Factors:
-        // - Win rate (40%)
-        // - Extraction rate (40%)
-        // - Average loot value (10%)
-        // - KD ratio (10%)
-        
-        float WinRate = GetWinRate();
-        float ExtractRate = GetExtractionRate();
-        float AvgLoot = GetAverageLootValue();
-        float KD = GetKDRatio();
-        
-        return BaseMMR +
-            (WinRate * 400.0f) +
-            (ExtractRate * 400.0f) +
-            (AvgLoot / 100.0f) +
-            (KD * 100.0f);
-    }
-};
+STRUCT LobbyMember:
+    ProductUserID: String
+    Attributes: Map<String, String> // Ready state, skin, char
 ```
 
 ---
 
-### Matchmaking Algorithm
-
-**Skill-Based Matching:**
-```cpp
-struct FMatchmakingBucket
-{
-    float MinMMR;
-    float MaxMMR;
-    TArray<FMatchmakingRequest> Players;
-    
-    bool CanMatch(const FMatchmakingRequest& Request)
-    {
-        return Request.MMR >= MinMMR && Request.MMR <= MaxMMR;
-    }
-};
-
-// Expand search over time
-void ExpandMatchmakingRange(FMatchmakingRequest& Request)
-{
-    float TimeSinceQueue = (FDateTime::Now() - 
-        Request.Timestamp).GetTotalSeconds();
-    
-    // Expand ±50 MMR per 15 seconds
-    float Expansion = (TimeSinceQueue / 15.0f) * 50.0f;
-    
-    Request.MinMMR = Request.MMR - 100.0f - Expansion;
-    Request.MaxMMR = Request.MMR + 100.0f + Expansion;
-    
-    // Cap expansion at ±500 MMR
-    Request.MinMMR = FMath::Max(Request.MinMMR, Request.MMR - 500.0f);
-    Request.MaxMMR = FMath::Min(Request.MaxMMR, Request.MMR + 500.0f);
-}
-```
-
----
-
-## Network Optimization
-
-### Bandwidth Management
-
-**Target Bandwidth:**
-- Per client: 128 kbps (upload + download)
-- Server: 16 MB/s for 100 concurrent players
-
-**Optimization Techniques:**
-
-**1. Relevancy:**
-```cpp
-// Only replicate nearby actors
-bool AExtractionCharacter::IsNetRelevantFor(
-    const AActor* RealViewer,
-    const AActor* ViewTarget,
-    const FVector& SrcLocation) const
-{
-    // Always relevant to owner
-    if (RealViewer == GetOwner())
-        return true;
-    
-    // Check distance
-    float Distance = FVector::Distance(
-        GetActorLocation(), 
-        SrcLocation
-    );
-    
-    // Relevant within 5000 units (50m)
-    return Distance <= 5000.0f;
-}
-```
-
-**2. Update Frequency:**
-```cpp
-// Adaptive tick rate based on importance
-void AExtractionCharacter::UpdateNetworkPriority()
-{
-    float Priority = 1.0f;
-    
-    // Increase priority if:
-    // - In combat
-    if (bIsInCombat)
-        Priority *= 2.0f;
-    
-    // - Near local player
-    if (bIsNearLocalPlayer)
-        Priority *= 1.5f;
-    
-    // - Moving fast
-    if (GetVelocity().Size() > 500.0f)
-        Priority *= 1.3f;
-    
-    NetPriority = Priority;
-}
-```
-
-**3. Delta Compression:**
-```cpp
-// Only send changed properties
-DOREPLIFETIME_CONDITION(AExtractionCharacter, Health,
-    COND_Custom); // Use custom condition
-
-bool AExtractionCharacter::ReplicateSubobjects(
-    UActorChannel* Channel,
-    FOutBunch* Bunch,
-    FReplicationFlags* RepFlags)
-{
-    bool bWroteSomething = Super::ReplicateSubobjects(
-        Channel, Bunch, RepFlags);
-    
-    // Only replicate if health changed significantly
-    if (FMath::Abs(Health - LastReplicatedHealth) > 1.0f)
-    {
-        bWroteSomething |= Channel->ReplicateSubobject(
-            HealthComponent, *Bunch, *RepFlags);
-        LastReplicatedHealth = Health;
-    }
-    
-    return bWroteSomething;
-}
-```
-
----
-
-## Anti-Cheat
-
-### Server-Side Validation
-
-**Movement Validation:**
-```cpp
-bool AExtractionGameMode::ValidateMovement(
-    AExtractionCharacter* Character,
-    const FVector& NewLocation,
-    float DeltaTime)
-{
-    FVector OldLocation = Character->GetActorLocation();
-    float Distance = FVector::Distance(OldLocation, NewLocation);
-    float MaxDistance = Character->GetMaxMovementSpeed() * DeltaTime * 1.1f;
-    
-    // Reject impossible movement
-    if (Distance > MaxDistance)
-    {
-        UE_LOG(LogTemp, Warning, 
-            TEXT("Invalid movement detected: %s"), 
-            *Character->GetName());
-        
-        // Force correction
-        Character->SetActorLocation(OldLocation);
-        return false;
-    }
-    
-    return true;
-}
-```
-
-**Weapon Fire Rate Validation:**
-```cpp
-bool AExtractionWeapon::CanFire() const
-{
-    float TimeSinceLastFire = GetWorld()->GetTimeSeconds() - LastFireTime;
-    float MinTimeBetweenShots = 60.0f / FireRate; // RPM to seconds
-    
-    return TimeSinceLastFire >= MinTimeBetweenShots * 0.95f; // 5% tolerance
-}
-
-UFUNCTION(Server, Reliable, WithValidation)
-void AExtractionWeapon::ServerFire_Implementation()
-{
-    if (!CanFire())
-    {
-        // Log potential speedhack
-        LogSuspiciousActivity(GetOwner(), "Fire rate violation");
-        return;
-    }
-    
-    // Process shot...
-}
-```
-
-**Loot Validation:**
-```cpp
-UFUNCTION(Server, Reliable, WithValidation)
-void AExtractionCharacter::ServerPickupItem_Implementation(
-    AActor* ItemActor)
-{
-    // Validate distance
-    float Distance = FVector::Distance(
-        GetActorLocation(),
-        ItemActor->GetActorLocation()
-    );
-    
-    if (Distance > 300.0f) // Max pickup range
-    {
-        LogSuspiciousActivity(this, "Teleport pickup");
-        return;
-    }
-    
-    // Validate item exists
-    if (!IsValid(ItemActor))
-    {
-        LogSuspiciousActivity(this, "Invalid item pickup");
-        return;
-    }
-    
-    // Process pickup...
-}
-
-bool AExtractionCharacter::ServerPickupItem_Validate(AActor* ItemActor)
-{
-    return IsValid(ItemActor);
-}
-```
-
----
-
-## Session Management
-
-### Match Lifecycle
-
-```cpp
-UCLASS()
-class AExtractionGameMode : public AGameModeBase
-{
-public:
-    virtual void BeginPlay() override
-    {
-        Super::BeginPlay();
-        
-        // Initialize match
-        MatchState = EMatchState::WaitingToStart;
-        MatchTime = 0.0f;
-        MaxMatchDuration = 900.0f; // 15 minutes
-        
-        // Wait for players
-        if (GetNumPlayers() >= MinPlayers)
-        {
-            StartMatchTimer();
-        }
-    }
-    
-    void StartMatchTimer()
-    {
-        GetWorldTimerManager().SetTimer(
-            MatchStartTimerHandle,
-            this,
-            &AExtractionGameMode::StartMatch,
-            PreMatchDelay,
-            false
-        );
-    }
-    
-    void StartMatch()
-    {
-        MatchState = EMatchState::InProgress;
-        
-        // Spawn players
-        for (APlayerController* PC : PlayerControllers)
-        {
-            SpawnPlayer(PC);
-        }
-        
-        // Start match timer
-        GetWorldTimerManager().SetTimer(
-            MatchUpdateTimerHandle,
-            this,
-            &AExtractionGameMode::UpdateMatch,
-            1.0f,
-            true
-        );
-        
-        // Schedule events
-        ScheduleSupplyDrops();
-        ScheduleContamination();
-    }
-    
-    void UpdateMatch()
-    {
-        MatchTime += 1.0f;
-        
-        // Update game state
-        GetGameState<AExtractionGameState>()->MatchTimeRemaining = 
-            MaxMatchDuration - MatchTime;
-        
-        // Check end conditions
-        if (MatchTime >= MaxMatchDuration)
-        {
-            EndMatch();
-        }
-        else if (GetNumAlivePlayers() == 0)
-        {
-            EndMatch();
-        }
-    }
-    
-    void EndMatch()
-    {
-        MatchState = EMatchState::PostMatch;
-        
-        // Stop timers
-        GetWorldTimerManager().ClearTimer(MatchUpdateTimerHandle);
-        
-        // Process results
-        ProcessMatchResults();
-        
-        // Return to lobby after delay
-        GetWorldTimerManager().SetTimer(
-            ReturnToLobbyTimerHandle,
-            this,
-            &AExtractionGameMode::ReturnToLobby,
-            10.0f,
-            false
-        );
-    }
-};
-```
-
----
-
-## TODO: Networking Tasks
-
-### Phase 1 (HIGH Priority) 🔴
-- [ ] Setup dedicated server configuration
-- [ ] Implement basic character replication
-- [ ] Client-side prediction for movement
-- [ ] Server hit validation
-- [ ] Basic matchmaking system
-
-### Phase 2 (MEDIUM Priority) 🟡
-- [ ] Lag compensation implementation
-- [ ] Advanced replication (inventory, etc)
-- [ ] Bandwidth optimization
-- [ ] Anti-cheat systems
-- [ ] Session management
-
-### Phase 3 (LOW Priority) 🟢
-- [ ] Reconnection handling
-- [ ] Spectator mode
-- [ ] Replay system
-- [ ] Advanced matchmaking (MMR)
-- [ ] Regional servers
-
----
-
-**[← Previous: Architecture](./01_Architecture.md)** | **[Technical Index](./README.md)** | **[Next: Character System →](./03_CharacterSystem.md)**
+**[← Previous: Architecture](./Architecture.md)** | **[Index](../README.md)** | **[Next: Character System →](../Gameplay/CharacterSystem.md)**

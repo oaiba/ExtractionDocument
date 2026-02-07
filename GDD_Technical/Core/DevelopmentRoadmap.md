@@ -1,6 +1,6 @@
 # Development Roadmap & TODO Tracking
 
-**[← Previous: Performance Optimization](./08_PerformanceOptimization.md)** | **[Technical Index](./README.md)**
+**[← Previous: Optimization](../Performance/Optimization.md)** | **[Technical Index](../README.md)**
 
 ---
 
@@ -10,6 +10,132 @@
 **Current Sprint:** Sprint 0 - Project Setup  
 **Team Size:** TBD  
 **Start Date:** TBD  
+
+---
+
+## Enums & Types
+
+### EProjectPhase
+Development phase classification.
+
+| Code Name     | Display Name     | Duration  | Focus      | Deliverable        | Description                 |
+| :------------ | :--------------- | :-------- | :--------- | :----------------- | :-------------------------- |
+| `EPP_PreDev`  | Pre-Development  | 2-4 weeks | Planning   | GDD, Architecture  | Documentation and setup     |
+| `EPP_Core`    | Core Development | 4 months  | Foundation | Playable Prototype | Core systems implementation |
+| `EPP_Content` | Content Creation | 3 months  | Assets     | Alpha Build        | Operators, weapons, maps    |
+| `EPP_Testing` | Testing & QA     | 3 months  | Polish     | Release Candidate  | Alpha, Beta testing         |
+| `EPP_Launch`  | Launch           | 1 month   | Release    | Live Game          | Soft launch, global launch  |
+| `EPP_LiveOps` | Live Operations  | Ongoing   | Updates    | Seasonal Content   | Post-launch support         |
+
+---
+
+### ETaskStatus
+Task completion status.
+
+| Code Name        | Display Name | Icon | Progress | Blocker | Description               |
+| :--------------- | :----------- | :--- | :------- | :------ | :------------------------ |
+| `ETS_NotStarted` | Not Started  | 🔴    | 0%       | None    | Task not yet begun        |
+| `ETS_InProgress` | In Progress  | 🟡    | 1-99%    | None    | Currently being worked on |
+| `ETS_Blocked`    | Blocked      | 🚫    | Variable | Active  | Waiting on dependency     |
+| `ETS_Review`     | In Review    | 🔵    | 95%      | None    | Pending approval/testing  |
+| `ETS_Done`       | Done         | ✅    | 100%     | None    | Task completed            |
+| `ETS_Deferred`   | Deferred     | ⏸️    | Variable | N/A     | Postponed to later phase  |
+
+---
+
+### ETaskPriority
+Task priority classification.
+
+| Code Name      | Display Name | Icon | Response Time | Escalation | Description             |
+| :------------- | :----------- | :--- | :------------ | :--------- | :---------------------- |
+| `ETP_Critical` | Critical     | 🔴    | Immediate     | Auto       | Blocker for release     |
+| `ETP_High`     | High         | 🟠    | < 24h         | Daily      | Core feature dependency |
+| `ETP_Medium`   | Medium       | 🟡    | < 1 week      | Weekly     | Standard priority       |
+| `ETP_Low`      | Low          | 🟢    | Sprint end    | Sprint     | Nice-to-have features   |
+
+---
+
+### ERiskLevel
+Risk assessment classification.
+
+| Code Name      | Display Name | Probability | Impact      | Action               | Description              |
+| :------------- | :----------- | :---------- | :---------- | :------------------- | :----------------------- |
+| `ERL_Critical` | Critical     | High        | High        | Immediate mitigation | Project-threatening risk |
+| `ERL_High`     | High         | High/Medium | High/Medium | Active monitoring    | Significant risk         |
+| `ERL_Medium`   | Medium       | Medium      | Medium      | Contingency plan     | Moderate risk            |
+| `ERL_Low`      | Low          | Low         | Low         | Accept               | Minor risk               |
+
+---
+
+### EMilestoneType
+Project milestone classification.
+
+| Code Name       | Display Name      | Review   | Stakeholders | Gate             | Description              |
+| :-------------- | :---------------- | :------- | :----------- | :--------------- | :----------------------- |
+| `EMT_Prototype` | Prototype         | Internal | Dev Team     | None             | Playable prototype       |
+| `EMT_Alpha`     | Alpha             | Internal | Team + QA    | Feature complete | All features implemented |
+| `EMT_Beta`      | Beta              | External | Testers      | Content complete | Public testing ready     |
+| `EMT_RC`        | Release Candidate | Full     | All          | Bug-free         | Ready for release        |
+| `EMT_Launch`    | Launch            | Public   | All + Press  | Store approved   | Live release             |
+
+---
+
+### ESprintStatus
+Sprint completion status.
+
+| Code Name      | Display Name | Velocity     | Burndown | Health    | Description        |
+| :------------- | :----------- | :----------- | :------- | :-------- | :----------------- |
+| `ESS_Planning` | Planning     | N/A          | N/A      | N/A       | Sprint not started |
+| `ESS_Active`   | Active       | Tracking     | Daily    | Monitored | Sprint in progress |
+| `ESS_AtRisk`   | At Risk      | Below target | Behind   | Warning   | May not complete   |
+| `ESS_Complete` | Complete     | Final        | 100%     | N/A       | Sprint finished    |
+
+---
+
+## Code Names
+
+### Phase Events
+
+| Code Name       | Trigger       | Parameters                | Description                 |
+| :-------------- | :------------ | :------------------------ | :-------------------------- |
+| `PHASE_START`   | Phase begins  | PhaseID, StartDate        | Development phase started   |
+| `PHASE_END`     | Phase ends    | PhaseID, EndDate, Status  | Development phase completed |
+| `PHASE_DELAYED` | Phase delayed | PhaseID, OldDate, NewDate | Phase timeline shifted      |
+
+### Sprint Events
+
+| Code Name       | Trigger       | Parameters                    | Description               |
+| :-------------- | :------------ | :---------------------------- | :------------------------ |
+| `SPRINT_START`  | Sprint begins | SprintID, Goals               | Sprint officially started |
+| `SPRINT_END`    | Sprint ends   | SprintID, Velocity, Completed | Sprint completed          |
+| `SPRINT_REVIEW` | Sprint review | SprintID, Feedback            | Sprint review meeting     |
+| `SPRINT_RETRO`  | Sprint retro  | SprintID, ActionItems         | Retrospective completed   |
+
+### Task Events
+
+| Code Name        | Trigger      | Parameters                        | Description             |
+| :--------------- | :----------- | :-------------------------------- | :---------------------- |
+| `TASK_CREATED`   | Task added   | TaskID, Priority, Assignee        | New task created        |
+| `TASK_UPDATED`   | Task changed | TaskID, Field, OldValue, NewValue | Task modified           |
+| `TASK_COMPLETED` | Task done    | TaskID, Duration                  | Task finished           |
+| `TASK_BLOCKED`   | Task blocked | TaskID, BlockerID                 | Task waiting on blocker |
+
+### Milestone Events
+
+| Code Name           | Trigger          | Parameters          | Description            |
+| :------------------ | :--------------- | :------------------ | :--------------------- |
+| `MILESTONE_REACHED` | Milestone hit    | MilestoneID, Date   | Milestone achieved     |
+| `MILESTONE_MISSED`  | Milestone missed | MilestoneID, Reason | Milestone not achieved |
+| `MILESTONE_REVIEW`  | Milestone review | MilestoneID, Status | Milestone evaluation   |
+
+### Risk Events
+
+| Code Name         | Trigger        | Parameters                 | Description                 |
+| :---------------- | :------------- | :------------------------- | :-------------------------- |
+| `RISK_IDENTIFIED` | Risk found     | RiskID, Level, Owner       | New risk identified         |
+| `RISK_ESCALATED`  | Risk increased | RiskID, OldLevel, NewLevel | Risk severity increased     |
+| `RISK_MITIGATED`  | Risk reduced   | RiskID, Action             | Risk successfully mitigated |
+| `RISK_RESOLVED`   | Risk closed    | RiskID, Resolution         | Risk no longer active       |
 
 ---
 

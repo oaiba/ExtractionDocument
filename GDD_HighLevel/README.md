@@ -23,11 +23,31 @@ This document focuses on **game design, art direction, and player experience**. 
 ## 📚 Documentation Structure
 
 ### 🎮 Game Design
-Core game design, mechanics, and progression systems
+Core game design, mechanics, progression, and monetization systems
 
 - **[Overview](./GameDesign/Overview.md)** - Game concept, pillars, target audience, competitive analysis
 - **[Core Gameplay](./GameDesign/CoreGameplay.md)** - Gameplay loop, phases, player psychology, session flow
-- **[Progression](./GameDesign/Progression.md)** - Player progression, economy, quests, battle pass, monetization
+- **[Controls & UX](./GameDesign/Controls.md)** - Design philosophy, cross-platform strategy, accessibility
+- **[Progression](./GameDesign/Progression.md)** - Player progression, XP, quests, battle pass
+- **[Economy](./GameDesign/Economy.md)** - Monetization, currencies, pricing, marketplace, anti-fraud
+- **[Ranked Mode](./GameDesign/RankedMode.md)** - Ranking system, matchmaking, competitive integrity, season rewards
+- **[Live Ops](./GameDesign/LiveOps.md)** - Events, content calendar, monetization events, community management
+- **[Accessibility](./GameDesign/Accessibility.md)** - Visual, auditory, motor, cognitive accessibility features
+- **[Localization](./GameDesign/Localization.md)** - Supported languages, text guidelines, cultural adaptation
+
+---
+
+### 📖 Story & Narrative
+World lore, factions, and character backstories
+
+- **[Narrative](./Story/Narrative.md)** - World lore, The Collapse, factions, operator backstories, environmental storytelling
+
+---
+
+### 👥 Social & Multiplayer
+Squad systems, clans, and community features
+
+- **[Multiplayer](./Social/Multiplayer.md)** - Squad system, voice/text chat, ping system, clans, friends, anti-toxicity
 
 ---
 
@@ -43,6 +63,13 @@ Weapon design, items, and combat mechanics
 Character design and abilities
 
 - **[Operators](./Characters/Operators.md)** - Operator classes, abilities, progression, synergies, cosmetics
+
+---
+
+### 🤖 AI & Enemies
+Enemy design, behavior systems, and difficulty
+
+- **[Enemy Behavior](./AI/EnemyBehavior.md)** - Enemy types, behavior systems, boss design, AI balancing
 
 ---
 
@@ -65,6 +92,14 @@ Art direction and user interface
 Sound and music
 
 - **[Sound Design](./Audio/SoundDesign.md)** - Audio vision, combat audio, environmental audio, music, voice lines
+
+---
+
+### 📋 Project Scope
+Risks, boundaries, and project management
+
+- **[Risks](./ProjectScope/Risks.md)** - Design, technical, business, and operational risks with mitigation
+- **[Non-Goals](./ProjectScope/NonGoals.md)** - Explicit exclusions and what we intentionally won't build
 
 ---
 
@@ -132,11 +167,22 @@ Sound and music
 
 ## 📅 Update Log
 
-| Date       | Section   | Changes                            | Updated By |
-| ---------- | --------- | ---------------------------------- | ---------- |
-| 2026-02-06 | Structure | Reorganized to folder-based system | Team       |
-| 2026-02-06 | Combat    | Added Weapons & Items documents    | Team       |
-| 2026-02-06 | All       | Initial documentation              | Team       |
+| Date       | Section      | Changes                                                     | Updated By |
+| ---------- | ------------ | ----------------------------------------------------------- | ---------- |
+| 2026-02-07 | GameDesign   | Added Accessibility.md (visual, auditory, motor, cognitive) | Team       |
+| 2026-02-07 | GameDesign   | Added Localization.md (languages, cultural adaptation)      | Team       |
+| 2026-02-07 | ProjectScope | Added Risks.md (design, tech, business risks)               | Team       |
+| 2026-02-07 | ProjectScope | Added NonGoals.md (explicit exclusions)                     | Team       |
+| 2026-02-07 | AI           | Added EnemyBehavior.md (enemy types, behavior, bosses)      | Team       |
+| 2026-02-07 | GameDesign   | Added RankedMode.md (ranking, matchmaking, competitive)     | Team       |
+| 2026-02-07 | GameDesign   | Added LiveOps.md (events, content calendar, monetization)   | Team       |
+| 2026-02-07 | Story        | Added Narrative.md (lore, factions, backstories)            | Team       |
+| 2026-02-07 | GameDesign   | Added Economy.md (monetization, currencies, anti-fraud)     | Team       |
+| 2026-02-07 | Social       | Added Multiplayer.md (squads, clans, communication)         | Team       |
+| 2026-02-07 | Controls     | Expanded with controller support, keyboard options          | Team       |
+| 2026-02-06 | Structure    | Reorganized to folder-based system                          | Team       |
+| 2026-02-06 | Combat       | Added Weapons & Items documents                             | Team       |
+| 2026-02-06 | All          | Initial documentation                                       | Team       |
 
 ---
 
@@ -147,10 +193,32 @@ Sound and music
 - Understanding gameplay? → [Core Gameplay](./GameDesign/CoreGameplay.md)
 - Designing characters? → [Operators](./Characters/Operators.md)
 
+**World & Story:**
+- World lore & factions → [Narrative](./Story/Narrative.md)
+- Multiplayer & social → [Multiplayer](./Social/Multiplayer.md)
+- AI & enemies → [Enemy Behavior](./AI/EnemyBehavior.md)
+
+**Competitive:**
+- Ranked system → [Ranked Mode](./GameDesign/RankedMode.md)
+- Events & live ops → [Live Ops](./GameDesign/LiveOps.md)
+
+**Economy & Monetization:**
+- Currencies & pricing → [Economy](./GameDesign/Economy.md)
+- Items & marketplace → [Items](./Combat/Items.md)
+
+**Platform & Accessibility:**
+- Accessibility features → [Accessibility](./GameDesign/Accessibility.md)
+- Localization strategy → [Localization](./GameDesign/Localization.md)
+
+**Project Management:**
+- Project risks → [Risks](./ProjectScope/Risks.md)
+- What we won't build → [Non-Goals](./ProjectScope/NonGoals.md)
+
 **Deep Dives:**
 - Combat systems → [Weapons](./Combat/Weapons.md) + [Items](./Combat/Items.md)
 - Visual design → [Art Direction](./Visuals/ArtDirection.md) + [UI](./Visuals/UserInterface.md)
 - Progression → [Progression](./GameDesign/Progression.md)
+- Controls & UX → [Controls](./GameDesign/Controls.md)
 
 ---
 

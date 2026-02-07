@@ -31,19 +31,43 @@ Foundation architecture and networking
 ---
 
 ### 🎮 Gameplay Systems
-Character, combat, and inventory mechanics
+Character, combat, inventory, and UI mechanics
 
 - **[Character System](./Gameplay/CharacterSystem.md)** - Operator classes, abilities, stats (enums & codenames)
 - **[Weapon System](./Gameplay/WeaponSystem.md)** - Weapons, attachments, combat mechanics (enums & codenames)
 - **[Inventory System](./Gameplay/InventorySystem.md)** - Grid system, items, stash (enums & codenames)
+- **[Control System](./Gameplay/ControlSystem.md)** - Input abstraction, cross-platform controls, movement logic
+- **[UI System](./Systems/UISystem.md)** - HUD, menus, widgets, touch controls, notifications
 
 ---
 
 ### 🤖 AI & World Systems
-AI behavior and map generation
+AI behavior, map, and narrative
 
-- **[AI System](./Systems/AISystem.md)** - AI behavior, pathfinding, decision trees
-- **[Map System](./Systems/MapSystem.md)** - Procedural generation,zones, POIs
+- **[AI System](./Systems/AISystem.md)** - Enemy types, behavior trees, perception, combat AI, bosses
+- **[Map System](./Systems/MapSystem.md)** - Zones, extraction, containers, supply drops, contamination, hazards
+- **[Narrative System](./Systems/NarrativeSystem.md)** - Quests, factions, dialogue, collectibles, operator stories
+
+---
+
+### 👥 Social & Competitive Systems
+Multiplayer, ranked, progression, and community features
+
+- **[Social System](./Systems/SocialSystem.md)** - Squads, voice/text chat, clans, friends, reporting
+- **[Ranked System](./Systems/RankedSystem.md)** - RP, matchmaking, seasons, leaderboards, anti-cheat
+- **[Progression System](./Systems/ProgressionSystem.md)** - XP, leveling, currencies, quests, Battle Pass
+- **[Live Ops System](./Systems/LiveOpsSystem.md)** - Events, challenges, shop, notifications
+
+---
+
+### ♿ Platform & Accessibility
+Localization, accessibility, persistence, and audio features
+
+- **[Localization System](./Systems/LocalizationSystem.md)** - Languages, text, fonts, RTL, voice localization
+- **[Accessibility System](./Systems/AccessibilitySystem.md)** - Colorblind, subtitles, aim assist, motor/cognitive
+- **[Audio System](./Systems/AudioSystem.md)** - Sound, music, voice lines, 3D audio, mixing
+- **[Save System](./Systems/SaveSystem.md)** - Save/load, cloud sync, data persistence, migration
+- **[Tutorial System](./Systems/TutorialSystem.md)** - Onboarding, hints, tooltips, training mode
 
 ---
 
@@ -164,12 +188,41 @@ ATT_OPTIC_REDDOT     // Attachment - Optic - RedDot
 - Adding new item → [Inventory System](./Gameplay/InventorySystem.md)
 - Optimizing performance → [Optimization](./Performance/Optimization.md)
 
+**New Systems:**
+- AI & enemies → [AI System](./Systems/AISystem.md)
+- Map & extraction → [Map System](./Systems/MapSystem.md)
+- Quests & story → [Narrative System](./Systems/NarrativeSystem.md)
+- Multiplayer & squads → [Social System](./Systems/SocialSystem.md)
+- Ranked & matchmaking → [Ranked System](./Systems/RankedSystem.md)
+- XP & leveling → [Progression System](./Systems/ProgressionSystem.md)
+- Events & Battle Pass → [Live Ops System](./Systems/LiveOpsSystem.md)
+- Sound & music → [Audio System](./Systems/AudioSystem.md)
+- HUD & menus → [UI System](./Systems/UISystem.md)
+- Save & cloud → [Save System](./Systems/SaveSystem.md)
+- Onboarding → [Tutorial System](./Systems/TutorialSystem.md)
+- Localization → [Localization System](./Systems/LocalizationSystem.md)
+- Accessibility → [Accessibility System](./Systems/AccessibilitySystem.md)
+
 ---
 
 ## 📅 Update Log
 
 | Date       | Section   | Changes                            | Updated By |
 | ---------- | --------- | ---------------------------------- | ---------- |
+| 2026-02-07 | Systems   | Added ProgressionSystem.md         | Team       |
+| 2026-02-07 | Systems   | Added SaveSystem.md                | Team       |
+| 2026-02-07 | Systems   | Added TutorialSystem.md            | Team       |
+| 2026-02-07 | Systems   | Added UISystem.md                  | Team       |
+| 2026-02-07 | Systems   | Added AudioSystem.md               | Team       |
+| 2026-02-07 | Systems   | Added NarrativeSystem.md           | Team       |
+| 2026-02-07 | Systems   | Added LiveOpsSystem.md             | Team       |
+| 2026-02-07 | Systems   | Major expansion of MapSystem.md    | Team       |
+| 2026-02-07 | Systems   | Added AccessibilitySystem.md       | Team       |
+| 2026-02-07 | Systems   | Added LocalizationSystem.md        | Team       |
+| 2026-02-07 | Systems   | Added RankedSystem.md              | Team       |
+| 2026-02-07 | Systems   | Added SocialSystem.md              | Team       |
+| 2026-02-07 | Systems   | Major expansion of AISystem.md     | Team       |
+| 2026-02-07 | Gameplay  | Updated ControlSystem.md           | Team       |
 | 2026-02-06 | Structure | Reorganized to folder-based system | Team       |
 | 2026-02-06 | All       | Focused on enums, codenames, TODOs | Team       |
 | 2026-02-06 | Core      | Initial documentation              | Team       |
@@ -177,3 +230,4 @@ ATT_OPTIC_REDDOT     // Attachment - Optic - RedDot
 ---
 
 **[← Back to Main](../README.md)** | **[View High-Level GDD →](../GDD_HighLevel/README.md)**
+

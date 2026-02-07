@@ -345,27 +345,25 @@
 
 ### Minimap
 
-**Position:** Top-right corner  
-**Size:** 150x150px (scalable in settings)  
-**Style:** Top-down, north-up
+For detailed functional design, see **[Navigation & Map System](../GameDesign/NavigationAndMap.md)**.
+
+**Position:** Top-right corner
+**Size:** 150x150px (scalable in settings)
+**Style:** Top-down. Default: Rotating with player.
 
 **Elements:**
 
 **Player:**
 - Cyan triangle (pointing forward)
-- Your position always centered
+- Fixed center (default) or North-up mode
 
 **Teammates:**
-- Blue circles
-- Player name on hover
+- Blue circles with ID numbers
+- Off-screen direction indicators
 
 **Enemies:**
-- Red circles (if detected by UAV)
-- Last known position
-
-**AI:**
-- Yellow circles
-- Faint outline
+- **Visual:** Red solid dot (if scanned/detected)
+- **Audio:** Pulsing waves pointing to sound source (See [Navigation GDD](../GameDesign/NavigationAndMap.md))
 
 **POIs:**
 - Loot containers: White dots
@@ -377,7 +375,7 @@
 - Building outlines (simplified)
 - Roads (gray lines)
 - Zone boundaries
-- Zoom levels: 100m, 200m, 400m radius
+- Zoom levels: Auto-zoom based on movement speed
 
 ---
 

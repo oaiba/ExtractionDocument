@@ -181,9 +181,7 @@ Input device type detection.
 | :------------- | :----------- | :------------ | :----------- | :--------- | :---------------- |
 | `EIM_Touch`    | Touch        | Mobile        | Touch icons  | Strong     | Touchscreen input |
 | `EIM_Keyboard` | Keyboard     | PC            | Key labels   | None       | Keyboard input    |
-| `EIM_Mouse`    | Mouse        | PC            | Mouse icons  | None       | Mouse input       |
 | `EIM_Gamepad`  | Gamepad      | Console/PC    | Button icons | Medium     | Controller input  |
-| `EIM_Gyro`     | Gyro         | Mobile/Switch | Motion icons | Medium     | Gyroscope aiming  |
 
 ---
 

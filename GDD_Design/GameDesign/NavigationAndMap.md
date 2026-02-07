@@ -16,37 +16,51 @@ The **Navigation & Map System** is the player's primary tool for situational awa
 
 ---
 
+## 🧭 HUD Compass Ring
+
+Instead of a First-Person Shooter (FPS) style horizontal "Compass Tape", the compass is **integrated directly into the Minimap border**.
+
+### Design & Behavior
+The compass is a **Ring** surrounding the square/circular Minimap at the top-right corner.
+
+*   **Visual Style:** A calibrated ring with Cardinal Directions (N, E, S, W) and degree ticks.
+*   **Rotation Logic:** Depends on Minimap settings (see below).
+    *   *If Map Rotates (Player-Up):* The **Compass Ring rotates** so "North" always points to the true North of the map.
+    *   *If Map Static (North-Up):* The **Compass Ring is fixed** with "North" at the top. The player arrow inside rotates.
+*   **Indicators on Ring:**
+    *   **Red Arcs:** Incoming fire direction (Audio/Hit).
+    *   **Blue Chevrons:** Off-screen teammates.
+    *   **Gold Arrow:** Main Objective / Extraction direction.
+
+---
+
 ## 🗺️ Minimap (HUD Radar)
 
 ### Core Mechanics
-The Minimap is a constant HUD element located at the **Top-Right** (default) providing immediate vicinity awareness.
+The Minimap is a constant HUD element located at the **Top-Right** (default).
 
-*   **Size:** occupies ~15% of screen corner.
-*   **Perspective:** Top-down, orthographic.
-*   **Rotation:**
-    *   *Default:* **Player-Centric Rotation** (Map rotates, Player arrow fixed up).
-    *   *Option:* **Fixed North** (Map static, Player arrow rotates).
-*   **Zoom Levels:**
-    *   *Auto:* Zooms out when driving/sprinting, zooms in when crouching/aiming.
-    *   *Manual:* Small +/- toggle (optional setting).
+*   **Shape:** Option for **Circle** (Default) or **Square** (Settings).
+*   **Orientation Settings:**
+    1.  **Option A: Player-Up (Default)**
+        *   **Behavior:** The Map rotates. The Player Arrow is fixed pointing UP.
+        *   **Compass:** The border ring rotates to show direction.
+        *   *Best for:* Tactical navigation and immediate combat awareness.
+    2.  **Option B: North-Up (Static)**
+        *   **Behavior:** The Map is fixed (North is Up). The Player Arrow rotates.
+        *   **Compass:** The border ring is static.
+        *   *Best for:* Coordinate communication and map reading experts.
 
 ### Visual Indicators
 
 | Indicator          | Icon            | Color           | Behavior                                                                    |
 | :----------------- | :-------------- | :-------------- | :-------------------------------------------------------------------------- |
-| **Player**         | Arrow           | 🟡 Yellow        | Fixed center (in rotating mode).                                            |
-| **Teammate**       | Circle + Number | 🔵 Blue          | Shows directional arrow if off-map.                                         |
+| **Player**         | Arrow           | 🟡 Yellow        | Fixed Up (Player-Up) or Rotates (North-Up).                                 |
+| **Teammate**       | Circle + Number | 🔵 Blue          | Shows directional arrow if off-map on the Compass Ring.                     |
 | **Enemy (Visual)** | Solid Dot       | 🔴 Red           | Only appears if scanned by UAV/Ability or team LOS (Line of Sight).         |
 | **Enemy (Audio)**  | Pulsing Wave    | 🔴 Red / ⚪ White | Shows *direction* of sound (footsteps/shots). See [Sound Visualization](#). |
 | **Gunfire**        | Bullet Icon     | 🔴 Red           | Fades after 2s. Size indicates caliber/threat.                              |
 | **Extraction**     | Door/Heli       | 🟢 Green         | Always visible if active.                                                   |
 | **Loot**           | Diamond         | ⚪ White         | Only special high-tier loot marked by teammates.                            |
-
-### Sound Visualization (Mobile Essential)
-Since mobile players often play without stereo headphones, the minimap acts as a **Sound Radar**:
-*   **Footsteps:** White waveform ripples from the edge of the central circle towards the source.
-*   **Gunfire:** Distinct red jagged indicator on the compass rim of the minimap.
-*   **Decoy/Noise:** Grey waveform (if distinguished by perks).
 
 ---
 
@@ -55,7 +69,9 @@ Since mobile players often play without stereo headphones, the minimap acts as a
 ### Access & Layout
 Accessed by **tapping the Minimap**. Overlays the screen (80% opacity) or slides in.
 
-*   **Grid System:** The map is divided into `A-H` (Horizontal) and `1-8` (Vertical) grids for voice callouts (e.g., "Sniper in C4!").
+*   **Orientation:** **ALWAYS North-Up**.
+    *   *Why?* To ensure consistent "Grid Callouts" (e.g., "Enemy in B4") regardless of individual player facing.
+*   **Grid System:** The map is divided into `A-H` (Horizontal) and `1-8` (Vertical) grids.
 *   **Fog of War:** Unexplored areas are *not* hidden, BUT dynamic contents (loot/enemies) are not shown unless revealed by intel. Terrain is always known.
 
 ### Interactive Features
@@ -129,16 +145,7 @@ Double-tapping the ping button *immediately* places a high-priority **RED DANGER
 
 ---
 
-## 🧭 Compass Bar
-
-Located at the **Top Center** of the HUD (PUBG/Fortnite style).
-
-*   **Design:** A horizontal scrolling tape.
-*   **Bearings:** Shows cardinal directions (N, NE, E, SE, S...) and degree numbers (0-359).
-*   **Function:**
-    *   Helps call out precise directions ("Enemy at 240!").
-    *   Displays icons for teammates, pings, and gunfire flashes.
-    *   Less cluttered than the minimap; good for long-range combat references.
+## 🧭 Compass Ring (Top-Down Optimized)
 
 ---
 

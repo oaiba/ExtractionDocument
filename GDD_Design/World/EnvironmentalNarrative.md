@@ -1,68 +1,68 @@
-# Environmental Narrative - Kể Chuyện Qua Môi Trường
+# Environmental Narrative - Storytelling Through Environment
 
 **[← Back to Map Layouts](./MapLayouts.md)** | **[Index](../README.md)** | **[Next: Loot Distribution →](./LootDistribution.md)**
 
 ---
 
-## 🎭 Triết Lý Environmental Storytelling
+## 🎭 Environmental Storytelling Philosophy
 
-**Nguyên tắc:** Thế giới tự kể câu chuyện - không cần cutscenes dài dòng.
+**Principle:** The world tells the story itself - no need for lengthy cutscenes.
 
-**Phương pháp:**
-- Visual clues (dấu vết, vật phẩm, graffiti)
-- Audio logs (thu âm ngắn 30-60s)
+**Methods:**
+- Visual clues (traces, items, graffiti)
+- Audio logs (short recordings 30-60s)
 - Environmental contrasts
 - Implied history through decay
 
 ---
 
-## 🏭 Industrial Decay - Câu Chuyện Từng Khu Vực
+## 🏭 Industrial Decay - Regional Stories
 
 ### Reactor Tower - "The Meltdown"
 
 **Lore Background:**
-Năm 2029, Power Plant đang vận hành bình thường. Khi The Collapse xảy ra, hệ thống cooling bị hack. Công nhân cố gắng shutdown manual nhưng radiation leak đã lan rộng.
+Year 2029, the Power Plant was operating normally. When The Collapse occurred, the cooling system was hacked. Workers attempted a manual shutdown, but the radiation leak had already spread.
 
-**Dấu Vết Môi Trường:**
+**Environmental Traces:**
 
-| Vị Trí | Dấu Vết | Ý Nghĩa |
+| Location | Trace | Implication |
 |:-------|:--------|:--------|
-| Floor 1 | Xác công nhân trong protective suits | Attempted manual shutdown |
-| Floor 2 | Barricade bằng equipment | Workers trapped above |
-| Floor 3 | Control panels destroyed | Sabotage hoặc panic |
-| Basement | Bloodtrail dẫn ra tunnel | Survivors escaped |
+| Floor 1 | Worker corpses in protective suits | Attempted manual shutdown |
+| Floor 2 | Barricade made of equipment | Workers trapped above |
+| Floor 3 | Control panels destroyed | Sabotage or panic |
+| Basement | Bloodtrail leading to tunnel | Survivors escaped |
 
 **Audio Log #1: "Final Shift"**
 > *"This is Foreman Lee... Day 3 after the lockdown. The radiation is rising. We sealed the lower levels but... [static] ...Martinez didn't make it. If anyone finds this, the emergency tunnel leads to the workshops. Don't trust the—" [cut off]*
 
 **Visual Details:**
-- Đồng hồ dừng ở 3:47 AM
-- Lịch treo tường: March 15, 2031
-- Emergency lights vẫn nhấp nháy (generator riêng)
-- Radiation warning signs mới được vẽ thêm bằng sơn đỏ
+- Clock stopped at 3:47 AM
+- Wall calendar: March 15, 2031
+- Emergency lights still flickering (separate generator)
+- Radiation warning signs freshly painted in red
 
 ---
 
 ### Tech Labs - "Project Prometheus"
 
 **Lore Background:**
-Cơ sở nghiên cứu bí mật của Nexus Corporation. Họ đang phát triển "Prometheus" - công nghệ AI tăng cường con người. The Outbreak có thể liên quan đến test subjects bị escape.
+Secret research facility of Nexus Corporation. They were developing "Prometheus" - AI technology for human enhancement. The Outbreak might be related to escaped test subjects.
 
-**Dấu Vết Môi Trường:**
+**Environmental Traces:**
 
-| Building | Dấu Vết | Ý Nghĩa |
+| Building | Trace | Implication |
 |:---------|:--------|:--------|
-| Lab Alpha | Cages bị phá từ bên trong | Test subjects escaped |
-| Lab Beta | Research notes bị đốt | Cover-up attempt |
-| Lab Gamma | Bodies trong hazmat suits | Containment failed |
+| Lab Alpha | Cages broken from the inside | Test subjects escaped |
+| Lab Beta | Research notes burnt | Cover-up attempt |
+| Lab Gamma | Bodies in hazmat suits | Containment failed |
 
 **Audio Log #2: "Dr. Chen's Warning"**
 > *"Log 847. The Prometheus subjects are showing... unexpected behavior. Enhanced aggression, reduced pain response. I've recommended immediate termination but Director Park insists we continue. If this gets out... God help us all."*
 
 **Visual Details:**
-- "SUBJECT 7" graffiti bằng máu khô
-- Broken glass từ bên trong phòng giam
-- Medical equipment bị phá hủy có chủ đích
+- "SUBJECT 7" graffiti in dried blood
+- Broken glass from inside the cell
+- Medical equipment intentionally destroyed
 - Vaccine vials scattered (quest item hint)
 
 ---
@@ -70,13 +70,13 @@ Cơ sở nghiên cứu bí mật của Nexus Corporation. Họ đang phát tri�
 ### Warehouse District - "The Smugglers' Haven"
 
 **Lore Background:**
-Sau The Collapse, warehouse trở thành hub cho buôn lậu. Underground Network từng đặt base ở đây trước khi di chuyển.
+After The Collapse, the warehouse became a hub for smuggling. The Underground Network used to base here before moving.
 
-**Dấu Vết Môi Trường:**
+**Environmental Traces:**
 
-| Warehouse | Dấu Vết | Ý Nghĩa |
+| Warehouse | Trace | Implication |
 |:----------|:--------|:--------|
-| W1 | Vehicle đang sửa dở | Escape attempt |
+| W1 | Vehicle under repair | Escape attempt |
 | W2 | Hidden weapon cache | Smuggler stash |
 | W3 | Medical supply boxes | Aid distribution |
 | W4 | Smashed electronics | Rage or looting |
@@ -91,11 +91,11 @@ Sau The Collapse, warehouse trở thành hub cho buôn lậu. Underground Networ
 ### Office Complex - "Corporate Collapse"
 
 **Lore Background:**
-Trụ sở regional của Nexus Corp. Khi mọi thứ tan rã, executives cố gắng evacuate bằng helipad trên mái - không thành công.
+Regional headquarters of Nexus Corp. When everything fell apart, executives tried to evacuate via the roof helipad - unsuccessfully.
 
-**Dấu Vết Môi Trường:**
+**Environmental Traces:**
 
-| Floor | Dấu Vết | Ý Nghĩa |
+| Floor | Trace | Implication |
 |:------|:--------|:--------|
 | 5F | Helicopter crashed on roof | Failed evacuation |
 | 4F | Computers still on, data wiping | Cover-up incomplete |

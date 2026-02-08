@@ -13,6 +13,19 @@ The control system is the bridge between the player's intent and the game's acti
 - **Accessibility**: The game must be playable by everyone, regardless of platform or physical ability.
 - **Platform Native**: Controls should not feel "ported." Mobile controls should feel like a native mobile game, and PC controls like a native PC shooter.
 
+### Game Feel Goals (The "Why")
+To ensure our controls deliver on the **High-Stakes Tension** pillar:
+
+1.  **Crunchy Combat**: Firing a weapon must feel impactful.
+    *   *Visuals*: Debris, sparks, and enemy flinch reactions are mandatory.
+    *   *Input*: Recoil should require active management, not just be a static spread.
+    *   *Audio*: Gunshots need environmental reverb (indoor vs. outdoor).
+
+2.  **Weighty Movement**:
+    *   *Inertia*: Movement has micro-acceleration/deceleration. It's not instant.
+    *   *Momentum*: Sliding preserves speed; jumping from a sprint carries it.
+    *   *Grounding*: Camera bob and footstep audio must sync perfectly.
+
 ---
 
 ## 📱 Cross-Platform Strategy
@@ -238,6 +251,20 @@ Players must have fine-grained control over how their input translates to camera
 - **Outer Deadzone**: Threshold before input is considered "max." Ensures full speed is reachable.
 - **Default Values**: Inner 10%, Outer 90%. Fully customizable by player.
 
+### Advanced Control & Movement Settings
+Inspired by competitive tactical shooters and top-down standards, these settings allow players to fine-tune the "feel" of control.
+
+| Category | Setting | Options | Description |
+| :--- | :--- | :--- | :--- |
+| **Movement Axis** | **Input Reference Frame** | **Camera Relative (Default)**<br>World Relative<br>Character Relative | Defines what "Up" means on the stick/keyboard.<br>• *Camera*: Up = Top of screen.<br>• *World*: Up = North (Fixed Compass).<br>• *Character*: Up = Forward (Tank Control). |
+| **Facing Logic** | **Strafing Behavior** | **Face Aim Direction (Default)**<br>Face Movement Direction | Defines character orientation.<br>• *Face Aim*: Character always looks at reticle (Tactical/Shooter).<br>• *Face Movement*: Character looks where they run (Adventure/RPGs). |
+| **Traversal** | **Auto-Vault / Climb** | **Sprint Only (Default)**<br>Always<br>Off (Manual) | Determines when the character automatically hops over low obstacles.<br>• *Sprint Only*: Only vaults when sprinting into an object.<br>• *Always*: Vaults whenever moving into an object.<br>• *Off*: Requires dedicated Jump/Vault button press. |
+| **Traversal** | **Sprint Behavior** | **Toggle (Default)**<br>Hold<br>Tactical Auto-Sprint | • *Toggle*: Press to start/stop.<br>• *Hold*: Sprint only while held.<br>• *Tactical Auto-Sprint*: Automatically engage sprint after moving forward for X seconds. |
+| **Aiming** | **Reticle Constraint** | **Clamped to Radius**<br>Screen Edge<br>Free Cursor | (Mouse Only) Limits how far the cursor can move from character.<br>• *Clamped*: Cursor stays within X meters of player (great for twin-stick feel).<br>• *Screen Edge*: Standard cursor usage.<br>• *Free*: Unbounded. |
+| **Aiming** | **Dynamic Aiming** | **Hold to Precision**<br>Toggle<br>Off | Changes camera/reticle behavior when right-click/LT is used.<br>• *Hold*: Tightens crosshair & slows movement while held.<br>• *Toggle*: Click to enter/exit precision stance. |
+| **Mouse** | **Confine Cursor** | **On (Fullscreen)**<br>Always<br>Off | Keeps mouse cursor inside game window (Critical for multi-monitor setups). |
+| **Tech** | **Input Buffering** | **Short (Default)**<br>None<br>Long | queues the next action (e.g., Vault after Reload) if pressed slightly early. |
+
 ---
 
 ## 🖼️ Control Layout Presets
@@ -358,6 +385,11 @@ PC players have diverse preferences based on their gaming background. We provide
 - **Follow Speed**: Camera smoothly follows character movement, slight delay to prevent jarring motion.
 - **Aim Offset**: When aiming, camera shifts slightly in the aim direction to provide more forward vision.
 - **Death Cam**: On death, camera briefly tracks killer before transitioning to spectate/respawn screen.
+
+### Visual Parallax & Depth Perception
+To address the lack of depth in a standard top-down view, we implement a **Parallax Illusion** system.
+- **Multi-Plane Perspective**: Objects at different elevations (rooftops, tree canopies vs. ground level) scroll at slightly different rates relative to the camera movement. This artificial parallax creates a convincing 3D "pop" and helps players judge the height of obstacles.
+- **Dynamic FoV Adjustment**: Subtle Field-of-View changes based on movement speed enhance the sense of speed and depth, reducing the "flatness" of the isometric view.
 
 ---
 

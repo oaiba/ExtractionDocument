@@ -240,6 +240,38 @@ Aim assist strength setting.
 
 ---
 
+### EControlReferenceFrame
+Defines how directional input is interpreted relative to the game world.
+
+| Code Name              | Display Name       | Up Input Means...         | Best For                  |
+| :--------------------- | :----------------- | :------------------------ | :------------------------ |
+| `ECRF_CameraRelative`  | Camera Relative    | Top of Screen             | Standard Top-Down/ISO     |
+| `ECRF_WorldRelative`   | World Relative     | Global North (Y+)         | Fixed Camera isometric    |
+| `ECRF_Character`       | Character Relative | Character Forward         | Tank Controls             |
+
+---
+
+### EFacingBehavior
+Defines how the character body orients itself during movement.
+
+| Code Name              | Display Name   | Behavior                                      | Use Case                  |
+| :--------------------- | :------------- | :-------------------------------------------- | :------------------------ |
+| `EFB_FaceAim`          | Face Aim       | Body always faces reticle/aim direction       | Tactical Shooters, Strafing|
+| `EFB_FaceMovement`     | Face Movement  | Body rotates to face movement direction       | Adventure, Exploration    |
+
+---
+
+### EAimConstraint
+Limits the cursor or aim point behavior.
+
+| Code Name              | Display Name      | Behavior                                |
+| :--------------------- | :---------------- | :-------------------------------------- |
+| `EAC_None`             | Free Cursor       | Unbounded mouse/aim movement            |
+| `EAC_Clamped`          | Clamped Radius    | Cursor constrained within radius R      |
+| `EAC_ScreenEdge`       | Screen Edge       | Cursor constrained to screen bounds     |
+
+---
+
 ## Code Names
 
 ### Input Events
@@ -313,6 +345,9 @@ CLASS InputManager:
     sensitivity: Float = 1.0
     invertY: Boolean = false
     aimAssistLevel: EAimAssistLevel
+    referenceFrame: EControlReferenceFrame = ECRF_CameraRelative
+    facingBehavior: EFacingBehavior = EFB_FaceAim
+    aimConstraint: EAimConstraint = EAC_Clamped
     
     // Initialize on game start
     FUNCTION Initialize():
@@ -514,6 +549,17 @@ CLASS InputProcessor:
         previousInput = smoothedInput
         RETURN smoothedInput
     END FUNCTION
+
+    // Reticle/Cursor Constraint Logic (Mouse/Gamepad)
+    FUNCTION ApplyAimConstraint(rawInput: Vector2, charPosition: Vector2) -> Vector2:
+        IF aimConstraint == EAC_Clamped:
+            offset = rawInput - charPosition
+            IF offset.Length() > maxAimRadius:
+                RETURN charPosition + offset.Normalized() * maxAimRadius
+            END IF
+        END IF
+        RETURN rawInput
+    END FUNCTION
 ```
 
 **Platform-Specific Settings:**
@@ -546,8 +592,8 @@ CLASS MovementController:
     
     // Process movement input
     FUNCTION HandleMovementInput(moveInput: Vector2, lookInput: Vector2):
-        // Convert movement to world space (camera-relative)
-        worldMoveDir = ConvertToWorldSpace(moveInput)
+        // Resolve movement based on settings (Camera vs World vs Character relative)
+        worldMoveDir = ResolveMovementFrame(moveInput)
         
         // Store for physics update
         moveDirection = worldMoveDir
@@ -596,10 +642,27 @@ CLASS MovementController:
             // Direction from character to hit point
             toTarget = groundHit.point - character.position
             toTarget.y = 0
+            
+            // Apply Aim Constraint (Clamping) at the input level if needed
+            // But usually handled in UI/Crosshair, here we just get direction
+            
             RETURN toTarget.Normalized()
         END IF
         
         RETURN character.forwardDirection
+    END FUNCTION
+    
+    // Resolve movement vector based on User Settings
+    FUNCTION ResolveMovementFrame(input: Vector2) -> Vector3:
+        SWITCH settings.referenceFrame:
+            CASE ECRF_CameraRelative:
+                RETURN ConvertToCameraSpace(input)
+            CASE ECRF_WorldRelative:
+                RETURN Vector3(input.x, 0, input.y) // Direct mapping to World X/Z
+            CASE ECRF_Character:
+                // Move relative to character's current forward
+                RETURN (character.forward * input.y) + (character.right * input.x)
+        END SWITCH
     END FUNCTION
     
     // Apply movement to character (called in physics update)
@@ -625,16 +688,32 @@ CLASS MovementController:
     
     // Apply rotation to character
     FUNCTION UpdateCharacterRotation():
-        IF lookDirection.Length() > 0.1:
-            targetRotation = LookRotation(lookDirection)
-            
-            // Smooth rotation
-            character.rotation = SmoothRotate(
-                character.rotation, 
-                targetRotation, 
-                rotationSpeed * deltaTime
-            )
-        END IF
+        targetRotation = character.rotation
+        
+        // Decide rotation based on Facing Behavior setting
+        SWITCH settings.facingBehavior:
+            CASE EFB_FaceAim:
+                // Standard Shooter: Face where we are aiming
+                IF lookDirection.Length() > 0.1:
+                    targetRotation = LookRotation(lookDirection)
+                END IF
+                
+            CASE EFB_FaceMovement:
+                // Adventure Style: Face where we are running
+                // Exception: Always face aim if firing or ADS
+                IF IsFiringOrADS():
+                    targetRotation = LookRotation(lookDirection)
+                ELSE IF moveDirection.Length() > 0.1:
+                    targetRotation = LookRotation(moveDirection)
+                END IF
+        END SWITCH
+
+        // Smooth rotation
+        character.rotation = SmoothRotate(
+            character.rotation, 
+            targetRotation, 
+            rotationSpeed * deltaTime
+        )
     END FUNCTION
 ```
 
@@ -966,6 +1045,61 @@ CLASS AimAssistController:
         slowdownFactor = 1.0 - (slowdownStrength * (1.0 - angle / 45.0))
         
         RETURN input * slowdownFactor
+    END FUNCTION
+```
+
+---
+
+### CameraController
+
+**Purpose:** Manages camera positioning, parallax effects, and dynamic FOV.
+
+**Pseudocode:**
+```
+CLASS CameraController:
+    
+    // Settings
+    baseFOV: Float = 60.0
+    dynamicFOVFactor: Float = 5.0 // How much FOV widens with speed
+    parallaxMult: Float = 0.5
+    
+    // Limits
+    minZoom: Float = 10.0
+    maxZoom: Float = 40.0
+    
+    // Update Camera Transform
+    FUNCTION UpdateCamera(deltaTime):
+        // 1. Follow Target (Character)
+        targetPos = character.position
+        
+        // 2. Apply "Lead" (look ahead)
+        velocityOffset = character.velocity * leadFactor
+        desiredPos = targetPos + velocityOffset + currentZoomOffset
+        
+        // 3. Smooth Damp
+        transform.position = Vector3.SmoothDamp(transform.position, desiredPos, smoothTime)
+        
+        // 4. Update Dynamic Effects
+        UpdateDynamicFOV()
+        UpdateParallaxLayers()
+    END FUNCTION
+    
+    // Widen FOV based on speed to give "sense of speed"
+    FUNCTION UpdateDynamicFOV():
+        speedRatio = character.velocity.Length() / character.maxSpeed
+        targetFOV = baseFOV + (speedRatio * dynamicFOVFactor)
+        currentFOV = Lerp(currentFOV, targetFOV, deltaTime * 2.0)
+        camera.fieldOfView = currentFOV
+    END FUNCTION
+    
+    // Simulate depth for top-down view
+    FUNCTION UpdateParallaxLayers():
+        // Move background layers slower than foreground to create depth
+        // This is usually a shader or separate camera stack effect
+        FOR EACH layer IN parallaxLayers:
+            offset = (transform.position - lastFramePos) * (layer.depth * parallaxMult)
+            layer.MoveOpposite(offset)
+        END FOR
     END FUNCTION
 ```
 

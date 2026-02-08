@@ -1,10 +1,10 @@
-# Loot Distribution - Phân Bổ Tài Nguyên
+# Loot Distribution
 
 **[← Back to Environmental Narrative](./EnvironmentalNarrative.md)** | **[Index](../README.md)** | **[Next: Story →](../Story/Factions.md)**
 
 ---
 
-## 📊 Bản Đồ Nhiệt Tổng Quan
+## 📊 Overall Heat Map
 
 ### Industrial Decay - Loot Heat Map
 
@@ -37,9 +37,9 @@ Legend:
 
 ---
 
-## 🎯 Phân Bổ Theo Khu Vực
+## 🎯 Zone-Based Distribution
 
-### Zone-Based Distribution
+
 
 | Zone Type | Loot Tier | Spawn Rate | Risk Level |
 |:----------|:----------|:-----------|:-----------|

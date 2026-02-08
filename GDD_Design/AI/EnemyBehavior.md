@@ -1,6 +1,6 @@
 # AI & Enemy Behavior Design
 
-**[← Back to Index](../README.md)** | **[Next: Map Design →](../World/MapDesign.md)**
+**[← Back to Index](../README.md)** | **[Faction Behaviors (Ecology) →](./FactionBehaviors.md)** | **[AI Tech (Implementation) →](../../GDD_Technical/AI/SensorySystem.md)** | **[Next: Map Design →](../World/MapDesign.md)**
 
 ---
 

@@ -3,22 +3,6 @@ title: "Extraction Shooter GDD"
 type: docs
 ---
 
-<pre>
-███████╗██╗  ██╗████████╗██████╗  █████╗  ██████╗████████╗██╗ ██████╗ ███╗   ██╗
-██╔════╝╚██╗██╔╝╚══██╔══╝██╔══██╗██╔══██╗██╔════╝╚══██╔══╝██║██╔═══██╗████╗  ██║
-█████╗   ╚███╔╝    ██║   ██████╔╝███████║██║        ██║   ██║██║   ██║██╔██╗ ██║
-██╔══╝   ██╔██╗    ██║   ██╔══██╗██╔══██║██║        ██║   ██║██║   ██║██║╚██╗██║
-███████╗██╔╝ ██╗   ██║   ██║  ██║██║  ██║╚██████╗   ██║   ██║╚██████╔╝██║ ╚████║
-╚══════╝╚═╝  ╚═╝   ╚═╝   ╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝   ╚═╝   ╚═╝ ╚═════╝ ╚═╝  ╚═══╝
-                      [ MASTER DOCUMENTATION PORTAL ]
-</pre>
-
-# Extraction Shooter - Game Design Document (GDD)
-
-
-<p align="center">
-  <img src="/assets/logo.svg" alt="Project Logo" width="180">
-</p>
 
 This is the central repository and gateway for all documentation related to the Extraction Shooter project. It serves as the single source of truth for both the creative vision and the technical implementation of our top-down, high-stakes tactical experience.
 

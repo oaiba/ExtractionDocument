@@ -1,0 +1,3831 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=52224&amp;path=livereload" data-no-instant defer></script>
+  <!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Items &amp; Economy Systems#← Previous: Weapons | Index
+Economy Philosophy#Core Principles:
+Player-Driven - Market prices determined by supply/demand Risk Creates Value - Rare items from dangerous zones worth more No Pay-to-Win - Real money cannot buy gameplay advantages Fair Trading - Systems prevent scams and exploitation Economic Sinks - Prevent inflation through item loss and fees Item Categories#1. Weapons &amp; Attachments#See: Weapons &amp; Combat for details on Weapons, Attachments, and Ammunition types
+">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:52224/docs/GDD_Design/Combat/Items/">
+  <meta property="og:site_name" content="Extraction Shooter GDD">
+  <meta property="og:title" content="Extraction Shooter GDD">
+  <meta property="og:description" content="Items &amp; Economy Systems#← Previous: Weapons | Index
+Economy Philosophy#Core Principles:
+Player-Driven - Market prices determined by supply/demand Risk Creates Value - Rare items from dangerous zones worth more No Pay-to-Win - Real money cannot buy gameplay advantages Fair Trading - Systems prevent scams and exploitation Economic Sinks - Prevent inflation through item loss and fees Item Categories#1. Weapons &amp; Attachments#See: Weapons &amp; Combat for details on Weapons, Attachments, and Ammunition types">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
+
+
+  <meta itemprop="name" content="Extraction Shooter GDD">
+  <meta itemprop="description" content="Items &amp; Economy Systems#← Previous: Weapons | Index
+Economy Philosophy#Core Principles:
+Player-Driven - Market prices determined by supply/demand Risk Creates Value - Rare items from dangerous zones worth more No Pay-to-Win - Real money cannot buy gameplay advantages Fair Trading - Systems prevent scams and exploitation Economic Sinks - Prevent inflation through item loss and fees Item Categories#1. Weapons &amp; Attachments#See: Weapons &amp; Combat for details on Weapons, Attachments, and Ammunition types">
+  <meta itemprop="wordCount" content="2755">
+
+<title>Items | Extraction Shooter GDD</title>
+<link rel="icon" href="/favicon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="http://localhost:52224/docs/GDD_Design/Combat/Items/">
+<link rel="stylesheet" href="/book.min.63c8b2b12bbd1ad36428837740ea371dd41fdb9c22b35499003d0dfa4dbce6ba.css" integrity="sha256-Y8iysSu9GtNkKIN3QOo3HdQf25wis1SZAD0N&#43;k285ro=" crossorigin="anonymous">
+
+
+  <script defer src="/fuse.min.js"></script>
+  <script defer src="/en.search.min.58bea27d7a08265548c5a8636a9a9fc844e0eb9d60fc3bb2c53d517da858d4c1.js" integrity="sha256-WL6ifXoIJlVIxahjapqfyETg651g/DuyxT1RfahY1ME=" crossorigin="anonymous"></script>
+
+  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
+
+
+
+  
+</head>
+<body dir="ltr" class="book-kind-page book-type-docs">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    
+<aside class="book-menu">
+  <div class="book-menu-content">
+    
+  <nav>
+    <h2 class="book-brand">
+  <a class="flex align-center" href="/"><img src="/logo.svg" alt="Logo" /><span>Extraction Shooter GDD</span>
+  </a>
+</h2>
+
+    <div class="book-theme-toggle">
+    <input type="checkbox" id="theme-toggle" class="toggle">
+    <label for="theme-toggle" class="flex justify-between items-center cursor-pointer">
+        <span class="text-xs font-semibold">Dark Mode</span>
+        <div
+            class="relative w-10 h-5 bg-gray-200 rounded-full transition-colors duration-200 ease-in-out dark:bg-gray-700">
+            <div
+                class="absolute left-0 w-5 h-5 bg-white rounded-full shadow transform transition-transform duration-200 ease-in-out dark:translate-x-full">
+            </div>
+        </div>
+    </label>
+</div>
+
+<script>
+    (function () {
+        const toggle = document.getElementById('theme-toggle');
+        const html = document.documentElement;
+
+        
+        const savedTheme = localStorage.getItem('theme');
+        const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+        if (savedTheme === 'dark' || (!savedTheme && systemDark)) {
+            html.classList.add('dark');
+            toggle.checked = true;
+        } else {
+            html.classList.remove('dark');
+            toggle.checked = false;
+        }
+
+        
+        toggle.addEventListener('change', function () {
+            if (this.checked) {
+                html.classList.add('dark');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                html.classList.remove('dark');
+                localStorage.setItem('theme', 'light');
+            }
+        });
+    })();
+</script>
+
+<style>
+     
+    .book-theme-toggle {
+        margin: 1rem 0;
+        padding: 0 1rem;
+
+    }
+
+    .book-theme-toggle label {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        cursor: pointer;
+        font-size: 0.85em;
+    }
+
+     
+    .book-theme-toggle input {
+        display: none;
+    }
+
+     
+    .book-theme-toggle label::after {
+        content: "🌙";
+         
+    }
+
+     
+    html:not(.dark) .book-theme-toggle label::after {
+        content: "☀️";
+         
+    }
+</style> 
+    
+<div class="book-search hidden">
+  <input id="book-search-input" type="text" 
+    placeholder="Search"
+    aria-label="Search"
+    maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+    
+
+    
+    
+
+
+
+    
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/" class="">
+      Gdd Design</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      AI</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/AI/EnemyBehavior/" class="">
+      Enemy Behavior</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/AI/FactionBehaviors/" class="">
+      Faction Behaviors</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Audio</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Audio/SoundDesign/" class="">
+      Sound Design</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Audio/Soundscape/" class="">
+      Soundscape</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Audio/TacticalAudio/" class="">
+      Tactical Audio</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Audio/VoiceLines/" class="">
+      Voice Lines</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Characters</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Operators/" class="">
+      Operators</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Assault</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Assault/Blaze/" class="">
+      Blaze</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Assault/Havoc/" class="">
+      Havoc</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Assault/README/" class="">
+      Readme</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Assault/Viper/" class="">
+      Viper</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Recon</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Recon/Phantom/" class="">
+      Phantom</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Recon/README/" class="">
+      Readme</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Recon/Specter/" class="">
+      Specter</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Recon/Wraith/" class="">
+      Wraith</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Specialist</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Specialist/Cipher/" class="">
+      Cipher</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Specialist/Flux/" class="">
+      Flux</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Specialist/README/" class="">
+      Readme</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Support</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Support/Angel/" class="">
+      Angel</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Support/Doc/" class="">
+      Doc</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Support/README/" class="">
+      Readme</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Tank</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Tank/Bulwark/" class="">
+      Bulwark</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Tank/Fortress/" class="">
+      Fortress</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Tank/README/" class="">
+      Readme</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Combat</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Combat/Items/" class="active">
+      Items</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Combat/Weapons/" class="">
+      Weapons</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      GameDesign</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Accessibility/" class="">
+      Accessibility</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Controls/" class="">
+      Controls</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/CoreGameplay/" class="">
+      Core Gameplay</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Economy/" class="">
+      Economy</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/GameModes/" class="">
+      Game Modes</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/LiveOps/" class="">
+      Live Ops</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Localization/" class="">
+      Localization</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/NavigationAndMap/" class="">
+      Navigation and Map</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Overview/" class="">
+      Overview</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Progression/" class="">
+      Progression</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/RankedMode/" class="">
+      Ranked Mode</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/TutorialRaid/" class="">
+      Tutorial Raid</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/UserSettings/" class="">
+      User Settings</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Gameplay</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Gameplay/CoreLoop/" class="">
+      Core Loop</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      ProjectScope</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/ProjectScope/DesignPillars/" class="">
+      Design Pillars</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/ProjectScope/MVP/" class="">
+      Mvp</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/ProjectScope/NonGoals/" class="">
+      Non Goals</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/ProjectScope/Risks/" class="">
+      Risks</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Social</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Social/Multiplayer/" class="">
+      Multiplayer</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Story</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Story/Backstory/" class="">
+      Backstory</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Story/Factions/" class="">
+      Factions</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Story/Narrative/" class="">
+      Narrative</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Story/QuestLines/" class="">
+      Quest Lines</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      UI UX</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/UI_UX/UX_Flows/" class="">
+      Ux Flows</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/UI_UX/Visual_Style/" class="">
+      Visual Style</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Visuals</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Visuals/ArtDirection/" class="">
+      Art Direction</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Visuals/AssetGuidelines/" class="">
+      Asset Guidelines</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Visuals/StyleGuide/" class="">
+      Style Guide</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Visuals/UserInterface/" class="">
+      User Interface</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      World</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/EnvironmentalNarrative/" class="">
+      Environmental Narrative</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/EnvironmentalNarrative_Guidelines/" class="">
+      Environmental Narrative Guidelines</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/LootDistribution/" class="">
+      Loot Distribution</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/MapDesign/" class="">
+      Map Design</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/MapDesign_IndustrialZone/" class="">
+      Map Design Industrial Zone</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/MapDesign_NeonSlums/" class="">
+      Map Design Neon Slums</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/MapDesign_Wilderness/" class="">
+      Map Design Wilderness</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/MapLayouts/" class="">
+      Map Layouts</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/" class="">
+      Gdd Technical</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      AI</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/AI/SensorySystem/" class="">
+      Sensory System</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Core</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Core/Architecture/" class="">
+      Architecture</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Core/CodingStandards/" class="">
+      Coding Standards</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Core/DevelopmentRoadmap/" class="">
+      Development Roadmap</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Core/NetworkingSystem/" class="">
+      Networking System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Core/SecuritySystem/" class="">
+      Security System</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Gameplay</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Gameplay/CharacterSystem/" class="">
+      Character System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Gameplay/ControlSystem/" class="">
+      Control System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Gameplay/InventorySystem/" class="">
+      Inventory System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Gameplay/WeaponSystem/" class="">
+      Weapon System</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Networking</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Networking/LagCompensation/" class="">
+      Lag Compensation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Networking/ReplicationStrategy/" class="">
+      Replication Strategy</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Performance</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Performance/Budgets/" class="">
+      Budgets</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Performance/Optimization/" class="">
+      Optimization</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Security</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Security/AntiCheatStrategy/" class="">
+      Anti Cheat Strategy</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Systems</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/AccessibilitySystem/" class="">
+      Accessibility System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/AISystem/" class="">
+      Aisystem</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/AnalyticsSystem/" class="">
+      Analytics System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/AudioSystem/" class="">
+      Audio System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/BuildPipeline/" class="">
+      Build Pipeline</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/LiveOpsSystem/" class="">
+      Live Ops System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/LocalizationSystem/" class="">
+      Localization System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/MapSystem/" class="">
+      Map System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/NarrativeSystem/" class="">
+      Narrative System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/ProgressionSystem/" class="">
+      Progression System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/RankedSystem/" class="">
+      Ranked System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/SaveSystem/" class="">
+      Save System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/SocialSystem/" class="">
+      Social System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/TutorialSystem/" class="">
+      Tutorial System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/UISystem/" class="">
+      Uisystem</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+</nav>
+
+
+
+
+<script>{ { . | safeJS } }</script>
+
+
+  </div>
+</aside>
+ 
+
+    <div class="book-page">
+      <header class="book-header hidden">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/icons/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <h3>Items</h3>
+
+  <label for="toc-control">
+    
+    <img src="/icons/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#economy-philosophy">Economy Philosophy</a></li>
+    <li><a href="#item-categories">Item Categories</a>
+      <ul>
+        <li><a href="#1-weapons--attachments">1. Weapons &amp; Attachments</a></li>
+        <li><a href="#2-armor--protection">2. Armor &amp; Protection</a></li>
+        <li><a href="#3-backpacks--storage">3. Backpacks &amp; Storage</a></li>
+        <li><a href="#4-medical-supplies">4. Medical Supplies</a></li>
+        <li><a href="#5-consumables--utilities">5. Consumables &amp; Utilities</a></li>
+        <li><a href="#6-tactical-equipment">6. Tactical Equipment</a></li>
+        <li><a href="#7-keys--special-items">7. Keys &amp; Special Items</a></li>
+        <li><a href="#8-crafting-materials">8. Crafting Materials</a></li>
+        <li><a href="#9-quest-items">9. Quest Items</a></li>
+      </ul>
+    </li>
+    <li><a href="#items-reference-tables">Items Reference Tables</a>
+      <ul>
+        <li><a href="#armor--protection---complete-specifications">Armor &amp; Protection - Complete Specifications</a></li>
+        <li><a href="#backpacks--storage">Backpacks &amp; Storage</a></li>
+        <li><a href="#medical-supplies---complete-specifications">Medical Supplies - Complete Specifications</a></li>
+        <li><a href="#consumables--utilities">Consumables &amp; Utilities</a></li>
+        <li><a href="#tactical-equipment">Tactical Equipment</a></li>
+        <li><a href="#keys--special-items">Keys &amp; Special Items</a></li>
+        <li><a href="#crafting-materials">Crafting Materials</a></li>
+        <li><a href="#throwables--grenades">Throwables &amp; Grenades</a></li>
+        <li><a href="#quest--special-items">Quest &amp; Special Items</a></li>
+      </ul>
+    </li>
+    <li><a href="#loot-system">Loot System</a>
+      <ul>
+        <li><a href="#loot-spawn-mechanics">Loot Spawn Mechanics</a></li>
+        <li><a href="#loot-distribution-by-zone">Loot Distribution by Zone</a></li>
+        <li><a href="#dynamic-loot-scaling">Dynamic Loot Scaling</a></li>
+      </ul>
+    </li>
+    <li><a href="#inventory-management">Inventory Management</a>
+      <ul>
+        <li><a href="#grid-based-system">Grid-Based System</a></li>
+        <li><a href="#secure-container">Secure Container</a></li>
+        <li><a href="#weight--encumbrance">Weight &amp; Encumbrance</a></li>
+      </ul>
+    </li>
+    <li><a href="#player-trading--marketplace">Player Trading &amp; Marketplace</a>
+      <ul>
+        <li><a href="#direct-trading-post-launch-feature">Direct Trading (Post-Launch Feature)</a></li>
+        <li><a href="#auction-house">Auction House</a></li>
+        <li><a href="#market-dynamics">Market Dynamics</a></li>
+        <li><a href="#popular-trade-items">Popular Trade Items</a></li>
+      </ul>
+    </li>
+    <li><a href="#crafting-system-future-feature">Crafting System (Future Feature)</a>
+      <ul>
+        <li><a href="#crafting-basics">Crafting Basics</a></li>
+      </ul>
+    </li>
+    <li><a href="#economic-sinks--sources">Economic Sinks &amp; Sources</a>
+      <ul>
+        <li><a href="#credit-sources-inflow">Credit Sources (Inflow)</a></li>
+        <li><a href="#credit-sinks-outflow">Credit Sinks (Outflow)</a></li>
+        <li><a href="#anti-inflation-measures">Anti-Inflation Measures</a></li>
+      </ul>
+    </li>
+    <li><a href="#item-insurance-future-feature">Item Insurance (Future Feature)</a>
+      <ul>
+        <li><a href="#how-it-works">How It Works</a></li>
+      </ul>
+    </li>
+    <li><a href="#black-market-future-pve-feature">Black Market (Future PvE Feature)</a></li>
+    <li><a href="#season-al-economy-events">Season al Economy Events</a></li>
+    <li><a href="#economic-balance-goals">Economic Balance Goals</a></li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><h1 id="items--economy-systems">Items &amp; Economy Systems<a class="anchor" href="#items--economy-systems">#</a></h1>
+<p><strong><a href="./Weapons.md">← Previous: Weapons</a></strong> | <strong><a href="../README.md">Index</a></strong></p>
+<hr>
+<h2 id="economy-philosophy">Economy Philosophy<a class="anchor" href="#economy-philosophy">#</a></h2>
+<p><strong>Core Principles:</strong></p>
+<ol>
+<li><strong>Player-Driven</strong> - Market prices determined by supply/demand</li>
+<li><strong>Risk Creates Value</strong> - Rare items from dangerous zones worth more</li>
+<li><strong>No Pay-to-Win</strong> - Real money cannot buy gameplay advantages</li>
+<li><strong>Fair Trading</strong> - Systems prevent scams and exploitation</li>
+<li><strong>Economic Sinks</strong> - Prevent inflation through item loss and fees</li>
+</ol>
+<hr>
+<h2 id="item-categories">Item Categories<a class="anchor" href="#item-categories">#</a></h2>
+<h3 id="1-weapons--attachments">1. Weapons &amp; Attachments<a class="anchor" href="#1-weapons--attachments">#</a></h3>
+<p><em>See: <a href="./Weapons.md">Weapons &amp; Combat</a> for details on Weapons, Attachments, and Ammunition types</em></p>
+<p><strong>Economic Role:</strong></p>
+<ul>
+<li>Primary value holders</li>
+<li>High-risk items (lost on death)</li>
+<li>Create demand for constant replacement</li>
+</ul>
+<hr>
+<h3 id="2-armor--protection">2. Armor &amp; Protection<a class="anchor" href="#2-armor--protection">#</a></h3>
+<h4 id="helmets">Helmets<a class="anchor" href="#helmets">#</a></h4>
+<p><strong>Light Helmet (Common)</strong></p>
+<ul>
+<li>Armor Value: 30</li>
+<li>Headshot Reduction: 25%</li>
+<li>Durability: 3-5 hits</li>
+<li>Value: $800</li>
+</ul>
+<p><strong>Medium Helmet (Uncommon)</strong></p>
+<ul>
+<li>Armor Value: 50</li>
+<li>Headshot Reduction: 40%</li>
+<li>Durability: 5-8 hits</li>
+<li>Value: $2,500</li>
+</ul>
+<p><strong>Heavy Helmet (Rare)</strong></p>
+<ul>
+<li>Armor Value: 75</li>
+<li>Headshot Reduction: 50%</li>
+<li>Durability: 8-12 hits</li>
+<li>Value: $6,000</li>
+</ul>
+<p><strong>Tactical Helmet (Epic)</strong></p>
+<ul>
+<li>Armor Value: 100</li>
+<li>Headshot Reduction: 60%</li>
+<li>Durability: 12-15 hits</li>
+<li>Special: Built-in night vision</li>
+<li>Value: $12,000</li>
+</ul>
+<hr>
+<h4 id="body-armor">Body Armor<a class="anchor" href="#body-armor">#</a></h4>
+<p><strong>Light Vest (Common)</strong></p>
+<ul>
+<li>Armor Value: 30</li>
+<li>Coverage: Chest only</li>
+<li>Movement: Normal speed</li>
+<li>Value: $1,000</li>
+</ul>
+<p><strong>Medium Vest (Uncommon)</strong></p>
+<ul>
+<li>Armor Value: 50</li>
+<li>Coverage: Chest + Back</li>
+<li>Movement: -5% speed</li>
+<li>Value: $3,000</li>
+</ul>
+<p><strong>Heavy Vest (Rare)</strong></p>
+<ul>
+<li>Armor Value: 80</li>
+<li>Coverage: Full torso</li>
+<li>Movement: -10% speed</li>
+<li>Value: $8,000</li>
+</ul>
+<p><strong>Tactical Rig (Epic)</strong></p>
+<ul>
+<li>Armor Value: 100</li>
+<li>Coverage: Full torso + arms</li>
+<li>Movement: -15% speed</li>
+<li>Special: +4 inventory slots</li>
+<li>Value: $15,000</li>
+</ul>
+<hr>
+<h3 id="3-backpacks--storage">3. Backpacks &amp; Storage<a class="anchor" href="#3-backpacks--storage">#</a></h3>
+<p><strong>Small Backpack (Common)</strong></p>
+<ul>
+<li>Inventory Slots: +6 (2x3)</li>
+<li>Value: $500</li>
+</ul>
+<p><strong>Medium Backpack (Uncommon)</strong></p>
+<ul>
+<li>Inventory Slots: +12 (3x4)</li>
+<li>Value: $1,500</li>
+</ul>
+<p><strong>Large Backpack (Rare)</strong></p>
+<ul>
+<li>Inventory Slots: +20 (4x5)</li>
+<li>Value: $4,000</li>
+</ul>
+<p><strong>Tactical Backpack (Epic)</strong></p>
+<ul>
+<li>Inventory Slots: +30 (5x6)</li>
+<li>Movement: -5% speed (trade-off)</li>
+<li>Value: $10,000</li>
+</ul>
+<hr>
+<h3 id="4-medical-supplies">4. Medical Supplies<a class="anchor" href="#4-medical-supplies">#</a></h3>
+<p><strong>Bandage (Common)</strong></p>
+<ul>
+<li>Effect: +15 HP over 3 sec, stops bleeding</li>
+<li>Stack Size: 5</li>
+<li>Weight: 0.1 kg each</li>
+<li>Value: $50</li>
+</ul>
+<p><strong>Medkit (Uncommon)</strong></p>
+<ul>
+<li>Effect: +50 HP over 5 sec</li>
+<li>Stack Size: 3</li>
+<li>Weight: 0.3 kg each</li>
+<li>Value: $200</li>
+</ul>
+<p><strong>Combat Stim (Rare)</strong></p>
+<ul>
+<li>Effect: +30 HP instant, +10% speed for 10 sec</li>
+<li>Stack Size: 2</li>
+<li>Weight: 0.2 kg each</li>
+<li>Value: $800</li>
+</ul>
+<p><strong>Surgery Kit (Epic)</strong></p>
+<ul>
+<li>Effect: Full heal (100 HP), 8 sec use</li>
+<li>Stack Size: 1</li>
+<li>Weight: 0.5 kg</li>
+<li>Value: $2,500</li>
+</ul>
+<p><strong>Painkillers (Uncommon)</strong></p>
+<ul>
+<li>Effect: Reduces damage taken by 15% for 60 sec</li>
+<li>Stack Size: 3</li>
+<li>Weight: 0.1 kg each</li>
+<li>Value: $300</li>
+</ul>
+<hr>
+<h3 id="5-consumables--utilities">5. Consumables &amp; Utilities<a class="anchor" href="#5-consumables--utilities">#</a></h3>
+<p><strong>Energy Drink (Common)</strong></p>
+<ul>
+<li>Effect: +20% sprint speed for 30 sec</li>
+<li>Stack Size: 3</li>
+<li>Value: $100</li>
+</ul>
+<p><strong>Adrenaline Shot (Rare)</strong></p>
+<ul>
+<li>Effect: +30% all stats for 15 sec</li>
+<li>Stack Size: 1</li>
+<li>Value: $1,000</li>
+</ul>
+<p><strong>Ration Pack (Common)</strong></p>
+<ul>
+<li>Effect: Restores stamina instantly</li>
+<li>Stack Size: 5</li>
+<li>Value: $50</li>
+</ul>
+<hr>
+<h3 id="6-tactical-equipment">6. Tactical Equipment<a class="anchor" href="#6-tactical-equipment">#</a></h3>
+<p><strong>Sensor Mine (Uncommon)</strong></p>
+<ul>
+<li>Effect: Detects enemies in 15m radius</li>
+<li>Duration: 60 seconds</li>
+<li>Stack Size: 2</li>
+<li>Value: $400</li>
+</ul>
+<p><strong>Claymore (Rare)</strong></p>
+<ul>
+<li>Effect: 80 damage in cone</li>
+<li>Trigger: Laser tripwire</li>
+<li>Stack Size: 1</li>
+<li>Value: $1,200</li>
+</ul>
+<p><strong>Portable Cover (Epic)</strong></p>
+<ul>
+<li>Effect: Deploy temporary hard cover</li>
+<li>Duration: Permanent until destroyed</li>
+<li>Stack Size: 1</li>
+<li>Value: $3,000</li>
+</ul>
+<hr>
+<h3 id="7-keys--special-items">7. Keys &amp; Special Items<a class="anchor" href="#7-keys--special-items">#</a></h3>
+<p><strong>Loot Room Key (Rare)</strong></p>
+<ul>
+<li>Use: Unlocks high-tier loot rooms</li>
+<li>Single-use</li>
+<li>Value: $5,000-10,000</li>
+</ul>
+<p><strong>Safe Key (Epic)</strong></p>
+<ul>
+<li>Use: Opens safes with guaranteed rare loot</li>
+<li>Single-use</li>
+<li>Value: $8,000-15,000</li>
+</ul>
+<p><strong>Supply Drop Beacon (Legendary)</strong></p>
+<ul>
+<li>Use: Calls personal supply drop</li>
+<li>Single-use</li>
+<li>Contents: Random Epic/Legendary items</li>
+<li>Value: $25,000</li>
+</ul>
+<hr>
+<h3 id="8-crafting-materials">8. Crafting Materials<a class="anchor" href="#8-crafting-materials">#</a></h3>
+<p><strong>Scrap Metal (Common)</strong></p>
+<ul>
+<li>Use: Basic weapon repairs</li>
+<li>Stack Size: 50</li>
+<li>Value: $10 each</li>
+</ul>
+<p><strong>Electronics (Uncommon)</strong></p>
+<ul>
+<li>Use: Attachment crafting</li>
+<li>Stack Size: 20</li>
+<li>Value: $50 each</li>
+</ul>
+<p><strong>Rare Components (Rare)</strong></p>
+<ul>
+<li>Use: High-tier crafting</li>
+<li>Stack Size: 10</li>
+<li>Value: $200 each</li>
+</ul>
+<p><strong>Legendary Parts (Legendary)</strong></p>
+<ul>
+<li>Use: Legendary weapon crafting</li>
+<li>Stack Size: 5</li>
+<li>Value: $1,000 each</li>
+</ul>
+<hr>
+<h3 id="9-quest-items">9. Quest Items<a class="anchor" href="#9-quest-items">#</a></h3>
+<p><strong>Faction Documents</strong></p>
+<ul>
+<li>Faction-specific quest items</li>
+<li>No stack limit</li>
+<li>Value: Cannot be sold (quest use only)</li>
+</ul>
+<p><strong>Intel Packages</strong></p>
+<ul>
+<li>Deliver to faction for reputation</li>
+<li>Single item</li>
+<li>Value: Reputation reward</li>
+</ul>
+<p><strong>Artifact Pieces</strong></p>
+<ul>
+<li>Collect full set for legendary reward</li>
+<li>Part of larger quest chain</li>
+<li>Value: $500 each (partial value)</li>
+</ul>
+<hr>
+<h2 id="items-reference-tables">Items Reference Tables<a class="anchor" href="#items-reference-tables">#</a></h2>
+<h3 id="armor--protection---complete-specifications">Armor &amp; Protection - Complete Specifications<a class="anchor" href="#armor--protection---complete-specifications">#</a></h3>
+<h4 id="helmets-1">Helmets<a class="anchor" href="#helmets-1">#</a></h4>
+<table>
+  <thead>
+      <tr>
+          <th>Code Name</th>
+          <th>Display Name</th>
+          <th>Rarity</th>
+          <th>Armor Value</th>
+          <th>Headshot Reduction</th>
+          <th>Durability (Hits)</th>
+          <th>Weight (kg)</th>
+          <th>Grid Size</th>
+          <th>Value ($)</th>
+          <th>Special Features</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>ITEM_HELM_LIGHT</td>
+          <td>Light Helmet</td>
+          <td>Common</td>
+          <td>30</td>
+          <td>25%</td>
+          <td>3-5</td>
+          <td>0.8</td>
+          <td>2x2</td>
+          <td>800</td>
+          <td>Basic protection</td>
+      </tr>
+      <tr>
+          <td>ITEM_HELM_MEDIUM</td>
+          <td>Medium Helmet</td>
+          <td>Uncommon</td>
+          <td>50</td>
+          <td>40%</td>
+          <td>5-8</td>
+          <td>1.2</td>
+          <td>2x2</td>
+          <td>2,500</td>
+          <td>Good balance</td>
+      </tr>
+      <tr>
+          <td>ITEM_HELM_HEAVY</td>
+          <td>Heavy Helmet</td>
+          <td>Rare</td>
+          <td>75</td>
+          <td>50%</td>
+          <td>8-12</td>
+          <td>1.8</td>
+          <td>2x2</td>
+          <td>6,000</td>
+          <td>High protection</td>
+      </tr>
+      <tr>
+          <td>ITEM_HELM_TACTICAL</td>
+          <td>Tactical Helmet</td>
+          <td>Epic</td>
+          <td>100</td>
+          <td>60%</td>
+          <td>12-15</td>
+          <td>1.5</td>
+          <td>2x2</td>
+          <td>12,000</td>
+          <td>Built-in night vision</td>
+      </tr>
+      <tr>
+          <td>ITEM_HELM_SPEC</td>
+          <td>Specialist Helmet</td>
+          <td>Rare</td>
+          <td>60</td>
+          <td>45%</td>
+          <td>6-10</td>
+          <td>1.0</td>
+          <td>2x2</td>
+          <td>4,500</td>
+          <td>+10% hearing range</td>
+      </tr>
+  </tbody>
+</table>
+<h4 id="body-armor-1">Body Armor<a class="anchor" href="#body-armor-1">#</a></h4>
+<table>
+  <thead>
+      <tr>
+          <th>Code Name</th>
+          <th>Display Name</th>
+          <th>Rarity</th>
+          <th>Armor Value</th>
+          <th>Coverage</th>
+          <th>Movement Penalty</th>
+          <th>Weight (kg)</th>
+          <th>Grid Size</th>
+          <th>Inventory Bonus</th>
+          <th>Value ($)</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>ITEM_VEST_LIGHT</td>
+          <td>Light Vest</td>
+          <td>Common</td>
+          <td>30</td>
+          <td>Chest only</td>
+          <td>0%</td>
+          <td>2.0</td>
+          <td>2x3</td>
+          <td>-</td>
+          <td>1,000</td>
+      </tr>
+      <tr>
+          <td>ITEM_VEST_MEDIUM</td>
+          <td>Medium Vest</td>
+          <td>Uncommon</td>
+          <td>50</td>
+          <td>Chest + Back</td>
+          <td>-5%</td>
+          <td>3.5</td>
+          <td>2x3</td>
+          <td>-</td>
+          <td>3,000</td>
+      </tr>
+      <tr>
+          <td>ITEM_VEST_HEAVY</td>
+          <td>Heavy Vest</td>
+          <td>Rare</td>
+          <td>80</td>
+          <td>Full torso</td>
+          <td>-10%</td>
+          <td>5.5</td>
+          <td>2x3</td>
+          <td>-</td>
+          <td>8,000</td>
+      </tr>
+      <tr>
+          <td>ITEM_VEST_TACTICAL</td>
+          <td>Tactical Rig</td>
+          <td>Epic</td>
+          <td>100</td>
+          <td>Full torso + arms</td>
+          <td>-15%</td>
+          <td>6.0</td>
+          <td>2x3</td>
+          <td>+4 slots</td>
+          <td>15,000</td>
+      </tr>
+      <tr>
+          <td>ITEM_VEST_CARRIER</td>
+          <td>Plate Carrier</td>
+          <td>Rare</td>
+          <td>90</td>
+          <td>Full torso</td>
+          <td>-8%</td>
+          <td>4.8</td>
+          <td>2x3</td>
+          <td>+2 slots</td>
+          <td>10,000</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h3 id="backpacks--storage">Backpacks &amp; Storage<a class="anchor" href="#backpacks--storage">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th>Code Name</th>
+          <th>Display Name</th>
+          <th>Rarity</th>
+          <th>Inventory Slots</th>
+          <th>Grid Layout</th>
+          <th>Movement Penalty</th>
+          <th>Weight (kg)</th>
+          <th>Value ($)</th>
+          <th>Durability</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>ITEM_BAG_SMALL</td>
+          <td>Small Backpack</td>
+          <td>Common</td>
+          <td>+6</td>
+          <td>2x3</td>
+          <td>0%</td>
+          <td>0.5</td>
+          <td>500</td>
+          <td>Standard</td>
+      </tr>
+      <tr>
+          <td>ITEM_BAG_MEDIUM</td>
+          <td>Medium Backpack</td>
+          <td>Uncommon</td>
+          <td>+12</td>
+          <td>3x4</td>
+          <td>0%</td>
+          <td>1.0</td>
+          <td>1,500</td>
+          <td>Standard</td>
+      </tr>
+      <tr>
+          <td>ITEM_BAG_LARGE</td>
+          <td>Large Backpack</td>
+          <td>Rare</td>
+          <td>+20</td>
+          <td>4x5</td>
+          <td>0%</td>
+          <td>1.5</td>
+          <td>4,000</td>
+          <td>Standard</td>
+      </tr>
+      <tr>
+          <td>ITEM_BAG_TACTICAL</td>
+          <td>Tactical Backpack</td>
+          <td>Epic</td>
+          <td>+30</td>
+          <td>5x6</td>
+          <td>-5%</td>
+          <td>2.0</td>
+          <td>10,000</td>
+          <td>Reinforced</td>
+      </tr>
+      <tr>
+          <td>ITEM_BAG_ASSAULT</td>
+          <td>Assault Pack</td>
+          <td>Uncommon</td>
+          <td>+15</td>
+          <td>3x5</td>
+          <td>0%</td>
+          <td>1.2</td>
+          <td>2,500</td>
+          <td>Water-resistant</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h3 id="medical-supplies---complete-specifications">Medical Supplies - Complete Specifications<a class="anchor" href="#medical-supplies---complete-specifications">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th>Code Name</th>
+          <th>Display Name</th>
+          <th>Rarity</th>
+          <th>Heal Amount</th>
+          <th>Heal Time</th>
+          <th>Stack Size</th>
+          <th>Weight (kg)</th>
+          <th>Grid Size</th>
+          <th>Value ($)</th>
+          <th>Special Effect</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>ITEM_MED_BANDAGE</td>
+          <td>Bandage</td>
+          <td>Common</td>
+          <td>+15 HP over 3s</td>
+          <td>3 sec</td>
+          <td>5</td>
+          <td>0.1</td>
+          <td>1x1</td>
+          <td>50</td>
+          <td>Stops bleeding</td>
+      </tr>
+      <tr>
+          <td>ITEM_MED_MEDKIT</td>
+          <td>Medkit</td>
+          <td>Uncommon</td>
+          <td>+50 HP over 5s</td>
+          <td>5 sec</td>
+          <td>3</td>
+          <td>0.3</td>
+          <td>1x2</td>
+          <td>200</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td>ITEM_MED_STIM</td>
+          <td>Combat Stim</td>
+          <td>Rare</td>
+          <td>+30 HP instant</td>
+          <td>1 sec</td>
+          <td>2</td>
+          <td>0.2</td>
+          <td>1x1</td>
+          <td>800</td>
+          <td>+10% speed 10s</td>
+      </tr>
+      <tr>
+          <td>ITEM_MED_SURGERY</td>
+          <td>Surgery Kit</td>
+          <td>Epic</td>
+          <td>+100 HP over 8s</td>
+          <td>8 sec</td>
+          <td>1</td>
+          <td>0.5</td>
+          <td>2x2</td>
+          <td>2,500</td>
+          <td>Removes all debuffs</td>
+      </tr>
+      <tr>
+          <td>ITEM_MED_PAINKILLER</td>
+          <td>Painkillers</td>
+          <td>Uncommon</td>
+          <td>-</td>
+          <td>2 sec</td>
+          <td>3</td>
+          <td>0.1</td>
+          <td>1x1</td>
+          <td>300</td>
+          <td>-15% dmg taken 60s</td>
+      </tr>
+      <tr>
+          <td>ITEM_MED_BLOODBAG</td>
+          <td>Blood Bag</td>
+          <td>Rare</td>
+          <td>+40 HP over 10s</td>
+          <td>10 sec</td>
+          <td>1</td>
+          <td>0.4</td>
+          <td>1x2</td>
+          <td>1,200</td>
+          <td>+20% max HP 2min</td>
+      </tr>
+      <tr>
+          <td>ITEM_MED_FIRSTAID</td>
+          <td>First Aid Kit</td>
+          <td>Common</td>
+          <td>+25 HP over 4s</td>
+          <td>4 sec</td>
+          <td>4</td>
+          <td>0.2</td>
+          <td>1x2</td>
+          <td>120</td>
+          <td>Basic healing</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h3 id="consumables--utilities">Consumables &amp; Utilities<a class="anchor" href="#consumables--utilities">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th>Code Name</th>
+          <th>Display Name</th>
+          <th>Rarity</th>
+          <th>Effect</th>
+          <th>Duration</th>
+          <th>Stack Size</th>
+          <th>Weight (kg)</th>
+          <th>Grid Size</th>
+          <th>Value ($)</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>ITEM_CONS_ENERGY</td>
+          <td>Energy Drink</td>
+          <td>Common</td>
+          <td>+20% sprint speed</td>
+          <td>30 sec</td>
+          <td>3</td>
+          <td>0.2</td>
+          <td>1x1</td>
+          <td>100</td>
+      </tr>
+      <tr>
+          <td>ITEM_CONS_ADRENALINE</td>
+          <td>Adrenaline Shot</td>
+          <td>Rare</td>
+          <td>+30% all stats</td>
+          <td>15 sec</td>
+          <td>1</td>
+          <td>0.1</td>
+          <td>1x1</td>
+          <td>1,000</td>
+      </tr>
+      <tr>
+          <td>ITEM_CONS_RATION</td>
+          <td>Ration Pack</td>
+          <td>Common</td>
+          <td>Restore stamina</td>
+          <td>Instant</td>
+          <td>5</td>
+          <td>0.3</td>
+          <td>1x1</td>
+          <td>50</td>
+      </tr>
+      <tr>
+          <td>ITEM_CONS_WATER</td>
+          <td>Water Bottle</td>
+          <td>Common</td>
+          <td>Restore hydration</td>
+          <td>Instant</td>
+          <td>4</td>
+          <td>0.5</td>
+          <td>1x1</td>
+          <td>30</td>
+      </tr>
+      <tr>
+          <td>ITEM_CONS_PROTEIN</td>
+          <td>Protein Bar</td>
+          <td>Uncommon</td>
+          <td>+15% max stamina</td>
+          <td>60 sec</td>
+          <td>3</td>
+          <td>0.1</td>
+          <td>1x1</td>
+          <td>150</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h3 id="tactical-equipment">Tactical Equipment<a class="anchor" href="#tactical-equipment">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th>Code Name</th>
+          <th>Display Name</th>
+          <th>Rarity</th>
+          <th>Effect</th>
+          <th>Duration</th>
+          <th>Deploy Time</th>
+          <th>Stack Size</th>
+          <th>Weight (kg)</th>
+          <th>Grid Size</th>
+          <th>Value ($)</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>ITEM_TAC_SENSOR</td>
+          <td>Sensor Mine</td>
+          <td>Uncommon</td>
+          <td>Detect enemies 15m</td>
+          <td>60 sec</td>
+          <td>2 sec</td>
+          <td>2</td>
+          <td>0.4</td>
+          <td>1x2</td>
+          <td>400</td>
+      </tr>
+      <tr>
+          <td>ITEM_TAC_CLAYMORE</td>
+          <td>Claymore</td>
+          <td>Rare</td>
+          <td>80 dmg cone</td>
+          <td>Until triggered</td>
+          <td>3 sec</td>
+          <td>1</td>
+          <td>1.0</td>
+          <td>2x2</td>
+          <td>1,200</td>
+      </tr>
+      <tr>
+          <td>ITEM_TAC_COVER</td>
+          <td>Portable Cover</td>
+          <td>Epic</td>
+          <td>Deploy hard cover</td>
+          <td>Permanent</td>
+          <td>5 sec</td>
+          <td>1</td>
+          <td>3.0</td>
+          <td>2x3</td>
+          <td>3,000</td>
+      </tr>
+      <tr>
+          <td>ITEM_TAC_BARRICADE</td>
+          <td>Barricade Kit</td>
+          <td>Uncommon</td>
+          <td>Block doorway</td>
+          <td>Permanent</td>
+          <td>4 sec</td>
+          <td>1</td>
+          <td>2.5</td>
+          <td>2x2</td>
+          <td>800</td>
+      </tr>
+      <tr>
+          <td>ITEM_TAC_C4</td>
+          <td>C4 Explosive</td>
+          <td>Epic</td>
+          <td>150 dmg 10m radius</td>
+          <td>Remote detonation</td>
+          <td>3 sec</td>
+          <td>1</td>
+          <td>0.8</td>
+          <td>1x2</td>
+          <td>2,500</td>
+      </tr>
+      <tr>
+          <td>ITEM_TAC_BEACON</td>
+          <td>Extraction Beacon</td>
+          <td>Rare</td>
+          <td>Call emergency extraction</td>
+          <td>Single-use</td>
+          <td>2 sec</td>
+          <td>1</td>
+          <td>0.3</td>
+          <td>1x1</td>
+          <td>5,000</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h3 id="keys--special-items">Keys &amp; Special Items<a class="anchor" href="#keys--special-items">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th>Code Name</th>
+          <th>Display Name</th>
+          <th>Rarity</th>
+          <th>Use</th>
+          <th>Durability</th>
+          <th>Weight (kg)</th>
+          <th>Grid Size</th>
+          <th>Value ($)</th>
+          <th>Drop Rate</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>ITEM_KEY_LOOTROOM</td>
+          <td>Loot Room Key</td>
+          <td>Rare</td>
+          <td>Unlock high-tier loot rooms</td>
+          <td>1 use</td>
+          <td>0.1</td>
+          <td>1x1</td>
+          <td>5,000-10,000</td>
+          <td>5%</td>
+      </tr>
+      <tr>
+          <td>ITEM_KEY_SAFE</td>
+          <td>Safe Key</td>
+          <td>Epic</td>
+          <td>Open safes</td>
+          <td>1 use</td>
+          <td>0.1</td>
+          <td>1x1</td>
+          <td>8,000-15,000</td>
+          <td>2%</td>
+      </tr>
+      <tr>
+          <td>ITEM_KEY_SUPPLY</td>
+          <td>Supply Drop Beacon</td>
+          <td>Legendary</td>
+          <td>Call personal supply drop</td>
+          <td>1 use</td>
+          <td>0.2</td>
+          <td>1x1</td>
+          <td>25,000</td>
+          <td>0.5%</td>
+      </tr>
+      <tr>
+          <td>ITEM_KEY_BUNKER</td>
+          <td>Bunker Key</td>
+          <td>Epic</td>
+          <td>Access bunker vault</td>
+          <td>3 uses</td>
+          <td>0.1</td>
+          <td>1x1</td>
+          <td>12,000</td>
+          <td>1%</td>
+      </tr>
+      <tr>
+          <td>ITEM_KEY_OFFICE</td>
+          <td>Office Key</td>
+          <td>Uncommon</td>
+          <td>Office rooms</td>
+          <td>5 uses</td>
+          <td>0.05</td>
+          <td>1x1</td>
+          <td>2,000</td>
+          <td>10%</td>
+      </tr>
+      <tr>
+          <td>ITEM_KEY_MASTER</td>
+          <td>Master Keycard</td>
+          <td>Legendary</td>
+          <td>Universal access</td>
+          <td>1 use</td>
+          <td>0.1</td>
+          <td>1x1</td>
+          <td>50,000</td>
+          <td>0.1%</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h3 id="crafting-materials">Crafting Materials<a class="anchor" href="#crafting-materials">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th>Code Name</th>
+          <th>Display Name</th>
+          <th>Rarity</th>
+          <th>Use</th>
+          <th>Stack Size</th>
+          <th>Weight (kg)</th>
+          <th>Grid Size</th>
+          <th>Value ($)</th>
+          <th>Where to Find</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>ITEM_CRAFT_SCRAP</td>
+          <td>Scrap Metal</td>
+          <td>Common</td>
+          <td>Basic repairs</td>
+          <td>50</td>
+          <td>0.05</td>
+          <td>1x1</td>
+          <td>10</td>
+          <td>Everywhere</td>
+      </tr>
+      <tr>
+          <td>ITEM_CRAFT_ELECTRONICS</td>
+          <td>Electronics</td>
+          <td>Uncommon</td>
+          <td>Attachment crafting</td>
+          <td>20</td>
+          <td>0.1</td>
+          <td>1x1</td>
+          <td>50</td>
+          <td>Mid zones</td>
+      </tr>
+      <tr>
+          <td>ITEM_CRAFT_RARECOMP</td>
+          <td>Rare Components</td>
+          <td>Rare</td>
+          <td>High-tier crafting</td>
+          <td>10</td>
+          <td>0.2</td>
+          <td>1x1</td>
+          <td>200</td>
+          <td>Hot zones</td>
+      </tr>
+      <tr>
+          <td>ITEM_CRAFT_LEGENDARY</td>
+          <td>Legendary Parts</td>
+          <td>Legendary</td>
+          <td>Legendary crafting</td>
+          <td>5</td>
+          <td>0.3</td>
+          <td>1x1</td>
+          <td>1,000</td>
+          <td>Safes, bosses</td>
+      </tr>
+      <tr>
+          <td>ITEM_CRAFT_CIRCUITS</td>
+          <td>Circuit Boards</td>
+          <td>Uncommon</td>
+          <td>Tech item crafting</td>
+          <td>25</td>
+          <td>0.08</td>
+          <td>1x1</td>
+          <td>80</td>
+          <td>Electronics stores</td>
+      </tr>
+      <tr>
+          <td>ITEM_CRAFT_POLYMER</td>
+          <td>Polymer</td>
+          <td>Common</td>
+          <td>Armor repairs</td>
+          <td>40</td>
+          <td>0.06</td>
+          <td>1x1</td>
+          <td>20</td>
+          <td>Industrial zones</td>
+      </tr>
+      <tr>
+          <td>ITEM_CRAFT_TOOLS</td>
+          <td>Tool Kit</td>
+          <td>Rare</td>
+          <td>Upgrade items</td>
+          <td>1</td>
+          <td>1.0</td>
+          <td>2x2</td>
+          <td>500</td>
+          <td>Supply drops</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h3 id="throwables--grenades">Throwables &amp; Grenades<a class="anchor" href="#throwables--grenades">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th>Code Name</th>
+          <th>Display Name</th>
+          <th>Rarity</th>
+          <th>Damage</th>
+          <th>Radius (m)</th>
+          <th>Fuse Time</th>
+          <th>Stack Size</th>
+          <th>Weight (kg)</th>
+          <th>Grid Size</th>
+          <th>Value ($)</th>
+          <th>Special</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>ITEM_GREN_FRAG</td>
+          <td>Frag Grenade</td>
+          <td>Common</td>
+          <td>100 (direct) 50-10 (falloff)</td>
+          <td>8</td>
+          <td>3 sec</td>
+          <td>3</td>
+          <td>0.4</td>
+          <td>1x1</td>
+          <td>200</td>
+          <td>Cookable</td>
+      </tr>
+      <tr>
+          <td>ITEM_GREN_FLASH</td>
+          <td>Flashbang</td>
+          <td>Common</td>
+          <td>0 dmg</td>
+          <td>10</td>
+          <td>1.5 sec</td>
+          <td>3</td>
+          <td>0.3</td>
+          <td>1x1</td>
+          <td>150</td>
+          <td>5s blind</td>
+      </tr>
+      <tr>
+          <td>ITEM_GREN_SMOKE</td>
+          <td>Smoke Grenade</td>
+          <td>Common</td>
+          <td>0 dmg</td>
+          <td>8</td>
+          <td>2 sec</td>
+          <td>3</td>
+          <td>0.3</td>
+          <td>1x1</td>
+          <td>100</td>
+          <td>15s duration</td>
+      </tr>
+      <tr>
+          <td>ITEM_GREN_EMP</td>
+          <td>EMP Grenade</td>
+          <td>Rare</td>
+          <td>0 dmg</td>
+          <td>15</td>
+          <td>2 sec</td>
+          <td>2</td>
+          <td>0.3</td>
+          <td>1x1</td>
+          <td>800</td>
+          <td>Disable abilities</td>
+      </tr>
+      <tr>
+          <td>ITEM_GREN_INCENDIARY</td>
+          <td>Incendiary Grenade</td>
+          <td>Rare</td>
+          <td>40/sec DOT</td>
+          <td>6</td>
+          <td>2 sec</td>
+          <td>2</td>
+          <td>0.4</td>
+          <td>1x1</td>
+          <td>600</td>
+          <td>8s burn</td>
+      </tr>
+      <tr>
+          <td>ITEM_GREN_STUN</td>
+          <td>Stun Grenade</td>
+          <td>Uncommon</td>
+          <td>0 dmg</td>
+          <td>8</td>
+          <td>1.5 sec</td>
+          <td>3</td>
+          <td>0.3</td>
+          <td>1x1</td>
+          <td>250</td>
+          <td>3s stun</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h3 id="quest--special-items">Quest &amp; Special Items<a class="anchor" href="#quest--special-items">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th>Code Name</th>
+          <th>Display Name</th>
+          <th>Category</th>
+          <th>Weight (kg)</th>
+          <th>Grid Size</th>
+          <th>Sell Value</th>
+          <th>Notes</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>ITEM_QUEST_DOC_SALVAGE</td>
+          <td>Salvage Corps Document</td>
+          <td>Quest</td>
+          <td>0.1</td>
+          <td>1x1</td>
+          <td>Cannot sell</td>
+          <td>Faction quest</td>
+      </tr>
+      <tr>
+          <td>ITEM_QUEST_DOC_TECH</td>
+          <td>Tech Syndicate Data</td>
+          <td>Quest</td>
+          <td>0.1</td>
+          <td>1x1</td>
+          <td>Cannot sell</td>
+          <td>Faction quest</td>
+      </tr>
+      <tr>
+          <td>ITEM_QUEST_INTEL</td>
+          <td>Intel Package</td>
+          <td>Quest</td>
+          <td>0.2</td>
+          <td>1x1</td>
+          <td>Cannot sell</td>
+          <td>Reputation reward</td>
+      </tr>
+      <tr>
+          <td>ITEM_QUEST_ARTIFACT1</td>
+          <td>Artifact Piece Alpha</td>
+          <td>Quest</td>
+          <td>0.3</td>
+          <td>1x1</td>
+          <td>500</td>
+          <td>Part 1 of 5</td>
+      </tr>
+      <tr>
+          <td>ITEM_QUEST_ARTIFACT2</td>
+          <td>Artifact Piece Beta</td>
+          <td>Quest</td>
+          <td>0.3</td>
+          <td>1x1</td>
+          <td>500</td>
+          <td>Part 2 of 5</td>
+      </tr>
+      <tr>
+          <td>ITEM_QUEST_SAMPLE</td>
+          <td>Biological Sample</td>
+          <td>Quest</td>
+          <td>0.5</td>
+          <td>1x2</td>
+          <td>Cannot sell</td>
+          <td>Time-sensitive</td>
+      </tr>
+      <tr>
+          <td>ITEM_QUEST_HARDDRIVE</td>
+          <td>Encrypted Hard Drive</td>
+          <td>Quest</td>
+          <td>0.4</td>
+          <td>1x1</td>
+          <td>Cannot sell</td>
+          <td>Rare quest item</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="loot-system">Loot System<a class="anchor" href="#loot-system">#</a></h2>
+<h3 id="loot-spawn-mechanics">Loot Spawn Mechanics<a class="anchor" href="#loot-spawn-mechanics">#</a></h3>
+<p><strong>Container Types:</strong></p>
+<p><strong>Wooden Crate (Common)</strong></p>
+<ul>
+<li>Spawn Rate: Very High (every 20-30m)</li>
+<li>Loot Quality: Common (80%), Uncommon (20%)</li>
+<li>Average Value: $500-1,500</li>
+<li>Typical Contents: Bandages, ammo, basic attachments</li>
+</ul>
+<p><strong>Metal Locker (Uncommon)</strong></p>
+<ul>
+<li>Spawn Rate: Medium (every 50-80m)</li>
+<li>Loot Quality: Uncommon (60%), Rare (30%), Common (10%)</li>
+<li>Average Value: $2,000-5,000</li>
+<li>Typical Contents: Armor, medkits, uncommon weapons</li>
+</ul>
+<p><strong>Weapon Rack (Uncommon)</strong></p>
+<ul>
+<li>Spawn Rate: Low (3-5 per map)</li>
+<li>Loot Quality: Weapons only</li>
+<li>Guaranteed weapon spawn (Common to Rare)</li>
+<li>Average Value: $1,500-6,000</li>
+</ul>
+<p><strong>Safe (Rare)</strong></p>
+<ul>
+<li>Spawn Rate: Very Low (1-2 per hot zone)</li>
+<li>Requires: Key or lockpick (time)</li>
+<li>Loot Quality: Rare (50%), Epic (40%), Legendary (10%)</li>
+<li>Average Value: $8,000-20,000</li>
+<li>Typical Contents: High-tier weapons, armor, cash</li>
+</ul>
+<p><strong>Supply Drop (Event)</strong></p>
+<ul>
+<li>Spawn: Timed events (5:00, 10:00)</li>
+<li>Location: Random hot zone</li>
+<li>Loot Quality: Epic (70%), Legendary (30%)</li>
+<li>Average Value: $15,000-30,000</li>
+<li>Risk: Contested, attracts all players</li>
+</ul>
+<hr>
+<h3 id="loot-distribution-by-zone">Loot Distribution by Zone<a class="anchor" href="#loot-distribution-by-zone">#</a></h3>
+<p><strong>Safe Zones (Map Edges)</strong></p>
+<ul>
+<li>Container Density: High</li>
+<li>Quality: 70% Common, 25% Uncommon, 5% Rare</li>
+<li>Risk: Low (AI only)</li>
+<li>Reward: Stable but modest</li>
+</ul>
+<p><strong>Mid Zones</strong></p>
+<ul>
+<li>Container Density: Medium</li>
+<li>Quality: 40% Common, 40% Uncommon, 18% Rare, 2% Epic</li>
+<li>Risk: Medium (AI + players)</li>
+<li>Reward: Balanced risk/reward</li>
+</ul>
+<p><strong>Hot Zones (Center)</strong></p>
+<ul>
+<li>Container Density: Low pero High Quality</li>
+<li>Quality: 20% Uncommon, 50% Rare, 25% Epic, 5% Legendary</li>
+<li>Risk: Very High (PvP combat)</li>
+<li>Reward: Highest value</li>
+</ul>
+<p><strong>Contamination Zone (Late Game)</strong></p>
+<ul>
+<li>Container Density: Medium</li>
+<li>Quality: 30% Rare, 50% Epic, 20% Legendary</li>
+<li>Risk: Extreme (contamination damage + combat)</li>
+<li>Reward: Best loot before match end</li>
+</ul>
+<hr>
+<h3 id="dynamic-loot-scaling">Dynamic Loot Scaling<a class="anchor" href="#dynamic-loot-scaling">#</a></h3>
+<p><strong>Player Count Adjustment:</strong></p>
+<ul>
+<li>More players alive = More loot spawns</li>
+<li>Prevents loot drought</li>
+<li>Encourages exploration</li>
+</ul>
+<p><strong>Time-Based:</strong></p>
+<ul>
+<li>Early game (0-5 min): Basic loot common</li>
+<li>Mid game (5-10 min): Quality increases</li>
+<li>Late game (10-15 min): Best loot in dangerous zones</li>
+</ul>
+<p><strong>Death-Based:</strong></p>
+<ul>
+<li>Each player death: Small loot quality increase globally</li>
+<li>Compensates surviving players</li>
+<li>Rewards skilled survival</li>
+</ul>
+<hr>
+<h2 id="inventory-management">Inventory Management<a class="anchor" href="#inventory-management">#</a></h2>
+<h3 id="grid-based-system">Grid-Based System<a class="anchor" href="#grid-based-system">#</a></h3>
+<p><strong>Inventory Layout:</strong></p>
+<pre tabindex="0"><code>┌─────────────────────┐
+│ Secure Container    │  Always Safe (2x2)
+│ ┌──┬──┐             │
+│ │░░│░░│             │
+│ ├──┼──┤             │
+│ │░░│░░│             │
+│ └──┴──┘             │
+├─────────────────────┤
+│ Backpack Space      │  Lost on Death
+│ ┌──┬──┬──┬──┬──┐   │
+│ │  │  │  │  │  │   │
+│ ├──┼──┼──┼──┼──┤   │
+│ │  │  │  │  │  │   │
+│ ├──┼──┼──┼──┼──┤   │
+│ │  │  │  │  │  │   │
+│ └──┴──┴──┴──┴──┘   │
+└─────────────────────┘</code></pre><p><strong>Item Sizes:</strong></p>
+<ul>
+<li>Small (1x1): Ammo, consumables, keys</li>
+<li>Medium (1x2): Pistols, attachments, meds</li>
+<li>Large (2x2): SMGs, armor pieces</li>
+<li>Very Large (2x3): Assault rifles, helmets</li>
+<li>Huge (2x4): Sniper rifles, LMGs</li>
+</ul>
+<p><strong>Tetris-Style Rotation:</strong></p>
+<ul>
+<li>Rotate items to fit</li>
+<li>Efficient packing rewarded</li>
+<li>Strategic space management</li>
+</ul>
+<hr>
+<h3 id="secure-container">Secure Container<a class="anchor" href="#secure-container">#</a></h3>
+<p><strong>Purpose:</strong> Protect high-value items from death loss</p>
+<p><strong>Standard Container (Free):</strong></p>
+<ul>
+<li>Size: 2x2 (4 slots)</li>
+<li>Cannot be upgraded in-match</li>
+</ul>
+<p><strong>Expanded Container (Premium/Quest):</strong></p>
+<ul>
+<li>Size: 2x3 (6 slots)</li>
+<li>Unlock: Level 25 or Premium</li>
+<li>Permanent upgrade</li>
+</ul>
+<p><strong>Container Rules:</strong></p>
+<ul>
+<li>Can only place items IN during raid</li>
+<li>Cannot take items OUT during raid</li>
+<li>Prevents container abuse</li>
+<li>Preserves risk/reward balance</li>
+</ul>
+<hr>
+<h3 id="weight--encumbrance">Weight &amp; Encumbrance<a class="anchor" href="#weight--encumbrance">#</a></h3>
+<p><strong>Weight System:</strong></p>
+<ul>
+<li>Each item has weight (kg)</li>
+<li>Total weight affects movement</li>
+</ul>
+<p><strong>Weight Thresholds:</strong></p>
+<table>
+  <thead>
+      <tr>
+          <th>Weight Total</th>
+          <th>Movement Speed</th>
+          <th>Stamina Drain</th>
+          <th>Effects</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>0-15 kg</td>
+          <td>100%</td>
+          <td>Normal</td>
+          <td>None</td>
+      </tr>
+      <tr>
+          <td>15-25 kg</td>
+          <td>90%</td>
+          <td>+20%</td>
+          <td>Slight slowdown</td>
+      </tr>
+      <tr>
+          <td>25-35 kg</td>
+          <td>75%</td>
+          <td>+50%</td>
+          <td>Heavy encumbered</td>
+      </tr>
+      <tr>
+          <td>35+ kg</td>
+          <td>60%</td>
+          <td>+100%</td>
+          <td>Severely slowed</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Strategic Decisions:</strong></p>
+<ul>
+<li>More loot = slower escape</li>
+<li>Drop items if chased</li>
+<li>Balance greed vs survival</li>
+</ul>
+<hr>
+<h2 id="player-trading--marketplace">Player Trading &amp; Marketplace<a class="anchor" href="#player-trading--marketplace">#</a></h2>
+<h3 id="direct-trading-post-launch-feature">Direct Trading (Post-Launch Feature)<a class="anchor" href="#direct-trading-post-launch-feature">#</a></h3>
+<p><strong>Face-to-Face Trading:</strong></p>
+<ul>
+<li>Players can trade in lobby</li>
+<li>Drag and drop items</li>
+<li>Both accept = complete trade</li>
+<li>No fees for direct trades</li>
+</ul>
+<p><strong>Safety Features:</strong></p>
+<ul>
+<li>Trade window shows both offers</li>
+<li>Confirmation required from both</li>
+<li>Cannot scam ifboth see everything</li>
+<li>Trade history logged</li>
+</ul>
+<hr>
+<h3 id="auction-house">Auction House<a class="anchor" href="#auction-house">#</a></h3>
+<p><strong>Listing Items:</strong></p>
+<ul>
+<li>List item for specific price</li>
+<li>Set buyout price (optional)</li>
+<li>Listing fee: 5% of starting bid</li>
+<li>Duration: 24, 48, or 72 hours</li>
+</ul>
+<p><strong>Bidding:</strong></p>
+<ul>
+<li>Players bid on items</li>
+<li>Automatic outbid notifications</li>
+<li>Last-minute extensions (anti-snipe)</li>
+<li>Highest bid wins</li>
+</ul>
+<p><strong>Fees:</strong></p>
+<ul>
+<li>Listing fee: 5% (non-refundable)</li>
+<li>Sale fee: 10% (from final sale price)</li>
+<li>Total cost: 15% to seller</li>
+<li>Purpose: Credit sink (prevent inflation)</li>
+</ul>
+<hr>
+<h3 id="market-dynamics">Market Dynamics<a class="anchor" href="#market-dynamics">#</a></h3>
+<p><strong>Supply &amp; Demand:</strong></p>
+<ul>
+<li>Prices fluctuate based on availability</li>
+<li>Rare items cost more</li>
+<li>Common items cheap</li>
+<li>Weekend events affect prices</li>
+</ul>
+<p><strong>Price Floors:</strong></p>
+<ul>
+<li>Minimum vendor price (prevents crashes)</li>
+<li>Prevents item value from hitting $0</li>
+<li>Maintains economic stability</li>
+</ul>
+<p><strong>Market Manipulation Prevention:</strong></p>
+<ul>
+<li>Transaction limits</li>
+<li>Price change limits (max 50% jump/day)</li>
+<li>Whale detection (large bulk buys flagged)</li>
+</ul>
+<hr>
+<h3 id="popular-trade-items">Popular Trade Items<a class="anchor" href="#popular-trade-items">#</a></h3>
+<p><strong>High-Demand Items:</strong></p>
+<ol>
+<li>Epic/Legendary weapons</li>
+<li>Rare keys</li>
+<li>Armor (always needed)</li>
+<li>Medical supplies (consumable)</li>
+<li>Crafting materials (bulk trading)</li>
+</ol>
+<p><strong>Profitable Flipping:</strong></p>
+<ul>
+<li>Buy low during high supply</li>
+<li>Sell high during scarcity</li>
+<li>Weekend events create opportunities</li>
+<li>Requires market knowledge</li>
+</ul>
+<hr>
+<h2 id="crafting-system-future-feature">Crafting System (Future Feature)<a class="anchor" href="#crafting-system-future-feature">#</a></h2>
+<h3 id="crafting-basics">Crafting Basics<a class="anchor" href="#crafting-basics">#</a></h3>
+<p><strong>Workbench (Stash):</strong></p>
+<ul>
+<li>Combine materials to create items</li>
+<li>Unlock recipes through progression</li>
+<li>Time-based (instant or wait)</li>
+</ul>
+<p><strong>Example Recipes:</strong></p>
+<p><strong>Medkit (Uncommon)</strong></p>
+<ul>
+<li>Materials: 5x Bandages + 2x Medical Supplies</li>
+<li>Craft Time: Instant</li>
+<li>Output: 1x Medkit</li>
+<li>Cost Savings: 20% vs buying</li>
+</ul>
+<p><strong>Rare Weapon (Customization)</strong></p>
+<ul>
+<li>Materials: Base weapon + 3x Rare Components + Attachments</li>
+<li>Craft Time: Instant</li>
+<li>Output: Weapon with pre-installed attachments</li>
+<li>Benefit: Saves attachment installation time</li>
+</ul>
+<p><strong>Armor Repair:</strong></p>
+<ul>
+<li>Materials: Damaged armor + Scrap Metal</li>
+<li>Output: Repaired armor (80% durability)</li>
+<li>Cheaper than buying new</li>
+</ul>
+<hr>
+<h2 id="economic-sinks--sources">Economic Sinks &amp; Sources<a class="anchor" href="#economic-sinks--sources">#</a></h2>
+<h3 id="credit-sources-inflow">Credit Sources (Inflow)<a class="anchor" href="#credit-sources-inflow">#</a></h3>
+<p><strong>Primary:</strong></p>
+<ul>
+<li>Extract loot and sell: $2,000-20,000 per match</li>
+<li>Quest rewards: $1,000-10,000 per quest</li>
+<li>Daily login: $500/day</li>
+<li>Level-up: $500-2,000 per level</li>
+</ul>
+<p><strong>Secondary:</strong></p>
+<ul>
+<li>Achievements: One-time bonuses</li>
+<li>Events: Limited-time earnings</li>
+<li>Referrals: $5,000 per friend (max 10)</li>
+</ul>
+<hr>
+<h3 id="credit-sinks-outflow">Credit Sinks (Outflow)<a class="anchor" href="#credit-sinks-outflow">#</a></h3>
+<p><strong>Primary:</strong></p>
+<ul>
+<li>Weapon purchases: $500-20,000</li>
+<li>Armor purchases: $800-15,000</li>
+<li>Medical supplies: $50-2,500</li>
+<li>Stash expansion: $10,000 per upgrade</li>
+</ul>
+<p><strong>Secondary:</strong></p>
+<ul>
+<li>Marketplace fees: 15% of transactions</li>
+<li>Name changes: $1,000</li>
+<li>Cosmetic purchases: $500-5,000</li>
+<li>Insurance (future): Based on gear value</li>
+</ul>
+<hr>
+<h3 id="anti-inflation-measures">Anti-Inflation Measures<a class="anchor" href="#anti-inflation-measures">#</a></h3>
+<p><strong>Item Loss on Death:</strong></p>
+<ul>
+<li>Largest credit sink</li>
+<li>Removes items from economy</li>
+<li>Creates constant demand</li>
+<li>Prevents supply saturation</li>
+</ul>
+<p><strong>Transaction Fees:</strong></p>
+<ul>
+<li>15% marketplace tax</li>
+<li>Prevents rapid flipping</li>
+<li>Stabilizes prices</li>
+<li>Removes credits from economy</li>
+</ul>
+<p><strong>Durability System (Future):</strong></p>
+<ul>
+<li>Weapons degrade with use</li>
+<li>Require repair or replacement</li>
+<li>Ongoing credit expenditure</li>
+<li>Balances high-tier weapon accessibility</li>
+</ul>
+<hr>
+<h2 id="item-insurance-future-feature">Item Insurance (Future Feature)<a class="anchor" href="#item-insurance-future-feature">#</a></h2>
+<h3 id="how-it-works">How It Works<a class="anchor" href="#how-it-works">#</a></h3>
+<p><strong>Pre-Match Insurance:</strong></p>
+<ul>
+<li>Pay fee (20-30% of item value)</li>
+<li>If you die, item returned (80% chance)</li>
+<li>24-hour wait for return</li>
+<li>Does NOT work if extracted by enemy</li>
+</ul>
+<p><strong>Benefits:</strong></p>
+<ul>
+<li>Reduce risk of expensive loadouts</li>
+<li>Encourage using good gear</li>
+<li>Still lose if looted by players</li>
+</ul>
+<p><strong>Limitations:</strong></p>
+<ul>
+<li>Only insured items returned</li>
+<li>Secure container items don&rsquo;t need insurance</li>
+<li>Max 3 insured items per match</li>
+</ul>
+<hr>
+<h2 id="black-market-future-pve-feature">Black Market (Future PvE Feature)<a class="anchor" href="#black-market-future-pve-feature">#</a></h2>
+<p><strong>Concept:</strong> High-risk AI trader in dangerous zones</p>
+<p><strong>How It Works:</strong></p>
+<ul>
+<li>NPC trader spawns in contaminated areas</li>
+<li>Sells Epic/Legendary items</li>
+<li>Accepts cash only (in-raid currency)</li>
+<li>Risk: PvP + contamination while shopping</li>
+</ul>
+<p><strong>Special Offers:</strong></p>
+<ul>
+<li>Rotating inventory</li>
+<li>Discounted rare items</li>
+<li>Exclusive black market weapons</li>
+<li>Intel items</li>
+</ul>
+<hr>
+<h2 id="season-al-economy-events">Season al Economy Events<a class="anchor" href="#season-al-economy-events">#</a></h2>
+<p><strong>Double Loot Weekend:</strong></p>
+<ul>
+<li>All containers have 2x loot</li>
+<li>Prices drop due to supply increase</li>
+<li>Good time to buy and stockpile</li>
+</ul>
+<p><strong>Rare Item Event:</strong></p>
+<ul>
+<li>Increased spawn rate of specific item type</li>
+<li>Example: &ldquo;Sniper Week&rdquo; - more snipers spawn</li>
+<li>Strategic selling window</li>
+</ul>
+<p><strong>Trader Special:</strong></p>
+<ul>
+<li>NPC vendors discount specific categories</li>
+<li>20-30% off selected items</li>
+<li>Limited-time offers</li>
+</ul>
+<hr>
+<h2 id="economic-balance-goals">Economic Balance Goals<a class="anchor" href="#economic-balance-goals">#</a></h2>
+<p><strong>Healthy Economy Indicators:</strong></p>
+<ul>
+<li>Average player wealth: $50,000-150,000</li>
+<li>Inflation rate: &lt;5% per month</li>
+<li>Market activity: 60%+ of players trade monthly</li>
+<li>Price stability: &lt;20% fluctuation week-to-week</li>
+</ul>
+<p><strong>Problem Indicators:</strong></p>
+<ul>
+<li>Hyperinflation (prices double monthly)</li>
+<li>Dead market (no trades happening)</li>
+<li>Wealth concentration (top 1% has 50%+ wealth)</li>
+<li>Item scarcity (specific items unobtainable)</li>
+</ul>
+<p><strong>Developer Interventions:</strong></p>
+<ul>
+<li>Adjust loot spawn rates</li>
+<li>Modify marketplace fees</li>
+<li>Special events to inject/remove credits</li>
+<li>Emergency balance patches</li>
+</ul>
+<hr>
+<p><strong><a href="./Weapons.md">← Previous: Weapons &amp; Combat</a></strong> | <strong><a href="./README.md">High-Level Index</a></strong></p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+<div>
+
+</div>
+
+<div>
+
+</div>
+
+</div>
+
+
+
+
+
+  
+  
+  
+  <div class="flex flex-wrap justify-between">
+    <span>
+    
+      <a href="/docs/GDD_Design/Characters/Tank/README/" class="flex align-center">
+        <img src="/icons/backward.svg" class="book-icon" alt="Backward" />
+        <span>Readme</span>
+      </a>
+    
+    </span>
+    <span>
+    
+      <a href="/docs/GDD_Design/Combat/Weapons/" class="flex align-center">
+        <span>Weapons</span>
+        <img src="/icons/forward.svg" class="book-icon" alt="Forward" />
+      </a>
+    
+    </span>
+  </div>
+  
+
+
+ 
+        
+  
+ 
+        
+        
+  
+ 
+        
+  
+  
+    <script>(function(){document.querySelectorAll("pre:has(code)").forEach(e=>{e.addEventListener("click",e.focus),e.addEventListener("copy",function(t){if(t.preventDefault(),navigator.clipboard){const t=window.getSelection().toString()||e.textContent;navigator.clipboard.writeText(t)}})})})()</script>
+  
+
+      </footer>
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+  
+  <aside class="book-toc">
+    <div class="book-toc-content">
+      
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#economy-philosophy">Economy Philosophy</a></li>
+    <li><a href="#item-categories">Item Categories</a>
+      <ul>
+        <li><a href="#1-weapons--attachments">1. Weapons &amp; Attachments</a></li>
+        <li><a href="#2-armor--protection">2. Armor &amp; Protection</a></li>
+        <li><a href="#3-backpacks--storage">3. Backpacks &amp; Storage</a></li>
+        <li><a href="#4-medical-supplies">4. Medical Supplies</a></li>
+        <li><a href="#5-consumables--utilities">5. Consumables &amp; Utilities</a></li>
+        <li><a href="#6-tactical-equipment">6. Tactical Equipment</a></li>
+        <li><a href="#7-keys--special-items">7. Keys &amp; Special Items</a></li>
+        <li><a href="#8-crafting-materials">8. Crafting Materials</a></li>
+        <li><a href="#9-quest-items">9. Quest Items</a></li>
+      </ul>
+    </li>
+    <li><a href="#items-reference-tables">Items Reference Tables</a>
+      <ul>
+        <li><a href="#armor--protection---complete-specifications">Armor &amp; Protection - Complete Specifications</a></li>
+        <li><a href="#backpacks--storage">Backpacks &amp; Storage</a></li>
+        <li><a href="#medical-supplies---complete-specifications">Medical Supplies - Complete Specifications</a></li>
+        <li><a href="#consumables--utilities">Consumables &amp; Utilities</a></li>
+        <li><a href="#tactical-equipment">Tactical Equipment</a></li>
+        <li><a href="#keys--special-items">Keys &amp; Special Items</a></li>
+        <li><a href="#crafting-materials">Crafting Materials</a></li>
+        <li><a href="#throwables--grenades">Throwables &amp; Grenades</a></li>
+        <li><a href="#quest--special-items">Quest &amp; Special Items</a></li>
+      </ul>
+    </li>
+    <li><a href="#loot-system">Loot System</a>
+      <ul>
+        <li><a href="#loot-spawn-mechanics">Loot Spawn Mechanics</a></li>
+        <li><a href="#loot-distribution-by-zone">Loot Distribution by Zone</a></li>
+        <li><a href="#dynamic-loot-scaling">Dynamic Loot Scaling</a></li>
+      </ul>
+    </li>
+    <li><a href="#inventory-management">Inventory Management</a>
+      <ul>
+        <li><a href="#grid-based-system">Grid-Based System</a></li>
+        <li><a href="#secure-container">Secure Container</a></li>
+        <li><a href="#weight--encumbrance">Weight &amp; Encumbrance</a></li>
+      </ul>
+    </li>
+    <li><a href="#player-trading--marketplace">Player Trading &amp; Marketplace</a>
+      <ul>
+        <li><a href="#direct-trading-post-launch-feature">Direct Trading (Post-Launch Feature)</a></li>
+        <li><a href="#auction-house">Auction House</a></li>
+        <li><a href="#market-dynamics">Market Dynamics</a></li>
+        <li><a href="#popular-trade-items">Popular Trade Items</a></li>
+      </ul>
+    </li>
+    <li><a href="#crafting-system-future-feature">Crafting System (Future Feature)</a>
+      <ul>
+        <li><a href="#crafting-basics">Crafting Basics</a></li>
+      </ul>
+    </li>
+    <li><a href="#economic-sinks--sources">Economic Sinks &amp; Sources</a>
+      <ul>
+        <li><a href="#credit-sources-inflow">Credit Sources (Inflow)</a></li>
+        <li><a href="#credit-sinks-outflow">Credit Sinks (Outflow)</a></li>
+        <li><a href="#anti-inflation-measures">Anti-Inflation Measures</a></li>
+      </ul>
+    </li>
+    <li><a href="#item-insurance-future-feature">Item Insurance (Future Feature)</a>
+      <ul>
+        <li><a href="#how-it-works">How It Works</a></li>
+      </ul>
+    </li>
+    <li><a href="#black-market-future-pve-feature">Black Market (Future PvE Feature)</a></li>
+    <li><a href="#season-al-economy-events">Season al Economy Events</a></li>
+    <li><a href="#economic-balance-goals">Economic Balance Goals</a></li>
+  </ul>
+</nav>
+
+
+
+    </div>
+  </aside>
+  
+ 
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

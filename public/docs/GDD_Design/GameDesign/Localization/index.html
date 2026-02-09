@@ -1,0 +1,3051 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=52224&amp;path=livereload" data-no-instant defer></script>
+  <!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Localization Strategy#← Back to Index | Next: Accessibility →
+🌍 Localization Philosophy#Core Principle: “Speak the player’s language, respect their culture”
+Localization is NOT just translation. It includes:
+Language translation - Text, voice, UI Cultural adaptation - References, humor, imagery Regional compliance - Laws, ratings, content restrictions Market customization - Pricing, events, partnerships 🗣️ Supported Languages#Launch Languages (Tier 1)#Language Code Region Priority Notes English en-US Global P0 Source language Simplified Chinese zh-CN China P0 Largest mobile market Japanese ja-JP Japan P0 High ARPU market Korean ko-KR South Korea P0 Competitive gaming culture Portuguese (BR) pt-BR Brazil P0 Largest LATAM market Post-Launch Languages (Tier 2)#Language Code Region Target Spanish (LATAM) es-MX Latin America Month 2 Spanish (Spain) es-ES Spain Month 2 German de-DE Germany Month 2 French fr-FR France Month 2 Russian ru-RU Russia/CIS Month 3 Traditional Chinese zh-TW Taiwan/HK Month 3 Thai th-TH Thailand Month 3 Vietnamese vi-VN Vietnam Month 3 Indonesian id-ID Indonesia Month 4 Turkish tr-TR Turkey Month 4 Arabic ar-SA MENA Month 6 Hindi hi-IN India Month 6 Future Languages (Tier 3)#Language Code Region Consideration Italian it-IT Italy Based on demand Polish pl-PL Poland Based on demand Dutch nl-NL Netherlands Based on demand Swedish sv-SE Scandinavia Based on demand 📝 Text Localization#Text Categories#Category Volume Update Frequency Priority UI Text ~2,000 strings Low (stable) P0 Gameplay Text ~3,000 strings Medium P0 Quest/Narrative ~10,000 strings High (new content) P1 Marketing ~500 strings Per campaign P1 Legal ~200 strings Per region P0 String Guidelines#DO:
+">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:52224/docs/GDD_Design/GameDesign/Localization/">
+  <meta property="og:site_name" content="Extraction Shooter GDD">
+  <meta property="og:title" content="Extraction Shooter GDD">
+  <meta property="og:description" content="Localization Strategy#← Back to Index | Next: Accessibility →
+🌍 Localization Philosophy#Core Principle: “Speak the player’s language, respect their culture”
+Localization is NOT just translation. It includes:
+Language translation - Text, voice, UI Cultural adaptation - References, humor, imagery Regional compliance - Laws, ratings, content restrictions Market customization - Pricing, events, partnerships 🗣️ Supported Languages#Launch Languages (Tier 1)#Language Code Region Priority Notes English en-US Global P0 Source language Simplified Chinese zh-CN China P0 Largest mobile market Japanese ja-JP Japan P0 High ARPU market Korean ko-KR South Korea P0 Competitive gaming culture Portuguese (BR) pt-BR Brazil P0 Largest LATAM market Post-Launch Languages (Tier 2)#Language Code Region Target Spanish (LATAM) es-MX Latin America Month 2 Spanish (Spain) es-ES Spain Month 2 German de-DE Germany Month 2 French fr-FR France Month 2 Russian ru-RU Russia/CIS Month 3 Traditional Chinese zh-TW Taiwan/HK Month 3 Thai th-TH Thailand Month 3 Vietnamese vi-VN Vietnam Month 3 Indonesian id-ID Indonesia Month 4 Turkish tr-TR Turkey Month 4 Arabic ar-SA MENA Month 6 Hindi hi-IN India Month 6 Future Languages (Tier 3)#Language Code Region Consideration Italian it-IT Italy Based on demand Polish pl-PL Poland Based on demand Dutch nl-NL Netherlands Based on demand Swedish sv-SE Scandinavia Based on demand 📝 Text Localization#Text Categories#Category Volume Update Frequency Priority UI Text ~2,000 strings Low (stable) P0 Gameplay Text ~3,000 strings Medium P0 Quest/Narrative ~10,000 strings High (new content) P1 Marketing ~500 strings Per campaign P1 Legal ~200 strings Per region P0 String Guidelines#DO:">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
+
+
+  <meta itemprop="name" content="Extraction Shooter GDD">
+  <meta itemprop="description" content="Localization Strategy#← Back to Index | Next: Accessibility →
+🌍 Localization Philosophy#Core Principle: “Speak the player’s language, respect their culture”
+Localization is NOT just translation. It includes:
+Language translation - Text, voice, UI Cultural adaptation - References, humor, imagery Regional compliance - Laws, ratings, content restrictions Market customization - Pricing, events, partnerships 🗣️ Supported Languages#Launch Languages (Tier 1)#Language Code Region Priority Notes English en-US Global P0 Source language Simplified Chinese zh-CN China P0 Largest mobile market Japanese ja-JP Japan P0 High ARPU market Korean ko-KR South Korea P0 Competitive gaming culture Portuguese (BR) pt-BR Brazil P0 Largest LATAM market Post-Launch Languages (Tier 2)#Language Code Region Target Spanish (LATAM) es-MX Latin America Month 2 Spanish (Spain) es-ES Spain Month 2 German de-DE Germany Month 2 French fr-FR France Month 2 Russian ru-RU Russia/CIS Month 3 Traditional Chinese zh-TW Taiwan/HK Month 3 Thai th-TH Thailand Month 3 Vietnamese vi-VN Vietnam Month 3 Indonesian id-ID Indonesia Month 4 Turkish tr-TR Turkey Month 4 Arabic ar-SA MENA Month 6 Hindi hi-IN India Month 6 Future Languages (Tier 3)#Language Code Region Consideration Italian it-IT Italy Based on demand Polish pl-PL Poland Based on demand Dutch nl-NL Netherlands Based on demand Swedish sv-SE Scandinavia Based on demand 📝 Text Localization#Text Categories#Category Volume Update Frequency Priority UI Text ~2,000 strings Low (stable) P0 Gameplay Text ~3,000 strings Medium P0 Quest/Narrative ~10,000 strings High (new content) P1 Marketing ~500 strings Per campaign P1 Legal ~200 strings Per region P0 String Guidelines#DO:">
+  <meta itemprop="wordCount" content="1097">
+
+<title>Localization | Extraction Shooter GDD</title>
+<link rel="icon" href="/favicon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="http://localhost:52224/docs/GDD_Design/GameDesign/Localization/">
+<link rel="stylesheet" href="/book.min.63c8b2b12bbd1ad36428837740ea371dd41fdb9c22b35499003d0dfa4dbce6ba.css" integrity="sha256-Y8iysSu9GtNkKIN3QOo3HdQf25wis1SZAD0N&#43;k285ro=" crossorigin="anonymous">
+
+
+  <script defer src="/fuse.min.js"></script>
+  <script defer src="/en.search.min.58bea27d7a08265548c5a8636a9a9fc844e0eb9d60fc3bb2c53d517da858d4c1.js" integrity="sha256-WL6ifXoIJlVIxahjapqfyETg651g/DuyxT1RfahY1ME=" crossorigin="anonymous"></script>
+
+  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
+
+
+
+  
+</head>
+<body dir="ltr" class="book-kind-page book-type-docs">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    
+<aside class="book-menu">
+  <div class="book-menu-content">
+    
+  <nav>
+    <h2 class="book-brand">
+  <a class="flex align-center" href="/"><img src="/logo.svg" alt="Logo" /><span>Extraction Shooter GDD</span>
+  </a>
+</h2>
+
+    <div class="book-theme-toggle">
+    <input type="checkbox" id="theme-toggle" class="toggle">
+    <label for="theme-toggle" class="flex justify-between items-center cursor-pointer">
+        <span class="text-xs font-semibold">Dark Mode</span>
+        <div
+            class="relative w-10 h-5 bg-gray-200 rounded-full transition-colors duration-200 ease-in-out dark:bg-gray-700">
+            <div
+                class="absolute left-0 w-5 h-5 bg-white rounded-full shadow transform transition-transform duration-200 ease-in-out dark:translate-x-full">
+            </div>
+        </div>
+    </label>
+</div>
+
+<script>
+    (function () {
+        const toggle = document.getElementById('theme-toggle');
+        const html = document.documentElement;
+
+        
+        const savedTheme = localStorage.getItem('theme');
+        const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+        if (savedTheme === 'dark' || (!savedTheme && systemDark)) {
+            html.classList.add('dark');
+            toggle.checked = true;
+        } else {
+            html.classList.remove('dark');
+            toggle.checked = false;
+        }
+
+        
+        toggle.addEventListener('change', function () {
+            if (this.checked) {
+                html.classList.add('dark');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                html.classList.remove('dark');
+                localStorage.setItem('theme', 'light');
+            }
+        });
+    })();
+</script>
+
+<style>
+     
+    .book-theme-toggle {
+        margin: 1rem 0;
+        padding: 0 1rem;
+
+    }
+
+    .book-theme-toggle label {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        cursor: pointer;
+        font-size: 0.85em;
+    }
+
+     
+    .book-theme-toggle input {
+        display: none;
+    }
+
+     
+    .book-theme-toggle label::after {
+        content: "🌙";
+         
+    }
+
+     
+    html:not(.dark) .book-theme-toggle label::after {
+        content: "☀️";
+         
+    }
+</style> 
+    
+<div class="book-search hidden">
+  <input id="book-search-input" type="text" 
+    placeholder="Search"
+    aria-label="Search"
+    maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+    
+
+    
+    
+
+
+
+    
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/" class="">
+      Gdd Design</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      AI</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/AI/EnemyBehavior/" class="">
+      Enemy Behavior</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/AI/FactionBehaviors/" class="">
+      Faction Behaviors</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Audio</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Audio/SoundDesign/" class="">
+      Sound Design</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Audio/Soundscape/" class="">
+      Soundscape</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Audio/TacticalAudio/" class="">
+      Tactical Audio</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Audio/VoiceLines/" class="">
+      Voice Lines</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Characters</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Operators/" class="">
+      Operators</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Assault</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Assault/Blaze/" class="">
+      Blaze</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Assault/Havoc/" class="">
+      Havoc</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Assault/README/" class="">
+      Readme</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Assault/Viper/" class="">
+      Viper</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Recon</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Recon/Phantom/" class="">
+      Phantom</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Recon/README/" class="">
+      Readme</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Recon/Specter/" class="">
+      Specter</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Recon/Wraith/" class="">
+      Wraith</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Specialist</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Specialist/Cipher/" class="">
+      Cipher</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Specialist/Flux/" class="">
+      Flux</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Specialist/README/" class="">
+      Readme</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Support</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Support/Angel/" class="">
+      Angel</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Support/Doc/" class="">
+      Doc</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Support/README/" class="">
+      Readme</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Tank</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Tank/Bulwark/" class="">
+      Bulwark</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Tank/Fortress/" class="">
+      Fortress</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Tank/README/" class="">
+      Readme</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Combat</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Combat/Items/" class="">
+      Items</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Combat/Weapons/" class="">
+      Weapons</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      GameDesign</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Accessibility/" class="">
+      Accessibility</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Controls/" class="">
+      Controls</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/CoreGameplay/" class="">
+      Core Gameplay</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Economy/" class="">
+      Economy</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/GameModes/" class="">
+      Game Modes</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/LiveOps/" class="">
+      Live Ops</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Localization/" class="active">
+      Localization</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/NavigationAndMap/" class="">
+      Navigation and Map</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Overview/" class="">
+      Overview</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Progression/" class="">
+      Progression</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/RankedMode/" class="">
+      Ranked Mode</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/TutorialRaid/" class="">
+      Tutorial Raid</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/UserSettings/" class="">
+      User Settings</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Gameplay</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Gameplay/CoreLoop/" class="">
+      Core Loop</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      ProjectScope</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/ProjectScope/DesignPillars/" class="">
+      Design Pillars</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/ProjectScope/MVP/" class="">
+      Mvp</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/ProjectScope/NonGoals/" class="">
+      Non Goals</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/ProjectScope/Risks/" class="">
+      Risks</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Social</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Social/Multiplayer/" class="">
+      Multiplayer</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Story</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Story/Backstory/" class="">
+      Backstory</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Story/Factions/" class="">
+      Factions</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Story/Narrative/" class="">
+      Narrative</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Story/QuestLines/" class="">
+      Quest Lines</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      UI UX</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/UI_UX/UX_Flows/" class="">
+      Ux Flows</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/UI_UX/Visual_Style/" class="">
+      Visual Style</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Visuals</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Visuals/ArtDirection/" class="">
+      Art Direction</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Visuals/AssetGuidelines/" class="">
+      Asset Guidelines</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Visuals/StyleGuide/" class="">
+      Style Guide</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Visuals/UserInterface/" class="">
+      User Interface</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      World</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/EnvironmentalNarrative/" class="">
+      Environmental Narrative</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/EnvironmentalNarrative_Guidelines/" class="">
+      Environmental Narrative Guidelines</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/LootDistribution/" class="">
+      Loot Distribution</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/MapDesign/" class="">
+      Map Design</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/MapDesign_IndustrialZone/" class="">
+      Map Design Industrial Zone</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/MapDesign_NeonSlums/" class="">
+      Map Design Neon Slums</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/MapDesign_Wilderness/" class="">
+      Map Design Wilderness</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/MapLayouts/" class="">
+      Map Layouts</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/" class="">
+      Gdd Technical</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      AI</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/AI/SensorySystem/" class="">
+      Sensory System</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Core</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Core/Architecture/" class="">
+      Architecture</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Core/CodingStandards/" class="">
+      Coding Standards</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Core/DevelopmentRoadmap/" class="">
+      Development Roadmap</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Core/NetworkingSystem/" class="">
+      Networking System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Core/SecuritySystem/" class="">
+      Security System</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Gameplay</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Gameplay/CharacterSystem/" class="">
+      Character System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Gameplay/ControlSystem/" class="">
+      Control System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Gameplay/InventorySystem/" class="">
+      Inventory System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Gameplay/WeaponSystem/" class="">
+      Weapon System</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Networking</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Networking/LagCompensation/" class="">
+      Lag Compensation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Networking/ReplicationStrategy/" class="">
+      Replication Strategy</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Performance</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Performance/Budgets/" class="">
+      Budgets</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Performance/Optimization/" class="">
+      Optimization</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Security</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Security/AntiCheatStrategy/" class="">
+      Anti Cheat Strategy</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Systems</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/AccessibilitySystem/" class="">
+      Accessibility System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/AISystem/" class="">
+      Aisystem</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/AnalyticsSystem/" class="">
+      Analytics System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/AudioSystem/" class="">
+      Audio System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/BuildPipeline/" class="">
+      Build Pipeline</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/LiveOpsSystem/" class="">
+      Live Ops System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/LocalizationSystem/" class="">
+      Localization System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/MapSystem/" class="">
+      Map System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/NarrativeSystem/" class="">
+      Narrative System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/ProgressionSystem/" class="">
+      Progression System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/RankedSystem/" class="">
+      Ranked System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/SaveSystem/" class="">
+      Save System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/SocialSystem/" class="">
+      Social System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/TutorialSystem/" class="">
+      Tutorial System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/UISystem/" class="">
+      Uisystem</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+</nav>
+
+
+
+
+<script>{ { . | safeJS } }</script>
+
+
+  </div>
+</aside>
+ 
+
+    <div class="book-page">
+      <header class="book-header hidden">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/icons/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <h3>Localization</h3>
+
+  <label for="toc-control">
+    
+    <img src="/icons/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#-localization-philosophy">🌍 Localization Philosophy</a></li>
+    <li><a href="#-supported-languages">🗣️ Supported Languages</a>
+      <ul>
+        <li><a href="#launch-languages-tier-1">Launch Languages (Tier 1)</a></li>
+        <li><a href="#post-launch-languages-tier-2">Post-Launch Languages (Tier 2)</a></li>
+        <li><a href="#future-languages-tier-3">Future Languages (Tier 3)</a></li>
+      </ul>
+    </li>
+    <li><a href="#-text-localization">📝 Text Localization</a>
+      <ul>
+        <li><a href="#text-categories">Text Categories</a></li>
+        <li><a href="#string-guidelines">String Guidelines</a></li>
+        <li><a href="#text-expansion-guidelines">Text Expansion Guidelines</a></li>
+        <li><a href="#localization-file-format">Localization File Format</a></li>
+      </ul>
+    </li>
+    <li><a href="#-voice-localization">🎙️ Voice Localization</a>
+      <ul>
+        <li><a href="#voice-strategy">Voice Strategy</a></li>
+        <li><a href="#voice-casting-guidelines">Voice Casting Guidelines</a></li>
+      </ul>
+    </li>
+    <li><a href="#-visual-localization">🎨 Visual Localization</a>
+      <ul>
+        <li><a href="#ui-adaptations">UI Adaptations</a></li>
+        <li><a href="#icon--image-localization">Icon &amp; Image Localization</a></li>
+        <li><a href="#font-requirements">Font Requirements</a></li>
+      </ul>
+    </li>
+    <li><a href="#-cultural-adaptation">🌐 Cultural Adaptation</a>
+      <ul>
+        <li><a href="#content-review-categories">Content Review Categories</a></li>
+        <li><a href="#holiday--event-localization">Holiday &amp; Event Localization</a></li>
+      </ul>
+    </li>
+    <li><a href="#-regional-pricing">💰 Regional Pricing</a>
+      <ul>
+        <li><a href="#price-tier-system">Price Tier System</a></li>
+        <li><a href="#currency-display">Currency Display</a></li>
+      </ul>
+    </li>
+    <li><a href="#-localization-process">📋 Localization Process</a>
+      <ul>
+        <li><a href="#workflow">Workflow</a></li>
+        <li><a href="#timeline-per-language">Timeline per Language</a></li>
+        <li><a href="#quality-metrics">Quality Metrics</a></li>
+      </ul>
+    </li>
+    <li><a href="#-technical-implementation">🔧 Technical Implementation</a>
+      <ul>
+        <li><a href="#localization-system">Localization System</a></li>
+        <li><a href="#asset-organization">Asset Organization</a></li>
+      </ul>
+    </li>
+    <li><a href="#-localization-metrics">📊 Localization Metrics</a>
+      <ul>
+        <li><a href="#per-language-kpis">Per-Language KPIs</a></li>
+        <li><a href="#localization-roi">Localization ROI</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><h1 id="localization-strategy">Localization Strategy<a class="anchor" href="#localization-strategy">#</a></h1>
+<p><strong><a href="../README.md">← Back to Index</a></strong> | <strong><a href="./Accessibility.md">Next: Accessibility →</a></strong></p>
+<hr>
+<h2 id="-localization-philosophy">🌍 Localization Philosophy<a class="anchor" href="#-localization-philosophy">#</a></h2>
+<p><strong>Core Principle:</strong> &ldquo;Speak the player&rsquo;s language, respect their culture&rdquo;</p>
+<p>Localization is NOT just translation. It includes:</p>
+<ul>
+<li><strong>Language translation</strong> - Text, voice, UI</li>
+<li><strong>Cultural adaptation</strong> - References, humor, imagery</li>
+<li><strong>Regional compliance</strong> - Laws, ratings, content restrictions</li>
+<li><strong>Market customization</strong> - Pricing, events, partnerships</li>
+</ul>
+<hr>
+<h2 id="-supported-languages">🗣️ Supported Languages<a class="anchor" href="#-supported-languages">#</a></h2>
+<h3 id="launch-languages-tier-1">Launch Languages (Tier 1)<a class="anchor" href="#launch-languages-tier-1">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Language</th>
+          <th style="text-align: left">Code</th>
+          <th style="text-align: left">Region</th>
+          <th style="text-align: left">Priority</th>
+          <th style="text-align: left">Notes</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><strong>English</strong></td>
+          <td style="text-align: left">en-US</td>
+          <td style="text-align: left">Global</td>
+          <td style="text-align: left">P0</td>
+          <td style="text-align: left">Source language</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Simplified Chinese</strong></td>
+          <td style="text-align: left">zh-CN</td>
+          <td style="text-align: left">China</td>
+          <td style="text-align: left">P0</td>
+          <td style="text-align: left">Largest mobile market</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Japanese</strong></td>
+          <td style="text-align: left">ja-JP</td>
+          <td style="text-align: left">Japan</td>
+          <td style="text-align: left">P0</td>
+          <td style="text-align: left">High ARPU market</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Korean</strong></td>
+          <td style="text-align: left">ko-KR</td>
+          <td style="text-align: left">South Korea</td>
+          <td style="text-align: left">P0</td>
+          <td style="text-align: left">Competitive gaming culture</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Portuguese (BR)</strong></td>
+          <td style="text-align: left">pt-BR</td>
+          <td style="text-align: left">Brazil</td>
+          <td style="text-align: left">P0</td>
+          <td style="text-align: left">Largest LATAM market</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="post-launch-languages-tier-2">Post-Launch Languages (Tier 2)<a class="anchor" href="#post-launch-languages-tier-2">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Language</th>
+          <th style="text-align: left">Code</th>
+          <th style="text-align: left">Region</th>
+          <th style="text-align: left">Target</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><strong>Spanish (LATAM)</strong></td>
+          <td style="text-align: left">es-MX</td>
+          <td style="text-align: left">Latin America</td>
+          <td style="text-align: left">Month 2</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Spanish (Spain)</strong></td>
+          <td style="text-align: left">es-ES</td>
+          <td style="text-align: left">Spain</td>
+          <td style="text-align: left">Month 2</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>German</strong></td>
+          <td style="text-align: left">de-DE</td>
+          <td style="text-align: left">Germany</td>
+          <td style="text-align: left">Month 2</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>French</strong></td>
+          <td style="text-align: left">fr-FR</td>
+          <td style="text-align: left">France</td>
+          <td style="text-align: left">Month 2</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Russian</strong></td>
+          <td style="text-align: left">ru-RU</td>
+          <td style="text-align: left">Russia/CIS</td>
+          <td style="text-align: left">Month 3</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Traditional Chinese</strong></td>
+          <td style="text-align: left">zh-TW</td>
+          <td style="text-align: left">Taiwan/HK</td>
+          <td style="text-align: left">Month 3</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Thai</strong></td>
+          <td style="text-align: left">th-TH</td>
+          <td style="text-align: left">Thailand</td>
+          <td style="text-align: left">Month 3</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Vietnamese</strong></td>
+          <td style="text-align: left">vi-VN</td>
+          <td style="text-align: left">Vietnam</td>
+          <td style="text-align: left">Month 3</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Indonesian</strong></td>
+          <td style="text-align: left">id-ID</td>
+          <td style="text-align: left">Indonesia</td>
+          <td style="text-align: left">Month 4</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Turkish</strong></td>
+          <td style="text-align: left">tr-TR</td>
+          <td style="text-align: left">Turkey</td>
+          <td style="text-align: left">Month 4</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Arabic</strong></td>
+          <td style="text-align: left">ar-SA</td>
+          <td style="text-align: left">MENA</td>
+          <td style="text-align: left">Month 6</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Hindi</strong></td>
+          <td style="text-align: left">hi-IN</td>
+          <td style="text-align: left">India</td>
+          <td style="text-align: left">Month 6</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="future-languages-tier-3">Future Languages (Tier 3)<a class="anchor" href="#future-languages-tier-3">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Language</th>
+          <th style="text-align: left">Code</th>
+          <th style="text-align: left">Region</th>
+          <th style="text-align: left">Consideration</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Italian</td>
+          <td style="text-align: left">it-IT</td>
+          <td style="text-align: left">Italy</td>
+          <td style="text-align: left">Based on demand</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Polish</td>
+          <td style="text-align: left">pl-PL</td>
+          <td style="text-align: left">Poland</td>
+          <td style="text-align: left">Based on demand</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Dutch</td>
+          <td style="text-align: left">nl-NL</td>
+          <td style="text-align: left">Netherlands</td>
+          <td style="text-align: left">Based on demand</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Swedish</td>
+          <td style="text-align: left">sv-SE</td>
+          <td style="text-align: left">Scandinavia</td>
+          <td style="text-align: left">Based on demand</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="-text-localization">📝 Text Localization<a class="anchor" href="#-text-localization">#</a></h2>
+<h3 id="text-categories">Text Categories<a class="anchor" href="#text-categories">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Category</th>
+          <th style="text-align: left">Volume</th>
+          <th style="text-align: left">Update Frequency</th>
+          <th style="text-align: left">Priority</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><strong>UI Text</strong></td>
+          <td style="text-align: left">~2,000 strings</td>
+          <td style="text-align: left">Low (stable)</td>
+          <td style="text-align: left">P0</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Gameplay Text</strong></td>
+          <td style="text-align: left">~3,000 strings</td>
+          <td style="text-align: left">Medium</td>
+          <td style="text-align: left">P0</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Quest/Narrative</strong></td>
+          <td style="text-align: left">~10,000 strings</td>
+          <td style="text-align: left">High (new content)</td>
+          <td style="text-align: left">P1</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Marketing</strong></td>
+          <td style="text-align: left">~500 strings</td>
+          <td style="text-align: left">Per campaign</td>
+          <td style="text-align: left">P1</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Legal</strong></td>
+          <td style="text-align: left">~200 strings</td>
+          <td style="text-align: left">Per region</td>
+          <td style="text-align: left">P0</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="string-guidelines">String Guidelines<a class="anchor" href="#string-guidelines">#</a></h3>
+<p><strong>DO:</strong></p>
+<pre tabindex="0"><code>✓ Use placeholder tokens: &#34;You earned {0} credits&#34;
+✓ Provide context notes: [Button label, max 10 chars]
+✓ Include plural forms: &#34;{0} item&#34; / &#34;{0} items&#34;
+✓ Handle gender where needed: &#34;He/She extracted&#34;
+✓ Keep strings modular: Avoid concatenation</code></pre><p><strong>DON&rsquo;T:</strong></p>
+<pre tabindex="0"><code>✗ Hardcode numbers: &#34;Kill 5 enemies&#34; → &#34;Kill {0} enemies&#34;
+✗ Embed formatting: &#34;KILL enemies&#34; → Mark as [UPPERCASE]
+✗ Use idioms blindly: &#34;Piece of cake&#34; → &#34;Easy task&#34;
+✗ Assume left-to-right: Support RTL layouts
+✗ Ignore text expansion: German is ~30% longer than English</code></pre><h3 id="text-expansion-guidelines">Text Expansion Guidelines<a class="anchor" href="#text-expansion-guidelines">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Source Language</th>
+          <th style="text-align: left">Average Expansion</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">English → German</td>
+          <td style="text-align: left">+30%</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">English → French</td>
+          <td style="text-align: left">+20%</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">English → Spanish</td>
+          <td style="text-align: left">+25%</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">English → Japanese</td>
+          <td style="text-align: left">-10% (but height needed)</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">English → Chinese</td>
+          <td style="text-align: left">-30% (but height needed)</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">English → Arabic</td>
+          <td style="text-align: left">+25% (plus RTL)</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>UI Design Consideration:</strong></p>
+<ul>
+<li>Buttons: Allow 150% text width</li>
+<li>Labels: Use dynamic sizing</li>
+<li>Tooltips: No fixed width</li>
+</ul>
+<h3 id="localization-file-format">Localization File Format<a class="anchor" href="#localization-file-format">#</a></h3>
+<p><strong>Structure (JSON example):</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;ui.button.play&#34;</span>: {
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;en-US&#34;</span>: <span style="color:#e6db74">&#34;PLAY&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;zh-CN&#34;</span>: <span style="color:#e6db74">&#34;开始游戏&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;ja-JP&#34;</span>: <span style="color:#e6db74">&#34;プレイ&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;context&#34;</span>: <span style="color:#e6db74">&#34;Main menu button, max 8 chars&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;maxLength&#34;</span>: <span style="color:#ae81ff">8</span>
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;gameplay.kill.notification&#34;</span>: {
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;en-US&#34;</span>: <span style="color:#e6db74">&#34;You eliminated {playerName}&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;zh-CN&#34;</span>: <span style="color:#e6db74">&#34;你击败了 {playerName}&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;ja-JP&#34;</span>: <span style="color:#e6db74">&#34;{playerName}を倒した&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;context&#34;</span>: <span style="color:#e6db74">&#34;Kill notification, {playerName} is victim&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;variables&#34;</span>: [<span style="color:#e6db74">&#34;playerName&#34;</span>]
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><hr>
+<h2 id="-voice-localization">🎙️ Voice Localization<a class="anchor" href="#-voice-localization">#</a></h2>
+<h3 id="voice-strategy">Voice Strategy<a class="anchor" href="#voice-strategy">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Content Type</th>
+          <th style="text-align: left">Localization Approach</th>
+          <th style="text-align: left">Languages</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><strong>Operator Voice Lines</strong></td>
+          <td style="text-align: left">Full dub</td>
+          <td style="text-align: left">Tier 1 only</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Quest NPC Dialogue</strong></td>
+          <td style="text-align: left">Full dub</td>
+          <td style="text-align: left">Tier 1 + Selected Tier 2</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Tutorial VO</strong></td>
+          <td style="text-align: left">Full dub</td>
+          <td style="text-align: left">All supported languages</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Announcer</strong></td>
+          <td style="text-align: left">Full dub</td>
+          <td style="text-align: left">Tier 1 only</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Ambient Chatter</strong></td>
+          <td style="text-align: left">Keep original (authenticity)</td>
+          <td style="text-align: left">N/A</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="voice-casting-guidelines">Voice Casting Guidelines<a class="anchor" href="#voice-casting-guidelines">#</a></h3>
+<p><strong>Operator Voices:</strong></p>
+<ul>
+<li>Match personality across languages</li>
+<li>Maintain age/gender consistency</li>
+<li>Allow regional accents (character backstory permitting)</li>
+<li>Record same emotional range</li>
+</ul>
+<p><strong>Recording Specs:</strong></p>
+<ul>
+<li>Format: WAV, 48kHz, 24-bit</li>
+<li>Environment: Professional studio, noise floor &lt; -60dB</li>
+<li>Delivery: Dry recordings, no processing</li>
+</ul>
+<hr>
+<h2 id="-visual-localization">🎨 Visual Localization<a class="anchor" href="#-visual-localization">#</a></h2>
+<h3 id="ui-adaptations">UI Adaptations<a class="anchor" href="#ui-adaptations">#</a></h3>
+<p><strong>Right-to-Left (RTL) Languages:</strong></p>
+<ul>
+<li>Arabic, Hebrew, Persian</li>
+<li>Mirror entire UI layout</li>
+<li>Keep numbers left-to-right</li>
+<li>Adjust text alignment</li>
+</ul>
+<p><strong>Vertical Text Support:</strong></p>
+<ul>
+<li>Japanese, Chinese, Korean can be vertical</li>
+<li>Currently: Horizontal only (no vertical mode planned)</li>
+</ul>
+<h3 id="icon--image-localization">Icon &amp; Image Localization<a class="anchor" href="#icon--image-localization">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Element</th>
+          <th style="text-align: left">Localization Required</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Universal icons (play, pause)</td>
+          <td style="text-align: left">No</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Text-in-image</td>
+          <td style="text-align: left">Yes (create variants)</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Cultural symbols</td>
+          <td style="text-align: left">Review per region</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Hand gestures</td>
+          <td style="text-align: left">Review (thumbs up OK globally)</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Colors</td>
+          <td style="text-align: left">Review (red = luck in China, danger in West)</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="font-requirements">Font Requirements<a class="anchor" href="#font-requirements">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Language</th>
+          <th style="text-align: left">Font Family</th>
+          <th style="text-align: left">Notes</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Latin-based</td>
+          <td style="text-align: left">Roboto, Inter</td>
+          <td style="text-align: left">Default</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Chinese</td>
+          <td style="text-align: left">Noto Sans SC/TC</td>
+          <td style="text-align: left">Full CJK support</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Japanese</td>
+          <td style="text-align: left">Noto Sans JP</td>
+          <td style="text-align: left">Full CJK support</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Korean</td>
+          <td style="text-align: left">Noto Sans KR</td>
+          <td style="text-align: left">Full CJK support</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Arabic</td>
+          <td style="text-align: left">Noto Sans Arabic</td>
+          <td style="text-align: left">RTL support</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Thai</td>
+          <td style="text-align: left">Noto Sans Thai</td>
+          <td style="text-align: left">Complex script</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Hindi</td>
+          <td style="text-align: left">Noto Sans Devanagari</td>
+          <td style="text-align: left">Complex script</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="-cultural-adaptation">🌐 Cultural Adaptation<a class="anchor" href="#-cultural-adaptation">#</a></h2>
+<h3 id="content-review-categories">Content Review Categories<a class="anchor" href="#content-review-categories">#</a></h3>
+<p><strong>Violence &amp; Gore:</strong></p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Region</th>
+          <th style="text-align: left">Consideration</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">China</td>
+          <td style="text-align: left">No blood/skulls, modify death animations</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Germany</td>
+          <td style="text-align: left">Review for USK rating</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Australia</td>
+          <td style="text-align: left">Review for ACB rating</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Japan</td>
+          <td style="text-align: left">CERO rating requirements</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Religious &amp; Political:</strong></p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Region</th>
+          <th style="text-align: left">Consideration</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Global</td>
+          <td style="text-align: left">Avoid real-world religious symbols</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">China</td>
+          <td style="text-align: left">No political references, map accuracy</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">MENA</td>
+          <td style="text-align: left">Review cultural sensitivities</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Gambling Mechanics:</strong></p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Region</th>
+          <th style="text-align: left">Consideration</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Belgium</td>
+          <td style="text-align: left">Loot boxes may require changes</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Netherlands</td>
+          <td style="text-align: left">Probability disclosure required</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">China</td>
+          <td style="text-align: left">Require probability disclosure</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Japan</td>
+          <td style="text-align: left">Gacha regulations apply</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="holiday--event-localization">Holiday &amp; Event Localization<a class="anchor" href="#holiday--event-localization">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Holiday</th>
+          <th style="text-align: left">Regions</th>
+          <th style="text-align: left">Adaptation</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Lunar New Year</td>
+          <td style="text-align: left">China, Korea, Vietnam</td>
+          <td style="text-align: left">Culturally accurate decorations</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Golden Week</td>
+          <td style="text-align: left">Japan</td>
+          <td style="text-align: left">Timing consideration</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Ramadan</td>
+          <td style="text-align: left">MENA</td>
+          <td style="text-align: left">Sensitive scheduling</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Christmas</td>
+          <td style="text-align: left">Western</td>
+          <td style="text-align: left">Optional, secular presentation</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Diwali</td>
+          <td style="text-align: left">India</td>
+          <td style="text-align: left">Future consideration</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="-regional-pricing">💰 Regional Pricing<a class="anchor" href="#-regional-pricing">#</a></h2>
+<h3 id="price-tier-system">Price Tier System<a class="anchor" href="#price-tier-system">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Tier</th>
+          <th style="text-align: left">Example Regions</th>
+          <th style="text-align: left">USD Equivalent</th>
+          <th style="text-align: left">Adjustment</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><strong>Tier 1</strong></td>
+          <td style="text-align: left">US, EU, Japan, Korea</td>
+          <td style="text-align: left">$9.99</td>
+          <td style="text-align: left">Baseline</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Tier 2</strong></td>
+          <td style="text-align: left">Brazil, Mexico, Russia</td>
+          <td style="text-align: left">~$5-7</td>
+          <td style="text-align: left">-30-50%</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Tier 3</strong></td>
+          <td style="text-align: left">SEA, India</td>
+          <td style="text-align: left">~$3-5</td>
+          <td style="text-align: left">-50-70%</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Tier 4</strong></td>
+          <td style="text-align: left">Developing markets</td>
+          <td style="text-align: left">~$1-3</td>
+          <td style="text-align: left">-70-90%</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="currency-display">Currency Display<a class="anchor" href="#currency-display">#</a></h3>
+<p><strong>Format by Region:</strong></p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Region</th>
+          <th style="text-align: left">Format Example</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">US</td>
+          <td style="text-align: left">$9.99</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">EU</td>
+          <td style="text-align: left">€9,99</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">UK</td>
+          <td style="text-align: left">£8.99</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Japan</td>
+          <td style="text-align: left">¥980</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Korea</td>
+          <td style="text-align: left">₩12,000</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Brazil</td>
+          <td style="text-align: left">R$29,99</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">China</td>
+          <td style="text-align: left">¥68.00 (CNY)</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="-localization-process">📋 Localization Process<a class="anchor" href="#-localization-process">#</a></h2>
+<h3 id="workflow">Workflow<a class="anchor" href="#workflow">#</a></h3>
+<pre tabindex="0"><code>1. String Freeze (Dev)
+   ├── All new strings marked for localization
+   └── Context and variables documented
+
+2. Export to TMS (Translation Management System)
+   ├── Strings extracted to platform
+   └── Assigned to translators
+
+3. Translation (External Partners)
+   ├── Professional translation
+   └── Native speaker review
+
+4. Import &amp; Integration (Dev)
+   ├── Strings imported to game
+   └── Build with localized content
+
+5. LQA (Localization QA)
+   ├── In-context testing
+   ├── Text fit verification
+   └── Cultural review
+
+6. Release
+   └── Localized build published</code></pre><h3 id="timeline-per-language">Timeline per Language<a class="anchor" href="#timeline-per-language">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Phase</th>
+          <th style="text-align: left">Duration</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Translation</td>
+          <td style="text-align: left">5-7 days</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Review</td>
+          <td style="text-align: left">2-3 days</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Integration</td>
+          <td style="text-align: left">1 day</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">LQA</td>
+          <td style="text-align: left">3-5 days</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Total</strong></td>
+          <td style="text-align: left"><strong>2-3 weeks per language</strong></td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="quality-metrics">Quality Metrics<a class="anchor" href="#quality-metrics">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Metric</th>
+          <th style="text-align: left">Target</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Translation accuracy</td>
+          <td style="text-align: left">98%+</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">UI text fit</td>
+          <td style="text-align: left">100%</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Cultural issues</td>
+          <td style="text-align: left">0 critical</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Player complaints (loc-related)</td>
+          <td style="text-align: left">&lt; 0.1% of tickets</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="-technical-implementation">🔧 Technical Implementation<a class="anchor" href="#-technical-implementation">#</a></h2>
+<h3 id="localization-system">Localization System<a class="anchor" href="#localization-system">#</a></h3>
+<p><strong>Runtime Language Switching:</strong></p>
+<ul>
+<li>Player can change language anytime</li>
+<li>UI updates immediately</li>
+<li>Voice requires restart (asset loading)</li>
+</ul>
+<p><strong>Fallback Logic:</strong></p>
+<pre tabindex="0"><code>Player language preference
+    ↓
+Exact match (zh-CN)
+    ↓ (if not available)
+Language family match (zh → zh-TW)
+    ↓ (if not available)
+English fallback (en-US)</code></pre><h3 id="asset-organization">Asset Organization<a class="anchor" href="#asset-organization">#</a></h3>
+<pre tabindex="0"><code>/Localization/
+├── /Strings/
+│   ├── en-US.json
+│   ├── zh-CN.json
+│   └── ja-JP.json
+├── /Audio/
+│   ├── /en-US/
+│   ├── /zh-CN/
+│   └── /ja-JP/
+├── /Fonts/
+│   ├── Latin.ttf
+│   ├── CJK.ttf
+│   └── Arabic.ttf
+└── /Images/
+    ├── /en-US/
+    └── /zh-CN/</code></pre><hr>
+<h2 id="-localization-metrics">📊 Localization Metrics<a class="anchor" href="#-localization-metrics">#</a></h2>
+<h3 id="per-language-kpis">Per-Language KPIs<a class="anchor" href="#per-language-kpis">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Metric</th>
+          <th style="text-align: left">How to Measure</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Market penetration</td>
+          <td style="text-align: left">Players by language</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Revenue by language</td>
+          <td style="text-align: left">IAP per language</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Retention by language</td>
+          <td style="text-align: left">D7/D30 per language</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Support tickets (loc)</td>
+          <td style="text-align: left">Tickets mentioning translation</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Community sentiment</td>
+          <td style="text-align: left">Forum/social feedback</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="localization-roi">Localization ROI<a class="anchor" href="#localization-roi">#</a></h3>
+<p><strong>Expected Impact:</strong></p>
+<ul>
+<li>Localized markets typically see 2-5x higher conversion</li>
+<li>Voice localization adds 10-20% engagement</li>
+<li>Poor localization = negative reviews, lower ratings</li>
+</ul>
+<hr>
+<p><strong><a href="../README.md">← Back to Index</a></strong> | <strong><a href="./Accessibility.md">Next: Accessibility →</a></strong></p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+<div>
+
+</div>
+
+<div>
+
+</div>
+
+</div>
+
+
+
+
+
+  
+  
+  
+  <div class="flex flex-wrap justify-between">
+    <span>
+    
+      <a href="/docs/GDD_Design/GameDesign/LiveOps/" class="flex align-center">
+        <img src="/icons/backward.svg" class="book-icon" alt="Backward" />
+        <span>Live Ops</span>
+      </a>
+    
+    </span>
+    <span>
+    
+      <a href="/docs/GDD_Design/GameDesign/NavigationAndMap/" class="flex align-center">
+        <span>Navigation and Map</span>
+        <img src="/icons/forward.svg" class="book-icon" alt="Forward" />
+      </a>
+    
+    </span>
+  </div>
+  
+
+
+ 
+        
+  
+ 
+        
+        
+  
+ 
+        
+  
+  
+    <script>(function(){document.querySelectorAll("pre:has(code)").forEach(e=>{e.addEventListener("click",e.focus),e.addEventListener("copy",function(t){if(t.preventDefault(),navigator.clipboard){const t=window.getSelection().toString()||e.textContent;navigator.clipboard.writeText(t)}})})})()</script>
+  
+
+      </footer>
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+  
+  <aside class="book-toc">
+    <div class="book-toc-content">
+      
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#-localization-philosophy">🌍 Localization Philosophy</a></li>
+    <li><a href="#-supported-languages">🗣️ Supported Languages</a>
+      <ul>
+        <li><a href="#launch-languages-tier-1">Launch Languages (Tier 1)</a></li>
+        <li><a href="#post-launch-languages-tier-2">Post-Launch Languages (Tier 2)</a></li>
+        <li><a href="#future-languages-tier-3">Future Languages (Tier 3)</a></li>
+      </ul>
+    </li>
+    <li><a href="#-text-localization">📝 Text Localization</a>
+      <ul>
+        <li><a href="#text-categories">Text Categories</a></li>
+        <li><a href="#string-guidelines">String Guidelines</a></li>
+        <li><a href="#text-expansion-guidelines">Text Expansion Guidelines</a></li>
+        <li><a href="#localization-file-format">Localization File Format</a></li>
+      </ul>
+    </li>
+    <li><a href="#-voice-localization">🎙️ Voice Localization</a>
+      <ul>
+        <li><a href="#voice-strategy">Voice Strategy</a></li>
+        <li><a href="#voice-casting-guidelines">Voice Casting Guidelines</a></li>
+      </ul>
+    </li>
+    <li><a href="#-visual-localization">🎨 Visual Localization</a>
+      <ul>
+        <li><a href="#ui-adaptations">UI Adaptations</a></li>
+        <li><a href="#icon--image-localization">Icon &amp; Image Localization</a></li>
+        <li><a href="#font-requirements">Font Requirements</a></li>
+      </ul>
+    </li>
+    <li><a href="#-cultural-adaptation">🌐 Cultural Adaptation</a>
+      <ul>
+        <li><a href="#content-review-categories">Content Review Categories</a></li>
+        <li><a href="#holiday--event-localization">Holiday &amp; Event Localization</a></li>
+      </ul>
+    </li>
+    <li><a href="#-regional-pricing">💰 Regional Pricing</a>
+      <ul>
+        <li><a href="#price-tier-system">Price Tier System</a></li>
+        <li><a href="#currency-display">Currency Display</a></li>
+      </ul>
+    </li>
+    <li><a href="#-localization-process">📋 Localization Process</a>
+      <ul>
+        <li><a href="#workflow">Workflow</a></li>
+        <li><a href="#timeline-per-language">Timeline per Language</a></li>
+        <li><a href="#quality-metrics">Quality Metrics</a></li>
+      </ul>
+    </li>
+    <li><a href="#-technical-implementation">🔧 Technical Implementation</a>
+      <ul>
+        <li><a href="#localization-system">Localization System</a></li>
+        <li><a href="#asset-organization">Asset Organization</a></li>
+      </ul>
+    </li>
+    <li><a href="#-localization-metrics">📊 Localization Metrics</a>
+      <ul>
+        <li><a href="#per-language-kpis">Per-Language KPIs</a></li>
+        <li><a href="#localization-roi">Localization ROI</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+    </div>
+  </aside>
+  
+ 
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

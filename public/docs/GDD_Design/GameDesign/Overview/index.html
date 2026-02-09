@@ -1,0 +1,3061 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=52224&amp;path=livereload" data-no-instant defer></script>
+  <!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Game Overview &amp; Design Foundation#← Back to Index | Next: Core Gameplay →
+Executive Summary#Extraction Topdown Mobile Multiplayer is a hardcore tactical extraction shooter designed specifically for mobile platforms, combining the tension of games like Escape from Tarkov with the accessibility and session length suited for mobile gaming.
+Core Hook: Every raid risks everything. Extract with fortune or lose it all.
+Game Concept#Elevator Pitch#“Escape from Tarkov meets mobile gaming - a top-down tactical extraction shooter where every decision matters, every death hurts, and every successful extraction feels earned.”
+">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:52224/docs/GDD_Design/GameDesign/Overview/">
+  <meta property="og:site_name" content="Extraction Shooter GDD">
+  <meta property="og:title" content="Extraction Shooter GDD">
+  <meta property="og:description" content="Game Overview &amp; Design Foundation#← Back to Index | Next: Core Gameplay →
+Executive Summary#Extraction Topdown Mobile Multiplayer is a hardcore tactical extraction shooter designed specifically for mobile platforms, combining the tension of games like Escape from Tarkov with the accessibility and session length suited for mobile gaming.
+Core Hook: Every raid risks everything. Extract with fortune or lose it all.
+Game Concept#Elevator Pitch#“Escape from Tarkov meets mobile gaming - a top-down tactical extraction shooter where every decision matters, every death hurts, and every successful extraction feels earned.”">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
+
+
+  <meta itemprop="name" content="Extraction Shooter GDD">
+  <meta itemprop="description" content="Game Overview &amp; Design Foundation#← Back to Index | Next: Core Gameplay →
+Executive Summary#Extraction Topdown Mobile Multiplayer is a hardcore tactical extraction shooter designed specifically for mobile platforms, combining the tension of games like Escape from Tarkov with the accessibility and session length suited for mobile gaming.
+Core Hook: Every raid risks everything. Extract with fortune or lose it all.
+Game Concept#Elevator Pitch#“Escape from Tarkov meets mobile gaming - a top-down tactical extraction shooter where every decision matters, every death hurts, and every successful extraction feels earned.”">
+  <meta itemprop="wordCount" content="2993">
+
+<title>Overview | Extraction Shooter GDD</title>
+<link rel="icon" href="/favicon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="http://localhost:52224/docs/GDD_Design/GameDesign/Overview/">
+<link rel="stylesheet" href="/book.min.63c8b2b12bbd1ad36428837740ea371dd41fdb9c22b35499003d0dfa4dbce6ba.css" integrity="sha256-Y8iysSu9GtNkKIN3QOo3HdQf25wis1SZAD0N&#43;k285ro=" crossorigin="anonymous">
+
+
+  <script defer src="/fuse.min.js"></script>
+  <script defer src="/en.search.min.58bea27d7a08265548c5a8636a9a9fc844e0eb9d60fc3bb2c53d517da858d4c1.js" integrity="sha256-WL6ifXoIJlVIxahjapqfyETg651g/DuyxT1RfahY1ME=" crossorigin="anonymous"></script>
+
+  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
+
+
+
+  
+</head>
+<body dir="ltr" class="book-kind-page book-type-docs">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    
+<aside class="book-menu">
+  <div class="book-menu-content">
+    
+  <nav>
+    <h2 class="book-brand">
+  <a class="flex align-center" href="/"><img src="/logo.svg" alt="Logo" /><span>Extraction Shooter GDD</span>
+  </a>
+</h2>
+
+    <div class="book-theme-toggle">
+    <input type="checkbox" id="theme-toggle" class="toggle">
+    <label for="theme-toggle" class="flex justify-between items-center cursor-pointer">
+        <span class="text-xs font-semibold">Dark Mode</span>
+        <div
+            class="relative w-10 h-5 bg-gray-200 rounded-full transition-colors duration-200 ease-in-out dark:bg-gray-700">
+            <div
+                class="absolute left-0 w-5 h-5 bg-white rounded-full shadow transform transition-transform duration-200 ease-in-out dark:translate-x-full">
+            </div>
+        </div>
+    </label>
+</div>
+
+<script>
+    (function () {
+        const toggle = document.getElementById('theme-toggle');
+        const html = document.documentElement;
+
+        
+        const savedTheme = localStorage.getItem('theme');
+        const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+        if (savedTheme === 'dark' || (!savedTheme && systemDark)) {
+            html.classList.add('dark');
+            toggle.checked = true;
+        } else {
+            html.classList.remove('dark');
+            toggle.checked = false;
+        }
+
+        
+        toggle.addEventListener('change', function () {
+            if (this.checked) {
+                html.classList.add('dark');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                html.classList.remove('dark');
+                localStorage.setItem('theme', 'light');
+            }
+        });
+    })();
+</script>
+
+<style>
+     
+    .book-theme-toggle {
+        margin: 1rem 0;
+        padding: 0 1rem;
+
+    }
+
+    .book-theme-toggle label {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        cursor: pointer;
+        font-size: 0.85em;
+    }
+
+     
+    .book-theme-toggle input {
+        display: none;
+    }
+
+     
+    .book-theme-toggle label::after {
+        content: "🌙";
+         
+    }
+
+     
+    html:not(.dark) .book-theme-toggle label::after {
+        content: "☀️";
+         
+    }
+</style> 
+    
+<div class="book-search hidden">
+  <input id="book-search-input" type="text" 
+    placeholder="Search"
+    aria-label="Search"
+    maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+    
+
+    
+    
+
+
+
+    
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/" class="">
+      Gdd Design</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      AI</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/AI/EnemyBehavior/" class="">
+      Enemy Behavior</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/AI/FactionBehaviors/" class="">
+      Faction Behaviors</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Audio</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Audio/SoundDesign/" class="">
+      Sound Design</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Audio/Soundscape/" class="">
+      Soundscape</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Audio/TacticalAudio/" class="">
+      Tactical Audio</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Audio/VoiceLines/" class="">
+      Voice Lines</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Characters</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Operators/" class="">
+      Operators</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Assault</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Assault/Blaze/" class="">
+      Blaze</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Assault/Havoc/" class="">
+      Havoc</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Assault/README/" class="">
+      Readme</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Assault/Viper/" class="">
+      Viper</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Recon</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Recon/Phantom/" class="">
+      Phantom</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Recon/README/" class="">
+      Readme</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Recon/Specter/" class="">
+      Specter</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Recon/Wraith/" class="">
+      Wraith</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Specialist</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Specialist/Cipher/" class="">
+      Cipher</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Specialist/Flux/" class="">
+      Flux</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Specialist/README/" class="">
+      Readme</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Support</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Support/Angel/" class="">
+      Angel</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Support/Doc/" class="">
+      Doc</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Support/README/" class="">
+      Readme</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Tank</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Tank/Bulwark/" class="">
+      Bulwark</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Tank/Fortress/" class="">
+      Fortress</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Tank/README/" class="">
+      Readme</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Combat</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Combat/Items/" class="">
+      Items</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Combat/Weapons/" class="">
+      Weapons</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      GameDesign</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Accessibility/" class="">
+      Accessibility</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Controls/" class="">
+      Controls</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/CoreGameplay/" class="">
+      Core Gameplay</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Economy/" class="">
+      Economy</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/GameModes/" class="">
+      Game Modes</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/LiveOps/" class="">
+      Live Ops</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Localization/" class="">
+      Localization</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/NavigationAndMap/" class="">
+      Navigation and Map</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Overview/" class="active">
+      Overview</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Progression/" class="">
+      Progression</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/RankedMode/" class="">
+      Ranked Mode</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/TutorialRaid/" class="">
+      Tutorial Raid</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/UserSettings/" class="">
+      User Settings</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Gameplay</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Gameplay/CoreLoop/" class="">
+      Core Loop</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      ProjectScope</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/ProjectScope/DesignPillars/" class="">
+      Design Pillars</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/ProjectScope/MVP/" class="">
+      Mvp</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/ProjectScope/NonGoals/" class="">
+      Non Goals</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/ProjectScope/Risks/" class="">
+      Risks</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Social</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Social/Multiplayer/" class="">
+      Multiplayer</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Story</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Story/Backstory/" class="">
+      Backstory</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Story/Factions/" class="">
+      Factions</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Story/Narrative/" class="">
+      Narrative</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Story/QuestLines/" class="">
+      Quest Lines</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      UI UX</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/UI_UX/UX_Flows/" class="">
+      Ux Flows</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/UI_UX/Visual_Style/" class="">
+      Visual Style</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Visuals</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Visuals/ArtDirection/" class="">
+      Art Direction</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Visuals/AssetGuidelines/" class="">
+      Asset Guidelines</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Visuals/StyleGuide/" class="">
+      Style Guide</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Visuals/UserInterface/" class="">
+      User Interface</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      World</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/EnvironmentalNarrative/" class="">
+      Environmental Narrative</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/EnvironmentalNarrative_Guidelines/" class="">
+      Environmental Narrative Guidelines</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/LootDistribution/" class="">
+      Loot Distribution</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/MapDesign/" class="">
+      Map Design</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/MapDesign_IndustrialZone/" class="">
+      Map Design Industrial Zone</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/MapDesign_NeonSlums/" class="">
+      Map Design Neon Slums</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/MapDesign_Wilderness/" class="">
+      Map Design Wilderness</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/MapLayouts/" class="">
+      Map Layouts</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/" class="">
+      Gdd Technical</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      AI</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/AI/SensorySystem/" class="">
+      Sensory System</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Core</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Core/Architecture/" class="">
+      Architecture</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Core/CodingStandards/" class="">
+      Coding Standards</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Core/DevelopmentRoadmap/" class="">
+      Development Roadmap</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Core/NetworkingSystem/" class="">
+      Networking System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Core/SecuritySystem/" class="">
+      Security System</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Gameplay</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Gameplay/CharacterSystem/" class="">
+      Character System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Gameplay/ControlSystem/" class="">
+      Control System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Gameplay/InventorySystem/" class="">
+      Inventory System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Gameplay/WeaponSystem/" class="">
+      Weapon System</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Networking</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Networking/LagCompensation/" class="">
+      Lag Compensation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Networking/ReplicationStrategy/" class="">
+      Replication Strategy</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Performance</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Performance/Budgets/" class="">
+      Budgets</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Performance/Optimization/" class="">
+      Optimization</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Security</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Security/AntiCheatStrategy/" class="">
+      Anti Cheat Strategy</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Systems</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/AccessibilitySystem/" class="">
+      Accessibility System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/AISystem/" class="">
+      Aisystem</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/AnalyticsSystem/" class="">
+      Analytics System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/AudioSystem/" class="">
+      Audio System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/BuildPipeline/" class="">
+      Build Pipeline</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/LiveOpsSystem/" class="">
+      Live Ops System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/LocalizationSystem/" class="">
+      Localization System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/MapSystem/" class="">
+      Map System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/NarrativeSystem/" class="">
+      Narrative System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/ProgressionSystem/" class="">
+      Progression System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/RankedSystem/" class="">
+      Ranked System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/SaveSystem/" class="">
+      Save System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/SocialSystem/" class="">
+      Social System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/TutorialSystem/" class="">
+      Tutorial System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/UISystem/" class="">
+      Uisystem</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+</nav>
+
+
+
+
+<script>{ { . | safeJS } }</script>
+
+
+  </div>
+</aside>
+ 
+
+    <div class="book-page">
+      <header class="book-header hidden">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/icons/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <h3>Overview</h3>
+
+  <label for="toc-control">
+    
+    <img src="/icons/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#executive-summary">Executive Summary</a></li>
+    <li><a href="#game-concept">Game Concept</a>
+      <ul>
+        <li><a href="#elevator-pitch">Elevator Pitch</a></li>
+        <li><a href="#high-concept-statement">High Concept Statement</a></li>
+      </ul>
+    </li>
+    <li><a href="#unique-selling-points-usp">Unique Selling Points (USP)</a>
+      <ul>
+        <li><a href="#1-true-extraction-mechanics-on-mobile-first-of-its-kind">1. True Extraction Mechanics on Mobile (First of Its Kind)</a></li>
+        <li><a href="#2-permanent-loss-system-the-core-mechanic">2. Permanent Loss System (THE Core Mechanic)</a></li>
+        <li><a href="#3-top-down-perspective-strategic-advantage">3. Top-Down Perspective (Strategic Advantage)</a></li>
+        <li><a href="#4-mobile-first-design-philosophy">4. Mobile-First Design Philosophy</a></li>
+      </ul>
+    </li>
+    <li><a href="#core-design-pillars">Core Design Pillars</a>
+      <ul>
+        <li><a href="#pillar-1-task-driven-agency-meaningful-choices">Pillar #1: Task-Driven Agency (Meaningful Choices)</a></li>
+        <li><a href="#pillar-2-risk-of-loss--reward-high-stakes-tension">Pillar #2: Risk of Loss &amp; Reward (High-Stakes Tension)</a></li>
+        <li><a href="#pillar-3-survival--tactical-depth-tactical-fluidity">Pillar #3: Survival &amp; Tactical Depth (Tactical Fluidity)</a></li>
+        <li><a href="#pillar-4-persistent-progression-progression-tree--world">Pillar #4: Persistent Progression (Progression Tree &amp; World)</a></li>
+        <li><a href="#pillar-5-environmental-narratives-the-living-world">Pillar #5: Environmental Narratives (The Living World)</a></li>
+      </ul>
+    </li>
+    <li><a href="#target-audience-deep-dive">Target Audience Deep Dive</a>
+      <ul>
+        <li><a href="#primary-persona-hardcore-mobile-gamer">Primary Persona: &ldquo;Hardcore Mobile Gamer&rdquo;</a></li>
+        <li><a href="#secondary-persona-pc-gamer-going-mobile">Secondary Persona: &ldquo;PC Gamer Going Mobile&rdquo;</a></li>
+      </ul>
+    </li>
+    <li><a href="#competitive-landscape-analysis">Competitive Landscape Analysis</a>
+      <ul>
+        <li><a href="#direct-competitors-extraction-genre">Direct Competitors (Extraction Genre)</a></li>
+        <li><a href="#indirect-competitors-mobile-shooters">Indirect Competitors (Mobile Shooters)</a></li>
+      </ul>
+    </li>
+    <li><a href="#game-world--narrative">Game World &amp; Narrative</a>
+      <ul>
+        <li><a href="#setting-aethelgard-post-collapse-industrial-zones">Setting: Aethelgard (Post-Collapse Industrial Zones)</a></li>
+        <li><a href="#factions-not-playable-quest-givers">Factions (Not Playable, Quest Givers)</a></li>
+        <li><a href="#tone--atmosphere">Tone &amp; Atmosphere</a></li>
+      </ul>
+    </li>
+    <li><a href="#monetization-philosophy">Monetization Philosophy</a>
+      <ul>
+        <li><a href="#free-to-play-never-pay-to-win">Free-to-Play, Never Pay-to-Win</a></li>
+      </ul>
+    </li>
+    <li><a href="#-marketing--distribution-strategy">🌎 Marketing &amp; Distribution Strategy</a>
+      <ul>
+        <li><a href="#target-markets">Target Markets</a></li>
+        <li><a href="#distribution-channels">Distribution Channels</a></li>
+        <li><a href="#go-to-market-plan">Go-To-Market Plan</a></li>
+      </ul>
+    </li>
+    <li><a href="#-document-ownership--changelog">📝 Document Ownership &amp; Changelog</a></li>
+    <li><a href="#success-metrics--kpis">Success Metrics &amp; KPIs</a>
+      <ul>
+        <li><a href="#engagement-metrics">Engagement Metrics</a></li>
+        <li><a href="#balance-metrics">Balance Metrics</a></li>
+        <li><a href="#economy-health">Economy Health</a></li>
+      </ul>
+    </li>
+    <li><a href="#development--design-constraints">Development &amp; Design Constraints</a>
+      <ul>
+        <li><a href="#technical-constraints">Technical Constraints</a></li>
+        <li><a href="#design-constraints">Design Constraints</a></li>
+      </ul>
+    </li>
+    <li><a href="#risk-mitigation">Risk Mitigation</a>
+      <ul>
+        <li><a href="#design-risks">Design Risks</a></li>
+      </ul>
+    </li>
+    <li><a href="#future-vision--roadmap">Future Vision &amp; Roadmap</a>
+      <ul>
+        <li><a href="#launch-version-10">Launch (Version 1.0)</a></li>
+        <li><a href="#year-1-post-launch">Year 1 Post-Launch</a></li>
+        <li><a href="#year-2-long-term">Year 2+ Long-Term</a></li>
+      </ul>
+    </li>
+    <li><a href="#core-design-philosophy-summary">Core Design Philosophy Summary</a></li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><h1 id="game-overview--design-foundation">Game Overview &amp; Design Foundation<a class="anchor" href="#game-overview--design-foundation">#</a></h1>
+<p><strong><a href="../README.md">← Back to Index</a></strong> | <strong><a href="./CoreGameplay.md">Next: Core Gameplay →</a></strong></p>
+<hr>
+<h2 id="executive-summary">Executive Summary<a class="anchor" href="#executive-summary">#</a></h2>
+<p><strong>Extraction Topdown Mobile Multiplayer</strong> is a hardcore tactical extraction shooter designed specifically for mobile platforms, combining the tension of games like Escape from Tarkov with the accessibility and session length suited for mobile gaming.</p>
+<p><strong>Core Hook:</strong> <em>Every raid risks everything. Extract with fortune or lose it all.</em></p>
+<hr>
+<h2 id="game-concept">Game Concept<a class="anchor" href="#game-concept">#</a></h2>
+<h3 id="elevator-pitch">Elevator Pitch<a class="anchor" href="#elevator-pitch">#</a></h3>
+<p>&ldquo;Escape from Tarkov meets mobile gaming - a top-down tactical extraction shooter where every decision matters, every death hurts, and every successful extraction feels earned.&rdquo;</p>
+<h3 id="high-concept-statement">High Concept Statement<a class="anchor" href="#high-concept-statement">#</a></h3>
+<blockquote class='book-hint '>
+<p>&ldquo;The Dark Souls of mobile extraction shooters - where strategic depth, permanent loss, and meaningful player choices create an addictive, high-stakes gameplay experience optimized for touch controls and mobile sessions.&rdquo;</p>
+</blockquote><hr>
+<h2 id="unique-selling-points-usp">Unique Selling Points (USP)<a class="anchor" href="#unique-selling-points-usp">#</a></h2>
+<h3 id="1-true-extraction-mechanics-on-mobile-first-of-its-kind">1. True Extraction Mechanics on Mobile (First of Its Kind)<a class="anchor" href="#1-true-extraction-mechanics-on-mobile-first-of-its-kind">#</a></h3>
+<p><strong>Market Gap:</strong></p>
+<ul>
+<li><strong>PC:</strong> Tarkov, The Cycle → Hardcore but not portable</li>
+<li><strong>Mobile:</strong> PUBG, COD Mobile → Battle Royale, not extraction</li>
+<li><strong>Our Solution:</strong> Genuine extraction shooter built for mobile</li>
+</ul>
+<p><strong>Key Differentiators:</strong></p>
+<pre tabindex="0"><code>Traditional Mobile Shooters  |  Our Game
+────────────────────────────────────────────
+• Start equal each match     |  • Bring your own gear
+• Battle Royale format        |  • Extraction-based
+• Casual, fast-paced          |  • Tactical, high-stakes
+• No permanent progression    |  • Persistent economy
+• Low consequence             |  • Meaningful death penalty</code></pre><hr>
+<h3 id="2-permanent-loss-system-the-core-mechanic">2. Permanent Loss System (THE Core Mechanic)<a class="anchor" href="#2-permanent-loss-system-the-core-mechanic">#</a></h3>
+<p><strong>Philosophy:</strong> Death must have weight</p>
+<p><strong>Implementation:</strong></p>
+<pre tabindex="0"><code>Death in Raid
+    ↓
+┌──────────────────────────────┐
+│  LOST:                       │
+│  • All items in backpack     │
+│  • All equipped weapons      │
+│  • All equipped armor        │
+│  • All consumables used      │
+│  • Operator in cooldown (5min)│
+└──────────────────────────────┘
+    ↓
+┌──────────────────────────────┐
+│  SAVED:                      │
+│  • Secure Container contents │
+│    (2x2 = 4 slots protected) │
+│  • Account progression (XP)  │
+│  • Stash items (not brought) │
+│  • Quest progress            │
+└──────────────────────────────┘</code></pre><p><strong>Psychological Impact:</strong></p>
+<ul>
+<li><strong>Pre-Match:</strong> &ldquo;Can I afford to lose this loadout?&rdquo;</li>
+<li><strong>In-Match:</strong> &ldquo;Should I extract now or risk for more?&rdquo;</li>
+<li><strong>Post-Death:</strong> &ldquo;That hurt, but I learn&rdquo; → Retry motivation</li>
+<li><strong>Post-Victory:</strong> &ldquo;I earned this!&rdquo; → Dopamine spike</li>
+</ul>
+<p><strong>Balance Considerations:</strong></p>
+<ul>
+<li>Death penalty severe enough to matter</li>
+<li>Not so punishing it causes rage-quit</li>
+<li>Secure Container provides safety net</li>
+<li>Account progression never lost</li>
+<li>Comeback mechanics for new players</li>
+</ul>
+<hr>
+<h3 id="3-top-down-perspective-strategic-advantage">3. Top-Down Perspective (Strategic Advantage)<a class="anchor" href="#3-top-down-perspective-strategic-advantage">#</a></h3>
+<p><strong>Why Top-Down Instead of FPS?</strong></p>
+<p><strong>Mobile Advantages:</strong></p>
+<pre tabindex="0"><code>Traditional FPS on Mobile:
+├─ Thumb blocks screen
+├─ Difficult aiming precision
+├─ Motion sickness potential
+├─ Cluttered UI
+└─ Battery drain (3D rendering)
+
+Top-Down Benefits:
+├─ Full screen visibility
+├─ Tactical overview
+├─ Easier touch controls
+├─ Cleaner UI layout
+├─ Better performance
+└─ Unique in genre</code></pre><p><strong>Gameplay Implications:</strong></p>
+<ul>
+<li><strong>Strategic positioning</strong> over twitch reflexes</li>
+<li><strong>Map awareness</strong> and tactical planning</li>
+<li><strong>Cover system</strong> more important</li>
+<li><strong>Ability usage</strong> more impactful</li>
+<li><strong>Team coordination</strong> visually clearer</li>
+</ul>
+<p><strong>Artist Direction:</strong></p>
+<pre tabindex="0"><code>Camera Angle: 45° isometric
+├─ Height: 15-20m above ground
+├─ Rotation: Fixed (for clarity)
+├─ Zoom: Pinch gesture (±20%)
+└─ Tilt: Slight for depth
+
+Visual Style:
+├─ High contrast (gameplay &gt; realism)
+├─ Clear silhouettes
+├─ Color-coded threats
+└─ Readable at 5&#34; screens</code></pre><hr>
+<h3 id="4-mobile-first-design-philosophy">4. Mobile-First Design Philosophy<a class="anchor" href="#4-mobile-first-design-philosophy">#</a></h3>
+<p><strong>Principle:</strong> Not a PC port, built ground-up for mobile</p>
+<p><strong>Match Duration:</strong></p>
+<pre tabindex="0"><code>PC Extraction Games: 30-45 minutes
+Our Target: 10-15 minutes
+
+Rationale:
+├─ Commute-friendly
+├─ Lunch break viable
+├─ Battery considerate
+├─ Attention span optimized
+└─ Multiple matches per session</code></pre><p><strong>Control Optimization:</strong></p>
+<pre tabindex="0"><code>Left Thumb: Movement
+├─ Virtual joystick
+├─ Sprint: Push further
+├─ Crouch: Edge tap
+└─ Intuitive, familiar
+
+Right Thumb: Action
+├─ Tap: Shoot
+├─ Hold: Aim
+├─ Swipe: Camera rotate
+└─ Contextual actions
+
+UI Touch Targets:
+├─ Minimum: 60x60px
+├─ Critical buttons: 80x80px
+├─ Spacing: 10px minimum
+└─ Thumb-zone optimized</code></pre><p><strong>Performance Targets:</strong></p>
+<pre tabindex="0"><code>Frame Rate: 60 FPS stable
+├─ High-end: 60 FPS locked
+├─ Mid-range: 60 FPS dynamic
+└─ Low-end: 30 FPS stable
+
+Battery Consumption:
+├─ 15-min match: &lt;5% battery
+├─ Thermal management
+└─ Power-saving mode support
+
+File Size:
+├─ Initial download: &lt;500MB
+├─ Full install: &lt;2GB
+├─ Streaming assets: Optional HD textures</code></pre><hr>
+<h2 id="core-design-pillars">Core Design Pillars<a class="anchor" href="#core-design-pillars">#</a></h2>
+<h3 id="pillar-1-task-driven-agency-meaningful-choices">Pillar #1: Task-Driven Agency (Meaningful Choices)<a class="anchor" href="#pillar-1-task-driven-agency-meaningful-choices">#</a></h3>
+<p><strong>Philosophy:</strong> Every decision should have weight, guided by clear objectives.</p>
+<p><strong>Manifestation in Gameplay:</strong></p>
+<p><strong>Pre-Match Choices (Preparation):</strong></p>
+<pre tabindex="0"><code>Loadout Decision Tree:
+    ↓
+&#34;Cheap Loadout&#34; ←→ &#34;Expensive Loadout&#34;
+    ↓                      ↓
+Less effective        More effective
+Low risk              High risk
+Easy to replace       Painful to lose
+    ↓                      ↓
+[Impacts entire match psychology]</code></pre><p><strong>In-Match Choices:</strong></p>
+<ul>
+<li><strong>Loot or Leave?</strong> - That container might have good stuff&hellip;or alert enemies</li>
+<li><strong>Fight or Flight?</strong> - Can I win this? Is the risk worth it?</li>
+<li><strong>Extract or Continue?</strong> - I have good loot, but there&rsquo;s more&hellip;</li>
+<li><strong>Help Teammate?</strong> - Save them or save myself?</li>
+</ul>
+<p><strong>Why It Matters:</strong></p>
+<blockquote class='book-hint '>
+<p>&ldquo;Players don&rsquo;t remember sequences of button presses. They remember the moment they chose greed over safety and paid the price. They remember extracting by the skin of their teeth with legendary loot. These <strong>emotional memories</strong> drive retention.&rdquo;</p>
+</blockquote><hr>
+<h3 id="pillar-2-risk-of-loss--reward-high-stakes-tension">Pillar #2: Risk of Loss &amp; Reward (High-Stakes Tension)<a class="anchor" href="#pillar-2-risk-of-loss--reward-high-stakes-tension">#</a></h3>
+<p><strong>Philosophy:</strong> The best rewards require the greatest risks; the fear of loss drives the thrill of gain.</p>
+<p><strong>Implementation:</strong></p>
+<p><strong>Loot Distribution Map:</strong></p>
+<pre tabindex="0"><code>┌─────────────────────────────────────┐
+│             MAP LAYOUT              │
+│    (Aethelgard Industrial Zone)     │
+├─────────────────────────────────────┤
+│                                     │
+│  🟢 Safe Zone (Edge)               │
+│  ├─ Loot: Common                    │
+│  ├─ AI: Light                       │
+│  ├─ Players: Rare                   │
+│  └─ Risk: ★☆☆☆☆                    │
+│                                     │
+│    🟡 Mid Zone                      │
+│    ├─ Loot: Common-Rare             │
+│    ├─ AI: Medium                    │
+│    ├─ Players: Moderate             │
+│    └─ Risk: ★★★☆☆                  │
+│                                     │
+│      🔴 Hot Zone (Center)           │
+│      ├─ Loot: Rare-Legendary        │
+│      ├─ AI: Heavy + Boss            │
+│      ├─ Players: High               │
+│      └─ Risk: ★★★★★                │
+│                                     │
+│  💎 Supply Drop (Event)              │
+│  ├─ Loot: Epic-Legendary guaranteed  │
+│  ├─ Alert: Map-wide notification     │
+│  ├─ Players: ALL converge            │
+│  └─ Risk: ★★★★★★                  │
+└─────────────────────────────────────┘</code></pre><p><strong>Time-Based Risk (The Time Pillar):</strong></p>
+<pre tabindex="0"><code>0-5 minutes:
+├─ Low tension
+├─ Players spreading out
+└─ Safe to loot edges
+
+5-10 minutes:
+├─ Rising tension
+├─ Players colliding
+├─ Decision: Extract or continue?
+└─ Supply drops create hotspots
+
+10-12 minutes:
+├─ High tension
+├─ Best-geared players remain
+├─ &#34;One more container&#34; syndrome
+└─ Extraction zones contested
+
+12-15 minutes:
+├─ EXTREME tension
+├─ Contamination zone active
+├─ Forced player interaction
+└─ Desperate extractions
+
+15:00 - Match End
+└─ All remaining players DIE</code></pre><p><strong>Psychological Pressure Points:</strong></p>
+<pre tabindex="0"><code>The &#34;Just One More&#34; Trap:
+    ↓
+Player has good loot
+    ↓
+Sees one more container
+    ↓
+&#34;Just ONE more...&#34; (GREED)
+    ↓
+Opens container → Rare item!
+    ↓
+&#34;Okay, ONE more...&#34; (ESCALATING GREED)
+    ↓
+[Loop continues until...]
+    ↓
+├─ Extracted = Dopamine HIGH
+└─ Died = Regret + Lesson Learned</code></pre><hr>
+<h3 id="pillar-3-survival--tactical-depth-tactical-fluidity">Pillar #3: Survival &amp; Tactical Depth (Tactical Fluidity)<a class="anchor" href="#pillar-3-survival--tactical-depth-tactical-fluidity">#</a></h3>
+<p><strong>Philosophy:</strong> Positioning, survival instincts, and knowledge &gt; Twitch reflexes. Controls must be fluid to support complex combat situations.</p>
+<p><strong>Skill Dimensions:</strong></p>
+<h4 id="1-map-knowledge-aethelgard-mastery">1. Map Knowledge (Aethelgard Mastery)<a class="anchor" href="#1-map-knowledge-aethelgard-mastery">#</a></h4>
+<pre tabindex="0"><code>Beginner:
+└─ Knows extraction points
+
+Intermediate:
+├─ Knows loot locations
+├─ Knows common routes
+└─ Understands timings
+
+Advanced:
+├─ Knows optimal rotations
+├─ Predicts player movements
+├─ Knows sound trap spots
+├─ Uses terrain advantage
+└─ Masters ambush points</code></pre><h4 id="2-loadout-building--resource-management">2. Loadout Building &amp; Resource Management<a class="anchor" href="#2-loadout-building--resource-management">#</a></h4>
+<pre tabindex="0"><code>Amateur:
+└─ &#34;Bring best gear always&#34;
+
+Skilled:
+├─ Resource Heavy: Matches loadout to goal
+├─ Balances cost vs effectiveness
+├─ Considers operator synergy
+└─ Plans for grid-based inventory weight</code></pre><h4 id="3-combat-tactics">3. Combat Tactics<a class="anchor" href="#3-combat-tactics">#</a></h4>
+<pre tabindex="0"><code>Spray and Pray:
+└─ ☠️ Dies often
+
+Tactical Player:
+├─ Uses cover effectively
+├─ Engages at optimal range
+├─ Knows when to disengage
+├─ Manages ability cooldowns
+└─ Controls the engagement</code></pre><h4 id="4-economy-management-the-stash">4. Economy Management (The Stash)<a class="anchor" href="#4-economy-management-the-stash">#</a></h4>
+<pre tabindex="0"><code>Poor Player:
+├─ Always broke
+├─ Can&#39;t afford gear
+├─ Stuck in poverty loop
+
+Wealthy Player:
+├─ Knows what to loot (value-per-slot)
+├─ Sells smartly to Traders
+├─ Invests in right gear
+├─ Completes profitable quests
+└─ Sustainable economy</code></pre><p><strong>Design Tools for Tactical Fluidity:</strong></p>
+<ul>
+<li><strong>Information asymmetry</strong> - UAV, sensors create advantage</li>
+<li><strong>Positioning matters</strong> - Cover, high ground, flanking</li>
+<li><strong>Ability combos</strong> - Operator synergies in squads</li>
+<li><strong>Resource management</strong> - Ammo (mag checks), medical, stamina</li>
+<li><strong>Economic decisions</strong> - What to loot, what to leave</li>
+</ul>
+<hr>
+<h3 id="pillar-4-persistent-progression-progression-tree--world">Pillar #4: Persistent Progression (Progression Tree &amp; World)<a class="anchor" href="#pillar-4-persistent-progression-progression-tree--world">#</a></h3>
+<p><strong>Philosophy:</strong> Your actions today impact tomorrow in Aethelgard. Long-term goals provide purpose beyond individual raids.</p>
+<p><strong>Progression Layers:</strong></p>
+<h4 id="account-progression-the-foundation">Account Progression (The Foundation)<a class="anchor" href="#account-progression-the-foundation">#</a></h4>
+<pre tabindex="0"><code>Level 1 → Level 50
+├─ Unlocks: Operators, weapons, items
+├─ Rewards: Credits, cosmetics
+├─ Milestones: Every 5 levels
+└─ Time Investment: ~100 hours</code></pre><h4 id="operator-mastery-per-operator">Operator Mastery (Per-Operator)<a class="anchor" href="#operator-mastery-per-operator">#</a></h4>
+<pre tabindex="0"><code>Mastery 0 → Mastery 10
+├─ Unlocks: Operator-specific items
+├─ Buffs: Small stat bonuses
+├─ Cosmetics: Skins, emotes
+└─ Time Investment: ~20 hours per operator</code></pre><h4 id="stash--hideout-growth-progression-tree">Stash &amp; Hideout Growth (Progression Tree)<a class="anchor" href="#stash--hideout-growth-progression-tree">#</a></h4>
+<pre tabindex="0"><code>Starting Stash: 10x20 grid
+├─ Extract loot → Add to stash
+├─ Sell for credits/Reputation
+├─ Upgrade Hideout (Base buffs)
+└─ Player wealth compounds</code></pre><h4 id="quest-progression-environmental-narratives">Quest Progression (Environmental Narratives)<a class="anchor" href="#quest-progression-environmental-narratives">#</a></h4>
+<pre tabindex="0"><code>Quest Types:
+├─ Tutorial Quests (1-5)
+│   └─ Teach mechanics
+├─ Faction Quests (ongoing)
+│   └─ Story, unique rewards, world lore
+├─ Daily Quests (resets)
+│   └─ Bonus XP, credits
+└─ Weekly Challenges
+    └─ Premium rewards</code></pre><p><strong>Progression Philosophy:</strong></p>
+<blockquote class='book-hint '>
+<p>&ldquo;Lose battles, never the war. Extracted loot and XP are yours forever. Bad raids teach lessons. Good raids build wealth. Long-term success through strategic thinking, not lucky streaks.&rdquo;</p>
+</blockquote><hr>
+<h3 id="pillar-5-environmental-narratives-the-living-world">Pillar #5: Environmental Narratives (The Living World)<a class="anchor" href="#pillar-5-environmental-narratives-the-living-world">#</a></h3>
+<p><strong>Philosophy:</strong> Aethelgard is a character, not a backdrop. History is told through the placement of objects and atmosphere.</p>
+<p><strong>Key Concepts:</strong></p>
+<ul>
+<li><strong>Environmental Storytelling:</strong> Visual clues and audio logs reveal the Collapse.</li>
+<li><strong>Logical Looting:</strong> Items found in contexts that make sense (meds in clinics).</li>
+<li><strong>Atmospheric Immersion:</strong> Lighting and sound lead the player through the ruins.</li>
+</ul>
+<hr>
+<h2 id="target-audience-deep-dive">Target Audience Deep Dive<a class="anchor" href="#target-audience-deep-dive">#</a></h2>
+<h3 id="primary-persona-hardcore-mobile-gamer">Primary Persona: &ldquo;Hardcore Mobile Gamer&rdquo;<a class="anchor" href="#primary-persona-hardcore-mobile-gamer">#</a></h3>
+<p><strong>Demographics:</strong></p>
+<pre tabindex="0"><code>Name: Alex
+Age: 24
+Gender: Male
+Location: Urban, Asia/NA/EU
+Device: iPhone 13 Pro / Samsung S22
+Income:Disposable income for hobbies</code></pre><p><strong>Gaming Background:</strong></p>
+<pre tabindex="0"><code>Experience:
+├─ 10+ years gaming
+├─ Played Tarkov/Hunt on PC
+├─ PUBG Mobile veteran
+├─ Enjoys Dark Souls, roguelikes
+└─ Values skill expression
+
+Motivations:
+├─ Seeks challenge
+├─ Wants meaningful progression
+├─ Competitive by nature
+├─ Appreciates fair difficulty
+└─ Willing to lose for mastery</code></pre><p><strong>Pain Points with Current Mobile Games:</strong></p>
+<pre tabindex="0"><code>❌ Too casual, no stakes
+❌ P2W mechanics ruin balance
+❌ Repetitive, no depth
+❌ No consequences for poor play
+❌ Progression feels hollow</code></pre><p><strong>What Our Game Provides:</strong></p>
+<pre tabindex="0"><code>✅ High-stakes gameplay
+✅ Skill-based, fair
+✅ Deep tactical systems
+✅ Meaningful death penalty
+✅ Persistent economy</code></pre><hr>
+<h3 id="secondary-persona-pc-gamer-going-mobile">Secondary Persona: &ldquo;PC Gamer Going Mobile&rdquo;<a class="anchor" href="#secondary-persona-pc-gamer-going-mobile">#</a></h3>
+<p><strong>Demographics:</strong></p>
+<pre tabindex="0"><code>Name: Jordan
+Age: 32
+Gender: Male
+Device: iPad Pro
+Background: PC gamer, busy lifestyle</code></pre><p><strong>Needs:</strong></p>
+<pre tabindex="0"><code>• Shorter sessions (can&#39;t play PC 3 hours)
+• Familiar hardcore mechanics
+• Portable but not &#34;dumbed down&#34;
+• Can play on commute</code></pre><p><strong>Our Appeal:</strong></p>
+<pre tabindex="0"><code>• 15-minute matches
+• Tarkov-like mechanics
+• Genuine tactical depth
+• Mobile convenience</code></pre><hr>
+<h2 id="competitive-landscape-analysis">Competitive Landscape Analysis<a class="anchor" href="#competitive-landscape-analysis">#</a></h2>
+<h3 id="direct-competitors-extraction-genre">Direct Competitors (Extraction Genre)<a class="anchor" href="#direct-competitors-extraction-genre">#</a></h3>
+<h4 id="escape-from-tarkov-pc">Escape from Tarkov (PC)<a class="anchor" href="#escape-from-tarkov-pc">#</a></h4>
+<p><strong>What They Do Well:</strong></p>
+<ul>
+<li>Unmatched depth and realism</li>
+<li>Thriving economy</li>
+<li>Hardcore community</li>
+<li>Regular updates</li>
+</ul>
+<p><strong>Where We Differentiate:</strong></p>
+<pre tabindex="0"><code>Tarkov              →    Our Game
+───────────────────────────────────────
+PC only             →    Mobile-first
+45-min matches      →    15-min matches
+FPS perspective     →    Top-down tactical
+Steep learning curve→    More accessible
+Survival sim        →    Action-focused
+$45 entry           →    Free-to-play</code></pre><p><strong>Our Strategy:</strong> <em>&ldquo;Tarkov&rsquo;s intensity in your pocket&rdquo;</em></p>
+<hr>
+<h4 id="the-cycle-frontier-pc-shut-down">The Cycle: Frontier (PC, Shut Down)<a class="anchor" href="#the-cycle-frontier-pc-shut-down">#</a></h4>
+<p><strong>What We Learn:</strong></p>
+<ul>
+<li>Market wants extraction games</li>
+<li>But must balance hardcore/casual</li>
+<li>Must have sustainable economy</li>
+<li>Must avoid P2W</li>
+</ul>
+<p><strong>Why They Failed:</strong></p>
+<ul>
+<li>Not accessible enough for casuals</li>
+<li>Too casual for hardcore fans</li>
+<li>Tried to please everyone</li>
+<li>Couldn&rsquo;t compete with Tarkov directly</li>
+</ul>
+<p><strong>Our Lesson:</strong> <em>&ldquo;Be confidently hardcore. Own our niche.&rdquo;</em></p>
+<hr>
+<h3 id="indirect-competitors-mobile-shooters">Indirect Competitors (Mobile Shooters)<a class="anchor" href="#indirect-competitors-mobile-shooters">#</a></h3>
+<h4 id="pubg-mobile">PUBG Mobile<a class="anchor" href="#pubg-mobile">#</a></h4>
+<p><strong>Strengths:</strong></p>
+<ul>
+<li>100M+ players</li>
+<li>Polished controls</li>
+<li>Regular content</li>
+<li>Esports scene</li>
+</ul>
+<p><strong>Weaknesses (Our Opportunities):</strong></p>
+<ul>
+<li>Battle Royale, not extraction</li>
+<li>Bloated with modes</li>
+<li>Arcade-y feel</li>
+<li>No persistent loot economy</li>
+</ul>
+<p><strong>Our Positioning:</strong> <em>&ldquo;For players who want higher stakes than Battle Royale&rdquo;</em></p>
+<hr>
+<h4 id="call-of-duty-mobile">Call of Duty Mobile<a class="anchor" href="#call-of-duty-mobile">#</a></h4>
+<p><strong>Strengths:</strong></p>
+<ul>
+<li>AAA brand</li>
+<li>Excellent gunplay</li>
+<li>High production value</li>
+</ul>
+<p><strong>Weaknesses (Our Opportunities):</strong></p>
+<ul>
+<li>Many P2W complaints</li>
+<li>No extraction mode</li>
+<li>Casual-focused</li>
+<li>Respawn-based modes</li>
+</ul>
+<p><strong>Our Positioning:</strong> <em>&ldquo;Where every life actually matters&rdquo;</em></p>
+<hr>
+<h2 id="game-world--narrative">Game World &amp; Narrative<a class="anchor" href="#game-world--narrative">#</a></h2>
+<h3 id="setting-aethelgard-post-collapse-industrial-zones">Setting: Aethelgard (Post-Collapse Industrial Zones)<a class="anchor" href="#setting-aethelgard-post-collapse-industrial-zones">#</a></h3>
+<pre tabindex="0"><code>2030: Environmental Disasters
+    ↓
+Corporate Zones Abandoned
+    ↓
+Lawless &#34;Extraction Zones&#34; Formed
+    ↓
+Mercenaries Enter for Salvage
+    ↓
+[Game Takes Place Here]</code></pre><p><strong>Zones:</strong></p>
+<pre tabindex="0"><code>Industrial complex
+├─ Factories
+├─ Warehouses
+├─ Office buildings
+├─ Underground facilities
+└─ Contaminated areas
+
+Urban Ruins
+├─ Abandoned  apartments
+├─ Shopping districts
+├─ Metro systems
+├─ Parks overgrown
+└─ Military checkpoints</code></pre><hr>
+<h3 id="factions-not-playable-quest-givers">Factions (Not Playable, Quest Givers)<a class="anchor" href="#factions-not-playable-quest-givers">#</a></h3>
+<h4 id="1-salvage-corps">1. Salvage Corps<a class="anchor" href="#1-salvage-corps">#</a></h4>
+<pre tabindex="0"><code>Identity: Blue-collar workers turned scavengers
+Quests: Retrieve industrial materials
+Rewards: Practical gear, tools
+Philosophy: &#34;Honest work in lawless lands&#34;</code></pre><h4 id="2-tech-syndicate">2. Tech Syndicate<a class="anchor" href="#2-tech-syndicate">#</a></h4>
+<pre tabindex="0"><code>Identity: Corporate treasure hunters
+Quests: Recover advanced technology
+Rewards: High-tech weapons, electronics
+Philosophy: &#34;Fortune favors the bold&#34;</code></pre><h4 id="3-underground-network">3. Underground Network<a class="anchor" href="#3-underground-network">#</a></h4>
+<pre tabindex="0"><code>Identity: Black market opportunists
+Quests: Smuggle contraband
+Rewards: Rare items, currency
+Philosophy: &#34;No questions asked&#34;</code></pre><h4 id="4-peacekeepers">4. Peacekeepers<a class="anchor" href="#4-peacekeepers">#</a></h4>
+<pre tabindex="0"><code>Identity: Ex-military trying to restore order
+Quests: Eliminate threats, rescue civilians
+Rewards: Military-grade equipment
+Philosophy: &#34;Duty above all&#34;</code></pre><p><strong>Faction System:</strong></p>
+<pre tabindex="0"><code>Complete Quests → Gain Reputation
+    ↓
+Higher Reputation → Better Quests
+    ↓
+Max Reputation → Unique Operator unlocks</code></pre><hr>
+<h3 id="tone--atmosphere">Tone &amp; Atmosphere<a class="anchor" href="#tone--atmosphere">#</a></h3>
+<p><strong>Visual Tone:</strong></p>
+<pre tabindex="0"><code>Color Palette:
+├─ Base: Desaturated (gray, brown, green)
+├─ Accents:危険 orange, tech blue
+├─ Loot: Color-coded rarity
+└─ Atmosphere: Gritty, oppressive
+
+Lighting:
+├─ Overcast skies (tension)
+├─ God rays through ruins (beauty in decay)
+├─ Harsh industrial lights
+└─ Dynamic weather (rain, fog)</code></pre><p><strong>Audio Atmosphere:</strong></p>
+<pre tabindex="0"><code>Ambient:
+├─ Wind through broken buildings
+├─ Distant industrial hums
+├─ Dripping water
+├─ Metal creaking
+└─ Occasional animal sounds
+
+Tension:
+├─ Footsteps AMPLIFIED
+├─ Distant gunshots
+├─ Radio static  
+├─ Heartbeat when low health
+└─ Contamination alarm</code></pre><p><strong>Emotional Tone:</strong></p>
+<pre tabindex="0"><code>Pre-Match: Anticipation, planning
+In-Match: Paranoia, tension, greed
+Combat: Intensity, focus
+Successful Extract: Relief, exhilaration
+Death: Frustration → Determination</code></pre><hr>
+<h2 id="monetization-philosophy">Monetization Philosophy<a class="anchor" href="#monetization-philosophy">#</a></h2>
+<h3 id="free-to-play-never-pay-to-win">Free-to-Play, Never Pay-to-Win<a class="anchor" href="#free-to-play-never-pay-to-win">#</a></h3>
+<p><strong>Core Principle:</strong></p>
+<blockquote class='book-hint '>
+<p>&ldquo;Spend money to look good and progress faster. Never spend money to win easier.&rdquo;</p>
+</blockquote><p><strong>Monetization Pillars:</strong></p>
+<h4 id="1-battle-pass-primary-revenue">1. Battle Pass (Primary Revenue)<a class="anchor" href="#1-battle-pass-primary-revenue">#</a></h4>
+<pre tabindex="0"><code>Free Track:
+├─ Basic rewards
+├─ Some operators
+└─ Decent progression
+
+Premium Track ($9.99/season):
+├─ Exclusive cosmetics
+├─ 2x XP boost
+├─ Premium currency income
+├─ Instant operator unlocks
+└─ Value: ~$50 worth of items</code></pre><h4 id="2-cosmetics-evergreen-revenue">2. Cosmetics (Evergreen Revenue)<a class="anchor" href="#2-cosmetics-evergreen-revenue">#</a></h4>
+<pre tabindex="0"><code>Skins:
+├─ Operator skins
+├─ Weapon skins
+├─ Backpack skins
+└─ Emotes/Finishers
+
+Price Ranges:
+├─ Common: $0.99-2.99
+├─ Rare: $4.99-7.99
+└─ Legendary: $14.99-19.99</code></pre><h4 id="3-convenience-optional-time-savers">3. Convenience (Optional Time-Savers)<a class="anchor" href="#3-convenience-optional-time-savers">#</a></h4>
+<pre tabindex="0"><code>Stash Expansion: $4.99 per tier
+Secure Container Upgrade: $9.99 (2x2 → 2x3)
+Operator Unlock: $4.99 each
+Loadout Slots: $2.99 for extras
+
+Note: ALL obtainable free through play</code></pre><p><strong>What We DON&rsquo;T Sell:</strong></p>
+<pre tabindex="0"><code>❌ Better weapons
+❌ Better armor
+❌ Stat boosts
+❌ Loot crates (RNG)
+❌ Exclusive power</code></pre><hr>
+<hr>
+<h2 id="-marketing--distribution-strategy">🌎 Marketing &amp; Distribution Strategy<a class="anchor" href="#-marketing--distribution-strategy">#</a></h2>
+<h3 id="target-markets">Target Markets<a class="anchor" href="#target-markets">#</a></h3>
+<ul>
+<li><strong>Primary:</strong> Southeast Asia (SEA), Brazil, India (Strong Mobile Hardcore Shooter Demographic).</li>
+<li><strong>Secondary:</strong> North America, Western Europe (Focus on &ldquo;PC Quality on Mobile&rdquo;).</li>
+</ul>
+<h3 id="distribution-channels">Distribution Channels<a class="anchor" href="#distribution-channels">#</a></h3>
+<ul>
+<li><strong>Mobile:</strong> Google Play Store, Apple App Store.</li>
+<li><strong>PC:</strong> Steam (Early Access potentially), Epic Games Store.</li>
+<li><strong>Community:</strong> Discord (Primary Hub), Reddit, Twitter/X.</li>
+</ul>
+<h3 id="go-to-market-plan">Go-To-Market Plan<a class="anchor" href="#go-to-market-plan">#</a></h3>
+<ol>
+<li><strong>Phase 1: Awareness (Pre-Alpha)</strong> - Developer Blogs, Concept Art teases, Discord community building.</li>
+<li><strong>Phase 2: Engagement (Alpha)</strong> - Closed invite-only tests for influencers and hardcore community members.</li>
+<li><strong>Phase 3: Hype (Beta)</strong> - Open Beta, sponsored streams, &ldquo;Drop&rdquo; campaigns for access keys.</li>
+<li><strong>Phase 4: Launch</strong> - Global rollout, Season 1 Battle Pass, cross-platform marketing push.</li>
+</ol>
+<hr>
+<h2 id="-document-ownership--changelog">📝 Document Ownership &amp; Changelog<a class="anchor" href="#-document-ownership--changelog">#</a></h2>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Role</th>
+          <th style="text-align: left">Owner</th>
+          <th style="text-align: left">Approver</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><strong>Author</strong></td>
+          <td style="text-align: left">Lead Game Designer</td>
+          <td style="text-align: left">Creative Director</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Tech Review</strong></td>
+          <td style="text-align: left">Networking Lead</td>
+          <td style="text-align: left">Technical Director</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Art Review</strong></td>
+          <td style="text-align: left">Art Director</td>
+          <td style="text-align: left">Art Lead</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Recent Changes:</strong></p>
+<ul>
+<li><strong>v1.1 (2026-02-09):</strong> Added &ldquo;Marketing &amp; Distribution Strategy&rdquo; section.</li>
+<li><strong>v1.0 (2026-02-07):</strong> Initial comprehensive draft.</li>
+</ul>
+<hr>
+<h2 id="success-metrics--kpis">Success Metrics &amp; KPIs<a class="anchor" href="#success-metrics--kpis">#</a></h2>
+<h3 id="engagement-metrics">Engagement Metrics<a class="anchor" href="#engagement-metrics">#</a></h3>
+<p><strong>Session Metrics:</strong></p>
+<pre tabindex="0"><code>Target Session Length: 25-40 minutes
+├─ 2-3 matches per session
+├─ Time in menus: &lt;15%
+└─ Time in match: &gt;80%
+
+Daily Active Users (DAU):
+├─ Month 1: 50K
+├─ Month 3: 150K
+├─ Month 6: 300K+</code></pre><p><strong>Retention Targets:</strong></p>
+<pre tabindex="0"><code>D1: 45% (strong tutorial)
+D7: 25% (hooked by core loop)
+D30: 12% (long-term fans)</code></pre><hr>
+<h3 id="balance-metrics">Balance Metrics<a class="anchor" href="#balance-metrics">#</a></h3>
+<p><strong>Extraction Success Rate:</strong></p>
+<pre tabindex="0"><code>Target: 35% overall
+
+By Skill Level:
+├─ Beginner: 20% (learning)
+├─ Intermediate: 35% (balanced)
+└─ Advanced: 50% (mastery)
+
+By Loadout Value:
+├─ Budget (&lt;$10K): 40% (less contested)
+├─ Standard ($10-30K): 35% (balanced)
+└─ Premium (&gt;$30K): 25% (hunted)</code></pre><p><strong>Time to Kill (TTK):</strong></p>
+<pre tabindex="0"><code>Close Range: 0.8-1.5 sec
+Mid Range: 1.5-2.5 sec
+Long Range: 2.0-3.5 sec
+
+Rationale: Fast enough for mobile, slow enough for tactics</code></pre><hr>
+<h3 id="economy-health">Economy Health<a class="anchor" href="#economy-health">#</a></h3>
+<p><strong>Inflation Control:</strong></p>
+<pre tabindex="0"><code>Money Supply:
+├─ Income: Extracted loot value
+├─ Sinks: Vendor purchases, deaths
+└─ Target: Stable prices
+
+Monitoring:
+├─ Average player wealth
+├─ Item price trends
+├─ Loot extraction rates
+└─ Adjustments via loot tables</code></pre><hr>
+<h2 id="development--design-constraints">Development &amp; Design Constraints<a class="anchor" href="#development--design-constraints">#</a></h2>
+<h3 id="technical-constraints">Technical Constraints<a class="anchor" href="#technical-constraints">#</a></h3>
+<p><strong>Performance:</strong></p>
+<pre tabindex="0"><code>Minimum Spec:
+├─ Device: 2018+ (iPhone X, Android equivalent)
+├─ RAM: 3GB+
+├─ Storage: 2GB free
+└─ OS: iOS 13+, Android 10+
+
+Target Spec:
+├─ 2021+ (iPhone 13, Flagship Android)
+├─ Best experience
+└─ All features enabled</code></pre><p><strong>Network:</strong></p>
+<pre tabindex="0"><code>Bandwidth: Optimized for 4G
+├─ Tick rate: 20Hz
+├─ Lag compensation
+└─ Reconnect support (3-min grace)
+
+Server Regions:
+├─ NA East, West
+├─ EU West, East
+├─ Asia (SEA, East Asia)
+└─ Latency-based matchmaking</code></pre><hr>
+<h3 id="design-constraints">Design Constraints<a class="anchor" href="#design-constraints">#</a></h3>
+<p><strong>Mobile UX Requirements:</strong></p>
+<pre tabindex="0"><code>✓ Touch targets: 60x60px minimum
+✓ One-thumb playable (future)
+✓ Readable on 5&#34; screens
+✓ Battery-efficient
+✓ Playable with gloves (accessibility)
+✓ Landscape orientation only</code></pre><p><strong>Content Cadence:</strong></p>
+<pre tabindex="0"><code>Weekly: New quests, events
+Monthly: Balance patches
+Quarterly: New operators, weapons
+Yearly: New maps, major features</code></pre><hr>
+<h2 id="risk-mitigation">Risk Mitigation<a class="anchor" href="#risk-mitigation">#</a></h2>
+<h3 id="design-risks">Design Risks<a class="anchor" href="#design-risks">#</a></h3>
+<h4 id="risk-too-hardcore-for-mobile-audience">Risk: &ldquo;Too Hardcore for Mobile Audience&rdquo;<a class="anchor" href="#risk-too-hardcore-for-mobile-audience">#</a></h4>
+<p><strong>Mitigation:</strong></p>
+<pre tabindex="0"><code>• Strong tutorial (5 missions)
+• Progressive difficulty (bot matches 1-10)
+• Scavenger mode (low-stakes practice)
+• Generous secure container
+• Clear feedback on mistakes</code></pre><h4 id="risk-frustrating-death-penalty-causes-churn">Risk: &ldquo;Frustrating Death Penalty Causes Churn&rdquo;<a class="anchor" href="#risk-frustrating-death-penalty-causes-churn">#</a></h4>
+<p><strong>Mitigation:</strong></p>
+<pre tabindex="0"><code>• Small XP on death (not total loss)
+• Secure container safety net
+• Insurance system (future)
+• &#34;Comeback&#34; quests for poor players
+• Clear death recap (learn from it)</code></pre><h4 id="risk-economy-inflationdeflation">Risk: &ldquo;Economy Inflation/Deflation&rdquo;<a class="anchor" href="#risk-economy-inflationdeflation">#</a></h4>
+<p><strong>Mitigation:</strong></p>
+<pre tabindex="0"><code>• Dynamic loot tables
+• Money sinks (repairs, upgrades)
+• Seasonal economy resets (optional)
+• Live monitoring dashboard
+• Quick adjustment capability</code></pre><hr>
+<h2 id="future-vision--roadmap">Future Vision &amp; Roadmap<a class="anchor" href="#future-vision--roadmap">#</a></h2>
+<h3 id="launch-version-10">Launch (Version 1.0)<a class="anchor" href="#launch-version-10">#</a></h3>
+<pre tabindex="0"><code>Content:
+├─ 5 Operators
+├─ 3 Maps
+├─ 30+ Weapons
+├─ 100+ Items
+├─ Core game modes
+└─ Battle Pass Season 1</code></pre><h3 id="year-1-post-launch">Year 1 Post-Launch<a class="anchor" href="#year-1-post-launch">#</a></h3>
+<pre tabindex="0"><code>Q1: New operator, new map
+Q2: Ranked mode, clan system
+Q3: New operators (2), weapon expansion
+Q4: Holiday events, major balance pass</code></pre><h3 id="year-2-long-term">Year 2+ Long-Term<a class="anchor" href="#year-2-long-term">#</a></h3>
+<pre tabindex="0"><code>• Cross-play with PC version
+• Base-building meta-game
+•Co-op PvE raids
+• Expanded world/lore
+• Esports ecosystem</code></pre><hr>
+<h2 id="core-design-philosophy-summary">Core Design Philosophy Summary<a class="anchor" href="#core-design-philosophy-summary">#</a></h2>
+<p><strong>What We Are:</strong></p>
+<ul>
+<li>Hardcore tactical extraction shooter</li>
+<li>Mobile-first, not mobile-port</li>
+<li>Skill-based, fair, meaningful</li>
+</ul>
+<p><strong>What We&rsquo;re NOT:</strong></p>
+<ul>
+<li>Casual arcade shooter</li>
+<li>Pay-to-win cash grab</li>
+<li>Watered-down PC port</li>
+</ul>
+<p><strong>Our Promise to Players:</strong></p>
+<blockquote class='book-hint '>
+<p>&ldquo;Your time matters. Your choices matter. Your skill matters. We will never compromise the integrity of the game for short-term profit. Every update will respect the hardcore tactical vision.&rdquo;</p>
+</blockquote><hr>
+<p><strong><a href="../README.md">← Back to Index</a></strong> | <strong><a href="./CoreGameplay.md">Next: Core Gameplay →</a></strong></p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+<div>
+
+</div>
+
+<div>
+
+</div>
+
+</div>
+
+
+
+
+
+  
+  
+  
+  <div class="flex flex-wrap justify-between">
+    <span>
+    
+      <a href="/docs/GDD_Design/GameDesign/NavigationAndMap/" class="flex align-center">
+        <img src="/icons/backward.svg" class="book-icon" alt="Backward" />
+        <span>Navigation and Map</span>
+      </a>
+    
+    </span>
+    <span>
+    
+      <a href="/docs/GDD_Design/GameDesign/Progression/" class="flex align-center">
+        <span>Progression</span>
+        <img src="/icons/forward.svg" class="book-icon" alt="Forward" />
+      </a>
+    
+    </span>
+  </div>
+  
+
+
+ 
+        
+  
+ 
+        
+        
+  
+ 
+        
+  
+  
+    <script>(function(){document.querySelectorAll("pre:has(code)").forEach(e=>{e.addEventListener("click",e.focus),e.addEventListener("copy",function(t){if(t.preventDefault(),navigator.clipboard){const t=window.getSelection().toString()||e.textContent;navigator.clipboard.writeText(t)}})})})()</script>
+  
+
+      </footer>
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+  
+  <aside class="book-toc">
+    <div class="book-toc-content">
+      
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#executive-summary">Executive Summary</a></li>
+    <li><a href="#game-concept">Game Concept</a>
+      <ul>
+        <li><a href="#elevator-pitch">Elevator Pitch</a></li>
+        <li><a href="#high-concept-statement">High Concept Statement</a></li>
+      </ul>
+    </li>
+    <li><a href="#unique-selling-points-usp">Unique Selling Points (USP)</a>
+      <ul>
+        <li><a href="#1-true-extraction-mechanics-on-mobile-first-of-its-kind">1. True Extraction Mechanics on Mobile (First of Its Kind)</a></li>
+        <li><a href="#2-permanent-loss-system-the-core-mechanic">2. Permanent Loss System (THE Core Mechanic)</a></li>
+        <li><a href="#3-top-down-perspective-strategic-advantage">3. Top-Down Perspective (Strategic Advantage)</a></li>
+        <li><a href="#4-mobile-first-design-philosophy">4. Mobile-First Design Philosophy</a></li>
+      </ul>
+    </li>
+    <li><a href="#core-design-pillars">Core Design Pillars</a>
+      <ul>
+        <li><a href="#pillar-1-task-driven-agency-meaningful-choices">Pillar #1: Task-Driven Agency (Meaningful Choices)</a></li>
+        <li><a href="#pillar-2-risk-of-loss--reward-high-stakes-tension">Pillar #2: Risk of Loss &amp; Reward (High-Stakes Tension)</a></li>
+        <li><a href="#pillar-3-survival--tactical-depth-tactical-fluidity">Pillar #3: Survival &amp; Tactical Depth (Tactical Fluidity)</a></li>
+        <li><a href="#pillar-4-persistent-progression-progression-tree--world">Pillar #4: Persistent Progression (Progression Tree &amp; World)</a></li>
+        <li><a href="#pillar-5-environmental-narratives-the-living-world">Pillar #5: Environmental Narratives (The Living World)</a></li>
+      </ul>
+    </li>
+    <li><a href="#target-audience-deep-dive">Target Audience Deep Dive</a>
+      <ul>
+        <li><a href="#primary-persona-hardcore-mobile-gamer">Primary Persona: &ldquo;Hardcore Mobile Gamer&rdquo;</a></li>
+        <li><a href="#secondary-persona-pc-gamer-going-mobile">Secondary Persona: &ldquo;PC Gamer Going Mobile&rdquo;</a></li>
+      </ul>
+    </li>
+    <li><a href="#competitive-landscape-analysis">Competitive Landscape Analysis</a>
+      <ul>
+        <li><a href="#direct-competitors-extraction-genre">Direct Competitors (Extraction Genre)</a></li>
+        <li><a href="#indirect-competitors-mobile-shooters">Indirect Competitors (Mobile Shooters)</a></li>
+      </ul>
+    </li>
+    <li><a href="#game-world--narrative">Game World &amp; Narrative</a>
+      <ul>
+        <li><a href="#setting-aethelgard-post-collapse-industrial-zones">Setting: Aethelgard (Post-Collapse Industrial Zones)</a></li>
+        <li><a href="#factions-not-playable-quest-givers">Factions (Not Playable, Quest Givers)</a></li>
+        <li><a href="#tone--atmosphere">Tone &amp; Atmosphere</a></li>
+      </ul>
+    </li>
+    <li><a href="#monetization-philosophy">Monetization Philosophy</a>
+      <ul>
+        <li><a href="#free-to-play-never-pay-to-win">Free-to-Play, Never Pay-to-Win</a></li>
+      </ul>
+    </li>
+    <li><a href="#-marketing--distribution-strategy">🌎 Marketing &amp; Distribution Strategy</a>
+      <ul>
+        <li><a href="#target-markets">Target Markets</a></li>
+        <li><a href="#distribution-channels">Distribution Channels</a></li>
+        <li><a href="#go-to-market-plan">Go-To-Market Plan</a></li>
+      </ul>
+    </li>
+    <li><a href="#-document-ownership--changelog">📝 Document Ownership &amp; Changelog</a></li>
+    <li><a href="#success-metrics--kpis">Success Metrics &amp; KPIs</a>
+      <ul>
+        <li><a href="#engagement-metrics">Engagement Metrics</a></li>
+        <li><a href="#balance-metrics">Balance Metrics</a></li>
+        <li><a href="#economy-health">Economy Health</a></li>
+      </ul>
+    </li>
+    <li><a href="#development--design-constraints">Development &amp; Design Constraints</a>
+      <ul>
+        <li><a href="#technical-constraints">Technical Constraints</a></li>
+        <li><a href="#design-constraints">Design Constraints</a></li>
+      </ul>
+    </li>
+    <li><a href="#risk-mitigation">Risk Mitigation</a>
+      <ul>
+        <li><a href="#design-risks">Design Risks</a></li>
+      </ul>
+    </li>
+    <li><a href="#future-vision--roadmap">Future Vision &amp; Roadmap</a>
+      <ul>
+        <li><a href="#launch-version-10">Launch (Version 1.0)</a></li>
+        <li><a href="#year-1-post-launch">Year 1 Post-Launch</a></li>
+        <li><a href="#year-2-long-term">Year 2+ Long-Term</a></li>
+      </ul>
+    </li>
+    <li><a href="#core-design-philosophy-summary">Core Design Philosophy Summary</a></li>
+  </ul>
+</nav>
+
+
+
+    </div>
+  </aside>
+  
+ 
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,2247 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=52224&amp;path=livereload" data-no-instant defer></script>
+  <!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Security &amp; Anti-Cheat Strategy#← Back to Index
+🛡️ The Concept of Trust#“Never Trust the Client.” The core principle is simple: The Client sends intent, not results.
+1. Server-Side Authority (Validation)#Everything critical happens on the Server.
+Ammo: Client says “I fired 5 rounds.” Server subtracts 5 rounds. Server does not trust client’s ammo count. Movement: Client sends Input (Forward, Right). Server calculates Position = Velocity * Time. Maximum Speed Check: If distance &gt; MaxSpeed * DeltaTime &#43; Tolerance -&gt; Flag for cheating. Health: Only Server can decrease Health. Client only plays damage effects. 2. Encryption (Packet Protection)#Protocol: Use DTLS (Datagram Transport Layer Security) over UDP. Key Exchange: Secured via HTTPS login (Master Server). Replay Protection: Unique SequenceNumber per packet. Old packets are discarded. 🚫 Common Exploits &amp; Mitigation#1. Speed Hacks (Teleport)#Detect: Compare LastKnownLocation &#43; MaxAllowedDistance. Result: Rubberband back (1st offense) -&gt; Kick (3rd offense within 1 min). Heuristics: Track average velocity over 10s. 2. Wallhack (ESP)#Mitigation: Network Culling (Don’t send data about enemies behind walls). We use the Replication Graph to stop replicating distant/occluded actors entirely. Obfuscation: Encrypt bone locations in memory (slower but harder to read). 3. Aimbot (Auto-Target)#Detection: Only Server can analyze unnatural mouse movement. Snap Check: 0ms aim adjustment to head -&gt; Flag. Recoil: 0 vertical recoil while firing full auto -&gt; Flag. Stats: Headshot % &gt; 80% over 5 matches -&gt; Review. 4. Loot Vacuum (Instant Pickup)#Validation: Distance: Check distance to item &lt; 3m. Line of Sight: Can player see item? (Trace check). Inventory Space: Can item fit? (Tetris validation). 👮‍♂️ Report System (Community Policing)#In-Game Reporting#Categories: Aimbot, Wallhack, Speedhack, Toxic Voice. Replay: Server saves a low-tick replay of the kill-cam (5s before death). Trust Score: Players with high accuracy/KD get flagged for manual review if reported frequently. Hardware Ban (HWID)#Identifier: Motherboard Serial &#43; HDD Serial &#43; MAC Address. Database: Shared ban list across all accounts. Review: Human review required for permanent bans. ">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:52224/docs/GDD_Technical/Security/AntiCheatStrategy/">
+  <meta property="og:site_name" content="Extraction Shooter GDD">
+  <meta property="og:title" content="Extraction Shooter GDD">
+  <meta property="og:description" content="Security &amp; Anti-Cheat Strategy#← Back to Index
+🛡️ The Concept of Trust#“Never Trust the Client.” The core principle is simple: The Client sends intent, not results.
+1. Server-Side Authority (Validation)#Everything critical happens on the Server.
+Ammo: Client says “I fired 5 rounds.” Server subtracts 5 rounds. Server does not trust client’s ammo count. Movement: Client sends Input (Forward, Right). Server calculates Position = Velocity * Time. Maximum Speed Check: If distance &gt; MaxSpeed * DeltaTime &#43; Tolerance -&gt; Flag for cheating. Health: Only Server can decrease Health. Client only plays damage effects. 2. Encryption (Packet Protection)#Protocol: Use DTLS (Datagram Transport Layer Security) over UDP. Key Exchange: Secured via HTTPS login (Master Server). Replay Protection: Unique SequenceNumber per packet. Old packets are discarded. 🚫 Common Exploits &amp; Mitigation#1. Speed Hacks (Teleport)#Detect: Compare LastKnownLocation &#43; MaxAllowedDistance. Result: Rubberband back (1st offense) -&gt; Kick (3rd offense within 1 min). Heuristics: Track average velocity over 10s. 2. Wallhack (ESP)#Mitigation: Network Culling (Don’t send data about enemies behind walls). We use the Replication Graph to stop replicating distant/occluded actors entirely. Obfuscation: Encrypt bone locations in memory (slower but harder to read). 3. Aimbot (Auto-Target)#Detection: Only Server can analyze unnatural mouse movement. Snap Check: 0ms aim adjustment to head -&gt; Flag. Recoil: 0 vertical recoil while firing full auto -&gt; Flag. Stats: Headshot % &gt; 80% over 5 matches -&gt; Review. 4. Loot Vacuum (Instant Pickup)#Validation: Distance: Check distance to item &lt; 3m. Line of Sight: Can player see item? (Trace check). Inventory Space: Can item fit? (Tetris validation). 👮‍♂️ Report System (Community Policing)#In-Game Reporting#Categories: Aimbot, Wallhack, Speedhack, Toxic Voice. Replay: Server saves a low-tick replay of the kill-cam (5s before death). Trust Score: Players with high accuracy/KD get flagged for manual review if reported frequently. Hardware Ban (HWID)#Identifier: Motherboard Serial &#43; HDD Serial &#43; MAC Address. Database: Shared ban list across all accounts. Review: Human review required for permanent bans.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
+
+
+  <meta itemprop="name" content="Extraction Shooter GDD">
+  <meta itemprop="description" content="Security &amp; Anti-Cheat Strategy#← Back to Index
+🛡️ The Concept of Trust#“Never Trust the Client.” The core principle is simple: The Client sends intent, not results.
+1. Server-Side Authority (Validation)#Everything critical happens on the Server.
+Ammo: Client says “I fired 5 rounds.” Server subtracts 5 rounds. Server does not trust client’s ammo count. Movement: Client sends Input (Forward, Right). Server calculates Position = Velocity * Time. Maximum Speed Check: If distance &gt; MaxSpeed * DeltaTime &#43; Tolerance -&gt; Flag for cheating. Health: Only Server can decrease Health. Client only plays damage effects. 2. Encryption (Packet Protection)#Protocol: Use DTLS (Datagram Transport Layer Security) over UDP. Key Exchange: Secured via HTTPS login (Master Server). Replay Protection: Unique SequenceNumber per packet. Old packets are discarded. 🚫 Common Exploits &amp; Mitigation#1. Speed Hacks (Teleport)#Detect: Compare LastKnownLocation &#43; MaxAllowedDistance. Result: Rubberband back (1st offense) -&gt; Kick (3rd offense within 1 min). Heuristics: Track average velocity over 10s. 2. Wallhack (ESP)#Mitigation: Network Culling (Don’t send data about enemies behind walls). We use the Replication Graph to stop replicating distant/occluded actors entirely. Obfuscation: Encrypt bone locations in memory (slower but harder to read). 3. Aimbot (Auto-Target)#Detection: Only Server can analyze unnatural mouse movement. Snap Check: 0ms aim adjustment to head -&gt; Flag. Recoil: 0 vertical recoil while firing full auto -&gt; Flag. Stats: Headshot % &gt; 80% over 5 matches -&gt; Review. 4. Loot Vacuum (Instant Pickup)#Validation: Distance: Check distance to item &lt; 3m. Line of Sight: Can player see item? (Trace check). Inventory Space: Can item fit? (Tetris validation). 👮‍♂️ Report System (Community Policing)#In-Game Reporting#Categories: Aimbot, Wallhack, Speedhack, Toxic Voice. Replay: Server saves a low-tick replay of the kill-cam (5s before death). Trust Score: Players with high accuracy/KD get flagged for manual review if reported frequently. Hardware Ban (HWID)#Identifier: Motherboard Serial &#43; HDD Serial &#43; MAC Address. Database: Shared ban list across all accounts. Review: Human review required for permanent bans.">
+  <meta itemprop="wordCount" content="327">
+
+<title>Anti Cheat Strategy | Extraction Shooter GDD</title>
+<link rel="icon" href="/favicon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="http://localhost:52224/docs/GDD_Technical/Security/AntiCheatStrategy/">
+<link rel="stylesheet" href="/book.min.63c8b2b12bbd1ad36428837740ea371dd41fdb9c22b35499003d0dfa4dbce6ba.css" integrity="sha256-Y8iysSu9GtNkKIN3QOo3HdQf25wis1SZAD0N&#43;k285ro=" crossorigin="anonymous">
+
+
+  <script defer src="/fuse.min.js"></script>
+  <script defer src="/en.search.min.58bea27d7a08265548c5a8636a9a9fc844e0eb9d60fc3bb2c53d517da858d4c1.js" integrity="sha256-WL6ifXoIJlVIxahjapqfyETg651g/DuyxT1RfahY1ME=" crossorigin="anonymous"></script>
+
+  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
+
+
+
+  
+</head>
+<body dir="ltr" class="book-kind-page book-type-docs">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    
+<aside class="book-menu">
+  <div class="book-menu-content">
+    
+  <nav>
+    <h2 class="book-brand">
+  <a class="flex align-center" href="/"><img src="/logo.svg" alt="Logo" /><span>Extraction Shooter GDD</span>
+  </a>
+</h2>
+
+    <div class="book-theme-toggle">
+    <input type="checkbox" id="theme-toggle" class="toggle">
+    <label for="theme-toggle" class="flex justify-between items-center cursor-pointer">
+        <span class="text-xs font-semibold">Dark Mode</span>
+        <div
+            class="relative w-10 h-5 bg-gray-200 rounded-full transition-colors duration-200 ease-in-out dark:bg-gray-700">
+            <div
+                class="absolute left-0 w-5 h-5 bg-white rounded-full shadow transform transition-transform duration-200 ease-in-out dark:translate-x-full">
+            </div>
+        </div>
+    </label>
+</div>
+
+<script>
+    (function () {
+        const toggle = document.getElementById('theme-toggle');
+        const html = document.documentElement;
+
+        
+        const savedTheme = localStorage.getItem('theme');
+        const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+        if (savedTheme === 'dark' || (!savedTheme && systemDark)) {
+            html.classList.add('dark');
+            toggle.checked = true;
+        } else {
+            html.classList.remove('dark');
+            toggle.checked = false;
+        }
+
+        
+        toggle.addEventListener('change', function () {
+            if (this.checked) {
+                html.classList.add('dark');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                html.classList.remove('dark');
+                localStorage.setItem('theme', 'light');
+            }
+        });
+    })();
+</script>
+
+<style>
+     
+    .book-theme-toggle {
+        margin: 1rem 0;
+        padding: 0 1rem;
+
+    }
+
+    .book-theme-toggle label {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        cursor: pointer;
+        font-size: 0.85em;
+    }
+
+     
+    .book-theme-toggle input {
+        display: none;
+    }
+
+     
+    .book-theme-toggle label::after {
+        content: "🌙";
+         
+    }
+
+     
+    html:not(.dark) .book-theme-toggle label::after {
+        content: "☀️";
+         
+    }
+</style> 
+    
+<div class="book-search hidden">
+  <input id="book-search-input" type="text" 
+    placeholder="Search"
+    aria-label="Search"
+    maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+    
+
+    
+    
+
+
+
+    
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/" class="">
+      Gdd Design</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      AI</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/AI/EnemyBehavior/" class="">
+      Enemy Behavior</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/AI/FactionBehaviors/" class="">
+      Faction Behaviors</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Audio</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Audio/SoundDesign/" class="">
+      Sound Design</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Audio/Soundscape/" class="">
+      Soundscape</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Audio/TacticalAudio/" class="">
+      Tactical Audio</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Audio/VoiceLines/" class="">
+      Voice Lines</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Characters</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Operators/" class="">
+      Operators</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Assault</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Assault/Blaze/" class="">
+      Blaze</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Assault/Havoc/" class="">
+      Havoc</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Assault/README/" class="">
+      Readme</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Assault/Viper/" class="">
+      Viper</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Recon</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Recon/Phantom/" class="">
+      Phantom</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Recon/README/" class="">
+      Readme</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Recon/Specter/" class="">
+      Specter</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Recon/Wraith/" class="">
+      Wraith</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Specialist</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Specialist/Cipher/" class="">
+      Cipher</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Specialist/Flux/" class="">
+      Flux</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Specialist/README/" class="">
+      Readme</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Support</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Support/Angel/" class="">
+      Angel</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Support/Doc/" class="">
+      Doc</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Support/README/" class="">
+      Readme</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Tank</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Tank/Bulwark/" class="">
+      Bulwark</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Tank/Fortress/" class="">
+      Fortress</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Tank/README/" class="">
+      Readme</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Combat</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Combat/Items/" class="">
+      Items</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Combat/Weapons/" class="">
+      Weapons</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      GameDesign</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Accessibility/" class="">
+      Accessibility</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Controls/" class="">
+      Controls</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/CoreGameplay/" class="">
+      Core Gameplay</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Economy/" class="">
+      Economy</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/GameModes/" class="">
+      Game Modes</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/LiveOps/" class="">
+      Live Ops</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Localization/" class="">
+      Localization</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/NavigationAndMap/" class="">
+      Navigation and Map</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Overview/" class="">
+      Overview</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Progression/" class="">
+      Progression</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/RankedMode/" class="">
+      Ranked Mode</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/TutorialRaid/" class="">
+      Tutorial Raid</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/UserSettings/" class="">
+      User Settings</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Gameplay</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Gameplay/CoreLoop/" class="">
+      Core Loop</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      ProjectScope</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/ProjectScope/DesignPillars/" class="">
+      Design Pillars</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/ProjectScope/MVP/" class="">
+      Mvp</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/ProjectScope/NonGoals/" class="">
+      Non Goals</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/ProjectScope/Risks/" class="">
+      Risks</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Social</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Social/Multiplayer/" class="">
+      Multiplayer</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Story</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Story/Backstory/" class="">
+      Backstory</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Story/Factions/" class="">
+      Factions</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Story/Narrative/" class="">
+      Narrative</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Story/QuestLines/" class="">
+      Quest Lines</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      UI UX</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/UI_UX/UX_Flows/" class="">
+      Ux Flows</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/UI_UX/Visual_Style/" class="">
+      Visual Style</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Visuals</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Visuals/ArtDirection/" class="">
+      Art Direction</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Visuals/AssetGuidelines/" class="">
+      Asset Guidelines</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Visuals/StyleGuide/" class="">
+      Style Guide</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Visuals/UserInterface/" class="">
+      User Interface</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      World</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/EnvironmentalNarrative/" class="">
+      Environmental Narrative</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/EnvironmentalNarrative_Guidelines/" class="">
+      Environmental Narrative Guidelines</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/LootDistribution/" class="">
+      Loot Distribution</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/MapDesign/" class="">
+      Map Design</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/MapDesign_IndustrialZone/" class="">
+      Map Design Industrial Zone</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/MapDesign_NeonSlums/" class="">
+      Map Design Neon Slums</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/MapDesign_Wilderness/" class="">
+      Map Design Wilderness</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/MapLayouts/" class="">
+      Map Layouts</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/" class="">
+      Gdd Technical</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      AI</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/AI/SensorySystem/" class="">
+      Sensory System</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Core</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Core/Architecture/" class="">
+      Architecture</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Core/CodingStandards/" class="">
+      Coding Standards</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Core/DevelopmentRoadmap/" class="">
+      Development Roadmap</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Core/NetworkingSystem/" class="">
+      Networking System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Core/SecuritySystem/" class="">
+      Security System</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Gameplay</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Gameplay/CharacterSystem/" class="">
+      Character System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Gameplay/ControlSystem/" class="">
+      Control System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Gameplay/InventorySystem/" class="">
+      Inventory System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Gameplay/WeaponSystem/" class="">
+      Weapon System</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Networking</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Networking/LagCompensation/" class="">
+      Lag Compensation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Networking/ReplicationStrategy/" class="">
+      Replication Strategy</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Performance</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Performance/Budgets/" class="">
+      Budgets</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Performance/Optimization/" class="">
+      Optimization</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Security</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Security/AntiCheatStrategy/" class="active">
+      Anti Cheat Strategy</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Systems</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/AccessibilitySystem/" class="">
+      Accessibility System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/AISystem/" class="">
+      Aisystem</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/AnalyticsSystem/" class="">
+      Analytics System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/AudioSystem/" class="">
+      Audio System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/BuildPipeline/" class="">
+      Build Pipeline</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/LiveOpsSystem/" class="">
+      Live Ops System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/LocalizationSystem/" class="">
+      Localization System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/MapSystem/" class="">
+      Map System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/NarrativeSystem/" class="">
+      Narrative System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/ProgressionSystem/" class="">
+      Progression System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/RankedSystem/" class="">
+      Ranked System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/SaveSystem/" class="">
+      Save System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/SocialSystem/" class="">
+      Social System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/TutorialSystem/" class="">
+      Tutorial System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/UISystem/" class="">
+      Uisystem</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+</nav>
+
+
+
+
+<script>{ { . | safeJS } }</script>
+
+
+  </div>
+</aside>
+ 
+
+    <div class="book-page">
+      <header class="book-header hidden">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/icons/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <h3>Anti Cheat Strategy</h3>
+
+  <label for="toc-control">
+    
+    <img src="/icons/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#-the-concept-of-trust">🛡️ The Concept of Trust</a>
+      <ul>
+        <li><a href="#1-server-side-authority-validation">1. Server-Side Authority (Validation)</a></li>
+        <li><a href="#2-encryption-packet-protection">2. Encryption (Packet Protection)</a></li>
+      </ul>
+    </li>
+    <li><a href="#-common-exploits--mitigation">🚫 Common Exploits &amp; Mitigation</a>
+      <ul>
+        <li><a href="#1-speed-hacks-teleport">1. Speed Hacks (Teleport)</a></li>
+        <li><a href="#2-wallhack-esp">2. Wallhack (ESP)</a></li>
+        <li><a href="#3-aimbot-auto-target">3. Aimbot (Auto-Target)</a></li>
+        <li><a href="#4-loot-vacuum-instant-pickup">4. Loot Vacuum (Instant Pickup)</a></li>
+      </ul>
+    </li>
+    <li><a href="#-report-system-community-policing">👮‍♂️ Report System (Community Policing)</a>
+      <ul>
+        <li><a href="#in-game-reporting">In-Game Reporting</a></li>
+        <li><a href="#hardware-ban-hwid">Hardware Ban (HWID)</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><h1 id="security--anti-cheat-strategy">Security &amp; Anti-Cheat Strategy<a class="anchor" href="#security--anti-cheat-strategy">#</a></h1>
+<p><strong><a href="../README.md">← Back to Index</a></strong></p>
+<hr>
+<h2 id="-the-concept-of-trust">🛡️ The Concept of Trust<a class="anchor" href="#-the-concept-of-trust">#</a></h2>
+<p><strong>&ldquo;Never Trust the Client.&rdquo;</strong>
+The core principle is simple: The Client sends <em>intent</em>, not <em>results</em>.</p>
+<h3 id="1-server-side-authority-validation">1. Server-Side Authority (Validation)<a class="anchor" href="#1-server-side-authority-validation">#</a></h3>
+<p>Everything critical happens on the Server.</p>
+<ul>
+<li><strong>Ammo:</strong> Client says &ldquo;I fired 5 rounds.&rdquo; Server subtracts 5 rounds. Server <em>does not</em> trust client&rsquo;s ammo count.</li>
+<li><strong>Movement:</strong> Client sends Input (Forward, Right). Server calculates Position = Velocity * Time.
+<ul>
+<li><strong>Maximum Speed Check:</strong> If distance &gt; <code>MaxSpeed * DeltaTime + Tolerance</code> -&gt; Flag for cheating.</li>
+</ul>
+</li>
+<li><strong>Health:</strong> Only Server can decrease Health. Client only plays damage effects.</li>
+</ul>
+<h3 id="2-encryption-packet-protection">2. Encryption (Packet Protection)<a class="anchor" href="#2-encryption-packet-protection">#</a></h3>
+<ul>
+<li><strong>Protocol:</strong> Use <code>DTLS</code> (Datagram Transport Layer Security) over UDP.</li>
+<li><strong>Key Exchange:</strong> Secured via HTTPS login (Master Server).</li>
+<li><strong>Replay Protection:</strong> Unique <code>SequenceNumber</code> per packet. Old packets are discarded.</li>
+</ul>
+<hr>
+<h2 id="-common-exploits--mitigation">🚫 Common Exploits &amp; Mitigation<a class="anchor" href="#-common-exploits--mitigation">#</a></h2>
+<h3 id="1-speed-hacks-teleport">1. Speed Hacks (Teleport)<a class="anchor" href="#1-speed-hacks-teleport">#</a></h3>
+<ul>
+<li><strong>Detect:</strong> Compare <code>LastKnownLocation</code> + <code>MaxAllowedDistance</code>.</li>
+<li><strong>Result:</strong> Rubberband back (1st offense) -&gt; Kick (3rd offense within 1 min).</li>
+<li><strong>Heuristics:</strong> Track average velocity over 10s.</li>
+</ul>
+<h3 id="2-wallhack-esp">2. Wallhack (ESP)<a class="anchor" href="#2-wallhack-esp">#</a></h3>
+<ul>
+<li><strong>Mitigation:</strong> <code>Network Culling</code> (Don&rsquo;t send data about enemies behind walls).
+<ul>
+<li>We use the <strong>Replication Graph</strong> to stop replicating distant/occluded actors entirely.</li>
+</ul>
+</li>
+<li><strong>Obfuscation:</strong> Encrypt bone locations in memory (slower but harder to read).</li>
+</ul>
+<h3 id="3-aimbot-auto-target">3. Aimbot (Auto-Target)<a class="anchor" href="#3-aimbot-auto-target">#</a></h3>
+<ul>
+<li><strong>Detection:</strong> Only Server can analyze unnatural mouse movement.
+<ul>
+<li><strong>Snap Check:</strong> 0ms aim adjustment to head -&gt; Flag.</li>
+<li><strong>Recoil:</strong> 0 vertical recoil while firing full auto -&gt; Flag.</li>
+<li><strong>Stats:</strong> Headshot % &gt; 80% over 5 matches -&gt; Review.</li>
+</ul>
+</li>
+</ul>
+<h3 id="4-loot-vacuum-instant-pickup">4. Loot Vacuum (Instant Pickup)<a class="anchor" href="#4-loot-vacuum-instant-pickup">#</a></h3>
+<ul>
+<li><strong>Validation:</strong>
+<ul>
+<li><strong>Distance:</strong> Check distance to item &lt; 3m.</li>
+<li><strong>Line of Sight:</strong> Can player see item? (Trace check).</li>
+<li><strong>Inventory Space:</strong> Can item fit? (Tetris validation).</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="-report-system-community-policing">👮‍♂️ Report System (Community Policing)<a class="anchor" href="#-report-system-community-policing">#</a></h2>
+<h3 id="in-game-reporting">In-Game Reporting<a class="anchor" href="#in-game-reporting">#</a></h3>
+<ul>
+<li><strong>Categories:</strong> Aimbot, Wallhack, Speedhack, Toxic Voice.</li>
+<li><strong>Replay:</strong> Server saves a low-tick replay of the kill-cam (5s before death).</li>
+<li><strong>Trust Score:</strong> Players with high accuracy/KD get flagged for manual review if reported frequently.</li>
+</ul>
+<h3 id="hardware-ban-hwid">Hardware Ban (HWID)<a class="anchor" href="#hardware-ban-hwid">#</a></h3>
+<ul>
+<li><strong>Identifier:</strong> Motherboard Serial + HDD Serial + MAC Address.</li>
+<li><strong>Database:</strong> Shared ban list across all accounts.</li>
+<li><strong>Review:</strong> Human review required for permanent bans.</li>
+</ul>
+<hr>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+<div>
+
+</div>
+
+<div>
+
+</div>
+
+</div>
+
+
+
+
+
+  
+  
+  
+  <div class="flex flex-wrap justify-between">
+    <span>
+    
+      <a href="/docs/GDD_Technical/Performance/Optimization/" class="flex align-center">
+        <img src="/icons/backward.svg" class="book-icon" alt="Backward" />
+        <span>Optimization</span>
+      </a>
+    
+    </span>
+    <span>
+    
+      <a href="/docs/GDD_Technical/Systems/AccessibilitySystem/" class="flex align-center">
+        <span>Accessibility System</span>
+        <img src="/icons/forward.svg" class="book-icon" alt="Forward" />
+      </a>
+    
+    </span>
+  </div>
+  
+
+
+ 
+        
+  
+ 
+        
+        
+  
+ 
+        
+  
+  
+    <script>(function(){document.querySelectorAll("pre:has(code)").forEach(e=>{e.addEventListener("click",e.focus),e.addEventListener("copy",function(t){if(t.preventDefault(),navigator.clipboard){const t=window.getSelection().toString()||e.textContent;navigator.clipboard.writeText(t)}})})})()</script>
+  
+
+      </footer>
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+  
+  <aside class="book-toc">
+    <div class="book-toc-content">
+      
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#-the-concept-of-trust">🛡️ The Concept of Trust</a>
+      <ul>
+        <li><a href="#1-server-side-authority-validation">1. Server-Side Authority (Validation)</a></li>
+        <li><a href="#2-encryption-packet-protection">2. Encryption (Packet Protection)</a></li>
+      </ul>
+    </li>
+    <li><a href="#-common-exploits--mitigation">🚫 Common Exploits &amp; Mitigation</a>
+      <ul>
+        <li><a href="#1-speed-hacks-teleport">1. Speed Hacks (Teleport)</a></li>
+        <li><a href="#2-wallhack-esp">2. Wallhack (ESP)</a></li>
+        <li><a href="#3-aimbot-auto-target">3. Aimbot (Auto-Target)</a></li>
+        <li><a href="#4-loot-vacuum-instant-pickup">4. Loot Vacuum (Instant Pickup)</a></li>
+      </ul>
+    </li>
+    <li><a href="#-report-system-community-policing">👮‍♂️ Report System (Community Policing)</a>
+      <ul>
+        <li><a href="#in-game-reporting">In-Game Reporting</a></li>
+        <li><a href="#hardware-ban-hwid">Hardware Ban (HWID)</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+    </div>
+  </aside>
+  
+ 
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

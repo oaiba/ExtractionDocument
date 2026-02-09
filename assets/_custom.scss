@@ -1,0 +1,67 @@
+/* Custom Overrides for Hugo Book Theme */
+
+/* Overriding SCSS variables */
+/* Increase the max-width of the container significantly */
+$body-min-width: 20rem;
+$body-width: 90vw;
+/* Use 90% of the viewport width */
+$container-max-width: 95rem;
+/* ~1500px, huge increase from default */
+$menu-width: 18rem;
+/* Slightly wider menu */
+$toc-width: 16rem;
+
+/* SIDEBAR & TOC: Hide Scrollbar */
+.book-menu-content,
+.book-toc-content {
+    scrollbar-width: none !important;
+    /* Firefox */
+    -ms-overflow-style: none !important;
+    /* IE and Edge */
+}
+
+.book-menu-content::-webkit-scrollbar,
+.book-toc-content::-webkit-scrollbar {
+    display: none !important;
+    /* Chrome, Safari and Opera */
+}
+
+/* LAYOUT ADJUSTMENTS */
+
+/* Force container to be wide */
+.container {
+    max-width: $container-max-width !important;
+}
+
+.book-page {
+    /* Ensure the page content expands to fill available space */
+    width: 100%;
+    max-width: none !important;
+    padding: 2rem 3rem !important;
+}
+
+/* Ensure images and tables scale properly in wide view */
+.markdown img {
+    max-width: 100%;
+    height: auto;
+}
+
+.markdown table {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    border-collapse: collapse;
+}
+
+/* Tree View Styling */
+.book-menu nav ul ul {
+    padding-left: 1rem;
+    border-left: 1px solid rgba(128, 128, 128, 0.2);
+    margin-left: 0.2rem;
+}
+
+/* Fix logo size */
+.book-brand img {
+    height: 3rem !important;
+    width: auto !important;
+}

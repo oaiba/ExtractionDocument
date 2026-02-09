@@ -1,0 +1,3250 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=52224&amp;path=livereload" data-no-instant defer></script>
+  <!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Narrative System - Technical Specification#← Back to Index | Next: Live Ops System →
+Reference: High-Level Narrative Design
+Overview#The Narrative System manages quests, faction reputation, dialogue, collectibles, and operator backstory progression. Designed for environmental storytelling with minimal UI interruption.
+Responsibilities:
+Quest tracking and progression Faction reputation and unlocks Dialogue and voice line management Audio log collectibles Operator personal storylines Environmental narrative triggers Localized text delivery Quest item management Enums &amp; Types#QuestType#Quest category determining reset behavior and source.
+">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:52224/docs/GDD_Technical/Systems/NarrativeSystem/">
+  <meta property="og:site_name" content="Extraction Shooter GDD">
+  <meta property="og:title" content="Extraction Shooter GDD">
+  <meta property="og:description" content="Narrative System - Technical Specification#← Back to Index | Next: Live Ops System →
+Reference: High-Level Narrative Design
+Overview#The Narrative System manages quests, faction reputation, dialogue, collectibles, and operator backstory progression. Designed for environmental storytelling with minimal UI interruption.
+Responsibilities:
+Quest tracking and progression Faction reputation and unlocks Dialogue and voice line management Audio log collectibles Operator personal storylines Environmental narrative triggers Localized text delivery Quest item management Enums &amp; Types#QuestType#Quest category determining reset behavior and source.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
+
+
+  <meta itemprop="name" content="Extraction Shooter GDD">
+  <meta itemprop="description" content="Narrative System - Technical Specification#← Back to Index | Next: Live Ops System →
+Reference: High-Level Narrative Design
+Overview#The Narrative System manages quests, faction reputation, dialogue, collectibles, and operator backstory progression. Designed for environmental storytelling with minimal UI interruption.
+Responsibilities:
+Quest tracking and progression Faction reputation and unlocks Dialogue and voice line management Audio log collectibles Operator personal storylines Environmental narrative triggers Localized text delivery Quest item management Enums &amp; Types#QuestType#Quest category determining reset behavior and source.">
+  <meta itemprop="wordCount" content="1614">
+
+<title>Narrative System | Extraction Shooter GDD</title>
+<link rel="icon" href="/favicon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="http://localhost:52224/docs/GDD_Technical/Systems/NarrativeSystem/">
+<link rel="stylesheet" href="/book.min.63c8b2b12bbd1ad36428837740ea371dd41fdb9c22b35499003d0dfa4dbce6ba.css" integrity="sha256-Y8iysSu9GtNkKIN3QOo3HdQf25wis1SZAD0N&#43;k285ro=" crossorigin="anonymous">
+
+
+  <script defer src="/fuse.min.js"></script>
+  <script defer src="/en.search.min.58bea27d7a08265548c5a8636a9a9fc844e0eb9d60fc3bb2c53d517da858d4c1.js" integrity="sha256-WL6ifXoIJlVIxahjapqfyETg651g/DuyxT1RfahY1ME=" crossorigin="anonymous"></script>
+
+  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
+
+
+
+  
+</head>
+<body dir="ltr" class="book-kind-page book-type-docs">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    
+<aside class="book-menu">
+  <div class="book-menu-content">
+    
+  <nav>
+    <h2 class="book-brand">
+  <a class="flex align-center" href="/"><img src="/logo.svg" alt="Logo" /><span>Extraction Shooter GDD</span>
+  </a>
+</h2>
+
+    <div class="book-theme-toggle">
+    <input type="checkbox" id="theme-toggle" class="toggle">
+    <label for="theme-toggle" class="flex justify-between items-center cursor-pointer">
+        <span class="text-xs font-semibold">Dark Mode</span>
+        <div
+            class="relative w-10 h-5 bg-gray-200 rounded-full transition-colors duration-200 ease-in-out dark:bg-gray-700">
+            <div
+                class="absolute left-0 w-5 h-5 bg-white rounded-full shadow transform transition-transform duration-200 ease-in-out dark:translate-x-full">
+            </div>
+        </div>
+    </label>
+</div>
+
+<script>
+    (function () {
+        const toggle = document.getElementById('theme-toggle');
+        const html = document.documentElement;
+
+        
+        const savedTheme = localStorage.getItem('theme');
+        const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+        if (savedTheme === 'dark' || (!savedTheme && systemDark)) {
+            html.classList.add('dark');
+            toggle.checked = true;
+        } else {
+            html.classList.remove('dark');
+            toggle.checked = false;
+        }
+
+        
+        toggle.addEventListener('change', function () {
+            if (this.checked) {
+                html.classList.add('dark');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                html.classList.remove('dark');
+                localStorage.setItem('theme', 'light');
+            }
+        });
+    })();
+</script>
+
+<style>
+     
+    .book-theme-toggle {
+        margin: 1rem 0;
+        padding: 0 1rem;
+
+    }
+
+    .book-theme-toggle label {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        cursor: pointer;
+        font-size: 0.85em;
+    }
+
+     
+    .book-theme-toggle input {
+        display: none;
+    }
+
+     
+    .book-theme-toggle label::after {
+        content: "🌙";
+         
+    }
+
+     
+    html:not(.dark) .book-theme-toggle label::after {
+        content: "☀️";
+         
+    }
+</style> 
+    
+<div class="book-search hidden">
+  <input id="book-search-input" type="text" 
+    placeholder="Search"
+    aria-label="Search"
+    maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+    
+
+    
+    
+
+
+
+    
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/" class="">
+      Gdd Design</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      AI</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/AI/EnemyBehavior/" class="">
+      Enemy Behavior</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/AI/FactionBehaviors/" class="">
+      Faction Behaviors</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Audio</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Audio/SoundDesign/" class="">
+      Sound Design</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Audio/Soundscape/" class="">
+      Soundscape</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Audio/TacticalAudio/" class="">
+      Tactical Audio</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Audio/VoiceLines/" class="">
+      Voice Lines</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Characters</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Operators/" class="">
+      Operators</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Assault</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Assault/Blaze/" class="">
+      Blaze</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Assault/Havoc/" class="">
+      Havoc</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Assault/README/" class="">
+      Readme</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Assault/Viper/" class="">
+      Viper</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Recon</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Recon/Phantom/" class="">
+      Phantom</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Recon/README/" class="">
+      Readme</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Recon/Specter/" class="">
+      Specter</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Recon/Wraith/" class="">
+      Wraith</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Specialist</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Specialist/Cipher/" class="">
+      Cipher</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Specialist/Flux/" class="">
+      Flux</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Specialist/README/" class="">
+      Readme</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Support</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Support/Angel/" class="">
+      Angel</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Support/Doc/" class="">
+      Doc</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Support/README/" class="">
+      Readme</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Tank</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Tank/Bulwark/" class="">
+      Bulwark</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Tank/Fortress/" class="">
+      Fortress</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Tank/README/" class="">
+      Readme</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Combat</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Combat/Items/" class="">
+      Items</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Combat/Weapons/" class="">
+      Weapons</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      GameDesign</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Accessibility/" class="">
+      Accessibility</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Controls/" class="">
+      Controls</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/CoreGameplay/" class="">
+      Core Gameplay</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Economy/" class="">
+      Economy</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/GameModes/" class="">
+      Game Modes</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/LiveOps/" class="">
+      Live Ops</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Localization/" class="">
+      Localization</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/NavigationAndMap/" class="">
+      Navigation and Map</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Overview/" class="">
+      Overview</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Progression/" class="">
+      Progression</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/RankedMode/" class="">
+      Ranked Mode</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/TutorialRaid/" class="">
+      Tutorial Raid</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/UserSettings/" class="">
+      User Settings</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Gameplay</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Gameplay/CoreLoop/" class="">
+      Core Loop</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      ProjectScope</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/ProjectScope/DesignPillars/" class="">
+      Design Pillars</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/ProjectScope/MVP/" class="">
+      Mvp</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/ProjectScope/NonGoals/" class="">
+      Non Goals</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/ProjectScope/Risks/" class="">
+      Risks</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Social</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Social/Multiplayer/" class="">
+      Multiplayer</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Story</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Story/Backstory/" class="">
+      Backstory</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Story/Factions/" class="">
+      Factions</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Story/Narrative/" class="">
+      Narrative</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Story/QuestLines/" class="">
+      Quest Lines</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      UI UX</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/UI_UX/UX_Flows/" class="">
+      Ux Flows</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/UI_UX/Visual_Style/" class="">
+      Visual Style</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Visuals</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Visuals/ArtDirection/" class="">
+      Art Direction</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Visuals/AssetGuidelines/" class="">
+      Asset Guidelines</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Visuals/StyleGuide/" class="">
+      Style Guide</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Visuals/UserInterface/" class="">
+      User Interface</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      World</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/EnvironmentalNarrative/" class="">
+      Environmental Narrative</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/EnvironmentalNarrative_Guidelines/" class="">
+      Environmental Narrative Guidelines</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/LootDistribution/" class="">
+      Loot Distribution</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/MapDesign/" class="">
+      Map Design</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/MapDesign_IndustrialZone/" class="">
+      Map Design Industrial Zone</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/MapDesign_NeonSlums/" class="">
+      Map Design Neon Slums</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/MapDesign_Wilderness/" class="">
+      Map Design Wilderness</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/MapLayouts/" class="">
+      Map Layouts</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/" class="">
+      Gdd Technical</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      AI</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/AI/SensorySystem/" class="">
+      Sensory System</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Core</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Core/Architecture/" class="">
+      Architecture</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Core/CodingStandards/" class="">
+      Coding Standards</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Core/DevelopmentRoadmap/" class="">
+      Development Roadmap</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Core/NetworkingSystem/" class="">
+      Networking System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Core/SecuritySystem/" class="">
+      Security System</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Gameplay</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Gameplay/CharacterSystem/" class="">
+      Character System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Gameplay/ControlSystem/" class="">
+      Control System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Gameplay/InventorySystem/" class="">
+      Inventory System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Gameplay/WeaponSystem/" class="">
+      Weapon System</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Networking</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Networking/LagCompensation/" class="">
+      Lag Compensation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Networking/ReplicationStrategy/" class="">
+      Replication Strategy</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Performance</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Performance/Budgets/" class="">
+      Budgets</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Performance/Optimization/" class="">
+      Optimization</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Security</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Security/AntiCheatStrategy/" class="">
+      Anti Cheat Strategy</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Systems</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/AccessibilitySystem/" class="">
+      Accessibility System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/AISystem/" class="">
+      Aisystem</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/AnalyticsSystem/" class="">
+      Analytics System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/AudioSystem/" class="">
+      Audio System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/BuildPipeline/" class="">
+      Build Pipeline</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/LiveOpsSystem/" class="">
+      Live Ops System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/LocalizationSystem/" class="">
+      Localization System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/MapSystem/" class="">
+      Map System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/NarrativeSystem/" class="active">
+      Narrative System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/ProgressionSystem/" class="">
+      Progression System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/RankedSystem/" class="">
+      Ranked System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/SaveSystem/" class="">
+      Save System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/SocialSystem/" class="">
+      Social System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/TutorialSystem/" class="">
+      Tutorial System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/UISystem/" class="">
+      Uisystem</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+</nav>
+
+
+
+
+<script>{ { . | safeJS } }</script>
+
+
+  </div>
+</aside>
+ 
+
+    <div class="book-page">
+      <header class="book-header hidden">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/icons/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <h3>Narrative System</h3>
+
+  <label for="toc-control">
+    
+    <img src="/icons/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#overview">Overview</a></li>
+    <li><a href="#enums--types">Enums &amp; Types</a>
+      <ul>
+        <li><a href="#questtype">QuestType</a></li>
+        <li><a href="#queststate">QuestState</a></li>
+        <li><a href="#questobjectivetype">QuestObjectiveType</a></li>
+        <li><a href="#faction">Faction</a></li>
+        <li><a href="#reputationlevel">ReputationLevel</a></li>
+        <li><a href="#dialoguetype">DialogueType</a></li>
+        <li><a href="#collectibletype">CollectibleType</a></li>
+      </ul>
+    </li>
+    <li><a href="#code-names">Code Names</a>
+      <ul>
+        <li><a href="#quest-events">Quest Events</a></li>
+        <li><a href="#faction-events">Faction Events</a></li>
+        <li><a href="#dialogue-events">Dialogue Events</a></li>
+        <li><a href="#collectible-events">Collectible Events</a></li>
+      </ul>
+    </li>
+    <li><a href="#architecture">Architecture</a>
+      <ul>
+        <li><a href="#class-diagram">Class Diagram</a></li>
+      </ul>
+    </li>
+    <li><a href="#core-classes">Core Classes</a>
+      <ul>
+        <li><a href="#narrativemanager">NarrativeManager</a></li>
+        <li><a href="#questmanager">QuestManager</a></li>
+        <li><a href="#factionmanager">FactionManager</a></li>
+        <li><a href="#dialoguemanager">DialogueManager</a></li>
+        <li><a href="#collectiblemanager">CollectibleManager</a></li>
+      </ul>
+    </li>
+    <li><a href="#data-structures">Data Structures</a></li>
+    <li><a href="#todo-implementation-tasks">TODO: Implementation Tasks</a>
+      <ul>
+        <li><a href="#high-priority-">HIGH Priority 🔴</a></li>
+        <li><a href="#medium-priority-">MEDIUM Priority 🟡</a></li>
+        <li><a href="#low-priority-">LOW Priority 🟢</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><h1 id="narrative-system---technical-specification">Narrative System - Technical Specification<a class="anchor" href="#narrative-system---technical-specification">#</a></h1>
+<p><strong><a href="../README.md">← Back to Index</a></strong> | <strong><a href="./LiveOpsSystem.md">Next: Live Ops System →</a></strong></p>
+<p><strong>Reference:</strong> <a href="../../GDD_HighLevel/Story/Narrative.md">High-Level Narrative Design</a></p>
+<hr>
+<h2 id="overview">Overview<a class="anchor" href="#overview">#</a></h2>
+<p>The <strong>Narrative System</strong> manages quests, faction reputation, dialogue, collectibles, and operator backstory progression. Designed for environmental storytelling with minimal UI interruption.</p>
+<p><strong>Responsibilities:</strong></p>
+<ul>
+<li>Quest tracking and progression</li>
+<li>Faction reputation and unlocks</li>
+<li>Dialogue and voice line management</li>
+<li>Audio log collectibles</li>
+<li>Operator personal storylines</li>
+<li>Environmental narrative triggers</li>
+<li>Localized text delivery</li>
+<li>Quest item management</li>
+</ul>
+<hr>
+<h2 id="enums--types">Enums &amp; Types<a class="anchor" href="#enums--types">#</a></h2>
+<h3 id="questtype">QuestType<a class="anchor" href="#questtype">#</a></h3>
+<p>Quest category determining reset behavior and source.</p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Code Name</th>
+          <th style="text-align: left">Display Name</th>
+          <th style="text-align: left">Reset</th>
+          <th style="text-align: left">Max Active</th>
+          <th style="text-align: left">Source</th>
+          <th style="text-align: left">Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><code>QT_Faction</code></td>
+          <td style="text-align: left">Faction Quest</td>
+          <td style="text-align: left">Never</td>
+          <td style="text-align: left">3</td>
+          <td style="text-align: left">NPC</td>
+          <td style="text-align: left">Given by faction representatives</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>QT_Personal</code></td>
+          <td style="text-align: left">Personal Quest</td>
+          <td style="text-align: left">Never</td>
+          <td style="text-align: left">1</td>
+          <td style="text-align: left">Operator</td>
+          <td style="text-align: left">Operator backstory progression</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>QT_Tutorial</code></td>
+          <td style="text-align: left">Tutorial Quest</td>
+          <td style="text-align: left">Once</td>
+          <td style="text-align: left">1</td>
+          <td style="text-align: left">System</td>
+          <td style="text-align: left">Onboarding quests for new players</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>QT_Daily</code></td>
+          <td style="text-align: left">Daily Quest</td>
+          <td style="text-align: left">24h</td>
+          <td style="text-align: left">3</td>
+          <td style="text-align: left">System</td>
+          <td style="text-align: left">Daily rotating challenges</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>QT_Weekly</code></td>
+          <td style="text-align: left">Weekly Quest</td>
+          <td style="text-align: left">7d</td>
+          <td style="text-align: left">5</td>
+          <td style="text-align: left">System</td>
+          <td style="text-align: left">Weekly rotating challenges</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>QT_Event</code></td>
+          <td style="text-align: left">Event Quest</td>
+          <td style="text-align: left">Event end</td>
+          <td style="text-align: left">5</td>
+          <td style="text-align: left">Event</td>
+          <td style="text-align: left">Limited-time event quests</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>QT_Hidden</code></td>
+          <td style="text-align: left">Hidden Quest</td>
+          <td style="text-align: left">Never</td>
+          <td style="text-align: left">N/A</td>
+          <td style="text-align: left">World</td>
+          <td style="text-align: left">Discovered through exploration</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>QT_Achievement</code></td>
+          <td style="text-align: left">Achievement</td>
+          <td style="text-align: left">Never</td>
+          <td style="text-align: left">N/A</td>
+          <td style="text-align: left">System</td>
+          <td style="text-align: left">Long-term permanent goals</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h3 id="queststate">QuestState<a class="anchor" href="#queststate">#</a></h3>
+<p>Current state of a quest in the player&rsquo;s log.</p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Code Name</th>
+          <th style="text-align: left">Display Name</th>
+          <th style="text-align: left">UI Display</th>
+          <th style="text-align: left">Actions</th>
+          <th style="text-align: left">Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><code>QS_Locked</code></td>
+          <td style="text-align: left">Locked</td>
+          <td style="text-align: left">Grayed out</td>
+          <td style="text-align: left">None</td>
+          <td style="text-align: left">Prerequisites not met</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>QS_Available</code></td>
+          <td style="text-align: left">Available</td>
+          <td style="text-align: left">&ldquo;!&rdquo; icon</td>
+          <td style="text-align: left">Accept</td>
+          <td style="text-align: left">Can be accepted</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>QS_Active</code></td>
+          <td style="text-align: left">Active</td>
+          <td style="text-align: left">Progress bar</td>
+          <td style="text-align: left">Track</td>
+          <td style="text-align: left">Currently in progress</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>QS_ReadyToComplete</code></td>
+          <td style="text-align: left">Ready</td>
+          <td style="text-align: left">&ldquo;✓&rdquo; icon</td>
+          <td style="text-align: left">Complete</td>
+          <td style="text-align: left">Objectives done, needs turn-in</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>QS_Completed</code></td>
+          <td style="text-align: left">Completed</td>
+          <td style="text-align: left">Checkmark</td>
+          <td style="text-align: left">None</td>
+          <td style="text-align: left">Finished and rewarded</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>QS_Failed</code></td>
+          <td style="text-align: left">Failed</td>
+          <td style="text-align: left">&ldquo;X&rdquo; icon</td>
+          <td style="text-align: left">Retry</td>
+          <td style="text-align: left">Time expired or failed condition</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>QS_Abandoned</code></td>
+          <td style="text-align: left">Abandoned</td>
+          <td style="text-align: left">None</td>
+          <td style="text-align: left">Re-accept</td>
+          <td style="text-align: left">Player cancelled</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h3 id="questobjectivetype">QuestObjectiveType<a class="anchor" href="#questobjectivetype">#</a></h3>
+<p>Quest objective action type for progress tracking.</p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Code Name</th>
+          <th style="text-align: left">Display Name</th>
+          <th style="text-align: left">Context</th>
+          <th style="text-align: left">Example</th>
+          <th style="text-align: left">Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><code>QOT_Collect</code></td>
+          <td style="text-align: left">Collect</td>
+          <td style="text-align: left">ItemID</td>
+          <td style="text-align: left">10 Scrap Metal</td>
+          <td style="text-align: left">Gather specific items</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>QOT_Kill</code></td>
+          <td style="text-align: left">Kill</td>
+          <td style="text-align: left">EnemyType</td>
+          <td style="text-align: left">15 Scavengers</td>
+          <td style="text-align: left">Kill enemy count</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>QOT_KillSpecific</code></td>
+          <td style="text-align: left">Kill Specific</td>
+          <td style="text-align: left">BossID</td>
+          <td style="text-align: left">Kill Warden</td>
+          <td style="text-align: left">Kill specific enemy/boss</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>QOT_Extract</code></td>
+          <td style="text-align: left">Extract</td>
+          <td style="text-align: left">None</td>
+          <td style="text-align: left">Extract 3 times</td>
+          <td style="text-align: left">Successfully extract</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>QOT_ExtractWithLoot</code></td>
+          <td style="text-align: left">Extract w/ Loot</td>
+          <td style="text-align: left">Value</td>
+          <td style="text-align: left">Extract with $5000</td>
+          <td style="text-align: left">Extract with loot value</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>QOT_VisitZone</code></td>
+          <td style="text-align: left">Visit Zone</td>
+          <td style="text-align: left">ZoneID</td>
+          <td style="text-align: left">Visit Power Plant</td>
+          <td style="text-align: left">Visit specific zone</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>QOT_Interact</code></td>
+          <td style="text-align: left">Interact</td>
+          <td style="text-align: left">ObjectID</td>
+          <td style="text-align: left">Hack Terminal</td>
+          <td style="text-align: left">Interact with object</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>QOT_Escort</code></td>
+          <td style="text-align: left">Escort</td>
+          <td style="text-align: left">NPCID</td>
+          <td style="text-align: left">Protect Data Courier</td>
+          <td style="text-align: left">Protect NPC/item</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>QOT_Survive</code></td>
+          <td style="text-align: left">Survive</td>
+          <td style="text-align: left">Minutes</td>
+          <td style="text-align: left">Survive 10 min</td>
+          <td style="text-align: left">Survive time in match</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>QOT_Hack</code></td>
+          <td style="text-align: left">Hack</td>
+          <td style="text-align: left">None</td>
+          <td style="text-align: left">Hack 3 Terminals</td>
+          <td style="text-align: left">Hack terminal count</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>QOT_Deliver</code></td>
+          <td style="text-align: left">Deliver</td>
+          <td style="text-align: left">Location</td>
+          <td style="text-align: left">Bring to NPC</td>
+          <td style="text-align: left">Bring item to location</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>QOT_Photograph</code></td>
+          <td style="text-align: left">Photograph</td>
+          <td style="text-align: left">ObjectID</td>
+          <td style="text-align: left">Scan Intel</td>
+          <td style="text-align: left">Scan/photo specific object</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>QOT_NoCondition</code></td>
+          <td style="text-align: left">No Condition</td>
+          <td style="text-align: left">Condition</td>
+          <td style="text-align: left">Without dying</td>
+          <td style="text-align: left">Complete without failing condition</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h3 id="faction">Faction<a class="anchor" href="#faction">#</a></h3>
+<p>Faction identity with colors and theme.</p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Code Name</th>
+          <th style="text-align: left">Display Name</th>
+          <th style="text-align: left">Primary Color</th>
+          <th style="text-align: left">Secondary</th>
+          <th style="text-align: left">Leader</th>
+          <th style="text-align: left">Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><code>F_SalvageCorps</code></td>
+          <td style="text-align: left">Salvage Corps</td>
+          <td style="text-align: left">Orange</td>
+          <td style="text-align: left">Gray</td>
+          <td style="text-align: left">Viktor Koval</td>
+          <td style="text-align: left">Industrial workers, honest trade</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>F_TechSyndicate</code></td>
+          <td style="text-align: left">Tech Syndicate</td>
+          <td style="text-align: left">Cyan</td>
+          <td style="text-align: left">Black</td>
+          <td style="text-align: left">The Node</td>
+          <td style="text-align: left">Hackers, tech specialists</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>F_UndergroundNetwork</code></td>
+          <td style="text-align: left">Underground Network</td>
+          <td style="text-align: left">Purple</td>
+          <td style="text-align: left">Gold</td>
+          <td style="text-align: left">The Broker</td>
+          <td style="text-align: left">Black market dealers</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>F_Peacekeepers</code></td>
+          <td style="text-align: left">Peacekeepers</td>
+          <td style="text-align: left">Blue</td>
+          <td style="text-align: left">White</td>
+          <td style="text-align: left">Commander Reyes</td>
+          <td style="text-align: left">Military remnants, order</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h3 id="reputationlevel">ReputationLevel<a class="anchor" href="#reputationlevel">#</a></h3>
+<p>Faction standing tier with unlocks.</p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Code Name</th>
+          <th style="text-align: left">Display Name</th>
+          <th style="text-align: left">Rep Range</th>
+          <th style="text-align: left">Discount</th>
+          <th style="text-align: left">Quests</th>
+          <th style="text-align: left">Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><code>RL_Hostile</code></td>
+          <td style="text-align: left">Hostile</td>
+          <td style="text-align: left">-1000 to -1</td>
+          <td style="text-align: left">+50% price</td>
+          <td style="text-align: left">Locked</td>
+          <td style="text-align: left">Locked out, must repair</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>RL_Neutral</code></td>
+          <td style="text-align: left">Neutral</td>
+          <td style="text-align: left">0</td>
+          <td style="text-align: left">0%</td>
+          <td style="text-align: left">Basic</td>
+          <td style="text-align: left">Starting reputation</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>RL_Level1</code></td>
+          <td style="text-align: left">Newcomer</td>
+          <td style="text-align: left">100-499</td>
+          <td style="text-align: left">0%</td>
+          <td style="text-align: left">Tier 1</td>
+          <td style="text-align: left">First standing tier</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>RL_Level2</code></td>
+          <td style="text-align: left">Trusted</td>
+          <td style="text-align: left">500-1499</td>
+          <td style="text-align: left">5%</td>
+          <td style="text-align: left">Tier 2</td>
+          <td style="text-align: left">Access to vendor items</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>RL_Level3</code></td>
+          <td style="text-align: left">Honored</td>
+          <td style="text-align: left">1500-2999</td>
+          <td style="text-align: left">10%</td>
+          <td style="text-align: left">Tier 3</td>
+          <td style="text-align: left">Special gear unlocks</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>RL_Level4</code></td>
+          <td style="text-align: left">Inner Circle</td>
+          <td style="text-align: left">3000-4999</td>
+          <td style="text-align: left">15%</td>
+          <td style="text-align: left">Tier 4</td>
+          <td style="text-align: left">Exclusive cosmetics</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>RL_Level5</code></td>
+          <td style="text-align: left">Veteran</td>
+          <td style="text-align: left">5000+</td>
+          <td style="text-align: left">20%</td>
+          <td style="text-align: left">All</td>
+          <td style="text-align: left">Max standing, all unlocks</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h3 id="dialoguetype">DialogueType<a class="anchor" href="#dialoguetype">#</a></h3>
+<p>Voice line context and priority.</p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Code Name</th>
+          <th style="text-align: left">Display Name</th>
+          <th style="text-align: left">Priority</th>
+          <th style="text-align: left">Cooldown</th>
+          <th style="text-align: left">Subtitle</th>
+          <th style="text-align: left">Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><code>DT_QuestGiver</code></td>
+          <td style="text-align: left">Quest Giver</td>
+          <td style="text-align: left">Critical</td>
+          <td style="text-align: left">0s</td>
+          <td style="text-align: left">Yes</td>
+          <td style="text-align: left">NPC dialogue for quests</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>DT_CombatCallout</code></td>
+          <td style="text-align: left">Combat Callout</td>
+          <td style="text-align: left">High</td>
+          <td style="text-align: left">3s</td>
+          <td style="text-align: left">Brief</td>
+          <td style="text-align: left">Short combat voice lines</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>DT_CharacterMoment</code></td>
+          <td style="text-align: left">Character Moment</td>
+          <td style="text-align: left">Low</td>
+          <td style="text-align: left">30s</td>
+          <td style="text-align: left">Yes</td>
+          <td style="text-align: left">Ambient personality lines</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>DT_SquadComm</code></td>
+          <td style="text-align: left">Squad Comm</td>
+          <td style="text-align: left">High</td>
+          <td style="text-align: left">2s</td>
+          <td style="text-align: left">Brief</td>
+          <td style="text-align: left">Team communication</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>DT_Ping</code></td>
+          <td style="text-align: left">Ping</td>
+          <td style="text-align: left">Medium</td>
+          <td style="text-align: left">1s</td>
+          <td style="text-align: left">No</td>
+          <td style="text-align: left">Ping responses</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>DT_Hurt</code></td>
+          <td style="text-align: left">Hurt</td>
+          <td style="text-align: left">Critical</td>
+          <td style="text-align: left">2s</td>
+          <td style="text-align: left">No</td>
+          <td style="text-align: left">Damage reactions</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>DT_Death</code></td>
+          <td style="text-align: left">Death</td>
+          <td style="text-align: left">Critical</td>
+          <td style="text-align: left">0s</td>
+          <td style="text-align: left">No</td>
+          <td style="text-align: left">Death voice lines</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>DT_Revival</code></td>
+          <td style="text-align: left">Revival</td>
+          <td style="text-align: left">High</td>
+          <td style="text-align: left">5s</td>
+          <td style="text-align: left">Brief</td>
+          <td style="text-align: left">Revive voice lines</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>DT_Extraction</code></td>
+          <td style="text-align: left">Extraction</td>
+          <td style="text-align: left">High</td>
+          <td style="text-align: left">5s</td>
+          <td style="text-align: left">Yes</td>
+          <td style="text-align: left">Extraction callouts</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>DT_Loot</code></td>
+          <td style="text-align: left">Loot</td>
+          <td style="text-align: left">Medium</td>
+          <td style="text-align: left">10s</td>
+          <td style="text-align: left">Brief</td>
+          <td style="text-align: left">Finding items</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>DT_Environmental</code></td>
+          <td style="text-align: left">Environmental</td>
+          <td style="text-align: left">Low</td>
+          <td style="text-align: left">60s</td>
+          <td style="text-align: left">Yes</td>
+          <td style="text-align: left">Zone-specific comments</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h3 id="collectibletype">CollectibleType<a class="anchor" href="#collectibletype">#</a></h3>
+<p>Collectible item category for codex.</p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Code Name</th>
+          <th style="text-align: left">Display Name</th>
+          <th style="text-align: left">Duration</th>
+          <th style="text-align: left">XP Reward</th>
+          <th style="text-align: left">Codex Category</th>
+          <th style="text-align: left">Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><code>CLT_AudioLog</code></td>
+          <td style="text-align: left">Audio Log</td>
+          <td style="text-align: left">30-60s</td>
+          <td style="text-align: left">100 XP</td>
+          <td style="text-align: left">Recordings</td>
+          <td style="text-align: left">Voice recordings with lore</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>CLT_Document</code></td>
+          <td style="text-align: left">Document</td>
+          <td style="text-align: left">N/A</td>
+          <td style="text-align: left">50 XP</td>
+          <td style="text-align: left">Files</td>
+          <td style="text-align: left">Text-based lore documents</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>CLT_Photo</code></td>
+          <td style="text-align: left">Photo</td>
+          <td style="text-align: left">N/A</td>
+          <td style="text-align: left">25 XP</td>
+          <td style="text-align: left">Gallery</td>
+          <td style="text-align: left">Image collectibles</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>CLT_Artifact</code></td>
+          <td style="text-align: left">Artifact</td>
+          <td style="text-align: left">N/A</td>
+          <td style="text-align: left">150 XP</td>
+          <td style="text-align: left">Artifacts</td>
+          <td style="text-align: left">Physical object collectibles</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>CLT_IntelFragment</code></td>
+          <td style="text-align: left">Intel Fragment</td>
+          <td style="text-align: left">N/A</td>
+          <td style="text-align: left">75 XP</td>
+          <td style="text-align: left">Intel</td>
+          <td style="text-align: left">Pieced together lore (3-5 parts)</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="code-names">Code Names<a class="anchor" href="#code-names">#</a></h2>
+<h3 id="quest-events">Quest Events<a class="anchor" href="#quest-events">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Code Name</th>
+          <th style="text-align: left">Trigger</th>
+          <th style="text-align: left">Parameters</th>
+          <th style="text-align: left">Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><code>QUEST_ACCEPT</code></td>
+          <td style="text-align: left">Player accepts</td>
+          <td style="text-align: left">QuestID</td>
+          <td style="text-align: left">Quest added to active</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>QUEST_PROGRESS</code></td>
+          <td style="text-align: left">Objective updated</td>
+          <td style="text-align: left">QuestID, ObjectiveID, Progress</td>
+          <td style="text-align: left">Progress toward objective</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>QUEST_OBJECTIVE_COMPLETE</code></td>
+          <td style="text-align: left">Objective done</td>
+          <td style="text-align: left">QuestID, ObjectiveID</td>
+          <td style="text-align: left">Single objective completed</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>QUEST_AVAILABLE</code></td>
+          <td style="text-align: left">Prerequisites met</td>
+          <td style="text-align: left">QuestID</td>
+          <td style="text-align: left">Quest now available</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>QUEST_COMPLETE</code></td>
+          <td style="text-align: left">All objectives done</td>
+          <td style="text-align: left">QuestID, Rewards</td>
+          <td style="text-align: left">Quest completed</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>QUEST_FAIL</code></td>
+          <td style="text-align: left">Failure condition</td>
+          <td style="text-align: left">QuestID, Reason</td>
+          <td style="text-align: left">Quest failed</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>QUEST_ABANDON</code></td>
+          <td style="text-align: left">Player cancels</td>
+          <td style="text-align: left">QuestID</td>
+          <td style="text-align: left">Quest abandoned</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="faction-events">Faction Events<a class="anchor" href="#faction-events">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Code Name</th>
+          <th style="text-align: left">Trigger</th>
+          <th style="text-align: left">Parameters</th>
+          <th style="text-align: left">Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><code>FACTION_REP_GAIN</code></td>
+          <td style="text-align: left">Rep earned</td>
+          <td style="text-align: left">FactionID, Amount, Source</td>
+          <td style="text-align: left">Reputation increased</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>FACTION_REP_LOSS</code></td>
+          <td style="text-align: left">Rep lost</td>
+          <td style="text-align: left">FactionID, Amount, Reason</td>
+          <td style="text-align: left">Reputation decreased</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>FACTION_LEVEL_UP</code></td>
+          <td style="text-align: left">Tier increased</td>
+          <td style="text-align: left">FactionID, OldLevel, NewLevel</td>
+          <td style="text-align: left">Faction level up</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>FACTION_UNLOCK</code></td>
+          <td style="text-align: left">Item unlocked</td>
+          <td style="text-align: left">FactionID, UnlockID</td>
+          <td style="text-align: left">New item available</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="dialogue-events">Dialogue Events<a class="anchor" href="#dialogue-events">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Code Name</th>
+          <th style="text-align: left">Trigger</th>
+          <th style="text-align: left">Parameters</th>
+          <th style="text-align: left">Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><code>DIALOGUE_TRIGGER</code></td>
+          <td style="text-align: left">Dialogue started</td>
+          <td style="text-align: left">DialogueID, SpeakerID</td>
+          <td style="text-align: left">Dialogue sequence began</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>DIALOGUE_COMPLETE</code></td>
+          <td style="text-align: left">Dialogue ended</td>
+          <td style="text-align: left">DialogueID</td>
+          <td style="text-align: left">Dialogue sequence finished</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>VOICELINE_PLAY</code></td>
+          <td style="text-align: left">Voice line played</td>
+          <td style="text-align: left">OperatorID, LineID</td>
+          <td style="text-align: left">Voice line started</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>VOICELINE_QUEUE</code></td>
+          <td style="text-align: left">Voice line queued</td>
+          <td style="text-align: left">OperatorID, LineID, Delay</td>
+          <td style="text-align: left">Voice line added to queue</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="collectible-events">Collectible Events<a class="anchor" href="#collectible-events">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Code Name</th>
+          <th style="text-align: left">Trigger</th>
+          <th style="text-align: left">Parameters</th>
+          <th style="text-align: left">Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><code>COLLECTIBLE_FOUND</code></td>
+          <td style="text-align: left">Item discovered</td>
+          <td style="text-align: left">CollectibleID, Type</td>
+          <td style="text-align: left">Collectible picked up</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>COLLECTIBLE_PLAY</code></td>
+          <td style="text-align: left">Audio played</td>
+          <td style="text-align: left">CollectibleID</td>
+          <td style="text-align: left">Audio log played</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>LORE_UNLOCK</code></td>
+          <td style="text-align: left">Lore completed</td>
+          <td style="text-align: left">LoreID, Category</td>
+          <td style="text-align: left">Lore entry unlocked</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>CODEX_UPDATE</code></td>
+          <td style="text-align: left">Codex updated</td>
+          <td style="text-align: left">Category, EntryID</td>
+          <td style="text-align: left">Codex entry added/updated</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="architecture">Architecture<a class="anchor" href="#architecture">#</a></h2>
+<h3 id="class-diagram">Class Diagram<a class="anchor" href="#class-diagram">#</a></h3>
+<pre tabindex="0"><code>                    ┌─────────────────┐
+                    │NarrativeManager │
+                    │  (Singleton)    │
+                    └────────┬────────┘
+                             │
+    ┌────────────────────────┼────────────────────────┐
+    │                        │                        │
+┌───▼───────┐    ┌───────────▼───────────┐    ┌───────▼───────┐
+│QuestManager│   │  FactionManager       │    │DialogueManager│
+│            │   │                       │    │               │
+└────────────┘   └───────────────────────┘    └───────────────┘
+    │                        │                        │
+    │            ┌───────────┼───────────┐            │
+    │            │           │           │            │
+    │    ┌───────▼───┐ ┌─────▼────┐ ┌────▼────┐       │
+    │    │Collectible│ │ Codex    │ │VoiceLine│       │
+    │    │ Manager   │ │ Manager  │ │ Manager │       │
+    │    └───────────┘ └──────────┘ └─────────┘       │
+    │                                                 │
+    └─────────────────────────────────────────────────┘</code></pre><hr>
+<h2 id="core-classes">Core Classes<a class="anchor" href="#core-classes">#</a></h2>
+<h3 id="narrativemanager">NarrativeManager<a class="anchor" href="#narrativemanager">#</a></h3>
+<p><strong>Purpose:</strong> Central narrative controller.</p>
+<pre tabindex="0"><code>CLASS NarrativeManager:
+    STATIC instance: NarrativeManager
+
+    // Sub-managers
+    questManager: QuestManager
+    factionManager: FactionManager
+    dialogueManager: DialogueManager
+    collectibleManager: CollectibleManager
+    codexManager: CodexManager
+
+    FUNCTION Initialize():
+        questManager.Initialize()
+        factionManager.Initialize()
+        // ...
+    END FUNCTION
+
+    // Global Event Handlers
+    FUNCTION OnMatchComplete(result: MatchResult):
+        questManager.ProcessMatchResult(result)
+    END FUNCTION
+    
+    FUNCTION OnItemCollected(itemID: String):
+        questManager.UpdateProgress(QOT_Collect, 1, itemID)
+        collectibleManager.OnItemFound(itemID)
+    END FUNCTION
+    
+    FUNCTION OnEnemyKilled(enemyID: String, weaponID: String):
+        questManager.UpdateProgress(QOT_Kill, 1, enemyID)
+    END FUNCTION
+    
+    FUNCTION OnZoneEntered(zoneID: String):
+        questManager.UpdateProgress(QOT_VisitZone, 1, zoneID)
+    END FUNCTION</code></pre><hr>
+<h3 id="questmanager">QuestManager<a class="anchor" href="#questmanager">#</a></h3>
+<p><strong>Purpose:</strong> Quest lifecycle management.</p>
+<pre tabindex="0"><code>CLASS QuestManager:
+    allQuests: List&lt;QuestData&gt;
+    acceptedQuests: Map&lt;String, QuestData&gt;
+    completedQuests: Set&lt;String&gt;
+    trackedQuestID: String
+    maxActiveQuests: Integer = 5
+    
+    // Events
+    OnQuestStateChanged: Event&lt;(QuestID, NewState)&gt;
+    OnQuestProgress: Event&lt;(QuestID, ObjectiveID, Current, Target)&gt;
+    OnQuestComplete: Event&lt;(QuestID, Rewards)&gt;
+
+    FUNCTION GetAvailableQuests() -&gt; List&lt;QuestData&gt;:
+        available = []
+        FOR EACH quest IN allQuests:
+            IF quest.CurrentState == QS_Available:
+                available.Add(quest)
+            END IF
+        END FOR
+        RETURN available
+    END FUNCTION
+    
+    FUNCTION AcceptQuest(questID: String) -&gt; Boolean:
+        IF acceptedQuests.Count &gt;= maxActiveQuests:
+             RETURN false
+        END IF
+        
+        quest = GetQuestByID(questID)
+        quest.CurrentState = QS_Active
+        acceptedQuests[questID] = quest
+        
+        EMIT EVENT &#34;QUEST_ACCEPT&#34; WITH (questID)
+        OnQuestStateChanged.Broadcast(questID, QS_Active)
+        
+        RETURN true
+    END FUNCTION
+    
+    FUNCTION UpdateProgress(type: QuestObjectiveType, amount: Integer, context: String):
+        FOR EACH quest IN acceptedQuests.Values:
+             FOR EACH objective IN quest.Objectives:
+                 IF objective.Type == type AND objective.TargetID == context AND NOT objective.bComplete:
+                     objective.CurrentAmount += amount
+                     
+                     EMIT EVENT &#34;QUEST_PROGRESS&#34; WITH (quest.QuestID, objective.ObjectiveID, objective.CurrentAmount)
+                     OnQuestProgress.Broadcast(quest.QuestID, objective.ObjectiveID, objective.CurrentAmount, objective.TargetAmount)
+                     
+                     IF objective.CurrentAmount &gt;= objective.TargetAmount:
+                         objective.bComplete = true
+                         EMIT EVENT &#34;QUEST_OBJECTIVE_COMPLETE&#34; WITH (quest.QuestID, objective.ObjectiveID)
+                         CheckQuestCompletion(quest)
+                     END IF
+                 END IF
+             END FOR
+        END FOR
+    END FUNCTION
+    
+    FUNCTION CheckQuestCompletion(quest: QuestData):
+        IF quest.AreAllObjectivesComplete():
+            quest.CurrentState = QS_ReadyToComplete
+            OnQuestStateChanged.Broadcast(quest.QuestID, QS_ReadyToComplete)
+        END IF
+    END FUNCTION
+    
+    FUNCTION CompleteQuest(questID: String):
+        quest = acceptedQuests[questID]
+        IF quest.CurrentState == QS_ReadyToComplete:
+            quest.CurrentState = QS_Completed
+            acceptedQuests.Remove(questID)
+            completedQuests.Add(questID)
+            
+            GrantRewards(quest)
+            
+            EMIT EVENT &#34;QUEST_COMPLETE&#34; WITH (questID, quest.Rewards)
+            OnQuestComplete.Broadcast(questID, quest.Rewards)
+        END IF
+    END FUNCTION</code></pre><hr>
+<h3 id="factionmanager">FactionManager<a class="anchor" href="#factionmanager">#</a></h3>
+<p><strong>Purpose:</strong> Reputation and faction progression.</p>
+<pre tabindex="0"><code>CLASS FactionManager:
+    factionReputation: Map&lt;Faction, Integer&gt;
+    unlockedItems: Map&lt;Faction, List&lt;String&gt;&gt;
+
+    // Events
+    OnReputationChanged: Event&lt;(Faction, NewAmount)&gt;
+    OnLevelUp: Event&lt;(Faction, NewLevel)&gt;
+
+    FUNCTION GetReputation(faction: Faction) -&gt; Integer:
+        RETURN factionReputation.GetOrDefault(faction, 0)
+    END FUNCTION
+    
+    FUNCTION GetReputationLevel(faction: Faction) -&gt; ReputationLevel:
+        rep = GetReputation(faction)
+        // Check ranges
+        IF rep &gt;= 5000: RETURN RL_Level5
+        IF rep &gt;= 3000: RETURN RL_Level4
+        // ...
+        RETURN RL_Neutral
+    END FUNCTION
+    
+    FUNCTION AddReputation(faction: Faction, amount: Integer):
+        current = GetReputation(faction)
+        newAmount = current + amount
+        factionReputation[faction] = newAmount
+        
+        oldLevel = GetReputationLevel(faction) // based on current
+        // update map
+        
+        newLevel = GetReputationLevel(faction) // based on newAmount
+        
+        EMIT EVENT &#34;FACTION_REP_GAIN&#34; WITH (faction, amount)
+        OnReputationChanged.Broadcast(faction, newAmount)
+        
+        IF newLevel &gt; oldLevel:
+             EMIT EVENT &#34;FACTION_LEVEL_UP&#34; WITH (faction, oldLevel, newLevel)
+             OnLevelUp.Broadcast(faction, newLevel)
+             UnlockTierRewards(faction, newLevel)
+        END IF
+    END FUNCTION</code></pre><hr>
+<h3 id="dialoguemanager">DialogueManager<a class="anchor" href="#dialoguemanager">#</a></h3>
+<p><strong>Purpose:</strong> Dialogue playback and voice lines.</p>
+<pre tabindex="0"><code>CLASS DialogueManager:
+    voiceLineQueue: List&lt;QueuedVoiceLine&gt;
+    currentDialogueID: String
+    voiceLineCooldowns: Map&lt;String, Float&gt;
+    defaultVoiceLineCooldown: Float = 5.0
+    
+    FUNCTION PlayDialogue(dialogueID: String):
+        currentDialogueID = dialogueID
+        EMIT EVENT &#34;DIALOGUE_TRIGGER&#34; WITH (dialogueID)
+        // Trigger UI display
+    END FUNCTION
+    
+    FUNCTION QueueVoiceLine(operatorID: String, type: DialogueType, delay: Float = 0.0):
+        line = SelectLine(operatorID, type)
+        IF line != null:
+             queuedLine = NEW QueuedVoiceLine(line, delay)
+             voiceLineQueue.Add(queuedLine)
+             EMIT EVENT &#34;VOICELINE_QUEUE&#34; WITH (operatorID, line.LineID, delay)
+        END IF
+    END FUNCTION
+    
+    FUNCTION Update(deltaTime: Float):
+        // Process queue
+        IF voiceLineQueue.HasItems():
+            nextLine = voiceLineQueue.Peek()
+            nextLine.Delay -= deltaTime
+            ifnextLine.Delay &lt;= 0:
+                 PlayVoiceLine(nextLine.Data)
+                 voiceLineQueue.Pop()
+            END IF
+        END IF
+    END FUNCTION</code></pre><hr>
+<h3 id="collectiblemanager">CollectibleManager<a class="anchor" href="#collectiblemanager">#</a></h3>
+<p><strong>Purpose:</strong> Collectible tracking and codex updates.</p>
+<pre tabindex="0"><code>CLASS CollectibleManager:
+    discoveredCollectibles: Set&lt;String&gt;
+    
+    FUNCTION DiscoverCollectible(collectibleID: String):
+        IF NOT discoveredCollectibles.Contains(collectibleID):
+            discoveredCollectibles.Add(collectibleID)
+            
+            data = GetCollectibleData(collectibleID)
+            EMIT EVENT &#34;COLLECTIBLE_FOUND&#34; WITH (collectibleID, data.Type)
+            
+            // Add XP
+            ProgressionManager.AddXP(data.XPReward)
+            
+            // Update Codex
+            CodexManager.UnlockEntry(data.CodexCategory, data.LoreEntryID)
+        END IF
+    END FUNCTION
+    
+    FUNCTION PlayAudioLog(logID: String):
+        data = GetAudioLog(logID)
+        IF data != null:
+             AudioManager.PlaySound(data.AudioClip)
+             EMIT EVENT &#34;COLLECTIBLE_PLAY&#34; WITH (logID)
+        END IF
+    END FUNCTION</code></pre><hr>
+<h2 id="data-structures">Data Structures<a class="anchor" href="#data-structures">#</a></h2>
+<pre tabindex="0"><code>STRUCT QuestData:
+    QuestID: String
+    DisplayName: String
+    Description: String
+    QuestType: QuestType
+    CurrentState: QuestState
+    Faction: Faction
+    RequiredReputation: ReputationLevel
+    Objectives: List&lt;QuestObjective&gt;
+    PrerequisiteQuests: List&lt;String&gt;
+    Rewards: QuestRewards
+
+STRUCT QuestObjective:
+    ObjectiveID: String
+    Description: String
+    Type: QuestObjectiveType
+    TargetAmount: Integer
+    CurrentAmount: Integer
+    TargetID: String
+    bOptional: Boolean
+
+STRUCT FactionData:
+    FactionID: Faction
+    DisplayName: String
+    LeaderName: String
+    Tiers: List&lt;FactionTier&gt;
+
+STRUCT FactionTier:
+    Level: ReputationLevel
+    RequiredReputation: Integer
+    VendorDiscount: Float
+    UnlockIDs: List&lt;String&gt;
+
+STRUCT DialogueLine:
+    Text: String
+    AudioClip: SoundBase
+    Duration: Float
+    SpeakerID: String
+
+STRUCT CollectibleData:
+    CollectibleID: String
+    Type: CollectibleType
+    DisplayName: String
+    LoreEntryID: String
+    XPReward: Integer</code></pre><hr>
+<h2 id="todo-implementation-tasks">TODO: Implementation Tasks<a class="anchor" href="#todo-implementation-tasks">#</a></h2>
+<h3 id="high-priority-">HIGH Priority 🔴<a class="anchor" href="#high-priority-">#</a></h3>
+<ul>
+<li><input disabled="" type="checkbox"> QuestManager logic (Accept, Progress, Complete)</li>
+<li><input disabled="" type="checkbox"> FactionManager reputation logic</li>
+<li><input disabled="" type="checkbox"> DialogueManager basic playback</li>
+</ul>
+<h3 id="medium-priority-">MEDIUM Priority 🟡<a class="anchor" href="#medium-priority-">#</a></h3>
+<ul>
+<li><input disabled="" type="checkbox"> Voice line prioritization/queuing</li>
+<li><input disabled="" type="checkbox"> CollectibleManager discovery logic</li>
+<li><input disabled="" type="checkbox"> UI integration (Quest Log, HUD)</li>
+</ul>
+<h3 id="low-priority-">LOW Priority 🟢<a class="anchor" href="#low-priority-">#</a></h3>
+<ul>
+<li><input disabled="" type="checkbox"> Complex quest chains (Branching)</li>
+<li><input disabled="" type="checkbox"> Dynamic environmental dialogue</li>
+<li><input disabled="" type="checkbox"> Codex UI implementation</li>
+</ul>
+<hr>
+<p><strong><a href="../README.md">← Back to Index</a></strong> | <strong><a href="./LiveOpsSystem.md">Next: Live Ops System →</a></strong></p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+<div>
+
+</div>
+
+<div>
+
+</div>
+
+</div>
+
+
+
+
+
+  
+  
+  
+  <div class="flex flex-wrap justify-between">
+    <span>
+    
+      <a href="/docs/GDD_Technical/Systems/MapSystem/" class="flex align-center">
+        <img src="/icons/backward.svg" class="book-icon" alt="Backward" />
+        <span>Map System</span>
+      </a>
+    
+    </span>
+    <span>
+    
+      <a href="/docs/GDD_Technical/Systems/ProgressionSystem/" class="flex align-center">
+        <span>Progression System</span>
+        <img src="/icons/forward.svg" class="book-icon" alt="Forward" />
+      </a>
+    
+    </span>
+  </div>
+  
+
+
+ 
+        
+  
+ 
+        
+        
+  
+ 
+        
+  
+  
+    <script>(function(){document.querySelectorAll("pre:has(code)").forEach(e=>{e.addEventListener("click",e.focus),e.addEventListener("copy",function(t){if(t.preventDefault(),navigator.clipboard){const t=window.getSelection().toString()||e.textContent;navigator.clipboard.writeText(t)}})})})()</script>
+  
+
+      </footer>
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+  
+  <aside class="book-toc">
+    <div class="book-toc-content">
+      
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#overview">Overview</a></li>
+    <li><a href="#enums--types">Enums &amp; Types</a>
+      <ul>
+        <li><a href="#questtype">QuestType</a></li>
+        <li><a href="#queststate">QuestState</a></li>
+        <li><a href="#questobjectivetype">QuestObjectiveType</a></li>
+        <li><a href="#faction">Faction</a></li>
+        <li><a href="#reputationlevel">ReputationLevel</a></li>
+        <li><a href="#dialoguetype">DialogueType</a></li>
+        <li><a href="#collectibletype">CollectibleType</a></li>
+      </ul>
+    </li>
+    <li><a href="#code-names">Code Names</a>
+      <ul>
+        <li><a href="#quest-events">Quest Events</a></li>
+        <li><a href="#faction-events">Faction Events</a></li>
+        <li><a href="#dialogue-events">Dialogue Events</a></li>
+        <li><a href="#collectible-events">Collectible Events</a></li>
+      </ul>
+    </li>
+    <li><a href="#architecture">Architecture</a>
+      <ul>
+        <li><a href="#class-diagram">Class Diagram</a></li>
+      </ul>
+    </li>
+    <li><a href="#core-classes">Core Classes</a>
+      <ul>
+        <li><a href="#narrativemanager">NarrativeManager</a></li>
+        <li><a href="#questmanager">QuestManager</a></li>
+        <li><a href="#factionmanager">FactionManager</a></li>
+        <li><a href="#dialoguemanager">DialogueManager</a></li>
+        <li><a href="#collectiblemanager">CollectibleManager</a></li>
+      </ul>
+    </li>
+    <li><a href="#data-structures">Data Structures</a></li>
+    <li><a href="#todo-implementation-tasks">TODO: Implementation Tasks</a>
+      <ul>
+        <li><a href="#high-priority-">HIGH Priority 🔴</a></li>
+        <li><a href="#medium-priority-">MEDIUM Priority 🟡</a></li>
+        <li><a href="#low-priority-">LOW Priority 🟢</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+    </div>
+  </aside>
+  
+ 
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

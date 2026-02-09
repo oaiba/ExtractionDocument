@@ -1,0 +1,3699 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=52224&amp;path=livereload" data-no-instant defer></script>
+  <!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="AI System - Technical Specification#← Back to Index | Next: Map System →
+Reference: High-Level AI Design
+Overview#The AI System manages all non-player enemies including behavior trees, perception systems, navigation, and combat logic. Designed for mobile performance with scalable complexity.
+Responsibilities:
+Enemy spawning and lifecycle management Behavior tree execution and state management Perception (vision, hearing) processing Pathfinding and navigation Combat decision making Boss fight phases and mechanics Enums &amp; Types#AIType#Enemy type classification determining base stats, behavior, and threat level.
+">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:52224/docs/GDD_Technical/Systems/AISystem/">
+  <meta property="og:site_name" content="Extraction Shooter GDD">
+  <meta property="og:title" content="Extraction Shooter GDD">
+  <meta property="og:description" content="AI System - Technical Specification#← Back to Index | Next: Map System →
+Reference: High-Level AI Design
+Overview#The AI System manages all non-player enemies including behavior trees, perception systems, navigation, and combat logic. Designed for mobile performance with scalable complexity.
+Responsibilities:
+Enemy spawning and lifecycle management Behavior tree execution and state management Perception (vision, hearing) processing Pathfinding and navigation Combat decision making Boss fight phases and mechanics Enums &amp; Types#AIType#Enemy type classification determining base stats, behavior, and threat level.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
+
+
+  <meta itemprop="name" content="Extraction Shooter GDD">
+  <meta itemprop="description" content="AI System - Technical Specification#← Back to Index | Next: Map System →
+Reference: High-Level AI Design
+Overview#The AI System manages all non-player enemies including behavior trees, perception systems, navigation, and combat logic. Designed for mobile performance with scalable complexity.
+Responsibilities:
+Enemy spawning and lifecycle management Behavior tree execution and state management Perception (vision, hearing) processing Pathfinding and navigation Combat decision making Boss fight phases and mechanics Enums &amp; Types#AIType#Enemy type classification determining base stats, behavior, and threat level.">
+  <meta itemprop="wordCount" content="2788">
+
+<title>Aisystem | Extraction Shooter GDD</title>
+<link rel="icon" href="/favicon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="http://localhost:52224/docs/GDD_Technical/Systems/AISystem/">
+<link rel="stylesheet" href="/book.min.63c8b2b12bbd1ad36428837740ea371dd41fdb9c22b35499003d0dfa4dbce6ba.css" integrity="sha256-Y8iysSu9GtNkKIN3QOo3HdQf25wis1SZAD0N&#43;k285ro=" crossorigin="anonymous">
+
+
+  <script defer src="/fuse.min.js"></script>
+  <script defer src="/en.search.min.58bea27d7a08265548c5a8636a9a9fc844e0eb9d60fc3bb2c53d517da858d4c1.js" integrity="sha256-WL6ifXoIJlVIxahjapqfyETg651g/DuyxT1RfahY1ME=" crossorigin="anonymous"></script>
+
+  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
+
+
+
+  
+</head>
+<body dir="ltr" class="book-kind-page book-type-docs">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    
+<aside class="book-menu">
+  <div class="book-menu-content">
+    
+  <nav>
+    <h2 class="book-brand">
+  <a class="flex align-center" href="/"><img src="/logo.svg" alt="Logo" /><span>Extraction Shooter GDD</span>
+  </a>
+</h2>
+
+    <div class="book-theme-toggle">
+    <input type="checkbox" id="theme-toggle" class="toggle">
+    <label for="theme-toggle" class="flex justify-between items-center cursor-pointer">
+        <span class="text-xs font-semibold">Dark Mode</span>
+        <div
+            class="relative w-10 h-5 bg-gray-200 rounded-full transition-colors duration-200 ease-in-out dark:bg-gray-700">
+            <div
+                class="absolute left-0 w-5 h-5 bg-white rounded-full shadow transform transition-transform duration-200 ease-in-out dark:translate-x-full">
+            </div>
+        </div>
+    </label>
+</div>
+
+<script>
+    (function () {
+        const toggle = document.getElementById('theme-toggle');
+        const html = document.documentElement;
+
+        
+        const savedTheme = localStorage.getItem('theme');
+        const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+        if (savedTheme === 'dark' || (!savedTheme && systemDark)) {
+            html.classList.add('dark');
+            toggle.checked = true;
+        } else {
+            html.classList.remove('dark');
+            toggle.checked = false;
+        }
+
+        
+        toggle.addEventListener('change', function () {
+            if (this.checked) {
+                html.classList.add('dark');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                html.classList.remove('dark');
+                localStorage.setItem('theme', 'light');
+            }
+        });
+    })();
+</script>
+
+<style>
+     
+    .book-theme-toggle {
+        margin: 1rem 0;
+        padding: 0 1rem;
+
+    }
+
+    .book-theme-toggle label {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        cursor: pointer;
+        font-size: 0.85em;
+    }
+
+     
+    .book-theme-toggle input {
+        display: none;
+    }
+
+     
+    .book-theme-toggle label::after {
+        content: "🌙";
+         
+    }
+
+     
+    html:not(.dark) .book-theme-toggle label::after {
+        content: "☀️";
+         
+    }
+</style> 
+    
+<div class="book-search hidden">
+  <input id="book-search-input" type="text" 
+    placeholder="Search"
+    aria-label="Search"
+    maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+    
+
+    
+    
+
+
+
+    
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/" class="">
+      Gdd Design</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      AI</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/AI/EnemyBehavior/" class="">
+      Enemy Behavior</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/AI/FactionBehaviors/" class="">
+      Faction Behaviors</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Audio</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Audio/SoundDesign/" class="">
+      Sound Design</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Audio/Soundscape/" class="">
+      Soundscape</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Audio/TacticalAudio/" class="">
+      Tactical Audio</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Audio/VoiceLines/" class="">
+      Voice Lines</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Characters</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Operators/" class="">
+      Operators</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Assault</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Assault/Blaze/" class="">
+      Blaze</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Assault/Havoc/" class="">
+      Havoc</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Assault/README/" class="">
+      Readme</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Assault/Viper/" class="">
+      Viper</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Recon</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Recon/Phantom/" class="">
+      Phantom</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Recon/README/" class="">
+      Readme</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Recon/Specter/" class="">
+      Specter</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Recon/Wraith/" class="">
+      Wraith</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Specialist</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Specialist/Cipher/" class="">
+      Cipher</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Specialist/Flux/" class="">
+      Flux</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Specialist/README/" class="">
+      Readme</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Support</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Support/Angel/" class="">
+      Angel</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Support/Doc/" class="">
+      Doc</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Support/README/" class="">
+      Readme</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Tank</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Tank/Bulwark/" class="">
+      Bulwark</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Tank/Fortress/" class="">
+      Fortress</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Tank/README/" class="">
+      Readme</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Combat</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Combat/Items/" class="">
+      Items</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Combat/Weapons/" class="">
+      Weapons</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      GameDesign</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Accessibility/" class="">
+      Accessibility</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Controls/" class="">
+      Controls</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/CoreGameplay/" class="">
+      Core Gameplay</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Economy/" class="">
+      Economy</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/GameModes/" class="">
+      Game Modes</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/LiveOps/" class="">
+      Live Ops</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Localization/" class="">
+      Localization</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/NavigationAndMap/" class="">
+      Navigation and Map</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Overview/" class="">
+      Overview</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Progression/" class="">
+      Progression</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/RankedMode/" class="">
+      Ranked Mode</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/TutorialRaid/" class="">
+      Tutorial Raid</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/UserSettings/" class="">
+      User Settings</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Gameplay</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Gameplay/CoreLoop/" class="">
+      Core Loop</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      ProjectScope</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/ProjectScope/DesignPillars/" class="">
+      Design Pillars</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/ProjectScope/MVP/" class="">
+      Mvp</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/ProjectScope/NonGoals/" class="">
+      Non Goals</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/ProjectScope/Risks/" class="">
+      Risks</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Social</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Social/Multiplayer/" class="">
+      Multiplayer</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Story</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Story/Backstory/" class="">
+      Backstory</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Story/Factions/" class="">
+      Factions</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Story/Narrative/" class="">
+      Narrative</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Story/QuestLines/" class="">
+      Quest Lines</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      UI UX</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/UI_UX/UX_Flows/" class="">
+      Ux Flows</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/UI_UX/Visual_Style/" class="">
+      Visual Style</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Visuals</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Visuals/ArtDirection/" class="">
+      Art Direction</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Visuals/AssetGuidelines/" class="">
+      Asset Guidelines</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Visuals/StyleGuide/" class="">
+      Style Guide</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Visuals/UserInterface/" class="">
+      User Interface</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      World</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/EnvironmentalNarrative/" class="">
+      Environmental Narrative</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/EnvironmentalNarrative_Guidelines/" class="">
+      Environmental Narrative Guidelines</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/LootDistribution/" class="">
+      Loot Distribution</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/MapDesign/" class="">
+      Map Design</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/MapDesign_IndustrialZone/" class="">
+      Map Design Industrial Zone</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/MapDesign_NeonSlums/" class="">
+      Map Design Neon Slums</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/MapDesign_Wilderness/" class="">
+      Map Design Wilderness</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/MapLayouts/" class="">
+      Map Layouts</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/" class="">
+      Gdd Technical</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      AI</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/AI/SensorySystem/" class="">
+      Sensory System</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Core</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Core/Architecture/" class="">
+      Architecture</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Core/CodingStandards/" class="">
+      Coding Standards</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Core/DevelopmentRoadmap/" class="">
+      Development Roadmap</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Core/NetworkingSystem/" class="">
+      Networking System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Core/SecuritySystem/" class="">
+      Security System</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Gameplay</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Gameplay/CharacterSystem/" class="">
+      Character System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Gameplay/ControlSystem/" class="">
+      Control System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Gameplay/InventorySystem/" class="">
+      Inventory System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Gameplay/WeaponSystem/" class="">
+      Weapon System</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Networking</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Networking/LagCompensation/" class="">
+      Lag Compensation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Networking/ReplicationStrategy/" class="">
+      Replication Strategy</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Performance</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Performance/Budgets/" class="">
+      Budgets</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Performance/Optimization/" class="">
+      Optimization</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Security</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Security/AntiCheatStrategy/" class="">
+      Anti Cheat Strategy</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Systems</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/AccessibilitySystem/" class="">
+      Accessibility System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/AISystem/" class="active">
+      Aisystem</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/AnalyticsSystem/" class="">
+      Analytics System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/AudioSystem/" class="">
+      Audio System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/BuildPipeline/" class="">
+      Build Pipeline</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/LiveOpsSystem/" class="">
+      Live Ops System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/LocalizationSystem/" class="">
+      Localization System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/MapSystem/" class="">
+      Map System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/NarrativeSystem/" class="">
+      Narrative System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/ProgressionSystem/" class="">
+      Progression System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/RankedSystem/" class="">
+      Ranked System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/SaveSystem/" class="">
+      Save System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/SocialSystem/" class="">
+      Social System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/TutorialSystem/" class="">
+      Tutorial System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/UISystem/" class="">
+      Uisystem</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+</nav>
+
+
+
+
+<script>{ { . | safeJS } }</script>
+
+
+  </div>
+</aside>
+ 
+
+    <div class="book-page">
+      <header class="book-header hidden">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/icons/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <h3>Aisystem</h3>
+
+  <label for="toc-control">
+    
+    <img src="/icons/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#overview">Overview</a></li>
+    <li><a href="#enums--types">Enums &amp; Types</a>
+      <ul>
+        <li><a href="#aitype">AIType</a></li>
+        <li><a href="#aistate">AIState</a></li>
+        <li><a href="#aibehavior">AIBehavior</a></li>
+        <li><a href="#aiaggression">AIAggression</a></li>
+        <li><a href="#aiaccuracy">AIAccuracy</a></li>
+        <li><a href="#detectionsource">DetectionSource</a></li>
+        <li><a href="#aitier">AITier</a></li>
+        <li><a href="#bossphase">BossPhase</a></li>
+      </ul>
+    </li>
+    <li><a href="#code-names">Code Names</a>
+      <ul>
+        <li><a href="#ai-type-identifiers">AI Type Identifiers</a></li>
+        <li><a href="#perception-config-identifiers">Perception Config Identifiers</a></li>
+        <li><a href="#event-code-names">Event Code Names</a></li>
+      </ul>
+    </li>
+    <li><a href="#architecture">Architecture</a>
+      <ul>
+        <li><a href="#class-diagram">Class Diagram</a></li>
+      </ul>
+    </li>
+    <li><a href="#core-classes">Core Classes</a>
+      <ul>
+        <li><a href="#aimanager">AIManager</a></li>
+        <li><a href="#aicharacter">AICharacter</a></li>
+        <li><a href="#aiperceptioncomponent">AIPerceptionComponent</a></li>
+        <li><a href="#aicombatcomponent">AICombatComponent</a></li>
+      </ul>
+    </li>
+    <li><a href="#behavior-trees">Behavior Trees</a>
+      <ul>
+        <li><a href="#state-transitions">State Transitions</a></li>
+        <li><a href="#behavior-tree-nodes">Behavior Tree Nodes</a></li>
+      </ul>
+    </li>
+    <li><a href="#ai-type-configurations">AI Type Configurations</a>
+      <ul>
+        <li><a href="#tier-1-scavenger">Tier 1: Scavenger</a></li>
+        <li><a href="#tier-2-guard">Tier 2: Guard</a></li>
+        <li><a href="#tier-3-heavy">Tier 3: Heavy</a></li>
+        <li><a href="#tier-4-boss---the-warden">Tier 4: Boss - The Warden</a></li>
+      </ul>
+    </li>
+    <li><a href="#performance-optimization">Performance Optimization</a>
+      <ul>
+        <li><a href="#ai-lod-system">AI LOD System</a></li>
+        <li><a href="#object-pooling">Object Pooling</a></li>
+      </ul>
+    </li>
+    <li><a href="#todo-implementation-tasks">TODO: Implementation Tasks</a>
+      <ul>
+        <li><a href="#high-priority-">HIGH Priority 🔴</a></li>
+        <li><a href="#medium-priority-">MEDIUM Priority 🟡</a></li>
+        <li><a href="#low-priority-">LOW Priority 🟢</a></li>
+      </ul>
+    </li>
+    <li><a href="#testing-checklist">Testing Checklist</a></li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><h1 id="ai-system---technical-specification">AI System - Technical Specification<a class="anchor" href="#ai-system---technical-specification">#</a></h1>
+<p><strong><a href="../README.md">← Back to Index</a></strong> | <strong><a href="./MapSystem.md">Next: Map System →</a></strong></p>
+<p><strong>Reference:</strong> <a href="../../GDD_HighLevel/AI/EnemyBehavior.md">High-Level AI Design</a></p>
+<hr>
+<h2 id="overview">Overview<a class="anchor" href="#overview">#</a></h2>
+<p>The <strong>AI System</strong> manages all non-player enemies including behavior trees, perception systems, navigation, and combat logic. Designed for mobile performance with scalable complexity.</p>
+<p><strong>Responsibilities:</strong></p>
+<ul>
+<li>Enemy spawning and lifecycle management</li>
+<li>Behavior tree execution and state management</li>
+<li>Perception (vision, hearing) processing</li>
+<li>Pathfinding and navigation</li>
+<li>Combat decision making</li>
+<li>Boss fight phases and mechanics</li>
+</ul>
+<hr>
+<h2 id="enums--types">Enums &amp; Types<a class="anchor" href="#enums--types">#</a></h2>
+<h3 id="aitype">AIType<a class="anchor" href="#aitype">#</a></h3>
+<p>Enemy type classification determining base stats, behavior, and threat level.</p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Code Name</th>
+          <th style="text-align: left">Display Name</th>
+          <th style="text-align: left">Tier</th>
+          <th style="text-align: left">HP</th>
+          <th style="text-align: left">Armor</th>
+          <th style="text-align: left">Primary Weapon</th>
+          <th style="text-align: left">Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><code>AIT_Scavenger</code></td>
+          <td style="text-align: left">Scavenger</td>
+          <td style="text-align: left">1</td>
+          <td style="text-align: left">80</td>
+          <td style="text-align: left">0</td>
+          <td style="text-align: left">Pistol</td>
+          <td style="text-align: left">Fodder, low threat, flees easily</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>AIT_Looter</code></td>
+          <td style="text-align: left">Looter</td>
+          <td style="text-align: left">1</td>
+          <td style="text-align: left">100</td>
+          <td style="text-align: left">10</td>
+          <td style="text-align: left">SMG</td>
+          <td style="text-align: left">Fodder, uses basic cover</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>AIT_Guard</code></td>
+          <td style="text-align: left">Guard</td>
+          <td style="text-align: left">2</td>
+          <td style="text-align: left">150</td>
+          <td style="text-align: left">30</td>
+          <td style="text-align: left">AR</td>
+          <td style="text-align: left">Soldier, patrols in pairs</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>AIT_Sniper</code></td>
+          <td style="text-align: left">Sniper</td>
+          <td style="text-align: left">2</td>
+          <td style="text-align: left">100</td>
+          <td style="text-align: left">20</td>
+          <td style="text-align: left">Sniper</td>
+          <td style="text-align: left">Soldier, long range overwatch</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>AIT_Heavy</code></td>
+          <td style="text-align: left">Heavy</td>
+          <td style="text-align: left">3</td>
+          <td style="text-align: left">300</td>
+          <td style="text-align: left">80</td>
+          <td style="text-align: left">LMG</td>
+          <td style="text-align: left">Elite, high HP/armor</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>AIT_Operative</code></td>
+          <td style="text-align: left">Operative</td>
+          <td style="text-align: left">3</td>
+          <td style="text-align: left">200</td>
+          <td style="text-align: left">50</td>
+          <td style="text-align: left">AR+Nade</td>
+          <td style="text-align: left">Elite, tactical flanking</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>AIT_BossWarden</code></td>
+          <td style="text-align: left">Warden</td>
+          <td style="text-align: left">4</td>
+          <td style="text-align: left">5000</td>
+          <td style="text-align: left">200</td>
+          <td style="text-align: left">Special</td>
+          <td style="text-align: left">Boss, Map 1, 4 phases</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>AIT_BossDirector</code></td>
+          <td style="text-align: left">Director</td>
+          <td style="text-align: left">4</td>
+          <td style="text-align: left">8000</td>
+          <td style="text-align: left">300</td>
+          <td style="text-align: left">Special</td>
+          <td style="text-align: left">Boss, Map 2, 5 phases</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h3 id="aistate">AIState<a class="anchor" href="#aistate">#</a></h3>
+<p>Current behavioral state of an AI entity.</p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Code Name</th>
+          <th style="text-align: left">Display Name</th>
+          <th style="text-align: left">Alert Level</th>
+          <th style="text-align: left">Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><code>AIS_Unaware</code></td>
+          <td style="text-align: left">Unaware</td>
+          <td style="text-align: left">0%</td>
+          <td style="text-align: left">Patrol mode, not alerted</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>AIS_Suspicious</code></td>
+          <td style="text-align: left">Suspicious</td>
+          <td style="text-align: left">25%</td>
+          <td style="text-align: left">Noticed something, investigating</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>AIS_Alert</code></td>
+          <td style="text-align: left">Alert</td>
+          <td style="text-align: left">50%</td>
+          <td style="text-align: left">Heard/saw something, searching</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>AIS_Engaged</code></td>
+          <td style="text-align: left">Engaged</td>
+          <td style="text-align: left">100%</td>
+          <td style="text-align: left">In combat, actively fighting</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>AIS_Fleeing</code></td>
+          <td style="text-align: left">Fleeing</td>
+          <td style="text-align: left">75%</td>
+          <td style="text-align: left">Retreating due to low HP</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>AIS_Dead</code></td>
+          <td style="text-align: left">Dead</td>
+          <td style="text-align: left">0%</td>
+          <td style="text-align: left">Corpse state, lootable</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h3 id="aibehavior">AIBehavior<a class="anchor" href="#aibehavior">#</a></h3>
+<p>Tactical behavior patterns for AI decision making.</p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Code Name</th>
+          <th style="text-align: left">Display Name</th>
+          <th style="text-align: left">Category</th>
+          <th style="text-align: left">Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><code>AIB_PatrolPoint</code></td>
+          <td style="text-align: left">Patrol (Point)</td>
+          <td style="text-align: left">Patrol</td>
+          <td style="text-align: left">Stationary guard</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>AIB_PatrolPath</code></td>
+          <td style="text-align: left">Patrol (Path)</td>
+          <td style="text-align: left">Patrol</td>
+          <td style="text-align: left">Follow waypoints</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>AIB_PatrolRandom</code></td>
+          <td style="text-align: left">Patrol (Random)</td>
+          <td style="text-align: left">Patrol</td>
+          <td style="text-align: left">Wander in area</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>AIB_PatrolPair</code></td>
+          <td style="text-align: left">Patrol (Pair)</td>
+          <td style="text-align: left">Patrol</td>
+          <td style="text-align: left">Coordinated patrol</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>AIB_Search</code></td>
+          <td style="text-align: left">Search</td>
+          <td style="text-align: left">Alert</td>
+          <td style="text-align: left">Looking for player</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>AIB_AttackDirect</code></td>
+          <td style="text-align: left">Attack (Direct)</td>
+          <td style="text-align: left">Combat</td>
+          <td style="text-align: left">Rush target</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>AIB_AttackCover</code></td>
+          <td style="text-align: left">Attack (Cover)</td>
+          <td style="text-align: left">Combat</td>
+          <td style="text-align: left">Use cover, peek-fire</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>AIB_AttackFlank</code></td>
+          <td style="text-align: left">Attack (Flank)</td>
+          <td style="text-align: left">Combat</td>
+          <td style="text-align: left">Flanking maneuver</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>AIB_Retreat</code></td>
+          <td style="text-align: left">Retreat</td>
+          <td style="text-align: left">Combat</td>
+          <td style="text-align: left">Fall back</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>AIB_Suppress</code></td>
+          <td style="text-align: left">Suppress</td>
+          <td style="text-align: left">Combat</td>
+          <td style="text-align: left">Suppressive fire</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h3 id="aiaggression">AIAggression<a class="anchor" href="#aiaggression">#</a></h3>
+<p>Aggression level affecting combat behavior.</p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Code Name</th>
+          <th style="text-align: left">Display Name</th>
+          <th style="text-align: left">Retreat HP</th>
+          <th style="text-align: left">Cover Use</th>
+          <th style="text-align: left">Rush Distance</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><code>AIA_Coward</code></td>
+          <td style="text-align: left">Coward</td>
+          <td style="text-align: left">40%</td>
+          <td style="text-align: left">90%</td>
+          <td style="text-align: left">Never</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>AIA_Cautious</code></td>
+          <td style="text-align: left">Cautious</td>
+          <td style="text-align: left">25%</td>
+          <td style="text-align: left">80%</td>
+          <td style="text-align: left">Never</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>AIA_Normal</code></td>
+          <td style="text-align: left">Normal</td>
+          <td style="text-align: left">15%</td>
+          <td style="text-align: left">60%</td>
+          <td style="text-align: left">10m</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>AIA_Aggressive</code></td>
+          <td style="text-align: left">Aggressive</td>
+          <td style="text-align: left">10%</td>
+          <td style="text-align: left">30%</td>
+          <td style="text-align: left">20m</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>AIA_Berserker</code></td>
+          <td style="text-align: left">Berserker</td>
+          <td style="text-align: left">Never</td>
+          <td style="text-align: left">0%</td>
+          <td style="text-align: left">50m</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h3 id="aiaccuracy">AIAccuracy<a class="anchor" href="#aiaccuracy">#</a></h3>
+<p>Shooting accuracy affecting hit chance.</p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Code Name</th>
+          <th style="text-align: left">Display Name</th>
+          <th style="text-align: left">Base Hit%</th>
+          <th style="text-align: left">Headshot%</th>
+          <th style="text-align: left">Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><code>AIAC_Poor</code></td>
+          <td style="text-align: left">Poor</td>
+          <td style="text-align: left">15%</td>
+          <td style="text-align: left">0%</td>
+          <td style="text-align: left">Tier 1 enemies</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>AIAC_BelowAverage</code></td>
+          <td style="text-align: left">Below Average</td>
+          <td style="text-align: left">25%</td>
+          <td style="text-align: left">5%</td>
+          <td style="text-align: left">Most Tier 1</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>AIAC_Average</code></td>
+          <td style="text-align: left">Average</td>
+          <td style="text-align: left">40%</td>
+          <td style="text-align: left">10%</td>
+          <td style="text-align: left">Tier 2 common</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>AIAC_AboveAverage</code></td>
+          <td style="text-align: left">Above Average</td>
+          <td style="text-align: left">55%</td>
+          <td style="text-align: left">15%</td>
+          <td style="text-align: left">Tier 2 elite</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>AIAC_Marksman</code></td>
+          <td style="text-align: left">Marksman</td>
+          <td style="text-align: left">70%</td>
+          <td style="text-align: left">25%</td>
+          <td style="text-align: left">Snipers, Tier 3</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h3 id="detectionsource">DetectionSource<a class="anchor" href="#detectionsource">#</a></h3>
+<p>Source of player detection for AI perception.</p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Code Name</th>
+          <th style="text-align: left">Display Name</th>
+          <th style="text-align: left">Alert Level</th>
+          <th style="text-align: left">Range</th>
+          <th style="text-align: left">Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><code>DS_VisionDirect</code></td>
+          <td style="text-align: left">Vision (Direct)</td>
+          <td style="text-align: left">100%</td>
+          <td style="text-align: left">Varies</td>
+          <td style="text-align: left">Center of vision cone</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>DS_VisionPeripheral</code></td>
+          <td style="text-align: left">Vision (Peripheral)</td>
+          <td style="text-align: left">50%</td>
+          <td style="text-align: left">Varies</td>
+          <td style="text-align: left">Edge of vision cone</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>DS_SoundFootstep</code></td>
+          <td style="text-align: left">Sound (Footstep)</td>
+          <td style="text-align: left">30%</td>
+          <td style="text-align: left">10-20m</td>
+          <td style="text-align: left">Player footsteps</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>DS_SoundGunfire</code></td>
+          <td style="text-align: left">Sound (Gunfire)</td>
+          <td style="text-align: left">100%</td>
+          <td style="text-align: left">50-80m</td>
+          <td style="text-align: left">Player shooting</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>DS_SoundExplosion</code></td>
+          <td style="text-align: left">Sound (Explosion)</td>
+          <td style="text-align: left">100%</td>
+          <td style="text-align: left">80-100m</td>
+          <td style="text-align: left">Explosions</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>DS_AlertAlly</code></td>
+          <td style="text-align: left">Alert (Ally)</td>
+          <td style="text-align: left">80%</td>
+          <td style="text-align: left">Unlimited</td>
+          <td style="text-align: left">Another AI alerted</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>DS_DamageTaken</code></td>
+          <td style="text-align: left">Damage Taken</td>
+          <td style="text-align: left">100%</td>
+          <td style="text-align: left">N/A</td>
+          <td style="text-align: left">AI took damage</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h3 id="aitier">AITier<a class="anchor" href="#aitier">#</a></h3>
+<p>Enemy tier classification for difficulty scaling.</p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Code Name</th>
+          <th style="text-align: left">Display Name</th>
+          <th style="text-align: left">XP Reward</th>
+          <th style="text-align: left">Loot Quality</th>
+          <th style="text-align: left">Spawn Weight</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><code>AITIER_1</code></td>
+          <td style="text-align: left">Fodder</td>
+          <td style="text-align: left">25</td>
+          <td style="text-align: left">Common</td>
+          <td style="text-align: left">60%</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>AITIER_2</code></td>
+          <td style="text-align: left">Soldier</td>
+          <td style="text-align: left">75</td>
+          <td style="text-align: left">Uncommon</td>
+          <td style="text-align: left">30%</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>AITIER_3</code></td>
+          <td style="text-align: left">Elite</td>
+          <td style="text-align: left">200</td>
+          <td style="text-align: left">Rare</td>
+          <td style="text-align: left">10%</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>AITIER_4</code></td>
+          <td style="text-align: left">Boss</td>
+          <td style="text-align: left">1000</td>
+          <td style="text-align: left">Epic+</td>
+          <td style="text-align: left">Event</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h3 id="bossphase">BossPhase<a class="anchor" href="#bossphase">#</a></h3>
+<p>Boss fight phase for multi-phase encounters.</p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Code Name</th>
+          <th style="text-align: left">Display Name</th>
+          <th style="text-align: left">HP Threshold</th>
+          <th style="text-align: left">Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><code>BP_Phase1</code></td>
+          <td style="text-align: left">Phase 1</td>
+          <td style="text-align: left">100-75%</td>
+          <td style="text-align: left">Initial phase, basic attacks</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>BP_Phase2</code></td>
+          <td style="text-align: left">Phase 2</td>
+          <td style="text-align: left">75-50%</td>
+          <td style="text-align: left">Adds minions, new attacks</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>BP_Phase3</code></td>
+          <td style="text-align: left">Phase 3</td>
+          <td style="text-align: left">50-25%</td>
+          <td style="text-align: left">Enraged, faster attacks</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>BP_Phase4</code></td>
+          <td style="text-align: left">Phase 4</td>
+          <td style="text-align: left">25-0%</td>
+          <td style="text-align: left">Desperation, all mechanics</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>BP_Transition</code></td>
+          <td style="text-align: left">Transition</td>
+          <td style="text-align: left">N/A</td>
+          <td style="text-align: left">Invulnerable during change</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="code-names">Code Names<a class="anchor" href="#code-names">#</a></h2>
+<h3 id="ai-type-identifiers">AI Type Identifiers<a class="anchor" href="#ai-type-identifiers">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Code Name</th>
+          <th style="text-align: left">Type</th>
+          <th style="text-align: left">Tier</th>
+          <th style="text-align: left">Notes</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><code>AI_T1_SCAVENGER</code></td>
+          <td style="text-align: left">Scavenger</td>
+          <td style="text-align: left">1</td>
+          <td style="text-align: left">Basic fodder</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>AI_T1_LOOTER</code></td>
+          <td style="text-align: left">Looter</td>
+          <td style="text-align: left">1</td>
+          <td style="text-align: left">Cover-using fodder</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>AI_T2_GUARD</code></td>
+          <td style="text-align: left">Guard</td>
+          <td style="text-align: left">2</td>
+          <td style="text-align: left">Patrol soldier</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>AI_T2_SNIPER</code></td>
+          <td style="text-align: left">Sniper</td>
+          <td style="text-align: left">2</td>
+          <td style="text-align: left">Long-range</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>AI_T3_HEAVY</code></td>
+          <td style="text-align: left">Heavy</td>
+          <td style="text-align: left">3</td>
+          <td style="text-align: left">Tank enemy</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>AI_T3_OPERATIVE</code></td>
+          <td style="text-align: left">Operative</td>
+          <td style="text-align: left">3</td>
+          <td style="text-align: left">Tactical flanker</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>AI_BOSS_WARDEN</code></td>
+          <td style="text-align: left">Warden</td>
+          <td style="text-align: left">4</td>
+          <td style="text-align: left">Map 1 Boss</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>AI_BOSS_DIRECTOR</code></td>
+          <td style="text-align: left">Director</td>
+          <td style="text-align: left">4</td>
+          <td style="text-align: left">Map 2 Boss</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="perception-config-identifiers">Perception Config Identifiers<a class="anchor" href="#perception-config-identifiers">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Code Name</th>
+          <th style="text-align: left">Vision Range</th>
+          <th style="text-align: left">Sound Range</th>
+          <th style="text-align: left">FOV</th>
+          <th style="text-align: left">Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><code>PERC_SCAVENGER</code></td>
+          <td style="text-align: left">15m</td>
+          <td style="text-align: left">10m</td>
+          <td style="text-align: left">90°</td>
+          <td style="text-align: left">Poor awareness</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>PERC_LOOTER</code></td>
+          <td style="text-align: left">20m</td>
+          <td style="text-align: left">15m</td>
+          <td style="text-align: left">100°</td>
+          <td style="text-align: left">Basic awareness</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>PERC_GUARD</code></td>
+          <td style="text-align: left">30m</td>
+          <td style="text-align: left">20m</td>
+          <td style="text-align: left">110°</td>
+          <td style="text-align: left">Trained soldier</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>PERC_SNIPER</code></td>
+          <td style="text-align: left">60m</td>
+          <td style="text-align: left">25m</td>
+          <td style="text-align: left">60°</td>
+          <td style="text-align: left">Long-range focused</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>PERC_HEAVY</code></td>
+          <td style="text-align: left">25m</td>
+          <td style="text-align: left">30m</td>
+          <td style="text-align: left">120°</td>
+          <td style="text-align: left">Wide awareness</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>PERC_OPERATIVE</code></td>
+          <td style="text-align: left">40m</td>
+          <td style="text-align: left">35m</td>
+          <td style="text-align: left">120°</td>
+          <td style="text-align: left">Elite perception</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>PERC_BOSS</code></td>
+          <td style="text-align: left">50m</td>
+          <td style="text-align: left">50m</td>
+          <td style="text-align: left">180°</td>
+          <td style="text-align: left">Near-omniscient</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="event-code-names">Event Code Names<a class="anchor" href="#event-code-names">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Code Name</th>
+          <th style="text-align: left">Trigger</th>
+          <th style="text-align: left">Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><code>AI_SPAWNED</code></td>
+          <td style="text-align: left">AI created</td>
+          <td style="text-align: left">New AI spawned in world</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>AI_DIED</code></td>
+          <td style="text-align: left">HP &lt;= 0</td>
+          <td style="text-align: left">AI killed</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>AI_STATE_CHANGED</code></td>
+          <td style="text-align: left">State transition</td>
+          <td style="text-align: left">AI state changed</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>AI_ALERTED</code></td>
+          <td style="text-align: left">Detection</td>
+          <td style="text-align: left">AI detected player</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>AI_ENGAGED</code></td>
+          <td style="text-align: left">Combat start</td>
+          <td style="text-align: left">AI entered combat</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>AI_RETREATING</code></td>
+          <td style="text-align: left">Low HP</td>
+          <td style="text-align: left">AI starts retreating</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>AI_LOST_TARGET</code></td>
+          <td style="text-align: left">Search timeout</td>
+          <td style="text-align: left">AI lost sight of player</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>AI_BOSS_PHASE_CHANGED</code></td>
+          <td style="text-align: left">HP threshold</td>
+          <td style="text-align: left">Boss entered new phase</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="architecture">Architecture<a class="anchor" href="#architecture">#</a></h2>
+<h3 id="class-diagram">Class Diagram<a class="anchor" href="#class-diagram">#</a></h3>
+<pre tabindex="0"><code>                    ┌─────────────────┐
+                    │   AIManager     │
+                    │ (Singleton)     │
+                    └────────┬────────┘
+                             │
+        ┌────────────────────┼────────────────────┐
+        │                    │                    │
+┌───────▼───────┐   ┌───────▼───────┐   ┌───────▼───────┐
+│ AISpawner     │   │ AIPoolManager │   │ AIPathfinder  │
+│               │   │               │   │               │
+└───────────────┘   └───────────────┘   └───────────────┘
+        │                    │                    │
+        └────────────────────┼────────────────────┘
+                             │
+                    ┌────────▼────────┐
+                    │ AICharacter     │
+                    │ (Entity)        │
+                    └────────┬────────┘
+                             │
+        ┌────────────────────┼────────────────────┐
+        │                    │                    │
+┌───────▼───────┐   ┌───────▼───────┐   ┌───────▼───────┐
+│ PerceptionComp│   │ BehaviorTree  │   │ CombatComp    │
+│               │   │               │   │               │
+└───────────────┘   └───────────────┘   └───────────────┘</code></pre><hr>
+<h2 id="core-classes">Core Classes<a class="anchor" href="#core-classes">#</a></h2>
+<h3 id="aimanager">AIManager<a class="anchor" href="#aimanager">#</a></h3>
+<p><strong>Purpose:</strong> Main system controller for all AI entities.</p>
+<pre tabindex="0"><code>CLASS AIManager:
+    STATIC instance: AIManager
+    
+    // AI Lifecycle
+    activeAI: List&lt;AICharacter&gt;
+    maxActiveAI: Integer = 30
+    aiTickRate: Float = 0.1  // 10 Hz
+    
+    // Sub-managers
+    poolManager: AIPoolManager
+    spawner: AISpawner
+    pathfinder: AIPathfinder
+    
+    FUNCTION SpawnAI(type: AIType, location: Vector3, rotation: Rotator) -&gt; AICharacter:
+        IF activeAI.Count &gt;= maxActiveAI:
+            EMIT EVENT &#34;AI_POOL_EXHAUSTED&#34;
+            RETURN null
+        END IF
+        
+        // Get from pool or spawn new
+        ai = poolManager.AcquireAI(type)
+        
+        IF ai == null:
+            ai = CreateNewAI(type)
+        END IF
+        
+        ai.SetPosition(location)
+        ai.SetRotation(rotation)
+        ai.Initialize()
+        
+        activeAI.Add(ai)
+        
+        EMIT EVENT &#34;AI_SPAWNED&#34; WITH (ai.ID, type, location)
+        
+        RETURN ai
+    END FUNCTION
+    
+    FUNCTION DespawnAI(ai: AICharacter):
+        ai.Cleanup()
+        activeAI.Remove(ai)
+        poolManager.ReleaseAI(ai)
+    END FUNCTION
+    
+    FUNCTION GetAIInRadius(center: Vector3, radius: Float) -&gt; List&lt;AICharacter&gt;:
+        result = NEW List&lt;AICharacter&gt;
+        
+        FOR EACH ai IN activeAI:
+            IF Distance(ai.Position, center) &lt;= radius:
+                result.Add(ai)
+            END IF
+        END FOR
+        
+        RETURN result
+    END FUNCTION
+    
+    FUNCTION Update(deltaTime: Float):
+        // Staggered updates for performance
+        FOR EACH ai IN activeAI:
+            ai.tickTimer += deltaTime
+            
+            IF ai.tickTimer &gt;= GetTickRate(ai):
+                ai.UpdateAI(ai.tickTimer)
+                ai.tickTimer = 0
+            END IF
+        END FOR
+    END FUNCTION
+    
+    FUNCTION GetTickRate(ai: AICharacter) -&gt; Float:
+        distanceToPlayer = Distance(ai.Position, GetPlayerPosition())
+        
+        IF distanceToPlayer &lt; 20.0:
+            RETURN 0.05   // 20 Hz - near player
+        ELSE IF distanceToPlayer &lt; 50.0:
+            RETURN 0.1    // 10 Hz - mid range
+        ELSE IF ai.IsOnScreen():
+            RETURN 0.2    // 5 Hz - far but visible
+        ELSE:
+            RETURN 0.5    // 2 Hz - offscreen
+        END IF
+    END FUNCTION</code></pre><hr>
+<h3 id="aicharacter">AICharacter<a class="anchor" href="#aicharacter">#</a></h3>
+<p><strong>Purpose:</strong> Base AI entity with stats and components.</p>
+<pre tabindex="0"><code>CLASS AICharacter:
+    // Identity
+    id: String
+    aiType: AIType
+    currentState: AIState = AIS_Unaware
+    
+    // Stats
+    maxHealth: Float = 100.0
+    currentHealth: Float
+    maxArmor: Float = 0.0
+    currentArmor: Float
+    moveSpeed: Float = 350.0
+    sprintSpeed: Float = 500.0
+    damagePerHit: Float = 20.0
+    
+    // Behavior
+    aggression: AIAggression = AIA_Normal
+    accuracy: AIAccuracy = AIAC_Average
+    fleeHealthPercent: Float = 0.2
+    
+    // Components
+    perceptionComp: AIPerceptionComponent
+    combatComp: AICombatComponent
+    behaviorTree: BehaviorTree
+    
+    // Target
+    currentTarget: Actor
+    lastKnownTargetPos: Vector3
+    
+    FUNCTION Initialize():
+        currentHealth = maxHealth
+        currentArmor = maxArmor
+        
+        perceptionComp = CreateComponent(AIPerceptionComponent)
+        combatComp = CreateComponent(AICombatComponent)
+        
+        LoadBehaviorTree(GetBehaviorTreeForType(aiType))
+        
+        perceptionComp.OnTargetDetected.AddListener(OnTargetDetected)
+        perceptionComp.OnTargetLost.AddListener(OnTargetLost)
+    END FUNCTION
+    
+    FUNCTION SetState(newState: AIState):
+        IF newState == currentState:
+            RETURN
+        END IF
+        
+        oldState = currentState
+        currentState = newState
+        
+        OnStateChanged(oldState, newState)
+        
+        EMIT EVENT &#34;AI_STATE_CHANGED&#34; WITH (id, oldState, newState)
+    END FUNCTION
+    
+    FUNCTION OnTargetDetected(target: Actor, source: DetectionSource):
+        currentTarget = target
+        lastKnownTargetPos = target.Position
+        
+        IF source == DS_VisionDirect OR source == DS_DamageTaken:
+            SetState(AIS_Engaged)
+            EMIT EVENT &#34;AI_ENGAGED&#34; WITH (id, target.ID)
+        ELSE:
+            SetState(AIS_Alert)
+            EMIT EVENT &#34;AI_ALERTED&#34; WITH (id, source)
+        END IF
+        
+        // Alert nearby AI
+        AlertNearbyAI(10.0)
+    END FUNCTION
+    
+    FUNCTION OnTargetLost():
+        lastKnownTargetPos = currentTarget.Position
+        currentTarget = null
+        
+        SetState(AIS_Alert)
+        
+        EMIT EVENT &#34;AI_LOST_TARGET&#34; WITH (id)
+    END FUNCTION
+    
+    FUNCTION TakeDamage(amount: Float, source: Actor):
+        // Armor absorbs first
+        IF currentArmor &gt; 0:
+            armorDamage = Min(amount * 0.8, currentArmor)
+            currentArmor -= armorDamage
+            amount -= armorDamage
+        END IF
+        
+        currentHealth -= amount
+        
+        // Auto-detect attacker
+        IF currentTarget == null:
+            OnTargetDetected(source, DS_DamageTaken)
+        END IF
+        
+        // Check flee threshold
+        IF GetHealthPercent() &lt;= fleeHealthPercent AND CanFlee():
+            SetState(AIS_Fleeing)
+            EMIT EVENT &#34;AI_RETREATING&#34; WITH (id)
+        END IF
+        
+        // Check death
+        IF currentHealth &lt;= 0:
+            Die(source)
+        END IF
+    END FUNCTION
+    
+    FUNCTION Die(killer: Actor):
+        SetState(AIS_Dead)
+        
+        // Drop loot
+        SpawnLoot()
+        
+        EMIT EVENT &#34;AI_DIED&#34; WITH (id, killer.ID, aiType)
+    END FUNCTION
+    
+    FUNCTION GetHealthPercent() -&gt; Float:
+        RETURN currentHealth / maxHealth
+    END FUNCTION
+    
+    FUNCTION AlertNearbyAI(radius: Float):
+        nearbyAI = AIManager.GetAIInRadius(Position, radius * 100)  // Convert to cm
+        
+        FOR EACH ai IN nearbyAI:
+            IF ai != self AND ai.currentState == AIS_Unaware:
+                ai.OnTargetDetected(currentTarget, DS_AlertAlly)
+            END IF
+        END FOR
+    END FUNCTION</code></pre><hr>
+<h3 id="aiperceptioncomponent">AIPerceptionComponent<a class="anchor" href="#aiperceptioncomponent">#</a></h3>
+<p><strong>Purpose:</strong> Vision and hearing perception for AI.</p>
+<pre tabindex="0"><code>CLASS AIPerceptionComponent:
+    // Vision config
+    visionRange: Float = 30.0       // meters
+    directAngle: Float = 30.0       // degrees
+    peripheralAngle: Float = 60.0   // degrees
+    
+    // Hearing config
+    hearingRange: Float = 20.0      // meters
+    
+    // Detection
+    detectionProgress: Float = 0.0
+    detectionThreshold: Float = 1.0
+    
+    // Events
+    OnTargetDetected: Event&lt;(Actor, DetectionSource)&gt;
+    OnTargetLost: Event&lt;()&gt;
+    
+    FUNCTION UpdatePerception(deltaTime: Float):
+        // Check for visible targets
+        FOR EACH target IN GetPotentialTargets():
+            IF CanSee(target):
+                ProcessVisionDetection(target, deltaTime)
+            ELSE IF CanHear(target):
+                ProcessAudioDetection(target)
+            END IF
+        END FOR
+        
+        // Decay detection if no stimulus
+        IF NOT HasActiveStimulus():
+            detectionProgress = Max(0, detectionProgress - deltaTime * 0.5)
+        END IF
+    END FUNCTION
+    
+    FUNCTION CanSee(target: Actor) -&gt; Boolean:
+        toTarget = target.Position - owner.Position
+        distance = toTarget.Length()
+        
+        IF distance &gt; visionRange:
+            RETURN false
+        END IF
+        
+        // Check angle
+        angle = AngleBetween(owner.Forward, toTarget.Normalized())
+        
+        IF angle &gt; peripheralAngle:
+            RETURN false
+        END IF
+        
+        // Line of sight check
+        IF NOT HasLineOfSight(owner.EyePosition, target.Position):
+            RETURN false
+        END IF
+        
+        RETURN true
+    END FUNCTION
+    
+    FUNCTION ProcessVisionDetection(target: Actor, deltaTime: Float):
+        toTarget = target.Position - owner.Position
+        angle = AngleBetween(owner.Forward, toTarget.Normalized())
+        
+        // Calculate detection speed
+        IF angle &lt;= directAngle:
+            detectionSpeed = 1.0  // Instant for direct vision
+        ELSE:
+            detectionSpeed = 0.3  // Slow for peripheral
+        END IF
+        
+        // Apply visibility modifiers
+        detectionSpeed *= GetVisibilityModifier(target)
+        
+        detectionProgress += detectionSpeed * deltaTime
+        
+        IF detectionProgress &gt;= detectionThreshold:
+            OnTargetDetected.Broadcast(target, DS_VisionDirect)
+        END IF
+    END FUNCTION
+    
+    FUNCTION GetVisibilityModifier(target: Actor) -&gt; Float:
+        modifier = 1.0
+        
+        IF target.IsCrouching():
+            modifier *= 0.7
+        ELSE IF target.IsProne():
+            modifier *= 0.4
+        END IF
+        
+        IF target.IsSprinting():
+            modifier *= 2.0
+        ELSE IF target.IsMoving():
+            modifier *= 1.5
+        END IF
+        
+        IF target.IsFiring():
+            RETURN 999.0  // Instant detection
+        END IF
+        
+        RETURN modifier
+    END FUNCTION
+    
+    FUNCTION CanHear(target: Actor) -&gt; Boolean:
+        distance = Distance(owner.Position, target.Position)
+        
+        IF distance &gt; hearingRange:
+            RETURN false
+        END IF
+        
+        RETURN target.IsProducingSound()
+    END FUNCTION</code></pre><hr>
+<h3 id="aicombatcomponent">AICombatComponent<a class="anchor" href="#aicombatcomponent">#</a></h3>
+<p><strong>Purpose:</strong> Combat logic for AI entities.</p>
+<pre tabindex="0"><code>CLASS AICombatComponent:
+    // Weapon stats
+    fireRate: Float = 0.15      // seconds between shots
+    accuracySpread: Float = 5.0 // degrees
+    reloadTime: Float = 2.0
+    magazineSize: Integer = 30
+    currentAmmo: Integer
+    
+    // Grenades
+    grenadesRemaining: Integer = 1
+    grenadeCooldown: Float = 10.0
+    lastGrenadeTime: Float
+    
+    // State
+    isFiring: Boolean = false
+    isReloading: Boolean = false
+    lastFireTime: Float
+    
+    FUNCTION StartFiring():
+        IF NOT CanAttack():
+            RETURN
+        END IF
+        
+        isFiring = true
+    END FUNCTION
+    
+    FUNCTION StopFiring():
+        isFiring = false
+    END FUNCTION
+    
+    FUNCTION UpdateCombat(deltaTime: Float):
+        IF isFiring AND CanAttack():
+            timeSinceLastFire = GetTime() - lastFireTime
+            
+            IF timeSinceLastFire &gt;= fireRate:
+                FireWeapon()
+                lastFireTime = GetTime()
+            END IF
+        END IF
+    END FUNCTION
+    
+    FUNCTION CanAttack() -&gt; Boolean:
+        IF isReloading:
+            RETURN false
+        END IF
+        
+        IF currentAmmo &lt;= 0:
+            StartReload()
+            RETURN false
+        END IF
+        
+        IF owner.currentTarget == null:
+            RETURN false
+        END IF
+        
+        RETURN true
+    END FUNCTION
+    
+    FUNCTION FireWeapon():
+        target = owner.currentTarget
+        
+        IF target == null:
+            RETURN
+        END IF
+        
+        // Calculate aim with spread
+        aimDir = (target.Position - owner.Position).Normalized()
+        aimDir = ApplySpread(aimDir, accuracySpread)
+        
+        // Check hit based on accuracy
+        hitChance = GetHitChance(target)
+        
+        IF Random() &lt; hitChance:
+            target.TakeDamage(owner.damagePerHit, owner)
+        END IF
+        
+        currentAmmo -= 1
+        
+        // Alert nearby players
+        EmitSoundEvent(DS_SoundGunfire, 80.0)
+    END FUNCTION
+    
+    FUNCTION GetHitChance(target: Actor) -&gt; Float:
+        baseChance = GetBaseHitChance(owner.accuracy)
+        distance = Distance(owner.Position, target.Position)
+        
+        // Distance falloff
+        IF distance &gt; 30.0:
+            baseChance *= 0.7
+        ELSE IF distance &gt; 50.0:
+            baseChance *= 0.4
+        END IF
+        
+        // Target movement penalty
+        IF target.IsMoving():
+            baseChance *= 0.8
+        END IF
+        
+        IF target.IsSprinting():
+            baseChance *= 0.6
+        END IF
+        
+        RETURN Clamp(baseChance, 0.05, 0.95)
+    END FUNCTION
+    
+    FUNCTION CanThrowGrenade() -&gt; Boolean:
+        IF grenadesRemaining &lt;= 0:
+            RETURN false
+        END IF
+        
+        timeSinceGrenade = GetTime() - lastGrenadeTime
+        
+        IF timeSinceGrenade &lt; grenadeCooldown:
+            RETURN false
+        END IF
+        
+        RETURN true
+    END FUNCTION
+    
+    FUNCTION ThrowGrenade(targetLocation: Vector3):
+        IF NOT CanThrowGrenade():
+            RETURN
+        END IF
+        
+        SpawnGrenade(owner.Position, targetLocation)
+        grenadesRemaining -= 1
+        lastGrenadeTime = GetTime()
+    END FUNCTION
+    
+    FUNCTION FindBestCover() -&gt; Vector3:
+        threat = owner.currentTarget
+        
+        IF threat == null:
+            RETURN owner.Position
+        END IF
+        
+        // Find cover points within 15m
+        coverPoints = GetCoverPointsInRadius(owner.Position, 15.0)
+        
+        bestCover = null
+        bestScore = -999
+        
+        FOR EACH cover IN coverPoints:
+            // Score based on:
+            // - Distance from threat
+            // - Angle to threat (side cover better)
+            // - Not visible from threat position
+            
+            score = 0
+            
+            distToThreat = Distance(cover.Position, threat.Position)
+            score += distToThreat * 0.5
+            
+            IF NOT IsPositionVisible(cover.Position, threat.Position):
+                score += 100
+            END IF
+            
+            IF score &gt; bestScore:
+                bestScore = score
+                bestCover = cover
+            END IF
+        END FOR
+        
+        RETURN bestCover?.Position OR owner.Position
+    END FUNCTION
+    
+    FUNCTION CalculateFlankPath() -&gt; Vector3:
+        target = owner.currentTarget
+        
+        IF target == null:
+            RETURN null
+        END IF
+        
+        // Calculate perpendicular directions
+        toTarget = (target.Position - owner.Position).Normalized()
+        flankDir = CrossProduct(toTarget, Vector3.Up)
+        
+        // Try both flanking directions
+        flankDistance = 15.0
+        candidates = [
+            target.Position + flankDir * flankDistance,
+            target.Position - flankDir * flankDistance
+        ]
+        
+        FOR EACH candidate IN candidates:
+            IF PathExists(owner.Position, candidate):
+                IF HasCoverNear(candidate):
+                    IF NOT IsPositionVisible(candidate, target.Position):
+                        RETURN candidate
+                    END IF
+                END IF
+            END IF
+        END FOR
+        
+        RETURN null
+    END FUNCTION</code></pre><hr>
+<h2 id="behavior-trees">Behavior Trees<a class="anchor" href="#behavior-trees">#</a></h2>
+<h3 id="state-transitions">State Transitions<a class="anchor" href="#state-transitions">#</a></h3>
+<pre tabindex="0"><code>┌──────────────────────────────────────────────────────────┐
+│                    STATE MACHINE                         │
+├──────────────────────────────────────────────────────────┤
+│                                                          │
+│   ┌─────────┐    Noise/Peripheral    ┌─────────┐        │
+│   │ UNAWARE │ ─────────────────────▶ │  ALERT  │        │
+│   │(Patrol) │ ◀───────────────────── │(Search) │        │
+│   └────┬────┘    30s no contact      └────┬────┘        │
+│        │                                   │             │
+│        │ Direct Vision                     │ Found Target│
+│        ▼                                   ▼             │
+│   ┌─────────────────────────────────────────────┐       │
+│   │              ENGAGED (Combat)               │       │
+│   └──────────────────────┬──────────────────────┘       │
+│                          │                               │
+│        Lost LOS 10s      │        HP &lt; FleeThreshold     │
+│        ┌─────────────────┴─────────────────┐            │
+│        ▼                                   ▼             │
+│   ┌─────────┐                         ┌─────────┐       │
+│   │  ALERT  │                         │ FLEEING │       │
+│   │(Search) │                         │         │       │
+│   └─────────┘                         └─────────┘       │
+│                                                          │
+└──────────────────────────────────────────────────────────┘</code></pre><h3 id="behavior-tree-nodes">Behavior Tree Nodes<a class="anchor" href="#behavior-tree-nodes">#</a></h3>
+<pre tabindex="0"><code>// Task Nodes
+BTTask_Patrol           // Move along patrol path
+BTTask_Search           // Investigate last known position
+BTTask_TakeCover        // Find and move to cover
+BTTask_ShootAtTarget    // Fire at current target
+BTTask_Suppress         // Suppressive fire at position
+BTTask_Flank            // Move to flanking position
+BTTask_ThrowGrenade     // Throw grenade at target
+BTTask_Retreat          // Move away from threat
+BTTask_CallForBackup    // Alert nearby AI
+
+// Decorator Nodes
+BTDecorator_HasTarget           // Check if target exists
+BTDecorator_HealthAbove         // Check HP threshold
+BTDecorator_InRange             // Check distance to target
+BTDecorator_HasLineOfSight      // Check LOS to target
+BTDecorator_InCover             // Check if in cover
+BTDecorator_CanFlank            // Check flank path exists
+
+// Service Nodes
+BTService_UpdateTarget          // Refresh target selection
+BTService_UpdateCover           // Re-evaluate cover positions
+BTService_CheckThreats          // Scan for new threats</code></pre><hr>
+<h2 id="ai-type-configurations">AI Type Configurations<a class="anchor" href="#ai-type-configurations">#</a></h2>
+<h3 id="tier-1-scavenger">Tier 1: Scavenger<a class="anchor" href="#tier-1-scavenger">#</a></h3>
+<pre tabindex="0"><code>CONST ScavengerConfig:
+    type: AIT_Scavenger
+    health: 50.0
+    armor: 0.0
+    damagePerHit: 12.0
+    moveSpeed: 300.0
+    sprintSpeed: 500.0
+    visionRange: 15.0
+    hearingRange: 10.0
+    aggression: AIA_Coward
+    accuracy: AIAC_Poor
+    fleeThreshold: 0.40
+    canFlee: true
+    weaponType: WT_Pistol
+    lootTable: &#34;LT_SCAVENGER&#34;</code></pre><h3 id="tier-2-guard">Tier 2: Guard<a class="anchor" href="#tier-2-guard">#</a></h3>
+<pre tabindex="0"><code>CONST GuardConfig:
+    type: AIT_Guard
+    health: 100.0
+    armor: 50.0
+    damagePerHit: 27.0
+    moveSpeed: 400.0
+    sprintSpeed: 600.0
+    visionRange: 30.0
+    hearingRange: 20.0
+    aggression: AIA_Aggressive
+    accuracy: AIAC_AboveAverage
+    fleeThreshold: 0.0
+    canFlee: false
+    weaponType: WT_AssaultRifle
+    lootTable: &#34;LT_GUARD&#34;
+    patrolType: AIB_PatrolPair
+    canThrowGrenades: true
+    canFlank: true</code></pre><h3 id="tier-3-heavy">Tier 3: Heavy<a class="anchor" href="#tier-3-heavy">#</a></h3>
+<pre tabindex="0"><code>CONST HeavyConfig:
+    type: AIT_Heavy
+    health: 200.0
+    armor: 100.0
+    damagePerHit: 37.0
+    moveSpeed: 250.0          // Slow
+    sprintSpeed: 0.0          // Cannot sprint
+    visionRange: 25.0
+    hearingRange: 30.0
+    aggression: AIA_Berserker
+    accuracy: AIAC_Average
+    fleeThreshold: 0.0
+    canFlee: false
+    weaponType: WT_LMG
+    lootTable: &#34;LT_HEAVY&#34;
+    weakPointMultiplier: 2.0
+    weakPointBone: &#34;Backpack&#34;
+    turnRate: 90.0            // Slow turn</code></pre><h3 id="tier-4-boss---the-warden">Tier 4: Boss - The Warden<a class="anchor" href="#tier-4-boss---the-warden">#</a></h3>
+<pre tabindex="0"><code>CONST WardenConfig:
+    type: AIT_BossWarden
+    health: 500.0
+    armor: 200.0
+    armorRegenRate: 5.0
+    moveSpeed: 300.0
+    chargeSpeed: 1000.0
+    visionRange: 50.0
+    aggression: AIA_Berserker
+    accuracy: AIAC_AboveAverage
+    lootTable: &#34;LT_BOSS_WARDEN&#34;
+    phases: [
+        { threshold: 0.75, behavior: &#34;BT_BOSS_WARDEN_PHASE1&#34; },  // Stalking
+        { threshold: 0.50, behavior: &#34;BT_BOSS_WARDEN_PHASE2&#34; },  // Aggressive
+        { threshold: 0.25, behavior: &#34;BT_BOSS_WARDEN_PHASE3&#34; },  // Berserk
+        { threshold: 0.00, behavior: &#34;BT_BOSS_WARDEN_PHASE4&#34; }   // Desperation
+    ]</code></pre><hr>
+<h2 id="performance-optimization">Performance Optimization<a class="anchor" href="#performance-optimization">#</a></h2>
+<h3 id="ai-lod-system">AI LOD System<a class="anchor" href="#ai-lod-system">#</a></h3>
+<pre tabindex="0"><code>ENUM AILODLevel:
+    LOD_Full        // Full behavior, animations, VFX
+    LOD_Reduced     // Simplified behavior, basic animations
+    LOD_Minimal     // State updates only
+    LOD_Dormant     // Paused, only check activation
+
+FUNCTION GetAILOD(ai: AICharacter) -&gt; AILODLevel:
+    distance = Distance(ai.Position, GetPlayerPosition())
+    
+    IF distance &lt; 20.0:
+        RETURN LOD_Full
+    ELSE IF distance &lt; 50.0:
+        RETURN LOD_Reduced
+    ELSE IF distance &lt; 100.0:
+        RETURN LOD_Minimal
+    ELSE:
+        RETURN LOD_Dormant
+    END IF
+END FUNCTION</code></pre><h3 id="object-pooling">Object Pooling<a class="anchor" href="#object-pooling">#</a></h3>
+<pre tabindex="0"><code>CLASS AIPoolManager:
+    pools: Map&lt;AIType, List&lt;AICharacter&gt;&gt;
+    initialPoolSize: Integer = 10
+    maxPoolSize: Integer = 50
+    
+    FUNCTION Initialize(type: AIType):
+        pool = NEW List&lt;AICharacter&gt;
+        
+        FOR i = 0 TO initialPoolSize:
+            ai = SpawnDeactivatedAI(type)
+            pool.Add(ai)
+        END FOR
+        
+        pools[type] = pool
+    END FUNCTION
+    
+    FUNCTION AcquireAI(type: AIType) -&gt; AICharacter:
+        pool = pools[type]
+        
+        FOR EACH ai IN pool:
+            IF NOT ai.IsActive:
+                ai.SetActive(true)
+                ai.ResetState()
+                RETURN ai
+            END IF
+        END FOR
+        
+        // Pool exhausted - expand if possible
+        IF pool.Count &lt; maxPoolSize:
+            ai = SpawnNewAI(type)
+            pool.Add(ai)
+            RETURN ai
+        END IF
+        
+        RETURN null
+    END FUNCTION
+    
+    FUNCTION ReleaseAI(ai: AICharacter):
+        ai.SetActive(false)
+        ai.ResetState()
+    END FUNCTION</code></pre><hr>
+<h2 id="todo-implementation-tasks">TODO: Implementation Tasks<a class="anchor" href="#todo-implementation-tasks">#</a></h2>
+<h3 id="high-priority-">HIGH Priority 🔴<a class="anchor" href="#high-priority-">#</a></h3>
+<ul>
+<li><input disabled="" type="checkbox"> AIManager - Main AI system manager</li>
+<li><input disabled="" type="checkbox"> AICharacter - Base AI character class</li>
+<li><input disabled="" type="checkbox"> AIPerceptionComponent - Vision/hearing</li>
+<li><input disabled="" type="checkbox"> Basic behavior trees (Patrol, Engage)</li>
+<li><input disabled="" type="checkbox"> Scavenger, Looter, Guard implementations</li>
+<li><input disabled="" type="checkbox"> Pathfinding integration (NavMesh)</li>
+</ul>
+<h3 id="medium-priority-">MEDIUM Priority 🟡<a class="anchor" href="#medium-priority-">#</a></h3>
+<ul>
+<li><input disabled="" type="checkbox"> Cover system integration</li>
+<li><input disabled="" type="checkbox"> Flanking logic</li>
+<li><input disabled="" type="checkbox"> Suppression mechanics</li>
+<li><input disabled="" type="checkbox"> Heavy, Sniper, Operative types</li>
+<li><input disabled="" type="checkbox"> AI spawning system</li>
+<li><input disabled="" type="checkbox"> Object pooling</li>
+</ul>
+<h3 id="low-priority-">LOW Priority 🟢<a class="anchor" href="#low-priority-">#</a></h3>
+<ul>
+<li><input disabled="" type="checkbox"> Boss behavior trees (multi-phase)</li>
+<li><input disabled="" type="checkbox"> The Warden implementation</li>
+<li><input disabled="" type="checkbox"> The Director implementation</li>
+<li><input disabled="" type="checkbox"> AI voice callouts</li>
+<li><input disabled="" type="checkbox"> Reinforcement wave system</li>
+</ul>
+<hr>
+<h2 id="testing-checklist">Testing Checklist<a class="anchor" href="#testing-checklist">#</a></h2>
+<ul>
+<li><input disabled="" type="checkbox"> AI spawns correctly at designated points</li>
+<li><input disabled="" type="checkbox"> Perception detects players at correct ranges</li>
+<li><input disabled="" type="checkbox"> State transitions work as documented</li>
+<li><input disabled="" type="checkbox"> Behavior trees execute without errors</li>
+<li><input disabled="" type="checkbox"> Pathfinding works on all map areas</li>
+<li><input disabled="" type="checkbox"> Cover system evaluates positions correctly</li>
+<li><input disabled="" type="checkbox"> Combat damage matches specs</li>
+<li><input disabled="" type="checkbox"> Flanking paths are valid</li>
+<li><input disabled="" type="checkbox"> Boss phases transition correctly</li>
+<li><input disabled="" type="checkbox"> Performance within budget (30 AI at 30 FPS)</li>
+<li><input disabled="" type="checkbox"> Object pooling prevents GC spikes</li>
+</ul>
+<hr>
+<p><strong><a href="../README.md">← Back to Index</a></strong> | <strong><a href="./MapSystem.md">Next: Map System →</a></strong></p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+<div>
+
+</div>
+
+<div>
+
+</div>
+
+</div>
+
+
+
+
+
+  
+  
+  
+  <div class="flex flex-wrap justify-between">
+    <span>
+    
+      <a href="/docs/GDD_Technical/Systems/AccessibilitySystem/" class="flex align-center">
+        <img src="/icons/backward.svg" class="book-icon" alt="Backward" />
+        <span>Accessibility System</span>
+      </a>
+    
+    </span>
+    <span>
+    
+      <a href="/docs/GDD_Technical/Systems/AnalyticsSystem/" class="flex align-center">
+        <span>Analytics System</span>
+        <img src="/icons/forward.svg" class="book-icon" alt="Forward" />
+      </a>
+    
+    </span>
+  </div>
+  
+
+
+ 
+        
+  
+ 
+        
+        
+  
+ 
+        
+  
+  
+    <script>(function(){document.querySelectorAll("pre:has(code)").forEach(e=>{e.addEventListener("click",e.focus),e.addEventListener("copy",function(t){if(t.preventDefault(),navigator.clipboard){const t=window.getSelection().toString()||e.textContent;navigator.clipboard.writeText(t)}})})})()</script>
+  
+
+      </footer>
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+  
+  <aside class="book-toc">
+    <div class="book-toc-content">
+      
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#overview">Overview</a></li>
+    <li><a href="#enums--types">Enums &amp; Types</a>
+      <ul>
+        <li><a href="#aitype">AIType</a></li>
+        <li><a href="#aistate">AIState</a></li>
+        <li><a href="#aibehavior">AIBehavior</a></li>
+        <li><a href="#aiaggression">AIAggression</a></li>
+        <li><a href="#aiaccuracy">AIAccuracy</a></li>
+        <li><a href="#detectionsource">DetectionSource</a></li>
+        <li><a href="#aitier">AITier</a></li>
+        <li><a href="#bossphase">BossPhase</a></li>
+      </ul>
+    </li>
+    <li><a href="#code-names">Code Names</a>
+      <ul>
+        <li><a href="#ai-type-identifiers">AI Type Identifiers</a></li>
+        <li><a href="#perception-config-identifiers">Perception Config Identifiers</a></li>
+        <li><a href="#event-code-names">Event Code Names</a></li>
+      </ul>
+    </li>
+    <li><a href="#architecture">Architecture</a>
+      <ul>
+        <li><a href="#class-diagram">Class Diagram</a></li>
+      </ul>
+    </li>
+    <li><a href="#core-classes">Core Classes</a>
+      <ul>
+        <li><a href="#aimanager">AIManager</a></li>
+        <li><a href="#aicharacter">AICharacter</a></li>
+        <li><a href="#aiperceptioncomponent">AIPerceptionComponent</a></li>
+        <li><a href="#aicombatcomponent">AICombatComponent</a></li>
+      </ul>
+    </li>
+    <li><a href="#behavior-trees">Behavior Trees</a>
+      <ul>
+        <li><a href="#state-transitions">State Transitions</a></li>
+        <li><a href="#behavior-tree-nodes">Behavior Tree Nodes</a></li>
+      </ul>
+    </li>
+    <li><a href="#ai-type-configurations">AI Type Configurations</a>
+      <ul>
+        <li><a href="#tier-1-scavenger">Tier 1: Scavenger</a></li>
+        <li><a href="#tier-2-guard">Tier 2: Guard</a></li>
+        <li><a href="#tier-3-heavy">Tier 3: Heavy</a></li>
+        <li><a href="#tier-4-boss---the-warden">Tier 4: Boss - The Warden</a></li>
+      </ul>
+    </li>
+    <li><a href="#performance-optimization">Performance Optimization</a>
+      <ul>
+        <li><a href="#ai-lod-system">AI LOD System</a></li>
+        <li><a href="#object-pooling">Object Pooling</a></li>
+      </ul>
+    </li>
+    <li><a href="#todo-implementation-tasks">TODO: Implementation Tasks</a>
+      <ul>
+        <li><a href="#high-priority-">HIGH Priority 🔴</a></li>
+        <li><a href="#medium-priority-">MEDIUM Priority 🟡</a></li>
+        <li><a href="#low-priority-">LOW Priority 🟢</a></li>
+      </ul>
+    </li>
+    <li><a href="#testing-checklist">Testing Checklist</a></li>
+  </ul>
+</nav>
+
+
+
+    </div>
+  </aside>
+  
+ 
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

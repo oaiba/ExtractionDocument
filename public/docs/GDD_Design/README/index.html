@@ -1,0 +1,1929 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content=" High-Level Game Design Document#Extraction Topdown Mobile Multiplayer#For: Game Designers, Artists, 3D Artists, Level Designers, Sound Designers, UI/UX Designers
+← Back to Main | View Technical GDD →
+Purpose#This document focuses on game design, art direction, and player experience. This is the primary reference for:
+Game Designers designing mechanics and balance Artists creating visual assets Level Designers building maps Sound Designers creating audio experience UI/UX Designers designing interfaces Does not include: Implementation details, code, technical specifications (see Technical GDD)
+">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:1313/docs/GDD_Design/README/">
+  <meta property="og:site_name" content="Extraction Shooter GDD">
+  <meta property="og:title" content="Extraction Shooter GDD">
+  <meta property="og:description" content="High-Level Game Design Document#Extraction Topdown Mobile Multiplayer#For: Game Designers, Artists, 3D Artists, Level Designers, Sound Designers, UI/UX Designers
+← Back to Main | View Technical GDD →
+Purpose#This document focuses on game design, art direction, and player experience. This is the primary reference for:
+Game Designers designing mechanics and balance Artists creating visual assets Level Designers building maps Sound Designers creating audio experience UI/UX Designers designing interfaces Does not include: Implementation details, code, technical specifications (see Technical GDD)">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
+
+
+  <meta itemprop="name" content="Extraction Shooter GDD">
+  <meta itemprop="description" content="High-Level Game Design Document#Extraction Topdown Mobile Multiplayer#For: Game Designers, Artists, 3D Artists, Level Designers, Sound Designers, UI/UX Designers
+← Back to Main | View Technical GDD →
+Purpose#This document focuses on game design, art direction, and player experience. This is the primary reference for:
+Game Designers designing mechanics and balance Artists creating visual assets Level Designers building maps Sound Designers creating audio experience UI/UX Designers designing interfaces Does not include: Implementation details, code, technical specifications (see Technical GDD)">
+  <meta itemprop="wordCount" content="818">
+
+<title>Readme | Extraction Shooter GDD</title>
+<link rel="icon" href="/favicon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="http://localhost:1313/docs/GDD_Design/README/">
+<link rel="stylesheet" href="/book.min.8be08ee19c78fece5778ccbad7b7920c47943153ee0c9e856094873c56dca415.css" integrity="sha256-i&#43;CO4Zx4/s5XeMy617eSDEeUMVPuDJ6FYJSHPFbcpBU=" crossorigin="anonymous">
+
+
+  <script defer src="/fuse.min.js"></script>
+  <script defer src="/en.search.min.beb6abd05d83d2b866a3c4f4f31613c55fb48586e9145b19042e34e4eb52f3a1.js" integrity="sha256-vrar0F2D0rhmo8T08xYTxV&#43;0hYbpFFsZBC405OtS86E=" crossorigin="anonymous"></script>
+
+  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
+
+
+
+  
+</head>
+<body dir="ltr" class="book-kind-page book-type-docs">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    
+<aside class="book-menu">
+  <div class="book-menu-content">
+    
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><img src="/logo.png" alt="Logo" /><span>Extraction Shooter GDD</span>
+  </a>
+</h2>
+
+
+<div class="book-search hidden">
+  <input id="book-search-input" type="text" 
+    placeholder="Search"
+    aria-label="Search"
+    maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/AI/EnemyBehavior/" class="">
+      Enemy Behavior</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/AI/FactionBehaviors/" class="">
+      Faction Behaviors</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Audio/SoundDesign/" class="">
+      Sound Design</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Audio/Soundscape/" class="">
+      Soundscape</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Audio/TacticalAudio/" class="">
+      Tactical Audio</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Audio/VoiceLines/" class="">
+      Voice Lines</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Assault/Blaze/" class="">
+      Blaze</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Assault/Havoc/" class="">
+      Havoc</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Assault/README/" class="">
+      Readme</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Assault/Viper/" class="">
+      Viper</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Operators/" class="">
+      Operators</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Recon/Phantom/" class="">
+      Phantom</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Recon/README/" class="">
+      Readme</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Recon/Specter/" class="">
+      Specter</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Recon/Wraith/" class="">
+      Wraith</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Specialist/Cipher/" class="">
+      Cipher</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Specialist/Flux/" class="">
+      Flux</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Specialist/README/" class="">
+      Readme</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Support/Angel/" class="">
+      Angel</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Support/Doc/" class="">
+      Doc</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Support/README/" class="">
+      Readme</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Tank/Bulwark/" class="">
+      Bulwark</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Tank/Fortress/" class="">
+      Fortress</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Tank/README/" class="">
+      Readme</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Combat/Items/" class="">
+      Items</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Combat/Weapons/" class="">
+      Weapons</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Accessibility/" class="">
+      Accessibility</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Controls/" class="">
+      Controls</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/CoreGameplay/" class="">
+      Core Gameplay</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Economy/" class="">
+      Economy</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/GameModes/" class="">
+      Game Modes</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/LiveOps/" class="">
+      Live Ops</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Localization/" class="">
+      Localization</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/NavigationAndMap/" class="">
+      Navigation and Map</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Overview/" class="">
+      Overview</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Progression/" class="">
+      Progression</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/RankedMode/" class="">
+      Ranked Mode</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/TutorialRaid/" class="">
+      Tutorial Raid</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/UserSettings/" class="">
+      User Settings</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Gameplay/CoreLoop/" class="">
+      Core Loop</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/ProjectScope/DesignPillars/" class="">
+      Design Pillars</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/ProjectScope/MVP/" class="">
+      Mvp</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/ProjectScope/NonGoals/" class="">
+      Non Goals</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/ProjectScope/Risks/" class="">
+      Risks</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/README/" class="active">
+      Readme</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Social/Multiplayer/" class="">
+      Multiplayer</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Story/Backstory/" class="">
+      Backstory</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Story/Factions/" class="">
+      Factions</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Story/Narrative/" class="">
+      Narrative</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Story/QuestLines/" class="">
+      Quest Lines</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/UI_UX/UX_Flows/" class="">
+      Ux Flows</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/UI_UX/Visual_Style/" class="">
+      Visual Style</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Visuals/ArtDirection/" class="">
+      Art Direction</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Visuals/AssetGuidelines/" class="">
+      Asset Guidelines</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Visuals/StyleGuide/" class="">
+      Style Guide</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Visuals/UserInterface/" class="">
+      User Interface</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/EnvironmentalNarrative/" class="">
+      Environmental Narrative</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/EnvironmentalNarrative_Guidelines/" class="">
+      Environmental Narrative Guidelines</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/LootDistribution/" class="">
+      Loot Distribution</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/MapDesign/" class="">
+      Map Design</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/MapDesign_IndustrialZone/" class="">
+      Map Design Industrial Zone</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/MapDesign_NeonSlums/" class="">
+      Map Design Neon Slums</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/MapDesign_Wilderness/" class="">
+      Map Design Wilderness</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/MapLayouts/" class="">
+      Map Layouts</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/AI/SensorySystem/" class="">
+      Sensory System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Core/Architecture/" class="">
+      Architecture</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Core/CodingStandards/" class="">
+      Coding Standards</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Core/DevelopmentRoadmap/" class="">
+      Development Roadmap</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Core/NetworkingSystem/" class="">
+      Networking System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Core/SecuritySystem/" class="">
+      Security System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Gameplay/CharacterSystem/" class="">
+      Character System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Gameplay/ControlSystem/" class="">
+      Control System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Gameplay/InventorySystem/" class="">
+      Inventory System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Gameplay/WeaponSystem/" class="">
+      Weapon System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Networking/LagCompensation/" class="">
+      Lag Compensation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Networking/ReplicationStrategy/" class="">
+      Replication Strategy</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Performance/Budgets/" class="">
+      Budgets</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Performance/Optimization/" class="">
+      Optimization</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/README/" class="">
+      Readme</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Security/AntiCheatStrategy/" class="">
+      Anti Cheat Strategy</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/AccessibilitySystem/" class="">
+      Accessibility System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/AISystem/" class="">
+      Aisystem</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/AnalyticsSystem/" class="">
+      Analytics System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/AudioSystem/" class="">
+      Audio System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/BuildPipeline/" class="">
+      Build Pipeline</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/LiveOpsSystem/" class="">
+      Live Ops System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/LocalizationSystem/" class="">
+      Localization System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/MapSystem/" class="">
+      Map System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/NarrativeSystem/" class="">
+      Narrative System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/ProgressionSystem/" class="">
+      Progression System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/RankedSystem/" class="">
+      Ranked System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/SaveSystem/" class="">
+      Save System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/SocialSystem/" class="">
+      Social System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/TutorialSystem/" class="">
+      Tutorial System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/UISystem/" class="">
+      Uisystem</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+
+  </div>
+</aside>
+ 
+
+    <div class="book-page">
+      <header class="book-header hidden">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/icons/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <h3>Readme</h3>
+
+  <label for="toc-control">
+    
+    <img src="/icons/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#extraction-topdown-mobile-multiplayer">Extraction Topdown Mobile Multiplayer</a></li>
+    <li><a href="#purpose">Purpose</a></li>
+    <li><a href="#-documentation-structure">📚 Documentation Structure</a>
+      <ul>
+        <li><a href="#-game-design">🎮 Game Design</a></li>
+        <li><a href="#-story--narrative">📖 Story &amp; Narrative</a></li>
+        <li><a href="#-social--multiplayer">👥 Social &amp; Multiplayer</a></li>
+        <li><a href="#-combat-systems">⚔️ Combat Systems</a></li>
+        <li><a href="#-characters">👤 Characters</a></li>
+        <li><a href="#-ai--enemies">🤖 AI &amp; Enemies</a></li>
+        <li><a href="#-world-design">🗺️ World Design</a></li>
+        <li><a href="#-visual-design">🎨 Visual Design</a></li>
+        <li><a href="#-audio-design">🔊 Audio Design</a></li>
+        <li><a href="#-project-scope">📋 Project Scope</a></li>
+      </ul>
+    </li>
+    <li><a href="#-how-to-use-this-document">📖 How to Use This Document</a></li>
+    <li><a href="#-design-philosophy">🎯 Design Philosophy</a></li>
+    <li><a href="#-glossary">📝 Glossary</a></li>
+    <li><a href="#-update-log">📅 Update Log</a></li>
+    <li><a href="#-quick-navigation">🔗 Quick Navigation</a></li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<h1 id="high-level-game-design-document">High-Level Game Design Document<a class="anchor" href="#high-level-game-design-document">#</a></h1>
+<h2 id="extraction-topdown-mobile-multiplayer">Extraction Topdown Mobile Multiplayer<a class="anchor" href="#extraction-topdown-mobile-multiplayer">#</a></h2>
+<p><strong>For:</strong> Game Designers, Artists, 3D Artists, Level Designers, Sound Designers, UI/UX Designers</p>
+<p><strong><a href="../README.md">← Back to Main</a></strong> | <strong><a href="../GDD_Technical/README.md">View Technical GDD →</a></strong></p>
+<hr>
+<h2 id="purpose">Purpose<a class="anchor" href="#purpose">#</a></h2>
+<p>This document focuses on <strong>game design, art direction, and player experience</strong>. This is the primary reference for:</p>
+<ul>
+<li>Game Designers designing mechanics and balance</li>
+<li>Artists creating visual assets</li>
+<li>Level Designers building maps</li>
+<li>Sound Designers creating audio experience</li>
+<li>UI/UX Designers designing interfaces</li>
+</ul>
+<p><strong>Does not include:</strong> Implementation details, code, technical specifications (see <a href="../GDD_Technical/README.md">Technical GDD</a>)</p>
+<hr>
+<h2 id="-documentation-structure">📚 Documentation Structure<a class="anchor" href="#-documentation-structure">#</a></h2>
+<h3 id="-game-design">🎮 Game Design<a class="anchor" href="#-game-design">#</a></h3>
+<p>Core game design, mechanics, progression, and monetization systems</p>
+<ul>
+<li><strong><a href="./GameDesign/Overview.md">Overview</a></strong> - Game concept, pillars, target audience, competitive analysis</li>
+<li><strong><a href="./GameDesign/CoreGameplay.md">Core Gameplay</a></strong> - Gameplay loop, phases, player psychology, session flow</li>
+<li><strong><a href="./GameDesign/Controls.md">Controls &amp; UX</a></strong> - Design philosophy, cross-platform strategy, accessibility</li>
+<li><strong><a href="./GameDesign/Progression.md">Progression</a></strong> - Player progression, XP, quests, battle pass</li>
+<li><strong><a href="./GameDesign/Economy.md">Economy</a></strong> - Monetization, currencies, pricing, marketplace, anti-fraud</li>
+<li><strong><a href="./GameDesign/RankedMode.md">Ranked Mode</a></strong> - Ranking system, matchmaking, competitive integrity, season rewards</li>
+<li><strong><a href="./GameDesign/LiveOps.md">Live Ops</a></strong> - Events, content calendar, monetization events, community management</li>
+<li><strong><a href="./GameDesign/Accessibility.md">Accessibility</a></strong> - Visual, auditory, motor, cognitive accessibility features</li>
+<li><strong><a href="./GameDesign/Localization.md">Localization</a></strong> - Supported languages, text guidelines, cultural adaptation</li>
+</ul>
+<hr>
+<h3 id="-story--narrative">📖 Story &amp; Narrative<a class="anchor" href="#-story--narrative">#</a></h3>
+<p>World lore, factions, and character backstories</p>
+<ul>
+<li><strong><a href="./Story/Narrative.md">Narrative</a></strong> - World lore, The Collapse, factions, operator backstories, environmental storytelling</li>
+</ul>
+<hr>
+<h3 id="-social--multiplayer">👥 Social &amp; Multiplayer<a class="anchor" href="#-social--multiplayer">#</a></h3>
+<p>Squad systems, clans, and community features</p>
+<ul>
+<li><strong><a href="./Social/Multiplayer.md">Multiplayer</a></strong> - Squad system, voice/text chat, ping system, clans, friends, anti-toxicity</li>
+</ul>
+<hr>
+<h3 id="-combat-systems">⚔️ Combat Systems<a class="anchor" href="#-combat-systems">#</a></h3>
+<p>Weapon design, items, and combat mechanics</p>
+<ul>
+<li><strong><a href="./Combat/Weapons.md">Weapons</a></strong> - Weapon categories, modifications, combat mechanics, balance</li>
+<li><strong><a href="./Combat/Items.md">Items &amp; Economy</a></strong> - Item systems, loot, inventory, trading marketplace</li>
+</ul>
+<hr>
+<h3 id="-characters">👤 Characters<a class="anchor" href="#-characters">#</a></h3>
+<p>Character design and abilities</p>
+<ul>
+<li><strong><a href="./Characters/Operators.md">Operators</a></strong> - Operator classes, abilities, progression, synergies, cosmetics</li>
+</ul>
+<hr>
+<h3 id="-ai--enemies">🤖 AI &amp; Enemies<a class="anchor" href="#-ai--enemies">#</a></h3>
+<p>Enemy design, behavior systems, and difficulty</p>
+<ul>
+<li><strong><a href="./AI/EnemyBehavior.md">Enemy Behavior</a></strong> - Enemy types, behavior systems, boss design, AI balancing</li>
+</ul>
+<hr>
+<h3 id="-world-design">🗺️ World Design<a class="anchor" href="#-world-design">#</a></h3>
+<p>Maps, environments, and level design</p>
+<ul>
+<li><strong><a href="./World/MapDesign.md">Map Design</a></strong> - Map structure, zones, loot distribution, environmental storytelling</li>
+</ul>
+<hr>
+<h3 id="-visual-design">🎨 Visual Design<a class="anchor" href="#-visual-design">#</a></h3>
+<p>Art direction and user interface</p>
+<ul>
+<li><strong><a href="./Visuals/ArtDirection.md">Art Direction</a></strong> - Visual style, color palette, character/environment art, VFX, animation</li>
+<li><strong><a href="./Visuals/UserInterface.md">User Interface</a></strong> - UI/UX design, screen layouts, controls, accessibility</li>
+</ul>
+<hr>
+<h3 id="-audio-design">🔊 Audio Design<a class="anchor" href="#-audio-design">#</a></h3>
+<p>Sound and music</p>
+<ul>
+<li><strong><a href="./Audio/SoundDesign.md">Sound Design</a></strong> - Audio vision, combat audio, environmental audio, music, voice lines</li>
+</ul>
+<hr>
+<h3 id="-project-scope">📋 Project Scope<a class="anchor" href="#-project-scope">#</a></h3>
+<p>Risks, boundaries, and project management</p>
+<ul>
+<li><strong><a href="./ProjectScope/Risks.md">Risks</a></strong> - Design, technical, business, and operational risks with mitigation</li>
+<li><strong><a href="./ProjectScope/NonGoals.md">Non-Goals</a></strong> - Explicit exclusions and what we intentionally won&rsquo;t build</li>
+</ul>
+<hr>
+<h2 id="-how-to-use-this-document">📖 How to Use This Document<a class="anchor" href="#-how-to-use-this-document">#</a></h2>
+<p><strong>For Game Designers:</strong></p>
+<ul>
+<li>Read entirely to understand game vision</li>
+<li>Reference when designing new mechanics</li>
+<li>Update when there are balance changes</li>
+</ul>
+<p><strong>For Artists:</strong></p>
+<ul>
+<li>Focus on Visuals section (Art Direction, UI)</li>
+<li>Reference Characters and World for context</li>
+<li>Follow guidelines when creating assets</li>
+</ul>
+<p><strong>For Level Designers:</strong></p>
+<ul>
+<li>Deep dive into World → Map Design</li>
+<li>Understand Core Gameplay Loop to design flow</li>
+<li>Coordinate with Artists on visual style</li>
+</ul>
+<p><strong>For Sound Designers:</strong></p>
+<ul>
+<li>Follow Audio → Sound Design guidelines</li>
+<li>Reference Core Gameplay to understand audio cues</li>
+<li>Coordinate with Game Designers on feedback</li>
+</ul>
+<p><strong>For UI/UX Designers:</strong></p>
+<ul>
+<li>Follow Visuals → User Interface guidelines</li>
+<li>Understand User Flow and player journey</li>
+<li>Coordinate with Developers on technical constraints</li>
+</ul>
+<hr>
+<h2 id="-design-philosophy">🎯 Design Philosophy<a class="anchor" href="#-design-philosophy">#</a></h2>
+<p><strong>Player-First Design:</strong></p>
+<ul>
+<li>Every design decision must benefit player experience</li>
+<li>Fair and balanced gameplay</li>
+<li>Respect player&rsquo;s time and effort</li>
+</ul>
+<p><strong>Mobile-Optimized:</strong></p>
+<ul>
+<li>Controls must be intuitive and responsive</li>
+<li>Matches designed for short sessions (10-15 minutes)</li>
+<li>Performance across multiple devices</li>
+</ul>
+<p><strong>Depth Through Simplicity:</strong></p>
+<ul>
+<li>Easy to learn, hard to master</li>
+<li>Clear mechanics with deep strategy</li>
+<li>Progressive complexity</li>
+</ul>
+<hr>
+<h2 id="-glossary">📝 Glossary<a class="anchor" href="#-glossary">#</a></h2>
+<p><strong>Core Terms:</strong></p>
+<ul>
+<li><strong>Extraction:</strong> Process of leaving map with loot</li>
+<li><strong>Hot Zone:</strong> High-risk, high-reward areas</li>
+<li><strong>Operator:</strong> Playable character class</li>
+<li><strong>Stash:</strong> Permanent storage for extracted items</li>
+<li><strong>MMR:</strong> Matchmaking Rating</li>
+<li><strong>POI:</strong> Point of Interest</li>
+<li><strong>TTK:</strong> Time to Kill</li>
+<li><strong>DPS:</strong> Damage Per Second</li>
+</ul>
+<hr>
+<h2 id="-update-log">📅 Update Log<a class="anchor" href="#-update-log">#</a></h2>
+<table>
+  <thead>
+      <tr>
+          <th>Date</th>
+          <th>Section</th>
+          <th>Changes</th>
+          <th>Updated By</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>2026-02-07</td>
+          <td>GameDesign</td>
+          <td>Added Accessibility.md (visual, auditory, motor, cognitive)</td>
+          <td>Team</td>
+      </tr>
+      <tr>
+          <td>2026-02-07</td>
+          <td>GameDesign</td>
+          <td>Added Localization.md (languages, cultural adaptation)</td>
+          <td>Team</td>
+      </tr>
+      <tr>
+          <td>2026-02-07</td>
+          <td>ProjectScope</td>
+          <td>Added Risks.md (design, tech, business risks)</td>
+          <td>Team</td>
+      </tr>
+      <tr>
+          <td>2026-02-07</td>
+          <td>ProjectScope</td>
+          <td>Added NonGoals.md (explicit exclusions)</td>
+          <td>Team</td>
+      </tr>
+      <tr>
+          <td>2026-02-07</td>
+          <td>AI</td>
+          <td>Added EnemyBehavior.md (enemy types, behavior, bosses)</td>
+          <td>Team</td>
+      </tr>
+      <tr>
+          <td>2026-02-07</td>
+          <td>GameDesign</td>
+          <td>Added RankedMode.md (ranking, matchmaking, competitive)</td>
+          <td>Team</td>
+      </tr>
+      <tr>
+          <td>2026-02-07</td>
+          <td>GameDesign</td>
+          <td>Added LiveOps.md (events, content calendar, monetization)</td>
+          <td>Team</td>
+      </tr>
+      <tr>
+          <td>2026-02-07</td>
+          <td>Story</td>
+          <td>Added Narrative.md (lore, factions, backstories)</td>
+          <td>Team</td>
+      </tr>
+      <tr>
+          <td>2026-02-07</td>
+          <td>GameDesign</td>
+          <td>Added Economy.md (monetization, currencies, anti-fraud)</td>
+          <td>Team</td>
+      </tr>
+      <tr>
+          <td>2026-02-07</td>
+          <td>Social</td>
+          <td>Added Multiplayer.md (squads, clans, communication)</td>
+          <td>Team</td>
+      </tr>
+      <tr>
+          <td>2026-02-07</td>
+          <td>Controls</td>
+          <td>Expanded with controller support, keyboard options</td>
+          <td>Team</td>
+      </tr>
+      <tr>
+          <td>2026-02-06</td>
+          <td>Structure</td>
+          <td>Reorganized to folder-based system</td>
+          <td>Team</td>
+      </tr>
+      <tr>
+          <td>2026-02-06</td>
+          <td>Combat</td>
+          <td>Added Weapons &amp; Items documents</td>
+          <td>Team</td>
+      </tr>
+      <tr>
+          <td>2026-02-06</td>
+          <td>All</td>
+          <td>Initial documentation</td>
+          <td>Team</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="-quick-navigation">🔗 Quick Navigation<a class="anchor" href="#-quick-navigation">#</a></h2>
+<p><strong>Start Here:</strong></p>
+<ul>
+<li>New to project? → <a href="./GameDesign/Overview.md">Overview</a></li>
+<li>Understanding gameplay? → <a href="./GameDesign/CoreGameplay.md">Core Gameplay</a></li>
+<li>Designing characters? → <a href="./Characters/Operators.md">Operators</a></li>
+</ul>
+<p><strong>World &amp; Story:</strong></p>
+<ul>
+<li>World lore &amp; factions → <a href="./Story/Narrative.md">Narrative</a></li>
+<li>Multiplayer &amp; social → <a href="./Social/Multiplayer.md">Multiplayer</a></li>
+<li>AI &amp; enemies → <a href="./AI/EnemyBehavior.md">Enemy Behavior</a></li>
+</ul>
+<p><strong>Competitive:</strong></p>
+<ul>
+<li>Ranked system → <a href="./GameDesign/RankedMode.md">Ranked Mode</a></li>
+<li>Events &amp; live ops → <a href="./GameDesign/LiveOps.md">Live Ops</a></li>
+</ul>
+<p><strong>Economy &amp; Monetization:</strong></p>
+<ul>
+<li>Currencies &amp; pricing → <a href="./GameDesign/Economy.md">Economy</a></li>
+<li>Items &amp; marketplace → <a href="./Combat/Items.md">Items</a></li>
+</ul>
+<p><strong>Platform &amp; Accessibility:</strong></p>
+<ul>
+<li>Accessibility features → <a href="./GameDesign/Accessibility.md">Accessibility</a></li>
+<li>Localization strategy → <a href="./GameDesign/Localization.md">Localization</a></li>
+</ul>
+<p><strong>Project Management:</strong></p>
+<ul>
+<li>Project risks → <a href="./ProjectScope/Risks.md">Risks</a></li>
+<li>What we won&rsquo;t build → <a href="./ProjectScope/NonGoals.md">Non-Goals</a></li>
+</ul>
+<p><strong>Deep Dives:</strong></p>
+<ul>
+<li>Combat systems → <a href="./Combat/Weapons.md">Weapons</a> + <a href="./Combat/Items.md">Items</a></li>
+<li>Visual design → <a href="./Visuals/ArtDirection.md">Art Direction</a> + <a href="./Visuals/UserInterface.md">UI</a></li>
+<li>Progression → <a href="./GameDesign/Progression.md">Progression</a></li>
+<li>Controls &amp; UX → <a href="./GameDesign/Controls.md">Controls</a></li>
+</ul>
+<hr>
+<p><strong><a href="../README.md">← Back to Main</a></strong> | <strong><a href="../GDD_Technical/README.md">View Technical GDD →</a></strong></p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+<div>
+
+</div>
+
+<div>
+
+</div>
+
+</div>
+
+
+
+
+
+  
+  
+  
+  <div class="flex flex-wrap justify-between">
+    <span>
+    
+      <a href="/docs/GDD_Design/ProjectScope/Risks/" class="flex align-center">
+        <img src="/icons/backward.svg" class="book-icon" alt="Backward" />
+        <span>Risks</span>
+      </a>
+    
+    </span>
+    <span>
+    
+      <a href="/docs/GDD_Design/Social/Multiplayer/" class="flex align-center">
+        <span>Multiplayer</span>
+        <img src="/icons/forward.svg" class="book-icon" alt="Forward" />
+      </a>
+    
+    </span>
+  </div>
+  
+
+
+ 
+        
+  
+ 
+        
+        
+  
+ 
+        
+  
+  
+    <script>(function(){document.querySelectorAll("pre:has(code)").forEach(e=>{e.addEventListener("click",e.focus),e.addEventListener("copy",function(t){if(t.preventDefault(),navigator.clipboard){const t=window.getSelection().toString()||e.textContent;navigator.clipboard.writeText(t)}})})})()</script>
+  
+
+      </footer>
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+  
+  <aside class="book-toc">
+    <div class="book-toc-content">
+      
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#extraction-topdown-mobile-multiplayer">Extraction Topdown Mobile Multiplayer</a></li>
+    <li><a href="#purpose">Purpose</a></li>
+    <li><a href="#-documentation-structure">📚 Documentation Structure</a>
+      <ul>
+        <li><a href="#-game-design">🎮 Game Design</a></li>
+        <li><a href="#-story--narrative">📖 Story &amp; Narrative</a></li>
+        <li><a href="#-social--multiplayer">👥 Social &amp; Multiplayer</a></li>
+        <li><a href="#-combat-systems">⚔️ Combat Systems</a></li>
+        <li><a href="#-characters">👤 Characters</a></li>
+        <li><a href="#-ai--enemies">🤖 AI &amp; Enemies</a></li>
+        <li><a href="#-world-design">🗺️ World Design</a></li>
+        <li><a href="#-visual-design">🎨 Visual Design</a></li>
+        <li><a href="#-audio-design">🔊 Audio Design</a></li>
+        <li><a href="#-project-scope">📋 Project Scope</a></li>
+      </ul>
+    </li>
+    <li><a href="#-how-to-use-this-document">📖 How to Use This Document</a></li>
+    <li><a href="#-design-philosophy">🎯 Design Philosophy</a></li>
+    <li><a href="#-glossary">📝 Glossary</a></li>
+    <li><a href="#-update-log">📅 Update Log</a></li>
+    <li><a href="#-quick-navigation">🔗 Quick Navigation</a></li>
+  </ul>
+</nav>
+
+
+
+    </div>
+  </aside>
+  
+ 
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

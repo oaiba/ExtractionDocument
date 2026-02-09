@@ -1,0 +1,56 @@
+baseURL = 'https://example.com/'
+title = 'Extraction Shooter GDD'
+theme = 'book'
+
+# Book configuration
+disablePathToLower = true
+enableGitInfo = true
+
+# Needed for mermaid/katex support
+[params]
+  # (Optional, default light) Sets color theme: light, dark or auto.
+  # Theme 'auto' switches between dark and light modes based on browser/os preferences
+  BookTheme = 'auto'
+
+  # (Optional, default true) Controls table of contents visibility on right side of pages.
+  # Start and end levels can be controlled with markup (e.g. {< toc 2 3 >})
+  BookToC = true
+
+  # (Optional, default none) Set the path to a logo for the book. If the logo is
+  # /static/logo.png then the path would be 'logo.png'
+  BookLogo = 'logo.svg'
+
+  # (Optional, default none) Set leaf bundle to render as side menu
+  # When not specified, simple tree traversal is performed
+  # BookMenuBundle = '/menu'
+
+  # (Optional, default docs) Specify section of content to render as menu
+  # You can also set value to "posts" or any other section
+  BookSection = 'docs'
+
+  # (Optional, default false) Enable comments template
+  BookComments = false
+
+  # (Optional, default true) Enable search function
+  BookSearch = true
+
+  # (Optional, default true) Enable Service Worker for offline access
+  BookServiceWorker = true
+
+  # (Optional, default true) Enable translation interface
+  BookUnstyled = false
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+  [markup.tableOfContents]
+    endLevel = 3
+    ordered = false
+    startLevel = 2
+
+
+# Custom CSS Override
+# This requires creating assets/custom.css
+# Because we are using the 'book' theme as a submodule, 
+# we can override by placing files in standard hugo locations.

@@ -1,0 +1,4163 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=52224&amp;path=livereload" data-no-instant defer></script>
+  <!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Audio System - Technical Specification#← Back to Index | Next: Narrative System →
+Reference: High-Level Audio Design
+Overview#The Audio System manages all game audio including sound effects, music, voice lines, ambient, and mixing. Optimized for mobile performance with streaming, pooling, and smart prioritization.
+Responsibilities:
+3D spatial audio Dynamic music intensity Weapon/footstep sounds Voice line queue system Occlusion and reverb Audio mixing by category Pool-based audio components Memory management Enums &amp; Types#SoundCategory#Sound category classification for mixing.
+">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:52224/docs/GDD_Technical/Systems/AudioSystem/">
+  <meta property="og:site_name" content="Extraction Shooter GDD">
+  <meta property="og:title" content="Extraction Shooter GDD">
+  <meta property="og:description" content="Audio System - Technical Specification#← Back to Index | Next: Narrative System →
+Reference: High-Level Audio Design
+Overview#The Audio System manages all game audio including sound effects, music, voice lines, ambient, and mixing. Optimized for mobile performance with streaming, pooling, and smart prioritization.
+Responsibilities:
+3D spatial audio Dynamic music intensity Weapon/footstep sounds Voice line queue system Occlusion and reverb Audio mixing by category Pool-based audio components Memory management Enums &amp; Types#SoundCategory#Sound category classification for mixing.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
+
+
+  <meta itemprop="name" content="Extraction Shooter GDD">
+  <meta itemprop="description" content="Audio System - Technical Specification#← Back to Index | Next: Narrative System →
+Reference: High-Level Audio Design
+Overview#The Audio System manages all game audio including sound effects, music, voice lines, ambient, and mixing. Optimized for mobile performance with streaming, pooling, and smart prioritization.
+Responsibilities:
+3D spatial audio Dynamic music intensity Weapon/footstep sounds Voice line queue system Occlusion and reverb Audio mixing by category Pool-based audio components Memory management Enums &amp; Types#SoundCategory#Sound category classification for mixing.">
+  <meta itemprop="wordCount" content="3810">
+
+<title>Audio System | Extraction Shooter GDD</title>
+<link rel="icon" href="/favicon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="http://localhost:52224/docs/GDD_Technical/Systems/AudioSystem/">
+<link rel="stylesheet" href="/book.min.63c8b2b12bbd1ad36428837740ea371dd41fdb9c22b35499003d0dfa4dbce6ba.css" integrity="sha256-Y8iysSu9GtNkKIN3QOo3HdQf25wis1SZAD0N&#43;k285ro=" crossorigin="anonymous">
+
+
+  <script defer src="/fuse.min.js"></script>
+  <script defer src="/en.search.min.58bea27d7a08265548c5a8636a9a9fc844e0eb9d60fc3bb2c53d517da858d4c1.js" integrity="sha256-WL6ifXoIJlVIxahjapqfyETg651g/DuyxT1RfahY1ME=" crossorigin="anonymous"></script>
+
+  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
+
+
+
+  
+</head>
+<body dir="ltr" class="book-kind-page book-type-docs">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    
+<aside class="book-menu">
+  <div class="book-menu-content">
+    
+  <nav>
+    <h2 class="book-brand">
+  <a class="flex align-center" href="/"><img src="/logo.svg" alt="Logo" /><span>Extraction Shooter GDD</span>
+  </a>
+</h2>
+
+    <div class="book-theme-toggle">
+    <input type="checkbox" id="theme-toggle" class="toggle">
+    <label for="theme-toggle" class="flex justify-between items-center cursor-pointer">
+        <span class="text-xs font-semibold">Dark Mode</span>
+        <div
+            class="relative w-10 h-5 bg-gray-200 rounded-full transition-colors duration-200 ease-in-out dark:bg-gray-700">
+            <div
+                class="absolute left-0 w-5 h-5 bg-white rounded-full shadow transform transition-transform duration-200 ease-in-out dark:translate-x-full">
+            </div>
+        </div>
+    </label>
+</div>
+
+<script>
+    (function () {
+        const toggle = document.getElementById('theme-toggle');
+        const html = document.documentElement;
+
+        
+        const savedTheme = localStorage.getItem('theme');
+        const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+        if (savedTheme === 'dark' || (!savedTheme && systemDark)) {
+            html.classList.add('dark');
+            toggle.checked = true;
+        } else {
+            html.classList.remove('dark');
+            toggle.checked = false;
+        }
+
+        
+        toggle.addEventListener('change', function () {
+            if (this.checked) {
+                html.classList.add('dark');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                html.classList.remove('dark');
+                localStorage.setItem('theme', 'light');
+            }
+        });
+    })();
+</script>
+
+<style>
+     
+    .book-theme-toggle {
+        margin: 1rem 0;
+        padding: 0 1rem;
+
+    }
+
+    .book-theme-toggle label {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        cursor: pointer;
+        font-size: 0.85em;
+    }
+
+     
+    .book-theme-toggle input {
+        display: none;
+    }
+
+     
+    .book-theme-toggle label::after {
+        content: "🌙";
+         
+    }
+
+     
+    html:not(.dark) .book-theme-toggle label::after {
+        content: "☀️";
+         
+    }
+</style> 
+    
+<div class="book-search hidden">
+  <input id="book-search-input" type="text" 
+    placeholder="Search"
+    aria-label="Search"
+    maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+    
+
+    
+    
+
+
+
+    
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/" class="">
+      Gdd Design</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      AI</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/AI/EnemyBehavior/" class="">
+      Enemy Behavior</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/AI/FactionBehaviors/" class="">
+      Faction Behaviors</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Audio</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Audio/SoundDesign/" class="">
+      Sound Design</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Audio/Soundscape/" class="">
+      Soundscape</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Audio/TacticalAudio/" class="">
+      Tactical Audio</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Audio/VoiceLines/" class="">
+      Voice Lines</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Characters</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Operators/" class="">
+      Operators</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Assault</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Assault/Blaze/" class="">
+      Blaze</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Assault/Havoc/" class="">
+      Havoc</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Assault/README/" class="">
+      Readme</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Assault/Viper/" class="">
+      Viper</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Recon</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Recon/Phantom/" class="">
+      Phantom</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Recon/README/" class="">
+      Readme</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Recon/Specter/" class="">
+      Specter</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Recon/Wraith/" class="">
+      Wraith</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Specialist</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Specialist/Cipher/" class="">
+      Cipher</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Specialist/Flux/" class="">
+      Flux</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Specialist/README/" class="">
+      Readme</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Support</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Support/Angel/" class="">
+      Angel</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Support/Doc/" class="">
+      Doc</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Support/README/" class="">
+      Readme</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Tank</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Tank/Bulwark/" class="">
+      Bulwark</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Tank/Fortress/" class="">
+      Fortress</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Tank/README/" class="">
+      Readme</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Combat</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Combat/Items/" class="">
+      Items</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Combat/Weapons/" class="">
+      Weapons</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      GameDesign</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Accessibility/" class="">
+      Accessibility</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Controls/" class="">
+      Controls</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/CoreGameplay/" class="">
+      Core Gameplay</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Economy/" class="">
+      Economy</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/GameModes/" class="">
+      Game Modes</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/LiveOps/" class="">
+      Live Ops</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Localization/" class="">
+      Localization</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/NavigationAndMap/" class="">
+      Navigation and Map</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Overview/" class="">
+      Overview</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Progression/" class="">
+      Progression</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/RankedMode/" class="">
+      Ranked Mode</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/TutorialRaid/" class="">
+      Tutorial Raid</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/UserSettings/" class="">
+      User Settings</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Gameplay</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Gameplay/CoreLoop/" class="">
+      Core Loop</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      ProjectScope</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/ProjectScope/DesignPillars/" class="">
+      Design Pillars</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/ProjectScope/MVP/" class="">
+      Mvp</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/ProjectScope/NonGoals/" class="">
+      Non Goals</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/ProjectScope/Risks/" class="">
+      Risks</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Social</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Social/Multiplayer/" class="">
+      Multiplayer</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Story</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Story/Backstory/" class="">
+      Backstory</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Story/Factions/" class="">
+      Factions</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Story/Narrative/" class="">
+      Narrative</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Story/QuestLines/" class="">
+      Quest Lines</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      UI UX</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/UI_UX/UX_Flows/" class="">
+      Ux Flows</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/UI_UX/Visual_Style/" class="">
+      Visual Style</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Visuals</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Visuals/ArtDirection/" class="">
+      Art Direction</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Visuals/AssetGuidelines/" class="">
+      Asset Guidelines</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Visuals/StyleGuide/" class="">
+      Style Guide</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Visuals/UserInterface/" class="">
+      User Interface</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      World</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/EnvironmentalNarrative/" class="">
+      Environmental Narrative</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/EnvironmentalNarrative_Guidelines/" class="">
+      Environmental Narrative Guidelines</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/LootDistribution/" class="">
+      Loot Distribution</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/MapDesign/" class="">
+      Map Design</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/MapDesign_IndustrialZone/" class="">
+      Map Design Industrial Zone</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/MapDesign_NeonSlums/" class="">
+      Map Design Neon Slums</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/MapDesign_Wilderness/" class="">
+      Map Design Wilderness</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/MapLayouts/" class="">
+      Map Layouts</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/" class="">
+      Gdd Technical</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      AI</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/AI/SensorySystem/" class="">
+      Sensory System</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Core</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Core/Architecture/" class="">
+      Architecture</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Core/CodingStandards/" class="">
+      Coding Standards</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Core/DevelopmentRoadmap/" class="">
+      Development Roadmap</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Core/NetworkingSystem/" class="">
+      Networking System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Core/SecuritySystem/" class="">
+      Security System</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Gameplay</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Gameplay/CharacterSystem/" class="">
+      Character System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Gameplay/ControlSystem/" class="">
+      Control System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Gameplay/InventorySystem/" class="">
+      Inventory System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Gameplay/WeaponSystem/" class="">
+      Weapon System</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Networking</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Networking/LagCompensation/" class="">
+      Lag Compensation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Networking/ReplicationStrategy/" class="">
+      Replication Strategy</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Performance</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Performance/Budgets/" class="">
+      Budgets</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Performance/Optimization/" class="">
+      Optimization</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Security</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Security/AntiCheatStrategy/" class="">
+      Anti Cheat Strategy</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Systems</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/AccessibilitySystem/" class="">
+      Accessibility System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/AISystem/" class="">
+      Aisystem</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/AnalyticsSystem/" class="">
+      Analytics System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/AudioSystem/" class="active">
+      Audio System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/BuildPipeline/" class="">
+      Build Pipeline</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/LiveOpsSystem/" class="">
+      Live Ops System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/LocalizationSystem/" class="">
+      Localization System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/MapSystem/" class="">
+      Map System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/NarrativeSystem/" class="">
+      Narrative System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/ProgressionSystem/" class="">
+      Progression System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/RankedSystem/" class="">
+      Ranked System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/SaveSystem/" class="">
+      Save System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/SocialSystem/" class="">
+      Social System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/TutorialSystem/" class="">
+      Tutorial System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/UISystem/" class="">
+      Uisystem</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+</nav>
+
+
+
+
+<script>{ { . | safeJS } }</script>
+
+
+  </div>
+</aside>
+ 
+
+    <div class="book-page">
+      <header class="book-header hidden">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/icons/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <h3>Audio System</h3>
+
+  <label for="toc-control">
+    
+    <img src="/icons/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#overview">Overview</a></li>
+    <li><a href="#enums--types">Enums &amp; Types</a>
+      <ul>
+        <li><a href="#soundcategory">SoundCategory</a></li>
+        <li><a href="#soundpriority">SoundPriority</a></li>
+        <li><a href="#musicintensity">MusicIntensity</a></li>
+        <li><a href="#surfacetype">SurfaceType</a></li>
+        <li><a href="#weaponsoundtype">WeaponSoundType</a></li>
+        <li><a href="#voicelinetype">VoiceLineType</a></li>
+        <li><a href="#audioocclusion">AudioOcclusion</a></li>
+        <li><a href="#mixpreset">MixPreset</a></li>
+        <li><a href="#stingertype">StingerType</a></li>
+      </ul>
+    </li>
+    <li><a href="#code-names">Code Names</a>
+      <ul>
+        <li><a href="#audio-events">Audio Events</a></li>
+        <li><a href="#playback-events">Playback Events</a></li>
+      </ul>
+    </li>
+    <li><a href="#architecture">Architecture</a>
+      <ul>
+        <li><a href="#class-diagram">Class Diagram</a></li>
+      </ul>
+    </li>
+    <li><a href="#core-classes">Core Classes</a>
+      <ul>
+        <li><a href="#audiomanager">AudioManager</a></li>
+        <li><a href="#musicmanager">MusicManager</a></li>
+        <li><a href="#voicelinemanager">VoiceLineManager</a></li>
+        <li><a href="#footstepmanager">FootstepManager</a></li>
+        <li><a href="#weaponsoundcomponent">WeaponSoundComponent</a></li>
+        <li><a href="#mixmanager">MixManager</a></li>
+        <li><a href="#occlusionmanager">OcclusionManager</a></li>
+        <li><a href="#spatialaudiosettings">SpatialAudioSettings</a></li>
+        <li><a href="#soundpoolmanager">SoundPoolManager</a></li>
+        <li><a href="#audiomemorymanager">AudioMemoryManager</a></li>
+      </ul>
+    </li>
+    <li><a href="#audio-settings-data">Audio Settings Data</a></li>
+    <li><a href="#audio-file-specifications">Audio File Specifications</a></li>
+    <li><a href="#sound-class-hierarchy">Sound Class Hierarchy</a></li>
+    <li><a href="#todo-implementation-tasks">TODO: Implementation Tasks</a>
+      <ul>
+        <li><a href="#high-priority-">HIGH Priority 🔴</a></li>
+        <li><a href="#medium-priority-">MEDIUM Priority 🟡</a></li>
+        <li><a href="#low-priority-">LOW Priority 🟢</a></li>
+      </ul>
+    </li>
+    <li><a href="#testing-checklist">Testing Checklist</a></li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><h1 id="audio-system---technical-specification">Audio System - Technical Specification<a class="anchor" href="#audio-system---technical-specification">#</a></h1>
+<p><strong><a href="../README.md">← Back to Index</a></strong> | <strong><a href="./NarrativeSystem.md">Next: Narrative System →</a></strong></p>
+<p><strong>Reference:</strong> <a href="../../GDD_HighLevel/Visuals/AudioDesign.md">High-Level Audio Design</a></p>
+<hr>
+<h2 id="overview">Overview<a class="anchor" href="#overview">#</a></h2>
+<p>The <strong>Audio System</strong> manages all game audio including sound effects, music, voice lines, ambient, and mixing. Optimized for mobile performance with streaming, pooling, and smart prioritization.</p>
+<p><strong>Responsibilities:</strong></p>
+<ul>
+<li>3D spatial audio</li>
+<li>Dynamic music intensity</li>
+<li>Weapon/footstep sounds</li>
+<li>Voice line queue system</li>
+<li>Occlusion and reverb</li>
+<li>Audio mixing by category</li>
+<li>Pool-based audio components</li>
+<li>Memory management</li>
+</ul>
+<hr>
+<h2 id="enums--types">Enums &amp; Types<a class="anchor" href="#enums--types">#</a></h2>
+<h3 id="soundcategory">SoundCategory<a class="anchor" href="#soundcategory">#</a></h3>
+<p>Sound category classification for mixing.</p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Code Name</th>
+          <th style="text-align: left">Display Name</th>
+          <th style="text-align: left">Mix Group</th>
+          <th style="text-align: left">Default Volume</th>
+          <th style="text-align: left">Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><code>SC_Master</code></td>
+          <td style="text-align: left">Master</td>
+          <td style="text-align: left">Master</td>
+          <td style="text-align: left">100%</td>
+          <td style="text-align: left">Top-level mix, affects all audio</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>SC_Music</code></td>
+          <td style="text-align: left">Music</td>
+          <td style="text-align: left">Music</td>
+          <td style="text-align: left">80%</td>
+          <td style="text-align: left">Background music tracks</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>SC_SFX</code></td>
+          <td style="text-align: left">Sound Effects</td>
+          <td style="text-align: left">SFX</td>
+          <td style="text-align: left">100%</td>
+          <td style="text-align: left">General sound effects</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>SC_Weapons</code></td>
+          <td style="text-align: left">Weapons</td>
+          <td style="text-align: left">SFX</td>
+          <td style="text-align: left">100%</td>
+          <td style="text-align: left">Gunfire, explosions</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>SC_Footsteps</code></td>
+          <td style="text-align: left">Footsteps</td>
+          <td style="text-align: left">SFX</td>
+          <td style="text-align: left">90%</td>
+          <td style="text-align: left">Movement sounds</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>SC_Voice</code></td>
+          <td style="text-align: left">Voice</td>
+          <td style="text-align: left">Voice</td>
+          <td style="text-align: left">100%</td>
+          <td style="text-align: left">Character voice lines</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>SC_Ambient</code></td>
+          <td style="text-align: left">Ambient</td>
+          <td style="text-align: left">Ambient</td>
+          <td style="text-align: left">70%</td>
+          <td style="text-align: left">Environment ambience</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>SC_UI</code></td>
+          <td style="text-align: left">UI</td>
+          <td style="text-align: left">UI</td>
+          <td style="text-align: left">100%</td>
+          <td style="text-align: left">Menu/HUD sounds</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>SC_VoiceChat</code></td>
+          <td style="text-align: left">Voice Chat</td>
+          <td style="text-align: left">VoiceChat</td>
+          <td style="text-align: left">80%</td>
+          <td style="text-align: left">Player communication</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h3 id="soundpriority">SoundPriority<a class="anchor" href="#soundpriority">#</a></h3>
+<p>Sound playback priority.</p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Code Name</th>
+          <th style="text-align: left">Display Name</th>
+          <th style="text-align: left">Priority</th>
+          <th style="text-align: left">Reserve Channels</th>
+          <th style="text-align: left">Interrupt</th>
+          <th style="text-align: left">Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><code>SP_Critical</code></td>
+          <td style="text-align: left">Critical</td>
+          <td style="text-align: left">100</td>
+          <td style="text-align: left">4</td>
+          <td style="text-align: left">Never</td>
+          <td style="text-align: left">Player death, extraction, alerts</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>SP_High</code></td>
+          <td style="text-align: left">High</td>
+          <td style="text-align: left">75</td>
+          <td style="text-align: left">8</td>
+          <td style="text-align: left">Low only</td>
+          <td style="text-align: left">Weapon fire, voice lines</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>SP_Medium</code></td>
+          <td style="text-align: left">Medium</td>
+          <td style="text-align: left">50</td>
+          <td style="text-align: left">16</td>
+          <td style="text-align: left">Low only</td>
+          <td style="text-align: left">Footsteps, impacts</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>SP_Low</code></td>
+          <td style="text-align: left">Low</td>
+          <td style="text-align: left">25</td>
+          <td style="text-align: left">0</td>
+          <td style="text-align: left">Any</td>
+          <td style="text-align: left">Ambient detail, debris</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>SP_Lowest</code></td>
+          <td style="text-align: left">Lowest</td>
+          <td style="text-align: left">10</td>
+          <td style="text-align: left">0</td>
+          <td style="text-align: left">Any</td>
+          <td style="text-align: left">Optional fluff sounds</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h3 id="musicintensity">MusicIntensity<a class="anchor" href="#musicintensity">#</a></h3>
+<p>Dynamic music intensity level.</p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Code Name</th>
+          <th style="text-align: left">Display Name</th>
+          <th style="text-align: left">Layers Active</th>
+          <th style="text-align: left">Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><code>MI_Silent</code></td>
+          <td style="text-align: left">Silent</td>
+          <td style="text-align: left">0</td>
+          <td style="text-align: left">No music (stealth, pre-match)</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>MI_Ambient</code></td>
+          <td style="text-align: left">Ambient</td>
+          <td style="text-align: left">1</td>
+          <td style="text-align: left">Exploration, light atmosphere</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>MI_Low</code></td>
+          <td style="text-align: left">Low</td>
+          <td style="text-align: left">2</td>
+          <td style="text-align: left">Tension building, searching</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>MI_Medium</code></td>
+          <td style="text-align: left">Medium</td>
+          <td style="text-align: left">3</td>
+          <td style="text-align: left">Combat nearby, alert</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>MI_High</code></td>
+          <td style="text-align: left">High</td>
+          <td style="text-align: left">4</td>
+          <td style="text-align: left">Active combat, PvP</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>MI_Boss</code></td>
+          <td style="text-align: left">Boss</td>
+          <td style="text-align: left">5+</td>
+          <td style="text-align: left">Boss encounter, special track</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>MI_Extraction</code></td>
+          <td style="text-align: left">Extraction</td>
+          <td style="text-align: left">4</td>
+          <td style="text-align: left">Extraction countdown tension</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h3 id="surfacetype">SurfaceType<a class="anchor" href="#surfacetype">#</a></h3>
+<p>Surface material for footsteps.</p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Code Name</th>
+          <th style="text-align: left">Display Name</th>
+          <th style="text-align: left">Sound Set</th>
+          <th style="text-align: left">Volume Mult</th>
+          <th style="text-align: left">Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><code>SFT_Concrete</code></td>
+          <td style="text-align: left">Concrete</td>
+          <td style="text-align: left">SFX_Footstep_Concrete</td>
+          <td style="text-align: left">1.0×</td>
+          <td style="text-align: left">Hard urban surfaces</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>SFT_Metal</code></td>
+          <td style="text-align: left">Metal</td>
+          <td style="text-align: left">SFX_Footstep_Metal</td>
+          <td style="text-align: left">1.1×</td>
+          <td style="text-align: left">Metallic floors/grates</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>SFT_Wood</code></td>
+          <td style="text-align: left">Wood</td>
+          <td style="text-align: left">SFX_Footstep_Wood</td>
+          <td style="text-align: left">0.9×</td>
+          <td style="text-align: left">Wooden floors/boards</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>SFT_Grass</code></td>
+          <td style="text-align: left">Grass</td>
+          <td style="text-align: left">SFX_Footstep_Grass</td>
+          <td style="text-align: left">0.6×</td>
+          <td style="text-align: left">Outdoor grass</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>SFT_Dirt</code></td>
+          <td style="text-align: left">Dirt</td>
+          <td style="text-align: left">SFX_Footstep_Dirt</td>
+          <td style="text-align: left">0.7×</td>
+          <td style="text-align: left">Dirt/earth</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>SFT_Gravel</code></td>
+          <td style="text-align: left">Gravel</td>
+          <td style="text-align: left">SFX_Footstep_Gravel</td>
+          <td style="text-align: left">0.95×</td>
+          <td style="text-align: left">Loose gravel</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>SFT_Water</code></td>
+          <td style="text-align: left">Water</td>
+          <td style="text-align: left">SFX_Footstep_Water</td>
+          <td style="text-align: left">1.15×</td>
+          <td style="text-align: left">Shallow water</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>SFT_Sand</code></td>
+          <td style="text-align: left">Sand</td>
+          <td style="text-align: left">SFX_Footstep_Sand</td>
+          <td style="text-align: left">0.5×</td>
+          <td style="text-align: left">Desert sand</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>SFT_Snow</code></td>
+          <td style="text-align: left">Snow</td>
+          <td style="text-align: left">SFX_Footstep_Snow</td>
+          <td style="text-align: left">0.65×</td>
+          <td style="text-align: left">Winter snow</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>SFT_Tile</code></td>
+          <td style="text-align: left">Tile</td>
+          <td style="text-align: left">SFX_Footstep_Tile</td>
+          <td style="text-align: left">0.85×</td>
+          <td style="text-align: left">Ceramic/tile floors</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h3 id="weaponsoundtype">WeaponSoundType<a class="anchor" href="#weaponsoundtype">#</a></h3>
+<p>Weapon sound event type.</p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Code Name</th>
+          <th style="text-align: left">Display Name</th>
+          <th style="text-align: left">Priority</th>
+          <th style="text-align: left">Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><code>WS_Fire</code></td>
+          <td style="text-align: left">Fire</td>
+          <td style="text-align: left">High</td>
+          <td style="text-align: left">Gunshot firing</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>WS_FireTail</code></td>
+          <td style="text-align: left">Fire Tail</td>
+          <td style="text-align: left">Medium</td>
+          <td style="text-align: left">Gunshot tail/reverb</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>WS_FireAuto</code></td>
+          <td style="text-align: left">Fire Auto</td>
+          <td style="text-align: left">High</td>
+          <td style="text-align: left">Automatic fire loop</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>WS_Reload</code></td>
+          <td style="text-align: left">Reload</td>
+          <td style="text-align: left">Medium</td>
+          <td style="text-align: left">Magazine reload</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>WS_ReloadEmpty</code></td>
+          <td style="text-align: left">Reload Empty</td>
+          <td style="text-align: left">Medium</td>
+          <td style="text-align: left">Empty mag reload</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>WS_Equip</code></td>
+          <td style="text-align: left">Equip</td>
+          <td style="text-align: left">Low</td>
+          <td style="text-align: left">Weapon draw</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>WS_DryFire</code></td>
+          <td style="text-align: left">Dry Fire</td>
+          <td style="text-align: left">Medium</td>
+          <td style="text-align: left">Click on empty</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>WS_MechAction</code></td>
+          <td style="text-align: left">Mech Action</td>
+          <td style="text-align: left">Low</td>
+          <td style="text-align: left">Cocking/bolt action</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>WS_ShellCasing</code></td>
+          <td style="text-align: left">Shell Casing</td>
+          <td style="text-align: left">Low</td>
+          <td style="text-align: left">Casing ejection/land</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h3 id="voicelinetype">VoiceLineType<a class="anchor" href="#voicelinetype">#</a></h3>
+<p>Voice line category.</p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Code Name</th>
+          <th style="text-align: left">Display Name</th>
+          <th style="text-align: left">Priority</th>
+          <th style="text-align: left">Cooldown</th>
+          <th style="text-align: left">Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><code>VL_Combat</code></td>
+          <td style="text-align: left">Combat</td>
+          <td style="text-align: left">High</td>
+          <td style="text-align: left">3s</td>
+          <td style="text-align: left">Combat callouts</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>VL_Reload</code></td>
+          <td style="text-align: left">Reload</td>
+          <td style="text-align: left">Medium</td>
+          <td style="text-align: left">5s</td>
+          <td style="text-align: left">Reloading announcements</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>VL_Hurt</code></td>
+          <td style="text-align: left">Hurt</td>
+          <td style="text-align: left">High</td>
+          <td style="text-align: left">2s</td>
+          <td style="text-align: left">Damage reactions</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>VL_Death</code></td>
+          <td style="text-align: left">Death</td>
+          <td style="text-align: left">Critical</td>
+          <td style="text-align: left">0s</td>
+          <td style="text-align: left">Death screams</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>VL_Interact</code></td>
+          <td style="text-align: left">Interact</td>
+          <td style="text-align: left">Low</td>
+          <td style="text-align: left">1s</td>
+          <td style="text-align: left">Looting/interaction</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>VL_Spot</code></td>
+          <td style="text-align: left">Spot</td>
+          <td style="text-align: left">High</td>
+          <td style="text-align: left">4s</td>
+          <td style="text-align: left">Enemy spotted</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>VL_Tactical</code></td>
+          <td style="text-align: left">Tactical</td>
+          <td style="text-align: left">Medium</td>
+          <td style="text-align: left">5s</td>
+          <td style="text-align: left">Team callouts</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>VL_Idle</code></td>
+          <td style="text-align: left">Idle</td>
+          <td style="text-align: left">Lowest</td>
+          <td style="text-align: left">30s</td>
+          <td style="text-align: left">Idle chatter</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h3 id="audioocclusion">AudioOcclusion<a class="anchor" href="#audioocclusion">#</a></h3>
+<p>Sound occlusion state.</p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Code Name</th>
+          <th style="text-align: left">Display Name</th>
+          <th style="text-align: left">Volume Mult</th>
+          <th style="text-align: left">LowPass Hz</th>
+          <th style="text-align: left">Reverb</th>
+          <th style="text-align: left">Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><code>AO_None</code></td>
+          <td style="text-align: left">None</td>
+          <td style="text-align: left">100%</td>
+          <td style="text-align: left">22000</td>
+          <td style="text-align: left">0.0</td>
+          <td style="text-align: left">Clear line of sight</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>AO_Partial</code></td>
+          <td style="text-align: left">Partial</td>
+          <td style="text-align: left">70%</td>
+          <td style="text-align: left">8000</td>
+          <td style="text-align: left">0.3</td>
+          <td style="text-align: left">Thin wall/door</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>AO_Full</code></td>
+          <td style="text-align: left">Full</td>
+          <td style="text-align: left">30%</td>
+          <td style="text-align: left">2000</td>
+          <td style="text-align: left">0.6</td>
+          <td style="text-align: left">Thick wall</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>AO_Muffled</code></td>
+          <td style="text-align: left">Muffled</td>
+          <td style="text-align: left">20%</td>
+          <td style="text-align: left">800</td>
+          <td style="text-align: left">0.8</td>
+          <td style="text-align: left">Underwater/gas</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>AO_Indoor</code></td>
+          <td style="text-align: left">Indoor</td>
+          <td style="text-align: left">100%</td>
+          <td style="text-align: left">22000</td>
+          <td style="text-align: left">0.4</td>
+          <td style="text-align: left">Indoor reverb</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>AO_Outdoor</code></td>
+          <td style="text-align: left">Outdoor</td>
+          <td style="text-align: left">100%</td>
+          <td style="text-align: left">22000</td>
+          <td style="text-align: left">0.0</td>
+          <td style="text-align: left">Normal outdoor</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h3 id="mixpreset">MixPreset<a class="anchor" href="#mixpreset">#</a></h3>
+<p>Audio mix preset for scenarios.</p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Code Name</th>
+          <th style="text-align: left">Display Name</th>
+          <th style="text-align: left">Music dB</th>
+          <th style="text-align: left">SFX dB</th>
+          <th style="text-align: left">Voice dB</th>
+          <th style="text-align: left">Ambient dB</th>
+          <th style="text-align: left">Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><code>MP_Default</code></td>
+          <td style="text-align: left">Default</td>
+          <td style="text-align: left">0</td>
+          <td style="text-align: left">0</td>
+          <td style="text-align: left">0</td>
+          <td style="text-align: left">0</td>
+          <td style="text-align: left">Normal gameplay</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>MP_Combat</code></td>
+          <td style="text-align: left">Combat</td>
+          <td style="text-align: left">-3</td>
+          <td style="text-align: left">+3</td>
+          <td style="text-align: left">+2</td>
+          <td style="text-align: left">-6</td>
+          <td style="text-align: left">Combat focus</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>MP_Menu</code></td>
+          <td style="text-align: left">Menu</td>
+          <td style="text-align: left">-2</td>
+          <td style="text-align: left">-4</td>
+          <td style="text-align: left">0</td>
+          <td style="text-align: left">-10</td>
+          <td style="text-align: left">Menu/lobby</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>MP_LowHealth</code></td>
+          <td style="text-align: left">Low Health</td>
+          <td style="text-align: left">-6</td>
+          <td style="text-align: left">-2</td>
+          <td style="text-align: left">+3</td>
+          <td style="text-align: left">-8</td>
+          <td style="text-align: left">Low health filter</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>MP_Stealth</code></td>
+          <td style="text-align: left">Stealth</td>
+          <td style="text-align: left">-4</td>
+          <td style="text-align: left">-2</td>
+          <td style="text-align: left">+1</td>
+          <td style="text-align: left">+2</td>
+          <td style="text-align: left">Quiet/sneaking</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h3 id="stingertype">StingerType<a class="anchor" href="#stingertype">#</a></h3>
+<p>One-shot music stinger type.</p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Code Name</th>
+          <th style="text-align: left">Display Name</th>
+          <th style="text-align: left">Duration</th>
+          <th style="text-align: left">Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><code>STG_Kill</code></td>
+          <td style="text-align: left">Kill</td>
+          <td style="text-align: left">1.5s</td>
+          <td style="text-align: left">Enemy eliminated</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>STG_Death</code></td>
+          <td style="text-align: left">Death</td>
+          <td style="text-align: left">2.0s</td>
+          <td style="text-align: left">Player death</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>STG_LevelUp</code></td>
+          <td style="text-align: left">Level Up</td>
+          <td style="text-align: left">3.0s</td>
+          <td style="text-align: left">Level milestone</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>STG_LootRare</code></td>
+          <td style="text-align: left">Loot Rare</td>
+          <td style="text-align: left">2.0s</td>
+          <td style="text-align: left">Epic/Legendary loot</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>STG_Extraction</code></td>
+          <td style="text-align: left">Extraction Start</td>
+          <td style="text-align: left">2.5s</td>
+          <td style="text-align: left">Extraction begins</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>STG_Victory</code></td>
+          <td style="text-align: left">Victory</td>
+          <td style="text-align: left">4.0s</td>
+          <td style="text-align: left">Match won</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>STG_Defeat</code></td>
+          <td style="text-align: left">Defeat</td>
+          <td style="text-align: left">3.0s</td>
+          <td style="text-align: left">Match lost</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>STG_BossSpawn</code></td>
+          <td style="text-align: left">Boss Spawn</td>
+          <td style="text-align: left">3.0s</td>
+          <td style="text-align: left">Boss appears</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="code-names">Code Names<a class="anchor" href="#code-names">#</a></h2>
+<h3 id="audio-events">Audio Events<a class="anchor" href="#audio-events">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Code Name</th>
+          <th style="text-align: left">Trigger</th>
+          <th style="text-align: left">Parameters</th>
+          <th style="text-align: left">Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><code>SFX_PLAY</code></td>
+          <td style="text-align: left">Sound played</td>
+          <td style="text-align: left">SoundID, Location, Priority</td>
+          <td style="text-align: left">Sound effect triggered</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>SFX_STOP</code></td>
+          <td style="text-align: left">Sound stopped</td>
+          <td style="text-align: left">SoundID</td>
+          <td style="text-align: left">Sound effect ended</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>MUSIC_INTENSITY</code></td>
+          <td style="text-align: left">Intensity changed</td>
+          <td style="text-align: left">OldLevel, NewLevel</td>
+          <td style="text-align: left">Music layer transition</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>MUSIC_STINGER</code></td>
+          <td style="text-align: left">Stinger played</td>
+          <td style="text-align: left">StingerType</td>
+          <td style="text-align: left">One-shot music event</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>VOICE_PLAY</code></td>
+          <td style="text-align: left">Voice line played</td>
+          <td style="text-align: left">VoiceLineID, Speaker</td>
+          <td style="text-align: left">Voice line started</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>VOICE_QUEUE</code></td>
+          <td style="text-align: left">Voice line queued</td>
+          <td style="text-align: left">VoiceLineID, QueuePos</td>
+          <td style="text-align: left">Voice line waiting</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>AUDIO_OCCLUDE</code></td>
+          <td style="text-align: left">Occlusion applied</td>
+          <td style="text-align: left">SourceID, OcclusionType</td>
+          <td style="text-align: left">Sound occlusion changed</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>MIX_CHANGE</code></td>
+          <td style="text-align: left">Mix preset changed</td>
+          <td style="text-align: left">OldPreset, NewPreset</td>
+          <td style="text-align: left">Audio mix transition</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="playback-events">Playback Events<a class="anchor" href="#playback-events">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Code Name</th>
+          <th style="text-align: left">Trigger</th>
+          <th style="text-align: left">Parameters</th>
+          <th style="text-align: left">Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><code>AUDIO_POOL_LIMIT</code></td>
+          <td style="text-align: left">Pool exhausted</td>
+          <td style="text-align: left">Category, ActiveCount</td>
+          <td style="text-align: left">No available channels</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>AUDIO_PRELOAD</code></td>
+          <td style="text-align: left">Sounds preloaded</td>
+          <td style="text-align: left">SoundIDs, MemoryUsed</td>
+          <td style="text-align: left">Sounds loaded to memory</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>AUDIO_UNLOAD</code></td>
+          <td style="text-align: left">Sounds unloaded</td>
+          <td style="text-align: left">SoundIDs, MemoryFreed</td>
+          <td style="text-align: left">Sounds removed from memory</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="architecture">Architecture<a class="anchor" href="#architecture">#</a></h2>
+<h3 id="class-diagram">Class Diagram<a class="anchor" href="#class-diagram">#</a></h3>
+<pre tabindex="0"><code>                    ┌─────────────────┐
+                    │  AudioManager   │
+                    │   (Singleton)   │
+                    └────────┬────────┘
+                             │
+    ┌────────────────────────┼────────────────────────┐
+    │                        │                        │
+┌───▼───────┐    ┌───────────▼───────────┐    ┌───────▼───────┐
+│MusicMgr   │    │     MixManager        │    │SoundPoolMgr   │
+│           │    │                       │    │               │
+└───────────┘    └───────────────────────┘    └───────────────┘
+    │                        │                        │
+    │            ┌───────────┼───────────┐           │
+    │            │           │           │           │
+    │    ┌───────▼───┐ ┌─────▼────┐ ┌────▼────┐     │
+    │    │VoiceLine  │ │Footstep  │ │Occlusion│     │
+    │    │ Manager   │ │ Manager  │ │ Manager │     │
+    │    └───────────┘ └──────────┘ └─────────┘     │
+    │                                                │
+    └────────────────────────────────────────────────┘</code></pre><hr>
+<h2 id="core-classes">Core Classes<a class="anchor" href="#core-classes">#</a></h2>
+<h3 id="audiomanager">AudioManager<a class="anchor" href="#audiomanager">#</a></h3>
+<p><strong>Purpose:</strong> Central audio controller and subsystem access.</p>
+<pre tabindex="0"><code>CLASS AudioManager:
+    STATIC instance: AudioManager
+    
+    // Sub-managers
+    musicManager: MusicManager
+    voiceLineManager: VoiceLineManager
+    footstepManager: FootstepManager
+    mixManager: MixManager
+    occlusionManager: OcclusionManager
+    soundPoolManager: SoundPoolManager
+    memoryManager: AudioMemoryManager
+    
+    // Volume levels
+    categoryVolumes: Map&lt;SoundCategory, Float&gt;
+    
+    // Events
+    OnSoundPlayed: Event&lt;(soundId, location)&gt;
+    
+    FUNCTION PlaySound(soundID: String, location: Vector3, priority: SoundPriority = SP_Medium) -&gt; AudioComponent:
+        // Check if can play
+        IF NOT soundPoolManager.CanPlaySound(priority):
+            LOG_WARNING(&#34;Audio channel limit reached for priority: &#34; + priority)
+            RETURN null
+        END IF
+        
+        // Get pooled component
+        component = soundPoolManager.GetPooledComponent()
+        IF component == null:
+            RETURN null
+        END IF
+        
+        // Setup component
+        soundData = GetSoundData(soundID)
+        component.SetSound(soundData.soundWave)
+        component.SetWorldLocation(location)
+        component.SetVolumeMultiplier(GetCategoryVolume(soundData.category))
+        
+        // Apply spatialization
+        IF soundData.is3D:
+            ApplySpatialSettings(component, soundData)
+        END IF
+        
+        // Play
+        component.Play()
+        
+        EMIT EVENT &#34;SFX_PLAY&#34; WITH (soundID, location, priority)
+        
+        RETURN component
+    END FUNCTION
+    
+    FUNCTION PlaySound2D(soundID: String, priority: SoundPriority = SP_Medium) -&gt; AudioComponent:
+        component = soundPoolManager.GetPooledComponent()
+        
+        soundData = GetSoundData(soundID)
+        component.SetSound(soundData.soundWave)
+        component.SetIs3D(false)
+        component.SetVolumeMultiplier(GetCategoryVolume(soundData.category))
+        
+        component.Play()
+        
+        RETURN component
+    END FUNCTION
+    
+    FUNCTION StopSound(component: AudioComponent):
+        component.Stop()
+        soundPoolManager.ReturnToPool(component)
+        
+        EMIT EVENT &#34;SFX_STOP&#34; WITH (component.soundID)
+    END FUNCTION
+    
+    FUNCTION StopAllSounds():
+        soundPoolManager.StopAllAndReturn()
+    END FUNCTION
+    
+    FUNCTION SetCategoryVolume(category: SoundCategory, volume: Float):
+        categoryVolumes[category] = Clamp(volume, 0, 1)
+        
+        // Update all active sounds in category
+        FOR EACH component IN soundPoolManager.GetActiveComponents():
+            IF component.category == category:
+                component.SetVolumeMultiplier(volume)
+            END IF
+        END FOR
+    END FUNCTION
+    
+    FUNCTION GetCategoryVolume(category: SoundCategory) -&gt; Float:
+        RETURN categoryVolumes.GetOrDefault(category, 1.0)
+    END FUNCTION
+    
+    FUNCTION SetMasterVolume(volume: Float):
+        SetCategoryVolume(SC_Master, volume)
+    END FUNCTION
+    
+    FUNCTION PlayWeaponSound(weaponID: String, soundType: WeaponSoundType, location: Vector3):
+        soundID = GetWeaponSoundID(weaponID, soundType)
+        priority = GetWeaponSoundPriority(soundType)
+        
+        PlaySound(soundID, location, priority)
+    END FUNCTION
+    
+    FUNCTION PlayFootstep(surface: SurfaceType, location: Vector3, isRunning: Boolean = false):
+        footstepManager.PlayFootstep(surface, location, isRunning)
+    END FUNCTION
+    
+    FUNCTION SetMusicIntensity(intensity: MusicIntensity):
+        musicManager.SetIntensity(intensity)
+    END FUNCTION
+    
+    FUNCTION PlayStinger(stingerType: StingerType):
+        musicManager.PlayStinger(stingerType)
+    END FUNCTION
+    
+    FUNCTION PlayVoiceLine(lineID: String, lineType: VoiceLineType, speaker: Actor):
+        voiceLineManager.PlayLine(lineID, lineType, speaker)
+    END FUNCTION
+    
+    FUNCTION SetMixPreset(preset: MixPreset, transitionTime: Float = 1.0):
+        mixManager.SetPreset(preset, transitionTime)
+    END FUNCTION
+    
+    FUNCTION PreloadSoundsForArea(areaID: String):
+        soundIDs = GetSoundsForArea(areaID)
+        memoryManager.PreloadSounds(soundIDs)
+    END FUNCTION
+
+STRUCT SoundData:
+    soundID: String
+    soundWave: SoundAsset
+    category: SoundCategory
+    priority: SoundPriority
+    is3D: Boolean = true
+    maxDistance: Float = 10000.0
+    rolloffFactor: Float = 1.0
+    variations: Integer = 1</code></pre><hr>
+<h3 id="musicmanager">MusicManager<a class="anchor" href="#musicmanager">#</a></h3>
+<p><strong>Purpose:</strong> Dynamic music intensity and layer management.</p>
+<pre tabindex="0"><code>CLASS MusicManager:
+    // Current state
+    currentIntensity: MusicIntensity = MI_Ambient
+    targetIntensity: MusicIntensity
+    transitionProgress: Float = 1.0
+    
+    // Music components
+    musicLayers: List&lt;AudioComponent&gt;
+    activeTrackID: String
+    
+    // Stinger component
+    stingerComponent: AudioComponent
+    
+    // Config
+    intensityTransitionTime: Float = 3.0
+    
+    // Events
+    OnIntensityChanged: Event&lt;(oldIntensity, newIntensity)&gt;
+    
+    FUNCTION SetIntensity(intensity: MusicIntensity):
+        IF intensity == currentIntensity:
+            RETURN
+        END IF
+        
+        oldIntensity = currentIntensity
+        targetIntensity = intensity
+        transitionProgress = 0.0
+        
+        StartLayerTransition()
+        
+        OnIntensityChanged.Broadcast(oldIntensity, intensity)
+        
+        EMIT EVENT &#34;MUSIC_INTENSITY&#34; WITH (oldIntensity, intensity)
+    END FUNCTION
+    
+    FUNCTION GetCurrentIntensity() -&gt; MusicIntensity:
+        RETURN currentIntensity
+    END FUNCTION
+    
+    FUNCTION PlayStinger(stingerType: StingerType):
+        stingerData = GetStingerData(stingerType)
+        
+        // Duck music briefly
+        DuckMusic(stingerData.duration, -6.0)
+        
+        stingerComponent.SetSound(stingerData.sound)
+        stingerComponent.Play()
+        
+        EMIT EVENT &#34;MUSIC_STINGER&#34; WITH (stingerType)
+    END FUNCTION
+    
+    FUNCTION PlayTrack(trackID: String, fadeInTime: Float = 2.0):
+        IF activeTrackID == trackID:
+            RETURN
+        END IF
+        
+        // Fade out current
+        IF activeTrackID != &#34;&#34;:
+            FadeOutTrack(fadeInTime)
+        END IF
+        
+        // Load and fade in new track
+        trackData = GetTrackData(trackID)
+        
+        FOR i = 0 TO trackData.layerCount:
+            layer = musicLayers[i]
+            layer.SetSound(trackData.layers[i])
+            layer.FadeIn(fadeInTime)
+        END FOR
+        
+        activeTrackID = trackID
+    END FUNCTION
+    
+    FUNCTION StopMusic(fadeOutTime: Float = 2.0):
+        FOR EACH layer IN musicLayers:
+            layer.FadeOut(fadeOutTime)
+        END FOR
+        
+        activeTrackID = &#34;&#34;
+        currentIntensity = MI_Silent
+    END FUNCTION
+    
+    FUNCTION StartLayerTransition():
+        activeLayers = GetActiveLayerCount(targetIntensity)
+        
+        FOR i = 0 TO musicLayers.Count:
+            layer = musicLayers[i]
+            
+            IF i &lt; activeLayers:
+                layer.FadeIn(intensityTransitionTime)
+            ELSE:
+                layer.FadeOut(intensityTransitionTime)
+            END IF
+        END FOR
+    END FUNCTION
+    
+    FUNCTION DuckMusic(duration: Float, duckDB: Float):
+        originalVolume = GetMusicVolume()
+        duckedVolume = DBToLinear(LinearToDB(originalVolume) + duckDB)
+        
+        FOR EACH layer IN musicLayers:
+            layer.SetVolumeMultiplier(duckedVolume)
+        END FOR
+        
+        SetTimer(duration, LAMBDA:
+            FOR EACH layer IN musicLayers:
+                layer.FadeVolumeTo(originalVolume, 0.5)
+            END FOR
+        END LAMBDA)
+    END FUNCTION
+    
+    FUNCTION Update(deltaTime: Float):
+        IF transitionProgress &lt; 1.0:
+            transitionProgress += deltaTime / intensityTransitionTime
+            transitionProgress = Min(transitionProgress, 1.0)
+            
+            IF transitionProgress &gt;= 1.0:
+                currentIntensity = targetIntensity
+            END IF
+        END IF
+    END FUNCTION
+
+STRUCT MusicTrackData:
+    trackID: String
+    layers: List&lt;SoundAsset&gt;
+    layerCount: Integer
+    bpm: Float
+    loopPoint: Float
+
+STRUCT StingerData:
+    stingerType: StingerType
+    sound: SoundAsset
+    duration: Float
+    duckAmount: Float = -6.0
+
+// Music track configurations
+CONST MUSIC_TRACKS = {
+    &#34;MSC_Map1_Main&#34;: { layerCount: 5, bpm: 120, loopPoint: 32.0 },
+    &#34;MSC_Map2_Main&#34;: { layerCount: 5, bpm: 140, loopPoint: 64.0 },
+    &#34;MSC_Boss_Warden&#34;: { layerCount: 6, bpm: 160, loopPoint: 48.0 }
+}
+
+// Intensity layer counts
+CONST INTENSITY_LAYERS = {
+    MI_Silent: 0,
+    MI_Ambient: 1,
+    MI_Low: 2,
+    MI_Medium: 3,
+    MI_High: 4,
+    MI_Boss: 5,
+    MI_Extraction: 4
+}</code></pre><hr>
+<h3 id="voicelinemanager">VoiceLineManager<a class="anchor" href="#voicelinemanager">#</a></h3>
+<p><strong>Purpose:</strong> Voice line queue and cooldown management.</p>
+<pre tabindex="0"><code>CLASS VoiceLineManager:
+    // Queue
+    voiceLineQueue: List&lt;QueuedVoiceLine&gt;
+    currentlyPlaying: VoiceLineData
+    
+    // Cooldowns
+    typeCooldowns: Map&lt;VoiceLineType, Float&gt;
+    speakerCooldowns: Map&lt;Actor, Float&gt;
+    
+    // Active component
+    voiceComponent: AudioComponent
+    
+    // Config
+    maxQueueSize: Integer = 3
+    globalCooldown: Float = 0.5
+    
+    FUNCTION PlayLine(lineID: String, lineType: VoiceLineType, speaker: Actor) -&gt; Boolean:
+        // Check cooldowns
+        IF NOT CanPlayLine(lineType, speaker):
+            RETURN false
+        END IF
+        
+        lineData = GetVoiceLineData(lineID)
+        
+        // If something playing, queue if high enough priority
+        IF IsPlaying():
+            IF lineData.priority &gt; currentlyPlaying.priority:
+                QueueLine(lineID, lineType, speaker)
+            END IF
+            RETURN false
+        END IF
+        
+        // Play directly
+        PlayLineImmediate(lineData, speaker)
+        
+        SetCooldown(lineType, speaker)
+        
+        EMIT EVENT &#34;VOICE_PLAY&#34; WITH (lineID, speaker)
+        
+        RETURN true
+    END FUNCTION
+    
+    FUNCTION QueueLine(lineID: String, lineType: VoiceLineType, speaker: Actor):
+        IF voiceLineQueue.Count &gt;= maxQueueSize:
+            // Remove lowest priority
+            RemoveLowestPriority()
+        END IF
+        
+        queuedLine = NEW QueuedVoiceLine()
+        queuedLine.lineID = lineID
+        queuedLine.lineType = lineType
+        queuedLine.speaker = speaker
+        queuedLine.timestamp = GetTime()
+        
+        voiceLineQueue.Add(queuedLine)
+        
+        // Sort by priority
+        voiceLineQueue.SortBy(line =&gt; -line.priority)
+        
+        EMIT EVENT &#34;VOICE_QUEUE&#34; WITH (lineID, voiceLineQueue.IndexOf(queuedLine))
+    END FUNCTION
+    
+    FUNCTION PlayLineImmediate(lineData: VoiceLineData, speaker: Actor):
+        voiceComponent.SetSound(lineData.soundAsset)
+        voiceComponent.SetWorldLocation(speaker.GetLocation())
+        voiceComponent.Play()
+        
+        currentlyPlaying = lineData
+        
+        // Set callback for when finished
+        voiceComponent.OnComplete.AddListener(LAMBDA:
+            OnLineFinished()
+        END LAMBDA)
+    END FUNCTION
+    
+    FUNCTION OnLineFinished():
+        currentlyPlaying = null
+        
+        // Play next in queue
+        IF voiceLineQueue.Count &gt; 0:
+            nextLine = voiceLineQueue.RemoveFirst()
+            
+            IF CanPlayLine(nextLine.lineType, nextLine.speaker):
+                lineData = GetVoiceLineData(nextLine.lineID)
+                PlayLineImmediate(lineData, nextLine.speaker)
+                SetCooldown(nextLine.lineType, nextLine.speaker)
+            ELSE:
+                OnLineFinished() // Try next
+            END IF
+        END IF
+    END FUNCTION
+    
+    FUNCTION CanPlayLine(lineType: VoiceLineType, speaker: Actor) -&gt; Boolean:
+        // Check type cooldown
+        IF typeCooldowns.Contains(lineType):
+            IF GetTime() &lt; typeCooldowns[lineType]:
+                RETURN false
+            END IF
+        END IF
+        
+        // Check speaker cooldown
+        IF speakerCooldowns.Contains(speaker):
+            IF GetTime() &lt; speakerCooldowns[speaker]:
+                RETURN false
+            END IF
+        END IF
+        
+        RETURN true
+    END FUNCTION
+    
+    FUNCTION IsPlaying() -&gt; Boolean:
+        RETURN currentlyPlaying != null AND voiceComponent.IsPlaying()
+    END FUNCTION
+    
+    FUNCTION CancelQueue():
+        voiceLineQueue.Clear()
+    END FUNCTION
+    
+    FUNCTION CancelCurrent():
+        IF IsPlaying():
+            voiceComponent.Stop()
+            currentlyPlaying = null
+        END IF
+    END FUNCTION
+    
+    FUNCTION SetCooldown(lineType: VoiceLineType, speaker: Actor):
+        cooldownDuration = GetCooldownForType(lineType)
+        typeCooldowns[lineType] = GetTime() + cooldownDuration
+        speakerCooldowns[speaker] = GetTime() + globalCooldown
+    END FUNCTION
+
+STRUCT VoiceLineData:
+    lineID: String
+    lineType: VoiceLineType
+    soundAsset: SoundAsset
+    priority: Integer
+    duration: Float
+    subtitleText: String
+
+STRUCT QueuedVoiceLine:
+    lineID: String
+    lineType: VoiceLineType
+    speaker: Actor
+    priority: Integer
+    timestamp: Float
+
+// Voice line cooldowns per type
+CONST VOICE_LINE_COOLDOWNS = {
+    VL_Combat: 3.0,
+    VL_Reload: 5.0,
+    VL_Hurt: 2.0,
+    VL_Death: 0.0,
+    VL_Interact: 1.0,
+    VL_Spot: 4.0,
+    VL_Tactical: 5.0,
+    VL_Idle: 30.0
+}</code></pre><hr>
+<h3 id="footstepmanager">FootstepManager<a class="anchor" href="#footstepmanager">#</a></h3>
+<p><strong>Purpose:</strong> Surface-aware footstep sounds.</p>
+<pre tabindex="0"><code>CLASS FootstepManager:
+    // Sound pools per surface
+    footstepSounds: Map&lt;SurfaceType, List&lt;SoundAsset&gt;&gt;
+    
+    // Last played tracking (for variation)
+    lastPlayedIndex: Map&lt;SurfaceType, Integer&gt;
+    
+    // Config
+    walkVolume: Float = 0.7
+    runVolume: Float = 1.0
+    crouchVolume: Float = 0.3
+    
+    FUNCTION PlayFootstep(surface: SurfaceType, location: Vector3, isRunning: Boolean = false, isCrouched: Boolean = false):
+        // Get surface config
+        config = GetSurfaceConfig(surface)
+        
+        // Get random sound (avoiding repeat)
+        soundAsset = GetRandomFootstepSound(surface)
+        
+        // Calculate volume
+        baseVolume = walkVolume
+        IF isRunning:
+            baseVolume = runVolume
+        ELSE IF isCrouched:
+            baseVolume = crouchVolume
+        END IF
+        
+        finalVolume = baseVolume * config.volumeMultiplier
+        
+        // Play
+        AudioManager.PlaySound(soundAsset.ID, location, SP_Medium)
+    END FUNCTION
+    
+    FUNCTION PlayLanding(surface: SurfaceType, location: Vector3, fallHeight: Float):
+        intensity = Clamp(fallHeight / 500.0, 0.5, 1.5)
+        
+        soundID = &#34;SFX_Land_&#34; + surface.ToString()
+        
+        component = AudioManager.PlaySound(soundID, location, SP_Medium)
+        component.SetVolumeMultiplier(intensity)
+    END FUNCTION
+    
+    FUNCTION DetectSurface(location: Vector3) -&gt; SurfaceType:
+        // Trace down to detect physical material
+        hit = TraceLineDown(location, 100.0)
+        
+        IF hit.IsValid:
+            physMat = hit.GetPhysicalMaterial()
+            RETURN GetSurfaceFromPhysMat(physMat)
+        END IF
+        
+        RETURN SFT_Concrete // Default
+    END FUNCTION
+    
+    FUNCTION GetRandomFootstepSound(surface: SurfaceType) -&gt; SoundAsset:
+        sounds = footstepSounds[surface]
+        
+        IF sounds.IsEmpty():
+            RETURN defaultFootstepSound
+        END IF
+        
+        // Avoid playing same sound twice
+        lastIndex = lastPlayedIndex.GetOrDefault(surface, -1)
+        newIndex = Random.RangeExcluding(0, sounds.Count, lastIndex)
+        
+        lastPlayedIndex[surface] = newIndex
+        
+        RETURN sounds[newIndex]
+    END FUNCTION
+
+STRUCT SurfaceConfig:
+    surfaceType: SurfaceType
+    volumeMultiplier: Float
+    pitchVariation: Float = 0.1
+    soundSet: String
+
+// Surface configurations
+CONST SURFACE_CONFIGS = {
+    SFT_Concrete: { volumeMult: 1.0, pitchVar: 0.05 },
+    SFT_Metal: { volumeMult: 1.1, pitchVar: 0.1 },
+    SFT_Wood: { volumeMult: 0.9, pitchVar: 0.1 },
+    SFT_Grass: { volumeMult: 0.6, pitchVar: 0.15 },
+    SFT_Dirt: { volumeMult: 0.7, pitchVar: 0.1 },
+    SFT_Gravel: { volumeMult: 0.95, pitchVar: 0.15 },
+    SFT_Water: { volumeMult: 1.15, pitchVar: 0.2 }
+}</code></pre><hr>
+<h3 id="weaponsoundcomponent">WeaponSoundComponent<a class="anchor" href="#weaponsoundcomponent">#</a></h3>
+<p><strong>Purpose:</strong> Weapon audio with fire/reload sounds.</p>
+<pre tabindex="0"><code>CLASS WeaponSoundComponent:
+    // Parent weapon
+    owningWeapon: Weapon
+    
+    // Sound data
+    weaponSoundData: WeaponSoundData
+    
+    // Fire tracking
+    lastFireTime: Float
+    isAutoFiring: Boolean = false
+    autoFireComponent: AudioComponent
+    
+    FUNCTION PlayFire():
+        location = owningWeapon.GetMuzzleLocation()
+        
+        // Main fire sound
+        AudioManager.PlaySound(weaponSoundData.fireSound, location, SP_High)
+        
+        // Fire tail (distant echo)
+        IF weaponSoundData.fireTailSound != &#34;&#34;:
+            SetTimer(0.05, LAMBDA:
+                AudioManager.PlaySound(weaponSoundData.fireTailSound, location, SP_Low)
+            END LAMBDA)
+        END IF
+        
+        // Shell casing
+        IF weaponSoundData.shellCasingSound != &#34;&#34;:
+            SetTimer(0.1, LAMBDA:
+                AudioManager.PlaySound(weaponSoundData.shellCasingSound, location, SP_Lowest)
+            END LAMBDA)
+        END IF
+        
+        lastFireTime = GetTime()
+    END FUNCTION
+    
+    FUNCTION StartAutoFire():
+        IF isAutoFiring:
+            RETURN
+        END IF
+        
+        isAutoFiring = true
+        
+        // Use looping fire sound for auto
+        IF weaponSoundData.autoFireLoop != &#34;&#34;:
+            autoFireComponent = AudioManager.PlaySound(weaponSoundData.autoFireLoop, owningWeapon.GetMuzzleLocation(), SP_High)
+            autoFireComponent.SetLooping(true)
+        END IF
+    END FUNCTION
+    
+    FUNCTION StopAutoFire():
+        IF NOT isAutoFiring:
+            RETURN
+        END IF
+        
+        isAutoFiring = false
+        
+        IF autoFireComponent != null:
+            autoFireComponent.FadeOut(0.1)
+            autoFireComponent = null
+        END IF
+        
+        // Play fire tail on stop
+        IF weaponSoundData.fireTailSound != &#34;&#34;:
+            AudioManager.PlaySound(weaponSoundData.fireTailSound, owningWeapon.GetMuzzleLocation(), SP_Low)
+        END IF
+    END FUNCTION
+    
+    FUNCTION PlayReload(isEmpty: Boolean = false):
+        soundID = isEmpty ? weaponSoundData.reloadEmptySound : weaponSoundData.reloadSound
+        location = owningWeapon.GetLocation()
+        
+        AudioManager.PlaySound(soundID, location, SP_Medium)
+    END FUNCTION
+    
+    FUNCTION PlayEquip():
+        AudioManager.PlaySound(weaponSoundData.equipSound, owningWeapon.GetLocation(), SP_Low)
+    END FUNCTION
+    
+    FUNCTION PlayDryFire():
+        AudioManager.PlaySound(weaponSoundData.dryFireSound, owningWeapon.GetMuzzleLocation(), SP_Medium)
+    END FUNCTION
+    
+    FUNCTION PlayMechAction(actionType: String):
+        actionSound = weaponSoundData.mechActions.GetOrDefault(actionType, &#34;&#34;)
+        
+        IF actionSound != &#34;&#34;:
+            AudioManager.PlaySound(actionSound, owningWeapon.GetLocation(), SP_Low)
+        END IF
+    END FUNCTION
+
+STRUCT WeaponSoundData:
+    weaponID: String
+    fireSound: String
+    fireTailSound: String
+    autoFireLoop: String
+    reloadSound: String
+    reloadEmptySound: String
+    equipSound: String
+    dryFireSound: String
+    shellCasingSound: String
+    mechActions: Map&lt;String, String&gt;
+
+// Weapon sound configurations
+CONST WEAPON_SOUNDS = {
+    &#34;WPN_AR_M4&#34;: {
+        fireSound: &#34;SFX_M4_Fire&#34;,
+        fireTailSound: &#34;SFX_AR_Tail&#34;,
+        autoFireLoop: &#34;SFX_M4_AutoLoop&#34;,
+        reloadSound: &#34;SFX_AR_Reload&#34;,
+        reloadEmptySound: &#34;SFX_AR_ReloadEmpty&#34;,
+        equipSound: &#34;SFX_Rifle_Equip&#34;,
+        dryFireSound: &#34;SFX_DryFire&#34;
+    },
+    &#34;WPN_SMG_MP5&#34;: {
+        fireSound: &#34;SFX_MP5_Fire&#34;,
+        fireTailSound: &#34;SFX_SMG_Tail&#34;,
+        autoFireLoop: &#34;SFX_MP5_AutoLoop&#34;,
+        reloadSound: &#34;SFX_SMG_Reload&#34;
+    }
+}</code></pre><hr>
+<h3 id="mixmanager">MixManager<a class="anchor" href="#mixmanager">#</a></h3>
+<p><strong>Purpose:</strong> Audio mixing and preset transitions.</p>
+<pre tabindex="0"><code>CLASS MixManager:
+    // Current state
+    currentPreset: MixPreset = MP_Default
+    targetPreset: MixPreset
+    transitionProgress: Float = 1.0
+    
+    // Mix settings
+    currentMixSettings: MixSettings
+    
+    // Config
+    transitionTime: Float = 1.0
+    
+    FUNCTION SetPreset(preset: MixPreset, transitionTime: Float = 1.0):
+        IF preset == currentPreset AND transitionProgress &gt;= 1.0:
+            RETURN
+        END IF
+        
+        targetPreset = preset
+        this.transitionTime = transitionTime
+        transitionProgress = 0.0
+        
+        EMIT EVENT &#34;MIX_CHANGE&#34; WITH (currentPreset, preset)
+    END FUNCTION
+    
+    FUNCTION GetCurrentPreset() -&gt; MixPreset:
+        RETURN currentPreset
+    END FUNCTION
+    
+    FUNCTION GetMusicVolume() -&gt; Float:
+        RETURN currentMixSettings.musicVolume
+    END FUNCTION
+    
+    FUNCTION GetSFXVolume() -&gt; Float:
+        RETURN currentMixSettings.sfxVolume
+    END FUNCTION
+    
+    FUNCTION GetVoiceVolume() -&gt; Float:
+        RETURN currentMixSettings.voiceVolume
+    END FUNCTION
+    
+    FUNCTION GetAmbientVolume() -&gt; Float:
+        RETURN currentMixSettings.ambientVolume
+    END FUNCTION
+    
+    FUNCTION Update(deltaTime: Float):
+        IF transitionProgress &lt; 1.0:
+            transitionProgress += deltaTime / transitionTime
+            transitionProgress = Min(transitionProgress, 1.0)
+            
+            // Lerp mix settings
+            fromSettings = GetPresetSettings(currentPreset)
+            toSettings = GetPresetSettings(targetPreset)
+            
+            currentMixSettings = LerpMixSettings(fromSettings, toSettings, transitionProgress)
+            
+            // Apply to audio system
+            ApplyMixSettings(currentMixSettings)
+            
+            IF transitionProgress &gt;= 1.0:
+                currentPreset = targetPreset
+            END IF
+        END IF
+    END FUNCTION
+    
+    FUNCTION ApplyMixSettings(settings: MixSettings):
+        AudioManager.SetCategoryVolume(SC_Music, DBToLinear(settings.musicDB))
+        AudioManager.SetCategoryVolume(SC_SFX, DBToLinear(settings.sfxDB))
+        AudioManager.SetCategoryVolume(SC_Voice, DBToLinear(settings.voiceDB))
+        AudioManager.SetCategoryVolume(SC_Ambient, DBToLinear(settings.ambientDB))
+        
+        // Apply effects if applicable
+        IF settings.lowPassFilter &gt; 0:
+            ApplyLowPassFilter(settings.lowPassFilter)
+        END IF
+        
+        IF settings.heartbeatOverlay:
+            EnableHeartbeatEffect()
+        ELSE:
+            DisableHeartbeatEffect()
+        END IF
+    END FUNCTION
+
+STRUCT MixSettings:
+    musicDB: Float = 0.0
+    sfxDB: Float = 0.0
+    voiceDB: Float = 0.0
+    ambientDB: Float = 0.0
+    lowPassFilter: Float = 0.0
+    heartbeatOverlay: Boolean = false
+
+// Mix preset configurations
+CONST MIX_PRESETS = {
+    MP_Default: { musicDB: 0.0, sfxDB: 0.0, voiceDB: 0.0, ambientDB: 0.0 },
+    MP_Combat: { musicDB: -3.0, sfxDB: +3.0, voiceDB: +2.0, ambientDB: -6.0 },
+    MP_Menu: { musicDB: -2.0, sfxDB: -4.0, voiceDB: 0.0, ambientDB: -10.0 },
+    MP_LowHealth: { musicDB: -6.0, sfxDB: -2.0, voiceDB: +3.0, ambientDB: -8.0, lowPassFilter: 2000.0, heartbeatOverlay: true },
+    MP_Stealth: { musicDB: -4.0, sfxDB: -2.0, voiceDB: +1.0, ambientDB: +2.0 }
+}</code></pre><hr>
+<h3 id="occlusionmanager">OcclusionManager<a class="anchor" href="#occlusionmanager">#</a></h3>
+<p><strong>Purpose:</strong> Sound occlusion calculation and application.</p>
+<pre tabindex="0"><code>CLASS OcclusionManager:
+    FUNCTION CalculateOcclusion(source: Vector3, listener: Vector3) -&gt; AudioOcclusion:
+        // Trace from listener to source
+        hit = TraceLine(listener, source)
+        
+        IF NOT hit.IsValid:
+            RETURN AO_None // Clear line of sight
+        END IF
+        
+        // Get occlusion from material
+        occlusion = GetOcclusionFromMaterial(hit.GetPhysicalMaterial())
+        
+        // Check for multiple obstructions
+        obstructionCount = CountObstructions(listener, source)
+        
+        IF obstructionCount &gt; 2:
+            RETURN AO_Full
+        ELSE IF obstructionCount &gt; 1:
+            RETURN UpgradeOcclusion(occlusion)
+        END IF
+        
+        RETURN occlusion
+    END FUNCTION
+    
+    FUNCTION GetOcclusionMultiplier(occlusion: AudioOcclusion) -&gt; Float:
+        RETURN OCCLUSION_SETTINGS[occlusion].volumeMultiplier
+    END FUNCTION
+    
+    FUNCTION GetLowPassFrequency(occlusion: AudioOcclusion) -&gt; Float:
+        RETURN OCCLUSION_SETTINGS[occlusion].lowPassHz
+    END FUNCTION
+    
+    FUNCTION ApplyOcclusionToComponent(component: AudioComponent, occlusion: AudioOcclusion):
+        settings = OCCLUSION_SETTINGS[occlusion]
+        
+        component.SetVolumeMultiplier(component.GetBaseVolume() * settings.volumeMultiplier)
+        component.SetLowPassFilterFrequency(settings.lowPassHz)
+        
+        IF settings.reverbSend &gt; 0:
+            component.SetReverbSendLevel(settings.reverbSend)
+        END IF
+        
+        EMIT EVENT &#34;AUDIO_OCCLUDE&#34; WITH (component.ID, occlusion)
+    END FUNCTION
+    
+    FUNCTION GetOcclusionFromMaterial(material: PhysicalMaterial) -&gt; AudioOcclusion:
+        IF material == null:
+            RETURN AO_Partial
+        END IF
+        
+        SWITCH material.surfaceType:
+            CASE Glass: RETURN AO_Partial
+            CASE Concrete: RETURN AO_Full
+            CASE Metal: RETURN AO_Full
+            CASE Wood: RETURN AO_Partial
+            CASE Fabric: RETURN AO_Partial
+            DEFAULT: RETURN AO_Partial
+        END SWITCH
+    END FUNCTION
+
+STRUCT OcclusionSettings:
+    volumeMultiplier: Float
+    lowPassHz: Float
+    reverbSend: Float
+
+// Occlusion configurations
+CONST OCCLUSION_SETTINGS = {
+    AO_None: { volumeMultiplier: 1.0, lowPassHz: 22000.0, reverbSend: 0.0 },
+    AO_Partial: { volumeMultiplier: 0.7, lowPassHz: 8000.0, reverbSend: 0.3 },
+    AO_Full: { volumeMultiplier: 0.3, lowPassHz: 2000.0, reverbSend: 0.6 },
+    AO_Muffled: { volumeMultiplier: 0.2, lowPassHz: 800.0, reverbSend: 0.8 },
+    AO_Indoor: { volumeMultiplier: 1.0, lowPassHz: 22000.0, reverbSend: 0.4 },
+    AO_Outdoor: { volumeMultiplier: 1.0, lowPassHz: 22000.0, reverbSend: 0.0 }
+}</code></pre><hr>
+<h3 id="spatialaudiosettings">SpatialAudioSettings<a class="anchor" href="#spatialaudiosettings">#</a></h3>
+<p><strong>Purpose:</strong> 3D audio configuration.</p>
+<pre tabindex="0"><code>STRUCT SpatialAudioSettings:
+    // Distance Model
+    model: DistanceModel = Logarithmic
+    referenceDistance: Float = 100.0   // 1m
+    maxDistance: Float = 10000.0       // 100m
+    rolloffFactor: Float = 1.0
+    
+    // Spatialization
+    useHRTF: Boolean = true
+    stereoSpread: Float = 0.5
+    
+    // Focus
+    focusAzimuth: Float = 30.0         // Front cone
+    focusDistanceScale: Float = 1.0
+    nonFocusDistanceScale: Float = 0.5
+
+ENUM DistanceModel:
+    Linear, Logarithmic, Inverse
+
+// Per-category spatial settings
+CONST CATEGORY_SPATIAL_SETTINGS = {
+    SC_Weapons: { maxDistance: 30000.0, rolloffFactor: 0.8 },  // 300m (gunshots travel far)
+    SC_Footsteps: { maxDistance: 3000.0, rolloffFactor: 1.2 }, // 30m (faster falloff)
+    SC_Ambient: { maxDistance: 5000.0, rolloffFactor: 0.5 }    // 50m (slower falloff)
+}</code></pre><hr>
+<h3 id="soundpoolmanager">SoundPoolManager<a class="anchor" href="#soundpoolmanager">#</a></h3>
+<p><strong>Purpose:</strong> Audio component pooling and channel management.</p>
+<pre tabindex="0"><code>CLASS SoundPoolManager:
+    // Pool
+    pool: List&lt;AudioComponent&gt;
+    activeComponents: List&lt;AudioComponent&gt;
+    
+    // Config
+    initialPoolSize: Integer = 32
+    maxPoolSize: Integer = 64
+    
+    // Priority tracking
+    componentPriorities: Map&lt;AudioComponent, SoundPriority&gt;
+    
+    FUNCTION GetPooledComponent() -&gt; AudioComponent:
+        // Find available in pool
+        FOR EACH component IN pool:
+            IF NOT component.IsPlaying():
+                pool.Remove(component)
+                activeComponents.Add(component)
+                RETURN component
+            END IF
+        END FOR
+        
+        // Expand pool if possible
+        IF pool.Count + activeComponents.Count &lt; maxPoolSize:
+            component = CreateAudioComponent()
+            activeComponents.Add(component)
+            RETURN component
+        END IF
+        
+        // Pool exhausted
+        EMIT EVENT &#34;AUDIO_POOL_LIMIT&#34; WITH (activeComponents.Count)
+        RETURN null
+    END FUNCTION
+    
+    FUNCTION ReturnToPool(component: AudioComponent):
+        component.Stop()
+        component.ResetToDefaults()
+        
+        activeComponents.Remove(component)
+        pool.Add(component)
+        
+        componentPriorities.Remove(component)
+    END FUNCTION
+    
+    FUNCTION GetActiveCount() -&gt; Integer:
+        RETURN activeComponents.Count
+    END FUNCTION
+    
+    FUNCTION GetPoolSize() -&gt; Integer:
+        RETURN pool.Count + activeComponents.Count
+    END FUNCTION
+    
+    FUNCTION CanPlaySound(priority: SoundPriority) -&gt; Boolean:
+        // High priority sounds can steal from lower
+        IF priority &gt;= SP_High:
+            RETURN true
+        END IF
+        
+        // Check if we have available slots
+        IF GetActiveCount() &lt; maxPoolSize:
+            RETURN true
+        END IF
+        
+        // Check if we can steal from lower priority
+        FOR EACH component IN activeComponents:
+            IF componentPriorities[component] &lt; priority:
+                RETURN true
+            END IF
+        END FOR
+        
+        RETURN false
+    END FUNCTION
+    
+    FUNCTION StopLowestPrioritySound():
+        lowestComponent = null
+        lowestPriority = SP_Critical
+        
+        FOR EACH component IN activeComponents:
+            priority = componentPriorities[component]
+            IF priority &lt; lowestPriority:
+                lowestPriority = priority
+                lowestComponent = component
+            END IF
+        END FOR
+        
+        IF lowestComponent != null:
+            ReturnToPool(lowestComponent)
+        END IF
+    END FUNCTION
+    
+    FUNCTION StopAllAndReturn():
+        FOR EACH component IN activeComponents.ToList():
+            ReturnToPool(component)
+        END FOR
+    END FUNCTION
+    
+    FUNCTION GetActiveComponents() -&gt; List&lt;AudioComponent&gt;:
+        RETURN activeComponents.ToList()
+    END FUNCTION
+
+// Channel limits by device tier
+CONST CHANNEL_LIMITS:
+    LowEnd = 16
+    MidRange = 32
+    HighEnd = 64</code></pre><hr>
+<h3 id="audiomemorymanager">AudioMemoryManager<a class="anchor" href="#audiomemorymanager">#</a></h3>
+<p><strong>Purpose:</strong> Sound memory budget management.</p>
+<pre tabindex="0"><code>CLASS AudioMemoryManager:
+    // Loaded sounds
+    loadedSounds: Map&lt;String, SoundAsset&gt;
+    
+    // Memory tracking
+    currentMemoryBytes: Integer = 0
+    maxMemoryBytes: Integer = 157286400  // 150 MB
+    
+    FUNCTION GetCurrentMemoryUsage() -&gt; Integer:
+        RETURN currentMemoryBytes
+    END FUNCTION
+    
+    FUNCTION PreloadSounds(soundIDs: List&lt;String&gt;):
+        memoryToLoad = 0
+        
+        FOR EACH soundID IN soundIDs:
+            IF NOT loadedSounds.Contains(soundID):
+                soundData = GetSoundMetadata(soundID)
+                memoryToLoad += soundData.sizeBytes
+            END IF
+        END FOR
+        
+        // Check if we need to unload some sounds
+        IF currentMemoryBytes + memoryToLoad &gt; maxMemoryBytes:
+            FreeMemory(memoryToLoad)
+        END IF
+        
+        // Load sounds
+        FOR EACH soundID IN soundIDs:
+            IF NOT loadedSounds.Contains(soundID):
+                sound = LoadSoundAsset(soundID)
+                loadedSounds[soundID] = sound
+                currentMemoryBytes += sound.GetSizeBytes()
+            END IF
+        END FOR
+        
+        EMIT EVENT &#34;AUDIO_PRELOAD&#34; WITH (soundIDs, memoryToLoad)
+    END FUNCTION
+    
+    FUNCTION UnloadSounds(soundIDs: List&lt;String&gt;):
+        memoryFreed = 0
+        
+        FOR EACH soundID IN soundIDs:
+            IF loadedSounds.Contains(soundID):
+                sound = loadedSounds[soundID]
+                memoryFreed += sound.GetSizeBytes()
+                
+                sound.Unload()
+                loadedSounds.Remove(soundID)
+            END IF
+        END FOR
+        
+        currentMemoryBytes -= memoryFreed
+        
+        EMIT EVENT &#34;AUDIO_UNLOAD&#34; WITH (soundIDs, memoryFreed)
+    END FUNCTION
+    
+    FUNCTION UnloadDistantSounds(playerLocation: Vector3, distance: Float):
+        toUnload = []
+        
+        FOR EACH (soundID, sound) IN loadedSounds:
+            IF NOT IsNearPlayer(sound.associatedLocation, playerLocation, distance):
+                toUnload.Add(soundID)
+            END IF
+        END FOR
+        
+        UnloadSounds(toUnload)
+    END FUNCTION
+    
+    FUNCTION FreeMemory(bytesNeeded: Integer):
+        // Prioritize unloading less important sounds
+        // Using LRU (Least Recently Used)
+        
+        sortedSounds = loadedSounds.Values.SortBy(s =&gt; s.lastUsedTime)
+        memoryFreed = 0
+        
+        FOR EACH sound IN sortedSounds:
+            IF memoryFreed &gt;= bytesNeeded:
+                BREAK
+            END IF
+            
+            IF CanUnload(sound):
+                memoryFreed += sound.GetSizeBytes()
+                UnloadSounds([sound.ID])
+            END IF
+        END FOR
+    END FUNCTION
+
+// Target memory budget
+CONST AUDIO_MEMORY_BUDGET:
+    MusicStreamBuffer = 30   // MB
+    SFXLoaded = 80           // MB
+    VoiceLoaded = 30         // MB
+    Reserve = 10             // MB
+    Total = 150              // MB</code></pre><hr>
+<h2 id="audio-settings-data">Audio Settings Data<a class="anchor" href="#audio-settings-data">#</a></h2>
+<pre tabindex="0"><code>STRUCT AudioSettings:
+    // Volume levels (0-1)
+    masterVolume: Float = 1.0
+    musicVolume: Float = 0.8
+    sfxVolume: Float = 1.0
+    voiceVolume: Float = 1.0
+    voiceChatVolume: Float = 0.8
+    
+    // Options
+    monoAudio: Boolean = false
+    subtitlesEnabled: Boolean = true
+    visualSoundIndicators: Boolean = false
+    reduceBackgroundAudio: Boolean = false
+    
+    // Quality
+    quality: AudioQuality = Medium
+    useHRTF: Boolean = true
+
+ENUM AudioQuality:
+    Low,     // 16 channels, compressed
+    Medium,  // 32 channels, standard
+    High     // 64 channels, high quality</code></pre><hr>
+<h2 id="audio-file-specifications">Audio File Specifications<a class="anchor" href="#audio-file-specifications">#</a></h2>
+<pre tabindex="0"><code>CONST AUDIO_FILE_SPECS:
+    // Music
+    MusicFormat = &#34;ogg&#34;
+    MusicBitrate = 128000     // 128 kbps
+    MusicSampleRate = 44100
+    MusicStreamed = true
+    
+    // SFX
+    SFXFormat = &#34;ogg&#34;
+    SFXBitrate = 96000        // 96 kbps
+    SFXSampleRate = 44100
+    SFXStreamed = false
+    
+    // Voice
+    VoiceFormat = &#34;ogg&#34;
+    VoiceBitrate = 64000      // 64 kbps
+    VoiceSampleRate = 22050
+    VoiceStreamed = false
+    
+    // UI
+    UIFormat = &#34;wav&#34;
+    UISampleRate = 44100</code></pre><hr>
+<h2 id="sound-class-hierarchy">Sound Class Hierarchy<a class="anchor" href="#sound-class-hierarchy">#</a></h2>
+<pre tabindex="0"><code>Master
+├── Music (DuckTarget)
+├── SFX
+│   ├── Weapons
+│   │   ├── WeaponsFire
+│   │   ├── WeaponsReload
+│   │   └── WeaponsFoley
+│   ├── Footsteps
+│   ├── Abilities
+│   ├── Impacts
+│   └── Interactions
+├── Ambient
+│   ├── Environment
+│   ├── Weather
+│   └── Hazards
+├── Voice
+│   ├── Player
+│   ├── AI
+│   └── Radio
+├── UI
+│   ├── Menu
+│   ├── HUD
+│   └── Notifications
+└── VoiceChat</code></pre><hr>
+<h2 id="todo-implementation-tasks">TODO: Implementation Tasks<a class="anchor" href="#todo-implementation-tasks">#</a></h2>
+<h3 id="high-priority-">HIGH Priority 🔴<a class="anchor" href="#high-priority-">#</a></h3>
+<ul>
+<li><input disabled="" type="checkbox"> AudioManager core playback</li>
+<li><input disabled="" type="checkbox"> WeaponSoundComponent</li>
+<li><input disabled="" type="checkbox"> MusicManager with intensity</li>
+<li><input disabled="" type="checkbox"> FootstepManager with surfaces</li>
+<li><input disabled="" type="checkbox"> Category volume controls</li>
+</ul>
+<h3 id="medium-priority-">MEDIUM Priority 🟡<a class="anchor" href="#medium-priority-">#</a></h3>
+<ul>
+<li><input disabled="" type="checkbox"> VoiceLineManager with queue</li>
+<li><input disabled="" type="checkbox"> MixManager with presets</li>
+<li><input disabled="" type="checkbox"> OcclusionManager</li>
+<li><input disabled="" type="checkbox"> 3D spatial audio setup</li>
+<li><input disabled="" type="checkbox"> SoundPoolManager</li>
+</ul>
+<h3 id="low-priority-">LOW Priority 🟢<a class="anchor" href="#low-priority-">#</a></h3>
+<ul>
+<li><input disabled="" type="checkbox"> HRTF implementation</li>
+<li><input disabled="" type="checkbox"> Advanced reverb zones</li>
+<li><input disabled="" type="checkbox"> Low health audio filter</li>
+<li><input disabled="" type="checkbox"> Sound visualization</li>
+<li><input disabled="" type="checkbox"> Audio middleware integration</li>
+</ul>
+<hr>
+<h2 id="testing-checklist">Testing Checklist<a class="anchor" href="#testing-checklist">#</a></h2>
+<ul>
+<li><input disabled="" type="checkbox"> All weapon types have distinct sounds</li>
+<li><input disabled="" type="checkbox"> Footsteps match surface materials</li>
+<li><input disabled="" type="checkbox"> Music intensity transitions smoothly</li>
+<li><input disabled="" type="checkbox"> Voice lines don&rsquo;t overlap</li>
+<li><input disabled="" type="checkbox"> Voice line cooldowns work</li>
+<li><input disabled="" type="checkbox"> Occlusion muffles correctly</li>
+<li><input disabled="" type="checkbox"> 3D positioning is accurate</li>
+<li><input disabled="" type="checkbox"> Channel limits respected</li>
+<li><input disabled="" type="checkbox"> Memory budget not exceeded</li>
+<li><input disabled="" type="checkbox"> Volume settings persist</li>
+<li><input disabled="" type="checkbox"> Mono audio works correctly</li>
+<li><input disabled="" type="checkbox"> No audio pops/clicks</li>
+</ul>
+<hr>
+<p><strong><a href="../README.md">← Back to Index</a></strong> | <strong><a href="./NarrativeSystem.md">Next: Narrative System →</a></strong></p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+<div>
+
+</div>
+
+<div>
+
+</div>
+
+</div>
+
+
+
+
+
+  
+  
+  
+  <div class="flex flex-wrap justify-between">
+    <span>
+    
+      <a href="/docs/GDD_Technical/Systems/AnalyticsSystem/" class="flex align-center">
+        <img src="/icons/backward.svg" class="book-icon" alt="Backward" />
+        <span>Analytics System</span>
+      </a>
+    
+    </span>
+    <span>
+    
+      <a href="/docs/GDD_Technical/Systems/BuildPipeline/" class="flex align-center">
+        <span>Build Pipeline</span>
+        <img src="/icons/forward.svg" class="book-icon" alt="Forward" />
+      </a>
+    
+    </span>
+  </div>
+  
+
+
+ 
+        
+  
+ 
+        
+        
+  
+ 
+        
+  
+  
+    <script>(function(){document.querySelectorAll("pre:has(code)").forEach(e=>{e.addEventListener("click",e.focus),e.addEventListener("copy",function(t){if(t.preventDefault(),navigator.clipboard){const t=window.getSelection().toString()||e.textContent;navigator.clipboard.writeText(t)}})})})()</script>
+  
+
+      </footer>
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+  
+  <aside class="book-toc">
+    <div class="book-toc-content">
+      
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#overview">Overview</a></li>
+    <li><a href="#enums--types">Enums &amp; Types</a>
+      <ul>
+        <li><a href="#soundcategory">SoundCategory</a></li>
+        <li><a href="#soundpriority">SoundPriority</a></li>
+        <li><a href="#musicintensity">MusicIntensity</a></li>
+        <li><a href="#surfacetype">SurfaceType</a></li>
+        <li><a href="#weaponsoundtype">WeaponSoundType</a></li>
+        <li><a href="#voicelinetype">VoiceLineType</a></li>
+        <li><a href="#audioocclusion">AudioOcclusion</a></li>
+        <li><a href="#mixpreset">MixPreset</a></li>
+        <li><a href="#stingertype">StingerType</a></li>
+      </ul>
+    </li>
+    <li><a href="#code-names">Code Names</a>
+      <ul>
+        <li><a href="#audio-events">Audio Events</a></li>
+        <li><a href="#playback-events">Playback Events</a></li>
+      </ul>
+    </li>
+    <li><a href="#architecture">Architecture</a>
+      <ul>
+        <li><a href="#class-diagram">Class Diagram</a></li>
+      </ul>
+    </li>
+    <li><a href="#core-classes">Core Classes</a>
+      <ul>
+        <li><a href="#audiomanager">AudioManager</a></li>
+        <li><a href="#musicmanager">MusicManager</a></li>
+        <li><a href="#voicelinemanager">VoiceLineManager</a></li>
+        <li><a href="#footstepmanager">FootstepManager</a></li>
+        <li><a href="#weaponsoundcomponent">WeaponSoundComponent</a></li>
+        <li><a href="#mixmanager">MixManager</a></li>
+        <li><a href="#occlusionmanager">OcclusionManager</a></li>
+        <li><a href="#spatialaudiosettings">SpatialAudioSettings</a></li>
+        <li><a href="#soundpoolmanager">SoundPoolManager</a></li>
+        <li><a href="#audiomemorymanager">AudioMemoryManager</a></li>
+      </ul>
+    </li>
+    <li><a href="#audio-settings-data">Audio Settings Data</a></li>
+    <li><a href="#audio-file-specifications">Audio File Specifications</a></li>
+    <li><a href="#sound-class-hierarchy">Sound Class Hierarchy</a></li>
+    <li><a href="#todo-implementation-tasks">TODO: Implementation Tasks</a>
+      <ul>
+        <li><a href="#high-priority-">HIGH Priority 🔴</a></li>
+        <li><a href="#medium-priority-">MEDIUM Priority 🟡</a></li>
+        <li><a href="#low-priority-">LOW Priority 🟢</a></li>
+      </ul>
+    </li>
+    <li><a href="#testing-checklist">Testing Checklist</a></li>
+  </ul>
+</nav>
+
+
+
+    </div>
+  </aside>
+  
+ 
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,3225 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=52224&amp;path=livereload" data-no-instant defer></script>
+  <!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Social &amp; Multiplayer Systems#← Back to Index | Next: Core Gameplay →
+🎯 Social Design Philosophy#Core Principle: “Alone is viable, together is powerful”
+The game must be:
+Solo-friendly - Single players can succeed without feeling disadvantaged Squad-rewarding - Playing with friends provides tangible benefits Community-building - Systems encourage forming lasting connections Toxicity-resistant - Design discourages griefing and harassment 👥 Squad System#Squad Types#Type Size Matchmaking Description Solo 1 Mixed lobbies Individual player, matched with/against all types Duo 2 Mixed lobbies Two-player team Squad 3-4 Mixed lobbies Full team, maximum coordination Squad Formation#Pre-Match Lobby:
+">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:52224/docs/GDD_Design/Social/Multiplayer/">
+  <meta property="og:site_name" content="Extraction Shooter GDD">
+  <meta property="og:title" content="Extraction Shooter GDD">
+  <meta property="og:description" content="Social &amp; Multiplayer Systems#← Back to Index | Next: Core Gameplay →
+🎯 Social Design Philosophy#Core Principle: “Alone is viable, together is powerful”
+The game must be:
+Solo-friendly - Single players can succeed without feeling disadvantaged Squad-rewarding - Playing with friends provides tangible benefits Community-building - Systems encourage forming lasting connections Toxicity-resistant - Design discourages griefing and harassment 👥 Squad System#Squad Types#Type Size Matchmaking Description Solo 1 Mixed lobbies Individual player, matched with/against all types Duo 2 Mixed lobbies Two-player team Squad 3-4 Mixed lobbies Full team, maximum coordination Squad Formation#Pre-Match Lobby:">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
+
+
+  <meta itemprop="name" content="Extraction Shooter GDD">
+  <meta itemprop="description" content="Social &amp; Multiplayer Systems#← Back to Index | Next: Core Gameplay →
+🎯 Social Design Philosophy#Core Principle: “Alone is viable, together is powerful”
+The game must be:
+Solo-friendly - Single players can succeed without feeling disadvantaged Squad-rewarding - Playing with friends provides tangible benefits Community-building - Systems encourage forming lasting connections Toxicity-resistant - Design discourages griefing and harassment 👥 Squad System#Squad Types#Type Size Matchmaking Description Solo 1 Mixed lobbies Individual player, matched with/against all types Duo 2 Mixed lobbies Two-player team Squad 3-4 Mixed lobbies Full team, maximum coordination Squad Formation#Pre-Match Lobby:">
+  <meta itemprop="wordCount" content="1677">
+
+<title>Multiplayer | Extraction Shooter GDD</title>
+<link rel="icon" href="/favicon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="http://localhost:52224/docs/GDD_Design/Social/Multiplayer/">
+<link rel="stylesheet" href="/book.min.63c8b2b12bbd1ad36428837740ea371dd41fdb9c22b35499003d0dfa4dbce6ba.css" integrity="sha256-Y8iysSu9GtNkKIN3QOo3HdQf25wis1SZAD0N&#43;k285ro=" crossorigin="anonymous">
+
+
+  <script defer src="/fuse.min.js"></script>
+  <script defer src="/en.search.min.58bea27d7a08265548c5a8636a9a9fc844e0eb9d60fc3bb2c53d517da858d4c1.js" integrity="sha256-WL6ifXoIJlVIxahjapqfyETg651g/DuyxT1RfahY1ME=" crossorigin="anonymous"></script>
+
+  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
+
+
+
+  
+</head>
+<body dir="ltr" class="book-kind-page book-type-docs">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    
+<aside class="book-menu">
+  <div class="book-menu-content">
+    
+  <nav>
+    <h2 class="book-brand">
+  <a class="flex align-center" href="/"><img src="/logo.svg" alt="Logo" /><span>Extraction Shooter GDD</span>
+  </a>
+</h2>
+
+    <div class="book-theme-toggle">
+    <input type="checkbox" id="theme-toggle" class="toggle">
+    <label for="theme-toggle" class="flex justify-between items-center cursor-pointer">
+        <span class="text-xs font-semibold">Dark Mode</span>
+        <div
+            class="relative w-10 h-5 bg-gray-200 rounded-full transition-colors duration-200 ease-in-out dark:bg-gray-700">
+            <div
+                class="absolute left-0 w-5 h-5 bg-white rounded-full shadow transform transition-transform duration-200 ease-in-out dark:translate-x-full">
+            </div>
+        </div>
+    </label>
+</div>
+
+<script>
+    (function () {
+        const toggle = document.getElementById('theme-toggle');
+        const html = document.documentElement;
+
+        
+        const savedTheme = localStorage.getItem('theme');
+        const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+        if (savedTheme === 'dark' || (!savedTheme && systemDark)) {
+            html.classList.add('dark');
+            toggle.checked = true;
+        } else {
+            html.classList.remove('dark');
+            toggle.checked = false;
+        }
+
+        
+        toggle.addEventListener('change', function () {
+            if (this.checked) {
+                html.classList.add('dark');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                html.classList.remove('dark');
+                localStorage.setItem('theme', 'light');
+            }
+        });
+    })();
+</script>
+
+<style>
+     
+    .book-theme-toggle {
+        margin: 1rem 0;
+        padding: 0 1rem;
+
+    }
+
+    .book-theme-toggle label {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        cursor: pointer;
+        font-size: 0.85em;
+    }
+
+     
+    .book-theme-toggle input {
+        display: none;
+    }
+
+     
+    .book-theme-toggle label::after {
+        content: "🌙";
+         
+    }
+
+     
+    html:not(.dark) .book-theme-toggle label::after {
+        content: "☀️";
+         
+    }
+</style> 
+    
+<div class="book-search hidden">
+  <input id="book-search-input" type="text" 
+    placeholder="Search"
+    aria-label="Search"
+    maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+    
+
+    
+    
+
+
+
+    
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/" class="">
+      Gdd Design</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      AI</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/AI/EnemyBehavior/" class="">
+      Enemy Behavior</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/AI/FactionBehaviors/" class="">
+      Faction Behaviors</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Audio</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Audio/SoundDesign/" class="">
+      Sound Design</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Audio/Soundscape/" class="">
+      Soundscape</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Audio/TacticalAudio/" class="">
+      Tactical Audio</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Audio/VoiceLines/" class="">
+      Voice Lines</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Characters</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Operators/" class="">
+      Operators</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Assault</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Assault/Blaze/" class="">
+      Blaze</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Assault/Havoc/" class="">
+      Havoc</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Assault/README/" class="">
+      Readme</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Assault/Viper/" class="">
+      Viper</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Recon</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Recon/Phantom/" class="">
+      Phantom</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Recon/README/" class="">
+      Readme</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Recon/Specter/" class="">
+      Specter</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Recon/Wraith/" class="">
+      Wraith</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Specialist</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Specialist/Cipher/" class="">
+      Cipher</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Specialist/Flux/" class="">
+      Flux</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Specialist/README/" class="">
+      Readme</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Support</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Support/Angel/" class="">
+      Angel</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Support/Doc/" class="">
+      Doc</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Support/README/" class="">
+      Readme</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Tank</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Tank/Bulwark/" class="">
+      Bulwark</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Tank/Fortress/" class="">
+      Fortress</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Tank/README/" class="">
+      Readme</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Combat</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Combat/Items/" class="">
+      Items</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Combat/Weapons/" class="">
+      Weapons</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      GameDesign</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Accessibility/" class="">
+      Accessibility</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Controls/" class="">
+      Controls</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/CoreGameplay/" class="">
+      Core Gameplay</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Economy/" class="">
+      Economy</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/GameModes/" class="">
+      Game Modes</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/LiveOps/" class="">
+      Live Ops</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Localization/" class="">
+      Localization</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/NavigationAndMap/" class="">
+      Navigation and Map</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Overview/" class="">
+      Overview</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Progression/" class="">
+      Progression</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/RankedMode/" class="">
+      Ranked Mode</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/TutorialRaid/" class="">
+      Tutorial Raid</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/UserSettings/" class="">
+      User Settings</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Gameplay</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Gameplay/CoreLoop/" class="">
+      Core Loop</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      ProjectScope</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/ProjectScope/DesignPillars/" class="">
+      Design Pillars</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/ProjectScope/MVP/" class="">
+      Mvp</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/ProjectScope/NonGoals/" class="">
+      Non Goals</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/ProjectScope/Risks/" class="">
+      Risks</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Social</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Social/Multiplayer/" class="active">
+      Multiplayer</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Story</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Story/Backstory/" class="">
+      Backstory</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Story/Factions/" class="">
+      Factions</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Story/Narrative/" class="">
+      Narrative</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Story/QuestLines/" class="">
+      Quest Lines</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      UI UX</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/UI_UX/UX_Flows/" class="">
+      Ux Flows</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/UI_UX/Visual_Style/" class="">
+      Visual Style</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Visuals</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Visuals/ArtDirection/" class="">
+      Art Direction</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Visuals/AssetGuidelines/" class="">
+      Asset Guidelines</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Visuals/StyleGuide/" class="">
+      Style Guide</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Visuals/UserInterface/" class="">
+      User Interface</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      World</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/EnvironmentalNarrative/" class="">
+      Environmental Narrative</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/EnvironmentalNarrative_Guidelines/" class="">
+      Environmental Narrative Guidelines</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/LootDistribution/" class="">
+      Loot Distribution</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/MapDesign/" class="">
+      Map Design</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/MapDesign_IndustrialZone/" class="">
+      Map Design Industrial Zone</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/MapDesign_NeonSlums/" class="">
+      Map Design Neon Slums</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/MapDesign_Wilderness/" class="">
+      Map Design Wilderness</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/MapLayouts/" class="">
+      Map Layouts</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/" class="">
+      Gdd Technical</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      AI</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/AI/SensorySystem/" class="">
+      Sensory System</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Core</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Core/Architecture/" class="">
+      Architecture</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Core/CodingStandards/" class="">
+      Coding Standards</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Core/DevelopmentRoadmap/" class="">
+      Development Roadmap</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Core/NetworkingSystem/" class="">
+      Networking System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Core/SecuritySystem/" class="">
+      Security System</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Gameplay</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Gameplay/CharacterSystem/" class="">
+      Character System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Gameplay/ControlSystem/" class="">
+      Control System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Gameplay/InventorySystem/" class="">
+      Inventory System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Gameplay/WeaponSystem/" class="">
+      Weapon System</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Networking</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Networking/LagCompensation/" class="">
+      Lag Compensation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Networking/ReplicationStrategy/" class="">
+      Replication Strategy</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Performance</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Performance/Budgets/" class="">
+      Budgets</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Performance/Optimization/" class="">
+      Optimization</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Security</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Security/AntiCheatStrategy/" class="">
+      Anti Cheat Strategy</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Systems</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/AccessibilitySystem/" class="">
+      Accessibility System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/AISystem/" class="">
+      Aisystem</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/AnalyticsSystem/" class="">
+      Analytics System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/AudioSystem/" class="">
+      Audio System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/BuildPipeline/" class="">
+      Build Pipeline</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/LiveOpsSystem/" class="">
+      Live Ops System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/LocalizationSystem/" class="">
+      Localization System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/MapSystem/" class="">
+      Map System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/NarrativeSystem/" class="">
+      Narrative System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/ProgressionSystem/" class="">
+      Progression System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/RankedSystem/" class="">
+      Ranked System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/SaveSystem/" class="">
+      Save System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/SocialSystem/" class="">
+      Social System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/TutorialSystem/" class="">
+      Tutorial System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/UISystem/" class="">
+      Uisystem</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+</nav>
+
+
+
+
+<script>{ { . | safeJS } }</script>
+
+
+  </div>
+</aside>
+ 
+
+    <div class="book-page">
+      <header class="book-header hidden">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/icons/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <h3>Multiplayer</h3>
+
+  <label for="toc-control">
+    
+    <img src="/icons/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#-social-design-philosophy">🎯 Social Design Philosophy</a></li>
+    <li><a href="#-squad-system">👥 Squad System</a>
+      <ul>
+        <li><a href="#squad-types">Squad Types</a></li>
+        <li><a href="#squad-formation">Squad Formation</a></li>
+        <li><a href="#squad-roles-optional-assignment">Squad Roles (Optional Assignment)</a></li>
+        <li><a href="#squad-communication">Squad Communication</a></li>
+      </ul>
+    </li>
+    <li><a href="#-clan-system">🏰 Clan System</a>
+      <ul>
+        <li><a href="#clan-overview">Clan Overview</a></li>
+        <li><a href="#clan-creation">Clan Creation</a></li>
+        <li><a href="#clan-hierarchy">Clan Hierarchy</a></li>
+        <li><a href="#clan-features">Clan Features</a></li>
+      </ul>
+    </li>
+    <li><a href="#-friends-system">👫 Friends System</a>
+      <ul>
+        <li><a href="#friend-list">Friend List</a></li>
+        <li><a href="#friend-categories">Friend Categories</a></li>
+        <li><a href="#friend-interactions">Friend Interactions</a></li>
+        <li><a href="#social-presence">Social Presence</a></li>
+      </ul>
+    </li>
+    <li><a href="#-social-rewards">🎁 Social Rewards</a>
+      <ul>
+        <li><a href="#play-together-bonuses">Play Together Bonuses</a></li>
+        <li><a href="#referral-system">Referral System</a></li>
+      </ul>
+    </li>
+    <li><a href="#-anti-toxicity-systems">🔇 Anti-Toxicity Systems</a>
+      <ul>
+        <li><a href="#report-system">Report System</a></li>
+        <li><a href="#behavior-score">Behavior Score</a></li>
+        <li><a href="#commendation-system">Commendation System</a></li>
+      </ul>
+    </li>
+    <li><a href="#-mobile-social-features">📱 Mobile Social Features</a>
+      <ul>
+        <li><a href="#quick-social-access">Quick Social Access</a></li>
+        <li><a href="#simplified-voice-chat">Simplified Voice Chat</a></li>
+        <li><a href="#share-features">Share Features</a></li>
+      </ul>
+    </li>
+    <li><a href="#-cross-platform-ecosystem-powered-by-eos">🔄 Cross-Platform Ecosystem (Powered by EOS)</a>
+      <ul>
+        <li><a href="#-epic-online-services-eos-integration">🌐 Epic Online Services (EOS) Integration</a></li>
+        <li><a href="#-unified-lobbies--parties">🎮 Unified Lobbies &amp; Parties</a></li>
+        <li><a href="#-cross-play-matchmaking">⚔️ Cross-Play Matchmaking</a></li>
+      </ul>
+    </li>
+    <li><a href="#-social-analytics-backend">📊 Social Analytics (Backend)</a>
+      <ul>
+        <li><a href="#metrics-to-track">Metrics to Track</a></li>
+      </ul>
+    </li>
+    <li><a href="#-social-features-roadmap">🚀 Social Features Roadmap</a>
+      <ul>
+        <li><a href="#launch-v10">Launch (v1.0)</a></li>
+        <li><a href="#post-launch-v11---month-2">Post-Launch (v1.1 - Month 2)</a></li>
+        <li><a href="#season-2-v12---month-3">Season 2 (v1.2 - Month 3)</a></li>
+        <li><a href="#future">Future</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><h1 id="social--multiplayer-systems">Social &amp; Multiplayer Systems<a class="anchor" href="#social--multiplayer-systems">#</a></h1>
+<p><strong><a href="../README.md">← Back to Index</a></strong> | <strong><a href="../GameDesign/CoreGameplay.md">Next: Core Gameplay →</a></strong></p>
+<hr>
+<h2 id="-social-design-philosophy">🎯 Social Design Philosophy<a class="anchor" href="#-social-design-philosophy">#</a></h2>
+<p><strong>Core Principle:</strong> &ldquo;Alone is viable, together is powerful&rdquo;</p>
+<p>The game must be:</p>
+<ul>
+<li><strong>Solo-friendly</strong> - Single players can succeed without feeling disadvantaged</li>
+<li><strong>Squad-rewarding</strong> - Playing with friends provides tangible benefits</li>
+<li><strong>Community-building</strong> - Systems encourage forming lasting connections</li>
+<li><strong>Toxicity-resistant</strong> - Design discourages griefing and harassment</li>
+</ul>
+<hr>
+<h2 id="-squad-system">👥 Squad System<a class="anchor" href="#-squad-system">#</a></h2>
+<h3 id="squad-types">Squad Types<a class="anchor" href="#squad-types">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Type</th>
+          <th style="text-align: left">Size</th>
+          <th style="text-align: left">Matchmaking</th>
+          <th style="text-align: left">Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><strong>Solo</strong></td>
+          <td style="text-align: left">1</td>
+          <td style="text-align: left">Mixed lobbies</td>
+          <td style="text-align: left">Individual player, matched with/against all types</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Duo</strong></td>
+          <td style="text-align: left">2</td>
+          <td style="text-align: left">Mixed lobbies</td>
+          <td style="text-align: left">Two-player team</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Squad</strong></td>
+          <td style="text-align: left">3-4</td>
+          <td style="text-align: left">Mixed lobbies</td>
+          <td style="text-align: left">Full team, maximum coordination</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="squad-formation">Squad Formation<a class="anchor" href="#squad-formation">#</a></h3>
+<p><strong>Pre-Match Lobby:</strong></p>
+<pre tabindex="0"><code>┌─────────────────────────────────────────────┐
+│  SQUAD LOBBY                    [READY]     │
+├─────────────────────────────────────────────┤
+│  ┌─────┐  ┌─────┐  ┌─────┐  ┌─────┐         │
+│  │ You │  │ P2  │  │ P3  │  │  +  │         │
+│  │READY│  │READY│  │ ... │  │ ADD │         │
+│  └─────┘  └─────┘  └─────┘  └─────┘         │
+│                                             │
+│  [INVITE FRIEND]  [FIND SQUAD]  [START]     │
+└─────────────────────────────────────────────┘</code></pre><p><strong>Invite Methods:</strong></p>
+<ol>
+<li><strong>Friend List</strong> - Invite from online friends</li>
+<li><strong>Recent Players</strong> - Invite from last 20 matches</li>
+<li><strong>Clan Members</strong> - Invite from clan roster</li>
+<li><strong>Share Code</strong> - Generate 6-digit code (expires in 10 min)</li>
+<li><strong>QR Code</strong> - Scan to join (mobile-friendly)</li>
+</ol>
+<h3 id="squad-roles-optional-assignment">Squad Roles (Optional Assignment)<a class="anchor" href="#squad-roles-optional-assignment">#</a></h3>
+<p>Players can assign themselves roles for coordination:</p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Role</th>
+          <th style="text-align: left">Icon</th>
+          <th style="text-align: left">Description</th>
+          <th style="text-align: left">Gameplay Benefit</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><strong>Leader</strong></td>
+          <td style="text-align: left">👑</td>
+          <td style="text-align: left">Shot-caller, extraction decisions</td>
+          <td style="text-align: left">Ping priority on map</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Point</strong></td>
+          <td style="text-align: left">⚔️</td>
+          <td style="text-align: left">First into combat</td>
+          <td style="text-align: left">Sees enemy outlines 0.5s earlier</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Support</strong></td>
+          <td style="text-align: left">❤️</td>
+          <td style="text-align: left">Healing priority</td>
+          <td style="text-align: left">Healing items 10% more effective on others</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Overwatch</strong></td>
+          <td style="text-align: left">👁️</td>
+          <td style="text-align: left">Rear guard, intel</td>
+          <td style="text-align: left">Wider minimap range</td>
+      </tr>
+  </tbody>
+</table>
+<p><em>Note: Roles are optional quality-of-life, not required</em></p>
+<h3 id="squad-communication">Squad Communication<a class="anchor" href="#squad-communication">#</a></h3>
+<h4 id="voice-chat">Voice Chat<a class="anchor" href="#voice-chat">#</a></h4>
+<p><strong>Channels:</strong></p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Channel</th>
+          <th style="text-align: left">Scope</th>
+          <th style="text-align: left">Default Key</th>
+          <th style="text-align: left">Notes</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><strong>Squad</strong></td>
+          <td style="text-align: left">Your team only</td>
+          <td style="text-align: left">Always on / Push-to-talk</td>
+          <td style="text-align: left">Primary communication</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Proximity</strong></td>
+          <td style="text-align: left">Nearby players (15m)</td>
+          <td style="text-align: left">Toggle</td>
+          <td style="text-align: left">Can hear enemies too (tactical!)</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Mute All</strong></td>
+          <td style="text-align: left">Disable incoming</td>
+          <td style="text-align: left">Settings</td>
+          <td style="text-align: left">For solo focus</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Voice Settings:</strong></p>
+<ul>
+<li><strong>Voice Volume</strong>: 0-100%</li>
+<li><strong>Voice Activation</strong>: Push-to-talk / Voice Activity / Muted</li>
+<li><strong>Voice Threshold</strong>: Sensitivity for voice activation</li>
+<li><strong>Individual Mute</strong>: Mute specific players</li>
+</ul>
+<p><strong>Anti-Toxicity:</strong></p>
+<ul>
+<li>Auto-mute after 3 reports</li>
+<li>Voice chat recording for reports (last 60 seconds)</li>
+<li>Offensive language filter (client-side option)</li>
+</ul>
+<h4 id="text-chat">Text Chat<a class="anchor" href="#text-chat">#</a></h4>
+<p><strong>Channels:</strong></p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Channel</th>
+          <th style="text-align: left">Scope</th>
+          <th style="text-align: left">Color</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><strong>Squad</strong></td>
+          <td style="text-align: left">Team only</td>
+          <td style="text-align: left">Green</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>All</strong></td>
+          <td style="text-align: left">Everyone in match</td>
+          <td style="text-align: left">White</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>System</strong></td>
+          <td style="text-align: left">Game notifications</td>
+          <td style="text-align: left">Yellow</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Features:</strong></p>
+<ul>
+<li>Profanity filter (default ON, toggle OFF in settings)</li>
+<li>Message rate limit (5 messages per 10 seconds)</li>
+<li>Report message button</li>
+</ul>
+<h4 id="ping-system">Ping System<a class="anchor" href="#ping-system">#</a></h4>
+<p><strong>Quick Ping (Single Tap/Click):</strong>
+Context-aware ping based on what you&rsquo;re looking at:</p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Looking At</th>
+          <th style="text-align: left">Ping Result</th>
+          <th style="text-align: left">Voice Callout</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Ground</td>
+          <td style="text-align: left">&ldquo;Go here&rdquo; marker</td>
+          <td style="text-align: left">&ldquo;Moving here&rdquo;</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Enemy</td>
+          <td style="text-align: left">&ldquo;Enemy spotted&rdquo;</td>
+          <td style="text-align: left">&ldquo;Enemy there!&rdquo;</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Loot</td>
+          <td style="text-align: left">&ldquo;Loot here&rdquo;</td>
+          <td style="text-align: left">&ldquo;Found something&rdquo;</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Extraction</td>
+          <td style="text-align: left">&ldquo;Extract here&rdquo;</td>
+          <td style="text-align: left">&ldquo;Let&rsquo;s extract here&rdquo;</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Danger zone</td>
+          <td style="text-align: left">&ldquo;Danger&rdquo;</td>
+          <td style="text-align: left">&ldquo;Watch out!&rdquo;</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Ping Wheel (Hold):</strong></p>
+<pre tabindex="0"><code>        [Enemy]
+           │
+[Need Help] ─┼─ [Go Here]
+           │
+        [Wait]</code></pre><p><strong>Advanced Pings:</strong></p>
+<ul>
+<li>Double-tap: &ldquo;Focus fire here!&rdquo;</li>
+<li>Triple-tap: &ldquo;Retreat/Cancel&rdquo;</li>
+<li>Ping on teammate: &ldquo;Follow them&rdquo;</li>
+</ul>
+<p><strong>Ping Limits:</strong></p>
+<ul>
+<li>Max 3 pings per 5 seconds (prevent spam)</li>
+<li>Pings fade after 10 seconds</li>
+<li>Enemy pings last 5 seconds</li>
+</ul>
+<hr>
+<h2 id="-clan-system">🏰 Clan System<a class="anchor" href="#-clan-system">#</a></h2>
+<h3 id="clan-overview">Clan Overview<a class="anchor" href="#clan-overview">#</a></h3>
+<p><strong>What is a Clan?</strong>
+A persistent group of players who play together regularly, earning collective rewards and competing in events.</p>
+<p><strong>Clan Limits:</strong></p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Tier</th>
+          <th style="text-align: left">Max Members</th>
+          <th style="text-align: left">Creation Cost</th>
+          <th style="text-align: left">Benefits</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><strong>Starter</strong></td>
+          <td style="text-align: left">10</td>
+          <td style="text-align: left">Free</td>
+          <td style="text-align: left">Basic features</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Standard</strong></td>
+          <td style="text-align: left">25</td>
+          <td style="text-align: left">10,000 Credits</td>
+          <td style="text-align: left">Clan bank, custom tag</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Premium</strong></td>
+          <td style="text-align: left">50</td>
+          <td style="text-align: left">50,000 Credits</td>
+          <td style="text-align: left">All features, clan challenges</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Elite</strong></td>
+          <td style="text-align: left">100</td>
+          <td style="text-align: left">100,000 Credits</td>
+          <td style="text-align: left">Priority matchmaking, exclusive events</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="clan-creation">Clan Creation<a class="anchor" href="#clan-creation">#</a></h3>
+<p><strong>Requirements:</strong></p>
+<ul>
+<li>Account Level 10+</li>
+<li>Creation cost (or earned through gameplay)</li>
+<li>Unique clan name (3-20 characters)</li>
+<li>Unique clan tag (2-5 characters)</li>
+</ul>
+<p><strong>Customization:</strong></p>
+<ul>
+<li>Clan Name: &ldquo;Shadow Wolves&rdquo;</li>
+<li>Clan Tag: [WOLF]</li>
+<li>Clan Description: 200 characters max</li>
+<li>Clan Emblem: Choose from presets or upload (moderated)</li>
+<li>Clan Colors: Primary &amp; Secondary (displayed on clan tag)</li>
+</ul>
+<h3 id="clan-hierarchy">Clan Hierarchy<a class="anchor" href="#clan-hierarchy">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Rank</th>
+          <th style="text-align: left">Permissions</th>
+          <th style="text-align: left">Notes</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><strong>Leader</strong></td>
+          <td style="text-align: left">All</td>
+          <td style="text-align: left">Founder or appointed</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Officer</strong></td>
+          <td style="text-align: left">Invite/Kick members, bank access, start events</td>
+          <td style="text-align: left">Trusted members</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Veteran</strong></td>
+          <td style="text-align: left">Invite members, limited bank withdrawal</td>
+          <td style="text-align: left">Active players</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Member</strong></td>
+          <td style="text-align: left">Basic access</td>
+          <td style="text-align: left">Default rank</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Recruit</strong></td>
+          <td style="text-align: left">View only, 7-day trial</td>
+          <td style="text-align: left">New joins</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="clan-features">Clan Features<a class="anchor" href="#clan-features">#</a></h3>
+<h4 id="1-clan-bank">1. Clan Bank<a class="anchor" href="#1-clan-bank">#</a></h4>
+<p>A shared storage for items and credits:</p>
+<p><strong>Deposits:</strong></p>
+<ul>
+<li>Any member can deposit</li>
+<li>Tracks who deposited what</li>
+</ul>
+<p><strong>Withdrawals:</strong></p>
+<ul>
+<li>Veterans: 1 item per day</li>
+<li>Officers: 5 items per day</li>
+<li>Leader: Unlimited</li>
+</ul>
+<p><strong>Contents:</strong></p>
+<ul>
+<li>Credits pool (for clan upgrades)</li>
+<li>Shared weapons/gear (for lower-level members)</li>
+<li>Clan-earned rewards</li>
+</ul>
+<h4 id="2-clan-challenges">2. Clan Challenges<a class="anchor" href="#2-clan-challenges">#</a></h4>
+<p>Weekly objectives that all clan members contribute to:</p>
+<p><strong>Example Challenges:</strong></p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Challenge</th>
+          <th style="text-align: left">Requirement</th>
+          <th style="text-align: left">Reward</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Extract Together</td>
+          <td style="text-align: left">Squad extract 50 times</td>
+          <td style="text-align: left">50,000 Credits (split)</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Total Kills</td>
+          <td style="text-align: left">Clan total 1,000 kills</td>
+          <td style="text-align: left">Exclusive emblem</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Loot Hoarders</td>
+          <td style="text-align: left">Extract 500 rare+ items</td>
+          <td style="text-align: left">Clan XP boost (24h)</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Faction Focus</td>
+          <td style="text-align: left">Complete 100 faction quests</td>
+          <td style="text-align: left">Faction reputation boost</td>
+      </tr>
+  </tbody>
+</table>
+<h4 id="3-clan-leaderboards">3. Clan Leaderboards<a class="anchor" href="#3-clan-leaderboards">#</a></h4>
+<p><strong>Categories:</strong></p>
+<ul>
+<li>Total Clan XP (Season)</li>
+<li>Total Extractions</li>
+<li>Average Survival Rate</li>
+<li>PvP Kills</li>
+<li>Wealth Accumulated</li>
+</ul>
+<p><strong>Rewards by Ranking:</strong></p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Rank</th>
+          <th style="text-align: left">Season Reward</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Top 1</td>
+          <td style="text-align: left">Legendary Clan Banner + 500,000 Credits</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Top 10</td>
+          <td style="text-align: left">Epic Clan Banner + 200,000 Credits</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Top 100</td>
+          <td style="text-align: left">Rare Clan Banner + 50,000 Credits</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Top 1000</td>
+          <td style="text-align: left">Uncommon Banner + 10,000 Credits</td>
+      </tr>
+  </tbody>
+</table>
+<h4 id="4-clan-chat">4. Clan Chat<a class="anchor" href="#4-clan-chat">#</a></h4>
+<p><strong>Channels:</strong></p>
+<ul>
+<li><strong>General</strong> - All members</li>
+<li><strong>Officers</strong> - Officers+ only</li>
+<li><strong>Events</strong> - Scheduling and coordination</li>
+<li><strong>Trading</strong> - Item exchange between members</li>
+</ul>
+<p><strong>Features:</strong></p>
+<ul>
+<li>Persistent chat history (7 days)</li>
+<li>@mentions for notifications</li>
+<li>Pinned messages (Officers+)</li>
+</ul>
+<h4 id="5-clan-events">5. Clan Events<a class="anchor" href="#5-clan-events">#</a></h4>
+<p><strong>Types:</strong></p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Event</th>
+          <th style="text-align: left">Description</th>
+          <th style="text-align: left">Reward</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><strong>Raid Night</strong></td>
+          <td style="text-align: left">Scheduled squad sessions</td>
+          <td style="text-align: left">Bonus XP</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Internal Tournament</strong></td>
+          <td style="text-align: left">1v1 or squad battles</td>
+          <td style="text-align: left">Bragging rights + clan bank bonus</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Faction Push</strong></td>
+          <td style="text-align: left">Focus on one faction</td>
+          <td style="text-align: left">Boosted reputation</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Training</strong></td>
+          <td style="text-align: left">Veterans help Recruits</td>
+          <td style="text-align: left">Loyalty points</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="-friends-system">👫 Friends System<a class="anchor" href="#-friends-system">#</a></h2>
+<h3 id="friend-list">Friend List<a class="anchor" href="#friend-list">#</a></h3>
+<p><strong>Features:</strong></p>
+<ul>
+<li>Add friends via username, code, or QR</li>
+<li>Online/Offline/In-Match status</li>
+<li>&ldquo;Last Online&rdquo; timestamp</li>
+<li>Favorite friends (pinned to top)</li>
+<li>Notes (personal reminders about friends)</li>
+</ul>
+<p><strong>Friend Limit:</strong> 100 friends (expandable with premium)</p>
+<h3 id="friend-categories">Friend Categories<a class="anchor" href="#friend-categories">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Category</th>
+          <th style="text-align: left">Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><strong>Favourites</strong> ⭐</td>
+          <td style="text-align: left">Pinned to top, quick invite</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Clan</strong> 🏰</td>
+          <td style="text-align: left">Auto-categorized clan members</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Recent</strong> 🕐</td>
+          <td style="text-align: left">Last 24 hours played together</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>All</strong> 👥</td>
+          <td style="text-align: left">Full friend list</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Blocked</strong> 🚫</td>
+          <td style="text-align: left">Cannot contact you</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="friend-interactions">Friend Interactions<a class="anchor" href="#friend-interactions">#</a></h3>
+<p><strong>From Friend List:</strong></p>
+<ul>
+<li>Invite to Squad</li>
+<li>Invite to Clan</li>
+<li>Send Message</li>
+<li>View Profile</li>
+<li>Compare Stats</li>
+<li>Send Gift (cosmetics, credits)</li>
+<li>Unfriend / Block</li>
+</ul>
+<h3 id="social-presence">Social Presence<a class="anchor" href="#social-presence">#</a></h3>
+<p><strong>Status Options:</strong></p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Status</th>
+          <th style="text-align: left">Icon</th>
+          <th style="text-align: left">Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><strong>Online</strong></td>
+          <td style="text-align: left">🟢</td>
+          <td style="text-align: left">Available</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>In Match</strong></td>
+          <td style="text-align: left">🔴</td>
+          <td style="text-align: left">Currently playing</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>In Lobby</strong></td>
+          <td style="text-align: left">🟡</td>
+          <td style="text-align: left">In pre-match lobby</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Away</strong></td>
+          <td style="text-align: left">🟠</td>
+          <td style="text-align: left">Idle 10+ minutes</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Do Not Disturb</strong></td>
+          <td style="text-align: left">⛔</td>
+          <td style="text-align: left">Blocks invites</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Invisible</strong></td>
+          <td style="text-align: left">⚫</td>
+          <td style="text-align: left">Appears offline</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="-social-rewards">🎁 Social Rewards<a class="anchor" href="#-social-rewards">#</a></h2>
+<h3 id="play-together-bonuses">Play Together Bonuses<a class="anchor" href="#play-together-bonuses">#</a></h3>
+<p><strong>Squad Bonuses:</strong></p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Squad Size</th>
+          <th style="text-align: left">XP Bonus</th>
+          <th style="text-align: left">Credit Bonus</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Solo</td>
+          <td style="text-align: left">0%</td>
+          <td style="text-align: left">0%</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Duo</td>
+          <td style="text-align: left">+10%</td>
+          <td style="text-align: left">+5%</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Trio</td>
+          <td style="text-align: left">+15%</td>
+          <td style="text-align: left">+10%</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Full Squad (4)</td>
+          <td style="text-align: left">+25%</td>
+          <td style="text-align: left">+15%</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Friend Bonuses (stacks):</strong></p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Condition</th>
+          <th style="text-align: left">Additional Bonus</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Playing with Friend</td>
+          <td style="text-align: left">+5% XP</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Playing with Clan Member</td>
+          <td style="text-align: left">+10% XP</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">First match with new Friend</td>
+          <td style="text-align: left">+50 XP flat</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Complete 10 matches with same squad</td>
+          <td style="text-align: left">Loyalty Badge</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="referral-system">Referral System<a class="anchor" href="#referral-system">#</a></h3>
+<p><strong>How It Works:</strong></p>
+<ol>
+<li>Generate referral code</li>
+<li>New player uses code during signup</li>
+<li>Both players earn rewards as referred player progresses</li>
+</ol>
+<p><strong>Rewards:</strong></p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Milestone</th>
+          <th style="text-align: left">Referrer Gets</th>
+          <th style="text-align: left">New Player Gets</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Account Created</td>
+          <td style="text-align: left">500 Credits</td>
+          <td style="text-align: left">1,000 Credits</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Level 5</td>
+          <td style="text-align: left">2,000 Credits</td>
+          <td style="text-align: left">2,000 Credits</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Level 10</td>
+          <td style="text-align: left">Rare Weapon Skin</td>
+          <td style="text-align: left">Rare Weapon Skin</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Level 20</td>
+          <td style="text-align: left">10,000 Credits</td>
+          <td style="text-align: left">10,000 Credits</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">First Extraction</td>
+          <td style="text-align: left">Exclusive Referral Badge</td>
+          <td style="text-align: left">Welcome Badge</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Referral Limit:</strong> 50 successful referrals per account</p>
+<hr>
+<h2 id="-anti-toxicity-systems">🔇 Anti-Toxicity Systems<a class="anchor" href="#-anti-toxicity-systems">#</a></h2>
+<h3 id="report-system">Report System<a class="anchor" href="#report-system">#</a></h3>
+<p><strong>Report Categories:</strong></p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Category</th>
+          <th style="text-align: left">Severity</th>
+          <th style="text-align: left">Action</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Cheating/Hacking</td>
+          <td style="text-align: left">🔴 Critical</td>
+          <td style="text-align: left">Immediate review, potential ban</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Abusive Voice/Text</td>
+          <td style="text-align: left">🟠 High</td>
+          <td style="text-align: left">Mute + review</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Griefing/Teamkilling</td>
+          <td style="text-align: left">🟠 High</td>
+          <td style="text-align: left">Behavior score impact</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Inappropriate Name</td>
+          <td style="text-align: left">🟡 Medium</td>
+          <td style="text-align: left">Forced name change</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">AFK/Abandonment</td>
+          <td style="text-align: left">🟡 Medium</td>
+          <td style="text-align: left">Matchmaking penalty</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Other</td>
+          <td style="text-align: left">🟢 Low</td>
+          <td style="text-align: left">Manual review</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Report Process:</strong></p>
+<ol>
+<li>Select player from scoreboard or kill feed</li>
+<li>Choose category</li>
+<li>Optional: Add description (100 char)</li>
+<li>Optional: Attach clip (last 60 seconds auto-saved)</li>
+<li>Submit</li>
+</ol>
+<p><strong>Feedback:</strong></p>
+<ul>
+<li>Notification when action is taken (&ldquo;A player you reported has been penalized&rdquo;)</li>
+<li>No details about specific punishment (privacy)</li>
+</ul>
+<h3 id="behavior-score">Behavior Score<a class="anchor" href="#behavior-score">#</a></h3>
+<p><strong>Hidden score</strong> affecting matchmaking and privileges:</p>
+<p><strong>Factors:</strong></p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Action</th>
+          <th style="text-align: left">Impact</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Complete match</td>
+          <td style="text-align: left">+1</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Extract successfully</td>
+          <td style="text-align: left">+2</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Receive commendation</td>
+          <td style="text-align: left">+5</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Reported (confirmed)</td>
+          <td style="text-align: left">-20</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Abandon match</td>
+          <td style="text-align: left">-10</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Teamkill (friendly fire)</td>
+          <td style="text-align: left">-15</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Chat violation</td>
+          <td style="text-align: left">-10</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Score Effects:</strong></p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Score Range</th>
+          <th style="text-align: left">Effect</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">100-80</td>
+          <td style="text-align: left">Normal matchmaking</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">79-50</td>
+          <td style="text-align: left">Matched with similar scores</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">49-20</td>
+          <td style="text-align: left">Chat restricted, warning</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Below 20</td>
+          <td style="text-align: left">Temporary ban, appeal required</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="commendation-system">Commendation System<a class="anchor" href="#commendation-system">#</a></h3>
+<p><strong>Positive reinforcement:</strong></p>
+<p>After each match, players can commend teammates:</p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Category</th>
+          <th style="text-align: left">Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><strong>Good Teammate</strong></td>
+          <td style="text-align: left">Communicated well, played objectives</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Skilled Player</strong></td>
+          <td style="text-align: left">Impressive gameplay</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Friendly</strong></td>
+          <td style="text-align: left">Positive attitude</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Leader</strong></td>
+          <td style="text-align: left">Made good calls</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Rewards:</strong></p>
+<ul>
+<li>10 commendations = 500 Credits</li>
+<li>50 commendations = &ldquo;Good Sport&rdquo; badge</li>
+<li>100 commendations = Exclusive emote</li>
+</ul>
+<hr>
+<h2 id="-mobile-social-features">📱 Mobile Social Features<a class="anchor" href="#-mobile-social-features">#</a></h2>
+<h3 id="quick-social-access">Quick Social Access<a class="anchor" href="#quick-social-access">#</a></h3>
+<p><strong>Floating Social Button:</strong></p>
+<ul>
+<li>Always accessible during menus</li>
+<li>Shows online friend count</li>
+<li>Notification dot for invites</li>
+</ul>
+<h3 id="simplified-voice-chat">Simplified Voice Chat<a class="anchor" href="#simplified-voice-chat">#</a></h3>
+<p><strong>Mobile Optimizations:</strong></p>
+<ul>
+<li>Large push-to-talk button</li>
+<li>Voice activity with smart threshold</li>
+<li>Automatic noise suppression</li>
+<li>Low-bandwidth codec (Opus)</li>
+</ul>
+<h3 id="share-features">Share Features<a class="anchor" href="#share-features">#</a></h3>
+<p><strong>One-Tap Sharing:</strong></p>
+<ul>
+<li>Share match results to social media</li>
+<li>Share extraction loot</li>
+<li>Share clan achievements</li>
+<li>Generate shareable profile cards</li>
+</ul>
+<hr>
+<h2 id="-cross-platform-ecosystem-powered-by-eos">🔄 Cross-Platform Ecosystem (Powered by EOS)<a class="anchor" href="#-cross-platform-ecosystem-powered-by-eos">#</a></h2>
+<h3 id="-epic-online-services-eos-integration">🌐 Epic Online Services (EOS) Integration<a class="anchor" href="#-epic-online-services-eos-integration">#</a></h3>
+<p>We utilize <strong>Epic Online Services</strong> to provide a seamless multiplayer experience across all devices.</p>
+<p><strong>Benefits for Players:</strong></p>
+<ul>
+<li><strong>One Identity:</strong> Log in with your preferred platform (Steam, PlayStation, Xbox, Google, Apple), and it links to a backend Epic Account. Your progress travels with you.</li>
+<li><strong>Universal Friends List:</strong> See friends from <em>all</em> platforms in one list. If you are on Steam, you can still see and invite your friend playing on PlayStation.</li>
+<li><strong>Cross-Platform Voice:</strong> High-quality voice chat that works between mobile and PC without third-party apps.</li>
+</ul>
+<h3 id="-unified-lobbies--parties">🎮 Unified Lobbies &amp; Parties<a class="anchor" href="#-unified-lobbies--parties">#</a></h3>
+<p><strong>The &ldquo;Smart Lobby&rdquo; System:</strong></p>
+<ul>
+<li><strong>Persistent Parties:</strong> Your squad stays together after the match ends. No need to re-invite.</li>
+<li><strong>Drop-In/Drop-Out:</strong> Friends can join your lobby while you are in the main menu (if set to &ldquo;Friends Only&rdquo;).</li>
+<li><strong>Cross-Platform Invites:</strong> Send game invites directly to a friend&rsquo;s device, regardless of what platform they are on, using the EOS Overlay or in-game Social Panel.</li>
+</ul>
+<h3 id="-cross-play-matchmaking">⚔️ Cross-Play Matchmaking<a class="anchor" href="#-cross-play-matchmaking">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Option</th>
+          <th style="text-align: left">Description</th>
+          <th style="text-align: left">Default</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><strong>Enable Cross-Play</strong></td>
+          <td style="text-align: left">Match with other platforms via EOS Matchmaking</td>
+          <td style="text-align: left">ON</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Input Matchmaking</strong></td>
+          <td style="text-align: left">Prioritize same input type (controller/touch/KB+M)</td>
+          <td style="text-align: left">OFF</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Platform Indicators</strong></td>
+          <td style="text-align: left">Icons showing if a player is on PC, Console, or Mobile</td>
+          <td style="text-align: left">ON</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="-social-analytics-backend">📊 Social Analytics (Backend)<a class="anchor" href="#-social-analytics-backend">#</a></h2>
+<h3 id="metrics-to-track">Metrics to Track<a class="anchor" href="#metrics-to-track">#</a></h3>
+<p><strong>Squad Formation:</strong></p>
+<ul>
+<li>% solo vs squad players</li>
+<li>Average squad size</li>
+<li>Friend vs random squad ratio</li>
+</ul>
+<p><strong>Communication:</strong></p>
+<ul>
+<li>Voice chat usage rate</li>
+<li>Ping usage frequency</li>
+<li>Chat message volume</li>
+</ul>
+<p><strong>Clan Health:</strong></p>
+<ul>
+<li>Average clan size</li>
+<li>Clan retention rate</li>
+<li>Clan activity (matches/week)</li>
+</ul>
+<p><strong>Toxicity:</strong></p>
+<ul>
+<li>Report rate per match</li>
+<li>Commendation vs report ratio</li>
+<li>Behavior score distribution</li>
+</ul>
+<hr>
+<h2 id="-social-features-roadmap">🚀 Social Features Roadmap<a class="anchor" href="#-social-features-roadmap">#</a></h2>
+<h3 id="launch-v10">Launch (v1.0)<a class="anchor" href="#launch-v10">#</a></h3>
+<ul>
+<li>✅ Squad system (1-4 players)</li>
+<li>✅ Voice chat (squad + proximity)</li>
+<li>✅ Ping system</li>
+<li>✅ Friends list</li>
+<li>✅ Basic reporting</li>
+</ul>
+<h3 id="post-launch-v11---month-2">Post-Launch (v1.1 - Month 2)<a class="anchor" href="#post-launch-v11---month-2">#</a></h3>
+<ul>
+<li>Clan system (basic)</li>
+<li>Clan chat</li>
+<li>Referral program</li>
+</ul>
+<h3 id="season-2-v12---month-3">Season 2 (v1.2 - Month 3)<a class="anchor" href="#season-2-v12---month-3">#</a></h3>
+<ul>
+<li>Clan challenges</li>
+<li>Clan leaderboards</li>
+<li>Commendation system</li>
+</ul>
+<h3 id="future">Future<a class="anchor" href="#future">#</a></h3>
+<ul>
+<li>Clan wars events</li>
+<li>Mentorship program</li>
+<li>Community tournaments</li>
+</ul>
+<hr>
+<p><strong><a href="../README.md">← Back to Index</a></strong> | <strong><a href="../GameDesign/CoreGameplay.md">Next: Core Gameplay →</a></strong></p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+<div>
+
+</div>
+
+<div>
+
+</div>
+
+</div>
+
+
+
+
+
+  
+  
+  
+  <div class="flex flex-wrap justify-between">
+    <span>
+    
+      <a href="/docs/GDD_Design/ProjectScope/Risks/" class="flex align-center">
+        <img src="/icons/backward.svg" class="book-icon" alt="Backward" />
+        <span>Risks</span>
+      </a>
+    
+    </span>
+    <span>
+    
+      <a href="/docs/GDD_Design/Story/Backstory/" class="flex align-center">
+        <span>Backstory</span>
+        <img src="/icons/forward.svg" class="book-icon" alt="Forward" />
+      </a>
+    
+    </span>
+  </div>
+  
+
+
+ 
+        
+  
+ 
+        
+        
+  
+ 
+        
+  
+  
+    <script>(function(){document.querySelectorAll("pre:has(code)").forEach(e=>{e.addEventListener("click",e.focus),e.addEventListener("copy",function(t){if(t.preventDefault(),navigator.clipboard){const t=window.getSelection().toString()||e.textContent;navigator.clipboard.writeText(t)}})})})()</script>
+  
+
+      </footer>
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+  
+  <aside class="book-toc">
+    <div class="book-toc-content">
+      
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#-social-design-philosophy">🎯 Social Design Philosophy</a></li>
+    <li><a href="#-squad-system">👥 Squad System</a>
+      <ul>
+        <li><a href="#squad-types">Squad Types</a></li>
+        <li><a href="#squad-formation">Squad Formation</a></li>
+        <li><a href="#squad-roles-optional-assignment">Squad Roles (Optional Assignment)</a></li>
+        <li><a href="#squad-communication">Squad Communication</a></li>
+      </ul>
+    </li>
+    <li><a href="#-clan-system">🏰 Clan System</a>
+      <ul>
+        <li><a href="#clan-overview">Clan Overview</a></li>
+        <li><a href="#clan-creation">Clan Creation</a></li>
+        <li><a href="#clan-hierarchy">Clan Hierarchy</a></li>
+        <li><a href="#clan-features">Clan Features</a></li>
+      </ul>
+    </li>
+    <li><a href="#-friends-system">👫 Friends System</a>
+      <ul>
+        <li><a href="#friend-list">Friend List</a></li>
+        <li><a href="#friend-categories">Friend Categories</a></li>
+        <li><a href="#friend-interactions">Friend Interactions</a></li>
+        <li><a href="#social-presence">Social Presence</a></li>
+      </ul>
+    </li>
+    <li><a href="#-social-rewards">🎁 Social Rewards</a>
+      <ul>
+        <li><a href="#play-together-bonuses">Play Together Bonuses</a></li>
+        <li><a href="#referral-system">Referral System</a></li>
+      </ul>
+    </li>
+    <li><a href="#-anti-toxicity-systems">🔇 Anti-Toxicity Systems</a>
+      <ul>
+        <li><a href="#report-system">Report System</a></li>
+        <li><a href="#behavior-score">Behavior Score</a></li>
+        <li><a href="#commendation-system">Commendation System</a></li>
+      </ul>
+    </li>
+    <li><a href="#-mobile-social-features">📱 Mobile Social Features</a>
+      <ul>
+        <li><a href="#quick-social-access">Quick Social Access</a></li>
+        <li><a href="#simplified-voice-chat">Simplified Voice Chat</a></li>
+        <li><a href="#share-features">Share Features</a></li>
+      </ul>
+    </li>
+    <li><a href="#-cross-platform-ecosystem-powered-by-eos">🔄 Cross-Platform Ecosystem (Powered by EOS)</a>
+      <ul>
+        <li><a href="#-epic-online-services-eos-integration">🌐 Epic Online Services (EOS) Integration</a></li>
+        <li><a href="#-unified-lobbies--parties">🎮 Unified Lobbies &amp; Parties</a></li>
+        <li><a href="#-cross-play-matchmaking">⚔️ Cross-Play Matchmaking</a></li>
+      </ul>
+    </li>
+    <li><a href="#-social-analytics-backend">📊 Social Analytics (Backend)</a>
+      <ul>
+        <li><a href="#metrics-to-track">Metrics to Track</a></li>
+      </ul>
+    </li>
+    <li><a href="#-social-features-roadmap">🚀 Social Features Roadmap</a>
+      <ul>
+        <li><a href="#launch-v10">Launch (v1.0)</a></li>
+        <li><a href="#post-launch-v11---month-2">Post-Launch (v1.1 - Month 2)</a></li>
+        <li><a href="#season-2-v12---month-3">Season 2 (v1.2 - Month 3)</a></li>
+        <li><a href="#future">Future</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+    </div>
+  </aside>
+  
+ 
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

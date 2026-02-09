@@ -1,0 +1,4468 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=52224&amp;path=livereload" data-no-instant defer></script>
+  <!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Control System - Technical Design Document#← Back to Index | Next: Character System
+Related Documents#Document Relationship Link Controls Design High-level input design GDD_HighLevel/GameDesign/Controls.md Character System Movement implementation CharacterSystem.md Weapon System Combat input handling WeaponSystem.md UI System HUD input prompts ../Systems/UISystem.md Accessibility System Input accessibility ../Systems/AccessibilitySystem.md Mobile Optimization Touch performance ../Performance/Optimization.md Overview#Purpose#The Control System provides a unified input abstraction layer that translates hardware-specific inputs into gameplay actions across all platforms (Mobile, PC, Console).
+">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:52224/docs/GDD_Technical/Gameplay/ControlSystem/">
+  <meta property="og:site_name" content="Extraction Shooter GDD">
+  <meta property="og:title" content="Extraction Shooter GDD">
+  <meta property="og:description" content="Control System - Technical Design Document#← Back to Index | Next: Character System
+Related Documents#Document Relationship Link Controls Design High-level input design GDD_HighLevel/GameDesign/Controls.md Character System Movement implementation CharacterSystem.md Weapon System Combat input handling WeaponSystem.md UI System HUD input prompts ../Systems/UISystem.md Accessibility System Input accessibility ../Systems/AccessibilitySystem.md Mobile Optimization Touch performance ../Performance/Optimization.md Overview#Purpose#The Control System provides a unified input abstraction layer that translates hardware-specific inputs into gameplay actions across all platforms (Mobile, PC, Console).">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
+
+
+  <meta itemprop="name" content="Extraction Shooter GDD">
+  <meta itemprop="description" content="Control System - Technical Design Document#← Back to Index | Next: Character System
+Related Documents#Document Relationship Link Controls Design High-level input design GDD_HighLevel/GameDesign/Controls.md Character System Movement implementation CharacterSystem.md Weapon System Combat input handling WeaponSystem.md UI System HUD input prompts ../Systems/UISystem.md Accessibility System Input accessibility ../Systems/AccessibilitySystem.md Mobile Optimization Touch performance ../Performance/Optimization.md Overview#Purpose#The Control System provides a unified input abstraction layer that translates hardware-specific inputs into gameplay actions across all platforms (Mobile, PC, Console).">
+  <meta itemprop="wordCount" content="4208">
+
+<title>Control System | Extraction Shooter GDD</title>
+<link rel="icon" href="/favicon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="http://localhost:52224/docs/GDD_Technical/Gameplay/ControlSystem/">
+<link rel="stylesheet" href="/book.min.63c8b2b12bbd1ad36428837740ea371dd41fdb9c22b35499003d0dfa4dbce6ba.css" integrity="sha256-Y8iysSu9GtNkKIN3QOo3HdQf25wis1SZAD0N&#43;k285ro=" crossorigin="anonymous">
+
+
+  <script defer src="/fuse.min.js"></script>
+  <script defer src="/en.search.min.58bea27d7a08265548c5a8636a9a9fc844e0eb9d60fc3bb2c53d517da858d4c1.js" integrity="sha256-WL6ifXoIJlVIxahjapqfyETg651g/DuyxT1RfahY1ME=" crossorigin="anonymous"></script>
+
+  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
+
+
+
+  
+</head>
+<body dir="ltr" class="book-kind-page book-type-docs">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    
+<aside class="book-menu">
+  <div class="book-menu-content">
+    
+  <nav>
+    <h2 class="book-brand">
+  <a class="flex align-center" href="/"><img src="/logo.svg" alt="Logo" /><span>Extraction Shooter GDD</span>
+  </a>
+</h2>
+
+    <div class="book-theme-toggle">
+    <input type="checkbox" id="theme-toggle" class="toggle">
+    <label for="theme-toggle" class="flex justify-between items-center cursor-pointer">
+        <span class="text-xs font-semibold">Dark Mode</span>
+        <div
+            class="relative w-10 h-5 bg-gray-200 rounded-full transition-colors duration-200 ease-in-out dark:bg-gray-700">
+            <div
+                class="absolute left-0 w-5 h-5 bg-white rounded-full shadow transform transition-transform duration-200 ease-in-out dark:translate-x-full">
+            </div>
+        </div>
+    </label>
+</div>
+
+<script>
+    (function () {
+        const toggle = document.getElementById('theme-toggle');
+        const html = document.documentElement;
+
+        
+        const savedTheme = localStorage.getItem('theme');
+        const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+        if (savedTheme === 'dark' || (!savedTheme && systemDark)) {
+            html.classList.add('dark');
+            toggle.checked = true;
+        } else {
+            html.classList.remove('dark');
+            toggle.checked = false;
+        }
+
+        
+        toggle.addEventListener('change', function () {
+            if (this.checked) {
+                html.classList.add('dark');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                html.classList.remove('dark');
+                localStorage.setItem('theme', 'light');
+            }
+        });
+    })();
+</script>
+
+<style>
+     
+    .book-theme-toggle {
+        margin: 1rem 0;
+        padding: 0 1rem;
+
+    }
+
+    .book-theme-toggle label {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        cursor: pointer;
+        font-size: 0.85em;
+    }
+
+     
+    .book-theme-toggle input {
+        display: none;
+    }
+
+     
+    .book-theme-toggle label::after {
+        content: "🌙";
+         
+    }
+
+     
+    html:not(.dark) .book-theme-toggle label::after {
+        content: "☀️";
+         
+    }
+</style> 
+    
+<div class="book-search hidden">
+  <input id="book-search-input" type="text" 
+    placeholder="Search"
+    aria-label="Search"
+    maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+    
+
+    
+    
+
+
+
+    
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/" class="">
+      Gdd Design</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      AI</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/AI/EnemyBehavior/" class="">
+      Enemy Behavior</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/AI/FactionBehaviors/" class="">
+      Faction Behaviors</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Audio</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Audio/SoundDesign/" class="">
+      Sound Design</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Audio/Soundscape/" class="">
+      Soundscape</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Audio/TacticalAudio/" class="">
+      Tactical Audio</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Audio/VoiceLines/" class="">
+      Voice Lines</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Characters</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Operators/" class="">
+      Operators</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Assault</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Assault/Blaze/" class="">
+      Blaze</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Assault/Havoc/" class="">
+      Havoc</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Assault/README/" class="">
+      Readme</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Assault/Viper/" class="">
+      Viper</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Recon</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Recon/Phantom/" class="">
+      Phantom</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Recon/README/" class="">
+      Readme</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Recon/Specter/" class="">
+      Specter</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Recon/Wraith/" class="">
+      Wraith</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Specialist</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Specialist/Cipher/" class="">
+      Cipher</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Specialist/Flux/" class="">
+      Flux</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Specialist/README/" class="">
+      Readme</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Support</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Support/Angel/" class="">
+      Angel</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Support/Doc/" class="">
+      Doc</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Support/README/" class="">
+      Readme</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Tank</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Tank/Bulwark/" class="">
+      Bulwark</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Tank/Fortress/" class="">
+      Fortress</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Tank/README/" class="">
+      Readme</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Combat</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Combat/Items/" class="">
+      Items</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Combat/Weapons/" class="">
+      Weapons</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      GameDesign</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Accessibility/" class="">
+      Accessibility</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Controls/" class="">
+      Controls</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/CoreGameplay/" class="">
+      Core Gameplay</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Economy/" class="">
+      Economy</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/GameModes/" class="">
+      Game Modes</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/LiveOps/" class="">
+      Live Ops</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Localization/" class="">
+      Localization</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/NavigationAndMap/" class="">
+      Navigation and Map</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Overview/" class="">
+      Overview</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Progression/" class="">
+      Progression</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/RankedMode/" class="">
+      Ranked Mode</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/TutorialRaid/" class="">
+      Tutorial Raid</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/UserSettings/" class="">
+      User Settings</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Gameplay</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Gameplay/CoreLoop/" class="">
+      Core Loop</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      ProjectScope</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/ProjectScope/DesignPillars/" class="">
+      Design Pillars</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/ProjectScope/MVP/" class="">
+      Mvp</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/ProjectScope/NonGoals/" class="">
+      Non Goals</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/ProjectScope/Risks/" class="">
+      Risks</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Social</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Social/Multiplayer/" class="">
+      Multiplayer</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Story</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Story/Backstory/" class="">
+      Backstory</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Story/Factions/" class="">
+      Factions</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Story/Narrative/" class="">
+      Narrative</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Story/QuestLines/" class="">
+      Quest Lines</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      UI UX</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/UI_UX/UX_Flows/" class="">
+      Ux Flows</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/UI_UX/Visual_Style/" class="">
+      Visual Style</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Visuals</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Visuals/ArtDirection/" class="">
+      Art Direction</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Visuals/AssetGuidelines/" class="">
+      Asset Guidelines</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Visuals/StyleGuide/" class="">
+      Style Guide</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Visuals/UserInterface/" class="">
+      User Interface</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      World</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/EnvironmentalNarrative/" class="">
+      Environmental Narrative</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/EnvironmentalNarrative_Guidelines/" class="">
+      Environmental Narrative Guidelines</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/LootDistribution/" class="">
+      Loot Distribution</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/MapDesign/" class="">
+      Map Design</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/MapDesign_IndustrialZone/" class="">
+      Map Design Industrial Zone</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/MapDesign_NeonSlums/" class="">
+      Map Design Neon Slums</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/MapDesign_Wilderness/" class="">
+      Map Design Wilderness</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/MapLayouts/" class="">
+      Map Layouts</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/" class="">
+      Gdd Technical</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      AI</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/AI/SensorySystem/" class="">
+      Sensory System</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Core</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Core/Architecture/" class="">
+      Architecture</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Core/CodingStandards/" class="">
+      Coding Standards</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Core/DevelopmentRoadmap/" class="">
+      Development Roadmap</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Core/NetworkingSystem/" class="">
+      Networking System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Core/SecuritySystem/" class="">
+      Security System</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Gameplay</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Gameplay/CharacterSystem/" class="">
+      Character System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Gameplay/ControlSystem/" class="active">
+      Control System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Gameplay/InventorySystem/" class="">
+      Inventory System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Gameplay/WeaponSystem/" class="">
+      Weapon System</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Networking</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Networking/LagCompensation/" class="">
+      Lag Compensation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Networking/ReplicationStrategy/" class="">
+      Replication Strategy</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Performance</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Performance/Budgets/" class="">
+      Budgets</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Performance/Optimization/" class="">
+      Optimization</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Security</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Security/AntiCheatStrategy/" class="">
+      Anti Cheat Strategy</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Systems</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/AccessibilitySystem/" class="">
+      Accessibility System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/AISystem/" class="">
+      Aisystem</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/AnalyticsSystem/" class="">
+      Analytics System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/AudioSystem/" class="">
+      Audio System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/BuildPipeline/" class="">
+      Build Pipeline</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/LiveOpsSystem/" class="">
+      Live Ops System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/LocalizationSystem/" class="">
+      Localization System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/MapSystem/" class="">
+      Map System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/NarrativeSystem/" class="">
+      Narrative System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/ProgressionSystem/" class="">
+      Progression System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/RankedSystem/" class="">
+      Ranked System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/SaveSystem/" class="">
+      Save System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/SocialSystem/" class="">
+      Social System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/TutorialSystem/" class="">
+      Tutorial System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/UISystem/" class="">
+      Uisystem</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+</nav>
+
+
+
+
+<script>{ { . | safeJS } }</script>
+
+
+  </div>
+</aside>
+ 
+
+    <div class="book-page">
+      <header class="book-header hidden">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/icons/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <h3>Control System</h3>
+
+  <label for="toc-control">
+    
+    <img src="/icons/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#related-documents">Related Documents</a></li>
+    <li><a href="#overview">Overview</a>
+      <ul>
+        <li><a href="#purpose">Purpose</a></li>
+        <li><a href="#core-functions">Core Functions</a></li>
+        <li><a href="#design-goals">Design Goals</a></li>
+      </ul>
+    </li>
+    <li><a href="#system-architecture">System Architecture</a>
+      <ul>
+        <li><a href="#component-diagram">Component Diagram</a></li>
+        <li><a href="#core-components">Core Components</a></li>
+      </ul>
+    </li>
+    <li><a href="#enums--types">Enums &amp; Types</a>
+      <ul>
+        <li><a href="#einputaction">EInputAction</a></li>
+        <li><a href="#mobile-touch-control-types">Mobile Touch Control Types</a></li>
+        <li><a href="#mobile-touch-zone-layout">Mobile Touch Zone Layout</a></li>
+        <li><a href="#mobile-control-customization-options">Mobile Control Customization Options</a></li>
+        <li><a href="#einputmethod">EInputMethod</a></li>
+        <li><a href="#econtrolpreset">EControlPreset</a></li>
+        <li><a href="#emovementmode">EMovementMode</a></li>
+        <li><a href="#etouchzone">ETouchZone</a></li>
+        <li><a href="#eaimassistlevel">EAimAssistLevel</a></li>
+        <li><a href="#econtrolreferenceframe">EControlReferenceFrame</a></li>
+        <li><a href="#efacingbehavior">EFacingBehavior</a></li>
+        <li><a href="#eaimconstraint">EAimConstraint</a></li>
+      </ul>
+    </li>
+    <li><a href="#code-names">Code Names</a>
+      <ul>
+        <li><a href="#input-events">Input Events</a></li>
+        <li><a href="#movement-input-events">Movement Input Events</a></li>
+        <li><a href="#combat-input-events">Combat Input Events</a></li>
+        <li><a href="#touch-events-mobile">Touch Events (Mobile)</a></li>
+        <li><a href="#hud-events">HUD Events</a></li>
+      </ul>
+    </li>
+    <li><a href="#core-classes">Core Classes</a>
+      <ul>
+        <li><a href="#inputmanager">InputManager</a></li>
+        <li><a href="#actionmap">ActionMap</a></li>
+        <li><a href="#inputprocessor">InputProcessor</a></li>
+        <li><a href="#movementcontroller">MovementController</a></li>
+        <li><a href="#touchcontroller">TouchController</a></li>
+        <li><a href="#remappingmanager">RemappingManager</a></li>
+        <li><a href="#aimassistcontroller">AimAssistController</a></li>
+        <li><a href="#cameracontroller">CameraController</a></li>
+      </ul>
+    </li>
+    <li><a href="#platform-specific-implementation">Platform-Specific Implementation</a>
+      <ul>
+        <li><a href="#pc-mouse--keyboard">PC (Mouse &amp; Keyboard)</a></li>
+        <li><a href="#console-gamepad">Console (Gamepad)</a></li>
+        <li><a href="#mobile-touch">Mobile (Touch)</a></li>
+      </ul>
+    </li>
+    <li><a href="#system-relationships">System Relationships</a>
+      <ul>
+        <li><a href="#dependency-diagram">Dependency Diagram</a></li>
+        <li><a href="#integration-points">Integration Points</a></li>
+      </ul>
+    </li>
+    <li><a href="#performance-considerations">Performance Considerations</a>
+      <ul>
+        <li><a href="#optimization-targets">Optimization Targets</a></li>
+        <li><a href="#optimization-strategies">Optimization Strategies</a></li>
+      </ul>
+    </li>
+    <li><a href="#todo-implementation-tasks">TODO: Implementation Tasks</a>
+      <ul>
+        <li><a href="#high-priority-">HIGH Priority 🔴</a></li>
+        <li><a href="#medium-priority-">MEDIUM Priority 🟡</a></li>
+        <li><a href="#low-priority-">LOW Priority 🟢</a></li>
+      </ul>
+    </li>
+    <li><a href="#references">References</a>
+      <ul>
+        <li><a href="#external-documentation">External Documentation</a></li>
+        <li><a href="#industry-examples">Industry Examples</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><h1 id="control-system---technical-design-document">Control System - Technical Design Document<a class="anchor" href="#control-system---technical-design-document">#</a></h1>
+<p><strong><a href="../README.md">← Back to Index</a></strong> | <strong><a href="./CharacterSystem.md">Next: Character System</a></strong></p>
+<hr>
+<h2 id="related-documents">Related Documents<a class="anchor" href="#related-documents">#</a></h2>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Document</th>
+          <th style="text-align: left">Relationship</th>
+          <th style="text-align: left">Link</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><strong>Controls Design</strong></td>
+          <td style="text-align: left">High-level input design</td>
+          <td style="text-align: left"><a href="../../GDD_HighLevel/GameDesign/Controls.md">GDD_HighLevel/GameDesign/Controls.md</a></td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Character System</strong></td>
+          <td style="text-align: left">Movement implementation</td>
+          <td style="text-align: left"><a href="./CharacterSystem.md">CharacterSystem.md</a></td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Weapon System</strong></td>
+          <td style="text-align: left">Combat input handling</td>
+          <td style="text-align: left"><a href="./WeaponSystem.md">WeaponSystem.md</a></td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>UI System</strong></td>
+          <td style="text-align: left">HUD input prompts</td>
+          <td style="text-align: left"><a href="../Systems/UISystem.md">../Systems/UISystem.md</a></td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Accessibility System</strong></td>
+          <td style="text-align: left">Input accessibility</td>
+          <td style="text-align: left"><a href="../Systems/AccessibilitySystem.md">../Systems/AccessibilitySystem.md</a></td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Mobile Optimization</strong></td>
+          <td style="text-align: left">Touch performance</td>
+          <td style="text-align: left"><a href="../Performance/Optimization.md">../Performance/Optimization.md</a></td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="overview">Overview<a class="anchor" href="#overview">#</a></h2>
+<h3 id="purpose">Purpose<a class="anchor" href="#purpose">#</a></h3>
+<p>The <strong>Control System</strong> provides a unified input abstraction layer that translates hardware-specific inputs into gameplay actions across all platforms (Mobile, PC, Console).</p>
+<h3 id="core-functions">Core Functions<a class="anchor" href="#core-functions">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Function</th>
+          <th style="text-align: left">Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><strong>Input Abstraction</strong></td>
+          <td style="text-align: left">Convert raw hardware input into logical game actions</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Platform Adaptation</strong></td>
+          <td style="text-align: left">Support Touch, Keyboard/Mouse, Gamepad seamlessly</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Movement Control</strong></td>
+          <td style="text-align: left">Handle twin-stick movement (move + aim independently)</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Action Binding</strong></td>
+          <td style="text-align: left">Map physical inputs to gameplay commands</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Dynamic Switching</strong></td>
+          <td style="text-align: left">Auto-detect and switch between input methods</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Customization</strong></td>
+          <td style="text-align: left">Allow key remapping and layout customization</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Accessibility</strong></td>
+          <td style="text-align: left">Support one-handed mode, hold-to-toggle, etc.</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="design-goals">Design Goals<a class="anchor" href="#design-goals">#</a></h3>
+<pre tabindex="0"><code>1. RESPONSIVE - Input latency &lt; 16ms (1 frame at 60 FPS)
+2. CONSISTENT - Same gameplay feel across all platforms
+3. CUSTOMIZABLE - Full remapping and accessibility options
+4. INTUITIVE - Platform-native controls that feel natural
+5. DYNAMIC - Seamless switching between input devices</code></pre><hr>
+<h2 id="system-architecture">System Architecture<a class="anchor" href="#system-architecture">#</a></h2>
+<h3 id="component-diagram">Component Diagram<a class="anchor" href="#component-diagram">#</a></h3>
+<pre tabindex="0"><code>┌─────────────────────────────────────────────────────────────────────┐
+│                         CONTROL SYSTEM                              │
+├─────────────────────────────────────────────────────────────────────┤
+│                                                                     │
+│  ┌──────────────┐     ┌──────────────┐     ┌──────────────┐           │
+│  │   HARDWARE   │     │   INPUT      │     │   ACTION     │           │
+│  │   INPUT      │───▶ │   PROCESSOR  │───▶│   DISPATCHER │           │
+│  │   LAYER      │     │              │     │              │           │
+│  └──────────────┘     └──────────────┘     └──────────────┘           │
+│         │                   │                   │                   │
+│         ▼                   ▼                   ▼                   │
+│  ┌──────────────┐    ┌──────────────┐     ┌──────────────┐           │
+│  │ Touch Input  │    │ Input        │     │ Character    │           │
+│  │ Keyboard     │    │ Smoothing    │     │ Controller   │           │
+│  │ Mouse        │    │ Deadzone     │    │ Weapon       │          │
+│  │ Gamepad      │    │ Sensitivity  │    │ UI System    │          │
+│  │ Gyroscope    │    │              │    │              │          │
+│  └──────────────┘    └──────────────┘    └──────────────┘          │
+│                                                                      │
+└─────────────────────────────────────────────────────────────────────┘</code></pre><h3 id="core-components">Core Components<a class="anchor" href="#core-components">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Component</th>
+          <th style="text-align: left">Responsibility</th>
+          <th style="text-align: left">Dependencies</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><strong>InputManager</strong></td>
+          <td style="text-align: left">Central input handling</td>
+          <td style="text-align: left">None (Singleton)</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>ActionMap</strong></td>
+          <td style="text-align: left">Binding definitions</td>
+          <td style="text-align: left">InputManager</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>InputProcessor</strong></td>
+          <td style="text-align: left">Smoothing, deadzone</td>
+          <td style="text-align: left">ActionMap</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>PlatformAdapter</strong></td>
+          <td style="text-align: left">Platform-specific logic</td>
+          <td style="text-align: left">InputProcessor</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>RemappingManager</strong></td>
+          <td style="text-align: left">Key customization</td>
+          <td style="text-align: left">ActionMap</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>TouchController</strong></td>
+          <td style="text-align: left">Mobile virtual controls</td>
+          <td style="text-align: left">PlatformAdapter</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="enums--types">Enums &amp; Types<a class="anchor" href="#enums--types">#</a></h2>
+<h3 id="einputaction">EInputAction<a class="anchor" href="#einputaction">#</a></h3>
+<p>Input action command type.</p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Code Name</th>
+          <th style="text-align: left">Display Name</th>
+          <th style="text-align: left">Type</th>
+          <th style="text-align: left">PC Key</th>
+          <th style="text-align: left">Console</th>
+          <th style="text-align: left">Mobile Touch</th>
+          <th style="text-align: left">Touch Zone</th>
+          <th style="text-align: left">Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><code>IA_Move</code></td>
+          <td style="text-align: left">Move</td>
+          <td style="text-align: left">Value (Vector2)</td>
+          <td style="text-align: left">WASD</td>
+          <td style="text-align: left">Left Stick</td>
+          <td style="text-align: left">Virtual Joystick</td>
+          <td style="text-align: left">Left 30%</td>
+          <td style="text-align: left">Character movement</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>IA_Look</code></td>
+          <td style="text-align: left">Look</td>
+          <td style="text-align: left">Value (Vector2)</td>
+          <td style="text-align: left">Mouse</td>
+          <td style="text-align: left">Right Stick</td>
+          <td style="text-align: left">Touch Drag</td>
+          <td style="text-align: left">Right 50%</td>
+          <td style="text-align: left">Camera/aim direction</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>IA_Fire</code></td>
+          <td style="text-align: left">Fire</td>
+          <td style="text-align: left">Button</td>
+          <td style="text-align: left">LMB</td>
+          <td style="text-align: left">RT/R2</td>
+          <td style="text-align: left">Fire Button (Hold/Tap)</td>
+          <td style="text-align: left">Bottom-Right</td>
+          <td style="text-align: left">Shoot weapon</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>IA_Aim</code></td>
+          <td style="text-align: left">Aim</td>
+          <td style="text-align: left">Button</td>
+          <td style="text-align: left">RMB</td>
+          <td style="text-align: left">LT/L2</td>
+          <td style="text-align: left">ADS Button (Toggle)</td>
+          <td style="text-align: left">Right-Center</td>
+          <td style="text-align: left">Aim down sights</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>IA_Reload</code></td>
+          <td style="text-align: left">Reload</td>
+          <td style="text-align: left">Button</td>
+          <td style="text-align: left">R</td>
+          <td style="text-align: left">X/Square</td>
+          <td style="text-align: left">Reload Button</td>
+          <td style="text-align: left">Action Bar</td>
+          <td style="text-align: left">Reload weapon</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>IA_Interact</code></td>
+          <td style="text-align: left">Interact</td>
+          <td style="text-align: left">Button</td>
+          <td style="text-align: left">F</td>
+          <td style="text-align: left">A/Cross</td>
+          <td style="text-align: left">Context Button (Auto)</td>
+          <td style="text-align: left">Center</td>
+          <td style="text-align: left">Interact with objects</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>IA_Jump</code></td>
+          <td style="text-align: left">Jump</td>
+          <td style="text-align: left">Button</td>
+          <td style="text-align: left">Space</td>
+          <td style="text-align: left">A/Cross</td>
+          <td style="text-align: left">Jump Button</td>
+          <td style="text-align: left">Action Bar</td>
+          <td style="text-align: left">Jump/vault</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>IA_Crouch</code></td>
+          <td style="text-align: left">Crouch</td>
+          <td style="text-align: left">Button</td>
+          <td style="text-align: left">C/Ctrl</td>
+          <td style="text-align: left">B/Circle</td>
+          <td style="text-align: left">Crouch Button (Toggle)</td>
+          <td style="text-align: left">Action Bar</td>
+          <td style="text-align: left">Crouch/slide</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>IA_Sprint</code></td>
+          <td style="text-align: left">Sprint</td>
+          <td style="text-align: left">Button</td>
+          <td style="text-align: left">Shift</td>
+          <td style="text-align: left">L3</td>
+          <td style="text-align: left">Joystick Edge Lock</td>
+          <td style="text-align: left">Left Zone</td>
+          <td style="text-align: left">Auto-sprint at edge</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>IA_Ability</code></td>
+          <td style="text-align: left">Ability</td>
+          <td style="text-align: left">Button</td>
+          <td style="text-align: left">Q</td>
+          <td style="text-align: left">RB/R1</td>
+          <td style="text-align: left">Ability Button</td>
+          <td style="text-align: left">Top-Right</td>
+          <td style="text-align: left">Operator ability</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>IA_Melee</code></td>
+          <td style="text-align: left">Melee</td>
+          <td style="text-align: left">Button</td>
+          <td style="text-align: left">V</td>
+          <td style="text-align: left">RS/R3</td>
+          <td style="text-align: left">Melee Button</td>
+          <td style="text-align: left">Action Bar</td>
+          <td style="text-align: left">Melee attack</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>IA_Grenade</code></td>
+          <td style="text-align: left">Grenade</td>
+          <td style="text-align: left">Button</td>
+          <td style="text-align: left">G</td>
+          <td style="text-align: left">LB/L1</td>
+          <td style="text-align: left">Grenade Button (Hold+Drag)</td>
+          <td style="text-align: left">Top-Left</td>
+          <td style="text-align: left">Throw grenade</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>IA_Ping</code></td>
+          <td style="text-align: left">Ping</td>
+          <td style="text-align: left">Button</td>
+          <td style="text-align: left">MMB</td>
+          <td style="text-align: left">D-Pad Up</td>
+          <td style="text-align: left">Double-Tap Look Zone</td>
+          <td style="text-align: left">Right Zone</td>
+          <td style="text-align: left">Ping location</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>IA_Inventory</code></td>
+          <td style="text-align: left">Inventory</td>
+          <td style="text-align: left">Button</td>
+          <td style="text-align: left">Tab</td>
+          <td style="text-align: left">D-Pad Down</td>
+          <td style="text-align: left">Inventory Icon</td>
+          <td style="text-align: left">Top-Right HUD</td>
+          <td style="text-align: left">Open inventory</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>IA_Map</code></td>
+          <td style="text-align: left">Map</td>
+          <td style="text-align: left">Button</td>
+          <td style="text-align: left">M</td>
+          <td style="text-align: left">Touchpad</td>
+          <td style="text-align: left">Map Icon</td>
+          <td style="text-align: left">Top-Left HUD</td>
+          <td style="text-align: left">Open map</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>IA_SwapPrimary</code></td>
+          <td style="text-align: left">Swap Primary</td>
+          <td style="text-align: left">Button</td>
+          <td style="text-align: left">1</td>
+          <td style="text-align: left">D-Pad Left</td>
+          <td style="text-align: left">Primary Weapon Icon</td>
+          <td style="text-align: left">Weapon Bar</td>
+          <td style="text-align: left">Equip primary</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>IA_SwapSecondary</code></td>
+          <td style="text-align: left">Swap Secondary</td>
+          <td style="text-align: left">Button</td>
+          <td style="text-align: left">2</td>
+          <td style="text-align: left">D-Pad Right</td>
+          <td style="text-align: left">Secondary Weapon Icon</td>
+          <td style="text-align: left">Weapon Bar</td>
+          <td style="text-align: left">Equip secondary</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>IA_SwapSidearm</code></td>
+          <td style="text-align: left">Swap Sidearm</td>
+          <td style="text-align: left">Button</td>
+          <td style="text-align: left">3</td>
+          <td style="text-align: left">Y/Triangle</td>
+          <td style="text-align: left">Sidearm Icon</td>
+          <td style="text-align: left">Weapon Bar</td>
+          <td style="text-align: left">Equip sidearm</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>IA_QuickHeal</code></td>
+          <td style="text-align: left">Quick Heal</td>
+          <td style="text-align: left">Button</td>
+          <td style="text-align: left">4</td>
+          <td style="text-align: left">D-Pad Down (Hold)</td>
+          <td style="text-align: left">Health Button (Hold)</td>
+          <td style="text-align: left">Bottom-Left</td>
+          <td style="text-align: left">Use healing item</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="mobile-touch-control-types">Mobile Touch Control Types<a class="anchor" href="#mobile-touch-control-types">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Control Type</th>
+          <th style="text-align: left">Gesture</th>
+          <th style="text-align: left">Activation</th>
+          <th style="text-align: left">Customizable</th>
+          <th style="text-align: left">Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><strong>Virtual Joystick</strong></td>
+          <td style="text-align: left">Touch + Drag</td>
+          <td style="text-align: left">On finger down</td>
+          <td style="text-align: left">Position, Size, Opacity</td>
+          <td style="text-align: left">Floating or fixed position</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Touch Drag</strong></td>
+          <td style="text-align: left">Swipe</td>
+          <td style="text-align: left">On finger move</td>
+          <td style="text-align: left">Sensitivity, Invert</td>
+          <td style="text-align: left">Camera/aim control</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Button (Tap)</strong></td>
+          <td style="text-align: left">Single tap</td>
+          <td style="text-align: left">On touch up</td>
+          <td style="text-align: left">Position, Size</td>
+          <td style="text-align: left">Single action trigger</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Button (Hold)</strong></td>
+          <td style="text-align: left">Press + hold</td>
+          <td style="text-align: left">Continuous</td>
+          <td style="text-align: left">Position, Size</td>
+          <td style="text-align: left">Sustained action (fire)</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Button (Toggle)</strong></td>
+          <td style="text-align: left">Tap to toggle</td>
+          <td style="text-align: left">On touch up</td>
+          <td style="text-align: left">Position, Size</td>
+          <td style="text-align: left">State switch (crouch, ADS)</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Context Button</strong></td>
+          <td style="text-align: left">Auto-appear</td>
+          <td style="text-align: left">Near target</td>
+          <td style="text-align: left">Threshold distance</td>
+          <td style="text-align: left">Appears when interactable nearby</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Edge Lock</strong></td>
+          <td style="text-align: left">Joystick to edge</td>
+          <td style="text-align: left">Auto-lock</td>
+          <td style="text-align: left">Threshold %</td>
+          <td style="text-align: left">Sprint activation at joystick limit</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Double-Tap</strong></td>
+          <td style="text-align: left">2 quick taps</td>
+          <td style="text-align: left">On second tap</td>
+          <td style="text-align: left">Tap interval</td>
+          <td style="text-align: left">Alternative action trigger</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Hold+Drag</strong></td>
+          <td style="text-align: left">Hold then drag</td>
+          <td style="text-align: left">Direction aim</td>
+          <td style="text-align: left">Sensitivity</td>
+          <td style="text-align: left">Grenade trajectory preview</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="mobile-touch-zone-layout">Mobile Touch Zone Layout<a class="anchor" href="#mobile-touch-zone-layout">#</a></h3>
+<pre tabindex="0"><code>┌─────────────────────────────────────────────────────────────────────────┐
+│ [MAP]  [PING-MINI]         [MATCH INFO]           [INV] [SETTINGS]     │
+│                                                              [ABILITY] │
+│                                                                        │
+│  [GRENADE]                                                   [AIM]     │
+│ (Hold+Drag)                     LOOK ZONE                  (Toggle)    │
+│                              (Touch Drag)                              │
+│                                                                        │
+│                    [INTERACT]                                          │
+│                   (Context Auto)                            [FIRE]     │
+│                                                            (Hold/Tap)  │
+│  ┌─────────────┐                                                       │
+│  │  JOYSTICK   │                                 [RELOAD] [JUMP]       │
+│  │  (Floating) │   [HEALTH]                     [MELEE] [CROUCH]       │
+│  └─────────────┘  (Hold Use)                                           │
+│                                                                        │
+│  [PRIMARY] [SECONDARY] [SIDEARM]                     [ACTION BAR]      │
+│        WEAPON SWAP BAR                                                 │
+└─────────────────────────────────────────────────────────────────────────┘</code></pre><h3 id="mobile-control-customization-options">Mobile Control Customization Options<a class="anchor" href="#mobile-control-customization-options">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Setting</th>
+          <th style="text-align: left">Range</th>
+          <th style="text-align: left">Default</th>
+          <th style="text-align: left">Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><strong>Button Size</strong></td>
+          <td style="text-align: left">50% - 150%</td>
+          <td style="text-align: left">100%</td>
+          <td style="text-align: left">Scale all buttons</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Button Opacity</strong></td>
+          <td style="text-align: left">20% - 100%</td>
+          <td style="text-align: left">70%</td>
+          <td style="text-align: left">Transparency when not pressed</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Joystick Size</strong></td>
+          <td style="text-align: left">80% - 150%</td>
+          <td style="text-align: left">100%</td>
+          <td style="text-align: left">Movement joystick size</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Joystick Type</strong></td>
+          <td style="text-align: left">Fixed / Floating</td>
+          <td style="text-align: left">Floating</td>
+          <td style="text-align: left">Position behavior</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Fire Mode</strong></td>
+          <td style="text-align: left">Tap / Hold / Auto</td>
+          <td style="text-align: left">Hold</td>
+          <td style="text-align: left">How fire button works</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>ADS Mode</strong></td>
+          <td style="text-align: left">Hold / Toggle</td>
+          <td style="text-align: left">Toggle</td>
+          <td style="text-align: left">How aim button works</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Crouch Mode</strong></td>
+          <td style="text-align: left">Hold / Toggle</td>
+          <td style="text-align: left">Toggle</td>
+          <td style="text-align: left">How crouch button works</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Sprint Lock</strong></td>
+          <td style="text-align: left">On / Off</td>
+          <td style="text-align: left">On</td>
+          <td style="text-align: left">Auto-sprint at joystick edge</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Gyroscope</strong></td>
+          <td style="text-align: left">Off / ADS Only / Always</td>
+          <td style="text-align: left">Off</td>
+          <td style="text-align: left">Motion aiming</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Gyro Sensitivity</strong></td>
+          <td style="text-align: left">0.1 - 3.0</td>
+          <td style="text-align: left">1.0</td>
+          <td style="text-align: left">Motion sensitivity</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Look Sensitivity X</strong></td>
+          <td style="text-align: left">0.1 - 3.0</td>
+          <td style="text-align: left">1.2</td>
+          <td style="text-align: left">Horizontal look speed</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Look Sensitivity Y</strong></td>
+          <td style="text-align: left">0.1 - 3.0</td>
+          <td style="text-align: left">1.0</td>
+          <td style="text-align: left">Vertical look speed</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Aim Sensitivity</strong></td>
+          <td style="text-align: left">0.1 - 2.0</td>
+          <td style="text-align: left">0.6</td>
+          <td style="text-align: left">Sensitivity while ADS</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Auto-Fire</strong></td>
+          <td style="text-align: left">Off / On</td>
+          <td style="text-align: left">Off</td>
+          <td style="text-align: left">Fire when aiming at enemy</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Left-Hand Mode</strong></td>
+          <td style="text-align: left">Off / On</td>
+          <td style="text-align: left">Off</td>
+          <td style="text-align: left">Mirror control layout</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h3 id="einputmethod">EInputMethod<a class="anchor" href="#einputmethod">#</a></h3>
+<p>Input device type detection.</p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Code Name</th>
+          <th style="text-align: left">Display Name</th>
+          <th style="text-align: left">Platform</th>
+          <th style="text-align: left">Prompt Style</th>
+          <th style="text-align: left">Aim Assist</th>
+          <th style="text-align: left">Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><code>EIM_Touch</code></td>
+          <td style="text-align: left">Touch</td>
+          <td style="text-align: left">Mobile</td>
+          <td style="text-align: left">Touch icons</td>
+          <td style="text-align: left">Strong</td>
+          <td style="text-align: left">Touchscreen input</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>EIM_Keyboard</code></td>
+          <td style="text-align: left">Keyboard</td>
+          <td style="text-align: left">PC</td>
+          <td style="text-align: left">Key labels</td>
+          <td style="text-align: left">None</td>
+          <td style="text-align: left">Keyboard input</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>EIM_Gamepad</code></td>
+          <td style="text-align: left">Gamepad</td>
+          <td style="text-align: left">Console/PC</td>
+          <td style="text-align: left">Button icons</td>
+          <td style="text-align: left">Medium</td>
+          <td style="text-align: left">Controller input</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h3 id="econtrolpreset">EControlPreset<a class="anchor" href="#econtrolpreset">#</a></h3>
+<p>Control layout preset.</p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Code Name</th>
+          <th style="text-align: left">Display Name</th>
+          <th style="text-align: left">Target</th>
+          <th style="text-align: left">Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><code>ECP_Default</code></td>
+          <td style="text-align: left">Default</td>
+          <td style="text-align: left">All</td>
+          <td style="text-align: left">Standard layout</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>ECP_Console</code></td>
+          <td style="text-align: left">Console</td>
+          <td style="text-align: left">Console</td>
+          <td style="text-align: left">Console-optimized</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>ECP_Claw</code></td>
+          <td style="text-align: left">Claw</td>
+          <td style="text-align: left">Mobile</td>
+          <td style="text-align: left">Claw grip layout</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>ECP_LeftHanded</code></td>
+          <td style="text-align: left">Left Handed</td>
+          <td style="text-align: left">All</td>
+          <td style="text-align: left">Left-hand dominant</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>ECP_Accessibility</code></td>
+          <td style="text-align: left">Accessibility</td>
+          <td style="text-align: left">All</td>
+          <td style="text-align: left">Simplified for accessibility</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>ECP_Custom</code></td>
+          <td style="text-align: left">Custom</td>
+          <td style="text-align: left">All</td>
+          <td style="text-align: left">User-defined mapping</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h3 id="emovementmode">EMovementMode<a class="anchor" href="#emovementmode">#</a></h3>
+<p>Advanced movement state.</p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Code Name</th>
+          <th style="text-align: left">Display Name</th>
+          <th style="text-align: left">Speed Mult</th>
+          <th style="text-align: left">Stamina Cost</th>
+          <th style="text-align: left">Can Fire</th>
+          <th style="text-align: left">Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><code>EMM_Walk</code></td>
+          <td style="text-align: left">Walk</td>
+          <td style="text-align: left">1.0×</td>
+          <td style="text-align: left">0/s</td>
+          <td style="text-align: left">Yes</td>
+          <td style="text-align: left">Normal walking</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>EMM_Sprint</code></td>
+          <td style="text-align: left">Sprint</td>
+          <td style="text-align: left">1.5×</td>
+          <td style="text-align: left">10/s</td>
+          <td style="text-align: left">No</td>
+          <td style="text-align: left">Fast running</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>EMM_Crouch</code></td>
+          <td style="text-align: left">Crouch</td>
+          <td style="text-align: left">0.6×</td>
+          <td style="text-align: left">0/s</td>
+          <td style="text-align: left">Yes</td>
+          <td style="text-align: left">Crouching</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>EMM_Slide</code></td>
+          <td style="text-align: left">Slide</td>
+          <td style="text-align: left">1.8×</td>
+          <td style="text-align: left">15 (burst)</td>
+          <td style="text-align: left">Limited</td>
+          <td style="text-align: left">Sliding</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>EMM_Vault</code></td>
+          <td style="text-align: left">Vault</td>
+          <td style="text-align: left">0.5×</td>
+          <td style="text-align: left">5 (burst)</td>
+          <td style="text-align: left">No</td>
+          <td style="text-align: left">Climbing obstacle</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>EMM_ADS</code></td>
+          <td style="text-align: left">Aim Down Sights</td>
+          <td style="text-align: left">0.5×</td>
+          <td style="text-align: left">0/s</td>
+          <td style="text-align: left">Yes</td>
+          <td style="text-align: left">Aiming weapon</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h3 id="etouchzone">ETouchZone<a class="anchor" href="#etouchzone">#</a></h3>
+<p>Mobile touch screen zone.</p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Code Name</th>
+          <th style="text-align: left">Display Name</th>
+          <th style="text-align: left">Screen Area</th>
+          <th style="text-align: left">Function</th>
+          <th style="text-align: left">Customizable</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><code>ETZ_LeftStick</code></td>
+          <td style="text-align: left">Left Stick</td>
+          <td style="text-align: left">Bottom-Left 30%</td>
+          <td style="text-align: left">Movement</td>
+          <td style="text-align: left">Yes</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>ETZ_RightLook</code></td>
+          <td style="text-align: left">Right Look</td>
+          <td style="text-align: left">Right 50%</td>
+          <td style="text-align: left">Aim/Look</td>
+          <td style="text-align: left">Yes</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>ETZ_FireButton</code></td>
+          <td style="text-align: left">Fire Button</td>
+          <td style="text-align: left">Bottom-Right</td>
+          <td style="text-align: left">Shoot</td>
+          <td style="text-align: left">Yes</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>ETZ_AimButton</code></td>
+          <td style="text-align: left">Aim Button</td>
+          <td style="text-align: left">Right-Center</td>
+          <td style="text-align: left">ADS</td>
+          <td style="text-align: left">Yes</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>ETZ_ActionButtons</code></td>
+          <td style="text-align: left">Action Buttons</td>
+          <td style="text-align: left">Right-Bottom</td>
+          <td style="text-align: left">Actions</td>
+          <td style="text-align: left">Yes</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>ETZ_AbilityButton</code></td>
+          <td style="text-align: left">Ability Button</td>
+          <td style="text-align: left">Right-Top</td>
+          <td style="text-align: left">Ability</td>
+          <td style="text-align: left">Yes</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h3 id="eaimassistlevel">EAimAssistLevel<a class="anchor" href="#eaimassistlevel">#</a></h3>
+<p>Aim assist strength setting.</p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Code Name</th>
+          <th style="text-align: left">Display Name</th>
+          <th style="text-align: left">Magnetism</th>
+          <th style="text-align: left">Slowdown</th>
+          <th style="text-align: left">Snap</th>
+          <th style="text-align: left">Target</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><code>EAAL_Off</code></td>
+          <td style="text-align: left">Off</td>
+          <td style="text-align: left">0%</td>
+          <td style="text-align: left">0%</td>
+          <td style="text-align: left">Off</td>
+          <td style="text-align: left">PC/Pro</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>EAAL_Low</code></td>
+          <td style="text-align: left">Low</td>
+          <td style="text-align: left">20%</td>
+          <td style="text-align: left">15%</td>
+          <td style="text-align: left">Off</td>
+          <td style="text-align: left">Console</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>EAAL_Medium</code></td>
+          <td style="text-align: left">Medium</td>
+          <td style="text-align: left">40%</td>
+          <td style="text-align: left">30%</td>
+          <td style="text-align: left">Off</td>
+          <td style="text-align: left">Console</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>EAAL_High</code></td>
+          <td style="text-align: left">High</td>
+          <td style="text-align: left">60%</td>
+          <td style="text-align: left">50%</td>
+          <td style="text-align: left">Weak</td>
+          <td style="text-align: left">Console/Mobile</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>EAAL_Touch</code></td>
+          <td style="text-align: left">Touch (Mobile)</td>
+          <td style="text-align: left">80%</td>
+          <td style="text-align: left">60%</td>
+          <td style="text-align: left">Strong</td>
+          <td style="text-align: left">Mobile</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h3 id="econtrolreferenceframe">EControlReferenceFrame<a class="anchor" href="#econtrolreferenceframe">#</a></h3>
+<p>Defines how directional input is interpreted relative to the game world.</p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Code Name</th>
+          <th style="text-align: left">Display Name</th>
+          <th style="text-align: left">Up Input Means&hellip;</th>
+          <th style="text-align: left">Best For</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><code>ECRF_CameraRelative</code></td>
+          <td style="text-align: left">Camera Relative</td>
+          <td style="text-align: left">Top of Screen</td>
+          <td style="text-align: left">Standard Top-Down/ISO</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>ECRF_WorldRelative</code></td>
+          <td style="text-align: left">World Relative</td>
+          <td style="text-align: left">Global North (Y+)</td>
+          <td style="text-align: left">Fixed Camera isometric</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>ECRF_Character</code></td>
+          <td style="text-align: left">Character Relative</td>
+          <td style="text-align: left">Character Forward</td>
+          <td style="text-align: left">Tank Controls</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h3 id="efacingbehavior">EFacingBehavior<a class="anchor" href="#efacingbehavior">#</a></h3>
+<p>Defines how the character body orients itself during movement.</p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Code Name</th>
+          <th style="text-align: left">Display Name</th>
+          <th style="text-align: left">Behavior</th>
+          <th style="text-align: left">Use Case</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><code>EFB_FaceAim</code></td>
+          <td style="text-align: left">Face Aim</td>
+          <td style="text-align: left">Body always faces reticle/aim direction</td>
+          <td style="text-align: left">Tactical Shooters, Strafing</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>EFB_FaceMovement</code></td>
+          <td style="text-align: left">Face Movement</td>
+          <td style="text-align: left">Body rotates to face movement direction</td>
+          <td style="text-align: left">Adventure, Exploration</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h3 id="eaimconstraint">EAimConstraint<a class="anchor" href="#eaimconstraint">#</a></h3>
+<p>Limits the cursor or aim point behavior.</p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Code Name</th>
+          <th style="text-align: left">Display Name</th>
+          <th style="text-align: left">Behavior</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><code>EAC_None</code></td>
+          <td style="text-align: left">Free Cursor</td>
+          <td style="text-align: left">Unbounded mouse/aim movement</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>EAC_Clamped</code></td>
+          <td style="text-align: left">Clamped Radius</td>
+          <td style="text-align: left">Cursor constrained within radius R</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>EAC_ScreenEdge</code></td>
+          <td style="text-align: left">Screen Edge</td>
+          <td style="text-align: left">Cursor constrained to screen bounds</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="code-names">Code Names<a class="anchor" href="#code-names">#</a></h2>
+<h3 id="input-events">Input Events<a class="anchor" href="#input-events">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Code Name</th>
+          <th style="text-align: left">Trigger</th>
+          <th style="text-align: left">Parameters</th>
+          <th style="text-align: left">Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><code>INPUT_ACTION</code></td>
+          <td style="text-align: left">Action triggered</td>
+          <td style="text-align: left">ActionID, Value</td>
+          <td style="text-align: left">Input action received</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>INPUT_METHOD_CHANGED</code></td>
+          <td style="text-align: left">Device switched</td>
+          <td style="text-align: left">OldMethod, NewMethod</td>
+          <td style="text-align: left">Input device changed</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>INPUT_REMAP</code></td>
+          <td style="text-align: left">Key remapped</td>
+          <td style="text-align: left">ActionID, OldKey, NewKey</td>
+          <td style="text-align: left">Control remapped</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>INPUT_PRESET_APPLIED</code></td>
+          <td style="text-align: left">Preset selected</td>
+          <td style="text-align: left">PresetID</td>
+          <td style="text-align: left">Control preset applied</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="movement-input-events">Movement Input Events<a class="anchor" href="#movement-input-events">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Code Name</th>
+          <th style="text-align: left">Trigger</th>
+          <th style="text-align: left">Parameters</th>
+          <th style="text-align: left">Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><code>CTRL_MOVE_START</code></td>
+          <td style="text-align: left">Movement begins</td>
+          <td style="text-align: left">Direction</td>
+          <td style="text-align: left">Started moving</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>CTRL_MOVE_STOP</code></td>
+          <td style="text-align: left">Movement ends</td>
+          <td style="text-align: left">-</td>
+          <td style="text-align: left">Stopped moving</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>CTRL_SPRINT_TOGGLE</code></td>
+          <td style="text-align: left">Sprint toggled</td>
+          <td style="text-align: left">IsActive</td>
+          <td style="text-align: left">Sprint state changed</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>CTRL_CROUCH_TOGGLE</code></td>
+          <td style="text-align: left">Crouch toggled</td>
+          <td style="text-align: left">IsActive</td>
+          <td style="text-align: left">Crouch state changed</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>CTRL_SLIDE_START</code></td>
+          <td style="text-align: left">Slide triggered</td>
+          <td style="text-align: left">Direction, Speed</td>
+          <td style="text-align: left">Started sliding</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="combat-input-events">Combat Input Events<a class="anchor" href="#combat-input-events">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Code Name</th>
+          <th style="text-align: left">Trigger</th>
+          <th style="text-align: left">Parameters</th>
+          <th style="text-align: left">Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><code>CTRL_FIRE_START</code></td>
+          <td style="text-align: left">Fire pressed</td>
+          <td style="text-align: left">-</td>
+          <td style="text-align: left">Started firing</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>CTRL_FIRE_STOP</code></td>
+          <td style="text-align: left">Fire released</td>
+          <td style="text-align: left">-</td>
+          <td style="text-align: left">Stopped firing</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>CTRL_AIM_START</code></td>
+          <td style="text-align: left">ADS pressed</td>
+          <td style="text-align: left">-</td>
+          <td style="text-align: left">Entered aim mode</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>CTRL_AIM_STOP</code></td>
+          <td style="text-align: left">ADS released</td>
+          <td style="text-align: left">-</td>
+          <td style="text-align: left">Exited aim mode</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>CTRL_RELOAD</code></td>
+          <td style="text-align: left">Reload pressed</td>
+          <td style="text-align: left">-</td>
+          <td style="text-align: left">Reload triggered</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="touch-events-mobile">Touch Events (Mobile)<a class="anchor" href="#touch-events-mobile">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Code Name</th>
+          <th style="text-align: left">Trigger</th>
+          <th style="text-align: left">Parameters</th>
+          <th style="text-align: left">Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><code>TOUCH_JOYSTICK_MOVE</code></td>
+          <td style="text-align: left">Joystick dragged</td>
+          <td style="text-align: left">Direction, Magnitude</td>
+          <td style="text-align: left">Virtual joystick input</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>TOUCH_LOOK_DRAG</code></td>
+          <td style="text-align: left">Look zone dragged</td>
+          <td style="text-align: left">Delta</td>
+          <td style="text-align: left">Look area touch</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>TOUCH_BUTTON_TAP</code></td>
+          <td style="text-align: left">Button tapped</td>
+          <td style="text-align: left">ButtonID</td>
+          <td style="text-align: left">Button pressed</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>TOUCH_GESTURE</code></td>
+          <td style="text-align: left">Gesture detected</td>
+          <td style="text-align: left">GestureType</td>
+          <td style="text-align: left">Special gesture</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="hud-events">HUD Events<a class="anchor" href="#hud-events">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Code Name</th>
+          <th style="text-align: left">Trigger</th>
+          <th style="text-align: left">Parameters</th>
+          <th style="text-align: left">Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><code>HUD_PROMPT_SHOW</code></td>
+          <td style="text-align: left">Prompt displayed</td>
+          <td style="text-align: left">ActionID, PromptType</td>
+          <td style="text-align: left">Input prompt shown</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>HUD_PROMPT_HIDE</code></td>
+          <td style="text-align: left">Prompt hidden</td>
+          <td style="text-align: left">ActionID</td>
+          <td style="text-align: left">Input prompt removed</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>HUD_LAYOUT_CHANGED</code></td>
+          <td style="text-align: left">Layout modified</td>
+          <td style="text-align: left">LayoutID</td>
+          <td style="text-align: left">HUD layout changed</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>HUD_BUTTON_MOVED</code></td>
+          <td style="text-align: left">Button moved</td>
+          <td style="text-align: left">ButtonID, NewPosition</td>
+          <td style="text-align: left">Touch button moved</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="core-classes">Core Classes<a class="anchor" href="#core-classes">#</a></h2>
+<h3 id="inputmanager">InputManager<a class="anchor" href="#inputmanager">#</a></h3>
+<p><strong>Purpose:</strong> Central singleton that coordinates all input processing.</p>
+<p><strong>Pseudocode:</strong></p>
+<pre tabindex="0"><code>CLASS InputManager:
+    
+    // Singleton instance
+    STATIC instance: InputManager
+    
+    // Current state
+    currentInputMethod: EInputMethod
+    actionMap: ActionMap
+    inputProcessor: InputProcessor
+    
+    // Settings
+    sensitivity: Float = 1.0
+    invertY: Boolean = false
+    aimAssistLevel: EAimAssistLevel
+    referenceFrame: EControlReferenceFrame = ECRF_CameraRelative
+    facingBehavior: EFacingBehavior = EFB_FaceAim
+    aimConstraint: EAimConstraint = EAC_Clamped
+    
+    // Initialize on game start
+    FUNCTION Initialize():
+        DetectPlatform()
+        LoadActionMap()
+        LoadUserSettings()
+        RegisterInputCallbacks()
+    END FUNCTION
+    
+    // Called every frame
+    FUNCTION ProcessInput(deltaTime):
+        // Get raw input from hardware
+        rawInput = GetRawInput()
+        
+        // Process through input processor (deadzone, smoothing)
+        processedInput = inputProcessor.Process(rawInput)
+        
+        // Dispatch to appropriate systems
+        FOR EACH action IN processedInput.triggeredActions:
+            DispatchAction(action)
+        END FOR
+        
+        // Check for input method changes
+        IF DetectMethodChange():
+            SwitchInputMethod()
+            EMIT EVENT &#34;INPUT_METHOD_CHANGED&#34;
+        END IF
+    END FUNCTION
+    
+    // Dispatch action to listeners
+    FUNCTION DispatchAction(action):
+        SWITCH action.type:
+            CASE Movement:
+                CharacterController.HandleMovement(action.value)
+            CASE Combat:
+                WeaponSystem.HandleCombatInput(action)
+            CASE Interaction:
+                InteractionSystem.HandleInteraction(action)
+            CASE UI:
+                UISystem.HandleUIInput(action)
+        END SWITCH
+    END FUNCTION
+    
+    // Auto-detect input method from last input
+    FUNCTION DetectMethodChange():
+        IF lastInput.source != currentInputMethod:
+            RETURN true
+        END IF
+        RETURN false
+    END FUNCTION</code></pre><p><strong>Relationships:</strong></p>
+<ul>
+<li>→ <strong>CharacterController</strong>: Sends movement commands</li>
+<li>→ <strong>WeaponSystem</strong>: Sends combat commands (fire, reload, aim)</li>
+<li>→ <strong>UISystem</strong>: Notifies of input method changes for prompt updates</li>
+<li>→ <strong>InteractionSystem</strong>: Sends interact commands</li>
+</ul>
+<hr>
+<h3 id="actionmap">ActionMap<a class="anchor" href="#actionmap">#</a></h3>
+<p><strong>Purpose:</strong> Defines mappings between hardware inputs and game actions.</p>
+<p><strong>Pseudocode:</strong></p>
+<pre tabindex="0"><code>CLASS ActionMap:
+    
+    // Binding storage
+    bindings: Map&lt;EInputAction, List&lt;InputBinding&gt;&gt;
+    
+    // Platform-specific defaults
+    pcDefaults: Map&lt;EInputAction, KeyCode&gt;
+    consoleDefaults: Map&lt;EInputAction, GamepadButton&gt;
+    mobileDefaults: Map&lt;EInputAction, TouchZone&gt;
+    
+    // Load default bindings for current platform
+    FUNCTION LoadDefaults(platform):
+        SWITCH platform:
+            CASE PC:
+                bindings = CreateBindingsFrom(pcDefaults)
+            CASE Console:
+                bindings = CreateBindingsFrom(consoleDefaults)
+            CASE Mobile:
+                bindings = CreateBindingsFrom(mobileDefaults)
+        END SWITCH
+    END FUNCTION
+    
+    // Get all bindings for an action
+    FUNCTION GetBindings(action: EInputAction) -&gt; List&lt;InputBinding&gt;:
+        RETURN bindings[action]
+    END FUNCTION
+    
+    // Check if input triggers any action
+    FUNCTION CheckInput(input: RawInput) -&gt; EInputAction?:
+        FOR EACH (action, bindingList) IN bindings:
+            FOR EACH binding IN bindingList:
+                IF binding.Matches(input):
+                    RETURN action
+                END IF
+            END FOR
+        END FOR
+        RETURN null
+    END FUNCTION
+    
+    // Remap an action to new key
+    FUNCTION RemapAction(action, newKey):
+        // Check for conflicts
+        conflictAction = FindActionWithKey(newKey)
+        IF conflictAction != null:
+            EMIT WARNING &#34;Key conflict with &#34; + conflictAction
+            RETURN false
+        END IF
+        
+        // Apply new binding
+        oldKey = bindings[action].primary
+        bindings[action].primary = newKey
+        
+        EMIT EVENT &#34;INPUT_REMAP&#34; WITH (action, oldKey, newKey)
+        SaveToUserSettings()
+        RETURN true
+    END FUNCTION</code></pre><p><strong>Data Structure:</strong></p>
+<pre tabindex="0"><code>InputBinding:
+    action: EInputAction          // What game action this triggers
+    primaryKey: KeyCode           // Main key/button
+    secondaryKey: KeyCode         // Alternative key (optional)
+    modifiers: List&lt;KeyCode&gt;      // Shift, Ctrl, etc.
+    inputType: ButtonType         // Press, Hold, Release, Axis
+    isRemappable: Boolean         // Can user change this?</code></pre><hr>
+<h3 id="inputprocessor">InputProcessor<a class="anchor" href="#inputprocessor">#</a></h3>
+<p><strong>Purpose:</strong> Process raw input through smoothing, deadzone, and sensitivity.</p>
+<p><strong>Pseudocode:</strong></p>
+<pre tabindex="0"><code>CLASS InputProcessor:
+    
+    // Settings
+    deadzoneInner: Float = 0.15
+    deadzoneOuter: Float = 0.95
+    smoothingFactor: Float = 0.1
+    sensitivityX: Float = 1.0
+    sensitivityY: Float = 1.0
+    
+    // State
+    previousInput: Vector2
+    smoothedInput: Vector2
+    
+    // Main processing pipeline
+    FUNCTION Process(rawInput: Vector2) -&gt; Vector2:
+        // Step 1: Apply deadzone
+        processed = ApplyDeadzone(rawInput)
+        
+        // Step 2: Apply sensitivity
+        processed.x = processed.x * sensitivityX
+        processed.y = processed.y * sensitivityY
+        
+        // Step 3: Apply smoothing (for mobile/gamepad)
+        IF currentInputMethod IN [Touch, Gamepad]:
+            processed = ApplySmoothing(processed)
+        END IF
+        
+        // Step 4: Clamp to valid range
+        processed = Clamp(processed, -1.0, 1.0)
+        
+        RETURN processed
+    END FUNCTION
+    
+    // Radial deadzone implementation
+    FUNCTION ApplyDeadzone(input: Vector2) -&gt; Vector2:
+        magnitude = input.Length()
+        
+        // Inside inner deadzone - no input
+        IF magnitude &lt; deadzoneInner:
+            RETURN Vector2.Zero
+        END IF
+        
+        // Outside outer deadzone - full input
+        IF magnitude &gt; deadzoneOuter:
+            RETURN input.Normalized()
+        END IF
+        
+        // Lerp between deadzones
+        normalizedMagnitude = (magnitude - deadzoneInner) / (deadzoneOuter - deadzoneInner)
+        RETURN input.Normalized() * normalizedMagnitude
+    END FUNCTION
+    
+    // Exponential smoothing
+    FUNCTION ApplySmoothing(input: Vector2) -&gt; Vector2:
+        smoothedInput = Lerp(previousInput, input, smoothingFactor)
+        previousInput = smoothedInput
+        RETURN smoothedInput
+    END FUNCTION
+
+    // Reticle/Cursor Constraint Logic (Mouse/Gamepad)
+    FUNCTION ApplyAimConstraint(rawInput: Vector2, charPosition: Vector2) -&gt; Vector2:
+        IF aimConstraint == EAC_Clamped:
+            offset = rawInput - charPosition
+            IF offset.Length() &gt; maxAimRadius:
+                RETURN charPosition + offset.Normalized() * maxAimRadius
+            END IF
+        END IF
+        RETURN rawInput
+    END FUNCTION</code></pre><p><strong>Platform-Specific Settings:</strong></p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Platform</th>
+          <th style="text-align: left">Deadzone Inner</th>
+          <th style="text-align: left">Deadzone Outer</th>
+          <th style="text-align: left">Smoothing</th>
+          <th style="text-align: left">Notes</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">PC (Mouse)</td>
+          <td style="text-align: left">0</td>
+          <td style="text-align: left">1.0</td>
+          <td style="text-align: left">None</td>
+          <td style="text-align: left">Direct 1:1 mapping</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">PC (Gamepad)</td>
+          <td style="text-align: left">0.15</td>
+          <td style="text-align: left">0.95</td>
+          <td style="text-align: left">0.1</td>
+          <td style="text-align: left">Standard deadzone</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Console</td>
+          <td style="text-align: left">0.18</td>
+          <td style="text-align: left">0.92</td>
+          <td style="text-align: left">0.15</td>
+          <td style="text-align: left">Slightly larger deadzone</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Mobile</td>
+          <td style="text-align: left">0.1</td>
+          <td style="text-align: left">0.98</td>
+          <td style="text-align: left">0.2</td>
+          <td style="text-align: left">More smoothing</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h3 id="movementcontroller">MovementController<a class="anchor" href="#movementcontroller">#</a></h3>
+<p><strong>Purpose:</strong> Handle twin-stick movement and rotation independently.</p>
+<p><strong>Pseudocode:</strong></p>
+<pre tabindex="0"><code>CLASS MovementController:
+    
+    // References
+    character: Character
+    cameraController: CameraController
+    
+    // Movement state
+    currentMode: EMovementMode = Walk
+    moveDirection: Vector2
+    lookDirection: Vector2
+    
+    // Process movement input
+    FUNCTION HandleMovementInput(moveInput: Vector2, lookInput: Vector2):
+        // Resolve movement based on settings (Camera vs World vs Character relative)
+        worldMoveDir = ResolveMovementFrame(moveInput)
+        
+        // Store for physics update
+        moveDirection = worldMoveDir
+        
+        // Handle look direction based on input method
+        IF InputManager.currentInputMethod == Mouse:
+            // PC: Project mouse to ground plane
+            lookDirection = CalculateMouseLookDirection()
+        ELSE:
+            // Gamepad/Mobile: Use input vector directly
+            lookDirection = lookInput
+        END IF
+        
+        // Update character
+        UpdateCharacterMovement()
+        UpdateCharacterRotation()
+    END FUNCTION
+    
+    // Convert input to camera-relative world direction
+    FUNCTION ConvertToWorldSpace(input: Vector2) -&gt; Vector3:
+        cameraRight = cameraController.GetRightVector()
+        cameraForward = cameraController.GetForwardVector()
+        
+        // Project camera vectors to ground plane (ignore Y)
+        cameraRight.y = 0
+        cameraForward.y = 0
+        cameraRight.Normalize()
+        cameraForward.Normalize()
+        
+        // Combine input with camera directions
+        worldDir = (cameraRight * input.x) + (cameraForward * input.y)
+        
+        RETURN worldDir.Normalized()
+    END FUNCTION
+    
+    // PC: Calculate look direction from mouse position
+    FUNCTION CalculateMouseLookDirection() -&gt; Vector2:
+        // Raycast from mouse to ground plane
+        mousePos = Input.GetMousePosition()
+        ray = cameraController.ScreenToWorldRay(mousePos)
+        
+        // Find intersection with ground
+        groundHit = Raycast(ray, GroundPlane)
+        
+        IF groundHit.success:
+            // Direction from character to hit point
+            toTarget = groundHit.point - character.position
+            toTarget.y = 0
+            
+            // Apply Aim Constraint (Clamping) at the input level if needed
+            // But usually handled in UI/Crosshair, here we just get direction
+            
+            RETURN toTarget.Normalized()
+        END IF
+        
+        RETURN character.forwardDirection
+    END FUNCTION
+    
+    // Resolve movement vector based on User Settings
+    FUNCTION ResolveMovementFrame(input: Vector2) -&gt; Vector3:
+        SWITCH settings.referenceFrame:
+            CASE ECRF_CameraRelative:
+                RETURN ConvertToCameraSpace(input)
+            CASE ECRF_WorldRelative:
+                RETURN Vector3(input.x, 0, input.y) // Direct mapping to World X/Z
+            CASE ECRF_Character:
+                // Move relative to character&#39;s current forward
+                RETURN (character.forward * input.y) + (character.right * input.x)
+        END SWITCH
+    END FUNCTION
+    
+    // Apply movement to character (called in physics update)
+    FUNCTION UpdateCharacterMovement():
+        // Calculate speed based on mode
+        baseSpeed = character.baseSpeed
+        speedMult = GetSpeedMultiplier(currentMode)
+        finalSpeed = baseSpeed * speedMult
+        
+        // Check stamina for sprint
+        IF currentMode == Sprint:
+            IF character.stamina &lt;= 0:
+                SetMovementMode(Walk)
+                finalSpeed = baseSpeed
+            ELSE:
+                character.ConsumeStamina(10 * deltaTime)
+            END IF
+        END IF
+        
+        // Apply velocity
+        character.velocity = moveDirection * finalSpeed
+    END FUNCTION
+    
+    // Apply rotation to character
+    FUNCTION UpdateCharacterRotation():
+        targetRotation = character.rotation
+        
+        // Decide rotation based on Facing Behavior setting
+        SWITCH settings.facingBehavior:
+            CASE EFB_FaceAim:
+                // Standard Shooter: Face where we are aiming
+                IF lookDirection.Length() &gt; 0.1:
+                    targetRotation = LookRotation(lookDirection)
+                END IF
+                
+            CASE EFB_FaceMovement:
+                // Adventure Style: Face where we are running
+                // Exception: Always face aim if firing or ADS
+                IF IsFiringOrADS():
+                    targetRotation = LookRotation(lookDirection)
+                ELSE IF moveDirection.Length() &gt; 0.1:
+                    targetRotation = LookRotation(moveDirection)
+                END IF
+        END SWITCH
+
+        // Smooth rotation
+        character.rotation = SmoothRotate(
+            character.rotation, 
+            targetRotation, 
+            rotationSpeed * deltaTime
+        )
+    END FUNCTION</code></pre><p><strong>Movement Modes:</strong></p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Mode</th>
+          <th style="text-align: left">Entry Condition</th>
+          <th style="text-align: left">Exit Condition</th>
+          <th style="text-align: left">Speed Mult</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Walk</td>
+          <td style="text-align: left">Default</td>
+          <td style="text-align: left">Sprint/Crouch input</td>
+          <td style="text-align: left">1.0×</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Sprint</td>
+          <td style="text-align: left">Shift + Moving forward + HasStamina</td>
+          <td style="text-align: left">ReleaseShift OR OutOfStamina OR ADS</td>
+          <td style="text-align: left">1.5×</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Crouch</td>
+          <td style="text-align: left">Press Crouch while not sprinting</td>
+          <td style="text-align: left">Press Crouch again</td>
+          <td style="text-align: left">0.6×</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Slide</td>
+          <td style="text-align: left">Press Crouch while sprinting</td>
+          <td style="text-align: left">SlideTimer expires</td>
+          <td style="text-align: left">1.8× (decaying)</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">ADS</td>
+          <td style="text-align: left">Hold ADS button</td>
+          <td style="text-align: left">Release ADS</td>
+          <td style="text-align: left">0.5×</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h3 id="touchcontroller">TouchController<a class="anchor" href="#touchcontroller">#</a></h3>
+<p><strong>Purpose:</strong> Handle mobile-specific virtual controls.</p>
+<p><strong>Pseudocode:</strong></p>
+<pre tabindex="0"><code>CLASS TouchController:
+    
+    // Virtual control references
+    moveJoystick: VirtualJoystick
+    lookZone: TouchZone
+    actionButtons: List&lt;TouchButton&gt;
+    
+    // Touch tracking
+    activeTouches: Map&lt;FingerId, TouchData&gt;
+    
+    // Initialize touch controls
+    FUNCTION Initialize():
+        // Create floating joystick (left side)
+        moveJoystick = CreateFloatingJoystick(
+            zone: LeftThird,
+            size: 150px,
+            deadzone: 0.15,
+            isFloating: true
+        )
+        
+        // Create look zone (right side)
+        lookZone = CreateLookZone(
+            zone: RightHalf,
+            sensitivity: UserSettings.lookSensitivity
+        )
+        
+        // Create action buttons
+        CreateActionButtons()
+    END FUNCTION
+    
+    // Process all active touches
+    FUNCTION ProcessTouches():
+        FOR EACH touch IN Input.GetTouches():
+            SWITCH touch.phase:
+                CASE Began:
+                    HandleTouchBegan(touch)
+                CASE Moved:
+                    HandleTouchMoved(touch)
+                CASE Ended, Cancelled:
+                    HandleTouchEnded(touch)
+            END SWITCH
+        END FOR
+        
+        // Update virtual controls
+        UpdateJoystick()
+        UpdateLookZone()
+    END FUNCTION
+    
+    // Handle new touch
+    FUNCTION HandleTouchBegan(touch):
+        // Determine which zone was touched
+        zone = GetZoneForPosition(touch.position)
+        
+        SWITCH zone:
+            CASE LeftThird:
+                // Start joystick at touch position
+                moveJoystick.Activate(touch.position)
+                activeTouches[touch.id] = { type: Joystick, startPos: touch.position }
+                
+            CASE RightHalf:
+                // Check if touching a button
+                button = GetButtonAtPosition(touch.position)
+                IF button != null:
+                    button.Press()
+                    activeTouches[touch.id] = { type: Button, button: button }
+                ELSE:
+                    // Start look drag
+                    activeTouches[touch.id] = { type: Look, startPos: touch.position }
+                END IF
+        END SWITCH
+    END FUNCTION
+    
+    // Handle touch movement
+    FUNCTION HandleTouchMoved(touch):
+        touchData = activeTouches[touch.id]
+        
+        IF touchData.type == Joystick:
+            // Update joystick position
+            delta = touch.position - touchData.startPos
+            moveJoystick.UpdatePosition(delta)
+            
+            // Calculate input vector
+            inputVector = moveJoystick.GetNormalizedInput()
+            EMIT EVENT &#34;TOUCH_JOYSTICK_MOVE&#34; WITH inputVector
+            
+        ELSE IF touchData.type == Look:
+            // Calculate look delta
+            delta = touch.deltaPosition * lookSensitivity
+            EMIT EVENT &#34;TOUCH_LOOK_DRAG&#34; WITH delta
+        END IF
+    END FUNCTION
+    
+    // Handle touch end
+    FUNCTION HandleTouchEnded(touch):
+        touchData = activeTouches[touch.id]
+        
+        IF touchData.type == Joystick:
+            moveJoystick.Deactivate()
+            EMIT EVENT &#34;CTRL_MOVE_STOP&#34;
+            
+        ELSE IF touchData.type == Button:
+            touchData.button.Release()
+        END IF
+        
+        activeTouches.Remove(touch.id)
+    END FUNCTION</code></pre><p><strong>Touch Zone Layout:</strong></p>
+<pre tabindex="0"><code>┌─────────────────────────────────────────────────────────────┐
+│                                                              │
+│  ┌───────────┐                        ┌──────┐  ┌──────┐   │
+│  │ ABILITY   │                        │ AIM  │  │ FIRE │   │
+│  └───────────┘                        └──────┘  └──────┘   │
+│                                                              │
+│                           LOOK ZONE                          │
+│                          (Drag to aim)                       │
+│                                                              │
+│  ┌───────────┐                                 ┌─────────┐  │
+│  │           │                                 │ RELOAD  │  │
+│  │ JOYSTICK  │                                 ├─────────┤  │
+│  │  (Float)  │                                 │  JUMP   │  │
+│  │           │                                 ├─────────┤  │
+│  └───────────┘                                 │ CROUCH  │  │
+│                                                └─────────┘  │
+└─────────────────────────────────────────────────────────────┘</code></pre><hr>
+<h3 id="remappingmanager">RemappingManager<a class="anchor" href="#remappingmanager">#</a></h3>
+<p><strong>Purpose:</strong> Handle key remapping and control customization.</p>
+<p><strong>Pseudocode:</strong></p>
+<pre tabindex="0"><code>CLASS RemappingManager:
+    
+    // Active bindings
+    currentBindings: Map&lt;EInputAction, KeyBinding&gt;
+    currentPreset: EControlPreset
+    
+    // Remap an action to a new key
+    FUNCTION RemapAction(action: EInputAction, newKey: KeyCode) -&gt; Boolean:
+        // Check if key is reserved (system keys)
+        IF IsReservedKey(newKey):
+            ShowError(&#34;This key cannot be remapped&#34;)
+            RETURN false
+        END IF
+        
+        // Check for conflicts
+        conflictingAction = FindConflict(newKey)
+        IF conflictingAction != null:
+            // Prompt user to swap or cancel
+            result = ShowConflictDialog(action, conflictingAction, newKey)
+            
+            IF result == Swap:
+                // Swap bindings
+                oldKey = currentBindings[action]
+                currentBindings[conflictingAction] = oldKey
+                currentBindings[action] = newKey
+            ELSE IF result == Cancel:
+                RETURN false
+            END IF
+        ELSE:
+            // No conflict, just assign
+            currentBindings[action] = newKey
+        END IF
+        
+        // Mark preset as custom
+        currentPreset = Custom
+        
+        // Save to user settings
+        SaveBindings()
+        
+        // Notify systems
+        EMIT EVENT &#34;INPUT_REMAP&#34;
+        
+        RETURN true
+    END FUNCTION
+    
+    // Apply a preset layout
+    FUNCTION ApplyPreset(preset: EControlPreset):
+        SWITCH preset:
+            CASE Default:
+                currentBindings = LoadDefaultBindings()
+            CASE Console:
+                currentBindings = LoadConsoleBindings()
+            CASE Claw:
+                currentBindings = LoadClawBindings()
+            CASE LeftHanded:
+                currentBindings = MirrorBindings(LoadDefaultBindings())
+            CASE Accessibility:
+                currentBindings = LoadAccessibilityBindings()
+            CASE Custom:
+                currentBindings = LoadUserBindings()
+        END SWITCH
+        
+        currentPreset = preset
+        SaveBindings()
+        
+        EMIT EVENT &#34;INPUT_PRESET_APPLIED&#34; WITH preset
+    END FUNCTION
+    
+    // Reset all bindings to default
+    FUNCTION ResetToDefaults():
+        ApplyPreset(Default)
+        ClearUserBindings()
+    END FUNCTION
+    
+    // Get current binding for action
+    FUNCTION GetBinding(action: EInputAction) -&gt; KeyBinding:
+        RETURN currentBindings[action]
+    END FUNCTION
+    
+    // Get all bindings (for settings UI)
+    FUNCTION GetAllBindings() -&gt; List&lt;BindingInfo&gt;:
+        result = []
+        FOR EACH (action, binding) IN currentBindings:
+            result.Add({
+                action: action,
+                displayName: GetDisplayName(action),
+                currentKey: binding.primary,
+                defaultKey: GetDefaultKey(action),
+                isRemappable: IsRemappable(action)
+            })
+        END FOR
+        RETURN result
+    END FUNCTION</code></pre><hr>
+<h3 id="aimassistcontroller">AimAssistController<a class="anchor" href="#aimassistcontroller">#</a></h3>
+<p><strong>Purpose:</strong> Provide aim assistance for gamepad and touch input.</p>
+<p><strong>Pseudocode:</strong></p>
+<pre tabindex="0"><code>CLASS AimAssistController:
+    
+    // Settings
+    level: EAimAssistLevel
+    magnetismStrength: Float
+    slowdownStrength: Float
+    snapStrength: Float
+    
+    // State
+    currentTarget: Character = null
+    isActive: Boolean = false
+    
+    // Apply aim assist to look input
+    FUNCTION ApplyAimAssist(rawLookInput: Vector2, aimOrigin: Vector3, aimDirection: Vector3) -&gt; Vector2:
+        // Skip if disabled or using mouse
+        IF level == Off OR InputManager.currentInputMethod == Mouse:
+            RETURN rawLookInput
+        END IF
+        
+        // Find potential targets
+        targets = FindTargetsInCone(aimOrigin, aimDirection, maxAngle: 45, maxDistance: 50)
+        
+        IF targets.IsEmpty():
+            currentTarget = null
+            RETURN rawLookInput
+        END IF
+        
+        // Get closest target to crosshair
+        closestTarget = GetClosestToCrosshair(targets)
+        currentTarget = closestTarget
+        
+        // Calculate angle to target
+        directionToTarget = (closestTarget.position - aimOrigin).Normalized()
+        angleToTarget = AngleBetween(aimDirection, directionToTarget)
+        
+        // Apply magnetism (pull toward target)
+        magnetismInput = ApplyMagnetism(rawLookInput, directionToTarget, angleToTarget)
+        
+        // Apply slowdown (reduce sensitivity near target)
+        slowedInput = ApplySlowdown(magnetismInput, angleToTarget)
+        
+        // Apply snap (optional, for mobile)
+        IF snapStrength &gt; 0 AND angleToTarget &lt; 15:
+            snappedInput = ApplySnap(slowedInput, directionToTarget)
+            RETURN snappedInput
+        END IF
+        
+        RETURN slowedInput
+    END FUNCTION
+    
+    // Pull aim toward target
+    FUNCTION ApplyMagnetism(input: Vector2, targetDir: Vector3, angle: Float) -&gt; Vector2:
+        // Magnetism falloff based on distance from target
+        magnetismFactor = 1.0 - (angle / 45.0)  // Full at 0°, zero at 45°
+        magnetismFactor = magnetismFactor * magnetismStrength
+        
+        // Blend input toward target direction
+        targetInput2D = ProjectToScreen(targetDir)
+        blendedInput = Lerp(input, targetInput2D, magnetismFactor)
+        
+        RETURN blendedInput
+    END FUNCTION
+    
+    // Reduce sensitivity near target
+    FUNCTION ApplySlowdown(input: Vector2, angle: Float) -&gt; Vector2:
+        // Slowdown increases as we get closer to target
+        slowdownFactor = 1.0 - (slowdownStrength * (1.0 - angle / 45.0))
+        
+        RETURN input * slowdownFactor
+    END FUNCTION</code></pre><hr>
+<h3 id="cameracontroller">CameraController<a class="anchor" href="#cameracontroller">#</a></h3>
+<p><strong>Purpose:</strong> Manages camera positioning, parallax effects, and dynamic FOV.</p>
+<p><strong>Pseudocode:</strong></p>
+<pre tabindex="0"><code>CLASS CameraController:
+    
+    // Settings
+    baseFOV: Float = 60.0
+    dynamicFOVFactor: Float = 5.0 // How much FOV widens with speed
+    parallaxMult: Float = 0.5
+    
+    // Limits
+    minZoom: Float = 10.0
+    maxZoom: Float = 40.0
+    
+    // Update Camera Transform
+    FUNCTION UpdateCamera(deltaTime):
+        // 1. Follow Target (Character)
+        targetPos = character.position
+        
+        // 2. Apply &#34;Lead&#34; (look ahead)
+        velocityOffset = character.velocity * leadFactor
+        desiredPos = targetPos + velocityOffset + currentZoomOffset
+        
+        // 3. Smooth Damp
+        transform.position = Vector3.SmoothDamp(transform.position, desiredPos, smoothTime)
+        
+        // 4. Update Dynamic Effects
+        UpdateDynamicFOV()
+        UpdateParallaxLayers()
+    END FUNCTION
+    
+    // Widen FOV based on speed to give &#34;sense of speed&#34;
+    FUNCTION UpdateDynamicFOV():
+        speedRatio = character.velocity.Length() / character.maxSpeed
+        targetFOV = baseFOV + (speedRatio * dynamicFOVFactor)
+        currentFOV = Lerp(currentFOV, targetFOV, deltaTime * 2.0)
+        camera.fieldOfView = currentFOV
+    END FUNCTION
+    
+    // Simulate depth for top-down view
+    FUNCTION UpdateParallaxLayers():
+        // Move background layers slower than foreground to create depth
+        // This is usually a shader or separate camera stack effect
+        FOR EACH layer IN parallaxLayers:
+            offset = (transform.position - lastFramePos) * (layer.depth * parallaxMult)
+            layer.MoveOpposite(offset)
+        END FOR
+    END FUNCTION</code></pre><hr>
+<h2 id="platform-specific-implementation">Platform-Specific Implementation<a class="anchor" href="#platform-specific-implementation">#</a></h2>
+<h3 id="pc-mouse--keyboard">PC (Mouse &amp; Keyboard)<a class="anchor" href="#pc-mouse--keyboard">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Aspect</th>
+          <th style="text-align: left">Implementation</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><strong>Movement</strong></td>
+          <td style="text-align: left">WASD keys, camera-relative</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Aiming</strong></td>
+          <td style="text-align: left">Mouse position projected to ground plane</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Fire</strong></td>
+          <td style="text-align: left">Left Mouse Button (hold for auto)</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Look Sensitivity</strong></td>
+          <td style="text-align: left">User-configurable, default 1.0</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Aim Assist</strong></td>
+          <td style="text-align: left">Disabled by default</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Key Remapping</strong></td>
+          <td style="text-align: left">Full remapping support</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="console-gamepad">Console (Gamepad)<a class="anchor" href="#console-gamepad">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Aspect</th>
+          <th style="text-align: left">Implementation</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><strong>Movement</strong></td>
+          <td style="text-align: left">Left Stick, camera-relative</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Aiming</strong></td>
+          <td style="text-align: left">Right Stick (twin-stick)</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Fire</strong></td>
+          <td style="text-align: left">Right Trigger (analog)</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Look Sensitivity</strong></td>
+          <td style="text-align: left">User-configurable, default 0.8</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Aim Assist</strong></td>
+          <td style="text-align: left">Medium by default</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Response Curve</strong></td>
+          <td style="text-align: left">Exponential for precision</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="mobile-touch">Mobile (Touch)<a class="anchor" href="#mobile-touch">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Aspect</th>
+          <th style="text-align: left">Implementation</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><strong>Movement</strong></td>
+          <td style="text-align: left">Floating virtual joystick (left)</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Aiming</strong></td>
+          <td style="text-align: left">Touch drag on right side</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Fire</strong></td>
+          <td style="text-align: left">Dedicated button + Auto-fire option</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Look Sensitivity</strong></td>
+          <td style="text-align: left">User-configurable, default 1.2</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Aim Assist</strong></td>
+          <td style="text-align: left">Strong by default</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>HUD Customization</strong></td>
+          <td style="text-align: left">Full button layout customization</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="system-relationships">System Relationships<a class="anchor" href="#system-relationships">#</a></h2>
+<h3 id="dependency-diagram">Dependency Diagram<a class="anchor" href="#dependency-diagram">#</a></h3>
+<pre tabindex="0"><code>                    ┌────────────────────┐
+                    │   CONTROL SYSTEM   │
+                    └─────────┬──────────┘
+                              │
+         ┌────────────────────┼────────────────────┐
+         │                    │                    │
+         ▼                    ▼                    ▼
+┌─────────────────┐  ┌─────────────────┐  ┌─────────────────┐
+│ CHARACTER       │  │ WEAPON          │  │ UI              │
+│ SYSTEM          │  │ SYSTEM          │  │ SYSTEM          │
+│                 │  │                 │  │                 │
+│ • Movement      │  │ • Fire          │  │ • Input prompts │
+│ • Rotation      │  │ • Aim           │  │ • Button icons  │
+│ • State machine │  │ • Reload        │  │ • Touch controls│
+└─────────────────┘  └─────────────────┘  └─────────────────┘
+         │                    │                    │
+         ▼                    ▼                    ▼
+┌─────────────────┐  ┌─────────────────┐  ┌─────────────────┐
+│ INTERACTION     │  │ INVENTORY       │  │ ACCESSIBILITY   │
+│ SYSTEM          │  │ SYSTEM          │  │ SYSTEM          │
+│                 │  │                 │  │                 │
+│ • Interact      │  │ • Quick select  │  │ • Remapping     │
+│ • Context menus │  │ • Item use      │  │ • One-handed    │
+└─────────────────┘  └─────────────────┘  └─────────────────┘</code></pre><h3 id="integration-points">Integration Points<a class="anchor" href="#integration-points">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Target System</th>
+          <th style="text-align: left">Interface</th>
+          <th style="text-align: left">Data</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><strong>CharacterSystem</strong></td>
+          <td style="text-align: left"><code>HandleMovement()</code></td>
+          <td style="text-align: left">Vector2 direction, MovementMode</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>WeaponSystem</strong></td>
+          <td style="text-align: left"><code>HandleCombatInput()</code></td>
+          <td style="text-align: left">Fire, Aim, Reload states</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>UISystem</strong></td>
+          <td style="text-align: left"><code>OnInputMethodChanged()</code></td>
+          <td style="text-align: left">Current input method</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>InteractionSystem</strong></td>
+          <td style="text-align: left"><code>HandleInteract()</code></td>
+          <td style="text-align: left">Interact action triggered</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>InventorySystem</strong></td>
+          <td style="text-align: left"><code>HandleQuickSelect()</code></td>
+          <td style="text-align: left">Slot selection</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>AccessibilitySystem</strong></td>
+          <td style="text-align: left"><code>GetRemappedAction()</code></td>
+          <td style="text-align: left">Custom bindings</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="performance-considerations">Performance Considerations<a class="anchor" href="#performance-considerations">#</a></h2>
+<h3 id="optimization-targets">Optimization Targets<a class="anchor" href="#optimization-targets">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Metric</th>
+          <th style="text-align: left">Target</th>
+          <th style="text-align: left">Current</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Input Latency</td>
+          <td style="text-align: left">&lt; 16ms</td>
+          <td style="text-align: left">TODO</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Touch Processing</td>
+          <td style="text-align: left">&lt; 2ms</td>
+          <td style="text-align: left">TODO</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Active Touch Limit</td>
+          <td style="text-align: left">10</td>
+          <td style="text-align: left">10</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Memory Usage</td>
+          <td style="text-align: left">&lt; 5 MB</td>
+          <td style="text-align: left">TODO</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="optimization-strategies">Optimization Strategies<a class="anchor" href="#optimization-strategies">#</a></h3>
+<pre tabindex="0"><code>1. INPUT POLLING
+   • Poll input once per frame, not per action
+   • Cache processed input for multi-system use
+   • Use event-driven updates for UI
+
+2. TOUCH OPTIMIZATION
+   • Limit active touch tracking
+   • Use spatial hashing for button detection
+   • Pool touch event objects
+
+3. MEMORY
+   • Reuse input structures
+   • Avoid allocations in hot path
+   • Cache binding lookups</code></pre><hr>
+<h2 id="todo-implementation-tasks">TODO: Implementation Tasks<a class="anchor" href="#todo-implementation-tasks">#</a></h2>
+<h3 id="high-priority-">HIGH Priority 🔴<a class="anchor" href="#high-priority-">#</a></h3>
+<ul>
+<li><input disabled="" type="checkbox"> Implement InputManager core loop</li>
+<li><input disabled="" type="checkbox"> Create ActionMap with all bindings</li>
+<li><input disabled="" type="checkbox"> Implement MovementController twin-stick logic</li>
+<li><input disabled="" type="checkbox"> Create TouchController for mobile</li>
+<li><input disabled="" type="checkbox"> Implement aim assist system</li>
+</ul>
+<h3 id="medium-priority-">MEDIUM Priority 🟡<a class="anchor" href="#medium-priority-">#</a></h3>
+<ul>
+<li><input disabled="" type="checkbox"> Add remapping UI and persistence</li>
+<li><input disabled="" type="checkbox"> Implement control presets</li>
+<li><input disabled="" type="checkbox"> Add sensitivity curves</li>
+<li><input disabled="" type="checkbox"> Create gyroscope aiming option</li>
+<li><input disabled="" type="checkbox"> Input method auto-detection</li>
+</ul>
+<h3 id="low-priority-">LOW Priority 🟢<a class="anchor" href="#low-priority-">#</a></h3>
+<ul>
+<li><input disabled="" type="checkbox"> Advanced customization (per-action sensitivity)</li>
+<li><input disabled="" type="checkbox"> Macro/combo support</li>
+<li><input disabled="" type="checkbox"> Controller vibration feedback</li>
+<li><input disabled="" type="checkbox"> Input replay for debugging</li>
+</ul>
+<hr>
+<h2 id="references">References<a class="anchor" href="#references">#</a></h2>
+<h3 id="external-documentation">External Documentation<a class="anchor" href="#external-documentation">#</a></h3>
+<ul>
+<li><a href="https://docs.unity3d.com/Packages/com.unity.inputsystem@1.0/manual/index.html">Unity Input System</a> - If using Unity</li>
+<li><a href="https://docs.unrealengine.com/5.0/en-US/enhanced-input-in-unreal-engine/">Unreal Enhanced Input</a> - If using Unreal</li>
+<li><a href="https://developer.android.com/games/develop/gamepad">Mobile Game Input Best Practices</a> - Android guidelines</li>
+<li><a href="https://developer.apple.com/design/human-interface-guidelines/game-controllers">Apple HIG - Game Controllers</a> - iOS guidelines</li>
+</ul>
+<h3 id="industry-examples">Industry Examples<a class="anchor" href="#industry-examples">#</a></h3>
+<ul>
+<li><strong>Call of Duty Mobile</strong> - Touch control reference</li>
+<li><strong>PUBG Mobile</strong> - Virtual joystick implementation</li>
+<li><strong>Fortnite</strong> - Cross-platform input handling</li>
+<li><strong>Apex Legends</strong> - Aim assist tuning</li>
+</ul>
+<hr>
+<p><strong><a href="../README.md">← Back to Index</a></strong> | <strong><a href="./CharacterSystem.md">Next: Character System</a></strong></p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+<div>
+
+</div>
+
+<div>
+
+</div>
+
+</div>
+
+
+
+
+
+  
+  
+  
+  <div class="flex flex-wrap justify-between">
+    <span>
+    
+      <a href="/docs/GDD_Technical/Gameplay/CharacterSystem/" class="flex align-center">
+        <img src="/icons/backward.svg" class="book-icon" alt="Backward" />
+        <span>Character System</span>
+      </a>
+    
+    </span>
+    <span>
+    
+      <a href="/docs/GDD_Technical/Gameplay/InventorySystem/" class="flex align-center">
+        <span>Inventory System</span>
+        <img src="/icons/forward.svg" class="book-icon" alt="Forward" />
+      </a>
+    
+    </span>
+  </div>
+  
+
+
+ 
+        
+  
+ 
+        
+        
+  
+ 
+        
+  
+  
+    <script>(function(){document.querySelectorAll("pre:has(code)").forEach(e=>{e.addEventListener("click",e.focus),e.addEventListener("copy",function(t){if(t.preventDefault(),navigator.clipboard){const t=window.getSelection().toString()||e.textContent;navigator.clipboard.writeText(t)}})})})()</script>
+  
+
+      </footer>
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+  
+  <aside class="book-toc">
+    <div class="book-toc-content">
+      
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#related-documents">Related Documents</a></li>
+    <li><a href="#overview">Overview</a>
+      <ul>
+        <li><a href="#purpose">Purpose</a></li>
+        <li><a href="#core-functions">Core Functions</a></li>
+        <li><a href="#design-goals">Design Goals</a></li>
+      </ul>
+    </li>
+    <li><a href="#system-architecture">System Architecture</a>
+      <ul>
+        <li><a href="#component-diagram">Component Diagram</a></li>
+        <li><a href="#core-components">Core Components</a></li>
+      </ul>
+    </li>
+    <li><a href="#enums--types">Enums &amp; Types</a>
+      <ul>
+        <li><a href="#einputaction">EInputAction</a></li>
+        <li><a href="#mobile-touch-control-types">Mobile Touch Control Types</a></li>
+        <li><a href="#mobile-touch-zone-layout">Mobile Touch Zone Layout</a></li>
+        <li><a href="#mobile-control-customization-options">Mobile Control Customization Options</a></li>
+        <li><a href="#einputmethod">EInputMethod</a></li>
+        <li><a href="#econtrolpreset">EControlPreset</a></li>
+        <li><a href="#emovementmode">EMovementMode</a></li>
+        <li><a href="#etouchzone">ETouchZone</a></li>
+        <li><a href="#eaimassistlevel">EAimAssistLevel</a></li>
+        <li><a href="#econtrolreferenceframe">EControlReferenceFrame</a></li>
+        <li><a href="#efacingbehavior">EFacingBehavior</a></li>
+        <li><a href="#eaimconstraint">EAimConstraint</a></li>
+      </ul>
+    </li>
+    <li><a href="#code-names">Code Names</a>
+      <ul>
+        <li><a href="#input-events">Input Events</a></li>
+        <li><a href="#movement-input-events">Movement Input Events</a></li>
+        <li><a href="#combat-input-events">Combat Input Events</a></li>
+        <li><a href="#touch-events-mobile">Touch Events (Mobile)</a></li>
+        <li><a href="#hud-events">HUD Events</a></li>
+      </ul>
+    </li>
+    <li><a href="#core-classes">Core Classes</a>
+      <ul>
+        <li><a href="#inputmanager">InputManager</a></li>
+        <li><a href="#actionmap">ActionMap</a></li>
+        <li><a href="#inputprocessor">InputProcessor</a></li>
+        <li><a href="#movementcontroller">MovementController</a></li>
+        <li><a href="#touchcontroller">TouchController</a></li>
+        <li><a href="#remappingmanager">RemappingManager</a></li>
+        <li><a href="#aimassistcontroller">AimAssistController</a></li>
+        <li><a href="#cameracontroller">CameraController</a></li>
+      </ul>
+    </li>
+    <li><a href="#platform-specific-implementation">Platform-Specific Implementation</a>
+      <ul>
+        <li><a href="#pc-mouse--keyboard">PC (Mouse &amp; Keyboard)</a></li>
+        <li><a href="#console-gamepad">Console (Gamepad)</a></li>
+        <li><a href="#mobile-touch">Mobile (Touch)</a></li>
+      </ul>
+    </li>
+    <li><a href="#system-relationships">System Relationships</a>
+      <ul>
+        <li><a href="#dependency-diagram">Dependency Diagram</a></li>
+        <li><a href="#integration-points">Integration Points</a></li>
+      </ul>
+    </li>
+    <li><a href="#performance-considerations">Performance Considerations</a>
+      <ul>
+        <li><a href="#optimization-targets">Optimization Targets</a></li>
+        <li><a href="#optimization-strategies">Optimization Strategies</a></li>
+      </ul>
+    </li>
+    <li><a href="#todo-implementation-tasks">TODO: Implementation Tasks</a>
+      <ul>
+        <li><a href="#high-priority-">HIGH Priority 🔴</a></li>
+        <li><a href="#medium-priority-">MEDIUM Priority 🟡</a></li>
+        <li><a href="#low-priority-">LOW Priority 🟢</a></li>
+      </ul>
+    </li>
+    <li><a href="#references">References</a>
+      <ul>
+        <li><a href="#external-documentation">External Documentation</a></li>
+        <li><a href="#industry-examples">Industry Examples</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+    </div>
+  </aside>
+  
+ 
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

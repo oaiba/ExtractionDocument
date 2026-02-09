@@ -1,0 +1,2911 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=52224&amp;path=livereload" data-no-instant defer></script>
+  <!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="User Interface#← Previous: Art Direction | Index | Next: Sound Design →
+UI Design Philosophy#Mobile-First Principles:
+Thumb-Friendly - Controls within reach Clear Hierarchy - Important info stands out Minimalist - Not cluttered Responsive - Instant feedback Accessible - Readable, colorblind-safe Touch Control Standards#Minimum Touch Targets#Button Sizes:
+Small buttons: 60x60 px (minimum) Medium buttons: 80x80 px (recommended) Large buttons: 100x100 px (primary actions) Touch zones: &#43;20px padding around visual Spacing:
+">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:52224/docs/GDD_Design/Visuals/UserInterface/">
+  <meta property="og:site_name" content="Extraction Shooter GDD">
+  <meta property="og:title" content="Extraction Shooter GDD">
+  <meta property="og:description" content="User Interface#← Previous: Art Direction | Index | Next: Sound Design →
+UI Design Philosophy#Mobile-First Principles:
+Thumb-Friendly - Controls within reach Clear Hierarchy - Important info stands out Minimalist - Not cluttered Responsive - Instant feedback Accessible - Readable, colorblind-safe Touch Control Standards#Minimum Touch Targets#Button Sizes:
+Small buttons: 60x60 px (minimum) Medium buttons: 80x80 px (recommended) Large buttons: 100x100 px (primary actions) Touch zones: &#43;20px padding around visual Spacing:">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
+
+
+  <meta itemprop="name" content="Extraction Shooter GDD">
+  <meta itemprop="description" content="User Interface#← Previous: Art Direction | Index | Next: Sound Design →
+UI Design Philosophy#Mobile-First Principles:
+Thumb-Friendly - Controls within reach Clear Hierarchy - Important info stands out Minimalist - Not cluttered Responsive - Instant feedback Accessible - Readable, colorblind-safe Touch Control Standards#Minimum Touch Targets#Button Sizes:
+Small buttons: 60x60 px (minimum) Medium buttons: 80x80 px (recommended) Large buttons: 100x100 px (primary actions) Touch zones: &#43;20px padding around visual Spacing:">
+  <meta itemprop="wordCount" content="1977">
+
+<title>User Interface | Extraction Shooter GDD</title>
+<link rel="icon" href="/favicon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="http://localhost:52224/docs/GDD_Design/Visuals/UserInterface/">
+<link rel="stylesheet" href="/book.min.63c8b2b12bbd1ad36428837740ea371dd41fdb9c22b35499003d0dfa4dbce6ba.css" integrity="sha256-Y8iysSu9GtNkKIN3QOo3HdQf25wis1SZAD0N&#43;k285ro=" crossorigin="anonymous">
+
+
+  <script defer src="/fuse.min.js"></script>
+  <script defer src="/en.search.min.58bea27d7a08265548c5a8636a9a9fc844e0eb9d60fc3bb2c53d517da858d4c1.js" integrity="sha256-WL6ifXoIJlVIxahjapqfyETg651g/DuyxT1RfahY1ME=" crossorigin="anonymous"></script>
+
+  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
+
+
+
+  
+</head>
+<body dir="ltr" class="book-kind-page book-type-docs">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    
+<aside class="book-menu">
+  <div class="book-menu-content">
+    
+  <nav>
+    <h2 class="book-brand">
+  <a class="flex align-center" href="/"><img src="/logo.svg" alt="Logo" /><span>Extraction Shooter GDD</span>
+  </a>
+</h2>
+
+    <div class="book-theme-toggle">
+    <input type="checkbox" id="theme-toggle" class="toggle">
+    <label for="theme-toggle" class="flex justify-between items-center cursor-pointer">
+        <span class="text-xs font-semibold">Dark Mode</span>
+        <div
+            class="relative w-10 h-5 bg-gray-200 rounded-full transition-colors duration-200 ease-in-out dark:bg-gray-700">
+            <div
+                class="absolute left-0 w-5 h-5 bg-white rounded-full shadow transform transition-transform duration-200 ease-in-out dark:translate-x-full">
+            </div>
+        </div>
+    </label>
+</div>
+
+<script>
+    (function () {
+        const toggle = document.getElementById('theme-toggle');
+        const html = document.documentElement;
+
+        
+        const savedTheme = localStorage.getItem('theme');
+        const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+        if (savedTheme === 'dark' || (!savedTheme && systemDark)) {
+            html.classList.add('dark');
+            toggle.checked = true;
+        } else {
+            html.classList.remove('dark');
+            toggle.checked = false;
+        }
+
+        
+        toggle.addEventListener('change', function () {
+            if (this.checked) {
+                html.classList.add('dark');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                html.classList.remove('dark');
+                localStorage.setItem('theme', 'light');
+            }
+        });
+    })();
+</script>
+
+<style>
+     
+    .book-theme-toggle {
+        margin: 1rem 0;
+        padding: 0 1rem;
+
+    }
+
+    .book-theme-toggle label {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        cursor: pointer;
+        font-size: 0.85em;
+    }
+
+     
+    .book-theme-toggle input {
+        display: none;
+    }
+
+     
+    .book-theme-toggle label::after {
+        content: "🌙";
+         
+    }
+
+     
+    html:not(.dark) .book-theme-toggle label::after {
+        content: "☀️";
+         
+    }
+</style> 
+    
+<div class="book-search hidden">
+  <input id="book-search-input" type="text" 
+    placeholder="Search"
+    aria-label="Search"
+    maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+    
+
+    
+    
+
+
+
+    
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/" class="">
+      Gdd Design</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      AI</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/AI/EnemyBehavior/" class="">
+      Enemy Behavior</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/AI/FactionBehaviors/" class="">
+      Faction Behaviors</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Audio</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Audio/SoundDesign/" class="">
+      Sound Design</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Audio/Soundscape/" class="">
+      Soundscape</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Audio/TacticalAudio/" class="">
+      Tactical Audio</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Audio/VoiceLines/" class="">
+      Voice Lines</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Characters</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Operators/" class="">
+      Operators</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Assault</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Assault/Blaze/" class="">
+      Blaze</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Assault/Havoc/" class="">
+      Havoc</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Assault/README/" class="">
+      Readme</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Assault/Viper/" class="">
+      Viper</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Recon</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Recon/Phantom/" class="">
+      Phantom</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Recon/README/" class="">
+      Readme</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Recon/Specter/" class="">
+      Specter</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Recon/Wraith/" class="">
+      Wraith</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Specialist</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Specialist/Cipher/" class="">
+      Cipher</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Specialist/Flux/" class="">
+      Flux</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Specialist/README/" class="">
+      Readme</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Support</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Support/Angel/" class="">
+      Angel</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Support/Doc/" class="">
+      Doc</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Support/README/" class="">
+      Readme</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Tank</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Tank/Bulwark/" class="">
+      Bulwark</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Tank/Fortress/" class="">
+      Fortress</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Tank/README/" class="">
+      Readme</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Combat</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Combat/Items/" class="">
+      Items</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Combat/Weapons/" class="">
+      Weapons</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      GameDesign</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Accessibility/" class="">
+      Accessibility</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Controls/" class="">
+      Controls</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/CoreGameplay/" class="">
+      Core Gameplay</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Economy/" class="">
+      Economy</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/GameModes/" class="">
+      Game Modes</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/LiveOps/" class="">
+      Live Ops</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Localization/" class="">
+      Localization</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/NavigationAndMap/" class="">
+      Navigation and Map</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Overview/" class="">
+      Overview</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Progression/" class="">
+      Progression</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/RankedMode/" class="">
+      Ranked Mode</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/TutorialRaid/" class="">
+      Tutorial Raid</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/UserSettings/" class="">
+      User Settings</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Gameplay</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Gameplay/CoreLoop/" class="">
+      Core Loop</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      ProjectScope</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/ProjectScope/DesignPillars/" class="">
+      Design Pillars</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/ProjectScope/MVP/" class="">
+      Mvp</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/ProjectScope/NonGoals/" class="">
+      Non Goals</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/ProjectScope/Risks/" class="">
+      Risks</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Social</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Social/Multiplayer/" class="">
+      Multiplayer</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Story</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Story/Backstory/" class="">
+      Backstory</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Story/Factions/" class="">
+      Factions</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Story/Narrative/" class="">
+      Narrative</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Story/QuestLines/" class="">
+      Quest Lines</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      UI UX</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/UI_UX/UX_Flows/" class="">
+      Ux Flows</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/UI_UX/Visual_Style/" class="">
+      Visual Style</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Visuals</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Visuals/ArtDirection/" class="">
+      Art Direction</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Visuals/AssetGuidelines/" class="">
+      Asset Guidelines</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Visuals/StyleGuide/" class="">
+      Style Guide</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Visuals/UserInterface/" class="active">
+      User Interface</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      World</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/EnvironmentalNarrative/" class="">
+      Environmental Narrative</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/EnvironmentalNarrative_Guidelines/" class="">
+      Environmental Narrative Guidelines</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/LootDistribution/" class="">
+      Loot Distribution</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/MapDesign/" class="">
+      Map Design</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/MapDesign_IndustrialZone/" class="">
+      Map Design Industrial Zone</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/MapDesign_NeonSlums/" class="">
+      Map Design Neon Slums</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/MapDesign_Wilderness/" class="">
+      Map Design Wilderness</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/MapLayouts/" class="">
+      Map Layouts</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/" class="">
+      Gdd Technical</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      AI</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/AI/SensorySystem/" class="">
+      Sensory System</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Core</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Core/Architecture/" class="">
+      Architecture</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Core/CodingStandards/" class="">
+      Coding Standards</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Core/DevelopmentRoadmap/" class="">
+      Development Roadmap</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Core/NetworkingSystem/" class="">
+      Networking System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Core/SecuritySystem/" class="">
+      Security System</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Gameplay</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Gameplay/CharacterSystem/" class="">
+      Character System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Gameplay/ControlSystem/" class="">
+      Control System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Gameplay/InventorySystem/" class="">
+      Inventory System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Gameplay/WeaponSystem/" class="">
+      Weapon System</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Networking</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Networking/LagCompensation/" class="">
+      Lag Compensation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Networking/ReplicationStrategy/" class="">
+      Replication Strategy</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Performance</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Performance/Budgets/" class="">
+      Budgets</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Performance/Optimization/" class="">
+      Optimization</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Security</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Security/AntiCheatStrategy/" class="">
+      Anti Cheat Strategy</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Systems</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/AccessibilitySystem/" class="">
+      Accessibility System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/AISystem/" class="">
+      Aisystem</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/AnalyticsSystem/" class="">
+      Analytics System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/AudioSystem/" class="">
+      Audio System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/BuildPipeline/" class="">
+      Build Pipeline</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/LiveOpsSystem/" class="">
+      Live Ops System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/LocalizationSystem/" class="">
+      Localization System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/MapSystem/" class="">
+      Map System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/NarrativeSystem/" class="">
+      Narrative System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/ProgressionSystem/" class="">
+      Progression System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/RankedSystem/" class="">
+      Ranked System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/SaveSystem/" class="">
+      Save System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/SocialSystem/" class="">
+      Social System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/TutorialSystem/" class="">
+      Tutorial System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/UISystem/" class="">
+      Uisystem</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+</nav>
+
+
+
+
+<script>{ { . | safeJS } }</script>
+
+
+  </div>
+</aside>
+ 
+
+    <div class="book-page">
+      <header class="book-header hidden">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/icons/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <h3>User Interface</h3>
+
+  <label for="toc-control">
+    
+    <img src="/icons/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#ui-design-philosophy">UI Design Philosophy</a></li>
+    <li><a href="#touch-control-standards">Touch Control Standards</a>
+      <ul>
+        <li><a href="#minimum-touch-targets">Minimum Touch Targets</a></li>
+        <li><a href="#control-zones">Control Zones</a></li>
+      </ul>
+    </li>
+    <li><a href="#main-menu--screens">Main Menu &amp; Screens</a>
+      <ul>
+        <li><a href="#home-screen">Home Screen</a></li>
+        <li><a href="#operator-selection-screen">Operator Selection Screen</a></li>
+        <li><a href="#loadout-screen">Loadout Screen</a></li>
+        <li><a href="#stashinventory-screen">Stash/Inventory Screen</a></li>
+      </ul>
+    </li>
+    <li><a href="#in-game-hud">In-Game HUD</a>
+      <ul>
+        <li><a href="#core-hud-layout">Core HUD Layout</a></li>
+        <li><a href="#health--status-bars">Health &amp; Status Bars</a></li>
+        <li><a href="#minimap">Minimap</a></li>
+        <li><a href="#ammo-counter">Ammo Counter</a></li>
+        <li><a href="#crosshair">Crosshair</a></li>
+        <li><a href="#virtual-joystick">Virtual Joystick</a></li>
+        <li><a href="#action-buttons">Action Buttons</a></li>
+        <li><a href="#damage-indicators">Damage Indicators</a></li>
+        <li><a href="#kill-feed">Kill Feed</a></li>
+        <li><a href="#objective--quest-tracker">Objective &amp; Quest Tracker</a></li>
+        <li><a href="#extraction-ui">Extraction UI</a></li>
+        <li><a href="#notification-system">Notification System</a></li>
+      </ul>
+    </li>
+    <li><a href="#post-match-screens">Post-Match Screens</a>
+      <ul>
+        <li><a href="#victory-screen">Victory Screen</a></li>
+        <li><a href="#defeat-screen">Defeat Screen</a></li>
+      </ul>
+    </li>
+    <li><a href="#settings-ui">Settings UI</a>
+      <ul>
+        <li><a href="#settings-categories">Settings Categories</a></li>
+      </ul>
+    </li>
+    <li><a href="#accessibility-features">Accessibility Features</a></li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><h1 id="user-interface">User Interface<a class="anchor" href="#user-interface">#</a></h1>
+<p><strong><a href="./ArtDirection.md">← Previous: Art Direction</a></strong> | <strong><a href="../README.md">Index</a></strong> | <strong><a href="../Audio/SoundDesign.md">Next: Sound Design →</a></strong></p>
+<hr>
+<h2 id="ui-design-philosophy">UI Design Philosophy<a class="anchor" href="#ui-design-philosophy">#</a></h2>
+<p><strong>Mobile-First Principles:</strong></p>
+<ol>
+<li><strong>Thumb-Friendly</strong> - Controls within reach</li>
+<li><strong>Clear Hierarchy</strong> - Important info stands out</li>
+<li><strong>Minimalist</strong> - Not cluttered</li>
+<li><strong>Responsive</strong> - Instant feedback</li>
+<li><strong>Accessible</strong> - Readable, colorblind-safe</li>
+</ol>
+<hr>
+<h2 id="touch-control-standards">Touch Control Standards<a class="anchor" href="#touch-control-standards">#</a></h2>
+<h3 id="minimum-touch-targets">Minimum Touch Targets<a class="anchor" href="#minimum-touch-targets">#</a></h3>
+<p><strong>Button Sizes:</strong></p>
+<ul>
+<li>Small buttons: 60x60 px (minimum)</li>
+<li>Medium buttons: 80x80 px (recommended)</li>
+<li>Large buttons: 100x100 px (primary actions)</li>
+<li>Touch zones: +20px padding around visual</li>
+</ul>
+<p><strong>Spacing:</strong></p>
+<ul>
+<li>Between buttons: 16px minimum</li>
+<li>Screen edges: 24px margin</li>
+<li>Grouped elements: 8px gap</li>
+</ul>
+<hr>
+<h3 id="control-zones">Control Zones<a class="anchor" href="#control-zones">#</a></h3>
+<pre tabindex="0"><code>┌─────────────────────────────┐
+│  [HP][Stamina]    [Timer]   │ Top (Status)
+│                  [Players]  │
+│                             │
+│     [Minimap]               │ Top-Right (Info)
+│                             │
+│                             │ Center (Gameplay)
+│         [Crosshair]         │
+│                             │
+│                             │
+│ [Joystick]      [Fire Btn]  │ Bottom (Controls)
+│ [Crouch]    [Reload][Swap]  │
+│ [Interact]     [Inventory]  │
+└─────────────────────────────┘</code></pre><p><strong>Thumb Zones:</strong></p>
+<ul>
+<li>Left thumb: Movement, crouch, interact</li>
+<li>Right thumb: Fire, reload, swap, inventory</li>
+<li>Top: Non-critical info only (no buttons)</li>
+</ul>
+<hr>
+<h2 id="main-menu--screens">Main Menu &amp; Screens<a class="anchor" href="#main-menu--screens">#</a></h2>
+<h3 id="home-screen">Home Screen<a class="anchor" href="#home-screen">#</a></h3>
+<p><strong>Layout:</strong></p>
+<pre tabindex="0"><code>┌─────────────────────────────┐
+│ [Logo]          [Settings]  │
+│                 [Profile]   │
+│                             │
+│   ┌─────────────────────┐   │
+│   │  Operator Preview   │   │ 3D Model Showcase
+│   │    [Character]      │   │
+│   └─────────────────────┘   │
+│                             │
+│      [═ PLAY MATCH ═]       │ Large, prominent
+│                             │
+│  [Loadout] [Stash] [Quests] │ Secondary actions
+│                             │
+│ ┌─────────────┐ ┌─────────┐ │
+│ │Daily Reward │ │  News   │ │ Info panels
+│ └─────────────┘ └─────────┘ │
+│                             │
+│ [Friends] [Clan] [Store]    │ Social/monetization
+└─────────────────────────────┘</code></pre><p><strong>Elements:</strong></p>
+<p><strong>Operator Display:</strong></p>
+<ul>
+<li>3D model preview</li>
+<li>Current operator name</li>
+<li>Level progress bar</li>
+<li>Tap to change operator</li>
+</ul>
+<p><strong>Play Button:</strong></p>
+<ul>
+<li>Size: 300x80px (large)</li>
+<li>Color: Bright cyan</li>
+<li>Animation: Pulse glow</li>
+<li>Haptic feedback on press</li>
+</ul>
+<p><strong>Daily Reward Banner:</strong></p>
+<ul>
+<li>Countdown timer</li>
+<li>Reward preview</li>
+<li>Tap to claim</li>
+<li>New reward indicator (red dot)</li>
+</ul>
+<p><strong>News Panel:</strong></p>
+<ul>
+<li>Latest updates</li>
+<li>Events</li>
+<li>Patch notes link</li>
+</ul>
+<hr>
+<h3 id="operator-selection-screen">Operator Selection Screen<a class="anchor" href="#operator-selection-screen">#</a></h3>
+<p><strong>Layout:</strong></p>
+<pre tabindex="0"><code>┌─────────────────────────────┐
+│  ← Back     OPERATORS       │
+│                             │
+│ ┌───┐ ┌───┐ ┌───┐ ┌───┐ ┌───┐ │
+│ │ A │ │ S │ │ R │ │ T │ │ Sp│ │ Operator Cards
+│ └───┘ └───┘ └───┘ └───┘ └───┘ │
+│  ✓              🔒    🔒     │ Lock indicators
+│                             │
+│   ┌─────────────────────┐   │
+│   │  Selected Operator  │   │ Preview
+│   │      3D Model       │   │
+│   └─────────────────────┘   │
+│                             │
+│  Class: ASSAULT             │ Info
+│  Level: 12  [Progress Bar] │
+│                             │
+│  Ability: Combat Stim       │ Ability
+│  ┌─────────────────────┐   │ description
+│  │ +25% damage for     │   │
+│  │ 10 seconds          │   │
+│  └─────────────────────┘   │
+│                             │
+│         [SELECT]            │ Confirm button
+└─────────────────────────────┘</code></pre><p><strong>Operator Cards:</strong></p>
+<ul>
+<li>Portrait thumbnail</li>
+<li>Class icon</li>
+<li>Level number</li>
+<li>Locked overlay (if locked)</li>
+<li>Tap to preview</li>
+</ul>
+<p><strong>Unlock Indicators:</strong></p>
+<ul>
+<li>Gray overlay + padlock</li>
+<li>&ldquo;Level 10 Required&rdquo;</li>
+<li>&ldquo;Complete Quest&rdquo; button</li>
+<li>Or &ldquo;Purchase&rdquo; option</li>
+</ul>
+<hr>
+<h3 id="loadout-screen">Loadout Screen<a class="anchor" href="#loadout-screen">#</a></h3>
+<p><strong>Layout:</strong></p>
+<pre tabindex="0"><code>┌─────────────────────────────┐
+│ ← Back      LOADOUT         │
+│                             │
+│ Operator: ASSAULT [Change]  │
+│                             │
+│ Primary Weapon:             │
+│ ┌─────────────┐             │
+│ │ [AR Image]  │ AK-47       │ Weapon slot
+│ │             │ DMG: 35     │
+│ │             │ FR:  600RPM │
+│ └─────────────┘ [Change]    │
+│                             │
+│ Secondary Weapon:           │
+│ ┌─────────────┐             │
+│ │ [Pistol Img]│ Glock 19    │
+│ └─────────────┘ [Change]    │
+│                             │
+│ Armor:                      │
+│ │ ████████░░  │ Medium (80) │ Armor bar
+│                  [Change]   │
+│                             │
+│ Equipment:                  │
+│ ┌───┐ ┌───┐ ┌───┐           │
+│ │Gren││Med││ - │  [Add]     │ Gear slots
+│ └───┘ └───┘ └───┘           │
+│                             │
+│ Perks: (Choose 2)           │
+│ [✓ Sprint+] [  Armor+]      │ Perk selection
+│ [  Reload+] [  Detection-]  │
+│                             │
+│ Total Gear Value: $15,250   │ Risk indicator
+│                             │
+│    [Save Loadout] [Ready]   │ Actions
+└─────────────────────────────┘</code></pre><p><strong>Weapon Selection Modal:</strong></p>
+<ul>
+<li>Grid of owned weapons</li>
+<li>Filter by type</li>
+<li>Sort by: Level, Rarity, Damage</li>
+<li>Preview stats comparison</li>
+<li>&ldquo;From Stash&rdquo; indicator</li>
+</ul>
+<p><strong>Loadout Presets:</strong></p>
+<ul>
+<li>Save up to 5 loadouts</li>
+<li>Quick-select buttons</li>
+<li>Rename loadouts</li>
+<li>&ldquo;Budget&rdquo; vs &ldquo;Premium&rdquo; labels</li>
+</ul>
+<hr>
+<h3 id="stashinventory-screen">Stash/Inventory Screen<a class="anchor" href="#stashinventory-screen">#</a></h3>
+<p><strong>Layout:</strong></p>
+<pre tabindex="0"><code>┌─────────────────────────────┐
+│ ← Back      STASH           │
+│ [Filter▼] [Sort▼] [Search] │
+│                             │
+│ ┌─────────────────────────┐ │
+│ │ ┌──┬──┬──┬──┬──┬──┬──┬──┐ │ │
+│ │ │██│  │██│  │  │  │  │  │ │ │
+│ │ ├──┼──┼──┼──┼──┼──┼──┼──┤ │ │
+│ │ │██│  │██│  │  │  │  │  │ │ │ Grid inventory
+│ │ ├──┼──┼──┼──┼──┼──┼──┼──┤ │ │ (drag &amp; drop)
+│ │ │  │  │  │  │  │  │  │  │ │ │
+│ │ ├──┼──┼──┼──┼──┼──┼──┼──┤ │ │
+│ │ │  │  │  │  │  │  │  │  │ │ │
+│ │ └──┴──┴──┴──┴──┴──┴──┴──┘ │ │
+│ └─────────────────────────┘ │
+│                             │
+│ Selected Item:              │ Item details
+│ ┌─────────────┐             │ panel
+│ │ [Item Img]  │             │
+│ │             │ AK-47       │
+│ │             │ Rarity: Rare│
+│ └─────────────┘             │
+│ Damage: 35  | Fire Rate: 600│
+│ Value: $2,500               │
+│                             │
+│ [Equip] [Sell] [Details]    │ Actions
+│                             │
+│ Inventory: 145/200 slots    │ Capacity
+│ Value: $125,430 total       │
+└─────────────────────────────┘</code></pre><p><strong>Features:</strong></p>
+<p><strong>Drag &amp; Drop:</strong></p>
+<ul>
+<li>Touch and hold to grab</li>
+<li>Drag to position</li>
+<li>Visual feedback (ghost item)</li>
+<li>Auto-snap to grid</li>
+<li>Haptic feedback on snap</li>
+</ul>
+<p><strong>Filters:</strong></p>
+<ul>
+<li>All items</li>
+<li>Weapons</li>
+<li>Armor</li>
+<li>Consumables</li>
+<li>Materials</li>
+<li>Quest items</li>
+</ul>
+<p><strong>Sort Options:</strong></p>
+<ul>
+<li>Rarity</li>
+<li>Value</li>
+<li>Name (A-Z)</li>
+<li>Recent (newly acquired)</li>
+<li>Type</li>
+</ul>
+<p><strong>Quick Actions:</strong></p>
+<ul>
+<li>Long-press for context menu</li>
+<li>Swipe to sell (with confirmation)</li>
+<li>Double-tap for details</li>
+</ul>
+<hr>
+<h2 id="in-game-hud">In-Game HUD<a class="anchor" href="#in-game-hud">#</a></h2>
+<h3 id="core-hud-layout">Core HUD Layout<a class="anchor" href="#core-hud-layout">#</a></h3>
+<pre tabindex="0"><code>┌─────────────────────────────┐
+│ ███ Health                  │ Top Left
+│ ███ Armor          12:45    │ (Status)
+│ ███ Stamina      12 Players │
+│                             │
+│           ┌───────┐         │ Top Right
+│           │ MAP   │         │ (Minimap)
+│           └───────┘         │
+│                             │
+│                             │
+│         ⊕                   │ Center
+│                             │ (Crosshair)
+│                             │
+│                   ┌──────┐  │ Right Side
+│                   │Loot  │  │ (Notifications)
+│                   │Found!│  │
+│                   └──────┘  │
+│ ◎                         ◉ │ Bottom
+│ Movement    30/30  [R] Fire │ (Controls)
+│ [C]rouch    [⟳]  [Inv]      │
+└─────────────────────────────┘</code></pre><hr>
+<h3 id="health--status-bars">Health &amp; Status Bars<a class="anchor" href="#health--status-bars">#</a></h3>
+<p><strong>Health Bar:</strong></p>
+<ul>
+<li>Location: Top-left</li>
+<li>Style: Segmented (10 segments x 10 HP each)</li>
+<li>Color: Bright red (#DC2626)</li>
+<li>Animation: Smooth depletion, flash on damage</li>
+<li>Size: 200x20px</li>
+</ul>
+<p><strong>Armor Bar:</strong></p>
+<ul>
+<li>Below health bar</li>
+<li>Style: Segmented (matching health)</li>
+<li>Color: Bright blue (#3B82F6)</li>
+<li>Shows before health depletes</li>
+</ul>
+<p><strong>Stamina Bar:</strong></p>
+<ul>
+<li>Below armor</li>
+<li>Style: Solid bar (no segments)</li>
+<li>Color: Yellow (#FBBF24)</li>
+<li>Auto-hide when full</li>
+<li>Pulsing when low (&lt;20%)</li>
+</ul>
+<p><strong>Design Notes:</strong></p>
+<ul>
+<li>High contrast colors</li>
+<li>Visible against any background</li>
+<li>Large enough for glance reading</li>
+<li>Damage direction indicators around bars</li>
+</ul>
+<hr>
+<h3 id="minimap">Minimap<a class="anchor" href="#minimap">#</a></h3>
+<p>For detailed functional design, see <strong><a href="../GameDesign/NavigationAndMap.md">Navigation &amp; Map System</a></strong>.</p>
+<p><strong>Position:</strong> Top-right corner
+<strong>Size:</strong> 150x150px (scalable in settings)
+<strong>Style:</strong> Top-down. Default: Rotating with player.</p>
+<p><strong>Elements:</strong></p>
+<p><strong>Player:</strong></p>
+<ul>
+<li>Cyan triangle (pointing forward)</li>
+<li>Fixed center (default) or North-up mode</li>
+</ul>
+<p><strong>Teammates:</strong></p>
+<ul>
+<li>Blue circles with ID numbers</li>
+<li>Off-screen direction indicators</li>
+</ul>
+<p><strong>Enemies:</strong></p>
+<ul>
+<li><strong>Visual:</strong> Red solid dot (if scanned/detected)</li>
+<li><strong>Audio:</strong> Pulsing waves pointing to sound source (See <a href="../GameDesign/NavigationAndMap.md">Navigation GDD</a>)</li>
+</ul>
+<p><strong>POIs:</strong></p>
+<ul>
+<li>Loot containers: White dots</li>
+<li>Extraction zones: Green helicopter icons</li>
+<li>Supply drop: Yellow parachute</li>
+<li>Contamination: Red pulsing circle</li>
+</ul>
+<p><strong>Map Features:</strong></p>
+<ul>
+<li>Building outlines (simplified)</li>
+<li>Roads (gray lines)</li>
+<li>Zone boundaries</li>
+<li>Zoom levels: Auto-zoom based on movement speed</li>
+</ul>
+<hr>
+<h3 id="ammo-counter">Ammo Counter<a class="anchor" href="#ammo-counter">#</a></h3>
+<p><strong>Position:</strong> Bottom-right (near fire button)<br>
+<strong>Style:</strong></p>
+<pre tabindex="0"><code>    30  Current mag
+   ───
+   120  Reserve ammo</code></pre><p><strong>States:</strong></p>
+<ul>
+<li>Normal: White text</li>
+<li>Low (&lt;10 rounds): Yellow text</li>
+<li>Empty: Red text + warning icon</li>
+<li>Reloading: Progress circle animation</li>
+</ul>
+<hr>
+<h3 id="crosshair">Crosshair<a class="anchor" href="#crosshair">#</a></h3>
+<p><strong>Position:</strong> Screen center<br>
+<strong>Style:</strong> Minimal, tactical</p>
+<p><strong>States:</strong></p>
+<p><strong>Default:</strong></p>
+<pre tabindex="0"><code>    │
+  ─ ⊕ ─
+    │</code></pre><p><strong>Aiming (smaller):</strong></p>
+<pre tabindex="0"><code>   │
+ ─ + ─
+   │</code></pre><p><strong>Enemy in sights (red):</strong></p>
+<pre tabindex="0"><code>   │
+ ─ ⊕ ─  (Red color)
+   │</code></pre><p><strong>Customization Options:</strong></p>
+<ul>
+<li>Color (white, green, cyan, red)</li>
+<li>Size (small, medium, large)</li>
+<li>Style (cross, dot, circle)</li>
+<li>Opacity (50-100%)</li>
+</ul>
+<hr>
+<h3 id="virtual-joystick">Virtual Joystick<a class="anchor" href="#virtual-joystick">#</a></h3>
+<p><strong>Position:</strong> Bottom-left<br>
+<strong>Size:</strong> 120x120px touch area, 80x80px visual</p>
+<p><strong>Design:</strong></p>
+<pre tabindex="0"><code>     ╔═══╗
+     ║ ◉ ║  Outer ring (fixed)
+     ╚═══╝
+       ●    Inner dot (follows thumb)</code></pre><p><strong>Behavior:</strong></p>
+<ul>
+<li>Appears on touch</li>
+<li>Follows thumb within deadzone</li>
+<li>Returns to center on release</li>
+<li>Visual opacity: 60% (not blocking view)</li>
+<li>Deadzone: 15% (no movement in center)</li>
+</ul>
+<p><strong>Haptic Feedback:</strong></p>
+<ul>
+<li>Light pulse at edge of deadzone</li>
+<li>Helps thumb positioning without looking</li>
+</ul>
+<hr>
+<h3 id="action-buttons">Action Buttons<a class="anchor" href="#action-buttons">#</a></h3>
+<p><strong>Fire Button:</strong></p>
+<ul>
+<li>Position: Bottom-right corner</li>
+<li>Size: 100x100px (largest button)</li>
+<li>Color: Red (#EF4444)</li>
+<li>Icon: Crosshair target</li>
+<li>Behavior: Hold to auto-fire, tap for single shot</li>
+</ul>
+<p><strong>Reload Button:</strong></p>
+<ul>
+<li>Position: Above right side, middle</li>
+<li>Size: 70x70px</li>
+<li>Color: Yellow (#FBBF24)</li>
+<li>Icon: Circular arrows</li>
+<li>Auto-hidden when full ammo</li>
+</ul>
+<p><strong>Weapon Swap:</strong></p>
+<ul>
+<li>Position: Right of reload</li>
+<li>Size: 60x60px</li>
+<li>Color: Gray (#6B7280)</li>
+<li>Icon: Two rifles crossed</li>
+<li>Shows current weapon icon</li>
+</ul>
+<p><strong>Crouch Button:</strong></p>
+<ul>
+<li>Position: Next to joystick</li>
+<li>Size: 70x70px</li>
+<li>Color: Gray (normal), Blue (crouched)</li>
+<li>Icon: Person crouching</li>
+<li>Toggle behavior</li>
+</ul>
+<p><strong>Interaction Button:</strong></p>
+<ul>
+<li>Position: Below joystick</li>
+<li>Size: 80x80px</li>
+<li>Color: Cyan (#06B6D4)</li>
+<li>Icon: Hand (changes contextual)</li>
+<li>Context: &ldquo;Open&rdquo;, &ldquo;Pick Up&rdquo;, &ldquo;Revive&rdquo;</li>
+<li>Only appears when near interactable</li>
+</ul>
+<p><strong>Inventory Button:</strong></p>
+<ul>
+<li>Position: Bottom-right, below fire</li>
+<li>Size: 60x60px</li>
+<li>Color: Gray</li>
+<li>Icon: Backpack</li>
+<li>Opens inventory overlay</li>
+</ul>
+<hr>
+<h3 id="damage-indicators">Damage Indicators<a class="anchor" href="#damage-indicators">#</a></h3>
+<p><strong>Hit Direction:</strong></p>
+<ul>
+<li>Red arc on screen edge</li>
+<li>Direction of damage source</li>
+<li>Fades over 1 second</li>
+<li>Intensity shows damage amount</li>
+</ul>
+<p><strong>Damage Numbers:</strong></p>
+<ul>
+<li>Float up from hit location</li>
+<li>Size scales with damage</li>
+<li>Color: Yellow (normal), Red (critical), White (armor)</li>
+<li>Optional toggle in settings</li>
+</ul>
+<hr>
+<h3 id="kill-feed">Kill Feed<a class="anchor" href="#kill-feed">#</a></h3>
+<p><strong>Position:</strong> Top-right, below timer<br>
+<strong>Style:</strong> Scrolling list (3 recent kills)</p>
+<p><strong>Format:</strong></p>
+<pre tabindex="0"><code>[Killer] 🔫 [Victim]        (Top, newest)
+  You   🔫  Enemy2          (Middle)
+Player3 💀  You             (Bottom, oldest)</code></pre><p><strong>Icons:</strong></p>
+<ul>
+<li>🔫 Gun kill (shows weapon icon)</li>
+<li>💥 Explosion</li>
+<li>🔪 Melee</li>
+<li>💀 Died to contamination/fall</li>
+</ul>
+<p><strong>Behavior:</strong></p>
+<ul>
+<li>Fades in (0.3s)</li>
+<li>Stays (5s)</li>
+<li>Fades out (0.5s)</li>
+<li>Scrolls up for new kills</li>
+</ul>
+<hr>
+<h3 id="objective--quest-tracker">Objective &amp; Quest Tracker<a class="anchor" href="#objective--quest-tracker">#</a></h3>
+<p><strong>Position:</strong> Left side, middle<br>
+<strong>Style:</strong> Minimal list</p>
+<pre tabindex="0"><code>├ Main Quest: Extract $5,000
+│  ├ Progress: $3,245 / $5,000
+│  └ Time: 8:32 remaining
+│
+└ Daily: Kill 5 enemies
+   └ Progress: 3 / 5</code></pre><p><strong>Behavior:</strong></p>
+<ul>
+<li>Collapsible (tap to minimize)</li>
+<li>Updates real-time</li>
+<li>Flash on progress</li>
+<li>Completion animation</li>
+</ul>
+<hr>
+<h3 id="extraction-ui">Extraction UI<a class="anchor" href="#extraction-ui">#</a></h3>
+<p><strong>Extraction Call:</strong></p>
+<ul>
+<li>Large button appears near extraction zone</li>
+<li>&ldquo;Call Extraction&rdquo; (green, pulsing)</li>
+<li>Shows zone name</li>
+<li>Tap to activate</li>
+</ul>
+<p><strong>Extraction Timer:</strong></p>
+<pre tabindex="0"><code>┌─────────────────┐
+│  EXTRACTING     │
+│                 │
+│   ⏱ 00:24      │  Large countdown
+│                 │
+│  ████████░░░░   │  Progress bar
+│                 │
+│ Stay in zone!   │  Instruction
+└─────────────────┘</code></pre><p><strong>States:</strong></p>
+<ul>
+<li>Countdown: Green</li>
+<li>Interrupted: Red flash + alert</li>
+<li>Success: Gold + checkmark</li>
+<li>Failed: Gray + X</li>
+</ul>
+<hr>
+<h3 id="notification-system">Notification System<a class="anchor" href="#notification-system">#</a></h3>
+<p><strong>Types:</strong></p>
+<p><strong>Toast Notifications:</strong></p>
+<ul>
+<li>Position: Top-center</li>
+<li>Duration: 3 seconds</li>
+<li>Examples: &ldquo;Quest completed!&rdquo;, &ldquo;Level up!&rdquo;</li>
+</ul>
+<p><strong>Popup Notifications:</strong></p>
+<ul>
+<li>Position: Center screen (modal)</li>
+<li>Requires dismiss</li>
+<li>Examples: &ldquo;Achievement unlocked&rdquo;</li>
+</ul>
+<p><strong>Loot Notifications:</strong></p>
+<ul>
+<li>Position: Right side, scrolling</li>
+<li>Shows item icon + name + rarity color</li>
+<li>Auto-dismisses after 4 seconds</li>
+</ul>
+<p><strong>Alert Notifications:</strong></p>
+<ul>
+<li>Position: Center-top</li>
+<li>Urgent warnings</li>
+<li>Examples: &ldquo;Contamination approaching!&rdquo;</li>
+<li>Red background, pulsing</li>
+</ul>
+<hr>
+<h2 id="post-match-screens">Post-Match Screens<a class="anchor" href="#post-match-screens">#</a></h2>
+<h3 id="victory-screen">Victory Screen<a class="anchor" href="#victory-screen">#</a></h3>
+<pre tabindex="0"><code>┌─────────────────────────────┐
+│        EXTRACTED!           │
+│                             │
+│   ┌─────────────────────┐   │
+│   │  Operator Standing  │   │ 3D model
+│   │   (Victory Pose)    │   │ celebration
+│   └─────────────────────┘   │
+│                             │
+│ Loot Extracted:             │
+│ ┌──────────────────┐        │
+│ │ [Item] [Item]    │        │ Scrolling
+│ │ [Item] [Item]    │        │ loot list
+│ │                  │        │
+│ └──────────────────┘        │
+│ Total Value: $8,450         │
+│                             │
+│ ┌──────┬──────┬──────┐      │
+│ │ XP   │Kills│ Time │      │ Stats
+│ │+1250 │  3  │12:34 │      │
+│ └──────┴──────┴──────┘      │
+│                             │
+│ [Continue] [Play Again]     │
+└─────────────────────────────┘</code></pre><p><strong>Animations:</strong></p>
+<ul>
+<li>Loot icons fly in</li>
+<li>XP bar fills with satisfying sound</li>
+<li>Rare items glow</li>
+<li>Victory music</li>
+</ul>
+<hr>
+<h3 id="defeat-screen">Defeat Screen<a class="anchor" href="#defeat-screen">#</a></h3>
+<pre tabindex="0"><code>┌─────────────────────────────┐
+│          KILLED             │
+│                             │
+│ Eliminated by: PlayerXYZ    │ Killer info
+│ Weapon: AK-47               │
+│ Distance: 45m               │
+│                             │
+│ You Lost:                   │
+│ ┌──────────────────┐        │
+│ │ [Item] [Item]    │        │ Lost loot
+│ │ [Item] [Item]    │        │ (grayed out)
+│ └──────────────────┘        │
+│ Value Lost: $12,340         │
+│                             │
+│ ┌──────┬──────┬──────┐      │
+│ │ XP   │Kills│ Time │      │ Consolation
+│ │ +250 │  1  │7:23  │      │ stats
+│ └──────┴──────┴──────┘      │
+│                             │
+│ [View Replay] [Try Again]   │
+└─────────────────────────────┘</code></pre><p><strong>Tone:</strong></p>
+<ul>
+<li>Not overly negative</li>
+<li>Show what was lost (learning)</li>
+<li>Encourage retry</li>
+<li>Somber music</li>
+</ul>
+<hr>
+<h2 id="settings-ui">Settings UI<a class="anchor" href="#settings-ui">#</a></h2>
+<h3 id="settings-categories">Settings Categories<a class="anchor" href="#settings-categories">#</a></h3>
+<p><strong>Graphics:</strong></p>
+<ul>
+<li>Quality presets (Low/Med/High/Ultra)</li>
+<li>Resolution</li>
+<li>Frame rate cap</li>
+<li>Effects quality</li>
+<li>Shadow quality</li>
+<li>Anti-aliasing</li>
+</ul>
+<p><strong>Audio:</strong></p>
+<ul>
+<li>Master volume</li>
+<li>Music volume</li>
+<li>SFX volume</li>
+<li>Voice volume</li>
+<li>Mono audio (accessibility)</li>
+</ul>
+<p><strong>Controls:</strong></p>
+<ul>
+<li>Sensitivity (aim, movement)</li>
+<li>Invert Y-axis</li>
+<li>Fire button: Tap/Hold</li>
+<li>Left-handed mode</li>
+<li>Button size scaling</li>
+<li>Button opacity</li>
+</ul>
+<p><strong>Gameplay:</strong></p>
+<ul>
+<li>Auto-pickup</li>
+<li>Aim assist strength</li>
+<li>Crosshair customization</li>
+<li>HUD scaling</li>
+<li>Colorblind modes</li>
+</ul>
+<p><strong>Account:</strong></p>
+<ul>
+<li>Linked accounts</li>
+<li>Language</li>
+<li>Logout</li>
+</ul>
+<hr>
+<h2 id="accessibility-features">Accessibility Features<a class="anchor" href="#accessibility-features">#</a></h2>
+<p><strong>Colorblind Modes:</strong></p>
+<ul>
+<li>Deuteranopia (red-green)</li>
+<li>Protanopia (red-green)</li>
+<li>Tritanopia (blue-yellow)</li>
+<li>Adjusts UI colors, not art</li>
+</ul>
+<p><strong>Visual Aids:</strong></p>
+<ul>
+<li>High contrast mode</li>
+<li>Larger text option</li>
+<li>Screen reader support (future)</li>
+<li>Simplified UI option</li>
+</ul>
+<p><strong>Audio Aids:</strong></p>
+<ul>
+<li>Subtitles for voice lines</li>
+<li>Visual sound indicators</li>
+<li>Mono audio option</li>
+</ul>
+<p><strong>Controls:</strong></p>
+<ul>
+<li>Customizable button layouts</li>
+<li>One-handed mode (future)</li>
+<li>External controller support</li>
+</ul>
+<hr>
+<p><strong><a href="./06_AudioDesign.md">← Previous: Audio Design</a></strong> | <strong><a href="./README.md">High-Level Index</a></strong> | <strong><a href="./08_Progression.md">Next: Progression →</a></strong></p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+<div>
+
+</div>
+
+<div>
+
+</div>
+
+</div>
+
+
+
+
+
+  
+  
+  
+  <div class="flex flex-wrap justify-between">
+    <span>
+    
+      <a href="/docs/GDD_Design/Visuals/StyleGuide/" class="flex align-center">
+        <img src="/icons/backward.svg" class="book-icon" alt="Backward" />
+        <span>Style Guide</span>
+      </a>
+    
+    </span>
+    <span>
+    
+      <a href="/docs/GDD_Design/World/EnvironmentalNarrative/" class="flex align-center">
+        <span>Environmental Narrative</span>
+        <img src="/icons/forward.svg" class="book-icon" alt="Forward" />
+      </a>
+    
+    </span>
+  </div>
+  
+
+
+ 
+        
+  
+ 
+        
+        
+  
+ 
+        
+  
+  
+    <script>(function(){document.querySelectorAll("pre:has(code)").forEach(e=>{e.addEventListener("click",e.focus),e.addEventListener("copy",function(t){if(t.preventDefault(),navigator.clipboard){const t=window.getSelection().toString()||e.textContent;navigator.clipboard.writeText(t)}})})})()</script>
+  
+
+      </footer>
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+  
+  <aside class="book-toc">
+    <div class="book-toc-content">
+      
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#ui-design-philosophy">UI Design Philosophy</a></li>
+    <li><a href="#touch-control-standards">Touch Control Standards</a>
+      <ul>
+        <li><a href="#minimum-touch-targets">Minimum Touch Targets</a></li>
+        <li><a href="#control-zones">Control Zones</a></li>
+      </ul>
+    </li>
+    <li><a href="#main-menu--screens">Main Menu &amp; Screens</a>
+      <ul>
+        <li><a href="#home-screen">Home Screen</a></li>
+        <li><a href="#operator-selection-screen">Operator Selection Screen</a></li>
+        <li><a href="#loadout-screen">Loadout Screen</a></li>
+        <li><a href="#stashinventory-screen">Stash/Inventory Screen</a></li>
+      </ul>
+    </li>
+    <li><a href="#in-game-hud">In-Game HUD</a>
+      <ul>
+        <li><a href="#core-hud-layout">Core HUD Layout</a></li>
+        <li><a href="#health--status-bars">Health &amp; Status Bars</a></li>
+        <li><a href="#minimap">Minimap</a></li>
+        <li><a href="#ammo-counter">Ammo Counter</a></li>
+        <li><a href="#crosshair">Crosshair</a></li>
+        <li><a href="#virtual-joystick">Virtual Joystick</a></li>
+        <li><a href="#action-buttons">Action Buttons</a></li>
+        <li><a href="#damage-indicators">Damage Indicators</a></li>
+        <li><a href="#kill-feed">Kill Feed</a></li>
+        <li><a href="#objective--quest-tracker">Objective &amp; Quest Tracker</a></li>
+        <li><a href="#extraction-ui">Extraction UI</a></li>
+        <li><a href="#notification-system">Notification System</a></li>
+      </ul>
+    </li>
+    <li><a href="#post-match-screens">Post-Match Screens</a>
+      <ul>
+        <li><a href="#victory-screen">Victory Screen</a></li>
+        <li><a href="#defeat-screen">Defeat Screen</a></li>
+      </ul>
+    </li>
+    <li><a href="#settings-ui">Settings UI</a>
+      <ul>
+        <li><a href="#settings-categories">Settings Categories</a></li>
+      </ul>
+    </li>
+    <li><a href="#accessibility-features">Accessibility Features</a></li>
+  </ul>
+</nav>
+
+
+
+    </div>
+  </aside>
+  
+ 
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

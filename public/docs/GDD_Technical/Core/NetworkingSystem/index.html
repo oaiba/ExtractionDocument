@@ -1,0 +1,2678 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=52224&amp;path=livereload" data-no-instant defer></script>
+  <!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Networking System - Technical Design Document#← Previous: Architecture | Index | Next: Character System →
+Overview#Network Model#Property Value Architecture Dedicated Server with EOS Relay fallback Authority Server Authoritative Topology Client-Server (Star) Protocol UDP (Standard) / P2P (EOS Relay) Cross-Platform Epic Online Services (EOS) Core Functions#Function Description Replication State synchronization Client Prediction Hide latency Lag Compensation Fair hit detection Matchmaking EOS Smart Sessions / Flex Match Lobbies Persistent cross-platform lobbies Anti-Cheat Easy Anti-Cheat (EOS) System Architecture#┌──────────────┐│ EOS Cloud │ (Matchmaking, Auth, Relay)└──────┬───────┘│┌──────┴───────┐│ │┌─────▼─────┐ ┌─────▼─────┐│ Game Svr 1│ │ Game Svr 2│ (Dedicated Servers)└─────┬─────┘ └─────┬─────┘│ │┌─────┼───────┬──────┼─────┐│ │ │ │ │┌─▼─┐ ┌─▼─┐ ┌─▼─┐ ┌─▼─┐ ┌─▼─┐│PC │ │PS5│ │XBX│ │iOS│ │And│ (Cross-Platform Clients)└───┘ └───┘ └───┘ └───┘ └───┘ Enums &amp; Types#NetworkRole#Code Name Display Name Authority Replication NR_Server Dedicated Server Full Source NR_ListenServer Listen Server Full Source NR_Client Client None Receiver NR_SimulatedProxy Simulated Proxy None Simulated NR_AutonomousProxy Autonomous Proxy Local Predicted AuthProvider#Authentication provider for EOS Connect.
+">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:52224/docs/GDD_Technical/Core/NetworkingSystem/">
+  <meta property="og:site_name" content="Extraction Shooter GDD">
+  <meta property="og:title" content="Extraction Shooter GDD">
+  <meta property="og:description" content="Networking System - Technical Design Document#← Previous: Architecture | Index | Next: Character System →
+Overview#Network Model#Property Value Architecture Dedicated Server with EOS Relay fallback Authority Server Authoritative Topology Client-Server (Star) Protocol UDP (Standard) / P2P (EOS Relay) Cross-Platform Epic Online Services (EOS) Core Functions#Function Description Replication State synchronization Client Prediction Hide latency Lag Compensation Fair hit detection Matchmaking EOS Smart Sessions / Flex Match Lobbies Persistent cross-platform lobbies Anti-Cheat Easy Anti-Cheat (EOS) System Architecture#┌──────────────┐│ EOS Cloud │ (Matchmaking, Auth, Relay)└──────┬───────┘│┌──────┴───────┐│ │┌─────▼─────┐ ┌─────▼─────┐│ Game Svr 1│ │ Game Svr 2│ (Dedicated Servers)└─────┬─────┘ └─────┬─────┘│ │┌─────┼───────┬──────┼─────┐│ │ │ │ │┌─▼─┐ ┌─▼─┐ ┌─▼─┐ ┌─▼─┐ ┌─▼─┐│PC │ │PS5│ │XBX│ │iOS│ │And│ (Cross-Platform Clients)└───┘ └───┘ └───┘ └───┘ └───┘ Enums &amp; Types#NetworkRole#Code Name Display Name Authority Replication NR_Server Dedicated Server Full Source NR_ListenServer Listen Server Full Source NR_Client Client None Receiver NR_SimulatedProxy Simulated Proxy None Simulated NR_AutonomousProxy Autonomous Proxy Local Predicted AuthProvider#Authentication provider for EOS Connect.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
+
+
+  <meta itemprop="name" content="Extraction Shooter GDD">
+  <meta itemprop="description" content="Networking System - Technical Design Document#← Previous: Architecture | Index | Next: Character System →
+Overview#Network Model#Property Value Architecture Dedicated Server with EOS Relay fallback Authority Server Authoritative Topology Client-Server (Star) Protocol UDP (Standard) / P2P (EOS Relay) Cross-Platform Epic Online Services (EOS) Core Functions#Function Description Replication State synchronization Client Prediction Hide latency Lag Compensation Fair hit detection Matchmaking EOS Smart Sessions / Flex Match Lobbies Persistent cross-platform lobbies Anti-Cheat Easy Anti-Cheat (EOS) System Architecture#┌──────────────┐│ EOS Cloud │ (Matchmaking, Auth, Relay)└──────┬───────┘│┌──────┴───────┐│ │┌─────▼─────┐ ┌─────▼─────┐│ Game Svr 1│ │ Game Svr 2│ (Dedicated Servers)└─────┬─────┘ └─────┬─────┘│ │┌─────┼───────┬──────┼─────┐│ │ │ │ │┌─▼─┐ ┌─▼─┐ ┌─▼─┐ ┌─▼─┐ ┌─▼─┐│PC │ │PS5│ │XBX│ │iOS│ │And│ (Cross-Platform Clients)└───┘ └───┘ └───┘ └───┘ └───┘ Enums &amp; Types#NetworkRole#Code Name Display Name Authority Replication NR_Server Dedicated Server Full Source NR_ListenServer Listen Server Full Source NR_Client Client None Receiver NR_SimulatedProxy Simulated Proxy None Simulated NR_AutonomousProxy Autonomous Proxy Local Predicted AuthProvider#Authentication provider for EOS Connect.">
+  <meta itemprop="wordCount" content="655">
+
+<title>Networking System | Extraction Shooter GDD</title>
+<link rel="icon" href="/favicon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="http://localhost:52224/docs/GDD_Technical/Core/NetworkingSystem/">
+<link rel="stylesheet" href="/book.min.63c8b2b12bbd1ad36428837740ea371dd41fdb9c22b35499003d0dfa4dbce6ba.css" integrity="sha256-Y8iysSu9GtNkKIN3QOo3HdQf25wis1SZAD0N&#43;k285ro=" crossorigin="anonymous">
+
+
+  <script defer src="/fuse.min.js"></script>
+  <script defer src="/en.search.min.58bea27d7a08265548c5a8636a9a9fc844e0eb9d60fc3bb2c53d517da858d4c1.js" integrity="sha256-WL6ifXoIJlVIxahjapqfyETg651g/DuyxT1RfahY1ME=" crossorigin="anonymous"></script>
+
+  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
+
+
+
+  
+</head>
+<body dir="ltr" class="book-kind-page book-type-docs">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    
+<aside class="book-menu">
+  <div class="book-menu-content">
+    
+  <nav>
+    <h2 class="book-brand">
+  <a class="flex align-center" href="/"><img src="/logo.svg" alt="Logo" /><span>Extraction Shooter GDD</span>
+  </a>
+</h2>
+
+    <div class="book-theme-toggle">
+    <input type="checkbox" id="theme-toggle" class="toggle">
+    <label for="theme-toggle" class="flex justify-between items-center cursor-pointer">
+        <span class="text-xs font-semibold">Dark Mode</span>
+        <div
+            class="relative w-10 h-5 bg-gray-200 rounded-full transition-colors duration-200 ease-in-out dark:bg-gray-700">
+            <div
+                class="absolute left-0 w-5 h-5 bg-white rounded-full shadow transform transition-transform duration-200 ease-in-out dark:translate-x-full">
+            </div>
+        </div>
+    </label>
+</div>
+
+<script>
+    (function () {
+        const toggle = document.getElementById('theme-toggle');
+        const html = document.documentElement;
+
+        
+        const savedTheme = localStorage.getItem('theme');
+        const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+        if (savedTheme === 'dark' || (!savedTheme && systemDark)) {
+            html.classList.add('dark');
+            toggle.checked = true;
+        } else {
+            html.classList.remove('dark');
+            toggle.checked = false;
+        }
+
+        
+        toggle.addEventListener('change', function () {
+            if (this.checked) {
+                html.classList.add('dark');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                html.classList.remove('dark');
+                localStorage.setItem('theme', 'light');
+            }
+        });
+    })();
+</script>
+
+<style>
+     
+    .book-theme-toggle {
+        margin: 1rem 0;
+        padding: 0 1rem;
+
+    }
+
+    .book-theme-toggle label {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        cursor: pointer;
+        font-size: 0.85em;
+    }
+
+     
+    .book-theme-toggle input {
+        display: none;
+    }
+
+     
+    .book-theme-toggle label::after {
+        content: "🌙";
+         
+    }
+
+     
+    html:not(.dark) .book-theme-toggle label::after {
+        content: "☀️";
+         
+    }
+</style> 
+    
+<div class="book-search hidden">
+  <input id="book-search-input" type="text" 
+    placeholder="Search"
+    aria-label="Search"
+    maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+    
+
+    
+    
+
+
+
+    
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/" class="">
+      Gdd Design</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      AI</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/AI/EnemyBehavior/" class="">
+      Enemy Behavior</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/AI/FactionBehaviors/" class="">
+      Faction Behaviors</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Audio</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Audio/SoundDesign/" class="">
+      Sound Design</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Audio/Soundscape/" class="">
+      Soundscape</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Audio/TacticalAudio/" class="">
+      Tactical Audio</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Audio/VoiceLines/" class="">
+      Voice Lines</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Characters</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Operators/" class="">
+      Operators</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Assault</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Assault/Blaze/" class="">
+      Blaze</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Assault/Havoc/" class="">
+      Havoc</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Assault/README/" class="">
+      Readme</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Assault/Viper/" class="">
+      Viper</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Recon</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Recon/Phantom/" class="">
+      Phantom</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Recon/README/" class="">
+      Readme</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Recon/Specter/" class="">
+      Specter</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Recon/Wraith/" class="">
+      Wraith</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Specialist</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Specialist/Cipher/" class="">
+      Cipher</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Specialist/Flux/" class="">
+      Flux</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Specialist/README/" class="">
+      Readme</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Support</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Support/Angel/" class="">
+      Angel</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Support/Doc/" class="">
+      Doc</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Support/README/" class="">
+      Readme</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Tank</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Tank/Bulwark/" class="">
+      Bulwark</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Tank/Fortress/" class="">
+      Fortress</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Tank/README/" class="">
+      Readme</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Combat</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Combat/Items/" class="">
+      Items</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Combat/Weapons/" class="">
+      Weapons</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      GameDesign</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Accessibility/" class="">
+      Accessibility</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Controls/" class="">
+      Controls</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/CoreGameplay/" class="">
+      Core Gameplay</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Economy/" class="">
+      Economy</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/GameModes/" class="">
+      Game Modes</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/LiveOps/" class="">
+      Live Ops</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Localization/" class="">
+      Localization</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/NavigationAndMap/" class="">
+      Navigation and Map</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Overview/" class="">
+      Overview</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Progression/" class="">
+      Progression</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/RankedMode/" class="">
+      Ranked Mode</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/TutorialRaid/" class="">
+      Tutorial Raid</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/UserSettings/" class="">
+      User Settings</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Gameplay</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Gameplay/CoreLoop/" class="">
+      Core Loop</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      ProjectScope</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/ProjectScope/DesignPillars/" class="">
+      Design Pillars</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/ProjectScope/MVP/" class="">
+      Mvp</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/ProjectScope/NonGoals/" class="">
+      Non Goals</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/ProjectScope/Risks/" class="">
+      Risks</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Social</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Social/Multiplayer/" class="">
+      Multiplayer</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Story</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Story/Backstory/" class="">
+      Backstory</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Story/Factions/" class="">
+      Factions</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Story/Narrative/" class="">
+      Narrative</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Story/QuestLines/" class="">
+      Quest Lines</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      UI UX</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/UI_UX/UX_Flows/" class="">
+      Ux Flows</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/UI_UX/Visual_Style/" class="">
+      Visual Style</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Visuals</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Visuals/ArtDirection/" class="">
+      Art Direction</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Visuals/AssetGuidelines/" class="">
+      Asset Guidelines</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Visuals/StyleGuide/" class="">
+      Style Guide</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Visuals/UserInterface/" class="">
+      User Interface</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      World</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/EnvironmentalNarrative/" class="">
+      Environmental Narrative</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/EnvironmentalNarrative_Guidelines/" class="">
+      Environmental Narrative Guidelines</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/LootDistribution/" class="">
+      Loot Distribution</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/MapDesign/" class="">
+      Map Design</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/MapDesign_IndustrialZone/" class="">
+      Map Design Industrial Zone</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/MapDesign_NeonSlums/" class="">
+      Map Design Neon Slums</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/MapDesign_Wilderness/" class="">
+      Map Design Wilderness</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/MapLayouts/" class="">
+      Map Layouts</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/" class="">
+      Gdd Technical</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      AI</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/AI/SensorySystem/" class="">
+      Sensory System</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Core</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Core/Architecture/" class="">
+      Architecture</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Core/CodingStandards/" class="">
+      Coding Standards</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Core/DevelopmentRoadmap/" class="">
+      Development Roadmap</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Core/NetworkingSystem/" class="active">
+      Networking System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Core/SecuritySystem/" class="">
+      Security System</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Gameplay</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Gameplay/CharacterSystem/" class="">
+      Character System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Gameplay/ControlSystem/" class="">
+      Control System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Gameplay/InventorySystem/" class="">
+      Inventory System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Gameplay/WeaponSystem/" class="">
+      Weapon System</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Networking</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Networking/LagCompensation/" class="">
+      Lag Compensation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Networking/ReplicationStrategy/" class="">
+      Replication Strategy</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Performance</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Performance/Budgets/" class="">
+      Budgets</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Performance/Optimization/" class="">
+      Optimization</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Security</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Security/AntiCheatStrategy/" class="">
+      Anti Cheat Strategy</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Systems</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/AccessibilitySystem/" class="">
+      Accessibility System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/AISystem/" class="">
+      Aisystem</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/AnalyticsSystem/" class="">
+      Analytics System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/AudioSystem/" class="">
+      Audio System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/BuildPipeline/" class="">
+      Build Pipeline</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/LiveOpsSystem/" class="">
+      Live Ops System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/LocalizationSystem/" class="">
+      Localization System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/MapSystem/" class="">
+      Map System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/NarrativeSystem/" class="">
+      Narrative System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/ProgressionSystem/" class="">
+      Progression System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/RankedSystem/" class="">
+      Ranked System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/SaveSystem/" class="">
+      Save System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/SocialSystem/" class="">
+      Social System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/TutorialSystem/" class="">
+      Tutorial System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/UISystem/" class="">
+      Uisystem</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+</nav>
+
+
+
+
+<script>{ { . | safeJS } }</script>
+
+
+  </div>
+</aside>
+ 
+
+    <div class="book-page">
+      <header class="book-header hidden">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/icons/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <h3>Networking System</h3>
+
+  <label for="toc-control">
+    
+    <img src="/icons/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#overview">Overview</a>
+      <ul>
+        <li><a href="#network-model">Network Model</a></li>
+        <li><a href="#core-functions">Core Functions</a></li>
+      </ul>
+    </li>
+    <li><a href="#system-architecture">System Architecture</a></li>
+    <li><a href="#enums--types">Enums &amp; Types</a>
+      <ul>
+        <li><a href="#networkrole">NetworkRole</a></li>
+        <li><a href="#authprovider">AuthProvider</a></li>
+        <li><a href="#lobbyprivacy">LobbyPrivacy</a></li>
+        <li><a href="#connectionstate">ConnectionState</a></li>
+        <li><a href="#matchmakingstate">MatchmakingState</a></li>
+      </ul>
+    </li>
+    <li><a href="#code-names">Code Names</a>
+      <ul>
+        <li><a href="#eos-events">EOS Events</a></li>
+        <li><a href="#connection-events">Connection Events</a></li>
+      </ul>
+    </li>
+    <li><a href="#core-classes">Core Classes</a>
+      <ul>
+        <li><a href="#eosmanager">EOSManager</a></li>
+        <li><a href="#lobbymanager">LobbyManager</a></li>
+        <li><a href="#networkmanager">NetworkManager</a></li>
+      </ul>
+    </li>
+    <li><a href="#data-structures">Data Structures</a></li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><h1 id="networking-system---technical-design-document">Networking System - Technical Design Document<a class="anchor" href="#networking-system---technical-design-document">#</a></h1>
+<p><strong><a href="./Architecture.md">← Previous: Architecture</a></strong> | <strong><a href="../README.md">Index</a></strong> | <strong><a href="../Gameplay/CharacterSystem.md">Next: Character System →</a></strong></p>
+<hr>
+<h2 id="overview">Overview<a class="anchor" href="#overview">#</a></h2>
+<h3 id="network-model">Network Model<a class="anchor" href="#network-model">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Property</th>
+          <th style="text-align: left">Value</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><strong>Architecture</strong></td>
+          <td style="text-align: left">Dedicated Server with EOS Relay fallback</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Authority</strong></td>
+          <td style="text-align: left">Server Authoritative</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Topology</strong></td>
+          <td style="text-align: left">Client-Server (Star)</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Protocol</strong></td>
+          <td style="text-align: left">UDP (Standard) / P2P (EOS Relay)</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Cross-Platform</strong></td>
+          <td style="text-align: left">Epic Online Services (EOS)</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="core-functions">Core Functions<a class="anchor" href="#core-functions">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Function</th>
+          <th style="text-align: left">Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><strong>Replication</strong></td>
+          <td style="text-align: left">State synchronization</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Client Prediction</strong></td>
+          <td style="text-align: left">Hide latency</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Lag Compensation</strong></td>
+          <td style="text-align: left">Fair hit detection</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Matchmaking</strong></td>
+          <td style="text-align: left">EOS Smart Sessions / Flex Match</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Lobbies</strong></td>
+          <td style="text-align: left">Persistent cross-platform lobbies</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Anti-Cheat</strong></td>
+          <td style="text-align: left">Easy Anti-Cheat (EOS)</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="system-architecture">System Architecture<a class="anchor" href="#system-architecture">#</a></h2>
+<pre tabindex="0"><code>        ┌──────────────┐
+        │  EOS Cloud   │ (Matchmaking, Auth, Relay)
+        └──────┬───────┘
+               │
+        ┌──────┴───────┐
+        │              │
+  ┌─────▼─────┐  ┌─────▼─────┐
+  │ Game Svr 1│  │ Game Svr 2│ (Dedicated Servers)
+  └─────┬─────┘  └─────┬─────┘
+        │              │
+  ┌─────┼───────┬──────┼─────┐
+  │     │       │      │     │
+┌─▼─┐ ┌─▼─┐   ┌─▼─┐  ┌─▼─┐ ┌─▼─┐
+│PC │ │PS5│   │XBX│  │iOS│ │And│ (Cross-Platform Clients)
+└───┘ └───┘   └───┘  └───┘ └───┘</code></pre><hr>
+<h2 id="enums--types">Enums &amp; Types<a class="anchor" href="#enums--types">#</a></h2>
+<h3 id="networkrole">NetworkRole<a class="anchor" href="#networkrole">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Code Name</th>
+          <th style="text-align: left">Display Name</th>
+          <th style="text-align: left">Authority</th>
+          <th style="text-align: left">Replication</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><code>NR_Server</code></td>
+          <td style="text-align: left">Dedicated Server</td>
+          <td style="text-align: left">Full</td>
+          <td style="text-align: left">Source</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>NR_ListenServer</code></td>
+          <td style="text-align: left">Listen Server</td>
+          <td style="text-align: left">Full</td>
+          <td style="text-align: left">Source</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>NR_Client</code></td>
+          <td style="text-align: left">Client</td>
+          <td style="text-align: left">None</td>
+          <td style="text-align: left">Receiver</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>NR_SimulatedProxy</code></td>
+          <td style="text-align: left">Simulated Proxy</td>
+          <td style="text-align: left">None</td>
+          <td style="text-align: left">Simulated</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>NR_AutonomousProxy</code></td>
+          <td style="text-align: left">Autonomous Proxy</td>
+          <td style="text-align: left">Local</td>
+          <td style="text-align: left">Predicted</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="authprovider">AuthProvider<a class="anchor" href="#authprovider">#</a></h3>
+<p>Authentication provider for EOS Connect.</p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Code Name</th>
+          <th style="text-align: left">Display Name</th>
+          <th style="text-align: left">Platform</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><code>AP_Epic</code></td>
+          <td style="text-align: left">Epic Games</td>
+          <td style="text-align: left">PC</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>AP_Steam</code></td>
+          <td style="text-align: left">Steam</td>
+          <td style="text-align: left">PC</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>AP_Google</code></td>
+          <td style="text-align: left">Google Play</td>
+          <td style="text-align: left">Android</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>AP_Apple</code></td>
+          <td style="text-align: left">Apple ID</td>
+          <td style="text-align: left">iOS</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>AP_PSN</code></td>
+          <td style="text-align: left">PlayStation</td>
+          <td style="text-align: left">PS5</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>AP_XBL</code></td>
+          <td style="text-align: left">Xbox Live</td>
+          <td style="text-align: left">Xbox</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>AP_Device</code></td>
+          <td style="text-align: left">Device ID</td>
+          <td style="text-align: left">Guest/Dev</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="lobbyprivacy">LobbyPrivacy<a class="anchor" href="#lobbyprivacy">#</a></h3>
+<p>Visibility settings for lobbies.</p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Code Name</th>
+          <th style="text-align: left">Display Name</th>
+          <th style="text-align: left">Searchable</th>
+          <th style="text-align: left">Invite Only</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><code>LP_Public</code></td>
+          <td style="text-align: left">Public</td>
+          <td style="text-align: left">Yes</td>
+          <td style="text-align: left">No</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>LP_Friends</code></td>
+          <td style="text-align: left">Friends Only</td>
+          <td style="text-align: left">No</td>
+          <td style="text-align: left">Yes</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>LP_Private</code></td>
+          <td style="text-align: left">Private</td>
+          <td style="text-align: left">No</td>
+          <td style="text-align: left">Yes</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="connectionstate">ConnectionState<a class="anchor" href="#connectionstate">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Code Name</th>
+          <th style="text-align: left">Display Name</th>
+          <th style="text-align: left">Timeout</th>
+          <th style="text-align: left">UI State</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><code>CS_Disconnected</code></td>
+          <td style="text-align: left">Disconnected</td>
+          <td style="text-align: left">N/A</td>
+          <td style="text-align: left">Main Menu</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>CS_Authenticating</code></td>
+          <td style="text-align: left">Authenticating</td>
+          <td style="text-align: left">15s</td>
+          <td style="text-align: left">Login Screen</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>CS_Connecting</code></td>
+          <td style="text-align: left">Connecting</td>
+          <td style="text-align: left">30s</td>
+          <td style="text-align: left">Loading</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>CS_Connected</code></td>
+          <td style="text-align: left">Connected</td>
+          <td style="text-align: left">N/A</td>
+          <td style="text-align: left">In-game</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>CS_Reconnecting</code></td>
+          <td style="text-align: left">Reconnecting</td>
+          <td style="text-align: left">60s</td>
+          <td style="text-align: left">Overlay</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>CS_TimedOut</code></td>
+          <td style="text-align: left">Timed Out</td>
+          <td style="text-align: left">N/A</td>
+          <td style="text-align: left">Error</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="matchmakingstate">MatchmakingState<a class="anchor" href="#matchmakingstate">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Code Name</th>
+          <th style="text-align: left">Display Name</th>
+          <th style="text-align: left">Duration</th>
+          <th style="text-align: left">Cancel</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><code>MMS_Idle</code></td>
+          <td style="text-align: left">Idle</td>
+          <td style="text-align: left">N/A</td>
+          <td style="text-align: left">N/A</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>MMS_InLobby</code></td>
+          <td style="text-align: left">In Lobby</td>
+          <td style="text-align: left">N/A</td>
+          <td style="text-align: left">Yes</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>MMS_Searching</code></td>
+          <td style="text-align: left">Searching</td>
+          <td style="text-align: left">0-120s</td>
+          <td style="text-align: left">Yes</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>MMS_Found</code></td>
+          <td style="text-align: left">Match Found</td>
+          <td style="text-align: left">10s</td>
+          <td style="text-align: left">Yes</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>MMS_Joining</code></td>
+          <td style="text-align: left">Joining</td>
+          <td style="text-align: left">30s</td>
+          <td style="text-align: left">No</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="code-names">Code Names<a class="anchor" href="#code-names">#</a></h2>
+<h3 id="eos-events">EOS Events<a class="anchor" href="#eos-events">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Code Name</th>
+          <th style="text-align: left">Trigger</th>
+          <th style="text-align: left">Parameters</th>
+          <th style="text-align: left">Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><code>EOS_AUTH_SUCCESS</code></td>
+          <td style="text-align: left">Login success</td>
+          <td style="text-align: left">PUID, EpikID</td>
+          <td style="text-align: left">Authenticated with EOS</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>EOS_AUTH_FAIL</code></td>
+          <td style="text-align: left">Login fail</td>
+          <td style="text-align: left">ErrorCode</td>
+          <td style="text-align: left">Auth failed</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>EOS_LOBBY_JOIN</code></td>
+          <td style="text-align: left">Joined lobby</td>
+          <td style="text-align: left">LobbyID</td>
+          <td style="text-align: left">Entered a lobby</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>EOS_LOBBY_LEFT</code></td>
+          <td style="text-align: left">Left lobby</td>
+          <td style="text-align: left">LobbyID</td>
+          <td style="text-align: left">Exited a lobby</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>EOS_LOBBY_UPDATE</code></td>
+          <td style="text-align: left">Data update</td>
+          <td style="text-align: left">Attr, Value</td>
+          <td style="text-align: left">Lobby attribute changed</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="connection-events">Connection Events<a class="anchor" href="#connection-events">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Code Name</th>
+          <th style="text-align: left">Trigger</th>
+          <th style="text-align: left">Parameters</th>
+          <th style="text-align: left">Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><code>NET_CONNECT</code></td>
+          <td style="text-align: left">Client connects</td>
+          <td style="text-align: left">ClientID, IP</td>
+          <td style="text-align: left">New client connected</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>NET_DISCONNECT</code></td>
+          <td style="text-align: left">Client disconnects</td>
+          <td style="text-align: left">ClientID, Reason</td>
+          <td style="text-align: left">Client disconnected</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>NET_TIMEOUT</code></td>
+          <td style="text-align: left">Connection timeout</td>
+          <td style="text-align: left">ClientID</td>
+          <td style="text-align: left">Connection timed out</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="core-classes">Core Classes<a class="anchor" href="#core-classes">#</a></h2>
+<h3 id="eosmanager">EOSManager<a class="anchor" href="#eosmanager">#</a></h3>
+<p><strong>Purpose:</strong> Wrapper for Epic Online Services platform interface.</p>
+<pre tabindex="0"><code>CLASS EOSManager:
+    STATIC instance: EOSManager
+    productUserID: String
+    epicAccountID: String
+    
+    FUNCTION Initialize():
+        // Init platform interface
+        config = CreatePlatformConfig()
+        PlatformInterface.Initialize(config)
+    END FUNCTION
+    
+    FUNCTION Login(provider: AuthProvider, token: String):
+        credentials = NEW Credentials()
+        credentials.Type = provider
+        credentials.Token = token
+        
+        AuthInterface.Login(credentials, OnLoginComplete)
+    END FUNCTION
+    
+    FUNCTION OnLoginComplete(result: LoginCallbackInfo):
+        IF result.ResultCode == Success:
+            productUserID = result.LocalUserId
+            ConnectInterface.Login(productUserID) // Link to Product User ID
+            EMIT EVENT &#34;EOS_AUTH_SUCCESS&#34;
+        ELSE:
+            EMIT EVENT &#34;EOS_AUTH_FAIL&#34; WITH (result.ResultCode)
+        END IF
+    END FUNCTION</code></pre><h3 id="lobbymanager">LobbyManager<a class="anchor" href="#lobbymanager">#</a></h3>
+<p><strong>Purpose:</strong> Manages EOS Lobby lifecycle and attributes.</p>
+<pre tabindex="0"><code>CLASS LobbyManager:
+    currentLobbyID: String
+    currentLobbyDetails: LobbyDetails
+    bIsHost: Boolean
+    
+    FUNCTION CreateLobby(maxPlayers: Integer, privacy: LobbyPrivacy):
+        options = NEW CreateLobbyOptions()
+        options.MaxPlayers = maxPlayers
+        options.PermissionLevel = privacy
+        options.BucketId = &#34;ExtractionGame:Region:GameMode&#34;
+        
+        LobbyInterface.CreateLobby(options, OnLobbyCreated)
+    END FUNCTION
+    
+    FUNCTION SearchLobbies(filters: List&lt;Attribute&gt;):
+        search = NEW LobbySearch()
+        search.SetMaxResults(10)
+        
+        FOR EACH filter IN filters:
+             search.SetParameter(filter.Key, filter.Value, filter.Op)
+        END FOR
+        
+        search.Find(OnLobbySearchComplete)
+    END FUNCTION
+    
+    FUNCTION UpdateLobbyAttribute(key: String, value: String):
+        IF NOT bIsHost: RETURN
+        
+        modification = NEW LobbyModification(currentLobbyID)
+        modification.AddAttribute(key, value)
+        LobbyInterface.UpdateLobby(modification, OnLobbyUpdated)
+    END FUNCTION</code></pre><h3 id="networkmanager">NetworkManager<a class="anchor" href="#networkmanager">#</a></h3>
+<p><strong>Purpose:</strong> Central networking controller for game sessions.</p>
+<pre tabindex="0"><code>CLASS NetworkManager:
+    STATIC instance: NetworkManager
+    
+    connectionState: ConnectionState
+    replicatedActors: Map&lt;String, NetworkedActor&gt;
+    
+    // Events
+    OnClientConnected: Event&lt;(clientID)&gt;
+    OnClientDisconnected: Event&lt;(clientID, reason)&gt;
+    
+    FUNCTION ConnectToSession(sessionInfo: SessionResult):
+        connectionState = CS_Connecting
+        
+        // Get connection string from session (IP or P2P ID)
+        connectString = sessionInfo.GetConnectionString()
+        
+        // Attempt transport connection
+        NetworkDriver.Connect(connectString)
+    END FUNCTION
+
+    FUNCTION SpawnNetworkedActor(actorClass: Type, position: Vector3, ownerID: String) -&gt; NetworkedActor:
+        // Spawning logic (same as previous)
+        actor = Instantiate(actorClass, position)
+        actor.actorID = GenerateNetworkID()
+        // ... replication setup ...
+        RETURN actor
+    END FUNCTION</code></pre><hr>
+<h2 id="data-structures">Data Structures<a class="anchor" href="#data-structures">#</a></h2>
+<pre tabindex="0"><code>STRUCT NetworkedActor:
+    actorID: String
+    ownerClientID: String
+    role: NetworkRole
+    replicatedProperties: Map&lt;String, Property&gt;
+
+STRUCT LobbyDetails:
+    LobbyID: String
+    HostID: String
+    MemberCount: Integer
+    MaxMembers: Integer
+    Attributes: Map&lt;String, String&gt;
+    Members: List&lt;LobbyMember&gt;
+
+STRUCT LobbyMember:
+    ProductUserID: String
+    Attributes: Map&lt;String, String&gt; // Ready state, skin, char</code></pre><hr>
+<p><strong><a href="./Architecture.md">← Previous: Architecture</a></strong> | <strong><a href="../README.md">Index</a></strong> | <strong><a href="../Gameplay/CharacterSystem.md">Next: Character System →</a></strong></p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+<div>
+
+</div>
+
+<div>
+
+</div>
+
+</div>
+
+
+
+
+
+  
+  
+  
+  <div class="flex flex-wrap justify-between">
+    <span>
+    
+      <a href="/docs/GDD_Technical/Core/DevelopmentRoadmap/" class="flex align-center">
+        <img src="/icons/backward.svg" class="book-icon" alt="Backward" />
+        <span>Development Roadmap</span>
+      </a>
+    
+    </span>
+    <span>
+    
+      <a href="/docs/GDD_Technical/Core/SecuritySystem/" class="flex align-center">
+        <span>Security System</span>
+        <img src="/icons/forward.svg" class="book-icon" alt="Forward" />
+      </a>
+    
+    </span>
+  </div>
+  
+
+
+ 
+        
+  
+ 
+        
+        
+  
+ 
+        
+  
+  
+    <script>(function(){document.querySelectorAll("pre:has(code)").forEach(e=>{e.addEventListener("click",e.focus),e.addEventListener("copy",function(t){if(t.preventDefault(),navigator.clipboard){const t=window.getSelection().toString()||e.textContent;navigator.clipboard.writeText(t)}})})})()</script>
+  
+
+      </footer>
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+  
+  <aside class="book-toc">
+    <div class="book-toc-content">
+      
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#overview">Overview</a>
+      <ul>
+        <li><a href="#network-model">Network Model</a></li>
+        <li><a href="#core-functions">Core Functions</a></li>
+      </ul>
+    </li>
+    <li><a href="#system-architecture">System Architecture</a></li>
+    <li><a href="#enums--types">Enums &amp; Types</a>
+      <ul>
+        <li><a href="#networkrole">NetworkRole</a></li>
+        <li><a href="#authprovider">AuthProvider</a></li>
+        <li><a href="#lobbyprivacy">LobbyPrivacy</a></li>
+        <li><a href="#connectionstate">ConnectionState</a></li>
+        <li><a href="#matchmakingstate">MatchmakingState</a></li>
+      </ul>
+    </li>
+    <li><a href="#code-names">Code Names</a>
+      <ul>
+        <li><a href="#eos-events">EOS Events</a></li>
+        <li><a href="#connection-events">Connection Events</a></li>
+      </ul>
+    </li>
+    <li><a href="#core-classes">Core Classes</a>
+      <ul>
+        <li><a href="#eosmanager">EOSManager</a></li>
+        <li><a href="#lobbymanager">LobbyManager</a></li>
+        <li><a href="#networkmanager">NetworkManager</a></li>
+      </ul>
+    </li>
+    <li><a href="#data-structures">Data Structures</a></li>
+  </ul>
+</nav>
+
+
+
+    </div>
+  </aside>
+  
+ 
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

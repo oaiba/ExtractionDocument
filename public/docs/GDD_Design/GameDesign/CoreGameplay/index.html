@@ -1,0 +1,2866 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=52224&amp;path=livereload" data-no-instant defer></script>
+  <!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Core Gameplay Mechanics - Deep Dive#← Previous: Overview | Index | Next: Progression →
+Overview#This document provides comprehensive details on the core gameplay loop, minute-by-minute player experience, combat mechanics, and psychological design principles.
+Core Gameplay Loop Structure#┌─────────────────────────────────────────────────────┐│ PRE-MATCH (2-5 min) ││ • Loadout Selection ││ • Risk Assessment ││ • Strategic Planning │└──────────────┬──────────────────────────────────────┘│▼┌─────────────────────────────────────────────────────┐│ IN-MATCH (10-15 min) ││ Deployment → Looting → Combat → Extraction ││ [High Tension, Constant Decision Making] │└──────────────┬──────────────────────────────────────┘│▼┌─────────────────────────────────────────────────────┐│ POST-MATCH (2-5 min) ││ • Victory/Defeat Screen ││ • Loot Management ││ • Progression Review │└─────────────────────────────────────────────────────┘Total Loop Time: 14-25 minutes (optimized for mobile sessions)
+">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:52224/docs/GDD_Design/GameDesign/CoreGameplay/">
+  <meta property="og:site_name" content="Extraction Shooter GDD">
+  <meta property="og:title" content="Extraction Shooter GDD">
+  <meta property="og:description" content="Core Gameplay Mechanics - Deep Dive#← Previous: Overview | Index | Next: Progression →
+Overview#This document provides comprehensive details on the core gameplay loop, minute-by-minute player experience, combat mechanics, and psychological design principles.
+Core Gameplay Loop Structure#┌─────────────────────────────────────────────────────┐│ PRE-MATCH (2-5 min) ││ • Loadout Selection ││ • Risk Assessment ││ • Strategic Planning │└──────────────┬──────────────────────────────────────┘│▼┌─────────────────────────────────────────────────────┐│ IN-MATCH (10-15 min) ││ Deployment → Looting → Combat → Extraction ││ [High Tension, Constant Decision Making] │└──────────────┬──────────────────────────────────────┘│▼┌─────────────────────────────────────────────────────┐│ POST-MATCH (2-5 min) ││ • Victory/Defeat Screen ││ • Loot Management ││ • Progression Review │└─────────────────────────────────────────────────────┘Total Loop Time: 14-25 minutes (optimized for mobile sessions)">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
+
+
+  <meta itemprop="name" content="Extraction Shooter GDD">
+  <meta itemprop="description" content="Core Gameplay Mechanics - Deep Dive#← Previous: Overview | Index | Next: Progression →
+Overview#This document provides comprehensive details on the core gameplay loop, minute-by-minute player experience, combat mechanics, and psychological design principles.
+Core Gameplay Loop Structure#┌─────────────────────────────────────────────────────┐│ PRE-MATCH (2-5 min) ││ • Loadout Selection ││ • Risk Assessment ││ • Strategic Planning │└──────────────┬──────────────────────────────────────┘│▼┌─────────────────────────────────────────────────────┐│ IN-MATCH (10-15 min) ││ Deployment → Looting → Combat → Extraction ││ [High Tension, Constant Decision Making] │└──────────────┬──────────────────────────────────────┘│▼┌─────────────────────────────────────────────────────┐│ POST-MATCH (2-5 min) ││ • Victory/Defeat Screen ││ • Loot Management ││ • Progression Review │└─────────────────────────────────────────────────────┘Total Loop Time: 14-25 minutes (optimized for mobile sessions)">
+  <meta itemprop="wordCount" content="2509">
+
+<title>Core Gameplay | Extraction Shooter GDD</title>
+<link rel="icon" href="/favicon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="http://localhost:52224/docs/GDD_Design/GameDesign/CoreGameplay/">
+<link rel="stylesheet" href="/book.min.63c8b2b12bbd1ad36428837740ea371dd41fdb9c22b35499003d0dfa4dbce6ba.css" integrity="sha256-Y8iysSu9GtNkKIN3QOo3HdQf25wis1SZAD0N&#43;k285ro=" crossorigin="anonymous">
+
+
+  <script defer src="/fuse.min.js"></script>
+  <script defer src="/en.search.min.58bea27d7a08265548c5a8636a9a9fc844e0eb9d60fc3bb2c53d517da858d4c1.js" integrity="sha256-WL6ifXoIJlVIxahjapqfyETg651g/DuyxT1RfahY1ME=" crossorigin="anonymous"></script>
+
+  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
+
+
+
+  
+</head>
+<body dir="ltr" class="book-kind-page book-type-docs">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    
+<aside class="book-menu">
+  <div class="book-menu-content">
+    
+  <nav>
+    <h2 class="book-brand">
+  <a class="flex align-center" href="/"><img src="/logo.svg" alt="Logo" /><span>Extraction Shooter GDD</span>
+  </a>
+</h2>
+
+    <div class="book-theme-toggle">
+    <input type="checkbox" id="theme-toggle" class="toggle">
+    <label for="theme-toggle" class="flex justify-between items-center cursor-pointer">
+        <span class="text-xs font-semibold">Dark Mode</span>
+        <div
+            class="relative w-10 h-5 bg-gray-200 rounded-full transition-colors duration-200 ease-in-out dark:bg-gray-700">
+            <div
+                class="absolute left-0 w-5 h-5 bg-white rounded-full shadow transform transition-transform duration-200 ease-in-out dark:translate-x-full">
+            </div>
+        </div>
+    </label>
+</div>
+
+<script>
+    (function () {
+        const toggle = document.getElementById('theme-toggle');
+        const html = document.documentElement;
+
+        
+        const savedTheme = localStorage.getItem('theme');
+        const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+        if (savedTheme === 'dark' || (!savedTheme && systemDark)) {
+            html.classList.add('dark');
+            toggle.checked = true;
+        } else {
+            html.classList.remove('dark');
+            toggle.checked = false;
+        }
+
+        
+        toggle.addEventListener('change', function () {
+            if (this.checked) {
+                html.classList.add('dark');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                html.classList.remove('dark');
+                localStorage.setItem('theme', 'light');
+            }
+        });
+    })();
+</script>
+
+<style>
+     
+    .book-theme-toggle {
+        margin: 1rem 0;
+        padding: 0 1rem;
+
+    }
+
+    .book-theme-toggle label {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        cursor: pointer;
+        font-size: 0.85em;
+    }
+
+     
+    .book-theme-toggle input {
+        display: none;
+    }
+
+     
+    .book-theme-toggle label::after {
+        content: "🌙";
+         
+    }
+
+     
+    html:not(.dark) .book-theme-toggle label::after {
+        content: "☀️";
+         
+    }
+</style> 
+    
+<div class="book-search hidden">
+  <input id="book-search-input" type="text" 
+    placeholder="Search"
+    aria-label="Search"
+    maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+    
+
+    
+    
+
+
+
+    
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/" class="">
+      Gdd Design</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      AI</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/AI/EnemyBehavior/" class="">
+      Enemy Behavior</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/AI/FactionBehaviors/" class="">
+      Faction Behaviors</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Audio</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Audio/SoundDesign/" class="">
+      Sound Design</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Audio/Soundscape/" class="">
+      Soundscape</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Audio/TacticalAudio/" class="">
+      Tactical Audio</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Audio/VoiceLines/" class="">
+      Voice Lines</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Characters</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Operators/" class="">
+      Operators</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Assault</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Assault/Blaze/" class="">
+      Blaze</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Assault/Havoc/" class="">
+      Havoc</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Assault/README/" class="">
+      Readme</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Assault/Viper/" class="">
+      Viper</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Recon</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Recon/Phantom/" class="">
+      Phantom</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Recon/README/" class="">
+      Readme</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Recon/Specter/" class="">
+      Specter</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Recon/Wraith/" class="">
+      Wraith</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Specialist</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Specialist/Cipher/" class="">
+      Cipher</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Specialist/Flux/" class="">
+      Flux</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Specialist/README/" class="">
+      Readme</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Support</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Support/Angel/" class="">
+      Angel</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Support/Doc/" class="">
+      Doc</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Support/README/" class="">
+      Readme</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Tank</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Tank/Bulwark/" class="">
+      Bulwark</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Tank/Fortress/" class="">
+      Fortress</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Tank/README/" class="">
+      Readme</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Combat</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Combat/Items/" class="">
+      Items</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Combat/Weapons/" class="">
+      Weapons</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      GameDesign</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Accessibility/" class="">
+      Accessibility</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Controls/" class="">
+      Controls</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/CoreGameplay/" class="active">
+      Core Gameplay</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Economy/" class="">
+      Economy</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/GameModes/" class="">
+      Game Modes</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/LiveOps/" class="">
+      Live Ops</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Localization/" class="">
+      Localization</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/NavigationAndMap/" class="">
+      Navigation and Map</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Overview/" class="">
+      Overview</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Progression/" class="">
+      Progression</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/RankedMode/" class="">
+      Ranked Mode</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/TutorialRaid/" class="">
+      Tutorial Raid</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/UserSettings/" class="">
+      User Settings</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Gameplay</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Gameplay/CoreLoop/" class="">
+      Core Loop</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      ProjectScope</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/ProjectScope/DesignPillars/" class="">
+      Design Pillars</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/ProjectScope/MVP/" class="">
+      Mvp</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/ProjectScope/NonGoals/" class="">
+      Non Goals</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/ProjectScope/Risks/" class="">
+      Risks</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Social</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Social/Multiplayer/" class="">
+      Multiplayer</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Story</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Story/Backstory/" class="">
+      Backstory</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Story/Factions/" class="">
+      Factions</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Story/Narrative/" class="">
+      Narrative</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Story/QuestLines/" class="">
+      Quest Lines</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      UI UX</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/UI_UX/UX_Flows/" class="">
+      Ux Flows</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/UI_UX/Visual_Style/" class="">
+      Visual Style</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Visuals</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Visuals/ArtDirection/" class="">
+      Art Direction</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Visuals/AssetGuidelines/" class="">
+      Asset Guidelines</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Visuals/StyleGuide/" class="">
+      Style Guide</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Visuals/UserInterface/" class="">
+      User Interface</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      World</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/EnvironmentalNarrative/" class="">
+      Environmental Narrative</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/EnvironmentalNarrative_Guidelines/" class="">
+      Environmental Narrative Guidelines</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/LootDistribution/" class="">
+      Loot Distribution</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/MapDesign/" class="">
+      Map Design</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/MapDesign_IndustrialZone/" class="">
+      Map Design Industrial Zone</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/MapDesign_NeonSlums/" class="">
+      Map Design Neon Slums</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/MapDesign_Wilderness/" class="">
+      Map Design Wilderness</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/MapLayouts/" class="">
+      Map Layouts</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/" class="">
+      Gdd Technical</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      AI</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/AI/SensorySystem/" class="">
+      Sensory System</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Core</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Core/Architecture/" class="">
+      Architecture</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Core/CodingStandards/" class="">
+      Coding Standards</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Core/DevelopmentRoadmap/" class="">
+      Development Roadmap</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Core/NetworkingSystem/" class="">
+      Networking System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Core/SecuritySystem/" class="">
+      Security System</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Gameplay</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Gameplay/CharacterSystem/" class="">
+      Character System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Gameplay/ControlSystem/" class="">
+      Control System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Gameplay/InventorySystem/" class="">
+      Inventory System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Gameplay/WeaponSystem/" class="">
+      Weapon System</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Networking</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Networking/LagCompensation/" class="">
+      Lag Compensation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Networking/ReplicationStrategy/" class="">
+      Replication Strategy</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Performance</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Performance/Budgets/" class="">
+      Budgets</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Performance/Optimization/" class="">
+      Optimization</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Security</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Security/AntiCheatStrategy/" class="">
+      Anti Cheat Strategy</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Systems</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/AccessibilitySystem/" class="">
+      Accessibility System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/AISystem/" class="">
+      Aisystem</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/AnalyticsSystem/" class="">
+      Analytics System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/AudioSystem/" class="">
+      Audio System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/BuildPipeline/" class="">
+      Build Pipeline</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/LiveOpsSystem/" class="">
+      Live Ops System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/LocalizationSystem/" class="">
+      Localization System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/MapSystem/" class="">
+      Map System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/NarrativeSystem/" class="">
+      Narrative System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/ProgressionSystem/" class="">
+      Progression System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/RankedSystem/" class="">
+      Ranked System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/SaveSystem/" class="">
+      Save System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/SocialSystem/" class="">
+      Social System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/TutorialSystem/" class="">
+      Tutorial System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/UISystem/" class="">
+      Uisystem</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+</nav>
+
+
+
+
+<script>{ { . | safeJS } }</script>
+
+
+  </div>
+</aside>
+ 
+
+    <div class="book-page">
+      <header class="book-header hidden">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/icons/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <h3>Core Gameplay</h3>
+
+  <label for="toc-control">
+    
+    <img src="/icons/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#overview">Overview</a></li>
+    <li><a href="#core-gameplay-loop-structure">Core Gameplay Loop Structure</a></li>
+    <li><a href="#pre-match-phase-2-5-minutes">PRE-MATCH PHASE (2-5 minutes)</a>
+      <ul>
+        <li><a href="#loadout-selection-system">Loadout Selection System</a></li>
+        <li><a href="#matchmaking-15-60-seconds">Matchmaking (15-60 seconds)</a></li>
+      </ul>
+    </li>
+    <li><a href="#in-match-phase-10-15-minutes">IN-MATCH PHASE (10-15 minutes)</a>
+      <ul>
+        <li><a href="#detailed-match-timeline">Detailed Match Timeline</a></li>
+        <li><a href="#movement--controls-mobile-optimized">Movement &amp; Controls (Mobile-Optimized)</a></li>
+        <li><a href="#combat-mechanics-deep-dive">Combat Mechanics Deep Dive</a></li>
+        <li><a href="#looting-mechanics">Looting Mechanics</a></li>
+        <li><a href="#extraction-mechanics">Extraction Mechanics</a></li>
+        <li><a href="#risk-vs-reward-psychology">Risk vs Reward Psychology</a></li>
+      </ul>
+    </li>
+    <li><a href="#post-match-phase-2-5-minutes">POST-MATCH PHASE (2-5 minutes)</a>
+      <ul>
+        <li><a href="#victory-screen-successful-extraction">Victory Screen (Successful Extraction)</a></li>
+        <li><a href="#defeat-screen-killed-in-action">Defeat Screen (Killed in Action)</a></li>
+        <li><a href="#session-structure">Session Structure</a></li>
+      </ul>
+    </li>
+    <li><a href="#advanced-mechanics">Advanced Mechanics</a>
+      <ul>
+        <li><a href="#squad-coordination">Squad Coordination</a></li>
+        <li><a href="#information-warfare">Information Warfare</a></li>
+      </ul>
+    </li>
+    <li><a href="#metrics--balance">Metrics &amp; Balance</a>
+      <ul>
+        <li><a href="#target-metrics">Target Metrics</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><h1 id="core-gameplay-mechanics---deep-dive">Core Gameplay Mechanics - Deep Dive<a class="anchor" href="#core-gameplay-mechanics---deep-dive">#</a></h1>
+<p><strong><a href="./Overview.md">← Previous: Overview</a></strong> | <strong><a href="../README.md">Index</a></strong> | <strong><a href="./Progression.md">Next: Progression →</a></strong></p>
+<hr>
+<h2 id="overview">Overview<a class="anchor" href="#overview">#</a></h2>
+<p>This document provides comprehensive details on the core gameplay loop, minute-by-minute player experience, combat mechanics, and psychological design principles.</p>
+<hr>
+<h2 id="core-gameplay-loop-structure">Core Gameplay Loop Structure<a class="anchor" href="#core-gameplay-loop-structure">#</a></h2>
+<pre tabindex="0"><code>┌─────────────────────────────────────────────────────┐
+│         PRE-MATCH (2-5 min)                         │
+│  • Loadout Selection                                │
+│  • Risk Assessment                                  │
+│  • Strategic Planning                               │
+└──────────────┬──────────────────────────────────────┘
+               │
+               ▼
+┌─────────────────────────────────────────────────────┐
+│         IN-MATCH (10-15 min)                        │
+│  Deployment → Looting → Combat → Extraction         │
+│  [High Tension, Constant Decision Making]           │
+└──────────────┬──────────────────────────────────────┘
+               │
+               ▼
+┌─────────────────────────────────────────────────────┐
+│         POST-MATCH (2-5 min)                        │
+│  • Victory/Defeat Screen                            │
+│  • Loot Management                                  │
+│  • Progression Review                               │
+└─────────────────────────────────────────────────────┘</code></pre><p><strong>Total Loop Time:</strong> 14-25 minutes (optimized for mobile sessions)</p>
+<hr>
+<h2 id="pre-match-phase-2-5-minutes">PRE-MATCH PHASE (2-5 minutes)<a class="anchor" href="#pre-match-phase-2-5-minutes">#</a></h2>
+<h3 id="loadout-selection-system">Loadout Selection System<a class="anchor" href="#loadout-selection-system">#</a></h3>
+<h4 id="1-operator-selection">1. Operator Selection<a class="anchor" href="#1-operator-selection">#</a></h4>
+<p><strong>Decision Framework:</strong></p>
+<pre tabindex="0"><code>Mission Type → Operator Choice → Loadout Build
+     ↓               ↓                  ↓
+  PvP Focus      Assault           Aggressive Kit
+  Loot Focus     Support/Recon     Defensive Kit
+  Quest          Specialist        Mission Kit</code></pre><p><strong>Strategic Considerations:</strong></p>
+<ul>
+<li><strong>Assault</strong> - High risk, high kill potential</li>
+<li><strong>Support</strong> - Sustain, team-oriented</li>
+<li><strong>Recon</strong> - Information advantage, solo-friendly</li>
+<li><strong>Tank</strong> - Defensive, extraction security</li>
+<li><strong>Specialist</strong> - Utility, quest completion</li>
+</ul>
+<h4 id="2-gear-selection-philosophy">2. Gear Selection Philosophy<a class="anchor" href="#2-gear-selection-philosophy">#</a></h4>
+<p><strong>Tier System:</strong></p>
+<pre tabindex="0"><code>Budget Loadout ($5,000-10,000)
+├─ Common weapons
+├─ Light armor
+├─ Basic medical supplies
+└─ Low risk if lost
+
+Standard Loadout ($15,000-25,000)
+├─ Uncommon weapons
+├─ Medium armor
+├─ Good medical supplies
+└─ Balanced risk/reward
+
+Premium Loadout ($40,000-60,000)
+├─ Rare+ weapons
+├─ Heavy armor
+├─ Full medical kit
+└─ High risk, competitive advantage</code></pre><p><strong>Loadout Decision Matrix:</strong></p>
+<ul>
+<li><strong>Account Balance</strong> - Can you afford to lose it?</li>
+<li><strong>Quest Requirements</strong> - Need specific items?</li>
+<li><strong>Skill Level</strong> - Confident enough?</li>
+<li><strong>Map Knowledge</strong> - Know the routes?</li>
+<li><strong>Time Available</strong> - Can commit 15 min?</li>
+</ul>
+<h4 id="3-psychological-pre-match-preparation">3. Psychological Pre-Match Preparation<a class="anchor" href="#3-psychological-pre-match-preparation">#</a></h4>
+<p><strong>Anticipation Building:</strong></p>
+<ul>
+<li>Review daily quests → Clear goals</li>
+<li>Check map conditions → Environmental awareness</li>
+<li>Inspect secure container → Protected assets</li>
+<li>Review death log → Learn from mistakes</li>
+</ul>
+<p><strong>UI Elements:</strong></p>
+<ul>
+<li><strong>Risk Indicator</strong> - Shows total loadout value</li>
+<li><strong>Insurance Option</strong> - Future feature for partial recovery</li>
+<li><strong>Recommended Loadouts</strong> - Based on quest/skill</li>
+<li><strong>Quick Loadout Slots</strong> - Save favorite builds (5 slots)</li>
+</ul>
+<hr>
+<h3 id="matchmaking-15-60-seconds">Matchmaking (15-60 seconds)<a class="anchor" href="#matchmaking-15-60-seconds">#</a></h3>
+<p><strong>Matchmaking Criteria:</strong></p>
+<pre tabindex="0"><code>Player Count: 15-20 players per match
+├─ Solo players: 40%
+├─ Duo teams: 30%
+└─ Squad teams (3-4): 30%
+
+Skill-based Matching:
+├─ Account Level weighted
+├─ Recent extraction rate
+├─ Average loadout value
+└─ Kill/Death ratio (minor weight)</code></pre><p><strong>During Matchmaking:</strong></p>
+<ul>
+<li><strong>Map Preview</strong> - Bird&rsquo;s eye view</li>
+<li><strong>Weather Condition</strong> - Today&rsquo;s environmental hazard</li>
+<li><strong>Loot Hotspot Indicator</strong> - High-traffic areas marked</li>
+<li><strong>Player Count Display</strong> - Building anticipation</li>
+<li><strong>Loading Tips</strong> - Rotate tactical advice</li>
+</ul>
+<hr>
+<h2 id="in-match-phase-10-15-minutes">IN-MATCH PHASE (10-15 minutes)<a class="anchor" href="#in-match-phase-10-15-minutes">#</a></h2>
+<h3 id="detailed-match-timeline">Detailed Match Timeline<a class="anchor" href="#detailed-match-timeline">#</a></h3>
+<pre tabindex="0"><code>┌─────────────┬────────────────────────────────────────────────────┐
+│   TIME      │              WHAT HAPPENS                          │
+├─────────────┼────────────────────────────────────────────────────┤
+│  0:00-0:30  │ DEPLOYMENT                                         │
+│             │ • Players spawn at edges (random, balanced)        │
+│             │ • 10-second spawn protection                       │
+│             │ • Orient, plan first move                          │
+├─────────────┼────────────────────────────────────────────────────┤
+│  0:30-3:00  │ EARLY LOOTING                                      │
+│             │ • Spread across map                                │
+│             │ • Low-risk containers                              │
+│             │ • AI encounters                                    │
+│             │ • First item acquisitions                          │
+├─────────────┼────────────────────────────────────────────────────┤
+│  3:00-5:00  │ MID LOOTING &amp; POSITIONING                          │
+│             │ • Players moving toward mid-zones                  │
+│             │ • Increased loot quality                           │
+│             │ • First player sightings                           │
+│             │ • Tactical positioning starts                      │
+├─────────────┼────────────────────────────────────────────────────┤
+│  5:00-5:30  │ SUPPLY DROP #1 (Event)                             │
+│             │ • High-tier loot announced                         │
+│             │ • Creates hotspot                                  │
+│             │ • Players converge OR avoid                        │
+│             │ • First major PvP spike                            │
+├─────────────┼────────────────────────────────────────────────────┤
+│  5:30-8:00  │ MID-GAME COMBAT PHASE                              │
+│             │ • Player paths collide                             │
+│             │ • PvP encounters frequent                          │
+│             │ • Loot from kills                                  │
+│             │ • Early extractions begin                          │
+├─────────────┼────────────────────────────────────────────────────┤
+│  8:00-10:00 │ PEAK TENSION                                       │
+│             │ • Best-geared players remain                       │
+│             │ • &#34;One more container&#34; decisions                   │
+│             │ • Extraction vs greed dilemma                      │
+│             │ • Reduced player count (~8-12 left)                │
+├─────────────┼────────────────────────────────────────────────────┤
+│ 10:00-10:30 │ SUPPLY DROP #2 (Event)                             │
+│             │ • Legendary loot possible                          │
+│             │ • High-stakes decision point                       │
+│             │ • Major combat if contested                        │
+├─────────────┼────────────────────────────────────────────────────┤
+│ 10:30-12:00 │ LATE GAME - EXTRACTION FOCUS                       │
+│             │ • Players head to extraction zones                 │
+│             │ • Extraction points become contested               │
+│             │ • Maximum inventory value                          │
+│             │ • High-stakes final encounters                     │
+├─────────────┼────────────────────────────────────────────────────┤
+│ 12:00-12:30 │ CONTAMINATION WARNING                              │
+│             │ • Zone appears on map (red)                        │
+│             │ • 30-second warning                                │
+│             │ • Players scramble to safe zones                   │
+│             │ • Panic extraction attempts                        │
+├─────────────┼────────────────────────────────────────────────────┤
+│ 12:30-15:00 │ CONTAMINATION ACTIVE                               │
+│             │ • Playable area shrinks                            │
+│             │ • Damage escalates: 10→25→50 HP/sec                │
+│             │ • Forced player interaction                        │
+│             │ • Desperate extraction attempts                    │
+├─────────────┼────────────────────────────────────────────────────┤
+│ 15:00       │ MATCH ENDS                                         │
+│             │ • All remaining players die                        │
+│             │ • Force extraction impossible                      │
+│             │ • Loot lost for stragglers                         │
+└─────────────┴────────────────────────────────────────────────────┘</code></pre><hr>
+<h3 id="movement--controls-mobile-optimized">Movement &amp; Controls (Mobile-Optimized)<a class="anchor" href="#movement--controls-mobile-optimized">#</a></h3>
+<h4 id="control-scheme">Control Scheme<a class="anchor" href="#control-scheme">#</a></h4>
+<pre tabindex="0"><code>Left Side: Movement Joystick
+├─ Drag to move
+├─ Push further = Sprint
+├─ Tap edge = Crouch toggle
+└─ Double-tap center = Stop
+
+Right Side: Action/Aim Zone
+├─ Tap to shoot
+├─ Hold to aim
+├─ Swipe to rotate camera
+└─ Multi-finger gestures
+
+Bottom UI:
+├─ Ability button (cooldown shown)
+├─ Reload button (auto-hide when full)
+├─ Medical quick-use (contextual)
+├─ Grenade/tactical slot
+└─ Interaction prompt (context-sensitive)
+
+Top UI:
+├─ Minimap (pinch to zoom)
+├─ Health/Armor bars
+├─ Stamina indicator
+├─ Time remaining
+└─ Contamination warning</code></pre><h4 id="movement-mechanics">Movement Mechanics<a class="anchor" href="#movement-mechanics">#</a></h4>
+<p><strong>Movement States:</strong></p>
+<pre tabindex="0"><code>Walking (default)
+├─ Speed: 5 m/s
+├─ Noise: Low
+├─ Stamina: No drain
+└─ Use case: Stealth approach
+
+Sprinting
+├─ Speed: 7.5 m/s (1.5x)
+├─ Noise: High
+├─ Stamina: Drain 10/sec
+├─ Cannot shoot while sprinting
+└─ Use case: Rotation, escape
+
+Crouching
+├─ Speed: 3 m/s (0.6x)
+├─ Noise: Very Low
+├─ Stamina: No drain
+├─ Accuracy bonus: +10%
+└─ Use case: Stealth, cover</code></pre><p><strong>Weight System Impact:</strong></p>
+<pre tabindex="0"><code>0-15 kg: Normal movement (100%)
+15-25 kg: Slightly slower (90%, +20% stamina drain)
+25-35 kg: Noticeably slower (75%, +50% stamina drain)
+35+ kg: Heavily encumbered (60%, +100% stamina drain, NO sprint)</code></pre><p><strong>Design Rationale:</strong></p>
+<ul>
+<li>Encourages inventory management</li>
+<li>Creates &ldquo;dump loot to escape&rdquo; decisions</li>
+<li>Rewards light loadouts for mobility</li>
+<li>Punishes excessive looting</li>
+</ul>
+<hr>
+<h3 id="combat-mechanics-deep-dive">Combat Mechanics Deep Dive<a class="anchor" href="#combat-mechanics-deep-dive">#</a></h3>
+<h4 id="engagement-flow">Engagement Flow<a class="anchor" href="#engagement-flow">#</a></h4>
+<pre tabindex="0"><code>DETECTION
+    ↓
+  [Decision Point]
+    ↓
+┌───────────┴───────────┐
+│                       │
+FIGHT                 FLEE
+│                       │
+├─ Assess Gear         ├─ Sprint away
+├─ Check Positioning   ├─ Use cover
+├─ Ability Ready?      ├─ Break line of sight
+└─ Commit or Disengage └─ Reposition
+    ↓                       ↓
+  COMBAT                   [Re-evaluate]
+    ↓                          ↓
+┌─────┴─────┐           Return to Detection
+│           │
+WIN       LOSE
+│           │
+Loot      Death</code></pre><h4 id="combat-systems">Combat Systems<a class="anchor" href="#combat-systems">#</a></h4>
+<p><strong>1. Cover System</strong></p>
+<pre tabindex="0"><code>Soft Cover (Wood, Thin Metal)
+├─ Damage Reduction: 30%
+├─ Penetrable by high-caliber weapons
+├─ Visual: Yellow outline
+└─ Examples: Crates, doors, cars
+
+Hard Cover (Concrete, Thick Metal)
+├─ Damage Reduction: 70%
+├─ Non-penetrable
+├─ Visual: Blue outline
+└─ Examples: Walls, bunkers, containers</code></pre><p><strong>Auto-Cover Mechanics:</strong></p>
+<ul>
+<li>Character auto-crouches near cover</li>
+<li>Peek system (slide finger while  in cover)</li>
+<li>Blind fire option (reduced accuracy)</li>
+</ul>
+<p><strong>2. Damage Calculation</strong></p>
+<pre tabindex="0"><code>Base Damage
+    ↓
+[Distance Falloff Applied]
+    ↓
+[Armor Absorption - 70% absorbed first]
+    ↓
+[Headshot/Limb Multiplier]
+    ↓
+Final Damage to Health</code></pre><p><strong>Headshot System:</strong></p>
+<pre tabindex="0"><code>No Helmet
+└─ 2.0x damage multiplier
+
+Light Helmet (30 armor)
+├─ 1.75x multiplier
+└─ Reduces by 25%
+
+Medium Helmet (50 armor)
+├─ 1.6x multiplier
+└─ Reduces by 40%
+
+Heavy Helmet (75 armor)
+├─ 1.5x multiplier
+└─ Reduces by 50%</code></pre><p><strong>Limb Damage:</strong></p>
+<pre tabindex="0"><code>Head: 2.0x (with helmet modifiers)
+Chest: 1.0x (full damage)
+Arms: 0.75x (reduced damage)
+Legs: 0.75x (reduced damage)</code></pre><p><strong>3. Time-to-Kill (TTK) Targets</strong></p>
+<pre tabindex="0"><code>Close Range (0-15m):
+├─ SMG: 0.8-1.2 sec
+├─ AR: 1.0-1.5 sec
+└─ Shotgun: 0.3-0.6 sec
+
+Mid Range (15-40m):
+├─ AR: 1.2-1.8 sec
+├─ LMG: 1.5-2.0 sec
+└─ SMG: 2.0-3.0 sec (falloff)
+
+Long Range (40m+):
+├─ Sniper: 0.5-1.0 sec
+├─ AR: 2.5-3.5 sec
+└─ DMR: 1.5-2.5 sec</code></pre><p><strong>Design Philosophy:</strong> TTK balanced for mobile - fast enough to be decisive, slow enough for tactical play.</p>
+<hr>
+<h3 id="looting-mechanics">Looting Mechanics<a class="anchor" href="#looting-mechanics">#</a></h3>
+<h4 id="loot-container-types">Loot container Types<a class="anchor" href="#loot-container-types">#</a></h4>
+<pre tabindex="0"><code>Wooden Crate
+├─ Loot Quality: Common-Uncommon (80/20)
+├─ Search Time: 2 seconds
+├─ Items: 2-4
+└─ Spawn Rate: High (every zone)
+
+Metal Locker
+├─ Loot Quality: Common-Rare (50/40/10)
+├─ Search Time: 3 seconds
+├─ Items: 3-5
+└─ Spawn Rate: Medium (mid zones)
+
+Weapon Rack
+├─ Loot Quality: Weapons only, Uncommon-Epic
+├─ Search Time: 4 seconds
+├─ Items: 1-2 weapons
+└─ Spawn Rate: Low (hot zones)
+
+Safe
+├─ Loot Quality: Rare-Legendary (60/30/10)
+├─ Search Time: 8 seconds (lockpick) or instant (key)
+├─ Items: 4-8 high-value
+└─ Spawn Rate: Very Low (2-3 per map)
+
+Supply Drop
+├─ Loot Quality: Epic-Legendary (70/30)
+├─ Search Time: 5 seconds
+├─ Items: 5-10
+└─ Spawn: Event-based (5:00, 10:00)
+
+Dead Player Body
+├─ Loot Quality: Player&#39;s entire inventory
+├─ Search Time: 3 seconds
+├─ Items: Variable (could be 20+ items)
+└─ Risk: High (killer might be watching)</code></pre><h4 id="dynamic-loot-scaling">Dynamic Loot Scaling<a class="anchor" href="#dynamic-loot-scaling">#</a></h4>
+<p><strong>Base formula:</strong></p>
+<pre tabindex="0"><code>Loot Quality = Base_Rate * Zone_Multiplier * Time_Multiplier * Death_Multiplier
+
+Where:
+Zone_Multiplier:
+├─ Safe Zone: 0.8x
+├─ Mid Zone: 1.0x
+└─ Hot Zone: 1.4x
+
+Time_Multiplier:
+├─ 0-5 min: 1.0x
+├─ 5-10 min: 1.1x
+└─ 10-15 min: 1.25x (reward late stay)
+
+Death_Multiplier:
+├─ More player deaths → Better loot spawns
+└─ Scales from 1.0x to 1.3x</code></pre><p><strong>Rationale:</strong> Encourage risk-taking and late-game tension</p>
+<hr>
+<h3 id="extraction-mechanics">Extraction Mechanics<a class="anchor" href="#extraction-mechanics">#</a></h3>
+<h4 id="extraction-process-30-second-timer">Extraction Process (30-second timer)<a class="anchor" href="#extraction-process-30-second-timer">#</a></h4>
+<p><strong>Step-by-Step:</strong></p>
+<pre tabindex="0"><code>1. Reach Extraction Zone
+   └─ Marked on map (green helicopter icon)
+   
+2. Enter Zone
+   └─ UI prompt: &#34;Hold E to Call Extraction&#34;
+   
+3. Activate Extraction
+   ├─ 30-second countdown begins
+   ├─ Audio cue: Helicopter approaching
+   ├─ Visual: Smoke grenade, lights
+   └─ Map notification: &#34;Player Extracting at Zone A!&#34;
+   
+4. Defend Position
+   ├─ Cannot leave zone (timer resets)
+   ├─ Can take damage (timer resets)
+   ├─ Can shoot/use abilities
+   └─ Team must all be in zone
+   
+5. Successful Extraction
+   └─ Fade to black, victory screen</code></pre><h4 id="extraction-zone-types">Extraction Zone Types<a class="anchor" href="#extraction-zone-types">#</a></h4>
+<p><strong>Standard Extraction (3-4 per map)</strong></p>
+<pre tabindex="0"><code>Always Active
+├─ Known locations
+├─ 30-second timer
+├─ Open to all players
+└─ Most contested</code></pre><p><strong>Emergency Extraction (1-2 per map)</strong></p>
+<pre tabindex="0"><code>Requires Special Item/Quest
+├─ Hidden locations
+├─ 15-second timer (faster)
+├─ Single-use
+└─ High risk to reach</code></pre><p><strong>Vehicle Extraction (1 per map)</strong></p>
+<pre tabindex="0"><code>Limited Capacity (4 players max)
+├─ First-come-first-served
+├─ 45-second timer (longer)
+├─ Vehicle arrival noise
+└─ Very exposed</code></pre><h4 id="extraction-interruption">Extraction Interruption<a class="anchor" href="#extraction-interruption">#</a></h4>
+<p><strong>Timer Resets When:</strong></p>
+<ul>
+<li>Leave extraction zone (even 1 step)</li>
+<li>Take ANY  damage</li>
+<li>Team member dies</li>
+<li>Extraction zone attacked (grenade, ability)</li>
+</ul>
+<p><strong>Counter-Play:</strong></p>
+<ul>
+<li>Attackers can camp extractions</li>
+<li>Smoke grenades help</li>
+<li>Decoy abilities viable</li>
+<li>Team coordination critical</li>
+</ul>
+<hr>
+<h3 id="risk-vs-reward-psychology">Risk vs Reward Psychology<a class="anchor" href="#risk-vs-reward-psychology">#</a></h3>
+<h4 id="the-greed-loop">The &ldquo;Greed Loop&rdquo;<a class="anchor" href="#the-greed-loop">#</a></h4>
+<p><strong>Player Mental Process:</strong></p>
+<pre tabindex="0"><code>&#34;I have good loot now...&#34;
+    ↓
+&#34;But there&#39;s a safe nearby...&#34;
+    ↓
+&#34;Just ONE more container...&#34;
+    ↓
+[Encounters another player]
+    ↓
+┌─────────┴─────────┐
+│                   │
+WIN               LOSE
+│                   │
+&#34;I can push more&#34;  &#34;I should&#39;ve extracted&#34;
+│                   │
+Cycle continues    Learn from loss</code></pre><p><strong>Design Mechanisms:</strong></p>
+<ol>
+<li><strong>Secure Container</strong> - Always saved, encourages risk</li>
+<li><strong>Visible Loot Value</strong> - See what you&rsquo;re risking</li>
+<li><strong>Time Pressure</strong> - Contamination forces decisions</li>
+<li><strong>Extraction Sounds</strong> - &ldquo;Others are escaping!&rdquo;</li>
+<li><strong>Quest Pressure</strong> - &ldquo;I need one more item&hellip;&rdquo;</li>
+</ol>
+<h4 id="decision-framework-design">Decision Framework Design<a class="anchor" href="#decision-framework-design">#</a></h4>
+<p>Every major decision follows this pattern:</p>
+<pre tabindex="0"><code>SITUATION
+    ↓
+INFO GATHERING
+├─ Listen for footsteps
+├─ Check minimap
+├─ Assess inventory value
+└─ Check time remaining
+    ↓
+RISK ASSESSMENT
+├─ Can I win this fight?
+├─ Is it worth the risk?
+├─ Do I have escape routes?
+└─ What do I lose if I die?
+    ↓
+DECISION
+├─ Engage
+├─ Avoid
+├─ Extract
+└─ Continue looting
+    ↓
+CONSEQUENCE
+└─ [Learn for next time]</code></pre><hr>
+<h2 id="post-match-phase-2-5-minutes">POST-MATCH PHASE (2-5 minutes)<a class="anchor" href="#post-match-phase-2-5-minutes">#</a></h2>
+<h3 id="victory-screen-successful-extraction">Victory Screen (Successful Extraction)<a class="anchor" href="#victory-screen-successful-extraction">#</a></h3>
+<p><strong>Display Breakdown:</strong></p>
+<pre tabindex="0"><code>┌──────────────────────────────────────┐
+│  EXTRACTION SUCCESSFUL               │
+├──────────────────────────────────────┤
+│  [Operator 3D Model - Celebrating]   │
+│                                      │
+│  Survival Time: 12:34                │
+│  Players Eliminated: 3               │
+│  Distance Traveled: 842m             │
+│                                      │
+│  ═══ LOOT ACQUIRED ═══               │
+│  [Grid showing all items]            │
+│  Total Value: $45,280                │
+│                                      │
+│  ═══ REWARDS ═══                     │
+│  Base XP: 1,200                      │
+│  Survival Bonus: +300                │
+│  Kill Bonus: +450 (3 kills)          │
+│  Extraction Bonus: +500              │
+│  ────────────────                    │
+│  Total XP: 2,450                     │
+│                                      │
+│  Credits Earned: $3,200              │
+│  Operator XP: +850                   │
+│                                      │
+│  [Continue]  [Share]  [Replay]       │
+└──────────────────────────────────────┘</code></pre><p><strong>Psychological Design:</strong></p>
+<ul>
+<li>Dopamine hit from victory</li>
+<li>Clear loot showcase</li>
+<li>Pride in performance stats</li>
+<li>Social sharing encouragement</li>
+</ul>
+<hr>
+<h3 id="defeat-screen-killed-in-action">Defeat Screen (Killed in Action)<a class="anchor" href="#defeat-screen-killed-in-action">#</a></h3>
+<p><strong>Display Breakdown:</strong></p>
+<pre tabindex="0"><code class="language-┌──────────────────────────────────────┐" data-lang="┌──────────────────────────────────────┐">│  KILLED IN ACTION                    │
+├──────────────────────────────────────┤
+│  [Death Recap]                       │
+│  Killed by: [Player Name]            │
+│  Using: AK-47                        │
+│  Distance: 23m                       │
+│  Body Shots: 4, Head: 1              │
+│                                      │
+│  ═══ ITEMS LOST ═══                  │
+│  [Grid showing lost items]           │
+│  Total Value Lost: $32,150           │
+│                                      │
+│  ═══ SECURED ITEMS ═══               │
+│  [Secure Container 2x2]              │
+│  Saved: $8,200                       │
+│                                      │
+│  Performance:                        │
+│  Survival Time: 8:42                 │
+│  Damage Dealt: 384                   │
+│  Players Hit: 2                      │
+│                                      │
+│  Consolation XP: 450                 │
+│                                      │
+│  [Retry]  [Change Loadout] [Stash]  │
+└──────────────────────────────────────┘</code></pre><p><strong>Psychological Design:</strong></p>
+<ul>
+<li>Not overly punishing visually</li>
+<li>Clear learning opportunity (death recap)</li>
+<li>Small XP consolation</li>
+<li>Highlight secured items (not total loss)</li>
+<li>Easy retry to prevent rage quit</li>
+</ul>
+<hr>
+<h3 id="session-structure">Session Structure<a class="anchor" href="#session-structure">#</a></h3>
+<p><strong>Ideal 30-Minute Session:</strong></p>
+<pre tabindex="0"><code>0:00 - Login
+├─ Daily reward claim
+├─ Quest check
+└─ BP progress review
+
+0:03 - Match #1 Prep
+├─ Loadout selection
+└─ Mental preparation
+
+0:06 - Match #1 (13 min)
+└─ Result: Death at 8:30
+
+0:19 - Quick Break
+├─ Review death
+├─ Adjust loadout
+└─ 1-minute breather
+
+0:21 - Match #2 Prep
+└─ Different strategy
+
+0:24 - Match #2 (15 min)
+└─ Result: Successful extraction!
+
+0:39 - Loot Management
+├─ Sort stash
+├─ Sell items
+├─ Craft upgrades
+└─ Quest turn-ins
+
+0:45 - Decision Point
+├─ Start Match #3?
+└─ Or logout satisfied
+
+Natural session: 30-45 minutes (2-3 matches)</code></pre><hr>
+<h2 id="advanced-mechanics">Advanced Mechanics<a class="anchor" href="#advanced-mechanics">#</a></h2>
+<h3 id="squad-coordination">Squad Coordination<a class="anchor" href="#squad-coordination">#</a></h3>
+<p><strong>Roles in Squad:</strong></p>
+<pre tabindex="0"><code>Point Man (Recon/Assault)
+├─ Leads movement
+├─ First contact
+└─ Calls enemy positions
+
+Support (Support/Specialist)
+├─ Healing duty
+├─ Utility deployment
+└─ Resource management
+
+Heavy (Tank/LMG Assault)
+├─ Suppressive fire
+├─ Zone control
+└─ Extraction security
+
+Flex (Any Operator)
+├─ Adapts to situation
+├─ Backup role
+└─ Quest focus</code></pre><p><strong>Squad Communication (Voice Not Required):</strong></p>
+<ul>
+<li>Ping system (location, enemy, item)</li>
+<li>Quick chat wheel</li>
+<li>Minimap markers</li>
+<li>Auto-callouts</li>
+</ul>
+<hr>
+<h3 id="information-warfare">Information Warfare<a class="anchor" href="#information-warfare">#</a></h3>
+<p><strong>Sound Design:</strong></p>
+<pre tabindex="0"><code>Footsteps:
+├─ Audible: 15m (walking), 30m (sprinting)
+├─ Material-based (metal, wood, concrete)
+├─ Directional audio (3D)
+└─ Volume based on surface
+
+Gunshots:
+├─ Audible: 100m+
+├─ Distinct per weapon type
+├─ Suppressed: 50% range reduction
+└─ Draws attention
+
+Looting Sounds:
+├─ Container open: 10m
+├─ Item pickup: 5m
+└─ Inventory management: 3m
+
+Abilities:
+├─ Each has unique audio
+├─ Range: 20-40m depending on type
+└─ Identifiable by enemies</code></pre><p><strong>Visual Information:</strong></p>
+<pre tabindex="0"><code>Muzzle Flash:
+├─ Visible: 50m
+├─ Reveals position
+└─ Brief but noticeable
+
+Movement:
+├─ Character visible: Line of sight
+├─ Minimap: 0m (no constant reveal)
+└─ UAV: Temporary reveal (ability)
+
+Loot Beam:
+├─ Rare+ items have vertical beam
+├─ Visible: 30m
+└─ Risk: Reveals your location if you loot</code></pre><hr>
+<h2 id="metrics--balance">Metrics &amp; Balance<a class="anchor" href="#metrics--balance">#</a></h2>
+<h3 id="target-metrics">Target Metrics<a class="anchor" href="#target-metrics">#</a></h3>
+<p><strong>Match Pacing:</strong></p>
+<ul>
+<li>Average match duration: 12 minutes</li>
+<li>Extraction success rate: 35%</li>
+<li>Average kills per match: 1.5</li>
+<li>Average loot value extracted: $25,000</li>
+</ul>
+<p><strong>Player Distribution:</strong></p>
+<pre tabindex="0"><code>Match Start: 20 players
+├─ 3 min: 18 players (-2 early deaths)
+├─ 6 min: 15 players (-3 combat)
+├─ 9 min: 11 players (-4 extracted/died)
+└─ 12 min: 6 players remain
+    ├─ 3 extract successfully
+    └─ 3 die to contamination/combat</code></pre><hr>
+<p><strong><a href="./Overview.md">← Previous: Overview</a></strong> | <strong><a href="../README.md">Index</a></strong> | <strong><a href="./Progression.md">Next: Progression →</a></strong></p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+<div>
+
+</div>
+
+<div>
+
+</div>
+
+</div>
+
+
+
+
+
+  
+  
+  
+  <div class="flex flex-wrap justify-between">
+    <span>
+    
+      <a href="/docs/GDD_Design/GameDesign/Controls/" class="flex align-center">
+        <img src="/icons/backward.svg" class="book-icon" alt="Backward" />
+        <span>Controls</span>
+      </a>
+    
+    </span>
+    <span>
+    
+      <a href="/docs/GDD_Design/GameDesign/Economy/" class="flex align-center">
+        <span>Economy</span>
+        <img src="/icons/forward.svg" class="book-icon" alt="Forward" />
+      </a>
+    
+    </span>
+  </div>
+  
+
+
+ 
+        
+  
+ 
+        
+        
+  
+ 
+        
+  
+  
+    <script>(function(){document.querySelectorAll("pre:has(code)").forEach(e=>{e.addEventListener("click",e.focus),e.addEventListener("copy",function(t){if(t.preventDefault(),navigator.clipboard){const t=window.getSelection().toString()||e.textContent;navigator.clipboard.writeText(t)}})})})()</script>
+  
+
+      </footer>
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+  
+  <aside class="book-toc">
+    <div class="book-toc-content">
+      
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#overview">Overview</a></li>
+    <li><a href="#core-gameplay-loop-structure">Core Gameplay Loop Structure</a></li>
+    <li><a href="#pre-match-phase-2-5-minutes">PRE-MATCH PHASE (2-5 minutes)</a>
+      <ul>
+        <li><a href="#loadout-selection-system">Loadout Selection System</a></li>
+        <li><a href="#matchmaking-15-60-seconds">Matchmaking (15-60 seconds)</a></li>
+      </ul>
+    </li>
+    <li><a href="#in-match-phase-10-15-minutes">IN-MATCH PHASE (10-15 minutes)</a>
+      <ul>
+        <li><a href="#detailed-match-timeline">Detailed Match Timeline</a></li>
+        <li><a href="#movement--controls-mobile-optimized">Movement &amp; Controls (Mobile-Optimized)</a></li>
+        <li><a href="#combat-mechanics-deep-dive">Combat Mechanics Deep Dive</a></li>
+        <li><a href="#looting-mechanics">Looting Mechanics</a></li>
+        <li><a href="#extraction-mechanics">Extraction Mechanics</a></li>
+        <li><a href="#risk-vs-reward-psychology">Risk vs Reward Psychology</a></li>
+      </ul>
+    </li>
+    <li><a href="#post-match-phase-2-5-minutes">POST-MATCH PHASE (2-5 minutes)</a>
+      <ul>
+        <li><a href="#victory-screen-successful-extraction">Victory Screen (Successful Extraction)</a></li>
+        <li><a href="#defeat-screen-killed-in-action">Defeat Screen (Killed in Action)</a></li>
+        <li><a href="#session-structure">Session Structure</a></li>
+      </ul>
+    </li>
+    <li><a href="#advanced-mechanics">Advanced Mechanics</a>
+      <ul>
+        <li><a href="#squad-coordination">Squad Coordination</a></li>
+        <li><a href="#information-warfare">Information Warfare</a></li>
+      </ul>
+    </li>
+    <li><a href="#metrics--balance">Metrics &amp; Balance</a>
+      <ul>
+        <li><a href="#target-metrics">Target Metrics</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+    </div>
+  </aside>
+  
+ 
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

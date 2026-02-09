@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>UI UX on Extraction Shooter GDD</title>
+    <link>http://localhost:52224/docs/GDD_Design/UI_UX/</link>
+    <description>Recent content in UI UX on Extraction Shooter GDD</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <atom:link href="http://localhost:52224/docs/GDD_Design/UI_UX/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title></title>
+      <link>http://localhost:52224/docs/GDD_Design/UI_UX/UX_Flows/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:52224/docs/GDD_Design/UI_UX/UX_Flows/</guid>
+      <description>&lt;h1 id=&#34;ux-flows--wireframes&#34;&gt;UX Flows &amp;amp; Wireframes&lt;a class=&#34;anchor&#34; href=&#34;#ux-flows--wireframes&#34;&gt;#&lt;/a&gt;&lt;/h1&gt;&#xD;&#xA;&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;../README.md&#34;&gt;← Back to Index&lt;/a&gt;&lt;/strong&gt; | &lt;strong&gt;&lt;a href=&#34;./Visual_Style.md&#34;&gt;Visual Style →&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;-user-journey-map&#34;&gt;🧭 User Journey Map&lt;a class=&#34;anchor&#34; href=&#34;#-user-journey-map&#34;&gt;#&lt;/a&gt;&lt;/h2&gt;&#xD;&#xA;&lt;h3 id=&#34;session-flow-the-happy-path&#34;&gt;Session Flow (The &amp;ldquo;Happy Path&amp;rdquo;)&lt;a class=&#34;anchor&#34; href=&#34;#session-flow-the-happy-path&#34;&gt;#&lt;/a&gt;&lt;/h3&gt;&#xD;&#xA;&lt;pre class=&#34;mermaid&#34;&gt;graph TD&#xD;&#xA;    Start(App Launch) --&amp;gt; Login{Auth Check}&#xD;&#xA;    Login -- New User --&amp;gt; Tutorial[Tutorial Mission]&#xD;&#xA;    Login -- Returning --&amp;gt; MainMenu[Main Menu]&#xD;&#xA;    Tutorial --&amp;gt; MainMenu&#xD;&#xA;    &#xD;&#xA;    MainMenu --&amp;gt; Prep[Preparation Phase]&#xD;&#xA;    Prep --&amp;gt;|Select Loadout| LoadoutUI&#xD;&#xA;    LoadoutUI --&amp;gt;|Ready| Matchmaking&#xD;&#xA;    &#xD;&#xA;    Matchmaking --&amp;gt; Loading{Loading Level}&#xD;&#xA;    Loading --&amp;gt; Spawn[In-Raid Gameplay]&#xD;&#xA;    &#xD;&#xA;    Spawn --&amp;gt;|Death| DefeatScreen&#xD;&#xA;    Spawn --&amp;gt;|Extraction| VictoryScreen&#xD;&#xA;    &#xD;&#xA;    DefeatScreen --&amp;gt; Summary[After Action Report]&#xD;&#xA;    VictoryScreen --&amp;gt; Summary&#xD;&#xA;    &#xD;&#xA;    Summary --&amp;gt; MainMenu&lt;/pre&gt;&lt;hr&gt;&#xA;&lt;h2 id=&#34;-key-screen-wireframes&#34;&gt;📱 Key Screen Wireframes&lt;a class=&#34;anchor&#34; href=&#34;#-key-screen-wireframes&#34;&gt;#&lt;/a&gt;&lt;/h2&gt;&#xD;&#xA;&lt;h3 id=&#34;1-main-menu-hub&#34;&gt;1. Main Menu (Hub)&lt;a class=&#34;anchor&#34; href=&#34;#1-main-menu-hub&#34;&gt;#&lt;/a&gt;&lt;/h3&gt;&#xD;&#xA;&lt;p&gt;&lt;strong&gt;Goal:&lt;/strong&gt; Quick access to &amp;ldquo;Play&amp;rdquo; while showing progression.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title></title>
+      <link>http://localhost:52224/docs/GDD_Design/UI_UX/Visual_Style/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:52224/docs/GDD_Design/UI_UX/Visual_Style/</guid>
+      <description>&lt;h1 id=&#34;visual-style--art-guidelines&#34;&gt;Visual Style &amp;amp; Art Guidelines&lt;a class=&#34;anchor&#34; href=&#34;#visual-style--art-guidelines&#34;&gt;#&lt;/a&gt;&lt;/h1&gt;&#xD;&#xA;&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;../README.md&#34;&gt;← Back to Index&lt;/a&gt;&lt;/strong&gt; | &lt;strong&gt;&lt;a href=&#34;./UX_Flows.md&#34;&gt;UX Flows ←&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;-visual-identity&#34;&gt;🎨 Visual Identity&lt;a class=&#34;anchor&#34; href=&#34;#-visual-identity&#34;&gt;#&lt;/a&gt;&lt;/h2&gt;&#xD;&#xA;&lt;p&gt;&lt;strong&gt;Style:&lt;/strong&gt; Grounded Neo-Industrial&#xA;&lt;strong&gt;Era:&lt;/strong&gt; Post-Collapse (Near Future 2035)&lt;/p&gt;&#xA;&lt;h3 id=&#34;design-philosophy&#34;&gt;Design Philosophy&lt;a class=&#34;anchor&#34; href=&#34;#design-philosophy&#34;&gt;#&lt;/a&gt;&lt;/h3&gt;&#xD;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Decay with Memory:&lt;/strong&gt; Every rusted panel was once new. Every ruin was a home. The world is &lt;em&gt;overgrown&lt;/em&gt;, not just dirty.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Tactical Clarity:&lt;/strong&gt; Gameplay elements (cover, loot, enemies) must be instantly readable against the chaotic background.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Functional Fashion:&lt;/strong&gt; Gear looks practical. No glowing magical armor. Duct tape, zip ties, and worn metal.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;-global-color-palette&#34;&gt;🌈 Global Color Palette&lt;a class=&#34;anchor&#34; href=&#34;#-global-color-palette&#34;&gt;#&lt;/a&gt;&lt;/h2&gt;&#xD;&#xA;&lt;h3 id=&#34;primary-game-colors-interactive&#34;&gt;Primary Game Colors (Interactive)&lt;a class=&#34;anchor&#34; href=&#34;#primary-game-colors-interactive&#34;&gt;#&lt;/a&gt;&lt;/h3&gt;&#xD;&#xA;&lt;p&gt;&lt;em&gt;Used for UI and Gameplay Feedback.&lt;/em&gt;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

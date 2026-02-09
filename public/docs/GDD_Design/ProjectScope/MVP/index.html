@@ -1,0 +1,2379 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=52224&amp;path=livereload" data-no-instant defer></script>
+  <!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="MVP Scope - Minimum Viable Product#← Back to Project Scope | Index | Next: Risk Analysis →
+📅 Critical Milestones &amp; Targets#Milestone Target Date Key Deliverable Dependency Project Start T-Minus 0 Core Team Assembled Budget Approval M1: Prototype Month 2 Playable Greybox Loop (Server Authoritative) UE5 Mobile Setup M2: Vertical Slice Month 4 One Polished Zone &#43; Full Combat Loop Asset Production M3: Alpha (Internal) Month 5 Full Map 1 &#43; 3 Operators Backend Stability M4: Beta (Closed) Month 7 Economy &#43; Quest System Alpha Feedback M5: Soft Launch Month 9 Store &#43; Live Ops Pipeline Platform Cert M6: Global Launch Month 11 Marketing Push &#43; Events Soft Launch Data 🔗 Technical Dependencies#Server Architecture: Dedicated servers (Agones/K8s) must be validated by M2. Asset Pipeline: Mobile optimization workflow (LODs, imposter system) established by M1. Backend Services: Auth, Inventory, and Matchmaking APIs ready for load testing by M3. 🎯 Alpha Scope (Technical Test)#Objective: Validate core gameplay loop and server stability.
+">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:52224/docs/GDD_Design/ProjectScope/MVP/">
+  <meta property="og:site_name" content="Extraction Shooter GDD">
+  <meta property="og:title" content="Extraction Shooter GDD">
+  <meta property="og:description" content="MVP Scope - Minimum Viable Product#← Back to Project Scope | Index | Next: Risk Analysis →
+📅 Critical Milestones &amp; Targets#Milestone Target Date Key Deliverable Dependency Project Start T-Minus 0 Core Team Assembled Budget Approval M1: Prototype Month 2 Playable Greybox Loop (Server Authoritative) UE5 Mobile Setup M2: Vertical Slice Month 4 One Polished Zone &#43; Full Combat Loop Asset Production M3: Alpha (Internal) Month 5 Full Map 1 &#43; 3 Operators Backend Stability M4: Beta (Closed) Month 7 Economy &#43; Quest System Alpha Feedback M5: Soft Launch Month 9 Store &#43; Live Ops Pipeline Platform Cert M6: Global Launch Month 11 Marketing Push &#43; Events Soft Launch Data 🔗 Technical Dependencies#Server Architecture: Dedicated servers (Agones/K8s) must be validated by M2. Asset Pipeline: Mobile optimization workflow (LODs, imposter system) established by M1. Backend Services: Auth, Inventory, and Matchmaking APIs ready for load testing by M3. 🎯 Alpha Scope (Technical Test)#Objective: Validate core gameplay loop and server stability.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
+
+
+  <meta itemprop="name" content="Extraction Shooter GDD">
+  <meta itemprop="description" content="MVP Scope - Minimum Viable Product#← Back to Project Scope | Index | Next: Risk Analysis →
+📅 Critical Milestones &amp; Targets#Milestone Target Date Key Deliverable Dependency Project Start T-Minus 0 Core Team Assembled Budget Approval M1: Prototype Month 2 Playable Greybox Loop (Server Authoritative) UE5 Mobile Setup M2: Vertical Slice Month 4 One Polished Zone &#43; Full Combat Loop Asset Production M3: Alpha (Internal) Month 5 Full Map 1 &#43; 3 Operators Backend Stability M4: Beta (Closed) Month 7 Economy &#43; Quest System Alpha Feedback M5: Soft Launch Month 9 Store &#43; Live Ops Pipeline Platform Cert M6: Global Launch Month 11 Marketing Push &#43; Events Soft Launch Data 🔗 Technical Dependencies#Server Architecture: Dedicated servers (Agones/K8s) must be validated by M2. Asset Pipeline: Mobile optimization workflow (LODs, imposter system) established by M1. Backend Services: Auth, Inventory, and Matchmaking APIs ready for load testing by M3. 🎯 Alpha Scope (Technical Test)#Objective: Validate core gameplay loop and server stability.">
+  <meta itemprop="wordCount" content="420">
+
+<title>Mvp | Extraction Shooter GDD</title>
+<link rel="icon" href="/favicon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="http://localhost:52224/docs/GDD_Design/ProjectScope/MVP/">
+<link rel="stylesheet" href="/book.min.63c8b2b12bbd1ad36428837740ea371dd41fdb9c22b35499003d0dfa4dbce6ba.css" integrity="sha256-Y8iysSu9GtNkKIN3QOo3HdQf25wis1SZAD0N&#43;k285ro=" crossorigin="anonymous">
+
+
+  <script defer src="/fuse.min.js"></script>
+  <script defer src="/en.search.min.58bea27d7a08265548c5a8636a9a9fc844e0eb9d60fc3bb2c53d517da858d4c1.js" integrity="sha256-WL6ifXoIJlVIxahjapqfyETg651g/DuyxT1RfahY1ME=" crossorigin="anonymous"></script>
+
+  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
+
+
+
+  
+</head>
+<body dir="ltr" class="book-kind-page book-type-docs">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    
+<aside class="book-menu">
+  <div class="book-menu-content">
+    
+  <nav>
+    <h2 class="book-brand">
+  <a class="flex align-center" href="/"><img src="/logo.svg" alt="Logo" /><span>Extraction Shooter GDD</span>
+  </a>
+</h2>
+
+    <div class="book-theme-toggle">
+    <input type="checkbox" id="theme-toggle" class="toggle">
+    <label for="theme-toggle" class="flex justify-between items-center cursor-pointer">
+        <span class="text-xs font-semibold">Dark Mode</span>
+        <div
+            class="relative w-10 h-5 bg-gray-200 rounded-full transition-colors duration-200 ease-in-out dark:bg-gray-700">
+            <div
+                class="absolute left-0 w-5 h-5 bg-white rounded-full shadow transform transition-transform duration-200 ease-in-out dark:translate-x-full">
+            </div>
+        </div>
+    </label>
+</div>
+
+<script>
+    (function () {
+        const toggle = document.getElementById('theme-toggle');
+        const html = document.documentElement;
+
+        
+        const savedTheme = localStorage.getItem('theme');
+        const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+        if (savedTheme === 'dark' || (!savedTheme && systemDark)) {
+            html.classList.add('dark');
+            toggle.checked = true;
+        } else {
+            html.classList.remove('dark');
+            toggle.checked = false;
+        }
+
+        
+        toggle.addEventListener('change', function () {
+            if (this.checked) {
+                html.classList.add('dark');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                html.classList.remove('dark');
+                localStorage.setItem('theme', 'light');
+            }
+        });
+    })();
+</script>
+
+<style>
+     
+    .book-theme-toggle {
+        margin: 1rem 0;
+        padding: 0 1rem;
+
+    }
+
+    .book-theme-toggle label {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        cursor: pointer;
+        font-size: 0.85em;
+    }
+
+     
+    .book-theme-toggle input {
+        display: none;
+    }
+
+     
+    .book-theme-toggle label::after {
+        content: "🌙";
+         
+    }
+
+     
+    html:not(.dark) .book-theme-toggle label::after {
+        content: "☀️";
+         
+    }
+</style> 
+    
+<div class="book-search hidden">
+  <input id="book-search-input" type="text" 
+    placeholder="Search"
+    aria-label="Search"
+    maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+    
+
+    
+    
+
+
+
+    
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/" class="">
+      Gdd Design</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      AI</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/AI/EnemyBehavior/" class="">
+      Enemy Behavior</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/AI/FactionBehaviors/" class="">
+      Faction Behaviors</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Audio</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Audio/SoundDesign/" class="">
+      Sound Design</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Audio/Soundscape/" class="">
+      Soundscape</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Audio/TacticalAudio/" class="">
+      Tactical Audio</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Audio/VoiceLines/" class="">
+      Voice Lines</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Characters</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Operators/" class="">
+      Operators</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Assault</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Assault/Blaze/" class="">
+      Blaze</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Assault/Havoc/" class="">
+      Havoc</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Assault/README/" class="">
+      Readme</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Assault/Viper/" class="">
+      Viper</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Recon</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Recon/Phantom/" class="">
+      Phantom</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Recon/README/" class="">
+      Readme</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Recon/Specter/" class="">
+      Specter</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Recon/Wraith/" class="">
+      Wraith</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Specialist</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Specialist/Cipher/" class="">
+      Cipher</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Specialist/Flux/" class="">
+      Flux</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Specialist/README/" class="">
+      Readme</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Support</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Support/Angel/" class="">
+      Angel</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Support/Doc/" class="">
+      Doc</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Support/README/" class="">
+      Readme</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Tank</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Tank/Bulwark/" class="">
+      Bulwark</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Tank/Fortress/" class="">
+      Fortress</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Tank/README/" class="">
+      Readme</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Combat</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Combat/Items/" class="">
+      Items</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Combat/Weapons/" class="">
+      Weapons</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      GameDesign</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Accessibility/" class="">
+      Accessibility</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Controls/" class="">
+      Controls</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/CoreGameplay/" class="">
+      Core Gameplay</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Economy/" class="">
+      Economy</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/GameModes/" class="">
+      Game Modes</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/LiveOps/" class="">
+      Live Ops</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Localization/" class="">
+      Localization</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/NavigationAndMap/" class="">
+      Navigation and Map</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Overview/" class="">
+      Overview</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Progression/" class="">
+      Progression</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/RankedMode/" class="">
+      Ranked Mode</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/TutorialRaid/" class="">
+      Tutorial Raid</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/UserSettings/" class="">
+      User Settings</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Gameplay</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Gameplay/CoreLoop/" class="">
+      Core Loop</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      ProjectScope</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/ProjectScope/DesignPillars/" class="">
+      Design Pillars</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/ProjectScope/MVP/" class="active">
+      Mvp</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/ProjectScope/NonGoals/" class="">
+      Non Goals</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/ProjectScope/Risks/" class="">
+      Risks</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Social</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Social/Multiplayer/" class="">
+      Multiplayer</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Story</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Story/Backstory/" class="">
+      Backstory</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Story/Factions/" class="">
+      Factions</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Story/Narrative/" class="">
+      Narrative</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Story/QuestLines/" class="">
+      Quest Lines</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      UI UX</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/UI_UX/UX_Flows/" class="">
+      Ux Flows</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/UI_UX/Visual_Style/" class="">
+      Visual Style</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Visuals</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Visuals/ArtDirection/" class="">
+      Art Direction</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Visuals/AssetGuidelines/" class="">
+      Asset Guidelines</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Visuals/StyleGuide/" class="">
+      Style Guide</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Visuals/UserInterface/" class="">
+      User Interface</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      World</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/EnvironmentalNarrative/" class="">
+      Environmental Narrative</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/EnvironmentalNarrative_Guidelines/" class="">
+      Environmental Narrative Guidelines</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/LootDistribution/" class="">
+      Loot Distribution</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/MapDesign/" class="">
+      Map Design</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/MapDesign_IndustrialZone/" class="">
+      Map Design Industrial Zone</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/MapDesign_NeonSlums/" class="">
+      Map Design Neon Slums</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/MapDesign_Wilderness/" class="">
+      Map Design Wilderness</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/MapLayouts/" class="">
+      Map Layouts</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/" class="">
+      Gdd Technical</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      AI</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/AI/SensorySystem/" class="">
+      Sensory System</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Core</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Core/Architecture/" class="">
+      Architecture</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Core/CodingStandards/" class="">
+      Coding Standards</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Core/DevelopmentRoadmap/" class="">
+      Development Roadmap</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Core/NetworkingSystem/" class="">
+      Networking System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Core/SecuritySystem/" class="">
+      Security System</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Gameplay</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Gameplay/CharacterSystem/" class="">
+      Character System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Gameplay/ControlSystem/" class="">
+      Control System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Gameplay/InventorySystem/" class="">
+      Inventory System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Gameplay/WeaponSystem/" class="">
+      Weapon System</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Networking</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Networking/LagCompensation/" class="">
+      Lag Compensation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Networking/ReplicationStrategy/" class="">
+      Replication Strategy</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Performance</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Performance/Budgets/" class="">
+      Budgets</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Performance/Optimization/" class="">
+      Optimization</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Security</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Security/AntiCheatStrategy/" class="">
+      Anti Cheat Strategy</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Systems</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/AccessibilitySystem/" class="">
+      Accessibility System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/AISystem/" class="">
+      Aisystem</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/AnalyticsSystem/" class="">
+      Analytics System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/AudioSystem/" class="">
+      Audio System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/BuildPipeline/" class="">
+      Build Pipeline</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/LiveOpsSystem/" class="">
+      Live Ops System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/LocalizationSystem/" class="">
+      Localization System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/MapSystem/" class="">
+      Map System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/NarrativeSystem/" class="">
+      Narrative System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/ProgressionSystem/" class="">
+      Progression System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/RankedSystem/" class="">
+      Ranked System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/SaveSystem/" class="">
+      Save System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/SocialSystem/" class="">
+      Social System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/TutorialSystem/" class="">
+      Tutorial System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/UISystem/" class="">
+      Uisystem</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+</nav>
+
+
+
+
+<script>{ { . | safeJS } }</script>
+
+
+  </div>
+</aside>
+ 
+
+    <div class="book-page">
+      <header class="book-header hidden">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/icons/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <h3>Mvp</h3>
+
+  <label for="toc-control">
+    
+    <img src="/icons/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#-critical-milestones--targets">📅 Critical Milestones &amp; Targets</a></li>
+    <li><a href="#-technical-dependencies">🔗 Technical Dependencies</a></li>
+    <li><a href="#-alpha-scope-technical-test">🎯 Alpha Scope (Technical Test)</a>
+      <ul>
+        <li><a href="#features-included">Features Included</a></li>
+        <li><a href="#features-excluded-for-beta">Features Excluded (For Beta)</a></li>
+      </ul>
+    </li>
+    <li><a href="#-beta-scope-soft-launch">🚀 Beta Scope (Soft Launch)</a>
+      <ul>
+        <li><a href="#features-added">Features Added</a></li>
+      </ul>
+    </li>
+    <li><a href="#-feature-comparison-matrix">📦 Feature Comparison Matrix</a></li>
+    <li><a href="#-cut-content-backlog">🛑 Cut Content (Backlog)</a></li>
+    <li><a href="#-document-ownership--changelog">📝 Document Ownership &amp; Changelog</a></li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><h1 id="mvp-scope---minimum-viable-product">MVP Scope - Minimum Viable Product<a class="anchor" href="#mvp-scope---minimum-viable-product">#</a></h1>
+<p><strong><a href="./NonGoals.md">← Back to Project Scope</a></strong> | <strong><a href="../README.md">Index</a></strong> | <strong><a href="./Risks.md">Next: Risk Analysis →</a></strong></p>
+<hr>
+<h2 id="-critical-milestones--targets">📅 Critical Milestones &amp; Targets<a class="anchor" href="#-critical-milestones--targets">#</a></h2>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Milestone</th>
+          <th style="text-align: left">Target Date</th>
+          <th style="text-align: left">Key Deliverable</th>
+          <th style="text-align: left">Dependency</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><strong>Project Start</strong></td>
+          <td style="text-align: left">T-Minus 0</td>
+          <td style="text-align: left">Core Team Assembled</td>
+          <td style="text-align: left">Budget Approval</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>M1: Prototype</strong></td>
+          <td style="text-align: left">Month 2</td>
+          <td style="text-align: left">Playable Greybox Loop (Server Authoritative)</td>
+          <td style="text-align: left">UE5 Mobile Setup</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>M2: Vertical Slice</strong></td>
+          <td style="text-align: left">Month 4</td>
+          <td style="text-align: left">One Polished Zone + Full Combat Loop</td>
+          <td style="text-align: left">Asset Production</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>M3: Alpha (Internal)</strong></td>
+          <td style="text-align: left">Month 5</td>
+          <td style="text-align: left">Full Map 1 + 3 Operators</td>
+          <td style="text-align: left">Backend Stability</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>M4: Beta (Closed)</strong></td>
+          <td style="text-align: left">Month 7</td>
+          <td style="text-align: left">Economy + Quest System</td>
+          <td style="text-align: left">Alpha Feedback</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>M5: Soft Launch</strong></td>
+          <td style="text-align: left">Month 9</td>
+          <td style="text-align: left">Store + Live Ops Pipeline</td>
+          <td style="text-align: left">Platform Cert</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>M6: Global Launch</strong></td>
+          <td style="text-align: left">Month 11</td>
+          <td style="text-align: left">Marketing Push + Events</td>
+          <td style="text-align: left">Soft Launch Data</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="-technical-dependencies">🔗 Technical Dependencies<a class="anchor" href="#-technical-dependencies">#</a></h2>
+<ul>
+<li><strong>Server Architecture:</strong> Dedicated servers (Agones/K8s) must be validated by <strong>M2</strong>.</li>
+<li><strong>Asset Pipeline:</strong> Mobile optimization workflow (LODs, imposter system) established by <strong>M1</strong>.</li>
+<li><strong>Backend Services:</strong> Auth, Inventory, and Matchmaking APIs ready for load testing by <strong>M3</strong>.</li>
+</ul>
+<hr>
+<h2 id="-alpha-scope-technical-test">🎯 Alpha Scope (Technical Test)<a class="anchor" href="#-alpha-scope-technical-test">#</a></h2>
+<p><strong>Objective:</strong> Validate core gameplay loop and server stability.</p>
+<h3 id="features-included">Features Included<a class="anchor" href="#features-included">#</a></h3>
+<ul>
+<li><strong>Map:</strong> Industrial Zone (Small version - &ldquo;The Factory&rdquo; only)</li>
+<li><strong>Game Loop:</strong> Spawn -&gt; Loot -&gt; Fight/Sneak -&gt; Extract</li>
+<li><strong>Operators:</strong> 3 Basic Classes (Assault, Scout, Support)</li>
+<li><strong>Weapons:</strong>
+<ul>
+<li>AR: AK-47, M4A1</li>
+<li>SMG: MP5</li>
+<li>Sidearm: Glock 17</li>
+</ul>
+</li>
+<li><strong>Enemies:</strong> Basic AI (Patrol behavior only)</li>
+<li><strong>Inventory:</strong> Grid system, basic drag-and-drop</li>
+<li><strong>Metagame:</strong> Stash, Basic Vendor (Sell only)</li>
+</ul>
+<h3 id="features-excluded-for-beta">Features Excluded (For Beta)<a class="anchor" href="#features-excluded-for-beta">#</a></h3>
+<ul>
+<li>Quest System</li>
+<li>Crafting/Modding</li>
+<li>complex AI behaviors</li>
+<li>Friends/Party System</li>
+<li>Monetization Store</li>
+</ul>
+<hr>
+<h2 id="-beta-scope-soft-launch">🚀 Beta Scope (Soft Launch)<a class="anchor" href="#-beta-scope-soft-launch">#</a></h2>
+<p><strong>Objective:</strong> Validate economy, retention, and progression.</p>
+<h3 id="features-added">Features Added<a class="anchor" href="#features-added">#</a></h3>
+<ul>
+<li><strong>Map:</strong> Industrial Zone (Full) + Early Urban Zone</li>
+<li><strong>Operators:</strong> Added Tank and Specialist (Total 5)</li>
+<li><strong>Weapons:</strong> Added Shotguns, Snipers, DMRs</li>
+<li><strong>Systems:</strong>
+<ul>
+<li>Gunsmith (Weapon modding)</li>
+<li>Market (Trading with NPCs)</li>
+<li>Quests (Daily + Main Story Ch.1)</li>
+<li>Wounds/Status Effects</li>
+</ul>
+</li>
+<li><strong>Social:</strong> Party System, Friend List</li>
+</ul>
+<hr>
+<h2 id="-feature-comparison-matrix">📦 Feature Comparison Matrix<a class="anchor" href="#-feature-comparison-matrix">#</a></h2>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Feature Category</th>
+          <th style="text-align: center">Prototype</th>
+          <th style="text-align: center">Alpha</th>
+          <th style="text-align: center">Beta</th>
+          <th style="text-align: center">Launch</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><strong>Maps</strong></td>
+          <td style="text-align: center">Greybox</td>
+          <td style="text-align: center">1 (Partial)</td>
+          <td style="text-align: center">1 (Full) + 1 (Partial)</td>
+          <td style="text-align: center">3 Maps</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Operators</strong></td>
+          <td style="text-align: center">1 (Dummy)</td>
+          <td style="text-align: center">3</td>
+          <td style="text-align: center">5</td>
+          <td style="text-align: center">8+</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Weapons</strong></td>
+          <td style="text-align: center">2</td>
+          <td style="text-align: center">5</td>
+          <td style="text-align: center">15+</td>
+          <td style="text-align: center">30+</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>AI Types</strong></td>
+          <td style="text-align: center">Static</td>
+          <td style="text-align: center">Patrol</td>
+          <td style="text-align: center">Flanking, Cover</td>
+          <td style="text-align: center">Bosses, Elite</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Loot System</strong></td>
+          <td style="text-align: center">Random</td>
+          <td style="text-align: center">Tables</td>
+          <td style="text-align: center">Dynamic</td>
+          <td style="text-align: center">Event-based</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Questing</strong></td>
+          <td style="text-align: center">❌</td>
+          <td style="text-align: center">❌</td>
+          <td style="text-align: center">Basic</td>
+          <td style="text-align: center">Campaign</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Progression</strong></td>
+          <td style="text-align: center">Session</td>
+          <td style="text-align: center">Wipe</td>
+          <td style="text-align: center">Persistent</td>
+          <td style="text-align: center">Seasons</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Monetization</strong></td>
+          <td style="text-align: center">❌</td>
+          <td style="text-align: center">❌</td>
+          <td style="text-align: center">Test Store</td>
+          <td style="text-align: center">Full Store</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="-cut-content-backlog">🛑 Cut Content (Backlog)<a class="anchor" href="#-cut-content-backlog">#</a></h2>
+<ul>
+<li><strong>Vehicles:</strong> Deferred to Year 2</li>
+<li><strong>Clan System:</strong> Deferred to Post-Launch</li>
+<li><strong>Weather System:</strong> Deferred to First Major Update</li>
+<li><strong>Spectator Mode:</strong> Deferred to esports update</li>
+</ul>
+<hr>
+<hr>
+<h2 id="-document-ownership--changelog">📝 Document Ownership &amp; Changelog<a class="anchor" href="#-document-ownership--changelog">#</a></h2>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Role</th>
+          <th style="text-align: left">Owner</th>
+          <th style="text-align: left">Approver</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><strong>Author</strong></td>
+          <td style="text-align: left">Lead Producer</td>
+          <td style="text-align: left">Executive Producer</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Tech Review</strong></td>
+          <td style="text-align: left">Technical Director</td>
+          <td style="text-align: left">CTO</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Recent Changes:</strong></p>
+<ul>
+<li><strong>v1.1 (2026-02-09):</strong> Refined Milestones with specific deliverable targets and dependencies.</li>
+<li><strong>v1.0 (2026-02-07):</strong> Initial MVP definition.</li>
+</ul>
+<hr>
+<p><strong><a href="./NonGoals.md">← Back to Project Scope</a></strong> | <strong><a href="../README.md">Index</a></strong> | <strong><a href="./Risks.md">Next: Risk Analysis →</a></strong></p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+<div>
+
+</div>
+
+<div>
+
+</div>
+
+</div>
+
+
+
+
+
+  
+  
+  
+  <div class="flex flex-wrap justify-between">
+    <span>
+    
+      <a href="/docs/GDD_Design/ProjectScope/DesignPillars/" class="flex align-center">
+        <img src="/icons/backward.svg" class="book-icon" alt="Backward" />
+        <span>Design Pillars</span>
+      </a>
+    
+    </span>
+    <span>
+    
+      <a href="/docs/GDD_Design/ProjectScope/NonGoals/" class="flex align-center">
+        <span>Non Goals</span>
+        <img src="/icons/forward.svg" class="book-icon" alt="Forward" />
+      </a>
+    
+    </span>
+  </div>
+  
+
+
+ 
+        
+  
+ 
+        
+        
+  
+ 
+        
+  
+  
+    <script>(function(){document.querySelectorAll("pre:has(code)").forEach(e=>{e.addEventListener("click",e.focus),e.addEventListener("copy",function(t){if(t.preventDefault(),navigator.clipboard){const t=window.getSelection().toString()||e.textContent;navigator.clipboard.writeText(t)}})})})()</script>
+  
+
+      </footer>
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+  
+  <aside class="book-toc">
+    <div class="book-toc-content">
+      
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#-critical-milestones--targets">📅 Critical Milestones &amp; Targets</a></li>
+    <li><a href="#-technical-dependencies">🔗 Technical Dependencies</a></li>
+    <li><a href="#-alpha-scope-technical-test">🎯 Alpha Scope (Technical Test)</a>
+      <ul>
+        <li><a href="#features-included">Features Included</a></li>
+        <li><a href="#features-excluded-for-beta">Features Excluded (For Beta)</a></li>
+      </ul>
+    </li>
+    <li><a href="#-beta-scope-soft-launch">🚀 Beta Scope (Soft Launch)</a>
+      <ul>
+        <li><a href="#features-added">Features Added</a></li>
+      </ul>
+    </li>
+    <li><a href="#-feature-comparison-matrix">📦 Feature Comparison Matrix</a></li>
+    <li><a href="#-cut-content-backlog">🛑 Cut Content (Backlog)</a></li>
+    <li><a href="#-document-ownership--changelog">📝 Document Ownership &amp; Changelog</a></li>
+  </ul>
+</nav>
+
+
+
+    </div>
+  </aside>
+  
+ 
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

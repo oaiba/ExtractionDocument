@@ -1,0 +1,2936 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=52224&amp;path=livereload" data-no-instant defer></script>
+  <!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Ranked Mode &amp; Competitive Systems#← Back to Index | Next: Live Ops →
+🏆 Competitive Philosophy#Core Principle: “Earn your rank through consistent performance”
+Ranked mode is designed to:
+Reward skill - Better players climb faster Create fair matches - Similar skill levels play together Provide progression goals - Something to strive for beyond loot Foster competition - Leaderboards and seasonal rewards NOT:
+Pay-to-win advantages Extremely grindy (should reflect skill, not hours) Toxic or frustrating Mandatory (casual play always available) 🎖️ Ranking System#Rank Tiers#Tier Divisions Icon Player Distribution Bronze I, II, III 🥉 ~30% Silver I, II, III 🥈 ~30% Gold I, II, III 🥇 ~20% Platinum I, II, III 💎 ~12% Diamond I, II, III 💠 ~5% Master No divisions 🏆 ~2% Champion Top 500 👑 ~1% Rank Points (RP) System#Base RP Structure:
+">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:52224/docs/GDD_Design/GameDesign/RankedMode/">
+  <meta property="og:site_name" content="Extraction Shooter GDD">
+  <meta property="og:title" content="Extraction Shooter GDD">
+  <meta property="og:description" content="Ranked Mode &amp; Competitive Systems#← Back to Index | Next: Live Ops →
+🏆 Competitive Philosophy#Core Principle: “Earn your rank through consistent performance”
+Ranked mode is designed to:
+Reward skill - Better players climb faster Create fair matches - Similar skill levels play together Provide progression goals - Something to strive for beyond loot Foster competition - Leaderboards and seasonal rewards NOT:
+Pay-to-win advantages Extremely grindy (should reflect skill, not hours) Toxic or frustrating Mandatory (casual play always available) 🎖️ Ranking System#Rank Tiers#Tier Divisions Icon Player Distribution Bronze I, II, III 🥉 ~30% Silver I, II, III 🥈 ~30% Gold I, II, III 🥇 ~20% Platinum I, II, III 💎 ~12% Diamond I, II, III 💠 ~5% Master No divisions 🏆 ~2% Champion Top 500 👑 ~1% Rank Points (RP) System#Base RP Structure:">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
+
+
+  <meta itemprop="name" content="Extraction Shooter GDD">
+  <meta itemprop="description" content="Ranked Mode &amp; Competitive Systems#← Back to Index | Next: Live Ops →
+🏆 Competitive Philosophy#Core Principle: “Earn your rank through consistent performance”
+Ranked mode is designed to:
+Reward skill - Better players climb faster Create fair matches - Similar skill levels play together Provide progression goals - Something to strive for beyond loot Foster competition - Leaderboards and seasonal rewards NOT:
+Pay-to-win advantages Extremely grindy (should reflect skill, not hours) Toxic or frustrating Mandatory (casual play always available) 🎖️ Ranking System#Rank Tiers#Tier Divisions Icon Player Distribution Bronze I, II, III 🥉 ~30% Silver I, II, III 🥈 ~30% Gold I, II, III 🥇 ~20% Platinum I, II, III 💎 ~12% Diamond I, II, III 💠 ~5% Master No divisions 🏆 ~2% Champion Top 500 👑 ~1% Rank Points (RP) System#Base RP Structure:">
+  <meta itemprop="wordCount" content="1235">
+
+<title>Ranked Mode | Extraction Shooter GDD</title>
+<link rel="icon" href="/favicon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="http://localhost:52224/docs/GDD_Design/GameDesign/RankedMode/">
+<link rel="stylesheet" href="/book.min.63c8b2b12bbd1ad36428837740ea371dd41fdb9c22b35499003d0dfa4dbce6ba.css" integrity="sha256-Y8iysSu9GtNkKIN3QOo3HdQf25wis1SZAD0N&#43;k285ro=" crossorigin="anonymous">
+
+
+  <script defer src="/fuse.min.js"></script>
+  <script defer src="/en.search.min.58bea27d7a08265548c5a8636a9a9fc844e0eb9d60fc3bb2c53d517da858d4c1.js" integrity="sha256-WL6ifXoIJlVIxahjapqfyETg651g/DuyxT1RfahY1ME=" crossorigin="anonymous"></script>
+
+  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
+
+
+
+  
+</head>
+<body dir="ltr" class="book-kind-page book-type-docs">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    
+<aside class="book-menu">
+  <div class="book-menu-content">
+    
+  <nav>
+    <h2 class="book-brand">
+  <a class="flex align-center" href="/"><img src="/logo.svg" alt="Logo" /><span>Extraction Shooter GDD</span>
+  </a>
+</h2>
+
+    <div class="book-theme-toggle">
+    <input type="checkbox" id="theme-toggle" class="toggle">
+    <label for="theme-toggle" class="flex justify-between items-center cursor-pointer">
+        <span class="text-xs font-semibold">Dark Mode</span>
+        <div
+            class="relative w-10 h-5 bg-gray-200 rounded-full transition-colors duration-200 ease-in-out dark:bg-gray-700">
+            <div
+                class="absolute left-0 w-5 h-5 bg-white rounded-full shadow transform transition-transform duration-200 ease-in-out dark:translate-x-full">
+            </div>
+        </div>
+    </label>
+</div>
+
+<script>
+    (function () {
+        const toggle = document.getElementById('theme-toggle');
+        const html = document.documentElement;
+
+        
+        const savedTheme = localStorage.getItem('theme');
+        const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+        if (savedTheme === 'dark' || (!savedTheme && systemDark)) {
+            html.classList.add('dark');
+            toggle.checked = true;
+        } else {
+            html.classList.remove('dark');
+            toggle.checked = false;
+        }
+
+        
+        toggle.addEventListener('change', function () {
+            if (this.checked) {
+                html.classList.add('dark');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                html.classList.remove('dark');
+                localStorage.setItem('theme', 'light');
+            }
+        });
+    })();
+</script>
+
+<style>
+     
+    .book-theme-toggle {
+        margin: 1rem 0;
+        padding: 0 1rem;
+
+    }
+
+    .book-theme-toggle label {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        cursor: pointer;
+        font-size: 0.85em;
+    }
+
+     
+    .book-theme-toggle input {
+        display: none;
+    }
+
+     
+    .book-theme-toggle label::after {
+        content: "🌙";
+         
+    }
+
+     
+    html:not(.dark) .book-theme-toggle label::after {
+        content: "☀️";
+         
+    }
+</style> 
+    
+<div class="book-search hidden">
+  <input id="book-search-input" type="text" 
+    placeholder="Search"
+    aria-label="Search"
+    maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+    
+
+    
+    
+
+
+
+    
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/" class="">
+      Gdd Design</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      AI</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/AI/EnemyBehavior/" class="">
+      Enemy Behavior</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/AI/FactionBehaviors/" class="">
+      Faction Behaviors</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Audio</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Audio/SoundDesign/" class="">
+      Sound Design</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Audio/Soundscape/" class="">
+      Soundscape</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Audio/TacticalAudio/" class="">
+      Tactical Audio</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Audio/VoiceLines/" class="">
+      Voice Lines</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Characters</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Operators/" class="">
+      Operators</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Assault</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Assault/Blaze/" class="">
+      Blaze</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Assault/Havoc/" class="">
+      Havoc</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Assault/README/" class="">
+      Readme</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Assault/Viper/" class="">
+      Viper</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Recon</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Recon/Phantom/" class="">
+      Phantom</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Recon/README/" class="">
+      Readme</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Recon/Specter/" class="">
+      Specter</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Recon/Wraith/" class="">
+      Wraith</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Specialist</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Specialist/Cipher/" class="">
+      Cipher</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Specialist/Flux/" class="">
+      Flux</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Specialist/README/" class="">
+      Readme</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Support</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Support/Angel/" class="">
+      Angel</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Support/Doc/" class="">
+      Doc</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Support/README/" class="">
+      Readme</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Tank</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Tank/Bulwark/" class="">
+      Bulwark</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Tank/Fortress/" class="">
+      Fortress</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Tank/README/" class="">
+      Readme</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Combat</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Combat/Items/" class="">
+      Items</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Combat/Weapons/" class="">
+      Weapons</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      GameDesign</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Accessibility/" class="">
+      Accessibility</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Controls/" class="">
+      Controls</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/CoreGameplay/" class="">
+      Core Gameplay</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Economy/" class="">
+      Economy</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/GameModes/" class="">
+      Game Modes</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/LiveOps/" class="">
+      Live Ops</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Localization/" class="">
+      Localization</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/NavigationAndMap/" class="">
+      Navigation and Map</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Overview/" class="">
+      Overview</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Progression/" class="">
+      Progression</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/RankedMode/" class="active">
+      Ranked Mode</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/TutorialRaid/" class="">
+      Tutorial Raid</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/UserSettings/" class="">
+      User Settings</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Gameplay</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Gameplay/CoreLoop/" class="">
+      Core Loop</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      ProjectScope</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/ProjectScope/DesignPillars/" class="">
+      Design Pillars</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/ProjectScope/MVP/" class="">
+      Mvp</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/ProjectScope/NonGoals/" class="">
+      Non Goals</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/ProjectScope/Risks/" class="">
+      Risks</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Social</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Social/Multiplayer/" class="">
+      Multiplayer</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Story</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Story/Backstory/" class="">
+      Backstory</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Story/Factions/" class="">
+      Factions</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Story/Narrative/" class="">
+      Narrative</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Story/QuestLines/" class="">
+      Quest Lines</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      UI UX</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/UI_UX/UX_Flows/" class="">
+      Ux Flows</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/UI_UX/Visual_Style/" class="">
+      Visual Style</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Visuals</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Visuals/ArtDirection/" class="">
+      Art Direction</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Visuals/AssetGuidelines/" class="">
+      Asset Guidelines</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Visuals/StyleGuide/" class="">
+      Style Guide</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Visuals/UserInterface/" class="">
+      User Interface</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      World</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/EnvironmentalNarrative/" class="">
+      Environmental Narrative</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/EnvironmentalNarrative_Guidelines/" class="">
+      Environmental Narrative Guidelines</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/LootDistribution/" class="">
+      Loot Distribution</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/MapDesign/" class="">
+      Map Design</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/MapDesign_IndustrialZone/" class="">
+      Map Design Industrial Zone</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/MapDesign_NeonSlums/" class="">
+      Map Design Neon Slums</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/MapDesign_Wilderness/" class="">
+      Map Design Wilderness</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/MapLayouts/" class="">
+      Map Layouts</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/" class="">
+      Gdd Technical</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      AI</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/AI/SensorySystem/" class="">
+      Sensory System</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Core</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Core/Architecture/" class="">
+      Architecture</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Core/CodingStandards/" class="">
+      Coding Standards</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Core/DevelopmentRoadmap/" class="">
+      Development Roadmap</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Core/NetworkingSystem/" class="">
+      Networking System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Core/SecuritySystem/" class="">
+      Security System</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Gameplay</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Gameplay/CharacterSystem/" class="">
+      Character System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Gameplay/ControlSystem/" class="">
+      Control System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Gameplay/InventorySystem/" class="">
+      Inventory System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Gameplay/WeaponSystem/" class="">
+      Weapon System</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Networking</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Networking/LagCompensation/" class="">
+      Lag Compensation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Networking/ReplicationStrategy/" class="">
+      Replication Strategy</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Performance</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Performance/Budgets/" class="">
+      Budgets</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Performance/Optimization/" class="">
+      Optimization</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Security</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Security/AntiCheatStrategy/" class="">
+      Anti Cheat Strategy</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Systems</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/AccessibilitySystem/" class="">
+      Accessibility System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/AISystem/" class="">
+      Aisystem</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/AnalyticsSystem/" class="">
+      Analytics System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/AudioSystem/" class="">
+      Audio System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/BuildPipeline/" class="">
+      Build Pipeline</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/LiveOpsSystem/" class="">
+      Live Ops System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/LocalizationSystem/" class="">
+      Localization System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/MapSystem/" class="">
+      Map System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/NarrativeSystem/" class="">
+      Narrative System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/ProgressionSystem/" class="">
+      Progression System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/RankedSystem/" class="">
+      Ranked System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/SaveSystem/" class="">
+      Save System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/SocialSystem/" class="">
+      Social System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/TutorialSystem/" class="">
+      Tutorial System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/UISystem/" class="">
+      Uisystem</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+</nav>
+
+
+
+
+<script>{ { . | safeJS } }</script>
+
+
+  </div>
+</aside>
+ 
+
+    <div class="book-page">
+      <header class="book-header hidden">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/icons/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <h3>Ranked Mode</h3>
+
+  <label for="toc-control">
+    
+    <img src="/icons/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#-competitive-philosophy">🏆 Competitive Philosophy</a></li>
+    <li><a href="#-ranking-system">🎖️ Ranking System</a>
+      <ul>
+        <li><a href="#rank-tiers">Rank Tiers</a></li>
+        <li><a href="#rank-points-rp-system">Rank Points (RP) System</a></li>
+        <li><a href="#rp-gains--losses">RP Gains &amp; Losses</a></li>
+      </ul>
+    </li>
+    <li><a href="#-ranked-queue">🎮 Ranked Queue</a>
+      <ul>
+        <li><a href="#queue-requirements">Queue Requirements</a></li>
+        <li><a href="#queue-types">Queue Types</a></li>
+        <li><a href="#rank-restrictions-squad">Rank Restrictions (Squad)</a></li>
+        <li><a href="#matchmaking-parameters">Matchmaking Parameters</a></li>
+      </ul>
+    </li>
+    <li><a href="#-season-structure">📈 Season Structure</a>
+      <ul>
+        <li><a href="#season-duration">Season Duration</a></li>
+        <li><a href="#rank-resets">Rank Resets</a></li>
+        <li><a href="#season-rewards">Season Rewards</a></li>
+      </ul>
+    </li>
+    <li><a href="#-leaderboards">🏅 Leaderboards</a>
+      <ul>
+        <li><a href="#leaderboard-types">Leaderboard Types</a></li>
+        <li><a href="#top-500-champion">Top 500 (Champion)</a></li>
+      </ul>
+    </li>
+    <li><a href="#-competitive-integrity">⚖️ Competitive Integrity</a>
+      <ul>
+        <li><a href="#anti-cheat-measures">Anti-Cheat Measures</a></li>
+        <li><a href="#penalties">Penalties</a></li>
+        <li><a href="#matchmaking-cooldowns">Matchmaking Cooldowns</a></li>
+      </ul>
+    </li>
+    <li><a href="#-ranked-specific-rules">🎯 Ranked-Specific Rules</a>
+      <ul>
+        <li><a href="#gameplay-differences">Gameplay Differences</a></li>
+        <li><a href="#reconnect-system">Reconnect System</a></li>
+        <li><a href="#map-rotation">Map Rotation</a></li>
+      </ul>
+    </li>
+    <li><a href="#-statistics--analytics">📊 Statistics &amp; Analytics</a>
+      <ul>
+        <li><a href="#player-stats-tracked">Player Stats Tracked</a></li>
+        <li><a href="#match-history">Match History</a></li>
+        <li><a href="#career-profile">Career Profile</a></li>
+      </ul>
+    </li>
+    <li><a href="#-squad-ranked-features">🤝 Squad Ranked Features</a>
+      <ul>
+        <li><a href="#team-rp">Team RP</a></li>
+        <li><a href="#voice-communication">Voice Communication</a></li>
+        <li><a href="#squad-synergy-bonus">Squad Synergy Bonus</a></li>
+      </ul>
+    </li>
+    <li><a href="#-competitive-events">🏟️ Competitive Events</a>
+      <ul>
+        <li><a href="#weekly-tournaments">Weekly Tournaments</a></li>
+        <li><a href="#monthly-majors">Monthly Majors</a></li>
+        <li><a href="#seasonal-championships">Seasonal Championships</a></li>
+      </ul>
+    </li>
+    <li><a href="#-ranked-roadmap">📅 Ranked Roadmap</a>
+      <ul>
+        <li><a href="#launch-season-1">Launch (Season 1)</a></li>
+        <li><a href="#season-2">Season 2</a></li>
+        <li><a href="#season-3">Season 3</a></li>
+        <li><a href="#future">Future</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><h1 id="ranked-mode--competitive-systems">Ranked Mode &amp; Competitive Systems<a class="anchor" href="#ranked-mode--competitive-systems">#</a></h1>
+<p><strong><a href="../README.md">← Back to Index</a></strong> | <strong><a href="./LiveOps.md">Next: Live Ops →</a></strong></p>
+<hr>
+<h2 id="-competitive-philosophy">🏆 Competitive Philosophy<a class="anchor" href="#-competitive-philosophy">#</a></h2>
+<p><strong>Core Principle:</strong> &ldquo;Earn your rank through consistent performance&rdquo;</p>
+<p>Ranked mode is designed to:</p>
+<ul>
+<li><strong>Reward skill</strong> - Better players climb faster</li>
+<li><strong>Create fair matches</strong> - Similar skill levels play together</li>
+<li><strong>Provide progression goals</strong> - Something to strive for beyond loot</li>
+<li><strong>Foster competition</strong> - Leaderboards and seasonal rewards</li>
+</ul>
+<p><strong>NOT:</strong></p>
+<ul>
+<li>Pay-to-win advantages</li>
+<li>Extremely grindy (should reflect skill, not hours)</li>
+<li>Toxic or frustrating</li>
+<li>Mandatory (casual play always available)</li>
+</ul>
+<hr>
+<h2 id="-ranking-system">🎖️ Ranking System<a class="anchor" href="#-ranking-system">#</a></h2>
+<h3 id="rank-tiers">Rank Tiers<a class="anchor" href="#rank-tiers">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Tier</th>
+          <th style="text-align: left">Divisions</th>
+          <th style="text-align: left">Icon</th>
+          <th style="text-align: left">Player Distribution</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><strong>Bronze</strong></td>
+          <td style="text-align: left">I, II, III</td>
+          <td style="text-align: left">🥉</td>
+          <td style="text-align: left">~30%</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Silver</strong></td>
+          <td style="text-align: left">I, II, III</td>
+          <td style="text-align: left">🥈</td>
+          <td style="text-align: left">~30%</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Gold</strong></td>
+          <td style="text-align: left">I, II, III</td>
+          <td style="text-align: left">🥇</td>
+          <td style="text-align: left">~20%</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Platinum</strong></td>
+          <td style="text-align: left">I, II, III</td>
+          <td style="text-align: left">💎</td>
+          <td style="text-align: left">~12%</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Diamond</strong></td>
+          <td style="text-align: left">I, II, III</td>
+          <td style="text-align: left">💠</td>
+          <td style="text-align: left">~5%</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Master</strong></td>
+          <td style="text-align: left">No divisions</td>
+          <td style="text-align: left">🏆</td>
+          <td style="text-align: left">~2%</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Champion</strong></td>
+          <td style="text-align: left">Top 500</td>
+          <td style="text-align: left">👑</td>
+          <td style="text-align: left">~1%</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="rank-points-rp-system">Rank Points (RP) System<a class="anchor" href="#rank-points-rp-system">#</a></h3>
+<p><strong>Base RP Structure:</strong></p>
+<pre tabindex="0"><code>Starting RP: 0 (Bronze III)
+Bronze → Silver: 300 RP
+Silver → Gold: 600 RP
+Gold → Platinum: 1000 RP
+Platinum → Diamond: 1500 RP
+Diamond → Master: 2000 RP
+Master → Champion: Top 500 players</code></pre><p><strong>Division Thresholds (Example: Gold):</strong></p>
+<pre tabindex="0"><code>Gold III: 600-699 RP
+Gold II: 700-799 RP
+Gold I: 800-999 RP
+Platinum III: 1000+ RP</code></pre><h3 id="rp-gains--losses">RP Gains &amp; Losses<a class="anchor" href="#rp-gains--losses">#</a></h3>
+<p><strong>RP Calculation Formula:</strong></p>
+<pre tabindex="0"><code>RP Change = Base RP ± Performance Modifier ± Rank Modifier
+
+Base RP:
+- Extraction: +30 RP
+- Death (early): -25 RP
+- Death (mid-match): -15 RP
+- Death (late-match): -10 RP</code></pre><p><strong>Performance Modifiers:</strong></p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Factor</th>
+          <th style="text-align: left">RP Modifier</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Kills (per kill)</td>
+          <td style="text-align: left">+5 RP</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">High-value loot extracted</td>
+          <td style="text-align: left">+5 to +15 RP</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Squad wipe achieved</td>
+          <td style="text-align: left">+10 RP</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Top 3 finish</td>
+          <td style="text-align: left">+10 RP</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Survived 10+ minutes</td>
+          <td style="text-align: left">+5 RP</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Quest completion</td>
+          <td style="text-align: left">+3 RP</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Rank Modifiers:</strong></p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Rank Comparison</th>
+          <th style="text-align: left">Modifier</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Playing against higher ranks</td>
+          <td style="text-align: left">+25% RP gains, -25% losses</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Playing against same ranks</td>
+          <td style="text-align: left">Normal</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Playing against lower ranks</td>
+          <td style="text-align: left">-25% RP gains, +25% losses</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Protection Systems:</strong></p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">System</th>
+          <th style="text-align: left">Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><strong>Demotion Shield</strong></td>
+          <td style="text-align: left">2 games protection when entering new tier</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Streak Protection</strong></td>
+          <td style="text-align: left">After 3 losses, reduced RP loss for next 2 games</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Rank Floor</strong></td>
+          <td style="text-align: left">Cannot drop below Bronze I once reached</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="-ranked-queue">🎮 Ranked Queue<a class="anchor" href="#-ranked-queue">#</a></h2>
+<h3 id="queue-requirements">Queue Requirements<a class="anchor" href="#queue-requirements">#</a></h3>
+<p><strong>To Queue Ranked:</strong></p>
+<ul>
+<li>Account Level 15+</li>
+<li>20+ casual matches completed</li>
+<li>At least 3 operators unlocked</li>
+<li>Valid phone number linked (anti-smurf)</li>
+</ul>
+<h3 id="queue-types">Queue Types<a class="anchor" href="#queue-types">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Type</th>
+          <th style="text-align: left">Description</th>
+          <th style="text-align: left">Notes</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><strong>Solo</strong></td>
+          <td style="text-align: left">Individual queue</td>
+          <td style="text-align: left">Matched with other solos or partial squads</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Duo</strong></td>
+          <td style="text-align: left">2-player team</td>
+          <td style="text-align: left">RP averaged for matching</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Squad</strong></td>
+          <td style="text-align: left">3-4 players</td>
+          <td style="text-align: left">RP averaged, tighter matching</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="rank-restrictions-squad">Rank Restrictions (Squad)<a class="anchor" href="#rank-restrictions-squad">#</a></h3>
+<p><strong>Maximum rank difference for squadding:</strong></p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Your Rank</th>
+          <th style="text-align: left">Can Queue With</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Bronze - Silver</td>
+          <td style="text-align: left">Any rank</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Gold</td>
+          <td style="text-align: left">Silver - Platinum</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Platinum</td>
+          <td style="text-align: left">Gold - Diamond</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Diamond</td>
+          <td style="text-align: left">Platinum - Master</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Master - Champion</td>
+          <td style="text-align: left">Diamond+ only</td>
+      </tr>
+  </tbody>
+</table>
+<p><em>Unranked players treated as Bronze for queue purposes</em></p>
+<h3 id="matchmaking-parameters">Matchmaking Parameters<a class="anchor" href="#matchmaking-parameters">#</a></h3>
+<p><strong>Factors (Priority Order):</strong></p>
+<ol>
+<li>Rank (primary)</li>
+<li>Queue time (expands range after 2 minutes)</li>
+<li>Squad size balance</li>
+<li>Server ping</li>
+</ol>
+<p><strong>Queue Time Expansion:</strong></p>
+<pre tabindex="0"><code>0-60 seconds: ±1 division
+60-120 seconds: ±2 divisions
+120-180 seconds: ±1 tier
+180+ seconds: ±2 tiers (warning shown)</code></pre><hr>
+<h2 id="-season-structure">📈 Season Structure<a class="anchor" href="#-season-structure">#</a></h2>
+<h3 id="season-duration">Season Duration<a class="anchor" href="#season-duration">#</a></h3>
+<p><strong>Each Season:</strong></p>
+<ul>
+<li>Duration: 90 days (~3 months)</li>
+<li>Split into 2 Acts (45 days each)</li>
+<li>Act 1 → Act 2: Soft reset</li>
+<li>Season end: Hard reset</li>
+</ul>
+<h3 id="rank-resets">Rank Resets<a class="anchor" href="#rank-resets">#</a></h3>
+<p><strong>Soft Reset (Mid-Season):</strong></p>
+<pre tabindex="0"><code>Champion → Diamond I
+Master → Diamond II
+Diamond → Platinum II
+Platinum → Gold II
+Gold → Gold III
+Silver → Silver III
+Bronze → Bronze III</code></pre><p><strong>Hard Reset (Season End):</strong></p>
+<pre tabindex="0"><code>All players: Rank reduced by 1.5 tiers
+Placement matches: 5 games to determine starting rank
+Previous season rank affects placement matches</code></pre><h3 id="season-rewards">Season Rewards<a class="anchor" href="#season-rewards">#</a></h3>
+<p><strong>End of Season Rewards by Peak Rank:</strong></p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Peak Rank</th>
+          <th style="text-align: left">Rewards</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><strong>Bronze</strong></td>
+          <td style="text-align: left">Bronze Badge, 500 Credits</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Silver</strong></td>
+          <td style="text-align: left">Silver Badge, 1,000 Credits, Common Weapon Skin</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Gold</strong></td>
+          <td style="text-align: left">Gold Badge, 2,500 Credits, Uncommon Weapon Skin</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Platinum</strong></td>
+          <td style="text-align: left">Platinum Badge, 5,000 Credits, Rare Weapon Skin, Operator Charm</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Diamond</strong></td>
+          <td style="text-align: left">Diamond Badge, 10,000 Credits, Epic Weapon Skin, Diamond Charm</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Master</strong></td>
+          <td style="text-align: left">Master Badge, 25,000 Credits, Legendary Weapon Skin, Master Trail</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Champion</strong></td>
+          <td style="text-align: left">All above + Champion Badge, Exclusive Operator Skin, Animated Banner</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Rewards are:</strong></p>
+<ul>
+<li>Based on peak rank (highest achieved during season)</li>
+<li>Distributed 3 days after season ends</li>
+<li>Exclusive to that season (never return)</li>
+</ul>
+<hr>
+<h2 id="-leaderboards">🏅 Leaderboards<a class="anchor" href="#-leaderboards">#</a></h2>
+<h3 id="leaderboard-types">Leaderboard Types<a class="anchor" href="#leaderboard-types">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Board</th>
+          <th style="text-align: left">Metric</th>
+          <th style="text-align: left">Reset</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><strong>Global RP</strong></td>
+          <td style="text-align: left">Total RP</td>
+          <td style="text-align: left">Season</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Regional RP</strong></td>
+          <td style="text-align: left">RP by region</td>
+          <td style="text-align: left">Season</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Weekly RP</strong></td>
+          <td style="text-align: left">RP gained this week</td>
+          <td style="text-align: left">Weekly</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Kill Leaders</strong></td>
+          <td style="text-align: left">Total kills (ranked)</td>
+          <td style="text-align: left">Season</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Extraction Rate</strong></td>
+          <td style="text-align: left">% successful extracts</td>
+          <td style="text-align: left">Season</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Wealth Extracted</strong></td>
+          <td style="text-align: left">Total loot value</td>
+          <td style="text-align: left">Season</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="top-500-champion">Top 500 (Champion)<a class="anchor" href="#top-500-champion">#</a></h3>
+<p><strong>Champion Tier:</strong></p>
+<ul>
+<li>Reserved for Top 500 players globally</li>
+<li>Updated every 24 hours</li>
+<li>Visible rank number (#1, #2, etc.)</li>
+<li>Special champion-only rewards</li>
+<li>Decay applies (must play to maintain)</li>
+</ul>
+<p><strong>Champion Decay:</strong></p>
+<ul>
+<li>After 48 hours of no ranked games: -50 RP/day</li>
+<li>Dropping below Top 500 RP threshold: Demoted to Master</li>
+<li>Playing 1 game resets decay timer</li>
+</ul>
+<hr>
+<h2 id="-competitive-integrity">⚖️ Competitive Integrity<a class="anchor" href="#-competitive-integrity">#</a></h2>
+<h3 id="anti-cheat-measures">Anti-Cheat Measures<a class="anchor" href="#anti-cheat-measures">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">System</th>
+          <th style="text-align: left">Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><strong>Kernel Anti-Cheat</strong></td>
+          <td style="text-align: left">Required for ranked (PC)</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Behavior Analysis</strong></td>
+          <td style="text-align: left">Abnormal input patterns flagged</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Statistics Tracking</strong></td>
+          <td style="text-align: left">Impossible stats reviewed</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Report Prioritization</strong></td>
+          <td style="text-align: left">Ranked reports reviewed faster</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Hardware Bans</strong></td>
+          <td style="text-align: left">Cheaters banned at hardware level</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="penalties">Penalties<a class="anchor" href="#penalties">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Offense</th>
+          <th style="text-align: left">Penalty</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><strong>First Cheat Detection</strong></td>
+          <td style="text-align: left">Permanent ban</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Boosting (paid)</strong></td>
+          <td style="text-align: left">Season ban + rank reset</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Smurfing (intentional)</strong></td>
+          <td style="text-align: left">Warning → 7-day ban</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>AFK/Leaving</strong></td>
+          <td style="text-align: left">-50 RP + matchmaking cooldown</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Toxicity</strong></td>
+          <td style="text-align: left">Voice ban → ranked ban</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="matchmaking-cooldowns">Matchmaking Cooldowns<a class="anchor" href="#matchmaking-cooldowns">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Offense</th>
+          <th style="text-align: left">Cooldown</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Leave 1 game</td>
+          <td style="text-align: left">5 minutes</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Leave 2 games (24h)</td>
+          <td style="text-align: left">30 minutes</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Leave 3 games (24h)</td>
+          <td style="text-align: left">2 hours</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Leave 4+ games (24h)</td>
+          <td style="text-align: left">24 hours + RP penalty</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="-ranked-specific-rules">🎯 Ranked-Specific Rules<a class="anchor" href="#-ranked-specific-rules">#</a></h2>
+<h3 id="gameplay-differences">Gameplay Differences<a class="anchor" href="#gameplay-differences">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Aspect</th>
+          <th style="text-align: left">Casual</th>
+          <th style="text-align: left">Ranked</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Player Count</td>
+          <td style="text-align: left">15-20</td>
+          <td style="text-align: left">20 (always full)</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Match Duration</td>
+          <td style="text-align: left">15 min</td>
+          <td style="text-align: left">15 min (strict)</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">AI Difficulty</td>
+          <td style="text-align: left">Normal</td>
+          <td style="text-align: left">Slightly harder</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Loot Quality</td>
+          <td style="text-align: left">Normal</td>
+          <td style="text-align: left">10% better spawns</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Reconnect</td>
+          <td style="text-align: left">2 minutes</td>
+          <td style="text-align: left">5 minutes</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="reconnect-system">Reconnect System<a class="anchor" href="#reconnect-system">#</a></h3>
+<p><strong>If Disconnected:</strong></p>
+<ul>
+<li>Character goes AFK (vulnerable)</li>
+<li>5 minutes to reconnect</li>
+<li>If reconnect: Resume at current position</li>
+<li>If timeout: Treated as death (RP loss)</li>
+<li>If squad extracts your body: Reduced RP loss</li>
+</ul>
+<h3 id="map-rotation">Map Rotation<a class="anchor" href="#map-rotation">#</a></h3>
+<p><strong>Ranked Map Pool:</strong></p>
+<ul>
+<li>Curated selection (not all maps)</li>
+<li>Maps rotated bi-weekly</li>
+<li>Community voting on map pool (monthly)</li>
+<li>Newly released maps: 2-week delay before ranked</li>
+</ul>
+<hr>
+<h2 id="-statistics--analytics">📊 Statistics &amp; Analytics<a class="anchor" href="#-statistics--analytics">#</a></h2>
+<h3 id="player-stats-tracked">Player Stats Tracked<a class="anchor" href="#player-stats-tracked">#</a></h3>
+<p><strong>Performance:</strong></p>
+<ul>
+<li>Matches played (ranked)</li>
+<li>Win rate (extraction rate)</li>
+<li>K/D ratio</li>
+<li>Average survival time</li>
+<li>Peak rank achieved</li>
+</ul>
+<p><strong>Detailed:</strong></p>
+<ul>
+<li>Damage dealt/received</li>
+<li>Headshot percentage</li>
+<li>Favorite operators (by playtime)</li>
+<li>Best maps (by win rate)</li>
+<li>Squad vs Solo performance</li>
+</ul>
+<h3 id="match-history">Match History<a class="anchor" href="#match-history">#</a></h3>
+<p><strong>Per Match Data:</strong></p>
+<ul>
+<li>Date, time, duration</li>
+<li>Map played</li>
+<li>Final placement</li>
+<li>Kills, damage, loot extracted</li>
+<li>RP change (+/-)</li>
+<li>Squad members</li>
+</ul>
+<h3 id="career-profile">Career Profile<a class="anchor" href="#career-profile">#</a></h3>
+<p><strong>Public Profile Shows:</strong></p>
+<ul>
+<li>Current rank + progression</li>
+<li>Season history (past ranks)</li>
+<li>Badges earned</li>
+<li>Stats summary</li>
+<li>Recent matches (last 20)</li>
+</ul>
+<p><strong>Privacy Options:</strong></p>
+<ul>
+<li>Hide career profile</li>
+<li>Hide current rank</li>
+<li>Hide match history</li>
+</ul>
+<hr>
+<h2 id="-squad-ranked-features">🤝 Squad Ranked Features<a class="anchor" href="#-squad-ranked-features">#</a></h2>
+<h3 id="team-rp">Team RP<a class="anchor" href="#team-rp">#</a></h3>
+<p><strong>Squad Average RP:</strong></p>
+<ul>
+<li>Matchmaking uses average RP of squad</li>
+<li>Individual RP gains still personal</li>
+<li>Performance modifiers still individual</li>
+</ul>
+<h3 id="voice-communication">Voice Communication<a class="anchor" href="#voice-communication">#</a></h3>
+<p><strong>Ranked Voice:</strong></p>
+<ul>
+<li>Squad voice: Always available</li>
+<li>Proximity voice: Optional (default ON)</li>
+<li>Enemy death comms: Hear last 2 seconds (optional)</li>
+</ul>
+<h3 id="squad-synergy-bonus">Squad Synergy Bonus<a class="anchor" href="#squad-synergy-bonus">#</a></h3>
+<p><strong>Consistent Squad Bonus:</strong>
+Playing 10+ ranked games with same squad members:</p>
+<ul>
+<li>+5% RP bonus for all members</li>
+<li>Must maintain 50%+ games together to keep bonus</li>
+<li>Stacks up to 3 squad mates (+15% max)</li>
+</ul>
+<hr>
+<h2 id="-competitive-events">🏟️ Competitive Events<a class="anchor" href="#-competitive-events">#</a></h2>
+<h3 id="weekly-tournaments">Weekly Tournaments<a class="anchor" href="#weekly-tournaments">#</a></h3>
+<p><strong>Open Ladder:</strong></p>
+<ul>
+<li>Every weekend</li>
+<li>Single elimination brackets</li>
+<li>Prizes: Credits, exclusive skins</li>
+<li>Entry: Free (Platinum+ rank)</li>
+</ul>
+<h3 id="monthly-majors">Monthly Majors<a class="anchor" href="#monthly-majors">#</a></h3>
+<p><strong>Format:</strong></p>
+<ul>
+<li>Top 100 players invited</li>
+<li>Round robin → Finals</li>
+<li>Substantial prizes</li>
+<li>Streamed on official channels</li>
+</ul>
+<h3 id="seasonal-championships">Seasonal Championships<a class="anchor" href="#seasonal-championships">#</a></h3>
+<p><strong>End of Season:</strong></p>
+<ul>
+<li>Top 500 players invited</li>
+<li>Multi-day event</li>
+<li>Largest prize pool</li>
+<li>Exclusive champion-only rewards</li>
+</ul>
+<hr>
+<h2 id="-ranked-roadmap">📅 Ranked Roadmap<a class="anchor" href="#-ranked-roadmap">#</a></h2>
+<h3 id="launch-season-1">Launch (Season 1)<a class="anchor" href="#launch-season-1">#</a></h3>
+<ul>
+<li>✅ Core RP system</li>
+<li>✅ Bronze → Champion tiers</li>
+<li>✅ Solo/Squad queue</li>
+<li>✅ Season rewards</li>
+<li>✅ Basic leaderboards</li>
+</ul>
+<h3 id="season-2">Season 2<a class="anchor" href="#season-2">#</a></h3>
+<ul>
+<li>Ranked challenges (bonus RP)</li>
+<li>Improved matchmaking</li>
+<li>Spectator mode (delayed)</li>
+</ul>
+<h3 id="season-3">Season 3<a class="anchor" href="#season-3">#</a></h3>
+<ul>
+<li>Professional league integration</li>
+<li>Custom lobbies (for tournaments)</li>
+<li>Coaching/replay system</li>
+</ul>
+<h3 id="future">Future<a class="anchor" href="#future">#</a></h3>
+<ul>
+<li>Cross-region ranked</li>
+<li>1v1 arena mode (ranked)</li>
+<li>Team-based seasons</li>
+</ul>
+<hr>
+<p><strong><a href="../README.md">← Back to Index</a></strong> | <strong><a href="./LiveOps.md">Next: Live Ops →</a></strong></p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+<div>
+
+</div>
+
+<div>
+
+</div>
+
+</div>
+
+
+
+
+
+  
+  
+  
+  <div class="flex flex-wrap justify-between">
+    <span>
+    
+      <a href="/docs/GDD_Design/GameDesign/Progression/" class="flex align-center">
+        <img src="/icons/backward.svg" class="book-icon" alt="Backward" />
+        <span>Progression</span>
+      </a>
+    
+    </span>
+    <span>
+    
+      <a href="/docs/GDD_Design/GameDesign/TutorialRaid/" class="flex align-center">
+        <span>Tutorial Raid</span>
+        <img src="/icons/forward.svg" class="book-icon" alt="Forward" />
+      </a>
+    
+    </span>
+  </div>
+  
+
+
+ 
+        
+  
+ 
+        
+        
+  
+ 
+        
+  
+  
+    <script>(function(){document.querySelectorAll("pre:has(code)").forEach(e=>{e.addEventListener("click",e.focus),e.addEventListener("copy",function(t){if(t.preventDefault(),navigator.clipboard){const t=window.getSelection().toString()||e.textContent;navigator.clipboard.writeText(t)}})})})()</script>
+  
+
+      </footer>
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+  
+  <aside class="book-toc">
+    <div class="book-toc-content">
+      
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#-competitive-philosophy">🏆 Competitive Philosophy</a></li>
+    <li><a href="#-ranking-system">🎖️ Ranking System</a>
+      <ul>
+        <li><a href="#rank-tiers">Rank Tiers</a></li>
+        <li><a href="#rank-points-rp-system">Rank Points (RP) System</a></li>
+        <li><a href="#rp-gains--losses">RP Gains &amp; Losses</a></li>
+      </ul>
+    </li>
+    <li><a href="#-ranked-queue">🎮 Ranked Queue</a>
+      <ul>
+        <li><a href="#queue-requirements">Queue Requirements</a></li>
+        <li><a href="#queue-types">Queue Types</a></li>
+        <li><a href="#rank-restrictions-squad">Rank Restrictions (Squad)</a></li>
+        <li><a href="#matchmaking-parameters">Matchmaking Parameters</a></li>
+      </ul>
+    </li>
+    <li><a href="#-season-structure">📈 Season Structure</a>
+      <ul>
+        <li><a href="#season-duration">Season Duration</a></li>
+        <li><a href="#rank-resets">Rank Resets</a></li>
+        <li><a href="#season-rewards">Season Rewards</a></li>
+      </ul>
+    </li>
+    <li><a href="#-leaderboards">🏅 Leaderboards</a>
+      <ul>
+        <li><a href="#leaderboard-types">Leaderboard Types</a></li>
+        <li><a href="#top-500-champion">Top 500 (Champion)</a></li>
+      </ul>
+    </li>
+    <li><a href="#-competitive-integrity">⚖️ Competitive Integrity</a>
+      <ul>
+        <li><a href="#anti-cheat-measures">Anti-Cheat Measures</a></li>
+        <li><a href="#penalties">Penalties</a></li>
+        <li><a href="#matchmaking-cooldowns">Matchmaking Cooldowns</a></li>
+      </ul>
+    </li>
+    <li><a href="#-ranked-specific-rules">🎯 Ranked-Specific Rules</a>
+      <ul>
+        <li><a href="#gameplay-differences">Gameplay Differences</a></li>
+        <li><a href="#reconnect-system">Reconnect System</a></li>
+        <li><a href="#map-rotation">Map Rotation</a></li>
+      </ul>
+    </li>
+    <li><a href="#-statistics--analytics">📊 Statistics &amp; Analytics</a>
+      <ul>
+        <li><a href="#player-stats-tracked">Player Stats Tracked</a></li>
+        <li><a href="#match-history">Match History</a></li>
+        <li><a href="#career-profile">Career Profile</a></li>
+      </ul>
+    </li>
+    <li><a href="#-squad-ranked-features">🤝 Squad Ranked Features</a>
+      <ul>
+        <li><a href="#team-rp">Team RP</a></li>
+        <li><a href="#voice-communication">Voice Communication</a></li>
+        <li><a href="#squad-synergy-bonus">Squad Synergy Bonus</a></li>
+      </ul>
+    </li>
+    <li><a href="#-competitive-events">🏟️ Competitive Events</a>
+      <ul>
+        <li><a href="#weekly-tournaments">Weekly Tournaments</a></li>
+        <li><a href="#monthly-majors">Monthly Majors</a></li>
+        <li><a href="#seasonal-championships">Seasonal Championships</a></li>
+      </ul>
+    </li>
+    <li><a href="#-ranked-roadmap">📅 Ranked Roadmap</a>
+      <ul>
+        <li><a href="#launch-season-1">Launch (Season 1)</a></li>
+        <li><a href="#season-2">Season 2</a></li>
+        <li><a href="#season-3">Season 3</a></li>
+        <li><a href="#future">Future</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+    </div>
+  </aside>
+  
+ 
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

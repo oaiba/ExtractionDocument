@@ -1,0 +1,3628 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=52224&amp;path=livereload" data-no-instant defer></script>
+  <!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Performance Optimization#← Previous: Map System | Technical Index | Next: Development Roadmap →
+Overview#This document defines the technical implementation of performance optimization systems for mobile platforms including device profiling, rendering settings, memory management, and profiling tools.
+Responsibilities:
+Device tier detection and auto-configuration Rendering quality scaling Memory budget management Object pooling and tick optimization Performance monitoring and profiling Enums &amp; Types#EDeviceTier#Device performance classification.
+Code Name Display Name RAM Range GPU Score Target FPS Resolution Description EDT_LowEnd Low End &lt; 4 GB &lt; 5000 30 FPS 720p Budget devices EDT_MidRange Mid Range 4-6 GB 5000-8000 45 FPS 900p Average devices EDT_HighEnd High End &gt; 6 GB &gt; 8000 60 FPS 1080p&#43; Premium devices EDT_Unknown Unknown N/A N/A 30 FPS 720p Detection failed EQualityLevel#Graphics quality preset.
+">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:52224/docs/GDD_Technical/Performance/Optimization/">
+  <meta property="og:site_name" content="Extraction Shooter GDD">
+  <meta property="og:title" content="Extraction Shooter GDD">
+  <meta property="og:description" content="Performance Optimization#← Previous: Map System | Technical Index | Next: Development Roadmap →
+Overview#This document defines the technical implementation of performance optimization systems for mobile platforms including device profiling, rendering settings, memory management, and profiling tools.
+Responsibilities:
+Device tier detection and auto-configuration Rendering quality scaling Memory budget management Object pooling and tick optimization Performance monitoring and profiling Enums &amp; Types#EDeviceTier#Device performance classification.
+Code Name Display Name RAM Range GPU Score Target FPS Resolution Description EDT_LowEnd Low End &lt; 4 GB &lt; 5000 30 FPS 720p Budget devices EDT_MidRange Mid Range 4-6 GB 5000-8000 45 FPS 900p Average devices EDT_HighEnd High End &gt; 6 GB &gt; 8000 60 FPS 1080p&#43; Premium devices EDT_Unknown Unknown N/A N/A 30 FPS 720p Detection failed EQualityLevel#Graphics quality preset.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
+
+
+  <meta itemprop="name" content="Extraction Shooter GDD">
+  <meta itemprop="description" content="Performance Optimization#← Previous: Map System | Technical Index | Next: Development Roadmap →
+Overview#This document defines the technical implementation of performance optimization systems for mobile platforms including device profiling, rendering settings, memory management, and profiling tools.
+Responsibilities:
+Device tier detection and auto-configuration Rendering quality scaling Memory budget management Object pooling and tick optimization Performance monitoring and profiling Enums &amp; Types#EDeviceTier#Device performance classification.
+Code Name Display Name RAM Range GPU Score Target FPS Resolution Description EDT_LowEnd Low End &lt; 4 GB &lt; 5000 30 FPS 720p Budget devices EDT_MidRange Mid Range 4-6 GB 5000-8000 45 FPS 900p Average devices EDT_HighEnd High End &gt; 6 GB &gt; 8000 60 FPS 1080p&#43; Premium devices EDT_Unknown Unknown N/A N/A 30 FPS 720p Detection failed EQualityLevel#Graphics quality preset.">
+  <meta itemprop="wordCount" content="2162">
+
+<title>Optimization | Extraction Shooter GDD</title>
+<link rel="icon" href="/favicon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="http://localhost:52224/docs/GDD_Technical/Performance/Optimization/">
+<link rel="stylesheet" href="/book.min.63c8b2b12bbd1ad36428837740ea371dd41fdb9c22b35499003d0dfa4dbce6ba.css" integrity="sha256-Y8iysSu9GtNkKIN3QOo3HdQf25wis1SZAD0N&#43;k285ro=" crossorigin="anonymous">
+
+
+  <script defer src="/fuse.min.js"></script>
+  <script defer src="/en.search.min.58bea27d7a08265548c5a8636a9a9fc844e0eb9d60fc3bb2c53d517da858d4c1.js" integrity="sha256-WL6ifXoIJlVIxahjapqfyETg651g/DuyxT1RfahY1ME=" crossorigin="anonymous"></script>
+
+  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
+
+
+
+  
+</head>
+<body dir="ltr" class="book-kind-page book-type-docs">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    
+<aside class="book-menu">
+  <div class="book-menu-content">
+    
+  <nav>
+    <h2 class="book-brand">
+  <a class="flex align-center" href="/"><img src="/logo.svg" alt="Logo" /><span>Extraction Shooter GDD</span>
+  </a>
+</h2>
+
+    <div class="book-theme-toggle">
+    <input type="checkbox" id="theme-toggle" class="toggle">
+    <label for="theme-toggle" class="flex justify-between items-center cursor-pointer">
+        <span class="text-xs font-semibold">Dark Mode</span>
+        <div
+            class="relative w-10 h-5 bg-gray-200 rounded-full transition-colors duration-200 ease-in-out dark:bg-gray-700">
+            <div
+                class="absolute left-0 w-5 h-5 bg-white rounded-full shadow transform transition-transform duration-200 ease-in-out dark:translate-x-full">
+            </div>
+        </div>
+    </label>
+</div>
+
+<script>
+    (function () {
+        const toggle = document.getElementById('theme-toggle');
+        const html = document.documentElement;
+
+        
+        const savedTheme = localStorage.getItem('theme');
+        const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+        if (savedTheme === 'dark' || (!savedTheme && systemDark)) {
+            html.classList.add('dark');
+            toggle.checked = true;
+        } else {
+            html.classList.remove('dark');
+            toggle.checked = false;
+        }
+
+        
+        toggle.addEventListener('change', function () {
+            if (this.checked) {
+                html.classList.add('dark');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                html.classList.remove('dark');
+                localStorage.setItem('theme', 'light');
+            }
+        });
+    })();
+</script>
+
+<style>
+     
+    .book-theme-toggle {
+        margin: 1rem 0;
+        padding: 0 1rem;
+
+    }
+
+    .book-theme-toggle label {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        cursor: pointer;
+        font-size: 0.85em;
+    }
+
+     
+    .book-theme-toggle input {
+        display: none;
+    }
+
+     
+    .book-theme-toggle label::after {
+        content: "🌙";
+         
+    }
+
+     
+    html:not(.dark) .book-theme-toggle label::after {
+        content: "☀️";
+         
+    }
+</style> 
+    
+<div class="book-search hidden">
+  <input id="book-search-input" type="text" 
+    placeholder="Search"
+    aria-label="Search"
+    maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+    
+
+    
+    
+
+
+
+    
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/" class="">
+      Gdd Design</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      AI</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/AI/EnemyBehavior/" class="">
+      Enemy Behavior</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/AI/FactionBehaviors/" class="">
+      Faction Behaviors</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Audio</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Audio/SoundDesign/" class="">
+      Sound Design</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Audio/Soundscape/" class="">
+      Soundscape</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Audio/TacticalAudio/" class="">
+      Tactical Audio</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Audio/VoiceLines/" class="">
+      Voice Lines</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Characters</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Operators/" class="">
+      Operators</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Assault</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Assault/Blaze/" class="">
+      Blaze</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Assault/Havoc/" class="">
+      Havoc</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Assault/README/" class="">
+      Readme</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Assault/Viper/" class="">
+      Viper</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Recon</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Recon/Phantom/" class="">
+      Phantom</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Recon/README/" class="">
+      Readme</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Recon/Specter/" class="">
+      Specter</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Recon/Wraith/" class="">
+      Wraith</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Specialist</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Specialist/Cipher/" class="">
+      Cipher</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Specialist/Flux/" class="">
+      Flux</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Specialist/README/" class="">
+      Readme</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Support</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Support/Angel/" class="">
+      Angel</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Support/Doc/" class="">
+      Doc</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Support/README/" class="">
+      Readme</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Tank</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Tank/Bulwark/" class="">
+      Bulwark</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Tank/Fortress/" class="">
+      Fortress</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Tank/README/" class="">
+      Readme</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Combat</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Combat/Items/" class="">
+      Items</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Combat/Weapons/" class="">
+      Weapons</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      GameDesign</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Accessibility/" class="">
+      Accessibility</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Controls/" class="">
+      Controls</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/CoreGameplay/" class="">
+      Core Gameplay</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Economy/" class="">
+      Economy</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/GameModes/" class="">
+      Game Modes</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/LiveOps/" class="">
+      Live Ops</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Localization/" class="">
+      Localization</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/NavigationAndMap/" class="">
+      Navigation and Map</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Overview/" class="">
+      Overview</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Progression/" class="">
+      Progression</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/RankedMode/" class="">
+      Ranked Mode</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/TutorialRaid/" class="">
+      Tutorial Raid</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/UserSettings/" class="">
+      User Settings</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Gameplay</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Gameplay/CoreLoop/" class="">
+      Core Loop</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      ProjectScope</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/ProjectScope/DesignPillars/" class="">
+      Design Pillars</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/ProjectScope/MVP/" class="">
+      Mvp</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/ProjectScope/NonGoals/" class="">
+      Non Goals</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/ProjectScope/Risks/" class="">
+      Risks</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Social</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Social/Multiplayer/" class="">
+      Multiplayer</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Story</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Story/Backstory/" class="">
+      Backstory</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Story/Factions/" class="">
+      Factions</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Story/Narrative/" class="">
+      Narrative</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Story/QuestLines/" class="">
+      Quest Lines</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      UI UX</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/UI_UX/UX_Flows/" class="">
+      Ux Flows</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/UI_UX/Visual_Style/" class="">
+      Visual Style</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Visuals</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Visuals/ArtDirection/" class="">
+      Art Direction</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Visuals/AssetGuidelines/" class="">
+      Asset Guidelines</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Visuals/StyleGuide/" class="">
+      Style Guide</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Visuals/UserInterface/" class="">
+      User Interface</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      World</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/EnvironmentalNarrative/" class="">
+      Environmental Narrative</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/EnvironmentalNarrative_Guidelines/" class="">
+      Environmental Narrative Guidelines</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/LootDistribution/" class="">
+      Loot Distribution</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/MapDesign/" class="">
+      Map Design</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/MapDesign_IndustrialZone/" class="">
+      Map Design Industrial Zone</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/MapDesign_NeonSlums/" class="">
+      Map Design Neon Slums</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/MapDesign_Wilderness/" class="">
+      Map Design Wilderness</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/MapLayouts/" class="">
+      Map Layouts</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/" class="">
+      Gdd Technical</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      AI</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/AI/SensorySystem/" class="">
+      Sensory System</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Core</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Core/Architecture/" class="">
+      Architecture</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Core/CodingStandards/" class="">
+      Coding Standards</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Core/DevelopmentRoadmap/" class="">
+      Development Roadmap</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Core/NetworkingSystem/" class="">
+      Networking System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Core/SecuritySystem/" class="">
+      Security System</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Gameplay</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Gameplay/CharacterSystem/" class="">
+      Character System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Gameplay/ControlSystem/" class="">
+      Control System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Gameplay/InventorySystem/" class="">
+      Inventory System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Gameplay/WeaponSystem/" class="">
+      Weapon System</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Networking</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Networking/LagCompensation/" class="">
+      Lag Compensation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Networking/ReplicationStrategy/" class="">
+      Replication Strategy</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Performance</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Performance/Budgets/" class="">
+      Budgets</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Performance/Optimization/" class="active">
+      Optimization</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Security</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Security/AntiCheatStrategy/" class="">
+      Anti Cheat Strategy</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Systems</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/AccessibilitySystem/" class="">
+      Accessibility System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/AISystem/" class="">
+      Aisystem</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/AnalyticsSystem/" class="">
+      Analytics System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/AudioSystem/" class="">
+      Audio System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/BuildPipeline/" class="">
+      Build Pipeline</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/LiveOpsSystem/" class="">
+      Live Ops System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/LocalizationSystem/" class="">
+      Localization System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/MapSystem/" class="">
+      Map System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/NarrativeSystem/" class="">
+      Narrative System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/ProgressionSystem/" class="">
+      Progression System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/RankedSystem/" class="">
+      Ranked System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/SaveSystem/" class="">
+      Save System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/SocialSystem/" class="">
+      Social System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/TutorialSystem/" class="">
+      Tutorial System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/UISystem/" class="">
+      Uisystem</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+</nav>
+
+
+
+
+<script>{ { . | safeJS } }</script>
+
+
+  </div>
+</aside>
+ 
+
+    <div class="book-page">
+      <header class="book-header hidden">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/icons/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <h3>Optimization</h3>
+
+  <label for="toc-control">
+    
+    <img src="/icons/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#overview">Overview</a></li>
+    <li><a href="#enums--types">Enums &amp; Types</a>
+      <ul>
+        <li><a href="#edevicetier">EDeviceTier</a></li>
+        <li><a href="#equalitylevel">EQualityLevel</a></li>
+        <li><a href="#elodlevel">ELODLevel</a></li>
+        <li><a href="#epooltype">EPoolType</a></li>
+        <li><a href="#ememorycategory">EMemoryCategory</a></li>
+        <li><a href="#etextureimportance">ETextureImportance</a></li>
+        <li><a href="#etickpriority">ETickPriority</a></li>
+        <li><a href="#eprofilingmode">EProfilingMode</a></li>
+      </ul>
+    </li>
+    <li><a href="#code-names">Code Names</a>
+      <ul>
+        <li><a href="#performance-events">Performance Events</a></li>
+        <li><a href="#memory-events">Memory Events</a></li>
+        <li><a href="#pool-events">Pool Events</a></li>
+        <li><a href="#lod-events">LOD Events</a></li>
+        <li><a href="#device-events">Device Events</a></li>
+      </ul>
+    </li>
+    <li><a href="#mobile-performance-targets">Mobile Performance Targets</a>
+      <ul>
+        <li><a href="#frame-rate-targets">Frame Rate Targets</a></li>
+        <li><a href="#device-categorization">Device Categorization</a></li>
+      </ul>
+    </li>
+    <li><a href="#rendering-optimization">Rendering Optimization</a>
+      <ul>
+        <li><a href="#level-of-detail-lod">Level of Detail (LOD)</a></li>
+        <li><a href="#occlusion-culling">Occlusion Culling</a></li>
+        <li><a href="#dynamic-resolution">Dynamic Resolution</a></li>
+        <li><a href="#texture-optimization">Texture Optimization</a></li>
+      </ul>
+    </li>
+    <li><a href="#cpu-optimization">CPU Optimization</a>
+      <ul>
+        <li><a href="#object-pooling">Object Pooling</a></li>
+        <li><a href="#tick-optimization">Tick Optimization</a></li>
+      </ul>
+    </li>
+    <li><a href="#memory-optimization">Memory Optimization</a>
+      <ul>
+        <li><a href="#memory-budget-tracking">Memory Budget Tracking</a></li>
+        <li><a href="#asset-streaming">Asset Streaming</a></li>
+      </ul>
+    </li>
+    <li><a href="#network-optimization">Network Optimization</a></li>
+    <li><a href="#mobile-specific-optimizations">Mobile-Specific Optimizations</a>
+      <ul>
+        <li><a href="#battery-optimization">Battery Optimization</a></li>
+        <li><a href="#touch-input-optimization">Touch Input Optimization</a></li>
+      </ul>
+    </li>
+    <li><a href="#profiling--debugging">Profiling &amp; Debugging</a>
+      <ul>
+        <li><a href="#built-in-profilers">Built-in Profilers</a></li>
+        <li><a href="#custom-performance-metrics">Custom Performance Metrics</a></li>
+      </ul>
+    </li>
+    <li><a href="#quality-settings">Quality Settings</a>
+      <ul>
+        <li><a href="#auto-detection">Auto-Detection</a></li>
+      </ul>
+    </li>
+    <li><a href="#todo-optimization-tasks">TODO: Optimization Tasks</a>
+      <ul>
+        <li><a href="#high-priority-">HIGH Priority 🔴</a></li>
+        <li><a href="#medium-priority-">MEDIUM Priority 🟡</a></li>
+        <li><a href="#low-priority-">LOW Priority 🟢</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><h1 id="performance-optimization">Performance Optimization<a class="anchor" href="#performance-optimization">#</a></h1>
+<p><strong><a href="../Systems/MapSystem.md">← Previous: Map System</a></strong> | <strong><a href="../README.md">Technical Index</a></strong> | <strong><a href="../Core/DevelopmentRoadmap.md">Next: Development Roadmap →</a></strong></p>
+<hr>
+<h2 id="overview">Overview<a class="anchor" href="#overview">#</a></h2>
+<p>This document defines the technical implementation of performance optimization systems for mobile platforms including device profiling, rendering settings, memory management, and profiling tools.</p>
+<p><strong>Responsibilities:</strong></p>
+<ul>
+<li>Device tier detection and auto-configuration</li>
+<li>Rendering quality scaling</li>
+<li>Memory budget management</li>
+<li>Object pooling and tick optimization</li>
+<li>Performance monitoring and profiling</li>
+</ul>
+<hr>
+<h2 id="enums--types">Enums &amp; Types<a class="anchor" href="#enums--types">#</a></h2>
+<h3 id="edevicetier">EDeviceTier<a class="anchor" href="#edevicetier">#</a></h3>
+<p>Device performance classification.</p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Code Name</th>
+          <th style="text-align: left">Display Name</th>
+          <th style="text-align: left">RAM Range</th>
+          <th style="text-align: left">GPU Score</th>
+          <th style="text-align: left">Target FPS</th>
+          <th style="text-align: left">Resolution</th>
+          <th style="text-align: left">Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><code>EDT_LowEnd</code></td>
+          <td style="text-align: left">Low End</td>
+          <td style="text-align: left">&lt; 4 GB</td>
+          <td style="text-align: left">&lt; 5000</td>
+          <td style="text-align: left">30 FPS</td>
+          <td style="text-align: left">720p</td>
+          <td style="text-align: left">Budget devices</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>EDT_MidRange</code></td>
+          <td style="text-align: left">Mid Range</td>
+          <td style="text-align: left">4-6 GB</td>
+          <td style="text-align: left">5000-8000</td>
+          <td style="text-align: left">45 FPS</td>
+          <td style="text-align: left">900p</td>
+          <td style="text-align: left">Average devices</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>EDT_HighEnd</code></td>
+          <td style="text-align: left">High End</td>
+          <td style="text-align: left">&gt; 6 GB</td>
+          <td style="text-align: left">&gt; 8000</td>
+          <td style="text-align: left">60 FPS</td>
+          <td style="text-align: left">1080p+</td>
+          <td style="text-align: left">Premium devices</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>EDT_Unknown</code></td>
+          <td style="text-align: left">Unknown</td>
+          <td style="text-align: left">N/A</td>
+          <td style="text-align: left">N/A</td>
+          <td style="text-align: left">30 FPS</td>
+          <td style="text-align: left">720p</td>
+          <td style="text-align: left">Detection failed</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h3 id="equalitylevel">EQualityLevel<a class="anchor" href="#equalitylevel">#</a></h3>
+<p>Graphics quality preset.</p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Code Name</th>
+          <th style="text-align: left">Display Name</th>
+          <th style="text-align: left">Shadows</th>
+          <th style="text-align: left">Textures</th>
+          <th style="text-align: left">Effects</th>
+          <th style="text-align: left">Post-Process</th>
+          <th style="text-align: left">Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><code>EQL_Low</code></td>
+          <td style="text-align: left">Low</td>
+          <td style="text-align: left">Off</td>
+          <td style="text-align: left">Low</td>
+          <td style="text-align: left">Minimal</td>
+          <td style="text-align: left">Off</td>
+          <td style="text-align: left">Maximum performance</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>EQL_Medium</code></td>
+          <td style="text-align: left">Medium</td>
+          <td style="text-align: left">Simple</td>
+          <td style="text-align: left">Medium</td>
+          <td style="text-align: left">Reduced</td>
+          <td style="text-align: left">Basic</td>
+          <td style="text-align: left">Balanced</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>EQL_High</code></td>
+          <td style="text-align: left">High</td>
+          <td style="text-align: left">Soft</td>
+          <td style="text-align: left">High</td>
+          <td style="text-align: left">Full</td>
+          <td style="text-align: left">Enhanced</td>
+          <td style="text-align: left">Best visuals</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>EQL_Ultra</code></td>
+          <td style="text-align: left">Ultra</td>
+          <td style="text-align: left">Full</td>
+          <td style="text-align: left">Ultra</td>
+          <td style="text-align: left">Full</td>
+          <td style="text-align: left">Maximum</td>
+          <td style="text-align: left">PC/High-end only</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>EQL_Custom</code></td>
+          <td style="text-align: left">Custom</td>
+          <td style="text-align: left">Variable</td>
+          <td style="text-align: left">Variable</td>
+          <td style="text-align: left">Variable</td>
+          <td style="text-align: left">Variable</td>
+          <td style="text-align: left">User-defined</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h3 id="elodlevel">ELODLevel<a class="anchor" href="#elodlevel">#</a></h3>
+<p>Level of Detail tier.</p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Code Name</th>
+          <th style="text-align: left">Display Name</th>
+          <th style="text-align: left">Distance</th>
+          <th style="text-align: left">Triangle %</th>
+          <th style="text-align: left">Texture Res</th>
+          <th style="text-align: left">Tick Rate</th>
+          <th style="text-align: left">Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><code>ELOD_0</code></td>
+          <td style="text-align: left">LOD 0</td>
+          <td style="text-align: left">0-15m</td>
+          <td style="text-align: left">100%</td>
+          <td style="text-align: left">Full</td>
+          <td style="text-align: left">Every frame</td>
+          <td style="text-align: left">Maximum detail</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>ELOD_1</code></td>
+          <td style="text-align: left">LOD 1</td>
+          <td style="text-align: left">15-50m</td>
+          <td style="text-align: left">50%</td>
+          <td style="text-align: left">75%</td>
+          <td style="text-align: left">30 Hz</td>
+          <td style="text-align: left">High detail</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>ELOD_2</code></td>
+          <td style="text-align: left">LOD 2</td>
+          <td style="text-align: left">50-100m</td>
+          <td style="text-align: left">25%</td>
+          <td style="text-align: left">50%</td>
+          <td style="text-align: left">10 Hz</td>
+          <td style="text-align: left">Medium detail</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>ELOD_3</code></td>
+          <td style="text-align: left">LOD 3</td>
+          <td style="text-align: left">100-200m</td>
+          <td style="text-align: left">10%</td>
+          <td style="text-align: left">25%</td>
+          <td style="text-align: left">2 Hz</td>
+          <td style="text-align: left">Low detail</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>ELOD_Culled</code></td>
+          <td style="text-align: left">Culled</td>
+          <td style="text-align: left">&gt; 200m</td>
+          <td style="text-align: left">0%</td>
+          <td style="text-align: left">None</td>
+          <td style="text-align: left">None</td>
+          <td style="text-align: left">Not rendered</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h3 id="epooltype">EPoolType<a class="anchor" href="#epooltype">#</a></h3>
+<p>Object pool category.</p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Code Name</th>
+          <th style="text-align: left">Display Name</th>
+          <th style="text-align: left">Initial Size</th>
+          <th style="text-align: left">Max Size</th>
+          <th style="text-align: left">Auto-Expand</th>
+          <th style="text-align: left">Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><code>EPT_Projectile</code></td>
+          <td style="text-align: left">Projectile</td>
+          <td style="text-align: left">100</td>
+          <td style="text-align: left">500</td>
+          <td style="text-align: left">Yes</td>
+          <td style="text-align: left">Bullets, rockets</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>EPT_Effect</code></td>
+          <td style="text-align: left">Effect</td>
+          <td style="text-align: left">50</td>
+          <td style="text-align: left">200</td>
+          <td style="text-align: left">Yes</td>
+          <td style="text-align: left">VFX particles</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>EPT_Decal</code></td>
+          <td style="text-align: left">Decal</td>
+          <td style="text-align: left">100</td>
+          <td style="text-align: left">300</td>
+          <td style="text-align: left">No</td>
+          <td style="text-align: left">Bullet holes, blood</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>EPT_Audio</code></td>
+          <td style="text-align: left">Audio</td>
+          <td style="text-align: left">30</td>
+          <td style="text-align: left">100</td>
+          <td style="text-align: left">Yes</td>
+          <td style="text-align: left">Sound emitters</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>EPT_AI</code></td>
+          <td style="text-align: left">AI</td>
+          <td style="text-align: left">20</td>
+          <td style="text-align: left">50</td>
+          <td style="text-align: left">No</td>
+          <td style="text-align: left">AI pawns</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>EPT_Loot</code></td>
+          <td style="text-align: left">Loot</td>
+          <td style="text-align: left">50</td>
+          <td style="text-align: left">200</td>
+          <td style="text-align: left">Yes</td>
+          <td style="text-align: left">Item pickups</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h3 id="ememorycategory">EMemoryCategory<a class="anchor" href="#ememorycategory">#</a></h3>
+<p>Memory budget category.</p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Code Name</th>
+          <th style="text-align: left">Display Name</th>
+          <th style="text-align: left">Budget (MB)</th>
+          <th style="text-align: left">Priority</th>
+          <th style="text-align: left">Streamable</th>
+          <th style="text-align: left">Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><code>EMC_Texture</code></td>
+          <td style="text-align: left">Textures</td>
+          <td style="text-align: left">800</td>
+          <td style="text-align: left">High</td>
+          <td style="text-align: left">Yes</td>
+          <td style="text-align: left">Texture data</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>EMC_Mesh</code></td>
+          <td style="text-align: left">Meshes</td>
+          <td style="text-align: left">200</td>
+          <td style="text-align: left">High</td>
+          <td style="text-align: left">Yes</td>
+          <td style="text-align: left">Static/skeletal meshes</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>EMC_Audio</code></td>
+          <td style="text-align: left">Audio</td>
+          <td style="text-align: left">150</td>
+          <td style="text-align: left">Medium</td>
+          <td style="text-align: left">Yes</td>
+          <td style="text-align: left">Sound data</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>EMC_Animation</code></td>
+          <td style="text-align: left">Animation</td>
+          <td style="text-align: left">100</td>
+          <td style="text-align: left">High</td>
+          <td style="text-align: left">No</td>
+          <td style="text-align: left">Animation data</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>EMC_Code</code></td>
+          <td style="text-align: left">Code</td>
+          <td style="text-align: left">300</td>
+          <td style="text-align: left">Critical</td>
+          <td style="text-align: left">No</td>
+          <td style="text-align: left">Game code, shaders</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>EMC_Runtime</code></td>
+          <td style="text-align: left">Runtime</td>
+          <td style="text-align: left">250</td>
+          <td style="text-align: left">Medium</td>
+          <td style="text-align: left">No</td>
+          <td style="text-align: left">Runtime allocations</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h3 id="etextureimportance">ETextureImportance<a class="anchor" href="#etextureimportance">#</a></h3>
+<p>Texture streaming priority.</p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Code Name</th>
+          <th style="text-align: left">Display Name</th>
+          <th style="text-align: left">LOD Bias</th>
+          <th style="text-align: left">Stream</th>
+          <th style="text-align: left">Max Size</th>
+          <th style="text-align: left">Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><code>ETI_Critical</code></td>
+          <td style="text-align: left">Critical</td>
+          <td style="text-align: left">0</td>
+          <td style="text-align: left">Never</td>
+          <td style="text-align: left">2048</td>
+          <td style="text-align: left">Characters, weapons</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>ETI_Important</code></td>
+          <td style="text-align: left">Important</td>
+          <td style="text-align: left">1</td>
+          <td style="text-align: left">Delayed</td>
+          <td style="text-align: left">1024</td>
+          <td style="text-align: left">Environment key</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>ETI_Normal</code></td>
+          <td style="text-align: left">Normal</td>
+          <td style="text-align: left">2</td>
+          <td style="text-align: left">Always</td>
+          <td style="text-align: left">512</td>
+          <td style="text-align: left">Props, details</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>ETI_Optional</code></td>
+          <td style="text-align: left">Optional</td>
+          <td style="text-align: left">3</td>
+          <td style="text-align: left">Always</td>
+          <td style="text-align: left">256</td>
+          <td style="text-align: left">Background elements</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h3 id="etickpriority">ETickPriority<a class="anchor" href="#etickpriority">#</a></h3>
+<p>Actor tick rate classification.</p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Code Name</th>
+          <th style="text-align: left">Display Name</th>
+          <th style="text-align: left">Interval</th>
+          <th style="text-align: left">Use Case</th>
+          <th style="text-align: left">CPU Cost</th>
+          <th style="text-align: left">Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><code>ETP_EveryFrame</code></td>
+          <td style="text-align: left">Every Frame</td>
+          <td style="text-align: left">0</td>
+          <td style="text-align: left">Player</td>
+          <td style="text-align: left">High</td>
+          <td style="text-align: left">Critical gameplay</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>ETP_High</code></td>
+          <td style="text-align: left">High</td>
+          <td style="text-align: left">0.016s</td>
+          <td style="text-align: left">Nearby AI</td>
+          <td style="text-align: left">Medium</td>
+          <td style="text-align: left">60 Hz updates</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>ETP_Medium</code></td>
+          <td style="text-align: left">Medium</td>
+          <td style="text-align: left">0.1s</td>
+          <td style="text-align: left">Mid-range</td>
+          <td style="text-align: left">Low</td>
+          <td style="text-align: left">10 Hz updates</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>ETP_Low</code></td>
+          <td style="text-align: left">Low</td>
+          <td style="text-align: left">0.5s</td>
+          <td style="text-align: left">Far actors</td>
+          <td style="text-align: left">Very Low</td>
+          <td style="text-align: left">2 Hz updates</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>ETP_Minimal</code></td>
+          <td style="text-align: left">Minimal</td>
+          <td style="text-align: left">1.0s</td>
+          <td style="text-align: left">Background</td>
+          <td style="text-align: left">Minimal</td>
+          <td style="text-align: left">1 Hz updates</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h3 id="eprofilingmode">EProfilingMode<a class="anchor" href="#eprofilingmode">#</a></h3>
+<p>Performance profiling mode.</p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Code Name</th>
+          <th style="text-align: left">Display Name</th>
+          <th style="text-align: left">Overhead</th>
+          <th style="text-align: left">Detail</th>
+          <th style="text-align: left">Use Case</th>
+          <th style="text-align: left">Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><code>EPM_Off</code></td>
+          <td style="text-align: left">Off</td>
+          <td style="text-align: left">None</td>
+          <td style="text-align: left">None</td>
+          <td style="text-align: left">Production</td>
+          <td style="text-align: left">No profiling</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>EPM_Basic</code></td>
+          <td style="text-align: left">Basic</td>
+          <td style="text-align: left">&lt; 1%</td>
+          <td style="text-align: left">FPS, Memory</td>
+          <td style="text-align: left">Dev</td>
+          <td style="text-align: left">Essential stats</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>EPM_Detailed</code></td>
+          <td style="text-align: left">Detailed</td>
+          <td style="text-align: left">2-5%</td>
+          <td style="text-align: left">Full breakdown</td>
+          <td style="text-align: left">Debug</td>
+          <td style="text-align: left">Comprehensive</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>EPM_Capture</code></td>
+          <td style="text-align: left">Capture</td>
+          <td style="text-align: left">5-10%</td>
+          <td style="text-align: left">Frame capture</td>
+          <td style="text-align: left">Analysis</td>
+          <td style="text-align: left">Recording mode</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="code-names">Code Names<a class="anchor" href="#code-names">#</a></h2>
+<h3 id="performance-events">Performance Events<a class="anchor" href="#performance-events">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Code Name</th>
+          <th style="text-align: left">Trigger</th>
+          <th style="text-align: left">Parameters</th>
+          <th style="text-align: left">Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><code>PERF_FPS_DROP</code></td>
+          <td style="text-align: left">FPS below target</td>
+          <td style="text-align: left">CurrentFPS, TargetFPS, Duration</td>
+          <td style="text-align: left">Performance degradation</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>PERF_FPS_RECOVER</code></td>
+          <td style="text-align: left">FPS recovered</td>
+          <td style="text-align: left">CurrentFPS, TargetFPS</td>
+          <td style="text-align: left">Performance restored</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>PERF_QUALITY_CHANGE</code></td>
+          <td style="text-align: left">Quality adjusted</td>
+          <td style="text-align: left">OldLevel, NewLevel, Reason</td>
+          <td style="text-align: left">Auto-quality changed</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>PERF_RESOLUTION_SCALE</code></td>
+          <td style="text-align: left">Resolution changed</td>
+          <td style="text-align: left">OldScale, NewScale</td>
+          <td style="text-align: left">Dynamic resolution</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="memory-events">Memory Events<a class="anchor" href="#memory-events">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Code Name</th>
+          <th style="text-align: left">Trigger</th>
+          <th style="text-align: left">Parameters</th>
+          <th style="text-align: left">Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><code>MEM_BUDGET_WARN</code></td>
+          <td style="text-align: left">Near budget limit</td>
+          <td style="text-align: left">Category, Used, Budget</td>
+          <td style="text-align: left">Memory warning</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>MEM_BUDGET_EXCEED</code></td>
+          <td style="text-align: left">Budget exceeded</td>
+          <td style="text-align: left">Category, Used, Budget</td>
+          <td style="text-align: left">Over budget</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>MEM_GC_START</code></td>
+          <td style="text-align: left">GC triggered</td>
+          <td style="text-align: left">Reason</td>
+          <td style="text-align: left">Garbage collection started</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>MEM_GC_END</code></td>
+          <td style="text-align: left">GC completed</td>
+          <td style="text-align: left">FreedMB, Duration</td>
+          <td style="text-align: left">Garbage collection done</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>MEM_STREAM_IN</code></td>
+          <td style="text-align: left">Asset loaded</td>
+          <td style="text-align: left">AssetPath, SizeMB</td>
+          <td style="text-align: left">Asset streamed in</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>MEM_STREAM_OUT</code></td>
+          <td style="text-align: left">Asset unloaded</td>
+          <td style="text-align: left">AssetPath, SizeMB</td>
+          <td style="text-align: left">Asset streamed out</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="pool-events">Pool Events<a class="anchor" href="#pool-events">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Code Name</th>
+          <th style="text-align: left">Trigger</th>
+          <th style="text-align: left">Parameters</th>
+          <th style="text-align: left">Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><code>POOL_ACQUIRE</code></td>
+          <td style="text-align: left">Object acquired</td>
+          <td style="text-align: left">PoolType, ActiveCount</td>
+          <td style="text-align: left">Object taken from pool</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>POOL_RELEASE</code></td>
+          <td style="text-align: left">Object released</td>
+          <td style="text-align: left">PoolType, ActiveCount</td>
+          <td style="text-align: left">Object returned to pool</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>POOL_EXPAND</code></td>
+          <td style="text-align: left">Pool expanded</td>
+          <td style="text-align: left">PoolType, OldSize, NewSize</td>
+          <td style="text-align: left">Pool grew</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>POOL_EXHAUSTED</code></td>
+          <td style="text-align: left">Pool empty</td>
+          <td style="text-align: left">PoolType, RequestCount</td>
+          <td style="text-align: left">No objects available</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="lod-events">LOD Events<a class="anchor" href="#lod-events">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Code Name</th>
+          <th style="text-align: left">Trigger</th>
+          <th style="text-align: left">Parameters</th>
+          <th style="text-align: left">Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><code>LOD_CHANGE</code></td>
+          <td style="text-align: left">LOD level changed</td>
+          <td style="text-align: left">ActorID, OldLOD, NewLOD</td>
+          <td style="text-align: left">LOD transition</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>LOD_CULL</code></td>
+          <td style="text-align: left">Actor culled</td>
+          <td style="text-align: left">ActorID, Distance</td>
+          <td style="text-align: left">Actor hidden</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>LOD_UNCULL</code></td>
+          <td style="text-align: left">Actor visible</td>
+          <td style="text-align: left">ActorID, Distance</td>
+          <td style="text-align: left">Actor shown</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="device-events">Device Events<a class="anchor" href="#device-events">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Code Name</th>
+          <th style="text-align: left">Trigger</th>
+          <th style="text-align: left">Parameters</th>
+          <th style="text-align: left">Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><code>DEV_TIER_DETECTED</code></td>
+          <td style="text-align: left">Tier determined</td>
+          <td style="text-align: left">Tier, Score, RAM, GPU</td>
+          <td style="text-align: left">Device classified</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>DEV_THERMAL_WARN</code></td>
+          <td style="text-align: left">Device heating</td>
+          <td style="text-align: left">Temperature, Throttle</td>
+          <td style="text-align: left">Thermal throttling</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>DEV_BATTERY_LOW</code></td>
+          <td style="text-align: left">Battery low</td>
+          <td style="text-align: left">Percent, PowerSaver</td>
+          <td style="text-align: left">Low battery mode</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="mobile-performance-targets">Mobile Performance Targets<a class="anchor" href="#mobile-performance-targets">#</a></h2>
+<h3 id="frame-rate-targets">Frame Rate Targets<a class="anchor" href="#frame-rate-targets">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th>Device Tier</th>
+          <th>Target FPS</th>
+          <th>Minimum FPS</th>
+          <th>Resolution</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>High-end</td>
+          <td>60 FPS</td>
+          <td>55 FPS</td>
+          <td>Native (1080p+)</td>
+      </tr>
+      <tr>
+          <td>Mid-range</td>
+          <td>45 FPS</td>
+          <td>40 FPS</td>
+          <td>900p</td>
+      </tr>
+      <tr>
+          <td>Low-end</td>
+          <td>30 FPS</td>
+          <td>28 FPS</td>
+          <td>720p</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="device-categorization">Device Categorization<a class="anchor" href="#device-categorization">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span>UENUM(BlueprintType)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">enum</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">EDeviceTier</span> <span style="color:#f92672">:</span> uint8
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    LowEnd,
+</span></span><span style="display:flex;"><span>    MidRange,
+</span></span><span style="display:flex;"><span>    HighEnd,
+</span></span><span style="display:flex;"><span>    Unknown
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">FDeviceProfiler</span>
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">static</span> EDeviceTier DetectDeviceTier()
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Get device specs
+</span></span></span><span style="display:flex;"><span>        FPlatformMemoryStats MemStats <span style="color:#f92672">=</span> FPlatformMemory<span style="color:#f92672">::</span>GetStats();
+</span></span><span style="display:flex;"><span>        int32 TotalRAM <span style="color:#f92672">=</span> MemStats.TotalPhysical <span style="color:#f92672">/</span> (<span style="color:#ae81ff">1024</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">1024</span>); <span style="color:#75715e">// MB
+</span></span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Get chipset info
+</span></span></span><span style="display:flex;"><span>        FString GPUBrand <span style="color:#f92672">=</span> FPlatformMisc<span style="color:#f92672">::</span>GetPrimaryGPUBrand();
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Calculate device score
+</span></span></span><span style="display:flex;"><span>        int32 Score <span style="color:#f92672">=</span> CalculateDeviceScore(TotalRAM, GPUBrand);
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (Score <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">8000</span>)
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> EDeviceTier<span style="color:#f92672">::</span>HighEnd;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">else</span> <span style="color:#a6e22e">if</span> (Score <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">5000</span>)
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> EDeviceTier<span style="color:#f92672">::</span>MidRange;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">else</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> EDeviceTier<span style="color:#f92672">::</span>LowEnd;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">private</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">static</span> int32 CalculateDeviceScore(int32 RAM, <span style="color:#66d9ef">const</span> FString<span style="color:#f92672">&amp;</span> GPU)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        int32 Score <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// RAM scoring
+</span></span></span><span style="display:flex;"><span>        Score <span style="color:#f92672">+=</span> FMath<span style="color:#f92672">::</span>Min(RAM <span style="color:#f92672">/</span> <span style="color:#ae81ff">100</span>, <span style="color:#ae81ff">50</span>) <span style="color:#f92672">*</span> <span style="color:#ae81ff">100</span>; <span style="color:#75715e">// Max 5000 from RAM
+</span></span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// GPU scoring (simplified)
+</span></span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (GPU.Contains(TEXT(<span style="color:#e6db74">&#34;Adreno 7&#34;</span>)) <span style="color:#f92672">||</span> GPU.Contains(TEXT(<span style="color:#e6db74">&#34;Apple A15&#34;</span>)))
+</span></span><span style="display:flex;"><span>            Score <span style="color:#f92672">+=</span> <span style="color:#ae81ff">4000</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">else</span> <span style="color:#a6e22e">if</span> (GPU.Contains(TEXT(<span style="color:#e6db74">&#34;Adreno 6&#34;</span>)) <span style="color:#f92672">||</span> GPU.Contains(TEXT(<span style="color:#e6db74">&#34;Apple A13&#34;</span>)))
+</span></span><span style="display:flex;"><span>            Score <span style="color:#f92672">+=</span> <span style="color:#ae81ff">3000</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">else</span> <span style="color:#a6e22e">if</span> (GPU.Contains(TEXT(<span style="color:#e6db74">&#34;Mali&#34;</span>)))
+</span></span><span style="display:flex;"><span>            Score <span style="color:#f92672">+=</span> <span style="color:#ae81ff">2000</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">else</span>
+</span></span><span style="display:flex;"><span>            Score <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1000</span>;
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> Score;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>};</span></span></code></pre></div><hr>
+<h2 id="rendering-optimization">Rendering Optimization<a class="anchor" href="#rendering-optimization">#</a></h2>
+<h3 id="level-of-detail-lod">Level of Detail (LOD)<a class="anchor" href="#level-of-detail-lod">#</a></h3>
+<p><strong>LOD Configuration:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">FLODSettings</span>
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Distance thresholds
+</span></span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">constexpr</span> <span style="color:#66d9ef">float</span> LOD0_Distance <span style="color:#f92672">=</span> <span style="color:#ae81ff">500.0f</span>;   <span style="color:#75715e">// High detail
+</span></span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">constexpr</span> <span style="color:#66d9ef">float</span> LOD1_Distance <span style="color:#f92672">=</span> <span style="color:#ae81ff">1500.0f</span>;  <span style="color:#75715e">// Medium detail
+</span></span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">constexpr</span> <span style="color:#66d9ef">float</span> LOD2_Distance <span style="color:#f92672">=</span> <span style="color:#ae81ff">3000.0f</span>;  <span style="color:#75715e">// Low detail
+</span></span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">constexpr</span> <span style="color:#66d9ef">float</span> CullDistance <span style="color:#f92672">=</span> <span style="color:#ae81ff">5000.0f</span>;   <span style="color:#75715e">// Beyond: cull
+</span></span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Apply LOD to static mesh
+</span></span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">ConfigureStaticMeshLOD</span>(UStaticMeshComponent<span style="color:#f92672">*</span> Mesh)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span>Mesh <span style="color:#f92672">||</span> <span style="color:#f92672">!</span>Mesh<span style="color:#f92672">-&gt;</span>GetStaticMesh())
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span>;
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    UStaticMesh<span style="color:#f92672">*</span> StaticMesh <span style="color:#f92672">=</span> Mesh<span style="color:#f92672">-&gt;</span>GetStaticMesh();
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Setup LOD distances
+</span></span></span><span style="display:flex;"><span>    StaticMesh<span style="color:#f92672">-&gt;</span>LODGroup <span style="color:#f92672">=</span> NAME_None;
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Per LOD settings
+</span></span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> (int32 LODIndex <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; LODIndex <span style="color:#f92672">&lt;</span> StaticMesh<span style="color:#f92672">-&gt;</span>GetNumLODs(); LODIndex<span style="color:#f92672">++</span>)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        FStaticMeshLODInfo<span style="color:#f92672">&amp;</span> LODInfo <span style="color:#f92672">=</span> StaticMesh<span style="color:#f92672">-&gt;</span>GetLODInfo(LODIndex);
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">switch</span> (LODIndex)
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">0</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>            LODInfo.ScreenSize <span style="color:#f92672">=</span> <span style="color:#ae81ff">1.0f</span>;
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">break</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">1</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>            LODInfo.ScreenSize <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.5f</span>;
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">break</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">2</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>            LODInfo.ScreenSize <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.25f</span>;
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">break</span>;
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Set cull distance
+</span></span></span><span style="display:flex;"><span>    Mesh<span style="color:#f92672">-&gt;</span>SetCullDistance(FLODSettings<span style="color:#f92672">::</span>CullDistance);
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><hr>
+<h3 id="occlusion-culling">Occlusion Culling<a class="anchor" href="#occlusion-culling">#</a></h3>
+<p><strong>Precomputed Visibility:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#75715e">// Enable precomputed visibility volumes
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// Place volumes in dense areas (buildings)
+</span></span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">APrecomputedVisibilityVolume</span> <span style="color:#f92672">:</span> <span style="color:#66d9ef">public</span> AActor
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">void</span> Configure()
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Set in editor or via code
+</span></span></span><span style="display:flex;"><span>        CellSize <span style="color:#f92672">=</span> <span style="color:#ae81ff">100.0f</span>; <span style="color:#75715e">// Smaller = more accurate, slower build
+</span></span></span><span style="display:flex;"><span>        NumCellsPerVisibilityOverride <span style="color:#f92672">=</span> <span style="color:#ae81ff">1024</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>};</span></span></code></pre></div><p><strong>Software Occlusion:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#75715e">// UE5 Software Occlusion for mobile
+</span></span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">EnableSoftwareOcclusion</span>()
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// In DefaultEngine.ini:
+</span></span></span><span style="display:flex;"><span>    <span style="color:#75715e">// [/Script/Engine.RendererSettings]
+</span></span></span><span style="display:flex;"><span>    <span style="color:#75715e">// r.Mobile.AllowSoftwareOcclusion=1
+</span></span></span><span style="display:flex;"><span>    <span style="color:#75715e">// r.Mobile.AllowSoftwareOcculsion.LODGracePeriod=1.0
+</span></span></span><span style="display:flex;"><span>}</span></span></code></pre></div><hr>
+<h3 id="dynamic-resolution">Dynamic Resolution<a class="anchor" href="#dynamic-resolution">#</a></h3>
+<p><strong>Adaptive Resolution Scaling:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">UDynamicResolutionManager</span> <span style="color:#f92672">:</span> <span style="color:#66d9ef">public</span> UGameInstanceSubsystem
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">void</span> Initialize(FSubsystemCollectionBase<span style="color:#f92672">&amp;</span> Collection) <span style="color:#66d9ef">override</span>
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        Super<span style="color:#f92672">::</span>Initialize(Collection);
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Enable dynamic resolution
+</span></span></span><span style="display:flex;"><span>        IConsoleVariable<span style="color:#f92672">*</span> DynamicRes <span style="color:#f92672">=</span> IConsoleManager<span style="color:#f92672">::</span>Get().FindConsoleVariable(
+</span></span><span style="display:flex;"><span>            TEXT(<span style="color:#e6db74">&#34;r.DynamicRes.OperationMode&#34;</span>));
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (DynamicRes)
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            DynamicRes<span style="color:#f92672">-&gt;</span>Set(<span style="color:#ae81ff">2</span>); <span style="color:#75715e">// 2 = Enabled
+</span></span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Set target frame rate
+</span></span></span><span style="display:flex;"><span>        IConsoleVariable<span style="color:#f92672">*</span> TargetFPS <span style="color:#f92672">=</span> IConsoleManager<span style="color:#f92672">::</span>Get().FindConsoleVariable(
+</span></span><span style="display:flex;"><span>            TEXT(<span style="color:#e6db74">&#34;r.DynamicRes.TargetFrameTime&#34;</span>));
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (TargetFPS)
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            TargetFPS<span style="color:#f92672">-&gt;</span>Set(<span style="color:#ae81ff">33.3f</span>); <span style="color:#75715e">// 30 FPS = 33.3ms
+</span></span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">Tick</span>(<span style="color:#66d9ef">float</span> DeltaTime) <span style="color:#66d9ef">override</span>
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Monitor frame rate
+</span></span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">float</span> CurrentFPS <span style="color:#f92672">=</span> <span style="color:#ae81ff">1.0f</span> <span style="color:#f92672">/</span> DeltaTime;
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Adjust resolution scale
+</span></span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (CurrentFPS <span style="color:#f92672">&lt;</span> TargetFPS <span style="color:#f92672">-</span> <span style="color:#ae81ff">5.0f</span>)
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            DecreaseResolution();
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (CurrentFPS <span style="color:#f92672">&gt;</span> TargetFPS <span style="color:#f92672">+</span> <span style="color:#ae81ff">5.0f</span>)
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            IncreaseResolution();
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">private</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">float</span> TargetFPS <span style="color:#f92672">=</span> <span style="color:#ae81ff">30.0f</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">float</span> CurrentResolutionScale <span style="color:#f92672">=</span> <span style="color:#ae81ff">1.0f</span>;
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">DecreaseResolution</span>()
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        CurrentResolutionScale <span style="color:#f92672">=</span> FMath<span style="color:#f92672">::</span>Max(<span style="color:#ae81ff">0.5f</span>, CurrentResolutionScale <span style="color:#f92672">-</span> <span style="color:#ae81ff">0.05f</span>);
+</span></span><span style="display:flex;"><span>        ApplyResolutionScale();
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">IncreaseResolution</span>()
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        CurrentResolutionScale <span style="color:#f92672">=</span> FMath<span style="color:#f92672">::</span>Min(<span style="color:#ae81ff">1.0f</span>, CurrentResolutionScale <span style="color:#f92672">+</span> <span style="color:#ae81ff">0.05f</span>);
+</span></span><span style="display:flex;"><span>        ApplyResolutionScale();
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">ApplyResolutionScale</span>()
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        IConsoleVariable<span style="color:#f92672">*</span> ScreenPercentage <span style="color:#f92672">=</span> IConsoleManager<span style="color:#f92672">::</span>Get().FindConsoleVariable(
+</span></span><span style="display:flex;"><span>            TEXT(<span style="color:#e6db74">&#34;r.ScreenPercentage&#34;</span>));
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (ScreenPercentage)
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            ScreenPercentage<span style="color:#f92672">-&gt;</span>Set(CurrentResolutionScale <span style="color:#f92672">*</span> <span style="color:#ae81ff">100.0f</span>);
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>};</span></span></code></pre></div><hr>
+<h3 id="texture-optimization">Texture Optimization<a class="anchor" href="#texture-optimization">#</a></h3>
+<p><strong>Texture Streaming:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#75715e">// Enable texture streaming
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// DefaultEngine.ini:
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// [/Script/Engine.RendererSettings]
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// r.Streaming.PoolSize=1000
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// r.Streaming.UseFixedPoolSize=True
+</span></span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Per-texture settings
+</span></span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">ConfigureTexture</span>(UTexture2D<span style="color:#f92672">*</span> Texture, ETextureImportance Importance)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span>Texture)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span>;
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Compression
+</span></span></span><span style="display:flex;"><span>    Texture<span style="color:#f92672">-&gt;</span>CompressionSettings <span style="color:#f92672">=</span> TC_Default;
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Mip maps
+</span></span></span><span style="display:flex;"><span>    Texture<span style="color:#f92672">-&gt;</span>MipGenSettings <span style="color:#f92672">=</span> TMGS_SimpleAverage;
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// LOD bias based on importance
+</span></span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">switch</span> (Importance)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">case</span> ETextureImportance<span style="color:#f92672">::</span>Critical: <span style="color:#75715e">// Characters, weapons
+</span></span></span><span style="display:flex;"><span>        Texture<span style="color:#f92672">-&gt;</span>LODBias <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">break</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">case</span> ETextureImportance<span style="color:#f92672">::</span>Important: <span style="color:#75715e">// Environment
+</span></span></span><span style="display:flex;"><span>        Texture<span style="color:#f92672">-&gt;</span>LODBias <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">break</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">case</span> ETextureImportance<span style="color:#f92672">::</span>Normal: <span style="color:#75715e">// Props
+</span></span></span><span style="display:flex;"><span>        Texture<span style="color:#f92672">-&gt;</span>LODBias <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">break</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Never stream critical textures
+</span></span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (Importance <span style="color:#f92672">==</span> ETextureImportance<span style="color:#f92672">::</span>Critical)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        Texture<span style="color:#f92672">-&gt;</span>NeverStream <span style="color:#f92672">=</span> true;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><hr>
+<h2 id="cpu-optimization">CPU Optimization<a class="anchor" href="#cpu-optimization">#</a></h2>
+<h3 id="object-pooling">Object Pooling<a class="anchor" href="#object-pooling">#</a></h3>
+<p><strong>Generic Object Pool:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#66d9ef">template</span><span style="color:#f92672">&lt;</span><span style="color:#66d9ef">typename</span> T<span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">TObjectPool</span>
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>    TObjectPool(UWorld<span style="color:#f92672">*</span> World, int32 InitialSize <span style="color:#f92672">=</span> <span style="color:#ae81ff">20</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">:</span> World(World)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        PreAllocate(InitialSize);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">PreAllocate</span>(int32 Count)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> (int32 i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> Count; i<span style="color:#f92672">++</span>)
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            T<span style="color:#f92672">*</span> NewObject <span style="color:#f92672">=</span> World<span style="color:#f92672">-&gt;</span>SpawnActor<span style="color:#f92672">&lt;</span>T<span style="color:#f92672">&gt;</span>();
+</span></span><span style="display:flex;"><span>            NewObject<span style="color:#f92672">-&gt;</span>SetActorHiddenInGame(true);
+</span></span><span style="display:flex;"><span>            NewObject<span style="color:#f92672">-&gt;</span>SetActorEnableCollision(false);
+</span></span><span style="display:flex;"><span>            Pool.Add(NewObject);
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    T<span style="color:#f92672">*</span> <span style="color:#a6e22e">Acquire</span>(FVector Location <span style="color:#f92672">=</span> FVector<span style="color:#f92672">::</span>ZeroVector, 
+</span></span><span style="display:flex;"><span>               FRotator Rotation <span style="color:#f92672">=</span> FRotator<span style="color:#f92672">::</span>ZeroRotator)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        T<span style="color:#f92672">*</span> Object <span style="color:#f92672">=</span> <span style="color:#66d9ef">nullptr</span>;
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (Pool.Num() <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span>)
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            Object <span style="color:#f92672">=</span> Pool.Pop();
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">else</span>
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// Pool exhausted, create new
+</span></span></span><span style="display:flex;"><span>            Object <span style="color:#f92672">=</span> World<span style="color:#f92672">-&gt;</span>SpawnActor<span style="color:#f92672">&lt;</span>T<span style="color:#f92672">&gt;</span>();
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Activate object
+</span></span></span><span style="display:flex;"><span>        Object<span style="color:#f92672">-&gt;</span>SetActorLocationAndRotation(Location, Rotation);
+</span></span><span style="display:flex;"><span>        Object<span style="color:#f92672">-&gt;</span>SetActorHiddenInGame(false);
+</span></span><span style="display:flex;"><span>        Object<span style="color:#f92672">-&gt;</span>SetActorEnableCollision(true);
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        ActiveObjects.Add(Object);
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> Object;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">Release</span>(T<span style="color:#f92672">*</span> Object)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span>Object)
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span>;
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Deactivate
+</span></span></span><span style="display:flex;"><span>        Object<span style="color:#f92672">-&gt;</span>SetActorHiddenInGame(true);
+</span></span><span style="display:flex;"><span>        Object<span style="color:#f92672">-&gt;</span>SetActorEnableCollision(false);
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Return to pool
+</span></span></span><span style="display:flex;"><span>        ActiveObjects.Remove(Object);
+</span></span><span style="display:flex;"><span>        Pool.Add(Object);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">ReleaseAll</span>()
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> (T<span style="color:#f92672">*</span> Object : ActiveObjects)
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            Object<span style="color:#f92672">-&gt;</span>SetActorHiddenInGame(true);
+</span></span><span style="display:flex;"><span>            Object<span style="color:#f92672">-&gt;</span>SetActorEnableCollision(false);
+</span></span><span style="display:flex;"><span>            Pool.Add(Object);
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        ActiveObjects.Empty();
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">private</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>    UWorld<span style="color:#f92672">*</span> World;
+</span></span><span style="display:flex;"><span>    TArray<span style="color:#f92672">&lt;</span>T<span style="color:#f92672">*&gt;</span> Pool;
+</span></span><span style="display:flex;"><span>    TArray<span style="color:#f92672">&lt;</span>T<span style="color:#f92672">*&gt;</span> ActiveObjects;
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Usage:
+</span></span></span><span style="display:flex;"><span>TObjectPool<span style="color:#f92672">&lt;</span>ABulletActor<span style="color:#f92672">&gt;</span> BulletPool;
+</span></span><span style="display:flex;"><span>ABulletActor<span style="color:#f92672">*</span> Bullet <span style="color:#f92672">=</span> BulletPool.Acquire(SpawnLocation, SpawnRotation);
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// ... use bullet ...
+</span></span></span><span style="display:flex;"><span>BulletPool.Release(Bullet);</span></span></code></pre></div><hr>
+<h3 id="tick-optimization">Tick Optimization<a class="anchor" href="#tick-optimization">#</a></h3>
+<p><strong>Selective Ticking:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#75715e">// Disable tick when not needed
+</span></span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> AExtractionCharacter<span style="color:#f92672">::</span>SetTickEnabled(<span style="color:#66d9ef">bool</span> bEnabled)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    SetActorTickEnabled(bEnabled);
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Also disable component ticks
+</span></span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> (UActorComponent<span style="color:#f92672">*</span> Component : GetComponents())
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (UPrimitiveComponent<span style="color:#f92672">*</span> PrimComp <span style="color:#f92672">=</span> Cast<span style="color:#f92672">&lt;</span>UPrimitiveComponent<span style="color:#f92672">&gt;</span>(Component))
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            PrimComp<span style="color:#f92672">-&gt;</span>PrimaryComponentTick.bCanEverTick <span style="color:#f92672">=</span> bEnabled;
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Variable tick rates
+</span></span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> AExtractionAICharacter<span style="color:#f92672">::</span>BeginPlay()
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    Super<span style="color:#f92672">::</span>BeginPlay();
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// AI doesn&#39;t need 60 Hz tick
+</span></span></span><span style="display:flex;"><span>    PrimaryActorTick.TickInterval <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.1f</span>; <span style="color:#75715e">// 10 Hz
+</span></span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Distance-based tick rates
+</span></span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">UpdateTickInterval</span>(AActor<span style="color:#f92672">*</span> Actor, APlayerController<span style="color:#f92672">*</span> Player)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">float</span> Distance <span style="color:#f92672">=</span> FVector<span style="color:#f92672">::</span>Distance(
+</span></span><span style="display:flex;"><span>        Actor<span style="color:#f92672">-&gt;</span>GetActorLocation(),
+</span></span><span style="display:flex;"><span>        Player<span style="color:#f92672">-&gt;</span>GetPawn()<span style="color:#f92672">-&gt;</span>GetActorLocation()
+</span></span><span style="display:flex;"><span>    );
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (Distance <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">1000.0f</span>)
+</span></span><span style="display:flex;"><span>        Actor<span style="color:#f92672">-&gt;</span>SetActorTickInterval(<span style="color:#ae81ff">0.0f</span>); <span style="color:#75715e">// Every frame
+</span></span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (Distance <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">3000.0f</span>)
+</span></span><span style="display:flex;"><span>        Actor<span style="color:#f92672">-&gt;</span>SetActorTickInterval(<span style="color:#ae81ff">0.1f</span>); <span style="color:#75715e">// 10 Hz
+</span></span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span>
+</span></span><span style="display:flex;"><span>        Actor<span style="color:#f92672">-&gt;</span>SetActorTickInterval(<span style="color:#ae81ff">0.5f</span>); <span style="color:#75715e">// 2 Hz
+</span></span></span><span style="display:flex;"><span>}</span></span></code></pre></div><hr>
+<h2 id="memory-optimization">Memory Optimization<a class="anchor" href="#memory-optimization">#</a></h2>
+<h3 id="memory-budget-tracking">Memory Budget Tracking<a class="anchor" href="#memory-budget-tracking">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">FMemoryBudgetTracker</span>
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">FMemoryBudget</span>
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        int64 Total <span style="color:#f92672">=</span> <span style="color:#ae81ff">1500</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">1024</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">1024</span>; <span style="color:#75715e">// 1.5 GB
+</span></span></span><span style="display:flex;"><span>        int64 Textures <span style="color:#f92672">=</span> <span style="color:#ae81ff">800</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">1024</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">1024</span>;
+</span></span><span style="display:flex;"><span>        int64 Audio <span style="color:#f92672">=</span> <span style="color:#ae81ff">150</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">1024</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">1024</span>;
+</span></span><span style="display:flex;"><span>        int64 Code <span style="color:#f92672">=</span> <span style="color:#ae81ff">300</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">1024</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">1024</span>;
+</span></span><span style="display:flex;"><span>        int64 Other <span style="color:#f92672">=</span> <span style="color:#ae81ff">250</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">1024</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">1024</span>;
+</span></span><span style="display:flex;"><span>    };
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">LogMemoryUsage</span>()
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        FPlatformMemoryStats MemStats <span style="color:#f92672">=</span> FPlatformMemory<span style="color:#f92672">::</span>GetStats();
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        UE_LOG(LogTemp, Log, TEXT(<span style="color:#e6db74">&#34;=== Memory Usage ===&#34;</span>));
+</span></span><span style="display:flex;"><span>        UE_LOG(LogTemp, Log, TEXT(<span style="color:#e6db74">&#34;Total: %d MB&#34;</span>), 
+</span></span><span style="display:flex;"><span>            MemStats.UsedPhysical <span style="color:#f92672">/</span> (<span style="color:#ae81ff">1024</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">1024</span>));
+</span></span><span style="display:flex;"><span>        UE_LOG(LogTemp, Log, TEXT(<span style="color:#e6db74">&#34;Available: %d MB&#34;</span>), 
+</span></span><span style="display:flex;"><span>            MemStats.AvailablePhysical <span style="color:#f92672">/</span> (<span style="color:#ae81ff">1024</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">1024</span>));
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Texture memory
+</span></span></span><span style="display:flex;"><span>        int64 TextureMemory <span style="color:#f92672">=</span> GetTextureMemoryUsage();
+</span></span><span style="display:flex;"><span>        UE_LOG(LogTemp, Log, TEXT(<span style="color:#e6db74">&#34;Textures: %d MB&#34;</span>), 
+</span></span><span style="display:flex;"><span>            TextureMemory <span style="color:#f92672">/</span> (<span style="color:#ae81ff">1024</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">1024</span>));
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">private</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">static</span> int64 GetTextureMemoryUsage()
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        int64 TotalSize <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> (TObjectIterator<span style="color:#f92672">&lt;</span>UTexture2D<span style="color:#f92672">&gt;</span> It; It; <span style="color:#f92672">++</span>It)
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            UTexture2D<span style="color:#f92672">*</span> Texture <span style="color:#f92672">=</span> <span style="color:#f92672">*</span>It;
+</span></span><span style="display:flex;"><span>            TotalSize <span style="color:#f92672">+=</span> Texture<span style="color:#f92672">-&gt;</span>CalcTextureMemorySizeEnum(TMC_AllMips);
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> TotalSize;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>};</span></span></code></pre></div><hr>
+<h3 id="asset-streaming">Asset Streaming<a class="anchor" href="#asset-streaming">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#75715e">// Async asset loading
+</span></span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">UAssetStreamingManager</span> <span style="color:#f92672">:</span> <span style="color:#66d9ef">public</span> UGameInstanceSubsystem
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">void</span> StreamInAssets(<span style="color:#66d9ef">const</span> TArray<span style="color:#f92672">&lt;</span>FSoftObjectPath<span style="color:#f92672">&gt;&amp;</span> Assets, 
+</span></span><span style="display:flex;"><span>                       FStreamableDelegate OnComplete)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (StreamableManager.IsValid())
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            StreamableManager<span style="color:#f92672">-&gt;</span>RequestAsyncLoad(
+</span></span><span style="display:flex;"><span>                Assets,
+</span></span><span style="display:flex;"><span>                OnComplete,
+</span></span><span style="display:flex;"><span>                FStreamableManager<span style="color:#f92672">::</span>AsyncLoadHighPriority
+</span></span><span style="display:flex;"><span>            );
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">StreamOutUnusedAssets</span>()
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Force garbage collection
+</span></span></span><span style="display:flex;"><span>        GetWorld()<span style="color:#f92672">-&gt;</span>ForceGarbageCollection(true);
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Flush streaming
+</span></span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (UGameplayStatics<span style="color:#f92672">::</span>GetStreamingManager())
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            UGameplayStatics<span style="color:#f92672">::</span>GetStreamingManager()<span style="color:#f92672">-&gt;</span>FlushAll();
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">private</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>    TSharedPtr<span style="color:#f92672">&lt;</span>FStreamableManager<span style="color:#f92672">&gt;</span> StreamableManager;
+</span></span><span style="display:flex;"><span>};</span></span></code></pre></div><hr>
+<h2 id="network-optimization">Network Optimization<a class="anchor" href="#network-optimization">#</a></h2>
+<p><strong>See:</strong> <a href="./02_NetworkingSystem.md">Networking System</a> for detailed network optimization</p>
+<p><strong>Key Techniques:</strong></p>
+<ul>
+<li>Relevancy culling</li>
+<li>Update frequency adjustment</li>
+<li>Delta compression</li>
+<li>Bandwidth monitoring</li>
+</ul>
+<hr>
+<h2 id="mobile-specific-optimizations">Mobile-Specific Optimizations<a class="anchor" href="#mobile-specific-optimizations">#</a></h2>
+<h3 id="battery-optimization">Battery Optimization<a class="anchor" href="#battery-optimization">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">UBatteryOptimizer</span> <span style="color:#f92672">:</span> <span style="color:#66d9ef">public</span> UGameInstanceSubsystem
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">void</span> ReducePowerConsumption()
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Lower frame rate when in menu
+</span></span></span><span style="display:flex;"><span>        IConsoleVariable<span style="color:#f92672">*</span> VSync <span style="color:#f92672">=</span> IConsoleManager<span style="color:#f92672">::</span>Get().FindConsoleVariable(
+</span></span><span style="display:flex;"><span>            TEXT(<span style="color:#e6db74">&#34;r.VSync&#34;</span>));
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (VSync)
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            VSync<span style="color:#f92672">-&gt;</span>Set(<span style="color:#ae81ff">1</span>); <span style="color:#75715e">// Enable VSync to cap FPS
+</span></span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Reduce tick rates
+</span></span></span><span style="display:flex;"><span>        ReduceTickRates();
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Disable unnecessary features
+</span></span></span><span style="display:flex;"><span>        DisablePostProcessing();
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">private</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">void</span> ReduceTickRates()
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Lower all non-critical tick rates
+</span></span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> (TActorIterator<span style="color:#f92672">&lt;</span>AActor<span style="color:#f92672">&gt;</span> It(GetWorld()); It; <span style="color:#f92672">++</span>It)
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            AActor<span style="color:#f92672">*</span> Actor <span style="color:#f92672">=</span> <span style="color:#f92672">*</span>It;
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span>Actor<span style="color:#f92672">-&gt;</span>IsPlayerControlled())
+</span></span><span style="display:flex;"><span>            {
+</span></span><span style="display:flex;"><span>                Actor<span style="color:#f92672">-&gt;</span>SetActorTickInterval(<span style="color:#ae81ff">0.1f</span>);
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">DisablePostProcessing</span>()
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        IConsoleVariable<span style="color:#f92672">*</span> Bloom <span style="color:#f92672">=</span> IConsoleManager<span style="color:#f92672">::</span>Get().FindConsoleVariable(
+</span></span><span style="display:flex;"><span>            TEXT(<span style="color:#e6db74">&#34;r.BloomQuality&#34;</span>));
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (Bloom)
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            Bloom<span style="color:#f92672">-&gt;</span>Set(<span style="color:#ae81ff">0</span>);
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Disable other expensive effects
+</span></span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Motion blur, DOF, etc.
+</span></span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>};</span></span></code></pre></div><hr>
+<h3 id="touch-input-optimization">Touch Input Optimization<a class="anchor" href="#touch-input-optimization">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#75715e">// Reduce input polling rate
+</span></span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">OptimizeTouchInput</span>()
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Only poll at frame rate (not higher)
+</span></span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Batch touch events
+</span></span></span><span style="display:flex;"><span>    IConsoleVariable<span style="color:#f92672">*</span> InputRate <span style="color:#f92672">=</span> IConsoleManager<span style="color:#f92672">::</span>Get().FindConsoleVariable(
+</span></span><span style="display:flex;"><span>        TEXT(<span style="color:#e6db74">&#34;t.MaxFPS&#34;</span>));
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (InputRate)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        InputRate<span style="color:#f92672">-&gt;</span>Set(<span style="color:#ae81ff">30</span>); <span style="color:#75715e">// Match game FPS
+</span></span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><hr>
+<h2 id="profiling--debugging">Profiling &amp; Debugging<a class="anchor" href="#profiling--debugging">#</a></h2>
+<h3 id="built-in-profilers">Built-in Profilers<a class="anchor" href="#built-in-profilers">#</a></h3>
+<p><strong>Stat Commands:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#75715e">// In-game console commands:
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// stat fps - Show FPS
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// stat unit - Show frame time breakdown
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// stat memory - Memory usage
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// stat streaming - Texture streaming info
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// stat gpu - GPU timing
+</span></span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Enable profiling
+</span></span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">EnableProfiling</span>()
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    GEngine<span style="color:#f92672">-&gt;</span>Exec(GetWorld(), TEXT(<span style="color:#e6db74">&#34;stat fps&#34;</span>));
+</span></span><span style="display:flex;"><span>    GEngine<span style="color:#f92672">-&gt;</span>Exec(GetWorld(), TEXT(<span style="color:#e6db74">&#34;stat unit&#34;</span>));
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><hr>
+<h3 id="custom-performance-metrics">Custom Performance Metrics<a class="anchor" href="#custom-performance-metrics">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">FPerformanceMetrics</span>
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> BeginFrame()
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        FrameStartTime <span style="color:#f92672">=</span> FPlatformTime<span style="color:#f92672">::</span>Seconds();
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">EndFrame</span>()
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">double</span> FrameTime <span style="color:#f92672">=</span> FPlatformTime<span style="color:#f92672">::</span>Seconds() <span style="color:#f92672">-</span> FrameStartTime;
+</span></span><span style="display:flex;"><span>        FrameTimes.Add(FrameTime);
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Keep last 60 frames
+</span></span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (FrameTimes.Num() <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">60</span>)
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            FrameTimes.RemoveAt(<span style="color:#ae81ff">0</span>);
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Calculate average
+</span></span></span><span style="display:flex;"><span>        AvgFrameTime <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.0</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">double</span> Time : FrameTimes)
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            AvgFrameTime <span style="color:#f92672">+=</span> Time;
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        AvgFrameTime <span style="color:#f92672">/=</span> FrameTimes.Num();
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">float</span> <span style="color:#a6e22e">GetAverageFPS</span>()
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">1.0f</span> <span style="color:#f92672">/</span> AvgFrameTime;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">private</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">double</span> FrameStartTime;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">static</span> TArray<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">double</span><span style="color:#f92672">&gt;</span> FrameTimes;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">double</span> AvgFrameTime;
+</span></span><span style="display:flex;"><span>};</span></span></code></pre></div><hr>
+<h2 id="quality-settings">Quality Settings<a class="anchor" href="#quality-settings">#</a></h2>
+<h3 id="auto-detection">Auto-Detection<a class="anchor" href="#auto-detection">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span>UCLASS()
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">UGraphicsSettings</span> <span style="color:#f92672">:</span> <span style="color:#66d9ef">public</span> UGameUserSettings
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">void</span> AutoDetectQualitySettings()
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        EDeviceTier Tier <span style="color:#f92672">=</span> FDeviceProfiler<span style="color:#f92672">::</span>DetectDeviceTier();
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">switch</span> (Tier)
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">case</span> EDeviceTier<span style="color:#f92672">::</span>HighEnd:
+</span></span><span style="display:flex;"><span>            ApplyHighSettings();
+</span></span><span style="display:flex;"><span>            SetFrameRateLimit(<span style="color:#ae81ff">60</span>);
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">break</span>;
+</span></span><span style="display:flex;"><span>            
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">case</span> EDeviceTier<span style="color:#f92672">::</span>MidRange:
+</span></span><span style="display:flex;"><span>            ApplyMediumSettings();
+</span></span><span style="display:flex;"><span>            SetFrameRateLimit(<span style="color:#ae81ff">45</span>);
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">break</span>;
+</span></span><span style="display:flex;"><span>            
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">case</span> EDeviceTier<span style="color:#f92672">::</span>LowEnd:
+</span></span><span style="display:flex;"><span>            ApplyLowSettings();
+</span></span><span style="display:flex;"><span>            SetFrameRateLimit(<span style="color:#ae81ff">30</span>);
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">break</span>;
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        ApplySettings(false);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">private</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">void</span> ApplyLowSettings()
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        SetViewDistanceQuality(<span style="color:#ae81ff">0</span>);
+</span></span><span style="display:flex;"><span>        SetShadowQuality(<span style="color:#ae81ff">0</span>);
+</span></span><span style="display:flex;"><span>        SetAntiAliasingQuality(<span style="color:#ae81ff">0</span>);
+</span></span><span style="display:flex;"><span>        SetTextureQuality(<span style="color:#ae81ff">1</span>);
+</span></span><span style="display:flex;"><span>        SetVisualEffectQuality(<span style="color:#ae81ff">0</span>);
+</span></span><span style="display:flex;"><span>        SetPostProcessingQuality(<span style="color:#ae81ff">0</span>);
+</span></span><span style="display:flex;"><span>        SetResolutionScaleValue(<span style="color:#ae81ff">75</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">ApplyMediumSettings</span>()
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        SetViewDistanceQuality(<span style="color:#ae81ff">1</span>);
+</span></span><span style="display:flex;"><span>        SetShadowQuality(<span style="color:#ae81ff">1</span>);
+</span></span><span style="display:flex;"><span>        SetAntiAliasingQuality(<span style="color:#ae81ff">1</span>);
+</span></span><span style="display:flex;"><span>        SetTextureQuality(<span style="color:#ae81ff">2</span>);
+</span></span><span style="display:flex;"><span>        SetVisualEffectQuality(<span style="color:#ae81ff">1</span>);
+</span></span><span style="display:flex;"><span>        SetPostProcessingQuality(<span style="color:#ae81ff">1</span>);
+</span></span><span style="display:flex;"><span>        SetResolutionScaleValue(<span style="color:#ae81ff">90</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">ApplyHighSettings</span>()
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        SetViewDistanceQuality(<span style="color:#ae81ff">2</span>);
+</span></span><span style="display:flex;"><span>        SetShadowQuality(<span style="color:#ae81ff">2</span>);
+</span></span><span style="display:flex;"><span>        SetAntiAliasingQuality(<span style="color:#ae81ff">2</span>);
+</span></span><span style="display:flex;"><span>        SetTextureQuality(<span style="color:#ae81ff">3</span>);
+</span></span><span style="display:flex;"><span>        SetVisualEffectQuality(<span style="color:#ae81ff">2</span>);
+</span></span><span style="display:flex;"><span>        SetPostProcessingQuality(<span style="color:#ae81ff">2</span>);
+</span></span><span style="display:flex;"><span>        SetResolutionScaleValue(<span style="color:#ae81ff">100</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>};</span></span></code></pre></div><hr>
+<h2 id="todo-optimization-tasks">TODO: Optimization Tasks<a class="anchor" href="#todo-optimization-tasks">#</a></h2>
+<h3 id="high-priority-">HIGH Priority 🔴<a class="anchor" href="#high-priority-">#</a></h3>
+<ul>
+<li><input disabled="" type="checkbox"> Implement device tier detection</li>
+<li><input disabled="" type="checkbox"> Setup LOD system for all meshes</li>
+<li><input disabled="" type="checkbox"> Configure texture streaming</li>
+<li><input disabled="" type="checkbox"> Implement object pooling (bullets, effects)</li>
+<li><input disabled="" type="checkbox"> Performance profiling baseline</li>
+</ul>
+<h3 id="medium-priority-">MEDIUM Priority 🟡<a class="anchor" href="#medium-priority-">#</a></h3>
+<ul>
+<li><input disabled="" type="checkbox"> Dynamic resolution scaling</li>
+<li><input disabled="" type="checkbox"> Occlusion culling setup</li>
+<li><input disabled="" type="checkbox"> Tick optimization</li>
+<li><input disabled="" type="checkbox"> Memory budget tracking</li>
+<li><input disabled="" type="checkbox"> Auto quality settings</li>
+</ul>
+<h3 id="low-priority-">LOW Priority 🟢<a class="anchor" href="#low-priority-">#</a></h3>
+<ul>
+<li><input disabled="" type="checkbox"> Advanced profiling</li>
+<li><input disabled="" type="checkbox"> Battery optimization</li>
+<li><input disabled="" type="checkbox"> Network bandwidth optimization</li>
+<li><input disabled="" type="checkbox"> Custom performance dashboard</li>
+</ul>
+<hr>
+<p><strong><a href="./07_MapSystem.md">← Previous: Map System</a></strong> | <strong><a href="./README.md">Technical Index</a></strong> | <strong><a href="./09_DevelopmentRoadmap.md">Next: Development Roadmap →</a></strong></p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+<div>
+
+</div>
+
+<div>
+
+</div>
+
+</div>
+
+
+
+
+
+  
+  
+  
+  <div class="flex flex-wrap justify-between">
+    <span>
+    
+      <a href="/docs/GDD_Technical/Performance/Budgets/" class="flex align-center">
+        <img src="/icons/backward.svg" class="book-icon" alt="Backward" />
+        <span>Budgets</span>
+      </a>
+    
+    </span>
+    <span>
+    
+      <a href="/docs/GDD_Technical/Security/AntiCheatStrategy/" class="flex align-center">
+        <span>Anti Cheat Strategy</span>
+        <img src="/icons/forward.svg" class="book-icon" alt="Forward" />
+      </a>
+    
+    </span>
+  </div>
+  
+
+
+ 
+        
+  
+ 
+        
+        
+  
+ 
+        
+  
+  
+    <script>(function(){document.querySelectorAll("pre:has(code)").forEach(e=>{e.addEventListener("click",e.focus),e.addEventListener("copy",function(t){if(t.preventDefault(),navigator.clipboard){const t=window.getSelection().toString()||e.textContent;navigator.clipboard.writeText(t)}})})})()</script>
+  
+
+      </footer>
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+  
+  <aside class="book-toc">
+    <div class="book-toc-content">
+      
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#overview">Overview</a></li>
+    <li><a href="#enums--types">Enums &amp; Types</a>
+      <ul>
+        <li><a href="#edevicetier">EDeviceTier</a></li>
+        <li><a href="#equalitylevel">EQualityLevel</a></li>
+        <li><a href="#elodlevel">ELODLevel</a></li>
+        <li><a href="#epooltype">EPoolType</a></li>
+        <li><a href="#ememorycategory">EMemoryCategory</a></li>
+        <li><a href="#etextureimportance">ETextureImportance</a></li>
+        <li><a href="#etickpriority">ETickPriority</a></li>
+        <li><a href="#eprofilingmode">EProfilingMode</a></li>
+      </ul>
+    </li>
+    <li><a href="#code-names">Code Names</a>
+      <ul>
+        <li><a href="#performance-events">Performance Events</a></li>
+        <li><a href="#memory-events">Memory Events</a></li>
+        <li><a href="#pool-events">Pool Events</a></li>
+        <li><a href="#lod-events">LOD Events</a></li>
+        <li><a href="#device-events">Device Events</a></li>
+      </ul>
+    </li>
+    <li><a href="#mobile-performance-targets">Mobile Performance Targets</a>
+      <ul>
+        <li><a href="#frame-rate-targets">Frame Rate Targets</a></li>
+        <li><a href="#device-categorization">Device Categorization</a></li>
+      </ul>
+    </li>
+    <li><a href="#rendering-optimization">Rendering Optimization</a>
+      <ul>
+        <li><a href="#level-of-detail-lod">Level of Detail (LOD)</a></li>
+        <li><a href="#occlusion-culling">Occlusion Culling</a></li>
+        <li><a href="#dynamic-resolution">Dynamic Resolution</a></li>
+        <li><a href="#texture-optimization">Texture Optimization</a></li>
+      </ul>
+    </li>
+    <li><a href="#cpu-optimization">CPU Optimization</a>
+      <ul>
+        <li><a href="#object-pooling">Object Pooling</a></li>
+        <li><a href="#tick-optimization">Tick Optimization</a></li>
+      </ul>
+    </li>
+    <li><a href="#memory-optimization">Memory Optimization</a>
+      <ul>
+        <li><a href="#memory-budget-tracking">Memory Budget Tracking</a></li>
+        <li><a href="#asset-streaming">Asset Streaming</a></li>
+      </ul>
+    </li>
+    <li><a href="#network-optimization">Network Optimization</a></li>
+    <li><a href="#mobile-specific-optimizations">Mobile-Specific Optimizations</a>
+      <ul>
+        <li><a href="#battery-optimization">Battery Optimization</a></li>
+        <li><a href="#touch-input-optimization">Touch Input Optimization</a></li>
+      </ul>
+    </li>
+    <li><a href="#profiling--debugging">Profiling &amp; Debugging</a>
+      <ul>
+        <li><a href="#built-in-profilers">Built-in Profilers</a></li>
+        <li><a href="#custom-performance-metrics">Custom Performance Metrics</a></li>
+      </ul>
+    </li>
+    <li><a href="#quality-settings">Quality Settings</a>
+      <ul>
+        <li><a href="#auto-detection">Auto-Detection</a></li>
+      </ul>
+    </li>
+    <li><a href="#todo-optimization-tasks">TODO: Optimization Tasks</a>
+      <ul>
+        <li><a href="#high-priority-">HIGH Priority 🔴</a></li>
+        <li><a href="#medium-priority-">MEDIUM Priority 🟡</a></li>
+        <li><a href="#low-priority-">LOW Priority 🟢</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+    </div>
+  </aside>
+  
+ 
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

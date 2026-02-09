@@ -1,0 +1,17 @@
+/* You can override SCSS variables here. */
+
+/* Layout */
+$container-max-width: 95vw;
+/* Make the container almost full screen width */
+$body-min-width: 20rem;
+$padding-16: 1rem;
+$padding-8: 0.5rem;
+$menu-width: 18rem;
+/* Slightly wider sidebar */
+$toc-width: 16rem;
+/* Slightly wider TOC */
+
+
+/* Fonts */
+$font-stack: "Inter", "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+$font-stack-code: Menlo, Monaco, Consolas, "Courier New", monospace;

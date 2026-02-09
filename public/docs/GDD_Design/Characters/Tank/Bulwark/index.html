@@ -1,0 +1,2574 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=52224&amp;path=livereload" data-no-instant defer></script>
+  <!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="BULWARK - Hans Richter#← Back to Tank Class | All Operators
+Operator Profile#“Behind me. Nothing gets through.”
+Basic Information#Attribute Value Real Name Hans Friedrich Richter Codename BULWARK Class Tank Nationality German Age 41 Height 195 cm (6&#39;5&#34;) Weight 110 kg (243 lbs) Background#Hans Richter was the immovable object of GSG 9, Germany’s elite counter-terrorism unit. His ability to hold positions under overwhelming fire became legendary after a 2019 embassy siege where he protected 30 hostages for 8 hours with only a riot shield and his determination.
+">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:52224/docs/GDD_Design/Characters/Tank/Bulwark/">
+  <meta property="og:site_name" content="Extraction Shooter GDD">
+  <meta property="og:title" content="Extraction Shooter GDD">
+  <meta property="og:description" content="BULWARK - Hans Richter#← Back to Tank Class | All Operators
+Operator Profile#“Behind me. Nothing gets through.”
+Basic Information#Attribute Value Real Name Hans Friedrich Richter Codename BULWARK Class Tank Nationality German Age 41 Height 195 cm (6&#39;5&#34;) Weight 110 kg (243 lbs) Background#Hans Richter was the immovable object of GSG 9, Germany’s elite counter-terrorism unit. His ability to hold positions under overwhelming fire became legendary after a 2019 embassy siege where he protected 30 hostages for 8 hours with only a riot shield and his determination.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
+
+
+  <meta itemprop="name" content="Extraction Shooter GDD">
+  <meta itemprop="description" content="BULWARK - Hans Richter#← Back to Tank Class | All Operators
+Operator Profile#“Behind me. Nothing gets through.”
+Basic Information#Attribute Value Real Name Hans Friedrich Richter Codename BULWARK Class Tank Nationality German Age 41 Height 195 cm (6&#39;5&#34;) Weight 110 kg (243 lbs) Background#Hans Richter was the immovable object of GSG 9, Germany’s elite counter-terrorism unit. His ability to hold positions under overwhelming fire became legendary after a 2019 embassy siege where he protected 30 hostages for 8 hours with only a riot shield and his determination.">
+  <meta itemprop="wordCount" content="482">
+
+<title>Bulwark | Extraction Shooter GDD</title>
+<link rel="icon" href="/favicon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="http://localhost:52224/docs/GDD_Design/Characters/Tank/Bulwark/">
+<link rel="stylesheet" href="/book.min.63c8b2b12bbd1ad36428837740ea371dd41fdb9c22b35499003d0dfa4dbce6ba.css" integrity="sha256-Y8iysSu9GtNkKIN3QOo3HdQf25wis1SZAD0N&#43;k285ro=" crossorigin="anonymous">
+
+
+  <script defer src="/fuse.min.js"></script>
+  <script defer src="/en.search.min.58bea27d7a08265548c5a8636a9a9fc844e0eb9d60fc3bb2c53d517da858d4c1.js" integrity="sha256-WL6ifXoIJlVIxahjapqfyETg651g/DuyxT1RfahY1ME=" crossorigin="anonymous"></script>
+
+  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
+
+
+
+  
+</head>
+<body dir="ltr" class="book-kind-page book-type-docs">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    
+<aside class="book-menu">
+  <div class="book-menu-content">
+    
+  <nav>
+    <h2 class="book-brand">
+  <a class="flex align-center" href="/"><img src="/logo.svg" alt="Logo" /><span>Extraction Shooter GDD</span>
+  </a>
+</h2>
+
+    <div class="book-theme-toggle">
+    <input type="checkbox" id="theme-toggle" class="toggle">
+    <label for="theme-toggle" class="flex justify-between items-center cursor-pointer">
+        <span class="text-xs font-semibold">Dark Mode</span>
+        <div
+            class="relative w-10 h-5 bg-gray-200 rounded-full transition-colors duration-200 ease-in-out dark:bg-gray-700">
+            <div
+                class="absolute left-0 w-5 h-5 bg-white rounded-full shadow transform transition-transform duration-200 ease-in-out dark:translate-x-full">
+            </div>
+        </div>
+    </label>
+</div>
+
+<script>
+    (function () {
+        const toggle = document.getElementById('theme-toggle');
+        const html = document.documentElement;
+
+        
+        const savedTheme = localStorage.getItem('theme');
+        const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+        if (savedTheme === 'dark' || (!savedTheme && systemDark)) {
+            html.classList.add('dark');
+            toggle.checked = true;
+        } else {
+            html.classList.remove('dark');
+            toggle.checked = false;
+        }
+
+        
+        toggle.addEventListener('change', function () {
+            if (this.checked) {
+                html.classList.add('dark');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                html.classList.remove('dark');
+                localStorage.setItem('theme', 'light');
+            }
+        });
+    })();
+</script>
+
+<style>
+     
+    .book-theme-toggle {
+        margin: 1rem 0;
+        padding: 0 1rem;
+
+    }
+
+    .book-theme-toggle label {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        cursor: pointer;
+        font-size: 0.85em;
+    }
+
+     
+    .book-theme-toggle input {
+        display: none;
+    }
+
+     
+    .book-theme-toggle label::after {
+        content: "🌙";
+         
+    }
+
+     
+    html:not(.dark) .book-theme-toggle label::after {
+        content: "☀️";
+         
+    }
+</style> 
+    
+<div class="book-search hidden">
+  <input id="book-search-input" type="text" 
+    placeholder="Search"
+    aria-label="Search"
+    maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+    
+
+    
+    
+
+
+
+    
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/" class="">
+      Gdd Design</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      AI</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/AI/EnemyBehavior/" class="">
+      Enemy Behavior</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/AI/FactionBehaviors/" class="">
+      Faction Behaviors</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Audio</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Audio/SoundDesign/" class="">
+      Sound Design</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Audio/Soundscape/" class="">
+      Soundscape</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Audio/TacticalAudio/" class="">
+      Tactical Audio</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Audio/VoiceLines/" class="">
+      Voice Lines</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Characters</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Operators/" class="">
+      Operators</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Assault</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Assault/Blaze/" class="">
+      Blaze</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Assault/Havoc/" class="">
+      Havoc</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Assault/README/" class="">
+      Readme</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Assault/Viper/" class="">
+      Viper</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Recon</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Recon/Phantom/" class="">
+      Phantom</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Recon/README/" class="">
+      Readme</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Recon/Specter/" class="">
+      Specter</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Recon/Wraith/" class="">
+      Wraith</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Specialist</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Specialist/Cipher/" class="">
+      Cipher</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Specialist/Flux/" class="">
+      Flux</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Specialist/README/" class="">
+      Readme</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Support</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Support/Angel/" class="">
+      Angel</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Support/Doc/" class="">
+      Doc</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Support/README/" class="">
+      Readme</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Tank</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Tank/Bulwark/" class="active">
+      Bulwark</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Tank/Fortress/" class="">
+      Fortress</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Tank/README/" class="">
+      Readme</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Combat</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Combat/Items/" class="">
+      Items</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Combat/Weapons/" class="">
+      Weapons</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      GameDesign</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Accessibility/" class="">
+      Accessibility</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Controls/" class="">
+      Controls</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/CoreGameplay/" class="">
+      Core Gameplay</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Economy/" class="">
+      Economy</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/GameModes/" class="">
+      Game Modes</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/LiveOps/" class="">
+      Live Ops</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Localization/" class="">
+      Localization</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/NavigationAndMap/" class="">
+      Navigation and Map</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Overview/" class="">
+      Overview</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Progression/" class="">
+      Progression</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/RankedMode/" class="">
+      Ranked Mode</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/TutorialRaid/" class="">
+      Tutorial Raid</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/UserSettings/" class="">
+      User Settings</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Gameplay</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Gameplay/CoreLoop/" class="">
+      Core Loop</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      ProjectScope</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/ProjectScope/DesignPillars/" class="">
+      Design Pillars</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/ProjectScope/MVP/" class="">
+      Mvp</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/ProjectScope/NonGoals/" class="">
+      Non Goals</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/ProjectScope/Risks/" class="">
+      Risks</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Social</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Social/Multiplayer/" class="">
+      Multiplayer</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Story</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Story/Backstory/" class="">
+      Backstory</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Story/Factions/" class="">
+      Factions</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Story/Narrative/" class="">
+      Narrative</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Story/QuestLines/" class="">
+      Quest Lines</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      UI UX</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/UI_UX/UX_Flows/" class="">
+      Ux Flows</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/UI_UX/Visual_Style/" class="">
+      Visual Style</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Visuals</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Visuals/ArtDirection/" class="">
+      Art Direction</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Visuals/AssetGuidelines/" class="">
+      Asset Guidelines</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Visuals/StyleGuide/" class="">
+      Style Guide</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Visuals/UserInterface/" class="">
+      User Interface</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      World</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/EnvironmentalNarrative/" class="">
+      Environmental Narrative</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/EnvironmentalNarrative_Guidelines/" class="">
+      Environmental Narrative Guidelines</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/LootDistribution/" class="">
+      Loot Distribution</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/MapDesign/" class="">
+      Map Design</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/MapDesign_IndustrialZone/" class="">
+      Map Design Industrial Zone</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/MapDesign_NeonSlums/" class="">
+      Map Design Neon Slums</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/MapDesign_Wilderness/" class="">
+      Map Design Wilderness</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/MapLayouts/" class="">
+      Map Layouts</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/" class="">
+      Gdd Technical</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      AI</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/AI/SensorySystem/" class="">
+      Sensory System</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Core</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Core/Architecture/" class="">
+      Architecture</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Core/CodingStandards/" class="">
+      Coding Standards</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Core/DevelopmentRoadmap/" class="">
+      Development Roadmap</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Core/NetworkingSystem/" class="">
+      Networking System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Core/SecuritySystem/" class="">
+      Security System</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Gameplay</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Gameplay/CharacterSystem/" class="">
+      Character System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Gameplay/ControlSystem/" class="">
+      Control System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Gameplay/InventorySystem/" class="">
+      Inventory System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Gameplay/WeaponSystem/" class="">
+      Weapon System</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Networking</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Networking/LagCompensation/" class="">
+      Lag Compensation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Networking/ReplicationStrategy/" class="">
+      Replication Strategy</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Performance</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Performance/Budgets/" class="">
+      Budgets</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Performance/Optimization/" class="">
+      Optimization</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Security</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Security/AntiCheatStrategy/" class="">
+      Anti Cheat Strategy</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Systems</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/AccessibilitySystem/" class="">
+      Accessibility System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/AISystem/" class="">
+      Aisystem</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/AnalyticsSystem/" class="">
+      Analytics System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/AudioSystem/" class="">
+      Audio System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/BuildPipeline/" class="">
+      Build Pipeline</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/LiveOpsSystem/" class="">
+      Live Ops System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/LocalizationSystem/" class="">
+      Localization System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/MapSystem/" class="">
+      Map System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/NarrativeSystem/" class="">
+      Narrative System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/ProgressionSystem/" class="">
+      Progression System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/RankedSystem/" class="">
+      Ranked System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/SaveSystem/" class="">
+      Save System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/SocialSystem/" class="">
+      Social System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/TutorialSystem/" class="">
+      Tutorial System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/UISystem/" class="">
+      Uisystem</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+</nav>
+
+
+
+
+<script>{ { . | safeJS } }</script>
+
+
+  </div>
+</aside>
+ 
+
+    <div class="book-page">
+      <header class="book-header hidden">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/icons/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <h3>Bulwark</h3>
+
+  <label for="toc-control">
+    
+    <img src="/icons/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#operator-profile">Operator Profile</a>
+      <ul>
+        <li><a href="#basic-information">Basic Information</a></li>
+        <li><a href="#background">Background</a></li>
+        <li><a href="#personality-traits">Personality Traits</a></li>
+      </ul>
+    </li>
+    <li><a href="#combat-statistics">Combat Statistics</a>
+      <ul>
+        <li><a href="#base-stats">Base Stats</a></li>
+      </ul>
+    </li>
+    <li><a href="#abilities">Abilities</a>
+      <ul>
+        <li><a href="#active-ability-riot-shield-deploy">Active Ability: Riot Shield Deploy</a></li>
+        <li><a href="#passive-ability-living-wall">Passive Ability: Living Wall</a></li>
+      </ul>
+    </li>
+    <li><a href="#loadout">Loadout</a>
+      <ul>
+        <li><a href="#default-loadout">Default Loadout</a></li>
+      </ul>
+    </li>
+    <li><a href="#voice-lines">Voice Lines</a>
+      <ul>
+        <li><a href="#combat">Combat</a></li>
+        <li><a href="#personality">Personality</a></li>
+      </ul>
+    </li>
+    <li><a href="#lore-connections">Lore Connections</a></li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><h1 id="bulwark---hans-richter">BULWARK - Hans Richter<a class="anchor" href="#bulwark---hans-richter">#</a></h1>
+<p><strong><a href="./README.md">← Back to Tank Class</a></strong> | <strong><a href="../Operators.md">All Operators</a></strong></p>
+<hr>
+<h2 id="operator-profile">Operator Profile<a class="anchor" href="#operator-profile">#</a></h2>
+<blockquote class='book-hint '>
+<p><em>&ldquo;Behind me. Nothing gets through.&rdquo;</em></p>
+</blockquote><h3 id="basic-information">Basic Information<a class="anchor" href="#basic-information">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Attribute</th>
+          <th style="text-align: left">Value</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><strong>Real Name</strong></td>
+          <td style="text-align: left">Hans Friedrich Richter</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Codename</strong></td>
+          <td style="text-align: left">BULWARK</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Class</strong></td>
+          <td style="text-align: left">Tank</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Nationality</strong></td>
+          <td style="text-align: left">German</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Age</strong></td>
+          <td style="text-align: left">41</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Height</strong></td>
+          <td style="text-align: left">195 cm (6'5&quot;)</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Weight</strong></td>
+          <td style="text-align: left">110 kg (243 lbs)</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="background">Background<a class="anchor" href="#background">#</a></h3>
+<p>Hans Richter was the immovable object of GSG 9, Germany&rsquo;s elite counter-terrorism unit. His ability to hold positions under overwhelming fire became legendary after a 2019 embassy siege where he protected 30 hostages for 8 hours with only a riot shield and his determination.</p>
+<p>After a political scandal forced budget cuts that disbanded his unit, Hans couldn&rsquo;t return to civilian life. The Exclusion Zone offers what he needs: a clear mission, enemies to stop, and people to protect.</p>
+<h3 id="personality-traits">Personality Traits<a class="anchor" href="#personality-traits">#</a></h3>
+<ul>
+<li><strong>Stoic</strong> - Rarely shows emotion</li>
+<li><strong>Protective</strong> - Lives for defending others</li>
+<li><strong>Stubborn</strong> - Will not retreat</li>
+<li><strong>Honorable</strong> - Respects worthy opponents</li>
+</ul>
+<hr>
+<h2 id="combat-statistics">Combat Statistics<a class="anchor" href="#combat-statistics">#</a></h2>
+<h3 id="base-stats">Base Stats<a class="anchor" href="#base-stats">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Stat</th>
+          <th style="text-align: left">Value</th>
+          <th style="text-align: left">Class Modifier</th>
+          <th style="text-align: left">Final</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><strong>Health</strong></td>
+          <td style="text-align: left">100 HP</td>
+          <td style="text-align: left">-</td>
+          <td style="text-align: left">100 HP</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Armor</strong></td>
+          <td style="text-align: left">75</td>
+          <td style="text-align: left">+25% cap</td>
+          <td style="text-align: left">75 (max 125)</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Sprint Speed</strong></td>
+          <td style="text-align: left">5.5 m/s</td>
+          <td style="text-align: left">-15%</td>
+          <td style="text-align: left">4.675 m/s</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Crouch Speed</strong></td>
+          <td style="text-align: left">2.0 m/s</td>
+          <td style="text-align: left">-</td>
+          <td style="text-align: left">2.0 m/s</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="abilities">Abilities<a class="anchor" href="#abilities">#</a></h2>
+<h3 id="active-ability-riot-shield-deploy">Active Ability: Riot Shield Deploy<a class="anchor" href="#active-ability-riot-shield-deploy">#</a></h3>
+<blockquote class='book-hint '>
+<p><em>&ldquo;Deploy an indestructible riot shield. Cannot fire while active.&rdquo;</em></p>
+</blockquote><table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Property</th>
+          <th style="text-align: left">Value</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><strong>Cooldown</strong></td>
+          <td style="text-align: left">80 seconds</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Duration</strong></td>
+          <td style="text-align: left">15 seconds</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Shield Coverage</strong></td>
+          <td style="text-align: left">180° frontal arc</td>
+      </tr>
+  </tbody>
+</table>
+<h4 id="effects">Effects<a class="anchor" href="#effects">#</a></h4>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Effect</th>
+          <th style="text-align: left">Value</th>
+          <th style="text-align: left">Notes</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Damage Block</td>
+          <td style="text-align: left">100% frontal</td>
+          <td style="text-align: left">Cannot be broken</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Movement Penalty</td>
+          <td style="text-align: left">-40%</td>
+          <td style="text-align: left">Very slow</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Weapon Use</td>
+          <td style="text-align: left">Secondary only</td>
+          <td style="text-align: left">While shield up</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Melee</td>
+          <td style="text-align: left">Yes</td>
+          <td style="text-align: left">Shield bash stuns</td>
+      </tr>
+  </tbody>
+</table>
+<h4 id="shield-bash">Shield Bash<a class="anchor" href="#shield-bash">#</a></h4>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Property</th>
+          <th style="text-align: left">Value</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Damage</td>
+          <td style="text-align: left">30</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Stun Duration</td>
+          <td style="text-align: left">1.5 seconds</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Range</td>
+          <td style="text-align: left">2 meters</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Cooldown</td>
+          <td style="text-align: left">5 seconds (during shield)</td>
+      </tr>
+  </tbody>
+</table>
+<h4 id="upgrade-slots">Upgrade Slots<a class="anchor" href="#upgrade-slots">#</a></h4>
+<p><strong>Slot 1 (Level 5):</strong></p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Option</th>
+          <th style="text-align: left">Effect</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><strong>Extended Guard</strong></td>
+          <td style="text-align: left">Duration +5 seconds (20s total)</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Quick Deploy</strong></td>
+          <td style="text-align: left">Cooldown -20 seconds (60s total)</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Mobile Wall</strong></td>
+          <td style="text-align: left">Movement penalty -15% (only -25%)</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Slot 2 (Level 20):</strong></p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Option</th>
+          <th style="text-align: left">Effect</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><strong>Shield Bash+</strong></td>
+          <td style="text-align: left">Bash damage +20, stun +0.5 sec</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Reflective Surface</strong></td>
+          <td style="text-align: left">10% damage reflected back to shooter</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Steadfast</strong></td>
+          <td style="text-align: left">Immune to stagger/knockback</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Slot 3 (Level 35):</strong></p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Option</th>
+          <th style="text-align: left">Effect</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><strong>Forward Unto Dawn</strong></td>
+          <td style="text-align: left">Gain 50 temp HP when deploying</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Team Aura</strong></td>
+          <td style="text-align: left">Allies behind shield gain +10% damage</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Explosive Resistance</strong></td>
+          <td style="text-align: left">Block 50% grenade damage</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h3 id="passive-ability-living-wall">Passive Ability: Living Wall<a class="anchor" href="#passive-ability-living-wall">#</a></h3>
+<blockquote class='book-hint '>
+<p><em>&ldquo;The bigger they are, the harder they stand.&rdquo;</em></p>
+</blockquote><table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Condition</th>
+          <th style="text-align: left">Effect</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Standing still</td>
+          <td style="text-align: left">+15% damage resistance</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">In cover</td>
+          <td style="text-align: left">+20% damage resistance</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Taking fire</td>
+          <td style="text-align: left">Generate Aggro (enemies more likely to target you)</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="loadout">Loadout<a class="anchor" href="#loadout">#</a></h2>
+<h3 id="default-loadout">Default Loadout<a class="anchor" href="#default-loadout">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Slot</th>
+          <th style="text-align: left">Item</th>
+          <th style="text-align: left">Notes</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><strong>Primary</strong></td>
+          <td style="text-align: left">SPAS-12 Shotgun</td>
+          <td style="text-align: left">CQB power</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Secondary</strong></td>
+          <td style="text-align: left">.44 Magnum</td>
+          <td style="text-align: left">High damage</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Tactical</strong></td>
+          <td style="text-align: left">Flashbang ×1, Extra Armor Plate</td>
+          <td style="text-align: left">Entry + durability</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Armor</strong></td>
+          <td style="text-align: left">Heavy Vest</td>
+          <td style="text-align: left">75 armor</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="voice-lines">Voice Lines<a class="anchor" href="#voice-lines">#</a></h2>
+<h3 id="combat">Combat<a class="anchor" href="#combat">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Trigger</th>
+          <th style="text-align: left">Line</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Ability Activation</td>
+          <td style="text-align: left">&ldquo;Shield up! I&rsquo;ll cover you!&rdquo;</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Shield Bash</td>
+          <td style="text-align: left">&ldquo;Back!&rdquo;</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Taking Heavy Fire</td>
+          <td style="text-align: left">&ldquo;I can take it. Keep moving!&rdquo;</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Shield Down</td>
+          <td style="text-align: left">&ldquo;Shield dropping. Need a moment.&rdquo;</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="personality">Personality<a class="anchor" href="#personality">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Trigger</th>
+          <th style="text-align: left">Line</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Match Start</td>
+          <td style="text-align: left">&ldquo;I go first. Stay behind me.&rdquo;</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Extraction Success</td>
+          <td style="text-align: left">&ldquo;Mission complete. All secure.&rdquo;</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="lore-connections">Lore Connections<a class="anchor" href="#lore-connections">#</a></h2>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Character</th>
+          <th style="text-align: left">Relationship</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><strong>VIPER</strong></td>
+          <td style="text-align: left">Rival philosophies, mutual respect</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>DOC</strong></td>
+          <td style="text-align: left">Old friends, saved each other&rsquo;s lives</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>HAVOC</strong></td>
+          <td style="text-align: left">Professional animosity, too reckless</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<p><strong><a href="./README.md">← Back to Tank Class</a></strong> | <strong><a href="../Operators.md">All Operators</a></strong></p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+<div>
+
+</div>
+
+<div>
+
+</div>
+
+</div>
+
+
+
+
+
+  
+  
+  
+  <div class="flex flex-wrap justify-between">
+    <span>
+    
+      <a href="/docs/GDD_Design/Characters/Support/README/" class="flex align-center">
+        <img src="/icons/backward.svg" class="book-icon" alt="Backward" />
+        <span>Readme</span>
+      </a>
+    
+    </span>
+    <span>
+    
+      <a href="/docs/GDD_Design/Characters/Tank/Fortress/" class="flex align-center">
+        <span>Fortress</span>
+        <img src="/icons/forward.svg" class="book-icon" alt="Forward" />
+      </a>
+    
+    </span>
+  </div>
+  
+
+
+ 
+        
+  
+ 
+        
+        
+  
+ 
+        
+  
+  
+    <script>(function(){document.querySelectorAll("pre:has(code)").forEach(e=>{e.addEventListener("click",e.focus),e.addEventListener("copy",function(t){if(t.preventDefault(),navigator.clipboard){const t=window.getSelection().toString()||e.textContent;navigator.clipboard.writeText(t)}})})})()</script>
+  
+
+      </footer>
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+  
+  <aside class="book-toc">
+    <div class="book-toc-content">
+      
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#operator-profile">Operator Profile</a>
+      <ul>
+        <li><a href="#basic-information">Basic Information</a></li>
+        <li><a href="#background">Background</a></li>
+        <li><a href="#personality-traits">Personality Traits</a></li>
+      </ul>
+    </li>
+    <li><a href="#combat-statistics">Combat Statistics</a>
+      <ul>
+        <li><a href="#base-stats">Base Stats</a></li>
+      </ul>
+    </li>
+    <li><a href="#abilities">Abilities</a>
+      <ul>
+        <li><a href="#active-ability-riot-shield-deploy">Active Ability: Riot Shield Deploy</a></li>
+        <li><a href="#passive-ability-living-wall">Passive Ability: Living Wall</a></li>
+      </ul>
+    </li>
+    <li><a href="#loadout">Loadout</a>
+      <ul>
+        <li><a href="#default-loadout">Default Loadout</a></li>
+      </ul>
+    </li>
+    <li><a href="#voice-lines">Voice Lines</a>
+      <ul>
+        <li><a href="#combat">Combat</a></li>
+        <li><a href="#personality">Personality</a></li>
+      </ul>
+    </li>
+    <li><a href="#lore-connections">Lore Connections</a></li>
+  </ul>
+</nav>
+
+
+
+    </div>
+  </aside>
+  
+ 
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

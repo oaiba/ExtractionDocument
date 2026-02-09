@@ -1,0 +1,3586 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=52224&amp;path=livereload" data-no-instant defer></script>
+  <!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Economy &amp; Monetization Design#← Previous: Progression | Index | Next: Live Ops →
+Overview#This document defines the monetization strategy, currency design, pricing structure, and anti-fraud measures for the game’s economy. Focused on ethical monetization that respects player time and investment.
+Related Documents:
+Items &amp; In-Game Economy - Item values, marketplace, trading Progression - XP, leveling, Battle Pass Live Ops - Events, seasonal content Philosophy#Core Principles#Principle Description Implementation No Pay-to-Win Real money cannot buy gameplay advantages Paid items are cosmetic only Respect Player Time Free players can progress meaningfully All content earnable eventually Transparent Value Players always know what they’re buying No loot boxes with hidden odds Fair Pricing Prices match regional purchasing power Regional pricing adjustments Player Investment Spending feels rewarding, not required Cosmetics enhance experience Monetization Goals#Sustainable Revenue - Long-term player spending over whale hunting Player Satisfaction - Happy players spend more over time Competitive Integrity - Gear parity between free and paying players Community Trust - Transparent practices build loyalty Currency System#Currency Types#Currency Type Acquisition Primary Use Credits Soft Gameplay earned Weapons, gear, repairs Tokens Premium Purchased Cosmetics, Battle Pass, convenience Reputation Progression Faction quests Faction rewards, unlocks Credits (Soft Currency)#Primary in-game currency for gameplay progression
+">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:52224/docs/GDD_Design/GameDesign/Economy/">
+  <meta property="og:site_name" content="Extraction Shooter GDD">
+  <meta property="og:title" content="Extraction Shooter GDD">
+  <meta property="og:description" content="Economy &amp; Monetization Design#← Previous: Progression | Index | Next: Live Ops →
+Overview#This document defines the monetization strategy, currency design, pricing structure, and anti-fraud measures for the game’s economy. Focused on ethical monetization that respects player time and investment.
+Related Documents:
+Items &amp; In-Game Economy - Item values, marketplace, trading Progression - XP, leveling, Battle Pass Live Ops - Events, seasonal content Philosophy#Core Principles#Principle Description Implementation No Pay-to-Win Real money cannot buy gameplay advantages Paid items are cosmetic only Respect Player Time Free players can progress meaningfully All content earnable eventually Transparent Value Players always know what they’re buying No loot boxes with hidden odds Fair Pricing Prices match regional purchasing power Regional pricing adjustments Player Investment Spending feels rewarding, not required Cosmetics enhance experience Monetization Goals#Sustainable Revenue - Long-term player spending over whale hunting Player Satisfaction - Happy players spend more over time Competitive Integrity - Gear parity between free and paying players Community Trust - Transparent practices build loyalty Currency System#Currency Types#Currency Type Acquisition Primary Use Credits Soft Gameplay earned Weapons, gear, repairs Tokens Premium Purchased Cosmetics, Battle Pass, convenience Reputation Progression Faction quests Faction rewards, unlocks Credits (Soft Currency)#Primary in-game currency for gameplay progression">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
+
+
+  <meta itemprop="name" content="Extraction Shooter GDD">
+  <meta itemprop="description" content="Economy &amp; Monetization Design#← Previous: Progression | Index | Next: Live Ops →
+Overview#This document defines the monetization strategy, currency design, pricing structure, and anti-fraud measures for the game’s economy. Focused on ethical monetization that respects player time and investment.
+Related Documents:
+Items &amp; In-Game Economy - Item values, marketplace, trading Progression - XP, leveling, Battle Pass Live Ops - Events, seasonal content Philosophy#Core Principles#Principle Description Implementation No Pay-to-Win Real money cannot buy gameplay advantages Paid items are cosmetic only Respect Player Time Free players can progress meaningfully All content earnable eventually Transparent Value Players always know what they’re buying No loot boxes with hidden odds Fair Pricing Prices match regional purchasing power Regional pricing adjustments Player Investment Spending feels rewarding, not required Cosmetics enhance experience Monetization Goals#Sustainable Revenue - Long-term player spending over whale hunting Player Satisfaction - Happy players spend more over time Competitive Integrity - Gear parity between free and paying players Community Trust - Transparent practices build loyalty Currency System#Currency Types#Currency Type Acquisition Primary Use Credits Soft Gameplay earned Weapons, gear, repairs Tokens Premium Purchased Cosmetics, Battle Pass, convenience Reputation Progression Faction quests Faction rewards, unlocks Credits (Soft Currency)#Primary in-game currency for gameplay progression">
+  <meta itemprop="wordCount" content="1793">
+
+<title>Economy | Extraction Shooter GDD</title>
+<link rel="icon" href="/favicon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="http://localhost:52224/docs/GDD_Design/GameDesign/Economy/">
+<link rel="stylesheet" href="/book.min.63c8b2b12bbd1ad36428837740ea371dd41fdb9c22b35499003d0dfa4dbce6ba.css" integrity="sha256-Y8iysSu9GtNkKIN3QOo3HdQf25wis1SZAD0N&#43;k285ro=" crossorigin="anonymous">
+
+
+  <script defer src="/fuse.min.js"></script>
+  <script defer src="/en.search.min.58bea27d7a08265548c5a8636a9a9fc844e0eb9d60fc3bb2c53d517da858d4c1.js" integrity="sha256-WL6ifXoIJlVIxahjapqfyETg651g/DuyxT1RfahY1ME=" crossorigin="anonymous"></script>
+
+  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
+
+
+
+  
+</head>
+<body dir="ltr" class="book-kind-page book-type-docs">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    
+<aside class="book-menu">
+  <div class="book-menu-content">
+    
+  <nav>
+    <h2 class="book-brand">
+  <a class="flex align-center" href="/"><img src="/logo.svg" alt="Logo" /><span>Extraction Shooter GDD</span>
+  </a>
+</h2>
+
+    <div class="book-theme-toggle">
+    <input type="checkbox" id="theme-toggle" class="toggle">
+    <label for="theme-toggle" class="flex justify-between items-center cursor-pointer">
+        <span class="text-xs font-semibold">Dark Mode</span>
+        <div
+            class="relative w-10 h-5 bg-gray-200 rounded-full transition-colors duration-200 ease-in-out dark:bg-gray-700">
+            <div
+                class="absolute left-0 w-5 h-5 bg-white rounded-full shadow transform transition-transform duration-200 ease-in-out dark:translate-x-full">
+            </div>
+        </div>
+    </label>
+</div>
+
+<script>
+    (function () {
+        const toggle = document.getElementById('theme-toggle');
+        const html = document.documentElement;
+
+        
+        const savedTheme = localStorage.getItem('theme');
+        const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+        if (savedTheme === 'dark' || (!savedTheme && systemDark)) {
+            html.classList.add('dark');
+            toggle.checked = true;
+        } else {
+            html.classList.remove('dark');
+            toggle.checked = false;
+        }
+
+        
+        toggle.addEventListener('change', function () {
+            if (this.checked) {
+                html.classList.add('dark');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                html.classList.remove('dark');
+                localStorage.setItem('theme', 'light');
+            }
+        });
+    })();
+</script>
+
+<style>
+     
+    .book-theme-toggle {
+        margin: 1rem 0;
+        padding: 0 1rem;
+
+    }
+
+    .book-theme-toggle label {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        cursor: pointer;
+        font-size: 0.85em;
+    }
+
+     
+    .book-theme-toggle input {
+        display: none;
+    }
+
+     
+    .book-theme-toggle label::after {
+        content: "🌙";
+         
+    }
+
+     
+    html:not(.dark) .book-theme-toggle label::after {
+        content: "☀️";
+         
+    }
+</style> 
+    
+<div class="book-search hidden">
+  <input id="book-search-input" type="text" 
+    placeholder="Search"
+    aria-label="Search"
+    maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+    
+
+    
+    
+
+
+
+    
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/" class="">
+      Gdd Design</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      AI</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/AI/EnemyBehavior/" class="">
+      Enemy Behavior</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/AI/FactionBehaviors/" class="">
+      Faction Behaviors</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Audio</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Audio/SoundDesign/" class="">
+      Sound Design</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Audio/Soundscape/" class="">
+      Soundscape</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Audio/TacticalAudio/" class="">
+      Tactical Audio</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Audio/VoiceLines/" class="">
+      Voice Lines</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Characters</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Operators/" class="">
+      Operators</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Assault</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Assault/Blaze/" class="">
+      Blaze</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Assault/Havoc/" class="">
+      Havoc</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Assault/README/" class="">
+      Readme</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Assault/Viper/" class="">
+      Viper</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Recon</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Recon/Phantom/" class="">
+      Phantom</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Recon/README/" class="">
+      Readme</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Recon/Specter/" class="">
+      Specter</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Recon/Wraith/" class="">
+      Wraith</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Specialist</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Specialist/Cipher/" class="">
+      Cipher</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Specialist/Flux/" class="">
+      Flux</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Specialist/README/" class="">
+      Readme</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Support</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Support/Angel/" class="">
+      Angel</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Support/Doc/" class="">
+      Doc</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Support/README/" class="">
+      Readme</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Tank</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Tank/Bulwark/" class="">
+      Bulwark</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Tank/Fortress/" class="">
+      Fortress</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Tank/README/" class="">
+      Readme</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Combat</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Combat/Items/" class="">
+      Items</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Combat/Weapons/" class="">
+      Weapons</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      GameDesign</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Accessibility/" class="">
+      Accessibility</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Controls/" class="">
+      Controls</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/CoreGameplay/" class="">
+      Core Gameplay</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Economy/" class="active">
+      Economy</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/GameModes/" class="">
+      Game Modes</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/LiveOps/" class="">
+      Live Ops</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Localization/" class="">
+      Localization</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/NavigationAndMap/" class="">
+      Navigation and Map</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Overview/" class="">
+      Overview</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Progression/" class="">
+      Progression</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/RankedMode/" class="">
+      Ranked Mode</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/TutorialRaid/" class="">
+      Tutorial Raid</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/UserSettings/" class="">
+      User Settings</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Gameplay</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Gameplay/CoreLoop/" class="">
+      Core Loop</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      ProjectScope</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/ProjectScope/DesignPillars/" class="">
+      Design Pillars</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/ProjectScope/MVP/" class="">
+      Mvp</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/ProjectScope/NonGoals/" class="">
+      Non Goals</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/ProjectScope/Risks/" class="">
+      Risks</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Social</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Social/Multiplayer/" class="">
+      Multiplayer</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Story</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Story/Backstory/" class="">
+      Backstory</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Story/Factions/" class="">
+      Factions</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Story/Narrative/" class="">
+      Narrative</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Story/QuestLines/" class="">
+      Quest Lines</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      UI UX</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/UI_UX/UX_Flows/" class="">
+      Ux Flows</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/UI_UX/Visual_Style/" class="">
+      Visual Style</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Visuals</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Visuals/ArtDirection/" class="">
+      Art Direction</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Visuals/AssetGuidelines/" class="">
+      Asset Guidelines</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Visuals/StyleGuide/" class="">
+      Style Guide</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Visuals/UserInterface/" class="">
+      User Interface</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      World</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/EnvironmentalNarrative/" class="">
+      Environmental Narrative</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/EnvironmentalNarrative_Guidelines/" class="">
+      Environmental Narrative Guidelines</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/LootDistribution/" class="">
+      Loot Distribution</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/MapDesign/" class="">
+      Map Design</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/MapDesign_IndustrialZone/" class="">
+      Map Design Industrial Zone</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/MapDesign_NeonSlums/" class="">
+      Map Design Neon Slums</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/MapDesign_Wilderness/" class="">
+      Map Design Wilderness</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/MapLayouts/" class="">
+      Map Layouts</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/" class="">
+      Gdd Technical</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      AI</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/AI/SensorySystem/" class="">
+      Sensory System</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Core</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Core/Architecture/" class="">
+      Architecture</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Core/CodingStandards/" class="">
+      Coding Standards</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Core/DevelopmentRoadmap/" class="">
+      Development Roadmap</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Core/NetworkingSystem/" class="">
+      Networking System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Core/SecuritySystem/" class="">
+      Security System</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Gameplay</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Gameplay/CharacterSystem/" class="">
+      Character System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Gameplay/ControlSystem/" class="">
+      Control System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Gameplay/InventorySystem/" class="">
+      Inventory System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Gameplay/WeaponSystem/" class="">
+      Weapon System</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Networking</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Networking/LagCompensation/" class="">
+      Lag Compensation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Networking/ReplicationStrategy/" class="">
+      Replication Strategy</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Performance</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Performance/Budgets/" class="">
+      Budgets</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Performance/Optimization/" class="">
+      Optimization</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Security</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Security/AntiCheatStrategy/" class="">
+      Anti Cheat Strategy</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Systems</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/AccessibilitySystem/" class="">
+      Accessibility System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/AISystem/" class="">
+      Aisystem</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/AnalyticsSystem/" class="">
+      Analytics System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/AudioSystem/" class="">
+      Audio System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/BuildPipeline/" class="">
+      Build Pipeline</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/LiveOpsSystem/" class="">
+      Live Ops System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/LocalizationSystem/" class="">
+      Localization System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/MapSystem/" class="">
+      Map System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/NarrativeSystem/" class="">
+      Narrative System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/ProgressionSystem/" class="">
+      Progression System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/RankedSystem/" class="">
+      Ranked System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/SaveSystem/" class="">
+      Save System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/SocialSystem/" class="">
+      Social System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/TutorialSystem/" class="">
+      Tutorial System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/UISystem/" class="">
+      Uisystem</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+</nav>
+
+
+
+
+<script>{ { . | safeJS } }</script>
+
+
+  </div>
+</aside>
+ 
+
+    <div class="book-page">
+      <header class="book-header hidden">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/icons/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <h3>Economy</h3>
+
+  <label for="toc-control">
+    
+    <img src="/icons/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#overview">Overview</a></li>
+    <li><a href="#philosophy">Philosophy</a>
+      <ul>
+        <li><a href="#core-principles">Core Principles</a></li>
+        <li><a href="#monetization-goals">Monetization Goals</a></li>
+      </ul>
+    </li>
+    <li><a href="#currency-system">Currency System</a>
+      <ul>
+        <li><a href="#currency-types">Currency Types</a></li>
+        <li><a href="#credits-soft-currency">Credits (Soft Currency)</a></li>
+        <li><a href="#tokens-premium-currency">Tokens (Premium Currency)</a></li>
+        <li><a href="#reputation-faction-currency">Reputation (Faction Currency)</a></li>
+      </ul>
+    </li>
+    <li><a href="#monetization-structure">Monetization Structure</a>
+      <ul>
+        <li><a href="#battle-pass">Battle Pass</a></li>
+        <li><a href="#direct-purchase-store">Direct Purchase Store</a></li>
+        <li><a href="#convenience-items">Convenience Items</a></li>
+      </ul>
+    </li>
+    <li><a href="#pricing-philosophy">Pricing Philosophy</a>
+      <ul>
+        <li><a href="#price-anchoring">Price Anchoring</a></li>
+        <li><a href="#psychological-fairness">Psychological Fairness</a></li>
+      </ul>
+    </li>
+    <li><a href="#marketplace-economy">Marketplace Economy</a>
+      <ul>
+        <li><a href="#marketplace-overview">Marketplace Overview</a></li>
+        <li><a href="#price-controls">Price Controls</a></li>
+      </ul>
+    </li>
+    <li><a href="#anti-fraud-systems">Anti-Fraud Systems</a>
+      <ul>
+        <li><a href="#payment-fraud-prevention">Payment Fraud Prevention</a></li>
+        <li><a href="#account-security">Account Security</a></li>
+        <li><a href="#rmt-real-money-trading-prevention">RMT (Real Money Trading) Prevention</a></li>
+        <li><a href="#botautomation-prevention">Bot/Automation Prevention</a></li>
+      </ul>
+    </li>
+    <li><a href="#spending-protections">Spending Protections</a>
+      <ul>
+        <li><a href="#spending-limits">Spending Limits</a></li>
+        <li><a href="#parental-controls">Parental Controls</a></li>
+        <li><a href="#refund-policy">Refund Policy</a></li>
+      </ul>
+    </li>
+    <li><a href="#economic-health-metrics">Economic Health Metrics</a>
+      <ul>
+        <li><a href="#key-performance-indicators">Key Performance Indicators</a></li>
+        <li><a href="#economy-health">Economy Health</a></li>
+        <li><a href="#intervention-triggers">Intervention Triggers</a></li>
+      </ul>
+    </li>
+    <li><a href="#ethical-monetization-guidelines">Ethical Monetization Guidelines</a>
+      <ul>
+        <li><a href="#what-we-promise-players">What We Promise Players</a></li>
+        <li><a href="#design-rules-for-monetization-team">Design Rules for Monetization Team</a></li>
+        <li><a href="#legal-compliance">Legal Compliance</a></li>
+      </ul>
+    </li>
+    <li><a href="#revenue-projections">Revenue Projections</a>
+      <ul>
+        <li><a href="#revenue-mix-target">Revenue Mix (Target)</a></li>
+        <li><a href="#player-spending-tiers">Player Spending Tiers</a></li>
+      </ul>
+    </li>
+    <li><a href="#implementation-timeline">Implementation Timeline</a>
+      <ul>
+        <li><a href="#launch-v10">Launch (v1.0)</a></li>
+        <li><a href="#post-launch-v11-13">Post-Launch (v1.1-1.3)</a></li>
+        <li><a href="#future-updates">Future Updates</a></li>
+      </ul>
+    </li>
+    <li><a href="#summary">Summary</a></li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><h1 id="economy--monetization-design">Economy &amp; Monetization Design<a class="anchor" href="#economy--monetization-design">#</a></h1>
+<p><strong><a href="./Progression.md">← Previous: Progression</a></strong> | <strong><a href="../README.md">Index</a></strong> | <strong><a href="./LiveOps.md">Next: Live Ops →</a></strong></p>
+<hr>
+<h2 id="overview">Overview<a class="anchor" href="#overview">#</a></h2>
+<p>This document defines the <strong>monetization strategy, currency design, pricing structure, and anti-fraud measures</strong> for the game&rsquo;s economy. Focused on ethical monetization that respects player time and investment.</p>
+<p><strong>Related Documents:</strong></p>
+<ul>
+<li><a href="../Combat/Items.md">Items &amp; In-Game Economy</a> - Item values, marketplace, trading</li>
+<li><a href="./Progression.md">Progression</a> - XP, leveling, Battle Pass</li>
+<li><a href="./LiveOps.md">Live Ops</a> - Events, seasonal content</li>
+</ul>
+<hr>
+<h2 id="philosophy">Philosophy<a class="anchor" href="#philosophy">#</a></h2>
+<h3 id="core-principles">Core Principles<a class="anchor" href="#core-principles">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Principle</th>
+          <th style="text-align: left">Description</th>
+          <th style="text-align: left">Implementation</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><strong>No Pay-to-Win</strong></td>
+          <td style="text-align: left">Real money cannot buy gameplay advantages</td>
+          <td style="text-align: left">Paid items are cosmetic only</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Respect Player Time</strong></td>
+          <td style="text-align: left">Free players can progress meaningfully</td>
+          <td style="text-align: left">All content earnable eventually</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Transparent Value</strong></td>
+          <td style="text-align: left">Players always know what they&rsquo;re buying</td>
+          <td style="text-align: left">No loot boxes with hidden odds</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Fair Pricing</strong></td>
+          <td style="text-align: left">Prices match regional purchasing power</td>
+          <td style="text-align: left">Regional pricing adjustments</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Player Investment</strong></td>
+          <td style="text-align: left">Spending feels rewarding, not required</td>
+          <td style="text-align: left">Cosmetics enhance experience</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="monetization-goals">Monetization Goals<a class="anchor" href="#monetization-goals">#</a></h3>
+<ol>
+<li><strong>Sustainable Revenue</strong> - Long-term player spending over whale hunting</li>
+<li><strong>Player Satisfaction</strong> - Happy players spend more over time</li>
+<li><strong>Competitive Integrity</strong> - Gear parity between free and paying players</li>
+<li><strong>Community Trust</strong> - Transparent practices build loyalty</li>
+</ol>
+<hr>
+<h2 id="currency-system">Currency System<a class="anchor" href="#currency-system">#</a></h2>
+<h3 id="currency-types">Currency Types<a class="anchor" href="#currency-types">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Currency</th>
+          <th style="text-align: left">Type</th>
+          <th style="text-align: left">Acquisition</th>
+          <th style="text-align: left">Primary Use</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><strong>Credits</strong></td>
+          <td style="text-align: left">Soft</td>
+          <td style="text-align: left">Gameplay earned</td>
+          <td style="text-align: left">Weapons, gear, repairs</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Tokens</strong></td>
+          <td style="text-align: left">Premium</td>
+          <td style="text-align: left">Purchased</td>
+          <td style="text-align: left">Cosmetics, Battle Pass, convenience</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Reputation</strong></td>
+          <td style="text-align: left">Progression</td>
+          <td style="text-align: left">Faction quests</td>
+          <td style="text-align: left">Faction rewards, unlocks</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h3 id="credits-soft-currency">Credits (Soft Currency)<a class="anchor" href="#credits-soft-currency">#</a></h3>
+<p><strong>Primary in-game currency for gameplay progression</strong></p>
+<p><strong>Earning Methods:</strong></p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Source</th>
+          <th style="text-align: left">Amount</th>
+          <th style="text-align: left">Frequency</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Successful extraction</td>
+          <td style="text-align: left">$500-3,000</td>
+          <td style="text-align: left">Per match</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Selling loot</td>
+          <td style="text-align: left">Varies</td>
+          <td style="text-align: left">Per match</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Quest completion</td>
+          <td style="text-align: left">$1,000-10,000</td>
+          <td style="text-align: left">Per quest</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Daily login</td>
+          <td style="text-align: left">$500-5,000</td>
+          <td style="text-align: left">Day 1-7 cycle</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Level up</td>
+          <td style="text-align: left">$500-2,000</td>
+          <td style="text-align: left">Per level</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Achievement</td>
+          <td style="text-align: left">$1,000-25,000</td>
+          <td style="text-align: left">One-time</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Typical Player Balance:</strong></p>
+<ul>
+<li>New player: $10,000 (starting balance)</li>
+<li>Casual player: $30,000-80,000</li>
+<li>Active player: $100,000-300,000</li>
+<li>Veteran player: $300,000-1,000,000</li>
+</ul>
+<p><strong>Credit Sinks:</strong></p>
+<ul>
+<li>Weapon purchases: $500-25,000</li>
+<li>Armor purchases: $800-15,000</li>
+<li>Medical supplies: $50-2,500</li>
+<li>Stash expansion: $10,000-50,000</li>
+<li>Marketplace fees: 15% of transactions</li>
+<li>Repair costs (future): 10-30% of item value</li>
+</ul>
+<hr>
+<h3 id="tokens-premium-currency">Tokens (Premium Currency)<a class="anchor" href="#tokens-premium-currency">#</a></h3>
+<p><strong>Real-money currency for cosmetics and convenience</strong></p>
+<p><strong>Token Bundles:</strong></p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Bundle</th>
+          <th style="text-align: left">Tokens</th>
+          <th style="text-align: left">Price (USD)</th>
+          <th style="text-align: left">Bonus</th>
+          <th style="text-align: left">Value/Token</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Starter</td>
+          <td style="text-align: left">100</td>
+          <td style="text-align: left">$0.99</td>
+          <td style="text-align: left">0%</td>
+          <td style="text-align: left">$0.0099</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Small</td>
+          <td style="text-align: left">500</td>
+          <td style="text-align: left">$4.99</td>
+          <td style="text-align: left">0%</td>
+          <td style="text-align: left">$0.0100</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Medium</td>
+          <td style="text-align: left">1,100</td>
+          <td style="text-align: left">$9.99</td>
+          <td style="text-align: left">10%</td>
+          <td style="text-align: left">$0.0091</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Large</td>
+          <td style="text-align: left">2,400</td>
+          <td style="text-align: left">$19.99</td>
+          <td style="text-align: left">20%</td>
+          <td style="text-align: left">$0.0083</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Mega</td>
+          <td style="text-align: left">5,200</td>
+          <td style="text-align: left">$39.99</td>
+          <td style="text-align: left">30%</td>
+          <td style="text-align: left">$0.0077</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Ultimate</td>
+          <td style="text-align: left">11,000</td>
+          <td style="text-align: left">$79.99</td>
+          <td style="text-align: left">37.5%</td>
+          <td style="text-align: left">$0.0073</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Regional Pricing:</strong></p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Region</th>
+          <th style="text-align: left">Price Adjustment</th>
+          <th style="text-align: left">Example ($9.99 USD)</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">US/EU/Tier 1</td>
+          <td style="text-align: left">100%</td>
+          <td style="text-align: left">$9.99</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Brazil/SEA</td>
+          <td style="text-align: left">60-70%</td>
+          <td style="text-align: left">~$6.99</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">India/LATAM</td>
+          <td style="text-align: left">45-55%</td>
+          <td style="text-align: left">~$4.99</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Africa/Tier 3</td>
+          <td style="text-align: left">30-40%</td>
+          <td style="text-align: left">~$3.99</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Token Spending:</strong></p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Item</th>
+          <th style="text-align: left">Token Cost</th>
+          <th style="text-align: left">USD Equivalent</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Operator Skin (Common)</td>
+          <td style="text-align: left">200</td>
+          <td style="text-align: left">~$2</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Operator Skin (Rare)</td>
+          <td style="text-align: left">500</td>
+          <td style="text-align: left">~$5</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Operator Skin (Epic)</td>
+          <td style="text-align: left">1,000</td>
+          <td style="text-align: left">~$10</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Operator Skin (Legendary)</td>
+          <td style="text-align: left">2,000</td>
+          <td style="text-align: left">~$20</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Weapon Skin (Rare)</td>
+          <td style="text-align: left">300</td>
+          <td style="text-align: left">~$3</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Weapon Skin (Epic)</td>
+          <td style="text-align: left">700</td>
+          <td style="text-align: left">~$7</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Weapon Skin (Legendary)</td>
+          <td style="text-align: left">1,500</td>
+          <td style="text-align: left">~$15</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Emote</td>
+          <td style="text-align: left">200-500</td>
+          <td style="text-align: left">~$2-5</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Spray/Voice Line</td>
+          <td style="text-align: left">100-200</td>
+          <td style="text-align: left">~$1-2</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Battle Pass</td>
+          <td style="text-align: left">1,000</td>
+          <td style="text-align: left">~$10</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Battle Pass + 25 Tiers</td>
+          <td style="text-align: left">2,500</td>
+          <td style="text-align: left">~$25</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Cannot Buy With Tokens:</strong></p>
+<ul>
+<li>Weapons</li>
+<li>Armor</li>
+<li>Gameplay-affecting items</li>
+<li>Operators (unlock through gameplay)</li>
+<li>Experience points</li>
+<li>Rank rating</li>
+</ul>
+<hr>
+<h3 id="reputation-faction-currency">Reputation (Faction Currency)<a class="anchor" href="#reputation-faction-currency">#</a></h3>
+<p><strong>Earned through faction quests, cannot be purchased</strong></p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Faction</th>
+          <th style="text-align: left">Standing</th>
+          <th style="text-align: left">Rep Required</th>
+          <th style="text-align: left">Unlock Examples</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Salvage Corps</td>
+          <td style="text-align: left">Neutral</td>
+          <td style="text-align: left">0</td>
+          <td style="text-align: left">Basic quests</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Salvage Corps</td>
+          <td style="text-align: left">Friendly</td>
+          <td style="text-align: left">1,000</td>
+          <td style="text-align: left">Faction cosmetics</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Salvage Corps</td>
+          <td style="text-align: left">Honored</td>
+          <td style="text-align: left">5,000</td>
+          <td style="text-align: left">Unique weapons</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Salvage Corps</td>
+          <td style="text-align: left">Revered</td>
+          <td style="text-align: left">15,000</td>
+          <td style="text-align: left">Exclusive gear</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Salvage Corps</td>
+          <td style="text-align: left">Exalted</td>
+          <td style="text-align: left">50,000</td>
+          <td style="text-align: left">Legendary rewards</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Reputation cannot be purchased</strong> - Preserves prestige of faction rewards.</p>
+<hr>
+<h2 id="monetization-structure">Monetization Structure<a class="anchor" href="#monetization-structure">#</a></h2>
+<h3 id="battle-pass">Battle Pass<a class="anchor" href="#battle-pass">#</a></h3>
+<p><strong>The primary monetization driver - fair value for player investment</strong></p>
+<p><strong>Battle Pass Tiers:</strong></p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Track</th>
+          <th style="text-align: left">Price</th>
+          <th style="text-align: left">Tiers</th>
+          <th style="text-align: left">Rewards</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Free Track</td>
+          <td style="text-align: left">Free</td>
+          <td style="text-align: left">100</td>
+          <td style="text-align: left">Credits, basic cosmetics, XP</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Premium Track</td>
+          <td style="text-align: left">1,000 Tokens (~$10)</td>
+          <td style="text-align: left">100</td>
+          <td style="text-align: left">All above + exclusive cosmetics</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Premium + 25 Tiers</td>
+          <td style="text-align: left">2,500 Tokens (~$25)</td>
+          <td style="text-align: left">100 (start at 26)</td>
+          <td style="text-align: left">Accelerated progress</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Battle Pass Value:</strong></p>
+<ul>
+<li>Total Premium value: ~15,000 Tokens worth of content</li>
+<li>Player pays: 1,000 Tokens</li>
+<li>Value ratio: 15:1 (player gets 15x what they pay)</li>
+<li>Token earning: 300 Tokens included in Premium track</li>
+<li><strong>Net cost if continuing</strong>: 700 Tokens per season</li>
+</ul>
+<p><strong>Season Duration:</strong> 90 days (3 months)</p>
+<p><strong>Design Philosophy:</strong></p>
+<ul>
+<li>Completing free track shows value</li>
+<li>Premium feels like upgrade, not requirement</li>
+<li>Returns tokens to encourage re-purchase</li>
+<li>Progression feels achievable (1 hour/day = complete by season end)</li>
+</ul>
+<hr>
+<h3 id="direct-purchase-store">Direct Purchase Store<a class="anchor" href="#direct-purchase-store">#</a></h3>
+<p><strong>Rotating cosmetic shop with fair pricing</strong></p>
+<p><strong>Store Structure:</strong></p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Section</th>
+          <th style="text-align: left">Refresh</th>
+          <th style="text-align: left">Items</th>
+          <th style="text-align: left">Price Range</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Daily Featured</td>
+          <td style="text-align: left">24 hours</td>
+          <td style="text-align: left">4 items</td>
+          <td style="text-align: left">200-2,000 Tokens</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Weekly Featured</td>
+          <td style="text-align: left">7 days</td>
+          <td style="text-align: left">6 items</td>
+          <td style="text-align: left">500-3,000 Tokens</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Always Available</td>
+          <td style="text-align: left">Permanent</td>
+          <td style="text-align: left">Core cosmetics</td>
+          <td style="text-align: left">100-1,500 Tokens</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Limited Time</td>
+          <td style="text-align: left">Event-based</td>
+          <td style="text-align: left">Exclusive</td>
+          <td style="text-align: left">500-2,500 Tokens</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Bundle Discounts:</strong></p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Bundle Type</th>
+          <th style="text-align: left">Discount</th>
+          <th style="text-align: left">Example</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Operator Bundle (Skin + 3 items)</td>
+          <td style="text-align: left">25% off</td>
+          <td style="text-align: left">1,500 vs 2,000 if separate</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Weapon Bundle (5 matching skins)</td>
+          <td style="text-align: left">30% off</td>
+          <td style="text-align: left">1,400 vs 2,000 if separate</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Starter Pack (Best value, once)</td>
+          <td style="text-align: left">50% off</td>
+          <td style="text-align: left">2,000 value for 1,000 Tokens</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Starter Pack (New Player Special):</strong></p>
+<ul>
+<li>1 Epic Operator Skin</li>
+<li>2 Rare Weapon Skins</li>
+<li>500 Tokens bonus</li>
+<li>10,000 Credits</li>
+<li>3-Day XP Boost</li>
+<li>Price: $4.99 (one-time purchase)</li>
+<li>Value: ~$15 worth of content</li>
+</ul>
+<hr>
+<h3 id="convenience-items">Convenience Items<a class="anchor" href="#convenience-items">#</a></h3>
+<p><strong>Time-savers that don&rsquo;t affect gameplay balance</strong></p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Item</th>
+          <th style="text-align: left">Price (Tokens)</th>
+          <th style="text-align: left">Effect</th>
+          <th style="text-align: left">Balance</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">XP Boost (1 Day)</td>
+          <td style="text-align: left">150</td>
+          <td style="text-align: left">+25% Account XP</td>
+          <td style="text-align: left">Does not affect gear</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">XP Boost (7 Days)</td>
+          <td style="text-align: left">800</td>
+          <td style="text-align: left">+25% Account XP</td>
+          <td style="text-align: left">Cosmetic unlocks faster</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Stash Upgrade</td>
+          <td style="text-align: left">500</td>
+          <td style="text-align: left">+20 stash slots</td>
+          <td style="text-align: left">Quality of life</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Name Change</td>
+          <td style="text-align: left">300</td>
+          <td style="text-align: left">Change display name</td>
+          <td style="text-align: left">Unlimited</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Loadout Slot</td>
+          <td style="text-align: left">200</td>
+          <td style="text-align: left">+1 loadout preset</td>
+          <td style="text-align: left">Convenience</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>NOT Sold:</strong></p>
+<ul>
+<li>Weapon boosts</li>
+<li>Armor boosts</li>
+<li>Damage increases</li>
+<li>Speed increases</li>
+<li>Anything affecting PvP balance</li>
+</ul>
+<hr>
+<h2 id="pricing-philosophy">Pricing Philosophy<a class="anchor" href="#pricing-philosophy">#</a></h2>
+<h3 id="price-anchoring">Price Anchoring<a class="anchor" href="#price-anchoring">#</a></h3>
+<p><strong>Strategic pricing to guide purchase decisions:</strong></p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Tier</th>
+          <th style="text-align: left">Purpose</th>
+          <th style="text-align: left">Example</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Low Anchor</td>
+          <td style="text-align: left">Entry point, easy decision</td>
+          <td style="text-align: left">100 Token spray</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Mid Anchor</td>
+          <td style="text-align: left">Standard purchase</td>
+          <td style="text-align: left">500 Token skin</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">High Anchor</td>
+          <td style="text-align: left">Premium option</td>
+          <td style="text-align: left">2,000 Token legendary</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Bundle Anchor</td>
+          <td style="text-align: left">&ldquo;Best value&rdquo; perception</td>
+          <td style="text-align: left">Bundle saves 25%</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="psychological-fairness">Psychological Fairness<a class="anchor" href="#psychological-fairness">#</a></h3>
+<p><strong>Practices we AVOID:</strong></p>
+<ul>
+<li>❌ Hidden odds (all chances disclosed)</li>
+<li>❌ FOMO manipulation (items can return)</li>
+<li>❌ Artificial scarcity (no fake limited editions)</li>
+<li>❌ Pay-to-win mechanics</li>
+<li>❌ Aggressive pop-up ads</li>
+<li>❌ Dark patterns in UI</li>
+</ul>
+<p><strong>Practices we EMBRACE:</strong></p>
+<ul>
+<li>✅ Clear value communication</li>
+<li>✅ Refund window (24 hours, unused items)</li>
+<li>✅ Purchase confirmation prompts</li>
+<li>✅ Spending history accessible</li>
+<li>✅ Parental controls available</li>
+<li>✅ Regional pricing</li>
+</ul>
+<hr>
+<h2 id="marketplace-economy">Marketplace Economy<a class="anchor" href="#marketplace-economy">#</a></h2>
+<p><strong>Player-to-player trading for in-game items</strong></p>
+<p><em>See <a href="../Combat/Items.md">Items &amp; Economy</a> for detailed marketplace rules</em></p>
+<h3 id="marketplace-overview">Marketplace Overview<a class="anchor" href="#marketplace-overview">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Feature</th>
+          <th style="text-align: left">Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Currency</td>
+          <td style="text-align: left">Credits only (not Tokens)</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Listing Fee</td>
+          <td style="text-align: left">5% of asking price (non-refundable)</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Sale Tax</td>
+          <td style="text-align: left">10% of final price</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Duration</td>
+          <td style="text-align: left">24, 48, or 72 hours</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Bid System</td>
+          <td style="text-align: left">Auction with buyout option</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="price-controls">Price Controls<a class="anchor" href="#price-controls">#</a></h3>
+<p><strong>Preventing market manipulation:</strong></p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Control</th>
+          <th style="text-align: left">Implementation</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Price Floor</td>
+          <td style="text-align: left">Items cannot sell below vendors</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Price Ceiling</td>
+          <td style="text-align: left">Max 10x average historical price</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Rate Limit</td>
+          <td style="text-align: left">50 transactions per day per player</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Volume Limit</td>
+          <td style="text-align: left">Cannot corner market (max 20% of item type)</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Velocity Alert</td>
+          <td style="text-align: left">Rapid price changes trigger review</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="anti-fraud-systems">Anti-Fraud Systems<a class="anchor" href="#anti-fraud-systems">#</a></h2>
+<h3 id="payment-fraud-prevention">Payment Fraud Prevention<a class="anchor" href="#payment-fraud-prevention">#</a></h3>
+<p><strong>Multi-layer fraud detection:</strong></p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Layer</th>
+          <th style="text-align: left">Detection Method</th>
+          <th style="text-align: left">Action</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Device</td>
+          <td style="text-align: left">Device fingerprinting</td>
+          <td style="text-align: left">Flag new device purchases</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Behavior</td>
+          <td style="text-align: left">Unusual spending patterns</td>
+          <td style="text-align: left">Manual review trigger</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Velocity</td>
+          <td style="text-align: left">Rapid purchases</td>
+          <td style="text-align: left">Temporary lock</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Chargeback</td>
+          <td style="text-align: left">Dispute detection</td>
+          <td style="text-align: left">Account suspension</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Geographic</td>
+          <td style="text-align: left">IP location mismatch</td>
+          <td style="text-align: left">Additional verification</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Fraud Response:</strong></p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Offense</th>
+          <th style="text-align: left">Action</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">First chargeback</td>
+          <td style="text-align: left">Warning + account restriction</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Second chargeback</td>
+          <td style="text-align: left">Permanent purchase ban</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Fraudulent payment</td>
+          <td style="text-align: left">Account suspension + legal action</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Credit card testing</td>
+          <td style="text-align: left">IP ban + report to payment processor</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="account-security">Account Security<a class="anchor" href="#account-security">#</a></h3>
+<p><strong>Protecting player investments:</strong></p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Feature</th>
+          <th style="text-align: left">Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Two-Factor Authentication</td>
+          <td style="text-align: left">Required for large purchases</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Login Notifications</td>
+          <td style="text-align: left">Email alerts for new devices</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Purchase Confirmation</td>
+          <td style="text-align: left">PIN/biometric for transactions</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Trade Lock</td>
+          <td style="text-align: left">7-day lock after password change</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Recovery Verification</td>
+          <td style="text-align: left">ID verification for account recovery</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="rmt-real-money-trading-prevention">RMT (Real Money Trading) Prevention<a class="anchor" href="#rmt-real-money-trading-prevention">#</a></h3>
+<p><strong>Stopping unauthorized cash-for-items trading:</strong></p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Detection</th>
+          <th style="text-align: left">Method</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Unusual trades</td>
+          <td style="text-align: left">Tracking item value vs trade value</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Account linking</td>
+          <td style="text-align: left">Multiple accounts trading frequently</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Price manipulation</td>
+          <td style="text-align: left">Selling items far below value</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Currency mules</td>
+          <td style="text-align: left">Accounts that only receive/send</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>RMT Consequences:</strong></p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Severity</th>
+          <th style="text-align: left">Action</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Suspected</td>
+          <td style="text-align: left">Investigation, trade monitoring</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Confirmed (Buyer)</td>
+          <td style="text-align: left">7-day ban, item removal</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Confirmed (Seller)</td>
+          <td style="text-align: left">Permanent ban</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Organized operation</td>
+          <td style="text-align: left">Legal action, all accounts banned</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="botautomation-prevention">Bot/Automation Prevention<a class="anchor" href="#botautomation-prevention">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Protection</th>
+          <th style="text-align: left">Implementation</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">CAPTCHA</td>
+          <td style="text-align: left">On suspicious login patterns</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Device attestation</td>
+          <td style="text-align: left">Mobile device verification</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Behavior analysis</td>
+          <td style="text-align: left">Inhuman play patterns detected</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Rate limiting</td>
+          <td style="text-align: left">API calls throttled</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="spending-protections">Spending Protections<a class="anchor" href="#spending-protections">#</a></h2>
+<h3 id="spending-limits">Spending Limits<a class="anchor" href="#spending-limits">#</a></h3>
+<p><strong>Voluntary controls for responsible spending:</strong></p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Feature</th>
+          <th style="text-align: left">Default</th>
+          <th style="text-align: left">Customizable</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Daily Limit</td>
+          <td style="text-align: left">No limit</td>
+          <td style="text-align: left">$1-500/day</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Weekly Limit</td>
+          <td style="text-align: left">No limit</td>
+          <td style="text-align: left">$5-1,000/week</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Monthly Limit</td>
+          <td style="text-align: left">No limit</td>
+          <td style="text-align: left">$20-5,000/month</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Cooling Period</td>
+          <td style="text-align: left">Off</td>
+          <td style="text-align: left">24-72 hour purchase delay</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>How to Enable:</strong></p>
+<ol>
+<li>Settings → Account → Spending Controls</li>
+<li>Set desired limits</li>
+<li>Confirm with password</li>
+<li>Limits active for 90 days (cannot remove early)</li>
+</ol>
+<h3 id="parental-controls">Parental Controls<a class="anchor" href="#parental-controls">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Control</th>
+          <th style="text-align: left">Function</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Purchase PIN</td>
+          <td style="text-align: left">Required for any real-money transaction</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Disable Purchases</td>
+          <td style="text-align: left">Completely block IAP</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Spending Reports</td>
+          <td style="text-align: left">Weekly email summaries</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Age Verification</td>
+          <td style="text-align: left">Required for account creation</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Content Filters</td>
+          <td style="text-align: left">Chat and content restrictions</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="refund-policy">Refund Policy<a class="anchor" href="#refund-policy">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Condition</th>
+          <th style="text-align: left">Refund Available</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Unused item, within 24 hours</td>
+          <td style="text-align: left">✅ Full refund (Tokens returned)</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Unused item, 24-72 hours</td>
+          <td style="text-align: left">✅ 75% refund</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Used item</td>
+          <td style="text-align: left">❌ No refund</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Technical error</td>
+          <td style="text-align: left">✅ Case-by-case review</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Accidental purchase</td>
+          <td style="text-align: left">✅ First 3 times per account</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Real currency</td>
+          <td style="text-align: left">❌ Per platform policy (App Store/Play Store)</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="economic-health-metrics">Economic Health Metrics<a class="anchor" href="#economic-health-metrics">#</a></h2>
+<h3 id="key-performance-indicators">Key Performance Indicators<a class="anchor" href="#key-performance-indicators">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Metric</th>
+          <th style="text-align: left">Healthy Range</th>
+          <th style="text-align: left">Warning Range</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">ARPDAU (Revenue/DAU)</td>
+          <td style="text-align: left">$0.05-0.15</td>
+          <td style="text-align: left">&lt;$0.03 or &gt;$0.30</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Conversion Rate</td>
+          <td style="text-align: left">2-5%</td>
+          <td style="text-align: left">&lt;1% or &gt;10%</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Payer ARPPU</td>
+          <td style="text-align: left">$15-40/month</td>
+          <td style="text-align: left">&lt;$10 or &gt;$80</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">D7 Payer Retention</td>
+          <td style="text-align: left">60-80%</td>
+          <td style="text-align: left">&lt;50%</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">D30 Payer Retention</td>
+          <td style="text-align: left">40-60%</td>
+          <td style="text-align: left">&lt;30%</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Refund Rate</td>
+          <td style="text-align: left">&lt;2%</td>
+          <td style="text-align: left">&gt;5%</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Chargeback Rate</td>
+          <td style="text-align: left">&lt;0.5%</td>
+          <td style="text-align: left">&gt;1%</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="economy-health">Economy Health<a class="anchor" href="#economy-health">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Metric</th>
+          <th style="text-align: left">Healthy Range</th>
+          <th style="text-align: left">Warning</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Credit inflation rate</td>
+          <td style="text-align: left">&lt;5%/month</td>
+          <td style="text-align: left">&gt;10%/month</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Average player wealth</td>
+          <td style="text-align: left">$50K-150K</td>
+          <td style="text-align: left">&lt;$20K or &gt;$500K</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Market activity</td>
+          <td style="text-align: left">60%+ trade/month</td>
+          <td style="text-align: left">&lt;30%</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Price volatility</td>
+          <td style="text-align: left">&lt;20% week/week</td>
+          <td style="text-align: left">&gt;50%</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Gini coefficient</td>
+          <td style="text-align: left">&lt;0.4</td>
+          <td style="text-align: left">&gt;0.6 (wealth concentration)</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="intervention-triggers">Intervention Triggers<a class="anchor" href="#intervention-triggers">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Condition</th>
+          <th style="text-align: left">Automatic Response</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Inflation &gt;10%/month</td>
+          <td style="text-align: left">Increase credit sinks</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Deflation (prices falling)</td>
+          <td style="text-align: left">Reduce loot spawn rates</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Market dead (&lt;10% activity)</td>
+          <td style="text-align: left">Lower marketplace fees</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Item scarcity</td>
+          <td style="text-align: left">Increase spawn rate</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Whale domination</td>
+          <td style="text-align: left">Transaction limits</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="ethical-monetization-guidelines">Ethical Monetization Guidelines<a class="anchor" href="#ethical-monetization-guidelines">#</a></h2>
+<h3 id="what-we-promise-players">What We Promise Players<a class="anchor" href="#what-we-promise-players">#</a></h3>
+<ol>
+<li><strong>Transparent Pricing</strong> - No hidden costs, clear token-to-dollar value</li>
+<li><strong>Achievable F2P</strong> - Free players can compete and have fun</li>
+<li><strong>No Gambling</strong> - No loot boxes with random valuable items</li>
+<li><strong>Purchase Clarity</strong> - Always know exactly what you&rsquo;re buying</li>
+<li><strong>Fair Refunds</strong> - Reasonable refund policy for mistakes</li>
+<li><strong>Privacy Respect</strong> - Spending data not shared externally</li>
+</ol>
+<h3 id="design-rules-for-monetization-team">Design Rules for Monetization Team<a class="anchor" href="#design-rules-for-monetization-team">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Rule</th>
+          <th style="text-align: left">Rationale</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Never create false urgency</td>
+          <td style="text-align: left">Builds long-term trust</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Never hide true costs</td>
+          <td style="text-align: left">Prevents regret, reduces refunds</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Never target vulnerable players</td>
+          <td style="text-align: left">Ethical responsibility</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Never lock content behind paywall</td>
+          <td style="text-align: left">Gameplay equality</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Always offer free path</td>
+          <td style="text-align: left">Respects all player types</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Always show odds</td>
+          <td style="text-align: left">Legal requirement in many regions</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="legal-compliance">Legal Compliance<a class="anchor" href="#legal-compliance">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Region</th>
+          <th style="text-align: left">Requirement</th>
+          <th style="text-align: left">Our Compliance</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">EU</td>
+          <td style="text-align: left">GDPR data protection</td>
+          <td style="text-align: left">Full compliance</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Belgium</td>
+          <td style="text-align: left">Loot box ban</td>
+          <td style="text-align: left">No loot boxes</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">China</td>
+          <td style="text-align: left">Odds disclosure</td>
+          <td style="text-align: left">N/A (no random purchases)</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">South Korea</td>
+          <td style="text-align: left">Refund rights</td>
+          <td style="text-align: left">Extended refund window</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">COPPA (US)</td>
+          <td style="text-align: left">Children&rsquo;s protection</td>
+          <td style="text-align: left">Age gate + parental controls</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Apple/Google</td>
+          <td style="text-align: left">Platform IAP rules</td>
+          <td style="text-align: left">100% through official store</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="revenue-projections">Revenue Projections<a class="anchor" href="#revenue-projections">#</a></h2>
+<h3 id="revenue-mix-target">Revenue Mix (Target)<a class="anchor" href="#revenue-mix-target">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Source</th>
+          <th style="text-align: left">% of Revenue</th>
+          <th style="text-align: left">Strategy</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Battle Pass</td>
+          <td style="text-align: left">40%</td>
+          <td style="text-align: left">Primary, predictable</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Direct Cosmetics</td>
+          <td style="text-align: left">30%</td>
+          <td style="text-align: left">Event-driven</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Token Bundles</td>
+          <td style="text-align: left">15%</td>
+          <td style="text-align: left">Convenience purchases</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Starter Packs</td>
+          <td style="text-align: left">10%</td>
+          <td style="text-align: left">New player conversion</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Convenience</td>
+          <td style="text-align: left">5%</td>
+          <td style="text-align: left">Minimal reliance</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="player-spending-tiers">Player Spending Tiers<a class="anchor" href="#player-spending-tiers">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Tier</th>
+          <th style="text-align: left">% of Players</th>
+          <th style="text-align: left">Monthly Spend</th>
+          <th style="text-align: left">% of Revenue</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Non-Payers</td>
+          <td style="text-align: left">95%</td>
+          <td style="text-align: left">$0</td>
+          <td style="text-align: left">0%</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Minnows</td>
+          <td style="text-align: left">3%</td>
+          <td style="text-align: left">$1-10</td>
+          <td style="text-align: left">15%</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Dolphins</td>
+          <td style="text-align: left">1.5%</td>
+          <td style="text-align: left">$10-50</td>
+          <td style="text-align: left">35%</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Whales</td>
+          <td style="text-align: left">0.5%</td>
+          <td style="text-align: left">$50+</td>
+          <td style="text-align: left">50%</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Goal:</strong> Increase minnow/dolphin conversion, reduce whale dependency.</p>
+<hr>
+<h2 id="implementation-timeline">Implementation Timeline<a class="anchor" href="#implementation-timeline">#</a></h2>
+<h3 id="launch-v10">Launch (v1.0)<a class="anchor" href="#launch-v10">#</a></h3>
+<ul>
+<li>✅ Soft currency (Credits)</li>
+<li>✅ Premium currency (Tokens)</li>
+<li>✅ Battle Pass (Free + Premium)</li>
+<li>✅ Direct purchase store</li>
+<li>✅ Basic anti-fraud</li>
+</ul>
+<h3 id="post-launch-v11-13">Post-Launch (v1.1-1.3)<a class="anchor" href="#post-launch-v11-13">#</a></h3>
+<ul>
+<li>📋 Marketplace (player trading)</li>
+<li>📋 Enhanced fraud detection</li>
+<li>📋 Spending controls</li>
+<li>📋 Regional pricing optimization</li>
+</ul>
+<h3 id="future-updates">Future Updates<a class="anchor" href="#future-updates">#</a></h3>
+<ul>
+<li>📋 Gifting system</li>
+<li>📋 Season bundles</li>
+<li>📋 Crew/Clan cosmetics</li>
+<li>📋 Tournament prizes</li>
+</ul>
+<hr>
+<h2 id="summary">Summary<a class="anchor" href="#summary">#</a></h2>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Aspect</th>
+          <th style="text-align: left">Our Approach</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><strong>Revenue Model</strong></td>
+          <td style="text-align: left">Cosmetic-only, Battle Pass primary</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Player Fairness</strong></td>
+          <td style="text-align: left">No pay-to-win, all gameplay earnable</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Pricing</strong></td>
+          <td style="text-align: left">Regional adjustment, clear value</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Security</strong></td>
+          <td style="text-align: left">Multi-layer fraud prevention</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Ethics</strong></td>
+          <td style="text-align: left">Transparent, responsible, compliant</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Goal</strong></td>
+          <td style="text-align: left">Sustainable revenue through player satisfaction</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<p><strong><a href="./Progression.md">← Previous: Progression</a></strong> | <strong><a href="../README.md">Index</a></strong> | <strong><a href="./LiveOps.md">Next: Live Ops →</a></strong></p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+<div>
+
+</div>
+
+<div>
+
+</div>
+
+</div>
+
+
+
+
+
+  
+  
+  
+  <div class="flex flex-wrap justify-between">
+    <span>
+    
+      <a href="/docs/GDD_Design/GameDesign/CoreGameplay/" class="flex align-center">
+        <img src="/icons/backward.svg" class="book-icon" alt="Backward" />
+        <span>Core Gameplay</span>
+      </a>
+    
+    </span>
+    <span>
+    
+      <a href="/docs/GDD_Design/GameDesign/GameModes/" class="flex align-center">
+        <span>Game Modes</span>
+        <img src="/icons/forward.svg" class="book-icon" alt="Forward" />
+      </a>
+    
+    </span>
+  </div>
+  
+
+
+ 
+        
+  
+ 
+        
+        
+  
+ 
+        
+  
+  
+    <script>(function(){document.querySelectorAll("pre:has(code)").forEach(e=>{e.addEventListener("click",e.focus),e.addEventListener("copy",function(t){if(t.preventDefault(),navigator.clipboard){const t=window.getSelection().toString()||e.textContent;navigator.clipboard.writeText(t)}})})})()</script>
+  
+
+      </footer>
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+  
+  <aside class="book-toc">
+    <div class="book-toc-content">
+      
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#overview">Overview</a></li>
+    <li><a href="#philosophy">Philosophy</a>
+      <ul>
+        <li><a href="#core-principles">Core Principles</a></li>
+        <li><a href="#monetization-goals">Monetization Goals</a></li>
+      </ul>
+    </li>
+    <li><a href="#currency-system">Currency System</a>
+      <ul>
+        <li><a href="#currency-types">Currency Types</a></li>
+        <li><a href="#credits-soft-currency">Credits (Soft Currency)</a></li>
+        <li><a href="#tokens-premium-currency">Tokens (Premium Currency)</a></li>
+        <li><a href="#reputation-faction-currency">Reputation (Faction Currency)</a></li>
+      </ul>
+    </li>
+    <li><a href="#monetization-structure">Monetization Structure</a>
+      <ul>
+        <li><a href="#battle-pass">Battle Pass</a></li>
+        <li><a href="#direct-purchase-store">Direct Purchase Store</a></li>
+        <li><a href="#convenience-items">Convenience Items</a></li>
+      </ul>
+    </li>
+    <li><a href="#pricing-philosophy">Pricing Philosophy</a>
+      <ul>
+        <li><a href="#price-anchoring">Price Anchoring</a></li>
+        <li><a href="#psychological-fairness">Psychological Fairness</a></li>
+      </ul>
+    </li>
+    <li><a href="#marketplace-economy">Marketplace Economy</a>
+      <ul>
+        <li><a href="#marketplace-overview">Marketplace Overview</a></li>
+        <li><a href="#price-controls">Price Controls</a></li>
+      </ul>
+    </li>
+    <li><a href="#anti-fraud-systems">Anti-Fraud Systems</a>
+      <ul>
+        <li><a href="#payment-fraud-prevention">Payment Fraud Prevention</a></li>
+        <li><a href="#account-security">Account Security</a></li>
+        <li><a href="#rmt-real-money-trading-prevention">RMT (Real Money Trading) Prevention</a></li>
+        <li><a href="#botautomation-prevention">Bot/Automation Prevention</a></li>
+      </ul>
+    </li>
+    <li><a href="#spending-protections">Spending Protections</a>
+      <ul>
+        <li><a href="#spending-limits">Spending Limits</a></li>
+        <li><a href="#parental-controls">Parental Controls</a></li>
+        <li><a href="#refund-policy">Refund Policy</a></li>
+      </ul>
+    </li>
+    <li><a href="#economic-health-metrics">Economic Health Metrics</a>
+      <ul>
+        <li><a href="#key-performance-indicators">Key Performance Indicators</a></li>
+        <li><a href="#economy-health">Economy Health</a></li>
+        <li><a href="#intervention-triggers">Intervention Triggers</a></li>
+      </ul>
+    </li>
+    <li><a href="#ethical-monetization-guidelines">Ethical Monetization Guidelines</a>
+      <ul>
+        <li><a href="#what-we-promise-players">What We Promise Players</a></li>
+        <li><a href="#design-rules-for-monetization-team">Design Rules for Monetization Team</a></li>
+        <li><a href="#legal-compliance">Legal Compliance</a></li>
+      </ul>
+    </li>
+    <li><a href="#revenue-projections">Revenue Projections</a>
+      <ul>
+        <li><a href="#revenue-mix-target">Revenue Mix (Target)</a></li>
+        <li><a href="#player-spending-tiers">Player Spending Tiers</a></li>
+      </ul>
+    </li>
+    <li><a href="#implementation-timeline">Implementation Timeline</a>
+      <ul>
+        <li><a href="#launch-v10">Launch (v1.0)</a></li>
+        <li><a href="#post-launch-v11-13">Post-Launch (v1.1-1.3)</a></li>
+        <li><a href="#future-updates">Future Updates</a></li>
+      </ul>
+    </li>
+    <li><a href="#summary">Summary</a></li>
+  </ul>
+</nav>
+
+
+
+    </div>
+  </aside>
+  
+ 
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

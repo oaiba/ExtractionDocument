@@ -1,0 +1,2632 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=52224&amp;path=livereload" data-no-instant defer></script>
+  <!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Tactical Audio - Combat Sound Design#← Back to Soundscape | Index | Next: Voice Lines →
+👣 Footstep Audio System#Philosophy#“Footsteps are the Meta” - In extraction shooters, footsteps are the most important information source for tracking enemies.
+Movement Mode Audio#Hearing Ranges:
+┌─────────────────────────────────────────────────┐│ Movement Mode │ Range │ Volume │ Character │├─────────────────────────────────────────────────┤│ Sprint │ 40m │ -6dB │ Heavy, urgent ││ Run │ 30m │ -10dB │ Clear, rhythmic││ Walk │ 20m │ -16dB │ Moderate pace ││ Crouch Walk │ 8m │ -24dB │ Soft shuffle ││ Crouch Idle │ 3m │ -32dB │ Fabric rustle ││ Prone (future)│ 5m │ -28dB │ Scraping │└─────────────────────────────────────────────────┘Surface Materials#Concrete/Asphalt (Most Common)#Sound Character: Solid, neutral boot impactFrequency Focus: Mid-range (500Hz-2kHz)Variations: 8 samples per movement typeWalking:├── Step_Concrete_Walk_01 → Standard boot clop├── Step_Concrete_Walk_02 → Slight scuff├── Step_Concrete_Walk_03 → Heel first└── ... (8 variations)Running:├── Heavier impact├── Faster cadence└── More bass contentMetal Grating (LOUDEST - High Risk)#Sound Character: Hollow, resonant, metallic ringFrequency Focus: High-mids (1kHz-4kHz) &#43; low resonanceHearing Bonus: &#43;50% range (60m sprint audible)Distinctive traits:├── Hollow &#34;clang&#34; on impact├── Structural vibration tail├── Very high recognition factor└── Players AVOID this surfaceWater/Mud (DISTINCTIVE)#Sound Character: Wet, splashing, suckingFrequency Focus: Broadband splash &#43; low squelchHearing Bonus: &#43;30% rangeShallow Water (ankle):├── Splash on step├── Dripping on lift└── Rhythmic sloshingDeep Water (knee&#43;):├── Heavy displacement├── Wading sounds├── Movement speed penalty (audio cue: slower)Mud:├── Sucking sound on lift├── Squelch on step├── Sticky, labored feelGrass/Vegetation#Sound Character: Soft, rustling, organicFrequency Focus: High frequencies (2kHz-6kHz)Hearing Range: Reduced by 20%Dry Grass:├── Crisp crackle├── Swishing sound└── Light footfallWet Grass:├── Muffled steps├── Occasional squish└── Quieter overallWood (Flooring/Platforms)#Sound Character: Creaky, hollow, resonantFrequency Focus: Low-mids with creaksOld Wood:├── Creaking boards (random)├── Hollow resonance├── Distinct from concreteSolid Wood:├── Thud-like impact├── Less creak└── Moderate resonanceGlass/Debris (DANGER - Noise Trap)#Sound Character: Sharp, high-pitched crunchFrequency Focus: High (4kHz-8kHz)Hearing Bonus: &#43;60% range (cannot stealth)Behavior:├── Unavoidable crunch sound├── Alerts nearby players/AI├── Environmental hazard for stealth└── Can be seen and avoidedCarpet/Fabric (Indoor - Quietest)#Sound Character: Muffled, soft, dampenedFrequency Focus: Very low presenceHearing Range: Reduced by 40%Benefits:├── Ideal for stealth approaches├── Near-silent at crouch└── Found in offices, hotels 🔫 Weapon Audio#Gunfire Characteristics#Audio Components:
+">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:52224/docs/GDD_Design/Audio/TacticalAudio/">
+  <meta property="og:site_name" content="Extraction Shooter GDD">
+  <meta property="og:title" content="Extraction Shooter GDD">
+  <meta property="og:description" content="Tactical Audio - Combat Sound Design#← Back to Soundscape | Index | Next: Voice Lines →
+👣 Footstep Audio System#Philosophy#“Footsteps are the Meta” - In extraction shooters, footsteps are the most important information source for tracking enemies.
+Movement Mode Audio#Hearing Ranges:
+┌─────────────────────────────────────────────────┐│ Movement Mode │ Range │ Volume │ Character │├─────────────────────────────────────────────────┤│ Sprint │ 40m │ -6dB │ Heavy, urgent ││ Run │ 30m │ -10dB │ Clear, rhythmic││ Walk │ 20m │ -16dB │ Moderate pace ││ Crouch Walk │ 8m │ -24dB │ Soft shuffle ││ Crouch Idle │ 3m │ -32dB │ Fabric rustle ││ Prone (future)│ 5m │ -28dB │ Scraping │└─────────────────────────────────────────────────┘Surface Materials#Concrete/Asphalt (Most Common)#Sound Character: Solid, neutral boot impactFrequency Focus: Mid-range (500Hz-2kHz)Variations: 8 samples per movement typeWalking:├── Step_Concrete_Walk_01 → Standard boot clop├── Step_Concrete_Walk_02 → Slight scuff├── Step_Concrete_Walk_03 → Heel first└── ... (8 variations)Running:├── Heavier impact├── Faster cadence└── More bass contentMetal Grating (LOUDEST - High Risk)#Sound Character: Hollow, resonant, metallic ringFrequency Focus: High-mids (1kHz-4kHz) &#43; low resonanceHearing Bonus: &#43;50% range (60m sprint audible)Distinctive traits:├── Hollow &#34;clang&#34; on impact├── Structural vibration tail├── Very high recognition factor└── Players AVOID this surfaceWater/Mud (DISTINCTIVE)#Sound Character: Wet, splashing, suckingFrequency Focus: Broadband splash &#43; low squelchHearing Bonus: &#43;30% rangeShallow Water (ankle):├── Splash on step├── Dripping on lift└── Rhythmic sloshingDeep Water (knee&#43;):├── Heavy displacement├── Wading sounds├── Movement speed penalty (audio cue: slower)Mud:├── Sucking sound on lift├── Squelch on step├── Sticky, labored feelGrass/Vegetation#Sound Character: Soft, rustling, organicFrequency Focus: High frequencies (2kHz-6kHz)Hearing Range: Reduced by 20%Dry Grass:├── Crisp crackle├── Swishing sound└── Light footfallWet Grass:├── Muffled steps├── Occasional squish└── Quieter overallWood (Flooring/Platforms)#Sound Character: Creaky, hollow, resonantFrequency Focus: Low-mids with creaksOld Wood:├── Creaking boards (random)├── Hollow resonance├── Distinct from concreteSolid Wood:├── Thud-like impact├── Less creak└── Moderate resonanceGlass/Debris (DANGER - Noise Trap)#Sound Character: Sharp, high-pitched crunchFrequency Focus: High (4kHz-8kHz)Hearing Bonus: &#43;60% range (cannot stealth)Behavior:├── Unavoidable crunch sound├── Alerts nearby players/AI├── Environmental hazard for stealth└── Can be seen and avoidedCarpet/Fabric (Indoor - Quietest)#Sound Character: Muffled, soft, dampenedFrequency Focus: Very low presenceHearing Range: Reduced by 40%Benefits:├── Ideal for stealth approaches├── Near-silent at crouch└── Found in offices, hotels 🔫 Weapon Audio#Gunfire Characteristics#Audio Components:">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
+
+
+  <meta itemprop="name" content="Extraction Shooter GDD">
+  <meta itemprop="description" content="Tactical Audio - Combat Sound Design#← Back to Soundscape | Index | Next: Voice Lines →
+👣 Footstep Audio System#Philosophy#“Footsteps are the Meta” - In extraction shooters, footsteps are the most important information source for tracking enemies.
+Movement Mode Audio#Hearing Ranges:
+┌─────────────────────────────────────────────────┐│ Movement Mode │ Range │ Volume │ Character │├─────────────────────────────────────────────────┤│ Sprint │ 40m │ -6dB │ Heavy, urgent ││ Run │ 30m │ -10dB │ Clear, rhythmic││ Walk │ 20m │ -16dB │ Moderate pace ││ Crouch Walk │ 8m │ -24dB │ Soft shuffle ││ Crouch Idle │ 3m │ -32dB │ Fabric rustle ││ Prone (future)│ 5m │ -28dB │ Scraping │└─────────────────────────────────────────────────┘Surface Materials#Concrete/Asphalt (Most Common)#Sound Character: Solid, neutral boot impactFrequency Focus: Mid-range (500Hz-2kHz)Variations: 8 samples per movement typeWalking:├── Step_Concrete_Walk_01 → Standard boot clop├── Step_Concrete_Walk_02 → Slight scuff├── Step_Concrete_Walk_03 → Heel first└── ... (8 variations)Running:├── Heavier impact├── Faster cadence└── More bass contentMetal Grating (LOUDEST - High Risk)#Sound Character: Hollow, resonant, metallic ringFrequency Focus: High-mids (1kHz-4kHz) &#43; low resonanceHearing Bonus: &#43;50% range (60m sprint audible)Distinctive traits:├── Hollow &#34;clang&#34; on impact├── Structural vibration tail├── Very high recognition factor└── Players AVOID this surfaceWater/Mud (DISTINCTIVE)#Sound Character: Wet, splashing, suckingFrequency Focus: Broadband splash &#43; low squelchHearing Bonus: &#43;30% rangeShallow Water (ankle):├── Splash on step├── Dripping on lift└── Rhythmic sloshingDeep Water (knee&#43;):├── Heavy displacement├── Wading sounds├── Movement speed penalty (audio cue: slower)Mud:├── Sucking sound on lift├── Squelch on step├── Sticky, labored feelGrass/Vegetation#Sound Character: Soft, rustling, organicFrequency Focus: High frequencies (2kHz-6kHz)Hearing Range: Reduced by 20%Dry Grass:├── Crisp crackle├── Swishing sound└── Light footfallWet Grass:├── Muffled steps├── Occasional squish└── Quieter overallWood (Flooring/Platforms)#Sound Character: Creaky, hollow, resonantFrequency Focus: Low-mids with creaksOld Wood:├── Creaking boards (random)├── Hollow resonance├── Distinct from concreteSolid Wood:├── Thud-like impact├── Less creak└── Moderate resonanceGlass/Debris (DANGER - Noise Trap)#Sound Character: Sharp, high-pitched crunchFrequency Focus: High (4kHz-8kHz)Hearing Bonus: &#43;60% range (cannot stealth)Behavior:├── Unavoidable crunch sound├── Alerts nearby players/AI├── Environmental hazard for stealth└── Can be seen and avoidedCarpet/Fabric (Indoor - Quietest)#Sound Character: Muffled, soft, dampenedFrequency Focus: Very low presenceHearing Range: Reduced by 40%Benefits:├── Ideal for stealth approaches├── Near-silent at crouch└── Found in offices, hotels 🔫 Weapon Audio#Gunfire Characteristics#Audio Components:">
+  <meta itemprop="wordCount" content="1621">
+
+<title>Tactical Audio | Extraction Shooter GDD</title>
+<link rel="icon" href="/favicon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="http://localhost:52224/docs/GDD_Design/Audio/TacticalAudio/">
+<link rel="stylesheet" href="/book.min.63c8b2b12bbd1ad36428837740ea371dd41fdb9c22b35499003d0dfa4dbce6ba.css" integrity="sha256-Y8iysSu9GtNkKIN3QOo3HdQf25wis1SZAD0N&#43;k285ro=" crossorigin="anonymous">
+
+
+  <script defer src="/fuse.min.js"></script>
+  <script defer src="/en.search.min.58bea27d7a08265548c5a8636a9a9fc844e0eb9d60fc3bb2c53d517da858d4c1.js" integrity="sha256-WL6ifXoIJlVIxahjapqfyETg651g/DuyxT1RfahY1ME=" crossorigin="anonymous"></script>
+
+  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
+
+
+
+  
+</head>
+<body dir="ltr" class="book-kind-page book-type-docs">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    
+<aside class="book-menu">
+  <div class="book-menu-content">
+    
+  <nav>
+    <h2 class="book-brand">
+  <a class="flex align-center" href="/"><img src="/logo.svg" alt="Logo" /><span>Extraction Shooter GDD</span>
+  </a>
+</h2>
+
+    <div class="book-theme-toggle">
+    <input type="checkbox" id="theme-toggle" class="toggle">
+    <label for="theme-toggle" class="flex justify-between items-center cursor-pointer">
+        <span class="text-xs font-semibold">Dark Mode</span>
+        <div
+            class="relative w-10 h-5 bg-gray-200 rounded-full transition-colors duration-200 ease-in-out dark:bg-gray-700">
+            <div
+                class="absolute left-0 w-5 h-5 bg-white rounded-full shadow transform transition-transform duration-200 ease-in-out dark:translate-x-full">
+            </div>
+        </div>
+    </label>
+</div>
+
+<script>
+    (function () {
+        const toggle = document.getElementById('theme-toggle');
+        const html = document.documentElement;
+
+        
+        const savedTheme = localStorage.getItem('theme');
+        const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+        if (savedTheme === 'dark' || (!savedTheme && systemDark)) {
+            html.classList.add('dark');
+            toggle.checked = true;
+        } else {
+            html.classList.remove('dark');
+            toggle.checked = false;
+        }
+
+        
+        toggle.addEventListener('change', function () {
+            if (this.checked) {
+                html.classList.add('dark');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                html.classList.remove('dark');
+                localStorage.setItem('theme', 'light');
+            }
+        });
+    })();
+</script>
+
+<style>
+     
+    .book-theme-toggle {
+        margin: 1rem 0;
+        padding: 0 1rem;
+
+    }
+
+    .book-theme-toggle label {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        cursor: pointer;
+        font-size: 0.85em;
+    }
+
+     
+    .book-theme-toggle input {
+        display: none;
+    }
+
+     
+    .book-theme-toggle label::after {
+        content: "🌙";
+         
+    }
+
+     
+    html:not(.dark) .book-theme-toggle label::after {
+        content: "☀️";
+         
+    }
+</style> 
+    
+<div class="book-search hidden">
+  <input id="book-search-input" type="text" 
+    placeholder="Search"
+    aria-label="Search"
+    maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+    
+
+    
+    
+
+
+
+    
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/" class="">
+      Gdd Design</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      AI</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/AI/EnemyBehavior/" class="">
+      Enemy Behavior</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/AI/FactionBehaviors/" class="">
+      Faction Behaviors</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Audio</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Audio/SoundDesign/" class="">
+      Sound Design</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Audio/Soundscape/" class="">
+      Soundscape</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Audio/TacticalAudio/" class="active">
+      Tactical Audio</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Audio/VoiceLines/" class="">
+      Voice Lines</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Characters</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Operators/" class="">
+      Operators</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Assault</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Assault/Blaze/" class="">
+      Blaze</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Assault/Havoc/" class="">
+      Havoc</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Assault/README/" class="">
+      Readme</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Assault/Viper/" class="">
+      Viper</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Recon</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Recon/Phantom/" class="">
+      Phantom</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Recon/README/" class="">
+      Readme</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Recon/Specter/" class="">
+      Specter</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Recon/Wraith/" class="">
+      Wraith</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Specialist</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Specialist/Cipher/" class="">
+      Cipher</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Specialist/Flux/" class="">
+      Flux</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Specialist/README/" class="">
+      Readme</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Support</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Support/Angel/" class="">
+      Angel</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Support/Doc/" class="">
+      Doc</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Support/README/" class="">
+      Readme</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Tank</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Tank/Bulwark/" class="">
+      Bulwark</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Tank/Fortress/" class="">
+      Fortress</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Tank/README/" class="">
+      Readme</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Combat</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Combat/Items/" class="">
+      Items</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Combat/Weapons/" class="">
+      Weapons</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      GameDesign</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Accessibility/" class="">
+      Accessibility</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Controls/" class="">
+      Controls</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/CoreGameplay/" class="">
+      Core Gameplay</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Economy/" class="">
+      Economy</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/GameModes/" class="">
+      Game Modes</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/LiveOps/" class="">
+      Live Ops</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Localization/" class="">
+      Localization</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/NavigationAndMap/" class="">
+      Navigation and Map</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Overview/" class="">
+      Overview</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Progression/" class="">
+      Progression</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/RankedMode/" class="">
+      Ranked Mode</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/TutorialRaid/" class="">
+      Tutorial Raid</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/UserSettings/" class="">
+      User Settings</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Gameplay</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Gameplay/CoreLoop/" class="">
+      Core Loop</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      ProjectScope</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/ProjectScope/DesignPillars/" class="">
+      Design Pillars</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/ProjectScope/MVP/" class="">
+      Mvp</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/ProjectScope/NonGoals/" class="">
+      Non Goals</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/ProjectScope/Risks/" class="">
+      Risks</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Social</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Social/Multiplayer/" class="">
+      Multiplayer</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Story</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Story/Backstory/" class="">
+      Backstory</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Story/Factions/" class="">
+      Factions</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Story/Narrative/" class="">
+      Narrative</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Story/QuestLines/" class="">
+      Quest Lines</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      UI UX</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/UI_UX/UX_Flows/" class="">
+      Ux Flows</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/UI_UX/Visual_Style/" class="">
+      Visual Style</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Visuals</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Visuals/ArtDirection/" class="">
+      Art Direction</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Visuals/AssetGuidelines/" class="">
+      Asset Guidelines</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Visuals/StyleGuide/" class="">
+      Style Guide</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Visuals/UserInterface/" class="">
+      User Interface</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      World</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/EnvironmentalNarrative/" class="">
+      Environmental Narrative</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/EnvironmentalNarrative_Guidelines/" class="">
+      Environmental Narrative Guidelines</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/LootDistribution/" class="">
+      Loot Distribution</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/MapDesign/" class="">
+      Map Design</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/MapDesign_IndustrialZone/" class="">
+      Map Design Industrial Zone</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/MapDesign_NeonSlums/" class="">
+      Map Design Neon Slums</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/MapDesign_Wilderness/" class="">
+      Map Design Wilderness</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/MapLayouts/" class="">
+      Map Layouts</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/" class="">
+      Gdd Technical</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      AI</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/AI/SensorySystem/" class="">
+      Sensory System</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Core</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Core/Architecture/" class="">
+      Architecture</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Core/CodingStandards/" class="">
+      Coding Standards</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Core/DevelopmentRoadmap/" class="">
+      Development Roadmap</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Core/NetworkingSystem/" class="">
+      Networking System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Core/SecuritySystem/" class="">
+      Security System</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Gameplay</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Gameplay/CharacterSystem/" class="">
+      Character System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Gameplay/ControlSystem/" class="">
+      Control System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Gameplay/InventorySystem/" class="">
+      Inventory System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Gameplay/WeaponSystem/" class="">
+      Weapon System</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Networking</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Networking/LagCompensation/" class="">
+      Lag Compensation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Networking/ReplicationStrategy/" class="">
+      Replication Strategy</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Performance</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Performance/Budgets/" class="">
+      Budgets</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Performance/Optimization/" class="">
+      Optimization</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Security</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Security/AntiCheatStrategy/" class="">
+      Anti Cheat Strategy</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Systems</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/AccessibilitySystem/" class="">
+      Accessibility System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/AISystem/" class="">
+      Aisystem</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/AnalyticsSystem/" class="">
+      Analytics System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/AudioSystem/" class="">
+      Audio System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/BuildPipeline/" class="">
+      Build Pipeline</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/LiveOpsSystem/" class="">
+      Live Ops System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/LocalizationSystem/" class="">
+      Localization System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/MapSystem/" class="">
+      Map System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/NarrativeSystem/" class="">
+      Narrative System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/ProgressionSystem/" class="">
+      Progression System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/RankedSystem/" class="">
+      Ranked System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/SaveSystem/" class="">
+      Save System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/SocialSystem/" class="">
+      Social System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/TutorialSystem/" class="">
+      Tutorial System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/UISystem/" class="">
+      Uisystem</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+</nav>
+
+
+
+
+<script>{ { . | safeJS } }</script>
+
+
+  </div>
+</aside>
+ 
+
+    <div class="book-page">
+      <header class="book-header hidden">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/icons/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <h3>Tactical Audio</h3>
+
+  <label for="toc-control">
+    
+    <img src="/icons/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#-footstep-audio-system">👣 Footstep Audio System</a>
+      <ul>
+        <li><a href="#philosophy">Philosophy</a></li>
+        <li><a href="#movement-mode-audio">Movement Mode Audio</a></li>
+        <li><a href="#surface-materials">Surface Materials</a></li>
+      </ul>
+    </li>
+    <li><a href="#-weapon-audio">🔫 Weapon Audio</a>
+      <ul>
+        <li><a href="#gunfire-characteristics">Gunfire Characteristics</a></li>
+        <li><a href="#weapon-audio-profiles">Weapon Audio Profiles</a></li>
+        <li><a href="#distance-based-gunfire">Distance-Based Gunfire</a></li>
+      </ul>
+    </li>
+    <li><a href="#-reload-audio">🔄 Reload Audio</a>
+      <ul>
+        <li><a href="#reload-sound-design">Reload Sound Design</a></li>
+        <li><a href="#reload-phases">Reload Phases</a></li>
+        <li><a href="#reload-audio-by-weapon-type">Reload Audio by Weapon Type</a></li>
+      </ul>
+    </li>
+    <li><a href="#-combat-audio-feedback">💥 Combat Audio Feedback</a>
+      <ul>
+        <li><a href="#bullet-impact-sounds">Bullet Impact Sounds</a></li>
+        <li><a href="#bullet-whizcrack-near-misses">Bullet Whiz/Crack (Near Misses)</a></li>
+      </ul>
+    </li>
+    <li><a href="#-ability--item-audio">💊 Ability &amp; Item Audio</a>
+      <ul>
+        <li><a href="#ability-sound-design">Ability Sound Design</a></li>
+        <li><a href="#grenade-audio">Grenade Audio</a></li>
+      </ul>
+    </li>
+    <li><a href="#-directional-audio-system">📍 Directional Audio System</a>
+      <ul>
+        <li><a href="#3d-audio-implementation">3D Audio Implementation</a></li>
+        <li><a href="#audio-compass-accuracy">Audio Compass Accuracy</a></li>
+        <li><a href="#vertical-audio-cues">Vertical Audio Cues</a></li>
+      </ul>
+    </li>
+    <li><a href="#-player-feedback-audio">🎮 Player Feedback Audio</a>
+      <ul>
+        <li><a href="#damage-indicators">Damage Indicators</a></li>
+        <li><a href="#status-effects-audio">Status Effects Audio</a></li>
+      </ul>
+    </li>
+    <li><a href="#-audio-settings-options">🔊 Audio Settings Options</a>
+      <ul>
+        <li><a href="#player-customization">Player Customization</a></li>
+        <li><a href="#accessibility">Accessibility</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><h1 id="tactical-audio---combat-sound-design">Tactical Audio - Combat Sound Design<a class="anchor" href="#tactical-audio---combat-sound-design">#</a></h1>
+<p><strong><a href="./Soundscape.md">← Back to Soundscape</a></strong> | <strong><a href="../README.md">Index</a></strong> | <strong><a href="./VoiceLines.md">Next: Voice Lines →</a></strong></p>
+<hr>
+<h2 id="-footstep-audio-system">👣 Footstep Audio System<a class="anchor" href="#-footstep-audio-system">#</a></h2>
+<h3 id="philosophy">Philosophy<a class="anchor" href="#philosophy">#</a></h3>
+<p><strong>&ldquo;Footsteps are the Meta&rdquo;</strong> - In extraction shooters, footsteps are the most important information source for tracking enemies.</p>
+<h3 id="movement-mode-audio">Movement Mode Audio<a class="anchor" href="#movement-mode-audio">#</a></h3>
+<p><strong>Hearing Ranges:</strong></p>
+<pre tabindex="0"><code>┌─────────────────────────────────────────────────┐
+│ Movement Mode │ Range │ Volume │ Character     │
+├─────────────────────────────────────────────────┤
+│ Sprint        │ 40m   │ -6dB   │ Heavy, urgent │
+│ Run           │ 30m   │ -10dB  │ Clear, rhythmic│
+│ Walk          │ 20m   │ -16dB  │ Moderate pace │
+│ Crouch Walk   │ 8m    │ -24dB  │ Soft shuffle  │
+│ Crouch Idle   │ 3m    │ -32dB  │ Fabric rustle │
+│ Prone (future)│ 5m    │ -28dB  │ Scraping      │
+└─────────────────────────────────────────────────┘</code></pre><h3 id="surface-materials">Surface Materials<a class="anchor" href="#surface-materials">#</a></h3>
+<h4 id="concreteasphalt-most-common">Concrete/Asphalt (Most Common)<a class="anchor" href="#concreteasphalt-most-common">#</a></h4>
+<pre tabindex="0"><code>Sound Character: Solid, neutral boot impact
+Frequency Focus: Mid-range (500Hz-2kHz)
+Variations: 8 samples per movement type
+
+Walking:
+├── Step_Concrete_Walk_01 → Standard boot clop
+├── Step_Concrete_Walk_02 → Slight scuff
+├── Step_Concrete_Walk_03 → Heel first
+└── ... (8 variations)
+
+Running:
+├── Heavier impact
+├── Faster cadence
+└── More bass content</code></pre><h4 id="metal-grating-loudest---high-risk">Metal Grating (LOUDEST - High Risk)<a class="anchor" href="#metal-grating-loudest---high-risk">#</a></h4>
+<pre tabindex="0"><code>Sound Character: Hollow, resonant, metallic ring
+Frequency Focus: High-mids (1kHz-4kHz) + low resonance
+Hearing Bonus: +50% range (60m sprint audible)
+
+Distinctive traits:
+├── Hollow &#34;clang&#34; on impact
+├── Structural vibration tail
+├── Very high recognition factor
+└── Players AVOID this surface</code></pre><h4 id="watermud-distinctive">Water/Mud (DISTINCTIVE)<a class="anchor" href="#watermud-distinctive">#</a></h4>
+<pre tabindex="0"><code>Sound Character: Wet, splashing, sucking
+Frequency Focus: Broadband splash + low squelch
+Hearing Bonus: +30% range
+
+Shallow Water (ankle):
+├── Splash on step
+├── Dripping on lift
+└── Rhythmic sloshing
+
+Deep Water (knee+):
+├── Heavy displacement
+├── Wading sounds
+├── Movement speed penalty (audio cue: slower)
+
+Mud:
+├── Sucking sound on lift
+├── Squelch on step
+├── Sticky, labored feel</code></pre><h4 id="grassvegetation">Grass/Vegetation<a class="anchor" href="#grassvegetation">#</a></h4>
+<pre tabindex="0"><code>Sound Character: Soft, rustling, organic
+Frequency Focus: High frequencies (2kHz-6kHz)
+Hearing Range: Reduced by 20%
+
+Dry Grass:
+├── Crisp crackle
+├── Swishing sound
+└── Light footfall
+
+Wet Grass:
+├── Muffled steps
+├── Occasional squish
+└── Quieter overall</code></pre><h4 id="wood-flooringplatforms">Wood (Flooring/Platforms)<a class="anchor" href="#wood-flooringplatforms">#</a></h4>
+<pre tabindex="0"><code>Sound Character: Creaky, hollow, resonant
+Frequency Focus: Low-mids with creaks
+
+Old Wood:
+├── Creaking boards (random)
+├── Hollow resonance
+├── Distinct from concrete
+
+Solid Wood:
+├── Thud-like impact
+├── Less creak
+└── Moderate resonance</code></pre><h4 id="glassdebris-danger---noise-trap">Glass/Debris (DANGER - Noise Trap)<a class="anchor" href="#glassdebris-danger---noise-trap">#</a></h4>
+<pre tabindex="0"><code>Sound Character: Sharp, high-pitched crunch
+Frequency Focus: High (4kHz-8kHz)
+Hearing Bonus: +60% range (cannot stealth)
+
+Behavior:
+├── Unavoidable crunch sound
+├── Alerts nearby players/AI
+├── Environmental hazard for stealth
+└── Can be seen and avoided</code></pre><h4 id="carpetfabric-indoor---quietest">Carpet/Fabric (Indoor - Quietest)<a class="anchor" href="#carpetfabric-indoor---quietest">#</a></h4>
+<pre tabindex="0"><code>Sound Character: Muffled, soft, dampened
+Frequency Focus: Very low presence
+Hearing Range: Reduced by 40%
+
+Benefits:
+├── Ideal for stealth approaches
+├── Near-silent at crouch
+└── Found in offices, hotels</code></pre><hr>
+<h2 id="-weapon-audio">🔫 Weapon Audio<a class="anchor" href="#-weapon-audio">#</a></h2>
+<h3 id="gunfire-characteristics">Gunfire Characteristics<a class="anchor" href="#gunfire-characteristics">#</a></h3>
+<p><strong>Audio Components:</strong></p>
+<pre tabindex="0"><code>Every gunshot = 4 layers:
+
+1. MUZZLE BLAST (Source)
+   └── The explosion at barrel end
+   └── Defines weapon &#34;punch&#34;
+
+2. MECHANICAL ACTION (Source)
+   └── Bolt cycling, hammer strike
+   └── Adds detail and rhythm
+
+3. SUPERSONIC CRACK (If applicable)
+   └── Bullet breaking sound barrier
+   └── Heard before muzzle blast at distance
+
+4. TAIL/REVERB (Environment)
+   └── Reflections and decay
+   └── Changes by location</code></pre><h3 id="weapon-audio-profiles">Weapon Audio Profiles<a class="anchor" href="#weapon-audio-profiles">#</a></h3>
+<h4 id="assault-rifles">Assault Rifles<a class="anchor" href="#assault-rifles">#</a></h4>
+<pre tabindex="0"><code>┌─────────────────────────────────────────────────┐
+│ Weapon    │ Character        │ Distant Sound   │
+├─────────────────────────────────────────────────┤
+│ AK-47     │ Heavy, punchy    │ &#34;Thunderclaps&#34;  │
+│ M4/AR-15  │ Sharp, snappy    │ &#34;Crackling&#34;     │
+│ SCAR      │ Balanced, solid  │ &#34;Deep pops&#34;     │
+└─────────────────────────────────────────────────┘
+
+Fire Rate Audio: Distinct rhythm per weapon
+Magazine Empty: Click sound (no more firing)</code></pre><h4 id="smgs">SMGs<a class="anchor" href="#smgs">#</a></h4>
+<pre tabindex="0"><code>┌─────────────────────────────────────────────────┐
+│ Weapon    │ Character        │ Distant Sound   │
+├─────────────────────────────────────────────────┤
+│ MP5       │ Rapid, contained │ &#34;Sewing machine&#34;│
+│ Vector    │ Ultra-fast, light│ &#34;Zipper&#34;        │
+│ UMP       │ Slower, thumpier │ &#34;Stapler&#34;       │
+└─────────────────────────────────────────────────┘
+
+Note: Higher fire rate = more blended sound</code></pre><h4 id="sniper-rifles">Sniper Rifles<a class="anchor" href="#sniper-rifles">#</a></h4>
+<pre tabindex="0"><code>┌─────────────────────────────────────────────────┐
+│ Weapon    │ Character            │ Distant     │
+├─────────────────────────────────────────────────┤
+│ AWM       │ Massive boom         │ &#34;Thunder&#34;   │
+│ SVD       │ Sharp crack          │ &#34;Whip crack&#34;│
+│ M24       │ Deep, echoing        │ &#34;Distant boom&#34;│
+└─────────────────────────────────────────────────┘
+
+Characteristic: Long reverb tail, unmistakable</code></pre><h4 id="shotguns">Shotguns<a class="anchor" href="#shotguns">#</a></h4>
+<pre tabindex="0"><code>┌─────────────────────────────────────────────────┐
+│ Weapon    │ Character            │ Distant     │
+├─────────────────────────────────────────────────┤
+│ Pump      │ Massive low-end      │ &#34;Cannon&#34;    │
+│ Semi-Auto │ Rapid booms          │ &#34;Drum beats&#34;│
+│ Double    │ Two-shot thunder     │ &#34;Double tap&#34;│
+└─────────────────────────────────────────────────┘
+
+Pump Action: Distinct &#34;chunk-chunk&#34; between shots</code></pre><h4 id="suppressed-weapons">Suppressed Weapons<a class="anchor" href="#suppressed-weapons">#</a></h4>
+<pre tabindex="0"><code>Sound Reduction: -15dB to -25dB
+Range Reduction: 70% less audible distance
+
+Components:
+├── Muzzle: Hissing gas release
+├── Mechanical: Bolt action prominent
+├── Supersonic: Still audible (unless subsonic ammo)
+└── Tail: Minimal reverb
+
+Distant Sound: &#34;Stapler&#34; or &#34;Nail gun&#34;
+Player Advantage: Harder to pinpoint direction</code></pre><h3 id="distance-based-gunfire">Distance-Based Gunfire<a class="anchor" href="#distance-based-gunfire">#</a></h3>
+<pre tabindex="0"><code>┌─────────────────────────────────────────────────┐
+│ Distance  │ Sound Character                     │
+├─────────────────────────────────────────────────┤
+│ 0-20m     │ Full impact, all frequencies        │
+│ 20-50m    │ -6dB, losing high end               │
+│ 50-100m   │ -12dB, muffled, delay noticeable    │
+│ 100-200m  │ -18dB, mostly crack/thump           │
+│ 200-400m  │ -24dB, distant rumble               │
+│ 400m+     │ Very faint, directional hint only   │
+└─────────────────────────────────────────────────┘</code></pre><hr>
+<h2 id="-reload-audio">🔄 Reload Audio<a class="anchor" href="#-reload-audio">#</a></h2>
+<h3 id="reload-sound-design">Reload Sound Design<a class="anchor" href="#reload-sound-design">#</a></h3>
+<p><strong>Philosophy:</strong> Reload sounds must be:</p>
+<ol>
+<li><strong>Distinctive</strong> per weapon type</li>
+<li><strong>Informative</strong> about reload progress</li>
+<li><strong>Satisfying</strong> with clear feedback</li>
+</ol>
+<h3 id="reload-phases">Reload Phases<a class="anchor" href="#reload-phases">#</a></h3>
+<pre tabindex="0"><code>STANDARD RELOAD (2-3 seconds):
+
+Phase 1: Magazine Release (0.3s)
+├── Button click
+├── Magazine slide out
+└── Magazine drop (if empty)
+
+Phase 2: New Magazine (0.5s)
+├── Magazine grab (fabric)
+├── Magazine orient
+└── Magazine insert (click)
+
+Phase 3: Chamber (0.3s) - If needed
+├── Bolt pull
+├── Bolt release
+└── Weapon ready
+
+Phase 4: Ready (0.1s)
+└── Subtle weapon settle</code></pre><h3 id="reload-audio-by-weapon-type">Reload Audio by Weapon Type<a class="anchor" href="#reload-audio-by-weapon-type">#</a></h3>
+<pre tabindex="0"><code>Assault Rifle:
+├── Mag release: Metallic click
+├── Mag out: Sliding metal
+├── Mag in: Solid click confirmation
+├── Bolt: If chamber empty
+└── Total: 2.5-3.0 seconds
+
+Pistol:
+├── Mag release: Small click
+├── Mag drop: Light clatter
+├── Mag slam: Quick insertion
+├── Slide release: Sharp snap
+└── Total: 1.5-2.0 seconds
+
+Shotgun (Shell by shell):
+├── Port open: Mechanical chunk
+├── Shell insert: Per shell click
+├── Chamber: Pump sound
+└── Total: 4-6 seconds (full reload)
+
+Sniper (Bolt Action):
+├── Bolt up: Mechanical lift
+├── Bolt back: Heavy slide
+├── Mag/Round: Insert sound
+├── Bolt forward/down: Locking sounds
+└── Total: 3-4 seconds</code></pre><hr>
+<h2 id="-combat-audio-feedback">💥 Combat Audio Feedback<a class="anchor" href="#-combat-audio-feedback">#</a></h2>
+<h3 id="bullet-impact-sounds">Bullet Impact Sounds<a class="anchor" href="#bullet-impact-sounds">#</a></h3>
+<p><strong>On Enemy (Confirmation):</strong></p>
+<pre tabindex="0"><code>┌─────────────────────────────────────────────────┐
+│ Hit Type    │ Sound              │ Purpose      │
+├─────────────────────────────────────────────────┤
+│ Body        │ Wet thud           │ Confirm hit  │
+│ Armor       │ Metallic clang     │ Reduced damage│
+│ Helmet      │ Sharp ring         │ Headshot armor│
+│ Headshot    │ Critical sound     │ High damage  │
+│ Kill        │ Distinct chime     │ Enemy down   │
+└─────────────────────────────────────────────────┘</code></pre><p><strong>On Environment:</strong></p>
+<pre tabindex="0"><code>┌─────────────────────────────────────────────────┐
+│ Surface     │ Sound              │ Visual       │
+├─────────────────────────────────────────────────┤
+│ Concrete    │ Dry chip/dust      │ Dust puff    │
+│ Metal       │ Ping + ricochet    │ Spark        │
+│ Wood        │ Splintering crack  │ Splinters    │
+│ Glass       │ Shatter            │ Glass break  │
+│ Water       │ Splash             │ Water spout  │
+│ Dirt        │ Soft thud          │ Dirt spray   │
+└─────────────────────────────────────────────────┘</code></pre><h3 id="bullet-whizcrack-near-misses">Bullet Whiz/Crack (Near Misses)<a class="anchor" href="#bullet-whizcrack-near-misses">#</a></h3>
+<pre tabindex="0"><code>When bullets pass near player:
+
+Close Miss (within 2m):
+├── Supersonic crack: Very loud
+├── Directional: Clear left/right
+├── Heart rate increase (audio)
+└── Player flinch (visual)
+
+Medium Miss (2-5m):
+├── Softer whiz
+├── Directional cue
+└── Alerting effect
+
+Far Miss (5-10m):
+├── Distant snap
+├── General direction
+└── Awareness prompt</code></pre><hr>
+<h2 id="-ability--item-audio">💊 Ability &amp; Item Audio<a class="anchor" href="#-ability--item-audio">#</a></h2>
+<h3 id="ability-sound-design">Ability Sound Design<a class="anchor" href="#ability-sound-design">#</a></h3>
+<p><strong>ASSAULT - Combat Stim:</strong></p>
+<pre tabindex="0"><code>Activation: Injection hiss + heartbeat spike
+Active: Pulsing bass undertone
+Duration: Rhythmic pulse matching timer
+Deactivation: Exhale + return to normal</code></pre><p><strong>SUPPORT - Healing Drone:</strong></p>
+<pre tabindex="0"><code>Deploy: Mechanical whir + propeller spin
+Active: Gentle hum + healing chime
+Healing: Soft positive tones per tick
+Recall/Destroy: Drone shutdown sound</code></pre><p><strong>RECON - UAV Scan:</strong></p>
+<pre tabindex="0"><code>Activation: Beep + radar sweep sound
+Scanning: Sonar ping (expanding circle)
+Enemy Detected: Alert chime per enemy
+Duration End: Power down beep</code></pre><p><strong>TANK - Riot Shield:</strong></p>
+<pre tabindex="0"><code>Deploy: Heavy metal clank
+Bullets Hitting: Impact sounds (no damage)
+Taking Damage: Shield stress sounds
+Breaking: Shattering + vulnerability alert</code></pre><p><strong>SPECIALIST - EMP Blast:</strong></p>
+<pre tabindex="0"><code>Charging: Electrical buildup
+Release: Massive electrical discharge
+Effect: Static zap on affected targets
+Recovery: Systems coming back online</code></pre><h3 id="grenade-audio">Grenade Audio<a class="anchor" href="#grenade-audio">#</a></h3>
+<pre tabindex="0"><code>Frag Grenade:
+├── Throw: Arm movement whoosh
+├── Flight: Air whistle
+├── Land: Bounce based on surface
+├── Fuse: Hissing (0.5s warning)
+└── Explosion: Massive boom + debris
+
+Flashbang:
+├── Flight: Same as frag
+├── Detonation: Bright audio pop
+├── Effect: Ringing tinnitus (affected)
+└── Duration: 3-5 second ring fade
+
+Smoke Grenade:
+├── Deploy: Pop + hiss
+├── Active: Continuous hissing
+├── Ambience: Muffled sounds inside
+└── Duration: Hiss fades as smoke clears</code></pre><hr>
+<h2 id="-directional-audio-system">📍 Directional Audio System<a class="anchor" href="#-directional-audio-system">#</a></h2>
+<h3 id="3d-audio-implementation">3D Audio Implementation<a class="anchor" href="#3d-audio-implementation">#</a></h3>
+<p><strong>Spatial Audio Requirements:</strong></p>
+<pre tabindex="0"><code>HRTF (Head-Related Transfer Function):
+├── Enabled for: Footsteps, gunfire, abilities
+├── 360° horizontal accuracy
+├── Vertical distinction (above/below)
+└── Distance-based filtering
+
+Stereo Fallback (No headphones):
+├── Left/Right panning
+├── Volume for distance
+├── Visual indicators supplement</code></pre><h3 id="audio-compass-accuracy">Audio Compass Accuracy<a class="anchor" href="#audio-compass-accuracy">#</a></h3>
+<pre tabindex="0"><code>Directional Precision:
+├── 0-30m: ±15° accuracy
+├── 30-60m: ±30° accuracy
+├── 60-100m: ±45° accuracy
+└── 100m+: General direction only</code></pre><h3 id="vertical-audio-cues">Vertical Audio Cues<a class="anchor" href="#vertical-audio-cues">#</a></h3>
+<pre tabindex="0"><code>Same Level:
+└── Normal playback
+
+Above (1+ floors):
+├── Muffled
+├── Creaking/footstep overhead feel
+└── Reverb suggests height
+
+Below (1+ floors):
+├── More muffled
+├── Bass-heavy
+└── Rumbling quality</code></pre><hr>
+<h2 id="-player-feedback-audio">🎮 Player Feedback Audio<a class="anchor" href="#-player-feedback-audio">#</a></h2>
+<h3 id="damage-indicators">Damage Indicators<a class="anchor" href="#damage-indicators">#</a></h3>
+<pre tabindex="0"><code>Taking Damage:
+├── Direction indicator: Whoosh from hit direction
+├── Severity: Audio varies with damage amount
+├── Low health: Heartbeat overlay
+└── Critical: Urgent warning tone
+
+Damage Sources:
+├── Bullet: Sharp impact + direction
+├── Explosion: Bass boom + tinnitus
+├── Fire: Burning sound + pain
+├── Poison/Gas: Coughing + labored breathing</code></pre><h3 id="status-effects-audio">Status Effects Audio<a class="anchor" href="#status-effects-audio">#</a></h3>
+<pre tabindex="0"><code>Bleeding:
+└── Dripping sound, heartbeat
+
+Poisoned:
+└── Nausea undertone, distorted audio
+
+Stunned:
+└── Ringing, muffled world audio
+
+Low Stamina:
+└── Heavy breathing
+
+Overweight:
+└── Labored steps, grunting</code></pre><hr>
+<h2 id="-audio-settings-options">🔊 Audio Settings Options<a class="anchor" href="#-audio-settings-options">#</a></h2>
+<h3 id="player-customization">Player Customization<a class="anchor" href="#player-customization">#</a></h3>
+<pre tabindex="0"><code>Audio Options Menu:
+├── Master Volume: 0-100%
+├── Music Volume: 0-100%
+├── SFX Volume: 0-100%
+├── Voice Volume: 0-100%
+├── Footstep Volume: 50-150% (boost option)
+├── Teammate Audio: On/Off
+├── HRTF: On/Off
+├── Visual Sound Indicators: On/Off
+└── Voice Chat Volume: 0-100%</code></pre><h3 id="accessibility">Accessibility<a class="anchor" href="#accessibility">#</a></h3>
+<pre tabindex="0"><code>Visual Sound Indicators:
+├── Footstep direction markers
+├── Gunfire direction + distance
+├── Ability sound visualized
+└── Important audio events shown
+
+Subtitle Options:
+├── Operator callouts shown
+├── Environmental audio described
+└── Combat events captioned</code></pre><hr>
+<p><strong><a href="./Soundscape.md">← Back to Soundscape</a></strong> | <strong><a href="../README.md">Index</a></strong> | <strong><a href="./VoiceLines.md">Next: Voice Lines →</a></strong></p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+<div>
+
+</div>
+
+<div>
+
+</div>
+
+</div>
+
+
+
+
+
+  
+  
+  
+  <div class="flex flex-wrap justify-between">
+    <span>
+    
+      <a href="/docs/GDD_Design/Audio/Soundscape/" class="flex align-center">
+        <img src="/icons/backward.svg" class="book-icon" alt="Backward" />
+        <span>Soundscape</span>
+      </a>
+    
+    </span>
+    <span>
+    
+      <a href="/docs/GDD_Design/Audio/VoiceLines/" class="flex align-center">
+        <span>Voice Lines</span>
+        <img src="/icons/forward.svg" class="book-icon" alt="Forward" />
+      </a>
+    
+    </span>
+  </div>
+  
+
+
+ 
+        
+  
+ 
+        
+        
+  
+ 
+        
+  
+  
+    <script>(function(){document.querySelectorAll("pre:has(code)").forEach(e=>{e.addEventListener("click",e.focus),e.addEventListener("copy",function(t){if(t.preventDefault(),navigator.clipboard){const t=window.getSelection().toString()||e.textContent;navigator.clipboard.writeText(t)}})})})()</script>
+  
+
+      </footer>
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+  
+  <aside class="book-toc">
+    <div class="book-toc-content">
+      
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#-footstep-audio-system">👣 Footstep Audio System</a>
+      <ul>
+        <li><a href="#philosophy">Philosophy</a></li>
+        <li><a href="#movement-mode-audio">Movement Mode Audio</a></li>
+        <li><a href="#surface-materials">Surface Materials</a></li>
+      </ul>
+    </li>
+    <li><a href="#-weapon-audio">🔫 Weapon Audio</a>
+      <ul>
+        <li><a href="#gunfire-characteristics">Gunfire Characteristics</a></li>
+        <li><a href="#weapon-audio-profiles">Weapon Audio Profiles</a></li>
+        <li><a href="#distance-based-gunfire">Distance-Based Gunfire</a></li>
+      </ul>
+    </li>
+    <li><a href="#-reload-audio">🔄 Reload Audio</a>
+      <ul>
+        <li><a href="#reload-sound-design">Reload Sound Design</a></li>
+        <li><a href="#reload-phases">Reload Phases</a></li>
+        <li><a href="#reload-audio-by-weapon-type">Reload Audio by Weapon Type</a></li>
+      </ul>
+    </li>
+    <li><a href="#-combat-audio-feedback">💥 Combat Audio Feedback</a>
+      <ul>
+        <li><a href="#bullet-impact-sounds">Bullet Impact Sounds</a></li>
+        <li><a href="#bullet-whizcrack-near-misses">Bullet Whiz/Crack (Near Misses)</a></li>
+      </ul>
+    </li>
+    <li><a href="#-ability--item-audio">💊 Ability &amp; Item Audio</a>
+      <ul>
+        <li><a href="#ability-sound-design">Ability Sound Design</a></li>
+        <li><a href="#grenade-audio">Grenade Audio</a></li>
+      </ul>
+    </li>
+    <li><a href="#-directional-audio-system">📍 Directional Audio System</a>
+      <ul>
+        <li><a href="#3d-audio-implementation">3D Audio Implementation</a></li>
+        <li><a href="#audio-compass-accuracy">Audio Compass Accuracy</a></li>
+        <li><a href="#vertical-audio-cues">Vertical Audio Cues</a></li>
+      </ul>
+    </li>
+    <li><a href="#-player-feedback-audio">🎮 Player Feedback Audio</a>
+      <ul>
+        <li><a href="#damage-indicators">Damage Indicators</a></li>
+        <li><a href="#status-effects-audio">Status Effects Audio</a></li>
+      </ul>
+    </li>
+    <li><a href="#-audio-settings-options">🔊 Audio Settings Options</a>
+      <ul>
+        <li><a href="#player-customization">Player Customization</a></li>
+        <li><a href="#accessibility">Accessibility</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+    </div>
+  </aside>
+  
+ 
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

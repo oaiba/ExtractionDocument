@@ -1,0 +1,2637 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=52224&amp;path=livereload" data-no-instant defer></script>
+  <!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Asset Guidelines#← Back to Style Guide | Index | Next: User Interface →
+📋 Asset Naming Convention#Folder Structure#Assets/├── Characters/│ ├── Operators/│ │ ├── SK_Operator_Assault.fbx│ │ ├── T_Operator_Assault_D.png│ │ └── ...│ ├── Enemies/│ └── NPCs/├── Weapons/│ ├── AssaultRifles/│ ├── SMGs/│ └── ...├── Environment/│ ├── Industrial/│ ├── Urban/│ └── Props/├── VFX/└── UI/Naming Pattern#[Prefix]_[Category]_[Name]_[Variant]_[Suffix]Prefixes:SK_ = Skeletal MeshSM_ = Static MeshT_ = TextureM_ = MaterialMI_ = Material InstanceA_ = AnimationS_ = SoundP_ = Particle/NiagaraWBP_= Widget BlueprintBP_ = BlueprintSuffixes (Textures):_D = Diffuse/Base Color_N = Normal Map_R = Roughness_M = Metallic_AO = Ambient Occlusion_E = Emissive_MSK= Mask (combined channels)Examples:
+">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:52224/docs/GDD_Design/Visuals/AssetGuidelines/">
+  <meta property="og:site_name" content="Extraction Shooter GDD">
+  <meta property="og:title" content="Extraction Shooter GDD">
+  <meta property="og:description" content="Asset Guidelines#← Back to Style Guide | Index | Next: User Interface →
+📋 Asset Naming Convention#Folder Structure#Assets/├── Characters/│ ├── Operators/│ │ ├── SK_Operator_Assault.fbx│ │ ├── T_Operator_Assault_D.png│ │ └── ...│ ├── Enemies/│ └── NPCs/├── Weapons/│ ├── AssaultRifles/│ ├── SMGs/│ └── ...├── Environment/│ ├── Industrial/│ ├── Urban/│ └── Props/├── VFX/└── UI/Naming Pattern#[Prefix]_[Category]_[Name]_[Variant]_[Suffix]Prefixes:SK_ = Skeletal MeshSM_ = Static MeshT_ = TextureM_ = MaterialMI_ = Material InstanceA_ = AnimationS_ = SoundP_ = Particle/NiagaraWBP_= Widget BlueprintBP_ = BlueprintSuffixes (Textures):_D = Diffuse/Base Color_N = Normal Map_R = Roughness_M = Metallic_AO = Ambient Occlusion_E = Emissive_MSK= Mask (combined channels)Examples:">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
+
+
+  <meta itemprop="name" content="Extraction Shooter GDD">
+  <meta itemprop="description" content="Asset Guidelines#← Back to Style Guide | Index | Next: User Interface →
+📋 Asset Naming Convention#Folder Structure#Assets/├── Characters/│ ├── Operators/│ │ ├── SK_Operator_Assault.fbx│ │ ├── T_Operator_Assault_D.png│ │ └── ...│ ├── Enemies/│ └── NPCs/├── Weapons/│ ├── AssaultRifles/│ ├── SMGs/│ └── ...├── Environment/│ ├── Industrial/│ ├── Urban/│ └── Props/├── VFX/└── UI/Naming Pattern#[Prefix]_[Category]_[Name]_[Variant]_[Suffix]Prefixes:SK_ = Skeletal MeshSM_ = Static MeshT_ = TextureM_ = MaterialMI_ = Material InstanceA_ = AnimationS_ = SoundP_ = Particle/NiagaraWBP_= Widget BlueprintBP_ = BlueprintSuffixes (Textures):_D = Diffuse/Base Color_N = Normal Map_R = Roughness_M = Metallic_AO = Ambient Occlusion_E = Emissive_MSK= Mask (combined channels)Examples:">
+  <meta itemprop="wordCount" content="1518">
+
+<title>Asset Guidelines | Extraction Shooter GDD</title>
+<link rel="icon" href="/favicon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="http://localhost:52224/docs/GDD_Design/Visuals/AssetGuidelines/">
+<link rel="stylesheet" href="/book.min.63c8b2b12bbd1ad36428837740ea371dd41fdb9c22b35499003d0dfa4dbce6ba.css" integrity="sha256-Y8iysSu9GtNkKIN3QOo3HdQf25wis1SZAD0N&#43;k285ro=" crossorigin="anonymous">
+
+
+  <script defer src="/fuse.min.js"></script>
+  <script defer src="/en.search.min.58bea27d7a08265548c5a8636a9a9fc844e0eb9d60fc3bb2c53d517da858d4c1.js" integrity="sha256-WL6ifXoIJlVIxahjapqfyETg651g/DuyxT1RfahY1ME=" crossorigin="anonymous"></script>
+
+  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
+
+
+
+  
+</head>
+<body dir="ltr" class="book-kind-page book-type-docs">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    
+<aside class="book-menu">
+  <div class="book-menu-content">
+    
+  <nav>
+    <h2 class="book-brand">
+  <a class="flex align-center" href="/"><img src="/logo.svg" alt="Logo" /><span>Extraction Shooter GDD</span>
+  </a>
+</h2>
+
+    <div class="book-theme-toggle">
+    <input type="checkbox" id="theme-toggle" class="toggle">
+    <label for="theme-toggle" class="flex justify-between items-center cursor-pointer">
+        <span class="text-xs font-semibold">Dark Mode</span>
+        <div
+            class="relative w-10 h-5 bg-gray-200 rounded-full transition-colors duration-200 ease-in-out dark:bg-gray-700">
+            <div
+                class="absolute left-0 w-5 h-5 bg-white rounded-full shadow transform transition-transform duration-200 ease-in-out dark:translate-x-full">
+            </div>
+        </div>
+    </label>
+</div>
+
+<script>
+    (function () {
+        const toggle = document.getElementById('theme-toggle');
+        const html = document.documentElement;
+
+        
+        const savedTheme = localStorage.getItem('theme');
+        const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+        if (savedTheme === 'dark' || (!savedTheme && systemDark)) {
+            html.classList.add('dark');
+            toggle.checked = true;
+        } else {
+            html.classList.remove('dark');
+            toggle.checked = false;
+        }
+
+        
+        toggle.addEventListener('change', function () {
+            if (this.checked) {
+                html.classList.add('dark');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                html.classList.remove('dark');
+                localStorage.setItem('theme', 'light');
+            }
+        });
+    })();
+</script>
+
+<style>
+     
+    .book-theme-toggle {
+        margin: 1rem 0;
+        padding: 0 1rem;
+
+    }
+
+    .book-theme-toggle label {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        cursor: pointer;
+        font-size: 0.85em;
+    }
+
+     
+    .book-theme-toggle input {
+        display: none;
+    }
+
+     
+    .book-theme-toggle label::after {
+        content: "🌙";
+         
+    }
+
+     
+    html:not(.dark) .book-theme-toggle label::after {
+        content: "☀️";
+         
+    }
+</style> 
+    
+<div class="book-search hidden">
+  <input id="book-search-input" type="text" 
+    placeholder="Search"
+    aria-label="Search"
+    maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+    
+
+    
+    
+
+
+
+    
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/" class="">
+      Gdd Design</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      AI</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/AI/EnemyBehavior/" class="">
+      Enemy Behavior</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/AI/FactionBehaviors/" class="">
+      Faction Behaviors</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Audio</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Audio/SoundDesign/" class="">
+      Sound Design</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Audio/Soundscape/" class="">
+      Soundscape</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Audio/TacticalAudio/" class="">
+      Tactical Audio</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Audio/VoiceLines/" class="">
+      Voice Lines</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Characters</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Operators/" class="">
+      Operators</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Assault</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Assault/Blaze/" class="">
+      Blaze</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Assault/Havoc/" class="">
+      Havoc</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Assault/README/" class="">
+      Readme</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Assault/Viper/" class="">
+      Viper</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Recon</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Recon/Phantom/" class="">
+      Phantom</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Recon/README/" class="">
+      Readme</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Recon/Specter/" class="">
+      Specter</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Recon/Wraith/" class="">
+      Wraith</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Specialist</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Specialist/Cipher/" class="">
+      Cipher</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Specialist/Flux/" class="">
+      Flux</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Specialist/README/" class="">
+      Readme</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Support</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Support/Angel/" class="">
+      Angel</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Support/Doc/" class="">
+      Doc</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Support/README/" class="">
+      Readme</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Tank</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Tank/Bulwark/" class="">
+      Bulwark</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Tank/Fortress/" class="">
+      Fortress</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Tank/README/" class="">
+      Readme</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Combat</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Combat/Items/" class="">
+      Items</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Combat/Weapons/" class="">
+      Weapons</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      GameDesign</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Accessibility/" class="">
+      Accessibility</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Controls/" class="">
+      Controls</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/CoreGameplay/" class="">
+      Core Gameplay</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Economy/" class="">
+      Economy</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/GameModes/" class="">
+      Game Modes</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/LiveOps/" class="">
+      Live Ops</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Localization/" class="">
+      Localization</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/NavigationAndMap/" class="">
+      Navigation and Map</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Overview/" class="">
+      Overview</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Progression/" class="">
+      Progression</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/RankedMode/" class="">
+      Ranked Mode</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/TutorialRaid/" class="">
+      Tutorial Raid</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/UserSettings/" class="">
+      User Settings</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Gameplay</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Gameplay/CoreLoop/" class="">
+      Core Loop</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      ProjectScope</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/ProjectScope/DesignPillars/" class="">
+      Design Pillars</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/ProjectScope/MVP/" class="">
+      Mvp</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/ProjectScope/NonGoals/" class="">
+      Non Goals</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/ProjectScope/Risks/" class="">
+      Risks</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Social</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Social/Multiplayer/" class="">
+      Multiplayer</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Story</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Story/Backstory/" class="">
+      Backstory</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Story/Factions/" class="">
+      Factions</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Story/Narrative/" class="">
+      Narrative</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Story/QuestLines/" class="">
+      Quest Lines</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      UI UX</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/UI_UX/UX_Flows/" class="">
+      Ux Flows</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/UI_UX/Visual_Style/" class="">
+      Visual Style</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Visuals</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Visuals/ArtDirection/" class="">
+      Art Direction</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Visuals/AssetGuidelines/" class="active">
+      Asset Guidelines</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Visuals/StyleGuide/" class="">
+      Style Guide</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Visuals/UserInterface/" class="">
+      User Interface</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      World</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/EnvironmentalNarrative/" class="">
+      Environmental Narrative</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/EnvironmentalNarrative_Guidelines/" class="">
+      Environmental Narrative Guidelines</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/LootDistribution/" class="">
+      Loot Distribution</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/MapDesign/" class="">
+      Map Design</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/MapDesign_IndustrialZone/" class="">
+      Map Design Industrial Zone</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/MapDesign_NeonSlums/" class="">
+      Map Design Neon Slums</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/MapDesign_Wilderness/" class="">
+      Map Design Wilderness</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/MapLayouts/" class="">
+      Map Layouts</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/" class="">
+      Gdd Technical</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      AI</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/AI/SensorySystem/" class="">
+      Sensory System</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Core</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Core/Architecture/" class="">
+      Architecture</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Core/CodingStandards/" class="">
+      Coding Standards</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Core/DevelopmentRoadmap/" class="">
+      Development Roadmap</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Core/NetworkingSystem/" class="">
+      Networking System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Core/SecuritySystem/" class="">
+      Security System</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Gameplay</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Gameplay/CharacterSystem/" class="">
+      Character System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Gameplay/ControlSystem/" class="">
+      Control System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Gameplay/InventorySystem/" class="">
+      Inventory System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Gameplay/WeaponSystem/" class="">
+      Weapon System</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Networking</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Networking/LagCompensation/" class="">
+      Lag Compensation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Networking/ReplicationStrategy/" class="">
+      Replication Strategy</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Performance</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Performance/Budgets/" class="">
+      Budgets</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Performance/Optimization/" class="">
+      Optimization</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Security</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Security/AntiCheatStrategy/" class="">
+      Anti Cheat Strategy</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Systems</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/AccessibilitySystem/" class="">
+      Accessibility System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/AISystem/" class="">
+      Aisystem</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/AnalyticsSystem/" class="">
+      Analytics System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/AudioSystem/" class="">
+      Audio System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/BuildPipeline/" class="">
+      Build Pipeline</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/LiveOpsSystem/" class="">
+      Live Ops System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/LocalizationSystem/" class="">
+      Localization System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/MapSystem/" class="">
+      Map System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/NarrativeSystem/" class="">
+      Narrative System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/ProgressionSystem/" class="">
+      Progression System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/RankedSystem/" class="">
+      Ranked System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/SaveSystem/" class="">
+      Save System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/SocialSystem/" class="">
+      Social System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/TutorialSystem/" class="">
+      Tutorial System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/UISystem/" class="">
+      Uisystem</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+</nav>
+
+
+
+
+<script>{ { . | safeJS } }</script>
+
+
+  </div>
+</aside>
+ 
+
+    <div class="book-page">
+      <header class="book-header hidden">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/icons/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <h3>Asset Guidelines</h3>
+
+  <label for="toc-control">
+    
+    <img src="/icons/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#-asset-naming-convention">📋 Asset Naming Convention</a>
+      <ul>
+        <li><a href="#folder-structure">Folder Structure</a></li>
+        <li><a href="#naming-pattern">Naming Pattern</a></li>
+      </ul>
+    </li>
+    <li><a href="#-character-asset-specifications">👤 Character Asset Specifications</a>
+      <ul>
+        <li><a href="#operator-models">Operator Models</a></li>
+        <li><a href="#operator-lod-settings">Operator LOD Settings</a></li>
+        <li><a href="#enemy-ai-models">Enemy AI Models</a></li>
+      </ul>
+    </li>
+    <li><a href="#-weapon-asset-specifications">🔫 Weapon Asset Specifications</a>
+      <ul>
+        <li><a href="#weapon-models">Weapon Models</a></li>
+        <li><a href="#attachment-models">Attachment Models</a></li>
+      </ul>
+    </li>
+    <li><a href="#-environment-asset-specifications">🏗️ Environment Asset Specifications</a>
+      <ul>
+        <li><a href="#building-exteriors">Building Exteriors</a></li>
+        <li><a href="#props--objects">Props &amp; Objects</a></li>
+        <li><a href="#cover-objects">Cover Objects</a></li>
+      </ul>
+    </li>
+    <li><a href="#-animation-guidelines">🎭 Animation Guidelines</a>
+      <ul>
+        <li><a href="#character-animation-specs">Character Animation Specs</a></li>
+      </ul>
+    </li>
+    <li><a href="#-vfx-asset-specifications">⚡ VFX Asset Specifications</a>
+      <ul>
+        <li><a href="#particle-system-limits">Particle System Limits</a></li>
+        <li><a href="#material-guidelines">Material Guidelines</a></li>
+      </ul>
+    </li>
+    <li><a href="#-lod-requirements">📦 LOD Requirements</a>
+      <ul>
+        <li><a href="#standard-lod-settings">Standard LOD Settings</a></li>
+      </ul>
+    </li>
+    <li><a href="#-import-settings-ue5">🔧 Import Settings (UE5)</a>
+      <ul>
+        <li><a href="#static-meshes">Static Meshes</a></li>
+        <li><a href="#skeletal-meshes">Skeletal Meshes</a></li>
+        <li><a href="#textures">Textures</a></li>
+      </ul>
+    </li>
+    <li><a href="#-quality-checklist">✅ Quality Checklist</a>
+      <ul>
+        <li><a href="#before-submission">Before Submission</a></li>
+      </ul>
+    </li>
+    <li><a href="#-asset-budget-summary">📊 Asset Budget Summary</a>
+      <ul>
+        <li><a href="#per-scene-budget-mobile-target">Per-Scene Budget (Mobile Target)</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><h1 id="asset-guidelines">Asset Guidelines<a class="anchor" href="#asset-guidelines">#</a></h1>
+<p><strong><a href="./StyleGuide.md">← Back to Style Guide</a></strong> | <strong><a href="../README.md">Index</a></strong> | <strong><a href="./UserInterface.md">Next: User Interface →</a></strong></p>
+<hr>
+<h2 id="-asset-naming-convention">📋 Asset Naming Convention<a class="anchor" href="#-asset-naming-convention">#</a></h2>
+<h3 id="folder-structure">Folder Structure<a class="anchor" href="#folder-structure">#</a></h3>
+<pre tabindex="0"><code>Assets/
+├── Characters/
+│   ├── Operators/
+│   │   ├── SK_Operator_Assault.fbx
+│   │   ├── T_Operator_Assault_D.png
+│   │   └── ...
+│   ├── Enemies/
+│   └── NPCs/
+├── Weapons/
+│   ├── AssaultRifles/
+│   ├── SMGs/
+│   └── ...
+├── Environment/
+│   ├── Industrial/
+│   ├── Urban/
+│   └── Props/
+├── VFX/
+└── UI/</code></pre><h3 id="naming-pattern">Naming Pattern<a class="anchor" href="#naming-pattern">#</a></h3>
+<pre tabindex="0"><code>[Prefix]_[Category]_[Name]_[Variant]_[Suffix]
+
+Prefixes:
+SK_ = Skeletal Mesh
+SM_ = Static Mesh
+T_  = Texture
+M_  = Material
+MI_ = Material Instance
+A_  = Animation
+S_  = Sound
+P_  = Particle/Niagara
+WBP_= Widget Blueprint
+BP_ = Blueprint
+
+Suffixes (Textures):
+_D  = Diffuse/Base Color
+_N  = Normal Map
+_R  = Roughness
+_M  = Metallic
+_AO = Ambient Occlusion
+_E  = Emissive
+_MSK= Mask (combined channels)</code></pre><p><strong>Examples:</strong></p>
+<pre tabindex="0"><code>SK_Operator_Assault_Male.fbx
+T_Operator_Assault_Male_D.png
+SM_Weapon_AR_AK47.fbx
+T_Weapon_AR_AK47_D.png
+SM_Prop_Crate_Military_A.fbx</code></pre><hr>
+<h2 id="-character-asset-specifications">👤 Character Asset Specifications<a class="anchor" href="#-character-asset-specifications">#</a></h2>
+<h3 id="operator-models">Operator Models<a class="anchor" href="#operator-models">#</a></h3>
+<p><strong>Polygon Budget:</strong></p>
+<pre tabindex="0"><code>┌─────────────────────────────────────────────┐
+│ Component       │ Low LOD │ Mid LOD │ High  │
+├─────────────────────────────────────────────┤
+│ Body Base       │ 4,000   │ 8,000   │ 12,000│
+│ Head            │ 1,500   │ 2,500   │ 4,000 │
+│ Armor/Gear      │ 2,000   │ 4,000   │ 6,000 │
+│ Accessories     │ 500     │ 1,000   │ 2,000 │
+│ Backpack        │ 300     │ 600     │ 1,000 │
+├─────────────────────────────────────────────┤
+│ TOTAL           │ 8,300   │ 16,100  │ 25,000│
+└─────────────────────────────────────────────┘</code></pre><p><strong>Texture Specifications:</strong></p>
+<pre tabindex="0"><code>┌─────────────────────────────────────────────┐
+│ Map Type        │ Resolution │ Format      │
+├─────────────────────────────────────────────┤
+│ Base Color      │ 2048x2048  │ BC1 (DXT1)  │
+│ Normal          │ 2048x2048  │ BC5         │
+│ ORM (AO/R/M)    │ 2048x2048  │ BC1         │
+│ Emissive (opt)  │ 1024x1024  │ BC1         │
+└─────────────────────────────────────────────┘</code></pre><p><strong>Skeleton Requirements:</strong></p>
+<pre tabindex="0"><code>Base: UE5 Mannequin compatible
+Bones: 70-80 total
+  - Spine: 4 bones
+  - Arms: 3 bones each + hand (15 bones)
+  - Legs: 4 bones each + foot (5 bones)
+  - Neck/Head: 3 bones
+  - Accessories: 5-10 extra bones
+
+IK Setup: Required for weapon handling
+Physics: Cloth simulation for pouches/straps</code></pre><h3 id="operator-lod-settings">Operator LOD Settings<a class="anchor" href="#operator-lod-settings">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">LOD</th>
+          <th style="text-align: left">Distance</th>
+          <th style="text-align: left">Triangles</th>
+          <th style="text-align: left">Use Case</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">LOD0</td>
+          <td style="text-align: left">0-50m</td>
+          <td style="text-align: left">25,000</td>
+          <td style="text-align: left">Player, close</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">LOD1</td>
+          <td style="text-align: left">50-100m</td>
+          <td style="text-align: left">16,000</td>
+          <td style="text-align: left">Mid range</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">LOD2</td>
+          <td style="text-align: left">100-200m</td>
+          <td style="text-align: left">8,000</td>
+          <td style="text-align: left">Far</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">LOD3</td>
+          <td style="text-align: left">200m+</td>
+          <td style="text-align: left">3,000</td>
+          <td style="text-align: left">Distant</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h3 id="enemy-ai-models">Enemy AI Models<a class="anchor" href="#enemy-ai-models">#</a></h3>
+<p><strong>Standard Enemy:</strong></p>
+<pre tabindex="0"><code>Polygon Budget: 8,000 - 12,000 tris
+Texture: 1024x1024 (shared atlas preferred)
+Bones: 50-60
+Animation Set: Shared with Operators (retarget)</code></pre><p><strong>Elite Enemy:</strong></p>
+<pre tabindex="0"><code>Polygon Budget: 12,000 - 18,000 tris
+Texture: 2048x2048
+Bones: 65-75
+Unique visual elements required</code></pre><p><strong>Boss Enemy:</strong></p>
+<pre tabindex="0"><code>Polygon Budget: 20,000 - 35,000 tris
+Texture: 2048x2048 (unique)
+Bones: 70-90 (extra for unique animations)
+Special VFX attachments</code></pre><hr>
+<h2 id="-weapon-asset-specifications">🔫 Weapon Asset Specifications<a class="anchor" href="#-weapon-asset-specifications">#</a></h2>
+<h3 id="weapon-models">Weapon Models<a class="anchor" href="#weapon-models">#</a></h3>
+<p><strong>Polygon Budget by Category:</strong></p>
+<pre tabindex="0"><code>┌─────────────────────────────────────────────┐
+│ Weapon Type     │ Triangles  │ Attachments │
+├─────────────────────────────────────────────┤
+│ Pistol          │ 1,500-2,500│ +500 max    │
+│ SMG             │ 2,000-3,000│ +800 max    │
+│ Assault Rifle   │ 3,000-4,000│ +1,000 max  │
+│ Shotgun         │ 2,500-3,500│ +800 max    │
+│ Sniper Rifle    │ 3,500-4,500│ +1,200 max  │
+│ LMG             │ 4,000-5,000│ +1,000 max  │
+│ Melee           │ 800-1,500  │ N/A         │
+└─────────────────────────────────────────────┘</code></pre><p><strong>Modular Setup:</strong></p>
+<pre tabindex="0"><code>Every weapon = Base + Attachments
+
+Attachment Slots:
+├── Slot_Optic     (Top rail)
+├── Slot_Muzzle    (Barrel end)
+├── Slot_Underbarrel (Bottom rail)
+├── Slot_Magazine  (Fixed position)
+└── Slot_Stock     (Rear, if applicable)
+
+Sockets required in skeleton:
+- Muzzle_Flash (for VFX)
+- Ejection_Port (for shell casings)
+- Magazine_Eject (for reload)</code></pre><p><strong>Texture Specifications:</strong></p>
+<pre tabindex="0"><code>Resolution: 1024x1024 per weapon
+Maps: Base Color, Normal, ORM
+Skin Support: Material parameter switching
+Wear Levels: Vertex color channel (R = wear)</code></pre><h3 id="attachment-models">Attachment Models<a class="anchor" href="#attachment-models">#</a></h3>
+<pre tabindex="0"><code>┌─────────────────────────────────────────────┐
+│ Attachment Type │ Triangles  │ Texture     │
+├─────────────────────────────────────────────┤
+│ Red Dot Sight   │ 200-400    │ Shared atlas│
+│ Holographic     │ 300-500    │ Shared atlas│
+│ Scope (4x+)     │ 500-800    │ Shared atlas│
+│ Suppressor      │ 200-400    │ Shared atlas│
+│ Foregrip        │ 150-300    │ Shared atlas│
+│ Laser           │ 100-200    │ Shared atlas│
+│ Extended Mag    │ 100-200    │ Shared atlas│
+└─────────────────────────────────────────────┘
+
+Total Attachment Atlas: 1024x1024 (all attachments)</code></pre><hr>
+<h2 id="-environment-asset-specifications">🏗️ Environment Asset Specifications<a class="anchor" href="#-environment-asset-specifications">#</a></h2>
+<h3 id="building-exteriors">Building Exteriors<a class="anchor" href="#building-exteriors">#</a></h3>
+<p><strong>Modular Building System:</strong></p>
+<pre tabindex="0"><code>Grid Size: 4m x 4m modules
+Height: 3.5m per floor
+
+Module Types:
+├── Wall_Solid (no opening)
+├── Wall_Window (standard window)
+├── Wall_Door (door frame)
+├── Wall_Damaged (hole/destruction)
+├── Corner_Internal
+├── Corner_External
+├── Floor_Standard
+├── Ceiling_Standard
+└── Roof_Variants</code></pre><p><strong>Polygon Budget (per module):</strong></p>
+<pre tabindex="0"><code>Wall Module:    200-500 tris
+Floor/Ceiling:  100-300 tris
+Decoration:     100-400 tris per piece</code></pre><p><strong>Texture Atlasing:</strong></p>
+<pre tabindex="0"><code>Industrial Atlas:  2048x2048 (tiled)
+Urban Atlas:       2048x2048 (tiled)
+Detail Atlas:      1024x1024 (decals)</code></pre><h3 id="props--objects">Props &amp; Objects<a class="anchor" href="#props--objects">#</a></h3>
+<p><strong>Hero Props (High Detail):</strong></p>
+<pre tabindex="0"><code>Loot Container (Legendary):
+├── Triangles: 2,000-3,000
+├── Texture: 1024x1024
+├── Materials: 2 (base + emissive)
+├── VFX: Particle attachment
+└── Animation: Open/Close
+
+Vehicles:
+├── Triangles: 5,000-10,000
+├── Texture: 2048x2048
+├── Destruction states: 3 variants
+└── LODs: 4 levels</code></pre><p><strong>Standard Props:</strong></p>
+<pre tabindex="0"><code>Crates/Boxes:     300-600 tris
+Barrels/Drums:    200-400 tris
+Furniture:        300-800 tris
+Equipment:        200-500 tris
+Small Debris:     50-150 tris</code></pre><p><strong>Vegetation:</strong></p>
+<pre tabindex="0"><code>Trees:            2,000-4,000 tris (billboard at distance)
+Bushes:           500-1,000 tris
+Grass:            Instanced mesh, 10-30 tris per blade
+Vines/Overgrowth: 200-500 tris (decal + mesh combo)</code></pre><h3 id="cover-objects">Cover Objects<a class="anchor" href="#cover-objects">#</a></h3>
+<p><strong>Cover Classification:</strong></p>
+<pre tabindex="0"><code>┌─────────────────────────────────────────────┐
+│ Cover Type  │ Height │ Protection │ Tris   │
+├─────────────────────────────────────────────┤
+│ Full        │ 1.5m+  │ 100%       │ 500+   │
+│ Half        │ 0.7-1.5│ 60%        │ 300-500│
+│ Soft        │ Any    │ 30%        │ 200-400│
+│ None        │ &lt;0.5m  │ 0%         │ &lt;200   │
+└─────────────────────────────────────────────┘
+
+Cover objects MUST have:
+- Clear collision shape
+- Appropriate material response
+- Destruction state (if applicable)</code></pre><hr>
+<h2 id="-animation-guidelines">🎭 Animation Guidelines<a class="anchor" href="#-animation-guidelines">#</a></h2>
+<h3 id="character-animation-specs">Character Animation Specs<a class="anchor" href="#character-animation-specs">#</a></h3>
+<p><strong>Locomotion Set:</strong></p>
+<pre tabindex="0"><code>┌─────────────────────────────────────────────┐
+│ Animation        │ Frames │ Loop │ Priority│
+├─────────────────────────────────────────────┤
+│ Idle_Unarmed     │ 90     │ Yes  │ Low     │
+│ Idle_Rifle       │ 90     │ Yes  │ Low     │
+│ Walk_Forward     │ 30     │ Yes  │ Med     │
+│ Walk_Backward    │ 30     │ Yes  │ Med     │
+│ Walk_Left        │ 30     │ Yes  │ Med     │
+│ Walk_Right       │ 30     │ Yes  │ Med     │
+│ Run_Forward      │ 20     │ Yes  │ High    │
+│ Sprint           │ 15     │ Yes  │ High    │
+│ Crouch_Idle      │ 60     │ Yes  │ Med     │
+│ Crouch_Walk      │ 40     │ Yes  │ Med     │
+└─────────────────────────────────────────────┘</code></pre><p><strong>Combat Animations:</strong></p>
+<pre tabindex="0"><code>┌─────────────────────────────────────────────┐
+│ Animation        │ Frames │ Blend │ Notes  │
+├─────────────────────────────────────────────┤
+│ Fire_Rifle       │ 8      │ Add   │ Upper  │
+│ Fire_Pistol      │ 6      │ Add   │ Upper  │
+│ Reload_Rifle     │ 60-90  │ Full  │ Events │
+│ Reload_Pistol    │ 45     │ Full  │ Events │
+│ Melee_Attack     │ 20     │ Full  │ Combo  │
+│ Throw_Grenade    │ 40     │ Full  │ Release│
+│ Hit_React_Light  │ 15     │ Add   │ Random │
+│ Hit_React_Heavy  │ 25     │ Full  │ Stagger│
+│ Death_Front      │ 45     │ Full  │ Ragdoll│
+│ Death_Back       │ 45     │ Full  │ Ragdoll│
+└─────────────────────────────────────────────┘</code></pre><p><strong>Animation Events Required:</strong></p>
+<pre tabindex="0"><code>Reload Animations:
+├── Event: MagOut (magazine detach)
+├── Event: MagIn (magazine attach)
+├── Event: BoltPull (if applicable)
+└── Event: Ready (weapon ready)
+
+Melee Animations:
+├── Event: DamageStart
+├── Event: DamageEnd
+└── Event: CanCombo
+
+Death Animations:
+├── Event: RagdollStart
+└── Event: LootableStart</code></pre><hr>
+<h2 id="-vfx-asset-specifications">⚡ VFX Asset Specifications<a class="anchor" href="#-vfx-asset-specifications">#</a></h2>
+<h3 id="particle-system-limits">Particle System Limits<a class="anchor" href="#particle-system-limits">#</a></h3>
+<p><strong>Per-Effect Budget:</strong></p>
+<pre tabindex="0"><code>Combat Effects:
+├── Muzzle Flash:   50 particles, 0.1s lifetime
+├── Bullet Impact:  20 particles, 0.5s lifetime
+├── Blood Splatter: 15 particles, 0.3s lifetime
+└── Explosion:      200 particles, 1.5s lifetime
+
+Environmental Effects:
+├── Smoke:          100 particles, 3s lifetime
+├── Fire:           150 particles, continuous
+├── Rain:           500 particles, continuous (pooled)
+└── Dust:           50 particles, 2s lifetime</code></pre><p><strong>Texture Specifications:</strong></p>
+<pre tabindex="0"><code>Particle Sprites: 256x256 max (atlased)
+Flipbooks: 512x512 max, 4x4 or 8x8 frames
+Format: BC4 (grayscale) or BC1 (color)</code></pre><h3 id="material-guidelines">Material Guidelines<a class="anchor" href="#material-guidelines">#</a></h3>
+<p><strong>Effect Materials:</strong></p>
+<pre tabindex="0"><code>Max texture samples: 2 per material
+Shader complexity: Simple (mobile target)
+Blend mode: Additive (most), Translucent (smoke)
+Soft particles: Required for all</code></pre><hr>
+<h2 id="-lod-requirements">📦 LOD Requirements<a class="anchor" href="#-lod-requirements">#</a></h2>
+<h3 id="standard-lod-settings">Standard LOD Settings<a class="anchor" href="#standard-lod-settings">#</a></h3>
+<p><strong>Characters:</strong></p>
+<pre tabindex="0"><code>LOD0: 100% triangles, 0-50 units
+LOD1: 65% triangles, 50-100 units
+LOD2: 35% triangles, 100-200 units
+LOD3: 15% triangles, 200+ units
+Cull: 500+ units</code></pre><p><strong>Props:</strong></p>
+<pre tabindex="0"><code>LOD0: 100% triangles, 0-30 units
+LOD1: 50% triangles, 30-80 units
+LOD2: 25% triangles, 80-150 units
+Cull: 200+ units (small props), 400+ (large)</code></pre><p><strong>Buildings:</strong></p>
+<pre tabindex="0"><code>LOD0: Full detail, 0-100 units
+LOD1: Simplified geometry, 100-200 units
+LOD2: Billboard/Impostor, 200+ units</code></pre><hr>
+<h2 id="-import-settings-ue5">🔧 Import Settings (UE5)<a class="anchor" href="#-import-settings-ue5">#</a></h2>
+<h3 id="static-meshes">Static Meshes<a class="anchor" href="#static-meshes">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">Import Settings</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">Auto Generate Collision</span>: <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">Combine Meshes</span>: <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">Generate Lightmap UVs</span>: <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span><span style="color:#f92672">Build Settings</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">Distance Field Resolution</span>: <span style="color:#ae81ff">1.0</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">Nanite</span>: <span style="color:#ae81ff">Enabled (high detail assets only)</span></span></span></code></pre></div><h3 id="skeletal-meshes">Skeletal Meshes<a class="anchor" href="#skeletal-meshes">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">Import Settings</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">Import Morph Targets</span>: <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">Update Skeleton Reference</span>: <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">Import Mesh LODs</span>: <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span><span style="color:#f92672">Animation Settings</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">Animation Length</span>: <span style="color:#ae81ff">Exported Time</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">Frame Range</span>: <span style="color:#ae81ff">Custom (0-end)</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">Sampling Rate</span>: <span style="color:#ae81ff">30</span> <span style="color:#ae81ff">FPS</span></span></span></code></pre></div><h3 id="textures">Textures<a class="anchor" href="#textures">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">Compression</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">Base Color</span>: <span style="color:#ae81ff">Default (DXT1)</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">Normal Map</span>: <span style="color:#ae81ff">Normalmap (BC5)</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">Masks</span>: <span style="color:#ae81ff">Masks (no sRGB)</span>
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span><span style="color:#f92672">Settings</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">sRGB</span>: <span style="color:#66d9ef">true</span> <span style="color:#ae81ff">(Base Color only)</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">Mip Gen Settings</span>: <span style="color:#ae81ff">NoMipmaps (UI), FromTextureGroup (3D)</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">LOD Bias</span>: <span style="color:#ae81ff">0</span></span></span></code></pre></div><hr>
+<h2 id="-quality-checklist">✅ Quality Checklist<a class="anchor" href="#-quality-checklist">#</a></h2>
+<h3 id="before-submission">Before Submission<a class="anchor" href="#before-submission">#</a></h3>
+<p><strong>Model Checklist:</strong></p>
+<ul>
+<li><input disabled="" type="checkbox"> Correct naming convention</li>
+<li><input disabled="" type="checkbox"> Polygon count within budget</li>
+<li><input disabled="" type="checkbox"> Clean topology (no N-gons, no floating verts)</li>
+<li><input disabled="" type="checkbox"> Proper UV layout (no overlapping for lightmaps)</li>
+<li><input disabled="" type="checkbox"> Origin point at logical location</li>
+<li><input disabled="" type="checkbox"> Scale matches world units (1 unit = 1 cm)</li>
+<li><input disabled="" type="checkbox"> LODs generated and tested</li>
+</ul>
+<p><strong>Texture Checklist:</strong></p>
+<ul>
+<li><input disabled="" type="checkbox"> Correct resolution</li>
+<li><input disabled="" type="checkbox"> Power of 2 dimensions</li>
+<li><input disabled="" type="checkbox"> No visible seams</li>
+<li><input disabled="" type="checkbox"> Consistent texel density</li>
+<li><input disabled="" type="checkbox"> All maps exported (D, N, ORM)</li>
+<li><input disabled="" type="checkbox"> sRGB settings correct</li>
+</ul>
+<p><strong>Animation Checklist:</strong></p>
+<ul>
+<li><input disabled="" type="checkbox"> Root motion correct (if applicable)</li>
+<li><input disabled="" type="checkbox"> Animation events placed</li>
+<li><input disabled="" type="checkbox"> Blend transitions smooth</li>
+<li><input disabled="" type="checkbox"> No foot sliding</li>
+<li><input disabled="" type="checkbox"> Loops seamless</li>
+</ul>
+<hr>
+<h2 id="-asset-budget-summary">📊 Asset Budget Summary<a class="anchor" href="#-asset-budget-summary">#</a></h2>
+<h3 id="per-scene-budget-mobile-target">Per-Scene Budget (Mobile Target)<a class="anchor" href="#per-scene-budget-mobile-target">#</a></h3>
+<pre tabindex="0"><code>┌─────────────────────────────────────────────┐
+│ Category            │ Budget    │ Priority │
+├─────────────────────────────────────────────┤
+│ Characters (visible)│ 300K tris │ High     │
+│ Weapons (visible)   │ 50K tris  │ High     │
+│ Environment Props   │ 800K tris │ Medium   │
+│ Vegetation          │ 400K tris │ Low      │
+│ VFX                 │ 200K tris │ Medium   │
+├─────────────────────────────────────────────┤
+│ TOTAL ON-SCREEN     │ 1.75M tris│          │
+└─────────────────────────────────────────────┘
+
+Texture Memory: &lt; 800MB (mid-range device)
+Draw Calls: &lt; 2000</code></pre><hr>
+<p><strong><a href="./StyleGuide.md">← Back to Style Guide</a></strong> | <strong><a href="../README.md">Index</a></strong> | <strong><a href="./UserInterface.md">Next: User Interface →</a></strong></p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+<div>
+
+</div>
+
+<div>
+
+</div>
+
+</div>
+
+
+
+
+
+  
+  
+  
+  <div class="flex flex-wrap justify-between">
+    <span>
+    
+      <a href="/docs/GDD_Design/Visuals/ArtDirection/" class="flex align-center">
+        <img src="/icons/backward.svg" class="book-icon" alt="Backward" />
+        <span>Art Direction</span>
+      </a>
+    
+    </span>
+    <span>
+    
+      <a href="/docs/GDD_Design/Visuals/StyleGuide/" class="flex align-center">
+        <span>Style Guide</span>
+        <img src="/icons/forward.svg" class="book-icon" alt="Forward" />
+      </a>
+    
+    </span>
+  </div>
+  
+
+
+ 
+        
+  
+ 
+        
+        
+  
+ 
+        
+  
+  
+    <script>(function(){document.querySelectorAll("pre:has(code)").forEach(e=>{e.addEventListener("click",e.focus),e.addEventListener("copy",function(t){if(t.preventDefault(),navigator.clipboard){const t=window.getSelection().toString()||e.textContent;navigator.clipboard.writeText(t)}})})})()</script>
+  
+
+      </footer>
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+  
+  <aside class="book-toc">
+    <div class="book-toc-content">
+      
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#-asset-naming-convention">📋 Asset Naming Convention</a>
+      <ul>
+        <li><a href="#folder-structure">Folder Structure</a></li>
+        <li><a href="#naming-pattern">Naming Pattern</a></li>
+      </ul>
+    </li>
+    <li><a href="#-character-asset-specifications">👤 Character Asset Specifications</a>
+      <ul>
+        <li><a href="#operator-models">Operator Models</a></li>
+        <li><a href="#operator-lod-settings">Operator LOD Settings</a></li>
+        <li><a href="#enemy-ai-models">Enemy AI Models</a></li>
+      </ul>
+    </li>
+    <li><a href="#-weapon-asset-specifications">🔫 Weapon Asset Specifications</a>
+      <ul>
+        <li><a href="#weapon-models">Weapon Models</a></li>
+        <li><a href="#attachment-models">Attachment Models</a></li>
+      </ul>
+    </li>
+    <li><a href="#-environment-asset-specifications">🏗️ Environment Asset Specifications</a>
+      <ul>
+        <li><a href="#building-exteriors">Building Exteriors</a></li>
+        <li><a href="#props--objects">Props &amp; Objects</a></li>
+        <li><a href="#cover-objects">Cover Objects</a></li>
+      </ul>
+    </li>
+    <li><a href="#-animation-guidelines">🎭 Animation Guidelines</a>
+      <ul>
+        <li><a href="#character-animation-specs">Character Animation Specs</a></li>
+      </ul>
+    </li>
+    <li><a href="#-vfx-asset-specifications">⚡ VFX Asset Specifications</a>
+      <ul>
+        <li><a href="#particle-system-limits">Particle System Limits</a></li>
+        <li><a href="#material-guidelines">Material Guidelines</a></li>
+      </ul>
+    </li>
+    <li><a href="#-lod-requirements">📦 LOD Requirements</a>
+      <ul>
+        <li><a href="#standard-lod-settings">Standard LOD Settings</a></li>
+      </ul>
+    </li>
+    <li><a href="#-import-settings-ue5">🔧 Import Settings (UE5)</a>
+      <ul>
+        <li><a href="#static-meshes">Static Meshes</a></li>
+        <li><a href="#skeletal-meshes">Skeletal Meshes</a></li>
+        <li><a href="#textures">Textures</a></li>
+      </ul>
+    </li>
+    <li><a href="#-quality-checklist">✅ Quality Checklist</a>
+      <ul>
+        <li><a href="#before-submission">Before Submission</a></li>
+      </ul>
+    </li>
+    <li><a href="#-asset-budget-summary">📊 Asset Budget Summary</a>
+      <ul>
+        <li><a href="#per-scene-budget-mobile-target">Per-Scene Budget (Mobile Target)</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+    </div>
+  </aside>
+  
+ 
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,2868 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=52224&amp;path=livereload" data-no-instant defer></script>
+  <!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Localization System - Technical Specification#← Back to Index | Next: Accessibility System →
+Reference: High-Level Localization Design
+Overview#The Localization System handles multi-language support, text management, font loading, and cultural adaptation.
+Enums &amp; Types#Language#Supported languages organized by launch tier priority.
+Tier 1 - Launch Languages:
+Code Name Display Name Locale Script Voice Font Description L_en_US English (US) en-US Latin Full Dub Roboto Source language L_zh_CN 简体中文 zh-CN CJK Full Dub Noto Sans SC Simplified Chinese L_ja_JP 日本語 ja-JP CJK Full Dub Noto Sans JP Japanese L_ko_KR 한국어 ko-KR CJK Full Dub Noto Sans KR Korean L_pt_BR Português (BR) pt-BR Latin Full Dub Roboto Portuguese (Brazil) Tier 2 - Post-Launch Languages:
+">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:52224/docs/GDD_Technical/Systems/LocalizationSystem/">
+  <meta property="og:site_name" content="Extraction Shooter GDD">
+  <meta property="og:title" content="Extraction Shooter GDD">
+  <meta property="og:description" content="Localization System - Technical Specification#← Back to Index | Next: Accessibility System →
+Reference: High-Level Localization Design
+Overview#The Localization System handles multi-language support, text management, font loading, and cultural adaptation.
+Enums &amp; Types#Language#Supported languages organized by launch tier priority.
+Tier 1 - Launch Languages:
+Code Name Display Name Locale Script Voice Font Description L_en_US English (US) en-US Latin Full Dub Roboto Source language L_zh_CN 简体中文 zh-CN CJK Full Dub Noto Sans SC Simplified Chinese L_ja_JP 日本語 ja-JP CJK Full Dub Noto Sans JP Japanese L_ko_KR 한국어 ko-KR CJK Full Dub Noto Sans KR Korean L_pt_BR Português (BR) pt-BR Latin Full Dub Roboto Portuguese (Brazil) Tier 2 - Post-Launch Languages:">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
+
+
+  <meta itemprop="name" content="Extraction Shooter GDD">
+  <meta itemprop="description" content="Localization System - Technical Specification#← Back to Index | Next: Accessibility System →
+Reference: High-Level Localization Design
+Overview#The Localization System handles multi-language support, text management, font loading, and cultural adaptation.
+Enums &amp; Types#Language#Supported languages organized by launch tier priority.
+Tier 1 - Launch Languages:
+Code Name Display Name Locale Script Voice Font Description L_en_US English (US) en-US Latin Full Dub Roboto Source language L_zh_CN 简体中文 zh-CN CJK Full Dub Noto Sans SC Simplified Chinese L_ja_JP 日本語 ja-JP CJK Full Dub Noto Sans JP Japanese L_ko_KR 한국어 ko-KR CJK Full Dub Noto Sans KR Korean L_pt_BR Português (BR) pt-BR Latin Full Dub Roboto Portuguese (Brazil) Tier 2 - Post-Launch Languages:">
+  <meta itemprop="wordCount" content="870">
+
+<title>Localization System | Extraction Shooter GDD</title>
+<link rel="icon" href="/favicon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="http://localhost:52224/docs/GDD_Technical/Systems/LocalizationSystem/">
+<link rel="stylesheet" href="/book.min.63c8b2b12bbd1ad36428837740ea371dd41fdb9c22b35499003d0dfa4dbce6ba.css" integrity="sha256-Y8iysSu9GtNkKIN3QOo3HdQf25wis1SZAD0N&#43;k285ro=" crossorigin="anonymous">
+
+
+  <script defer src="/fuse.min.js"></script>
+  <script defer src="/en.search.min.58bea27d7a08265548c5a8636a9a9fc844e0eb9d60fc3bb2c53d517da858d4c1.js" integrity="sha256-WL6ifXoIJlVIxahjapqfyETg651g/DuyxT1RfahY1ME=" crossorigin="anonymous"></script>
+
+  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
+
+
+
+  
+</head>
+<body dir="ltr" class="book-kind-page book-type-docs">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    
+<aside class="book-menu">
+  <div class="book-menu-content">
+    
+  <nav>
+    <h2 class="book-brand">
+  <a class="flex align-center" href="/"><img src="/logo.svg" alt="Logo" /><span>Extraction Shooter GDD</span>
+  </a>
+</h2>
+
+    <div class="book-theme-toggle">
+    <input type="checkbox" id="theme-toggle" class="toggle">
+    <label for="theme-toggle" class="flex justify-between items-center cursor-pointer">
+        <span class="text-xs font-semibold">Dark Mode</span>
+        <div
+            class="relative w-10 h-5 bg-gray-200 rounded-full transition-colors duration-200 ease-in-out dark:bg-gray-700">
+            <div
+                class="absolute left-0 w-5 h-5 bg-white rounded-full shadow transform transition-transform duration-200 ease-in-out dark:translate-x-full">
+            </div>
+        </div>
+    </label>
+</div>
+
+<script>
+    (function () {
+        const toggle = document.getElementById('theme-toggle');
+        const html = document.documentElement;
+
+        
+        const savedTheme = localStorage.getItem('theme');
+        const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+        if (savedTheme === 'dark' || (!savedTheme && systemDark)) {
+            html.classList.add('dark');
+            toggle.checked = true;
+        } else {
+            html.classList.remove('dark');
+            toggle.checked = false;
+        }
+
+        
+        toggle.addEventListener('change', function () {
+            if (this.checked) {
+                html.classList.add('dark');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                html.classList.remove('dark');
+                localStorage.setItem('theme', 'light');
+            }
+        });
+    })();
+</script>
+
+<style>
+     
+    .book-theme-toggle {
+        margin: 1rem 0;
+        padding: 0 1rem;
+
+    }
+
+    .book-theme-toggle label {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        cursor: pointer;
+        font-size: 0.85em;
+    }
+
+     
+    .book-theme-toggle input {
+        display: none;
+    }
+
+     
+    .book-theme-toggle label::after {
+        content: "🌙";
+         
+    }
+
+     
+    html:not(.dark) .book-theme-toggle label::after {
+        content: "☀️";
+         
+    }
+</style> 
+    
+<div class="book-search hidden">
+  <input id="book-search-input" type="text" 
+    placeholder="Search"
+    aria-label="Search"
+    maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+    
+
+    
+    
+
+
+
+    
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/" class="">
+      Gdd Design</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      AI</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/AI/EnemyBehavior/" class="">
+      Enemy Behavior</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/AI/FactionBehaviors/" class="">
+      Faction Behaviors</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Audio</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Audio/SoundDesign/" class="">
+      Sound Design</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Audio/Soundscape/" class="">
+      Soundscape</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Audio/TacticalAudio/" class="">
+      Tactical Audio</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Audio/VoiceLines/" class="">
+      Voice Lines</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Characters</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Operators/" class="">
+      Operators</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Assault</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Assault/Blaze/" class="">
+      Blaze</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Assault/Havoc/" class="">
+      Havoc</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Assault/README/" class="">
+      Readme</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Assault/Viper/" class="">
+      Viper</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Recon</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Recon/Phantom/" class="">
+      Phantom</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Recon/README/" class="">
+      Readme</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Recon/Specter/" class="">
+      Specter</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Recon/Wraith/" class="">
+      Wraith</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Specialist</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Specialist/Cipher/" class="">
+      Cipher</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Specialist/Flux/" class="">
+      Flux</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Specialist/README/" class="">
+      Readme</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Support</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Support/Angel/" class="">
+      Angel</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Support/Doc/" class="">
+      Doc</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Support/README/" class="">
+      Readme</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Tank</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Tank/Bulwark/" class="">
+      Bulwark</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Tank/Fortress/" class="">
+      Fortress</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Tank/README/" class="">
+      Readme</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Combat</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Combat/Items/" class="">
+      Items</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Combat/Weapons/" class="">
+      Weapons</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      GameDesign</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Accessibility/" class="">
+      Accessibility</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Controls/" class="">
+      Controls</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/CoreGameplay/" class="">
+      Core Gameplay</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Economy/" class="">
+      Economy</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/GameModes/" class="">
+      Game Modes</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/LiveOps/" class="">
+      Live Ops</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Localization/" class="">
+      Localization</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/NavigationAndMap/" class="">
+      Navigation and Map</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Overview/" class="">
+      Overview</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Progression/" class="">
+      Progression</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/RankedMode/" class="">
+      Ranked Mode</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/TutorialRaid/" class="">
+      Tutorial Raid</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/UserSettings/" class="">
+      User Settings</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Gameplay</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Gameplay/CoreLoop/" class="">
+      Core Loop</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      ProjectScope</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/ProjectScope/DesignPillars/" class="">
+      Design Pillars</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/ProjectScope/MVP/" class="">
+      Mvp</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/ProjectScope/NonGoals/" class="">
+      Non Goals</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/ProjectScope/Risks/" class="">
+      Risks</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Social</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Social/Multiplayer/" class="">
+      Multiplayer</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Story</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Story/Backstory/" class="">
+      Backstory</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Story/Factions/" class="">
+      Factions</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Story/Narrative/" class="">
+      Narrative</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Story/QuestLines/" class="">
+      Quest Lines</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      UI UX</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/UI_UX/UX_Flows/" class="">
+      Ux Flows</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/UI_UX/Visual_Style/" class="">
+      Visual Style</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Visuals</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Visuals/ArtDirection/" class="">
+      Art Direction</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Visuals/AssetGuidelines/" class="">
+      Asset Guidelines</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Visuals/StyleGuide/" class="">
+      Style Guide</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Visuals/UserInterface/" class="">
+      User Interface</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      World</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/EnvironmentalNarrative/" class="">
+      Environmental Narrative</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/EnvironmentalNarrative_Guidelines/" class="">
+      Environmental Narrative Guidelines</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/LootDistribution/" class="">
+      Loot Distribution</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/MapDesign/" class="">
+      Map Design</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/MapDesign_IndustrialZone/" class="">
+      Map Design Industrial Zone</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/MapDesign_NeonSlums/" class="">
+      Map Design Neon Slums</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/MapDesign_Wilderness/" class="">
+      Map Design Wilderness</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/MapLayouts/" class="">
+      Map Layouts</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/" class="">
+      Gdd Technical</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      AI</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/AI/SensorySystem/" class="">
+      Sensory System</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Core</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Core/Architecture/" class="">
+      Architecture</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Core/CodingStandards/" class="">
+      Coding Standards</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Core/DevelopmentRoadmap/" class="">
+      Development Roadmap</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Core/NetworkingSystem/" class="">
+      Networking System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Core/SecuritySystem/" class="">
+      Security System</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Gameplay</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Gameplay/CharacterSystem/" class="">
+      Character System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Gameplay/ControlSystem/" class="">
+      Control System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Gameplay/InventorySystem/" class="">
+      Inventory System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Gameplay/WeaponSystem/" class="">
+      Weapon System</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Networking</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Networking/LagCompensation/" class="">
+      Lag Compensation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Networking/ReplicationStrategy/" class="">
+      Replication Strategy</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Performance</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Performance/Budgets/" class="">
+      Budgets</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Performance/Optimization/" class="">
+      Optimization</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Security</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Security/AntiCheatStrategy/" class="">
+      Anti Cheat Strategy</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Systems</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/AccessibilitySystem/" class="">
+      Accessibility System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/AISystem/" class="">
+      Aisystem</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/AnalyticsSystem/" class="">
+      Analytics System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/AudioSystem/" class="">
+      Audio System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/BuildPipeline/" class="">
+      Build Pipeline</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/LiveOpsSystem/" class="">
+      Live Ops System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/LocalizationSystem/" class="active">
+      Localization System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/MapSystem/" class="">
+      Map System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/NarrativeSystem/" class="">
+      Narrative System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/ProgressionSystem/" class="">
+      Progression System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/RankedSystem/" class="">
+      Ranked System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/SaveSystem/" class="">
+      Save System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/SocialSystem/" class="">
+      Social System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/TutorialSystem/" class="">
+      Tutorial System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/UISystem/" class="">
+      Uisystem</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+</nav>
+
+
+
+
+<script>{ { . | safeJS } }</script>
+
+
+  </div>
+</aside>
+ 
+
+    <div class="book-page">
+      <header class="book-header hidden">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/icons/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <h3>Localization System</h3>
+
+  <label for="toc-control">
+    
+    <img src="/icons/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#overview">Overview</a></li>
+    <li><a href="#enums--types">Enums &amp; Types</a>
+      <ul>
+        <li><a href="#language">Language</a></li>
+        <li><a href="#textcategory">TextCategory</a></li>
+        <li><a href="#fontfamily">FontFamily</a></li>
+        <li><a href="#textdirection">TextDirection</a></li>
+        <li><a href="#voicelocstrategy">VoiceLocStrategy</a></li>
+        <li><a href="#textexpansion">TextExpansion</a></li>
+      </ul>
+    </li>
+    <li><a href="#code-names">Code Names</a>
+      <ul>
+        <li><a href="#system-events">System Events</a></li>
+        <li><a href="#validation-events">Validation Events</a></li>
+        <li><a href="#voice-events">Voice Events</a></li>
+      </ul>
+    </li>
+    <li><a href="#architecture">Architecture</a>
+      <ul>
+        <li><a href="#localization-manager">Localization Manager</a></li>
+      </ul>
+    </li>
+    <li><a href="#data-structures">Data Structures</a></li>
+    <li><a href="#todo-implementation-tasks">TODO: Implementation Tasks</a>
+      <ul>
+        <li><a href="#high-priority-">HIGH Priority 🔴</a></li>
+        <li><a href="#medium-priority-">MEDIUM Priority 🟡</a></li>
+        <li><a href="#low-priority-">LOW Priority 🟢</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><h1 id="localization-system---technical-specification">Localization System - Technical Specification<a class="anchor" href="#localization-system---technical-specification">#</a></h1>
+<p><strong><a href="../README.md">← Back to Index</a></strong> | <strong><a href="./AccessibilitySystem.md">Next: Accessibility System →</a></strong></p>
+<p><strong>Reference:</strong> <a href="../../GDD_HighLevel/GameDesign/Localization.md">High-Level Localization Design</a></p>
+<hr>
+<h2 id="overview">Overview<a class="anchor" href="#overview">#</a></h2>
+<p>The <strong>Localization System</strong> handles multi-language support, text management, font loading, and cultural adaptation.</p>
+<hr>
+<h2 id="enums--types">Enums &amp; Types<a class="anchor" href="#enums--types">#</a></h2>
+<h3 id="language">Language<a class="anchor" href="#language">#</a></h3>
+<p>Supported languages organized by launch tier priority.</p>
+<p><strong>Tier 1 - Launch Languages:</strong></p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Code Name</th>
+          <th style="text-align: left">Display Name</th>
+          <th style="text-align: left">Locale</th>
+          <th style="text-align: left">Script</th>
+          <th style="text-align: left">Voice</th>
+          <th style="text-align: left">Font</th>
+          <th style="text-align: left">Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><code>L_en_US</code></td>
+          <td style="text-align: left">English (US)</td>
+          <td style="text-align: left">en-US</td>
+          <td style="text-align: left">Latin</td>
+          <td style="text-align: left">Full Dub</td>
+          <td style="text-align: left">Roboto</td>
+          <td style="text-align: left">Source language</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>L_zh_CN</code></td>
+          <td style="text-align: left">简体中文</td>
+          <td style="text-align: left">zh-CN</td>
+          <td style="text-align: left">CJK</td>
+          <td style="text-align: left">Full Dub</td>
+          <td style="text-align: left">Noto Sans SC</td>
+          <td style="text-align: left">Simplified Chinese</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>L_ja_JP</code></td>
+          <td style="text-align: left">日本語</td>
+          <td style="text-align: left">ja-JP</td>
+          <td style="text-align: left">CJK</td>
+          <td style="text-align: left">Full Dub</td>
+          <td style="text-align: left">Noto Sans JP</td>
+          <td style="text-align: left">Japanese</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>L_ko_KR</code></td>
+          <td style="text-align: left">한국어</td>
+          <td style="text-align: left">ko-KR</td>
+          <td style="text-align: left">CJK</td>
+          <td style="text-align: left">Full Dub</td>
+          <td style="text-align: left">Noto Sans KR</td>
+          <td style="text-align: left">Korean</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>L_pt_BR</code></td>
+          <td style="text-align: left">Português (BR)</td>
+          <td style="text-align: left">pt-BR</td>
+          <td style="text-align: left">Latin</td>
+          <td style="text-align: left">Full Dub</td>
+          <td style="text-align: left">Roboto</td>
+          <td style="text-align: left">Portuguese (Brazil)</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Tier 2 - Post-Launch Languages:</strong></p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Code Name</th>
+          <th style="text-align: left">Display Name</th>
+          <th style="text-align: left">Locale</th>
+          <th style="text-align: left">Script</th>
+          <th style="text-align: left">Voice</th>
+          <th style="text-align: left">Font</th>
+          <th style="text-align: left">Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><code>L_es_MX</code></td>
+          <td style="text-align: left">Español (LATAM)</td>
+          <td style="text-align: left">es-MX</td>
+          <td style="text-align: left">Latin</td>
+          <td style="text-align: left">Partial</td>
+          <td style="text-align: left">Roboto</td>
+          <td style="text-align: left">Spanish (Latin America)</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>L_es_ES</code></td>
+          <td style="text-align: left">Español (España)</td>
+          <td style="text-align: left">es-ES</td>
+          <td style="text-align: left">Latin</td>
+          <td style="text-align: left">Partial</td>
+          <td style="text-align: left">Roboto</td>
+          <td style="text-align: left">Spanish (Spain)</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>L_de_DE</code></td>
+          <td style="text-align: left">Deutsch</td>
+          <td style="text-align: left">de-DE</td>
+          <td style="text-align: left">Latin</td>
+          <td style="text-align: left">Partial</td>
+          <td style="text-align: left">Roboto</td>
+          <td style="text-align: left">German</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>L_fr_FR</code></td>
+          <td style="text-align: left">Français</td>
+          <td style="text-align: left">fr-FR</td>
+          <td style="text-align: left">Latin</td>
+          <td style="text-align: left">Partial</td>
+          <td style="text-align: left">Roboto</td>
+          <td style="text-align: left">French</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>L_ru_RU</code></td>
+          <td style="text-align: left">Русский</td>
+          <td style="text-align: left">ru-RU</td>
+          <td style="text-align: left">Cyrillic</td>
+          <td style="text-align: left">Partial</td>
+          <td style="text-align: left">Roboto</td>
+          <td style="text-align: left">Russian</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>L_zh_TW</code></td>
+          <td style="text-align: left">繁體中文</td>
+          <td style="text-align: left">zh-TW</td>
+          <td style="text-align: left">CJK</td>
+          <td style="text-align: left">Subtitles</td>
+          <td style="text-align: left">Noto Sans TC</td>
+          <td style="text-align: left">Traditional Chinese</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>L_th_TH</code></td>
+          <td style="text-align: left">ภาษาไทย</td>
+          <td style="text-align: left">th-TH</td>
+          <td style="text-align: left">Thai</td>
+          <td style="text-align: left">Subtitles</td>
+          <td style="text-align: left">Noto Sans Thai</td>
+          <td style="text-align: left">Thai</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>L_vi_VN</code></td>
+          <td style="text-align: left">Tiếng Việt</td>
+          <td style="text-align: left">vi-VN</td>
+          <td style="text-align: left">Latin</td>
+          <td style="text-align: left">Subtitles</td>
+          <td style="text-align: left">Roboto</td>
+          <td style="text-align: left">Vietnamese</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>L_id_ID</code></td>
+          <td style="text-align: left">Bahasa Indonesia</td>
+          <td style="text-align: left">id-ID</td>
+          <td style="text-align: left">Latin</td>
+          <td style="text-align: left">Subtitles</td>
+          <td style="text-align: left">Roboto</td>
+          <td style="text-align: left">Indonesian</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>L_tr_TR</code></td>
+          <td style="text-align: left">Türkçe</td>
+          <td style="text-align: left">tr-TR</td>
+          <td style="text-align: left">Latin</td>
+          <td style="text-align: left">Subtitles</td>
+          <td style="text-align: left">Roboto</td>
+          <td style="text-align: left">Turkish</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Tier 3 - Future Languages:</strong></p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Code Name</th>
+          <th style="text-align: left">Display Name</th>
+          <th style="text-align: left">Locale</th>
+          <th style="text-align: left">Script</th>
+          <th style="text-align: left">Voice</th>
+          <th style="text-align: left">Font</th>
+          <th style="text-align: left">Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><code>L_ar_SA</code></td>
+          <td style="text-align: left">العربية</td>
+          <td style="text-align: left">ar-SA</td>
+          <td style="text-align: left">Arabic (RTL)</td>
+          <td style="text-align: left">Subtitles</td>
+          <td style="text-align: left">Noto Sans Arabic</td>
+          <td style="text-align: left">Arabic</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>L_hi_IN</code></td>
+          <td style="text-align: left">हिन्दी</td>
+          <td style="text-align: left">hi-IN</td>
+          <td style="text-align: left">Devanagari</td>
+          <td style="text-align: left">Subtitles</td>
+          <td style="text-align: left">Noto Sans Devanagari</td>
+          <td style="text-align: left">Hindi</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h3 id="textcategory">TextCategory<a class="anchor" href="#textcategory">#</a></h3>
+<p>Text string category for localization management.</p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Code Name</th>
+          <th style="text-align: left">Display Name</th>
+          <th style="text-align: left">Priority</th>
+          <th style="text-align: left">Context</th>
+          <th style="text-align: left">Example</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><code>TC_UI</code></td>
+          <td style="text-align: left">UI</td>
+          <td style="text-align: left">Critical</td>
+          <td style="text-align: left">Buttons, labels</td>
+          <td style="text-align: left">&ldquo;PLAY&rdquo;, &ldquo;SETTINGS&rdquo;</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>TC_Gameplay</code></td>
+          <td style="text-align: left">Gameplay</td>
+          <td style="text-align: left">Critical</td>
+          <td style="text-align: left">In-game text</td>
+          <td style="text-align: left">&ldquo;Reload&rdquo;, &ldquo;2 enemies&rdquo;</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>TC_Quest</code></td>
+          <td style="text-align: left">Quest/Narrative</td>
+          <td style="text-align: left">High</td>
+          <td style="text-align: left">Dialogue, quests</td>
+          <td style="text-align: left">Quest descriptions</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>TC_Marketing</code></td>
+          <td style="text-align: left">Marketing</td>
+          <td style="text-align: left">Medium</td>
+          <td style="text-align: left">Store, promotions</td>
+          <td style="text-align: left">Sale banners</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>TC_Legal</code></td>
+          <td style="text-align: left">Legal</td>
+          <td style="text-align: left">Low</td>
+          <td style="text-align: left">Terms, privacy</td>
+          <td style="text-align: left">Legal documents</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>TC_Tutorial</code></td>
+          <td style="text-align: left">Tutorial</td>
+          <td style="text-align: left">High</td>
+          <td style="text-align: left">Help, onboarding</td>
+          <td style="text-align: left">Tutorial tips</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>TC_System</code></td>
+          <td style="text-align: left">System</td>
+          <td style="text-align: left">Critical</td>
+          <td style="text-align: left">Errors, notifications</td>
+          <td style="text-align: left">Error messages</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h3 id="fontfamily">FontFamily<a class="anchor" href="#fontfamily">#</a></h3>
+<p>Font family for language script support.</p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Code Name</th>
+          <th style="text-align: left">Display Name</th>
+          <th style="text-align: left">Languages</th>
+          <th style="text-align: left">Primary Font</th>
+          <th style="text-align: left">Size Mult</th>
+          <th style="text-align: left">Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><code>FF_Latin</code></td>
+          <td style="text-align: left">Latin</td>
+          <td style="text-align: left">EN, ES, FR, DE, PT, VI, ID, TR</td>
+          <td style="text-align: left">Roboto</td>
+          <td style="text-align: left">1.0×</td>
+          <td style="text-align: left">Latin script languages</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>FF_CJK</code></td>
+          <td style="text-align: left">CJK</td>
+          <td style="text-align: left">ZH, JA, KO</td>
+          <td style="text-align: left">Noto Sans CJK</td>
+          <td style="text-align: left">1.1×</td>
+          <td style="text-align: left">Chinese, Japanese, Korean</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>FF_Cyrillic</code></td>
+          <td style="text-align: left">Cyrillic</td>
+          <td style="text-align: left">RU</td>
+          <td style="text-align: left">Roboto</td>
+          <td style="text-align: left">1.0×</td>
+          <td style="text-align: left">Russian, Ukrainian</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>FF_Arabic</code></td>
+          <td style="text-align: left">Arabic</td>
+          <td style="text-align: left">AR</td>
+          <td style="text-align: left">Noto Sans Arabic</td>
+          <td style="text-align: left">1.0×</td>
+          <td style="text-align: left">Arabic (RTL)</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>FF_Thai</code></td>
+          <td style="text-align: left">Thai</td>
+          <td style="text-align: left">TH</td>
+          <td style="text-align: left">Noto Sans Thai</td>
+          <td style="text-align: left">1.0×</td>
+          <td style="text-align: left">Thai script</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>FF_Devanagari</code></td>
+          <td style="text-align: left">Devanagari</td>
+          <td style="text-align: left">HI</td>
+          <td style="text-align: left">Noto Sans Devanagari</td>
+          <td style="text-align: left">1.0×</td>
+          <td style="text-align: left">Hindi script</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h3 id="textdirection">TextDirection<a class="anchor" href="#textdirection">#</a></h3>
+<p>Text direction for layout management.</p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Code Name</th>
+          <th style="text-align: left">Display Name</th>
+          <th style="text-align: left">UI Mirror</th>
+          <th style="text-align: left">Text Align</th>
+          <th style="text-align: left">Languages</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><code>TD_LTR</code></td>
+          <td style="text-align: left">Left-to-Right</td>
+          <td style="text-align: left">No</td>
+          <td style="text-align: left">Left</td>
+          <td style="text-align: left">EN, ZH, JA, KO, etc.</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>TD_RTL</code></td>
+          <td style="text-align: left">Right-to-Left</td>
+          <td style="text-align: left">Yes</td>
+          <td style="text-align: left">Right</td>
+          <td style="text-align: left">AR (Arabic)</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h3 id="voicelocstrategy">VoiceLocStrategy<a class="anchor" href="#voicelocstrategy">#</a></h3>
+<p>Voice localization strategy per language.</p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Code Name</th>
+          <th style="text-align: left">Display Name</th>
+          <th style="text-align: left">Coverage</th>
+          <th style="text-align: left">Languages</th>
+          <th style="text-align: left">Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><code>VLS_FullDub</code></td>
+          <td style="text-align: left">Full Dub</td>
+          <td style="text-align: left">100%</td>
+          <td style="text-align: left">EN, ZH, JA, KO, PT</td>
+          <td style="text-align: left">All dialogue dubbed</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>VLS_PartialDub</code></td>
+          <td style="text-align: left">Partial Dub</td>
+          <td style="text-align: left">30-50%</td>
+          <td style="text-align: left">DE, FR, ES</td>
+          <td style="text-align: left">Key lines only</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>VLS_SubtitlesOnly</code></td>
+          <td style="text-align: left">Subtitles Only</td>
+          <td style="text-align: left">0%</td>
+          <td style="text-align: left">TH, VI, ID, TR, AR</td>
+          <td style="text-align: left">Original audio + subtitles</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h3 id="textexpansion">TextExpansion<a class="anchor" href="#textexpansion">#</a></h3>
+<p>Text expansion rate from English source.</p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Code Name</th>
+          <th style="text-align: left">Display Name</th>
+          <th style="text-align: left">Expansion</th>
+          <th style="text-align: left">Design Buffer</th>
+          <th style="text-align: left">Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><code>TE_Compact</code></td>
+          <td style="text-align: left">Compact</td>
+          <td style="text-align: left">-30%</td>
+          <td style="text-align: left">0%</td>
+          <td style="text-align: left">ZH, JA (character-based)</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>TE_Normal</code></td>
+          <td style="text-align: left">Normal</td>
+          <td style="text-align: left">0%</td>
+          <td style="text-align: left">20%</td>
+          <td style="text-align: left">EN (source)</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>TE_Expanded</code></td>
+          <td style="text-align: left">Expanded</td>
+          <td style="text-align: left">+20%</td>
+          <td style="text-align: left">30%</td>
+          <td style="text-align: left">FR, ES</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>TE_VeryExpanded</code></td>
+          <td style="text-align: left">Very Expanded</td>
+          <td style="text-align: left">+30%</td>
+          <td style="text-align: left">50%</td>
+          <td style="text-align: left">DE, AR</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="code-names">Code Names<a class="anchor" href="#code-names">#</a></h2>
+<h3 id="system-events">System Events<a class="anchor" href="#system-events">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Code Name</th>
+          <th style="text-align: left">Trigger</th>
+          <th style="text-align: left">Parameters</th>
+          <th style="text-align: left">Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><code>LOC_LANGUAGE_CHANGED</code></td>
+          <td style="text-align: left">Language set</td>
+          <td style="text-align: left">OldLang, NewLang</td>
+          <td style="text-align: left">Language preference changed</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>LOC_STRING_LOADED</code></td>
+          <td style="text-align: left">Strings loaded</td>
+          <td style="text-align: left">Language, Count</td>
+          <td style="text-align: left">Localization file loaded</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>LOC_STRING_MISSING</code></td>
+          <td style="text-align: left">Key not found</td>
+          <td style="text-align: left">Key, Language</td>
+          <td style="text-align: left">Missing translation fallback</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>LOC_FALLBACK_USED</code></td>
+          <td style="text-align: left">Fallback used</td>
+          <td style="text-align: left">Key, FallbackLang</td>
+          <td style="text-align: left">Non-primary language used</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>LOC_FONT_CHANGED</code></td>
+          <td style="text-align: left">Font switched</td>
+          <td style="text-align: left">FontFamily</td>
+          <td style="text-align: left">Font family changed</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>LOC_FONT_LOADED</code></td>
+          <td style="text-align: left">Font loaded</td>
+          <td style="text-align: left">FontFamily, Size</td>
+          <td style="text-align: left">Font asset loaded</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="validation-events">Validation Events<a class="anchor" href="#validation-events">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Code Name</th>
+          <th style="text-align: left">Trigger</th>
+          <th style="text-align: left">Parameters</th>
+          <th style="text-align: left">Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><code>LOC_VALIDATION_START</code></td>
+          <td style="text-align: left">Validation began</td>
+          <td style="text-align: left">Language</td>
+          <td style="text-align: left">Localization validation started</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>LOC_VALIDATION_COMPLETE</code></td>
+          <td style="text-align: left">Validation done</td>
+          <td style="text-align: left">Language, MissingCount</td>
+          <td style="text-align: left">Validation finished</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>LOC_OVERFLOW_DETECTED</code></td>
+          <td style="text-align: left">Text too long</td>
+          <td style="text-align: left">Key, Language, Overflow</td>
+          <td style="text-align: left">Text exceeds max length</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>LOC_VARIABLE_MISMATCH</code></td>
+          <td style="text-align: left">Variables differ</td>
+          <td style="text-align: left">Key, Expected, Found</td>
+          <td style="text-align: left">Variable count mismatch</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="voice-events">Voice Events<a class="anchor" href="#voice-events">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Code Name</th>
+          <th style="text-align: left">Trigger</th>
+          <th style="text-align: left">Parameters</th>
+          <th style="text-align: left">Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><code>LOC_VOICE_LOADED</code></td>
+          <td style="text-align: left">Voice pack loaded</td>
+          <td style="text-align: left">Language, Size</td>
+          <td style="text-align: left">Voice audio loaded</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>LOC_VOICE_SWITCHED</code></td>
+          <td style="text-align: left">Voice language set</td>
+          <td style="text-align: left">OldLang, NewLang</td>
+          <td style="text-align: left">Voice language changed</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>LOC_VOICE_MISSING</code></td>
+          <td style="text-align: left">Voice not found</td>
+          <td style="text-align: left">VoiceID, Language</td>
+          <td style="text-align: left">Missing voice fallback</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="architecture">Architecture<a class="anchor" href="#architecture">#</a></h2>
+<h3 id="localization-manager">Localization Manager<a class="anchor" href="#localization-manager">#</a></h3>
+<p><strong>Purpose:</strong> Manage language settings, text retrieval, and font loading.</p>
+<pre tabindex="0"><code>CLASS LocalizationManager:
+    currentLanguage: Language
+    stringTable: Map&lt;String, String&gt;
+    
+    // Events
+    OnLanguageChanged: Event&lt;(OldLang, NewLang)&gt;
+    
+    FUNCTION SetLanguage(language: Language):
+        oldLang = currentLanguage
+        currentLanguage = language
+        
+        LoadStrings(language)
+        UpdateFonts(language)
+        
+        EMIT EVENT &#34;LOC_LANGUAGE_CHANGED&#34; WITH (oldLang, language)
+        OnLanguageChanged.Broadcast(oldLang, language)
+    END FUNCTION
+    
+    FUNCTION GetLocalizedText(key: String) -&gt; String:
+        IF stringTable.ContainsKey(key):
+             RETURN stringTable[key]
+        END IF
+        
+        EMIT EVENT &#34;LOC_STRING_MISSING&#34; WITH (key, currentLanguage)
+        RETURN GetFallbackText(key)
+    END FUNCTION
+    
+    FUNCTION GetLocalizedTextFormatted(key: String, args: List&lt;String&gt;) -&gt; String:
+        template = GetLocalizedText(key)
+        RETURN FormatText(template, args)
+    END FUNCTION
+    
+    FUNCTION GetPluralText(key: String, count: Integer) -&gt; String:
+        template = GetLocalizedText(key)
+        RETURN GetPluralForm(template, count)
+    END FUNCTION
+    
+    FUNCTION GetFontForLanguage(language: Language) -&gt; FontAsset:
+        config = FontRegistry[language]
+        RETURN LoadFont(config.PrimaryFont)
+    END FUNCTION
+    
+    FUNCTION FormatText(template: String, args: List&lt;String&gt;) -&gt; String:
+        result = template
+        FOR i = 0 TO args.Count - 1:
+            result = result.Replace(&#34;{&#34; + i + &#34;}&#34;, args[i])
+        END FOR
+        RETURN result
+    END FUNCTION</code></pre><hr>
+<h2 id="data-structures">Data Structures<a class="anchor" href="#data-structures">#</a></h2>
+<pre tabindex="0"><code>STRUCT LocString:
+    Key: String
+    Translations: Map&lt;Language, String&gt;
+    Context: String
+    MaxLength: Integer = 0
+    bSupportsPlural: Boolean = false
+    Variables: List&lt;String&gt;
+
+STRUCT FontConfig:
+    Language: Language
+    FontFamily: FontFamily
+    PrimaryFont: AssetPath
+    FallbackFont: AssetPath
+    SizeMultiplier: Float = 1.0
+
+STRUCT RTLLayoutHelper:
+    FUNCTION ApplyRTLLayout(widget: Widget):
+        // Mirror UI hierarchy for RTL languages
+    END FUNCTION</code></pre><hr>
+<h2 id="todo-implementation-tasks">TODO: Implementation Tasks<a class="anchor" href="#todo-implementation-tasks">#</a></h2>
+<h3 id="high-priority-">HIGH Priority 🔴<a class="anchor" href="#high-priority-">#</a></h3>
+<ul>
+<li><input disabled="" type="checkbox"> LocalizationManager core</li>
+<li><input disabled="" type="checkbox"> String table loading (JSON)</li>
+<li><input disabled="" type="checkbox"> Variable substitution</li>
+<li><input disabled="" type="checkbox"> Font loading by language</li>
+</ul>
+<h3 id="medium-priority-">MEDIUM Priority 🟡<a class="anchor" href="#medium-priority-">#</a></h3>
+<ul>
+<li><input disabled="" type="checkbox"> Pluralization support</li>
+<li><input disabled="" type="checkbox"> RTL layout system</li>
+<li><input disabled="" type="checkbox"> Voice audio switching</li>
+<li><input disabled="" type="checkbox"> Image localization</li>
+</ul>
+<h3 id="low-priority-">LOW Priority 🟢<a class="anchor" href="#low-priority-">#</a></h3>
+<ul>
+<li><input disabled="" type="checkbox"> In-game language switcher</li>
+<li><input disabled="" type="checkbox"> Translation memory integration</li>
+<li><input disabled="" type="checkbox"> Coverage reporting</li>
+</ul>
+<hr>
+<p><strong><a href="../README.md">← Back to Index</a></strong> | <strong><a href="./AccessibilitySystem.md">Next: Accessibility System →</a></strong></p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+<div>
+
+</div>
+
+<div>
+
+</div>
+
+</div>
+
+
+
+
+
+  
+  
+  
+  <div class="flex flex-wrap justify-between">
+    <span>
+    
+      <a href="/docs/GDD_Technical/Systems/LiveOpsSystem/" class="flex align-center">
+        <img src="/icons/backward.svg" class="book-icon" alt="Backward" />
+        <span>Live Ops System</span>
+      </a>
+    
+    </span>
+    <span>
+    
+      <a href="/docs/GDD_Technical/Systems/MapSystem/" class="flex align-center">
+        <span>Map System</span>
+        <img src="/icons/forward.svg" class="book-icon" alt="Forward" />
+      </a>
+    
+    </span>
+  </div>
+  
+
+
+ 
+        
+  
+ 
+        
+        
+  
+ 
+        
+  
+  
+    <script>(function(){document.querySelectorAll("pre:has(code)").forEach(e=>{e.addEventListener("click",e.focus),e.addEventListener("copy",function(t){if(t.preventDefault(),navigator.clipboard){const t=window.getSelection().toString()||e.textContent;navigator.clipboard.writeText(t)}})})})()</script>
+  
+
+      </footer>
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+  
+  <aside class="book-toc">
+    <div class="book-toc-content">
+      
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#overview">Overview</a></li>
+    <li><a href="#enums--types">Enums &amp; Types</a>
+      <ul>
+        <li><a href="#language">Language</a></li>
+        <li><a href="#textcategory">TextCategory</a></li>
+        <li><a href="#fontfamily">FontFamily</a></li>
+        <li><a href="#textdirection">TextDirection</a></li>
+        <li><a href="#voicelocstrategy">VoiceLocStrategy</a></li>
+        <li><a href="#textexpansion">TextExpansion</a></li>
+      </ul>
+    </li>
+    <li><a href="#code-names">Code Names</a>
+      <ul>
+        <li><a href="#system-events">System Events</a></li>
+        <li><a href="#validation-events">Validation Events</a></li>
+        <li><a href="#voice-events">Voice Events</a></li>
+      </ul>
+    </li>
+    <li><a href="#architecture">Architecture</a>
+      <ul>
+        <li><a href="#localization-manager">Localization Manager</a></li>
+      </ul>
+    </li>
+    <li><a href="#data-structures">Data Structures</a></li>
+    <li><a href="#todo-implementation-tasks">TODO: Implementation Tasks</a>
+      <ul>
+        <li><a href="#high-priority-">HIGH Priority 🔴</a></li>
+        <li><a href="#medium-priority-">MEDIUM Priority 🟡</a></li>
+        <li><a href="#low-priority-">LOW Priority 🟢</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+    </div>
+  </aside>
+  
+ 
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

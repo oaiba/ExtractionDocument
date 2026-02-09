@@ -1,0 +1,3514 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=52224&amp;path=livereload" data-no-instant defer></script>
+  <!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Development Roadmap &amp; TODO Tracking#← Previous: Optimization | Technical Index
+Current Status#Project Phase: 🔴 Pre-Development
+Current Sprint: Sprint 0 - Project Setup
+Team Size: TBD
+Start Date: TBD
+Enums &amp; Types#EProjectPhase#Development phase classification.
+Code Name Display Name Duration Focus Deliverable Description EPP_PreDev Pre-Development 2-4 weeks Planning GDD, Architecture Documentation and setup EPP_Core Core Development 4 months Foundation Playable Prototype Core systems implementation EPP_Content Content Creation 3 months Assets Alpha Build Operators, weapons, maps EPP_Testing Testing &amp; QA 3 months Polish Release Candidate Alpha, Beta testing EPP_Launch Launch 1 month Release Live Game Soft launch, global launch EPP_LiveOps Live Operations Ongoing Updates Seasonal Content Post-launch support ETaskStatus#Task completion status.
+">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:52224/docs/GDD_Technical/Core/DevelopmentRoadmap/">
+  <meta property="og:site_name" content="Extraction Shooter GDD">
+  <meta property="og:title" content="Extraction Shooter GDD">
+  <meta property="og:description" content="Development Roadmap &amp; TODO Tracking#← Previous: Optimization | Technical Index
+Current Status#Project Phase: 🔴 Pre-Development
+Current Sprint: Sprint 0 - Project Setup
+Team Size: TBD
+Start Date: TBD
+Enums &amp; Types#EProjectPhase#Development phase classification.
+Code Name Display Name Duration Focus Deliverable Description EPP_PreDev Pre-Development 2-4 weeks Planning GDD, Architecture Documentation and setup EPP_Core Core Development 4 months Foundation Playable Prototype Core systems implementation EPP_Content Content Creation 3 months Assets Alpha Build Operators, weapons, maps EPP_Testing Testing &amp; QA 3 months Polish Release Candidate Alpha, Beta testing EPP_Launch Launch 1 month Release Live Game Soft launch, global launch EPP_LiveOps Live Operations Ongoing Updates Seasonal Content Post-launch support ETaskStatus#Task completion status.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
+
+
+  <meta itemprop="name" content="Extraction Shooter GDD">
+  <meta itemprop="description" content="Development Roadmap &amp; TODO Tracking#← Previous: Optimization | Technical Index
+Current Status#Project Phase: 🔴 Pre-Development
+Current Sprint: Sprint 0 - Project Setup
+Team Size: TBD
+Start Date: TBD
+Enums &amp; Types#EProjectPhase#Development phase classification.
+Code Name Display Name Duration Focus Deliverable Description EPP_PreDev Pre-Development 2-4 weeks Planning GDD, Architecture Documentation and setup EPP_Core Core Development 4 months Foundation Playable Prototype Core systems implementation EPP_Content Content Creation 3 months Assets Alpha Build Operators, weapons, maps EPP_Testing Testing &amp; QA 3 months Polish Release Candidate Alpha, Beta testing EPP_Launch Launch 1 month Release Live Game Soft launch, global launch EPP_LiveOps Live Operations Ongoing Updates Seasonal Content Post-launch support ETaskStatus#Task completion status.">
+  <meta itemprop="wordCount" content="1638">
+
+<title>Development Roadmap | Extraction Shooter GDD</title>
+<link rel="icon" href="/favicon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="http://localhost:52224/docs/GDD_Technical/Core/DevelopmentRoadmap/">
+<link rel="stylesheet" href="/book.min.63c8b2b12bbd1ad36428837740ea371dd41fdb9c22b35499003d0dfa4dbce6ba.css" integrity="sha256-Y8iysSu9GtNkKIN3QOo3HdQf25wis1SZAD0N&#43;k285ro=" crossorigin="anonymous">
+
+
+  <script defer src="/fuse.min.js"></script>
+  <script defer src="/en.search.min.58bea27d7a08265548c5a8636a9a9fc844e0eb9d60fc3bb2c53d517da858d4c1.js" integrity="sha256-WL6ifXoIJlVIxahjapqfyETg651g/DuyxT1RfahY1ME=" crossorigin="anonymous"></script>
+
+  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
+
+
+
+  
+</head>
+<body dir="ltr" class="book-kind-page book-type-docs">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    
+<aside class="book-menu">
+  <div class="book-menu-content">
+    
+  <nav>
+    <h2 class="book-brand">
+  <a class="flex align-center" href="/"><img src="/logo.svg" alt="Logo" /><span>Extraction Shooter GDD</span>
+  </a>
+</h2>
+
+    <div class="book-theme-toggle">
+    <input type="checkbox" id="theme-toggle" class="toggle">
+    <label for="theme-toggle" class="flex justify-between items-center cursor-pointer">
+        <span class="text-xs font-semibold">Dark Mode</span>
+        <div
+            class="relative w-10 h-5 bg-gray-200 rounded-full transition-colors duration-200 ease-in-out dark:bg-gray-700">
+            <div
+                class="absolute left-0 w-5 h-5 bg-white rounded-full shadow transform transition-transform duration-200 ease-in-out dark:translate-x-full">
+            </div>
+        </div>
+    </label>
+</div>
+
+<script>
+    (function () {
+        const toggle = document.getElementById('theme-toggle');
+        const html = document.documentElement;
+
+        
+        const savedTheme = localStorage.getItem('theme');
+        const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+        if (savedTheme === 'dark' || (!savedTheme && systemDark)) {
+            html.classList.add('dark');
+            toggle.checked = true;
+        } else {
+            html.classList.remove('dark');
+            toggle.checked = false;
+        }
+
+        
+        toggle.addEventListener('change', function () {
+            if (this.checked) {
+                html.classList.add('dark');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                html.classList.remove('dark');
+                localStorage.setItem('theme', 'light');
+            }
+        });
+    })();
+</script>
+
+<style>
+     
+    .book-theme-toggle {
+        margin: 1rem 0;
+        padding: 0 1rem;
+
+    }
+
+    .book-theme-toggle label {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        cursor: pointer;
+        font-size: 0.85em;
+    }
+
+     
+    .book-theme-toggle input {
+        display: none;
+    }
+
+     
+    .book-theme-toggle label::after {
+        content: "🌙";
+         
+    }
+
+     
+    html:not(.dark) .book-theme-toggle label::after {
+        content: "☀️";
+         
+    }
+</style> 
+    
+<div class="book-search hidden">
+  <input id="book-search-input" type="text" 
+    placeholder="Search"
+    aria-label="Search"
+    maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+    
+
+    
+    
+
+
+
+    
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/" class="">
+      Gdd Design</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      AI</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/AI/EnemyBehavior/" class="">
+      Enemy Behavior</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/AI/FactionBehaviors/" class="">
+      Faction Behaviors</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Audio</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Audio/SoundDesign/" class="">
+      Sound Design</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Audio/Soundscape/" class="">
+      Soundscape</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Audio/TacticalAudio/" class="">
+      Tactical Audio</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Audio/VoiceLines/" class="">
+      Voice Lines</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Characters</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Operators/" class="">
+      Operators</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Assault</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Assault/Blaze/" class="">
+      Blaze</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Assault/Havoc/" class="">
+      Havoc</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Assault/README/" class="">
+      Readme</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Assault/Viper/" class="">
+      Viper</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Recon</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Recon/Phantom/" class="">
+      Phantom</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Recon/README/" class="">
+      Readme</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Recon/Specter/" class="">
+      Specter</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Recon/Wraith/" class="">
+      Wraith</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Specialist</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Specialist/Cipher/" class="">
+      Cipher</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Specialist/Flux/" class="">
+      Flux</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Specialist/README/" class="">
+      Readme</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Support</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Support/Angel/" class="">
+      Angel</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Support/Doc/" class="">
+      Doc</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Support/README/" class="">
+      Readme</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Tank</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Tank/Bulwark/" class="">
+      Bulwark</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Tank/Fortress/" class="">
+      Fortress</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Tank/README/" class="">
+      Readme</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Combat</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Combat/Items/" class="">
+      Items</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Combat/Weapons/" class="">
+      Weapons</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      GameDesign</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Accessibility/" class="">
+      Accessibility</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Controls/" class="">
+      Controls</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/CoreGameplay/" class="">
+      Core Gameplay</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Economy/" class="">
+      Economy</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/GameModes/" class="">
+      Game Modes</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/LiveOps/" class="">
+      Live Ops</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Localization/" class="">
+      Localization</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/NavigationAndMap/" class="">
+      Navigation and Map</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Overview/" class="">
+      Overview</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Progression/" class="">
+      Progression</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/RankedMode/" class="">
+      Ranked Mode</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/TutorialRaid/" class="">
+      Tutorial Raid</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/UserSettings/" class="">
+      User Settings</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Gameplay</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Gameplay/CoreLoop/" class="">
+      Core Loop</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      ProjectScope</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/ProjectScope/DesignPillars/" class="">
+      Design Pillars</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/ProjectScope/MVP/" class="">
+      Mvp</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/ProjectScope/NonGoals/" class="">
+      Non Goals</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/ProjectScope/Risks/" class="">
+      Risks</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Social</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Social/Multiplayer/" class="">
+      Multiplayer</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Story</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Story/Backstory/" class="">
+      Backstory</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Story/Factions/" class="">
+      Factions</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Story/Narrative/" class="">
+      Narrative</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Story/QuestLines/" class="">
+      Quest Lines</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      UI UX</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/UI_UX/UX_Flows/" class="">
+      Ux Flows</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/UI_UX/Visual_Style/" class="">
+      Visual Style</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Visuals</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Visuals/ArtDirection/" class="">
+      Art Direction</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Visuals/AssetGuidelines/" class="">
+      Asset Guidelines</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Visuals/StyleGuide/" class="">
+      Style Guide</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Visuals/UserInterface/" class="">
+      User Interface</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      World</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/EnvironmentalNarrative/" class="">
+      Environmental Narrative</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/EnvironmentalNarrative_Guidelines/" class="">
+      Environmental Narrative Guidelines</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/LootDistribution/" class="">
+      Loot Distribution</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/MapDesign/" class="">
+      Map Design</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/MapDesign_IndustrialZone/" class="">
+      Map Design Industrial Zone</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/MapDesign_NeonSlums/" class="">
+      Map Design Neon Slums</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/MapDesign_Wilderness/" class="">
+      Map Design Wilderness</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/MapLayouts/" class="">
+      Map Layouts</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/" class="">
+      Gdd Technical</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      AI</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/AI/SensorySystem/" class="">
+      Sensory System</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Core</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Core/Architecture/" class="">
+      Architecture</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Core/CodingStandards/" class="">
+      Coding Standards</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Core/DevelopmentRoadmap/" class="active">
+      Development Roadmap</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Core/NetworkingSystem/" class="">
+      Networking System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Core/SecuritySystem/" class="">
+      Security System</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Gameplay</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Gameplay/CharacterSystem/" class="">
+      Character System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Gameplay/ControlSystem/" class="">
+      Control System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Gameplay/InventorySystem/" class="">
+      Inventory System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Gameplay/WeaponSystem/" class="">
+      Weapon System</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Networking</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Networking/LagCompensation/" class="">
+      Lag Compensation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Networking/ReplicationStrategy/" class="">
+      Replication Strategy</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Performance</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Performance/Budgets/" class="">
+      Budgets</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Performance/Optimization/" class="">
+      Optimization</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Security</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Security/AntiCheatStrategy/" class="">
+      Anti Cheat Strategy</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Systems</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/AccessibilitySystem/" class="">
+      Accessibility System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/AISystem/" class="">
+      Aisystem</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/AnalyticsSystem/" class="">
+      Analytics System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/AudioSystem/" class="">
+      Audio System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/BuildPipeline/" class="">
+      Build Pipeline</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/LiveOpsSystem/" class="">
+      Live Ops System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/LocalizationSystem/" class="">
+      Localization System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/MapSystem/" class="">
+      Map System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/NarrativeSystem/" class="">
+      Narrative System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/ProgressionSystem/" class="">
+      Progression System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/RankedSystem/" class="">
+      Ranked System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/SaveSystem/" class="">
+      Save System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/SocialSystem/" class="">
+      Social System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/TutorialSystem/" class="">
+      Tutorial System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/UISystem/" class="">
+      Uisystem</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+</nav>
+
+
+
+
+<script>{ { . | safeJS } }</script>
+
+
+  </div>
+</aside>
+ 
+
+    <div class="book-page">
+      <header class="book-header hidden">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/icons/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <h3>Development Roadmap</h3>
+
+  <label for="toc-control">
+    
+    <img src="/icons/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#current-status">Current Status</a></li>
+    <li><a href="#enums--types">Enums &amp; Types</a>
+      <ul>
+        <li><a href="#eprojectphase">EProjectPhase</a></li>
+        <li><a href="#etaskstatus">ETaskStatus</a></li>
+        <li><a href="#etaskpriority">ETaskPriority</a></li>
+        <li><a href="#erisklevel">ERiskLevel</a></li>
+        <li><a href="#emilestonetype">EMilestoneType</a></li>
+        <li><a href="#esprintstatus">ESprintStatus</a></li>
+      </ul>
+    </li>
+    <li><a href="#code-names">Code Names</a>
+      <ul>
+        <li><a href="#phase-events">Phase Events</a></li>
+        <li><a href="#sprint-events">Sprint Events</a></li>
+        <li><a href="#task-events">Task Events</a></li>
+        <li><a href="#milestone-events">Milestone Events</a></li>
+        <li><a href="#risk-events">Risk Events</a></li>
+      </ul>
+    </li>
+    <li><a href="#phase-1-core-development">Phase 1: Core Development</a>
+      <ul>
+        <li><a href="#month-1-2-foundation">Month 1-2: Foundation</a></li>
+        <li><a href="#month-3-4-core-systems">Month 3-4: Core Systems</a></li>
+      </ul>
+    </li>
+    <li><a href="#phase-2-content-creation">Phase 2: Content Creation</a>
+      <ul>
+        <li><a href="#month-5-6-operators--weapons">Month 5-6: Operators &amp; Weapons</a></li>
+        <li><a href="#month-7-maps--ui">Month 7: Maps &amp; UI</a></li>
+      </ul>
+    </li>
+    <li><a href="#phase-3-testing--refinement">Phase 3: Testing &amp; Refinement</a>
+      <ul>
+        <li><a href="#month-8-closed-alpha">Month 8: Closed Alpha</a></li>
+        <li><a href="#month-9-open-beta">Month 9: Open Beta</a></li>
+        <li><a href="#month-10-pre-launch-polish">Month 10: Pre-Launch Polish</a></li>
+      </ul>
+    </li>
+    <li><a href="#phase-4-launch--live-service">Phase 4: Launch &amp; Live Service</a>
+      <ul>
+        <li><a href="#month-11-soft-launch">Month 11: Soft Launch</a></li>
+        <li><a href="#month-12-global-launch">Month 12: Global Launch</a></li>
+        <li><a href="#post-launch-live-operations">Post-Launch: Live Operations</a></li>
+      </ul>
+    </li>
+    <li><a href="#current-sprint-sprint-0">Current Sprint (Sprint 0)</a>
+      <ul>
+        <li><a href="#sprint-backlog">Sprint Backlog</a></li>
+      </ul>
+    </li>
+    <li><a href="#blocker-tracking">Blocker Tracking</a>
+      <ul>
+        <li><a href="#active-blockers-">Active Blockers 🚫</a></li>
+        <li><a href="#resolved-blockers">Resolved Blockers</a></li>
+      </ul>
+    </li>
+    <li><a href="#risk-register">Risk Register</a></li>
+    <li><a href="#metrics-tracking">Metrics Tracking</a>
+      <ul>
+        <li><a href="#development-metrics">Development Metrics</a></li>
+      </ul>
+    </li>
+    <li><a href="#team-capacity">Team Capacity</a>
+      <ul>
+        <li><a href="#current-allocation">Current Allocation</a></li>
+      </ul>
+    </li>
+    <li><a href="#next-actions">Next Actions</a>
+      <ul>
+        <li><a href="#immediate-this-week">Immediate (This Week)</a></li>
+        <li><a href="#short-term-this-month">Short-term (This Month)</a></li>
+        <li><a href="#long-term-this-quarter">Long-term (This Quarter)</a></li>
+      </ul>
+    </li>
+    <li><a href="#review-schedule">Review Schedule</a></li>
+    <li><a href="#document-updates">Document Updates</a></li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><h1 id="development-roadmap--todo-tracking">Development Roadmap &amp; TODO Tracking<a class="anchor" href="#development-roadmap--todo-tracking">#</a></h1>
+<p><strong><a href="../Performance/Optimization.md">← Previous: Optimization</a></strong> | <strong><a href="../README.md">Technical Index</a></strong></p>
+<hr>
+<h2 id="current-status">Current Status<a class="anchor" href="#current-status">#</a></h2>
+<p><strong>Project Phase:</strong> 🔴 <strong>Pre-Development</strong><br>
+<strong>Current Sprint:</strong> Sprint 0 - Project Setup<br>
+<strong>Team Size:</strong> TBD<br>
+<strong>Start Date:</strong> TBD</p>
+<hr>
+<h2 id="enums--types">Enums &amp; Types<a class="anchor" href="#enums--types">#</a></h2>
+<h3 id="eprojectphase">EProjectPhase<a class="anchor" href="#eprojectphase">#</a></h3>
+<p>Development phase classification.</p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Code Name</th>
+          <th style="text-align: left">Display Name</th>
+          <th style="text-align: left">Duration</th>
+          <th style="text-align: left">Focus</th>
+          <th style="text-align: left">Deliverable</th>
+          <th style="text-align: left">Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><code>EPP_PreDev</code></td>
+          <td style="text-align: left">Pre-Development</td>
+          <td style="text-align: left">2-4 weeks</td>
+          <td style="text-align: left">Planning</td>
+          <td style="text-align: left">GDD, Architecture</td>
+          <td style="text-align: left">Documentation and setup</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>EPP_Core</code></td>
+          <td style="text-align: left">Core Development</td>
+          <td style="text-align: left">4 months</td>
+          <td style="text-align: left">Foundation</td>
+          <td style="text-align: left">Playable Prototype</td>
+          <td style="text-align: left">Core systems implementation</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>EPP_Content</code></td>
+          <td style="text-align: left">Content Creation</td>
+          <td style="text-align: left">3 months</td>
+          <td style="text-align: left">Assets</td>
+          <td style="text-align: left">Alpha Build</td>
+          <td style="text-align: left">Operators, weapons, maps</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>EPP_Testing</code></td>
+          <td style="text-align: left">Testing &amp; QA</td>
+          <td style="text-align: left">3 months</td>
+          <td style="text-align: left">Polish</td>
+          <td style="text-align: left">Release Candidate</td>
+          <td style="text-align: left">Alpha, Beta testing</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>EPP_Launch</code></td>
+          <td style="text-align: left">Launch</td>
+          <td style="text-align: left">1 month</td>
+          <td style="text-align: left">Release</td>
+          <td style="text-align: left">Live Game</td>
+          <td style="text-align: left">Soft launch, global launch</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>EPP_LiveOps</code></td>
+          <td style="text-align: left">Live Operations</td>
+          <td style="text-align: left">Ongoing</td>
+          <td style="text-align: left">Updates</td>
+          <td style="text-align: left">Seasonal Content</td>
+          <td style="text-align: left">Post-launch support</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h3 id="etaskstatus">ETaskStatus<a class="anchor" href="#etaskstatus">#</a></h3>
+<p>Task completion status.</p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Code Name</th>
+          <th style="text-align: left">Display Name</th>
+          <th style="text-align: left">Icon</th>
+          <th style="text-align: left">Progress</th>
+          <th style="text-align: left">Blocker</th>
+          <th style="text-align: left">Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><code>ETS_NotStarted</code></td>
+          <td style="text-align: left">Not Started</td>
+          <td style="text-align: left">🔴</td>
+          <td style="text-align: left">0%</td>
+          <td style="text-align: left">None</td>
+          <td style="text-align: left">Task not yet begun</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>ETS_InProgress</code></td>
+          <td style="text-align: left">In Progress</td>
+          <td style="text-align: left">🟡</td>
+          <td style="text-align: left">1-99%</td>
+          <td style="text-align: left">None</td>
+          <td style="text-align: left">Currently being worked on</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>ETS_Blocked</code></td>
+          <td style="text-align: left">Blocked</td>
+          <td style="text-align: left">🚫</td>
+          <td style="text-align: left">Variable</td>
+          <td style="text-align: left">Active</td>
+          <td style="text-align: left">Waiting on dependency</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>ETS_Review</code></td>
+          <td style="text-align: left">In Review</td>
+          <td style="text-align: left">🔵</td>
+          <td style="text-align: left">95%</td>
+          <td style="text-align: left">None</td>
+          <td style="text-align: left">Pending approval/testing</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>ETS_Done</code></td>
+          <td style="text-align: left">Done</td>
+          <td style="text-align: left">✅</td>
+          <td style="text-align: left">100%</td>
+          <td style="text-align: left">None</td>
+          <td style="text-align: left">Task completed</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>ETS_Deferred</code></td>
+          <td style="text-align: left">Deferred</td>
+          <td style="text-align: left">⏸️</td>
+          <td style="text-align: left">Variable</td>
+          <td style="text-align: left">N/A</td>
+          <td style="text-align: left">Postponed to later phase</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h3 id="etaskpriority">ETaskPriority<a class="anchor" href="#etaskpriority">#</a></h3>
+<p>Task priority classification.</p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Code Name</th>
+          <th style="text-align: left">Display Name</th>
+          <th style="text-align: left">Icon</th>
+          <th style="text-align: left">Response Time</th>
+          <th style="text-align: left">Escalation</th>
+          <th style="text-align: left">Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><code>ETP_Critical</code></td>
+          <td style="text-align: left">Critical</td>
+          <td style="text-align: left">🔴</td>
+          <td style="text-align: left">Immediate</td>
+          <td style="text-align: left">Auto</td>
+          <td style="text-align: left">Blocker for release</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>ETP_High</code></td>
+          <td style="text-align: left">High</td>
+          <td style="text-align: left">🟠</td>
+          <td style="text-align: left">&lt; 24h</td>
+          <td style="text-align: left">Daily</td>
+          <td style="text-align: left">Core feature dependency</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>ETP_Medium</code></td>
+          <td style="text-align: left">Medium</td>
+          <td style="text-align: left">🟡</td>
+          <td style="text-align: left">&lt; 1 week</td>
+          <td style="text-align: left">Weekly</td>
+          <td style="text-align: left">Standard priority</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>ETP_Low</code></td>
+          <td style="text-align: left">Low</td>
+          <td style="text-align: left">🟢</td>
+          <td style="text-align: left">Sprint end</td>
+          <td style="text-align: left">Sprint</td>
+          <td style="text-align: left">Nice-to-have features</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h3 id="erisklevel">ERiskLevel<a class="anchor" href="#erisklevel">#</a></h3>
+<p>Risk assessment classification.</p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Code Name</th>
+          <th style="text-align: left">Display Name</th>
+          <th style="text-align: left">Probability</th>
+          <th style="text-align: left">Impact</th>
+          <th style="text-align: left">Action</th>
+          <th style="text-align: left">Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><code>ERL_Critical</code></td>
+          <td style="text-align: left">Critical</td>
+          <td style="text-align: left">High</td>
+          <td style="text-align: left">High</td>
+          <td style="text-align: left">Immediate mitigation</td>
+          <td style="text-align: left">Project-threatening risk</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>ERL_High</code></td>
+          <td style="text-align: left">High</td>
+          <td style="text-align: left">High/Medium</td>
+          <td style="text-align: left">High/Medium</td>
+          <td style="text-align: left">Active monitoring</td>
+          <td style="text-align: left">Significant risk</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>ERL_Medium</code></td>
+          <td style="text-align: left">Medium</td>
+          <td style="text-align: left">Medium</td>
+          <td style="text-align: left">Medium</td>
+          <td style="text-align: left">Contingency plan</td>
+          <td style="text-align: left">Moderate risk</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>ERL_Low</code></td>
+          <td style="text-align: left">Low</td>
+          <td style="text-align: left">Low</td>
+          <td style="text-align: left">Low</td>
+          <td style="text-align: left">Accept</td>
+          <td style="text-align: left">Minor risk</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h3 id="emilestonetype">EMilestoneType<a class="anchor" href="#emilestonetype">#</a></h3>
+<p>Project milestone classification.</p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Code Name</th>
+          <th style="text-align: left">Display Name</th>
+          <th style="text-align: left">Review</th>
+          <th style="text-align: left">Stakeholders</th>
+          <th style="text-align: left">Gate</th>
+          <th style="text-align: left">Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><code>EMT_Prototype</code></td>
+          <td style="text-align: left">Prototype</td>
+          <td style="text-align: left">Internal</td>
+          <td style="text-align: left">Dev Team</td>
+          <td style="text-align: left">None</td>
+          <td style="text-align: left">Playable prototype</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>EMT_Alpha</code></td>
+          <td style="text-align: left">Alpha</td>
+          <td style="text-align: left">Internal</td>
+          <td style="text-align: left">Team + QA</td>
+          <td style="text-align: left">Feature complete</td>
+          <td style="text-align: left">All features implemented</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>EMT_Beta</code></td>
+          <td style="text-align: left">Beta</td>
+          <td style="text-align: left">External</td>
+          <td style="text-align: left">Testers</td>
+          <td style="text-align: left">Content complete</td>
+          <td style="text-align: left">Public testing ready</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>EMT_RC</code></td>
+          <td style="text-align: left">Release Candidate</td>
+          <td style="text-align: left">Full</td>
+          <td style="text-align: left">All</td>
+          <td style="text-align: left">Bug-free</td>
+          <td style="text-align: left">Ready for release</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>EMT_Launch</code></td>
+          <td style="text-align: left">Launch</td>
+          <td style="text-align: left">Public</td>
+          <td style="text-align: left">All + Press</td>
+          <td style="text-align: left">Store approved</td>
+          <td style="text-align: left">Live release</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h3 id="esprintstatus">ESprintStatus<a class="anchor" href="#esprintstatus">#</a></h3>
+<p>Sprint completion status.</p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Code Name</th>
+          <th style="text-align: left">Display Name</th>
+          <th style="text-align: left">Velocity</th>
+          <th style="text-align: left">Burndown</th>
+          <th style="text-align: left">Health</th>
+          <th style="text-align: left">Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><code>ESS_Planning</code></td>
+          <td style="text-align: left">Planning</td>
+          <td style="text-align: left">N/A</td>
+          <td style="text-align: left">N/A</td>
+          <td style="text-align: left">N/A</td>
+          <td style="text-align: left">Sprint not started</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>ESS_Active</code></td>
+          <td style="text-align: left">Active</td>
+          <td style="text-align: left">Tracking</td>
+          <td style="text-align: left">Daily</td>
+          <td style="text-align: left">Monitored</td>
+          <td style="text-align: left">Sprint in progress</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>ESS_AtRisk</code></td>
+          <td style="text-align: left">At Risk</td>
+          <td style="text-align: left">Below target</td>
+          <td style="text-align: left">Behind</td>
+          <td style="text-align: left">Warning</td>
+          <td style="text-align: left">May not complete</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>ESS_Complete</code></td>
+          <td style="text-align: left">Complete</td>
+          <td style="text-align: left">Final</td>
+          <td style="text-align: left">100%</td>
+          <td style="text-align: left">N/A</td>
+          <td style="text-align: left">Sprint finished</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="code-names">Code Names<a class="anchor" href="#code-names">#</a></h2>
+<h3 id="phase-events">Phase Events<a class="anchor" href="#phase-events">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Code Name</th>
+          <th style="text-align: left">Trigger</th>
+          <th style="text-align: left">Parameters</th>
+          <th style="text-align: left">Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><code>PHASE_START</code></td>
+          <td style="text-align: left">Phase begins</td>
+          <td style="text-align: left">PhaseID, StartDate</td>
+          <td style="text-align: left">Development phase started</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>PHASE_END</code></td>
+          <td style="text-align: left">Phase ends</td>
+          <td style="text-align: left">PhaseID, EndDate, Status</td>
+          <td style="text-align: left">Development phase completed</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>PHASE_DELAYED</code></td>
+          <td style="text-align: left">Phase delayed</td>
+          <td style="text-align: left">PhaseID, OldDate, NewDate</td>
+          <td style="text-align: left">Phase timeline shifted</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="sprint-events">Sprint Events<a class="anchor" href="#sprint-events">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Code Name</th>
+          <th style="text-align: left">Trigger</th>
+          <th style="text-align: left">Parameters</th>
+          <th style="text-align: left">Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><code>SPRINT_START</code></td>
+          <td style="text-align: left">Sprint begins</td>
+          <td style="text-align: left">SprintID, Goals</td>
+          <td style="text-align: left">Sprint officially started</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>SPRINT_END</code></td>
+          <td style="text-align: left">Sprint ends</td>
+          <td style="text-align: left">SprintID, Velocity, Completed</td>
+          <td style="text-align: left">Sprint completed</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>SPRINT_REVIEW</code></td>
+          <td style="text-align: left">Sprint review</td>
+          <td style="text-align: left">SprintID, Feedback</td>
+          <td style="text-align: left">Sprint review meeting</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>SPRINT_RETRO</code></td>
+          <td style="text-align: left">Sprint retro</td>
+          <td style="text-align: left">SprintID, ActionItems</td>
+          <td style="text-align: left">Retrospective completed</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="task-events">Task Events<a class="anchor" href="#task-events">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Code Name</th>
+          <th style="text-align: left">Trigger</th>
+          <th style="text-align: left">Parameters</th>
+          <th style="text-align: left">Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><code>TASK_CREATED</code></td>
+          <td style="text-align: left">Task added</td>
+          <td style="text-align: left">TaskID, Priority, Assignee</td>
+          <td style="text-align: left">New task created</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>TASK_UPDATED</code></td>
+          <td style="text-align: left">Task changed</td>
+          <td style="text-align: left">TaskID, Field, OldValue, NewValue</td>
+          <td style="text-align: left">Task modified</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>TASK_COMPLETED</code></td>
+          <td style="text-align: left">Task done</td>
+          <td style="text-align: left">TaskID, Duration</td>
+          <td style="text-align: left">Task finished</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>TASK_BLOCKED</code></td>
+          <td style="text-align: left">Task blocked</td>
+          <td style="text-align: left">TaskID, BlockerID</td>
+          <td style="text-align: left">Task waiting on blocker</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="milestone-events">Milestone Events<a class="anchor" href="#milestone-events">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Code Name</th>
+          <th style="text-align: left">Trigger</th>
+          <th style="text-align: left">Parameters</th>
+          <th style="text-align: left">Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><code>MILESTONE_REACHED</code></td>
+          <td style="text-align: left">Milestone hit</td>
+          <td style="text-align: left">MilestoneID, Date</td>
+          <td style="text-align: left">Milestone achieved</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>MILESTONE_MISSED</code></td>
+          <td style="text-align: left">Milestone missed</td>
+          <td style="text-align: left">MilestoneID, Reason</td>
+          <td style="text-align: left">Milestone not achieved</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>MILESTONE_REVIEW</code></td>
+          <td style="text-align: left">Milestone review</td>
+          <td style="text-align: left">MilestoneID, Status</td>
+          <td style="text-align: left">Milestone evaluation</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="risk-events">Risk Events<a class="anchor" href="#risk-events">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Code Name</th>
+          <th style="text-align: left">Trigger</th>
+          <th style="text-align: left">Parameters</th>
+          <th style="text-align: left">Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><code>RISK_IDENTIFIED</code></td>
+          <td style="text-align: left">Risk found</td>
+          <td style="text-align: left">RiskID, Level, Owner</td>
+          <td style="text-align: left">New risk identified</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>RISK_ESCALATED</code></td>
+          <td style="text-align: left">Risk increased</td>
+          <td style="text-align: left">RiskID, OldLevel, NewLevel</td>
+          <td style="text-align: left">Risk severity increased</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>RISK_MITIGATED</code></td>
+          <td style="text-align: left">Risk reduced</td>
+          <td style="text-align: left">RiskID, Action</td>
+          <td style="text-align: left">Risk successfully mitigated</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>RISK_RESOLVED</code></td>
+          <td style="text-align: left">Risk closed</td>
+          <td style="text-align: left">RiskID, Resolution</td>
+          <td style="text-align: left">Risk no longer active</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="phase-1-core-development">Phase 1: Core Development<a class="anchor" href="#phase-1-core-development">#</a></h2>
+<p><strong>Duration:</strong> Months 1-4<br>
+<strong>Status:</strong> 🔴 Not Started (0%)</p>
+<h3 id="month-1-2-foundation">Month 1-2: Foundation<a class="anchor" href="#month-1-2-foundation">#</a></h3>
+<h4 id="week-1-2-project-setup">Week 1-2: Project Setup<a class="anchor" href="#week-1-2-project-setup">#</a></h4>
+<p><strong>Status:</strong> 🔴 TODO</p>
+<p><strong>Tasks:</strong></p>
+<ul>
+<li><input disabled="" type="checkbox"> Create UE5 project (mobile template)</li>
+<li><input disabled="" type="checkbox"> Setup version control (Git + LFS)</li>
+<li><input disabled="" type="checkbox"> Configure build pipeline</li>
+<li><input disabled="" type="checkbox"> Setup development environment docs</li>
+<li><input disabled="" type="checkbox"> Create coding standards document</li>
+<li><input disabled="" type="checkbox"> Initialize project structure</li>
+</ul>
+<p><strong>Assignees:</strong> TBD<br>
+<strong>Blockers:</strong> None</p>
+<hr>
+<h4 id="week-3-4-core-character-system">Week 3-4: Core Character System<a class="anchor" href="#week-3-4-core-character-system">#</a></h4>
+<p><strong>Status:</strong> 🔴 TODO</p>
+<p><strong>Tasks:</strong></p>
+<ul>
+<li>
+<p><input disabled="" type="checkbox"> Implement <code>AExtractionCharacter</code> base class</p>
+<ul>
+<li><input disabled="" type="checkbox"> Basic movement (walk, sprint, crouch)</li>
+<li><input disabled="" type="checkbox"> Health system integration</li>
+<li><input disabled="" type="checkbox"> Stamina system</li>
+<li><input disabled="" type="checkbox"> Death/respawn logic</li>
+</ul>
+</li>
+<li>
+<p><input disabled="" type="checkbox"> Create <code>UMobileInputComponent</code></p>
+<ul>
+<li><input disabled="" type="checkbox"> Virtual joystick for movement</li>
+<li><input disabled="" type="checkbox"> Touch aim controls</li>
+<li><input disabled="" type="checkbox"> Aim assist implementation</li>
+<li><input disabled="" type="checkbox"> Button mapping</li>
+</ul>
+</li>
+<li>
+<p><input disabled="" type="checkbox"> Animation setup</p>
+<ul>
+<li><input disabled="" type="checkbox"> Idle, walk, run animations</li>
+<li><input disabled="" type="checkbox"> Crouch animations</li>
+<li><input disabled="" type="checkbox"> Death animations</li>
+</ul>
+</li>
+</ul>
+<p><strong>Assignees:</strong> TBD<br>
+<strong>Dependencies:</strong> Project setup complete<br>
+<strong>Blockers:</strong> None</p>
+<hr>
+<h4 id="week-5-6-basic-combat">Week 5-6: Basic Combat<a class="anchor" href="#week-5-6-basic-combat">#</a></h4>
+<p><strong>Status:</strong> 🔴 TODO</p>
+<p><strong>Tasks:</strong></p>
+<ul>
+<li>
+<p><input disabled="" type="checkbox"> Implement <code>AExtractionWeapon</code> base class</p>
+<ul>
+<li><input disabled="" type="checkbox"> Firing mechanics</li>
+<li><input disabled="" type="checkbox"> Ammo system</li>
+<li><input disabled="" type="checkbox"> Reload system</li>
+<li><input disabled="" type="checkbox"> Weapon switching</li>
+</ul>
+</li>
+<li>
+<p><input disabled="" type="checkbox"> Create weapon types</p>
+<ul>
+<li><input disabled="" type="checkbox"> Assault Rifle (prototype)</li>
+<li><input disabled="" type="checkbox"> Pistol (prototype)</li>
+</ul>
+</li>
+<li>
+<p><input disabled="" type="checkbox"> Implement <code>UHealthComponent</code></p>
+<ul>
+<li><input disabled="" type="checkbox"> Health tracking</li>
+<li><input disabled="" type="checkbox"> Armor system</li>
+<li><input disabled="" type="checkbox"> Damage calculation</li>
+<li><input disabled="" type="checkbox"> Death handling</li>
+</ul>
+</li>
+<li>
+<p><input disabled="" type="checkbox"> Hit detection</p>
+<ul>
+<li><input disabled="" type="checkbox"> Line trace implementation</li>
+<li><input disabled="" type="checkbox"> Hit validation</li>
+<li><input disabled="" type="checkbox"> Damage application</li>
+</ul>
+</li>
+</ul>
+<p><strong>Assignees:</strong> TBD<br>
+<strong>Dependencies:</strong> Character system<br>
+<strong>Blockers:</strong> None</p>
+<hr>
+<h4 id="week-7-8-network-foundation">Week 7-8: Network Foundation<a class="anchor" href="#week-7-8-network-foundation">#</a></h4>
+<p><strong>Status:</strong> 🔴 TODO</p>
+<p><strong>Tasks:</strong></p>
+<ul>
+<li>
+<p><input disabled="" type="checkbox"> Setup dedicated server architecture</p>
+<ul>
+<li><input disabled="" type="checkbox"> Server project configuration</li>
+<li><input disabled="" type="checkbox"> Client-server separation</li>
+<li><input disabled="" type="checkbox"> Connection handling</li>
+</ul>
+</li>
+<li>
+<p><input disabled="" type="checkbox"> Implement replication</p>
+<ul>
+<li><input disabled="" type="checkbox"> Character replication</li>
+<li><input disabled="" type="checkbox"> Movement prediction</li>
+<li><input disabled="" type="checkbox"> Combat replication</li>
+<li><input disabled="" type="checkbox"> Health/damage replication</li>
+</ul>
+</li>
+<li>
+<p><input disabled="" type="checkbox"> Create <code>AExtractionGameMode</code></p>
+<ul>
+<li><input disabled="" type="checkbox"> Match flow logic</li>
+<li><input disabled="" type="checkbox"> Spawn management</li>
+<li><input disabled="" type="checkbox"> Win conditions</li>
+</ul>
+</li>
+<li>
+<p><input disabled="" type="checkbox"> Create <code>AExtractionGameState</code></p>
+<ul>
+<li><input disabled="" type="checkbox"> Match timer</li>
+<li><input disabled="" type="checkbox"> Player count tracking</li>
+<li><input disabled="" type="checkbox"> Event management</li>
+</ul>
+</li>
+</ul>
+<p><strong>Assignees:</strong> TBD<br>
+<strong>Dependencies:</strong> Character + Combat<br>
+<strong>Blockers:</strong> None</p>
+<hr>
+<h3 id="month-3-4-core-systems">Month 3-4: Core Systems<a class="anchor" href="#month-3-4-core-systems">#</a></h3>
+<h4 id="week-9-10-inventory-system">Week 9-10: Inventory System<a class="anchor" href="#week-9-10-inventory-system">#</a></h4>
+<p><strong>Status:</strong> 🔴 TODO</p>
+<p><strong>Tasks:</strong></p>
+<ul>
+<li>
+<p><input disabled="" type="checkbox"> Implement <code>UInventoryComponent</code></p>
+<ul>
+<li><input disabled="" type="checkbox"> Grid-based inventory</li>
+<li><input disabled="" type="checkbox"> Add/remove items</li>
+<li><input disabled="" type="checkbox"> Weight system</li>
+<li><input disabled="" type="checkbox"> Secure container</li>
+</ul>
+</li>
+<li>
+<p><input disabled="" type="checkbox"> Create item system</p>
+<ul>
+<li><input disabled="" type="checkbox"> <code>FItemData</code> structure</li>
+<li><input disabled="" type="checkbox"> Item database setup</li>
+<li><input disabled="" type="checkbox"> Loot tables</li>
+</ul>
+</li>
+<li>
+<p><input disabled="" type="checkbox"> UI implementation</p>
+<ul>
+<li><input disabled="" type="checkbox"> Inventory widget</li>
+<li><input disabled="" type="checkbox"> Drag-and-drop</li>
+<li><input disabled="" type="checkbox"> Item tooltips</li>
+</ul>
+</li>
+</ul>
+<p><strong>Assignees:</strong> TBD<br>
+<strong>Dependencies:</strong> Core character<br>
+<strong>Blockers:</strong> None</p>
+<hr>
+<h4 id="week-11-12-loot-system">Week 11-12: Loot System<a class="anchor" href="#week-11-12-loot-system">#</a></h4>
+<p><strong>Status:</strong> 🔴 TODO</p>
+<p><strong>Tasks:</strong></p>
+<ul>
+<li>
+<p><input disabled="" type="checkbox"> Create <code>ALootContainer</code> actor</p>
+<ul>
+<li><input disabled="" type="checkbox"> Container interaction</li>
+<li><input disabled="" type="checkbox"> Loot generation</li>
+<li><input disabled="" type="checkbox"> Rarity system</li>
+</ul>
+</li>
+<li>
+<p><input disabled="" type="checkbox"> Implement loot distribution</p>
+<ul>
+<li><input disabled="" type="checkbox"> Zone-based spawning</li>
+<li><input disabled="" type="checkbox"> Rarity weighting</li>
+<li><input disabled="" type="checkbox"> Dynamic loot tables</li>
+</ul>
+</li>
+<li>
+<p><input disabled="" type="checkbox"> Item pickup system</p>
+<ul>
+<li><input disabled="" type="checkbox"> Ground items</li>
+<li><input disabled="" type="checkbox"> Auto-pickup logic</li>
+<li><input disabled="" type="checkbox"> Inventory integration</li>
+</ul>
+</li>
+</ul>
+<p><strong>Assignees:</strong> TBD<br>
+<strong>Dependencies:</strong> Inventory system<br>
+<strong>Blockers:</strong> None</p>
+<hr>
+<h4 id="week-13-14-ai-system">Week 13-14: AI System<a class="anchor" href="#week-13-14-ai-system">#</a></h4>
+<p><strong>Status:</strong> 🔴 TODO</p>
+<p><strong>Tasks:</strong></p>
+<ul>
+<li>
+<p><input disabled="" type="checkbox"> Implement <code>AExtractionAICharacter</code></p>
+<ul>
+<li><input disabled="" type="checkbox"> Inherit from base character</li>
+<li><input disabled="" type="checkbox"> AI-specific behaviors</li>
+</ul>
+</li>
+<li>
+<p><input disabled="" type="checkbox"> Create <code>AExtractionAIController</code></p>
+<ul>
+<li><input disabled="" type="checkbox"> Behavior tree setup</li>
+<li><input disabled="" type="checkbox"> Blackboard configuration</li>
+<li><input disabled="" type="checkbox"> Perception system</li>
+</ul>
+</li>
+<li>
+<p><input disabled="" type="checkbox"> AI behaviors</p>
+<ul>
+<li><input disabled="" type="checkbox"> Patrol</li>
+<li><input disabled="" type="checkbox"> Chase</li>
+<li><input disabled="" type="checkbox"> Combat</li>
+<li><input disabled="" type="checkbox"> Cover usage</li>
+</ul>
+</li>
+</ul>
+<p><strong>Assignees:</strong> TBD<br>
+<strong>Dependencies:</strong> Character + Combat<br>
+<strong>Blockers:</strong> None</p>
+<hr>
+<h4 id="week-15-16-extraction--match-flow">Week 15-16: Extraction &amp; Match Flow<a class="anchor" href="#week-15-16-extraction--match-flow">#</a></h4>
+<p><strong>Status:</strong> 🔴 TODO</p>
+<p><strong>Tasks:</strong></p>
+<ul>
+<li>
+<p><input disabled="" type="checkbox"> Implement <code>AExtractionZone</code></p>
+<ul>
+<li><input disabled="" type="checkbox"> Zone activation</li>
+<li><input disabled="" type="checkbox"> Extraction timer</li>
+<li><input disabled="" type="checkbox"> Player tracking</li>
+<li><input disabled="" type="checkbox"> Interruption logic</li>
+</ul>
+</li>
+<li>
+<p><input disabled="" type="checkbox"> Match flow implementation</p>
+<ul>
+<li><input disabled="" type="checkbox"> Match start</li>
+<li><input disabled="" type="checkbox"> Supply drops</li>
+<li><input disabled="" type="checkbox"> Contamination system</li>
+<li><input disabled="" type="checkbox"> Match end conditions</li>
+</ul>
+</li>
+<li>
+<p><input disabled="" type="checkbox"> Prototype map</p>
+<ul>
+<li><input disabled="" type="checkbox"> Basic layout</li>
+<li><input disabled="" type="checkbox"> Spawn points</li>
+<li><input disabled="" type="checkbox"> Extraction zones</li>
+<li><input disabled="" type="checkbox"> Loot locations</li>
+</ul>
+</li>
+</ul>
+<p><strong>Assignees:</strong> TBD<br>
+<strong>Dependencies:</strong> All core systems<br>
+<strong>Blockers:</strong> None</p>
+<p><strong>Milestone:</strong> ✅ <strong>Playable Prototype Complete</strong></p>
+<hr>
+<h2 id="phase-2-content-creation">Phase 2: Content Creation<a class="anchor" href="#phase-2-content-creation">#</a></h2>
+<p><strong>Duration:</strong> Months 5-7<br>
+<strong>Status:</strong> 🔴 Not Started (0%)</p>
+<h3 id="month-5-6-operators--weapons">Month 5-6: Operators &amp; Weapons<a class="anchor" href="#month-5-6-operators--weapons">#</a></h3>
+<h4 id="week-17-20-operator-implementation">Week 17-20: Operator Implementation<a class="anchor" href="#week-17-20-operator-implementation">#</a></h4>
+<p><strong>Status:</strong> 🔴 TODO</p>
+<p><strong>Tasks:</strong></p>
+<ul>
+<li>
+<p><input disabled="" type="checkbox"> Implement 5 operator classes</p>
+<ul>
+<li><input disabled="" type="checkbox"> Assault (Combat Stim)</li>
+<li><input disabled="" type="checkbox"> Support (Healing Drone)</li>
+<li><input disabled="" type="checkbox"> Recon (UAV Scan)</li>
+<li><input disabled="" type="checkbox"> Tank (Riot Shield)</li>
+<li><input disabled="" type="checkbox"> Specialist (EMP Blast)</li>
+</ul>
+</li>
+<li>
+<p><input disabled="" type="checkbox"> Operator ability system</p>
+<ul>
+<li><input disabled="" type="checkbox"> Base ability class</li>
+<li><input disabled="" type="checkbox"> Cooldown system</li>
+<li><input disabled="" type="checkbox"> Effect implementation</li>
+<li><input disabled="" type="checkbox"> Upgrades system</li>
+</ul>
+</li>
+<li>
+<p><input disabled="" type="checkbox"> Operator progression</p>
+<ul>
+<li><input disabled="" type="checkbox"> Level system</li>
+<li><input disabled="" type="checkbox"> XP tracking</li>
+<li><input disabled="" type="checkbox"> Unlock system</li>
+</ul>
+</li>
+</ul>
+<p><strong>Assignees:</strong> TBD<br>
+<strong>Dependencies:</strong> Core character system<br>
+<strong>Blockers:</strong> None</p>
+<hr>
+<h4 id="week-21-24-weapon-expansion">Week 21-24: Weapon Expansion<a class="anchor" href="#week-21-24-weapon-expansion">#</a></h4>
+<p><strong>Status:</strong> 🔴 TODO</p>
+<p><strong>Tasks:</strong></p>
+<ul>
+<li>
+<p><input disabled="" type="checkbox"> Implement 15+ weapons across categories</p>
+<ul>
+<li><input disabled="" type="checkbox"> Assault Rifles (3-4)</li>
+<li><input disabled="" type="checkbox"> SMGs (3-4)</li>
+<li><input disabled="" type="checkbox"> Shotguns (2-3)</li>
+<li><input disabled="" type="checkbox"> Sniper Rifles (2-3)</li>
+<li><input disabled="" type="checkbox"> Pistols (3-4)</li>
+<li><input disabled="" type="checkbox"> Melee (2)</li>
+</ul>
+</li>
+<li>
+<p><input disabled="" type="checkbox"> Weapon stats balancing</p>
+<ul>
+<li><input disabled="" type="checkbox"> Damage values</li>
+<li><input disabled="" type="checkbox"> Fire rates</li>
+<li><input disabled="" type="checkbox"> Recoil patterns</li>
+<li><input disabled="" type="checkbox"> Effective ranges</li>
+</ul>
+</li>
+<li>
+<p><input disabled="" type="checkbox"> Weapon attachments (optional)</p>
+<ul>
+<li><input disabled="" type="checkbox"> Scopes</li>
+<li><input disabled="" type="checkbox"> Magazines</li>
+<li><input disabled="" type="checkbox"> Grips</li>
+</ul>
+</li>
+</ul>
+<p><strong>Assignees:</strong> TBD<br>
+<strong>Dependencies:</strong> Base weapon system<br>
+<strong>Blockers:</strong> None</p>
+<hr>
+<h3 id="month-7-maps--ui">Month 7: Maps &amp; UI<a class="anchor" href="#month-7-maps--ui">#</a></h3>
+<h4 id="week-25-28-map-development">Week 25-28: Map Development<a class="anchor" href="#week-25-28-map-development">#</a></h4>
+<p><strong>Status:</strong> 🔴 TODO</p>
+<p><strong>Tasks:</strong></p>
+<ul>
+<li>
+<p><input disabled="" type="checkbox"> Map 1: &ldquo;Industrial Zone&rdquo;</p>
+<ul>
+<li><input disabled="" type="checkbox"> Layout design</li>
+<li><input disabled="" type="checkbox"> Art pass</li>
+<li><input disabled="" type="checkbox"> Loot placement</li>
+<li><input disabled="" type="checkbox"> AI spawns</li>
+<li><input disabled="" type="checkbox"> Extraction zones</li>
+<li><input disabled="" type="checkbox"> Optimization</li>
+</ul>
+</li>
+<li>
+<p><input disabled="" type="checkbox"> Map 2: &ldquo;Abandoned City&rdquo;</p>
+<ul>
+<li><input disabled="" type="checkbox"> Layout design</li>
+<li><input disabled="" type="checkbox"> Art pass</li>
+<li><input disabled="" type="checkbox"> Loot placement</li>
+<li><input disabled="" type="checkbox"> AI spawns</li>
+<li><input disabled="" type="checkbox"> Extraction zones</li>
+<li><input disabled="" type="checkbox"> Optimization</li>
+</ul>
+</li>
+</ul>
+<p><strong>Assignees:</strong> TBD<br>
+<strong>Dependencies:</strong> Core systems<br>
+<strong>Blockers:</strong> None</p>
+<hr>
+<h4 id="week-29-30-uiux-implementation">Week 29-30: UI/UX Implementation<a class="anchor" href="#week-29-30-uiux-implementation">#</a></h4>
+<p><strong>Status:</strong> 🔴 TODO</p>
+<p><strong>Tasks:</strong></p>
+<ul>
+<li>
+<p><input disabled="" type="checkbox"> Main menu</p>
+<ul>
+<li><input disabled="" type="checkbox"> Home screen</li>
+<li><input disabled="" type="checkbox"> Operator selection</li>
+<li><input disabled="" type="checkbox"> Loadout management</li>
+<li><input disabled="" type="checkbox"> Settings</li>
+</ul>
+</li>
+<li>
+<p><input disabled="" type="checkbox"> In-game HUD</p>
+<ul>
+<li><input disabled="" type="checkbox"> Health/armor bars</li>
+<li><input disabled="" type="checkbox"> Minimap</li>
+<li><input disabled="" type="checkbox"> Ammo counter</li>
+<li><input disabled="" type="checkbox"> Virtual controls</li>
+</ul>
+</li>
+<li>
+<p><input disabled="" type="checkbox"> Post-match screens</p>
+<ul>
+<li><input disabled="" type="checkbox"> Victory/defeat</li>
+<li><input disabled="" type="checkbox"> Loot summary</li>
+<li><input disabled="" type="checkbox"> XP breakdown</li>
+</ul>
+</li>
+</ul>
+<p><strong>Assignees:</strong> TBD<br>
+<strong>Dependencies:</strong> Core gameplay<br>
+<strong>Blockers:</strong> None</p>
+<hr>
+<h4 id="week-31-32-matchmaking-system">Week 31-32: Matchmaking System<a class="anchor" href="#week-31-32-matchmaking-system">#</a></h4>
+<p><strong>Status:</strong> 🔴 TODO</p>
+<p><strong>Tasks:</strong></p>
+<ul>
+<li>
+<p><input disabled="" type="checkbox"> Implement matchmaking backend</p>
+<ul>
+<li><input disabled="" type="checkbox"> Queue system</li>
+<li><input disabled="" type="checkbox"> MMR calculation</li>
+<li><input disabled="" type="checkbox"> Team formation</li>
+</ul>
+</li>
+<li>
+<p><input disabled="" type="checkbox"> Server browser (optional)</p>
+</li>
+<li>
+<p><input disabled="" type="checkbox"> Party system</p>
+<ul>
+<li><input disabled="" type="checkbox"> Invite friends</li>
+<li><input disabled="" type="checkbox"> Squad formation</li>
+<li><input disabled="" type="checkbox"> Voice chat integration (future)</li>
+</ul>
+</li>
+</ul>
+<p><strong>Assignees:</strong> TBD<br>
+<strong>Dependencies:</strong> Network system<br>
+<strong>Blockers:</strong> Backend services</p>
+<p><strong>Milestone:</strong> ✅ <strong>Alpha Build Complete</strong></p>
+<hr>
+<h2 id="phase-3-testing--refinement">Phase 3: Testing &amp; Refinement<a class="anchor" href="#phase-3-testing--refinement">#</a></h2>
+<p><strong>Duration:</strong> Months 8-10<br>
+<strong>Status:</strong> 🔴 Not Started (0%)</p>
+<h3 id="month-8-closed-alpha">Month 8: Closed Alpha<a class="anchor" href="#month-8-closed-alpha">#</a></h3>
+<p><strong>Tasks:</strong></p>
+<ul>
+<li><input disabled="" type="checkbox"> Setup alpha testing infrastructure</li>
+<li><input disabled="" type="checkbox"> Recruit 50-100 testers</li>
+<li><input disabled="" type="checkbox"> Implement telemetry</li>
+<li><input disabled="" type="checkbox"> Bug tracking system</li>
+<li><input disabled="" type="checkbox"> Feedback collection</li>
+</ul>
+<p><strong>Focus Areas:</strong></p>
+<ul>
+<li>Core gameplay loop</li>
+<li>Network stability</li>
+<li>Balance issues</li>
+<li>Critical bugs</li>
+</ul>
+<hr>
+<h3 id="month-9-open-beta">Month 9: Open Beta<a class="anchor" href="#month-9-open-beta">#</a></h3>
+<p><strong>Tasks:</strong></p>
+<ul>
+<li><input disabled="" type="checkbox"> Public beta release</li>
+<li><input disabled="" type="checkbox"> Stress testing (1000+ players)</li>
+<li><input disabled="" type="checkbox"> Anti-cheat implementation</li>
+<li><input disabled="" type="checkbox"> Performance optimization</li>
+<li><input disabled="" type="checkbox"> Content additions based on feedback</li>
+</ul>
+<p><strong>Focus Areas:</strong></p>
+<ul>
+<li>Server capacity</li>
+<li>Matchmaking quality</li>
+<li>Economy balance</li>
+<li>Monetization testing</li>
+</ul>
+<hr>
+<h3 id="month-10-pre-launch-polish">Month 10: Pre-Launch Polish<a class="anchor" href="#month-10-pre-launch-polish">#</a></h3>
+<p><strong>Tasks:</strong></p>
+<ul>
+<li><input disabled="" type="checkbox"> Final bug fixes</li>
+<li><input disabled="" type="checkbox"> Performance optimization</li>
+<li><input disabled="" type="checkbox"> Content completion</li>
+<li><input disabled="" type="checkbox"> Store implementation</li>
+<li><input disabled="" type="checkbox"> Marketing materials</li>
+<li><input disabled="" type="checkbox"> Launch preparation</li>
+</ul>
+<p><strong>Milestone:</strong> ✅ <strong>Release Candidate</strong></p>
+<hr>
+<h2 id="phase-4-launch--live-service">Phase 4: Launch &amp; Live Service<a class="anchor" href="#phase-4-launch--live-service">#</a></h2>
+<p><strong>Duration:</strong> Month 11+<br>
+<strong>Status:</strong> 🔴 Not Started</p>
+<h3 id="month-11-soft-launch">Month 11: Soft Launch<a class="anchor" href="#month-11-soft-launch">#</a></h3>
+<ul>
+<li>Limited region release</li>
+<li>Monitor metrics</li>
+<li>Quick iterations</li>
+</ul>
+<h3 id="month-12-global-launch">Month 12: Global Launch<a class="anchor" href="#month-12-global-launch">#</a></h3>
+<ul>
+<li>Worldwide release</li>
+<li>Marketing campaign</li>
+<li>Launch events</li>
+</ul>
+<h3 id="post-launch-live-operations">Post-Launch: Live Operations<a class="anchor" href="#post-launch-live-operations">#</a></h3>
+<ul>
+<li>Weekly balance patches</li>
+<li>Monthly content updates</li>
+<li>Seasonal events</li>
+<li>Battle Pass seasons</li>
+</ul>
+<hr>
+<h2 id="current-sprint-sprint-0">Current Sprint (Sprint 0)<a class="anchor" href="#current-sprint-sprint-0">#</a></h2>
+<p><strong>Sprint Goal:</strong> Project Setup &amp; Planning</p>
+<h3 id="sprint-backlog">Sprint Backlog<a class="anchor" href="#sprint-backlog">#</a></h3>
+<h4 id="in-progress-">In Progress 🟡<a class="anchor" href="#in-progress-">#</a></h4>
+<p><em>No tasks in progress</em></p>
+<h4 id="to-do-">To Do 🔴<a class="anchor" href="#to-do-">#</a></h4>
+<ul>
+<li><input disabled="" type="checkbox"> Finalize team structure</li>
+<li><input disabled="" type="checkbox"> Setup development machines</li>
+<li><input disabled="" type="checkbox"> Create project repository</li>
+<li><input disabled="" type="checkbox"> Write setup documentation</li>
+</ul>
+<h4 id="done-">Done ✅<a class="anchor" href="#done-">#</a></h4>
+<ul>
+<li><input checked="" disabled="" type="checkbox"> GDD documentation created</li>
+<li><input checked="" disabled="" type="checkbox"> High-level design complete</li>
+<li><input checked="" disabled="" type="checkbox"> Technical architecture planned</li>
+</ul>
+<hr>
+<h2 id="blocker-tracking">Blocker Tracking<a class="anchor" href="#blocker-tracking">#</a></h2>
+<h3 id="active-blockers-">Active Blockers 🚫<a class="anchor" href="#active-blockers-">#</a></h3>
+<p><em>No active blockers</em></p>
+<h3 id="resolved-blockers">Resolved Blockers<a class="anchor" href="#resolved-blockers">#</a></h3>
+<p><em>None yet</em></p>
+<hr>
+<h2 id="risk-register">Risk Register<a class="anchor" href="#risk-register">#</a></h2>
+<table>
+  <thead>
+      <tr>
+          <th>Risk</th>
+          <th>Probability</th>
+          <th>Impact</th>
+          <th>Mitigation</th>
+          <th>Owner</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Mobile performance issues</td>
+          <td>High</td>
+          <td>High</td>
+          <td>Early profiling, scalable quality</td>
+          <td>Tech Lead</td>
+      </tr>
+      <tr>
+          <td>Network latency</td>
+          <td>Medium</td>
+          <td>High</td>
+          <td>Regional servers, lag comp</td>
+          <td>Network Eng</td>
+      </tr>
+      <tr>
+          <td>Team resource shortage</td>
+          <td>Medium</td>
+          <td>High</td>
+          <td>Phased hiring, outsourcing</td>
+          <td>PM</td>
+      </tr>
+      <tr>
+          <td>Scope creep</td>
+          <td>Medium</td>
+          <td>Medium</td>
+          <td>Strict prioritization</td>
+          <td>PM</td>
+      </tr>
+      <tr>
+          <td>Competitor launch</td>
+          <td>Low</td>
+          <td>Medium</td>
+          <td>Focus on unique features</td>
+          <td>Design Lead</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="metrics-tracking">Metrics Tracking<a class="anchor" href="#metrics-tracking">#</a></h2>
+<h3 id="development-metrics">Development Metrics<a class="anchor" href="#development-metrics">#</a></h3>
+<p><strong>Code Quality:</strong></p>
+<ul>
+<li>Unit test coverage: Target 60%</li>
+<li>Build success rate: Target 95%+</li>
+<li>Code review turnaround: &lt; 24 hours</li>
+</ul>
+<p><strong>Velocity:</strong></p>
+<ul>
+<li>Story points per sprint: TBD (baseline)</li>
+<li>Bug resolution time: &lt; 48 hours (critical)</li>
+</ul>
+<p><strong>Performance:</strong></p>
+<ul>
+<li>Frame rate: 30 FPS minimum (mid-range)</li>
+<li>Memory usage: &lt; 1GB (mid-range)</li>
+<li>APK size: &lt; 2GB</li>
+</ul>
+<hr>
+<h2 id="team-capacity">Team Capacity<a class="anchor" href="#team-capacity">#</a></h2>
+<h3 id="current-allocation">Current Allocation<a class="anchor" href="#current-allocation">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th>Role</th>
+          <th>Team Members</th>
+          <th>Capacity</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Programmers</td>
+          <td>TBD</td>
+          <td>TBD</td>
+      </tr>
+      <tr>
+          <td>Artists</td>
+          <td>TBD</td>
+          <td>TBD</td>
+      </tr>
+      <tr>
+          <td>Designers</td>
+          <td>TBD</td>
+          <td>TBD</td>
+      </tr>
+      <tr>
+          <td>QA</td>
+          <td>TBD</td>
+          <td>TBD</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="next-actions">Next Actions<a class="anchor" href="#next-actions">#</a></h2>
+<h3 id="immediate-this-week">Immediate (This Week)<a class="anchor" href="#immediate-this-week">#</a></h3>
+<ol>
+<li>Finalize team hiring</li>
+<li>Setup development infrastructure</li>
+<li>Create project in UE5</li>
+<li>First sprint planning</li>
+</ol>
+<h3 id="short-term-this-month">Short-term (This Month)<a class="anchor" href="#short-term-this-month">#</a></h3>
+<ol>
+<li>Complete Phase 1 Week 1-2 tasks</li>
+<li>Establish coding standards</li>
+<li>Setup CI/CD pipeline</li>
+<li>Begin core character implementation</li>
+</ol>
+<h3 id="long-term-this-quarter">Long-term (This Quarter)<a class="anchor" href="#long-term-this-quarter">#</a></h3>
+<ol>
+<li>Complete Phase 1 (Core Development)</li>
+<li>Playable prototype</li>
+<li>Begin content creation</li>
+</ol>
+<hr>
+<h2 id="review-schedule">Review Schedule<a class="anchor" href="#review-schedule">#</a></h2>
+<p><strong>Daily Standup:</strong> 10:00 AM (15 minutes)
+<strong>Sprint Planning:</strong> Every 2 weeks (Monday)
+<strong>Sprint Review:</strong> Every 2 weeks (Friday)
+<strong>Sprint Retro:</strong> Every 2 weeks (Friday)
+<strong>Milestone Reviews:</strong> End of each phase</p>
+<hr>
+<h2 id="document-updates">Document Updates<a class="anchor" href="#document-updates">#</a></h2>
+<table>
+  <thead>
+      <tr>
+          <th>Date</th>
+          <th>Version</th>
+          <th>Changes</th>
+          <th>Author</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>2026-02-06</td>
+          <td>1.0</td>
+          <td>Initial roadmap</td>
+          <td>Team</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<p><strong><a href="./08_PerformanceOptimization.md">← Previous: Performance Optimization</a></strong> | <strong><a href="./README.md">Technical Index</a></strong></p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+<div>
+
+</div>
+
+<div>
+
+</div>
+
+</div>
+
+
+
+
+
+  
+  
+  
+  <div class="flex flex-wrap justify-between">
+    <span>
+    
+      <a href="/docs/GDD_Technical/Core/CodingStandards/" class="flex align-center">
+        <img src="/icons/backward.svg" class="book-icon" alt="Backward" />
+        <span>Coding Standards</span>
+      </a>
+    
+    </span>
+    <span>
+    
+      <a href="/docs/GDD_Technical/Core/NetworkingSystem/" class="flex align-center">
+        <span>Networking System</span>
+        <img src="/icons/forward.svg" class="book-icon" alt="Forward" />
+      </a>
+    
+    </span>
+  </div>
+  
+
+
+ 
+        
+  
+ 
+        
+        
+  
+ 
+        
+  
+  
+    <script>(function(){document.querySelectorAll("pre:has(code)").forEach(e=>{e.addEventListener("click",e.focus),e.addEventListener("copy",function(t){if(t.preventDefault(),navigator.clipboard){const t=window.getSelection().toString()||e.textContent;navigator.clipboard.writeText(t)}})})})()</script>
+  
+
+      </footer>
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+  
+  <aside class="book-toc">
+    <div class="book-toc-content">
+      
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#current-status">Current Status</a></li>
+    <li><a href="#enums--types">Enums &amp; Types</a>
+      <ul>
+        <li><a href="#eprojectphase">EProjectPhase</a></li>
+        <li><a href="#etaskstatus">ETaskStatus</a></li>
+        <li><a href="#etaskpriority">ETaskPriority</a></li>
+        <li><a href="#erisklevel">ERiskLevel</a></li>
+        <li><a href="#emilestonetype">EMilestoneType</a></li>
+        <li><a href="#esprintstatus">ESprintStatus</a></li>
+      </ul>
+    </li>
+    <li><a href="#code-names">Code Names</a>
+      <ul>
+        <li><a href="#phase-events">Phase Events</a></li>
+        <li><a href="#sprint-events">Sprint Events</a></li>
+        <li><a href="#task-events">Task Events</a></li>
+        <li><a href="#milestone-events">Milestone Events</a></li>
+        <li><a href="#risk-events">Risk Events</a></li>
+      </ul>
+    </li>
+    <li><a href="#phase-1-core-development">Phase 1: Core Development</a>
+      <ul>
+        <li><a href="#month-1-2-foundation">Month 1-2: Foundation</a></li>
+        <li><a href="#month-3-4-core-systems">Month 3-4: Core Systems</a></li>
+      </ul>
+    </li>
+    <li><a href="#phase-2-content-creation">Phase 2: Content Creation</a>
+      <ul>
+        <li><a href="#month-5-6-operators--weapons">Month 5-6: Operators &amp; Weapons</a></li>
+        <li><a href="#month-7-maps--ui">Month 7: Maps &amp; UI</a></li>
+      </ul>
+    </li>
+    <li><a href="#phase-3-testing--refinement">Phase 3: Testing &amp; Refinement</a>
+      <ul>
+        <li><a href="#month-8-closed-alpha">Month 8: Closed Alpha</a></li>
+        <li><a href="#month-9-open-beta">Month 9: Open Beta</a></li>
+        <li><a href="#month-10-pre-launch-polish">Month 10: Pre-Launch Polish</a></li>
+      </ul>
+    </li>
+    <li><a href="#phase-4-launch--live-service">Phase 4: Launch &amp; Live Service</a>
+      <ul>
+        <li><a href="#month-11-soft-launch">Month 11: Soft Launch</a></li>
+        <li><a href="#month-12-global-launch">Month 12: Global Launch</a></li>
+        <li><a href="#post-launch-live-operations">Post-Launch: Live Operations</a></li>
+      </ul>
+    </li>
+    <li><a href="#current-sprint-sprint-0">Current Sprint (Sprint 0)</a>
+      <ul>
+        <li><a href="#sprint-backlog">Sprint Backlog</a></li>
+      </ul>
+    </li>
+    <li><a href="#blocker-tracking">Blocker Tracking</a>
+      <ul>
+        <li><a href="#active-blockers-">Active Blockers 🚫</a></li>
+        <li><a href="#resolved-blockers">Resolved Blockers</a></li>
+      </ul>
+    </li>
+    <li><a href="#risk-register">Risk Register</a></li>
+    <li><a href="#metrics-tracking">Metrics Tracking</a>
+      <ul>
+        <li><a href="#development-metrics">Development Metrics</a></li>
+      </ul>
+    </li>
+    <li><a href="#team-capacity">Team Capacity</a>
+      <ul>
+        <li><a href="#current-allocation">Current Allocation</a></li>
+      </ul>
+    </li>
+    <li><a href="#next-actions">Next Actions</a>
+      <ul>
+        <li><a href="#immediate-this-week">Immediate (This Week)</a></li>
+        <li><a href="#short-term-this-month">Short-term (This Month)</a></li>
+        <li><a href="#long-term-this-quarter">Long-term (This Quarter)</a></li>
+      </ul>
+    </li>
+    <li><a href="#review-schedule">Review Schedule</a></li>
+    <li><a href="#document-updates">Document Updates</a></li>
+  </ul>
+</nav>
+
+
+
+    </div>
+  </aside>
+  
+ 
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

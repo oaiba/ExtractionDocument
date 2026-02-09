@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Combat on Extraction Shooter GDD</title>
+    <link>http://localhost:52224/docs/GDD_Design/Combat/</link>
+    <description>Recent content in Combat on Extraction Shooter GDD</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <atom:link href="http://localhost:52224/docs/GDD_Design/Combat/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title></title>
+      <link>http://localhost:52224/docs/GDD_Design/Combat/Items/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:52224/docs/GDD_Design/Combat/Items/</guid>
+      <description>&lt;h1 id=&#34;items--economy-systems&#34;&gt;Items &amp;amp; Economy Systems&lt;a class=&#34;anchor&#34; href=&#34;#items--economy-systems&#34;&gt;#&lt;/a&gt;&lt;/h1&gt;&#xD;&#xA;&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;./Weapons.md&#34;&gt;← Previous: Weapons&lt;/a&gt;&lt;/strong&gt; | &lt;strong&gt;&lt;a href=&#34;../README.md&#34;&gt;Index&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;economy-philosophy&#34;&gt;Economy Philosophy&lt;a class=&#34;anchor&#34; href=&#34;#economy-philosophy&#34;&gt;#&lt;/a&gt;&lt;/h2&gt;&#xD;&#xA;&lt;p&gt;&lt;strong&gt;Core Principles:&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&lt;strong&gt;Player-Driven&lt;/strong&gt; - Market prices determined by supply/demand&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Risk Creates Value&lt;/strong&gt; - Rare items from dangerous zones worth more&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;No Pay-to-Win&lt;/strong&gt; - Real money cannot buy gameplay advantages&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Fair Trading&lt;/strong&gt; - Systems prevent scams and exploitation&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Economic Sinks&lt;/strong&gt; - Prevent inflation through item loss and fees&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;item-categories&#34;&gt;Item Categories&lt;a class=&#34;anchor&#34; href=&#34;#item-categories&#34;&gt;#&lt;/a&gt;&lt;/h2&gt;&#xD;&#xA;&lt;h3 id=&#34;1-weapons--attachments&#34;&gt;1. Weapons &amp;amp; Attachments&lt;a class=&#34;anchor&#34; href=&#34;#1-weapons--attachments&#34;&gt;#&lt;/a&gt;&lt;/h3&gt;&#xD;&#xA;&lt;p&gt;&lt;em&gt;See: &lt;a href=&#34;./Weapons.md&#34;&gt;Weapons &amp;amp; Combat&lt;/a&gt; for details on Weapons, Attachments, and Ammunition types&lt;/em&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title></title>
+      <link>http://localhost:52224/docs/GDD_Design/Combat/Weapons/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:52224/docs/GDD_Design/Combat/Weapons/</guid>
+      <description>&lt;h1 id=&#34;weapons--combat-systems&#34;&gt;Weapons &amp;amp; Combat Systems&lt;a class=&#34;anchor&#34; href=&#34;#weapons--combat-systems&#34;&gt;#&lt;/a&gt;&lt;/h1&gt;&#xD;&#xA;&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;../GameDesign/Progression.md&#34;&gt;← Previous: Progression&lt;/a&gt;&lt;/strong&gt; | &lt;strong&gt;&lt;a href=&#34;../README.md&#34;&gt;Index&lt;/a&gt;&lt;/strong&gt; | &lt;strong&gt;&lt;a href=&#34;./Items.md&#34;&gt;Next: Items →&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;combat-philosophy&#34;&gt;Combat Philosophy&lt;a class=&#34;anchor&#34; href=&#34;#combat-philosophy&#34;&gt;#&lt;/a&gt;&lt;/h2&gt;&#xD;&#xA;&lt;p&gt;&lt;strong&gt;Core Principles:&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&lt;strong&gt;Tactical Over Twitch&lt;/strong&gt; - Positioning and decision-making matter more than raw reflexes&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Weapon Variety&lt;/strong&gt; - Each weapon has distinct role and feel&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Risk vs Reward&lt;/strong&gt; - Better weapons come with higher loss penalty&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Skill Expression&lt;/strong&gt; - High skill ceiling with recoil control and positioning&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Mobile Optimized&lt;/strong&gt; - Controls and mechanics designed for touch screens&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;weapon-categories&#34;&gt;Weapon Categories&lt;a class=&#34;anchor&#34; href=&#34;#weapon-categories&#34;&gt;#&lt;/a&gt;&lt;/h2&gt;&#xD;&#xA;&lt;h3 id=&#34;primary-weapons&#34;&gt;Primary Weapons&lt;a class=&#34;anchor&#34; href=&#34;#primary-weapons&#34;&gt;#&lt;/a&gt;&lt;/h3&gt;&#xD;&#xA;&lt;h4 id=&#34;1-assault-rifles-ar&#34;&gt;1. Assault Rifles (AR)&lt;a class=&#34;anchor&#34; href=&#34;#1-assault-rifles-ar&#34;&gt;#&lt;/a&gt;&lt;/h4&gt;&#xD;&#xA;&lt;p&gt;&lt;strong&gt;Role:&lt;/strong&gt; Versatile all-rounders, effective at medium range&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

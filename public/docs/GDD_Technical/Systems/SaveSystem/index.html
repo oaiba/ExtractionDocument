@@ -1,0 +1,4079 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=52224&amp;path=livereload" data-no-instant defer></script>
+  <!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Save System - Technical Specification#← Back to Index | Next: Tutorial System →
+Reference: High-Level Persistence Design
+Overview#The Save System manages all data persistence including local saves, cloud sync, data validation, encryption, and recovery. Designed for reliability with backup and conflict resolution.
+Responsibilities:
+Local save/load operations Cloud synchronization Data validation and checksums Encryption for sensitive data Version migration Backup and recovery Match state persistence Cross-device sync Conflict resolution Enums &amp; Types#SaveDataType#Data category for saving.
+">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:52224/docs/GDD_Technical/Systems/SaveSystem/">
+  <meta property="og:site_name" content="Extraction Shooter GDD">
+  <meta property="og:title" content="Extraction Shooter GDD">
+  <meta property="og:description" content="Save System - Technical Specification#← Back to Index | Next: Tutorial System →
+Reference: High-Level Persistence Design
+Overview#The Save System manages all data persistence including local saves, cloud sync, data validation, encryption, and recovery. Designed for reliability with backup and conflict resolution.
+Responsibilities:
+Local save/load operations Cloud synchronization Data validation and checksums Encryption for sensitive data Version migration Backup and recovery Match state persistence Cross-device sync Conflict resolution Enums &amp; Types#SaveDataType#Data category for saving.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
+
+
+  <meta itemprop="name" content="Extraction Shooter GDD">
+  <meta itemprop="description" content="Save System - Technical Specification#← Back to Index | Next: Tutorial System →
+Reference: High-Level Persistence Design
+Overview#The Save System manages all data persistence including local saves, cloud sync, data validation, encryption, and recovery. Designed for reliability with backup and conflict resolution.
+Responsibilities:
+Local save/load operations Cloud synchronization Data validation and checksums Encryption for sensitive data Version migration Backup and recovery Match state persistence Cross-device sync Conflict resolution Enums &amp; Types#SaveDataType#Data category for saving.">
+  <meta itemprop="wordCount" content="3823">
+
+<title>Save System | Extraction Shooter GDD</title>
+<link rel="icon" href="/favicon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="http://localhost:52224/docs/GDD_Technical/Systems/SaveSystem/">
+<link rel="stylesheet" href="/book.min.63c8b2b12bbd1ad36428837740ea371dd41fdb9c22b35499003d0dfa4dbce6ba.css" integrity="sha256-Y8iysSu9GtNkKIN3QOo3HdQf25wis1SZAD0N&#43;k285ro=" crossorigin="anonymous">
+
+
+  <script defer src="/fuse.min.js"></script>
+  <script defer src="/en.search.min.58bea27d7a08265548c5a8636a9a9fc844e0eb9d60fc3bb2c53d517da858d4c1.js" integrity="sha256-WL6ifXoIJlVIxahjapqfyETg651g/DuyxT1RfahY1ME=" crossorigin="anonymous"></script>
+
+  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
+
+
+
+  
+</head>
+<body dir="ltr" class="book-kind-page book-type-docs">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    
+<aside class="book-menu">
+  <div class="book-menu-content">
+    
+  <nav>
+    <h2 class="book-brand">
+  <a class="flex align-center" href="/"><img src="/logo.svg" alt="Logo" /><span>Extraction Shooter GDD</span>
+  </a>
+</h2>
+
+    <div class="book-theme-toggle">
+    <input type="checkbox" id="theme-toggle" class="toggle">
+    <label for="theme-toggle" class="flex justify-between items-center cursor-pointer">
+        <span class="text-xs font-semibold">Dark Mode</span>
+        <div
+            class="relative w-10 h-5 bg-gray-200 rounded-full transition-colors duration-200 ease-in-out dark:bg-gray-700">
+            <div
+                class="absolute left-0 w-5 h-5 bg-white rounded-full shadow transform transition-transform duration-200 ease-in-out dark:translate-x-full">
+            </div>
+        </div>
+    </label>
+</div>
+
+<script>
+    (function () {
+        const toggle = document.getElementById('theme-toggle');
+        const html = document.documentElement;
+
+        
+        const savedTheme = localStorage.getItem('theme');
+        const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+        if (savedTheme === 'dark' || (!savedTheme && systemDark)) {
+            html.classList.add('dark');
+            toggle.checked = true;
+        } else {
+            html.classList.remove('dark');
+            toggle.checked = false;
+        }
+
+        
+        toggle.addEventListener('change', function () {
+            if (this.checked) {
+                html.classList.add('dark');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                html.classList.remove('dark');
+                localStorage.setItem('theme', 'light');
+            }
+        });
+    })();
+</script>
+
+<style>
+     
+    .book-theme-toggle {
+        margin: 1rem 0;
+        padding: 0 1rem;
+
+    }
+
+    .book-theme-toggle label {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        cursor: pointer;
+        font-size: 0.85em;
+    }
+
+     
+    .book-theme-toggle input {
+        display: none;
+    }
+
+     
+    .book-theme-toggle label::after {
+        content: "🌙";
+         
+    }
+
+     
+    html:not(.dark) .book-theme-toggle label::after {
+        content: "☀️";
+         
+    }
+</style> 
+    
+<div class="book-search hidden">
+  <input id="book-search-input" type="text" 
+    placeholder="Search"
+    aria-label="Search"
+    maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+    
+
+    
+    
+
+
+
+    
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/" class="">
+      Gdd Design</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      AI</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/AI/EnemyBehavior/" class="">
+      Enemy Behavior</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/AI/FactionBehaviors/" class="">
+      Faction Behaviors</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Audio</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Audio/SoundDesign/" class="">
+      Sound Design</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Audio/Soundscape/" class="">
+      Soundscape</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Audio/TacticalAudio/" class="">
+      Tactical Audio</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Audio/VoiceLines/" class="">
+      Voice Lines</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Characters</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Operators/" class="">
+      Operators</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Assault</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Assault/Blaze/" class="">
+      Blaze</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Assault/Havoc/" class="">
+      Havoc</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Assault/README/" class="">
+      Readme</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Assault/Viper/" class="">
+      Viper</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Recon</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Recon/Phantom/" class="">
+      Phantom</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Recon/README/" class="">
+      Readme</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Recon/Specter/" class="">
+      Specter</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Recon/Wraith/" class="">
+      Wraith</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Specialist</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Specialist/Cipher/" class="">
+      Cipher</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Specialist/Flux/" class="">
+      Flux</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Specialist/README/" class="">
+      Readme</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Support</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Support/Angel/" class="">
+      Angel</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Support/Doc/" class="">
+      Doc</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Support/README/" class="">
+      Readme</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Tank</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Tank/Bulwark/" class="">
+      Bulwark</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Tank/Fortress/" class="">
+      Fortress</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Tank/README/" class="">
+      Readme</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Combat</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Combat/Items/" class="">
+      Items</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Combat/Weapons/" class="">
+      Weapons</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      GameDesign</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Accessibility/" class="">
+      Accessibility</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Controls/" class="">
+      Controls</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/CoreGameplay/" class="">
+      Core Gameplay</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Economy/" class="">
+      Economy</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/GameModes/" class="">
+      Game Modes</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/LiveOps/" class="">
+      Live Ops</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Localization/" class="">
+      Localization</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/NavigationAndMap/" class="">
+      Navigation and Map</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Overview/" class="">
+      Overview</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Progression/" class="">
+      Progression</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/RankedMode/" class="">
+      Ranked Mode</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/TutorialRaid/" class="">
+      Tutorial Raid</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/UserSettings/" class="">
+      User Settings</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Gameplay</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Gameplay/CoreLoop/" class="">
+      Core Loop</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      ProjectScope</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/ProjectScope/DesignPillars/" class="">
+      Design Pillars</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/ProjectScope/MVP/" class="">
+      Mvp</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/ProjectScope/NonGoals/" class="">
+      Non Goals</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/ProjectScope/Risks/" class="">
+      Risks</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Social</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Social/Multiplayer/" class="">
+      Multiplayer</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Story</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Story/Backstory/" class="">
+      Backstory</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Story/Factions/" class="">
+      Factions</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Story/Narrative/" class="">
+      Narrative</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Story/QuestLines/" class="">
+      Quest Lines</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      UI UX</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/UI_UX/UX_Flows/" class="">
+      Ux Flows</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/UI_UX/Visual_Style/" class="">
+      Visual Style</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Visuals</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Visuals/ArtDirection/" class="">
+      Art Direction</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Visuals/AssetGuidelines/" class="">
+      Asset Guidelines</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Visuals/StyleGuide/" class="">
+      Style Guide</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Visuals/UserInterface/" class="">
+      User Interface</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      World</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/EnvironmentalNarrative/" class="">
+      Environmental Narrative</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/EnvironmentalNarrative_Guidelines/" class="">
+      Environmental Narrative Guidelines</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/LootDistribution/" class="">
+      Loot Distribution</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/MapDesign/" class="">
+      Map Design</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/MapDesign_IndustrialZone/" class="">
+      Map Design Industrial Zone</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/MapDesign_NeonSlums/" class="">
+      Map Design Neon Slums</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/MapDesign_Wilderness/" class="">
+      Map Design Wilderness</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/MapLayouts/" class="">
+      Map Layouts</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/" class="">
+      Gdd Technical</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      AI</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/AI/SensorySystem/" class="">
+      Sensory System</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Core</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Core/Architecture/" class="">
+      Architecture</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Core/CodingStandards/" class="">
+      Coding Standards</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Core/DevelopmentRoadmap/" class="">
+      Development Roadmap</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Core/NetworkingSystem/" class="">
+      Networking System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Core/SecuritySystem/" class="">
+      Security System</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Gameplay</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Gameplay/CharacterSystem/" class="">
+      Character System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Gameplay/ControlSystem/" class="">
+      Control System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Gameplay/InventorySystem/" class="">
+      Inventory System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Gameplay/WeaponSystem/" class="">
+      Weapon System</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Networking</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Networking/LagCompensation/" class="">
+      Lag Compensation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Networking/ReplicationStrategy/" class="">
+      Replication Strategy</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Performance</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Performance/Budgets/" class="">
+      Budgets</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Performance/Optimization/" class="">
+      Optimization</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Security</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Security/AntiCheatStrategy/" class="">
+      Anti Cheat Strategy</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Systems</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/AccessibilitySystem/" class="">
+      Accessibility System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/AISystem/" class="">
+      Aisystem</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/AnalyticsSystem/" class="">
+      Analytics System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/AudioSystem/" class="">
+      Audio System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/BuildPipeline/" class="">
+      Build Pipeline</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/LiveOpsSystem/" class="">
+      Live Ops System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/LocalizationSystem/" class="">
+      Localization System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/MapSystem/" class="">
+      Map System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/NarrativeSystem/" class="">
+      Narrative System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/ProgressionSystem/" class="">
+      Progression System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/RankedSystem/" class="">
+      Ranked System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/SaveSystem/" class="active">
+      Save System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/SocialSystem/" class="">
+      Social System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/TutorialSystem/" class="">
+      Tutorial System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/UISystem/" class="">
+      Uisystem</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+</nav>
+
+
+
+
+<script>{ { . | safeJS } }</script>
+
+
+  </div>
+</aside>
+ 
+
+    <div class="book-page">
+      <header class="book-header hidden">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/icons/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <h3>Save System</h3>
+
+  <label for="toc-control">
+    
+    <img src="/icons/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#overview">Overview</a></li>
+    <li><a href="#enums--types">Enums &amp; Types</a>
+      <ul>
+        <li><a href="#savedatatype">SaveDataType</a></li>
+        <li><a href="#syncstate">SyncState</a></li>
+        <li><a href="#saveresult">SaveResult</a></li>
+        <li><a href="#cloudservice">CloudService</a></li>
+        <li><a href="#conflictresolution">ConflictResolution</a></li>
+        <li><a href="#datamigrationstatus">DataMigrationStatus</a></li>
+      </ul>
+    </li>
+    <li><a href="#code-names">Code Names</a>
+      <ul>
+        <li><a href="#save-events">Save Events</a></li>
+        <li><a href="#sync-events">Sync Events</a></li>
+        <li><a href="#backup-events">Backup Events</a></li>
+      </ul>
+    </li>
+    <li><a href="#architecture">Architecture</a>
+      <ul>
+        <li><a href="#class-diagram">Class Diagram</a></li>
+      </ul>
+    </li>
+    <li><a href="#core-classes">Core Classes</a>
+      <ul>
+        <li><a href="#savemanager">SaveManager</a></li>
+        <li><a href="#localstoragemanager">LocalStorageManager</a></li>
+        <li><a href="#cloudprovider">CloudProvider</a></li>
+        <li><a href="#syncmanager">SyncManager</a></li>
+        <li><a href="#datavalidator">DataValidator</a></li>
+        <li><a href="#encryptionmanager">EncryptionManager</a></li>
+        <li><a href="#migrationmanager">MigrationManager</a></li>
+        <li><a href="#backupmanager">BackupManager</a></li>
+        <li><a href="#matchstatemanager">MatchStateManager</a></li>
+      </ul>
+    </li>
+    <li><a href="#data-structures">Data Structures</a></li>
+    <li><a href="#auto-save-configuration">Auto-Save Configuration</a></li>
+    <li><a href="#todo-implementation-tasks">TODO: Implementation Tasks</a>
+      <ul>
+        <li><a href="#high-priority-">HIGH Priority 🔴</a></li>
+        <li><a href="#medium-priority-">MEDIUM Priority 🟡</a></li>
+        <li><a href="#low-priority-">LOW Priority 🟢</a></li>
+      </ul>
+    </li>
+    <li><a href="#testing-checklist">Testing Checklist</a></li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><h1 id="save-system---technical-specification">Save System - Technical Specification<a class="anchor" href="#save-system---technical-specification">#</a></h1>
+<p><strong><a href="../README.md">← Back to Index</a></strong> | <strong><a href="./TutorialSystem.md">Next: Tutorial System →</a></strong></p>
+<p><strong>Reference:</strong> <a href="../../GDD_HighLevel/Technical/Persistence.md">High-Level Persistence Design</a></p>
+<hr>
+<h2 id="overview">Overview<a class="anchor" href="#overview">#</a></h2>
+<p>The <strong>Save System</strong> manages all data persistence including local saves, cloud sync, data validation, encryption, and recovery. Designed for reliability with backup and conflict resolution.</p>
+<p><strong>Responsibilities:</strong></p>
+<ul>
+<li>Local save/load operations</li>
+<li>Cloud synchronization</li>
+<li>Data validation and checksums</li>
+<li>Encryption for sensitive data</li>
+<li>Version migration</li>
+<li>Backup and recovery</li>
+<li>Match state persistence</li>
+<li>Cross-device sync</li>
+<li>Conflict resolution</li>
+</ul>
+<hr>
+<h2 id="enums--types">Enums &amp; Types<a class="anchor" href="#enums--types">#</a></h2>
+<h3 id="savedatatype">SaveDataType<a class="anchor" href="#savedatatype">#</a></h3>
+<p>Data category for saving.</p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Code Name</th>
+          <th style="text-align: left">Display Name</th>
+          <th style="text-align: left">Priority</th>
+          <th style="text-align: left">Sync Freq</th>
+          <th style="text-align: left">Size (Avg)</th>
+          <th style="text-align: left">Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><code>SDT_PlayerProfile</code></td>
+          <td style="text-align: left">Player Profile</td>
+          <td style="text-align: left">Critical</td>
+          <td style="text-align: left">Real-time</td>
+          <td style="text-align: left">2 KB</td>
+          <td style="text-align: left">Account info, level, currencies</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>SDT_Inventory</code></td>
+          <td style="text-align: left">Inventory</td>
+          <td style="text-align: left">Critical</td>
+          <td style="text-align: left">On change</td>
+          <td style="text-align: left">50 KB</td>
+          <td style="text-align: left">Items, stash contents</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>SDT_Progression</code></td>
+          <td style="text-align: left">Progression</td>
+          <td style="text-align: left">High</td>
+          <td style="text-align: left">On change</td>
+          <td style="text-align: left">10 KB</td>
+          <td style="text-align: left">Quests, achievements, unlocks</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>SDT_MatchState</code></td>
+          <td style="text-align: left">Match State</td>
+          <td style="text-align: left">Critical</td>
+          <td style="text-align: left">Real-time</td>
+          <td style="text-align: left">10 KB</td>
+          <td style="text-align: left">Current match (recovery)</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>SDT_Settings</code></td>
+          <td style="text-align: left">Settings</td>
+          <td style="text-align: left">Low</td>
+          <td style="text-align: left">On change</td>
+          <td style="text-align: left">1 KB</td>
+          <td style="text-align: left">Player preferences</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>SDT_Statistics</code></td>
+          <td style="text-align: left">Statistics</td>
+          <td style="text-align: left">Medium</td>
+          <td style="text-align: left">Periodic</td>
+          <td style="text-align: left">5 KB</td>
+          <td style="text-align: left">Gameplay stats</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>SDT_Social</code></td>
+          <td style="text-align: left">Social</td>
+          <td style="text-align: left">Low</td>
+          <td style="text-align: left">On change</td>
+          <td style="text-align: left">3 KB</td>
+          <td style="text-align: left">Friends, clan data</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>SDT_Cosmetics</code></td>
+          <td style="text-align: left">Cosmetics</td>
+          <td style="text-align: left">Medium</td>
+          <td style="text-align: left">On change</td>
+          <td style="text-align: left">2 KB</td>
+          <td style="text-align: left">Skins, loadouts</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h3 id="syncstate">SyncState<a class="anchor" href="#syncstate">#</a></h3>
+<p>Cloud synchronization state.</p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Code Name</th>
+          <th style="text-align: left">Display Name</th>
+          <th style="text-align: left">Icon</th>
+          <th style="text-align: left">Sync Action</th>
+          <th style="text-align: left">Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><code>SS_Synced</code></td>
+          <td style="text-align: left">Synced</td>
+          <td style="text-align: left">✓</td>
+          <td style="text-align: left">None</td>
+          <td style="text-align: left">Local matches cloud</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>SS_Pending</code></td>
+          <td style="text-align: left">Pending</td>
+          <td style="text-align: left">↑</td>
+          <td style="text-align: left">Upload</td>
+          <td style="text-align: left">Local changes to upload</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>SS_Downloading</code></td>
+          <td style="text-align: left">Downloading</td>
+          <td style="text-align: left">↓</td>
+          <td style="text-align: left">Download</td>
+          <td style="text-align: left">Receiving cloud data</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>SS_Uploading</code></td>
+          <td style="text-align: left">Uploading</td>
+          <td style="text-align: left">↑</td>
+          <td style="text-align: left">Upload</td>
+          <td style="text-align: left">Sending to cloud</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>SS_Conflict</code></td>
+          <td style="text-align: left">Conflict</td>
+          <td style="text-align: left">⚠</td>
+          <td style="text-align: left">Resolve</td>
+          <td style="text-align: left">Local and cloud differ</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>SS_Error</code></td>
+          <td style="text-align: left">Error</td>
+          <td style="text-align: left">✗</td>
+          <td style="text-align: left">Retry</td>
+          <td style="text-align: left">Sync failed</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>SS_Offline</code></td>
+          <td style="text-align: left">Offline</td>
+          <td style="text-align: left">−</td>
+          <td style="text-align: left">Queue</td>
+          <td style="text-align: left">No connection</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h3 id="saveresult">SaveResult<a class="anchor" href="#saveresult">#</a></h3>
+<p>Save operation result.</p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Code Name</th>
+          <th style="text-align: left">Display Name</th>
+          <th style="text-align: left">Success</th>
+          <th style="text-align: left">Retry</th>
+          <th style="text-align: left">Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><code>SR_Success</code></td>
+          <td style="text-align: left">Success</td>
+          <td style="text-align: left">Yes</td>
+          <td style="text-align: left">No</td>
+          <td style="text-align: left">Save completed</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>SR_Failed</code></td>
+          <td style="text-align: left">Failed</td>
+          <td style="text-align: left">No</td>
+          <td style="text-align: left">Yes</td>
+          <td style="text-align: left">Save failed (retry)</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>SR_ValidationFailed</code></td>
+          <td style="text-align: left">Validation Failed</td>
+          <td style="text-align: left">No</td>
+          <td style="text-align: left">No</td>
+          <td style="text-align: left">Data invalid</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>SR_DiskFull</code></td>
+          <td style="text-align: left">Disk Full</td>
+          <td style="text-align: left">No</td>
+          <td style="text-align: left">No</td>
+          <td style="text-align: left">No storage space</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>SR_PermissionDenied</code></td>
+          <td style="text-align: left">Permission Denied</td>
+          <td style="text-align: left">No</td>
+          <td style="text-align: left">No</td>
+          <td style="text-align: left">No write access</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>SR_Corrupted</code></td>
+          <td style="text-align: left">Corrupted</td>
+          <td style="text-align: left">No</td>
+          <td style="text-align: left">No</td>
+          <td style="text-align: left">Data corruption detected</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>SR_VersionMismatch</code></td>
+          <td style="text-align: left">Version Mismatch</td>
+          <td style="text-align: left">No</td>
+          <td style="text-align: left">Migrate</td>
+          <td style="text-align: left">Old data version</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h3 id="cloudservice">CloudService<a class="anchor" href="#cloudservice">#</a></h3>
+<p>Cloud save provider.</p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Code Name</th>
+          <th style="text-align: left">Display Name</th>
+          <th style="text-align: left">Platform</th>
+          <th style="text-align: left">Priority</th>
+          <th style="text-align: left">Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><code>CS_GameServer</code></td>
+          <td style="text-align: left">Game Server</td>
+          <td style="text-align: left">All</td>
+          <td style="text-align: left">1</td>
+          <td style="text-align: left">Primary authoritative</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>CS_GooglePlay</code></td>
+          <td style="text-align: left">Google Play</td>
+          <td style="text-align: left">Android</td>
+          <td style="text-align: left">2</td>
+          <td style="text-align: left">Android fallback</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>CS_iCloud</code></td>
+          <td style="text-align: left">iCloud</td>
+          <td style="text-align: left">iOS</td>
+          <td style="text-align: left">2</td>
+          <td style="text-align: left">iOS backup</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>CS_Steam</code></td>
+          <td style="text-align: left">Steam</td>
+          <td style="text-align: left">PC</td>
+          <td style="text-align: left">2</td>
+          <td style="text-align: left">Steam Cloud</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>CS_None</code></td>
+          <td style="text-align: left">None</td>
+          <td style="text-align: left">All</td>
+          <td style="text-align: left">99</td>
+          <td style="text-align: left">Local only</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h3 id="conflictresolution">ConflictResolution<a class="anchor" href="#conflictresolution">#</a></h3>
+<p>Conflict resolution strategy.</p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Code Name</th>
+          <th style="text-align: left">Display Name</th>
+          <th style="text-align: left">Auto</th>
+          <th style="text-align: left">Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><code>CR_UseLocal</code></td>
+          <td style="text-align: left">Use Local</td>
+          <td style="text-align: left">No</td>
+          <td style="text-align: left">Keep local version</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>CR_UseCloud</code></td>
+          <td style="text-align: left">Use Cloud</td>
+          <td style="text-align: left">No</td>
+          <td style="text-align: left">Use cloud version</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>CR_UseNewest</code></td>
+          <td style="text-align: left">Use Newest</td>
+          <td style="text-align: left">Yes</td>
+          <td style="text-align: left">Timestamp-based</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>CR_Merge</code></td>
+          <td style="text-align: left">Merge</td>
+          <td style="text-align: left">Yes</td>
+          <td style="text-align: left">Combine data</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>CR_AskUser</code></td>
+          <td style="text-align: left">Ask User</td>
+          <td style="text-align: left">No</td>
+          <td style="text-align: left">Show UI prompt</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h3 id="datamigrationstatus">DataMigrationStatus<a class="anchor" href="#datamigrationstatus">#</a></h3>
+<p>Data version migration status.</p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Code Name</th>
+          <th style="text-align: left">Display Name</th>
+          <th style="text-align: left">Can Continue</th>
+          <th style="text-align: left">Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><code>DM_NotRequired</code></td>
+          <td style="text-align: left">Not Required</td>
+          <td style="text-align: left">Yes</td>
+          <td style="text-align: left">Already current</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>DM_Required</code></td>
+          <td style="text-align: left">Required</td>
+          <td style="text-align: left">Yes</td>
+          <td style="text-align: left">Needs migration</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>DM_InProgress</code></td>
+          <td style="text-align: left">In Progress</td>
+          <td style="text-align: left">Wait</td>
+          <td style="text-align: left">Migrating</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>DM_Completed</code></td>
+          <td style="text-align: left">Completed</td>
+          <td style="text-align: left">Yes</td>
+          <td style="text-align: left">Migration done</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>DM_Failed</code></td>
+          <td style="text-align: left">Failed</td>
+          <td style="text-align: left">No</td>
+          <td style="text-align: left">Migration failed</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="code-names">Code Names<a class="anchor" href="#code-names">#</a></h2>
+<h3 id="save-events">Save Events<a class="anchor" href="#save-events">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Code Name</th>
+          <th style="text-align: left">Trigger</th>
+          <th style="text-align: left">Parameters</th>
+          <th style="text-align: left">Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><code>SAVE_START</code></td>
+          <td style="text-align: left">Save begins</td>
+          <td style="text-align: left">DataType, Size</td>
+          <td style="text-align: left">Save operation started</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>SAVE_COMPLETE</code></td>
+          <td style="text-align: left">Save finishes</td>
+          <td style="text-align: left">DataType, Result</td>
+          <td style="text-align: left">Save operation complete</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>SAVE_FAILED</code></td>
+          <td style="text-align: left">Save error</td>
+          <td style="text-align: left">DataType, Error</td>
+          <td style="text-align: left">Save operation failed</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>LOAD_START</code></td>
+          <td style="text-align: left">Load begins</td>
+          <td style="text-align: left">DataType</td>
+          <td style="text-align: left">Load operation started</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>LOAD_COMPLETE</code></td>
+          <td style="text-align: left">Load finishes</td>
+          <td style="text-align: left">DataType, Size</td>
+          <td style="text-align: left">Load operation complete</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>LOAD_FAILED</code></td>
+          <td style="text-align: left">Load error</td>
+          <td style="text-align: left">DataType, Error</td>
+          <td style="text-align: left">Load operation failed</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="sync-events">Sync Events<a class="anchor" href="#sync-events">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Code Name</th>
+          <th style="text-align: left">Trigger</th>
+          <th style="text-align: left">Parameters</th>
+          <th style="text-align: left">Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><code>SYNC_START</code></td>
+          <td style="text-align: left">Sync begins</td>
+          <td style="text-align: left">DataType</td>
+          <td style="text-align: left">Cloud sync started</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>SYNC_COMPLETE</code></td>
+          <td style="text-align: left">Sync finishes</td>
+          <td style="text-align: left">DataType, Direction</td>
+          <td style="text-align: left">Cloud sync complete</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>SYNC_CONFLICT</code></td>
+          <td style="text-align: left">Conflict detected</td>
+          <td style="text-align: left">DataType, LocalVer, CloudVer</td>
+          <td style="text-align: left">Data conflict found</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>SYNC_RESOLVED</code></td>
+          <td style="text-align: left">Conflict resolved</td>
+          <td style="text-align: left">DataType, Resolution</td>
+          <td style="text-align: left">Conflict resolved</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>SYNC_OFFLINE</code></td>
+          <td style="text-align: left">Connection lost</td>
+          <td style="text-align: left">LastSyncTime</td>
+          <td style="text-align: left">Went offline</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>SYNC_ONLINE</code></td>
+          <td style="text-align: left">Connection restored</td>
+          <td style="text-align: left">QueuedChanges</td>
+          <td style="text-align: left">Came online</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="backup-events">Backup Events<a class="anchor" href="#backup-events">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Code Name</th>
+          <th style="text-align: left">Trigger</th>
+          <th style="text-align: left">Parameters</th>
+          <th style="text-align: left">Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><code>BACKUP_CREATED</code></td>
+          <td style="text-align: left">Backup made</td>
+          <td style="text-align: left">BackupName, Size</td>
+          <td style="text-align: left">Backup created</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>BACKUP_RESTORED</code></td>
+          <td style="text-align: left">Backup loaded</td>
+          <td style="text-align: left">BackupName</td>
+          <td style="text-align: left">Backup restored</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>BACKUP_DELETED</code></td>
+          <td style="text-align: left">Backup removed</td>
+          <td style="text-align: left">BackupName</td>
+          <td style="text-align: left">Backup deleted</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="architecture">Architecture<a class="anchor" href="#architecture">#</a></h2>
+<h3 id="class-diagram">Class Diagram<a class="anchor" href="#class-diagram">#</a></h3>
+<pre tabindex="0"><code>                    ┌─────────────────┐
+                    │   SaveManager   │
+                    │   (Singleton)   │
+                    └────────┬────────┘
+                             │
+    ┌────────────────────────┼────────────────────────┐
+    │                        │                        │
+┌───▼───────┐    ┌───────────▼───────────┐    ┌───────▼───────┐
+│LocalStore │    │    CloudProvider      │    │DataValidator  │
+│ Manager   │    │                       │    │               │
+└───────────┘    └───────────────────────┘    └───────────────┘
+    │                        │                        │
+    │            ┌───────────┼───────────┐           │
+    │            │           │           │           │
+    │    ┌───────▼───┐ ┌─────▼────┐ ┌────▼────┐     │
+    │    │Encryption │ │Migration │ │Backup   │     │
+    │    │ Manager   │ │ Manager  │ │ Manager │     │
+    │    └───────────┘ └──────────┘ └─────────┘     │
+    │                                                │
+    └────────────────────────────────────────────────┘</code></pre><hr>
+<h2 id="core-classes">Core Classes<a class="anchor" href="#core-classes">#</a></h2>
+<h3 id="savemanager">SaveManager<a class="anchor" href="#savemanager">#</a></h3>
+<p><strong>Purpose:</strong> Central save/load controller.</p>
+<pre tabindex="0"><code>CLASS SaveManager:
+    STATIC instance: SaveManager
+    
+    // Sub-managers
+    localStorageManager: LocalStorageManager
+    cloudProvider: CloudProvider
+    dataValidator: DataValidator
+    encryptionManager: EncryptionManager
+    migrationManager: MigrationManager
+    backupManager: BackupManager
+    syncManager: SyncManager
+    matchStateManager: MatchStateManager
+    
+    // State
+    currentSyncState: SyncState = SS_Synced
+    pendingChanges: Map&lt;SaveDataType, Boolean&gt;
+    autoSaveConfig: AutoSaveConfig
+    
+    // Events
+    OnSaveComplete: Event&lt;(dataType, result)&gt;
+    OnLoadComplete: Event&lt;(dataType, data)&gt;
+    OnSyncStateChanged: Event&lt;(oldState, newState)&gt;
+    
+    FUNCTION SaveData(dataType: SaveDataType, data: Object) -&gt; SaveResult:
+        // Validate data
+        validationResult = dataValidator.Validate(dataType, data)
+        IF NOT validationResult.isValid:
+            EMIT EVENT &#34;SAVE_FAILED&#34; WITH (dataType, &#34;Validation failed&#34;)
+            RETURN SR_ValidationFailed
+        END IF
+        
+        EMIT EVENT &#34;SAVE_START&#34; WITH (dataType, GetDataSize(data))
+        
+        // Serialize
+        serializedData = SerializeData(data)
+        
+        // Generate checksum
+        checksum = GenerateChecksum(serializedData)
+        
+        // Encrypt if needed
+        IF ShouldEncrypt(dataType):
+            serializedData = encryptionManager.Encrypt(serializedData)
+        END IF
+        
+        // Add metadata
+        savePackage = CreateSavePackage(dataType, serializedData, checksum)
+        
+        // Save locally
+        localResult = localStorageManager.Save(GetFilePath(dataType), savePackage)
+        
+        IF localResult != SR_Success:
+            EMIT EVENT &#34;SAVE_FAILED&#34; WITH (dataType, localResult)
+            RETURN localResult
+        END IF
+        
+        // Mark for cloud sync
+        MarkPendingSync(dataType)
+        
+        OnSaveComplete.Broadcast(dataType, SR_Success)
+        
+        EMIT EVENT &#34;SAVE_COMPLETE&#34; WITH (dataType, SR_Success)
+        
+        RETURN SR_Success
+    END FUNCTION
+    
+    FUNCTION LoadData(dataType: SaveDataType) -&gt; LoadResult:
+        EMIT EVENT &#34;LOAD_START&#34; WITH (dataType)
+        
+        filePath = GetFilePath(dataType)
+        
+        // Load from local storage
+        loadResult = localStorageManager.Load(filePath)
+        
+        IF loadResult.failed:
+            EMIT EVENT &#34;LOAD_FAILED&#34; WITH (dataType, loadResult.error)
+            RETURN LoadResult.Failed(loadResult.error)
+        END IF
+        
+        savePackage = loadResult.data
+        
+        // Validate checksum
+        IF NOT ValidateChecksum(savePackage):
+            EMIT EVENT &#34;LOAD_FAILED&#34; WITH (dataType, &#34;Checksum mismatch&#34;)
+            
+            // Try to restore from backup
+            backupResult = backupManager.RestoreLatest(dataType)
+            IF backupResult.success:
+                RETURN LoadData(dataType) // Retry with backup
+            END IF
+            
+            RETURN LoadResult.Failed(&#34;Data corrupted&#34;)
+        END IF
+        
+        // Decrypt if needed
+        serializedData = savePackage.data
+        IF encryptionManager.IsEncrypted(serializedData):
+            serializedData = encryptionManager.Decrypt(serializedData)
+        END IF
+        
+        // Check version and migrate if needed
+        migrationStatus = migrationManager.CheckMigrationNeeded(dataType, savePackage.dataVersion)
+        
+        IF migrationStatus == DM_Required:
+            serializedData = migrationManager.MigrateData(dataType, serializedData, 
+                savePackage.dataVersion, GetCurrentVersion(dataType))
+        END IF
+        
+        // Deserialize
+        data = DeserializeData(dataType, serializedData)
+        
+        OnLoadComplete.Broadcast(dataType, data)
+        
+        EMIT EVENT &#34;LOAD_COMPLETE&#34; WITH (dataType, GetDataSize(data))
+        
+        RETURN LoadResult.Success(data)
+    END FUNCTION
+    
+    FUNCTION SaveAllPendingData():
+        FOR EACH (dataType, pending) IN pendingChanges:
+            IF pending:
+                data = GetCurrentData(dataType)
+                SaveData(dataType, data)
+            END IF
+        END FOR
+    END FUNCTION
+    
+    FUNCTION SyncWithCloud():
+        IF NOT cloudProvider.IsConnected():
+            SetSyncState(SS_Offline)
+            RETURN
+        END IF
+        
+        syncManager.BeginSync()
+    END FUNCTION
+    
+    FUNCTION SetSyncState(newState: SyncState):
+        oldState = currentSyncState
+        currentSyncState = newState
+        
+        OnSyncStateChanged.Broadcast(oldState, newState)
+    END FUNCTION
+    
+    FUNCTION MarkPendingSync(dataType: SaveDataType):
+        pendingChanges[dataType] = true
+        
+        IF autoSaveConfig.periodicSaveInterval &gt; 0:
+            ScheduleAutoSave()
+        END IF
+    END FUNCTION
+    
+    FUNCTION HasPendingChanges() -&gt; Boolean:
+        FOR EACH (type, pending) IN pendingChanges:
+            IF pending:
+                RETURN true
+            END IF
+        END FOR
+        
+        RETURN false
+    END FUNCTION
+    
+    FUNCTION DeleteAllData():
+        localStorageManager.DeleteAll()
+        backupManager.DeleteAllBackups()
+        pendingChanges.Clear()
+    END FUNCTION
+
+STRUCT SavePackage:
+    dataType: SaveDataType
+    data: ByteArray
+    dataVersion: Integer
+    checksum: String
+    timestamp: DateTime
+    playerID: String</code></pre><hr>
+<h3 id="localstoragemanager">LocalStorageManager<a class="anchor" href="#localstoragemanager">#</a></h3>
+<p><strong>Purpose:</strong> Local file system operations.</p>
+<pre tabindex="0"><code>CLASS LocalStorageManager:
+    // Paths
+    saveDirectory: String
+    
+    // Config
+    maxSaveSize: Integer = 10485760  // 10 MB per file
+    
+    FUNCTION GetSaveDirectory() -&gt; String:
+        RETURN Platform.GetPersistentDataPath() + &#34;/Saves/&#34;
+    END FUNCTION
+    
+    FUNCTION Initialize():
+        saveDirectory = GetSaveDirectory()
+        
+        IF NOT DirectoryExists(saveDirectory):
+            CreateDirectory(saveDirectory)
+        END IF
+    END FUNCTION
+    
+    FUNCTION Save(filePath: String, data: ByteArray) -&gt; SaveResult:
+        // Check disk space
+        IF NOT HasEnoughSpace(data.Length):
+            RETURN SR_DiskFull
+        END IF
+        
+        // Check file size limit
+        IF data.Length &gt; maxSaveSize:
+            LOG_ERROR(&#34;Save data too large: &#34; + data.Length)
+            RETURN SR_Failed
+        END IF
+        
+        TRY:
+            fullPath = saveDirectory + filePath
+            
+            // Write to temp file first
+            tempPath = fullPath + &#34;.tmp&#34;
+            WriteFile(tempPath, data)
+            
+            // Verify write
+            IF NOT VerifyFile(tempPath, data):
+                DeleteFile(tempPath)
+                RETURN SR_Failed
+            END IF
+            
+            // Atomic rename
+            IF FileExists(fullPath):
+                DeleteFile(fullPath)
+            END IF
+            
+            RenameFile(tempPath, fullPath)
+            
+            RETURN SR_Success
+            
+        CATCH IOException e:
+            LOG_ERROR(&#34;Save failed: &#34; + e.Message)
+            RETURN SR_Failed
+        CATCH SecurityException e:
+            RETURN SR_PermissionDenied
+        END TRY
+    END FUNCTION
+    
+    FUNCTION Load(filePath: String) -&gt; LoadResult:
+        fullPath = saveDirectory + filePath
+        
+        IF NOT FileExists(fullPath):
+            RETURN LoadResult.NotFound()
+        END IF
+        
+        TRY:
+            data = ReadFile(fullPath)
+            RETURN LoadResult.Success(data)
+            
+        CATCH IOException e:
+            LOG_ERROR(&#34;Load failed: &#34; + e.Message)
+            RETURN LoadResult.Failed(e.Message)
+        CATCH SecurityException e:
+            RETURN LoadResult.Failed(&#34;Permission denied&#34;)
+        END TRY
+    END FUNCTION
+    
+    FUNCTION Delete(filePath: String) -&gt; Boolean:
+        fullPath = saveDirectory + filePath
+        
+        IF FileExists(fullPath):
+            DeleteFile(fullPath)
+            RETURN true
+        END IF
+        
+        RETURN false
+    END FUNCTION
+    
+    FUNCTION DeleteAll():
+        files = GetFilesInDirectory(saveDirectory)
+        
+        FOR EACH file IN files:
+            DeleteFile(file)
+        END FOR
+    END FUNCTION
+    
+    FUNCTION FileExists(filePath: String) -&gt; Boolean:
+        RETURN System.FileExists(saveDirectory + filePath)
+    END FUNCTION
+    
+    FUNCTION GetFileSize(filePath: String) -&gt; Integer:
+        RETURN System.GetFileSize(saveDirectory + filePath)
+    END FUNCTION
+    
+    FUNCTION GetLastModified(filePath: String) -&gt; DateTime:
+        RETURN System.GetFileModifiedTime(saveDirectory + filePath)
+    END FUNCTION
+    
+    FUNCTION HasEnoughSpace(requiredBytes: Integer) -&gt; Boolean:
+        availableBytes = Platform.GetAvailableDiskSpace()
+        RETURN availableBytes &gt;= requiredBytes + 1048576  // 1 MB buffer
+    END FUNCTION
+
+STRUCT LoadResult:
+    success: Boolean
+    data: ByteArray
+    error: String
+    
+    STATIC FUNCTION Success(data: ByteArray) -&gt; LoadResult:
+        RETURN { success: true, data: data, error: &#34;&#34; }
+    END FUNCTION
+    
+    STATIC FUNCTION Failed(error: String) -&gt; LoadResult:
+        RETURN { success: false, data: null, error: error }
+    END FUNCTION
+    
+    STATIC FUNCTION NotFound() -&gt; LoadResult:
+        RETURN { success: false, data: null, error: &#34;File not found&#34; }
+    END FUNCTION</code></pre><hr>
+<h3 id="cloudprovider">CloudProvider<a class="anchor" href="#cloudprovider">#</a></h3>
+<p><strong>Purpose:</strong> Cloud save synchronization provider.</p>
+<pre tabindex="0"><code>CLASS CloudProvider:
+    // State
+    currentService: CloudService
+    isConnected: Boolean = false
+    lastSyncTime: DateTime
+    
+    // Events
+    OnConnected: Event&lt;()&gt;
+    OnDisconnected: Event&lt;()&gt;
+    OnDataReceived: Event&lt;(dataType, data)&gt;
+    
+    FUNCTION Initialize(service: CloudService):
+        currentService = service
+        
+        SWITCH service:
+            CASE CS_GameServer:
+                InitializeGameServer()
+            CASE CS_GooglePlay:
+                InitializeGooglePlay()
+            CASE CS_iCloud:
+                InitializeiCloud()
+            CASE CS_Steam:
+                InitializeSteam()
+        END SWITCH
+    END FUNCTION
+    
+    FUNCTION Connect() -&gt; Boolean:
+        TRY:
+            SWITCH currentService:
+                CASE CS_GameServer:
+                    isConnected = GameServerClient.Connect()
+                CASE CS_GooglePlay:
+                    isConnected = PlayGamesClient.SignIn()
+                CASE CS_iCloud:
+                    isConnected = iCloudClient.CheckAvailability()
+                CASE CS_Steam:
+                    isConnected = SteamCloud.IsAvailable()
+            END SWITCH
+            
+            IF isConnected:
+                OnConnected.Broadcast()
+            END IF
+            
+            RETURN isConnected
+            
+        CATCH Exception e:
+            LOG_ERROR(&#34;Cloud connect failed: &#34; + e.Message)
+            RETURN false
+        END TRY
+    END FUNCTION
+    
+    FUNCTION Disconnect():
+        isConnected = false
+        OnDisconnected.Broadcast()
+    END FUNCTION
+    
+    FUNCTION IsConnected() -&gt; Boolean:
+        RETURN isConnected
+    END FUNCTION
+    
+    FUNCTION Upload(dataType: SaveDataType, data: ByteArray) -&gt; Boolean:
+        IF NOT isConnected:
+            RETURN false
+        END IF
+        
+        key = GetCloudKey(dataType)
+        
+        TRY:
+            SWITCH currentService:
+                CASE CS_GameServer:
+                    result = GameServerClient.UploadSave(key, data)
+                CASE CS_GooglePlay:
+                    result = PlayGamesClient.SaveSnapshot(key, data)
+                CASE CS_iCloud:
+                    result = iCloudClient.WriteFile(key, data)
+                CASE CS_Steam:
+                    result = SteamCloud.WriteFile(key, data)
+            END SWITCH
+            
+            IF result:
+                lastSyncTime = DateTime.Now
+            END IF
+            
+            RETURN result
+            
+        CATCH Exception e:
+            LOG_ERROR(&#34;Cloud upload failed: &#34; + e.Message)
+            RETURN false
+        END TRY
+    END FUNCTION
+    
+    FUNCTION Download(dataType: SaveDataType) -&gt; CloudDownloadResult:
+        IF NOT isConnected:
+            RETURN CloudDownloadResult.Offline()
+        END IF
+        
+        key = GetCloudKey(dataType)
+        
+        TRY:
+            data = null
+            metadata = null
+            
+            SWITCH currentService:
+                CASE CS_GameServer:
+                    (data, metadata) = GameServerClient.DownloadSave(key)
+                CASE CS_GooglePlay:
+                    (data, metadata) = PlayGamesClient.LoadSnapshot(key)
+                CASE CS_iCloud:
+                    (data, metadata) = iCloudClient.ReadFile(key)
+                CASE CS_Steam:
+                    data = SteamCloud.ReadFile(key)
+            END SWITCH
+            
+            IF data != null:
+                OnDataReceived.Broadcast(dataType, data)
+                RETURN CloudDownloadResult.Success(data, metadata)
+            END IF
+            
+            RETURN CloudDownloadResult.NotFound()
+            
+        CATCH Exception e:
+            LOG_ERROR(&#34;Cloud download failed: &#34; + e.Message)
+            RETURN CloudDownloadResult.Failed(e.Message)
+        END TRY
+    END FUNCTION
+    
+    FUNCTION GetCloudMetadata(dataType: SaveDataType) -&gt; CloudMetadata:
+        key = GetCloudKey(dataType)
+        
+        SWITCH currentService:
+            CASE CS_GameServer:
+                RETURN GameServerClient.GetMetadata(key)
+            CASE CS_GooglePlay:
+                RETURN PlayGamesClient.GetSnapshotMetadata(key)
+            CASE CS_iCloud:
+                RETURN iCloudClient.GetFileMetadata(key)
+            CASE CS_Steam:
+                RETURN SteamCloud.GetFileMetadata(key)
+        END SWITCH
+    END FUNCTION
+    
+    FUNCTION GetCloudKey(dataType: SaveDataType) -&gt; String:
+        RETURN &#34;save_&#34; + dataType.ToString().ToLower()
+    END FUNCTION
+
+STRUCT CloudMetadata:
+    lastModified: DateTime
+    size: Integer
+    checksum: String
+    deviceID: String
+
+STRUCT CloudDownloadResult:
+    success: Boolean
+    data: ByteArray
+    metadata: CloudMetadata
+    error: String</code></pre><hr>
+<h3 id="syncmanager">SyncManager<a class="anchor" href="#syncmanager">#</a></h3>
+<p><strong>Purpose:</strong> Cloud sync orchestration and conflict resolution.</p>
+<pre tabindex="0"><code>CLASS SyncManager:
+    // State
+    syncInProgress: Boolean = false
+    pendingSync: List&lt;SaveDataType&gt;
+    
+    // Config
+    conflictResolution: ConflictResolution = CR_UseNewest
+    
+    // Events
+    OnSyncProgress: Event&lt;(dataType, progress)&gt;
+    OnConflictDetected: Event&lt;(dataType, localData, cloudData)&gt;
+    
+    FUNCTION BeginSync():
+        IF syncInProgress:
+            RETURN
+        END IF
+        
+        syncInProgress = true
+        
+        SaveManager.SetSyncState(SS_Downloading)
+        
+        EMIT EVENT &#34;SYNC_START&#34; WITH (SDT_All)
+        
+        // Download first
+        FOR EACH dataType IN GetSyncPriorityOrder():
+            DownloadAndMerge(dataType)
+        END FOR
+        
+        SaveManager.SetSyncState(SS_Uploading)
+        
+        // Upload pending changes
+        FOR EACH dataType IN pendingSync:
+            UploadData(dataType)
+        END FOR
+        
+        syncInProgress = false
+        pendingSync.Clear()
+        
+        SaveManager.SetSyncState(SS_Synced)
+        
+        EMIT EVENT &#34;SYNC_COMPLETE&#34; WITH (SDT_All, &#34;Both&#34;)
+    END FUNCTION
+    
+    FUNCTION DownloadAndMerge(dataType: SaveDataType):
+        downloadResult = CloudProvider.Download(dataType)
+        
+        IF NOT downloadResult.success:
+            RETURN
+        END IF
+        
+        cloudData = downloadResult.data
+        cloudMetadata = downloadResult.metadata
+        
+        localData = LocalStorageManager.Load(GetFilePath(dataType))
+        
+        // Compare versions
+        IF NeedsResolution(localData, cloudData, cloudMetadata):
+            ResolveConflict(dataType, localData, cloudData, cloudMetadata)
+        ELSE IF cloudMetadata.lastModified &gt; LocalLastModified(dataType):
+            // Cloud is newer, use it
+            SaveManager.SaveDataLocal(dataType, cloudData)
+        END IF
+    END FUNCTION
+    
+    FUNCTION UploadData(dataType: SaveDataType):
+        data = LocalStorageManager.Load(GetFilePath(dataType))
+        
+        IF data.success:
+            CloudProvider.Upload(dataType, data.data)
+        END IF
+    END FUNCTION
+    
+    FUNCTION NeedsResolution(localData: ByteArray, cloudData: ByteArray, cloudMetadata: CloudMetadata) -&gt; Boolean:
+        // Same checksum = no conflict
+        localChecksum = GenerateChecksum(localData)
+        
+        IF localChecksum == cloudMetadata.checksum:
+            RETURN false
+        END IF
+        
+        // Different data, check timestamps
+        localModified = LocalStorageManager.GetLastModified(GetFilePath())
+        
+        // Both modified since last sync = conflict
+        IF localModified &gt; LastSyncTime AND cloudMetadata.lastModified &gt; LastSyncTime:
+            RETURN true
+        END IF
+        
+        RETURN false
+    END FUNCTION
+    
+    FUNCTION ResolveConflict(dataType: SaveDataType, localData: ByteArray, cloudData: ByteArray, cloudMetadata: CloudMetadata):
+        EMIT EVENT &#34;SYNC_CONFLICT&#34; WITH (dataType, localData.Version, cloudMetadata.version)
+        
+        SaveManager.SetSyncState(SS_Conflict)
+        
+        OnConflictDetected.Broadcast(dataType, localData, cloudData)
+        
+        resolution = conflictResolution
+        
+        SWITCH resolution:
+            CASE CR_UseLocal:
+                // Upload local to cloud
+                CloudProvider.Upload(dataType, localData)
+            
+            CASE CR_UseCloud:
+                // Save cloud data locally
+                SaveManager.SaveDataLocal(dataType, cloudData)
+            
+            CASE CR_UseNewest:
+                localModified = LocalStorageManager.GetLastModified(GetFilePath(dataType))
+                
+                IF localModified &gt; cloudMetadata.lastModified:
+                    CloudProvider.Upload(dataType, localData)
+                ELSE:
+                    SaveManager.SaveDataLocal(dataType, cloudData)
+                END IF
+            
+            CASE CR_Merge:
+                mergedData = MergeData(dataType, localData, cloudData)
+                SaveManager.SaveData(dataType, mergedData)
+                CloudProvider.Upload(dataType, mergedData)
+            
+            CASE CR_AskUser:
+                UIManager.ShowConflictResolutionUI(dataType, localData, cloudData, LAMBDA choice:
+                    ApplyResolution(dataType, choice, localData, cloudData)
+                END LAMBDA)
+        END SWITCH
+        
+        EMIT EVENT &#34;SYNC_RESOLVED&#34; WITH (dataType, resolution)
+    END FUNCTION
+    
+    FUNCTION MergeData(dataType: SaveDataType, localData: ByteArray, cloudData: ByteArray) -&gt; ByteArray:
+        // Type-specific merge logic
+        SWITCH dataType:
+            CASE SDT_Inventory:
+                RETURN MergeInventory(localData, cloudData)
+            CASE SDT_Progression:
+                RETURN MergeProgression(localData, cloudData)
+            DEFAULT:
+                // Default to newest
+                RETURN UseNewest(localData, cloudData)
+        END SWITCH
+    END FUNCTION
+    
+    FUNCTION GetSyncPriorityOrder() -&gt; List&lt;SaveDataType&gt;:
+        RETURN [
+            SDT_PlayerProfile,   // Most critical
+            SDT_Inventory,       // High value
+            SDT_Progression,     // Important
+            SDT_MatchState,      // Recovery
+            SDT_Statistics,      // Nice to have
+            SDT_Settings,
+            SDT_Social,
+            SDT_Cosmetics
+        ]
+    END FUNCTION</code></pre><hr>
+<h3 id="datavalidator">DataValidator<a class="anchor" href="#datavalidator">#</a></h3>
+<p><strong>Purpose:</strong> Data integrity validation.</p>
+<pre tabindex="0"><code>CLASS DataValidator:
+    FUNCTION Validate(dataType: SaveDataType, data: Object) -&gt; ValidationResult:
+        result = NEW ValidationResult()
+        result.isValid = true
+        
+        // Type-specific validation
+        SWITCH dataType:
+            CASE SDT_PlayerProfile:
+                ValidatePlayerProfile(data, result)
+            CASE SDT_Inventory:
+                ValidateInventory(data, result)
+            CASE SDT_Progression:
+                ValidateProgression(data, result)
+            CASE SDT_Settings:
+                ValidateSettings(data, result)
+        END SWITCH
+        
+        RETURN result
+    END FUNCTION
+    
+    FUNCTION ValidatePlayerProfile(data: PlayerProfileData, result: ValidationResult):
+        // PlayerID required
+        IF data.playerID.IsEmpty():
+            result.AddError(&#34;PlayerID is required&#34;)
+        END IF
+        
+        // Level valid range
+        IF data.accountLevel &lt; 1 OR data.accountLevel &gt; MAX_LEVEL:
+            result.AddError(&#34;Account level out of range&#34;)
+        END IF
+        
+        // Currencies non-negative
+        IF data.credits &lt; 0:
+            result.AddError(&#34;Credits cannot be negative&#34;)
+        END IF
+        
+        IF data.premiumCurrency &lt; 0:
+            result.AddError(&#34;Premium currency cannot be negative&#34;)
+        END IF
+    END FUNCTION
+    
+    FUNCTION ValidateInventory(data: InventoryData, result: ValidationResult):
+        // Check capacity
+        IF data.stashItems.Count &gt; data.stashCapacity:
+            result.AddError(&#34;Stash exceeds capacity&#34;)
+        END IF
+        
+        // Validate each item
+        FOR EACH item IN data.stashItems:
+            IF NOT ValidateItem(item):
+                result.AddError(&#34;Invalid item: &#34; + item.itemID)
+            END IF
+        END FOR
+    END FUNCTION
+    
+    FUNCTION ValidateItem(item: SavedItemData) -&gt; Boolean:
+        // ItemID must exist
+        IF NOT ItemDatabase.Exists(item.itemID):
+            RETURN false
+        END IF
+        
+        // Quantity valid
+        IF item.quantity &lt;= 0:
+            RETURN false
+        END IF
+        
+        // Durability valid
+        IF item.durability &lt; 0 OR item.durability &gt; 100:
+            RETURN false
+        END IF
+        
+        RETURN true
+    END FUNCTION
+    
+    FUNCTION ValidateProgression(data: ProgressionData, result: ValidationResult):
+        // XP valid
+        IF data.currentXP &lt; 0:
+            result.AddError(&#34;XP cannot be negative&#34;)
+        END IF
+        
+        // Quest IDs valid
+        FOR EACH questID IN data.completedQuests:
+            IF NOT QuestDatabase.Exists(questID):
+                result.AddWarning(&#34;Unknown quest: &#34; + questID)
+            END IF
+        END FOR
+    END FUNCTION
+    
+    FUNCTION ValidateSettings(data: SettingsData, result: ValidationResult):
+        // Volume ranges
+        IF data.masterVolume &lt; 0 OR data.masterVolume &gt; 1:
+            result.AddError(&#34;Master volume out of range&#34;)
+        END IF
+        
+        // Sensitivity ranges
+        IF data.sensitivity &lt; 0.1 OR data.sensitivity &gt; 5.0:
+            result.AddError(&#34;Sensitivity out of range&#34;)
+        END IF
+    END FUNCTION
+    
+    FUNCTION ValidateChecksum(data: ByteArray, expectedChecksum: String) -&gt; Boolean:
+        actualChecksum = GenerateChecksum(data)
+        RETURN actualChecksum == expectedChecksum
+    END FUNCTION
+    
+    FUNCTION GenerateChecksum(data: ByteArray) -&gt; String:
+        RETURN SHA256.ComputeHash(data).ToHexString()
+    END FUNCTION
+
+STRUCT ValidationResult:
+    isValid: Boolean = true
+    errors: List&lt;String&gt;
+    warnings: List&lt;String&gt;
+    
+    FUNCTION AddError(message: String):
+        errors.Add(message)
+        isValid = false
+    END FUNCTION
+    
+    FUNCTION AddWarning(message: String):
+        warnings.Add(message)
+    END FUNCTION</code></pre><hr>
+<h3 id="encryptionmanager">EncryptionManager<a class="anchor" href="#encryptionmanager">#</a></h3>
+<p><strong>Purpose:</strong> Data encryption for sensitive saves.</p>
+<pre tabindex="0"><code>CLASS EncryptionManager:
+    // Config
+    CONST KEY_SIZE = 256  // AES-256
+    
+    FUNCTION Encrypt(data: ByteArray) -&gt; ByteArray:
+        // Derive key from device ID
+        key = DeriveKey(GetDeviceID())
+        
+        // Generate random IV
+        iv = GenerateIV()
+        
+        // Encrypt using AES-256-CBC
+        encryptedData = AES.Encrypt(data, key, iv)
+        
+        // Prepend IV to encrypted data
+        result = ConcatArrays(iv, encryptedData)
+        
+        RETURN result
+    END FUNCTION
+    
+    FUNCTION Decrypt(encryptedData: ByteArray) -&gt; ByteArray:
+        // Extract IV (first 16 bytes)
+        iv = encryptedData.Slice(0, 16)
+        cipherText = encryptedData.Slice(16)
+        
+        // Derive key
+        key = DeriveKey(GetDeviceID())
+        
+        // Decrypt
+        TRY:
+            data = AES.Decrypt(cipherText, key, iv)
+            RETURN data
+        CATCH CryptographicException e:
+            LOG_ERROR(&#34;Decryption failed: &#34; + e.Message)
+            RETURN null
+        END TRY
+    END FUNCTION
+    
+    FUNCTION IsEncrypted(data: ByteArray) -&gt; Boolean:
+        // Check for encryption header/marker
+        IF data.Length &lt; 16:
+            RETURN false
+        END IF
+        
+        // Check magic bytes
+        RETURN data[0] == 0xEF AND data[1] == 0xBE
+    END FUNCTION
+    
+    FUNCTION DeriveKey(deviceID: String) -&gt; ByteArray:
+        // Use PBKDF2 to derive key from device ID + salt
+        salt = GetApplicationSalt()
+        iterations = 10000
+        
+        RETURN PBKDF2.DeriveKey(deviceID, salt, iterations, KEY_SIZE / 8)
+    END FUNCTION
+    
+    FUNCTION GenerateIV() -&gt; ByteArray:
+        iv = NEW ByteArray(16)
+        Random.FillBytes(iv)
+        RETURN iv
+    END FUNCTION
+    
+    FUNCTION GetDeviceID() -&gt; String:
+        RETURN Platform.GetUniqueDeviceID()
+    END FUNCTION
+    
+    FUNCTION GetApplicationSalt() -&gt; ByteArray:
+        // Static salt stored in application
+        RETURN BASE64.Decode(&#34;YOUR_BASE64_SALT_HERE&#34;)
+    END FUNCTION</code></pre><hr>
+<h3 id="migrationmanager">MigrationManager<a class="anchor" href="#migrationmanager">#</a></h3>
+<p><strong>Purpose:</strong> Save data version migration.</p>
+<pre tabindex="0"><code>CLASS MigrationManager:
+    // Version tracking
+    CONST CURRENT_PROFILE_VERSION = 2
+    CONST CURRENT_INVENTORY_VERSION = 2
+    CONST CURRENT_PROGRESSION_VERSION = 1
+    CONST CURRENT_SETTINGS_VERSION = 1
+    
+    FUNCTION CheckMigrationNeeded(dataType: SaveDataType, loadedVersion: Integer) -&gt; DataMigrationStatus:
+        currentVersion = GetCurrentDataVersion(dataType)
+        
+        IF loadedVersion == currentVersion:
+            RETURN DM_NotRequired
+        END IF
+        
+        IF loadedVersion &gt; currentVersion:
+            LOG_WARNING(&#34;Save data is from newer version&#34;)
+            RETURN DM_NotRequired  // Don&#39;t downgrade
+        END IF
+        
+        RETURN DM_Required
+    END FUNCTION
+    
+    FUNCTION MigrateData(dataType: SaveDataType, data: ByteArray, fromVersion: Integer, toVersion: Integer) -&gt; ByteArray:
+        currentData = data
+        currentVersion = fromVersion
+        
+        // Apply migrations in sequence
+        WHILE currentVersion &lt; toVersion:
+            migrationFunc = GetMigrationFunction(dataType, currentVersion, currentVersion + 1)
+            
+            IF migrationFunc == null:
+                LOG_ERROR(&#34;Missing migration for &#34; + dataType + &#34; v&#34; + currentVersion)
+                RETURN data  // Return original
+            END IF
+            
+            currentData = migrationFunc(currentData)
+            currentVersion += 1
+        END WHILE
+        
+        RETURN currentData
+    END FUNCTION
+    
+    FUNCTION GetCurrentDataVersion(dataType: SaveDataType) -&gt; Integer:
+        SWITCH dataType:
+            CASE SDT_PlayerProfile: RETURN CURRENT_PROFILE_VERSION
+            CASE SDT_Inventory: RETURN CURRENT_INVENTORY_VERSION
+            CASE SDT_Progression: RETURN CURRENT_PROGRESSION_VERSION
+            CASE SDT_Settings: RETURN CURRENT_SETTINGS_VERSION
+            DEFAULT: RETURN 1
+        END SWITCH
+    END FUNCTION
+    
+    // Profile migrations
+    FUNCTION MigrateProfile_V1_V2(data: ByteArray) -&gt; ByteArray:
+        profileV1 = Deserialize&lt;ProfileDataV1&gt;(data)
+        
+        profileV2 = NEW ProfileDataV2()
+        profileV2.playerID = profileV1.playerID
+        profileV2.displayName = profileV1.displayName
+        profileV2.accountLevel = profileV1.level
+        profileV2.credits = profileV1.credits
+        
+        // New fields with defaults
+        profileV2.premiumCurrency = 0
+        profileV2.createdAt = DateTime.Now
+        profileV2.lastLoginAt = DateTime.Now
+        
+        RETURN Serialize(profileV2)
+    END FUNCTION
+    
+    // Inventory migrations
+    FUNCTION MigrateInventory_V1_V2(data: ByteArray) -&gt; ByteArray:
+        inventoryV1 = Deserialize&lt;InventoryDataV1&gt;(data)
+        
+        inventoryV2 = NEW InventoryDataV2()
+        inventoryV2.stashCapacity = inventoryV1.capacity
+        
+        // Migrate items with new structure
+        FOR EACH itemV1 IN inventoryV1.items:
+            itemV2 = NEW ItemDataV2()
+            itemV2.itemID = itemV1.itemID
+            itemV2.quantity = itemV1.count
+            itemV2.durability = 100  // New field, default to max
+            itemV2.attachments = []  // New field
+            
+            inventoryV2.stashItems.Add(itemV2)
+        END FOR
+        
+        RETURN Serialize(inventoryV2)
+    END FUNCTION</code></pre><hr>
+<h3 id="backupmanager">BackupManager<a class="anchor" href="#backupmanager">#</a></h3>
+<p><strong>Purpose:</strong> Save backup and restoration.</p>
+<pre tabindex="0"><code>CLASS BackupManager:
+    // Config
+    maxBackups: Integer = 5
+    autoBackupInterval: Float = 3600.0  // 1 hour
+    
+    // Paths
+    backupDirectory: String
+    
+    FUNCTION Initialize():
+        backupDirectory = LocalStorageManager.GetSaveDirectory() + &#34;Backups/&#34;
+        
+        IF NOT DirectoryExists(backupDirectory):
+            CreateDirectory(backupDirectory)
+        END IF
+    END FUNCTION
+    
+    FUNCTION CreateBackup(name: String) -&gt; Boolean:
+        backupInfo = NEW BackupInfo()
+        backupInfo.name = name
+        backupInfo.createdAt = DateTime.Now
+        backupInfo.isAutoBackup = false
+        
+        TRY:
+            // Create backup folder
+            backupPath = backupDirectory + name + &#34;/&#34;
+            CreateDirectory(backupPath)
+            
+            // Copy all save files
+            saveFiles = GetAllSaveFiles()
+            totalSize = 0
+            
+            FOR EACH file IN saveFiles:
+                CopyFile(file, backupPath + GetFileName(file))
+                totalSize += GetFileSize(file)
+            END FOR
+            
+            backupInfo.sizeBytes = totalSize
+            backupInfo.dataVersion = SaveManager.GetCurrentVersion()
+            
+            // Save backup metadata
+            SaveBackupMetadata(backupPath, backupInfo)
+            
+            // Cleanup old backups
+            CleanupOldBackups()
+            
+            EMIT EVENT &#34;BACKUP_CREATED&#34; WITH (name, totalSize)
+            
+            RETURN true
+            
+        CATCH Exception e:
+            LOG_ERROR(&#34;Backup failed: &#34; + e.Message)
+            RETURN false
+        END TRY
+    END FUNCTION
+    
+    FUNCTION RestoreBackup(name: String) -&gt; Boolean:
+        backupPath = backupDirectory + name + &#34;/&#34;
+        
+        IF NOT DirectoryExists(backupPath):
+            RETURN false
+        END IF
+        
+        TRY:
+            // Copy backup files to save directory
+            backupFiles = GetFilesInDirectory(backupPath)
+            
+            FOR EACH file IN backupFiles:
+                IF NOT file.EndsWith(&#34;metadata.json&#34;):
+                    targetPath = LocalStorageManager.GetSaveDirectory() + GetFileName(file)
+                    CopyFile(file, targetPath)
+                END IF
+            END FOR
+            
+            EMIT EVENT &#34;BACKUP_RESTORED&#34; WITH (name)
+            
+            RETURN true
+            
+        CATCH Exception e:
+            LOG_ERROR(&#34;Restore failed: &#34; + e.Message)
+            RETURN false
+        END TRY
+    END FUNCTION
+    
+    FUNCTION RestoreLatest(dataType: SaveDataType) -&gt; RestoreResult:
+        backups = GetBackups()
+        
+        // Sort by date descending
+        backups.SortByDescending(b =&gt; b.createdAt)
+        
+        FOR EACH backup IN backups:
+            backupPath = backupDirectory + backup.name + &#34;/&#34;
+            filePath = backupPath + GetFilePath(dataType)
+            
+            IF FileExists(filePath):
+                // Copy this file
+                CopyFile(filePath, LocalStorageManager.GetSaveDirectory() + GetFilePath(dataType))
+                RETURN RestoreResult.Success(backup.name)
+            END IF
+        END FOR
+        
+        RETURN RestoreResult.Failed(&#34;No backup found&#34;)
+    END FUNCTION
+    
+    FUNCTION DeleteBackup(name: String) -&gt; Boolean:
+        backupPath = backupDirectory + name + &#34;/&#34;
+        
+        IF DirectoryExists(backupPath):
+            DeleteDirectory(backupPath, recursive: true)
+            
+            EMIT EVENT &#34;BACKUP_DELETED&#34; WITH (name)
+            
+            RETURN true
+        END IF
+        
+        RETURN false
+    END FUNCTION
+    
+    FUNCTION DeleteAllBackups():
+        backups = GetBackups()
+        
+        FOR EACH backup IN backups:
+            DeleteBackup(backup.name)
+        END FOR
+    END FUNCTION
+    
+    FUNCTION GetBackups() -&gt; List&lt;BackupInfo&gt;:
+        result = []
+        
+        directories = GetSubdirectories(backupDirectory)
+        
+        FOR EACH dir IN directories:
+            metadataPath = dir + &#34;metadata.json&#34;
+            
+            IF FileExists(metadataPath):
+                metadata = LoadBackupMetadata(metadataPath)
+                result.Add(metadata)
+            END IF
+        END FOR
+        
+        RETURN result
+    END FUNCTION
+    
+    FUNCTION CreateAutoBackup():
+        timestamp = DateTime.Now.ToString(&#34;yyyyMMdd_HHmmss&#34;)
+        name = &#34;auto_&#34; + timestamp
+        
+        backupInfo = NEW BackupInfo()
+        backupInfo.isAutoBackup = true
+        
+        CreateBackup(name)
+    END FUNCTION
+    
+    FUNCTION CleanupOldBackups():
+        backups = GetBackups()
+        
+        // Keep only maxBackups, prioritize manual backups
+        autoBackups = backups.Where(b =&gt; b.isAutoBackup).SortBy(b =&gt; b.createdAt)
+        
+        WHILE backups.Count &gt; maxBackups AND autoBackups.Count &gt; 0:
+            oldest = autoBackups.First()
+            DeleteBackup(oldest.name)
+            backups.Remove(oldest)
+            autoBackups.Remove(oldest)
+        END WHILE
+    END FUNCTION
+
+STRUCT BackupInfo:
+    name: String
+    createdAt: DateTime
+    sizeBytes: Integer
+    dataVersion: Integer
+    isAutoBackup: Boolean</code></pre><hr>
+<h3 id="matchstatemanager">MatchStateManager<a class="anchor" href="#matchstatemanager">#</a></h3>
+<p><strong>Purpose:</strong> In-match state persistence for recovery.</p>
+<pre tabindex="0"><code>CLASS MatchStateManager:
+    // Config
+    matchStateTimeout: Float = 300.0  // 5 minutes
+    saveInterval: Float = 30.0
+    
+    // State
+    lastSaveTime: Float = 0.0
+    
+    FUNCTION SaveMatchState(state: MatchStateData):
+        state.savedAt = DateTime.Now
+        state.isValid = true
+        
+        SaveManager.SaveData(SDT_MatchState, state)
+    END FUNCTION
+    
+    FUNCTION HasPendingMatchState() -&gt; Boolean:
+        loadResult = SaveManager.LoadData(SDT_MatchState)
+        
+        IF NOT loadResult.success:
+            RETURN false
+        END IF
+        
+        state = loadResult.data AS MatchStateData
+        
+        IF NOT state.isValid:
+            RETURN false
+        END IF
+        
+        // Check if timed out
+        elapsed = DateTime.Now - state.savedAt
+        
+        IF elapsed.TotalSeconds &gt; matchStateTimeout:
+            ClearMatchState()
+            RETURN false
+        END IF
+        
+        RETURN true
+    END FUNCTION
+    
+    FUNCTION LoadMatchState() -&gt; MatchStateData:
+        loadResult = SaveManager.LoadData(SDT_MatchState)
+        
+        IF loadResult.success:
+            RETURN loadResult.data AS MatchStateData
+        END IF
+        
+        RETURN null
+    END FUNCTION
+    
+    FUNCTION ClearMatchState():
+        emptyState = NEW MatchStateData()
+        emptyState.isValid = false
+        
+        SaveManager.SaveData(SDT_MatchState, emptyState)
+    END FUNCTION
+    
+    FUNCTION CanRecover() -&gt; Boolean:
+        state = LoadMatchState()
+        
+        IF state == null OR NOT state.isValid:
+            RETURN false
+        END IF
+        
+        // Check if match still exists on server
+        RETURN GameServer.CheckMatchExists(state.matchID)
+    END FUNCTION
+    
+    FUNCTION Update(deltaTime: Float):
+        IF NOT IsInMatch():
+            RETURN
+        END IF
+        
+        lastSaveTime += deltaTime
+        
+        IF lastSaveTime &gt;= saveInterval:
+            SaveCurrentMatchState()
+            lastSaveTime = 0.0
+        END IF
+    END FUNCTION
+    
+    FUNCTION SaveCurrentMatchState():
+        state = NEW MatchStateData()
+        state.matchID = CurrentMatch.GetID()
+        state.mapID = CurrentMatch.GetMapID()
+        state.matchTimeRemaining = CurrentMatch.GetTimeRemaining()
+        state.playerPosition = LocalPlayer.GetPosition()
+        state.playerHealth = LocalPlayer.GetHealth()
+        state.playerArmor = LocalPlayer.GetArmor()
+        state.currentInventory = LocalPlayer.GetInventorySnapshot()
+        
+        SaveMatchState(state)
+    END FUNCTION
+
+STRUCT MatchStateData:
+    matchID: String
+    mapID: String
+    matchTimeRemaining: Float
+    playerPosition: Vector3
+    playerHealth: Float
+    playerArmor: Float
+    currentInventory: List&lt;SavedItemData&gt;
+    savedAt: DateTime
+    isValid: Boolean = false</code></pre><hr>
+<h2 id="data-structures">Data Structures<a class="anchor" href="#data-structures">#</a></h2>
+<pre tabindex="0"><code>STRUCT PlayerProfileData:
+    playerID: String
+    displayName: String
+    accountLevel: Integer = 1
+    currentXP: Integer = 0
+    credits: Integer = 0
+    premiumCurrency: Integer = 0
+    createdAt: DateTime
+    lastLoginAt: DateTime
+    totalPlayTime: Float = 0.0
+    dataVersion: Integer = 1
+    checksum: String
+
+STRUCT InventoryData:
+    stashItems: List&lt;SavedItemData&gt;
+    stashCapacity: Integer = 100
+    equippedLoadout: LoadoutData
+    dataVersion: Integer = 1
+    checksum: String
+
+STRUCT SavedItemData:
+    itemID: String
+    quantity: Integer = 1
+    durability: Float = 100.0
+    attachments: List&lt;String&gt;
+    customData: Map&lt;String, String&gt;
+
+STRUCT ProgressionData:
+    operatorProgress: Map&lt;String, OperatorProgressData&gt;
+    completedQuests: Set&lt;String&gt;
+    activeQuests: List&lt;ActiveQuestData&gt;
+    achievements: Set&lt;String&gt;
+    battlePassLevel: Integer = 1
+    battlePassXP: Integer = 0
+    dataVersion: Integer = 1
+    checksum: String
+
+STRUCT SettingsData:
+    // Audio
+    masterVolume: Float = 1.0
+    musicVolume: Float = 0.8
+    sfxVolume: Float = 1.0
+    voiceVolume: Float = 1.0
+    
+    // Controls
+    sensitivity: Float = 1.0
+    invertY: Boolean = false
+    aimAssist: Boolean = true
+    
+    // Graphics
+    graphicsQuality: Integer = 2
+    targetFPS: Integer = 60
+    showFPS: Boolean = false
+    
+    // UI
+    hudScale: Float = 1.0
+    minimapSize: Float = 150.0
+    crosshairColor: Color = #FFFFFF
+    
+    dataVersion: Integer = 1
+
+STRUCT StatisticsData:
+    totalMatchesPlayed: Integer = 0
+    totalWins: Integer = 0
+    totalKills: Integer = 0
+    totalDeaths: Integer = 0
+    totalDamageDealt: Float = 0.0
+    totalItemsLooted: Integer = 0
+    totalExtractions: Integer = 0
+    totalPlayTime: Float = 0.0
+    dataVersion: Integer = 1</code></pre><hr>
+<h2 id="auto-save-configuration">Auto-Save Configuration<a class="anchor" href="#auto-save-configuration">#</a></h2>
+<pre tabindex="0"><code>STRUCT AutoSaveConfig:
+    // Triggers
+    saveOnMatchComplete: Boolean = true
+    saveOnLevelUp: Boolean = true
+    saveOnQuestComplete: Boolean = true
+    saveOnPurchase: Boolean = true
+    saveOnSettingsChange: Boolean = true
+    saveOnInventoryChange: Boolean = true
+    
+    // Intervals
+    periodicSaveInterval: Float = 60.0
+    minTimeBetweenSaves: Float = 5.0
+    
+    // During Match
+    saveMatchStateOnDeath: Boolean = true
+    matchStateSaveInterval: Float = 30.0</code></pre><hr>
+<h2 id="todo-implementation-tasks">TODO: Implementation Tasks<a class="anchor" href="#todo-implementation-tasks">#</a></h2>
+<h3 id="high-priority-">HIGH Priority 🔴<a class="anchor" href="#high-priority-">#</a></h3>
+<ul>
+<li><input disabled="" type="checkbox"> SaveManager core</li>
+<li><input disabled="" type="checkbox"> LocalStorageManager</li>
+<li><input disabled="" type="checkbox"> Player profile save/load</li>
+<li><input disabled="" type="checkbox"> Inventory save/load</li>
+<li><input disabled="" type="checkbox"> Settings save/load</li>
+</ul>
+<h3 id="medium-priority-">MEDIUM Priority 🟡<a class="anchor" href="#medium-priority-">#</a></h3>
+<ul>
+<li><input disabled="" type="checkbox"> CloudProvider implementation</li>
+<li><input disabled="" type="checkbox"> SyncManager</li>
+<li><input disabled="" type="checkbox"> DataValidator</li>
+<li><input disabled="" type="checkbox"> EncryptionManager</li>
+<li><input disabled="" type="checkbox"> Conflict resolution UI</li>
+</ul>
+<h3 id="low-priority-">LOW Priority 🟢<a class="anchor" href="#low-priority-">#</a></h3>
+<ul>
+<li><input disabled="" type="checkbox"> MigrationManager</li>
+<li><input disabled="" type="checkbox"> BackupManager</li>
+<li><input disabled="" type="checkbox"> MatchStateManager</li>
+<li><input disabled="" type="checkbox"> Advanced sync strategies</li>
+<li><input disabled="" type="checkbox"> Data compression</li>
+</ul>
+<hr>
+<h2 id="testing-checklist">Testing Checklist<a class="anchor" href="#testing-checklist">#</a></h2>
+<ul>
+<li><input disabled="" type="checkbox"> Local save/load works offline</li>
+<li><input disabled="" type="checkbox"> Data persists across app restarts</li>
+<li><input disabled="" type="checkbox"> Cloud sync uploads correctly</li>
+<li><input disabled="" type="checkbox"> Cloud sync downloads correctly</li>
+<li><input disabled="" type="checkbox"> Conflict detection works</li>
+<li><input disabled="" type="checkbox"> Conflict resolution UI shows</li>
+<li><input disabled="" type="checkbox"> Data migration updates old saves</li>
+<li><input disabled="" type="checkbox"> Checksums detect corruption</li>
+<li><input disabled="" type="checkbox"> Encryption protects data</li>
+<li><input disabled="" type="checkbox"> Backup/restore works</li>
+<li><input disabled="" type="checkbox"> Match state recovery works</li>
+<li><input disabled="" type="checkbox"> Auto-save triggers correctly</li>
+</ul>
+<hr>
+<p><strong><a href="../README.md">← Back to Index</a></strong> | <strong><a href="./TutorialSystem.md">Next: Tutorial System →</a></strong></p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+<div>
+
+</div>
+
+<div>
+
+</div>
+
+</div>
+
+
+
+
+
+  
+  
+  
+  <div class="flex flex-wrap justify-between">
+    <span>
+    
+      <a href="/docs/GDD_Technical/Systems/RankedSystem/" class="flex align-center">
+        <img src="/icons/backward.svg" class="book-icon" alt="Backward" />
+        <span>Ranked System</span>
+      </a>
+    
+    </span>
+    <span>
+    
+      <a href="/docs/GDD_Technical/Systems/SocialSystem/" class="flex align-center">
+        <span>Social System</span>
+        <img src="/icons/forward.svg" class="book-icon" alt="Forward" />
+      </a>
+    
+    </span>
+  </div>
+  
+
+
+ 
+        
+  
+ 
+        
+        
+  
+ 
+        
+  
+  
+    <script>(function(){document.querySelectorAll("pre:has(code)").forEach(e=>{e.addEventListener("click",e.focus),e.addEventListener("copy",function(t){if(t.preventDefault(),navigator.clipboard){const t=window.getSelection().toString()||e.textContent;navigator.clipboard.writeText(t)}})})})()</script>
+  
+
+      </footer>
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+  
+  <aside class="book-toc">
+    <div class="book-toc-content">
+      
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#overview">Overview</a></li>
+    <li><a href="#enums--types">Enums &amp; Types</a>
+      <ul>
+        <li><a href="#savedatatype">SaveDataType</a></li>
+        <li><a href="#syncstate">SyncState</a></li>
+        <li><a href="#saveresult">SaveResult</a></li>
+        <li><a href="#cloudservice">CloudService</a></li>
+        <li><a href="#conflictresolution">ConflictResolution</a></li>
+        <li><a href="#datamigrationstatus">DataMigrationStatus</a></li>
+      </ul>
+    </li>
+    <li><a href="#code-names">Code Names</a>
+      <ul>
+        <li><a href="#save-events">Save Events</a></li>
+        <li><a href="#sync-events">Sync Events</a></li>
+        <li><a href="#backup-events">Backup Events</a></li>
+      </ul>
+    </li>
+    <li><a href="#architecture">Architecture</a>
+      <ul>
+        <li><a href="#class-diagram">Class Diagram</a></li>
+      </ul>
+    </li>
+    <li><a href="#core-classes">Core Classes</a>
+      <ul>
+        <li><a href="#savemanager">SaveManager</a></li>
+        <li><a href="#localstoragemanager">LocalStorageManager</a></li>
+        <li><a href="#cloudprovider">CloudProvider</a></li>
+        <li><a href="#syncmanager">SyncManager</a></li>
+        <li><a href="#datavalidator">DataValidator</a></li>
+        <li><a href="#encryptionmanager">EncryptionManager</a></li>
+        <li><a href="#migrationmanager">MigrationManager</a></li>
+        <li><a href="#backupmanager">BackupManager</a></li>
+        <li><a href="#matchstatemanager">MatchStateManager</a></li>
+      </ul>
+    </li>
+    <li><a href="#data-structures">Data Structures</a></li>
+    <li><a href="#auto-save-configuration">Auto-Save Configuration</a></li>
+    <li><a href="#todo-implementation-tasks">TODO: Implementation Tasks</a>
+      <ul>
+        <li><a href="#high-priority-">HIGH Priority 🔴</a></li>
+        <li><a href="#medium-priority-">MEDIUM Priority 🟡</a></li>
+        <li><a href="#low-priority-">LOW Priority 🟢</a></li>
+      </ul>
+    </li>
+    <li><a href="#testing-checklist">Testing Checklist</a></li>
+  </ul>
+</nav>
+
+
+
+    </div>
+  </aside>
+  
+ 
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

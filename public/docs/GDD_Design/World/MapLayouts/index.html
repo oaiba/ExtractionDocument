@@ -1,0 +1,2360 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=52224&amp;path=livereload" data-no-instant defer></script>
+  <!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Map Layouts - Detailed Map Configurations#← Back to World | Index | Next: Environmental Narrative →
+📍 Points of Interest (POI)#POI Tiers#Tier Name Characteristics Quantity/Map S Landmark Major visual landmark, visible map-wide 1-2 A Major POI Primary area with high-tier loot 3-4 B Minor POI Secondary area, moderate loot 5-7 C Micro POI Small point, basic loot 8-12 Industrial Decay POIs#S-Tier: Reactor Tower
+Position: Map Center (800m, 800m) Height: 45m (tallest), 4 floors &#43; basement Loot: Epic Vaults, Legendary Cache AI: 15-20 enemies &#43; Boss A-Tier:
+">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:52224/docs/GDD_Design/World/MapLayouts/">
+  <meta property="og:site_name" content="Extraction Shooter GDD">
+  <meta property="og:title" content="Extraction Shooter GDD">
+  <meta property="og:description" content="Map Layouts - Detailed Map Configurations#← Back to World | Index | Next: Environmental Narrative →
+📍 Points of Interest (POI)#POI Tiers#Tier Name Characteristics Quantity/Map S Landmark Major visual landmark, visible map-wide 1-2 A Major POI Primary area with high-tier loot 3-4 B Minor POI Secondary area, moderate loot 5-7 C Micro POI Small point, basic loot 8-12 Industrial Decay POIs#S-Tier: Reactor Tower
+Position: Map Center (800m, 800m) Height: 45m (tallest), 4 floors &#43; basement Loot: Epic Vaults, Legendary Cache AI: 15-20 enemies &#43; Boss A-Tier:">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
+
+
+  <meta itemprop="name" content="Extraction Shooter GDD">
+  <meta itemprop="description" content="Map Layouts - Detailed Map Configurations#← Back to World | Index | Next: Environmental Narrative →
+📍 Points of Interest (POI)#POI Tiers#Tier Name Characteristics Quantity/Map S Landmark Major visual landmark, visible map-wide 1-2 A Major POI Primary area with high-tier loot 3-4 B Minor POI Secondary area, moderate loot 5-7 C Micro POI Small point, basic loot 8-12 Industrial Decay POIs#S-Tier: Reactor Tower
+Position: Map Center (800m, 800m) Height: 45m (tallest), 4 floors &#43; basement Loot: Epic Vaults, Legendary Cache AI: 15-20 enemies &#43; Boss A-Tier:">
+  <meta itemprop="wordCount" content="411">
+
+<title>Map Layouts | Extraction Shooter GDD</title>
+<link rel="icon" href="/favicon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="http://localhost:52224/docs/GDD_Design/World/MapLayouts/">
+<link rel="stylesheet" href="/book.min.63c8b2b12bbd1ad36428837740ea371dd41fdb9c22b35499003d0dfa4dbce6ba.css" integrity="sha256-Y8iysSu9GtNkKIN3QOo3HdQf25wis1SZAD0N&#43;k285ro=" crossorigin="anonymous">
+
+
+  <script defer src="/fuse.min.js"></script>
+  <script defer src="/en.search.min.58bea27d7a08265548c5a8636a9a9fc844e0eb9d60fc3bb2c53d517da858d4c1.js" integrity="sha256-WL6ifXoIJlVIxahjapqfyETg651g/DuyxT1RfahY1ME=" crossorigin="anonymous"></script>
+
+  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
+
+
+
+  
+</head>
+<body dir="ltr" class="book-kind-page book-type-docs">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    
+<aside class="book-menu">
+  <div class="book-menu-content">
+    
+  <nav>
+    <h2 class="book-brand">
+  <a class="flex align-center" href="/"><img src="/logo.svg" alt="Logo" /><span>Extraction Shooter GDD</span>
+  </a>
+</h2>
+
+    <div class="book-theme-toggle">
+    <input type="checkbox" id="theme-toggle" class="toggle">
+    <label for="theme-toggle" class="flex justify-between items-center cursor-pointer">
+        <span class="text-xs font-semibold">Dark Mode</span>
+        <div
+            class="relative w-10 h-5 bg-gray-200 rounded-full transition-colors duration-200 ease-in-out dark:bg-gray-700">
+            <div
+                class="absolute left-0 w-5 h-5 bg-white rounded-full shadow transform transition-transform duration-200 ease-in-out dark:translate-x-full">
+            </div>
+        </div>
+    </label>
+</div>
+
+<script>
+    (function () {
+        const toggle = document.getElementById('theme-toggle');
+        const html = document.documentElement;
+
+        
+        const savedTheme = localStorage.getItem('theme');
+        const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+        if (savedTheme === 'dark' || (!savedTheme && systemDark)) {
+            html.classList.add('dark');
+            toggle.checked = true;
+        } else {
+            html.classList.remove('dark');
+            toggle.checked = false;
+        }
+
+        
+        toggle.addEventListener('change', function () {
+            if (this.checked) {
+                html.classList.add('dark');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                html.classList.remove('dark');
+                localStorage.setItem('theme', 'light');
+            }
+        });
+    })();
+</script>
+
+<style>
+     
+    .book-theme-toggle {
+        margin: 1rem 0;
+        padding: 0 1rem;
+
+    }
+
+    .book-theme-toggle label {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        cursor: pointer;
+        font-size: 0.85em;
+    }
+
+     
+    .book-theme-toggle input {
+        display: none;
+    }
+
+     
+    .book-theme-toggle label::after {
+        content: "🌙";
+         
+    }
+
+     
+    html:not(.dark) .book-theme-toggle label::after {
+        content: "☀️";
+         
+    }
+</style> 
+    
+<div class="book-search hidden">
+  <input id="book-search-input" type="text" 
+    placeholder="Search"
+    aria-label="Search"
+    maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+    
+
+    
+    
+
+
+
+    
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/" class="">
+      Gdd Design</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      AI</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/AI/EnemyBehavior/" class="">
+      Enemy Behavior</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/AI/FactionBehaviors/" class="">
+      Faction Behaviors</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Audio</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Audio/SoundDesign/" class="">
+      Sound Design</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Audio/Soundscape/" class="">
+      Soundscape</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Audio/TacticalAudio/" class="">
+      Tactical Audio</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Audio/VoiceLines/" class="">
+      Voice Lines</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Characters</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Operators/" class="">
+      Operators</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Assault</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Assault/Blaze/" class="">
+      Blaze</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Assault/Havoc/" class="">
+      Havoc</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Assault/README/" class="">
+      Readme</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Assault/Viper/" class="">
+      Viper</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Recon</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Recon/Phantom/" class="">
+      Phantom</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Recon/README/" class="">
+      Readme</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Recon/Specter/" class="">
+      Specter</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Recon/Wraith/" class="">
+      Wraith</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Specialist</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Specialist/Cipher/" class="">
+      Cipher</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Specialist/Flux/" class="">
+      Flux</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Specialist/README/" class="">
+      Readme</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Support</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Support/Angel/" class="">
+      Angel</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Support/Doc/" class="">
+      Doc</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Support/README/" class="">
+      Readme</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Tank</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Tank/Bulwark/" class="">
+      Bulwark</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Tank/Fortress/" class="">
+      Fortress</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Tank/README/" class="">
+      Readme</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Combat</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Combat/Items/" class="">
+      Items</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Combat/Weapons/" class="">
+      Weapons</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      GameDesign</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Accessibility/" class="">
+      Accessibility</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Controls/" class="">
+      Controls</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/CoreGameplay/" class="">
+      Core Gameplay</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Economy/" class="">
+      Economy</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/GameModes/" class="">
+      Game Modes</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/LiveOps/" class="">
+      Live Ops</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Localization/" class="">
+      Localization</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/NavigationAndMap/" class="">
+      Navigation and Map</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Overview/" class="">
+      Overview</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Progression/" class="">
+      Progression</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/RankedMode/" class="">
+      Ranked Mode</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/TutorialRaid/" class="">
+      Tutorial Raid</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/UserSettings/" class="">
+      User Settings</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Gameplay</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Gameplay/CoreLoop/" class="">
+      Core Loop</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      ProjectScope</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/ProjectScope/DesignPillars/" class="">
+      Design Pillars</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/ProjectScope/MVP/" class="">
+      Mvp</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/ProjectScope/NonGoals/" class="">
+      Non Goals</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/ProjectScope/Risks/" class="">
+      Risks</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Social</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Social/Multiplayer/" class="">
+      Multiplayer</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Story</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Story/Backstory/" class="">
+      Backstory</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Story/Factions/" class="">
+      Factions</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Story/Narrative/" class="">
+      Narrative</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Story/QuestLines/" class="">
+      Quest Lines</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      UI UX</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/UI_UX/UX_Flows/" class="">
+      Ux Flows</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/UI_UX/Visual_Style/" class="">
+      Visual Style</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Visuals</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Visuals/ArtDirection/" class="">
+      Art Direction</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Visuals/AssetGuidelines/" class="">
+      Asset Guidelines</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Visuals/StyleGuide/" class="">
+      Style Guide</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Visuals/UserInterface/" class="">
+      User Interface</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      World</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/EnvironmentalNarrative/" class="">
+      Environmental Narrative</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/EnvironmentalNarrative_Guidelines/" class="">
+      Environmental Narrative Guidelines</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/LootDistribution/" class="">
+      Loot Distribution</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/MapDesign/" class="">
+      Map Design</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/MapDesign_IndustrialZone/" class="">
+      Map Design Industrial Zone</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/MapDesign_NeonSlums/" class="">
+      Map Design Neon Slums</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/MapDesign_Wilderness/" class="">
+      Map Design Wilderness</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/MapLayouts/" class="active">
+      Map Layouts</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/" class="">
+      Gdd Technical</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      AI</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/AI/SensorySystem/" class="">
+      Sensory System</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Core</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Core/Architecture/" class="">
+      Architecture</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Core/CodingStandards/" class="">
+      Coding Standards</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Core/DevelopmentRoadmap/" class="">
+      Development Roadmap</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Core/NetworkingSystem/" class="">
+      Networking System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Core/SecuritySystem/" class="">
+      Security System</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Gameplay</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Gameplay/CharacterSystem/" class="">
+      Character System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Gameplay/ControlSystem/" class="">
+      Control System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Gameplay/InventorySystem/" class="">
+      Inventory System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Gameplay/WeaponSystem/" class="">
+      Weapon System</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Networking</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Networking/LagCompensation/" class="">
+      Lag Compensation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Networking/ReplicationStrategy/" class="">
+      Replication Strategy</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Performance</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Performance/Budgets/" class="">
+      Budgets</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Performance/Optimization/" class="">
+      Optimization</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Security</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Security/AntiCheatStrategy/" class="">
+      Anti Cheat Strategy</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Systems</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/AccessibilitySystem/" class="">
+      Accessibility System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/AISystem/" class="">
+      Aisystem</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/AnalyticsSystem/" class="">
+      Analytics System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/AudioSystem/" class="">
+      Audio System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/BuildPipeline/" class="">
+      Build Pipeline</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/LiveOpsSystem/" class="">
+      Live Ops System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/LocalizationSystem/" class="">
+      Localization System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/MapSystem/" class="">
+      Map System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/NarrativeSystem/" class="">
+      Narrative System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/ProgressionSystem/" class="">
+      Progression System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/RankedSystem/" class="">
+      Ranked System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/SaveSystem/" class="">
+      Save System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/SocialSystem/" class="">
+      Social System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/TutorialSystem/" class="">
+      Tutorial System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/UISystem/" class="">
+      Uisystem</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+</nav>
+
+
+
+
+<script>{ { . | safeJS } }</script>
+
+
+  </div>
+</aside>
+ 
+
+    <div class="book-page">
+      <header class="book-header hidden">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/icons/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <h3>Map Layouts</h3>
+
+  <label for="toc-control">
+    
+    <img src="/icons/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#-points-of-interest-poi">📍 Points of Interest (POI)</a>
+      <ul>
+        <li><a href="#poi-tiers">POI Tiers</a></li>
+        <li><a href="#industrial-decay-pois">Industrial Decay POIs</a></li>
+      </ul>
+    </li>
+    <li><a href="#-hotspots---high-activity-zones">🔥 Hotspots - High Activity Zones</a>
+      <ul>
+        <li><a href="#hotspot-1-reactor-core">Hotspot 1: Reactor Core</a></li>
+        <li><a href="#hotspot-2-the-bridge">Hotspot 2: The Bridge</a></li>
+        <li><a href="#hotspot-3-tech-labs-lobby">Hotspot 3: Tech Labs Lobby</a></li>
+      </ul>
+    </li>
+    <li><a href="#-choke-points">🚧 Choke Points</a>
+      <ul>
+        <li><a href="#critical-chokes">Critical Chokes</a></li>
+        <li><a href="#secondary-chokes">Secondary Chokes</a></li>
+      </ul>
+    </li>
+    <li><a href="#-extraction-points">🚁 Extraction Points</a>
+      <ul>
+        <li><a href="#ex-1-helipad-north">EX-1: Helipad (North)</a></li>
+        <li><a href="#ex-2-gate-03-east">EX-2: Gate 03 (East)</a></li>
+        <li><a href="#ex-3-convoy-south">EX-3: Convoy (South)</a></li>
+        <li><a href="#ex-4-sewer-central">EX-4: Sewer (Central)</a></li>
+        <li><a href="#ex-5-boat-west">EX-5: Boat (West)</a></li>
+      </ul>
+    </li>
+    <li><a href="#-traffic-flow">📊 Traffic Flow</a></li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><h1 id="map-layouts---detailed-map-configurations">Map Layouts - Detailed Map Configurations<a class="anchor" href="#map-layouts---detailed-map-configurations">#</a></h1>
+<p><strong><a href="./MapDesign.md">← Back to World</a></strong> | <strong><a href="../README.md">Index</a></strong> | <strong><a href="./EnvironmentalNarrative.md">Next: Environmental Narrative →</a></strong></p>
+<hr>
+<h2 id="-points-of-interest-poi">📍 Points of Interest (POI)<a class="anchor" href="#-points-of-interest-poi">#</a></h2>
+<h3 id="poi-tiers">POI Tiers<a class="anchor" href="#poi-tiers">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: center">Tier</th>
+          <th style="text-align: left">Name</th>
+          <th style="text-align: left">Characteristics</th>
+          <th style="text-align: center">Quantity/Map</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: center"><strong>S</strong></td>
+          <td style="text-align: left">Landmark</td>
+          <td style="text-align: left">Major visual landmark, visible map-wide</td>
+          <td style="text-align: center">1-2</td>
+      </tr>
+      <tr>
+          <td style="text-align: center"><strong>A</strong></td>
+          <td style="text-align: left">Major POI</td>
+          <td style="text-align: left">Primary area with high-tier loot</td>
+          <td style="text-align: center">3-4</td>
+      </tr>
+      <tr>
+          <td style="text-align: center"><strong>B</strong></td>
+          <td style="text-align: left">Minor POI</td>
+          <td style="text-align: left">Secondary area, moderate loot</td>
+          <td style="text-align: center">5-7</td>
+      </tr>
+      <tr>
+          <td style="text-align: center"><strong>C</strong></td>
+          <td style="text-align: left">Micro POI</td>
+          <td style="text-align: left">Small point, basic loot</td>
+          <td style="text-align: center">8-12</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="industrial-decay-pois">Industrial Decay POIs<a class="anchor" href="#industrial-decay-pois">#</a></h3>
+<p><strong>S-Tier: Reactor Tower</strong></p>
+<ul>
+<li>Position: Map Center (800m, 800m)</li>
+<li>Height: 45m (tallest), 4 floors + basement</li>
+<li>Loot: Epic Vaults, Legendary Cache</li>
+<li>AI: 15-20 enemies + Boss</li>
+</ul>
+<p><strong>A-Tier:</strong></p>
+<ul>
+<li>Tech Labs Complex (East) - 3 buildings, quest items</li>
+<li>Warehouse District (West) - 6 warehouses, mechanical parts</li>
+<li>Office Complex (North) - 5 floors, Intel documents</li>
+</ul>
+<hr>
+<h2 id="-hotspots---high-activity-zones">🔥 Hotspots - High Activity Zones<a class="anchor" href="#-hotspots---high-activity-zones">#</a></h2>
+<h3 id="hotspot-1-reactor-core">Hotspot 1: Reactor Core<a class="anchor" href="#hotspot-1-reactor-core">#</a></h3>
+<p><strong>Heat:</strong> 🔴🔴🔴🔴🔴 | Combat rate: 85% | Deaths/match: 8-12</p>
+<p><strong>Entry Points (7):</strong> Main entrance, Emergency stairs, Service ladder, Elevator, Roof access, Vent, Basement tunnel</p>
+<h3 id="hotspot-2-the-bridge">Hotspot 2: The Bridge<a class="anchor" href="#hotspot-2-the-bridge">#</a></h3>
+<p><strong>Heat:</strong> 🔴🔴🔴🔴⚪ | Combat rate: 70% | Deaths/match: 4-6</p>
+<p><strong>tactical Overview:</strong> Crossing point between Warehouse and Office. Vulnerable to sniper fire from Office windows.</p>
+<h3 id="hotspot-3-tech-labs-lobby">Hotspot 3: Tech Labs Lobby<a class="anchor" href="#hotspot-3-tech-labs-lobby">#</a></h3>
+<p><strong>Heat:</strong> 🔴🔴🔴⚪⚪ | Combat rate: 55% | Deaths/match: 3-5</p>
+<p><strong>Tactical Overview:</strong> Single main entrance with a 3-floor atrium providing multiple vertical sightlines.</p>
+<hr>
+<h2 id="-choke-points">🚧 Choke Points<a class="anchor" href="#-choke-points">#</a></h2>
+<h3 id="critical-chokes">Critical Chokes<a class="anchor" href="#critical-chokes">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">ID</th>
+          <th style="text-align: left">Location</th>
+          <th style="text-align: left">Width</th>
+          <th style="text-align: left">Type</th>
+          <th style="text-align: left">Bypass</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">CH-1</td>
+          <td style="text-align: left">The Bridge</td>
+          <td style="text-align: left">3m</td>
+          <td style="text-align: left">Structural</td>
+          <td style="text-align: left">Canal, Tunnel</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">CH-2</td>
+          <td style="text-align: left">Reactor Entrance</td>
+          <td style="text-align: left">4m</td>
+          <td style="text-align: left">Structural</td>
+          <td style="text-align: left">Vent, Ladder</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">CH-3</td>
+          <td style="text-align: left">Lab Lobby</td>
+          <td style="text-align: left">5m</td>
+          <td style="text-align: left">Vertical</td>
+          <td style="text-align: left">Fire escape</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="secondary-chokes">Secondary Chokes<a class="anchor" href="#secondary-chokes">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">ID</th>
+          <th style="text-align: left">Location</th>
+          <th style="text-align: left">Width</th>
+          <th style="text-align: left">Notes</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">CH-4</td>
+          <td style="text-align: left">Warehouse W2</td>
+          <td style="text-align: left">2m</td>
+          <td style="text-align: left">Roll-up shutter</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">CH-5</td>
+          <td style="text-align: left">Office Stairwell</td>
+          <td style="text-align: left">1.5m</td>
+          <td style="text-align: left">5 floor funnel</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">CH-6</td>
+          <td style="text-align: left">Water Pipe</td>
+          <td style="text-align: left">1m</td>
+          <td style="text-align: left">Crouch required</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="-extraction-points">🚁 Extraction Points<a class="anchor" href="#-extraction-points">#</a></h2>
+<h3 id="ex-1-helipad-north">EX-1: Helipad (North)<a class="anchor" href="#ex-1-helipad-north">#</a></h3>
+<ul>
+<li><strong>Type:</strong> Signal (Flare Gun required)</li>
+<li><strong>Capacity:</strong> 4 | <strong>Wait:</strong> 90s | <strong>Risk:</strong> 🔴 High</li>
+<li>Visible map-wide, high PvP target</li>
+</ul>
+<h3 id="ex-2-gate-03-east">EX-2: Gate 03 (East)<a class="anchor" href="#ex-2-gate-03-east">#</a></h3>
+<ul>
+<li><strong>Type:</strong> Always Open</li>
+<li><strong>Capacity:</strong> 6 | <strong>Wait:</strong> 15s | <strong>Risk:</strong> 🟡 Medium</li>
+<li>Most used extraction</li>
+</ul>
+<h3 id="ex-3-convoy-south">EX-3: Convoy (South)<a class="anchor" href="#ex-3-convoy-south">#</a></h3>
+<ul>
+<li><strong>Type:</strong> Paid (3000 Credits)</li>
+<li><strong>Capacity:</strong> 8 | <strong>Wait:</strong> 30s | <strong>Risk:</strong> 🟡 Medium</li>
+</ul>
+<h3 id="ex-4-sewer-central">EX-4: Sewer (Central)<a class="anchor" href="#ex-4-sewer-central">#</a></h3>
+<ul>
+<li><strong>Type:</strong> Conditional (No Backpack)</li>
+<li><strong>Capacity:</strong> 2 | <strong>Wait:</strong> 45s | <strong>Risk:</strong> 🟢 Low</li>
+<li>Emergency escape, hidden location</li>
+</ul>
+<h3 id="ex-5-boat-west">EX-5: Boat (West)<a class="anchor" href="#ex-5-boat-west">#</a></h3>
+<ul>
+<li><strong>Type:</strong> Timer (&lt;3:00 remaining)</li>
+<li><strong>Capacity:</strong> 3 | <strong>Wait:</strong> 20s | <strong>Risk:</strong> 🔴 High</li>
+<li>Late-game emergency option</li>
+</ul>
+<hr>
+<h2 id="-traffic-flow">📊 Traffic Flow<a class="anchor" href="#-traffic-flow">#</a></h2>
+<p><strong>Early Game (0-5m):</strong> Spawn → Rush to nearest POI → Move towards Mid zones
+<strong>Mid Game (5-10m):</strong> Contesting hot zones, fighting for Supply drops, Peak PvP encounters
+<strong>Late Game (10-15m):</strong> Securing escape routes → Moving to Extraction Points</p>
+<hr>
+<p><strong><a href="./MapDesign.md">← Back to World</a></strong> | <strong><a href="../README.md">Index</a></strong> | <strong><a href="./EnvironmentalNarrative.md">Next: Environmental Narrative →</a></strong></p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+<div>
+
+</div>
+
+<div>
+
+</div>
+
+</div>
+
+
+
+
+
+  
+  
+  
+  <div class="flex flex-wrap justify-between">
+    <span>
+    
+      <a href="/docs/GDD_Design/World/MapDesign_Wilderness/" class="flex align-center">
+        <img src="/icons/backward.svg" class="book-icon" alt="Backward" />
+        <span>Map Design Wilderness</span>
+      </a>
+    
+    </span>
+    <span>
+    
+      <a href="/docs/GDD_Technical/" class="flex align-center">
+        <span>Gdd Technical</span>
+        <img src="/icons/forward.svg" class="book-icon" alt="Forward" />
+      </a>
+    
+    </span>
+  </div>
+  
+
+
+ 
+        
+  
+ 
+        
+        
+  
+ 
+        
+  
+  
+    <script>(function(){document.querySelectorAll("pre:has(code)").forEach(e=>{e.addEventListener("click",e.focus),e.addEventListener("copy",function(t){if(t.preventDefault(),navigator.clipboard){const t=window.getSelection().toString()||e.textContent;navigator.clipboard.writeText(t)}})})})()</script>
+  
+
+      </footer>
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+  
+  <aside class="book-toc">
+    <div class="book-toc-content">
+      
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#-points-of-interest-poi">📍 Points of Interest (POI)</a>
+      <ul>
+        <li><a href="#poi-tiers">POI Tiers</a></li>
+        <li><a href="#industrial-decay-pois">Industrial Decay POIs</a></li>
+      </ul>
+    </li>
+    <li><a href="#-hotspots---high-activity-zones">🔥 Hotspots - High Activity Zones</a>
+      <ul>
+        <li><a href="#hotspot-1-reactor-core">Hotspot 1: Reactor Core</a></li>
+        <li><a href="#hotspot-2-the-bridge">Hotspot 2: The Bridge</a></li>
+        <li><a href="#hotspot-3-tech-labs-lobby">Hotspot 3: Tech Labs Lobby</a></li>
+      </ul>
+    </li>
+    <li><a href="#-choke-points">🚧 Choke Points</a>
+      <ul>
+        <li><a href="#critical-chokes">Critical Chokes</a></li>
+        <li><a href="#secondary-chokes">Secondary Chokes</a></li>
+      </ul>
+    </li>
+    <li><a href="#-extraction-points">🚁 Extraction Points</a>
+      <ul>
+        <li><a href="#ex-1-helipad-north">EX-1: Helipad (North)</a></li>
+        <li><a href="#ex-2-gate-03-east">EX-2: Gate 03 (East)</a></li>
+        <li><a href="#ex-3-convoy-south">EX-3: Convoy (South)</a></li>
+        <li><a href="#ex-4-sewer-central">EX-4: Sewer (Central)</a></li>
+        <li><a href="#ex-5-boat-west">EX-5: Boat (West)</a></li>
+      </ul>
+    </li>
+    <li><a href="#-traffic-flow">📊 Traffic Flow</a></li>
+  </ul>
+</nav>
+
+
+
+    </div>
+  </aside>
+  
+ 
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

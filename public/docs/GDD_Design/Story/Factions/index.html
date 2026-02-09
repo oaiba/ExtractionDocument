@@ -1,0 +1,3024 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=52224&amp;path=livereload" data-no-instant defer></script>
+  <!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Factions - Detailed Breakdown#← Back to Narrative | Index | Next: Quest Lines →
+🏴 Faction System Overview#Role of Factions#Factions are NOT playable sides. They function as:
+Quest Givers: Provide missions and objectives Vendors: Sell exclusive items based on reputation Lore Sources: Expand world building Reputation System: Unlock rewards through loyalty ⚔️ Faction Relationship Matrix#Inter-Faction Relationships#SALVAGE TECH UNDERGROUND PEACEKEEPERSSALVAGE CORPS ■ ○ ○ ●TECH SYNDICATE ○ ■ ● ✕UNDERGROUND ○ ● ■ ✕PEACEKEEPERS ● ✕ ✕ ■Legend:■ = Self● = Friendly (Trade, non-aggression)○ = Neutral (Cautious cooperation)✕ = Hostile (Active conflict)Relationship Details#Faction A Faction B Status Reason Salvage Tech Neutral Trade tech for materials Salvage Underground Neutral Occasional supply deals Salvage Peacekeepers Friendly Non-political workers Tech Underground Friendly Information exchange Tech Peacekeepers Hostile Corp secrets exposed Underground Peacekeepers Hostile Criminal vs Law 🔧 Salvage Corps#Identity#Attribute Value Motto “Honest Work in Lawless Lands” Colors Orange &amp; Gray Symbol Crossed wrenches over gear ⚙️ Leader “Foreman” Viktor Koval Base Converted factory (off-map) Leadership Profile#Viktor Koval - “The Foreman”
+">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:52224/docs/GDD_Design/Story/Factions/">
+  <meta property="og:site_name" content="Extraction Shooter GDD">
+  <meta property="og:title" content="Extraction Shooter GDD">
+  <meta property="og:description" content="Factions - Detailed Breakdown#← Back to Narrative | Index | Next: Quest Lines →
+🏴 Faction System Overview#Role of Factions#Factions are NOT playable sides. They function as:
+Quest Givers: Provide missions and objectives Vendors: Sell exclusive items based on reputation Lore Sources: Expand world building Reputation System: Unlock rewards through loyalty ⚔️ Faction Relationship Matrix#Inter-Faction Relationships#SALVAGE TECH UNDERGROUND PEACEKEEPERSSALVAGE CORPS ■ ○ ○ ●TECH SYNDICATE ○ ■ ● ✕UNDERGROUND ○ ● ■ ✕PEACEKEEPERS ● ✕ ✕ ■Legend:■ = Self● = Friendly (Trade, non-aggression)○ = Neutral (Cautious cooperation)✕ = Hostile (Active conflict)Relationship Details#Faction A Faction B Status Reason Salvage Tech Neutral Trade tech for materials Salvage Underground Neutral Occasional supply deals Salvage Peacekeepers Friendly Non-political workers Tech Underground Friendly Information exchange Tech Peacekeepers Hostile Corp secrets exposed Underground Peacekeepers Hostile Criminal vs Law 🔧 Salvage Corps#Identity#Attribute Value Motto “Honest Work in Lawless Lands” Colors Orange &amp; Gray Symbol Crossed wrenches over gear ⚙️ Leader “Foreman” Viktor Koval Base Converted factory (off-map) Leadership Profile#Viktor Koval - “The Foreman”">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
+
+
+  <meta itemprop="name" content="Extraction Shooter GDD">
+  <meta itemprop="description" content="Factions - Detailed Breakdown#← Back to Narrative | Index | Next: Quest Lines →
+🏴 Faction System Overview#Role of Factions#Factions are NOT playable sides. They function as:
+Quest Givers: Provide missions and objectives Vendors: Sell exclusive items based on reputation Lore Sources: Expand world building Reputation System: Unlock rewards through loyalty ⚔️ Faction Relationship Matrix#Inter-Faction Relationships#SALVAGE TECH UNDERGROUND PEACEKEEPERSSALVAGE CORPS ■ ○ ○ ●TECH SYNDICATE ○ ■ ● ✕UNDERGROUND ○ ● ■ ✕PEACEKEEPERS ● ✕ ✕ ■Legend:■ = Self● = Friendly (Trade, non-aggression)○ = Neutral (Cautious cooperation)✕ = Hostile (Active conflict)Relationship Details#Faction A Faction B Status Reason Salvage Tech Neutral Trade tech for materials Salvage Underground Neutral Occasional supply deals Salvage Peacekeepers Friendly Non-political workers Tech Underground Friendly Information exchange Tech Peacekeepers Hostile Corp secrets exposed Underground Peacekeepers Hostile Criminal vs Law 🔧 Salvage Corps#Identity#Attribute Value Motto “Honest Work in Lawless Lands” Colors Orange &amp; Gray Symbol Crossed wrenches over gear ⚙️ Leader “Foreman” Viktor Koval Base Converted factory (off-map) Leadership Profile#Viktor Koval - “The Foreman”">
+  <meta itemprop="wordCount" content="982">
+
+<title>Factions | Extraction Shooter GDD</title>
+<link rel="icon" href="/favicon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="http://localhost:52224/docs/GDD_Design/Story/Factions/">
+<link rel="stylesheet" href="/book.min.63c8b2b12bbd1ad36428837740ea371dd41fdb9c22b35499003d0dfa4dbce6ba.css" integrity="sha256-Y8iysSu9GtNkKIN3QOo3HdQf25wis1SZAD0N&#43;k285ro=" crossorigin="anonymous">
+
+
+  <script defer src="/fuse.min.js"></script>
+  <script defer src="/en.search.min.58bea27d7a08265548c5a8636a9a9fc844e0eb9d60fc3bb2c53d517da858d4c1.js" integrity="sha256-WL6ifXoIJlVIxahjapqfyETg651g/DuyxT1RfahY1ME=" crossorigin="anonymous"></script>
+
+  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
+
+
+
+  
+</head>
+<body dir="ltr" class="book-kind-page book-type-docs">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    
+<aside class="book-menu">
+  <div class="book-menu-content">
+    
+  <nav>
+    <h2 class="book-brand">
+  <a class="flex align-center" href="/"><img src="/logo.svg" alt="Logo" /><span>Extraction Shooter GDD</span>
+  </a>
+</h2>
+
+    <div class="book-theme-toggle">
+    <input type="checkbox" id="theme-toggle" class="toggle">
+    <label for="theme-toggle" class="flex justify-between items-center cursor-pointer">
+        <span class="text-xs font-semibold">Dark Mode</span>
+        <div
+            class="relative w-10 h-5 bg-gray-200 rounded-full transition-colors duration-200 ease-in-out dark:bg-gray-700">
+            <div
+                class="absolute left-0 w-5 h-5 bg-white rounded-full shadow transform transition-transform duration-200 ease-in-out dark:translate-x-full">
+            </div>
+        </div>
+    </label>
+</div>
+
+<script>
+    (function () {
+        const toggle = document.getElementById('theme-toggle');
+        const html = document.documentElement;
+
+        
+        const savedTheme = localStorage.getItem('theme');
+        const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+        if (savedTheme === 'dark' || (!savedTheme && systemDark)) {
+            html.classList.add('dark');
+            toggle.checked = true;
+        } else {
+            html.classList.remove('dark');
+            toggle.checked = false;
+        }
+
+        
+        toggle.addEventListener('change', function () {
+            if (this.checked) {
+                html.classList.add('dark');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                html.classList.remove('dark');
+                localStorage.setItem('theme', 'light');
+            }
+        });
+    })();
+</script>
+
+<style>
+     
+    .book-theme-toggle {
+        margin: 1rem 0;
+        padding: 0 1rem;
+
+    }
+
+    .book-theme-toggle label {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        cursor: pointer;
+        font-size: 0.85em;
+    }
+
+     
+    .book-theme-toggle input {
+        display: none;
+    }
+
+     
+    .book-theme-toggle label::after {
+        content: "🌙";
+         
+    }
+
+     
+    html:not(.dark) .book-theme-toggle label::after {
+        content: "☀️";
+         
+    }
+</style> 
+    
+<div class="book-search hidden">
+  <input id="book-search-input" type="text" 
+    placeholder="Search"
+    aria-label="Search"
+    maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+    
+
+    
+    
+
+
+
+    
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/" class="">
+      Gdd Design</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      AI</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/AI/EnemyBehavior/" class="">
+      Enemy Behavior</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/AI/FactionBehaviors/" class="">
+      Faction Behaviors</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Audio</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Audio/SoundDesign/" class="">
+      Sound Design</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Audio/Soundscape/" class="">
+      Soundscape</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Audio/TacticalAudio/" class="">
+      Tactical Audio</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Audio/VoiceLines/" class="">
+      Voice Lines</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Characters</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Operators/" class="">
+      Operators</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Assault</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Assault/Blaze/" class="">
+      Blaze</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Assault/Havoc/" class="">
+      Havoc</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Assault/README/" class="">
+      Readme</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Assault/Viper/" class="">
+      Viper</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Recon</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Recon/Phantom/" class="">
+      Phantom</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Recon/README/" class="">
+      Readme</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Recon/Specter/" class="">
+      Specter</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Recon/Wraith/" class="">
+      Wraith</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Specialist</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Specialist/Cipher/" class="">
+      Cipher</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Specialist/Flux/" class="">
+      Flux</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Specialist/README/" class="">
+      Readme</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Support</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Support/Angel/" class="">
+      Angel</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Support/Doc/" class="">
+      Doc</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Support/README/" class="">
+      Readme</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Tank</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Tank/Bulwark/" class="">
+      Bulwark</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Tank/Fortress/" class="">
+      Fortress</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Tank/README/" class="">
+      Readme</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Combat</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Combat/Items/" class="">
+      Items</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Combat/Weapons/" class="">
+      Weapons</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      GameDesign</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Accessibility/" class="">
+      Accessibility</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Controls/" class="">
+      Controls</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/CoreGameplay/" class="">
+      Core Gameplay</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Economy/" class="">
+      Economy</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/GameModes/" class="">
+      Game Modes</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/LiveOps/" class="">
+      Live Ops</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Localization/" class="">
+      Localization</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/NavigationAndMap/" class="">
+      Navigation and Map</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Overview/" class="">
+      Overview</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Progression/" class="">
+      Progression</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/RankedMode/" class="">
+      Ranked Mode</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/TutorialRaid/" class="">
+      Tutorial Raid</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/UserSettings/" class="">
+      User Settings</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Gameplay</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Gameplay/CoreLoop/" class="">
+      Core Loop</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      ProjectScope</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/ProjectScope/DesignPillars/" class="">
+      Design Pillars</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/ProjectScope/MVP/" class="">
+      Mvp</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/ProjectScope/NonGoals/" class="">
+      Non Goals</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/ProjectScope/Risks/" class="">
+      Risks</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Social</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Social/Multiplayer/" class="">
+      Multiplayer</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Story</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Story/Backstory/" class="">
+      Backstory</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Story/Factions/" class="active">
+      Factions</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Story/Narrative/" class="">
+      Narrative</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Story/QuestLines/" class="">
+      Quest Lines</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      UI UX</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/UI_UX/UX_Flows/" class="">
+      Ux Flows</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/UI_UX/Visual_Style/" class="">
+      Visual Style</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Visuals</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Visuals/ArtDirection/" class="">
+      Art Direction</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Visuals/AssetGuidelines/" class="">
+      Asset Guidelines</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Visuals/StyleGuide/" class="">
+      Style Guide</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Visuals/UserInterface/" class="">
+      User Interface</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      World</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/EnvironmentalNarrative/" class="">
+      Environmental Narrative</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/EnvironmentalNarrative_Guidelines/" class="">
+      Environmental Narrative Guidelines</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/LootDistribution/" class="">
+      Loot Distribution</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/MapDesign/" class="">
+      Map Design</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/MapDesign_IndustrialZone/" class="">
+      Map Design Industrial Zone</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/MapDesign_NeonSlums/" class="">
+      Map Design Neon Slums</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/MapDesign_Wilderness/" class="">
+      Map Design Wilderness</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/MapLayouts/" class="">
+      Map Layouts</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/" class="">
+      Gdd Technical</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      AI</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/AI/SensorySystem/" class="">
+      Sensory System</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Core</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Core/Architecture/" class="">
+      Architecture</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Core/CodingStandards/" class="">
+      Coding Standards</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Core/DevelopmentRoadmap/" class="">
+      Development Roadmap</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Core/NetworkingSystem/" class="">
+      Networking System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Core/SecuritySystem/" class="">
+      Security System</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Gameplay</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Gameplay/CharacterSystem/" class="">
+      Character System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Gameplay/ControlSystem/" class="">
+      Control System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Gameplay/InventorySystem/" class="">
+      Inventory System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Gameplay/WeaponSystem/" class="">
+      Weapon System</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Networking</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Networking/LagCompensation/" class="">
+      Lag Compensation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Networking/ReplicationStrategy/" class="">
+      Replication Strategy</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Performance</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Performance/Budgets/" class="">
+      Budgets</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Performance/Optimization/" class="">
+      Optimization</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Security</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Security/AntiCheatStrategy/" class="">
+      Anti Cheat Strategy</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Systems</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/AccessibilitySystem/" class="">
+      Accessibility System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/AISystem/" class="">
+      Aisystem</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/AnalyticsSystem/" class="">
+      Analytics System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/AudioSystem/" class="">
+      Audio System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/BuildPipeline/" class="">
+      Build Pipeline</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/LiveOpsSystem/" class="">
+      Live Ops System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/LocalizationSystem/" class="">
+      Localization System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/MapSystem/" class="">
+      Map System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/NarrativeSystem/" class="">
+      Narrative System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/ProgressionSystem/" class="">
+      Progression System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/RankedSystem/" class="">
+      Ranked System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/SaveSystem/" class="">
+      Save System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/SocialSystem/" class="">
+      Social System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/TutorialSystem/" class="">
+      Tutorial System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/UISystem/" class="">
+      Uisystem</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+</nav>
+
+
+
+
+<script>{ { . | safeJS } }</script>
+
+
+  </div>
+</aside>
+ 
+
+    <div class="book-page">
+      <header class="book-header hidden">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/icons/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <h3>Factions</h3>
+
+  <label for="toc-control">
+    
+    <img src="/icons/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#-faction-system-overview">🏴 Faction System Overview</a>
+      <ul>
+        <li><a href="#role-of-factions">Role of Factions</a></li>
+      </ul>
+    </li>
+    <li><a href="#-faction-relationship-matrix">⚔️ Faction Relationship Matrix</a>
+      <ul>
+        <li><a href="#inter-faction-relationships">Inter-Faction Relationships</a></li>
+        <li><a href="#relationship-details">Relationship Details</a></li>
+      </ul>
+    </li>
+    <li><a href="#-salvage-corps">🔧 Salvage Corps</a>
+      <ul>
+        <li><a href="#identity">Identity</a></li>
+        <li><a href="#leadership-profile">Leadership Profile</a></li>
+        <li><a href="#faction-structure">Faction Structure</a></li>
+        <li><a href="#key-npcs">Key NPCs</a></li>
+        <li><a href="#reputation-system">Reputation System</a></li>
+        <li><a href="#unique-items-reputation-locked">Unique Items (Reputation Locked)</a></li>
+      </ul>
+    </li>
+    <li><a href="#-tech-syndicate">💻 Tech Syndicate</a>
+      <ul>
+        <li><a href="#identity-1">Identity</a></li>
+        <li><a href="#leadership-profile-1">Leadership Profile</a></li>
+        <li><a href="#faction-structure-1">Faction Structure</a></li>
+        <li><a href="#key-npcs-1">Key NPCs</a></li>
+        <li><a href="#reputation-system-1">Reputation System</a></li>
+        <li><a href="#unique-items">Unique Items</a></li>
+      </ul>
+    </li>
+    <li><a href="#-underground-network">🤝 Underground Network</a>
+      <ul>
+        <li><a href="#identity-2">Identity</a></li>
+        <li><a href="#leadership-profile-2">Leadership Profile</a></li>
+        <li><a href="#faction-structure-2">Faction Structure</a></li>
+        <li><a href="#key-npcs-2">Key NPCs</a></li>
+        <li><a href="#reputation-system-2">Reputation System</a></li>
+        <li><a href="#unique-items-1">Unique Items</a></li>
+      </ul>
+    </li>
+    <li><a href="#-peacekeepers">🛡️ Peacekeepers</a>
+      <ul>
+        <li><a href="#identity-3">Identity</a></li>
+        <li><a href="#leadership-profile-3">Leadership Profile</a></li>
+        <li><a href="#faction-structure-3">Faction Structure</a></li>
+        <li><a href="#key-npcs-3">Key NPCs</a></li>
+        <li><a href="#reputation-system-3">Reputation System</a></li>
+        <li><a href="#unique-items-2">Unique Items</a></li>
+      </ul>
+    </li>
+    <li><a href="#-faction-comparison-summary">📊 Faction Comparison Summary</a></li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><h1 id="factions---detailed-breakdown">Factions - Detailed Breakdown<a class="anchor" href="#factions---detailed-breakdown">#</a></h1>
+<p><strong><a href="./Narrative.md">← Back to Narrative</a></strong> | <strong><a href="../README.md">Index</a></strong> | <strong><a href="./QuestLines.md">Next: Quest Lines →</a></strong></p>
+<hr>
+<h2 id="-faction-system-overview">🏴 Faction System Overview<a class="anchor" href="#-faction-system-overview">#</a></h2>
+<h3 id="role-of-factions">Role of Factions<a class="anchor" href="#role-of-factions">#</a></h3>
+<p>Factions are <strong>NOT</strong> playable sides. They function as:</p>
+<ul>
+<li><strong>Quest Givers</strong>: Provide missions and objectives</li>
+<li><strong>Vendors</strong>: Sell exclusive items based on reputation</li>
+<li><strong>Lore Sources</strong>: Expand world building</li>
+<li><strong>Reputation System</strong>: Unlock rewards through loyalty</li>
+</ul>
+<hr>
+<h2 id="-faction-relationship-matrix">⚔️ Faction Relationship Matrix<a class="anchor" href="#-faction-relationship-matrix">#</a></h2>
+<h3 id="inter-faction-relationships">Inter-Faction Relationships<a class="anchor" href="#inter-faction-relationships">#</a></h3>
+<pre tabindex="0"><code>                 SALVAGE   TECH    UNDERGROUND   PEACEKEEPERS
+SALVAGE CORPS      ■        ○          ○             ●
+TECH SYNDICATE     ○        ■          ●             ✕
+UNDERGROUND        ○        ●          ■             ✕
+PEACEKEEPERS       ●        ✕          ✕             ■
+
+Legend:
+■ = Self
+● = Friendly (Trade, non-aggression)
+○ = Neutral (Cautious cooperation)
+✕ = Hostile (Active conflict)</code></pre><h3 id="relationship-details">Relationship Details<a class="anchor" href="#relationship-details">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Faction A</th>
+          <th style="text-align: left">Faction B</th>
+          <th style="text-align: left">Status</th>
+          <th style="text-align: left">Reason</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Salvage</td>
+          <td style="text-align: left">Tech</td>
+          <td style="text-align: left">Neutral</td>
+          <td style="text-align: left">Trade tech for materials</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Salvage</td>
+          <td style="text-align: left">Underground</td>
+          <td style="text-align: left">Neutral</td>
+          <td style="text-align: left">Occasional supply deals</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Salvage</td>
+          <td style="text-align: left">Peacekeepers</td>
+          <td style="text-align: left">Friendly</td>
+          <td style="text-align: left">Non-political workers</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Tech</td>
+          <td style="text-align: left">Underground</td>
+          <td style="text-align: left">Friendly</td>
+          <td style="text-align: left">Information exchange</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Tech</td>
+          <td style="text-align: left">Peacekeepers</td>
+          <td style="text-align: left">Hostile</td>
+          <td style="text-align: left">Corp secrets exposed</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Underground</td>
+          <td style="text-align: left">Peacekeepers</td>
+          <td style="text-align: left">Hostile</td>
+          <td style="text-align: left">Criminal vs Law</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="-salvage-corps">🔧 Salvage Corps<a class="anchor" href="#-salvage-corps">#</a></h2>
+<h3 id="identity">Identity<a class="anchor" href="#identity">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Attribute</th>
+          <th style="text-align: left">Value</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><strong>Motto</strong></td>
+          <td style="text-align: left">&ldquo;Honest Work in Lawless Lands&rdquo;</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Colors</strong></td>
+          <td style="text-align: left">Orange &amp; Gray</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Symbol</strong></td>
+          <td style="text-align: left">Crossed wrenches over gear ⚙️</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Leader</strong></td>
+          <td style="text-align: left">&ldquo;Foreman&rdquo; Viktor Koval</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Base</strong></td>
+          <td style="text-align: left">Converted factory (off-map)</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="leadership-profile">Leadership Profile<a class="anchor" href="#leadership-profile">#</a></h3>
+<p><strong>Viktor Koval - &ldquo;The Foreman&rdquo;</strong></p>
+<pre tabindex="0"><code>Age: 52
+Origin: Ukrainian factory supervisor
+Pre-Collapse: Plant manager, 200 workers
+The Collapse: Organized survivors into work crews
+Philosophy: &#34;Build, don&#39;t destroy&#34;
+Voice: Gruff, fatherly, practical</code></pre><h3 id="faction-structure">Faction Structure<a class="anchor" href="#faction-structure">#</a></h3>
+<pre tabindex="0"><code>         [Foreman Viktor Koval]
+                 │
+    ┌────────────┼────────────┐
+    │            │            │
+[Chief Engineer] [Quartermaster] [Recruiter]
+    Yuri         Mama Rosa      &#34;Wrench&#34; Lee
+    │            │            │
+[Work Crews]  [Supply Team] [New Contractors]</code></pre><h3 id="key-npcs">Key NPCs<a class="anchor" href="#key-npcs">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Name</th>
+          <th style="text-align: left">Role</th>
+          <th style="text-align: left">Quest Type</th>
+          <th style="text-align: left">Location</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Viktor Koval</td>
+          <td style="text-align: left">Leader</td>
+          <td style="text-align: left">Main story</td>
+          <td style="text-align: left">Safe Zone</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Yuri</td>
+          <td style="text-align: left">Engineer</td>
+          <td style="text-align: left">Repair missions</td>
+          <td style="text-align: left">Field</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Mama Rosa</td>
+          <td style="text-align: left">Quartermaster</td>
+          <td style="text-align: left">Supply runs</td>
+          <td style="text-align: left">Safe Zone</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">&ldquo;Wrench&rdquo; Lee</td>
+          <td style="text-align: left">Recruiter</td>
+          <td style="text-align: left">Introduction</td>
+          <td style="text-align: left">Anywhere</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="reputation-system">Reputation System<a class="anchor" href="#reputation-system">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: center">Level</th>
+          <th style="text-align: left">Title</th>
+          <th style="text-align: center">Rep Required</th>
+          <th style="text-align: left">Benefits</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: center">1</td>
+          <td style="text-align: left">Newcomer</td>
+          <td style="text-align: center">0</td>
+          <td style="text-align: left">Basic quests</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">2</td>
+          <td style="text-align: left">Worker</td>
+          <td style="text-align: center">1,000</td>
+          <td style="text-align: left">5% discount</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">3</td>
+          <td style="text-align: left">Foreman&rsquo;s Pick</td>
+          <td style="text-align: center">3,000</td>
+          <td style="text-align: left">Gear unlocks</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">4</td>
+          <td style="text-align: left">Trusted</td>
+          <td style="text-align: center">7,000</td>
+          <td style="text-align: left">High-value quests</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">5</td>
+          <td style="text-align: left">Veteran</td>
+          <td style="text-align: center">15,000</td>
+          <td style="text-align: left">Unique cosmetics</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="unique-items-reputation-locked">Unique Items (Reputation Locked)<a class="anchor" href="#unique-items-reputation-locked">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Item</th>
+          <th style="text-align: center">Level</th>
+          <th style="text-align: left">Type</th>
+          <th style="text-align: left">Stats</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Worker&rsquo;s Backpack</td>
+          <td style="text-align: center">2</td>
+          <td style="text-align: left">Storage</td>
+          <td style="text-align: left">+2 slots</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Heavy-Duty Tool</td>
+          <td style="text-align: center">3</td>
+          <td style="text-align: left">Utility</td>
+          <td style="text-align: left">Faster looting</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Foreman&rsquo;s Vest</td>
+          <td style="text-align: center">4</td>
+          <td style="text-align: left">Armor</td>
+          <td style="text-align: left">+15% carry weight</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Salvage Legend Skin</td>
+          <td style="text-align: center">5</td>
+          <td style="text-align: left">Cosmetic</td>
+          <td style="text-align: left">Orange/Gray theme</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="-tech-syndicate">💻 Tech Syndicate<a class="anchor" href="#-tech-syndicate">#</a></h2>
+<h3 id="identity-1">Identity<a class="anchor" href="#identity-1">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Attribute</th>
+          <th style="text-align: left">Value</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><strong>Motto</strong></td>
+          <td style="text-align: left">&ldquo;Knowledge is the Ultimate Currency&rdquo;</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Colors</strong></td>
+          <td style="text-align: left">Cyan &amp; Black</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Symbol</strong></td>
+          <td style="text-align: left">Circuit pattern forming eye 👁️</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Leader</strong></td>
+          <td style="text-align: left">&ldquo;Director&rdquo; Seo-Yun Park</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Base</strong></td>
+          <td style="text-align: left">Hidden server farm (unknown)</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="leadership-profile-1">Leadership Profile<a class="anchor" href="#leadership-profile-1">#</a></h3>
+<p><strong>Seo-Yun Park - &ldquo;The Director&rdquo;</strong></p>
+<pre tabindex="0"><code>Age: 41
+Origin: Korean tech executive (Nexus Corp defector)
+Pre-Collapse: Chief Data Officer
+The Collapse: Stole corporate secrets, went underground
+Philosophy: &#34;Information sets you free&#34;
+Voice: Cold, calculated, occasional warmth
+Secret: Knows more about The Collapse than she reveals</code></pre><h3 id="faction-structure-1">Faction Structure<a class="anchor" href="#faction-structure-1">#</a></h3>
+<pre tabindex="0"><code>          [Director Seo-Yun Park]
+                   │
+      ┌────────────┼────────────┐
+      │            │            │
+ [Lead Hacker]  [Archivist]  [Field Ops]
+   &#34;Zero&#34;       Dr. Huang     &#34;Glitch&#34;
+      │            │            │
+[Cyber Team]  [Data Team]  [Operatives]</code></pre><h3 id="key-npcs-1">Key NPCs<a class="anchor" href="#key-npcs-1">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Name</th>
+          <th style="text-align: left">Role</th>
+          <th style="text-align: left">Quest Type</th>
+          <th style="text-align: left">Location</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Seo-Yun Park</td>
+          <td style="text-align: left">Director</td>
+          <td style="text-align: left">Main story</td>
+          <td style="text-align: left">Encrypted comms</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">&ldquo;Zero&rdquo;</td>
+          <td style="text-align: left">Lead Hacker</td>
+          <td style="text-align: left">Tech missions</td>
+          <td style="text-align: left">Remote</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Dr. Huang</td>
+          <td style="text-align: left">Archivist</td>
+          <td style="text-align: left">Data recovery</td>
+          <td style="text-align: left">Safe Zone</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">&ldquo;Glitch&rdquo;</td>
+          <td style="text-align: left">Field Ops</td>
+          <td style="text-align: left">Recon missions</td>
+          <td style="text-align: left">Field</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="reputation-system-1">Reputation System<a class="anchor" href="#reputation-system-1">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: center">Level</th>
+          <th style="text-align: left">Title</th>
+          <th style="text-align: center">Rep Required</th>
+          <th style="text-align: left">Benefits</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: center">1</td>
+          <td style="text-align: left">Unknown</td>
+          <td style="text-align: center">0</td>
+          <td style="text-align: left">Basic access</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">2</td>
+          <td style="text-align: left">Registered</td>
+          <td style="text-align: center">1,500</td>
+          <td style="text-align: left">Tech discounts</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">3</td>
+          <td style="text-align: left">Trusted Node</td>
+          <td style="text-align: center">4,000</td>
+          <td style="text-align: left">Gadget unlocks</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">4</td>
+          <td style="text-align: left">Inner Circle</td>
+          <td style="text-align: center">9,000</td>
+          <td style="text-align: left">Secret quest lines</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">5</td>
+          <td style="text-align: left">Elite Hacker</td>
+          <td style="text-align: center">20,000</td>
+          <td style="text-align: left">Exclusive skins</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="unique-items">Unique Items<a class="anchor" href="#unique-items">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Item</th>
+          <th style="text-align: center">Level</th>
+          <th style="text-align: left">Type</th>
+          <th style="text-align: left">Stats</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Signal Scanner</td>
+          <td style="text-align: center">2</td>
+          <td style="text-align: left">Gadget</td>
+          <td style="text-align: left">Reveal nearby enemies</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Crypto Wallet</td>
+          <td style="text-align: center">3</td>
+          <td style="text-align: left">Utility</td>
+          <td style="text-align: left">+10% credit gain</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Stealth Module</td>
+          <td style="text-align: center">4</td>
+          <td style="text-align: left">Attachment</td>
+          <td style="text-align: left">Reduced detection</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Syndicate Ghost Skin</td>
+          <td style="text-align: center">5</td>
+          <td style="text-align: left">Cosmetic</td>
+          <td style="text-align: left">Cyan/Black theme</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="-underground-network">🤝 Underground Network<a class="anchor" href="#-underground-network">#</a></h2>
+<h3 id="identity-2">Identity<a class="anchor" href="#identity-2">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Attribute</th>
+          <th style="text-align: left">Value</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><strong>Motto</strong></td>
+          <td style="text-align: left">&ldquo;Survive Together or Die Alone&rdquo;</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Colors</strong></td>
+          <td style="text-align: left">Purple &amp; Gold</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Symbol</strong></td>
+          <td style="text-align: left">Clasped hands in shadows 🤝</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Leader</strong></td>
+          <td style="text-align: left">&ldquo;The Broker&rdquo; (unknown identity)</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Base</strong></td>
+          <td style="text-align: left">Multiple safehouses</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="leadership-profile-2">Leadership Profile<a class="anchor" href="#leadership-profile-2">#</a></h3>
+<p><strong>&ldquo;The Broker&rdquo; - Identity Unknown</strong></p>
+<pre tabindex="0"><code>Age: Unknown (voice suggests 30-50)
+Origin: Unknown (accent shifts)
+Pre-Collapse: Unknown
+The Collapse: Emerged as information kingpin
+Philosophy: &#34;Everyone has a price&#34;
+Voice: Distorted, never seen in person
+Secret: May be multiple people or AI</code></pre><h3 id="faction-structure-2">Faction Structure<a class="anchor" href="#faction-structure-2">#</a></h3>
+<pre tabindex="0"><code>              [The Broker]
+                   │ (voice only)
+                   │
+      ┌────────────┼────────────┐
+      │            │            │
+  [Fixers]    [Smugglers]   [Enforcers]
+  Madame X    &#34;Rat King&#34;    &#34;Big Bear&#34;
+      │            │            │
+ [Informants] [Runners]    [Muscle]</code></pre><h3 id="key-npcs-2">Key NPCs<a class="anchor" href="#key-npcs-2">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Name</th>
+          <th style="text-align: left">Role</th>
+          <th style="text-align: left">Quest Type</th>
+          <th style="text-align: left">Location</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">The Broker</td>
+          <td style="text-align: left">Leader</td>
+          <td style="text-align: left">Directives</td>
+          <td style="text-align: left">Voice only</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Madame X</td>
+          <td style="text-align: left">Fixer</td>
+          <td style="text-align: left">Contract kills</td>
+          <td style="text-align: left">Hidden</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">&ldquo;Rat King&rdquo;</td>
+          <td style="text-align: left">Smuggler</td>
+          <td style="text-align: left">Delivery quests</td>
+          <td style="text-align: left">Sewers</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">&ldquo;Big Bear&rdquo;</td>
+          <td style="text-align: left">Enforcer</td>
+          <td style="text-align: left">Elimination</td>
+          <td style="text-align: left">Field</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="reputation-system-2">Reputation System<a class="anchor" href="#reputation-system-2">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: center">Level</th>
+          <th style="text-align: left">Title</th>
+          <th style="text-align: center">Rep Required</th>
+          <th style="text-align: left">Benefits</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: center">1</td>
+          <td style="text-align: left">Nobody</td>
+          <td style="text-align: center">0</td>
+          <td style="text-align: left">Black market access</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">2</td>
+          <td style="text-align: left">Known Face</td>
+          <td style="text-align: center">2,000</td>
+          <td style="text-align: left">Better prices</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">3</td>
+          <td style="text-align: left">Trusted Runner</td>
+          <td style="text-align: center">5,000</td>
+          <td style="text-align: left">Smuggling quests</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">4</td>
+          <td style="text-align: left">Inner Circle</td>
+          <td style="text-align: center">12,000</td>
+          <td style="text-align: left">Assassination contracts</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">5</td>
+          <td style="text-align: left">Shadow Elite</td>
+          <td style="text-align: center">25,000</td>
+          <td style="text-align: left">Legendary items</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="unique-items-1">Unique Items<a class="anchor" href="#unique-items-1">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Item</th>
+          <th style="text-align: center">Level</th>
+          <th style="text-align: left">Type</th>
+          <th style="text-align: left">Stats</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Forged ID</td>
+          <td style="text-align: center">2</td>
+          <td style="text-align: left">Utility</td>
+          <td style="text-align: left">Access restricted areas</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Silencer Kit</td>
+          <td style="text-align: center">3</td>
+          <td style="text-align: left">Attachment</td>
+          <td style="text-align: left">-50% gunfire sound</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Broker&rsquo;s Favor</td>
+          <td style="text-align: center">4</td>
+          <td style="text-align: left">Consumable</td>
+          <td style="text-align: left">One-time quest boost</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Shadow Wraith Skin</td>
+          <td style="text-align: center">5</td>
+          <td style="text-align: left">Cosmetic</td>
+          <td style="text-align: left">Purple/Gold theme</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="-peacekeepers">🛡️ Peacekeepers<a class="anchor" href="#-peacekeepers">#</a></h2>
+<h3 id="identity-3">Identity<a class="anchor" href="#identity-3">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Attribute</th>
+          <th style="text-align: left">Value</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><strong>Motto</strong></td>
+          <td style="text-align: left">&ldquo;Order From Chaos&rdquo;</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Colors</strong></td>
+          <td style="text-align: left">Blue &amp; White</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Symbol</strong></td>
+          <td style="text-align: left">Shield with olive branches 🛡️</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Leader</strong></td>
+          <td style="text-align: left">Commander Helena Vance</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Base</strong></td>
+          <td style="text-align: left">Fortified outpost (map edge)</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="leadership-profile-3">Leadership Profile<a class="anchor" href="#leadership-profile-3">#</a></h3>
+<p><strong>Helena Vance - &ldquo;The Commander&rdquo;</strong></p>
+<pre tabindex="0"><code>Age: 47
+Origin: Former UN Peacekeeper
+Pre-Collapse: Deployed to conflict zones
+The Collapse: Tried to maintain order, saw the worst
+Philosophy: &#34;Law is all that separates us from animals&#34;
+Voice: Stern but weary, occasional hope
+Secret: Makes moral compromises she regrets</code></pre><h3 id="faction-structure-3">Faction Structure<a class="anchor" href="#faction-structure-3">#</a></h3>
+<pre tabindex="0"><code>         [Commander Helena Vance]
+                   │
+      ┌────────────┼────────────┐
+      │            │            │
+  [Captain]    [Sergeant]   [Medical]
+  Reyes        &#34;Stone&#34;      Dr. Wells
+      │            │            │
+[Patrol Units] [Combat Team] [Medics]</code></pre><h3 id="key-npcs-3">Key NPCs<a class="anchor" href="#key-npcs-3">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Name</th>
+          <th style="text-align: left">Role</th>
+          <th style="text-align: left">Quest Type</th>
+          <th style="text-align: left">Location</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Helena Vance</td>
+          <td style="text-align: left">Commander</td>
+          <td style="text-align: left">Main story</td>
+          <td style="text-align: left">Command Post</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Captain Reyes</td>
+          <td style="text-align: left">Patrol Lead</td>
+          <td style="text-align: left">Sweep missions</td>
+          <td style="text-align: left">Field</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Sergeant &ldquo;Stone&rdquo;</td>
+          <td style="text-align: left">Combat</td>
+          <td style="text-align: left">Elimination</td>
+          <td style="text-align: left">Hotspots</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Dr. Wells</td>
+          <td style="text-align: left">Medical Officer</td>
+          <td style="text-align: left">Rescue missions</td>
+          <td style="text-align: left">Medical</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="reputation-system-3">Reputation System<a class="anchor" href="#reputation-system-3">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: center">Level</th>
+          <th style="text-align: left">Title</th>
+          <th style="text-align: center">Rep Required</th>
+          <th style="text-align: left">Benefits</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: center">1</td>
+          <td style="text-align: left">Civilian</td>
+          <td style="text-align: center">0</td>
+          <td style="text-align: left">Basic recognition</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">2</td>
+          <td style="text-align: left">Auxiliary</td>
+          <td style="text-align: center">1,200</td>
+          <td style="text-align: left">Medical discounts</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">3</td>
+          <td style="text-align: left">Deputy</td>
+          <td style="text-align: center">3,500</td>
+          <td style="text-align: left">Armor unlocks</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">4</td>
+          <td style="text-align: left">Officer</td>
+          <td style="text-align: center">8,000</td>
+          <td style="text-align: left">Elite quests</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">5</td>
+          <td style="text-align: left">Commander&rsquo;s Trust</td>
+          <td style="text-align: center">18,000</td>
+          <td style="text-align: left">Legendary gear</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="unique-items-2">Unique Items<a class="anchor" href="#unique-items-2">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Item</th>
+          <th style="text-align: center">Level</th>
+          <th style="text-align: left">Type</th>
+          <th style="text-align: left">Stats</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">First Aid Training</td>
+          <td style="text-align: center">2</td>
+          <td style="text-align: left">Passive</td>
+          <td style="text-align: left">+20% heal speed</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Tactical Vest</td>
+          <td style="text-align: center">3</td>
+          <td style="text-align: left">Armor</td>
+          <td style="text-align: left">+20 armor</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Commander&rsquo;s Radio</td>
+          <td style="text-align: center">4</td>
+          <td style="text-align: left">Gadget</td>
+          <td style="text-align: left">Call backup</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Peacekeeper Elite Skin</td>
+          <td style="text-align: center">5</td>
+          <td style="text-align: left">Cosmetic</td>
+          <td style="text-align: left">Blue/White theme</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="-faction-comparison-summary">📊 Faction Comparison Summary<a class="anchor" href="#-faction-comparison-summary">#</a></h2>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Aspect</th>
+          <th style="text-align: left">Salvage</th>
+          <th style="text-align: left">Tech</th>
+          <th style="text-align: left">Underground</th>
+          <th style="text-align: left">Peacekeepers</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><strong>Focus</strong></td>
+          <td style="text-align: left">Materials</td>
+          <td style="text-align: left">Data</td>
+          <td style="text-align: left">Contraband</td>
+          <td style="text-align: left">Security</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Playstyle</strong></td>
+          <td style="text-align: left">Gathering</td>
+          <td style="text-align: left">Stealth</td>
+          <td style="text-align: left">Risk/Reward</td>
+          <td style="text-align: left">Combat</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Morality</strong></td>
+          <td style="text-align: left">Neutral</td>
+          <td style="text-align: left">Gray</td>
+          <td style="text-align: left">Dark</td>
+          <td style="text-align: left">Light Gray</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Difficulty</strong></td>
+          <td style="text-align: left">Easy</td>
+          <td style="text-align: left">Medium</td>
+          <td style="text-align: left">Hard</td>
+          <td style="text-align: left">Medium</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Best For</strong></td>
+          <td style="text-align: left">New players</td>
+          <td style="text-align: left">Scouts</td>
+          <td style="text-align: left">Veterans</td>
+          <td style="text-align: left">Teams</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<p><strong><a href="./Narrative.md">← Back to Narrative</a></strong> | <strong><a href="../README.md">Index</a></strong> | <strong><a href="./QuestLines.md">Next: Quest Lines →</a></strong></p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+<div>
+
+</div>
+
+<div>
+
+</div>
+
+</div>
+
+
+
+
+
+  
+  
+  
+  <div class="flex flex-wrap justify-between">
+    <span>
+    
+      <a href="/docs/GDD_Design/Story/Backstory/" class="flex align-center">
+        <img src="/icons/backward.svg" class="book-icon" alt="Backward" />
+        <span>Backstory</span>
+      </a>
+    
+    </span>
+    <span>
+    
+      <a href="/docs/GDD_Design/Story/Narrative/" class="flex align-center">
+        <span>Narrative</span>
+        <img src="/icons/forward.svg" class="book-icon" alt="Forward" />
+      </a>
+    
+    </span>
+  </div>
+  
+
+
+ 
+        
+  
+ 
+        
+        
+  
+ 
+        
+  
+  
+    <script>(function(){document.querySelectorAll("pre:has(code)").forEach(e=>{e.addEventListener("click",e.focus),e.addEventListener("copy",function(t){if(t.preventDefault(),navigator.clipboard){const t=window.getSelection().toString()||e.textContent;navigator.clipboard.writeText(t)}})})})()</script>
+  
+
+      </footer>
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+  
+  <aside class="book-toc">
+    <div class="book-toc-content">
+      
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#-faction-system-overview">🏴 Faction System Overview</a>
+      <ul>
+        <li><a href="#role-of-factions">Role of Factions</a></li>
+      </ul>
+    </li>
+    <li><a href="#-faction-relationship-matrix">⚔️ Faction Relationship Matrix</a>
+      <ul>
+        <li><a href="#inter-faction-relationships">Inter-Faction Relationships</a></li>
+        <li><a href="#relationship-details">Relationship Details</a></li>
+      </ul>
+    </li>
+    <li><a href="#-salvage-corps">🔧 Salvage Corps</a>
+      <ul>
+        <li><a href="#identity">Identity</a></li>
+        <li><a href="#leadership-profile">Leadership Profile</a></li>
+        <li><a href="#faction-structure">Faction Structure</a></li>
+        <li><a href="#key-npcs">Key NPCs</a></li>
+        <li><a href="#reputation-system">Reputation System</a></li>
+        <li><a href="#unique-items-reputation-locked">Unique Items (Reputation Locked)</a></li>
+      </ul>
+    </li>
+    <li><a href="#-tech-syndicate">💻 Tech Syndicate</a>
+      <ul>
+        <li><a href="#identity-1">Identity</a></li>
+        <li><a href="#leadership-profile-1">Leadership Profile</a></li>
+        <li><a href="#faction-structure-1">Faction Structure</a></li>
+        <li><a href="#key-npcs-1">Key NPCs</a></li>
+        <li><a href="#reputation-system-1">Reputation System</a></li>
+        <li><a href="#unique-items">Unique Items</a></li>
+      </ul>
+    </li>
+    <li><a href="#-underground-network">🤝 Underground Network</a>
+      <ul>
+        <li><a href="#identity-2">Identity</a></li>
+        <li><a href="#leadership-profile-2">Leadership Profile</a></li>
+        <li><a href="#faction-structure-2">Faction Structure</a></li>
+        <li><a href="#key-npcs-2">Key NPCs</a></li>
+        <li><a href="#reputation-system-2">Reputation System</a></li>
+        <li><a href="#unique-items-1">Unique Items</a></li>
+      </ul>
+    </li>
+    <li><a href="#-peacekeepers">🛡️ Peacekeepers</a>
+      <ul>
+        <li><a href="#identity-3">Identity</a></li>
+        <li><a href="#leadership-profile-3">Leadership Profile</a></li>
+        <li><a href="#faction-structure-3">Faction Structure</a></li>
+        <li><a href="#key-npcs-3">Key NPCs</a></li>
+        <li><a href="#reputation-system-3">Reputation System</a></li>
+        <li><a href="#unique-items-2">Unique Items</a></li>
+      </ul>
+    </li>
+    <li><a href="#-faction-comparison-summary">📊 Faction Comparison Summary</a></li>
+  </ul>
+</nav>
+
+
+
+    </div>
+  </aside>
+  
+ 
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

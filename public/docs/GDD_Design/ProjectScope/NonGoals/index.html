@@ -1,0 +1,2767 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=52224&amp;path=livereload" data-no-instant defer></script>
+  <!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Non-Goals &amp; Explicit Exclusions#← Back to Index | Next: Overview →
+🚫 Purpose of This Document#Why define what we WON’T do?
+This document explicitly states features, systems, and approaches that are intentionally excluded from the game. This prevents:
+Scope creep - “Why don’t we just add X?” Design drift - Losing focus on core pillars Resource waste - Building things that don’t fit Team confusion - Everyone understands boundaries Important: Non-goals are not “never” - they’re “not now and not a priority.” Some may be reconsidered post-launch based on data.
+">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:52224/docs/GDD_Design/ProjectScope/NonGoals/">
+  <meta property="og:site_name" content="Extraction Shooter GDD">
+  <meta property="og:title" content="Extraction Shooter GDD">
+  <meta property="og:description" content="Non-Goals &amp; Explicit Exclusions#← Back to Index | Next: Overview →
+🚫 Purpose of This Document#Why define what we WON’T do?
+This document explicitly states features, systems, and approaches that are intentionally excluded from the game. This prevents:
+Scope creep - “Why don’t we just add X?” Design drift - Losing focus on core pillars Resource waste - Building things that don’t fit Team confusion - Everyone understands boundaries Important: Non-goals are not “never” - they’re “not now and not a priority.” Some may be reconsidered post-launch based on data.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
+
+
+  <meta itemprop="name" content="Extraction Shooter GDD">
+  <meta itemprop="description" content="Non-Goals &amp; Explicit Exclusions#← Back to Index | Next: Overview →
+🚫 Purpose of This Document#Why define what we WON’T do?
+This document explicitly states features, systems, and approaches that are intentionally excluded from the game. This prevents:
+Scope creep - “Why don’t we just add X?” Design drift - Losing focus on core pillars Resource waste - Building things that don’t fit Team confusion - Everyone understands boundaries Important: Non-goals are not “never” - they’re “not now and not a priority.” Some may be reconsidered post-launch based on data.">
+  <meta itemprop="wordCount" content="1295">
+
+<title>Non Goals | Extraction Shooter GDD</title>
+<link rel="icon" href="/favicon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="http://localhost:52224/docs/GDD_Design/ProjectScope/NonGoals/">
+<link rel="stylesheet" href="/book.min.63c8b2b12bbd1ad36428837740ea371dd41fdb9c22b35499003d0dfa4dbce6ba.css" integrity="sha256-Y8iysSu9GtNkKIN3QOo3HdQf25wis1SZAD0N&#43;k285ro=" crossorigin="anonymous">
+
+
+  <script defer src="/fuse.min.js"></script>
+  <script defer src="/en.search.min.58bea27d7a08265548c5a8636a9a9fc844e0eb9d60fc3bb2c53d517da858d4c1.js" integrity="sha256-WL6ifXoIJlVIxahjapqfyETg651g/DuyxT1RfahY1ME=" crossorigin="anonymous"></script>
+
+  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
+
+
+
+  
+</head>
+<body dir="ltr" class="book-kind-page book-type-docs">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    
+<aside class="book-menu">
+  <div class="book-menu-content">
+    
+  <nav>
+    <h2 class="book-brand">
+  <a class="flex align-center" href="/"><img src="/logo.svg" alt="Logo" /><span>Extraction Shooter GDD</span>
+  </a>
+</h2>
+
+    <div class="book-theme-toggle">
+    <input type="checkbox" id="theme-toggle" class="toggle">
+    <label for="theme-toggle" class="flex justify-between items-center cursor-pointer">
+        <span class="text-xs font-semibold">Dark Mode</span>
+        <div
+            class="relative w-10 h-5 bg-gray-200 rounded-full transition-colors duration-200 ease-in-out dark:bg-gray-700">
+            <div
+                class="absolute left-0 w-5 h-5 bg-white rounded-full shadow transform transition-transform duration-200 ease-in-out dark:translate-x-full">
+            </div>
+        </div>
+    </label>
+</div>
+
+<script>
+    (function () {
+        const toggle = document.getElementById('theme-toggle');
+        const html = document.documentElement;
+
+        
+        const savedTheme = localStorage.getItem('theme');
+        const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+        if (savedTheme === 'dark' || (!savedTheme && systemDark)) {
+            html.classList.add('dark');
+            toggle.checked = true;
+        } else {
+            html.classList.remove('dark');
+            toggle.checked = false;
+        }
+
+        
+        toggle.addEventListener('change', function () {
+            if (this.checked) {
+                html.classList.add('dark');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                html.classList.remove('dark');
+                localStorage.setItem('theme', 'light');
+            }
+        });
+    })();
+</script>
+
+<style>
+     
+    .book-theme-toggle {
+        margin: 1rem 0;
+        padding: 0 1rem;
+
+    }
+
+    .book-theme-toggle label {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        cursor: pointer;
+        font-size: 0.85em;
+    }
+
+     
+    .book-theme-toggle input {
+        display: none;
+    }
+
+     
+    .book-theme-toggle label::after {
+        content: "🌙";
+         
+    }
+
+     
+    html:not(.dark) .book-theme-toggle label::after {
+        content: "☀️";
+         
+    }
+</style> 
+    
+<div class="book-search hidden">
+  <input id="book-search-input" type="text" 
+    placeholder="Search"
+    aria-label="Search"
+    maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+    
+
+    
+    
+
+
+
+    
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/" class="">
+      Gdd Design</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      AI</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/AI/EnemyBehavior/" class="">
+      Enemy Behavior</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/AI/FactionBehaviors/" class="">
+      Faction Behaviors</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Audio</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Audio/SoundDesign/" class="">
+      Sound Design</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Audio/Soundscape/" class="">
+      Soundscape</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Audio/TacticalAudio/" class="">
+      Tactical Audio</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Audio/VoiceLines/" class="">
+      Voice Lines</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Characters</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Operators/" class="">
+      Operators</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Assault</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Assault/Blaze/" class="">
+      Blaze</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Assault/Havoc/" class="">
+      Havoc</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Assault/README/" class="">
+      Readme</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Assault/Viper/" class="">
+      Viper</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Recon</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Recon/Phantom/" class="">
+      Phantom</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Recon/README/" class="">
+      Readme</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Recon/Specter/" class="">
+      Specter</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Recon/Wraith/" class="">
+      Wraith</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Specialist</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Specialist/Cipher/" class="">
+      Cipher</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Specialist/Flux/" class="">
+      Flux</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Specialist/README/" class="">
+      Readme</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Support</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Support/Angel/" class="">
+      Angel</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Support/Doc/" class="">
+      Doc</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Support/README/" class="">
+      Readme</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Tank</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Tank/Bulwark/" class="">
+      Bulwark</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Tank/Fortress/" class="">
+      Fortress</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Tank/README/" class="">
+      Readme</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Combat</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Combat/Items/" class="">
+      Items</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Combat/Weapons/" class="">
+      Weapons</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      GameDesign</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Accessibility/" class="">
+      Accessibility</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Controls/" class="">
+      Controls</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/CoreGameplay/" class="">
+      Core Gameplay</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Economy/" class="">
+      Economy</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/GameModes/" class="">
+      Game Modes</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/LiveOps/" class="">
+      Live Ops</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Localization/" class="">
+      Localization</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/NavigationAndMap/" class="">
+      Navigation and Map</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Overview/" class="">
+      Overview</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Progression/" class="">
+      Progression</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/RankedMode/" class="">
+      Ranked Mode</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/TutorialRaid/" class="">
+      Tutorial Raid</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/UserSettings/" class="">
+      User Settings</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Gameplay</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Gameplay/CoreLoop/" class="">
+      Core Loop</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      ProjectScope</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/ProjectScope/DesignPillars/" class="">
+      Design Pillars</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/ProjectScope/MVP/" class="">
+      Mvp</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/ProjectScope/NonGoals/" class="active">
+      Non Goals</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/ProjectScope/Risks/" class="">
+      Risks</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Social</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Social/Multiplayer/" class="">
+      Multiplayer</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Story</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Story/Backstory/" class="">
+      Backstory</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Story/Factions/" class="">
+      Factions</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Story/Narrative/" class="">
+      Narrative</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Story/QuestLines/" class="">
+      Quest Lines</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      UI UX</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/UI_UX/UX_Flows/" class="">
+      Ux Flows</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/UI_UX/Visual_Style/" class="">
+      Visual Style</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Visuals</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Visuals/ArtDirection/" class="">
+      Art Direction</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Visuals/AssetGuidelines/" class="">
+      Asset Guidelines</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Visuals/StyleGuide/" class="">
+      Style Guide</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Visuals/UserInterface/" class="">
+      User Interface</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      World</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/EnvironmentalNarrative/" class="">
+      Environmental Narrative</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/EnvironmentalNarrative_Guidelines/" class="">
+      Environmental Narrative Guidelines</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/LootDistribution/" class="">
+      Loot Distribution</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/MapDesign/" class="">
+      Map Design</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/MapDesign_IndustrialZone/" class="">
+      Map Design Industrial Zone</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/MapDesign_NeonSlums/" class="">
+      Map Design Neon Slums</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/MapDesign_Wilderness/" class="">
+      Map Design Wilderness</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/MapLayouts/" class="">
+      Map Layouts</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/" class="">
+      Gdd Technical</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      AI</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/AI/SensorySystem/" class="">
+      Sensory System</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Core</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Core/Architecture/" class="">
+      Architecture</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Core/CodingStandards/" class="">
+      Coding Standards</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Core/DevelopmentRoadmap/" class="">
+      Development Roadmap</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Core/NetworkingSystem/" class="">
+      Networking System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Core/SecuritySystem/" class="">
+      Security System</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Gameplay</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Gameplay/CharacterSystem/" class="">
+      Character System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Gameplay/ControlSystem/" class="">
+      Control System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Gameplay/InventorySystem/" class="">
+      Inventory System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Gameplay/WeaponSystem/" class="">
+      Weapon System</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Networking</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Networking/LagCompensation/" class="">
+      Lag Compensation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Networking/ReplicationStrategy/" class="">
+      Replication Strategy</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Performance</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Performance/Budgets/" class="">
+      Budgets</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Performance/Optimization/" class="">
+      Optimization</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Security</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Security/AntiCheatStrategy/" class="">
+      Anti Cheat Strategy</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Systems</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/AccessibilitySystem/" class="">
+      Accessibility System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/AISystem/" class="">
+      Aisystem</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/AnalyticsSystem/" class="">
+      Analytics System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/AudioSystem/" class="">
+      Audio System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/BuildPipeline/" class="">
+      Build Pipeline</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/LiveOpsSystem/" class="">
+      Live Ops System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/LocalizationSystem/" class="">
+      Localization System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/MapSystem/" class="">
+      Map System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/NarrativeSystem/" class="">
+      Narrative System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/ProgressionSystem/" class="">
+      Progression System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/RankedSystem/" class="">
+      Ranked System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/SaveSystem/" class="">
+      Save System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/SocialSystem/" class="">
+      Social System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/TutorialSystem/" class="">
+      Tutorial System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/UISystem/" class="">
+      Uisystem</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+</nav>
+
+
+
+
+<script>{ { . | safeJS } }</script>
+
+
+  </div>
+</aside>
+ 
+
+    <div class="book-page">
+      <header class="book-header hidden">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/icons/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <h3>Non Goals</h3>
+
+  <label for="toc-control">
+    
+    <img src="/icons/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#-purpose-of-this-document">🚫 Purpose of This Document</a></li>
+    <li><a href="#-gameplay-non-goals">❌ Gameplay Non-Goals</a>
+      <ul>
+        <li><a href="#we-are-not-building-a-battle-royale">We Are NOT Building a Battle Royale</a></li>
+        <li><a href="#we-are-not-building-an-mmorpg">We Are NOT Building an MMORPG</a></li>
+        <li><a href="#we-are-not-building-an-esport-initially">We Are NOT Building an Esport (Initially)</a></li>
+        <li><a href="#we-are-not-targeting-ultra-realism">We Are NOT Targeting Ultra-Realism</a></li>
+        <li><a href="#we-are-not-adding-vehicles-initially">We Are NOT Adding Vehicles (Initially)</a></li>
+        <li><a href="#we-are-not-building-base-building">We Are NOT Building Base Building</a></li>
+      </ul>
+    </li>
+    <li><a href="#-monetization-non-goals">❌ Monetization Non-Goals</a>
+      <ul>
+        <li><a href="#we-will-not-sell-gameplay-advantage">We Will NOT Sell Gameplay Advantage</a></li>
+        <li><a href="#we-will-not-have-loot-boxes-randomized-purchases">We Will NOT Have Loot Boxes (Randomized Purchases)</a></li>
+        <li><a href="#we-will-not-have-energy-systems">We Will NOT Have Energy Systems</a></li>
+        <li><a href="#we-will-not-have-forced-ads">We Will NOT Have Forced Ads</a></li>
+      </ul>
+    </li>
+    <li><a href="#-technical-non-goals">❌ Technical Non-Goals</a>
+      <ul>
+        <li><a href="#we-are-not-supporting-ancient-devices">We Are NOT Supporting Ancient Devices</a></li>
+        <li><a href="#we-are-not-building-offline-mode">We Are NOT Building Offline Mode</a></li>
+        <li><a href="#we-are-not-native-on-all-platforms-initially">We Are NOT Native on All Platforms Initially</a></li>
+      </ul>
+    </li>
+    <li><a href="#-content-non-goals">❌ Content Non-Goals</a>
+      <ul>
+        <li><a href="#we-are-not-pursuing-licensingip-crossovers">We Are NOT Pursuing Licensing/IP Crossovers</a></li>
+        <li><a href="#we-are-not-creating-player-generated-content">We Are NOT Creating Player-Generated Content</a></li>
+        <li><a href="#we-are-not-doing-extensive-voice-acting">We Are NOT Doing Extensive Voice Acting</a></li>
+      </ul>
+    </li>
+    <li><a href="#-socialcommunity-non-goals">❌ Social/Community Non-Goals</a>
+      <ul>
+        <li><a href="#we-are-not-building-social-media">We Are NOT Building Social Media</a></li>
+        <li><a href="#we-are-not-allowing-real-money-trading">We Are NOT Allowing Real-Money Trading</a></li>
+      </ul>
+    </li>
+    <li><a href="#-non-goal-review-process">📋 Non-Goal Review Process</a>
+      <ul>
+        <li><a href="#adding-to-non-goals">Adding to Non-Goals</a></li>
+        <li><a href="#reconsidering-non-goals">Reconsidering Non-Goals</a></li>
+      </ul>
+    </li>
+    <li><a href="#-trade-off-principles">⚖️ Trade-Off Principles</a></li>
+    <li><a href="#-summary-table">🗂️ Summary Table</a></li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><h1 id="non-goals--explicit-exclusions">Non-Goals &amp; Explicit Exclusions<a class="anchor" href="#non-goals--explicit-exclusions">#</a></h1>
+<p><strong><a href="../README.md">← Back to Index</a></strong> | <strong><a href="../GameDesign/Overview.md">Next: Overview →</a></strong></p>
+<hr>
+<h2 id="-purpose-of-this-document">🚫 Purpose of This Document<a class="anchor" href="#-purpose-of-this-document">#</a></h2>
+<p><strong>Why define what we WON&rsquo;T do?</strong></p>
+<p>This document explicitly states features, systems, and approaches that are <strong>intentionally excluded</strong> from the game. This prevents:</p>
+<ul>
+<li><strong>Scope creep</strong> - &ldquo;Why don&rsquo;t we just add X?&rdquo;</li>
+<li><strong>Design drift</strong> - Losing focus on core pillars</li>
+<li><strong>Resource waste</strong> - Building things that don&rsquo;t fit</li>
+<li><strong>Team confusion</strong> - Everyone understands boundaries</li>
+</ul>
+<p><strong>Important:</strong> Non-goals are not &ldquo;never&rdquo; - they&rsquo;re &ldquo;not now and not a priority.&rdquo; Some may be reconsidered post-launch based on data.</p>
+<hr>
+<h2 id="-gameplay-non-goals">❌ Gameplay Non-Goals<a class="anchor" href="#-gameplay-non-goals">#</a></h2>
+<h3 id="we-are-not-building-a-battle-royale">We Are NOT Building a Battle Royale<a class="anchor" href="#we-are-not-building-a-battle-royale">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Aspect</th>
+          <th style="text-align: left">Our Game</th>
+          <th style="text-align: left">Battle Royale</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Player count</td>
+          <td style="text-align: left">15-20</td>
+          <td style="text-align: left">100+</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Win condition</td>
+          <td style="text-align: left">Extract with loot</td>
+          <td style="text-align: left">Be last alive</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Match structure</td>
+          <td style="text-align: left">Enter/exit anytime</td>
+          <td style="text-align: left">Single elimination</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Loadout</td>
+          <td style="text-align: left">Bring your own</td>
+          <td style="text-align: left">Find in-match</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Progression</td>
+          <td style="text-align: left">Persistent</td>
+          <td style="text-align: left">Per-match reset</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Why not:</strong></p>
+<ul>
+<li>Market saturated with BRs</li>
+<li>Different core fantasy</li>
+<li>Technical complexity not justified</li>
+<li>Our extraction loop is the differentiator</li>
+</ul>
+<p><strong>Decision status:</strong> ✅ Final - Will not change</p>
+<hr>
+<h3 id="we-are-not-building-an-mmorpg">We Are NOT Building an MMORPG<a class="anchor" href="#we-are-not-building-an-mmorpg">#</a></h3>
+<p><strong>Excluded features:</strong></p>
+<ul>
+<li>❌ Persistent open world (instance-based instead)</li>
+<li>❌ Massive player counts in same space</li>
+<li>❌ World bosses requiring 50+ players</li>
+<li>❌ Player housing/persistent bases</li>
+<li>❌ Deep crafting with gathering professions</li>
+<li>❌ Story-driven questing as primary content</li>
+</ul>
+<p><strong>Why not:</strong></p>
+<ul>
+<li>Scope explosion</li>
+<li>Mobile performance/battery concerns</li>
+<li>Session time mismatch (10-15 min vs hours)</li>
+<li>Different audience expectations</li>
+</ul>
+<p><strong>Decision status:</strong> ✅ Final</p>
+<hr>
+<h3 id="we-are-not-building-an-esport-initially">We Are NOT Building an Esport (Initially)<a class="anchor" href="#we-are-not-building-an-esport-initially">#</a></h3>
+<p><strong>Excluded at launch:</strong></p>
+<ul>
+<li>❌ Spectator mode (add post-launch)</li>
+<li>❌ Tournament infrastructure</li>
+<li>❌ Official competitive leagues</li>
+<li>❌ LAN event support</li>
+<li>❌ Detailed replay system</li>
+</ul>
+<p><strong>Why not:</strong></p>
+<ul>
+<li>Launch focus is on core game</li>
+<li>Esport features expensive to build well</li>
+<li>Must prove game success first</li>
+<li>Community must grow organically</li>
+</ul>
+<p><strong>Decision status:</strong> 🟡 Deferred to Year 2+</p>
+<hr>
+<h3 id="we-are-not-targeting-ultra-realism">We Are NOT Targeting Ultra-Realism<a class="anchor" href="#we-are-not-targeting-ultra-realism">#</a></h3>
+<p><strong>Excluded approaches:</strong></p>
+<ul>
+<li>❌ Simulation-level weapon ballistics</li>
+<li>❌ Complex medical system (EFT-style surgery)</li>
+<li>❌ Realistic magazine management</li>
+<li>❌ Permanent character injury</li>
+<li>❌ Hunger/thirst survival mechanics</li>
+</ul>
+<p><strong>Why not:</strong></p>
+<ul>
+<li>Mobile audience preference for accessibility</li>
+<li>Session time constraints</li>
+<li>Steep learning curve hurts retention</li>
+<li>We want &ldquo;tactical&rdquo; not &ldquo;tedious&rdquo;</li>
+</ul>
+<p><strong>Decision status:</strong> ✅ Final</p>
+<hr>
+<h3 id="we-are-not-adding-vehicles-initially">We Are NOT Adding Vehicles (Initially)<a class="anchor" href="#we-are-not-adding-vehicles-initially">#</a></h3>
+<p><strong>Excluded:</strong></p>
+<ul>
+<li>❌ Drivable vehicles</li>
+<li>❌ Vehicle combat</li>
+<li>❌ Vehicle customization</li>
+</ul>
+<p><strong>Why not:</strong></p>
+<ul>
+<li>Map size doesn&rsquo;t require vehicles</li>
+<li>Physics complexity on mobile</li>
+<li>Balance implications with extraction</li>
+<li>Dev time better spent elsewhere</li>
+</ul>
+<p><strong>Decision status:</strong> 🟡 Consider for large desert map (Season 4+)</p>
+<hr>
+<h3 id="we-are-not-building-base-building">We Are NOT Building Base Building<a class="anchor" href="#we-are-not-building-base-building">#</a></h3>
+<p><strong>Excluded:</strong></p>
+<ul>
+<li>❌ Player-constructed structures</li>
+<li>❌ Fortification mechanics</li>
+<li>❌ Clan bases/hideouts</li>
+</ul>
+<p><strong>Why not:</strong></p>
+<ul>
+<li>Significantly increases scope</li>
+<li>Server/persistence complexity</li>
+<li>Doesn&rsquo;t fit extraction loop</li>
+<li>Fortnite already owns this space</li>
+</ul>
+<p><strong>Decision status:</strong> ✅ Final</p>
+<hr>
+<h2 id="-monetization-non-goals">❌ Monetization Non-Goals<a class="anchor" href="#-monetization-non-goals">#</a></h2>
+<h3 id="we-will-not-sell-gameplay-advantage">We Will NOT Sell Gameplay Advantage<a class="anchor" href="#we-will-not-sell-gameplay-advantage">#</a></h3>
+<p><strong>Explicitly NOT for sale:</strong></p>
+<ul>
+<li>❌ Weapons with better stats</li>
+<li>❌ Armor with better protection</li>
+<li>❌ Operator stat boosts</li>
+<li>❌ Reduced matchmaking times for money</li>
+<li>❌ Better loot chance for payers</li>
+<li>❌ Extra protected slots for money (only credits)</li>
+</ul>
+<p><strong>Why not:</strong></p>
+<ul>
+<li>Destroys competitive integrity</li>
+<li>Community backlash guaranteed</li>
+<li>Long-term player value &gt; short-term revenue</li>
+<li>This is a non-negotiable pillar</li>
+</ul>
+<p><strong>Decision status:</strong> ✅ Final - Red line</p>
+<hr>
+<h3 id="we-will-not-have-loot-boxes-randomized-purchases">We Will NOT Have Loot Boxes (Randomized Purchases)<a class="anchor" href="#we-will-not-have-loot-boxes-randomized-purchases">#</a></h3>
+<p><strong>Excluded:</strong></p>
+<ul>
+<li>❌ Blind random item boxes for real money</li>
+<li>❌ Gacha-style character pulls</li>
+<li>❌ Mystery bundles</li>
+</ul>
+<p><strong>What we DO have:</strong></p>
+<ul>
+<li>✅ Battle Pass (known rewards)</li>
+<li>✅ Direct purchase cosmetics</li>
+<li>✅ Occasional free random rewards (gameplay only)</li>
+</ul>
+<p><strong>Why not:</strong></p>
+<ul>
+<li>Legal issues in multiple regions</li>
+<li>Ethical concerns</li>
+<li>Negative player perception</li>
+<li>Transparent model builds trust</li>
+</ul>
+<p><strong>Decision status:</strong> ✅ Final</p>
+<hr>
+<h3 id="we-will-not-have-energy-systems">We Will NOT Have Energy Systems<a class="anchor" href="#we-will-not-have-energy-systems">#</a></h3>
+<p><strong>Excluded:</strong></p>
+<ul>
+<li>❌ Limited plays per day</li>
+<li>❌ Lives that regenerate over time</li>
+<li>❌ Pay-to-play-more mechanics</li>
+</ul>
+<p><strong>Why not:</strong></p>
+<ul>
+<li>Players should play as much as they want</li>
+<li>Energy systems are frustrating</li>
+<li>Revenue comes from engagement, not gating</li>
+</ul>
+<p><strong>Decision status:</strong> ✅ Final</p>
+<hr>
+<h3 id="we-will-not-have-forced-ads">We Will NOT Have Forced Ads<a class="anchor" href="#we-will-not-have-forced-ads">#</a></h3>
+<p><strong>Excluded:</strong></p>
+<ul>
+<li>❌ Interstitial ads between matches</li>
+<li>❌ Ads required for core gameplay</li>
+<li>❌ Banner ads in gameplay</li>
+</ul>
+<p><strong>What we MIGHT have:</strong></p>
+<ul>
+<li>⚠️ Optional rewarded ads (watch for small bonus)</li>
+<li>Only in specific contexts (post-match, daily reward)</li>
+</ul>
+<p><strong>Why not:</strong></p>
+<ul>
+<li>Premium experience expectation</li>
+<li>Ads destroy immersion</li>
+<li>Whales won&rsquo;t tolerate ads</li>
+</ul>
+<p><strong>Decision status:</strong> ✅ Final</p>
+<hr>
+<h2 id="-technical-non-goals">❌ Technical Non-Goals<a class="anchor" href="#-technical-non-goals">#</a></h2>
+<h3 id="we-are-not-supporting-ancient-devices">We Are NOT Supporting Ancient Devices<a class="anchor" href="#we-are-not-supporting-ancient-devices">#</a></h3>
+<p><strong>Minimum specs (firm):</strong></p>
+<ul>
+<li>Android: 3GB RAM, Snapdragon 660 equivalent, Android 8.0+</li>
+<li>iOS: iPhone 8 / iPad 6th gen or newer, iOS 14+</li>
+</ul>
+<p><strong>NOT supported:</strong></p>
+<ul>
+<li>❌ Devices below 3GB RAM</li>
+<li>❌ Android 7.x or below</li>
+<li>❌ iPhone 7 or older</li>
+<li>❌ Devices without OpenGL ES 3.0</li>
+</ul>
+<p><strong>Why not:</strong></p>
+<ul>
+<li>Performance compromises hurt everyone</li>
+<li>Diminishing returns chasing old hardware</li>
+<li>Security concerns with old OS</li>
+<li>Future-proofing the codebase</li>
+</ul>
+<p><strong>Decision status:</strong> ✅ Final</p>
+<hr>
+<h3 id="we-are-not-building-offline-mode">We Are NOT Building Offline Mode<a class="anchor" href="#we-are-not-building-offline-mode">#</a></h3>
+<p><strong>Excluded:</strong></p>
+<ul>
+<li>❌ Single-player offline play</li>
+<li>❌ Play without internet</li>
+<li>❌ Local multiplayer</li>
+</ul>
+<p><strong>Why not:</strong></p>
+<ul>
+<li>Anti-cheat requires server authority</li>
+<li>Progression must be verified</li>
+<li>Core experience is multiplayer</li>
+<li>Data sync complexity not worth it</li>
+</ul>
+<p><strong>Decision status:</strong> ✅ Final</p>
+<hr>
+<h3 id="we-are-not-native-on-all-platforms-initially">We Are NOT Native on All Platforms Initially<a class="anchor" href="#we-are-not-native-on-all-platforms-initially">#</a></h3>
+<p><strong>Launch platforms:</strong></p>
+<ul>
+<li>✅ Android (Google Play)</li>
+<li>✅ iOS (App Store)</li>
+<li>⏳ PC (Epic/Steam) - Post-launch</li>
+</ul>
+<p><strong>NOT at launch:</strong></p>
+<ul>
+<li>❌ Console (PlayStation, Xbox, Switch)</li>
+<li>❌ Web version</li>
+<li>❌ Mac native</li>
+</ul>
+<p><strong>Why not:</strong></p>
+<ul>
+<li>Focus resources on core platforms</li>
+<li>Console certification is expensive/slow</li>
+<li>Mobile-first means mobile quality first</li>
+</ul>
+<p><strong>Decision status:</strong> 🟡 Console considered for Year 2</p>
+<hr>
+<h2 id="-content-non-goals">❌ Content Non-Goals<a class="anchor" href="#-content-non-goals">#</a></h2>
+<h3 id="we-are-not-pursuing-licensingip-crossovers">We Are NOT Pursuing Licensing/IP Crossovers<a class="anchor" href="#we-are-not-pursuing-licensingip-crossovers">#</a></h3>
+<p><strong>Excluded:</strong></p>
+<ul>
+<li>❌ Movie/TV character skins</li>
+<li>❌ Other game character crossovers</li>
+<li>❌ Celebrity athlete partnerships</li>
+<li>❌ Brand collaborations (energy drinks, etc.)</li>
+</ul>
+<p><strong>Why not:</strong></p>
+<ul>
+<li>Expensive licensing fees</li>
+<li>Potential lore conflicts</li>
+<li>Dependency on external partners</li>
+<li>Want to build our own IP value</li>
+</ul>
+<p><strong>Decision status:</strong> 🟡 Reconsider after Year 1 success</p>
+<hr>
+<h3 id="we-are-not-creating-player-generated-content">We Are NOT Creating Player-Generated Content<a class="anchor" href="#we-are-not-creating-player-generated-content">#</a></h3>
+<p><strong>Excluded:</strong></p>
+<ul>
+<li>❌ Custom maps</li>
+<li>❌ Mod support</li>
+<li>❌ User-created skins</li>
+<li>❌ Workshop/marketplace</li>
+</ul>
+<p><strong>Why not:</strong></p>
+<ul>
+<li>QA nightmare on mobile</li>
+<li>Moderation requirements massive</li>
+<li>Technical complexity</li>
+<li>Security vulnerabilities</li>
+</ul>
+<p><strong>Decision status:</strong> ✅ Final for mobile</p>
+<hr>
+<h3 id="we-are-not-doing-extensive-voice-acting">We Are NOT Doing Extensive Voice Acting<a class="anchor" href="#we-are-not-doing-extensive-voice-acting">#</a></h3>
+<p><strong>Excluded:</strong></p>
+<ul>
+<li>❌ Full narrative voice acting</li>
+<li>❌ Voiced quest dialogues</li>
+<li>❌ NPC conversations</li>
+</ul>
+<p><strong>What we DO have:</strong></p>
+<ul>
+<li>✅ Operator combat callouts</li>
+<li>✅ Tutorial narration</li>
+<li>✅ Announcer voice</li>
+</ul>
+<p><strong>Why not:</strong></p>
+<ul>
+<li>Budget constraints</li>
+<li>Localization multiplication</li>
+<li>Download size concerns</li>
+<li>Text is more flexible</li>
+</ul>
+<p><strong>Decision status:</strong> ✅ Final for launch</p>
+<hr>
+<h2 id="-socialcommunity-non-goals">❌ Social/Community Non-Goals<a class="anchor" href="#-socialcommunity-non-goals">#</a></h2>
+<h3 id="we-are-not-building-social-media">We Are NOT Building Social Media<a class="anchor" href="#we-are-not-building-social-media">#</a></h3>
+<p><strong>Excluded:</strong></p>
+<ul>
+<li>❌ In-game feed/timeline</li>
+<li>❌ Public profiles with posts</li>
+<li>❌ Following/followers system</li>
+<li>❌ Content sharing within game</li>
+</ul>
+<p><strong>Why not:</strong></p>
+<ul>
+<li>Moderation nightmare</li>
+<li>Liability concerns</li>
+<li>Distracts from gameplay</li>
+<li>Use existing platforms instead</li>
+</ul>
+<p><strong>Decision status:</strong> ✅ Final</p>
+<hr>
+<h3 id="we-are-not-allowing-real-money-trading">We Are NOT Allowing Real-Money Trading<a class="anchor" href="#we-are-not-allowing-real-money-trading">#</a></h3>
+<p><strong>Excluded:</strong></p>
+<ul>
+<li>❌ Player-to-player item sales for cash</li>
+<li>❌ Official marketplace for real money</li>
+<li>❌ NFTs or blockchain items</li>
+</ul>
+<p><strong>Why not:</strong></p>
+<ul>
+<li>Legal complexity (gambling, securities)</li>
+<li>Black market encouragement</li>
+<li>Exploit incentive for hackers</li>
+<li>Damages economy design</li>
+</ul>
+<p><strong>Decision status:</strong> ✅ Final - Red line</p>
+<hr>
+<h2 id="-non-goal-review-process">📋 Non-Goal Review Process<a class="anchor" href="#-non-goal-review-process">#</a></h2>
+<h3 id="adding-to-non-goals">Adding to Non-Goals<a class="anchor" href="#adding-to-non-goals">#</a></h3>
+<ol>
+<li>Feature request identified</li>
+<li>Evaluate against design pillars</li>
+<li>Assess scope/resource impact</li>
+<li>Team discussion</li>
+<li>If rejected: Add to Non-Goals with rationale</li>
+<li>Communicate to team</li>
+</ol>
+<h3 id="reconsidering-non-goals">Reconsidering Non-Goals<a class="anchor" href="#reconsidering-non-goals">#</a></h3>
+<p>Non-goals can be reconsidered when:</p>
+<ul>
+<li>Market conditions change significantly</li>
+<li>Post-launch data suggests opportunity</li>
+<li>Technical constraints are resolved</li>
+<li>Resources become available</li>
+<li>Community demand is overwhelming AND aligned with vision</li>
+</ul>
+<p><strong>Review frequency:</strong> Quarterly</p>
+<hr>
+<h2 id="-trade-off-principles">⚖️ Trade-Off Principles<a class="anchor" href="#-trade-off-principles">#</a></h2>
+<p>When facing choices, we prioritize:</p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Priority</th>
+          <th style="text-align: left">Over</th>
+          <th style="text-align: left">Rationale</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Core loop quality</td>
+          <td style="text-align: left">More features</td>
+          <td style="text-align: left">Fun first, breadth later</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Mobile experience</td>
+          <td style="text-align: left">PC parity</td>
+          <td style="text-align: left">Mobile-first philosophy</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Player fairness</td>
+          <td style="text-align: left">Revenue</td>
+          <td style="text-align: left">Trust is our currency</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Launch quality</td>
+          <td style="text-align: left">Launch date</td>
+          <td style="text-align: left">Better to delay than fail</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Team health</td>
+          <td style="text-align: left">Crunch</td>
+          <td style="text-align: left">Sustainable pace wins long-term</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="-summary-table">🗂️ Summary Table<a class="anchor" href="#-summary-table">#</a></h2>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Non-Goal</th>
+          <th style="text-align: left">Category</th>
+          <th style="text-align: left">Status</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Battle Royale mode</td>
+          <td style="text-align: left">Gameplay</td>
+          <td style="text-align: left">✅ Final</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">MMO features</td>
+          <td style="text-align: left">Gameplay</td>
+          <td style="text-align: left">✅ Final</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Esport infrastructure</td>
+          <td style="text-align: left">Gameplay</td>
+          <td style="text-align: left">🟡 Deferred</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Ultra-realism</td>
+          <td style="text-align: left">Gameplay</td>
+          <td style="text-align: left">✅ Final</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Vehicles</td>
+          <td style="text-align: left">Gameplay</td>
+          <td style="text-align: left">🟡 Deferred</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Base building</td>
+          <td style="text-align: left">Gameplay</td>
+          <td style="text-align: left">✅ Final</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Pay-to-win</td>
+          <td style="text-align: left">Monetization</td>
+          <td style="text-align: left">✅ Red Line</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Loot boxes</td>
+          <td style="text-align: left">Monetization</td>
+          <td style="text-align: left">✅ Final</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Energy systems</td>
+          <td style="text-align: left">Monetization</td>
+          <td style="text-align: left">✅ Final</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Forced ads</td>
+          <td style="text-align: left">Monetization</td>
+          <td style="text-align: left">✅ Final</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Ancient device support</td>
+          <td style="text-align: left">Technical</td>
+          <td style="text-align: left">✅ Final</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Offline mode</td>
+          <td style="text-align: left">Technical</td>
+          <td style="text-align: left">✅ Final</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Console launch</td>
+          <td style="text-align: left">Technical</td>
+          <td style="text-align: left">🟡 Deferred</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">IP crossovers</td>
+          <td style="text-align: left">Content</td>
+          <td style="text-align: left">🟡 Deferred</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">User-generated content</td>
+          <td style="text-align: left">Content</td>
+          <td style="text-align: left">✅ Final</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Extensive voice acting</td>
+          <td style="text-align: left">Content</td>
+          <td style="text-align: left">✅ Final</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Social media features</td>
+          <td style="text-align: left">Social</td>
+          <td style="text-align: left">✅ Final</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Real-money trading</td>
+          <td style="text-align: left">Social</td>
+          <td style="text-align: left">✅ Red Line</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<p><strong><a href="../README.md">← Back to Index</a></strong> | <strong><a href="../GameDesign/Overview.md">Next: Overview →</a></strong></p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+<div>
+
+</div>
+
+<div>
+
+</div>
+
+</div>
+
+
+
+
+
+  
+  
+  
+  <div class="flex flex-wrap justify-between">
+    <span>
+    
+      <a href="/docs/GDD_Design/ProjectScope/MVP/" class="flex align-center">
+        <img src="/icons/backward.svg" class="book-icon" alt="Backward" />
+        <span>Mvp</span>
+      </a>
+    
+    </span>
+    <span>
+    
+      <a href="/docs/GDD_Design/ProjectScope/Risks/" class="flex align-center">
+        <span>Risks</span>
+        <img src="/icons/forward.svg" class="book-icon" alt="Forward" />
+      </a>
+    
+    </span>
+  </div>
+  
+
+
+ 
+        
+  
+ 
+        
+        
+  
+ 
+        
+  
+  
+    <script>(function(){document.querySelectorAll("pre:has(code)").forEach(e=>{e.addEventListener("click",e.focus),e.addEventListener("copy",function(t){if(t.preventDefault(),navigator.clipboard){const t=window.getSelection().toString()||e.textContent;navigator.clipboard.writeText(t)}})})})()</script>
+  
+
+      </footer>
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+  
+  <aside class="book-toc">
+    <div class="book-toc-content">
+      
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#-purpose-of-this-document">🚫 Purpose of This Document</a></li>
+    <li><a href="#-gameplay-non-goals">❌ Gameplay Non-Goals</a>
+      <ul>
+        <li><a href="#we-are-not-building-a-battle-royale">We Are NOT Building a Battle Royale</a></li>
+        <li><a href="#we-are-not-building-an-mmorpg">We Are NOT Building an MMORPG</a></li>
+        <li><a href="#we-are-not-building-an-esport-initially">We Are NOT Building an Esport (Initially)</a></li>
+        <li><a href="#we-are-not-targeting-ultra-realism">We Are NOT Targeting Ultra-Realism</a></li>
+        <li><a href="#we-are-not-adding-vehicles-initially">We Are NOT Adding Vehicles (Initially)</a></li>
+        <li><a href="#we-are-not-building-base-building">We Are NOT Building Base Building</a></li>
+      </ul>
+    </li>
+    <li><a href="#-monetization-non-goals">❌ Monetization Non-Goals</a>
+      <ul>
+        <li><a href="#we-will-not-sell-gameplay-advantage">We Will NOT Sell Gameplay Advantage</a></li>
+        <li><a href="#we-will-not-have-loot-boxes-randomized-purchases">We Will NOT Have Loot Boxes (Randomized Purchases)</a></li>
+        <li><a href="#we-will-not-have-energy-systems">We Will NOT Have Energy Systems</a></li>
+        <li><a href="#we-will-not-have-forced-ads">We Will NOT Have Forced Ads</a></li>
+      </ul>
+    </li>
+    <li><a href="#-technical-non-goals">❌ Technical Non-Goals</a>
+      <ul>
+        <li><a href="#we-are-not-supporting-ancient-devices">We Are NOT Supporting Ancient Devices</a></li>
+        <li><a href="#we-are-not-building-offline-mode">We Are NOT Building Offline Mode</a></li>
+        <li><a href="#we-are-not-native-on-all-platforms-initially">We Are NOT Native on All Platforms Initially</a></li>
+      </ul>
+    </li>
+    <li><a href="#-content-non-goals">❌ Content Non-Goals</a>
+      <ul>
+        <li><a href="#we-are-not-pursuing-licensingip-crossovers">We Are NOT Pursuing Licensing/IP Crossovers</a></li>
+        <li><a href="#we-are-not-creating-player-generated-content">We Are NOT Creating Player-Generated Content</a></li>
+        <li><a href="#we-are-not-doing-extensive-voice-acting">We Are NOT Doing Extensive Voice Acting</a></li>
+      </ul>
+    </li>
+    <li><a href="#-socialcommunity-non-goals">❌ Social/Community Non-Goals</a>
+      <ul>
+        <li><a href="#we-are-not-building-social-media">We Are NOT Building Social Media</a></li>
+        <li><a href="#we-are-not-allowing-real-money-trading">We Are NOT Allowing Real-Money Trading</a></li>
+      </ul>
+    </li>
+    <li><a href="#-non-goal-review-process">📋 Non-Goal Review Process</a>
+      <ul>
+        <li><a href="#adding-to-non-goals">Adding to Non-Goals</a></li>
+        <li><a href="#reconsidering-non-goals">Reconsidering Non-Goals</a></li>
+      </ul>
+    </li>
+    <li><a href="#-trade-off-principles">⚖️ Trade-Off Principles</a></li>
+    <li><a href="#-summary-table">🗂️ Summary Table</a></li>
+  </ul>
+</nav>
+
+
+
+    </div>
+  </aside>
+  
+ 
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

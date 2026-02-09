@@ -1,0 +1,2611 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=52224&amp;path=livereload" data-no-instant defer></script>
+  <!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Style Guide - Art Bible#← Back to Art Direction | Index | Next: Asset Guidelines →
+🎨 Visual Identity Overview#Style Definition#Primary Style: Grounded Neo-Industrial
+REALISTIC ←──────●──────────→ STYLIZED▲Game Position(70% Realistic, 30% Stylized)Characteristics:
+Realistic materials and lighting Stylized readability for top-down perspective Gritty, weathered aesthetic Tech-enhanced with neon accents Post-apocalyptic industrial decay 🖼️ Visual Pillars#Pillar 1: “Decay with Memory”#Concept: A collapsing world that still bears traces of its civilized past.
+">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:52224/docs/GDD_Design/Visuals/StyleGuide/">
+  <meta property="og:site_name" content="Extraction Shooter GDD">
+  <meta property="og:title" content="Extraction Shooter GDD">
+  <meta property="og:description" content="Style Guide - Art Bible#← Back to Art Direction | Index | Next: Asset Guidelines →
+🎨 Visual Identity Overview#Style Definition#Primary Style: Grounded Neo-Industrial
+REALISTIC ←──────●──────────→ STYLIZED▲Game Position(70% Realistic, 30% Stylized)Characteristics:
+Realistic materials and lighting Stylized readability for top-down perspective Gritty, weathered aesthetic Tech-enhanced with neon accents Post-apocalyptic industrial decay 🖼️ Visual Pillars#Pillar 1: “Decay with Memory”#Concept: A collapsing world that still bears traces of its civilized past.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
+
+
+  <meta itemprop="name" content="Extraction Shooter GDD">
+  <meta itemprop="description" content="Style Guide - Art Bible#← Back to Art Direction | Index | Next: Asset Guidelines →
+🎨 Visual Identity Overview#Style Definition#Primary Style: Grounded Neo-Industrial
+REALISTIC ←──────●──────────→ STYLIZED▲Game Position(70% Realistic, 30% Stylized)Characteristics:
+Realistic materials and lighting Stylized readability for top-down perspective Gritty, weathered aesthetic Tech-enhanced with neon accents Post-apocalyptic industrial decay 🖼️ Visual Pillars#Pillar 1: “Decay with Memory”#Concept: A collapsing world that still bears traces of its civilized past.">
+  <meta itemprop="wordCount" content="1218">
+
+<title>Style Guide | Extraction Shooter GDD</title>
+<link rel="icon" href="/favicon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="http://localhost:52224/docs/GDD_Design/Visuals/StyleGuide/">
+<link rel="stylesheet" href="/book.min.63c8b2b12bbd1ad36428837740ea371dd41fdb9c22b35499003d0dfa4dbce6ba.css" integrity="sha256-Y8iysSu9GtNkKIN3QOo3HdQf25wis1SZAD0N&#43;k285ro=" crossorigin="anonymous">
+
+
+  <script defer src="/fuse.min.js"></script>
+  <script defer src="/en.search.min.58bea27d7a08265548c5a8636a9a9fc844e0eb9d60fc3bb2c53d517da858d4c1.js" integrity="sha256-WL6ifXoIJlVIxahjapqfyETg651g/DuyxT1RfahY1ME=" crossorigin="anonymous"></script>
+
+  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
+
+
+
+  
+</head>
+<body dir="ltr" class="book-kind-page book-type-docs">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    
+<aside class="book-menu">
+  <div class="book-menu-content">
+    
+  <nav>
+    <h2 class="book-brand">
+  <a class="flex align-center" href="/"><img src="/logo.svg" alt="Logo" /><span>Extraction Shooter GDD</span>
+  </a>
+</h2>
+
+    <div class="book-theme-toggle">
+    <input type="checkbox" id="theme-toggle" class="toggle">
+    <label for="theme-toggle" class="flex justify-between items-center cursor-pointer">
+        <span class="text-xs font-semibold">Dark Mode</span>
+        <div
+            class="relative w-10 h-5 bg-gray-200 rounded-full transition-colors duration-200 ease-in-out dark:bg-gray-700">
+            <div
+                class="absolute left-0 w-5 h-5 bg-white rounded-full shadow transform transition-transform duration-200 ease-in-out dark:translate-x-full">
+            </div>
+        </div>
+    </label>
+</div>
+
+<script>
+    (function () {
+        const toggle = document.getElementById('theme-toggle');
+        const html = document.documentElement;
+
+        
+        const savedTheme = localStorage.getItem('theme');
+        const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+        if (savedTheme === 'dark' || (!savedTheme && systemDark)) {
+            html.classList.add('dark');
+            toggle.checked = true;
+        } else {
+            html.classList.remove('dark');
+            toggle.checked = false;
+        }
+
+        
+        toggle.addEventListener('change', function () {
+            if (this.checked) {
+                html.classList.add('dark');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                html.classList.remove('dark');
+                localStorage.setItem('theme', 'light');
+            }
+        });
+    })();
+</script>
+
+<style>
+     
+    .book-theme-toggle {
+        margin: 1rem 0;
+        padding: 0 1rem;
+
+    }
+
+    .book-theme-toggle label {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        cursor: pointer;
+        font-size: 0.85em;
+    }
+
+     
+    .book-theme-toggle input {
+        display: none;
+    }
+
+     
+    .book-theme-toggle label::after {
+        content: "🌙";
+         
+    }
+
+     
+    html:not(.dark) .book-theme-toggle label::after {
+        content: "☀️";
+         
+    }
+</style> 
+    
+<div class="book-search hidden">
+  <input id="book-search-input" type="text" 
+    placeholder="Search"
+    aria-label="Search"
+    maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+    
+
+    
+    
+
+
+
+    
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/" class="">
+      Gdd Design</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      AI</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/AI/EnemyBehavior/" class="">
+      Enemy Behavior</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/AI/FactionBehaviors/" class="">
+      Faction Behaviors</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Audio</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Audio/SoundDesign/" class="">
+      Sound Design</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Audio/Soundscape/" class="">
+      Soundscape</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Audio/TacticalAudio/" class="">
+      Tactical Audio</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Audio/VoiceLines/" class="">
+      Voice Lines</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Characters</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Operators/" class="">
+      Operators</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Assault</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Assault/Blaze/" class="">
+      Blaze</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Assault/Havoc/" class="">
+      Havoc</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Assault/README/" class="">
+      Readme</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Assault/Viper/" class="">
+      Viper</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Recon</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Recon/Phantom/" class="">
+      Phantom</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Recon/README/" class="">
+      Readme</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Recon/Specter/" class="">
+      Specter</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Recon/Wraith/" class="">
+      Wraith</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Specialist</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Specialist/Cipher/" class="">
+      Cipher</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Specialist/Flux/" class="">
+      Flux</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Specialist/README/" class="">
+      Readme</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Support</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Support/Angel/" class="">
+      Angel</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Support/Doc/" class="">
+      Doc</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Support/README/" class="">
+      Readme</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Tank</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Tank/Bulwark/" class="">
+      Bulwark</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Tank/Fortress/" class="">
+      Fortress</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Tank/README/" class="">
+      Readme</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Combat</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Combat/Items/" class="">
+      Items</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Combat/Weapons/" class="">
+      Weapons</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      GameDesign</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Accessibility/" class="">
+      Accessibility</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Controls/" class="">
+      Controls</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/CoreGameplay/" class="">
+      Core Gameplay</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Economy/" class="">
+      Economy</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/GameModes/" class="">
+      Game Modes</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/LiveOps/" class="">
+      Live Ops</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Localization/" class="">
+      Localization</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/NavigationAndMap/" class="">
+      Navigation and Map</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Overview/" class="">
+      Overview</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Progression/" class="">
+      Progression</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/RankedMode/" class="">
+      Ranked Mode</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/TutorialRaid/" class="">
+      Tutorial Raid</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/UserSettings/" class="">
+      User Settings</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Gameplay</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Gameplay/CoreLoop/" class="">
+      Core Loop</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      ProjectScope</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/ProjectScope/DesignPillars/" class="">
+      Design Pillars</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/ProjectScope/MVP/" class="">
+      Mvp</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/ProjectScope/NonGoals/" class="">
+      Non Goals</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/ProjectScope/Risks/" class="">
+      Risks</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Social</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Social/Multiplayer/" class="">
+      Multiplayer</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Story</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Story/Backstory/" class="">
+      Backstory</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Story/Factions/" class="">
+      Factions</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Story/Narrative/" class="">
+      Narrative</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Story/QuestLines/" class="">
+      Quest Lines</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      UI UX</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/UI_UX/UX_Flows/" class="">
+      Ux Flows</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/UI_UX/Visual_Style/" class="">
+      Visual Style</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Visuals</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Visuals/ArtDirection/" class="">
+      Art Direction</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Visuals/AssetGuidelines/" class="">
+      Asset Guidelines</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Visuals/StyleGuide/" class="active">
+      Style Guide</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Visuals/UserInterface/" class="">
+      User Interface</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      World</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/EnvironmentalNarrative/" class="">
+      Environmental Narrative</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/EnvironmentalNarrative_Guidelines/" class="">
+      Environmental Narrative Guidelines</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/LootDistribution/" class="">
+      Loot Distribution</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/MapDesign/" class="">
+      Map Design</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/MapDesign_IndustrialZone/" class="">
+      Map Design Industrial Zone</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/MapDesign_NeonSlums/" class="">
+      Map Design Neon Slums</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/MapDesign_Wilderness/" class="">
+      Map Design Wilderness</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/MapLayouts/" class="">
+      Map Layouts</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/" class="">
+      Gdd Technical</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      AI</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/AI/SensorySystem/" class="">
+      Sensory System</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Core</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Core/Architecture/" class="">
+      Architecture</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Core/CodingStandards/" class="">
+      Coding Standards</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Core/DevelopmentRoadmap/" class="">
+      Development Roadmap</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Core/NetworkingSystem/" class="">
+      Networking System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Core/SecuritySystem/" class="">
+      Security System</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Gameplay</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Gameplay/CharacterSystem/" class="">
+      Character System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Gameplay/ControlSystem/" class="">
+      Control System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Gameplay/InventorySystem/" class="">
+      Inventory System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Gameplay/WeaponSystem/" class="">
+      Weapon System</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Networking</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Networking/LagCompensation/" class="">
+      Lag Compensation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Networking/ReplicationStrategy/" class="">
+      Replication Strategy</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Performance</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Performance/Budgets/" class="">
+      Budgets</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Performance/Optimization/" class="">
+      Optimization</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Security</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Security/AntiCheatStrategy/" class="">
+      Anti Cheat Strategy</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Systems</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/AccessibilitySystem/" class="">
+      Accessibility System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/AISystem/" class="">
+      Aisystem</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/AnalyticsSystem/" class="">
+      Analytics System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/AudioSystem/" class="">
+      Audio System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/BuildPipeline/" class="">
+      Build Pipeline</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/LiveOpsSystem/" class="">
+      Live Ops System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/LocalizationSystem/" class="">
+      Localization System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/MapSystem/" class="">
+      Map System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/NarrativeSystem/" class="">
+      Narrative System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/ProgressionSystem/" class="">
+      Progression System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/RankedSystem/" class="">
+      Ranked System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/SaveSystem/" class="">
+      Save System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/SocialSystem/" class="">
+      Social System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/TutorialSystem/" class="">
+      Tutorial System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/UISystem/" class="">
+      Uisystem</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+</nav>
+
+
+
+
+<script>{ { . | safeJS } }</script>
+
+
+  </div>
+</aside>
+ 
+
+    <div class="book-page">
+      <header class="book-header hidden">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/icons/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <h3>Style Guide</h3>
+
+  <label for="toc-control">
+    
+    <img src="/icons/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#-visual-identity-overview">🎨 Visual Identity Overview</a>
+      <ul>
+        <li><a href="#style-definition">Style Definition</a></li>
+      </ul>
+    </li>
+    <li><a href="#-visual-pillars">🖼️ Visual Pillars</a>
+      <ul>
+        <li><a href="#pillar-1-decay-with-memory">Pillar 1: &ldquo;Decay with Memory&rdquo;</a></li>
+        <li><a href="#pillar-2-tactical-clarity">Pillar 2: &ldquo;Tactical Clarity&rdquo;</a></li>
+        <li><a href="#pillar-3-functional-fashion">Pillar 3: &ldquo;Functional Fashion&rdquo;</a></li>
+      </ul>
+    </li>
+    <li><a href="#-master-color-palette">🎨 Master Color Palette</a>
+      <ul>
+        <li><a href="#core-palette">Core Palette</a></li>
+        <li><a href="#faction-color-schemes">Faction Color Schemes</a></li>
+        <li><a href="#item-rarity-colors">Item Rarity Colors</a></li>
+      </ul>
+    </li>
+    <li><a href="#-lighting-design">💡 Lighting Design</a>
+      <ul>
+        <li><a href="#lighting-philosophy">Lighting Philosophy</a></li>
+        <li><a href="#outdoor-lighting">Outdoor Lighting</a></li>
+        <li><a href="#indoor-lighting">Indoor Lighting</a></li>
+        <li><a href="#zone-specific-lighting-moods">Zone-Specific Lighting Moods</a></li>
+      </ul>
+    </li>
+    <li><a href="#-environment-style-guide">🏙️ Environment Style Guide</a>
+      <ul>
+        <li><a href="#industrial-zone-visual-language">Industrial Zone Visual Language</a></li>
+        <li><a href="#urban-zone-visual-language">Urban Zone Visual Language</a></li>
+        <li><a href="#military-zone-visual-language">Military Zone Visual Language</a></li>
+      </ul>
+    </li>
+    <li><a href="#-character-style-guide">👤 Character Style Guide</a>
+      <ul>
+        <li><a href="#operator-visual-identity">Operator Visual Identity</a></li>
+        <li><a href="#class-visual-distinction">Class Visual Distinction</a></li>
+      </ul>
+    </li>
+    <li><a href="#-weapon-style-guide">🔫 Weapon Style Guide</a>
+      <ul>
+        <li><a href="#weapon-visual-philosophy">Weapon Visual Philosophy</a></li>
+        <li><a href="#attachment-visibility">Attachment Visibility</a></li>
+      </ul>
+    </li>
+    <li><a href="#-composition-guidelines">📐 Composition Guidelines</a>
+      <ul>
+        <li><a href="#top-down-framing">Top-Down Framing</a></li>
+        <li><a href="#readability-zones">Readability Zones</a></li>
+      </ul>
+    </li>
+    <li><a href="#-mood-board-references">🎭 Mood Board References</a>
+      <ul>
+        <li><a href="#visual-inspirations">Visual Inspirations</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><h1 id="style-guide---art-bible">Style Guide - Art Bible<a class="anchor" href="#style-guide---art-bible">#</a></h1>
+<p><strong><a href="./ArtDirection.md">← Back to Art Direction</a></strong> | <strong><a href="../README.md">Index</a></strong> | <strong><a href="./AssetGuidelines.md">Next: Asset Guidelines →</a></strong></p>
+<hr>
+<h2 id="-visual-identity-overview">🎨 Visual Identity Overview<a class="anchor" href="#-visual-identity-overview">#</a></h2>
+<h3 id="style-definition">Style Definition<a class="anchor" href="#style-definition">#</a></h3>
+<p><strong>Primary Style: Grounded Neo-Industrial</strong></p>
+<pre tabindex="0"><code>REALISTIC ←──────●──────────→ STYLIZED
+          ▲
+     Game Position
+     (70% Realistic, 30% Stylized)</code></pre><p><strong>Characteristics:</strong></p>
+<ul>
+<li>Realistic materials and lighting</li>
+<li>Stylized readability for top-down perspective</li>
+<li>Gritty, weathered aesthetic</li>
+<li>Tech-enhanced with neon accents</li>
+<li>Post-apocalyptic industrial decay</li>
+</ul>
+<hr>
+<h2 id="-visual-pillars">🖼️ Visual Pillars<a class="anchor" href="#-visual-pillars">#</a></h2>
+<h3 id="pillar-1-decay-with-memory">Pillar 1: &ldquo;Decay with Memory&rdquo;<a class="anchor" href="#pillar-1-decay-with-memory">#</a></h3>
+<p><strong>Concept:</strong> A collapsing world that still bears traces of its civilized past.</p>
+<p><strong>Visual Elements:</strong></p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Past Glory</th>
+          <th style="text-align: left">Current Decay</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Corporate logos</td>
+          <td style="text-align: left">Faded, broken signage</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Clean architecture</td>
+          <td style="text-align: left">Rust, cracks, overgrowth</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Modern equipment</td>
+          <td style="text-align: left">Abandoned, scavenged</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Organized spaces</td>
+          <td style="text-align: left">Chaotic, looted</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Color Trend:</strong></p>
+<pre tabindex="0"><code>Before:   🟦⬜🟦⬜  (Clean, corporate)
+          ↓
+After:    🟤🟠⬛🟢  (Rust, decay, nature)</code></pre><h3 id="pillar-2-tactical-clarity">Pillar 2: &ldquo;Tactical Clarity&rdquo;<a class="anchor" href="#pillar-2-tactical-clarity">#</a></h3>
+<p><strong>Concept:</strong> Every element must be readable from a top-down perspective.</p>
+<p><strong>Rules:</strong></p>
+<ol>
+<li>Strong silhouettes (recognizable at 50m+)</li>
+<li>Color-coded gameplay elements</li>
+<li>High contrast between player and environment</li>
+<li>Clear visual hierarchy</li>
+</ol>
+<p><strong>Hierarchy:</strong></p>
+<pre tabindex="0"><code>1. [PLAYER]    → Brightest, most saturated
+2. [ENEMIES]   → High contrast red
+3. [LOOT]      → Glowing, color-coded
+4. [COVER]     → Neutral, readable
+5. [BACKGROUND]→ Desaturated, atmospheric</code></pre><h3 id="pillar-3-functional-fashion">Pillar 3: &ldquo;Functional Fashion&rdquo;<a class="anchor" href="#pillar-3-functional-fashion">#</a></h3>
+<p><strong>Concept:</strong> Everything must look like it has a practical purpose.</p>
+<p><strong>Not This:</strong> Fantasy armor, glowing runes, magical effects
+<strong>But This:</strong> Tactical gear, worn equipment, practical modifications</p>
+<p><strong>Material Focus:</strong></p>
+<ul>
+<li>Kevlar, ballistic nylon</li>
+<li>Weathered metal, polymer</li>
+<li>Medical fabrics, pouches</li>
+<li>Tech devices with subtle LEDs</li>
+</ul>
+<hr>
+<h2 id="-master-color-palette">🎨 Master Color Palette<a class="anchor" href="#-master-color-palette">#</a></h2>
+<h3 id="core-palette">Core Palette<a class="anchor" href="#core-palette">#</a></h3>
+<p><strong>Primary Colors (Gameplay Essential):</strong></p>
+<pre tabindex="0"><code>┌─────────────────────────────────────────────┐
+│  PLAYER COLORS                              │
+├─────────────────────────────────────────────┤
+│  🔵 Friendly Blue  │ #3B82F6 │ Team markers │
+│  🔴 Enemy Red      │ #EF4444 │ Hostiles     │
+│  🟡 Neutral Yellow │ #FACC15 │ AI, Objects  │
+│  🟢 Objective Green│ #22C55E │ Goals        │
+└─────────────────────────────────────────────┘</code></pre><p><strong>Environmental Base Colors:</strong></p>
+<pre tabindex="0"><code>┌─────────────────────────────────────────────┐
+│  INDUSTRIAL                                 │
+├─────────────────────────────────────────────┤
+│  Concrete Gray    │ #6B7280 │ Walls, floors │
+│  Rust Orange      │ #D97706 │ Metal decay   │
+│  Safety Yellow    │ #FBBF24 │ Warning signs │
+│  Shadow Blue      │ #1E293B │ Deep shadows  │
+└─────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────┐
+│  URBAN                                      │
+├─────────────────────────────────────────────┤
+│  Brick Red        │ #92400E │ Buildings     │
+│  Faded Paint      │ #94A3B8 │ Walls         │
+│  Asphalt Dark     │ #374151 │ Roads         │
+│  Overgrowth Green │ #166534 │ Nature        │
+└─────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────┐
+│  NATURE                                     │
+├─────────────────────────────────────────────┤
+│  Forest Green     │ #65A30D │ Trees         │
+│  Grass Light      │ #84CC16 │ Ground        │
+│  Earth Brown      │ #78350F │ Dirt          │
+│  Sky Overcast     │ #64748B │ Atmosphere    │
+└─────────────────────────────────────────────┘</code></pre><h3 id="faction-color-schemes">Faction Color Schemes<a class="anchor" href="#faction-color-schemes">#</a></h3>
+<p><strong>Salvage Corps:</strong></p>
+<pre tabindex="0"><code>Primary:   Orange #D97706
+Secondary: Gray #6B7280
+Accent:    Yellow #FBBF24
+Use: Warm, industrial, worker aesthetic</code></pre><p><strong>Tech Syndicate:</strong></p>
+<pre tabindex="0"><code>Primary:   Cyan #06B6D4
+Secondary: Black #111827
+Accent:    White #F9FAFB
+Use: Cold, high-tech, digital aesthetic</code></pre><p><strong>Underground Network:</strong></p>
+<pre tabindex="0"><code>Primary:   Purple #7C3AED
+Secondary: Gold #EAB308
+Accent:    Black #111827
+Use: Mysterious, luxurious, hidden</code></pre><p><strong>Peacekeepers:</strong></p>
+<pre tabindex="0"><code>Primary:   Blue #2563EB
+Secondary: White #F9FAFB
+Accent:    Red #DC2626
+Use: Military, official, authoritative</code></pre><h3 id="item-rarity-colors">Item Rarity Colors<a class="anchor" href="#item-rarity-colors">#</a></h3>
+<pre tabindex="0"><code>COMMON      │ #9CA3AF │ Gray    │ No glow
+UNCOMMON    │ #22C55E │ Green   │ Subtle pulse
+RARE        │ #3B82F6 │ Blue    │ Soft glow
+EPIC        │ #A855F7 │ Purple  │ Medium glow
+LEGENDARY   │ #EAB308 │ Gold    │ Strong glow + particles</code></pre><hr>
+<h2 id="-lighting-design">💡 Lighting Design<a class="anchor" href="#-lighting-design">#</a></h2>
+<h3 id="lighting-philosophy">Lighting Philosophy<a class="anchor" href="#lighting-philosophy">#</a></h3>
+<p><strong>Goals:</strong></p>
+<ol>
+<li>Enhance readability from top-down</li>
+<li>Create atmosphere and mood</li>
+<li>Guide player attention</li>
+<li>Differentiate zones</li>
+</ol>
+<h3 id="outdoor-lighting">Outdoor Lighting<a class="anchor" href="#outdoor-lighting">#</a></h3>
+<p><strong>Primary: Overcast Day (Default)</strong></p>
+<pre tabindex="0"><code>Sun Direction: 45° angle (soft shadows)
+Sun Color: Warm white #FFF7ED
+Intensity: 2.0 (lux)
+Sky: Gray-blue overcast #94A3B8
+Ambient: Cool #E0E7FF
+Shadow Softness: 0.7
+
+Mood: Somber, industrial, realistic</code></pre><p><strong>Secondary: Golden Hour (Events)</strong></p>
+<pre tabindex="0"><code>Sun Direction: Low angle (15°)
+Sun Color: Deep orange #F97316
+Intensity: 1.5
+Sky: Gradient orange → purple
+Shadow Color: Deep blue #1E3A8A
+Shadow Length: Long
+
+Mood: Dramatic, tense, beautiful danger</code></pre><h3 id="indoor-lighting">Indoor Lighting<a class="anchor" href="#indoor-lighting">#</a></h3>
+<p><strong>Industrial Interiors:</strong></p>
+<pre tabindex="0"><code>Primary: Overhead fluorescent (flickering)
+Color: Cool white #F0F9FF with green tint
+Intensity: Variable (broken fixtures)
+Fill: Window light (motivated)
+Accent: Warning lights (orange/red)
+Shadow: High contrast
+
+Mood: Abandoned, unsettling, industrial</code></pre><p><strong>Office/Corporate Interiors:</strong></p>
+<pre tabindex="0"><code>Primary: Soft overhead panels
+Color: Neutral white #FAFAFA
+Intensity: Lower (power issues)
+Fill: Computer screen glow (cyan)
+Accent: Emergency exit signs (green)
+Shadow: Soft
+
+Mood: Corporate decay, eerie quiet</code></pre><p><strong>Underground/Labs:</strong></p>
+<pre tabindex="0"><code>Primary: Emergency lighting only
+Color: Deep red #DC2626 or Cyan #06B6D4
+Intensity: Low, dramatic
+Fill: Equipment glow
+Accent: Hazard lights (yellow pulse)
+Shadow: Very high contrast
+
+Mood: Danger, sci-fi horror, secrets</code></pre><h3 id="zone-specific-lighting-moods">Zone-Specific Lighting Moods<a class="anchor" href="#zone-specific-lighting-moods">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Zone</th>
+          <th style="text-align: left">Light Temp</th>
+          <th style="text-align: left">Key Light</th>
+          <th style="text-align: left">Fill</th>
+          <th style="text-align: left">Mood</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Edge/Forest</td>
+          <td style="text-align: left">5500K</td>
+          <td style="text-align: left">Overcast</td>
+          <td style="text-align: left">Blue ambient</td>
+          <td style="text-align: left">Safe, natural</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Mid/Urban</td>
+          <td style="text-align: left">4500K</td>
+          <td style="text-align: left">Mixed</td>
+          <td style="text-align: left">Warm bounce</td>
+          <td style="text-align: left">Transitional</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Hot/Industrial</td>
+          <td style="text-align: left">4000K</td>
+          <td style="text-align: left">Harsh spots</td>
+          <td style="text-align: left">Orange fill</td>
+          <td style="text-align: left">Dangerous</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Core/Labs</td>
+          <td style="text-align: left">6500K+</td>
+          <td style="text-align: left">Colored</td>
+          <td style="text-align: left">Minimal</td>
+          <td style="text-align: left">Extreme danger</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="-environment-style-guide">🏙️ Environment Style Guide<a class="anchor" href="#-environment-style-guide">#</a></h2>
+<h3 id="industrial-zone-visual-language">Industrial Zone Visual Language<a class="anchor" href="#industrial-zone-visual-language">#</a></h3>
+<p><strong>Key Visual Elements:</strong></p>
+<ul>
+<li>Massive smokestacks (landmark)</li>
+<li>Rusted catwalks and gantries</li>
+<li>Conveyor belts (non-functional)</li>
+<li>Chemical tanks with warning labels</li>
+<li>Graffiti (survivor messages)</li>
+<li>Nature reclaiming (vines, moss)</li>
+</ul>
+<p><strong>Material Palette:</strong></p>
+<pre tabindex="0"><code>60% - Corrugated metal (rusted)
+20% - Concrete (cracked, stained)
+10% - Remnant paint (faded corporate)
+10% - Organic intrusion (plants, mold)</code></pre><h3 id="urban-zone-visual-language">Urban Zone Visual Language<a class="anchor" href="#urban-zone-visual-language">#</a></h3>
+<p><strong>Key Visual Elements:</strong></p>
+<ul>
+<li>High-rise buildings (varied damage)</li>
+<li>Street-level storefronts</li>
+<li>Abandoned vehicles</li>
+<li>Billboard frameworks (empty)</li>
+<li>Public art (damaged)</li>
+<li>Makeshift barricades</li>
+</ul>
+<p><strong>Material Palette:</strong></p>
+<pre tabindex="0"><code>40% - Concrete/brick
+30% - Glass (broken, boarded)
+15% - Asphalt (cracked)
+15% - Nature overgrowth</code></pre><h3 id="military-zone-visual-language">Military Zone Visual Language<a class="anchor" href="#military-zone-visual-language">#</a></h3>
+<p><strong>Key Visual Elements:</strong></p>
+<ul>
+<li>Bunkers and blast walls</li>
+<li>Watchtowers</li>
+<li>Razor wire perimeters</li>
+<li>Camouflage netting</li>
+<li>Vehicle wrecks (military)</li>
+<li>Active defense systems</li>
+</ul>
+<p><strong>Material Palette:</strong></p>
+<pre tabindex="0"><code>50% - Reinforced concrete
+30% - Olive drab metal
+15% - Sandbags/earthworks
+5% - High-tech panels</code></pre><hr>
+<h2 id="-character-style-guide">👤 Character Style Guide<a class="anchor" href="#-character-style-guide">#</a></h2>
+<h3 id="operator-visual-identity">Operator Visual Identity<a class="anchor" href="#operator-visual-identity">#</a></h3>
+<p><strong>Body Proportions:</strong></p>
+<pre tabindex="0"><code>Style: Realistic-heroic hybrid
+Head: 1/7.5 of body (slightly larger for readability)
+Shoulders: 2 heads wide (men), 1.8 heads (women)
+Silhouette: Clear class distinction</code></pre><p><strong>Gear Layering System:</strong></p>
+<pre tabindex="0"><code>Layer 1: Base clothing (undersuit, shirt)
+Layer 2: Primary armor (vest, plates)
+Layer 3: Pouches and equipment
+Layer 4: Accessories (helmet, goggles)
+Layer 5: Backpack (if equipped)</code></pre><h3 id="class-visual-distinction">Class Visual Distinction<a class="anchor" href="#class-visual-distinction">#</a></h3>
+<pre tabindex="0"><code>┌─────────────────────────────────────────────┐
+│ CLASS      │ BUILD    │ KEY VISUAL         │
+├─────────────────────────────────────────────┤
+│ ASSAULT    │ Athletic │ Ammo pouches       │
+│ SUPPORT    │ Medium   │ Medical bag        │
+│ RECON      │ Slim     │ Tech goggles       │
+│ TANK       │ Heavy    │ Shield plates      │
+│ SPECIALIST │ Medium   │ Tool belt          │
+└─────────────────────────────────────────────┘</code></pre><hr>
+<h2 id="-weapon-style-guide">🔫 Weapon Style Guide<a class="anchor" href="#-weapon-style-guide">#</a></h2>
+<h3 id="weapon-visual-philosophy">Weapon Visual Philosophy<a class="anchor" href="#weapon-visual-philosophy">#</a></h3>
+<p><strong>Principles:</strong></p>
+<ol>
+<li>Grounded in real-world firearms</li>
+<li>Visible wear and personalization</li>
+<li>Clear type identification</li>
+<li>Attachment modularity visible</li>
+</ol>
+<p><strong>Wear Levels:</strong></p>
+<pre tabindex="0"><code>Factory New   - 5% of weapons  - Clean, shiny
+Field-Tested  - 30% of weapons - Minor scratches
+Well-Worn     - 40% of weapons - Visible use marks
+Battle-Scarred- 20% of weapons - Heavy damage
+Veteran       - 5% of weapons  - Heavy wear + custom</code></pre><h3 id="attachment-visibility">Attachment Visibility<a class="anchor" href="#attachment-visibility">#</a></h3>
+<pre tabindex="0"><code>Scope     → Top rail mount (visible profile change)
+Suppressor→ Barrel extension (+30% length)
+Grip      → Underbarrel (silhouette change)
+Magazine  → Body side (size varies by capacity)
+Laser     → Side rail (visible red/green beam)</code></pre><hr>
+<h2 id="-composition-guidelines">📐 Composition Guidelines<a class="anchor" href="#-composition-guidelines">#</a></h2>
+<h3 id="top-down-framing">Top-Down Framing<a class="anchor" href="#top-down-framing">#</a></h3>
+<p><strong>Screen Layout:</strong></p>
+<pre tabindex="0"><code>┌─────────────────────────────────────────┐
+│          SAFE ZONE (UI)                 │
+├─────────────────────────────────────────┤
+│                                         │
+│      FOCUS AREA (Player + Combat)       │
+│           ●──player──●                  │
+│                                         │
+├─────────────────────────────────────────┤
+│          SAFE ZONE (Controls)           │
+└─────────────────────────────────────────┘</code></pre><p><strong>Visual Weight Distribution:</strong></p>
+<ul>
+<li>Center: Player (highest contrast)</li>
+<li>Near: Immediate threats (high contrast)</li>
+<li>Mid: Environment detail (medium contrast)</li>
+<li>Far: Atmosphere (low contrast, fog)</li>
+</ul>
+<h3 id="readability-zones">Readability Zones<a class="anchor" href="#readability-zones">#</a></h3>
+<pre tabindex="0"><code>0-50 units    │ Full detail, all effects
+50-100 units  │ High detail, reduced particles
+100-200 units │ Medium detail, billboard vegetation
+200+ units    │ Low detail, simplified</code></pre><hr>
+<h2 id="-mood-board-references">🎭 Mood Board References<a class="anchor" href="#-mood-board-references">#</a></h2>
+<h3 id="visual-inspirations">Visual Inspirations<a class="anchor" href="#visual-inspirations">#</a></h3>
+<p><strong>Games:</strong></p>
+<ul>
+<li>The Division (urban decay, tactical gear)</li>
+<li>Escape from Tarkov (weapon detail, grit)</li>
+<li>Death Stranding (environment atmosphere)</li>
+<li>Gears Tactics (top-down combat clarity)</li>
+</ul>
+<p><strong>Films:</strong></p>
+<ul>
+<li>Children of Men (near-future decay)</li>
+<li>The Road (post-apocalyptic barren)</li>
+<li>Blade Runner 2049 (lighting, atmosphere)</li>
+<li>District 9 (industrial sci-fi)</li>
+</ul>
+<p><strong>Real-World:</strong></p>
+<ul>
+<li>Chernobyl exclusion zone</li>
+<li>Abandoned industrial zones (Rust Belt)</li>
+<li>Korean DMZ</li>
+<li>Urban exploration photography</li>
+</ul>
+<hr>
+<p><strong><a href="./ArtDirection.md">← Back to Art Direction</a></strong> | <strong><a href="../README.md">Index</a></strong> | <strong><a href="./AssetGuidelines.md">Next: Asset Guidelines →</a></strong></p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+<div>
+
+</div>
+
+<div>
+
+</div>
+
+</div>
+
+
+
+
+
+  
+  
+  
+  <div class="flex flex-wrap justify-between">
+    <span>
+    
+      <a href="/docs/GDD_Design/Visuals/AssetGuidelines/" class="flex align-center">
+        <img src="/icons/backward.svg" class="book-icon" alt="Backward" />
+        <span>Asset Guidelines</span>
+      </a>
+    
+    </span>
+    <span>
+    
+      <a href="/docs/GDD_Design/Visuals/UserInterface/" class="flex align-center">
+        <span>User Interface</span>
+        <img src="/icons/forward.svg" class="book-icon" alt="Forward" />
+      </a>
+    
+    </span>
+  </div>
+  
+
+
+ 
+        
+  
+ 
+        
+        
+  
+ 
+        
+  
+  
+    <script>(function(){document.querySelectorAll("pre:has(code)").forEach(e=>{e.addEventListener("click",e.focus),e.addEventListener("copy",function(t){if(t.preventDefault(),navigator.clipboard){const t=window.getSelection().toString()||e.textContent;navigator.clipboard.writeText(t)}})})})()</script>
+  
+
+      </footer>
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+  
+  <aside class="book-toc">
+    <div class="book-toc-content">
+      
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#-visual-identity-overview">🎨 Visual Identity Overview</a>
+      <ul>
+        <li><a href="#style-definition">Style Definition</a></li>
+      </ul>
+    </li>
+    <li><a href="#-visual-pillars">🖼️ Visual Pillars</a>
+      <ul>
+        <li><a href="#pillar-1-decay-with-memory">Pillar 1: &ldquo;Decay with Memory&rdquo;</a></li>
+        <li><a href="#pillar-2-tactical-clarity">Pillar 2: &ldquo;Tactical Clarity&rdquo;</a></li>
+        <li><a href="#pillar-3-functional-fashion">Pillar 3: &ldquo;Functional Fashion&rdquo;</a></li>
+      </ul>
+    </li>
+    <li><a href="#-master-color-palette">🎨 Master Color Palette</a>
+      <ul>
+        <li><a href="#core-palette">Core Palette</a></li>
+        <li><a href="#faction-color-schemes">Faction Color Schemes</a></li>
+        <li><a href="#item-rarity-colors">Item Rarity Colors</a></li>
+      </ul>
+    </li>
+    <li><a href="#-lighting-design">💡 Lighting Design</a>
+      <ul>
+        <li><a href="#lighting-philosophy">Lighting Philosophy</a></li>
+        <li><a href="#outdoor-lighting">Outdoor Lighting</a></li>
+        <li><a href="#indoor-lighting">Indoor Lighting</a></li>
+        <li><a href="#zone-specific-lighting-moods">Zone-Specific Lighting Moods</a></li>
+      </ul>
+    </li>
+    <li><a href="#-environment-style-guide">🏙️ Environment Style Guide</a>
+      <ul>
+        <li><a href="#industrial-zone-visual-language">Industrial Zone Visual Language</a></li>
+        <li><a href="#urban-zone-visual-language">Urban Zone Visual Language</a></li>
+        <li><a href="#military-zone-visual-language">Military Zone Visual Language</a></li>
+      </ul>
+    </li>
+    <li><a href="#-character-style-guide">👤 Character Style Guide</a>
+      <ul>
+        <li><a href="#operator-visual-identity">Operator Visual Identity</a></li>
+        <li><a href="#class-visual-distinction">Class Visual Distinction</a></li>
+      </ul>
+    </li>
+    <li><a href="#-weapon-style-guide">🔫 Weapon Style Guide</a>
+      <ul>
+        <li><a href="#weapon-visual-philosophy">Weapon Visual Philosophy</a></li>
+        <li><a href="#attachment-visibility">Attachment Visibility</a></li>
+      </ul>
+    </li>
+    <li><a href="#-composition-guidelines">📐 Composition Guidelines</a>
+      <ul>
+        <li><a href="#top-down-framing">Top-Down Framing</a></li>
+        <li><a href="#readability-zones">Readability Zones</a></li>
+      </ul>
+    </li>
+    <li><a href="#-mood-board-references">🎭 Mood Board References</a>
+      <ul>
+        <li><a href="#visual-inspirations">Visual Inspirations</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+    </div>
+  </aside>
+  
+ 
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

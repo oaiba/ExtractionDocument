@@ -1,0 +1,3176 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=52224&amp;path=livereload" data-no-instant defer></script>
+  <!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Accessibility Design#← Back to Index | Next: Controls →
+♿ Accessibility Philosophy#Core Principle: “Everyone should be able to play”
+Accessibility is NOT optional. It’s fundamental game design that:
+Expands audience - More players = more success Improves UX for all - Good accessibility helps everyone Shows respect - Acknowledges diverse player needs Builds loyalty - Accessible games earn dedicated communities 👁️ Visual Accessibility#Colorblind Support#Colorblind Modes:
+Mode Affects Adjustment Protanopia Red-Green (Red weak) Red → Orange/Yellow shift Deuteranopia Red-Green (Green weak) Green → Yellow/Blue shift Tritanopia Blue-Yellow Blue → Cyan, Yellow → Pink Monochromacy All colors High contrast grayscale Elements Adjusted:
+">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:52224/docs/GDD_Design/GameDesign/Accessibility/">
+  <meta property="og:site_name" content="Extraction Shooter GDD">
+  <meta property="og:title" content="Extraction Shooter GDD">
+  <meta property="og:description" content="Accessibility Design#← Back to Index | Next: Controls →
+♿ Accessibility Philosophy#Core Principle: “Everyone should be able to play”
+Accessibility is NOT optional. It’s fundamental game design that:
+Expands audience - More players = more success Improves UX for all - Good accessibility helps everyone Shows respect - Acknowledges diverse player needs Builds loyalty - Accessible games earn dedicated communities 👁️ Visual Accessibility#Colorblind Support#Colorblind Modes:
+Mode Affects Adjustment Protanopia Red-Green (Red weak) Red → Orange/Yellow shift Deuteranopia Red-Green (Green weak) Green → Yellow/Blue shift Tritanopia Blue-Yellow Blue → Cyan, Yellow → Pink Monochromacy All colors High contrast grayscale Elements Adjusted:">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
+
+
+  <meta itemprop="name" content="Extraction Shooter GDD">
+  <meta itemprop="description" content="Accessibility Design#← Back to Index | Next: Controls →
+♿ Accessibility Philosophy#Core Principle: “Everyone should be able to play”
+Accessibility is NOT optional. It’s fundamental game design that:
+Expands audience - More players = more success Improves UX for all - Good accessibility helps everyone Shows respect - Acknowledges diverse player needs Builds loyalty - Accessible games earn dedicated communities 👁️ Visual Accessibility#Colorblind Support#Colorblind Modes:
+Mode Affects Adjustment Protanopia Red-Green (Red weak) Red → Orange/Yellow shift Deuteranopia Red-Green (Green weak) Green → Yellow/Blue shift Tritanopia Blue-Yellow Blue → Cyan, Yellow → Pink Monochromacy All colors High contrast grayscale Elements Adjusted:">
+  <meta itemprop="wordCount" content="1268">
+
+<title>Accessibility | Extraction Shooter GDD</title>
+<link rel="icon" href="/favicon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="http://localhost:52224/docs/GDD_Design/GameDesign/Accessibility/">
+<link rel="stylesheet" href="/book.min.63c8b2b12bbd1ad36428837740ea371dd41fdb9c22b35499003d0dfa4dbce6ba.css" integrity="sha256-Y8iysSu9GtNkKIN3QOo3HdQf25wis1SZAD0N&#43;k285ro=" crossorigin="anonymous">
+
+
+  <script defer src="/fuse.min.js"></script>
+  <script defer src="/en.search.min.58bea27d7a08265548c5a8636a9a9fc844e0eb9d60fc3bb2c53d517da858d4c1.js" integrity="sha256-WL6ifXoIJlVIxahjapqfyETg651g/DuyxT1RfahY1ME=" crossorigin="anonymous"></script>
+
+  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
+
+
+
+  
+</head>
+<body dir="ltr" class="book-kind-page book-type-docs">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    
+<aside class="book-menu">
+  <div class="book-menu-content">
+    
+  <nav>
+    <h2 class="book-brand">
+  <a class="flex align-center" href="/"><img src="/logo.svg" alt="Logo" /><span>Extraction Shooter GDD</span>
+  </a>
+</h2>
+
+    <div class="book-theme-toggle">
+    <input type="checkbox" id="theme-toggle" class="toggle">
+    <label for="theme-toggle" class="flex justify-between items-center cursor-pointer">
+        <span class="text-xs font-semibold">Dark Mode</span>
+        <div
+            class="relative w-10 h-5 bg-gray-200 rounded-full transition-colors duration-200 ease-in-out dark:bg-gray-700">
+            <div
+                class="absolute left-0 w-5 h-5 bg-white rounded-full shadow transform transition-transform duration-200 ease-in-out dark:translate-x-full">
+            </div>
+        </div>
+    </label>
+</div>
+
+<script>
+    (function () {
+        const toggle = document.getElementById('theme-toggle');
+        const html = document.documentElement;
+
+        
+        const savedTheme = localStorage.getItem('theme');
+        const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+        if (savedTheme === 'dark' || (!savedTheme && systemDark)) {
+            html.classList.add('dark');
+            toggle.checked = true;
+        } else {
+            html.classList.remove('dark');
+            toggle.checked = false;
+        }
+
+        
+        toggle.addEventListener('change', function () {
+            if (this.checked) {
+                html.classList.add('dark');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                html.classList.remove('dark');
+                localStorage.setItem('theme', 'light');
+            }
+        });
+    })();
+</script>
+
+<style>
+     
+    .book-theme-toggle {
+        margin: 1rem 0;
+        padding: 0 1rem;
+
+    }
+
+    .book-theme-toggle label {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        cursor: pointer;
+        font-size: 0.85em;
+    }
+
+     
+    .book-theme-toggle input {
+        display: none;
+    }
+
+     
+    .book-theme-toggle label::after {
+        content: "🌙";
+         
+    }
+
+     
+    html:not(.dark) .book-theme-toggle label::after {
+        content: "☀️";
+         
+    }
+</style> 
+    
+<div class="book-search hidden">
+  <input id="book-search-input" type="text" 
+    placeholder="Search"
+    aria-label="Search"
+    maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+    
+
+    
+    
+
+
+
+    
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/" class="">
+      Gdd Design</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      AI</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/AI/EnemyBehavior/" class="">
+      Enemy Behavior</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/AI/FactionBehaviors/" class="">
+      Faction Behaviors</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Audio</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Audio/SoundDesign/" class="">
+      Sound Design</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Audio/Soundscape/" class="">
+      Soundscape</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Audio/TacticalAudio/" class="">
+      Tactical Audio</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Audio/VoiceLines/" class="">
+      Voice Lines</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Characters</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Operators/" class="">
+      Operators</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Assault</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Assault/Blaze/" class="">
+      Blaze</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Assault/Havoc/" class="">
+      Havoc</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Assault/README/" class="">
+      Readme</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Assault/Viper/" class="">
+      Viper</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Recon</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Recon/Phantom/" class="">
+      Phantom</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Recon/README/" class="">
+      Readme</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Recon/Specter/" class="">
+      Specter</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Recon/Wraith/" class="">
+      Wraith</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Specialist</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Specialist/Cipher/" class="">
+      Cipher</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Specialist/Flux/" class="">
+      Flux</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Specialist/README/" class="">
+      Readme</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Support</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Support/Angel/" class="">
+      Angel</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Support/Doc/" class="">
+      Doc</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Support/README/" class="">
+      Readme</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Tank</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Tank/Bulwark/" class="">
+      Bulwark</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Tank/Fortress/" class="">
+      Fortress</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Tank/README/" class="">
+      Readme</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Combat</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Combat/Items/" class="">
+      Items</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Combat/Weapons/" class="">
+      Weapons</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      GameDesign</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Accessibility/" class="active">
+      Accessibility</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Controls/" class="">
+      Controls</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/CoreGameplay/" class="">
+      Core Gameplay</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Economy/" class="">
+      Economy</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/GameModes/" class="">
+      Game Modes</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/LiveOps/" class="">
+      Live Ops</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Localization/" class="">
+      Localization</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/NavigationAndMap/" class="">
+      Navigation and Map</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Overview/" class="">
+      Overview</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Progression/" class="">
+      Progression</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/RankedMode/" class="">
+      Ranked Mode</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/TutorialRaid/" class="">
+      Tutorial Raid</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/UserSettings/" class="">
+      User Settings</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Gameplay</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Gameplay/CoreLoop/" class="">
+      Core Loop</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      ProjectScope</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/ProjectScope/DesignPillars/" class="">
+      Design Pillars</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/ProjectScope/MVP/" class="">
+      Mvp</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/ProjectScope/NonGoals/" class="">
+      Non Goals</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/ProjectScope/Risks/" class="">
+      Risks</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Social</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Social/Multiplayer/" class="">
+      Multiplayer</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Story</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Story/Backstory/" class="">
+      Backstory</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Story/Factions/" class="">
+      Factions</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Story/Narrative/" class="">
+      Narrative</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Story/QuestLines/" class="">
+      Quest Lines</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      UI UX</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/UI_UX/UX_Flows/" class="">
+      Ux Flows</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/UI_UX/Visual_Style/" class="">
+      Visual Style</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Visuals</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Visuals/ArtDirection/" class="">
+      Art Direction</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Visuals/AssetGuidelines/" class="">
+      Asset Guidelines</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Visuals/StyleGuide/" class="">
+      Style Guide</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Visuals/UserInterface/" class="">
+      User Interface</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      World</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/EnvironmentalNarrative/" class="">
+      Environmental Narrative</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/EnvironmentalNarrative_Guidelines/" class="">
+      Environmental Narrative Guidelines</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/LootDistribution/" class="">
+      Loot Distribution</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/MapDesign/" class="">
+      Map Design</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/MapDesign_IndustrialZone/" class="">
+      Map Design Industrial Zone</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/MapDesign_NeonSlums/" class="">
+      Map Design Neon Slums</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/MapDesign_Wilderness/" class="">
+      Map Design Wilderness</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/MapLayouts/" class="">
+      Map Layouts</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/" class="">
+      Gdd Technical</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      AI</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/AI/SensorySystem/" class="">
+      Sensory System</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Core</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Core/Architecture/" class="">
+      Architecture</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Core/CodingStandards/" class="">
+      Coding Standards</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Core/DevelopmentRoadmap/" class="">
+      Development Roadmap</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Core/NetworkingSystem/" class="">
+      Networking System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Core/SecuritySystem/" class="">
+      Security System</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Gameplay</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Gameplay/CharacterSystem/" class="">
+      Character System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Gameplay/ControlSystem/" class="">
+      Control System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Gameplay/InventorySystem/" class="">
+      Inventory System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Gameplay/WeaponSystem/" class="">
+      Weapon System</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Networking</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Networking/LagCompensation/" class="">
+      Lag Compensation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Networking/ReplicationStrategy/" class="">
+      Replication Strategy</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Performance</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Performance/Budgets/" class="">
+      Budgets</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Performance/Optimization/" class="">
+      Optimization</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Security</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Security/AntiCheatStrategy/" class="">
+      Anti Cheat Strategy</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Systems</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/AccessibilitySystem/" class="">
+      Accessibility System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/AISystem/" class="">
+      Aisystem</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/AnalyticsSystem/" class="">
+      Analytics System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/AudioSystem/" class="">
+      Audio System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/BuildPipeline/" class="">
+      Build Pipeline</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/LiveOpsSystem/" class="">
+      Live Ops System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/LocalizationSystem/" class="">
+      Localization System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/MapSystem/" class="">
+      Map System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/NarrativeSystem/" class="">
+      Narrative System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/ProgressionSystem/" class="">
+      Progression System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/RankedSystem/" class="">
+      Ranked System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/SaveSystem/" class="">
+      Save System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/SocialSystem/" class="">
+      Social System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/TutorialSystem/" class="">
+      Tutorial System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/UISystem/" class="">
+      Uisystem</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+</nav>
+
+
+
+
+<script>{ { . | safeJS } }</script>
+
+
+  </div>
+</aside>
+ 
+
+    <div class="book-page">
+      <header class="book-header hidden">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/icons/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <h3>Accessibility</h3>
+
+  <label for="toc-control">
+    
+    <img src="/icons/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#-accessibility-philosophy">♿ Accessibility Philosophy</a></li>
+    <li><a href="#-visual-accessibility">👁️ Visual Accessibility</a>
+      <ul>
+        <li><a href="#colorblind-support">Colorblind Support</a></li>
+        <li><a href="#rarity-indication-beyond-color">Rarity Indication Beyond Color</a></li>
+        <li><a href="#text-readability">Text Readability</a></li>
+        <li><a href="#ui-scaling">UI Scaling</a></li>
+        <li><a href="#visual-effects-options">Visual Effects Options</a></li>
+        <li><a href="#photosensitivity">Photosensitivity</a></li>
+      </ul>
+    </li>
+    <li><a href="#-auditory-accessibility">👂 Auditory Accessibility</a>
+      <ul>
+        <li><a href="#visual-sound-indicators">Visual Sound Indicators</a></li>
+        <li><a href="#subtitles--captions">Subtitles &amp; Captions</a></li>
+        <li><a href="#audio-balance">Audio Balance</a></li>
+      </ul>
+    </li>
+    <li><a href="#-motor-accessibility">🎮 Motor Accessibility</a>
+      <ul>
+        <li><a href="#control-remapping">Control Remapping</a></li>
+        <li><a href="#input-assistance">Input Assistance</a></li>
+        <li><a href="#aim-assistance">Aim Assistance</a></li>
+        <li><a href="#one-handed-play">One-Handed Play</a></li>
+        <li><a href="#timing-adjustments">Timing Adjustments</a></li>
+      </ul>
+    </li>
+    <li><a href="#-cognitive-accessibility">🧠 Cognitive Accessibility</a>
+      <ul>
+        <li><a href="#simplified-modes">Simplified Modes</a></li>
+        <li><a href="#tutorials--guidance">Tutorials &amp; Guidance</a></li>
+        <li><a href="#reading--comprehension">Reading &amp; Comprehension</a></li>
+        <li><a href="#memory-assists">Memory Assists</a></li>
+      </ul>
+    </li>
+    <li><a href="#-platform-specific-accessibility">📱 Platform-Specific Accessibility</a>
+      <ul>
+        <li><a href="#mobile">Mobile</a></li>
+        <li><a href="#pc">PC</a></li>
+        <li><a href="#console">Console</a></li>
+      </ul>
+    </li>
+    <li><a href="#-accessibility-presets">📊 Accessibility Presets</a>
+      <ul>
+        <li><a href="#quick-setup-profiles">Quick Setup Profiles</a></li>
+        <li><a href="#custom-profile">Custom Profile</a></li>
+      </ul>
+    </li>
+    <li><a href="#-accessibility-testing">📋 Accessibility Testing</a>
+      <ul>
+        <li><a href="#testing-requirements">Testing Requirements</a></li>
+        <li><a href="#accessibility-checklist-new-features">Accessibility Checklist (New Features)</a></li>
+      </ul>
+    </li>
+    <li><a href="#-accessibility-certifications">🏆 Accessibility Certifications</a>
+      <ul>
+        <li><a href="#target-standards">Target Standards</a></li>
+      </ul>
+    </li>
+    <li><a href="#-accessibility-roadmap">📅 Accessibility Roadmap</a>
+      <ul>
+        <li><a href="#launch">Launch</a></li>
+        <li><a href="#post-launch-month-2-3">Post-Launch (Month 2-3)</a></li>
+        <li><a href="#future">Future</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><h1 id="accessibility-design">Accessibility Design<a class="anchor" href="#accessibility-design">#</a></h1>
+<p><strong><a href="../README.md">← Back to Index</a></strong> | <strong><a href="./Controls.md">Next: Controls →</a></strong></p>
+<hr>
+<h2 id="-accessibility-philosophy">♿ Accessibility Philosophy<a class="anchor" href="#-accessibility-philosophy">#</a></h2>
+<p><strong>Core Principle:</strong> &ldquo;Everyone should be able to play&rdquo;</p>
+<p>Accessibility is NOT optional. It&rsquo;s fundamental game design that:</p>
+<ul>
+<li><strong>Expands audience</strong> - More players = more success</li>
+<li><strong>Improves UX for all</strong> - Good accessibility helps everyone</li>
+<li><strong>Shows respect</strong> - Acknowledges diverse player needs</li>
+<li><strong>Builds loyalty</strong> - Accessible games earn dedicated communities</li>
+</ul>
+<hr>
+<h2 id="-visual-accessibility">👁️ Visual Accessibility<a class="anchor" href="#-visual-accessibility">#</a></h2>
+<h3 id="colorblind-support">Colorblind Support<a class="anchor" href="#colorblind-support">#</a></h3>
+<p><strong>Colorblind Modes:</strong></p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Mode</th>
+          <th style="text-align: left">Affects</th>
+          <th style="text-align: left">Adjustment</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><strong>Protanopia</strong></td>
+          <td style="text-align: left">Red-Green (Red weak)</td>
+          <td style="text-align: left">Red → Orange/Yellow shift</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Deuteranopia</strong></td>
+          <td style="text-align: left">Red-Green (Green weak)</td>
+          <td style="text-align: left">Green → Yellow/Blue shift</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Tritanopia</strong></td>
+          <td style="text-align: left">Blue-Yellow</td>
+          <td style="text-align: left">Blue → Cyan, Yellow → Pink</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Monochromacy</strong></td>
+          <td style="text-align: left">All colors</td>
+          <td style="text-align: left">High contrast grayscale</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Elements Adjusted:</strong></p>
+<ul>
+<li>Enemy outlines (red → orange/shapes)</li>
+<li>Teammate outlines (blue → cyan/patterns)</li>
+<li>Loot rarity colors (add symbols + shapes)</li>
+<li>Health/armor bars (add patterns)</li>
+<li>Minimap markers (shapes + colors)</li>
+<li>Ping colors (icons added)</li>
+</ul>
+<h3 id="rarity-indication-beyond-color">Rarity Indication Beyond Color<a class="anchor" href="#rarity-indication-beyond-color">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Rarity</th>
+          <th style="text-align: left">Color</th>
+          <th style="text-align: left">Symbol</th>
+          <th style="text-align: left">Pattern</th>
+          <th style="text-align: left">Label</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Common</td>
+          <td style="text-align: left">Gray</td>
+          <td style="text-align: left">○</td>
+          <td style="text-align: left">Solid</td>
+          <td style="text-align: left">&ldquo;Common&rdquo;</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Uncommon</td>
+          <td style="text-align: left">Green</td>
+          <td style="text-align: left">◇</td>
+          <td style="text-align: left">Striped</td>
+          <td style="text-align: left">&ldquo;Uncommon&rdquo;</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Rare</td>
+          <td style="text-align: left">Blue</td>
+          <td style="text-align: left">△</td>
+          <td style="text-align: left">Dotted</td>
+          <td style="text-align: left">&ldquo;Rare&rdquo;</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Epic</td>
+          <td style="text-align: left">Purple</td>
+          <td style="text-align: left">☆</td>
+          <td style="text-align: left">Crosshatch</td>
+          <td style="text-align: left">&ldquo;Epic&rdquo;</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Legendary</td>
+          <td style="text-align: left">Gold</td>
+          <td style="text-align: left">★</td>
+          <td style="text-align: left">Animated</td>
+          <td style="text-align: left">&ldquo;Legendary&rdquo;</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="text-readability">Text Readability<a class="anchor" href="#text-readability">#</a></h3>
+<p><strong>Font Options:</strong></p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Setting</th>
+          <th style="text-align: left">Range</th>
+          <th style="text-align: left">Default</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><strong>Font Size</strong></td>
+          <td style="text-align: left">75% - 200%</td>
+          <td style="text-align: left">100%</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Font Weight</strong></td>
+          <td style="text-align: left">Normal, Bold</td>
+          <td style="text-align: left">Normal</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Font Style</strong></td>
+          <td style="text-align: left">Sans-serif, Dyslexia-friendly</td>
+          <td style="text-align: left">Sans-serif</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Dyslexia-Friendly Font:</strong></p>
+<ul>
+<li>OpenDyslexic or similar</li>
+<li>Weighted bottoms for letter distinction</li>
+<li>Increased letter spacing</li>
+</ul>
+<p><strong>Text Background:</strong></p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Setting</th>
+          <th style="text-align: left">Options</th>
+          <th style="text-align: left">Default</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><strong>Background Opacity</strong></td>
+          <td style="text-align: left">0% - 100%</td>
+          <td style="text-align: left">50%</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Background Color</strong></td>
+          <td style="text-align: left">Black, White, Custom</td>
+          <td style="text-align: left">Black</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Contrast Mode</strong></td>
+          <td style="text-align: left">Normal, High Contrast</td>
+          <td style="text-align: left">Normal</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="ui-scaling">UI Scaling<a class="anchor" href="#ui-scaling">#</a></h3>
+<p><strong>HUD Scale:</strong></p>
+<ul>
+<li>Range: 50% - 200%</li>
+<li>Affects: Minimap, health bar, ammo counter, crosshair</li>
+<li>Independent scaling per element</li>
+</ul>
+<p><strong>Menu Scale:</strong></p>
+<ul>
+<li>Range: 75% - 150%</li>
+<li>Affects: All menu UI, shop, inventory</li>
+</ul>
+<h3 id="visual-effects-options">Visual Effects Options<a class="anchor" href="#visual-effects-options">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Setting</th>
+          <th style="text-align: left">Options</th>
+          <th style="text-align: left">Purpose</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><strong>Screen Shake</strong></td>
+          <td style="text-align: left">Off, Reduced, Normal</td>
+          <td style="text-align: left">Reduce motion sickness</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Camera Smoothing</strong></td>
+          <td style="text-align: left">Off, Low, Normal</td>
+          <td style="text-align: left">Reduce motion sickness</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Flash Effects</strong></td>
+          <td style="text-align: left">Off, Reduced, Normal</td>
+          <td style="text-align: left">Photosensitivity</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Motion Blur</strong></td>
+          <td style="text-align: left">Off, On</td>
+          <td style="text-align: left">Reduce motion sickness</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Field of View</strong></td>
+          <td style="text-align: left">Fixed, Variable</td>
+          <td style="text-align: left">Comfort adjustment</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="photosensitivity">Photosensitivity<a class="anchor" href="#photosensitivity">#</a></h3>
+<p><strong>Protections:</strong></p>
+<ul>
+<li>Warning on game launch</li>
+<li>Option to disable all flashing (&gt; 3Hz)</li>
+<li>Reduced muzzle flash intensity option</li>
+<li>Explosion flash reduction</li>
+<li>No strobing UI elements</li>
+</ul>
+<hr>
+<h2 id="-auditory-accessibility">👂 Auditory Accessibility<a class="anchor" href="#-auditory-accessibility">#</a></h2>
+<h3 id="visual-sound-indicators">Visual Sound Indicators<a class="anchor" href="#visual-sound-indicators">#</a></h3>
+<p><strong>Sound Visualization System:</strong>
+When enabled, shows on-screen indicators for:</p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Sound Type</th>
+          <th style="text-align: left">Visual Indicator</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Gunfire</td>
+          <td style="text-align: left">Direction arc + distance icon</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Footsteps</td>
+          <td style="text-align: left">Footprint icon + direction</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Explosions</td>
+          <td style="text-align: left">Burst icon + direction</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Voice/Callouts</td>
+          <td style="text-align: left">Chat bubble + direction</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Vehicle</td>
+          <td style="text-align: left">Vehicle icon + direction</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Ability sounds</td>
+          <td style="text-align: left">Ability icon + direction</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Indicator Customization:</strong></p>
+<ul>
+<li>Icon size: 50% - 200%</li>
+<li>Icon opacity: 50% - 100%</li>
+<li>Screen position: Edge, center ring</li>
+<li>Color scheme: Default, high contrast</li>
+</ul>
+<h3 id="subtitles--captions">Subtitles &amp; Captions<a class="anchor" href="#subtitles--captions">#</a></h3>
+<p><strong>Subtitle Options:</strong></p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Setting</th>
+          <th style="text-align: left">Options</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><strong>Subtitles</strong></td>
+          <td style="text-align: left">Off, Dialogue Only, All</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Subtitle Size</strong></td>
+          <td style="text-align: left">Small, Medium, Large, Extra Large</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Subtitle Background</strong></td>
+          <td style="text-align: left">Off, Low, Medium, High</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Speaker Names</strong></td>
+          <td style="text-align: left">Off, On</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Speaker Colors</strong></td>
+          <td style="text-align: left">Off, By Team, By Character</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Closed Captions:</strong></p>
+<ul>
+<li>Include non-dialogue sounds: [Explosion], [Footsteps], [Reload]</li>
+<li>Directional indication: [Gunfire - Left]</li>
+<li>Intensity indication: [Distant Explosion], [Nearby Footsteps]</li>
+</ul>
+<h3 id="audio-balance">Audio Balance<a class="anchor" href="#audio-balance">#</a></h3>
+<p><strong>Independent Volume Controls:</strong></p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Channel</th>
+          <th style="text-align: left">Default</th>
+          <th style="text-align: left">Range</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Master</td>
+          <td style="text-align: left">100%</td>
+          <td style="text-align: left">0-100%</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Music</td>
+          <td style="text-align: left">50%</td>
+          <td style="text-align: left">0-100%</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Sound Effects</td>
+          <td style="text-align: left">100%</td>
+          <td style="text-align: left">0-100%</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Voice Chat</td>
+          <td style="text-align: left">80%</td>
+          <td style="text-align: left">0-100%</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Voice Lines</td>
+          <td style="text-align: left">80%</td>
+          <td style="text-align: left">0-100%</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Ambient</td>
+          <td style="text-align: left">60%</td>
+          <td style="text-align: left">0-100%</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">UI Sounds</td>
+          <td style="text-align: left">70%</td>
+          <td style="text-align: left">0-100%</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Mono Audio:</strong></p>
+<ul>
+<li>Option to downmix to mono</li>
+<li>Useful for single-sided hearing</li>
+<li>Maintains spatial importance through volume</li>
+</ul>
+<hr>
+<h2 id="-motor-accessibility">🎮 Motor Accessibility<a class="anchor" href="#-motor-accessibility">#</a></h2>
+<h3 id="control-remapping">Control Remapping<a class="anchor" href="#control-remapping">#</a></h3>
+<p><strong>Full Remapping:</strong></p>
+<ul>
+<li>Every action can be rebound</li>
+<li>Multiple inputs per action allowed</li>
+<li>Gamepad and keyboard independently remappable</li>
+<li>Save/Load control profiles</li>
+</ul>
+<h3 id="input-assistance">Input Assistance<a class="anchor" href="#input-assistance">#</a></h3>
+<p><strong>Hold vs Toggle:</strong></p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Action</th>
+          <th style="text-align: left">Options</th>
+          <th style="text-align: left">Default</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Sprint</td>
+          <td style="text-align: left">Hold, Toggle</td>
+          <td style="text-align: left">Hold</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Crouch</td>
+          <td style="text-align: left">Hold, Toggle</td>
+          <td style="text-align: left">Toggle</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">ADS (Aim)</td>
+          <td style="text-align: left">Hold, Toggle</td>
+          <td style="text-align: left">Hold</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Prone</td>
+          <td style="text-align: left">Hold, Toggle</td>
+          <td style="text-align: left">Toggle</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Interact</td>
+          <td style="text-align: left">Hold (timed), Tap</td>
+          <td style="text-align: left">Hold</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Auto-Actions:</strong></p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Setting</th>
+          <th style="text-align: left">Description</th>
+          <th style="text-align: left">Default</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><strong>Auto-Sprint</strong></td>
+          <td style="text-align: left">Always sprint when moving forward</td>
+          <td style="text-align: left">Off</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Auto-Fire</strong></td>
+          <td style="text-align: left">Fire when aiming at enemy (mobile)</td>
+          <td style="text-align: left">Off</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Auto-Pickup</strong></td>
+          <td style="text-align: left">Automatically loot common items</td>
+          <td style="text-align: left">Off</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Auto-Reload</strong></td>
+          <td style="text-align: left">Reload when magazine empty</td>
+          <td style="text-align: left">On</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Auto-Vault</strong></td>
+          <td style="text-align: left">Vault obstacles automatically</td>
+          <td style="text-align: left">On (mobile)</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="aim-assistance">Aim Assistance<a class="anchor" href="#aim-assistance">#</a></h3>
+<p><strong>Aim Assist Levels:</strong></p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Level</th>
+          <th style="text-align: left">Target Friction</th>
+          <th style="text-align: left">Target Magnetism</th>
+          <th style="text-align: left">Use Case</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Off</td>
+          <td style="text-align: left">None</td>
+          <td style="text-align: left">None</td>
+          <td style="text-align: left">Mouse users, preference</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Low</td>
+          <td style="text-align: left">Light slowdown</td>
+          <td style="text-align: left">None</td>
+          <td style="text-align: left">Skilled controller</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Medium</td>
+          <td style="text-align: left">Moderate slowdown</td>
+          <td style="text-align: left">Light pull</td>
+          <td style="text-align: left">Default controller</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">High</td>
+          <td style="text-align: left">Strong slowdown</td>
+          <td style="text-align: left">Moderate pull</td>
+          <td style="text-align: left">Accessibility need</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Max</td>
+          <td style="text-align: left">Very strong</td>
+          <td style="text-align: left">Strong pull</td>
+          <td style="text-align: left">Motor impairment</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Aim Assistance Options:</strong></p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Setting</th>
+          <th style="text-align: left">Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><strong>Lock-On Aim</strong></td>
+          <td style="text-align: left">Hold aim to lock onto nearest enemy</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Aim Snap</strong></td>
+          <td style="text-align: left">ADS snaps to nearby enemy</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Gyro Aim</strong></td>
+          <td style="text-align: left">Use device tilt for fine aim (mobile)</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Extended ADS</strong></td>
+          <td style="text-align: left">Slow-motion while aiming (limited use)</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="one-handed-play">One-Handed Play<a class="anchor" href="#one-handed-play">#</a></h3>
+<p><strong>One-Handed Mode (Mobile):</strong></p>
+<ul>
+<li>All controls on one side of screen</li>
+<li>Simplified control scheme</li>
+<li>Auto-aim increased</li>
+<li>Context-sensitive buttons prioritized</li>
+</ul>
+<p><strong>One-Handed Mode (Controller):</strong></p>
+<ul>
+<li>Remappable to single Joy-Con or half-controller</li>
+<li>Reduced action complexity</li>
+<li>AI assists for movement or aiming</li>
+</ul>
+<h3 id="timing-adjustments">Timing Adjustments<a class="anchor" href="#timing-adjustments">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Setting</th>
+          <th style="text-align: left">Description</th>
+          <th style="text-align: left">Range</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><strong>QTE Extensions</strong></td>
+          <td style="text-align: left">More time for timed events</td>
+          <td style="text-align: left">1x - 3x</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Hold Duration</strong></td>
+          <td style="text-align: left">Time to hold for actions</td>
+          <td style="text-align: left">0.5s - 3s</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Double-Tap Window</strong></td>
+          <td style="text-align: left">Time between double-taps</td>
+          <td style="text-align: left">0.2s - 1s</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="-cognitive-accessibility">🧠 Cognitive Accessibility<a class="anchor" href="#-cognitive-accessibility">#</a></h2>
+<h3 id="simplified-modes">Simplified Modes<a class="anchor" href="#simplified-modes">#</a></h3>
+<p><strong>Simplified HUD:</strong></p>
+<ul>
+<li>Shows only essential information</li>
+<li>Hides secondary stats</li>
+<li>Larger, clearer icons</li>
+<li>Reduced visual clutter</li>
+</ul>
+<p><strong>Simplified Controls:</strong></p>
+<ul>
+<li>Fewer buttons required</li>
+<li>Auto-aim and auto-fire</li>
+<li>AI-assisted navigation</li>
+<li>Reduced simultaneous inputs</li>
+</ul>
+<h3 id="tutorials--guidance">Tutorials &amp; Guidance<a class="anchor" href="#tutorials--guidance">#</a></h3>
+<p><strong>Tutorial Options:</strong></p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Setting</th>
+          <th style="text-align: left">Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><strong>Tutorial Skip</strong></td>
+          <td style="text-align: left">Skip any tutorial section</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Tutorial Repeat</strong></td>
+          <td style="text-align: left">Replay tutorials from menu</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Hint Frequency</strong></td>
+          <td style="text-align: left">Off, Minimal, Normal, Frequent</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Hint Duration</strong></td>
+          <td style="text-align: left">How long hints stay on screen</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>In-Game Guidance:</strong></p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Feature</th>
+          <th style="text-align: left">Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><strong>Objective Markers</strong></td>
+          <td style="text-align: left">Always visible, scalable</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Path Assist</strong></td>
+          <td style="text-align: left">Suggested route to objective</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Ping Suggestions</strong></td>
+          <td style="text-align: left">AI suggests tactical pings</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Loadout Recommendations</strong></td>
+          <td style="text-align: left">Suggest gear for new players</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="reading--comprehension">Reading &amp; Comprehension<a class="anchor" href="#reading--comprehension">#</a></h3>
+<p><strong>Text-to-Speech (TTS):</strong></p>
+<ul>
+<li>Read UI elements aloud</li>
+<li>Read chat messages</li>
+<li>Describe menu navigation</li>
+<li>Available for critical information</li>
+</ul>
+<p><strong>Simple Language Mode:</strong></p>
+<ul>
+<li>Shorter sentences</li>
+<li>Common vocabulary</li>
+<li>Clearer instructions</li>
+<li>Less jargon</li>
+</ul>
+<h3 id="memory-assists">Memory Assists<a class="anchor" href="#memory-assists">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Feature</th>
+          <th style="text-align: left">Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><strong>Quest Log</strong></td>
+          <td style="text-align: left">Always accessible, clear objectives</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Recent Actions</strong></td>
+          <td style="text-align: left">Log of recent player actions</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Inventory Sorting</strong></td>
+          <td style="text-align: left">Auto-sort by type, rarity</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Loadout Presets</strong></td>
+          <td style="text-align: left">Save and load complete loadouts</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Control Reminders</strong></td>
+          <td style="text-align: left">Show control hints periodically</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="-platform-specific-accessibility">📱 Platform-Specific Accessibility<a class="anchor" href="#-platform-specific-accessibility">#</a></h2>
+<h3 id="mobile">Mobile<a class="anchor" href="#mobile">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Feature</th>
+          <th style="text-align: left">Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><strong>Touch Target Size</strong></td>
+          <td style="text-align: left">Minimum 44x44pt</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Button Spacing</strong></td>
+          <td style="text-align: left">Prevent accidental taps</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>HUD Customization</strong></td>
+          <td style="text-align: left">Move/resize any element</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Voice Control</strong></td>
+          <td style="text-align: left">Basic commands via voice</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Switch Control</strong></td>
+          <td style="text-align: left">iOS/Android switch support</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="pc">PC<a class="anchor" href="#pc">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Feature</th>
+          <th style="text-align: left">Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><strong>Eye Tracking</strong></td>
+          <td style="text-align: left">Supported where available</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Screen Reader</strong></td>
+          <td style="text-align: left">Compatible with NVDA, JAWS</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Sticky Keys</strong></td>
+          <td style="text-align: left">OS-level support respected</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Mouse Keys</strong></td>
+          <td style="text-align: left">Keyboard as mouse support</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>High Contrast Theme</strong></td>
+          <td style="text-align: left">Windows high contrast compatible</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="console">Console<a class="anchor" href="#console">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Feature</th>
+          <th style="text-align: left">Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><strong>System Accessibility</strong></td>
+          <td style="text-align: left">Respects platform settings</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Adaptive Controller</strong></td>
+          <td style="text-align: left">Xbox Adaptive Controller support</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Copilot Mode</strong></td>
+          <td style="text-align: left">Two controllers as one (Xbox)</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Button Remapping</strong></td>
+          <td style="text-align: left">Beyond game, system level</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="-accessibility-presets">📊 Accessibility Presets<a class="anchor" href="#-accessibility-presets">#</a></h2>
+<h3 id="quick-setup-profiles">Quick Setup Profiles<a class="anchor" href="#quick-setup-profiles">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Profile</th>
+          <th style="text-align: left">Includes</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><strong>Vision Impaired</strong></td>
+          <td style="text-align: left">Large text, high contrast, TTS on, sound indicators</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Color Blind</strong></td>
+          <td style="text-align: left">Deuteranopia mode, patterns on, labels on</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Hard of Hearing</strong></td>
+          <td style="text-align: left">Subtitles on, captions on, sound visualization on</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Motor Limited</strong></td>
+          <td style="text-align: left">High aim assist, auto-actions on, extended timings</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Cognitive Support</strong></td>
+          <td style="text-align: left">Simple HUD, frequent hints, simple language</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Photosensitivity</strong></td>
+          <td style="text-align: left">No flash, no shake, reduced motion</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="custom-profile">Custom Profile<a class="anchor" href="#custom-profile">#</a></h3>
+<ul>
+<li>Save custom accessibility settings</li>
+<li>Share profiles with others (export/import)</li>
+<li>Multiple profiles per account</li>
+</ul>
+<hr>
+<h2 id="-accessibility-testing">📋 Accessibility Testing<a class="anchor" href="#-accessibility-testing">#</a></h2>
+<h3 id="testing-requirements">Testing Requirements<a class="anchor" href="#testing-requirements">#</a></h3>
+<p><strong>Pre-Launch:</strong></p>
+<ul>
+<li><input disabled="" type="checkbox"> Screen reader compatibility (menus)</li>
+<li><input disabled="" type="checkbox"> Colorblind simulation testing</li>
+<li><input disabled="" type="checkbox"> One-handed playthrough (both hands)</li>
+<li><input disabled="" type="checkbox"> Subtitle readability at all sizes</li>
+<li><input disabled="" type="checkbox"> Sound visualization effectiveness</li>
+<li><input disabled="" type="checkbox"> All remapping combinations work</li>
+<li><input disabled="" type="checkbox"> Aim assist levels feel appropriate</li>
+<li><input disabled="" type="checkbox"> Tutorial skippable and repeatable</li>
+<li><input disabled="" type="checkbox"> Photosensitivity pass (no 3Hz+ flashing)</li>
+</ul>
+<p><strong>Ongoing:</strong></p>
+<ul>
+<li><input disabled="" type="checkbox"> Player feedback monitoring</li>
+<li><input disabled="" type="checkbox"> Accessibility bug priority</li>
+<li><input disabled="" type="checkbox"> New feature accessibility review</li>
+<li><input disabled="" type="checkbox"> Community consultation</li>
+</ul>
+<h3 id="accessibility-checklist-new-features">Accessibility Checklist (New Features)<a class="anchor" href="#accessibility-checklist-new-features">#</a></h3>
+<p>For every new feature, ask:</p>
+<ol>
+<li>Can colorblind players perceive it?</li>
+<li>Can deaf players understand it?</li>
+<li>Can motor-impaired players interact with it?</li>
+<li>Is it explained clearly for cognitive accessibility?</li>
+<li>Does it respect current accessibility settings?</li>
+</ol>
+<hr>
+<h2 id="-accessibility-certifications">🏆 Accessibility Certifications<a class="anchor" href="#-accessibility-certifications">#</a></h2>
+<h3 id="target-standards">Target Standards<a class="anchor" href="#target-standards">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Standard</th>
+          <th style="text-align: left">Target</th>
+          <th style="text-align: left">Status</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><strong>CVAA (US)</strong></td>
+          <td style="text-align: left">Compliant</td>
+          <td style="text-align: left">Required for US release</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>WCAG 2.1 AA</strong></td>
+          <td style="text-align: left">Partial</td>
+          <td style="text-align: left">Best effort</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Xbox Accessibility Guidelines</strong></td>
+          <td style="text-align: left">Compliant</td>
+          <td style="text-align: left">Required for Xbox</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>PlayStation Accessibility</strong></td>
+          <td style="text-align: left">Compliant</td>
+          <td style="text-align: left">Required for PlayStation</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>AbleGamers APX</strong></td>
+          <td style="text-align: left">Score 7+/10</td>
+          <td style="text-align: left">Aspirational</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="-accessibility-roadmap">📅 Accessibility Roadmap<a class="anchor" href="#-accessibility-roadmap">#</a></h2>
+<h3 id="launch">Launch<a class="anchor" href="#launch">#</a></h3>
+<ul>
+<li>✅ Colorblind modes (3 types)</li>
+<li>✅ Subtitle customization</li>
+<li>✅ Full control remapping</li>
+<li>✅ Aim assist levels</li>
+<li>✅ Basic sound visualization</li>
+<li>✅ Text scaling</li>
+</ul>
+<h3 id="post-launch-month-2-3">Post-Launch (Month 2-3)<a class="anchor" href="#post-launch-month-2-3">#</a></h3>
+<ul>
+<li>Text-to-speech (menus)</li>
+<li>Enhanced sound visualization</li>
+<li>One-handed mobile mode</li>
+<li>Screen reader support (PC)</li>
+</ul>
+<h3 id="future">Future<a class="anchor" href="#future">#</a></h3>
+<ul>
+<li>AI-assisted gameplay options</li>
+<li>Copilot/assisted play</li>
+<li>Eye tracking integration</li>
+<li>Community accessibility profiles</li>
+</ul>
+<hr>
+<p><strong><a href="../README.md">← Back to Index</a></strong> | <strong><a href="./Controls.md">Next: Controls →</a></strong></p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+<div>
+
+</div>
+
+<div>
+
+</div>
+
+</div>
+
+
+
+
+
+  
+  
+  
+  <div class="flex flex-wrap justify-between">
+    <span>
+    
+      <a href="/docs/GDD_Design/Combat/Weapons/" class="flex align-center">
+        <img src="/icons/backward.svg" class="book-icon" alt="Backward" />
+        <span>Weapons</span>
+      </a>
+    
+    </span>
+    <span>
+    
+      <a href="/docs/GDD_Design/GameDesign/Controls/" class="flex align-center">
+        <span>Controls</span>
+        <img src="/icons/forward.svg" class="book-icon" alt="Forward" />
+      </a>
+    
+    </span>
+  </div>
+  
+
+
+ 
+        
+  
+ 
+        
+        
+  
+ 
+        
+  
+  
+    <script>(function(){document.querySelectorAll("pre:has(code)").forEach(e=>{e.addEventListener("click",e.focus),e.addEventListener("copy",function(t){if(t.preventDefault(),navigator.clipboard){const t=window.getSelection().toString()||e.textContent;navigator.clipboard.writeText(t)}})})})()</script>
+  
+
+      </footer>
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+  
+  <aside class="book-toc">
+    <div class="book-toc-content">
+      
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#-accessibility-philosophy">♿ Accessibility Philosophy</a></li>
+    <li><a href="#-visual-accessibility">👁️ Visual Accessibility</a>
+      <ul>
+        <li><a href="#colorblind-support">Colorblind Support</a></li>
+        <li><a href="#rarity-indication-beyond-color">Rarity Indication Beyond Color</a></li>
+        <li><a href="#text-readability">Text Readability</a></li>
+        <li><a href="#ui-scaling">UI Scaling</a></li>
+        <li><a href="#visual-effects-options">Visual Effects Options</a></li>
+        <li><a href="#photosensitivity">Photosensitivity</a></li>
+      </ul>
+    </li>
+    <li><a href="#-auditory-accessibility">👂 Auditory Accessibility</a>
+      <ul>
+        <li><a href="#visual-sound-indicators">Visual Sound Indicators</a></li>
+        <li><a href="#subtitles--captions">Subtitles &amp; Captions</a></li>
+        <li><a href="#audio-balance">Audio Balance</a></li>
+      </ul>
+    </li>
+    <li><a href="#-motor-accessibility">🎮 Motor Accessibility</a>
+      <ul>
+        <li><a href="#control-remapping">Control Remapping</a></li>
+        <li><a href="#input-assistance">Input Assistance</a></li>
+        <li><a href="#aim-assistance">Aim Assistance</a></li>
+        <li><a href="#one-handed-play">One-Handed Play</a></li>
+        <li><a href="#timing-adjustments">Timing Adjustments</a></li>
+      </ul>
+    </li>
+    <li><a href="#-cognitive-accessibility">🧠 Cognitive Accessibility</a>
+      <ul>
+        <li><a href="#simplified-modes">Simplified Modes</a></li>
+        <li><a href="#tutorials--guidance">Tutorials &amp; Guidance</a></li>
+        <li><a href="#reading--comprehension">Reading &amp; Comprehension</a></li>
+        <li><a href="#memory-assists">Memory Assists</a></li>
+      </ul>
+    </li>
+    <li><a href="#-platform-specific-accessibility">📱 Platform-Specific Accessibility</a>
+      <ul>
+        <li><a href="#mobile">Mobile</a></li>
+        <li><a href="#pc">PC</a></li>
+        <li><a href="#console">Console</a></li>
+      </ul>
+    </li>
+    <li><a href="#-accessibility-presets">📊 Accessibility Presets</a>
+      <ul>
+        <li><a href="#quick-setup-profiles">Quick Setup Profiles</a></li>
+        <li><a href="#custom-profile">Custom Profile</a></li>
+      </ul>
+    </li>
+    <li><a href="#-accessibility-testing">📋 Accessibility Testing</a>
+      <ul>
+        <li><a href="#testing-requirements">Testing Requirements</a></li>
+        <li><a href="#accessibility-checklist-new-features">Accessibility Checklist (New Features)</a></li>
+      </ul>
+    </li>
+    <li><a href="#-accessibility-certifications">🏆 Accessibility Certifications</a>
+      <ul>
+        <li><a href="#target-standards">Target Standards</a></li>
+      </ul>
+    </li>
+    <li><a href="#-accessibility-roadmap">📅 Accessibility Roadmap</a>
+      <ul>
+        <li><a href="#launch">Launch</a></li>
+        <li><a href="#post-launch-month-2-3">Post-Launch (Month 2-3)</a></li>
+        <li><a href="#future">Future</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+    </div>
+  </aside>
+  
+ 
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

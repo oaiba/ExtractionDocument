@@ -1,0 +1,2644 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=52224&amp;path=livereload" data-no-instant defer></script>
+  <!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Soundscape - Environmental Audio Design#← Back to Sound Design | Index | Next: Tactical Audio →
+🎧 Audio Design Philosophy#Core Principles#“Sound is the Second Eye” - In extraction shooters, audio is a survival tool.
+Pillars:
+Information First: Every sound must provide gameplay information Realistic Propagation: Audio must follow realistic physics Atmospheric Immersion: Create distinctive atmosphere for each zone Mobile Consideration: Support visual sound indicators 🌍 Ambient Soundscape By Zone#Industrial Decay - “The Factory”#Mood Keywords: Oppressive, Mechanical, Echoing, Abandoned
+">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:52224/docs/GDD_Design/Audio/Soundscape/">
+  <meta property="og:site_name" content="Extraction Shooter GDD">
+  <meta property="og:title" content="Extraction Shooter GDD">
+  <meta property="og:description" content="Soundscape - Environmental Audio Design#← Back to Sound Design | Index | Next: Tactical Audio →
+🎧 Audio Design Philosophy#Core Principles#“Sound is the Second Eye” - In extraction shooters, audio is a survival tool.
+Pillars:
+Information First: Every sound must provide gameplay information Realistic Propagation: Audio must follow realistic physics Atmospheric Immersion: Create distinctive atmosphere for each zone Mobile Consideration: Support visual sound indicators 🌍 Ambient Soundscape By Zone#Industrial Decay - “The Factory”#Mood Keywords: Oppressive, Mechanical, Echoing, Abandoned">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
+
+
+  <meta itemprop="name" content="Extraction Shooter GDD">
+  <meta itemprop="description" content="Soundscape - Environmental Audio Design#← Back to Sound Design | Index | Next: Tactical Audio →
+🎧 Audio Design Philosophy#Core Principles#“Sound is the Second Eye” - In extraction shooters, audio is a survival tool.
+Pillars:
+Information First: Every sound must provide gameplay information Realistic Propagation: Audio must follow realistic physics Atmospheric Immersion: Create distinctive atmosphere for each zone Mobile Consideration: Support visual sound indicators 🌍 Ambient Soundscape By Zone#Industrial Decay - “The Factory”#Mood Keywords: Oppressive, Mechanical, Echoing, Abandoned">
+  <meta itemprop="wordCount" content="1227">
+
+<title>Soundscape | Extraction Shooter GDD</title>
+<link rel="icon" href="/favicon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="http://localhost:52224/docs/GDD_Design/Audio/Soundscape/">
+<link rel="stylesheet" href="/book.min.63c8b2b12bbd1ad36428837740ea371dd41fdb9c22b35499003d0dfa4dbce6ba.css" integrity="sha256-Y8iysSu9GtNkKIN3QOo3HdQf25wis1SZAD0N&#43;k285ro=" crossorigin="anonymous">
+
+
+  <script defer src="/fuse.min.js"></script>
+  <script defer src="/en.search.min.58bea27d7a08265548c5a8636a9a9fc844e0eb9d60fc3bb2c53d517da858d4c1.js" integrity="sha256-WL6ifXoIJlVIxahjapqfyETg651g/DuyxT1RfahY1ME=" crossorigin="anonymous"></script>
+
+  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
+
+
+
+  
+</head>
+<body dir="ltr" class="book-kind-page book-type-docs">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    
+<aside class="book-menu">
+  <div class="book-menu-content">
+    
+  <nav>
+    <h2 class="book-brand">
+  <a class="flex align-center" href="/"><img src="/logo.svg" alt="Logo" /><span>Extraction Shooter GDD</span>
+  </a>
+</h2>
+
+    <div class="book-theme-toggle">
+    <input type="checkbox" id="theme-toggle" class="toggle">
+    <label for="theme-toggle" class="flex justify-between items-center cursor-pointer">
+        <span class="text-xs font-semibold">Dark Mode</span>
+        <div
+            class="relative w-10 h-5 bg-gray-200 rounded-full transition-colors duration-200 ease-in-out dark:bg-gray-700">
+            <div
+                class="absolute left-0 w-5 h-5 bg-white rounded-full shadow transform transition-transform duration-200 ease-in-out dark:translate-x-full">
+            </div>
+        </div>
+    </label>
+</div>
+
+<script>
+    (function () {
+        const toggle = document.getElementById('theme-toggle');
+        const html = document.documentElement;
+
+        
+        const savedTheme = localStorage.getItem('theme');
+        const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+        if (savedTheme === 'dark' || (!savedTheme && systemDark)) {
+            html.classList.add('dark');
+            toggle.checked = true;
+        } else {
+            html.classList.remove('dark');
+            toggle.checked = false;
+        }
+
+        
+        toggle.addEventListener('change', function () {
+            if (this.checked) {
+                html.classList.add('dark');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                html.classList.remove('dark');
+                localStorage.setItem('theme', 'light');
+            }
+        });
+    })();
+</script>
+
+<style>
+     
+    .book-theme-toggle {
+        margin: 1rem 0;
+        padding: 0 1rem;
+
+    }
+
+    .book-theme-toggle label {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        cursor: pointer;
+        font-size: 0.85em;
+    }
+
+     
+    .book-theme-toggle input {
+        display: none;
+    }
+
+     
+    .book-theme-toggle label::after {
+        content: "🌙";
+         
+    }
+
+     
+    html:not(.dark) .book-theme-toggle label::after {
+        content: "☀️";
+         
+    }
+</style> 
+    
+<div class="book-search hidden">
+  <input id="book-search-input" type="text" 
+    placeholder="Search"
+    aria-label="Search"
+    maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+    
+
+    
+    
+
+
+
+    
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/" class="">
+      Gdd Design</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      AI</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/AI/EnemyBehavior/" class="">
+      Enemy Behavior</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/AI/FactionBehaviors/" class="">
+      Faction Behaviors</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Audio</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Audio/SoundDesign/" class="">
+      Sound Design</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Audio/Soundscape/" class="active">
+      Soundscape</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Audio/TacticalAudio/" class="">
+      Tactical Audio</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Audio/VoiceLines/" class="">
+      Voice Lines</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Characters</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Operators/" class="">
+      Operators</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Assault</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Assault/Blaze/" class="">
+      Blaze</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Assault/Havoc/" class="">
+      Havoc</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Assault/README/" class="">
+      Readme</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Assault/Viper/" class="">
+      Viper</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Recon</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Recon/Phantom/" class="">
+      Phantom</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Recon/README/" class="">
+      Readme</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Recon/Specter/" class="">
+      Specter</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Recon/Wraith/" class="">
+      Wraith</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Specialist</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Specialist/Cipher/" class="">
+      Cipher</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Specialist/Flux/" class="">
+      Flux</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Specialist/README/" class="">
+      Readme</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Support</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Support/Angel/" class="">
+      Angel</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Support/Doc/" class="">
+      Doc</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Support/README/" class="">
+      Readme</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Tank</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Tank/Bulwark/" class="">
+      Bulwark</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Tank/Fortress/" class="">
+      Fortress</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Tank/README/" class="">
+      Readme</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Combat</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Combat/Items/" class="">
+      Items</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Combat/Weapons/" class="">
+      Weapons</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      GameDesign</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Accessibility/" class="">
+      Accessibility</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Controls/" class="">
+      Controls</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/CoreGameplay/" class="">
+      Core Gameplay</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Economy/" class="">
+      Economy</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/GameModes/" class="">
+      Game Modes</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/LiveOps/" class="">
+      Live Ops</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Localization/" class="">
+      Localization</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/NavigationAndMap/" class="">
+      Navigation and Map</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Overview/" class="">
+      Overview</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Progression/" class="">
+      Progression</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/RankedMode/" class="">
+      Ranked Mode</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/TutorialRaid/" class="">
+      Tutorial Raid</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/UserSettings/" class="">
+      User Settings</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Gameplay</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Gameplay/CoreLoop/" class="">
+      Core Loop</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      ProjectScope</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/ProjectScope/DesignPillars/" class="">
+      Design Pillars</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/ProjectScope/MVP/" class="">
+      Mvp</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/ProjectScope/NonGoals/" class="">
+      Non Goals</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/ProjectScope/Risks/" class="">
+      Risks</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Social</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Social/Multiplayer/" class="">
+      Multiplayer</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Story</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Story/Backstory/" class="">
+      Backstory</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Story/Factions/" class="">
+      Factions</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Story/Narrative/" class="">
+      Narrative</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Story/QuestLines/" class="">
+      Quest Lines</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      UI UX</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/UI_UX/UX_Flows/" class="">
+      Ux Flows</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/UI_UX/Visual_Style/" class="">
+      Visual Style</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Visuals</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Visuals/ArtDirection/" class="">
+      Art Direction</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Visuals/AssetGuidelines/" class="">
+      Asset Guidelines</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Visuals/StyleGuide/" class="">
+      Style Guide</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Visuals/UserInterface/" class="">
+      User Interface</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      World</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/EnvironmentalNarrative/" class="">
+      Environmental Narrative</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/EnvironmentalNarrative_Guidelines/" class="">
+      Environmental Narrative Guidelines</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/LootDistribution/" class="">
+      Loot Distribution</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/MapDesign/" class="">
+      Map Design</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/MapDesign_IndustrialZone/" class="">
+      Map Design Industrial Zone</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/MapDesign_NeonSlums/" class="">
+      Map Design Neon Slums</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/MapDesign_Wilderness/" class="">
+      Map Design Wilderness</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/MapLayouts/" class="">
+      Map Layouts</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/" class="">
+      Gdd Technical</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      AI</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/AI/SensorySystem/" class="">
+      Sensory System</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Core</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Core/Architecture/" class="">
+      Architecture</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Core/CodingStandards/" class="">
+      Coding Standards</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Core/DevelopmentRoadmap/" class="">
+      Development Roadmap</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Core/NetworkingSystem/" class="">
+      Networking System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Core/SecuritySystem/" class="">
+      Security System</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Gameplay</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Gameplay/CharacterSystem/" class="">
+      Character System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Gameplay/ControlSystem/" class="">
+      Control System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Gameplay/InventorySystem/" class="">
+      Inventory System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Gameplay/WeaponSystem/" class="">
+      Weapon System</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Networking</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Networking/LagCompensation/" class="">
+      Lag Compensation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Networking/ReplicationStrategy/" class="">
+      Replication Strategy</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Performance</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Performance/Budgets/" class="">
+      Budgets</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Performance/Optimization/" class="">
+      Optimization</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Security</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Security/AntiCheatStrategy/" class="">
+      Anti Cheat Strategy</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Systems</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/AccessibilitySystem/" class="">
+      Accessibility System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/AISystem/" class="">
+      Aisystem</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/AnalyticsSystem/" class="">
+      Analytics System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/AudioSystem/" class="">
+      Audio System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/BuildPipeline/" class="">
+      Build Pipeline</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/LiveOpsSystem/" class="">
+      Live Ops System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/LocalizationSystem/" class="">
+      Localization System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/MapSystem/" class="">
+      Map System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/NarrativeSystem/" class="">
+      Narrative System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/ProgressionSystem/" class="">
+      Progression System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/RankedSystem/" class="">
+      Ranked System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/SaveSystem/" class="">
+      Save System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/SocialSystem/" class="">
+      Social System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/TutorialSystem/" class="">
+      Tutorial System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/UISystem/" class="">
+      Uisystem</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+</nav>
+
+
+
+
+<script>{ { . | safeJS } }</script>
+
+
+  </div>
+</aside>
+ 
+
+    <div class="book-page">
+      <header class="book-header hidden">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/icons/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <h3>Soundscape</h3>
+
+  <label for="toc-control">
+    
+    <img src="/icons/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#-audio-design-philosophy">🎧 Audio Design Philosophy</a>
+      <ul>
+        <li><a href="#core-principles">Core Principles</a></li>
+      </ul>
+    </li>
+    <li><a href="#-ambient-soundscape-by-zone">🌍 Ambient Soundscape By Zone</a>
+      <ul>
+        <li><a href="#industrial-decay---the-factory">Industrial Decay - &ldquo;The Factory&rdquo;</a></li>
+        <li><a href="#urban-ruins---district-14">Urban Ruins - &ldquo;District 14&rdquo;</a></li>
+        <li><a href="#wilderness---the-mire">Wilderness - &ldquo;The Mire&rdquo;</a></li>
+      </ul>
+    </li>
+    <li><a href="#-dynamic-audio-states">🎵 Dynamic Audio States</a>
+      <ul>
+        <li><a href="#tension-system">Tension System</a></li>
+        <li><a href="#time-based-variations">Time-Based Variations</a></li>
+      </ul>
+    </li>
+    <li><a href="#-occlusion--propagation">🔊 Occlusion &amp; Propagation</a>
+      <ul>
+        <li><a href="#sound-occlusion-rules">Sound Occlusion Rules</a></li>
+        <li><a href="#vertical-audio">Vertical Audio</a></li>
+      </ul>
+    </li>
+    <li><a href="#-audio-mix-priorities">🎚️ Audio Mix Priorities</a>
+      <ul>
+        <li><a href="#priority-hierarchy">Priority Hierarchy</a></li>
+        <li><a href="#voice-channel-limits">Voice Channel Limits</a></li>
+      </ul>
+    </li>
+    <li><a href="#-special-audio-events">📻 Special Audio Events</a>
+      <ul>
+        <li><a href="#map-events">Map Events</a></li>
+      </ul>
+    </li>
+    <li><a href="#-technical-specifications">🔧 Technical Specifications</a>
+      <ul>
+        <li><a href="#audio-format-standards">Audio Format Standards</a></li>
+        <li><a href="#memory-budget">Memory Budget</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><h1 id="soundscape---environmental-audio-design">Soundscape - Environmental Audio Design<a class="anchor" href="#soundscape---environmental-audio-design">#</a></h1>
+<p><strong><a href="./SoundDesign.md">← Back to Sound Design</a></strong> | <strong><a href="../README.md">Index</a></strong> | <strong><a href="./TacticalAudio.md">Next: Tactical Audio →</a></strong></p>
+<hr>
+<h2 id="-audio-design-philosophy">🎧 Audio Design Philosophy<a class="anchor" href="#-audio-design-philosophy">#</a></h2>
+<h3 id="core-principles">Core Principles<a class="anchor" href="#core-principles">#</a></h3>
+<p><strong>&ldquo;Sound is the Second Eye&rdquo;</strong> - In extraction shooters, audio is a survival tool.</p>
+<p><strong>Pillars:</strong></p>
+<ol>
+<li><strong>Information First</strong>: Every sound must provide gameplay information</li>
+<li><strong>Realistic Propagation</strong>: Audio must follow realistic physics</li>
+<li><strong>Atmospheric Immersion</strong>: Create distinctive atmosphere for each zone</li>
+<li><strong>Mobile Consideration</strong>: Support visual sound indicators</li>
+</ol>
+<hr>
+<h2 id="-ambient-soundscape-by-zone">🌍 Ambient Soundscape By Zone<a class="anchor" href="#-ambient-soundscape-by-zone">#</a></h2>
+<h3 id="industrial-decay---the-factory">Industrial Decay - &ldquo;The Factory&rdquo;<a class="anchor" href="#industrial-decay---the-factory">#</a></h3>
+<p><strong>Mood Keywords:</strong> Oppressive, Mechanical, Echoing, Abandoned</p>
+<p><strong>Layer Structure:</strong></p>
+<pre tabindex="0"><code>┌────────────────────────────────────────────┐
+│ Layer 4: EVENT SOUNDS (Dynamic)            │
+│ └── Explosions, gunfire, player actions    │
+├────────────────────────────────────────────┤
+│ Layer 3: DETAIL SOUNDS (Contextual)        │
+│ └── Dripping water, sparking wires         │
+├────────────────────────────────────────────┤
+│ Layer 2: ZONE AMBIENCE (Mid)               │
+│ └── Metal groans, wind through holes       │
+├────────────────────────────────────────────┤
+│ Layer 1: BASE DRONE (Constant)             │
+│ └── Generator hum, distant machinery       │
+└────────────────────────────────────────────┘</code></pre><p><strong>Specific Sounds:</strong></p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Sound</th>
+          <th style="text-align: left">Description</th>
+          <th style="text-align: left">Volume</th>
+          <th style="text-align: left">Loop</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Generator Hum</td>
+          <td style="text-align: left">50Hz low drone</td>
+          <td style="text-align: left">-18dB</td>
+          <td style="text-align: left">Yes</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Metal Stress</td>
+          <td style="text-align: left">Groaning steel</td>
+          <td style="text-align: left">-24dB</td>
+          <td style="text-align: left">Random</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Dripping Water</td>
+          <td style="text-align: left">Cave-like echoes</td>
+          <td style="text-align: left">-30dB</td>
+          <td style="text-align: left">Yes</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Steam Vents</td>
+          <td style="text-align: left">Periodic hiss</td>
+          <td style="text-align: left">-20dB</td>
+          <td style="text-align: left">Trigger</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Distant Collapse</td>
+          <td style="text-align: left">Rumbling debris</td>
+          <td style="text-align: left">-28dB</td>
+          <td style="text-align: left">Random</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Wind Through Holes</td>
+          <td style="text-align: left">Whistling</td>
+          <td style="text-align: left">-26dB</td>
+          <td style="text-align: left">Yes</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Electrical Spark</td>
+          <td style="text-align: left">Crackling</td>
+          <td style="text-align: left">-22dB</td>
+          <td style="text-align: left">Random</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Radiation Click</td>
+          <td style="text-align: left">Geiger counter</td>
+          <td style="text-align: left">-20dB</td>
+          <td style="text-align: left">Zone</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Reverb Settings:</strong></p>
+<pre tabindex="0"><code>Large Halls:
+├── Pre-delay: 25ms
+├── Decay Time: 2.5s
+├── High Frequency Damping: 0.6
+└── Wet/Dry Mix: 40%
+
+Tight Corridors:
+├── Pre-delay: 5ms
+├── Decay Time: 0.8s
+├── High Frequency Damping: 0.8
+└── Wet/Dry Mix: 25%
+
+Underground/Labs:
+├── Pre-delay: 15ms
+├── Decay Time: 1.8s
+├── High Frequency Damping: 0.4 (bright)
+└── Wet/Dry Mix: 35%</code></pre><hr>
+<h3 id="urban-ruins---district-14">Urban Ruins - &ldquo;District 14&rdquo;<a class="anchor" href="#urban-ruins---district-14">#</a></h3>
+<p><strong>Mood Keywords:</strong> Eerie, Abandoned Life, Nature Reclaiming, Echo</p>
+<p><strong>Layer Structure:</strong></p>
+<pre tabindex="0"><code>┌────────────────────────────────────────────┐
+│ Layer 4: LIFE SIGNS (Random)               │
+│ └── Distant dogs, car alarms              │
+├────────────────────────────────────────────┤
+│ Layer 3: NATURE RETURN (Contextual)        │
+│ └── Birds, insects, rustling leaves       │
+├────────────────────────────────────────────┤
+│ Layer 2: URBAN DECAY (Mid)                 │
+│ └── Creaking buildings, broken glass      │
+├────────────────────────────────────────────┤
+│ Layer 1: WIND &amp; SILENCE (Constant)         │
+│ └── Wind channels, dead air               │
+└────────────────────────────────────────────┘</code></pre><p><strong>Specific Sounds:</strong></p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Sound</th>
+          <th style="text-align: left">Description</th>
+          <th style="text-align: left">Volume</th>
+          <th style="text-align: left">Location</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Wind Channel</td>
+          <td style="text-align: left">Between buildings</td>
+          <td style="text-align: left">-20dB</td>
+          <td style="text-align: left">Outdoor</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Bird Calls</td>
+          <td style="text-align: left">Crows, pigeons</td>
+          <td style="text-align: left">-28dB</td>
+          <td style="text-align: left">Outdoor</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Creaking Structure</td>
+          <td style="text-align: left">Wood, metal</td>
+          <td style="text-align: left">-26dB</td>
+          <td style="text-align: left">Indoor</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Broken Glass Tinkle</td>
+          <td style="text-align: left">Wind-blown shards</td>
+          <td style="text-align: left">-30dB</td>
+          <td style="text-align: left">Window areas</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Distant Dog Bark</td>
+          <td style="text-align: left">Feral pack</td>
+          <td style="text-align: left">-32dB</td>
+          <td style="text-align: left">Random</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Paper Rustling</td>
+          <td style="text-align: left">Scattered debris</td>
+          <td style="text-align: left">-28dB</td>
+          <td style="text-align: left">Indoor</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Subway Rumble</td>
+          <td style="text-align: left">Underground train</td>
+          <td style="text-align: left">-15dB</td>
+          <td style="text-align: left">Subway areas</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Water Drip Echo</td>
+          <td style="text-align: left">Flooded basements</td>
+          <td style="text-align: left">-24dB</td>
+          <td style="text-align: left">Underground</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Weather Variations:</strong></p>
+<pre tabindex="0"><code>Clear Day:
+├── Bird activity: High
+├── Wind: Light
+└── Visibility sounds: Normal
+
+Rain (If implemented):
+├── Rain on surfaces: Loud (-10dB)
+├── Puddle splashes: Prominent
+├── Thunder: Random events
+└── Masking effect: +20% (harder to hear footsteps)
+
+Fog (If implemented):
+├── Dampened high frequencies
+├── Muffled distant sounds
+└── Close sounds: Louder feel</code></pre><hr>
+<h3 id="wilderness---the-mire">Wilderness - &ldquo;The Mire&rdquo;<a class="anchor" href="#wilderness---the-mire">#</a></h3>
+<p><strong>Mood Keywords:</strong> Isolated, Organic, Threatening Nature, Deceptive</p>
+<p><strong>Layer Structure:</strong></p>
+<pre tabindex="0"><code>┌────────────────────────────────────────────┐
+│ Layer 4: PREDATOR HINTS (Tension)          │
+│ └── Unseen movement, branch snaps          │
+├────────────────────────────────────────────┤
+│ Layer 3: WILDLIFE (Dense)                  │
+│ └── Insects, frogs, birds                  │
+├────────────────────────────────────────────┤
+│ Layer 2: VEGETATION (Wind-driven)          │
+│ └── Rustling leaves, swaying grass         │
+├────────────────────────────────────────────┤
+│ Layer 1: WIND &amp; WATER (Constant)           │
+│ └── Wind through trees, distant stream     │
+└────────────────────────────────────────────┘</code></pre><p><strong>Specific Sounds:</strong></p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Sound</th>
+          <th style="text-align: left">Description</th>
+          <th style="text-align: left">Volume</th>
+          <th style="text-align: left">Condition</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Wind Through Trees</td>
+          <td style="text-align: left">Constant rustle</td>
+          <td style="text-align: left">-18dB</td>
+          <td style="text-align: left">Always</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Insect Chorus</td>
+          <td style="text-align: left">Crickets, cicadas</td>
+          <td style="text-align: left">-22dB</td>
+          <td style="text-align: left">Always</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Frog Croaks</td>
+          <td style="text-align: left">Near water</td>
+          <td style="text-align: left">-26dB</td>
+          <td style="text-align: left">Swamp areas</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Bird Calls</td>
+          <td style="text-align: left">Various species</td>
+          <td style="text-align: left">-24dB</td>
+          <td style="text-align: left">Random</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Branch Snap</td>
+          <td style="text-align: left">Sudden, nearby</td>
+          <td style="text-align: left">-20dB</td>
+          <td style="text-align: left">Random/AI</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Leaves Underfoot</td>
+          <td style="text-align: left">Player-caused</td>
+          <td style="text-align: left">-16dB</td>
+          <td style="text-align: left">Movement</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Water Stream</td>
+          <td style="text-align: left">Flowing water</td>
+          <td style="text-align: left">-20dB</td>
+          <td style="text-align: left">River areas</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Flies Buzzing</td>
+          <td style="text-align: left">Near corpses</td>
+          <td style="text-align: left">-24dB</td>
+          <td style="text-align: left">Loot areas</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Contamination Zone Sounds:</strong></p>
+<pre tabindex="0"><code>Chemical Gas Zone:
+├── Player Heartbeat: Audible, accelerating
+├── Breathing: Labored, filtered (mask)
+├── Tinnitus: High frequency ring
+├── Muffled exterior: -20dB reduction
+└── Geiger clicks: Increasing rate</code></pre><hr>
+<h2 id="-dynamic-audio-states">🎵 Dynamic Audio States<a class="anchor" href="#-dynamic-audio-states">#</a></h2>
+<h3 id="tension-system">Tension System<a class="anchor" href="#tension-system">#</a></h3>
+<p><strong>Combat States:</strong></p>
+<pre tabindex="0"><code>┌─────────────────────────────────────────────┐
+│ State      │ Trigger              │ Effect  │
+├─────────────────────────────────────────────┤
+│ PASSIVE    │ No threats nearby    │ 100% amb│
+│ ALERT      │ Gunfire heard        │ 70% amb │
+│ COMBAT     │ Player takes fire    │ 40% amb │
+│ DANGER     │ Low health           │ 20% amb │
+│ EXTRACTION │ Exit timer active    │ 50% amb │
+└─────────────────────────────────────────────┘</code></pre><p><strong>Transition Rules:</strong></p>
+<ul>
+<li>PASSIVE → ALERT: Fade over 0.5s</li>
+<li>ALERT → COMBAT: Immediate snap</li>
+<li>COMBAT → PASSIVE: 10 second delay, fade 2s</li>
+<li>Any → DANGER: Immediate + heartbeat layer</li>
+</ul>
+<h3 id="time-based-variations">Time-Based Variations<a class="anchor" href="#time-based-variations">#</a></h3>
+<p><strong>Match Timeline Audio:</strong></p>
+<pre tabindex="0"><code>0:00-5:00   │ Full ambience, peaceful start
+5:00-10:00  │ Tension subtly increases (+5% bass)
+10:00-12:00 │ Heightened alertness (faster ambient events)
+12:00-15:00 │ Urgency layer (subtle pulse in mix)
+Last 60s    │ Extraction urgency (low freq pulse)</code></pre><hr>
+<h2 id="-occlusion--propagation">🔊 Occlusion &amp; Propagation<a class="anchor" href="#-occlusion--propagation">#</a></h2>
+<h3 id="sound-occlusion-rules">Sound Occlusion Rules<a class="anchor" href="#sound-occlusion-rules">#</a></h3>
+<p><strong>Material Attenuation:</strong></p>
+<pre tabindex="0"><code>┌─────────────────────────────────────────────┐
+│ Material          │Attenuation │ Freq Cut   │
+├─────────────────────────────────────────────┤
+│ Air (open)        │ -0dB/m     │ None       │
+│ Glass             │ -8dB       │ -2kHz      │
+│ Wood (thin)       │ -12dB      │ -3kHz      │
+│ Drywall           │ -15dB      │ -4kHz      │
+│ Concrete (thin)   │ -20dB      │ -6kHz      │
+│ Concrete (thick)  │ -30dB      │ -8kHz      │
+│ Metal             │ -25dB      │ -5kHz      │
+└─────────────────────────────────────────────┘</code></pre><p><strong>Distance Attenuation:</strong></p>
+<pre tabindex="0"><code>Close (0-10m):    Full frequency, full volume
+Near (10-30m):    -6dB, slight HF roll-off
+Medium (30-60m):  -12dB, noticeable HF cut
+Far (60-100m):    -18dB, mostly low-mid
+Distant (100m+):  -24dB, bass-heavy</code></pre><h3 id="vertical-audio">Vertical Audio<a class="anchor" href="#vertical-audio">#</a></h3>
+<p><strong>Floor Separation:</strong></p>
+<pre tabindex="0"><code>Same Floor:      Normal propagation
+1 Floor Apart:   -10dB, muffled
+2+ Floors Apart: -20dB, very muffled
+
+Stairwells: Reduced occlusion (sound travels)
+Ventilation: Sound channels (connects rooms)</code></pre><hr>
+<h2 id="-audio-mix-priorities">🎚️ Audio Mix Priorities<a class="anchor" href="#-audio-mix-priorities">#</a></h2>
+<h3 id="priority-hierarchy">Priority Hierarchy<a class="anchor" href="#priority-hierarchy">#</a></h3>
+<pre tabindex="0"><code>Priority 1 (CRITICAL - Never duck):
+├── Enemy footsteps within 10m
+├── Incoming fire (bullets passing)
+├── Player damage indicators
+└── Extraction timer beeps
+
+Priority 2 (HIGH - Slight duck allowed):
+├── All gunfire
+├── Explosions
+├── Ability sounds
+└── Reload sounds
+
+Priority 3 (MEDIUM - Ducks during combat):
+├── Teammate audio
+├── AI enemy callouts
+├── Interactive object sounds
+└── Loot pickup sounds
+
+Priority 4 (LOW - Heavy duck):
+├── Ambient soundscape
+├── Music (if any)
+├── Distant events
+└── Environmental details</code></pre><h3 id="voice-channel-limits">Voice Channel Limits<a class="anchor" href="#voice-channel-limits">#</a></h3>
+<pre tabindex="0"><code>Max Simultaneous Voices: 64
+
+Allocation:
+├── Player sounds: 8 reserved
+├── Nearby combat: 16 reserved
+├── Ambience: 12 reserved
+├── UI/Feedback: 4 reserved
+└── Dynamic pool: 24 shared</code></pre><hr>
+<h2 id="-special-audio-events">📻 Special Audio Events<a class="anchor" href="#-special-audio-events">#</a></h2>
+<h3 id="map-events">Map Events<a class="anchor" href="#map-events">#</a></h3>
+<p><strong>Supply Drop:</strong></p>
+<pre tabindex="0"><code>Sequence:
+1. Distant plane engine (10s before) → -20dB, panning
+2. Overhead pass (3s) → -8dB, doppler effect
+3. Parachute deploy → Fabric flutter
+4. Impact → Thud based on terrain
+5. Beacon → Rhythmic ping for 30s</code></pre><p><strong>Contamination Zone Expansion:</strong></p>
+<pre tabindex="0"><code>Warning Phase (30s before):
+├── Siren wail: Distant, ominous
+├── Building to urgency
+└── Radio static bursts
+
+Active Phase:
+├── Gas hiss: Constant
+├── Toxic ambience layer
+└── Heartbeat (player in zone)</code></pre><p><strong>Extraction Vehicle:</strong></p>
+<pre tabindex="0"><code>Helicopter:
+├── Distant rotor (30s out): -28dB, growing
+├── Approach (15s): -18dB, getting loud
+├── Hover: -10dB, constant rotor wash
+├── Departure: Doppler fade
+
+Truck:
+├── Engine start: Rumble
+├── Idle: Low frequency vibration
+├── Horn: Warning signal
+├── Departure: Diesel acceleration</code></pre><hr>
+<h2 id="-technical-specifications">🔧 Technical Specifications<a class="anchor" href="#-technical-specifications">#</a></h2>
+<h3 id="audio-format-standards">Audio Format Standards<a class="anchor" href="#audio-format-standards">#</a></h3>
+<pre tabindex="0"><code>Ambient Loops:
+├── Format: OGG Vorbis
+├── Sample Rate: 44.1kHz
+├── Bit Depth: 16-bit
+├── Channels: Stereo
+└── Loop: Seamless
+
+Sound Effects:
+├── Format: WAV
+├── Sample Rate: 48kHz
+├── Bit Depth: 24-bit (source), 16-bit (runtime)
+├── Channels: Mono (3D), Stereo (UI)
+└── Length: &lt; 5 seconds
+
+Voice Lines:
+├── Format: OGG Vorbis
+├── Sample Rate: 44.1kHz
+├── Bit Depth: 16-bit
+├── Channels: Mono
+└── Compression: -4 quality</code></pre><h3 id="memory-budget">Memory Budget<a class="anchor" href="#memory-budget">#</a></h3>
+<pre tabindex="0"><code>Total Audio Memory: &lt; 150MB (mobile)
+
+Allocation:
+├── Weapon sounds: 30MB
+├── Footsteps/Foley: 20MB
+├── Ambience (streaming): 25MB
+├── Voice lines: 40MB
+├── UI sounds: 10MB
+└── VFX sounds: 25MB</code></pre><hr>
+<p><strong><a href="./SoundDesign.md">← Back to Sound Design</a></strong> | <strong><a href="../README.md">Index</a></strong> | <strong><a href="./TacticalAudio.md">Next: Tactical Audio →</a></strong></p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+<div>
+
+</div>
+
+<div>
+
+</div>
+
+</div>
+
+
+
+
+
+  
+  
+  
+  <div class="flex flex-wrap justify-between">
+    <span>
+    
+      <a href="/docs/GDD_Design/Audio/SoundDesign/" class="flex align-center">
+        <img src="/icons/backward.svg" class="book-icon" alt="Backward" />
+        <span>Sound Design</span>
+      </a>
+    
+    </span>
+    <span>
+    
+      <a href="/docs/GDD_Design/Audio/TacticalAudio/" class="flex align-center">
+        <span>Tactical Audio</span>
+        <img src="/icons/forward.svg" class="book-icon" alt="Forward" />
+      </a>
+    
+    </span>
+  </div>
+  
+
+
+ 
+        
+  
+ 
+        
+        
+  
+ 
+        
+  
+  
+    <script>(function(){document.querySelectorAll("pre:has(code)").forEach(e=>{e.addEventListener("click",e.focus),e.addEventListener("copy",function(t){if(t.preventDefault(),navigator.clipboard){const t=window.getSelection().toString()||e.textContent;navigator.clipboard.writeText(t)}})})})()</script>
+  
+
+      </footer>
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+  
+  <aside class="book-toc">
+    <div class="book-toc-content">
+      
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#-audio-design-philosophy">🎧 Audio Design Philosophy</a>
+      <ul>
+        <li><a href="#core-principles">Core Principles</a></li>
+      </ul>
+    </li>
+    <li><a href="#-ambient-soundscape-by-zone">🌍 Ambient Soundscape By Zone</a>
+      <ul>
+        <li><a href="#industrial-decay---the-factory">Industrial Decay - &ldquo;The Factory&rdquo;</a></li>
+        <li><a href="#urban-ruins---district-14">Urban Ruins - &ldquo;District 14&rdquo;</a></li>
+        <li><a href="#wilderness---the-mire">Wilderness - &ldquo;The Mire&rdquo;</a></li>
+      </ul>
+    </li>
+    <li><a href="#-dynamic-audio-states">🎵 Dynamic Audio States</a>
+      <ul>
+        <li><a href="#tension-system">Tension System</a></li>
+        <li><a href="#time-based-variations">Time-Based Variations</a></li>
+      </ul>
+    </li>
+    <li><a href="#-occlusion--propagation">🔊 Occlusion &amp; Propagation</a>
+      <ul>
+        <li><a href="#sound-occlusion-rules">Sound Occlusion Rules</a></li>
+        <li><a href="#vertical-audio">Vertical Audio</a></li>
+      </ul>
+    </li>
+    <li><a href="#-audio-mix-priorities">🎚️ Audio Mix Priorities</a>
+      <ul>
+        <li><a href="#priority-hierarchy">Priority Hierarchy</a></li>
+        <li><a href="#voice-channel-limits">Voice Channel Limits</a></li>
+      </ul>
+    </li>
+    <li><a href="#-special-audio-events">📻 Special Audio Events</a>
+      <ul>
+        <li><a href="#map-events">Map Events</a></li>
+      </ul>
+    </li>
+    <li><a href="#-technical-specifications">🔧 Technical Specifications</a>
+      <ul>
+        <li><a href="#audio-format-standards">Audio Format Standards</a></li>
+        <li><a href="#memory-budget">Memory Budget</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+    </div>
+  </aside>
+  
+ 
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

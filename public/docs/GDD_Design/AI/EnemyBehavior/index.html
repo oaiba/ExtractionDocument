@@ -1,0 +1,3001 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=52224&amp;path=livereload" data-no-instant defer></script>
+  <!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="AI &amp; Enemy Behavior Design#← Back to Index | Faction Behaviors (Ecology) → | AI Tech (Implementation) → | Next: Map Design →
+🎯 AI Design Philosophy#Core Principle: AI should enhance the extraction experience, not replace PvP
+AI enemies serve as:
+Loot guardians - Protect valuable areas Tension creators - Keep players on edge even without PvP contact Skill tests - Predictable patterns that reward mastery Sound traps - Engaging AI creates noise, attracting players NOT:
+">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:52224/docs/GDD_Design/AI/EnemyBehavior/">
+  <meta property="og:site_name" content="Extraction Shooter GDD">
+  <meta property="og:title" content="Extraction Shooter GDD">
+  <meta property="og:description" content="AI &amp; Enemy Behavior Design#← Back to Index | Faction Behaviors (Ecology) → | AI Tech (Implementation) → | Next: Map Design →
+🎯 AI Design Philosophy#Core Principle: AI should enhance the extraction experience, not replace PvP
+AI enemies serve as:
+Loot guardians - Protect valuable areas Tension creators - Keep players on edge even without PvP contact Skill tests - Predictable patterns that reward mastery Sound traps - Engaging AI creates noise, attracting players NOT:">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
+
+
+  <meta itemprop="name" content="Extraction Shooter GDD">
+  <meta itemprop="description" content="AI &amp; Enemy Behavior Design#← Back to Index | Faction Behaviors (Ecology) → | AI Tech (Implementation) → | Next: Map Design →
+🎯 AI Design Philosophy#Core Principle: AI should enhance the extraction experience, not replace PvP
+AI enemies serve as:
+Loot guardians - Protect valuable areas Tension creators - Keep players on edge even without PvP contact Skill tests - Predictable patterns that reward mastery Sound traps - Engaging AI creates noise, attracting players NOT:">
+  <meta itemprop="wordCount" content="1595">
+
+<title>Enemy Behavior | Extraction Shooter GDD</title>
+<link rel="icon" href="/favicon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="http://localhost:52224/docs/GDD_Design/AI/EnemyBehavior/">
+<link rel="stylesheet" href="/book.min.63c8b2b12bbd1ad36428837740ea371dd41fdb9c22b35499003d0dfa4dbce6ba.css" integrity="sha256-Y8iysSu9GtNkKIN3QOo3HdQf25wis1SZAD0N&#43;k285ro=" crossorigin="anonymous">
+
+
+  <script defer src="/fuse.min.js"></script>
+  <script defer src="/en.search.min.58bea27d7a08265548c5a8636a9a9fc844e0eb9d60fc3bb2c53d517da858d4c1.js" integrity="sha256-WL6ifXoIJlVIxahjapqfyETg651g/DuyxT1RfahY1ME=" crossorigin="anonymous"></script>
+
+  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
+
+
+
+  
+</head>
+<body dir="ltr" class="book-kind-page book-type-docs">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    
+<aside class="book-menu">
+  <div class="book-menu-content">
+    
+  <nav>
+    <h2 class="book-brand">
+  <a class="flex align-center" href="/"><img src="/logo.svg" alt="Logo" /><span>Extraction Shooter GDD</span>
+  </a>
+</h2>
+
+    <div class="book-theme-toggle">
+    <input type="checkbox" id="theme-toggle" class="toggle">
+    <label for="theme-toggle" class="flex justify-between items-center cursor-pointer">
+        <span class="text-xs font-semibold">Dark Mode</span>
+        <div
+            class="relative w-10 h-5 bg-gray-200 rounded-full transition-colors duration-200 ease-in-out dark:bg-gray-700">
+            <div
+                class="absolute left-0 w-5 h-5 bg-white rounded-full shadow transform transition-transform duration-200 ease-in-out dark:translate-x-full">
+            </div>
+        </div>
+    </label>
+</div>
+
+<script>
+    (function () {
+        const toggle = document.getElementById('theme-toggle');
+        const html = document.documentElement;
+
+        
+        const savedTheme = localStorage.getItem('theme');
+        const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+        if (savedTheme === 'dark' || (!savedTheme && systemDark)) {
+            html.classList.add('dark');
+            toggle.checked = true;
+        } else {
+            html.classList.remove('dark');
+            toggle.checked = false;
+        }
+
+        
+        toggle.addEventListener('change', function () {
+            if (this.checked) {
+                html.classList.add('dark');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                html.classList.remove('dark');
+                localStorage.setItem('theme', 'light');
+            }
+        });
+    })();
+</script>
+
+<style>
+     
+    .book-theme-toggle {
+        margin: 1rem 0;
+        padding: 0 1rem;
+
+    }
+
+    .book-theme-toggle label {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        cursor: pointer;
+        font-size: 0.85em;
+    }
+
+     
+    .book-theme-toggle input {
+        display: none;
+    }
+
+     
+    .book-theme-toggle label::after {
+        content: "🌙";
+         
+    }
+
+     
+    html:not(.dark) .book-theme-toggle label::after {
+        content: "☀️";
+         
+    }
+</style> 
+    
+<div class="book-search hidden">
+  <input id="book-search-input" type="text" 
+    placeholder="Search"
+    aria-label="Search"
+    maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+    
+
+    
+    
+
+
+
+    
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/" class="">
+      Gdd Design</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      AI</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/AI/EnemyBehavior/" class="active">
+      Enemy Behavior</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/AI/FactionBehaviors/" class="">
+      Faction Behaviors</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Audio</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Audio/SoundDesign/" class="">
+      Sound Design</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Audio/Soundscape/" class="">
+      Soundscape</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Audio/TacticalAudio/" class="">
+      Tactical Audio</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Audio/VoiceLines/" class="">
+      Voice Lines</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Characters</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Operators/" class="">
+      Operators</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Assault</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Assault/Blaze/" class="">
+      Blaze</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Assault/Havoc/" class="">
+      Havoc</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Assault/README/" class="">
+      Readme</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Assault/Viper/" class="">
+      Viper</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Recon</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Recon/Phantom/" class="">
+      Phantom</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Recon/README/" class="">
+      Readme</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Recon/Specter/" class="">
+      Specter</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Recon/Wraith/" class="">
+      Wraith</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Specialist</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Specialist/Cipher/" class="">
+      Cipher</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Specialist/Flux/" class="">
+      Flux</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Specialist/README/" class="">
+      Readme</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Support</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Support/Angel/" class="">
+      Angel</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Support/Doc/" class="">
+      Doc</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Support/README/" class="">
+      Readme</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Tank</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Tank/Bulwark/" class="">
+      Bulwark</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Tank/Fortress/" class="">
+      Fortress</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Tank/README/" class="">
+      Readme</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Combat</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Combat/Items/" class="">
+      Items</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Combat/Weapons/" class="">
+      Weapons</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      GameDesign</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Accessibility/" class="">
+      Accessibility</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Controls/" class="">
+      Controls</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/CoreGameplay/" class="">
+      Core Gameplay</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Economy/" class="">
+      Economy</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/GameModes/" class="">
+      Game Modes</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/LiveOps/" class="">
+      Live Ops</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Localization/" class="">
+      Localization</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/NavigationAndMap/" class="">
+      Navigation and Map</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Overview/" class="">
+      Overview</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Progression/" class="">
+      Progression</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/RankedMode/" class="">
+      Ranked Mode</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/TutorialRaid/" class="">
+      Tutorial Raid</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/UserSettings/" class="">
+      User Settings</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Gameplay</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Gameplay/CoreLoop/" class="">
+      Core Loop</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      ProjectScope</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/ProjectScope/DesignPillars/" class="">
+      Design Pillars</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/ProjectScope/MVP/" class="">
+      Mvp</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/ProjectScope/NonGoals/" class="">
+      Non Goals</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/ProjectScope/Risks/" class="">
+      Risks</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Social</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Social/Multiplayer/" class="">
+      Multiplayer</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Story</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Story/Backstory/" class="">
+      Backstory</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Story/Factions/" class="">
+      Factions</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Story/Narrative/" class="">
+      Narrative</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Story/QuestLines/" class="">
+      Quest Lines</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      UI UX</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/UI_UX/UX_Flows/" class="">
+      Ux Flows</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/UI_UX/Visual_Style/" class="">
+      Visual Style</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Visuals</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Visuals/ArtDirection/" class="">
+      Art Direction</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Visuals/AssetGuidelines/" class="">
+      Asset Guidelines</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Visuals/StyleGuide/" class="">
+      Style Guide</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Visuals/UserInterface/" class="">
+      User Interface</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      World</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/EnvironmentalNarrative/" class="">
+      Environmental Narrative</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/EnvironmentalNarrative_Guidelines/" class="">
+      Environmental Narrative Guidelines</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/LootDistribution/" class="">
+      Loot Distribution</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/MapDesign/" class="">
+      Map Design</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/MapDesign_IndustrialZone/" class="">
+      Map Design Industrial Zone</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/MapDesign_NeonSlums/" class="">
+      Map Design Neon Slums</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/MapDesign_Wilderness/" class="">
+      Map Design Wilderness</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/MapLayouts/" class="">
+      Map Layouts</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/" class="">
+      Gdd Technical</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      AI</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/AI/SensorySystem/" class="">
+      Sensory System</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Core</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Core/Architecture/" class="">
+      Architecture</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Core/CodingStandards/" class="">
+      Coding Standards</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Core/DevelopmentRoadmap/" class="">
+      Development Roadmap</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Core/NetworkingSystem/" class="">
+      Networking System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Core/SecuritySystem/" class="">
+      Security System</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Gameplay</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Gameplay/CharacterSystem/" class="">
+      Character System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Gameplay/ControlSystem/" class="">
+      Control System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Gameplay/InventorySystem/" class="">
+      Inventory System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Gameplay/WeaponSystem/" class="">
+      Weapon System</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Networking</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Networking/LagCompensation/" class="">
+      Lag Compensation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Networking/ReplicationStrategy/" class="">
+      Replication Strategy</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Performance</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Performance/Budgets/" class="">
+      Budgets</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Performance/Optimization/" class="">
+      Optimization</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Security</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Security/AntiCheatStrategy/" class="">
+      Anti Cheat Strategy</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Systems</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/AccessibilitySystem/" class="">
+      Accessibility System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/AISystem/" class="">
+      Aisystem</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/AnalyticsSystem/" class="">
+      Analytics System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/AudioSystem/" class="">
+      Audio System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/BuildPipeline/" class="">
+      Build Pipeline</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/LiveOpsSystem/" class="">
+      Live Ops System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/LocalizationSystem/" class="">
+      Localization System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/MapSystem/" class="">
+      Map System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/NarrativeSystem/" class="">
+      Narrative System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/ProgressionSystem/" class="">
+      Progression System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/RankedSystem/" class="">
+      Ranked System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/SaveSystem/" class="">
+      Save System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/SocialSystem/" class="">
+      Social System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/TutorialSystem/" class="">
+      Tutorial System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/UISystem/" class="">
+      Uisystem</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+</nav>
+
+
+
+
+<script>{ { . | safeJS } }</script>
+
+
+  </div>
+</aside>
+ 
+
+    <div class="book-page">
+      <header class="book-header hidden">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/icons/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <h3>Enemy Behavior</h3>
+
+  <label for="toc-control">
+    
+    <img src="/icons/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#-ai-design-philosophy">🎯 AI Design Philosophy</a></li>
+    <li><a href="#-enemy-types">🧟 Enemy Types</a>
+      <ul>
+        <li><a href="#tier-1-fodder-common">Tier 1: Fodder (Common)</a></li>
+        <li><a href="#tier-2-soldiers-uncommon">Tier 2: Soldiers (Uncommon)</a></li>
+        <li><a href="#tier-3-elites-rare">Tier 3: Elites (Rare)</a></li>
+        <li><a href="#tier-4-bosses-legendary">Tier 4: Bosses (Legendary)</a></li>
+      </ul>
+    </li>
+    <li><a href="#-ai-behavior-systems">🧠 AI Behavior Systems</a>
+      <ul>
+        <li><a href="#detection-system">Detection System</a></li>
+        <li><a href="#vision-system">Vision System</a></li>
+        <li><a href="#sound-system">Sound System</a></li>
+        <li><a href="#patrol-system">Patrol System</a></li>
+      </ul>
+    </li>
+    <li><a href="#-combat-behavior">⚔️ Combat Behavior</a>
+      <ul>
+        <li><a href="#engagement-rules">Engagement Rules</a></li>
+        <li><a href="#cover-usage">Cover Usage</a></li>
+        <li><a href="#suppression">Suppression</a></li>
+        <li><a href="#flanking">Flanking</a></li>
+      </ul>
+    </li>
+    <li><a href="#-difficulty-scaling">📊 Difficulty Scaling</a>
+      <ul>
+        <li><a href="#dynamic-difficulty">Dynamic Difficulty</a></li>
+        <li><a href="#spawn-density-by-zone">Spawn Density by Zone</a></li>
+        <li><a href="#respawn-rules">Respawn Rules</a></li>
+      </ul>
+    </li>
+    <li><a href="#-ai-personality-variants">🎭 AI Personality Variants</a>
+      <ul>
+        <li><a href="#aggression">Aggression</a></li>
+        <li><a href="#accuracy">Accuracy</a></li>
+      </ul>
+    </li>
+    <li><a href="#-ai-audio-design">🔊 AI Audio Design</a>
+      <ul>
+        <li><a href="#detection-audio">Detection Audio</a></li>
+        <li><a href="#combat-audio">Combat Audio</a></li>
+        <li><a href="#ambient-ai">Ambient AI</a></li>
+      </ul>
+    </li>
+    <li><a href="#-ai-balancing-guidelines">🧪 AI Balancing Guidelines</a>
+      <ul>
+        <li><a href="#kill-time-ttk-targets">Kill Time (TTK) Targets</a></li>
+        <li><a href="#solo-vs-squad-balance">Solo vs Squad Balance</a></li>
+      </ul>
+    </li>
+    <li><a href="#-ai-content-roadmap">📅 AI Content Roadmap</a>
+      <ul>
+        <li><a href="#launch">Launch</a></li>
+        <li><a href="#season-2">Season 2</a></li>
+        <li><a href="#season-3">Season 3</a></li>
+        <li><a href="#future">Future</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><h1 id="ai--enemy-behavior-design">AI &amp; Enemy Behavior Design<a class="anchor" href="#ai--enemy-behavior-design">#</a></h1>
+<p><strong><a href="../README.md">← Back to Index</a></strong> | <strong><a href="./FactionBehaviors.md">Faction Behaviors (Ecology) →</a></strong> | <strong><a href="../../GDD_Technical/AI/SensorySystem.md">AI Tech (Implementation) →</a></strong> | <strong><a href="../World/MapDesign.md">Next: Map Design →</a></strong></p>
+<hr>
+<h2 id="-ai-design-philosophy">🎯 AI Design Philosophy<a class="anchor" href="#-ai-design-philosophy">#</a></h2>
+<p><strong>Core Principle:</strong> AI should enhance the extraction experience, not replace PvP</p>
+<p>AI enemies serve as:</p>
+<ul>
+<li><strong>Loot guardians</strong> - Protect valuable areas</li>
+<li><strong>Tension creators</strong> - Keep players on edge even without PvP contact</li>
+<li><strong>Skill tests</strong> - Predictable patterns that reward mastery</li>
+<li><strong>Sound traps</strong> - Engaging AI creates noise, attracting players</li>
+</ul>
+<p><strong>NOT:</strong></p>
+<ul>
+<li>Main adversaries (PvP is the core tension)</li>
+<li>Unfair or unpredictable</li>
+<li>Bullet sponges</li>
+<li>Trivially easy</li>
+</ul>
+<hr>
+<h2 id="-enemy-types">🧟 Enemy Types<a class="anchor" href="#-enemy-types">#</a></h2>
+<h3 id="tier-1-fodder-common">Tier 1: Fodder (Common)<a class="anchor" href="#tier-1-fodder-common">#</a></h3>
+<p><strong>Purpose:</strong> Easy to kill, noise makers, loot pinatas</p>
+<h4 id="scavenger">Scavenger<a class="anchor" href="#scavenger">#</a></h4>
+<pre tabindex="0"><code>Visual: Ragged civilian clothing, makeshift weapons
+Health: 50 HP
+Armor: None
+Damage: 10-15 per hit (melee) / 15-20 (pistol)
+Speed: Walk (3 m/s), Sprint (5 m/s)
+Detection Range: 15m (vision), 10m (sound)
+Behavior: Patrol → Alert → Engage → Flee (when low HP)</code></pre><p><strong>Spawn Locations:</strong> Edge zones, mid zones
+<strong>Loot Drop:</strong> Common items, ammo, medical supplies
+<strong>Threat Level:</strong> ★☆☆☆☆</p>
+<p><strong>Behavior Details:</strong></p>
+<ul>
+<li>Patrols in small area (10m radius)</li>
+<li>Alerts nearby scavengers when engaged</li>
+<li>Flees at 20% HP</li>
+<li>Does NOT pursue beyond patrol area</li>
+</ul>
+<hr>
+<h4 id="looter">Looter<a class="anchor" href="#looter">#</a></h4>
+<pre tabindex="0"><code>Visual: Hoodie, backpack, SMG
+Health: 75 HP
+Armor: Light (25 armor)
+Damage: 18-22 per hit (SMG)
+Speed: Walk (3.5 m/s), Sprint (6 m/s)
+Detection Range: 20m (vision), 15m (sound)
+Behavior: Patrol → Alert → Take Cover → Engage</code></pre><p><strong>Spawn Locations:</strong> Mid zones, near loot containers
+<strong>Loot Drop:</strong> Uncommon items, sometimes rare
+<strong>Threat Level:</strong> ★★☆☆☆</p>
+<p><strong>Behavior Details:</strong></p>
+<ul>
+<li>Searches containers (can be ambushed)</li>
+<li>Uses cover during combat</li>
+<li>Calls for backup if possible</li>
+<li>More accurate than Scavengers</li>
+</ul>
+<hr>
+<h3 id="tier-2-soldiers-uncommon">Tier 2: Soldiers (Uncommon)<a class="anchor" href="#tier-2-soldiers-uncommon">#</a></h3>
+<p><strong>Purpose:</strong> Actual threats, require tactical approach</p>
+<h4 id="guard">Guard<a class="anchor" href="#guard">#</a></h4>
+<pre tabindex="0"><code>Visual: Military fatigues, body armor, assault rifle
+Health: 100 HP
+Armor: Medium (50 armor)
+Damage: 25-30 per hit (AR)
+Speed: Walk (4 m/s), Sprint (6 m/s)
+Detection Range: 30m (vision), 20m (sound)
+Behavior: Patrol (formations) → Alert Team → Suppress → Flank</code></pre><p><strong>Spawn Locations:</strong> Hot zones, POI entrances
+<strong>Loot Drop:</strong> Rare items, military gear
+<strong>Threat Level:</strong> ★★★☆☆</p>
+<p><strong>Behavior Details:</strong></p>
+<ul>
+<li>Patrols in pairs</li>
+<li>Uses suppressive fire</li>
+<li>One flanks while other suppresses</li>
+<li>Throws grenades into cover</li>
+<li>Does NOT flee</li>
+</ul>
+<hr>
+<h4 id="sniper">Sniper<a class="anchor" href="#sniper">#</a></h4>
+<pre tabindex="0"><code>Visual: Ghillie suit or overwatch position
+Health: 80 HP
+Armor: Light (25 armor)
+Damage: 60-80 per hit (sniper rifle)
+Speed: Stationary / Reposition (5 m/s)
+Detection Range: 60m (vision), 25m (sound)
+Behavior: Overwatch → Aim (laser warning) → Fire → Reposition</code></pre><p><strong>Spawn Locations:</strong> Elevated positions, guard towers
+<strong>Loot Drop:</strong> Rare weapons, optics
+<strong>Threat Level:</strong> ★★★☆☆</p>
+<p><strong>Behavior Details:</strong></p>
+<ul>
+<li>Does NOT patrol (stationary overwatch)</li>
+<li>Laser sight warns players (1.5s before shot)</li>
+<li>Repositions after 3 shots</li>
+<li>Vulnerable during repositioning</li>
+<li>Audio cue: Loud shot echo (alerts other players)</li>
+</ul>
+<hr>
+<h3 id="tier-3-elites-rare">Tier 3: Elites (Rare)<a class="anchor" href="#tier-3-elites-rare">#</a></h3>
+<p><strong>Purpose:</strong> Mini-bosses, guard high-value loot</p>
+<h4 id="heavy">Heavy<a class="anchor" href="#heavy">#</a></h4>
+<pre tabindex="0"><code>Visual: Full body armor, LMG, slow movement
+Health: 200 HP
+Armor: Heavy (100 armor)
+Damage: 35-40 per hit (LMG)
+Speed: Walk (2.5 m/s), NO sprint
+Detection Range: 25m (vision), 30m (sound)
+Behavior: Advance → Suppress → Pursue relentlessly</code></pre><p><strong>Spawn Locations:</strong> Hot zone centers, vaults
+<strong>Loot Drop:</strong> Epic items, LMG, heavy armor
+<strong>Threat Level:</strong> ★★★★☆</p>
+<p><strong>Behavior Details:</strong></p>
+<ul>
+<li>Announced by heavy footsteps (audio warning)</li>
+<li>Cannot be staggered easily</li>
+<li>Weak point: Backpack (2x damage)</li>
+<li>Slow turn rate (flank effective)</li>
+<li>Does NOT retreat</li>
+</ul>
+<hr>
+<h4 id="operative">Operative<a class="anchor" href="#operative">#</a></h4>
+<pre tabindex="0"><code>Visual: Tactical gear, night vision, suppressed weapons
+Health: 120 HP
+Armor: Medium (50 armor)
+Damage: 30-35 per hit (suppressed AR)
+Speed: Walk (4 m/s), Sprint (7 m/s)
+Detection Range: 40m (vision), 35m (sound)
+Behavior: Stealth approach → Flank → Engage → Smoke retreat</code></pre><p><strong>Spawn Locations:</strong> Random spawn, event reinforcements
+<strong>Loot Drop:</strong> Epic items, tactical equipment
+<strong>Threat Level:</strong> ★★★★☆</p>
+<p><strong>Behavior Details:</strong></p>
+<ul>
+<li>Can approach silently (no footsteps until 10m)</li>
+<li>Uses flashbangs before engaging</li>
+<li>Retreats with smoke grenades when damaged</li>
+<li>Most intelligent AI type</li>
+<li>Coordinates with other Operatives</li>
+</ul>
+<hr>
+<h3 id="tier-4-bosses-legendary">Tier 4: Bosses (Legendary)<a class="anchor" href="#tier-4-bosses-legendary">#</a></h3>
+<p><strong>Purpose:</strong> High-risk, high-reward encounters</p>
+<h4 id="the-warden-map-1---industrial-decay">The Warden (Map 1 - Industrial Decay)<a class="anchor" href="#the-warden-map-1---industrial-decay">#</a></h4>
+<pre tabindex="0"><code>Visual: Heavily modified exosuit, construction theme
+Health: 500 HP
+Armor: 200 armor (regenerates slowly)
+Damage: Variable (see phases)
+Speed: Walk (3 m/s), Charge (10 m/s)
+Detection Range: Map-wide when triggered
+Location: Central hot zone (Reactor Core)</code></pre><p><strong>Phases:</strong></p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Phase</th>
+          <th style="text-align: left">HP Threshold</th>
+          <th style="text-align: left">Behavior</th>
+          <th style="text-align: left">Attacks</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">1</td>
+          <td style="text-align: left">100-75%</td>
+          <td style="text-align: left">Stalking</td>
+          <td style="text-align: left">Ground slam (AoE), debris throw</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">2</td>
+          <td style="text-align: left">75-50%</td>
+          <td style="text-align: left">Aggressive</td>
+          <td style="text-align: left">Adds charge attack, faster attacks</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">3</td>
+          <td style="text-align: left">50-25%</td>
+          <td style="text-align: left">Berserk</td>
+          <td style="text-align: left">Continuous charge, environment destruction</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">4</td>
+          <td style="text-align: left">25-0%</td>
+          <td style="text-align: left">Desperation</td>
+          <td style="text-align: left">All attacks + calls reinforcements</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Loot Drop:</strong> Legendary weapon/armor guaranteed, rare crafting materials
+<strong>Threat Level:</strong> ★★★★★</p>
+<p><strong>Design Notes:</strong></p>
+<ul>
+<li>Announced 30 seconds before appearing (alarm sounds)</li>
+<li>Creates massive noise (attracts players)</li>
+<li>Can be avoided (not mandatory)</li>
+<li>Intended for squad coordination</li>
+</ul>
+<hr>
+<h4 id="the-director-map-2---urban-ruins">The Director (Map 2 - Urban Ruins)<a class="anchor" href="#the-director-map-2---urban-ruins">#</a></h4>
+<pre tabindex="0"><code>Visual: Corporate executive suit + combat augments
+Health: 400 HP
+Armor: 150 armor (depleting shields)
+Damage: Drone attacks + personal sidearm
+Speed: Walk (4 m/s), Teleport (short range blink)
+Detection Range: Drone network (entire POI)
+Location: Corporate Tower (top floor)</code></pre><p><strong>Mechanics:</strong></p>
+<ul>
+<li>Controls 4 attack drones</li>
+<li>Drones must be destroyed first (80 HP each)</li>
+<li>Shields regenerate if drones are alive</li>
+<li>Blinks away when attacked directly</li>
+<li>Final phase: Overcharges remaining drones (explode on death)</li>
+</ul>
+<p><strong>Loot Drop:</strong> Legendary tech items, electronic components
+<strong>Threat Level:</strong> ★★★★★</p>
+<hr>
+<h2 id="-ai-behavior-systems">🧠 AI Behavior Systems<a class="anchor" href="#-ai-behavior-systems">#</a></h2>
+<h3 id="detection-system">Detection System<a class="anchor" href="#detection-system">#</a></h3>
+<p><strong>Three Detection States:</strong></p>
+<pre tabindex="0"><code>┌─────────────┐     ┌─────────────┐     ┌─────────────┐
+│   UNAWARE   │────→│    ALERT    │────→│   ENGAGED   │
+│  (Patrol)   │←────│ (Searching) │←────│  (Combat)   │
+└─────────────┘     └─────────────┘     └─────────────┘
+      │                   │                    │
+      └───────────────────┴────────────────────┘
+                    (Timer expires)</code></pre><p><strong>Transition Triggers:</strong></p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">From</th>
+          <th style="text-align: left">To</th>
+          <th style="text-align: left">Trigger</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Unaware</td>
+          <td style="text-align: left">Alert</td>
+          <td style="text-align: left">Noise heard (footsteps, gunfire)</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Unaware</td>
+          <td style="text-align: left">Alert</td>
+          <td style="text-align: left">Peripheral vision (edge of cone)</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Unaware</td>
+          <td style="text-align: left">Engaged</td>
+          <td style="text-align: left">Direct vision (center of cone)</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Alert</td>
+          <td style="text-align: left">Engaged</td>
+          <td style="text-align: left">Player spotted during search</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Alert</td>
+          <td style="text-align: left">Unaware</td>
+          <td style="text-align: left">30 seconds no contact</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Engaged</td>
+          <td style="text-align: left">Alert</td>
+          <td style="text-align: left">Line of sight lost for 10 seconds</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Engaged</td>
+          <td style="text-align: left">Unaware</td>
+          <td style="text-align: left">60 seconds no contact (rare)</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="vision-system">Vision System<a class="anchor" href="#vision-system">#</a></h3>
+<p><strong>Vision Cone:</strong></p>
+<pre tabindex="0"><code>          Player
+             ▼
+    ┌───────────────┐
+    │   Peripheral  │  60° total angle
+    │  ┌─────────┐  │
+    │  │ Direct  │  │  30° center (immediate detection)
+    │  └─────────┘  │
+    └───────────────┘
+         Enemy
+         
+Detection Range by State:
+- Unaware: 50% normal range
+- Alert: 100% normal range  
+- Engaged: 150% normal range</code></pre><p><strong>Visibility Modifiers:</strong></p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Condition</th>
+          <th style="text-align: left">Detection Speed</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Standing</td>
+          <td style="text-align: left">Normal</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Crouching</td>
+          <td style="text-align: left">-30%</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Prone</td>
+          <td style="text-align: left">-60%</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Moving</td>
+          <td style="text-align: left">+50%</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Sprinting</td>
+          <td style="text-align: left">+100%</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Firing</td>
+          <td style="text-align: left">Immediate</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">In light</td>
+          <td style="text-align: left">+30%</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">In shadow</td>
+          <td style="text-align: left">-30%</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="sound-system">Sound System<a class="anchor" href="#sound-system">#</a></h3>
+<p><strong>Sound Propagation:</strong></p>
+<pre tabindex="0"><code>Footsteps (Walk): 10m radius
+Footsteps (Sprint): 25m radius
+Gunfire (Suppressed): 30m radius
+Gunfire (Unsuppressed): 80m radius
+Explosions: 150m radius
+Ability Use: 40m radius (varies)</code></pre><p><strong>Sound Occlusion:</strong></p>
+<ul>
+<li>Walls reduce sound by 50%</li>
+<li>Closed doors reduce by 75%</li>
+<li>Open areas: Full propagation</li>
+</ul>
+<h3 id="patrol-system">Patrol System<a class="anchor" href="#patrol-system">#</a></h3>
+<p><strong>Patrol Types:</strong></p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Type</th>
+          <th style="text-align: left">Description</th>
+          <th style="text-align: left">Used By</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><strong>Point</strong></td>
+          <td style="text-align: left">Stand in one location</td>
+          <td style="text-align: left">Snipers, Guards</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Path</strong></td>
+          <td style="text-align: left">Follow waypoints</td>
+          <td style="text-align: left">Scavengers, Looters</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Random</strong></td>
+          <td style="text-align: left">Wander within area</td>
+          <td style="text-align: left">Scavengers</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Pair</strong></td>
+          <td style="text-align: left">Two AI coordinated</td>
+          <td style="text-align: left">Guards, Elites</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Formation</strong></td>
+          <td style="text-align: left">3+ AI in tactical formation</td>
+          <td style="text-align: left">Hot zone squads</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Patrol Behavior:</strong></p>
+<ul>
+<li>Stop at waypoints (1-5 seconds)</li>
+<li>Look around at waypoints</li>
+<li>Investigate sounds during patrol</li>
+<li>Return to patrol after alert timeout</li>
+</ul>
+<hr>
+<h2 id="-combat-behavior">⚔️ Combat Behavior<a class="anchor" href="#-combat-behavior">#</a></h2>
+<h3 id="engagement-rules">Engagement Rules<a class="anchor" href="#engagement-rules">#</a></h3>
+<p><strong>Aggression by Type:</strong></p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Type</th>
+          <th style="text-align: left">Behavior</th>
+          <th style="text-align: left">Retreat Trigger</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Scavenger</td>
+          <td style="text-align: left">Cautious, flee early</td>
+          <td style="text-align: left">20% HP</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Looter</td>
+          <td style="text-align: left">Moderate, use cover</td>
+          <td style="text-align: left">15% HP</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Guard</td>
+          <td style="text-align: left">Aggressive, no retreat</td>
+          <td style="text-align: left">Never</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Sniper</td>
+          <td style="text-align: left">Evasive, reposition</td>
+          <td style="text-align: left">When flanked</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Heavy</td>
+          <td style="text-align: left">Relentless pursuit</td>
+          <td style="text-align: left">Never</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Operative</td>
+          <td style="text-align: left">Tactical, coordinate</td>
+          <td style="text-align: left">30% HP (smoke)</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="cover-usage">Cover Usage<a class="anchor" href="#cover-usage">#</a></h3>
+<p><strong>Cover Selection Priority:</strong></p>
+<ol>
+<li>Hard cover (walls, concrete)</li>
+<li>Soft cover (cars, furniture)</li>
+<li>Distance from threat</li>
+<li>Angle to threat</li>
+</ol>
+<p><strong>Cover Behavior:</strong></p>
+<ul>
+<li>Peek and shoot (2-3 shots)</li>
+<li>Reload behind cover</li>
+<li>Switch cover if flanked</li>
+<li>Grenade flush if player camps</li>
+</ul>
+<h3 id="suppression">Suppression<a class="anchor" href="#suppression">#</a></h3>
+<p><strong>When AI Uses Suppression:</strong></p>
+<ul>
+<li>Player behind cover for 5+ seconds</li>
+<li>Multiple AI present</li>
+<li>Heavy/Guard types</li>
+</ul>
+<p><strong>Suppression Effect on Player:</strong></p>
+<ul>
+<li>Camera shake (light)</li>
+<li>Reduced accuracy if standing</li>
+<li>Audio feedback (bullets snapping)</li>
+</ul>
+<h3 id="flanking">Flanking<a class="anchor" href="#flanking">#</a></h3>
+<p><strong>Flank Trigger:</strong></p>
+<ul>
+<li>Player stationary in cover for 10+ seconds</li>
+<li>2+ AI present</li>
+<li>One AI suppresses, one moves</li>
+</ul>
+<p><strong>Flank Path:</strong></p>
+<ul>
+<li>Attempt wide angle (90°+)</li>
+<li>Use cover during movement</li>
+<li>Coordinate timing with suppressor</li>
+</ul>
+<hr>
+<h2 id="-difficulty-scaling">📊 Difficulty Scaling<a class="anchor" href="#-difficulty-scaling">#</a></h2>
+<h3 id="dynamic-difficulty">Dynamic Difficulty<a class="anchor" href="#dynamic-difficulty">#</a></h3>
+<p><strong>NOT used</strong> - We want consistent, learnable AI</p>
+<h3 id="spawn-density-by-zone">Spawn Density by Zone<a class="anchor" href="#spawn-density-by-zone">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Zone</th>
+          <th style="text-align: left">Fodder</th>
+          <th style="text-align: left">Soldiers</th>
+          <th style="text-align: left">Elites</th>
+          <th style="text-align: left">Boss</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Edge</td>
+          <td style="text-align: left">Low (2-4)</td>
+          <td style="text-align: left">None</td>
+          <td style="text-align: left">None</td>
+          <td style="text-align: left">No</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Mid</td>
+          <td style="text-align: left">Medium (4-8)</td>
+          <td style="text-align: left">Low (2-3)</td>
+          <td style="text-align: left">Rare (0-1)</td>
+          <td style="text-align: left">No</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Hot</td>
+          <td style="text-align: left">High (6-10)</td>
+          <td style="text-align: left">Medium (4-6)</td>
+          <td style="text-align: left">Common (2-3)</td>
+          <td style="text-align: left">Yes</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="respawn-rules">Respawn Rules<a class="anchor" href="#respawn-rules">#</a></h3>
+<p><strong>General:</strong></p>
+<ul>
+<li>AI does NOT respawn during a single match</li>
+<li>Cleared areas stay cleared</li>
+<li>Exception: Reinforcement events</li>
+</ul>
+<p><strong>Reinforcement Events:</strong></p>
+<ul>
+<li>Trigger: Supply drop, boss fight, timed event</li>
+<li>Warning: 30 seconds audio cue</li>
+<li>Spawn from map edges</li>
+<li>Limited count (5-10 AI)</li>
+</ul>
+<hr>
+<h2 id="-ai-personality-variants">🎭 AI Personality Variants<a class="anchor" href="#-ai-personality-variants">#</a></h2>
+<p>Each AI type has personality variants affecting behavior:</p>
+<h3 id="aggression">Aggression<a class="anchor" href="#aggression">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Level</th>
+          <th style="text-align: left">Behavior</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Coward</td>
+          <td style="text-align: left">Flee early, poor accuracy</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Cautious</td>
+          <td style="text-align: left">Heavy cover use, slow advance</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Normal</td>
+          <td style="text-align: left">Balanced</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Aggressive</td>
+          <td style="text-align: left">Rush tactics, less cover</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Berserker</td>
+          <td style="text-align: left">Suicide charge (rare variant)</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="accuracy">Accuracy<a class="anchor" href="#accuracy">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Level</th>
+          <th style="text-align: left">Hit Rate</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Poor</td>
+          <td style="text-align: left">15%</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Below Average</td>
+          <td style="text-align: left">25%</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Average</td>
+          <td style="text-align: left">40%</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Above Average</td>
+          <td style="text-align: left">55%</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Marksman</td>
+          <td style="text-align: left">70%</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Distribution:</strong></p>
+<ul>
+<li>Fodder: Poor to Average</li>
+<li>Soldiers: Below Average to Above Average</li>
+<li>Elites: Average to Marksman</li>
+</ul>
+<hr>
+<h2 id="-ai-audio-design">🔊 AI Audio Design<a class="anchor" href="#-ai-audio-design">#</a></h2>
+<h3 id="detection-audio">Detection Audio<a class="anchor" href="#detection-audio">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">State</th>
+          <th style="text-align: left">Sound</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Unaware → Alert</td>
+          <td style="text-align: left">&ldquo;What was that?&rdquo; grunt</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Alert → Engaged</td>
+          <td style="text-align: left">&ldquo;There! Enemy!&rdquo; callout</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Engaged → Alert</td>
+          <td style="text-align: left">&ldquo;Lost visual&rdquo;</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Alert → Unaware</td>
+          <td style="text-align: left">Relaxed sigh</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="combat-audio">Combat Audio<a class="anchor" href="#combat-audio">#</a></h3>
+<ul>
+<li>Reload calls: &ldquo;Reloading!&rdquo;</li>
+<li>Throw grenade: &ldquo;Grenade out!&rdquo;</li>
+<li>Flanking: &ldquo;Moving!&rdquo;</li>
+<li>Suppressing: &ldquo;Covering fire!&rdquo;</li>
+<li>Low HP: Pain sounds, panicked breathing</li>
+</ul>
+<h3 id="ambient-ai">Ambient AI<a class="anchor" href="#ambient-ai">#</a></h3>
+<ul>
+<li>Idle chatter (background noise)</li>
+<li>Radio checks</li>
+<li>Coughing, shuffling</li>
+<li>Equipment sounds</li>
+</ul>
+<hr>
+<h2 id="-ai-balancing-guidelines">🧪 AI Balancing Guidelines<a class="anchor" href="#-ai-balancing-guidelines">#</a></h2>
+<h3 id="kill-time-ttk-targets">Kill Time (TTK) Targets<a class="anchor" href="#kill-time-ttk-targets">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">AI Type</th>
+          <th style="text-align: left">Player TTK (target)</th>
+          <th style="text-align: left">AI TTK (player target)</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Scavenger</td>
+          <td style="text-align: left">1-2 seconds</td>
+          <td style="text-align: left">8-10 seconds</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Looter</td>
+          <td style="text-align: left">2-3 seconds</td>
+          <td style="text-align: left">6-8 seconds</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Guard</td>
+          <td style="text-align: left">3-5 seconds</td>
+          <td style="text-align: left">4-6 seconds</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Sniper</td>
+          <td style="text-align: left">2-3 seconds</td>
+          <td style="text-align: left">6-8 seconds</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Heavy</td>
+          <td style="text-align: left">8-15 seconds</td>
+          <td style="text-align: left">5-7 seconds</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Operative</td>
+          <td style="text-align: left">4-6 seconds</td>
+          <td style="text-align: left">4-6 seconds</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Boss</td>
+          <td style="text-align: left">60-120 seconds</td>
+          <td style="text-align: left">30-60 seconds</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="solo-vs-squad-balance">Solo vs Squad Balance<a class="anchor" href="#solo-vs-squad-balance">#</a></h3>
+<p><strong>AI should be:</strong></p>
+<ul>
+<li>Soloable with skill and caution</li>
+<li>Faster/easier with squad coordination</li>
+<li>Never trivial regardless of squad size</li>
+</ul>
+<p><strong>Scaling (OPTIONAL for hot zones):</strong></p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Players in Area</th>
+          <th style="text-align: left">AI Damage</th>
+          <th style="text-align: left">AI Health</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">1</td>
+          <td style="text-align: left">100%</td>
+          <td style="text-align: left">100%</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">2</td>
+          <td style="text-align: left">110%</td>
+          <td style="text-align: left">110%</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">3+</td>
+          <td style="text-align: left">120%</td>
+          <td style="text-align: left">125%</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="-ai-content-roadmap">📅 AI Content Roadmap<a class="anchor" href="#-ai-content-roadmap">#</a></h2>
+<h3 id="launch">Launch<a class="anchor" href="#launch">#</a></h3>
+<ul>
+<li>All Tier 1-3 AI types</li>
+<li>1 Boss (The Warden)</li>
+<li>Basic behavior systems</li>
+</ul>
+<h3 id="season-2">Season 2<a class="anchor" href="#season-2">#</a></h3>
+<ul>
+<li>The Director boss</li>
+<li>Operative elite type</li>
+<li>Improved flanking AI</li>
+</ul>
+<h3 id="season-3">Season 3<a class="anchor" href="#season-3">#</a></h3>
+<ul>
+<li>New boss for Map 3</li>
+<li>AI events (raids)</li>
+<li>Faction-specific AI variants</li>
+</ul>
+<h3 id="future">Future<a class="anchor" href="#future">#</a></h3>
+<ul>
+<li>AI faction wars (environmental events)</li>
+<li>Wandering mini-bosses</li>
+<li>Seasonal boss variants</li>
+</ul>
+<hr>
+<p><strong><a href="../README.md">← Back to Index</a></strong> | <strong><a href="../World/MapDesign.md">Next: Map Design →</a></strong></p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+<div>
+
+</div>
+
+<div>
+
+</div>
+
+</div>
+
+
+
+
+
+  
+  
+  
+  <div class="flex flex-wrap justify-between">
+    <span>
+    
+      <a href="/docs/GDD_Design/" class="flex align-center">
+        <img src="/icons/backward.svg" class="book-icon" alt="Backward" />
+        <span>Gdd Design</span>
+      </a>
+    
+    </span>
+    <span>
+    
+      <a href="/docs/GDD_Design/AI/FactionBehaviors/" class="flex align-center">
+        <span>Faction Behaviors</span>
+        <img src="/icons/forward.svg" class="book-icon" alt="Forward" />
+      </a>
+    
+    </span>
+  </div>
+  
+
+
+ 
+        
+  
+ 
+        
+        
+  
+ 
+        
+  
+  
+    <script>(function(){document.querySelectorAll("pre:has(code)").forEach(e=>{e.addEventListener("click",e.focus),e.addEventListener("copy",function(t){if(t.preventDefault(),navigator.clipboard){const t=window.getSelection().toString()||e.textContent;navigator.clipboard.writeText(t)}})})})()</script>
+  
+
+      </footer>
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+  
+  <aside class="book-toc">
+    <div class="book-toc-content">
+      
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#-ai-design-philosophy">🎯 AI Design Philosophy</a></li>
+    <li><a href="#-enemy-types">🧟 Enemy Types</a>
+      <ul>
+        <li><a href="#tier-1-fodder-common">Tier 1: Fodder (Common)</a></li>
+        <li><a href="#tier-2-soldiers-uncommon">Tier 2: Soldiers (Uncommon)</a></li>
+        <li><a href="#tier-3-elites-rare">Tier 3: Elites (Rare)</a></li>
+        <li><a href="#tier-4-bosses-legendary">Tier 4: Bosses (Legendary)</a></li>
+      </ul>
+    </li>
+    <li><a href="#-ai-behavior-systems">🧠 AI Behavior Systems</a>
+      <ul>
+        <li><a href="#detection-system">Detection System</a></li>
+        <li><a href="#vision-system">Vision System</a></li>
+        <li><a href="#sound-system">Sound System</a></li>
+        <li><a href="#patrol-system">Patrol System</a></li>
+      </ul>
+    </li>
+    <li><a href="#-combat-behavior">⚔️ Combat Behavior</a>
+      <ul>
+        <li><a href="#engagement-rules">Engagement Rules</a></li>
+        <li><a href="#cover-usage">Cover Usage</a></li>
+        <li><a href="#suppression">Suppression</a></li>
+        <li><a href="#flanking">Flanking</a></li>
+      </ul>
+    </li>
+    <li><a href="#-difficulty-scaling">📊 Difficulty Scaling</a>
+      <ul>
+        <li><a href="#dynamic-difficulty">Dynamic Difficulty</a></li>
+        <li><a href="#spawn-density-by-zone">Spawn Density by Zone</a></li>
+        <li><a href="#respawn-rules">Respawn Rules</a></li>
+      </ul>
+    </li>
+    <li><a href="#-ai-personality-variants">🎭 AI Personality Variants</a>
+      <ul>
+        <li><a href="#aggression">Aggression</a></li>
+        <li><a href="#accuracy">Accuracy</a></li>
+      </ul>
+    </li>
+    <li><a href="#-ai-audio-design">🔊 AI Audio Design</a>
+      <ul>
+        <li><a href="#detection-audio">Detection Audio</a></li>
+        <li><a href="#combat-audio">Combat Audio</a></li>
+        <li><a href="#ambient-ai">Ambient AI</a></li>
+      </ul>
+    </li>
+    <li><a href="#-ai-balancing-guidelines">🧪 AI Balancing Guidelines</a>
+      <ul>
+        <li><a href="#kill-time-ttk-targets">Kill Time (TTK) Targets</a></li>
+        <li><a href="#solo-vs-squad-balance">Solo vs Squad Balance</a></li>
+      </ul>
+    </li>
+    <li><a href="#-ai-content-roadmap">📅 AI Content Roadmap</a>
+      <ul>
+        <li><a href="#launch">Launch</a></li>
+        <li><a href="#season-2">Season 2</a></li>
+        <li><a href="#season-3">Season 3</a></li>
+        <li><a href="#future">Future</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+    </div>
+  </aside>
+  
+ 
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

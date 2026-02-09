@@ -1,0 +1,102 @@
+<div class="book-theme-toggle">
+    <input type="checkbox" id="theme-toggle" class="toggle">
+    <label for="theme-toggle">
+        <span class="toggle-label">Dark Mode</span>
+        <div class="toggle-switch"></div>
+    </label>
+</div>
+
+<script>
+    (function () {
+        const toggle = document.getElementById('theme-toggle');
+        const html = document.documentElement;
+
+        // Check local storage or system preference
+        const savedTheme = localStorage.getItem('theme');
+        const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+        if (savedTheme === 'dark' || (!savedTheme && systemDark)) {
+            html.classList.add('dark');
+            toggle.checked = true;
+        } else {
+            html.classList.remove('dark');
+            toggle.checked = false;
+        }
+
+        // Toggle theme on click
+        toggle.addEventListener('change', function () {
+            if (this.checked) {
+                html.classList.add('dark');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                html.classList.remove('dark');
+                localStorage.setItem('theme', 'light');
+            }
+        });
+    })();
+</script>
+
+<style>
+    /* Basic toggle styling */
+    .book-theme-toggle {
+        margin: 1rem 0;
+        padding: 0 1rem;
+    }
+
+    .book-theme-toggle label {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        cursor: pointer;
+        font-size: 0.85em;
+        width: 100%;
+    }
+
+    .book-theme-toggle .toggle-label {
+        font-weight: 600;
+        margin-right: auto;
+    }
+
+    /* Toggle Switch Container */
+    .book-theme-toggle .toggle-switch {
+        position: relative;
+        width: 40px;
+        height: 20px;
+        background-color: #ccc;
+        border-radius: 20px;
+        transition: background-color 0.3s;
+    }
+
+    /* Toggle Switch Handle */
+    .book-theme-toggle .toggle-switch::after {
+        content: '';
+        position: absolute;
+        top: 2px;
+        left: 2px;
+        width: 16px;
+        height: 16px;
+        background-color: white;
+        border-radius: 50%;
+        transition: transform 0.3s;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Checked State (Dark Mode Active) */
+    .book-theme-toggle input:checked+label .toggle-switch {
+        background-color: #4cd964;
+        /* Green or Theme Accent Color */
+    }
+
+    .book-theme-toggle input:checked+label .toggle-switch::after {
+        transform: translateX(20px);
+    }
+
+    /* Icon / Text adjustments if needed */
+    html.dark .book-theme-toggle .toggle-label::after {
+        content: " 🌙";
+    }
+
+    html:not(.dark) .book-theme-toggle .toggle-label::after {
+        content: " ☀️";
+    }
+</style>

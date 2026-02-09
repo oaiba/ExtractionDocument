@@ -1,0 +1,3483 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=52224&amp;path=livereload" data-no-instant defer></script>
+  <!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Control System - Design &amp; Experience#← Back to Index | Next: Progression →
+🎯 Design Philosophy#The control system is the bridge between the player’s intent and the game’s action. Our core philosophy for controls is “Fluidity First.”
+Responsiveness: Input latency must be imperceptible. Every button press should result in an immediate visual and auditory feedback. Predictability: The character should never do something the player didn’t intend. Movement momentum should feel weighty but controllable. Accessibility: The game must be playable by everyone, regardless of platform or physical ability. Platform Native: Controls should not feel “ported.” Mobile controls should feel like a native mobile game, and PC controls like a native PC shooter. Game Feel Goals (The “Why”)#To ensure our controls deliver on the High-Stakes Tension pillar:
+">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:52224/docs/GDD_Design/GameDesign/Controls/">
+  <meta property="og:site_name" content="Extraction Shooter GDD">
+  <meta property="og:title" content="Extraction Shooter GDD">
+  <meta property="og:description" content="Control System - Design &amp; Experience#← Back to Index | Next: Progression →
+🎯 Design Philosophy#The control system is the bridge between the player’s intent and the game’s action. Our core philosophy for controls is “Fluidity First.”
+Responsiveness: Input latency must be imperceptible. Every button press should result in an immediate visual and auditory feedback. Predictability: The character should never do something the player didn’t intend. Movement momentum should feel weighty but controllable. Accessibility: The game must be playable by everyone, regardless of platform or physical ability. Platform Native: Controls should not feel “ported.” Mobile controls should feel like a native mobile game, and PC controls like a native PC shooter. Game Feel Goals (The “Why”)#To ensure our controls deliver on the High-Stakes Tension pillar:">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
+
+
+  <meta itemprop="name" content="Extraction Shooter GDD">
+  <meta itemprop="description" content="Control System - Design &amp; Experience#← Back to Index | Next: Progression →
+🎯 Design Philosophy#The control system is the bridge between the player’s intent and the game’s action. Our core philosophy for controls is “Fluidity First.”
+Responsiveness: Input latency must be imperceptible. Every button press should result in an immediate visual and auditory feedback. Predictability: The character should never do something the player didn’t intend. Movement momentum should feel weighty but controllable. Accessibility: The game must be playable by everyone, regardless of platform or physical ability. Platform Native: Controls should not feel “ported.” Mobile controls should feel like a native mobile game, and PC controls like a native PC shooter. Game Feel Goals (The “Why”)#To ensure our controls deliver on the High-Stakes Tension pillar:">
+  <meta itemprop="wordCount" content="3305">
+
+<title>Controls | Extraction Shooter GDD</title>
+<link rel="icon" href="/favicon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="http://localhost:52224/docs/GDD_Design/GameDesign/Controls/">
+<link rel="stylesheet" href="/book.min.63c8b2b12bbd1ad36428837740ea371dd41fdb9c22b35499003d0dfa4dbce6ba.css" integrity="sha256-Y8iysSu9GtNkKIN3QOo3HdQf25wis1SZAD0N&#43;k285ro=" crossorigin="anonymous">
+
+
+  <script defer src="/fuse.min.js"></script>
+  <script defer src="/en.search.min.58bea27d7a08265548c5a8636a9a9fc844e0eb9d60fc3bb2c53d517da858d4c1.js" integrity="sha256-WL6ifXoIJlVIxahjapqfyETg651g/DuyxT1RfahY1ME=" crossorigin="anonymous"></script>
+
+  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
+
+
+
+  
+</head>
+<body dir="ltr" class="book-kind-page book-type-docs">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    
+<aside class="book-menu">
+  <div class="book-menu-content">
+    
+  <nav>
+    <h2 class="book-brand">
+  <a class="flex align-center" href="/"><img src="/logo.svg" alt="Logo" /><span>Extraction Shooter GDD</span>
+  </a>
+</h2>
+
+    <div class="book-theme-toggle">
+    <input type="checkbox" id="theme-toggle" class="toggle">
+    <label for="theme-toggle" class="flex justify-between items-center cursor-pointer">
+        <span class="text-xs font-semibold">Dark Mode</span>
+        <div
+            class="relative w-10 h-5 bg-gray-200 rounded-full transition-colors duration-200 ease-in-out dark:bg-gray-700">
+            <div
+                class="absolute left-0 w-5 h-5 bg-white rounded-full shadow transform transition-transform duration-200 ease-in-out dark:translate-x-full">
+            </div>
+        </div>
+    </label>
+</div>
+
+<script>
+    (function () {
+        const toggle = document.getElementById('theme-toggle');
+        const html = document.documentElement;
+
+        
+        const savedTheme = localStorage.getItem('theme');
+        const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+        if (savedTheme === 'dark' || (!savedTheme && systemDark)) {
+            html.classList.add('dark');
+            toggle.checked = true;
+        } else {
+            html.classList.remove('dark');
+            toggle.checked = false;
+        }
+
+        
+        toggle.addEventListener('change', function () {
+            if (this.checked) {
+                html.classList.add('dark');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                html.classList.remove('dark');
+                localStorage.setItem('theme', 'light');
+            }
+        });
+    })();
+</script>
+
+<style>
+     
+    .book-theme-toggle {
+        margin: 1rem 0;
+        padding: 0 1rem;
+
+    }
+
+    .book-theme-toggle label {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        cursor: pointer;
+        font-size: 0.85em;
+    }
+
+     
+    .book-theme-toggle input {
+        display: none;
+    }
+
+     
+    .book-theme-toggle label::after {
+        content: "🌙";
+         
+    }
+
+     
+    html:not(.dark) .book-theme-toggle label::after {
+        content: "☀️";
+         
+    }
+</style> 
+    
+<div class="book-search hidden">
+  <input id="book-search-input" type="text" 
+    placeholder="Search"
+    aria-label="Search"
+    maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+    
+
+    
+    
+
+
+
+    
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/" class="">
+      Gdd Design</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      AI</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/AI/EnemyBehavior/" class="">
+      Enemy Behavior</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/AI/FactionBehaviors/" class="">
+      Faction Behaviors</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Audio</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Audio/SoundDesign/" class="">
+      Sound Design</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Audio/Soundscape/" class="">
+      Soundscape</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Audio/TacticalAudio/" class="">
+      Tactical Audio</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Audio/VoiceLines/" class="">
+      Voice Lines</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Characters</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Operators/" class="">
+      Operators</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Assault</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Assault/Blaze/" class="">
+      Blaze</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Assault/Havoc/" class="">
+      Havoc</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Assault/README/" class="">
+      Readme</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Assault/Viper/" class="">
+      Viper</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Recon</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Recon/Phantom/" class="">
+      Phantom</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Recon/README/" class="">
+      Readme</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Recon/Specter/" class="">
+      Specter</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Recon/Wraith/" class="">
+      Wraith</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Specialist</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Specialist/Cipher/" class="">
+      Cipher</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Specialist/Flux/" class="">
+      Flux</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Specialist/README/" class="">
+      Readme</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Support</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Support/Angel/" class="">
+      Angel</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Support/Doc/" class="">
+      Doc</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Support/README/" class="">
+      Readme</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Tank</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Tank/Bulwark/" class="">
+      Bulwark</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Tank/Fortress/" class="">
+      Fortress</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Characters/Tank/README/" class="">
+      Readme</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Combat</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Combat/Items/" class="">
+      Items</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Combat/Weapons/" class="">
+      Weapons</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      GameDesign</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Accessibility/" class="">
+      Accessibility</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Controls/" class="active">
+      Controls</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/CoreGameplay/" class="">
+      Core Gameplay</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Economy/" class="">
+      Economy</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/GameModes/" class="">
+      Game Modes</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/LiveOps/" class="">
+      Live Ops</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Localization/" class="">
+      Localization</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/NavigationAndMap/" class="">
+      Navigation and Map</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Overview/" class="">
+      Overview</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/Progression/" class="">
+      Progression</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/RankedMode/" class="">
+      Ranked Mode</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/TutorialRaid/" class="">
+      Tutorial Raid</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/GameDesign/UserSettings/" class="">
+      User Settings</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Gameplay</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Gameplay/CoreLoop/" class="">
+      Core Loop</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      ProjectScope</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/ProjectScope/DesignPillars/" class="">
+      Design Pillars</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/ProjectScope/MVP/" class="">
+      Mvp</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/ProjectScope/NonGoals/" class="">
+      Non Goals</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/ProjectScope/Risks/" class="">
+      Risks</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Social</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Social/Multiplayer/" class="">
+      Multiplayer</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Story</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Story/Backstory/" class="">
+      Backstory</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Story/Factions/" class="">
+      Factions</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Story/Narrative/" class="">
+      Narrative</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Story/QuestLines/" class="">
+      Quest Lines</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      UI UX</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/UI_UX/UX_Flows/" class="">
+      Ux Flows</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/UI_UX/Visual_Style/" class="">
+      Visual Style</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Visuals</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Visuals/ArtDirection/" class="">
+      Art Direction</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Visuals/AssetGuidelines/" class="">
+      Asset Guidelines</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Visuals/StyleGuide/" class="">
+      Style Guide</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/Visuals/UserInterface/" class="">
+      User Interface</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      World</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/EnvironmentalNarrative/" class="">
+      Environmental Narrative</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/EnvironmentalNarrative_Guidelines/" class="">
+      Environmental Narrative Guidelines</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/LootDistribution/" class="">
+      Loot Distribution</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/MapDesign/" class="">
+      Map Design</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/MapDesign_IndustrialZone/" class="">
+      Map Design Industrial Zone</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/MapDesign_NeonSlums/" class="">
+      Map Design Neon Slums</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/MapDesign_Wilderness/" class="">
+      Map Design Wilderness</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Design/World/MapLayouts/" class="">
+      Map Layouts</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/" class="">
+      Gdd Technical</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      AI</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/AI/SensorySystem/" class="">
+      Sensory System</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Core</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Core/Architecture/" class="">
+      Architecture</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Core/CodingStandards/" class="">
+      Coding Standards</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Core/DevelopmentRoadmap/" class="">
+      Development Roadmap</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Core/NetworkingSystem/" class="">
+      Networking System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Core/SecuritySystem/" class="">
+      Security System</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Gameplay</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Gameplay/CharacterSystem/" class="">
+      Character System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Gameplay/ControlSystem/" class="">
+      Control System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Gameplay/InventorySystem/" class="">
+      Inventory System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Gameplay/WeaponSystem/" class="">
+      Weapon System</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Networking</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Networking/LagCompensation/" class="">
+      Lag Compensation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Networking/ReplicationStrategy/" class="">
+      Replication Strategy</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Performance</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Performance/Budgets/" class="">
+      Budgets</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Performance/Optimization/" class="">
+      Optimization</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Security</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Security/AntiCheatStrategy/" class="">
+      Anti Cheat Strategy</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Systems</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/AccessibilitySystem/" class="">
+      Accessibility System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/AISystem/" class="">
+      Aisystem</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/AnalyticsSystem/" class="">
+      Analytics System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/AudioSystem/" class="">
+      Audio System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/BuildPipeline/" class="">
+      Build Pipeline</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/LiveOpsSystem/" class="">
+      Live Ops System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/LocalizationSystem/" class="">
+      Localization System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/MapSystem/" class="">
+      Map System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/NarrativeSystem/" class="">
+      Narrative System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/ProgressionSystem/" class="">
+      Progression System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/RankedSystem/" class="">
+      Ranked System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/SaveSystem/" class="">
+      Save System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/SocialSystem/" class="">
+      Social System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/TutorialSystem/" class="">
+      Tutorial System</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/GDD_Technical/Systems/UISystem/" class="">
+      Uisystem</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+</nav>
+
+
+
+
+<script>{ { . | safeJS } }</script>
+
+
+  </div>
+</aside>
+ 
+
+    <div class="book-page">
+      <header class="book-header hidden">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/icons/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <h3>Controls</h3>
+
+  <label for="toc-control">
+    
+    <img src="/icons/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#-design-philosophy">🎯 Design Philosophy</a>
+      <ul>
+        <li><a href="#game-feel-goals-the-why">Game Feel Goals (The &ldquo;Why&rdquo;)</a></li>
+      </ul>
+    </li>
+    <li><a href="#-cross-platform-strategy">📱 Cross-Platform Strategy</a>
+      <ul>
+        <li><a href="#mobile-first-the-feel">Mobile First (The &ldquo;Feel&rdquo;)</a></li>
+        <li><a href="#pc--console-standards">PC &amp; Console Standards</a></li>
+      </ul>
+    </li>
+    <li><a href="#-controller-support-cross-platform">🎮 Controller Support (Cross-Platform)</a>
+      <ul>
+        <li><a href="#supported-controllers">Supported Controllers</a></li>
+        <li><a href="#controller-features-by-platform">Controller Features by Platform</a></li>
+      </ul>
+    </li>
+    <li><a href="#-dynamic-input-switching">🔄 Dynamic Input Switching</a>
+      <ul>
+        <li><a href="#pc-keyboardmouse--controller">PC: Keyboard/Mouse ↔ Controller</a></li>
+        <li><a href="#mobile-touch--controller">Mobile: Touch ↔ Controller</a></li>
+        <li><a href="#visual-feedback-during-switch">Visual Feedback During Switch</a></li>
+      </ul>
+    </li>
+    <li><a href="#-controller-layout-options">🕹️ Controller Layout Options</a>
+      <ul>
+        <li><a href="#controller-specific-settings">Controller-Specific Settings</a></li>
+      </ul>
+    </li>
+    <li><a href="#-core-mechanics-ux">🕹️ Core Mechanics UX</a>
+      <ul>
+        <li><a href="#movement--traversal">Movement &amp; Traversal</a></li>
+        <li><a href="#combat-controls">Combat Controls</a></li>
+        <li><a href="#interactions">Interactions</a></li>
+      </ul>
+    </li>
+    <li><a href="#-accessibility--customization">♿ Accessibility &amp; Customization</a>
+      <ul>
+        <li><a href="#remapping">Remapping</a></li>
+        <li><a href="#visual--audio-assists">Visual &amp; Audio Assists</a></li>
+        <li><a href="#input-assists">Input Assists</a></li>
+      </ul>
+    </li>
+    <li><a href="#-haptics--feedback">📳 Haptics &amp; Feedback</a></li>
+    <li><a href="#-detailed-input-schemes">🎮 Detailed Input Schemes</a>
+      <ul>
+        <li><a href="#movement-input">Movement Input</a></li>
+        <li><a href="#combat-input">Combat Input</a></li>
+        <li><a href="#interaction--ability-input">Interaction &amp; Ability Input</a></li>
+      </ul>
+    </li>
+    <li><a href="#-sensitivity--tuning">⚙️ Sensitivity &amp; Tuning</a>
+      <ul>
+        <li><a href="#lookaim-sensitivity">Look/Aim Sensitivity</a></li>
+        <li><a href="#aim-acceleration--curves">Aim Acceleration &amp; Curves</a></li>
+        <li><a href="#deadzone-configuration-gamepadtouch">Deadzone Configuration (Gamepad/Touch)</a></li>
+        <li><a href="#advanced-control--movement-settings">Advanced Control &amp; Movement Settings</a></li>
+      </ul>
+    </li>
+    <li><a href="#-control-layout-presets">🖼️ Control Layout Presets</a>
+      <ul>
+        <li><a href="#mobile-layout-options">Mobile Layout Options</a></li>
+        <li><a href="#console-layout-options">Console Layout Options</a></li>
+        <li><a href="#pc-keyboard-layout-options">PC Keyboard Layout Options</a></li>
+        <li><a href="#keyboard-customization-options">Keyboard Customization Options</a></li>
+        <li><a href="#advanced-keyboard-settings">Advanced Keyboard Settings</a></li>
+      </ul>
+    </li>
+    <li><a href="#-camera--perspective">🧭 Camera &amp; Perspective</a>
+      <ul>
+        <li><a href="#top-down-camera-behavior">Top-Down Camera Behavior</a></li>
+        <li><a href="#camera-smoothing">Camera Smoothing</a></li>
+        <li><a href="#visual-parallax--depth-perception">Visual Parallax &amp; Depth Perception</a></li>
+      </ul>
+    </li>
+    <li><a href="#-context-sensitive-controls">🔄 Context-Sensitive Controls</a>
+      <ul>
+        <li><a href="#dynamic-button-visibility-mobile">Dynamic Button Visibility (Mobile)</a></li>
+        <li><a href="#action-priority-system">Action Priority System</a></li>
+      </ul>
+    </li>
+    <li><a href="#-tutorial--onboarding">🎓 Tutorial &amp; Onboarding</a>
+      <ul>
+        <li><a href="#first-time-user-experience-ftue">First-Time User Experience (FTUE)</a></li>
+        <li><a href="#in-game-reminders">In-Game Reminders</a></li>
+      </ul>
+    </li>
+    <li><a href="#-competitive-control-considerations">🏆 Competitive Control Considerations</a>
+      <ul>
+        <li><a href="#input-fairness">Input Fairness</a></li>
+        <li><a href="#anti-cheat-measures-input-related">Anti-Cheat Measures (Input Related)</a></li>
+        <li><a href="#response-time-requirements">Response Time Requirements</a></li>
+      </ul>
+    </li>
+    <li><a href="#-control-analytics--telemetry">📊 Control Analytics &amp; Telemetry</a>
+      <ul>
+        <li><a href="#metrics-to-collect">Metrics to Collect</a></li>
+        <li><a href="#feedback-loops">Feedback Loops</a></li>
+      </ul>
+    </li>
+    <li><a href="#-future-control-enhancements">🔮 Future Control Enhancements</a></li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><h1 id="control-system---design--experience">Control System - Design &amp; Experience<a class="anchor" href="#control-system---design--experience">#</a></h1>
+<p><strong><a href="../README.md">← Back to Index</a></strong> | <strong><a href="./Progression.md">Next: Progression →</a></strong></p>
+<hr>
+<h2 id="-design-philosophy">🎯 Design Philosophy<a class="anchor" href="#-design-philosophy">#</a></h2>
+<p>The control system is the bridge between the player&rsquo;s intent and the game&rsquo;s action. Our core philosophy for controls is <strong>&ldquo;Fluidity First.&rdquo;</strong></p>
+<ul>
+<li><strong>Responsiveness</strong>: Input latency must be imperceptible. Every button press should result in an immediate visual and auditory feedback.</li>
+<li><strong>Predictability</strong>: The character should never do something the player didn&rsquo;t intend. Movement momentum should feel weighty but controllable.</li>
+<li><strong>Accessibility</strong>: The game must be playable by everyone, regardless of platform or physical ability.</li>
+<li><strong>Platform Native</strong>: Controls should not feel &ldquo;ported.&rdquo; Mobile controls should feel like a native mobile game, and PC controls like a native PC shooter.</li>
+</ul>
+<h3 id="game-feel-goals-the-why">Game Feel Goals (The &ldquo;Why&rdquo;)<a class="anchor" href="#game-feel-goals-the-why">#</a></h3>
+<p>To ensure our controls deliver on the <strong>High-Stakes Tension</strong> pillar:</p>
+<ol>
+<li>
+<p><strong>Crunchy Combat</strong>: Firing a weapon must feel impactful.</p>
+<ul>
+<li><em>Visuals</em>: Debris, sparks, and enemy flinch reactions are mandatory.</li>
+<li><em>Input</em>: Recoil should require active management, not just be a static spread.</li>
+<li><em>Audio</em>: Gunshots need environmental reverb (indoor vs. outdoor).</li>
+</ul>
+</li>
+<li>
+<p><strong>Weighty Movement</strong>:</p>
+<ul>
+<li><em>Inertia</em>: Movement has micro-acceleration/deceleration. It&rsquo;s not instant.</li>
+<li><em>Momentum</em>: Sliding preserves speed; jumping from a sprint carries it.</li>
+<li><em>Grounding</em>: Camera bob and footstep audio must sync perfectly.</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="-cross-platform-strategy">📱 Cross-Platform Strategy<a class="anchor" href="#-cross-platform-strategy">#</a></h2>
+<h3 id="mobile-first-the-feel">Mobile First (The &ldquo;Feel&rdquo;)<a class="anchor" href="#mobile-first-the-feel">#</a></h3>
+<p>Mobile is our primary target for accessibility. The challenge is handling complex inputs without a controller.</p>
+<ul>
+<li><strong>Virtual Stick Polish</strong>: The movement stick must have a dynamic center (re-centers where the thumb touches) to prevent &ldquo;drifting off&rdquo; the control.</li>
+<li><strong>Smart Context</strong>: Reduce screen clutter by making buttons context-sensitive. The &ldquo;Vault&rdquo; button only appears when near an obstacle. &ldquo;Reload&rdquo; is prioritized when mag is low.</li>
+<li><strong>Assisted Precision</strong>: Since touch aiming is less precise, we implement a &ldquo;soft friction&rdquo; aim assist that slows down the reticle when hovering over enemies, rather than snapping to them.</li>
+</ul>
+<h3 id="pc--console-standards">PC &amp; Console Standards<a class="anchor" href="#pc--console-standards">#</a></h3>
+<p>For platforms with physical inputs, we adhere to industry standards to minimize learning curve.</p>
+<ul>
+<li><strong>PC</strong>: High-precision mouse input with raw input support. Keyboard bindings fully remappable. UI designed for cursor navigation.</li>
+<li><strong>Console</strong>: Twin-stick shooter paradigm. Left stick for movement, Right stick for aiming. Triggers for fire/aim. Rumble feedback is essential here.</li>
+</ul>
+<hr>
+<h2 id="-controller-support-cross-platform">🎮 Controller Support (Cross-Platform)<a class="anchor" href="#-controller-support-cross-platform">#</a></h2>
+<p>Both <strong>PC</strong> and <strong>Mobile</strong> platforms support external game controllers, providing a unified console-like experience across all devices.</p>
+<h3 id="supported-controllers">Supported Controllers<a class="anchor" href="#supported-controllers">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Platform</th>
+          <th style="text-align: left">Supported Controllers</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><strong>PC</strong></td>
+          <td style="text-align: left">Xbox Series X/S, Xbox One, PlayStation DualSense (PS5), DualShock 4 (PS4), Nintendo Switch Pro, Generic XInput/DirectInput controllers</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Mobile (Android)</strong></td>
+          <td style="text-align: left">Xbox controllers (Bluetooth), PlayStation controllers (Bluetooth), Razer Kishi, Backbone, GameSir, 8BitDo controllers</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Mobile (iOS)</strong></td>
+          <td style="text-align: left">Xbox controllers (Bluetooth), PlayStation DualSense/DualShock (Bluetooth), Backbone One, Razer Kishi, MFi-certified controllers</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="controller-features-by-platform">Controller Features by Platform<a class="anchor" href="#controller-features-by-platform">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Feature</th>
+          <th style="text-align: left">PC</th>
+          <th style="text-align: left">Mobile</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><strong>Full Button Mapping</strong></td>
+          <td style="text-align: left">✅ All buttons recognized</td>
+          <td style="text-align: left">✅ All buttons recognized</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Analog Stick Support</strong></td>
+          <td style="text-align: left">✅ Full analog input</td>
+          <td style="text-align: left">✅ Full analog input</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Trigger Analog</strong></td>
+          <td style="text-align: left">✅ Pressure-sensitive triggers</td>
+          <td style="text-align: left">✅ Pressure-sensitive triggers</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Vibration/Haptics</strong></td>
+          <td style="text-align: left">✅ Standard rumble + HD Haptics (DualSense)</td>
+          <td style="text-align: left">⚠️ Device-dependent</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Gyro Aiming</strong></td>
+          <td style="text-align: left">✅ DualSense/DualShock/Switch Pro</td>
+          <td style="text-align: left">⚠️ Limited support</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Adaptive Triggers (PS5)</strong></td>
+          <td style="text-align: left">✅ Full support</td>
+          <td style="text-align: left">❌ Not supported</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Touchpad (DualSense)</strong></td>
+          <td style="text-align: left">✅ As mouse/gesture input</td>
+          <td style="text-align: left">❌ Not supported</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="-dynamic-input-switching">🔄 Dynamic Input Switching<a class="anchor" href="#-dynamic-input-switching">#</a></h2>
+<p>The game <strong>automatically detects</strong> and <strong>seamlessly switches</strong> between input methods without requiring a restart or menu navigation.</p>
+<h3 id="pc-keyboardmouse--controller">PC: Keyboard/Mouse ↔ Controller<a class="anchor" href="#pc-keyboardmouse--controller">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Scenario</th>
+          <th style="text-align: left">Behavior</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><strong>Controller Connected</strong></td>
+          <td style="text-align: left">System detects controller. Player can use either input at any time.</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Any Keyboard/Mouse Input</strong></td>
+          <td style="text-align: left">UI prompts switch to Keyboard/Mouse icons (e.g., &ldquo;[F] Interact&rdquo;).</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Any Controller Input</strong></td>
+          <td style="text-align: left">UI prompts switch to Controller icons (e.g., &ldquo;[A] Interact&rdquo;).</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Mixed Input</strong></td>
+          <td style="text-align: left">Last-used input determines UI prompts. Both inputs work simultaneously.</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Controller Disconnected</strong></td>
+          <td style="text-align: left">Automatic fallback to Keyboard/Mouse. Pause menu if in combat (optional setting).</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>PC Input Settings:</strong></p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Option</th>
+          <th style="text-align: left">Description</th>
+          <th style="text-align: left">Default</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><strong>Preferred Input</strong></td>
+          <td style="text-align: left">Force UI to always show specific input icons (Auto / Keyboard / Controller).</td>
+          <td style="text-align: left">Auto</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Controller Disconnect Behavior</strong></td>
+          <td style="text-align: left">Pause game, Show warning only, or Ignore.</td>
+          <td style="text-align: left">Show Warning</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Simultaneous Input</strong></td>
+          <td style="text-align: left">Allow both controller and keyboard/mouse at the same time.</td>
+          <td style="text-align: left">On</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="mobile-touch--controller">Mobile: Touch ↔ Controller<a class="anchor" href="#mobile-touch--controller">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Scenario</th>
+          <th style="text-align: left">Behavior</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><strong>No Controller</strong></td>
+          <td style="text-align: left">Touch controls displayed (Virtual joystick, on-screen buttons).</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Controller Connected</strong></td>
+          <td style="text-align: left">Touch UI elements fade/hide. Controller icons appear for prompts.</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Touch Input Detected</strong></td>
+          <td style="text-align: left">Touch UI elements reappear. Prompts switch to touch icons.</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Controller Input Detected</strong></td>
+          <td style="text-align: left">Touch UI elements hide again. Prompts switch to controller icons.</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Controller Disconnected</strong></td>
+          <td style="text-align: left">Immediate fallback to touch controls. Brief notification shown.</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Mobile Input Settings:</strong></p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Option</th>
+          <th style="text-align: left">Description</th>
+          <th style="text-align: left">Default</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><strong>Preferred Input</strong></td>
+          <td style="text-align: left">Force UI to always show specific input (Auto / Touch / Controller).</td>
+          <td style="text-align: left">Auto</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Hide Touch UI with Controller</strong></td>
+          <td style="text-align: left">Completely hide on-screen buttons, or keep as secondary option.</td>
+          <td style="text-align: left">Hide</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Controller Disconnect Behavior</strong></td>
+          <td style="text-align: left">Resume with touch, Pause game, or Show warning.</td>
+          <td style="text-align: left">Resume with Touch</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Hybrid Mode</strong></td>
+          <td style="text-align: left">Keep touch controls visible while using controller (e.g., touch to look, controller to move).</td>
+          <td style="text-align: left">Off</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="visual-feedback-during-switch">Visual Feedback During Switch<a class="anchor" href="#visual-feedback-during-switch">#</a></h3>
+<ul>
+<li><strong>Smooth Transition Animation</strong>: Touch buttons fade out (0.3s) when controller is detected, fade in when touch is used.</li>
+<li><strong>Audio Cue</strong>: Subtle &ldquo;click&rdquo; sound when input method switches.</li>
+<li><strong>Notification Toast</strong>: Brief message: &ldquo;Controller Connected&rdquo; / &ldquo;Using Touch Controls&rdquo;.</li>
+</ul>
+<hr>
+<h2 id="-controller-layout-options">🕹️ Controller Layout Options<a class="anchor" href="#-controller-layout-options">#</a></h2>
+<p>When a controller is connected on any platform, players can choose from standard layouts:</p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Preset Name</th>
+          <th style="text-align: left">Description</th>
+          <th style="text-align: left">Platform</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><strong>Default</strong></td>
+          <td style="text-align: left">Standard twin-stick shooter layout.</td>
+          <td style="text-align: left">All</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Tactical</strong></td>
+          <td style="text-align: left">Crouch/Prone swapped to R3 for faster reactions.</td>
+          <td style="text-align: left">All</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Flipped</strong></td>
+          <td style="text-align: left">Fire/Aim on bumpers (LB/RB) instead of triggers (LT/RT).</td>
+          <td style="text-align: left">All</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Southpaw</strong></td>
+          <td style="text-align: left">Inverted stick controls (Movement on Right, Aim on Left).</td>
+          <td style="text-align: left">All</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Legacy</strong></td>
+          <td style="text-align: left">Classic FPS layout (non-twin-stick, look is on left stick).</td>
+          <td style="text-align: left">All</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Custom</strong></td>
+          <td style="text-align: left">Full remapping of all controller buttons.</td>
+          <td style="text-align: left">All</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="controller-specific-settings">Controller-Specific Settings<a class="anchor" href="#controller-specific-settings">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Option</th>
+          <th style="text-align: left">Description</th>
+          <th style="text-align: left">Default</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><strong>Stick Deadzone (Inner)</strong></td>
+          <td style="text-align: left">Dead area in stick center to prevent drift.</td>
+          <td style="text-align: left">10%</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Stick Deadzone (Outer)</strong></td>
+          <td style="text-align: left">Threshold for max input.</td>
+          <td style="text-align: left">90%</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Trigger Deadzone</strong></td>
+          <td style="text-align: left">Minimum trigger pull to register input.</td>
+          <td style="text-align: left">5%</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Aim Acceleration</strong></td>
+          <td style="text-align: left">Speed increase when stick is held at max.</td>
+          <td style="text-align: left">Medium</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Aim Assist Strength</strong></td>
+          <td style="text-align: left">Friction/slowdown when aiming near enemies.</td>
+          <td style="text-align: left">Medium</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Vibration Intensity</strong></td>
+          <td style="text-align: left">Strength of controller rumble.</td>
+          <td style="text-align: left">100%</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Invert Y-Axis</strong></td>
+          <td style="text-align: left">Inverted look controls.</td>
+          <td style="text-align: left">Off</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Swap Sticks</strong></td>
+          <td style="text-align: left">Swap left and right stick functions.</td>
+          <td style="text-align: left">Off</td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="-core-mechanics-ux">🕹️ Core Mechanics UX<a class="anchor" href="#-core-mechanics-ux">#</a></h2>
+<h3 id="movement--traversal">Movement &amp; Traversal<a class="anchor" href="#movement--traversal">#</a></h3>
+<ul>
+<li><strong>Weight vs. Agility</strong>: Operators should have mass. Sprinting shouldn&rsquo;t be instant max speed; there&rsquo;s a short ramp-up. Stopping has a slight deceleration.</li>
+<li><strong>Stamina Management</strong>: Running out of stamina shouldn&rsquo;t feel like hitting a wall. The character slows to a jog, with heavy breathing audio cues.</li>
+<li><strong>Vaulting</strong>: Fluid transitions. Players shouldn&rsquo;t get stuck on knee-high geometry. Auto-vault options for mobile.</li>
+</ul>
+<h3 id="combat-controls">Combat Controls<a class="anchor" href="#combat-controls">#</a></h3>
+<ul>
+<li><strong>Firing Feedback</strong>:
+<ul>
+<li><strong>Visual</strong>: Screen shake (subtle), muzzle flash, crosshair expansion.</li>
+<li><strong>Audio</strong>: Punchy sound effects, shell casing sounds.</li>
+<li><strong>Haptic</strong>: Vibration on fire (Mobile/Console).</li>
+</ul>
+</li>
+<li><strong>Recoil Control</strong>: Predictable patterns that can be learned. Visual recoil (camera kick) should align with actual bullet spread.</li>
+</ul>
+<h3 id="interactions">Interactions<a class="anchor" href="#interactions">#</a></h3>
+<ul>
+<li><strong>The &ldquo;Use&rdquo; Key</strong>: A single context button (F / Tap Screen) handles opening doors, looting, and reviving.</li>
+<li><strong>Priority System</strong>: If multiple interactables are close (e.g., a door next to a loot bag), priority is given to the most urgent action (Revive &gt; Door &gt; Loot).</li>
+<li><strong>Hold vs. Press</strong>: Dangerous actions (Reviving, Extraction) use &ldquo;Hold to Confirm&rdquo; to prevent accidental triggers.</li>
+</ul>
+<hr>
+<h2 id="-accessibility--customization">♿ Accessibility &amp; Customization<a class="anchor" href="#-accessibility--customization">#</a></h2>
+<h3 id="remapping">Remapping<a class="anchor" href="#remapping">#</a></h3>
+<ul>
+<li><strong>Full Remapping</strong>: Every action can be rebound on PC/Console.</li>
+<li><strong>HUD Layout (Mobile)</strong>: Players can move, resize, and change opacity of every on-screen button.</li>
+</ul>
+<h3 id="visual--audio-assists">Visual &amp; Audio Assists<a class="anchor" href="#visual--audio-assists">#</a></h3>
+<ul>
+<li><strong>Colorblind Modes</strong>: Protanopia, Deuteranopia, Tritanopia filters for UI elements (Enemy outlines, Reticles, Pings).</li>
+<li><strong>Visual Audio cues</strong>: Option to show visual indicators for footsteps and gunfire direction (Mobile/Hearing impaired).</li>
+</ul>
+<h3 id="input-assists">Input Assists<a class="anchor" href="#input-assists">#</a></h3>
+<ul>
+<li><strong>Auto-Sprint</strong>: Option to always sprint when moving forward.</li>
+<li><strong>Auto-Fire (Mobile)</strong>: Option to automatically fire when reticle is over an enemy (within range).</li>
+<li><strong>Toggle Aim/Crouch</strong>: Options to set actions as specific Toggles or Holds.</li>
+</ul>
+<hr>
+<h2 id="-haptics--feedback">📳 Haptics &amp; Feedback<a class="anchor" href="#-haptics--feedback">#</a></h2>
+<p>Haptics are crucial for immersion and gameplay information.</p>
+<ul>
+<li><strong>Combat Haptics</strong>: Distinct vibrations for firing different weapon calibers.</li>
+<li><strong>Damage Haptics</strong>: Directional vibration (if supported) when taking damage.</li>
+<li><strong>UI Haptics</strong>: Light &ldquo;taps&rdquo; when hovering over buttons or confirming actions.</li>
+<li><strong>Status Haptics</strong>: A heartbeat pulse when health is critical.</li>
+</ul>
+<hr>
+<h2 id="-detailed-input-schemes">🎮 Detailed Input Schemes<a class="anchor" href="#-detailed-input-schemes">#</a></h2>
+<h3 id="movement-input">Movement Input<a class="anchor" href="#movement-input">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Action</th>
+          <th style="text-align: left">Mobile</th>
+          <th style="text-align: left">PC Keyboard</th>
+          <th style="text-align: left">Console Gamepad</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><strong>Move Forward</strong></td>
+          <td style="text-align: left">Virtual Stick Up</td>
+          <td style="text-align: left">W</td>
+          <td style="text-align: left">Left Stick Up</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Move Backward</strong></td>
+          <td style="text-align: left">Virtual Stick Down</td>
+          <td style="text-align: left">S</td>
+          <td style="text-align: left">Left Stick Down</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Strafe Left</strong></td>
+          <td style="text-align: left">Virtual Stick Left</td>
+          <td style="text-align: left">A</td>
+          <td style="text-align: left">Left Stick Left</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Strafe Right</strong></td>
+          <td style="text-align: left">Virtual Stick Right</td>
+          <td style="text-align: left">D</td>
+          <td style="text-align: left">Left Stick Right</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Sprint</strong></td>
+          <td style="text-align: left">Double-tap + Hold Stick Edge</td>
+          <td style="text-align: left">Shift (Hold)</td>
+          <td style="text-align: left">L3 (Click Left Stick)</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Crouch</strong></td>
+          <td style="text-align: left">Crouch Button (Toggle)</td>
+          <td style="text-align: left">C / Ctrl (Toggle/Hold)</td>
+          <td style="text-align: left">B / Circle (Toggle)</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Prone</strong></td>
+          <td style="text-align: left">Hold Crouch Button (2s)</td>
+          <td style="text-align: left">Z</td>
+          <td style="text-align: left">Hold B / Circle (2s)</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Jump / Vault</strong></td>
+          <td style="text-align: left">Jump Button</td>
+          <td style="text-align: left">Space</td>
+          <td style="text-align: left">A / Cross</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Slide</strong></td>
+          <td style="text-align: left">Crouch while Sprinting</td>
+          <td style="text-align: left">Ctrl while Sprinting</td>
+          <td style="text-align: left">B while Sprinting</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="combat-input">Combat Input<a class="anchor" href="#combat-input">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Action</th>
+          <th style="text-align: left">Mobile</th>
+          <th style="text-align: left">PC</th>
+          <th style="text-align: left">Console</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><strong>Fire</strong></td>
+          <td style="text-align: left">Fire Button / Auto-Fire Zone</td>
+          <td style="text-align: left">LMB (Left Mouse)</td>
+          <td style="text-align: left">RT / R2</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Aim Down Sights (ADS)</strong></td>
+          <td style="text-align: left">ADS Button (Toggle)</td>
+          <td style="text-align: left">RMB (Hold)</td>
+          <td style="text-align: left">LT / L2 (Hold)</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Reload</strong></td>
+          <td style="text-align: left">Reload Button / Auto</td>
+          <td style="text-align: left">R</td>
+          <td style="text-align: left">X / Square</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Switch Weapon</strong></td>
+          <td style="text-align: left">Weapon Slot Buttons</td>
+          <td style="text-align: left">1, 2, 3 / Scroll Wheel</td>
+          <td style="text-align: left">Y / Triangle</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Melee</strong></td>
+          <td style="text-align: left">Melee Button</td>
+          <td style="text-align: left">V / Mouse Wheel Click</td>
+          <td style="text-align: left">RS / R3 (Click Right Stick)</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Throw Grenade</strong></td>
+          <td style="text-align: left">Grenade Button (Hold to Cook)</td>
+          <td style="text-align: left">G (Tap) / Hold for Arc</td>
+          <td style="text-align: left">RB / R1</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="interaction--ability-input">Interaction &amp; Ability Input<a class="anchor" href="#interaction--ability-input">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Action</th>
+          <th style="text-align: left">Mobile</th>
+          <th style="text-align: left">PC</th>
+          <th style="text-align: left">Console</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><strong>Interact</strong></td>
+          <td style="text-align: left">Context Button (Auto-appears)</td>
+          <td style="text-align: left">F / E</td>
+          <td style="text-align: left">A / Cross</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Use Ability</strong></td>
+          <td style="text-align: left">Ability Icon (Tap)</td>
+          <td style="text-align: left">Q</td>
+          <td style="text-align: left">LB / L1</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Tactical Equipment</strong></td>
+          <td style="text-align: left">Equipment Icon</td>
+          <td style="text-align: left">Middle Mouse / 4</td>
+          <td style="text-align: left">D-Pad Up</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Quick Ping</strong></td>
+          <td style="text-align: left">Double-tap Screen</td>
+          <td style="text-align: left">Middle Mouse Click</td>
+          <td style="text-align: left">D-Pad Left</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Open Map</strong></td>
+          <td style="text-align: left">Map Button</td>
+          <td style="text-align: left">M / Tab</td>
+          <td style="text-align: left">Touchpad / View</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Open Inventory</strong></td>
+          <td style="text-align: left">Inventory Button</td>
+          <td style="text-align: left">Tab / I</td>
+          <td style="text-align: left">D-Pad Down</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="-sensitivity--tuning">⚙️ Sensitivity &amp; Tuning<a class="anchor" href="#-sensitivity--tuning">#</a></h2>
+<h3 id="lookaim-sensitivity">Look/Aim Sensitivity<a class="anchor" href="#lookaim-sensitivity">#</a></h3>
+<p>Players must have fine-grained control over how their input translates to camera movement.</p>
+<ul>
+<li><strong>General Sensitivity</strong>: Base multiplier for all look input (1-100 scale).</li>
+<li><strong>ADS Sensitivity Multiplier</strong>: Separate multiplier when aiming down sights (0.5x - 2.0x of General).</li>
+<li><strong>Per-Scope Sensitivity</strong>: Unique sensitivity values for each scope magnification (1x, 2x, 4x, 8x).</li>
+<li><strong>Vertical/Horizontal Ratio</strong>: Option to use different sensitivities for X and Y axes.</li>
+</ul>
+<h3 id="aim-acceleration--curves">Aim Acceleration &amp; Curves<a class="anchor" href="#aim-acceleration--curves">#</a></h3>
+<ul>
+<li><strong>Linear Response</strong>: Direct 1:1 mapping of input to camera speed. Preferred by PC players for precision.</li>
+<li><strong>Exponential Curve</strong>: Slow movement for small inputs, fast for large inputs. Better for analog sticks.</li>
+<li><strong>Aim Acceleration (Console/Mobile)</strong>: Gradual speed increase when stick is held at max deflection. <strong>Tunable ON/OFF</strong>.</li>
+</ul>
+<h3 id="deadzone-configuration-gamepadtouch">Deadzone Configuration (Gamepad/Touch)<a class="anchor" href="#deadzone-configuration-gamepadtouch">#</a></h3>
+<ul>
+<li><strong>Inner Deadzone</strong>: Area around stick center where no input is registered. Prevents drift.</li>
+<li><strong>Outer Deadzone</strong>: Threshold before input is considered &ldquo;max.&rdquo; Ensures full speed is reachable.</li>
+<li><strong>Default Values</strong>: Inner 10%, Outer 90%. Fully customizable by player.</li>
+</ul>
+<h3 id="advanced-control--movement-settings">Advanced Control &amp; Movement Settings<a class="anchor" href="#advanced-control--movement-settings">#</a></h3>
+<p>Inspired by competitive tactical shooters and top-down standards, these settings allow players to fine-tune the &ldquo;feel&rdquo; of control.</p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Category</th>
+          <th style="text-align: left">Setting</th>
+          <th style="text-align: left">Options</th>
+          <th style="text-align: left">Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><strong>Movement Axis</strong></td>
+          <td style="text-align: left"><strong>Input Reference Frame</strong></td>
+          <td style="text-align: left"><strong>Camera Relative (Default)</strong><br>World Relative<br>Character Relative</td>
+          <td style="text-align: left">Defines what &ldquo;Up&rdquo; means on the stick/keyboard.<br>• <em>Camera</em>: Up = Top of screen.<br>• <em>World</em>: Up = North (Fixed Compass).<br>• <em>Character</em>: Up = Forward (Tank Control).</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Facing Logic</strong></td>
+          <td style="text-align: left"><strong>Strafing Behavior</strong></td>
+          <td style="text-align: left"><strong>Face Aim Direction (Default)</strong><br>Face Movement Direction</td>
+          <td style="text-align: left">Defines character orientation.<br>• <em>Face Aim</em>: Character always looks at reticle (Tactical/Shooter).<br>• <em>Face Movement</em>: Character looks where they run (Adventure/RPGs).</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Traversal</strong></td>
+          <td style="text-align: left"><strong>Auto-Vault / Climb</strong></td>
+          <td style="text-align: left"><strong>Sprint Only (Default)</strong><br>Always<br>Off (Manual)</td>
+          <td style="text-align: left">Determines when the character automatically hops over low obstacles.<br>• <em>Sprint Only</em>: Only vaults when sprinting into an object.<br>• <em>Always</em>: Vaults whenever moving into an object.<br>• <em>Off</em>: Requires dedicated Jump/Vault button press.</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Traversal</strong></td>
+          <td style="text-align: left"><strong>Sprint Behavior</strong></td>
+          <td style="text-align: left"><strong>Toggle (Default)</strong><br>Hold<br>Tactical Auto-Sprint</td>
+          <td style="text-align: left">• <em>Toggle</em>: Press to start/stop.<br>• <em>Hold</em>: Sprint only while held.<br>• <em>Tactical Auto-Sprint</em>: Automatically engage sprint after moving forward for X seconds.</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Aiming</strong></td>
+          <td style="text-align: left"><strong>Reticle Constraint</strong></td>
+          <td style="text-align: left"><strong>Clamped to Radius</strong><br>Screen Edge<br>Free Cursor</td>
+          <td style="text-align: left">(Mouse Only) Limits how far the cursor can move from character.<br>• <em>Clamped</em>: Cursor stays within X meters of player (great for twin-stick feel).<br>• <em>Screen Edge</em>: Standard cursor usage.<br>• <em>Free</em>: Unbounded.</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Aiming</strong></td>
+          <td style="text-align: left"><strong>Dynamic Aiming</strong></td>
+          <td style="text-align: left"><strong>Hold to Precision</strong><br>Toggle<br>Off</td>
+          <td style="text-align: left">Changes camera/reticle behavior when right-click/LT is used.<br>• <em>Hold</em>: Tightens crosshair &amp; slows movement while held.<br>• <em>Toggle</em>: Click to enter/exit precision stance.</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Mouse</strong></td>
+          <td style="text-align: left"><strong>Confine Cursor</strong></td>
+          <td style="text-align: left"><strong>On (Fullscreen)</strong><br>Always<br>Off</td>
+          <td style="text-align: left">Keeps mouse cursor inside game window (Critical for multi-monitor setups).</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Tech</strong></td>
+          <td style="text-align: left"><strong>Input Buffering</strong></td>
+          <td style="text-align: left"><strong>Short (Default)</strong><br>None<br>Long</td>
+          <td style="text-align: left">queues the next action (e.g., Vault after Reload) if pressed slightly early.</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="-control-layout-presets">🖼️ Control Layout Presets<a class="anchor" href="#-control-layout-presets">#</a></h2>
+<h3 id="mobile-layout-options">Mobile Layout Options<a class="anchor" href="#mobile-layout-options">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Preset Name</th>
+          <th style="text-align: left">Description</th>
+          <th style="text-align: left">Best For</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><strong>Default</strong></td>
+          <td style="text-align: left">Balanced button placement with medium touch zones.</td>
+          <td style="text-align: left">New players, general use.</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Claw</strong></td>
+          <td style="text-align: left">Buttons moved to top corners for multi-finger grip (claw players).</td>
+          <td style="text-align: left">Competitive players.</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Minimal</strong></td>
+          <td style="text-align: left">Less on-screen clutter, context-heavy buttons.</td>
+          <td style="text-align: left">Immersive, casual play.</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>One-Handed</strong></td>
+          <td style="text-align: left">All controls consolidated to one side (portrait or landscape edge).</td>
+          <td style="text-align: left">Accessibility.</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Gyro-Aim</strong></td>
+          <td style="text-align: left">Reduced touch aim zone, relies on device tilt for fine-tuning.</td>
+          <td style="text-align: left">Players with gyro experience.</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="console-layout-options">Console Layout Options<a class="anchor" href="#console-layout-options">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Preset Name</th>
+          <th style="text-align: left">Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><strong>Default</strong></td>
+          <td style="text-align: left">Standard twin-stick shooter layout.</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Tactical</strong></td>
+          <td style="text-align: left">Crouch/Prone swapped to R3 for faster reactions.</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Flipped</strong></td>
+          <td style="text-align: left">Fire/Aim on bumpers instead of triggers.</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Southpaw</strong></td>
+          <td style="text-align: left">Inverted stick controls (Movement on Right, Aim on Left).</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Legacy</strong></td>
+          <td style="text-align: left">Classic FPS layout (non-twin-stick).</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="pc-keyboard-layout-options">PC Keyboard Layout Options<a class="anchor" href="#pc-keyboard-layout-options">#</a></h3>
+<p>PC players have diverse preferences based on their gaming background. We provide multiple presets while allowing <strong>full remapping</strong>.</p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Preset Name</th>
+          <th style="text-align: left">Description</th>
+          <th style="text-align: left">Inspired By</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><strong>Default (Tactical Shooter)</strong></td>
+          <td style="text-align: left">WASD movement, Shift sprint, Ctrl crouch, Space jump, Q ability.</td>
+          <td style="text-align: left">Valorant, CS2</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>MMO Style</strong></td>
+          <td style="text-align: left">WASD movement, abilities on 1-4, Tab for inventory, Alt for walk.</td>
+          <td style="text-align: left">WoW, FFXIV</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Arrow Keys</strong></td>
+          <td style="text-align: left">Arrow keys for movement, Numpad for actions.</td>
+          <td style="text-align: left">Classic PC gamers, accessibility.</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>ESDF Movement</strong></td>
+          <td style="text-align: left">Shifts movement one key right (ESDF), freeing more keys on the left.</td>
+          <td style="text-align: left">Hardcore FPS players.</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Left-Handed (IJKL)</strong></td>
+          <td style="text-align: left">Movement on IJKL for right-hand dominant players using mouse on left.</td>
+          <td style="text-align: left">Left-handed players.</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>One-Hand Only</strong></td>
+          <td style="text-align: left">All essential actions accessible with one hand (left side of keyboard + mouse).</td>
+          <td style="text-align: left">Accessibility, streamers.</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="keyboard-customization-options">Keyboard Customization Options<a class="anchor" href="#keyboard-customization-options">#</a></h3>
+<p><strong>Full Key Rebinding:</strong></p>
+<ul>
+<li>Every action can be rebound to any key.</li>
+<li><strong>Conflict Detection</strong>: System warns if a key is already assigned.</li>
+<li><strong>Multi-Bind Support</strong>: Assign multiple keys to the same action (e.g., both C and Ctrl for Crouch).</li>
+<li><strong>&ldquo;Unbind&rdquo; Option</strong>: Allow actions to have no key assigned (for unused features).</li>
+</ul>
+<p><strong>Movement Modifiers:</strong></p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Option</th>
+          <th style="text-align: left">Description</th>
+          <th style="text-align: left">Default</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><strong>Sprint Type</strong></td>
+          <td style="text-align: left">Toggle (press once to start/stop) or Hold (hold to sprint).</td>
+          <td style="text-align: left">Hold</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Crouch Type</strong></td>
+          <td style="text-align: left">Toggle or Hold.</td>
+          <td style="text-align: left">Toggle</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Prone Type</strong></td>
+          <td style="text-align: left">Toggle or Hold.</td>
+          <td style="text-align: left">Toggle</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Walk Key</strong></td>
+          <td style="text-align: left">Optional slow-walk key for stealthy movement.</td>
+          <td style="text-align: left">Alt</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Combat Modifiers:</strong></p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Option</th>
+          <th style="text-align: left">Description</th>
+          <th style="text-align: left">Default</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><strong>ADS Type</strong></td>
+          <td style="text-align: left">Toggle (click to aim, click to stop) or Hold.</td>
+          <td style="text-align: left">Hold</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Fire Mode Toggle</strong></td>
+          <td style="text-align: left">Dedicated key to switch between Auto/Semi/Burst fire modes.</td>
+          <td style="text-align: left">B</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Quick Throw vs. Aim Throw</strong></td>
+          <td style="text-align: left">Tap G for quick throw, Hold G for aim trajectory.</td>
+          <td style="text-align: left">Enabled</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Lean Keys</strong></td>
+          <td style="text-align: left">Q/E for leaning left/right (if lean mechanic exists).</td>
+          <td style="text-align: left">Q/E</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Inventory &amp; UI Shortcuts:</strong></p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Option</th>
+          <th style="text-align: left">Description</th>
+          <th style="text-align: left">Default</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><strong>Weapon Slots</strong></td>
+          <td style="text-align: left">Direct access to primary (1), secondary (2), melee (3), grenades (4).</td>
+          <td style="text-align: left">1, 2, 3, 4</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Quick Heal</strong></td>
+          <td style="text-align: left">Dedicated key to use healing item without opening inventory.</td>
+          <td style="text-align: left">5 or H</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Quick Armor</strong></td>
+          <td style="text-align: left">Dedicated key to equip armor plate.</td>
+          <td style="text-align: left">6 or J</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Last Weapon</strong></td>
+          <td style="text-align: left">Swap to previously equipped weapon.</td>
+          <td style="text-align: left">Q (if not ability)</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Holster Weapon</strong></td>
+          <td style="text-align: left">Put weapon away for faster movement.</td>
+          <td style="text-align: left">X</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Communication Shortcuts:</strong></p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Option</th>
+          <th style="text-align: left">Description</th>
+          <th style="text-align: left">Default</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><strong>Push-to-Talk</strong></td>
+          <td style="text-align: left">Hold to transmit voice.</td>
+          <td style="text-align: left">V</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Text Chat</strong></td>
+          <td style="text-align: left">Open text chat input.</td>
+          <td style="text-align: left">Enter</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Quick Ping</strong></td>
+          <td style="text-align: left">Contextual ping (Enemy, Item, Location).</td>
+          <td style="text-align: left">Middle Mouse / Z</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Ping Wheel</strong></td>
+          <td style="text-align: left">Hold to open radial ping menu.</td>
+          <td style="text-align: left">Hold Z</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Team Comms Wheel</strong></td>
+          <td style="text-align: left">Quick voice lines (Need Ammo, Cover Me, etc.).</td>
+          <td style="text-align: left">C</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Mouse Button Options:</strong></p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Option</th>
+          <th style="text-align: left">Description</th>
+          <th style="text-align: left">Default</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><strong>Mouse Button 4 (Side)</strong></td>
+          <td style="text-align: left">Assignable action (e.g., Melee, Ping, Push-to-Talk).</td>
+          <td style="text-align: left">Melee</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Mouse Button 5 (Side)</strong></td>
+          <td style="text-align: left">Assignable action.</td>
+          <td style="text-align: left">Quick Ping</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Mouse Wheel Up</strong></td>
+          <td style="text-align: left">Assignable (default: Next Weapon).</td>
+          <td style="text-align: left">Next Weapon</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Mouse Wheel Down</strong></td>
+          <td style="text-align: left">Assignable (default: Previous Weapon).</td>
+          <td style="text-align: left">Previous Weapon</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Mouse Wheel Click</strong></td>
+          <td style="text-align: left">Assignable (default: Ping).</td>
+          <td style="text-align: left">Ping</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="advanced-keyboard-settings">Advanced Keyboard Settings<a class="anchor" href="#advanced-keyboard-settings">#</a></h3>
+<p><strong>Double-Tap Actions:</strong></p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Option</th>
+          <th style="text-align: left">Description</th>
+          <th style="text-align: left">Default</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><strong>Double-Tap W to Sprint</strong></td>
+          <td style="text-align: left">Sprint by quickly pressing W twice.</td>
+          <td style="text-align: left">Off</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Double-Tap Direction to Dodge</strong></td>
+          <td style="text-align: left">Quick dodge/roll by double-tapping movement key.</td>
+          <td style="text-align: left">Off</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Double-Tap Crouch to Prone</strong></td>
+          <td style="text-align: left">Quickly drop to prone by tapping crouch twice.</td>
+          <td style="text-align: left">Off</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Hold Duration Settings:</strong></p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Option</th>
+          <th style="text-align: left">Description</th>
+          <th style="text-align: left">Default</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><strong>Hold Interact Duration</strong></td>
+          <td style="text-align: left">Time to hold F for important interactions (Revive, Extract).</td>
+          <td style="text-align: left">1.5s</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Hold Grenade to Cook</strong></td>
+          <td style="text-align: left">Max cook time before auto-throw.</td>
+          <td style="text-align: left">3.0s</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Key Repeat / Spam Protection:</strong></p>
+<ul>
+<li><strong>Debounce Time</strong>: Minimum time between repeated key presses being registered (prevents accidental double-inputs).</li>
+<li><strong>Default</strong>: 50ms (adjustable 0-200ms).</li>
+</ul>
+<hr>
+<h2 id="-camera--perspective">🧭 Camera &amp; Perspective<a class="anchor" href="#-camera--perspective">#</a></h2>
+<h3 id="top-down-camera-behavior">Top-Down Camera Behavior<a class="anchor" href="#top-down-camera-behavior">#</a></h3>
+<ul>
+<li><strong>Fixed Angle</strong>: Camera maintains a constant isometric-style angle above the player.</li>
+<li><strong>Height Variation</strong>: Camera slightly adjusts height based on environment (closer in buildings, further in open areas).</li>
+<li><strong>Zoom Control</strong>: Player can adjust zoom level within a defined range (default: middle of range).</li>
+</ul>
+<h3 id="camera-smoothing">Camera Smoothing<a class="anchor" href="#camera-smoothing">#</a></h3>
+<ul>
+<li><strong>Follow Speed</strong>: Camera smoothly follows character movement, slight delay to prevent jarring motion.</li>
+<li><strong>Aim Offset</strong>: When aiming, camera shifts slightly in the aim direction to provide more forward vision.</li>
+<li><strong>Death Cam</strong>: On death, camera briefly tracks killer before transitioning to spectate/respawn screen.</li>
+</ul>
+<h3 id="visual-parallax--depth-perception">Visual Parallax &amp; Depth Perception<a class="anchor" href="#visual-parallax--depth-perception">#</a></h3>
+<p>To address the lack of depth in a standard top-down view, we implement a <strong>Parallax Illusion</strong> system.</p>
+<ul>
+<li><strong>Multi-Plane Perspective</strong>: Objects at different elevations (rooftops, tree canopies vs. ground level) scroll at slightly different rates relative to the camera movement. This artificial parallax creates a convincing 3D &ldquo;pop&rdquo; and helps players judge the height of obstacles.</li>
+<li><strong>Dynamic FoV Adjustment</strong>: Subtle Field-of-View changes based on movement speed enhance the sense of speed and depth, reducing the &ldquo;flatness&rdquo; of the isometric view.</li>
+</ul>
+<hr>
+<h2 id="-context-sensitive-controls">🔄 Context-Sensitive Controls<a class="anchor" href="#-context-sensitive-controls">#</a></h2>
+<h3 id="dynamic-button-visibility-mobile">Dynamic Button Visibility (Mobile)<a class="anchor" href="#dynamic-button-visibility-mobile">#</a></h3>
+<p>To reduce screen clutter, certain buttons only appear when relevant:</p>
+<ul>
+<li><strong>Vault Button</strong>: Appears when near vaultable geometry.</li>
+<li><strong>Reload Button</strong>: Highlighted when ammo is low (&lt; 30%).</li>
+<li><strong>Interact Prompt</strong>: Appears over interactable objects with icon indicating action type (Door, Loot, Revive).</li>
+<li><strong>Vehicle Controls</strong>: Mount/Dismount, Drive, Brake replace certain buttons when in/near vehicles.</li>
+</ul>
+<h3 id="action-priority-system">Action Priority System<a class="anchor" href="#action-priority-system">#</a></h3>
+<p>When multiple actions are possible, the game selects the most important one:</p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Priority</th>
+          <th style="text-align: left">Action</th>
+          <th style="text-align: left">Reasoning</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">1</td>
+          <td style="text-align: left">Revive Teammate</td>
+          <td style="text-align: left">Life-saving action, highest priority.</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">2</td>
+          <td style="text-align: left">Defuse/Plant Objective</td>
+          <td style="text-align: left">Mission-critical.</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">3</td>
+          <td style="text-align: left">Use Extraction Point</td>
+          <td style="text-align: left">End-game goal.</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">4</td>
+          <td style="text-align: left">Open Door/Gate</td>
+          <td style="text-align: left">Traversal.</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">5</td>
+          <td style="text-align: left">Loot Item/Container</td>
+          <td style="text-align: left">Resource gathering.</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">6</td>
+          <td style="text-align: left">Interact with Environment</td>
+          <td style="text-align: left">Low priority (Switches, etc.).</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="-tutorial--onboarding">🎓 Tutorial &amp; Onboarding<a class="anchor" href="#-tutorial--onboarding">#</a></h2>
+<h3 id="first-time-user-experience-ftue">First-Time User Experience (FTUE)<a class="anchor" href="#first-time-user-experience-ftue">#</a></h3>
+<p><strong>Phase 1: Movement Basics</strong></p>
+<ul>
+<li>Guided prompt to use virtual stick / WASD.</li>
+<li>Short obstacle course teaching Sprint, Crouch, Vault.</li>
+<li>Checkpoint: Player reaches a destination using all movement types.</li>
+</ul>
+<p><strong>Phase 2: Combat Basics</strong></p>
+<ul>
+<li>Firing range with static targets.</li>
+<li>Introduction to ADS, Reloading, Weapon Switching.</li>
+<li>Checkpoint: Player eliminates all targets.</li>
+</ul>
+<p><strong>Phase 3: Interaction &amp; Ability</strong></p>
+<ul>
+<li>Tutorial on looting containers.</li>
+<li>Introduction to Operator Ability with context of when to use it.</li>
+<li>Checkpoint: Player uses ability to achieve a goal (e.g., heal self, reveal enemy).</li>
+</ul>
+<p><strong>Phase 4: Full Simulation</strong></p>
+<ul>
+<li>Practice match vs. AI bots with all systems enabled.</li>
+<li>Subtle prompts if player forgets an action.</li>
+</ul>
+<h3 id="in-game-reminders">In-Game Reminders<a class="anchor" href="#in-game-reminders">#</a></h3>
+<ul>
+<li><strong>Contextual Tips</strong>: &ldquo;Hold [Crouch] while sprinting to slide!&rdquo;</li>
+<li><strong>Low Ammo Warning</strong>: Visual + audio cue when magazine is low.</li>
+<li><strong>Ability Ready Indicator</strong>: Audio chime when ability comes off cooldown.</li>
+</ul>
+<hr>
+<h2 id="-competitive-control-considerations">🏆 Competitive Control Considerations<a class="anchor" href="#-competitive-control-considerations">#</a></h2>
+<h3 id="input-fairness">Input Fairness<a class="anchor" href="#input-fairness">#</a></h3>
+<ul>
+<li><strong>Cross-Platform Matchmaking</strong>: If enabled, aim assist for controller/touch players is balanced against raw mouse input.</li>
+<li><strong>Input Display</strong>: Match results can show which input method each player used.</li>
+<li><strong>Ranked Queues</strong>: Separate queues for Input Type (Touch, Controller, M&amp;K) can be considered for high tiers.</li>
+</ul>
+<h3 id="anti-cheat-measures-input-related">Anti-Cheat Measures (Input Related)<a class="anchor" href="#anti-cheat-measures-input-related">#</a></h3>
+<ul>
+<li><strong>Input Velocity Limits</strong>: Flag inputs that exceed humanly possible speeds (aimbot detection).</li>
+<li><strong>No Third-Party Mapping</strong>: Disable remapping tools that could be used for macros (on Console/Mobile stores).</li>
+<li><strong>Gyro Anti-Abuse</strong>: Limit gyro sensitivity to prevent &ldquo;flick&rdquo; exploits.</li>
+</ul>
+<h3 id="response-time-requirements">Response Time Requirements<a class="anchor" href="#response-time-requirements">#</a></h3>
+<ul>
+<li><strong>Target Input Latency</strong>: &lt; 16ms (1 frame at 60fps).</li>
+<li><strong>Server Tick Rate</strong>: 60Hz for responsive hit registration.</li>
+<li><strong>Rollback/Prediction</strong>: Client-side prediction for movement to mask network latency.</li>
+</ul>
+<hr>
+<h2 id="-control-analytics--telemetry">📊 Control Analytics &amp; Telemetry<a class="anchor" href="#-control-analytics--telemetry">#</a></h2>
+<p>Understanding how players use controls helps us iterate.</p>
+<h3 id="metrics-to-collect">Metrics to Collect<a class="anchor" href="#metrics-to-collect">#</a></h3>
+<ul>
+<li><strong>Button Usage Frequency</strong>: Which buttons are pressed most/least?</li>
+<li><strong>Layout Changes</strong>: How many players customize their HUD layout?</li>
+<li><strong>Sensitivity Distribution</strong>: What is the average sensitivity players settle on?</li>
+<li><strong>Aim Assist Engagement</strong>: How often does aim assist activate? Correlation with kills?</li>
+<li><strong>Accessibility Feature Usage</strong>: % of players using Auto-Fire, Colorblind modes, etc.</li>
+</ul>
+<h3 id="feedback-loops">Feedback Loops<a class="anchor" href="#feedback-loops">#</a></h3>
+<ul>
+<li><strong>A/B Testing</strong>: Test different default sensitivity values or button placements.</li>
+<li><strong>Player Surveys</strong>: In-game feedback prompts after first few matches.</li>
+<li><strong>Community Input</strong>: Monitor subreddit/Discord for control-related complaints.</li>
+</ul>
+<hr>
+<h2 id="-future-control-enhancements">🔮 Future Control Enhancements<a class="anchor" href="#-future-control-enhancements">#</a></h2>
+<ul>
+<li><strong>Gyro Aiming Support</strong>: Fine-tune aiming on Mobile and Switch by tilting the device.</li>
+<li><strong>Adaptive Trigger Support (PS5)</strong>: Resistance on triggers when firing different weapon types.</li>
+<li><strong>External Controller Support (Mobile)</strong>: Pair Bluetooth controllers for a console-like experience.</li>
+<li><strong>Voice Commands</strong>: Basic actions like &ldquo;Reload,&rdquo; &ldquo;Ping,&rdquo; &ldquo;Open Map&rdquo; via voice (Accessibility).</li>
+<li><strong>Eye Tracking (PC)</strong>: Experimental aim-where-you-look for ultra-immersive gameplay.</li>
+</ul>
+<hr>
+<p><strong><a href="../README.md">← Back to Index</a></strong> | <strong><a href="./Progression.md">Next: Progression →</a></strong></p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+<div>
+
+</div>
+
+<div>
+
+</div>
+
+</div>
+
+
+
+
+
+  
+  
+  
+  <div class="flex flex-wrap justify-between">
+    <span>
+    
+      <a href="/docs/GDD_Design/GameDesign/Accessibility/" class="flex align-center">
+        <img src="/icons/backward.svg" class="book-icon" alt="Backward" />
+        <span>Accessibility</span>
+      </a>
+    
+    </span>
+    <span>
+    
+      <a href="/docs/GDD_Design/GameDesign/CoreGameplay/" class="flex align-center">
+        <span>Core Gameplay</span>
+        <img src="/icons/forward.svg" class="book-icon" alt="Forward" />
+      </a>
+    
+    </span>
+  </div>
+  
+
+
+ 
+        
+  
+ 
+        
+        
+  
+ 
+        
+  
+  
+    <script>(function(){document.querySelectorAll("pre:has(code)").forEach(e=>{e.addEventListener("click",e.focus),e.addEventListener("copy",function(t){if(t.preventDefault(),navigator.clipboard){const t=window.getSelection().toString()||e.textContent;navigator.clipboard.writeText(t)}})})})()</script>
+  
+
+      </footer>
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+  
+  <aside class="book-toc">
+    <div class="book-toc-content">
+      
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#-design-philosophy">🎯 Design Philosophy</a>
+      <ul>
+        <li><a href="#game-feel-goals-the-why">Game Feel Goals (The &ldquo;Why&rdquo;)</a></li>
+      </ul>
+    </li>
+    <li><a href="#-cross-platform-strategy">📱 Cross-Platform Strategy</a>
+      <ul>
+        <li><a href="#mobile-first-the-feel">Mobile First (The &ldquo;Feel&rdquo;)</a></li>
+        <li><a href="#pc--console-standards">PC &amp; Console Standards</a></li>
+      </ul>
+    </li>
+    <li><a href="#-controller-support-cross-platform">🎮 Controller Support (Cross-Platform)</a>
+      <ul>
+        <li><a href="#supported-controllers">Supported Controllers</a></li>
+        <li><a href="#controller-features-by-platform">Controller Features by Platform</a></li>
+      </ul>
+    </li>
+    <li><a href="#-dynamic-input-switching">🔄 Dynamic Input Switching</a>
+      <ul>
+        <li><a href="#pc-keyboardmouse--controller">PC: Keyboard/Mouse ↔ Controller</a></li>
+        <li><a href="#mobile-touch--controller">Mobile: Touch ↔ Controller</a></li>
+        <li><a href="#visual-feedback-during-switch">Visual Feedback During Switch</a></li>
+      </ul>
+    </li>
+    <li><a href="#-controller-layout-options">🕹️ Controller Layout Options</a>
+      <ul>
+        <li><a href="#controller-specific-settings">Controller-Specific Settings</a></li>
+      </ul>
+    </li>
+    <li><a href="#-core-mechanics-ux">🕹️ Core Mechanics UX</a>
+      <ul>
+        <li><a href="#movement--traversal">Movement &amp; Traversal</a></li>
+        <li><a href="#combat-controls">Combat Controls</a></li>
+        <li><a href="#interactions">Interactions</a></li>
+      </ul>
+    </li>
+    <li><a href="#-accessibility--customization">♿ Accessibility &amp; Customization</a>
+      <ul>
+        <li><a href="#remapping">Remapping</a></li>
+        <li><a href="#visual--audio-assists">Visual &amp; Audio Assists</a></li>
+        <li><a href="#input-assists">Input Assists</a></li>
+      </ul>
+    </li>
+    <li><a href="#-haptics--feedback">📳 Haptics &amp; Feedback</a></li>
+    <li><a href="#-detailed-input-schemes">🎮 Detailed Input Schemes</a>
+      <ul>
+        <li><a href="#movement-input">Movement Input</a></li>
+        <li><a href="#combat-input">Combat Input</a></li>
+        <li><a href="#interaction--ability-input">Interaction &amp; Ability Input</a></li>
+      </ul>
+    </li>
+    <li><a href="#-sensitivity--tuning">⚙️ Sensitivity &amp; Tuning</a>
+      <ul>
+        <li><a href="#lookaim-sensitivity">Look/Aim Sensitivity</a></li>
+        <li><a href="#aim-acceleration--curves">Aim Acceleration &amp; Curves</a></li>
+        <li><a href="#deadzone-configuration-gamepadtouch">Deadzone Configuration (Gamepad/Touch)</a></li>
+        <li><a href="#advanced-control--movement-settings">Advanced Control &amp; Movement Settings</a></li>
+      </ul>
+    </li>
+    <li><a href="#-control-layout-presets">🖼️ Control Layout Presets</a>
+      <ul>
+        <li><a href="#mobile-layout-options">Mobile Layout Options</a></li>
+        <li><a href="#console-layout-options">Console Layout Options</a></li>
+        <li><a href="#pc-keyboard-layout-options">PC Keyboard Layout Options</a></li>
+        <li><a href="#keyboard-customization-options">Keyboard Customization Options</a></li>
+        <li><a href="#advanced-keyboard-settings">Advanced Keyboard Settings</a></li>
+      </ul>
+    </li>
+    <li><a href="#-camera--perspective">🧭 Camera &amp; Perspective</a>
+      <ul>
+        <li><a href="#top-down-camera-behavior">Top-Down Camera Behavior</a></li>
+        <li><a href="#camera-smoothing">Camera Smoothing</a></li>
+        <li><a href="#visual-parallax--depth-perception">Visual Parallax &amp; Depth Perception</a></li>
+      </ul>
+    </li>
+    <li><a href="#-context-sensitive-controls">🔄 Context-Sensitive Controls</a>
+      <ul>
+        <li><a href="#dynamic-button-visibility-mobile">Dynamic Button Visibility (Mobile)</a></li>
+        <li><a href="#action-priority-system">Action Priority System</a></li>
+      </ul>
+    </li>
+    <li><a href="#-tutorial--onboarding">🎓 Tutorial &amp; Onboarding</a>
+      <ul>
+        <li><a href="#first-time-user-experience-ftue">First-Time User Experience (FTUE)</a></li>
+        <li><a href="#in-game-reminders">In-Game Reminders</a></li>
+      </ul>
+    </li>
+    <li><a href="#-competitive-control-considerations">🏆 Competitive Control Considerations</a>
+      <ul>
+        <li><a href="#input-fairness">Input Fairness</a></li>
+        <li><a href="#anti-cheat-measures-input-related">Anti-Cheat Measures (Input Related)</a></li>
+        <li><a href="#response-time-requirements">Response Time Requirements</a></li>
+      </ul>
+    </li>
+    <li><a href="#-control-analytics--telemetry">📊 Control Analytics &amp; Telemetry</a>
+      <ul>
+        <li><a href="#metrics-to-collect">Metrics to Collect</a></li>
+        <li><a href="#feedback-loops">Feedback Loops</a></li>
+      </ul>
+    </li>
+    <li><a href="#-future-control-enhancements">🔮 Future Control Enhancements</a></li>
+  </ul>
+</nav>
+
+
+
+    </div>
+  </aside>
+  
+ 
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

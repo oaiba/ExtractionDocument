@@ -1,28 +1,26 @@
-/* Custom styles to apply JetBrains Mono font site-wide */
+/* Custom styles to apply Inter font for better readability in GDD */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
 
 :root {
-    /* Override Tailwind/Hextra default font families if possible */
+    --font-inter: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     --font-jetbrains: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
 html,
 body {
-    font-family: var(--font-jetbrains) !important;
-    font-feature-settings: "liga" on, "calt" on;
+    font-family: var(--font-inter) !important;
+    font-feature-settings: "rlig" 1, "calt" 1; /* Improved legibility */
+    line-height: 1.6; /* Better line height for reading */
 }
 
-/* Ensure headings also use the font */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    font-family: var(--font-jetbrains) !important;
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-inter) !important;
+    font-weight: 600;
     letter-spacing: -0.02em;
 }
 
-/* Monospace elements */
+/* Monospace elements for code */
 code,
 pre,
 kbd,
@@ -34,5 +32,10 @@ samp {
 /* Sidebar and Navbar titles */
 .hextra-sidebar-container,
 .hextra-navbar {
-    font-family: var(--font-jetbrains) !important;
+    font-family: var(--font-inter) !important;
+}
+
+/* Enhance readability for documentation content */
+article {
+    max-width: 90ch; /* Optional: limit line length for better reading experience */
 }

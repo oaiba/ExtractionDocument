@@ -1,0 +1,1072 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Extraction Document – AI</title>
+    <link>http://localhost:1313/gdd_design/ai/index.html</link>
+    <description>Recent content in AI on Extraction Document</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	  <atom:link href="http://localhost:1313/gdd_design/ai/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>AI &amp; Enemy Behavior Design</title>
+      <link>http://localhost:1313/gdd_design/ai/enemybehavior.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/gdd_design/ai/enemybehavior.html</guid>
+      <description>
+        
+        
+        &lt;h1&gt;AI &amp;amp; Enemy Behavior Design&lt;/h1&gt;&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;../README.md&#34;&gt;← Back to Index&lt;/a&gt;&lt;/strong&gt; | &lt;strong&gt;&lt;a href=&#34;./FactionBehaviors.md&#34;&gt;Faction Behaviors (Ecology) →&lt;/a&gt;&lt;/strong&gt; | &lt;strong&gt;&lt;a href=&#34;../../GDD_Technical/AI/SensorySystem.md&#34;&gt;AI Tech (Implementation) →&lt;/a&gt;&lt;/strong&gt; | &lt;strong&gt;&lt;a href=&#34;../World/MapDesign.md&#34;&gt;Next: Map Design →&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2&gt;🎯 AI Design Philosophy&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-ai-design-philosophy&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-ai-design-philosophy&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;Core Principle:&lt;/strong&gt; AI should enhance the extraction experience, not replace PvP&lt;/p&gt;
+&lt;p&gt;AI enemies serve as:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Loot guardians&lt;/strong&gt; - Protect valuable areas&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Tension creators&lt;/strong&gt; - Keep players on edge even without PvP contact&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Skill tests&lt;/strong&gt; - Predictable patterns that reward mastery&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Sound traps&lt;/strong&gt; - Engaging AI creates noise, attracting players&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;NOT:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Main adversaries (PvP is the core tension)&lt;/li&gt;
+&lt;li&gt;Unfair or unpredictable&lt;/li&gt;
+&lt;li&gt;Bullet sponges&lt;/li&gt;
+&lt;li&gt;Trivially easy&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2&gt;🧟 Enemy Types&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-enemy-types&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-enemy-types&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;Tier 1: Fodder (Common)&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;tier-1-fodder-common&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#tier-1-fodder-common&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Purpose:&lt;/strong&gt; Easy to kill, noise makers, loot pinatas&lt;/p&gt;
+&lt;h4&gt;Scavenger&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;scavenger&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#scavenger&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;Visual: Ragged civilian clothing, makeshift weapons
+Health: 50 HP
+Armor: None
+Damage: 10-15 per hit (melee) / 15-20 (pistol)
+Speed: Walk (3 m/s), Sprint (5 m/s)
+Detection Range: 15m (vision), 10m (sound)
+Behavior: Patrol → Alert → Engage → Flee (when low HP)&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;Spawn Locations:&lt;/strong&gt; Edge zones, mid zones
+&lt;strong&gt;Loot Drop:&lt;/strong&gt; Common items, ammo, medical supplies
+&lt;strong&gt;Threat Level:&lt;/strong&gt; ★☆☆☆☆&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Behavior Details:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Patrols in small area (10m radius)&lt;/li&gt;
+&lt;li&gt;Alerts nearby scavengers when engaged&lt;/li&gt;
+&lt;li&gt;Flees at 20% HP&lt;/li&gt;
+&lt;li&gt;Does NOT pursue beyond patrol area&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h4&gt;Looter&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;looter&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#looter&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;Visual: Hoodie, backpack, SMG
+Health: 75 HP
+Armor: Light (25 armor)
+Damage: 18-22 per hit (SMG)
+Speed: Walk (3.5 m/s), Sprint (6 m/s)
+Detection Range: 20m (vision), 15m (sound)
+Behavior: Patrol → Alert → Take Cover → Engage&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;Spawn Locations:&lt;/strong&gt; Mid zones, near loot containers
+&lt;strong&gt;Loot Drop:&lt;/strong&gt; Uncommon items, sometimes rare
+&lt;strong&gt;Threat Level:&lt;/strong&gt; ★★☆☆☆&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Behavior Details:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Searches containers (can be ambushed)&lt;/li&gt;
+&lt;li&gt;Uses cover during combat&lt;/li&gt;
+&lt;li&gt;Calls for backup if possible&lt;/li&gt;
+&lt;li&gt;More accurate than Scavengers&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3&gt;Tier 2: Soldiers (Uncommon)&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;tier-2-soldiers-uncommon&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#tier-2-soldiers-uncommon&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Purpose:&lt;/strong&gt; Actual threats, require tactical approach&lt;/p&gt;
+&lt;h4&gt;Guard&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;guard&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#guard&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;Visual: Military fatigues, body armor, assault rifle
+Health: 100 HP
+Armor: Medium (50 armor)
+Damage: 25-30 per hit (AR)
+Speed: Walk (4 m/s), Sprint (6 m/s)
+Detection Range: 30m (vision), 20m (sound)
+Behavior: Patrol (formations) → Alert Team → Suppress → Flank&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;Spawn Locations:&lt;/strong&gt; Hot zones, POI entrances
+&lt;strong&gt;Loot Drop:&lt;/strong&gt; Rare items, military gear
+&lt;strong&gt;Threat Level:&lt;/strong&gt; ★★★☆☆&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Behavior Details:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Patrols in pairs&lt;/li&gt;
+&lt;li&gt;Uses suppressive fire&lt;/li&gt;
+&lt;li&gt;One flanks while other suppresses&lt;/li&gt;
+&lt;li&gt;Throws grenades into cover&lt;/li&gt;
+&lt;li&gt;Does NOT flee&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h4&gt;Sniper&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;sniper&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#sniper&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;Visual: Ghillie suit or overwatch position
+Health: 80 HP
+Armor: Light (25 armor)
+Damage: 60-80 per hit (sniper rifle)
+Speed: Stationary / Reposition (5 m/s)
+Detection Range: 60m (vision), 25m (sound)
+Behavior: Overwatch → Aim (laser warning) → Fire → Reposition&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;Spawn Locations:&lt;/strong&gt; Elevated positions, guard towers
+&lt;strong&gt;Loot Drop:&lt;/strong&gt; Rare weapons, optics
+&lt;strong&gt;Threat Level:&lt;/strong&gt; ★★★☆☆&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Behavior Details:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Does NOT patrol (stationary overwatch)&lt;/li&gt;
+&lt;li&gt;Laser sight warns players (1.5s before shot)&lt;/li&gt;
+&lt;li&gt;Repositions after 3 shots&lt;/li&gt;
+&lt;li&gt;Vulnerable during repositioning&lt;/li&gt;
+&lt;li&gt;Audio cue: Loud shot echo (alerts other players)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3&gt;Tier 3: Elites (Rare)&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;tier-3-elites-rare&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#tier-3-elites-rare&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Purpose:&lt;/strong&gt; Mini-bosses, guard high-value loot&lt;/p&gt;
+&lt;h4&gt;Heavy&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;heavy&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#heavy&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;Visual: Full body armor, LMG, slow movement
+Health: 200 HP
+Armor: Heavy (100 armor)
+Damage: 35-40 per hit (LMG)
+Speed: Walk (2.5 m/s), NO sprint
+Detection Range: 25m (vision), 30m (sound)
+Behavior: Advance → Suppress → Pursue relentlessly&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;Spawn Locations:&lt;/strong&gt; Hot zone centers, vaults
+&lt;strong&gt;Loot Drop:&lt;/strong&gt; Epic items, LMG, heavy armor
+&lt;strong&gt;Threat Level:&lt;/strong&gt; ★★★★☆&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Behavior Details:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Announced by heavy footsteps (audio warning)&lt;/li&gt;
+&lt;li&gt;Cannot be staggered easily&lt;/li&gt;
+&lt;li&gt;Weak point: Backpack (2x damage)&lt;/li&gt;
+&lt;li&gt;Slow turn rate (flank effective)&lt;/li&gt;
+&lt;li&gt;Does NOT retreat&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h4&gt;Operative&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;operative&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#operative&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;Visual: Tactical gear, night vision, suppressed weapons
+Health: 120 HP
+Armor: Medium (50 armor)
+Damage: 30-35 per hit (suppressed AR)
+Speed: Walk (4 m/s), Sprint (7 m/s)
+Detection Range: 40m (vision), 35m (sound)
+Behavior: Stealth approach → Flank → Engage → Smoke retreat&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;Spawn Locations:&lt;/strong&gt; Random spawn, event reinforcements
+&lt;strong&gt;Loot Drop:&lt;/strong&gt; Epic items, tactical equipment
+&lt;strong&gt;Threat Level:&lt;/strong&gt; ★★★★☆&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Behavior Details:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Can approach silently (no footsteps until 10m)&lt;/li&gt;
+&lt;li&gt;Uses flashbangs before engaging&lt;/li&gt;
+&lt;li&gt;Retreats with smoke grenades when damaged&lt;/li&gt;
+&lt;li&gt;Most intelligent AI type&lt;/li&gt;
+&lt;li&gt;Coordinates with other Operatives&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3&gt;Tier 4: Bosses (Legendary)&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;tier-4-bosses-legendary&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#tier-4-bosses-legendary&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Purpose:&lt;/strong&gt; High-risk, high-reward encounters&lt;/p&gt;
+&lt;h4&gt;The Warden (Map 1 - Industrial Decay)&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;the-warden-map-1---industrial-decay&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#the-warden-map-1---industrial-decay&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;Visual: Heavily modified exosuit, construction theme
+Health: 500 HP
+Armor: 200 armor (regenerates slowly)
+Damage: Variable (see phases)
+Speed: Walk (3 m/s), Charge (10 m/s)
+Detection Range: Map-wide when triggered
+Location: Central hot zone (Reactor Core)&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;Phases:&lt;/strong&gt;&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Phase&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;HP Threshold&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Behavior&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Attacks&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;1&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;100-75%&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Stalking&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Ground slam (AoE), debris throw&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;2&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;75-50%&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Aggressive&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Adds charge attack, faster attacks&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;3&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;50-25%&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Berserk&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Continuous charge, environment destruction&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;4&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;25-0%&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Desperation&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;All attacks + calls reinforcements&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;strong&gt;Loot Drop:&lt;/strong&gt; Legendary weapon/armor guaranteed, rare crafting materials
+&lt;strong&gt;Threat Level:&lt;/strong&gt; ★★★★★&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Design Notes:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Announced 30 seconds before appearing (alarm sounds)&lt;/li&gt;
+&lt;li&gt;Creates massive noise (attracts players)&lt;/li&gt;
+&lt;li&gt;Can be avoided (not mandatory)&lt;/li&gt;
+&lt;li&gt;Intended for squad coordination&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h4&gt;The Director (Map 2 - Urban Ruins)&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;the-director-map-2---urban-ruins&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#the-director-map-2---urban-ruins&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;Visual: Corporate executive suit &amp;#43; combat augments
+Health: 400 HP
+Armor: 150 armor (depleting shields)
+Damage: Drone attacks &amp;#43; personal sidearm
+Speed: Walk (4 m/s), Teleport (short range blink)
+Detection Range: Drone network (entire POI)
+Location: Corporate Tower (top floor)&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;Mechanics:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Controls 4 attack drones&lt;/li&gt;
+&lt;li&gt;Drones must be destroyed first (80 HP each)&lt;/li&gt;
+&lt;li&gt;Shields regenerate if drones are alive&lt;/li&gt;
+&lt;li&gt;Blinks away when attacked directly&lt;/li&gt;
+&lt;li&gt;Final phase: Overcharges remaining drones (explode on death)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Loot Drop:&lt;/strong&gt; Legendary tech items, electronic components
+&lt;strong&gt;Threat Level:&lt;/strong&gt; ★★★★★&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2&gt;🧠 AI Behavior Systems&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-ai-behavior-systems&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-ai-behavior-systems&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;Detection System&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;detection-system&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#detection-system&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Three Detection States:&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;┌─────────────┐     ┌─────────────┐     ┌─────────────┐
+│   UNAWARE   │────→│    ALERT    │────→│   ENGAGED   │
+│  (Patrol)   │←────│ (Searching) │←────│  (Combat)   │
+└─────────────┘     └─────────────┘     └─────────────┘
+      │                   │                    │
+      └───────────────────┴────────────────────┘
+                    (Timer expires)&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;Transition Triggers:&lt;/strong&gt;&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;From&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;To&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Trigger&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Unaware&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Alert&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Noise heard (footsteps, gunfire)&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Unaware&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Alert&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Peripheral vision (edge of cone)&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Unaware&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Engaged&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Direct vision (center of cone)&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Alert&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Engaged&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Player spotted during search&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Alert&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Unaware&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;30 seconds no contact&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Engaged&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Alert&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Line of sight lost for 10 seconds&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Engaged&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Unaware&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;60 seconds no contact (rare)&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3&gt;Vision System&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;vision-system&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#vision-system&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Vision Cone:&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;          Player
+             ▼
+    ┌───────────────┐
+    │   Peripheral  │  60° total angle
+    │  ┌─────────┐  │
+    │  │ Direct  │  │  30° center (immediate detection)
+    │  └─────────┘  │
+    └───────────────┘
+         Enemy
+         
+Detection Range by State:
+- Unaware: 50% normal range
+- Alert: 100% normal range  
+- Engaged: 150% normal range&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;Visibility Modifiers:&lt;/strong&gt;&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Condition&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Detection Speed&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Standing&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Normal&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Crouching&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;-30%&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Prone&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;-60%&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Moving&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;+50%&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Sprinting&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;+100%&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Firing&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Immediate&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;In light&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;+30%&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;In shadow&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;-30%&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3&gt;Sound System&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;sound-system&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#sound-system&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Sound Propagation:&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;Footsteps (Walk): 10m radius
+Footsteps (Sprint): 25m radius
+Gunfire (Suppressed): 30m radius
+Gunfire (Unsuppressed): 80m radius
+Explosions: 150m radius
+Ability Use: 40m radius (varies)&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;Sound Occlusion:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Walls reduce sound by 50%&lt;/li&gt;
+&lt;li&gt;Closed doors reduce by 75%&lt;/li&gt;
+&lt;li&gt;Open areas: Full propagation&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Patrol System&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;patrol-system&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#patrol-system&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Patrol Types:&lt;/strong&gt;&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Type&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Description&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Used By&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Point&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Stand in one location&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Snipers, Guards&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Path&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Follow waypoints&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Scavengers, Looters&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Random&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Wander within area&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Scavengers&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Pair&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Two AI coordinated&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Guards, Elites&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Formation&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;3+ AI in tactical formation&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Hot zone squads&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;strong&gt;Patrol Behavior:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Stop at waypoints (1-5 seconds)&lt;/li&gt;
+&lt;li&gt;Look around at waypoints&lt;/li&gt;
+&lt;li&gt;Investigate sounds during patrol&lt;/li&gt;
+&lt;li&gt;Return to patrol after alert timeout&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2&gt;⚔️ Combat Behavior&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-combat-behavior&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-combat-behavior&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;Engagement Rules&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;engagement-rules&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#engagement-rules&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Aggression by Type:&lt;/strong&gt;&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Type&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Behavior&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Retreat Trigger&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Scavenger&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Cautious, flee early&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;20% HP&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Looter&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Moderate, use cover&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;15% HP&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Guard&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Aggressive, no retreat&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Never&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Sniper&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Evasive, reposition&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;When flanked&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Heavy&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Relentless pursuit&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Never&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Operative&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Tactical, coordinate&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;30% HP (smoke)&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3&gt;Cover Usage&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;cover-usage&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#cover-usage&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Cover Selection Priority:&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Hard cover (walls, concrete)&lt;/li&gt;
+&lt;li&gt;Soft cover (cars, furniture)&lt;/li&gt;
+&lt;li&gt;Distance from threat&lt;/li&gt;
+&lt;li&gt;Angle to threat&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;Cover Behavior:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Peek and shoot (2-3 shots)&lt;/li&gt;
+&lt;li&gt;Reload behind cover&lt;/li&gt;
+&lt;li&gt;Switch cover if flanked&lt;/li&gt;
+&lt;li&gt;Grenade flush if player camps&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Suppression&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;suppression&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#suppression&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;When AI Uses Suppression:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Player behind cover for 5+ seconds&lt;/li&gt;
+&lt;li&gt;Multiple AI present&lt;/li&gt;
+&lt;li&gt;Heavy/Guard types&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Suppression Effect on Player:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Camera shake (light)&lt;/li&gt;
+&lt;li&gt;Reduced accuracy if standing&lt;/li&gt;
+&lt;li&gt;Audio feedback (bullets snapping)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Flanking&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;flanking&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#flanking&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Flank Trigger:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Player stationary in cover for 10+ seconds&lt;/li&gt;
+&lt;li&gt;2+ AI present&lt;/li&gt;
+&lt;li&gt;One AI suppresses, one moves&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Flank Path:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Attempt wide angle (90°+)&lt;/li&gt;
+&lt;li&gt;Use cover during movement&lt;/li&gt;
+&lt;li&gt;Coordinate timing with suppressor&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2&gt;📊 Difficulty Scaling&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-difficulty-scaling&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-difficulty-scaling&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;Dynamic Difficulty&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;dynamic-difficulty&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#dynamic-difficulty&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;NOT used&lt;/strong&gt; - We want consistent, learnable AI&lt;/p&gt;
+&lt;h3&gt;Spawn Density by Zone&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;spawn-density-by-zone&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#spawn-density-by-zone&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Zone&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Fodder&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Soldiers&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Elites&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Boss&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Edge&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Low (2-4)&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;None&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;None&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;No&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Mid&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Medium (4-8)&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Low (2-3)&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Rare (0-1)&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;No&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Hot&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;High (6-10)&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Medium (4-6)&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Common (2-3)&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Yes&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3&gt;Respawn Rules&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;respawn-rules&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#respawn-rules&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;General:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;AI does NOT respawn during a single match&lt;/li&gt;
+&lt;li&gt;Cleared areas stay cleared&lt;/li&gt;
+&lt;li&gt;Exception: Reinforcement events&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Reinforcement Events:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Trigger: Supply drop, boss fight, timed event&lt;/li&gt;
+&lt;li&gt;Warning: 30 seconds audio cue&lt;/li&gt;
+&lt;li&gt;Spawn from map edges&lt;/li&gt;
+&lt;li&gt;Limited count (5-10 AI)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2&gt;🎭 AI Personality Variants&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-ai-personality-variants&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-ai-personality-variants&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Each AI type has personality variants affecting behavior:&lt;/p&gt;
+&lt;h3&gt;Aggression&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;aggression&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#aggression&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Level&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Behavior&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Coward&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Flee early, poor accuracy&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Cautious&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Heavy cover use, slow advance&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Normal&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Balanced&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Aggressive&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Rush tactics, less cover&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Berserker&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Suicide charge (rare variant)&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3&gt;Accuracy&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;accuracy&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#accuracy&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Level&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Hit Rate&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Poor&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;15%&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Below Average&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;25%&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Average&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;40%&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Above Average&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;55%&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Marksman&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;70%&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;strong&gt;Distribution:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Fodder: Poor to Average&lt;/li&gt;
+&lt;li&gt;Soldiers: Below Average to Above Average&lt;/li&gt;
+&lt;li&gt;Elites: Average to Marksman&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2&gt;🔊 AI Audio Design&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-ai-audio-design&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-ai-audio-design&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;Detection Audio&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;detection-audio&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#detection-audio&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;State&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Sound&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Unaware → Alert&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&amp;ldquo;What was that?&amp;rdquo; grunt&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Alert → Engaged&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&amp;ldquo;There! Enemy!&amp;rdquo; callout&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Engaged → Alert&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&amp;ldquo;Lost visual&amp;rdquo;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Alert → Unaware&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Relaxed sigh&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3&gt;Combat Audio&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;combat-audio&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#combat-audio&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;Reload calls: &amp;ldquo;Reloading!&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;Throw grenade: &amp;ldquo;Grenade out!&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;Flanking: &amp;ldquo;Moving!&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;Suppressing: &amp;ldquo;Covering fire!&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;Low HP: Pain sounds, panicked breathing&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Ambient AI&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;ambient-ai&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#ambient-ai&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;Idle chatter (background noise)&lt;/li&gt;
+&lt;li&gt;Radio checks&lt;/li&gt;
+&lt;li&gt;Coughing, shuffling&lt;/li&gt;
+&lt;li&gt;Equipment sounds&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2&gt;🧪 AI Balancing Guidelines&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-ai-balancing-guidelines&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-ai-balancing-guidelines&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;Kill Time (TTK) Targets&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;kill-time-ttk-targets&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#kill-time-ttk-targets&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;AI Type&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Player TTK (target)&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;AI TTK (player target)&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Scavenger&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;1-2 seconds&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;8-10 seconds&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Looter&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;2-3 seconds&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;6-8 seconds&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Guard&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;3-5 seconds&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;4-6 seconds&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Sniper&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;2-3 seconds&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;6-8 seconds&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Heavy&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;8-15 seconds&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;5-7 seconds&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Operative&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;4-6 seconds&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;4-6 seconds&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Boss&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;60-120 seconds&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;30-60 seconds&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3&gt;Solo vs Squad Balance&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;solo-vs-squad-balance&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#solo-vs-squad-balance&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;AI should be:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Soloable with skill and caution&lt;/li&gt;
+&lt;li&gt;Faster/easier with squad coordination&lt;/li&gt;
+&lt;li&gt;Never trivial regardless of squad size&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Scaling (OPTIONAL for hot zones):&lt;/strong&gt;&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Players in Area&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;AI Damage&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;AI Health&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;1&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;100%&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;100%&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;2&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;110%&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;110%&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;3+&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;120%&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;125%&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr&gt;
+&lt;h2&gt;📅 AI Content Roadmap&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-ai-content-roadmap&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-ai-content-roadmap&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;Launch&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;launch&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#launch&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;All Tier 1-3 AI types&lt;/li&gt;
+&lt;li&gt;1 Boss (The Warden)&lt;/li&gt;
+&lt;li&gt;Basic behavior systems&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Season 2&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;season-2&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#season-2&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;The Director boss&lt;/li&gt;
+&lt;li&gt;Operative elite type&lt;/li&gt;
+&lt;li&gt;Improved flanking AI&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Season 3&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;season-3&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#season-3&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;New boss for Map 3&lt;/li&gt;
+&lt;li&gt;AI events (raids)&lt;/li&gt;
+&lt;li&gt;Faction-specific AI variants&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Future&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;future&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#future&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;AI faction wars (environmental events)&lt;/li&gt;
+&lt;li&gt;Wandering mini-bosses&lt;/li&gt;
+&lt;li&gt;Seasonal boss variants&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;../README.md&#34;&gt;← Back to Index&lt;/a&gt;&lt;/strong&gt; | &lt;strong&gt;&lt;a href=&#34;../World/MapDesign.md&#34;&gt;Next: Map Design →&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Faction Behaviors &amp; Ecology</title>
+      <link>http://localhost:1313/gdd_design/ai/factionbehaviors.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/gdd_design/ai/factionbehaviors.html</guid>
+      <description>
+        
+        
+        &lt;h1&gt;Faction Behaviors &amp;amp; Ecology&lt;/h1&gt;&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;../README.md&#34;&gt;← Back to Index&lt;/a&gt;&lt;/strong&gt; | &lt;strong&gt;&lt;a href=&#34;./EnemyBehavior.md&#34;&gt;Enemy Behavior (Basics) →&lt;/a&gt;&lt;/strong&gt; | &lt;strong&gt;&lt;a href=&#34;../../GDD_Technical/AI/SensorySystem.md&#34;&gt;AI Tech (Implementation) →&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2&gt;🏛️ The Faction Ecosystem&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-the-faction-ecosystem&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-the-faction-ecosystem&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Aethelgard is not just Player vs. AI. It is a living world where factions have their own goals, territories, and relationships.&lt;/p&gt;
+&lt;h3&gt;Faction Matrix (Who fights whom?)&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;faction-matrix-who-fights-whom&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#faction-matrix-who-fights-whom&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Faction&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Player&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Scavengers&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Syndicate&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;UN-Peacekeepers&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Wildlife&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Player (PMC)&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;KILL&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;KILL&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;KILL&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Wariness (Neutral until provoked)&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;KILL&lt;/strong&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Scavengers&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;KILL&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;em&gt;Friendly&lt;/em&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;em&gt;Avoid&lt;/em&gt; (Fear)&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;KILL&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;KILL&lt;/strong&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Syndicate&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;KILL&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;em&gt;Exploit&lt;/em&gt; (Bully)&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;em&gt;Friendly&lt;/em&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;KILL&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;KILL&lt;/strong&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;UN-PK&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Wariness&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;KILL&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;KILL&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;em&gt;Friendly&lt;/em&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;KILL&lt;/strong&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Wildlife&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;HUNT&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;HUNT&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;HUNT&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;HUNT&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;em&gt;Territorial&lt;/em&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr&gt;
+&lt;h2&gt;🦠 1. Scavengers ( The &amp;ldquo;Rats&amp;rdquo; )&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-1-scavengers--the-rats-&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-1-scavengers--the-rats-&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;Archetype:&lt;/strong&gt; Desperate survivors, poorly equipped, chaotic.
+&lt;strong&gt;Goal:&lt;/strong&gt; Scavenge food/meds, survive, protect their trash piles.&lt;/p&gt;
+&lt;h3&gt;Behavior Profile&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;behavior-profile&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#behavior-profile&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Patrol:&lt;/strong&gt; Random wandering in small groups (2-3). They check containers, sit by fires, smoke.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Combat Style:&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;&amp;ldquo;Spray and Pray&amp;rdquo;:&lt;/strong&gt; Low accuracy, high volume of fire.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Cowardice:&lt;/strong&gt; If a leader dies, 50% chance to flee or hide.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Voice Lines:&lt;/strong&gt; Constant chatter (&amp;ldquo;Cheeki Breeki&amp;rdquo;, cursing). Reveals their position easily.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Loot Tier:&lt;/strong&gt; Low (Broken AKs, Bandages, Food).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Unique Trait:&lt;/strong&gt; &lt;em&gt;The Swarm.&lt;/em&gt; If one Scav yells for help, all Scavs in a 50m radius will converge on the location aggressively.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2&gt;🦾 2. The Syndicate ( The &amp;ldquo;Elites&amp;rdquo; )&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-2-the-syndicate--the-elites-&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-2-the-syndicate--the-elites-&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;Archetype:&lt;/strong&gt; High-tech mercenaries, disciplined, lethal.
+&lt;strong&gt;Goal:&lt;/strong&gt; Secure high-value assets, guard key locations (Labs, Server Rooms).&lt;/p&gt;
+&lt;h3&gt;Behavior Profile&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;behavior-profile-1&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#behavior-profile-1&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Patrol:&lt;/strong&gt; Strict routes. They hold angles and cover entrances. They do not wander.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Combat Style:&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;&amp;ldquo;Suppress and Flank&amp;rdquo;:&lt;/strong&gt; One lays down fire (LMG), two push the sides (SMG/Shotgun).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Tactical:&lt;/strong&gt; Use grenades to flush players out. Use smoke to cover movement.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Voice Lines:&lt;/strong&gt; Professional, concise callouts (&amp;ldquo;Contact Front&amp;rdquo;, &amp;ldquo;Flanking Left&amp;rdquo;). Encrypted chatter.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Loot Tier:&lt;/strong&gt; High (Modded M4s, Class 4-5 Armor, Keycards).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Unique Trait:&lt;/strong&gt; &lt;em&gt;Hunt Mode.&lt;/em&gt; If they spot a player, they will actively pursue them across the map block (Zone Pursuit), not just within line of sight.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2&gt;🇺🇳 3. UN Peacekeepers ( The &amp;ldquo;Law&amp;rdquo; )&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-3-un-peacekeepers--the-law-&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-3-un-peacekeepers--the-law-&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;Archetype:&lt;/strong&gt; Heavily armored, defensive, strictly Rules of Engagement (ROE).
+&lt;strong&gt;Goal:&lt;/strong&gt; Maintain order at Checkpoints and Extraction Zones.&lt;/p&gt;
+&lt;h3&gt;Behavior Profile&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;behavior-profile-2&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#behavior-profile-2&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;State:&lt;/strong&gt; &lt;em&gt;Defensive Neutrality.&lt;/em&gt; They will warn players before shooting (&amp;ldquo;Drop the weapon!&amp;rdquo;, &amp;ldquo;Back away!&amp;rdquo;).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Combat Style:&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;&amp;ldquo;Walls of Lead&amp;rdquo;:&lt;/strong&gt; They do not push. They hold ground with overwhelming firepower (Mounted MGs, Snipers).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Accuracy:&lt;/strong&gt; Extremely High (Aimbot-like logic to punish aggression).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Loot Tier:&lt;/strong&gt; Unobtainable (Scripts prevent looting their heavy gear usually, or it&amp;rsquo;s damaged).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Unique Trait:&lt;/strong&gt; &lt;em&gt;Karma System.&lt;/em&gt; Killing Peacekeepers marks the player as a &amp;ldquo;Rogue Agent&amp;rdquo; for 3 raids, making all AI (even Scavs) hunt them instantly.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2&gt;🐺 4. Wildlife / Mutants ( The &amp;ldquo;Environment&amp;rdquo; )&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-4-wildlife--mutants--the-environment-&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-4-wildlife--mutants--the-environment-&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;Archetype:&lt;/strong&gt; Instinctive predators.
+&lt;strong&gt;Goal:&lt;/strong&gt; Defense of territory, hunger.&lt;/p&gt;
+&lt;h3&gt;Behavior Profile&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;behavior-profile-3&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#behavior-profile-3&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;State:&lt;/strong&gt; Ambient until triggered.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Combat Style:&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;&amp;ldquo;Ambush&amp;rdquo;:&lt;/strong&gt; Hide in bushes/vents. Rush the player when backs are turned.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Melee Only:&lt;/strong&gt; High damage, causes &lt;em&gt;Bleed&lt;/em&gt; status effect.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Unique Trait:&lt;/strong&gt; &lt;em&gt;Fear of Fire.&lt;/em&gt; Flares and torches will keep them at bay (radius 5m).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2&gt;🎭 Dynamic Events (The &amp;ldquo;Living World&amp;rdquo;)&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-dynamic-events-the-living-world&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-dynamic-events-the-living-world&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Faction War:&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;Trigger:&lt;/em&gt; A Scav patrol meets a Syndicate team.&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Result:&lt;/em&gt; A firefight erupts. Players can wait and loot the winners, or 3rd-party the fight.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Boss Arrival:&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;Trigger:&lt;/em&gt; 15 minutes into the raid.&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Result:&lt;/em&gt; &amp;ldquo;The Butcher&amp;rdquo; (Scav Boss) arrives with guards. Scavs become 2x more aggressive.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Extraction Denial:&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;Trigger:&lt;/em&gt; Peacekeepers lock down an extraction zone due to &amp;ldquo;contamination&amp;rdquo;.&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Result:&lt;/em&gt; Players must find another way out or fight through the blockade.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>

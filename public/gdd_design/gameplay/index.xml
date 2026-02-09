@@ -1,0 +1,149 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Extraction Document – Gameplay</title>
+    <link>http://localhost:1313/gdd_design/gameplay/index.html</link>
+    <description>Recent content in Gameplay on Extraction Document</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	  <atom:link href="http://localhost:1313/gdd_design/gameplay/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Core Gameplay Loop &amp; Progression</title>
+      <link>http://localhost:1313/gdd_design/gameplay/coreloop.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/gdd_design/gameplay/coreloop.html</guid>
+      <description>
+        
+        
+        &lt;h1&gt;Core Gameplay Loop &amp;amp; Progression&lt;/h1&gt;&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;../README.md&#34;&gt;← Back to Index&lt;/a&gt;&lt;/strong&gt; | &lt;strong&gt;&lt;a href=&#34;../World/LootDistribution.md&#34;&gt;Next: Loot Distribution&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h1&gt;Core Gameplay Loop &amp;amp; Progression&lt;/h1&gt;&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;../README.md&#34;&gt;← Back to Index&lt;/a&gt;&lt;/strong&gt; | &lt;strong&gt;&lt;a href=&#34;../World/LootDistribution.md&#34;&gt;Next: Loot Distribution&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2&gt;🔁 The Extraction Loop (The &amp;ldquo;Cycle&amp;rdquo;)&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-the-extraction-loop-the-cycle&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-the-extraction-loop-the-cycle&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;The core engagement loop is designed to create a &amp;ldquo;Hero&amp;rsquo;s Journey&amp;rdquo; in miniature, built on the cycle of &lt;strong&gt;Risk Assessment -&amp;gt; Execution -&amp;gt; Consequence&lt;/strong&gt;.&lt;/p&gt;
+&lt;h3&gt;1. Preparation Phase (Safety &amp;amp; Investment)&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;1-preparation-phase-safety--investment&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#1-preparation-phase-safety--investment&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Psychology:&lt;/strong&gt; &lt;em&gt;Loss Aversion&lt;/em&gt;. The more gear you equip, the more confident you feel, but the more you fear death.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Key Decisions:&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Budget vs. Chad:&lt;/strong&gt; &amp;ldquo;Do I bring my best M4A1 to survive, or a cheap shotgun to minimize loss?&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Objective Selection:&lt;/strong&gt; &amp;ldquo;Do I hunt players (High Risk) or loot the perimeter (Low Risk)?&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Consumable Tetris:&lt;/strong&gt; Packing food, water, and meds. Balancing utility vs. inventory space for loot.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;2. Infiltration Phase (Tension &amp;amp; Information)&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;2-infiltration-phase-tension--information&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#2-infiltration-phase-tension--information&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Psychology:&lt;/strong&gt; &lt;em&gt;Sensory Overload&lt;/em&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Mechanics:&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;The Spawn:&lt;/strong&gt; Random insertion. immediate check of surroundings.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Sound Discipline:&lt;/strong&gt; Moving slowly to hear enemies first. &lt;em&gt;Silence is your radar.&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Map Knowledge:&lt;/strong&gt; Recognizing landmarks to orient without a minimap.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;3. Execution Phase (The &amp;ldquo;Peak&amp;rdquo;)&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;3-execution-phase-the-peak&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#3-execution-phase-the-peak&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Psychology:&lt;/strong&gt; &lt;em&gt;Flow State&lt;/em&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Combat:&lt;/strong&gt; Millisecond decisions. Flanking, suppressing, grenade usage.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Looting:&lt;/strong&gt; The dopamine hit of finding a high-value item (GPU, Keycard).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;The &amp;ldquo;Greed&amp;rdquo; Check:&lt;/strong&gt; &amp;ldquo;I found a quest item. Should I leave NOW, or check one more room?&amp;rdquo;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;4. Extraction Phase (The &amp;ldquo;Climax&amp;rdquo;)&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;4-extraction-phase-the-climax&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#4-extraction-phase-the-climax&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Psychology:&lt;/strong&gt; &lt;em&gt;Peak Anxiety&lt;/em&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Mechanics:&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;The Exfil timer:&lt;/strong&gt; A 10-60 second countdown where you are defenseless or exposed.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Exit Camping:&lt;/strong&gt; The threat of enemies watching the exit.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Success:&lt;/strong&gt; The splash screen showing XP and Loot Value. The release of tension.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;5. Recovery Phase (The &amp;ldquo;Aftermath&amp;rdquo;)&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;5-recovery-phase-the-aftermath&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#5-recovery-phase-the-aftermath&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Psychology:&lt;/strong&gt; &lt;em&gt;Analysis &amp;amp; Growth&lt;/em&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Actions:&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Healing:&lt;/strong&gt; Treating wounds that persist post-raid (optional mechanic).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Tetris:&lt;/strong&gt; Organizing the stash.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;The Market:&lt;/strong&gt; Selling loot to fund the next run.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2&gt;🧠 Psychological Hooks &amp;amp; Logic&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-psychological-hooks--logic&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-psychological-hooks--logic&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Why do players come back?&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Hook&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Concept&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Implementation&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Variable Ratio Reinforcement&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&amp;ldquo;The Slot Machine&amp;rdquo;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Loot containers have random contents. You pull the lever (open the box) hoping for a Jackpot. Most times it&amp;rsquo;s junk, but the &lt;em&gt;chance&lt;/em&gt; keeps you searching.&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Loss Aversion&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&amp;ldquo;It&amp;rsquo;s Mine&amp;rdquo;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Once you loot an item, you feel ownership. Dying feels like having it &lt;em&gt;stolen&lt;/em&gt;. This anger drives the &amp;ldquo;One More Game&amp;rdquo; mentality to reclaim losses.&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Sunk Cost Fallacy&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&amp;ldquo;I&amp;rsquo;m Committed&amp;rdquo;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Upgrading the Hideout requires massive resource investment. Players play to &amp;ldquo;justify&amp;rdquo; the time/money already spent.&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Mastery Curve&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&amp;ldquo;I&amp;rsquo;m Getting Better&amp;rdquo;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Learning map angles and recoil control is a permanent skill that persists through death/wipes.&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr&gt;
+&lt;h2&gt;📊 Advanced Economy: Faucets &amp;amp; Sinks&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-advanced-economy-faucets--sinks&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-advanced-economy-faucets--sinks&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;To prevent hyper-inflation (where everyone has the best gear), we use a strict Faucet/Sink model.&lt;/p&gt;
+&lt;h3&gt;🚰 Faucets (Resource Inflow)&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-faucets-resource-inflow&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-faucets-resource-inflow&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;em&gt;These generate value in the economy.&lt;/em&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Raid Loot:&lt;/strong&gt; The primary source. Items spawned by the server.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Scav Mode:&lt;/strong&gt; Free &amp;ldquo;welfare&amp;rdquo; runs with zero risk, injecting free gear into the economy.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Bitcoin Farm (Passive):&lt;/strong&gt; Hideout modules that generate currency over time (must be capped/balanced).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Trader Resets:&lt;/strong&gt; Infinite supply of basic ammo/meds from NPCs.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;🚽 Sinks (Resource Destruction)&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-sinks-resource-destruction&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-sinks-resource-destruction&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;em&gt;These remove value to maintain scarcity.&lt;/em&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Deleted on Death:&lt;/strong&gt; Uninsured gear is deleted if not looted by another player.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Consumables:&lt;/strong&gt; Ammo, Meds, Food, and Grenades are one-time use. High-tier ammo is a massive money sink.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Insurance Fees:&lt;/strong&gt; Paying 10-20% of item value for a &lt;em&gt;chance&lt;/em&gt; to get it back.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Flea Market Tax:&lt;/strong&gt; A progressive tax on selling items to other players.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Hideout Upgrades:&lt;/strong&gt; Massive material dumps required to unlock passive bonuses.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Repair Degradation:&lt;/strong&gt; Armor loses max durability when repaired, eventually becoming trash.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;Dynamic Balancing (The &amp;ldquo;Invisible Hand&amp;rdquo;)&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;dynamic-balancing-the-invisible-hand&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#dynamic-balancing-the-invisible-hand&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Trader Barters:&lt;/strong&gt; If &amp;ldquo;Gunpowder&amp;rdquo; becomes too common/cheap, Traders will demand &lt;em&gt;more&lt;/em&gt; Gunpowder for high-tier trades, artificially increasing demand.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Scarcity Events:&lt;/strong&gt; &amp;ldquo;Fuel Shortage&amp;rdquo; events reduce spawn rates of fuel, draining cash reserves as players panic-buy.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,227 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Extraction Document – Networking</title>
+    <link>http://localhost:1313/gdd_technical/networking/index.html</link>
+    <description>Recent content in Networking on Extraction Document</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	  <atom:link href="http://localhost:1313/gdd_technical/networking/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Lag Compensation &amp; Netcode Logic</title>
+      <link>http://localhost:1313/gdd_technical/networking/lagcompensation.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/gdd_technical/networking/lagcompensation.html</guid>
+      <description>
+        
+        
+        &lt;h1&gt;Lag Compensation &amp;amp; Netcode Logic&lt;/h1&gt;&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;../README.md&#34;&gt;← Back to Index&lt;/a&gt;&lt;/strong&gt; | &lt;strong&gt;&lt;a href=&#34;./ReplicationStrategy.md&#34;&gt;Replication Strategy ←&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2&gt;🏃 The Problem: &amp;ldquo;Peeker&amp;rsquo;s Advantage&amp;rdquo;&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-the-problem-peekers-advantage&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-the-problem-peekers-advantage&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;In shooters, the client is always ahead of the server. When Player A peeks a corner, they see Player B &lt;em&gt;before&lt;/em&gt; the server knows Player A has moved. This creates unfair kills.&lt;/p&gt;
+&lt;h3&gt;1. Server-Side Rewind (The Solution)&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;1-server-side-rewind-the-solution&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#1-server-side-rewind-the-solution&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;When a player fires a hitscan weapon:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Client:&lt;/strong&gt; Sends &lt;code&gt;InputFire(TimeStamp)&lt;/code&gt; to Server.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Server:&lt;/strong&gt; Receives packet 50ms later.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Rewind:&lt;/strong&gt; Before checking collision, &lt;strong&gt;Server rewinds ALL other players&lt;/strong&gt; to where they were at &lt;code&gt;TimeStamp&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Check:&lt;/strong&gt; Did the shot hit the &lt;em&gt;rewound&lt;/em&gt; position?&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Result:&lt;/strong&gt; Grant damage, even if the enemy is currently safe behind a wall on the Server.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;Why?&lt;/strong&gt; It favors the shooter&amp;rsquo;s screen (&amp;ldquo;If I hit them on my screen, they should die&amp;rdquo;).&lt;/p&gt;
+
+&lt;/blockquote&gt;
+&lt;h3&gt;2. Client-Side Prediction (Movement)&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;2-client-side-prediction-movement&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#2-client-side-prediction-movement&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Prediction:&lt;/strong&gt; Client simulates movement &lt;em&gt;instantly&lt;/em&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Correction:&lt;/strong&gt; Server checks position. If Client is &amp;gt; 50 units (error tolerance) away from Server, force &lt;em&gt;teleport&lt;/em&gt; back (Rubberbanding).
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Tolerance:&lt;/strong&gt; 50 units (Close), 150 units (Far/Lagging).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Smoothing:&lt;/strong&gt; &lt;code&gt;UCharacterMovementComponent&lt;/code&gt; interpolates the correction over 0.2s to reduce jarring snaps.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2&gt;🛡️ Hit Registration &amp;amp; Validation&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-hit-registration--validation&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-hit-registration--validation&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;1. Headshot Detection&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;1-headshot-detection&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#1-headshot-detection&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Problem:&lt;/strong&gt; Clients can fake headshots easily.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Validation:&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;Server checks &lt;code&gt;BoneName&lt;/code&gt; hit.&lt;/li&gt;
+&lt;li&gt;Server checks angle of incidence (Did bullet come from front?).&lt;/li&gt;
+&lt;li&gt;Server checks if &lt;code&gt;BoneName&lt;/code&gt; was occluded by &lt;code&gt;Chest&lt;/code&gt; or &lt;code&gt;Arm&lt;/code&gt; (Penetration).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;2. Projectile Physics&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;2-projectile-physics&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#2-projectile-physics&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Ballistics:&lt;/strong&gt; Simulated locally for visuals.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Trajectory:&lt;/strong&gt; Server calculates trajectory based on &lt;code&gt;MuzzleVelocity&lt;/code&gt;, &lt;code&gt;Gravity&lt;/code&gt;, and &lt;code&gt;Drag&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Sync:&lt;/strong&gt; Every 0.5s, Server sends &lt;code&gt;ProjectileCorrection&lt;/code&gt; if discrepancy &amp;gt; 1m.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2&gt;🕰️ Time Management (Clock Sync)&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-time-management-clock-sync&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-time-management-clock-sync&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;Server Time vs. Client Time&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;server-time-vs-client-time&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#server-time-vs-client-time&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;GameTime:&lt;/strong&gt; Synced at login. Client maintains local &lt;code&gt;ServerTimeOffset&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Ping:&lt;/strong&gt; Calculated every 1s using &lt;code&gt;ICMP&lt;/code&gt; or round-trip packet.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Jitter:&lt;/strong&gt; Filtered using a rolling average of last 10 pings.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;High Ping Mitigation (&amp;gt; 150ms)&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;high-ping-mitigation--150ms&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#high-ping-mitigation--150ms&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Disable Rewind:&lt;/strong&gt; If Ping &amp;gt; 200ms, Server &lt;em&gt;ignores&lt;/em&gt; rewind requests to prevent &amp;ldquo;dying around corners&amp;rdquo; for low-ping players.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Prediction Limit:&lt;/strong&gt; Visuals stop predicting enemy movement beyond 300ms (preventing teleporting enemies).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Replication Strategy &amp; Bandwidth Optimization</title>
+      <link>http://localhost:1313/gdd_technical/networking/replicationstrategy.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/gdd_technical/networking/replicationstrategy.html</guid>
+      <description>
+        
+        
+        &lt;h1&gt;Replication Strategy &amp;amp; Bandwidth Optimization&lt;/h1&gt;&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;../README.md&#34;&gt;← Back to Index&lt;/a&gt;&lt;/strong&gt; | &lt;strong&gt;&lt;a href=&#34;./LagCompensation.md&#34;&gt;Lag Compensation →&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2&gt;🏗️ The Problem: High Density&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-the-problem-high-density&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-the-problem-high-density&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Extraction Shooters have a unique networking challenge: &lt;strong&gt;Huge Maps + High AI Count + High Loot Count.&lt;/strong&gt;
+Standard Unreal &lt;code&gt;NetCullDistance&lt;/code&gt; is not enough.&lt;/p&gt;
+&lt;h2&gt;📡 Replication Graph&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-replication-graph&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-replication-graph&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;We implement a custom &lt;code&gt;UReplicationGraph&lt;/code&gt; to manage the immense number of replicated actors.&lt;/p&gt;
+&lt;h3&gt;1. The Grid (Spatialization)&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;1-the-grid-spatialization&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#1-the-grid-spatialization&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Concept:&lt;/strong&gt; The map is divided into a 2D grid cells (e.g., 50x50 meters).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Logic:&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;Dynamic Actors (AI, Players) are registered to their current cell.&lt;/li&gt;
+&lt;li&gt;Clients only receive updates from actors in their cell + adjacent cells.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Result:&lt;/strong&gt; A client on the West side never processes data from the East side.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;2. Dormancy (Sleeping Actors)&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;2-dormancy-sleeping-actors&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#2-dormancy-sleeping-actors&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Loot Containers:&lt;/strong&gt; By default, all containers are &lt;code&gt;DORM_Initial&lt;/code&gt;.
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;Server:&lt;/em&gt; Never replicates container state (Open/Close) until a player is within 5m interaction range.&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Client:&lt;/em&gt; Only sees static mesh.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;AI (Far):&lt;/strong&gt; AI beyond 150m tick at 1hz on Server and do NOT replicate movement to clients (Server-side simulation only).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;3. Priority &amp;amp; Frequency&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;3-priority--frequency&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#3-priority--frequency&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Actor Type&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;NetUpdateFrequency (Hz)&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Priority&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Player (Active)&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;60Hz&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;1.0 (Highest)&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Player (Far &amp;gt; 50m)&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;20Hz&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;0.8&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Enemy AI (Combat)&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;30Hz&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;0.9&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Enemy AI (Patrol)&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;10Hz&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;0.5&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Loot Item&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;0Hz (On Spawn only)&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;0.1&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Door/Gate&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;OnEvent&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;1.0&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr&gt;
+&lt;h2&gt;📦 Loot Replication (The &amp;ldquo;Thousands of Items&amp;rdquo; Problem)&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-loot-replication-the-thousands-of-items-problem&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-loot-replication-the-thousands-of-items-problem&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;Structural Items (Containers)&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;structural-items-containers&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#structural-items-containers&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;Use &lt;code&gt;NetDormancy&lt;/code&gt; heavily.&lt;/li&gt;
+&lt;li&gt;Only replicate the &lt;em&gt;State&lt;/em&gt; (Open/Closed/Locked), never the &lt;em&gt;Contents&lt;/em&gt; array to all clients.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Contents&lt;/strong&gt; are only sent via &lt;code&gt;Client_&lt;/code&gt; RPC to the &lt;em&gt;specific player&lt;/em&gt; who opens the UI.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Dropped Items (Physics)&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;dropped-items-physics&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#dropped-items-physics&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Optimization:&lt;/strong&gt; When an item is dropped:
+&lt;ol&gt;
+&lt;li&gt;Spawn &lt;code&gt;BP_LootItem&lt;/code&gt; (Replicated).&lt;/li&gt;
+&lt;li&gt;Wait for Physics to settle (Sleep).&lt;/li&gt;
+&lt;li&gt;Server destroys &lt;code&gt;StaticMeshComponent&lt;/code&gt; physics and replaces it with a simple, non-ticking location update.&lt;/li&gt;
+&lt;li&gt;Client interpolates to rest position.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2&gt;🔫 Weapon Replication&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-weapon-replication&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-weapon-replication&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;1. Firing (Client-Side Prediction)&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;1-firing-client-side-prediction&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#1-firing-client-side-prediction&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Client:&lt;/strong&gt; plays muzzle flash &amp;amp; audio &lt;em&gt;immediately&lt;/em&gt; (Zero latency feel).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Server:&lt;/strong&gt; Validates ammo and cooldown.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Replication:&lt;/strong&gt; Do NOT replicate every bullet.
+&lt;ul&gt;
+&lt;li&gt;Use &lt;code&gt;Burst&lt;/code&gt; replication: &amp;ldquo;Player A started firing at time T&amp;rdquo;.&lt;/li&gt;
+&lt;li&gt;Remote clients simulate the burst.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;2. Projectiles vs. Hitscan&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;2-projectiles-vs-hitscan&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#2-projectiles-vs-hitscan&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Hitscan (Close &amp;lt; 50m):&lt;/strong&gt; Instant trace. Efficient.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Projectile (Long &amp;gt; 50m):&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;Spawn &amp;ldquo;Fake&amp;rdquo; projectile on Client (Visual only).&lt;/li&gt;
+&lt;li&gt;Server traces trajectory.&lt;/li&gt;
+&lt;li&gt;Do NOT replicate an Actor for every bullet. Use &lt;code&gt;FVector&lt;/code&gt; arrays in a compressed struct if ballistic visuals are needed.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2&gt;📉 Bandwidth Budget&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-bandwidth-budget&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-bandwidth-budget&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;Target:&lt;/strong&gt; &amp;lt; 40KB/s per client.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Movement:&lt;/strong&gt; 60% of budget. Compressed &lt;code&gt;FVector_NetQuantize10&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Actions:&lt;/strong&gt; 20% (Firing, interacting).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Environment:&lt;/strong&gt; 10% (Doors, lights).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;VOIP:&lt;/strong&gt; 10% (Ideally separate channel/server).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,12 +1,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Extraction Document – Core</title>
-    <link>http://localhost:1313/gdd_technical/core/index.html</link>
+    <link>http://localhost:52333/gdd_technical/core/index.html</link>
     <description>Recent content in Core on Extraction Document</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     
-	  <atom:link href="http://localhost:1313/gdd_technical/core/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="http://localhost:52333/gdd_technical/core/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -16,10 +16,10 @@
     
     <item>
       <title>Coding Standards &amp; Guidelines</title>
-      <link>http://localhost:1313/gdd_technical/core/codingstandards.html</link>
+      <link>http://localhost:52333/gdd_technical/core/codingstandards.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/gdd_technical/core/codingstandards.html</guid>
+      <guid>http://localhost:52333/gdd_technical/core/codingstandards.html</guid>
       <description>
         
         
@@ -160,10 +160,10 @@
     
     <item>
       <title>Development Roadmap &amp; TODO Tracking</title>
-      <link>http://localhost:1313/gdd_technical/core/developmentroadmap.html</link>
+      <link>http://localhost:52333/gdd_technical/core/developmentroadmap.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/gdd_technical/core/developmentroadmap.html</guid>
+      <guid>http://localhost:52333/gdd_technical/core/developmentroadmap.html</guid>
       <description>
         
         
@@ -1390,10 +1390,10 @@
     
     <item>
       <title>Networking System - Technical Design Document</title>
-      <link>http://localhost:1313/gdd_technical/core/networkingsystem.html</link>
+      <link>http://localhost:52333/gdd_technical/core/networkingsystem.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/gdd_technical/core/networkingsystem.html</guid>
+      <guid>http://localhost:52333/gdd_technical/core/networkingsystem.html</guid>
       <description>
         
         
@@ -1953,10 +1953,10 @@ STRUCT LobbyMember:
     
     <item>
       <title>Security System - Technical Specification</title>
-      <link>http://localhost:1313/gdd_technical/core/securitysystem.html</link>
+      <link>http://localhost:52333/gdd_technical/core/securitysystem.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/gdd_technical/core/securitysystem.html</guid>
+      <guid>http://localhost:52333/gdd_technical/core/securitysystem.html</guid>
       <description>
         
         
@@ -2198,10 +2198,10 @@ STRUCT ViolationRecord:
     
     <item>
       <title>System Architecture - Technical Design Document</title>
-      <link>http://localhost:1313/gdd_technical/core/architecture.html</link>
+      <link>http://localhost:52333/gdd_technical/core/architecture.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/gdd_technical/core/architecture.html</guid>
+      <guid>http://localhost:52333/gdd_technical/core/architecture.html</guid>
       <description>
         
         

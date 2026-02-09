@@ -1,12 +1,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Extraction Document – Performance</title>
-    <link>http://localhost:1313/gdd_technical/performance/index.html</link>
+    <link>http://localhost:52333/gdd_technical/performance/index.html</link>
     <description>Recent content in Performance on Extraction Document</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     
-	  <atom:link href="http://localhost:1313/gdd_technical/performance/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="http://localhost:52333/gdd_technical/performance/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -16,10 +16,10 @@
     
     <item>
       <title>Performance Budgets &amp; Technical Constraints</title>
-      <link>http://localhost:1313/gdd_technical/performance/budgets.html</link>
+      <link>http://localhost:52333/gdd_technical/performance/budgets.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/gdd_technical/performance/budgets.html</guid>
+      <guid>http://localhost:52333/gdd_technical/performance/budgets.html</guid>
       <description>
         
         
@@ -142,10 +142,10 @@
     
     <item>
       <title>Performance Optimization</title>
-      <link>http://localhost:1313/gdd_technical/performance/optimization.html</link>
+      <link>http://localhost:52333/gdd_technical/performance/optimization.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/gdd_technical/performance/optimization.html</guid>
+      <guid>http://localhost:52333/gdd_technical/performance/optimization.html</guid>
       <description>
         
         

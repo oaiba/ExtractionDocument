@@ -1,12 +1,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Extraction Document – Audio</title>
-    <link>http://localhost:1313/gdd_design/audio/index.html</link>
+    <link>http://localhost:52333/gdd_design/audio/index.html</link>
     <description>Recent content in Audio on Extraction Document</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     
-	  <atom:link href="http://localhost:1313/gdd_design/audio/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="http://localhost:52333/gdd_design/audio/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -16,10 +16,10 @@
     
     <item>
       <title>Audio Design &amp; Soundscapes</title>
-      <link>http://localhost:1313/gdd_design/audio/sounddesign.html</link>
+      <link>http://localhost:52333/gdd_design/audio/sounddesign.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/gdd_design/audio/sounddesign.html</guid>
+      <guid>http://localhost:52333/gdd_design/audio/sounddesign.html</guid>
       <description>
         
         
@@ -151,10 +151,10 @@
     
     <item>
       <title>Soundscape - Environmental Audio Design</title>
-      <link>http://localhost:1313/gdd_design/audio/soundscape.html</link>
+      <link>http://localhost:52333/gdd_design/audio/soundscape.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/gdd_design/audio/soundscape.html</guid>
+      <guid>http://localhost:52333/gdd_design/audio/soundscape.html</guid>
       <description>
         
         
@@ -808,10 +808,10 @@ Allocation:
     
     <item>
       <title>Tactical Audio - Combat Sound Design</title>
-      <link>http://localhost:1313/gdd_design/audio/tacticalaudio.html</link>
+      <link>http://localhost:52333/gdd_design/audio/tacticalaudio.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/gdd_design/audio/tacticalaudio.html</guid>
+      <guid>http://localhost:52333/gdd_design/audio/tacticalaudio.html</guid>
       <description>
         
         
@@ -1611,10 +1611,10 @@ Subtitle Options:
     
     <item>
       <title>Voice Lines - Character Dialogue</title>
-      <link>http://localhost:1313/gdd_design/audio/voicelines.html</link>
+      <link>http://localhost:52333/gdd_design/audio/voicelines.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/gdd_design/audio/voicelines.html</guid>
+      <guid>http://localhost:52333/gdd_design/audio/voicelines.html</guid>
       <description>
         
         

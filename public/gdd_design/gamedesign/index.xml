@@ -1,12 +1,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Extraction Document – GameDesign</title>
-    <link>http://localhost:1313/gdd_design/gamedesign/index.html</link>
+    <link>http://localhost:52333/gdd_design/gamedesign/index.html</link>
     <description>Recent content in GameDesign on Extraction Document</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     
-	  <atom:link href="http://localhost:1313/gdd_design/gamedesign/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="http://localhost:52333/gdd_design/gamedesign/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -16,10 +16,10 @@
     
     <item>
       <title>Accessibility Design</title>
-      <link>http://localhost:1313/gdd_design/gamedesign/accessibility.html</link>
+      <link>http://localhost:52333/gdd_design/gamedesign/accessibility.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/gdd_design/gamedesign/accessibility.html</guid>
+      <guid>http://localhost:52333/gdd_design/gamedesign/accessibility.html</guid>
       <description>
         
         
@@ -936,10 +936,10 @@ When enabled, shows on-screen indicators for:&lt;/p&gt;
     
     <item>
       <title>Control System - Design &amp; Experience</title>
-      <link>http://localhost:1313/gdd_design/gamedesign/controls.html</link>
+      <link>http://localhost:52333/gdd_design/gamedesign/controls.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/gdd_design/gamedesign/controls.html</guid>
+      <guid>http://localhost:52333/gdd_design/gamedesign/controls.html</guid>
       <description>
         
         
@@ -2099,10 +2099,10 @@ When enabled, shows on-screen indicators for:&lt;/p&gt;
     
     <item>
       <title>Core Gameplay Mechanics - Deep Dive</title>
-      <link>http://localhost:1313/gdd_design/gamedesign/coregameplay.html</link>
+      <link>http://localhost:52333/gdd_design/gamedesign/coregameplay.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/gdd_design/gamedesign/coregameplay.html</guid>
+      <guid>http://localhost:52333/gdd_design/gamedesign/coregameplay.html</guid>
       <description>
         
         
@@ -3123,10 +3123,10 @@ Loot Beam:
     
     <item>
       <title>Economy &amp; Monetization Design</title>
-      <link>http://localhost:1313/gdd_design/gamedesign/economy.html</link>
+      <link>http://localhost:52333/gdd_design/gamedesign/economy.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/gdd_design/gamedesign/economy.html</guid>
+      <guid>http://localhost:52333/gdd_design/gamedesign/economy.html</guid>
       <description>
         
         
@@ -4434,10 +4434,10 @@ Loot Beam:
     
     <item>
       <title>Game Modes Design</title>
-      <link>http://localhost:1313/gdd_design/gamedesign/gamemodes.html</link>
+      <link>http://localhost:52333/gdd_design/gamedesign/gamemodes.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/gdd_design/gamedesign/gamemodes.html</guid>
+      <guid>http://localhost:52333/gdd_design/gamedesign/gamemodes.html</guid>
       <description>
         
         
@@ -4559,10 +4559,10 @@ Loot Beam:
     
     <item>
       <title>Game Overview &amp; Design Foundation</title>
-      <link>http://localhost:1313/gdd_design/gamedesign/overview.html</link>
+      <link>http://localhost:52333/gdd_design/gamedesign/overview.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/gdd_design/gamedesign/overview.html</guid>
+      <guid>http://localhost:52333/gdd_design/gamedesign/overview.html</guid>
       <description>
         
         
@@ -6017,10 +6017,10 @@ Q4: Holiday events, major balance pass&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;d
     
     <item>
       <title>Live Operations &amp; Events</title>
-      <link>http://localhost:1313/gdd_design/gamedesign/liveops.html</link>
+      <link>http://localhost:52333/gdd_design/gamedesign/liveops.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/gdd_design/gamedesign/liveops.html</guid>
+      <guid>http://localhost:52333/gdd_design/gamedesign/liveops.html</guid>
       <description>
         
         
@@ -7073,10 +7073,10 @@ Thank you for your patience.&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&
     
     <item>
       <title>Localization Strategy</title>
-      <link>http://localhost:1313/gdd_design/gamedesign/localization.html</link>
+      <link>http://localhost:52333/gdd_design/gamedesign/localization.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/gdd_design/gamedesign/localization.html</guid>
+      <guid>http://localhost:52333/gdd_design/gamedesign/localization.html</guid>
       <description>
         
         
@@ -7955,10 +7955,10 @@ English fallback (en-US)&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;
     
     <item>
       <title>Navigation &amp; Map System Design</title>
-      <link>http://localhost:1313/gdd_design/gamedesign/navigationandmap.html</link>
+      <link>http://localhost:52333/gdd_design/gamedesign/navigationandmap.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/gdd_design/gamedesign/navigationandmap.html</guid>
+      <guid>http://localhost:52333/gdd_design/gamedesign/navigationandmap.html</guid>
       <description>
         
         
@@ -8227,10 +8227,10 @@ English fallback (en-US)&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;
     
     <item>
       <title>Progression &amp; Monetization</title>
-      <link>http://localhost:1313/gdd_design/gamedesign/progression.html</link>
+      <link>http://localhost:52333/gdd_design/gamedesign/progression.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/gdd_design/gamedesign/progression.html</guid>
+      <guid>http://localhost:52333/gdd_design/gamedesign/progression.html</guid>
       <description>
         
         
@@ -9149,10 +9149,10 @@ Exalted:    50,000 reputation&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=
     
     <item>
       <title>Ranked Mode &amp; Competitive Systems</title>
-      <link>http://localhost:1313/gdd_design/gamedesign/rankedmode.html</link>
+      <link>http://localhost:52333/gdd_design/gamedesign/rankedmode.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/gdd_design/gamedesign/rankedmode.html</guid>
+      <guid>http://localhost:52333/gdd_design/gamedesign/rankedmode.html</guid>
       <description>
         
         
@@ -9889,10 +9889,10 @@ Playing 10+ ranked games with same squad members:&lt;/p&gt;
     
     <item>
       <title>Tutorial Raid: &#34;Operation Zero&#34;</title>
-      <link>http://localhost:1313/gdd_design/gamedesign/tutorialraid.html</link>
+      <link>http://localhost:52333/gdd_design/gamedesign/tutorialraid.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/gdd_design/gamedesign/tutorialraid.html</guid>
+      <guid>http://localhost:52333/gdd_design/gamedesign/tutorialraid.html</guid>
       <description>
         
         
@@ -9985,10 +9985,10 @@ Most players quit Extraction Shooters because they loot, get lost, and die to a 
     
     <item>
       <title>User Settings &amp; Configuration</title>
-      <link>http://localhost:1313/gdd_design/gamedesign/usersettings.html</link>
+      <link>http://localhost:52333/gdd_design/gamedesign/usersettings.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/gdd_design/gamedesign/usersettings.html</guid>
+      <guid>http://localhost:52333/gdd_design/gamedesign/usersettings.html</guid>
       <description>
         
         

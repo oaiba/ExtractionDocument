@@ -1,4 +1,4 @@
-# Quest Lines - Hệ Thống Nhiệm Vụ
+# Quest Lines - Mission System
 
 **[← Back to Factions](./Factions.md)** | **[Index](../README.md)** | **[Next: Backstory →](./Backstory.md)**
 
@@ -8,13 +8,13 @@
 
 ### Quest Categories
 
-| Category | Duration | Complexity | Rewards |
-|:---------|:---------|:-----------|:--------|
-| **Main Story** | Multi-session | High | Major unlocks |
-| **Faction Quests** | 1-3 sessions | Medium | Reputation + Items |
-| **Daily Quests** | Single session | Low | Credits + XP |
-| **Weekly Quests** | Multi-session | Medium | Premium rewards |
-| **Challenge Quests** | Varies | Very High | Unique items |
+| Category             | Duration       | Complexity | Rewards            |
+| :------------------- | :------------- | :--------- | :----------------- |
+| **Main Story**       | Multi-session  | High       | Major unlocks      |
+| **Faction Quests**   | 1-3 sessions   | Medium     | Reputation + Items |
+| **Daily Quests**     | Single session | Low        | Credits + XP       |
+| **Weekly Quests**    | Multi-session  | Medium     | Premium rewards    |
+| **Challenge Quests** | Varies         | Very High  | Unique items       |
 
 ---
 
@@ -202,25 +202,25 @@ Example: "Trapped"
 ### Daily Quest Pool (Rotating)
 
 **Easy Tier (Pick 1):**
-| Quest | Objective | Reward |
-|:------|:----------|:-------|
-| Loot Run | Extract with 5+ items | 500 Credits |
-| Scavenger | Loot 10 containers | 400 Credits |
-| Survivor | Extract 2 matches | 600 Credits |
+| Quest     | Objective             | Reward      |
+| :-------- | :-------------------- | :---------- |
+| Loot Run  | Extract with 5+ items | 500 Credits |
+| Scavenger | Loot 10 containers    | 400 Credits |
+| Survivor  | Extract 2 matches     | 600 Credits |
 
 **Medium Tier (Pick 1):**
-| Quest | Objective | Reward |
-|:------|:----------|:-------|
-| Combat Expert | Kill 10 AI enemies | 800 Credits |
+| Quest         | Objective               | Reward       |
+| :------------ | :---------------------- | :----------- |
+| Combat Expert | Kill 10 AI enemies      | 800 Credits  |
 | Valuable Find | Extract with Rare+ item | 1000 Credits |
-| Hot Zone Hero | Loot from Hot Zone | 900 Credits |
+| Hot Zone Hero | Loot from Hot Zone      | 900 Credits  |
 
 **Hard Tier (Pick 1):**
-| Quest | Objective | Reward |
-|:------|:----------|:-------|
+| Quest       | Objective                     | Reward       |
+| :---------- | :---------------------------- | :----------- |
 | Untouchable | Extract without taking damage | 1500 Credits |
-| Boss Hunter | Kill any AI Boss | 2000 Credits |
-| Full Bag | Extract with full inventory | 1200 Credits |
+| Boss Hunter | Kill any AI Boss              | 2000 Credits |
+| Full Bag    | Extract with full inventory   | 1200 Credits |
 
 ### Daily Reset
 - Resets at: 00:00 UTC
@@ -235,14 +235,14 @@ Example: "Trapped"
 
 **Week Example: "Industrial Dominance"**
 
-| Day | Objective | Individual Reward |
-|:----|:----------|:------------------|
-| Mon | Extract 3 times from Industrial Decay | 1000 Credits |
-| Tue | Kill 25 AI in Industrial Decay | 1200 Credits |
-| Wed | Loot the Reactor Core | 1500 Credits |
-| Thu | Complete 1 Faction Quest | 2000 Credits |
-| Fri | Defeat Reactor Guardian Boss | 2500 Credits |
-| Sat-Sun | Complete ALL objectives | BONUS: Rare Weapon |
+| Day     | Objective                             | Individual Reward  |
+| :------ | :------------------------------------ | :----------------- |
+| Mon     | Extract 3 times from Industrial Decay | 1000 Credits       |
+| Tue     | Kill 25 AI in Industrial Decay        | 1200 Credits       |
+| Wed     | Loot the Reactor Core                 | 1500 Credits       |
+| Thu     | Complete 1 Faction Quest              | 2000 Credits       |
+| Fri     | Defeat Reactor Guardian Boss          | 2500 Credits       |
+| Sat-Sun | Complete ALL objectives               | BONUS: Rare Weapon |
 
 **Completion Bonus:** 
 - 5/5 Days = Rare Weapon Crate
@@ -329,12 +329,12 @@ Reward: Story conclusion, "Memorial" skin, 10,000 Credits
 - **AI Presence:** [Number and type]
 
 ## Rewards
-| Reward Type | Amount |
-|:------------|:-------|
-| Credits | [X] |
-| Reputation | [Faction +X] |
-| Items | [Specific items] |
-| Unlocks | [New content] |
+| Reward Type | Amount           |
+| :---------- | :--------------- |
+| Credits     | [X]              |
+| Reputation  | [Faction +X]     |
+| Items       | [Specific items] |
+| Unlocks     | [New content]    |
 
 ## Dialogue
 ### Quest Accept
@@ -359,11 +359,11 @@ Reward: Story conclusion, "Memorial" skin, 10,000 Credits
 ### Reward Scaling
 
 | Difficulty | Time Est. | Credit Reward | Rep Reward |
-|:-----------|:----------|:--------------|:-----------|
-| Easy | 5-10 min | 500-1000 | 200-400 |
-| Medium | 10-20 min | 1000-2500 | 500-800 |
-| Hard | 20-30 min | 2500-5000 | 800-1200 |
-| Extreme | 30+ min | 5000-10000 | 1200-2000 |
+| :--------- | :-------- | :------------ | :--------- |
+| Easy       | 5-10 min  | 500-1000      | 200-400    |
+| Medium     | 10-20 min | 1000-2500     | 500-800    |
+| Hard       | 20-30 min | 2500-5000     | 800-1200   |
+| Extreme    | 30+ min   | 5000-10000    | 1200-2000  |
 
 ### Quest Availability Rules
 - Max 3 Daily quests active

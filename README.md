@@ -20,6 +20,17 @@
 
 ---
 
+## ⚡ One-Page Summary
+
+**Concept:** A top-down, high-stakes extraction shooter for mobile where players risk their gear to scavenge valuable loot in hostile, post-collapse industrial zones.
+**Core Loop:** Infiltrate Zone → Scavenge Loot/Complete Intel Goals → Survive AI & Players → Extract.
+**USP:** "Tarkov-lite" for mobile. Realism-focused ballistics and economy, but with accessible top-down controls and 12-15 minute sessions.
+**Monetization:** Free-to-Play. Battle Pass & Cosmetics. NO Pay-to-Win (selling power).
+**Platform:** iOS, Android (Primary). PC (Secondary).
+**Status:** Pre-Production / Prototyping Phase.
+
+---
+
 ## Project Overview
 
 This is the central Game Design Document for a top-down extraction shooter. Players infiltrate hazardous zones, scavenge for valuable loot, fight hostile factions and other players, and extract to secure their gains. High stakes, tactical gameplay, and persistent progression are the core pillars.

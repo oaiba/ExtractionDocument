@@ -787,6 +787,41 @@ Note: ALL obtainable free through play
 
 ---
 
+---
+
+## 🌎 Marketing & Distribution Strategy
+
+### Target Markets
+*   **Primary:** Southeast Asia (SEA), Brazil, India (Strong Mobile Hardcore Shooter Demographic).
+*   **Secondary:** North America, Western Europe (Focus on "PC Quality on Mobile").
+
+### Distribution Channels
+*   **Mobile:** Google Play Store, Apple App Store.
+*   **PC:** Steam (Early Access potentially), Epic Games Store.
+*   **Community:** Discord (Primary Hub), Reddit, Twitter/X.
+
+### Go-To-Market Plan
+1.  **Phase 1: Awareness (Pre-Alpha)** - Developer Blogs, Concept Art teases, Discord community building.
+2.  **Phase 2: Engagement (Alpha)** - Closed invite-only tests for influencers and hardcore community members.
+3.  **Phase 3: Hype (Beta)** - Open Beta, sponsored streams, "Drop" campaigns for access keys.
+4.  **Phase 4: Launch** - Global rollout, Season 1 Battle Pass, cross-platform marketing push.
+
+---
+
+## 📝 Document Ownership & Changelog
+
+| Role            | Owner              | Approver           |
+| :-------------- | :----------------- | :----------------- |
+| **Author**      | Lead Game Designer | Creative Director  |
+| **Tech Review** | Networking Lead    | Technical Director |
+| **Art Review**  | Art Director       | Art Lead           |
+
+**Recent Changes:**
+*   **v1.1 (2026-02-09):** Added "Marketing & Distribution Strategy" section.
+*   **v1.0 (2026-02-07):** Initial comprehensive draft.
+
+---
+
 ## Success Metrics & KPIs
 
 ### Engagement Metrics

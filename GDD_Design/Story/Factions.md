@@ -1,24 +1,24 @@
-# Factions - Phe Phái Chi Tiết
+# Factions - Detailed Breakdown
 
 **[← Back to Narrative](./Narrative.md)** | **[Index](../README.md)** | **[Next: Quest Lines →](./QuestLines.md)**
 
 ---
 
-## 🏴 Tổng Quan Hệ Thống Phe Phái
+## 🏴 Faction System Overview
 
-### Vai Trò Của Factions
+### Role of Factions
 
-Factions **KHÔNG** phải là playable sides. Chúng hoạt động như:
-- **Quest Givers**: Cung cấp nhiệm vụ và mục tiêu
-- **Vendors**: Bán items độc quyền theo reputation
-- **Lore Sources**: Mở rộng world building
-- **Reputation System**: Unlock rewards qua loyalty
+Factions are **NOT** playable sides. They function as:
+- **Quest Givers**: Provide missions and objectives
+- **Vendors**: Sell exclusive items based on reputation
+- **Lore Sources**: Expand world building
+- **Reputation System**: Unlock rewards through loyalty
 
 ---
 
 ## ⚔️ Faction Relationship Matrix
 
-### Quan Hệ Giữa Các Phe
+### Inter-Faction Relationships
 
 ```
                  SALVAGE   TECH    UNDERGROUND   PEACEKEEPERS
@@ -36,14 +36,14 @@ Legend:
 
 ### Relationship Details
 
-| Faction A | Faction B | Status | Reason |
-|:----------|:----------|:-------|:-------|
-| Salvage | Tech | Neutral | Trade tech for materials |
-| Salvage | Underground | Neutral | Occasional supply deals |
-| Salvage | Peacekeepers | Friendly | Non-political workers |
-| Tech | Underground | Friendly | Information exchange |
-| Tech | Peacekeepers | Hostile | Corp secrets exposed |
-| Underground | Peacekeepers | Hostile | Criminal vs Law |
+| Faction A   | Faction B    | Status   | Reason                   |
+| :---------- | :----------- | :------- | :----------------------- |
+| Salvage     | Tech         | Neutral  | Trade tech for materials |
+| Salvage     | Underground  | Neutral  | Occasional supply deals  |
+| Salvage     | Peacekeepers | Friendly | Non-political workers    |
+| Tech        | Underground  | Friendly | Information exchange     |
+| Tech        | Peacekeepers | Hostile  | Corp secrets exposed     |
+| Underground | Peacekeepers | Hostile  | Criminal vs Law          |
 
 ---
 
@@ -51,13 +51,13 @@ Legend:
 
 ### Identity
 
-| Attribute | Value |
-|:----------|:------|
-| **Motto** | "Honest Work in Lawless Lands" |
-| **Colors** | Orange & Gray |
-| **Symbol** | Crossed wrenches over gear ⚙️ |
-| **Leader** | "Foreman" Viktor Koval |
-| **Base** | Converted factory (off-map) |
+| Attribute  | Value                          |
+| :--------- | :----------------------------- |
+| **Motto**  | "Honest Work in Lawless Lands" |
+| **Colors** | Orange & Gray                  |
+| **Symbol** | Crossed wrenches over gear ⚙️   |
+| **Leader** | "Foreman" Viktor Koval         |
+| **Base**   | Converted factory (off-map)    |
 
 ### Leadership Profile
 
@@ -86,31 +86,31 @@ Voice: Gruff, fatherly, practical
 
 ### Key NPCs
 
-| Name | Role | Quest Type | Location |
-|:-----|:-----|:-----------|:---------|
-| Viktor Koval | Leader | Main story | Safe Zone |
-| Yuri | Engineer | Repair missions | Field |
-| Mama Rosa | Quartermaster | Supply runs | Safe Zone |
-| "Wrench" Lee | Recruiter | Introduction | Anywhere |
+| Name         | Role          | Quest Type      | Location  |
+| :----------- | :------------ | :-------------- | :-------- |
+| Viktor Koval | Leader        | Main story      | Safe Zone |
+| Yuri         | Engineer      | Repair missions | Field     |
+| Mama Rosa    | Quartermaster | Supply runs     | Safe Zone |
+| "Wrench" Lee | Recruiter     | Introduction    | Anywhere  |
 
 ### Reputation System
 
-| Level | Title | Rep Required | Benefits |
-|:-----:|:------|:------------:|:---------|
-| 1 | Newcomer | 0 | Basic quests |
-| 2 | Worker | 1,000 | 5% discount |
-| 3 | Foreman's Pick | 3,000 | Gear unlocks |
-| 4 | Trusted | 7,000 | High-value quests |
-| 5 | Veteran | 15,000 | Unique cosmetics |
+| Level | Title          | Rep Required | Benefits          |
+| :---: | :------------- | :----------: | :---------------- |
+|   1   | Newcomer       |      0       | Basic quests      |
+|   2   | Worker         |    1,000     | 5% discount       |
+|   3   | Foreman's Pick |    3,000     | Gear unlocks      |
+|   4   | Trusted        |    7,000     | High-value quests |
+|   5   | Veteran        |    15,000    | Unique cosmetics  |
 
 ### Unique Items (Reputation Locked)
 
-| Item | Level | Type | Stats |
-|:-----|:-----:|:-----|:------|
-| Worker's Backpack | 2 | Storage | +2 slots |
-| Heavy-Duty Tool | 3 | Utility | Faster looting |
-| Foreman's Vest | 4 | Armor | +15% carry weight |
-| Salvage Legend Skin | 5 | Cosmetic | Orange/Gray theme |
+| Item                | Level | Type     | Stats             |
+| :------------------ | :---: | :------- | :---------------- |
+| Worker's Backpack   |   2   | Storage  | +2 slots          |
+| Heavy-Duty Tool     |   3   | Utility  | Faster looting    |
+| Foreman's Vest      |   4   | Armor    | +15% carry weight |
+| Salvage Legend Skin |   5   | Cosmetic | Orange/Gray theme |
 
 ---
 
@@ -118,13 +118,13 @@ Voice: Gruff, fatherly, practical
 
 ### Identity
 
-| Attribute | Value |
-|:----------|:------|
-| **Motto** | "Knowledge is the Ultimate Currency" |
-| **Colors** | Cyan & Black |
-| **Symbol** | Circuit pattern forming eye 👁️ |
-| **Leader** | "Director" Seo-Yun Park |
-| **Base** | Hidden server farm (unknown) |
+| Attribute  | Value                                |
+| :--------- | :----------------------------------- |
+| **Motto**  | "Knowledge is the Ultimate Currency" |
+| **Colors** | Cyan & Black                         |
+| **Symbol** | Circuit pattern forming eye 👁️        |
+| **Leader** | "Director" Seo-Yun Park              |
+| **Base**   | Hidden server farm (unknown)         |
 
 ### Leadership Profile
 
@@ -154,31 +154,31 @@ Secret: Knows more about The Collapse than she reveals
 
 ### Key NPCs
 
-| Name | Role | Quest Type | Location |
-|:-----|:-----|:-----------|:---------|
-| Seo-Yun Park | Director | Main story | Encrypted comms |
-| "Zero" | Lead Hacker | Tech missions | Remote |
-| Dr. Huang | Archivist | Data recovery | Safe Zone |
-| "Glitch" | Field Ops | Recon missions | Field |
+| Name         | Role        | Quest Type     | Location        |
+| :----------- | :---------- | :------------- | :-------------- |
+| Seo-Yun Park | Director    | Main story     | Encrypted comms |
+| "Zero"       | Lead Hacker | Tech missions  | Remote          |
+| Dr. Huang    | Archivist   | Data recovery  | Safe Zone       |
+| "Glitch"     | Field Ops   | Recon missions | Field           |
 
 ### Reputation System
 
-| Level | Title | Rep Required | Benefits |
-|:-----:|:------|:------------:|:---------|
-| 1 | Unknown | 0 | Basic access |
-| 2 | Registered | 1,500 | Tech discounts |
-| 3 | Trusted Node | 4,000 | Gadget unlocks |
-| 4 | Inner Circle | 9,000 | Secret quest lines |
-| 5 | Elite Hacker | 20,000 | Exclusive skins |
+| Level | Title        | Rep Required | Benefits           |
+| :---: | :----------- | :----------: | :----------------- |
+|   1   | Unknown      |      0       | Basic access       |
+|   2   | Registered   |    1,500     | Tech discounts     |
+|   3   | Trusted Node |    4,000     | Gadget unlocks     |
+|   4   | Inner Circle |    9,000     | Secret quest lines |
+|   5   | Elite Hacker |    20,000    | Exclusive skins    |
 
 ### Unique Items
 
-| Item | Level | Type | Stats |
-|:-----|:-----:|:-----|:------|
-| Signal Scanner | 2 | Gadget | Reveal nearby enemies |
-| Crypto Wallet | 3 | Utility | +10% credit gain |
-| Stealth Module | 4 | Attachment | Reduced detection |
-| Syndicate Ghost Skin | 5 | Cosmetic | Cyan/Black theme |
+| Item                 | Level | Type       | Stats                 |
+| :------------------- | :---: | :--------- | :-------------------- |
+| Signal Scanner       |   2   | Gadget     | Reveal nearby enemies |
+| Crypto Wallet        |   3   | Utility    | +10% credit gain      |
+| Stealth Module       |   4   | Attachment | Reduced detection     |
+| Syndicate Ghost Skin |   5   | Cosmetic   | Cyan/Black theme      |
 
 ---
 
@@ -186,13 +186,13 @@ Secret: Knows more about The Collapse than she reveals
 
 ### Identity
 
-| Attribute | Value |
-|:----------|:------|
-| **Motto** | "Survive Together or Die Alone" |
-| **Colors** | Purple & Gold |
-| **Symbol** | Clasped hands in shadows 🤝 |
+| Attribute  | Value                           |
+| :--------- | :------------------------------ |
+| **Motto**  | "Survive Together or Die Alone" |
+| **Colors** | Purple & Gold                   |
+| **Symbol** | Clasped hands in shadows 🤝      |
 | **Leader** | "The Broker" (unknown identity) |
-| **Base** | Multiple safehouses |
+| **Base**   | Multiple safehouses             |
 
 ### Leadership Profile
 
@@ -223,31 +223,31 @@ Secret: May be multiple people or AI
 
 ### Key NPCs
 
-| Name | Role | Quest Type | Location |
-|:-----|:-----|:-----------|:---------|
-| The Broker | Leader | Directives | Voice only |
-| Madame X | Fixer | Contract kills | Hidden |
-| "Rat King" | Smuggler | Delivery quests | Sewers |
-| "Big Bear" | Enforcer | Elimination | Field |
+| Name       | Role     | Quest Type      | Location   |
+| :--------- | :------- | :-------------- | :--------- |
+| The Broker | Leader   | Directives      | Voice only |
+| Madame X   | Fixer    | Contract kills  | Hidden     |
+| "Rat King" | Smuggler | Delivery quests | Sewers     |
+| "Big Bear" | Enforcer | Elimination     | Field      |
 
 ### Reputation System
 
-| Level | Title | Rep Required | Benefits |
-|:-----:|:------|:------------:|:---------|
-| 1 | Nobody | 0 | Black market access |
-| 2 | Known Face | 2,000 | Better prices |
-| 3 | Trusted Runner | 5,000 | Smuggling quests |
-| 4 | Inner Circle | 12,000 | Assassination contracts |
-| 5 | Shadow Elite | 25,000 | Legendary items |
+| Level | Title          | Rep Required | Benefits                |
+| :---: | :------------- | :----------: | :---------------------- |
+|   1   | Nobody         |      0       | Black market access     |
+|   2   | Known Face     |    2,000     | Better prices           |
+|   3   | Trusted Runner |    5,000     | Smuggling quests        |
+|   4   | Inner Circle   |    12,000    | Assassination contracts |
+|   5   | Shadow Elite   |    25,000    | Legendary items         |
 
 ### Unique Items
 
-| Item | Level | Type | Stats |
-|:-----|:-----:|:-----|:------|
-| Forged ID | 2 | Utility | Access restricted areas |
-| Silencer Kit | 3 | Attachment | -50% gunfire sound |
-| Broker's Favor | 4 | Consumable | One-time quest boost |
-| Shadow Wraith Skin | 5 | Cosmetic | Purple/Gold theme |
+| Item               | Level | Type       | Stats                   |
+| :----------------- | :---: | :--------- | :---------------------- |
+| Forged ID          |   2   | Utility    | Access restricted areas |
+| Silencer Kit       |   3   | Attachment | -50% gunfire sound      |
+| Broker's Favor     |   4   | Consumable | One-time quest boost    |
+| Shadow Wraith Skin |   5   | Cosmetic   | Purple/Gold theme       |
 
 ---
 
@@ -255,13 +255,13 @@ Secret: May be multiple people or AI
 
 ### Identity
 
-| Attribute | Value |
-|:----------|:------|
-| **Motto** | "Order From Chaos" |
-| **Colors** | Blue & White |
+| Attribute  | Value                        |
+| :--------- | :--------------------------- |
+| **Motto**  | "Order From Chaos"           |
+| **Colors** | Blue & White                 |
 | **Symbol** | Shield with olive branches 🛡️ |
-| **Leader** | Commander Helena Vance |
-| **Base** | Fortified outpost (map edge) |
+| **Leader** | Commander Helena Vance       |
+| **Base**   | Fortified outpost (map edge) |
 
 ### Leadership Profile
 
@@ -291,43 +291,43 @@ Secret: Makes moral compromises she regrets
 
 ### Key NPCs
 
-| Name | Role | Quest Type | Location |
-|:-----|:-----|:-----------|:---------|
-| Helena Vance | Commander | Main story | Command Post |
-| Captain Reyes | Patrol Lead | Sweep missions | Field |
-| Sergeant "Stone" | Combat | Elimination | Hotspots |
-| Dr. Wells | Medical Officer | Rescue missions | Medical |
+| Name             | Role            | Quest Type      | Location     |
+| :--------------- | :-------------- | :-------------- | :----------- |
+| Helena Vance     | Commander       | Main story      | Command Post |
+| Captain Reyes    | Patrol Lead     | Sweep missions  | Field        |
+| Sergeant "Stone" | Combat          | Elimination     | Hotspots     |
+| Dr. Wells        | Medical Officer | Rescue missions | Medical      |
 
 ### Reputation System
 
-| Level | Title | Rep Required | Benefits |
-|:-----:|:------|:------------:|:---------|
-| 1 | Civilian | 0 | Basic recognition |
-| 2 | Auxiliary | 1,200 | Medical discounts |
-| 3 | Deputy | 3,500 | Armor unlocks |
-| 4 | Officer | 8,000 | Elite quests |
-| 5 | Commander's Trust | 18,000 | Legendary gear |
+| Level | Title             | Rep Required | Benefits          |
+| :---: | :---------------- | :----------: | :---------------- |
+|   1   | Civilian          |      0       | Basic recognition |
+|   2   | Auxiliary         |    1,200     | Medical discounts |
+|   3   | Deputy            |    3,500     | Armor unlocks     |
+|   4   | Officer           |    8,000     | Elite quests      |
+|   5   | Commander's Trust |    18,000    | Legendary gear    |
 
 ### Unique Items
 
-| Item | Level | Type | Stats |
-|:-----|:-----:|:-----|:------|
-| First Aid Training | 2 | Passive | +20% heal speed |
-| Tactical Vest | 3 | Armor | +20 armor |
-| Commander's Radio | 4 | Gadget | Call backup |
-| Peacekeeper Elite Skin | 5 | Cosmetic | Blue/White theme |
+| Item                   | Level | Type     | Stats            |
+| :--------------------- | :---: | :------- | :--------------- |
+| First Aid Training     |   2   | Passive  | +20% heal speed  |
+| Tactical Vest          |   3   | Armor    | +20 armor        |
+| Commander's Radio      |   4   | Gadget   | Call backup      |
+| Peacekeeper Elite Skin |   5   | Cosmetic | Blue/White theme |
 
 ---
 
 ## 📊 Faction Comparison Summary
 
-| Aspect | Salvage | Tech | Underground | Peacekeepers |
-|:-------|:--------|:-----|:------------|:-------------|
-| **Focus** | Materials | Data | Contraband | Security |
-| **Playstyle** | Gathering | Stealth | Risk/Reward | Combat |
-| **Morality** | Neutral | Gray | Dark | Light Gray |
-| **Difficulty** | Easy | Medium | Hard | Medium |
-| **Best For** | New players | Scouts | Veterans | Teams |
+| Aspect         | Salvage     | Tech    | Underground | Peacekeepers |
+| :------------- | :---------- | :------ | :---------- | :----------- |
+| **Focus**      | Materials   | Data    | Contraband  | Security     |
+| **Playstyle**  | Gathering   | Stealth | Risk/Reward | Combat       |
+| **Morality**   | Neutral     | Gray    | Dark        | Light Gray   |
+| **Difficulty** | Easy        | Medium  | Hard        | Medium       |
+| **Best For**   | New players | Scouts  | Veterans    | Teams        |
 
 ---
 

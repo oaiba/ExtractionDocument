@@ -6,22 +6,22 @@
 
 ## 🎨 Visual Identity Overview
 
-### Định Nghĩa Phong Cách
+### Style Definition
 
 **Primary Style: Grounded Neo-Industrial**
 
 ```
 REALISTIC ←──────●──────────→ STYLIZED
           ▲
-     Vị trí của game
+     Game Position
      (70% Realistic, 30% Stylized)
 ```
 
-**Đặc điểm:**
-- Realistic materials và lighting
-- Stylized readability cho top-down
+**Characteristics:**
+- Realistic materials and lighting
+- Stylized readability for top-down perspective
 - Gritty, weathered aesthetic
-- Tech-enhanced với neon accents
+- Tech-enhanced with neon accents
 - Post-apocalyptic industrial decay
 
 ---
@@ -30,15 +30,15 @@ REALISTIC ←──────●──────────→ STYLIZED
 
 ### Pillar 1: "Decay with Memory"
 
-**Concept:** Thế giới đang sụp đổ nhưng vẫn còn dấu vết của quá khứ văn minh
+**Concept:** A collapsing world that still bears traces of its civilized past.
 
 **Visual Elements:**
-| Past Glory | Current Decay |
-|:-----------|:--------------|
-| Corporate logos | Faded, broken signage |
+| Past Glory         | Current Decay            |
+| :----------------- | :----------------------- |
+| Corporate logos    | Faded, broken signage    |
 | Clean architecture | Rust, cracks, overgrowth |
-| Modern equipment | Abandoned, scavenged |
-| Organized spaces | Chaotic, looted |
+| Modern equipment   | Abandoned, scavenged     |
+| Organized spaces   | Chaotic, looted          |
 
 **Color Trend:**
 ```
@@ -49,12 +49,12 @@ After:    🟤🟠⬛🟢  (Rust, decay, nature)
 
 ### Pillar 2: "Tactical Clarity"
 
-**Concept:** Mọi element phải readable từ góc nhìn top-down
+**Concept:** Every element must be readable from a top-down perspective.
 
 **Rules:**
-1. Strong silhouettes (nhận diện 50m+)
+1. Strong silhouettes (recognizable at 50m+)
 2. Color-coded gameplay elements
-3. High contrast giữa player/environment
+3. High contrast between player and environment
 4. Clear visual hierarchy
 
 **Hierarchy:**
@@ -68,7 +68,7 @@ After:    🟤🟠⬛🟢  (Rust, decay, nature)
 
 ### Pillar 3: "Functional Fashion"
 
-**Concept:** Mọi thứ trông như có mục đích thực tế
+**Concept:** Everything must look like it has a practical purpose.
 
 **Not This:** Fantasy armor, glowing runes, magical effects
 **But This:** Tactical gear, worn equipment, practical modifications
@@ -77,7 +77,7 @@ After:    🟤🟠⬛🟢  (Rust, decay, nature)
 - Kevlar, ballistic nylon
 - Weathered metal, polymer
 - Medical fabrics, pouches
-- Tech devices với subtle LEDs
+- Tech devices with subtle LEDs
 
 ---
 
@@ -249,12 +249,12 @@ Mood: Danger, sci-fi horror, secrets
 
 ### Zone-Specific Lighting Moods
 
-| Zone | Light Temp | Key Light | Fill | Mood |
-|:-----|:-----------|:----------|:-----|:-----|
-| Edge/Forest | 5500K | Overcast | Blue ambient | Safe, natural |
-| Mid/Urban | 4500K | Mixed | Warm bounce | Transitional |
-| Hot/Industrial | 4000K | Harsh spots | Orange fill | Dangerous |
-| Core/Labs | 6500K+ | Colored | Minimal | Extreme danger |
+| Zone           | Light Temp | Key Light   | Fill         | Mood           |
+| :------------- | :--------- | :---------- | :----------- | :------------- |
+| Edge/Forest    | 5500K      | Overcast    | Blue ambient | Safe, natural  |
+| Mid/Urban      | 4500K      | Mixed       | Warm bounce  | Transitional   |
+| Hot/Industrial | 4000K      | Harsh spots | Orange fill  | Dangerous      |
+| Core/Labs      | 6500K+     | Colored     | Minimal      | Extreme danger |
 
 ---
 
@@ -264,9 +264,9 @@ Mood: Danger, sci-fi horror, secrets
 
 **Key Visual Elements:**
 - Massive smokestacks (landmark)
-- Rusted catwalks và gantries
+- Rusted catwalks and gantries
 - Conveyor belts (non-functional)
-- Chemical tanks với warning labels
+- Chemical tanks with warning labels
 - Graffiti (survivor messages)
 - Nature reclaiming (vines, moss)
 
@@ -299,7 +299,7 @@ Mood: Danger, sci-fi horror, secrets
 ### Military Zone Visual Language
 
 **Key Visual Elements:**
-- Bunkers và blast walls
+- Bunkers and blast walls
 - Watchtowers
 - Razor wire perimeters
 - Camouflage netting
@@ -332,7 +332,7 @@ Silhouette: Clear class distinction
 ```
 Layer 1: Base clothing (undersuit, shirt)
 Layer 2: Primary armor (vest, plates)
-Layer 3: Pouches và equipment
+Layer 3: Pouches and equipment
 Layer 4: Accessories (helmet, goggles)
 Layer 5: Backpack (if equipped)
 ```

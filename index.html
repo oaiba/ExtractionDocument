@@ -9,15 +9,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify-darklight-theme@latest/dist/style.min.css"
     title="docsify-darklight-theme" type="text/css" />
+  <style>
+    /* Limit the sidebar logo size */
+    .app-name-link img {
+      height: 120px;
+      object-fit: contain;
+    }
+  </style>
 </head>
 
 <body>
   <div id="app"></div>
   <script>
     window.docsify = {
+      logo: '/_media/logo.svg',
       name: 'Extraction Shooter GDD',
       repo: '', // Add repo URL if available, otherwise leave empty
       loadSidebar: true,
+      loadNavbar: true,
+      mergeNavbar: true,
       subMaxLevel: 2,
       auto2top: true,
       search: 'auto', // default

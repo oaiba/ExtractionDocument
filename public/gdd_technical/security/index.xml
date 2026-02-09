@@ -1,0 +1,105 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Extraction Document – Security</title>
+    <link>http://localhost:1313/gdd_technical/security/index.html</link>
+    <description>Recent content in Security on Extraction Document</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	  <atom:link href="http://localhost:1313/gdd_technical/security/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Security &amp; Anti-Cheat Strategy</title>
+      <link>http://localhost:1313/gdd_technical/security/anticheatstrategy.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/gdd_technical/security/anticheatstrategy.html</guid>
+      <description>
+        
+        
+        &lt;h1&gt;Security &amp;amp; Anti-Cheat Strategy&lt;/h1&gt;&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;../README.md&#34;&gt;← Back to Index&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2&gt;🛡️ The Concept of Trust&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-the-concept-of-trust&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-the-concept-of-trust&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;&amp;ldquo;Never Trust the Client.&amp;rdquo;&lt;/strong&gt;
+The core principle is simple: The Client sends &lt;em&gt;intent&lt;/em&gt;, not &lt;em&gt;results&lt;/em&gt;.&lt;/p&gt;
+&lt;h3&gt;1. Server-Side Authority (Validation)&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;1-server-side-authority-validation&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#1-server-side-authority-validation&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Everything critical happens on the Server.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Ammo:&lt;/strong&gt; Client says &amp;ldquo;I fired 5 rounds.&amp;rdquo; Server subtracts 5 rounds. Server &lt;em&gt;does not&lt;/em&gt; trust client&amp;rsquo;s ammo count.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Movement:&lt;/strong&gt; Client sends Input (Forward, Right). Server calculates Position = Velocity * Time.
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Maximum Speed Check:&lt;/strong&gt; If distance &amp;gt; &lt;code&gt;MaxSpeed * DeltaTime + Tolerance&lt;/code&gt; -&amp;gt; Flag for cheating.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Health:&lt;/strong&gt; Only Server can decrease Health. Client only plays damage effects.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;2. Encryption (Packet Protection)&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;2-encryption-packet-protection&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#2-encryption-packet-protection&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Protocol:&lt;/strong&gt; Use &lt;code&gt;DTLS&lt;/code&gt; (Datagram Transport Layer Security) over UDP.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Key Exchange:&lt;/strong&gt; Secured via HTTPS login (Master Server).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Replay Protection:&lt;/strong&gt; Unique &lt;code&gt;SequenceNumber&lt;/code&gt; per packet. Old packets are discarded.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2&gt;🚫 Common Exploits &amp;amp; Mitigation&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-common-exploits--mitigation&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-common-exploits--mitigation&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;1. Speed Hacks (Teleport)&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;1-speed-hacks-teleport&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#1-speed-hacks-teleport&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Detect:&lt;/strong&gt; Compare &lt;code&gt;LastKnownLocation&lt;/code&gt; + &lt;code&gt;MaxAllowedDistance&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Result:&lt;/strong&gt; Rubberband back (1st offense) -&amp;gt; Kick (3rd offense within 1 min).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Heuristics:&lt;/strong&gt; Track average velocity over 10s.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;2. Wallhack (ESP)&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;2-wallhack-esp&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#2-wallhack-esp&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Mitigation:&lt;/strong&gt; &lt;code&gt;Network Culling&lt;/code&gt; (Don&amp;rsquo;t send data about enemies behind walls).
+&lt;ul&gt;
+&lt;li&gt;We use the &lt;strong&gt;Replication Graph&lt;/strong&gt; to stop replicating distant/occluded actors entirely.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Obfuscation:&lt;/strong&gt; Encrypt bone locations in memory (slower but harder to read).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;3. Aimbot (Auto-Target)&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;3-aimbot-auto-target&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#3-aimbot-auto-target&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Detection:&lt;/strong&gt; Only Server can analyze unnatural mouse movement.
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Snap Check:&lt;/strong&gt; 0ms aim adjustment to head -&amp;gt; Flag.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Recoil:&lt;/strong&gt; 0 vertical recoil while firing full auto -&amp;gt; Flag.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Stats:&lt;/strong&gt; Headshot % &amp;gt; 80% over 5 matches -&amp;gt; Review.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;4. Loot Vacuum (Instant Pickup)&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;4-loot-vacuum-instant-pickup&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#4-loot-vacuum-instant-pickup&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Validation:&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Distance:&lt;/strong&gt; Check distance to item &amp;lt; 3m.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Line of Sight:&lt;/strong&gt; Can player see item? (Trace check).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Inventory Space:&lt;/strong&gt; Can item fit? (Tetris validation).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2&gt;👮‍♂️ Report System (Community Policing)&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-report-system-community-policing&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-report-system-community-policing&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;In-Game Reporting&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;in-game-reporting&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#in-game-reporting&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Categories:&lt;/strong&gt; Aimbot, Wallhack, Speedhack, Toxic Voice.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Replay:&lt;/strong&gt; Server saves a low-tick replay of the kill-cam (5s before death).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Trust Score:&lt;/strong&gt; Players with high accuracy/KD get flagged for manual review if reported frequently.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Hardware Ban (HWID)&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;hardware-ban-hwid&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#hardware-ban-hwid&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Identifier:&lt;/strong&gt; Motherboard Serial + HDD Serial + MAC Address.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Database:&lt;/strong&gt; Shared ban list across all accounts.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Review:&lt;/strong&gt; Human review required for permanent bans.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>

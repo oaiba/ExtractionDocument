@@ -12,7 +12,7 @@ weight: 1
 
 ## Class Overview
 
-The **Recon** class operators excel at gathering intelligence and controlling information flow. They enable ambushes, prevent surprises, and dominate through knowledge.
+The **Recon** class operators excel at gathering intelligence and controlling information flow. They enable ambushes, prevent surprises, and dominate through knowledge. test
 
 ### Class Identity
 

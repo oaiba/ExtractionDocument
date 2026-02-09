@@ -10,6 +10,13 @@ markup:
 
 uglyURLs: true
 
+params:
+  search:
+    enable: true
+    type: flexsearch
+    flexsearch:
+      index: content
+
 menu:
   main:
     - name: Design GDD
@@ -18,3 +25,7 @@ menu:
     - name: Technical GDD
       url: /GDD_Technical/
       weight: 2
+    - name: Search
+      weight: 10
+      params:
+        type: search

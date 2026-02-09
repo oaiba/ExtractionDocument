@@ -1,0 +1,38 @@
+/* Custom styles to apply JetBrains Mono font site-wide */
+
+:root {
+    /* Override Tailwind/Hextra default font families if possible */
+    --font-jetbrains: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+html,
+body {
+    font-family: var(--font-jetbrains) !important;
+    font-feature-settings: "liga" on, "calt" on;
+}
+
+/* Ensure headings also use the font */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-jetbrains) !important;
+    letter-spacing: -0.02em;
+}
+
+/* Monospace elements */
+code,
+pre,
+kbd,
+samp {
+    font-family: var(--font-jetbrains) !important;
+    font-variant-ligatures: normal;
+}
+
+/* Sidebar and Navbar titles */
+.hextra-sidebar-container,
+.hextra-navbar {
+    font-family: var(--font-jetbrains) !important;
+}

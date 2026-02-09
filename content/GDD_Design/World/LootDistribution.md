@@ -2,11 +2,6 @@
 title: "Loot Distribution"
 type: docs
 ---
-# Loot Distribution
-
-**[← Back to Environmental Narrative](./EnvironmentalNarrative.md)** | **[Index](../README.md)** | **[Next: Story →](../Story/Factions.md)**
-
----
 
 ## 📊 Overall Heat Map
 
@@ -209,8 +204,5 @@ Risk: Extreme (guaranteed PvP)
 | Extraction rate | 40-50% | Challenging but fair |
 | Hot zone deaths | 50% | Risk matches reward |
 
----
-
-**[← Back to Environmental Narrative](./EnvironmentalNarrative.md)** | **[Index](../README.md)** | **[Next: Story →](../Story/Factions.md)**
 
 

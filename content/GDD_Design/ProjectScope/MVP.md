@@ -2,11 +2,6 @@
 title: "MVP Scope - Minimum Viable Product"
 type: docs
 ---
-# MVP Scope - Minimum Viable Product
-
-**[← Back to Project Scope](./NonGoals.md)** | **[Index](../README.md)** | **[Next: Risk Analysis →](./Risks.md)**
-
----
 
 ## 📅 Critical Milestones & Targets
 
@@ -109,8 +104,5 @@ type: docs
 *   **v1.1 (2026-02-09):** Refined Milestones with specific deliverable targets and dependencies.
 *   **v1.0 (2026-02-07):** Initial MVP definition.
 
----
-
-**[← Back to Project Scope](./NonGoals.md)** | **[Index](../README.md)** | **[Next: Risk Analysis →](./Risks.md)**
 
 

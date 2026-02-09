@@ -2,11 +2,6 @@
 title: "User Settings & Configuration"
 type: docs
 ---
-# User Settings & Configuration
-
-**[← Back to Index](../README.md)** | **[Controls →](./Controls.md)**
-
----
 
 ## ⚙️ Design Philosophy
 
@@ -294,7 +289,5 @@ Settings should offer granular control for competitive players while providing s
 *   **Crossplay:** ON / OFF (Console only).
 *   **Data Center:** Auto / Select Region (e.g., Asia, NA-West).
 *   **Delete Account:** GDPR compliance link.
-
----
 
 

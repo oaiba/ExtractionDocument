@@ -2,11 +2,6 @@
 title: "Performance Budgets & Technical Constraints"
 type: docs
 ---
-# Performance Budgets & Technical Constraints
-
-**[← Back to Index](../README.md)**
-
----
 
 ## 📈 Platform Targets
 
@@ -81,7 +76,5 @@ Before checking in any asset or code, verify:
 2.  [ ] **Is the Poly Count within budget?** based on screen size/importance.
 3.  [ ] **Are all Textures power of 2?** (1024, 2048). No 1000x1000.
 4.  [ ] **Does code run in Tick()?** If yes, have you profiled it (`stat unit`)?
-
----
 
 

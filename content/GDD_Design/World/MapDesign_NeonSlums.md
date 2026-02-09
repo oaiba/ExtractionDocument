@@ -2,11 +2,6 @@
 title: "Map Design: Neon Slums (The \"Undercity\")"
 type: docs
 ---
-# Map Design: Neon Slums (The "Undercity")
-
-**[← Back to Index](../../README.md)** | **[Next: Art Direction →](../../Visuals/ArtDirection.md)**
-
----
 
 ## 🗺️ Map Overview
 
@@ -128,8 +123,5 @@ Navigating the vertical favela requires special tools:
 *   **Lighting:** High contrast. Dark shadows vs blinding neon signs.
 *   **Audio:** Constant rain (muffles light footsteps), distant sirens, cyberpunk synth music in the Arcade.
 
----
-
-**[← Previous: Map Design (Industrial)](./MapDesign_IndustrialZone.md)** | **[Index](../../README.md)** | **[Next: Map Design (Wilderness)](./MapDesign_Wilderness.md)**
 
 

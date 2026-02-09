@@ -2,11 +2,6 @@
 title: "PHANTOM - Sarah Kim"
 type: docs
 ---
-# PHANTOM - Sarah Kim
-
-**[← Back to Recon Class](./README.md)** | **[All Operators](../Operators.md)**
-
----
 
 ## Operator Profile
 
@@ -164,8 +159,5 @@ After a mole compromised her network, Sarah watched helplessly as her assets wer
 | **CIPHER**  | Uneasy allies, both have secrets          |
 | **SPECTER** | Former colleagues, know each other's past |
 
----
-
-**[← Back to Recon Class](./README.md)** | **[All Operators](../Operators.md)**
 
 

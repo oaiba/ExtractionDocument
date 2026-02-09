@@ -2,11 +2,6 @@
 title: "CIPHER - Alex Nakamura"
 type: docs
 ---
-# CIPHER - Alex Nakamura
-
-**[← Back to Specialist Class](./README.md)** | **[All Operators](../Operators.md)**
-
----
 
 ## Operator Profile
 
@@ -271,8 +266,5 @@ He leaked what he could and went underground, using his skills to level the play
 | **FLUX**    | Fellow outcasts, tech partners            |
 | **ANGEL**   | She represents institutions he hates      |
 
----
-
-**[← Back to Specialist Class](./README.md)** | **[All Operators](../Operators.md)**
 
 

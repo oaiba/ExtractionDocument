@@ -2,13 +2,6 @@
 title: "Localization System - Technical Specification"
 type: docs
 ---
-# Localization System - Technical Specification
-
-**[← Back to Index](../README.md)** | **[Next: Accessibility System →](./AccessibilitySystem.md)**
-
-**Reference:** [High-Level Localization Design](../../GDD_HighLevel/GameDesign/Localization.md)
-
----
 
 ## Overview
 
@@ -254,8 +247,5 @@ STRUCT RTLLayoutHelper:
 - [ ] Translation memory integration
 - [ ] Coverage reporting
 
----
-
-**[← Back to Index](../README.md)** | **[Next: Accessibility System →](./AccessibilitySystem.md)**
 
 

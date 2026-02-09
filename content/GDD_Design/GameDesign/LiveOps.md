@@ -2,11 +2,6 @@
 title: "Live Operations & Events"
 type: docs
 ---
-# Live Operations & Events
-
-**[← Back to Index](../README.md)** | **[Next: Overview →](./Overview.md)**
-
----
 
 ## 🎯 Live Ops Philosophy
 
@@ -465,8 +460,5 @@ Thank you for your patience.
 | Affiliate | 1k+ followers                      | Free Battle Pass, feature priority       |
 | Community | 100+ followers                     | In-game title, Discord role              |
 
----
-
-**[← Back to Index](../README.md)** | **[Next: Overview →](./Overview.md)**
 
 

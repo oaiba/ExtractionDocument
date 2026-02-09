@@ -2,11 +2,6 @@
 title: "Art Direction"
 type: docs
 ---
-# Art Direction
-
-**[← Previous: Map Design](../World/MapDesign.md)** | **[Index](../README.md)** | **[Next: User Interface →](./UserInterface.md)**
-
----
 
 ## Visual Identity
 
@@ -667,8 +662,5 @@ Specialist: ██████  (Medium, tech visible)
 - Unreal Engine 5
 - Version control: Git LFS for assets
 
----
-
-**[← Previous: World Design](./04_WorldDesign.md)** | **[High-Level Index](./README.md)** | **[Next: Audio Design →](./06_AudioDesign.md)**
 
 

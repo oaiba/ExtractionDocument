@@ -2,11 +2,6 @@
 title: "Inventory System - Technical Design Document"
 type: docs
 ---
-# Inventory System - Technical Design Document
-
-**[← Previous: Weapon System](./WeaponSystem.md)** | **[Index](../README.md)**
-
----
 
 ## Related Documents
 
@@ -1193,8 +1188,5 @@ CLASS SecureContainer:
 └─────────────────┘  └─────────────────┘  └─────────────────┘
 ```
 
----
-
-**[← Previous: Weapon System](./WeaponSystem.md)** | **[Index](../README.md)**
 
 

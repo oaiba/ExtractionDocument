@@ -2,11 +2,6 @@
 title: "Core Gameplay Mechanics - Deep Dive"
 type: docs
 ---
-# Core Gameplay Mechanics - Deep Dive
-
-**[← Previous: Overview](./Overview.md)** | **[Index](../README.md)** | **[Next: Progression →](./Progression.md)**
-
----
 
 ## Overview
 
@@ -821,8 +816,5 @@ Match Start: 20 players
     └─ 3 die to contamination/combat
 ```
 
----
-
-**[← Previous: Overview](./Overview.md)** | **[Index](../README.md)** | **[Next: Progression →](./Progression.md)**
 
 

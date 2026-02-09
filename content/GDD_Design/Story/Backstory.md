@@ -2,11 +2,6 @@
 title: "Backstory - World History"
 type: docs
 ---
-# Backstory - World History
-
-**[← Back to Quest Lines](./QuestLines.md)** | **[Index](../README.md)** | **[Next: Characters →](../Characters/Operators.md)**
-
----
 
 ## 📜 General Timeline
 
@@ -335,8 +330,5 @@ Destroy this memo after reading.
 - World expansion beyond Neo-Asia
 - Player-driven narrative events
 
----
-
-**[← Back to Quest Lines](./QuestLines.md)** | **[Index](../README.md)** | **[Next: Characters →](../Characters/Operators.md)**
 
 

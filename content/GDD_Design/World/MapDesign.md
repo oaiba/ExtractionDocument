@@ -2,11 +2,6 @@
 title: "World & Map Design"
 type: docs
 ---
-# World & Map Design
-
-**[← Previous: Operators](../Characters/Operators.md)** | **[Index](../README.md)** | **[Next: Art Direction →](../Visuals/ArtDirection.md)**
-
----
 
 ## Map Design Philosophy
 
@@ -627,8 +622,5 @@ For each new map:
 *   **v1.1 (2026-02-09):** Added "Extraction-Shooter Specifics" section.
 *   **v1.0 (2026-02-07):** Initial map design documentation.
 
----
-
-**[← Previous: Characters](./03_Characters.md)** | **[High-Level Index](./README.md)** | **[Next: Art Direction →](./05_ArtDirection.md)**
 
 

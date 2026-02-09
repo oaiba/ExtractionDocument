@@ -2,11 +2,6 @@
 title: "Security & Anti-Cheat Strategy"
 type: docs
 ---
-# Security & Anti-Cheat Strategy
-
-**[← Back to Index](../README.md)**
-
----
 
 ## 🛡️ The Concept of Trust
 **"Never Trust the Client."**
@@ -63,7 +58,5 @@ Everything critical happens on the Server.
 *   **Identifier:** Motherboard Serial + HDD Serial + MAC Address.
 *   **Database:** Shared ban list across all accounts.
 *   **Review:** Human review required for permanent bans.
-
----
 
 

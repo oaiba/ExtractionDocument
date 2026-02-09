@@ -2,11 +2,6 @@
 title: "Visual Style & Art Guidelines"
 type: docs
 ---
-# Visual Style & Art Guidelines
-
-**[← Back to Index](../README.md)** | **[UX Flows ←](./UX_Flows.md)**
-
----
 
 ## 🎨 Visual Identity
 
@@ -88,7 +83,5 @@ The game is Top-Down, so lighting is critical for depth perception.
     *   *Enemy:* Red rim light (subtle).
 2.  **Silhouette:** Props must have clean outlines. Avoid visually noisy textures on the ground that confuse character movement.
 3.  **Contrast:** Playable areas are 20% brighter than non-playable areas.
-
----
 
 

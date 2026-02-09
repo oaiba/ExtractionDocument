@@ -2,11 +2,6 @@
 title: "Factions - Detailed Breakdown"
 type: docs
 ---
-# Factions - Detailed Breakdown
-
-**[← Back to Narrative](./Narrative.md)** | **[Index](../README.md)** | **[Next: Quest Lines →](./QuestLines.md)**
-
----
 
 ## 🏴 Faction System Overview
 
@@ -333,8 +328,5 @@ Secret: Makes moral compromises she regrets
 | **Difficulty** | Easy        | Medium  | Hard        | Medium       |
 | **Best For**   | New players | Scouts  | Veterans    | Teams        |
 
----
-
-**[← Back to Narrative](./Narrative.md)** | **[Index](../README.md)** | **[Next: Quest Lines →](./QuestLines.md)**
 
 

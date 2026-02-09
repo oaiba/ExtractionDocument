@@ -2,11 +2,6 @@
 title: "Navigation & Map System Design"
 type: docs
 ---
-# Navigation & Map System Design
-
-**[← Back to Index](../README.md)** | **[Next: Controls & Combat →](./Controls.md)**
-
----
 
 ## 🧭 System Overview
 
@@ -171,8 +166,5 @@ Double-tapping the ping button *immediately* places a high-priority **RED DANGER
 *   **Call of Duty Mobile:** Map grid system and footprint indicators.
 *   **The Division:** 3D AR lines floating in the world (for pathfinding integration).
 
----
-
-**[← Back to Index](../README.md)** | **[Next: Controls & Combat →](./Controls.md)**
 
 

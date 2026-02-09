@@ -2,11 +2,6 @@
 title: "BLAZE - Elena Reyes"
 type: docs
 ---
-# BLAZE - Elena Reyes
-
-**[← Back to Assault Class](./README.md)** | **[All Operators](../Operators.md)**
-
----
 
 ## Operator Profile
 
@@ -351,8 +346,5 @@ After serving as a combat engineer specializing in incendiary weapons, Elena bec
 | Collision   | Fire is non-physical, just damage zone               |
 | Networking  | Fire positions synced, damage calculated server-side |
 
----
-
-**[← Back to Assault Class](./README.md)** | **[All Operators](../Operators.md)**
 
 

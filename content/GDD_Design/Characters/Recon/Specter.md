@@ -2,11 +2,6 @@
 title: "SPECTER - Viktor Volkov"
 type: docs
 ---
-# SPECTER - Viktor Volkov
-
-**[← Back to Recon Class](./README.md)** | **[All Operators](../Operators.md)**
-
----
 
 ## Operator Profile
 
@@ -161,8 +156,5 @@ After growing disillusioned with the corruption eating Russia from within, Vikto
 | **HAVOC**    | Both Russian, but different ideology   |
 | **FORTRESS** | Old military connection                |
 
----
-
-**[← Back to Recon Class](./README.md)** | **[All Operators](../Operators.md)**
 
 

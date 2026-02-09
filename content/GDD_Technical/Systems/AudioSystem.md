@@ -2,13 +2,6 @@
 title: "Audio System - Technical Specification"
 type: docs
 ---
-# Audio System - Technical Specification
-
-**[← Back to Index](../README.md)** | **[Next: Narrative System →](./NarrativeSystem.md)**
-
-**Reference:** [High-Level Audio Design](../../GDD_HighLevel/Visuals/AudioDesign.md)
-
----
 
 ## Overview
 
@@ -1488,8 +1481,5 @@ Master
 - [ ] Mono audio works correctly
 - [ ] No audio pops/clicks
 
----
-
-**[← Back to Index](../README.md)** | **[Next: Narrative System →](./NarrativeSystem.md)**
 
 

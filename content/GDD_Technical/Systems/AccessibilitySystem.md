@@ -2,13 +2,6 @@
 title: "Accessibility System - Technical Specification"
 type: docs
 ---
-# Accessibility System - Technical Specification
-
-**[← Back to Index](../README.md)** | **[Next: AI System →](./AISystem.md)**
-
-**Reference:** [High-Level Accessibility Design](../../GDD_HighLevel/GameDesign/Accessibility.md)
-
----
 
 ## Overview
 
@@ -274,8 +267,5 @@ STRUCT AutoActionSettings:
 - [ ] Screen reader support
 - [ ] One-handed mode configuration
 
----
-
-**[← Back to Index](../README.md)** | **[Next: AI System →](./AISystem.md)**
 
 

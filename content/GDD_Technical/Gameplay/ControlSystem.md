@@ -2,11 +2,6 @@
 title: "Control System - Technical Design Document"
 type: docs
 ---
-# Control System - Technical Design Document
-
-**[← Back to Index](../README.md)** | **[Next: Character System](./CharacterSystem.md)**
-
----
 
 ## Related Documents
 
@@ -1260,8 +1255,5 @@ CLASS CameraController:
 - **Fortnite** - Cross-platform input handling
 - **Apex Legends** - Aim assist tuning
 
----
-
-**[← Back to Index](../README.md)** | **[Next: Character System](./CharacterSystem.md)**
 
 

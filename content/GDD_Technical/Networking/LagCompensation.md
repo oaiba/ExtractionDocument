@@ -2,11 +2,6 @@
 title: "Lag Compensation & Netcode Logic"
 type: docs
 ---
-# Lag Compensation & Netcode Logic
-
-**[← Back to Index](../README.md)** | **[Replication Strategy ←](./ReplicationStrategy.md)**
-
----
 
 ## 🏃 The Problem: "Peeker's Advantage"
 In shooters, the client is always ahead of the server. When Player A peeks a corner, they see Player B *before* the server knows Player A has moved. This creates unfair kills.
@@ -57,7 +52,5 @@ When a player fires a hitscan weapon:
 ### High Ping Mitigation (> 150ms)
 *   **Disable Rewind:** If Ping > 200ms, Server *ignores* rewind requests to prevent "dying around corners" for low-ping players.
 *   **Prediction Limit:** Visuals stop predicting enemy movement beyond 300ms (preventing teleporting enemies).
-
----
 
 

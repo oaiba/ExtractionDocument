@@ -2,11 +2,6 @@
 title: "DOC - Dr. James Morrison"
 type: docs
 ---
-# DOC - Dr. James Morrison
-
-**[← Back to Support Class](./README.md)** | **[All Operators](../Operators.md)**
-
----
 
 ## Operator Profile
 
@@ -345,8 +340,5 @@ After a hostile extraction went wrong, James watched helplessly as soldiers died
 | Healing pulse   | Gentle heartbeat rhythm         |
 | Drone destroyed | Electrical fizzle + crash       |
 
----
-
-**[← Back to Support Class](./README.md)** | **[All Operators](../Operators.md)**
 
 

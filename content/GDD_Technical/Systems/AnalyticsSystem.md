@@ -2,11 +2,6 @@
 title: "Analytics System - Technical Specification"
 type: docs
 ---
-# Analytics System - Technical Specification
-
-**[← Back to Index](../README.md)** | **[Next: Security System →](../Core/SecuritySystem.md)**
-
----
 
 ## Overview
 
@@ -193,8 +188,5 @@ STRUCT TelemetryConfig:
 - [ ] Crash reporting integration
 - [ ] Real-time dashboard support
 
----
-
-**[← Back to Index](../README.md)** | **[Next: Security System →](../Core/SecuritySystem.md)**
 
 

@@ -2,11 +2,6 @@
 title: "Items & Economy Systems"
 type: docs
 ---
-# Items & Economy Systems
-
-**[← Previous: Weapons](./Weapons.md)** | **[Index](../README.md)**
-
----
 
 ## Economy Philosophy
 
@@ -790,8 +785,5 @@ type: docs
 - Special events to inject/remove credits
 - Emergency balance patches
 
----
-
-**[← Previous: Weapons & Combat](./Weapons.md)** | **[High-Level Index](./README.md)**
 
 

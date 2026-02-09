@@ -2,11 +2,6 @@
 title: "Operators - Character System Overview"
 type: docs
 ---
-# Operators - Character System Overview
-
-**[← Previous: Core Gameplay](../GameDesign/CoreGameplay.md)** | **[Index](../README.md)** | **[Next: Map Design →](../World/MapDesign.md)**
-
----
 
 ## Introduction
 
@@ -360,8 +355,5 @@ After reaching Level 50, operators can be **Prestiged**:
 | [Cipher.md](./Specialist/Cipher.md) | Alex "Cipher" Nakamura | ✅ Complete |
 | [Flux.md](./Specialist/Flux.md)     | Maya "Flux" Okonkwo    | ✅ Complete |
 
----
-
-**[← Previous: Core Gameplay](../GameDesign/CoreGameplay.md)** | **[Index](../README.md)** | **[Next: Map Design →](../World/MapDesign.md)**
 
 

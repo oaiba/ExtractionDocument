@@ -2,11 +2,6 @@
 title: "Coding Standards & Guidelines"
 type: docs
 ---
-# Coding Standards & Guidelines
-
-**[← Back to Index](../README.md)**
-
----
 
 ## 🏗️ Naming Conventions (Unreal Engine Standard)
 
@@ -74,7 +69,5 @@ We strictly follow the [Unreal Engine Coding Standard](https://docs.unrealengine
 *   **Hardcoding Paths:** Never use `ConstructorHelpers::FClassFinder` inside usage functions. Load assets via `UPROPERTY(EditDefaultsOnly)` in Blueprints.
 *   **god Classes:** If a class has more that 2000 lines, it's doing too much. Break it down.
 *   **Blueprint Logic:** Heavy math or complex loops must be C++. Blueprints are for configuration and simple flow.
-
----
 
 

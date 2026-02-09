@@ -2,11 +2,6 @@
 title: "Environmental Narrative - Storytelling Through Environment"
 type: docs
 ---
-# Environmental Narrative - Storytelling Through Environment
-
-**[← Back to Map Layouts](./MapLayouts.md)** | **[Index](../README.md)** | **[Next: Loot Distribution →](./LootDistribution.md)**
-
----
 
 ## 🎭 Environmental Storytelling Philosophy
 
@@ -226,8 +221,5 @@ Quest Connection: [If applicable]
 | Candles lit in circle | Lab basement | Special item spawn |
 | Fresh bloodtrail | Any | Recent PvP happened here |
 
----
-
-**[← Back to Map Layouts](./MapLayouts.md)** | **[Index](../README.md)** | **[Next: Loot Distribution →](./LootDistribution.md)**
 
 

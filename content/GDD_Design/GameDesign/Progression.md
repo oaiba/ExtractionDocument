@@ -2,11 +2,6 @@
 title: "Progression & Monetization"
 type: docs
 ---
-# Progression & Monetization
-
-**[← Previous: User Interface](../Visuals/UserInterface.md)** | **[Index](../README.md)** | **[Next: Weapons →](../Combat/Weapons.md)**
-
----
 
 ## Progression Philosophy
 
@@ -807,8 +802,5 @@ Exalted:    50,000 reputation
 - Churn analysis
 - Return player rate
 
----
-
-**[← Previous: User Interface](../Visuals/UserInterface.md)** | **[Index](../README.md)** | **[Next: Weapons →](../Combat/Weapons.md)**
 
 

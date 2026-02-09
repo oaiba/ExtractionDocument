@@ -4,11 +4,6 @@ linkTitle: "Recon"
 type: docs
 weight: 1
 ---
-# Recon Class - Information Specialists
-
-**[← Back to Operators](../Operators.md)** | **[Characters Index](../README.md)**
-
----
 
 ## Class Overview
 
@@ -84,11 +79,6 @@ The **Recon** class operators excel at gathering intelligence and controlling in
 
 ## Recon Operator Quick Links
 
-- 📄 [PHANTOM - Sarah Kim](./Phantom.md)
-- 📄 [SPECTER - Viktor Volkov](./Specter.md)
-- 📄 [WRAITH - Yuki Tanaka](./Wraith.md)
 
----
 
-**[← Back to Operators](../Operators.md)** | **[Characters Index](../README.md)**
 

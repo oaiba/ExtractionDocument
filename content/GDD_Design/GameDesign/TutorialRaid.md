@@ -2,11 +2,6 @@
 title: "Tutorial Raid: \"Operation Zero\""
 type: docs
 ---
-# Tutorial Raid: "Operation Zero"
-
-**[← Back to Index](../README.md)** | **[Controls →](../GameDesign/Controls.md)**
-
----
 
 ## 🎓 Design Goal: "Teach to Survive"
 
@@ -81,7 +76,5 @@ Completing the tutorial grants:
 4.  **Currency:** $5,000 (Enough for 1 raid insurance).
 
 This gear is *yours*. If you lose it in the next raid, it's gone forever. Welcome to Aethelgard.
-
----
 
 

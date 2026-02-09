@@ -2,13 +2,6 @@
 title: "Map & Environment System - Technical Specification"
 type: docs
 ---
-# Map & Environment System - Technical Specification
-
-**[← Back to Index](../README.md)** | **[Next: AI System →](./AISystem.md)**
-
-**Reference:** [High-Level Environment Design](../../GDD_HighLevel/Environments/EnvironmentDesign.md)
-
----
 
 ## Overview
 
@@ -1580,8 +1573,5 @@ CONST ZONE_STREAMING_CONFIGS = {
 - [ ] Level streaming doesn't cause stutters
 - [ ] Weather transitions smoothly
 
----
-
-**[← Back to Index](../README.md)** | **[Next: AI System →](./AISystem.md)**
 
 

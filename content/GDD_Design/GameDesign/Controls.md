@@ -2,11 +2,6 @@
 title: "Control System - Design & Experience"
 type: docs
 ---
-# Control System - Design & Experience
-
-**[← Back to Index](../README.md)** | **[Next: Progression →](./Progression.md)**
-
----
 
 ## 🎯 Design Philosophy
 
@@ -495,8 +490,5 @@ Understanding how players use controls helps us iterate.
 - **Voice Commands**: Basic actions like "Reload," "Ping," "Open Map" via voice (Accessibility).
 - **Eye Tracking (PC)**: Experimental aim-where-you-look for ultra-immersive gameplay.
 
----
-
-**[← Back to Index](../README.md)** | **[Next: Progression →](./Progression.md)**
 
 

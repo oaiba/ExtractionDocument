@@ -2,11 +2,6 @@
 title: "Game Modes Design"
 type: docs
 ---
-# Game Modes Design
-
-**[← Back to Index](../README.md)** | **[Next: Audio Design →](../Audio/SoundDesign.md)**
-
----
 
 ## 🎮 Core Philosophy
 
@@ -103,8 +98,5 @@ Special limited-time modes that mutate the core rules.
 | **Golden Rush** | 500% Cash Loot  | Everyone spawns with pistols only. Loot cash & run. |
 | **No Fly Zone** | No Air Drops    | Extractions are ground-only. Snipers dominate.      |
 
----
-
-**[← Back to Index](../README.md)** | **[Next: Audio Design →](../Audio/SoundDesign.md)**
 
 

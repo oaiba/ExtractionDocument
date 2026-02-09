@@ -2,11 +2,6 @@
 title: "Voice Lines - Character Dialogue"
 type: docs
 ---
-# Voice Lines - Character Dialogue
-
-**[← Back to Tactical Audio](./TacticalAudio.md)** | **[Index](../README.md)** | **[Next: Characters →](../Characters/Operators.md)**
-
----
 
 ## 🎙️ Voice Design Philosophy
 
@@ -497,8 +492,5 @@ Teammate Audio:
 └── Can be muted in settings
 ```
 
----
-
-**[← Back to Tactical Audio](./TacticalAudio.md)** | **[Index](../README.md)** | **[Next: Characters →](../Characters/Operators.md)**
 
 

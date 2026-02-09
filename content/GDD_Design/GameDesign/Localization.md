@@ -2,11 +2,6 @@
 title: "Localization Strategy"
 type: docs
 ---
-# Localization Strategy
-
-**[← Back to Index](../README.md)** | **[Next: Accessibility →](./Accessibility.md)**
-
----
 
 ## 🌍 Localization Philosophy
 
@@ -375,8 +370,5 @@ English fallback (en-US)
 - Voice localization adds 10-20% engagement
 - Poor localization = negative reviews, lower ratings
 
----
-
-**[← Back to Index](../README.md)** | **[Next: Accessibility →](./Accessibility.md)**
 
 

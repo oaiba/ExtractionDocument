@@ -2,11 +2,6 @@
 title: "WRAITH - Yuki Tanaka"
 type: docs
 ---
-# WRAITH - Yuki Tanaka
-
-**[← Back to Recon Class](./README.md)** | **[All Operators](../Operators.md)**
-
----
 
 ## Operator Profile
 
@@ -160,8 +155,5 @@ A failed mission in Taiwan left her squad dead and Yuki blamed by superiors look
 | **BLAZE**   | Fire burns smoke, natural enemy            |
 | **CIPHER**  | Mutual understanding of being outcasts     |
 
----
-
-**[← Back to Recon Class](./README.md)** | **[All Operators](../Operators.md)**
 
 

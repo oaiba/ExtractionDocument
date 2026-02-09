@@ -2,11 +2,6 @@
 title: "Style Guide - Art Bible"
 type: docs
 ---
-# Style Guide - Art Bible
-
-**[← Back to Art Direction](./ArtDirection.md)** | **[Index](../README.md)** | **[Next: Asset Guidelines →](./AssetGuidelines.md)**
-
----
 
 ## 🎨 Visual Identity Overview
 
@@ -445,8 +440,5 @@ Laser     → Side rail (visible red/green beam)
 - Korean DMZ
 - Urban exploration photography
 
----
-
-**[← Back to Art Direction](./ArtDirection.md)** | **[Index](../README.md)** | **[Next: Asset Guidelines →](./AssetGuidelines.md)**
 
 

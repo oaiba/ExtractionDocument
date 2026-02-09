@@ -2,11 +2,6 @@
 title: "Asset Guidelines"
 type: docs
 ---
-# Asset Guidelines
-
-**[← Back to Style Guide](./StyleGuide.md)** | **[Index](../README.md)** | **[Next: User Interface →](./UserInterface.md)**
-
----
 
 ## 📋 Asset Naming Convention
 
@@ -531,8 +526,5 @@ Texture Memory: < 800MB (mid-range device)
 Draw Calls: < 2000
 ```
 
----
-
-**[← Back to Style Guide](./StyleGuide.md)** | **[Index](../README.md)** | **[Next: User Interface →](./UserInterface.md)**
 
 

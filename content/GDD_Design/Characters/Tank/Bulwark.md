@@ -2,11 +2,6 @@
 title: "BULWARK - Hans Richter"
 type: docs
 ---
-# BULWARK - Hans Richter
-
-**[← Back to Tank Class](./README.md)** | **[All Operators](../Operators.md)**
-
----
 
 ## Operator Profile
 
@@ -160,8 +155,5 @@ After a political scandal forced budget cuts that disbanded his unit, Hans could
 | **DOC**   | Old friends, saved each other's lives |
 | **HAVOC** | Professional animosity, too reckless  |
 
----
-
-**[← Back to Tank Class](./README.md)** | **[All Operators](../Operators.md)**
 
 

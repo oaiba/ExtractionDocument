@@ -2,11 +2,6 @@
 title: "UX Flows & Wireframes"
 type: docs
 ---
-# UX Flows & Wireframes
-
-**[← Back to Index](../README.md)** | **[Visual Style →](./Visual_Style.md)**
-
----
 
 ## 🧭 User Journey Map
 
@@ -115,7 +110,5 @@ graph TD
 *   **Positive Action:** Green flash or Gold outline (e.g., Successfully equipping an item).
 *   **Negative Action:** Red shake animation (e.g., Trying to equip a Primary weapon in a Secondary slot).
 *   **Process:** Spinner/Progress bar for long actions (e.g., Searching a body).
-
----
 
 

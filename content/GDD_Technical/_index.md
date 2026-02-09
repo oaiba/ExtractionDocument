@@ -3,15 +3,6 @@ title: "GDD Technical"
 type: docs
 ---
 
-# Technical Game Design Document
-## Extraction Topdown Mobile Multiplayer
-
-**For:** Developers, Programmers, Technical Artists, DevOps
-
-**[← Back to Main](/)** | **[View High-Level GDD →](/GDD_Design/)**
-
----
-
 ## Purpose
 
 This document focuses on **technical implementation, enums, codenames, and feature TODOs**. This is the primary reference for:
@@ -232,6 +223,4 @@ ATT_OPTIC_REDDOT     // Attachment - Optic - RedDot
 | 2026-02-06 | All       | Focused on enums, codenames, TODOs | Team       |
 | 2026-02-06 | Core      | Initial documentation              | Team       |
 
----
 
-**[← Back to Main](/)** | **[View High-Level GDD →](/GDD_Design/)**

@@ -3,11 +3,6 @@ title: "Extraction Shooter GDD"
 type: docs
 ---
 
-
-This is the central repository and gateway for all documentation related to the Extraction Shooter project. It serves as the single source of truth for both the creative vision and the technical implementation of our top-down, high-stakes tactical experience.
-
----
-
 ## Project Snapshot
 
 | Category               | Details                                   |
@@ -73,11 +68,7 @@ Focused on implementation, systems architecture, and technical workflows.
 ---
 
 ## Quick Start
-1.  **Read the [MVP Scope](/GDD_Design/ProjectScope/MVP)** to understand the current focus.
-2.  **Explore the [Core Loop](/GDD_Design/GameDesign/CoreGameplay)** to grasp the game's heartbeat.
-3.  **Review the [Technical Roadmap](/GDD_Technical/Core/DevelopmentRoadmap)** if you are contributing code.
 
----
 *Last Updated: February 9, 2026*  
 *Lead Designer: [Name] | Technical Lead: [Name]*
 

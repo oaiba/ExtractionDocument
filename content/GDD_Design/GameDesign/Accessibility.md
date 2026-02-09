@@ -2,11 +2,6 @@
 title: "Accessibility Design"
 type: docs
 ---
-# Accessibility Design
-
-**[← Back to Index](../README.md)** | **[Next: Controls →](./Controls.md)**
-
----
 
 ## ♿ Accessibility Philosophy
 
@@ -424,8 +419,5 @@ For every new feature, ask:
 - Eye tracking integration
 - Community accessibility profiles
 
----
-
-**[← Back to Index](../README.md)** | **[Next: Controls →](./Controls.md)**
 
 

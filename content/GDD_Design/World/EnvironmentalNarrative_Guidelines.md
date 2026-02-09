@@ -2,11 +2,6 @@
 title: "Environmental Narrative Guidelines: \"Show, Don't Tell\""
 type: docs
 ---
-# Environmental Narrative Guidelines: "Show, Don't Tell"
-
-**[← Back to Index](../README.md)** | **[Visual Style](./Visual_Style.md)**
-
----
 
 ## 🏛️ The Silent Storyteller
 
@@ -97,7 +92,5 @@ Use lighting to highlight these stories, but also to set the emotional tone.
 1.  **Written Notes everywhere:** Avoid "My Dearest Diary..." pages scattered in illogical places. Use environmental clues first.
 2.  **Blood without a Body:** If there is a massive blood trail, it must lead *somewhere* (a body, a drag mark, a monster den). It cannot just end at a wall.
 3.  **Perfect Skeletons:** Skeletons should be disarticulated, scavenged by animals, or crushed. Avoid the "Halloween Prop" look.
-
----
 
 

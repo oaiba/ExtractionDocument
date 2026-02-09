@@ -2,11 +2,6 @@
 title: "Ranked Mode & Competitive Systems"
 type: docs
 ---
-# Ranked Mode & Competitive Systems
-
-**[← Back to Index](../README.md)** | **[Next: Live Ops →](./LiveOps.md)**
-
----
 
 ## 🏆 Competitive Philosophy
 
@@ -419,8 +414,5 @@ Playing 10+ ranked games with same squad members:
 - 1v1 arena mode (ranked)
 - Team-based seasons
 
----
-
-**[← Back to Index](../README.md)** | **[Next: Live Ops →](./LiveOps.md)**
 
 

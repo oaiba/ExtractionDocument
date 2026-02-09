@@ -2,13 +2,6 @@
 title: "UI System - Technical Specification"
 type: docs
 ---
-# UI System - Technical Specification
-
-**[← Back to Index](../README.md)** | **[Next: Audio System →](./AudioSystem.md)**
-
-**Reference:** [High-Level User Interface Design](../../GDD_HighLevel/Visuals/UserInterface.md)
-
----
 
 ## Overview
 
@@ -1560,8 +1553,5 @@ ENUM CrosshairStyle:
 - [ ] UI scales on different devices
 - [ ] Safe zones respected on notched devices
 
----
-
-**[← Back to Index](../README.md)** | **[Next: Audio System →](./AudioSystem.md)**
 
 

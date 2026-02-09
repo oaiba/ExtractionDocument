@@ -10,10 +10,19 @@
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify-darklight-theme@latest/dist/style.min.css"
     title="docsify-darklight-theme" type="text/css" />
   <style>
-    /* Limit the sidebar logo size */
+    /* Logo styling */
+    :root {
+      --docsifytabs-border-color: #ededed;
+      --docsifytabs-tab-highlight-color: purple;
+    }
+
     .app-name-link img {
-      height: 120px;
+      height: 140px;
       object-fit: contain;
+    }
+
+    .sidebar-nav {
+      margin-top: 20px;
     }
   </style>
 </head>
@@ -22,12 +31,12 @@
   <div id="app"></div>
   <script>
     window.docsify = {
-      logo: '/_media/logo.svg',
+      logo: '_media/logo.svg',
       name: 'Extraction Shooter GDD',
-      repo: '', // Add repo URL if available, otherwise leave empty
+      repo: '',
       loadSidebar: true,
       loadNavbar: true,
-      mergeNavbar: true,
+      mergeNavbar: false,
       subMaxLevel: 2,
       auto2top: true,
       search: 'auto', // default

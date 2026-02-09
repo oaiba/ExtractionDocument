@@ -33,13 +33,29 @@
     window.docsify = {
       logo: 'assets/logo.svg',
       name: 'Extraction Shooter GDD',
-      repo: '',
+      repo: 'https://github.com/oaiba/ExtractionDocument',
       loadSidebar: true,
       loadNavbar: 'navbar.md',
       mergeNavbar: false,
       subMaxLevel: 2,
       auto2top: true,
-      search: 'auto', // default
+      // Pagination Configuration
+      pagination: {
+        previousText: 'Previous',
+        nextText: 'Next',
+        crossChapter: true,
+        crossChapterText: true,
+      },
+      // Search Plugin Configuration
+      search: {
+        maxAge: 86400000, // Expiration time, the default is one day
+        paths: 'auto',
+        placeholder: 'Type to search',
+        noData: 'No Results!',
+        // Headline depth, 1 - 6
+        depth: 6,
+        hideOtherSidebarContent: false, // whether or not to hide other sidebar content
+      },
       autoHeaders: {
         separator: '.',
         debug: false
@@ -89,6 +105,7 @@
   <script src="//cdn.jsdelivr.net/npm/docsify-copy-code/dist/docsify-copy-code.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/docsify-darklight-theme@latest/dist/index.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/docsify-auto-headers@latest/dist/docsify-auto-headers.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify-pagination/dist/docsify-pagination.min.js"></script>
 </body>
 
 </html>

@@ -7,10 +7,43 @@
 ## Map Design Philosophy
 
 **Core Principles:**
-1. **Readability** - Top-down perspective cần clear visual hierarchy
-2. **Tactical Depth** - Multiple routes, cover options, vertical elements
-3. **Risk vs Reward** - Loot quality scales với danger
-4. **Memorable Landmarks** - Easy navigation và callouts
+1. **Readability** - Top-down perspective requires clear visual hierarchy.
+2. **Tactical Depth** - Multiple routes, cover options, and vertical elements.
+3. **Risk vs Reward** - Loot quality scales with danger level.
+4. **Memorable Landmarks** - Facilitates easy navigation and team callouts.
+
+---
+
+## Extraction-Shooter Specifics
+
+Primary and secondary design factors adapted for the extraction genre, directly influencing zone layouts.
+
+### Primary Factors
+1. **Verticality**
+   - **Definition:** How height and layers affect play, visibility, and flanking.
+   - **Application:**
+     - **Hot Zones:** High verticality (3+ floors, catwalks) for complex CQB and vertical ambushes.
+     - **Mid Zones:** Moderate verticality (2 floors, accessible rooftops) for vantage points.
+     - **Edge Zones:** Mostly ground level with natural elevation changes.
+
+2. **Size**
+   - **Definition:** Horizontal scale relative to match duration (travel time vs. looting time).
+   - **Application:**
+     - **Hot Zones:** Condensed footprint with high asset density to force encounters.
+     - **Edge Zones:** Expansive areas to allow safe spawning and initial movement.
+
+3. **Population**
+   - **Definition:** Player and AI entity density per square meter.
+   - **Application:**
+     - **Hot Zones:** Maximum density (High player convergence + Elite AI squads).
+     - **Mid Zones:** Medium density (Roaming AI patrols, transiting players).
+     - **Edge Zones:** Low density (Scattered AI, spawning/extracting players).
+
+### Secondary Factors
+- **Spawn/Exit Points:** Primarily located in **Edge Zones** to force inward movement. Conditional high-risk exits (e.g., rooftop helipads) may exist in **Hot Zones**.
+- **Event Pockets / POIs:** Dynamic areas (Supply Drops, Contamination) that can temporarily transform safe **Mid Zones** into combat-heavy **Hot Zones**.
+- **Line of Sight (LOS):** **Hot Zones** feature frequent blind spots and LOS breaks for tactical movement; **Edge Zones** offer longer sightlines but less hard cover.
+- **Navigator Elements:** Ziplines, jump pads, and ladders are placed strategically to bridge **Mid Zone** gaps or provide rapid access to **Hot Zone** verticality.
 
 ---
 
@@ -21,7 +54,7 @@
 #### 1. Hot Zones (Center Areas)
 **Characteristics:**
 - 60% loot spawn rate
-- Rare và Epic items
+- Rare and Epic items
 - Heavy AI presence (10-15 enemies)
 - Multiple entry points (5-7)
 - Vertical gameplay (multi-floor buildings)
@@ -41,10 +74,10 @@
 #### 2. Mid Zones (Transition Areas)
 **Characteristics:**
 - 40% loot spawn rate
-- Uncommon và Rare items
+- Uncommon and Rare items
 - Moderate AI (5-8 enemies)
 - 3-4 entry points
-- Mixed indoor/outdoor
+- Mixed indoor/outdoor environments
 
 **Examples:**
 - Office buildings
@@ -53,9 +86,9 @@
 - Industrial workshops
 
 **Design Goals:**
-- Provide safe(r) looting options
-- Connect hot zones to edges
-- Offer tactical choices
+- Provide safer looting options
+- Connect hot zones to map edges
+- Offer tactical choices for engagement
 
 ---
 
@@ -109,37 +142,37 @@
 **1. Power Plant (Hot Zone - Center)**
 - 4 floors
 - Central reactor room (best loot)
-- Catwalks và tight corridors
+- Catwalks and tight corridors
 - AI Boss: "Reactor Guardian"
-- Highly contested
+- Highly contested area
 
 **2. Warehouse District (Mid Zone - West)**
 - 6 large warehouses
 - Open floor plans
-- Good cover
-- Vehicle section (future: drivable)
+- Good cover density
+- Vehicle section (future update: drivable)
 
 **3. Tech Labs (Mid Zone - East)**
 - Research facility
-- Clean rooms
+- Clean rooms (sterile environment)
 - Quest items spawn here
 - Vertical gameplay (3 floors)
 
 **4. Office Complex (Mid Zone - North)**
 - Corporate offices
 - Cubicle maze
-- Good ambush spots
-- Medium loot
+- Excellent ambush spots
+- Medium tier loot
 
 **5. Workshops (Mid Zone - South)**
 - Industrial repair shops
-- Heavy machinery cover
-- Crafting materials
+- Heavy machinery provides cover
+- Crafting materials abundant
 
 **6. Forest Perimeter (Edge Zone)**
-- Natural cover (trees)
+- Natural cover (trees and rocks)
 - Fewer sightlines
-- Spawn points
+- Player spawn points
 - 4 extraction zones
 
 ---
@@ -164,38 +197,38 @@
 
 **1. Central Plaza (Hot Zone)**
 - Open square
-- Fountain cover
-- Underground access
+- Central fountain provides cover
+- Underground access points
 - Supply drop landing zone
 
 **2. Shopping Mall (Hot Zone)**
 - 2 floors
-- Stores với loot
+- Stores contain high density loot
 - Food court ambush point
-- Skylights (lighting effects)
+- Skylights (dynamic lighting effects)
 
 **3. Apartment Buildings (Mid Zone)**
 - 5-story buildings
-- Room-to-room combat
+- Room-to-room CQB combat
 - Balcony sniping positions
-- Stairwell chokes
+- Stairwell choke points
 
 **4. Subway System (Mid Zone)**
-- Underground tunnels
-- Connect different areas
-- Dark, close-quarters
+- Underground tunnels network
+- Connects different map areas
+- Dark, close-quarters environment
 - Unique lighting challenges
 
 **5. Hotel (Mid Zone)**
-- Luxury location
-- Lobbies, rooms, rooftop
+- Luxury location styling
+- Lobbies, guest rooms, rooftop bar
 - Quest item spawns
-- Good extraction defense
+- defensible position for extraction
 
 **6. City Park (Edge Zone)**
-- Trees và foliage
-- Open sightlines
-- Extraction zones
+- Trees and dense foliage
+- Open sightlines across paths
+- Extraction zones location
 
 ---
 
@@ -333,31 +366,31 @@
 ### Dynamic Elements
 
 **Supply Drops**
-- Timing: 5:00 và 10:00 into match
+- Timing: 5:00 and 10:00 into match
 - Landing: Random mid-to-hot zones
-- Visual: Flare, then parachute drop
+- Visual: Signal flare, followed by parachute drop
 - Audio: Plane flyover, warning siren
-- Contents: High-tier loot, special items
-- Radius: Creates temporary hot zone
+- Contents: High-tier loot, special weapons/items
+- Radius: Creates temporary high-heat zone
 
 **Contamination Zone**
 - Timing: Starts at 12:00
 - Effect: Shrinking safe zone
 - Visual: Red fog, particle effects
 - Damage: Increasing over time (10→50 HP/sec)
-- Purpose: Force player movement, prevent camping
+- Purpose: Forces player movement, prevents camping
 
 **Environmental Hazards**
 
 **1. Electrical Hazards**
-- Broken power lines
+- Exposed/Broken power lines
 - Sparking machinery
-- Damage: 5 HP/sec trong area
+- Damage: 5 HP/sec within area
 
 **2. Radiation Zones** (Map-specific)
 - Contaminated areas
 - Damage: 10 HP/sec
-- Reward: Best loot inside
+- Reward: Best loot located inside
 
 **3. Fire** (Dynamic)
 - Can be caused by explosions
@@ -372,23 +405,23 @@
 **Narrative Through Environment:**
 
 **Industrial Decay Map:**
-- Abandoned worker belongings
-- Warning signs về evacuation
-- Broken machinery
-- Graffiti từ survivors
-- Environmental disasters visible
+- Abandoned worker belongings and personal items
+- Evacuation warning signs
+- Broken and rusted machinery
+- Graffiti from survivors or scavengers
+- Evidence of environmental disasters
 
 **Visual Clues:**
 - Scattered documents (lore items)
 - Propaganda posters
-- Faction symbols
-- Timeline của events qua decay levels
+- Faction symbols and territorial markings
+- Timeline of events shown through decay levels
 
 **Purpose:**
 - Build world lore
 - Create atmosphere
-- Player immersion
-- Quest context
+- Deepen player immersion
+- Provide context for Quests
 
 ---
 
@@ -422,20 +455,20 @@
 **Visual Landmarks:**
 - Tall structures (towers, smokestacks)
 - Unique color schemes per area
-- Lighting differences
-- Architectural styles
+- Distinct lighting differences
+- Varied architectural styles
 
 **Minimap Design:**
 - Color-coded zones
 - POI icons
 - Extraction markers
 - Player/enemy indicators
-- Scale appropriate cho mobile screens
+- Scale appropriate for mobile screens
 
 **In-World Signs:**
-- Directional signs (in-universe)
+- Directional signs (diegetic/in-universe)
 - Zone markers
-- Extraction indicators (far visible)
+- Extraction indicators (visible from distance)
 
 ---
 
@@ -443,14 +476,14 @@
 
 **Spawn Points:**
 - 8-12 spawn locations per map
-- Near map edges only
-- Equidistant từ hot zones (fairness)
+- Located near map edges only
+- Equidistant from hot zones (fairness)
 - Random assignment
 - 10-second protection shield
 
 **Spawn Balancing:**
 - No spawns near active combat
-- Distance check từ other players (minimum 100m)
+- Distance check from other players (minimum 100m)
 - Visibility check (not in direct sightline)
 
 ---
@@ -574,6 +607,21 @@ For each new map:
 - Huge open tarmac
 - Airport terminals
 - Plane wrecks
+
+---
+
+---
+
+## 📝 Document Ownership & Changelog
+
+| Role            | Owner                   | Approver           |
+| :-------------- | :---------------------- | :----------------- |
+| **Author**      | Lead Level Designer     | Lead Game Designer |
+| **Tech Review** | Environment Artist Lead | Technical Artist   |
+
+**Recent Changes:**
+*   **v1.1 (2026-02-09):** Added "Extraction-Shooter Specifics" section.
+*   **v1.0 (2026-02-07):** Initial map design documentation.
 
 ---
 

@@ -8,6 +8,19 @@
 
 **[← Back to Index](../README.md)**
 
+## 🏗️ Genre Pillars (Extraction Shooter Core)
+
+These six foundational pillars define the extraction shooter genre. Our design choices directly support these concepts to ensure an authentic experience.
+
+| Pillar               | Definition                                    | Implementation in Our Game                                                                                                           |
+| :------------------- | :-------------------------------------------- | :----------------------------------------------------------------------------------------------------------------------------------- |
+| **Risk of Loss**     | Constant awareness that progress can be lost. | **Full Loot Drop:** Dying means losing everything equipped. This drives the "High-Stakes Tension" pillar.                            |
+| **Survival**         | Survival prioritized over unnecessary combat. | **Health Scarcity:** Meds are valuable. Engaging every enemy drains resources, making stealth and avoidance viable tactical choices. |
+| **Progression Tree** | Permanent, learnable advantages.              | **Hideout & Trader Levels:** Even if you lose gear, you gain XP and reputation, unlocking better shop items and passive base buffs.  |
+| **Resource Heavy**   | Strong emphasis on inventory management.      | **Tetris Inventory:** Managing grid space requires decision-making. Ammo tracking is manual (mag checking), not just a UI number.    |
+| **Task Driven**      | Clear objectives that guide decisions.        | **Faction Quests:** Players depoy with specific goals (mark territory, retrieve intel) rather than just "killing everyone."          |
+| **Time**             | Staying longer increases risk and reward.     | **Match Timer & Events:** As the match progresses, player scavengers spawn, and extracts may close, forcing movement.                |
+
 ---
 
 ## 🏛️ The Three Pillars
@@ -103,5 +116,18 @@ use this checklist for every new feature request:
 2.  [ ] Does it respect the **Flow** of movement?
 3.  [ ] Does it make sense in the **Context of the World**?
 4.  [ ] Is it **Readable** to the player instantly?
+
+---
+
+## 📝 Document Ownership & Changelog
+
+| Role            | Owner             | Approver           |
+| :-------------- | :---------------- | :----------------- |
+| **Author**      | Creative Director | Studio Head        |
+| **Tech Review** | N/A               | Lead Game Designer |
+
+**Recent Changes:**
+*   **v1.1 (2026-02-09):** Added "Genre Pillars" section.
+*   **v1.0 (2026-02-07):** Initial philosophy definition.
 
 ---

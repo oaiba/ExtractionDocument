@@ -4,14 +4,25 @@
 
 ---
 
-## 📅 Roadmap Overview
+## 📅 Critical Milestones & Targets
 
-| Phase | Milestone | Focus | Est. Timeline |
-|:------|:----------|:------|:--------------|
-| **Phase 1** | **Prototype** | Core Loop (Enter -> Loot -> Extract) | Month 1-2 |
-| **Phase 2** | **Alpha** | 1 Map, 3 Operators, Basic Metagame | Month 3-5 |
-| **Phase 3** | **Beta** | 2 Maps, 5 Operators, Economy Polish | Month 6-8 |
-| **Phase 4** | **Launch** | Full Content, Monetization Active | Month 9+ |
+| Milestone                | Target Date | Key Deliverable                              | Dependency        |
+| :----------------------- | :---------- | :------------------------------------------- | :---------------- |
+| **Project Start**        | T-Minus 0   | Core Team Assembled                          | Budget Approval   |
+| **M1: Prototype**        | Month 2     | Playable Greybox Loop (Server Authoritative) | UE5 Mobile Setup  |
+| **M2: Vertical Slice**   | Month 4     | One Polished Zone + Full Combat Loop         | Asset Production  |
+| **M3: Alpha (Internal)** | Month 5     | Full Map 1 + 3 Operators                     | Backend Stability |
+| **M4: Beta (Closed)**    | Month 7     | Economy + Quest System                       | Alpha Feedback    |
+| **M5: Soft Launch**      | Month 9     | Store + Live Ops Pipeline                    | Platform Cert     |
+| **M6: Global Launch**    | Month 11    | Marketing Push + Events                      | Soft Launch Data  |
+
+---
+
+## 🔗 Technical Dependencies
+
+*   **Server Architecture:** Dedicated servers (Agones/K8s) must be validated by **M2**.
+*   **Asset Pipeline:** Mobile optimization workflow (LODs, imposter system) established by **M1**.
+*   **Backend Services:** Auth, Inventory, and Matchmaking APIs ready for load testing by **M3**.
 
 ---
 
@@ -59,16 +70,16 @@
 
 ## 📦 Feature Comparison Matrix
 
-| Feature Category | Prototype | Alpha | Beta | Launch |
-|:-----------------|:---------:|:-----:|:----:|:------:|
-| **Maps** | Greybox | 1 (Partial) | 1 (Full) + 1 (Partial) | 3 Maps |
-| **Operators** | 1 (Dummy) | 3 | 5 | 8+ |
-| **Weapons** | 2 | 5 | 15+ | 30+ |
-| **AI Types** | Static | Patrol | Flanking, Cover | Bosses, Elite |
-| **Loot System** | Random | Tables | Dynamic | Event-based |
-| **Questing** | ❌ | ❌ | Basic | Campaign |
-| **Progression** | Session | Wipe | Persistent | Seasons |
-| **Monetization** | ❌ | ❌ | Test Store | Full Store |
+| Feature Category | Prototype |    Alpha    |          Beta          |    Launch     |
+| :--------------- | :-------: | :---------: | :--------------------: | :-----------: |
+| **Maps**         |  Greybox  | 1 (Partial) | 1 (Full) + 1 (Partial) |    3 Maps     |
+| **Operators**    | 1 (Dummy) |      3      |           5            |      8+       |
+| **Weapons**      |     2     |      5      |          15+           |      30+      |
+| **AI Types**     |  Static   |   Patrol    |    Flanking, Cover     | Bosses, Elite |
+| **Loot System**  |  Random   |   Tables    |        Dynamic         |  Event-based  |
+| **Questing**     |     ❌     |      ❌      |         Basic          |   Campaign    |
+| **Progression**  |  Session  |    Wipe     |       Persistent       |    Seasons    |
+| **Monetization** |     ❌     |      ❌      |       Test Store       |  Full Store   |
 
 ---
 
@@ -78,6 +89,21 @@
 *   **Clan System:** Deferred to Post-Launch
 *   **Weather System:** Deferred to First Major Update
 *   **Spectator Mode:** Deferred to esports update
+
+---
+
+---
+
+## 📝 Document Ownership & Changelog
+
+| Role            | Owner              | Approver           |
+| :-------------- | :----------------- | :----------------- |
+| **Author**      | Lead Producer      | Executive Producer |
+| **Tech Review** | Technical Director | CTO                |
+
+**Recent Changes:**
+*   **v1.1 (2026-02-09):** Refined Milestones with specific deliverable targets and dependencies.
+*   **v1.0 (2026-02-07):** Initial MVP definition.
 
 ---
 

@@ -1,4 +1,4 @@
-# Asset Guidelines - Quy Chuẩn Thiết Kế Assets
+# Asset Guidelines
 
 **[← Back to Style Guide](./StyleGuide.md)** | **[Index](../README.md)** | **[Next: User Interface →](./UserInterface.md)**
 
@@ -114,12 +114,12 @@ Physics: Cloth simulation for pouches/straps
 
 ### Operator LOD Settings
 
-| LOD | Distance | Triangles | Use Case |
-|:----|:---------|:----------|:---------|
-| LOD0 | 0-50m | 25,000 | Player, close |
-| LOD1 | 50-100m | 16,000 | Mid range |
-| LOD2 | 100-200m | 8,000 | Far |
-| LOD3 | 200m+ | 3,000 | Distant |
+| LOD  | Distance | Triangles | Use Case      |
+| :--- | :------- | :-------- | :------------ |
+| LOD0 | 0-50m    | 25,000    | Player, close |
+| LOD1 | 50-100m  | 16,000    | Mid range     |
+| LOD2 | 100-200m | 8,000     | Far           |
+| LOD3 | 200m+    | 3,000     | Distant       |
 
 ---
 
@@ -130,7 +130,7 @@ Physics: Cloth simulation for pouches/straps
 Polygon Budget: 8,000 - 12,000 tris
 Texture: 1024x1024 (shared atlas preferred)
 Bones: 50-60
-Animation Set: Shared với Operators (retarget)
+Animation Set: Shared with Operators (retarget)
 ```
 
 **Elite Enemy:**

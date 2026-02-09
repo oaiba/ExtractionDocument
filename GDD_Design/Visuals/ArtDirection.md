@@ -6,7 +6,7 @@
 
 ## Visual Identity
 
-**Art Style:** Realistic với stylized elements  
+**Art Style:** Realistic with stylized elements  
 **Tone:** Gritty, industrial, post-disaster  
 **Perspective:** Top-down (isometric-style camera)  
 **Platform:** Mobile-optimized
@@ -16,7 +16,7 @@
 ## Art Pillars
 
 ### 1. Clarity Above All
-**Why:** Top-down mobile cần instant readability
+**Why:** Top-down mobile perspective needs instant readability
 
 **Implementation:**
 - Strong silhouettes
@@ -25,7 +25,7 @@
 - Minimal visual noise
 
 ### 2. Grounded Realism
-**Why:** Extraction gameplay cần believable world
+**Why:** Extraction gameplay requires a believable world
 
 **Implementation:**
 - Realistic materials (metal, concrete, fabric)
@@ -39,7 +39,7 @@
 **Implementation:**
 - Color schemes per faction
 - Unique architectural styles
-- Branded props và signage
+- Branded props and signage
 - Consistent art language
 
 ### 4. Performance First
@@ -103,7 +103,8 @@
 ### Operator Design
 
 **Core Principles:**
-- Instant recognition từ top-down
+**Core Principles:**
+- Instant recognition from top-down perspective
 - Clear silhouette differences
 - Functional, believable gear
 - Mobile polygon budget: 15,000-25,000 tris
@@ -175,7 +176,7 @@ Specialist: ██████  (Medium, tech visible)
 - **Material:** Metal plates, heavy fabric
 
 **Specialist:**
-- Utility vest với many pockets
+- Utility vest with many pockets
 - Tool belt
 - Fingerless gloves
 - Casual-tactical mix
@@ -286,8 +287,8 @@ Specialist: ██████  (Medium, tech visible)
 - Safety signage (faded)
 
 **Urban Buildings:**
-- Concrete và brick
-- Variety trong window types
+- Concrete and brick
+- Variety in window types
 - Fire escapes
 - Damage (cracks, collapse)
 - Overgrown vegetation
@@ -301,12 +302,12 @@ Specialist: ██████  (Medium, tech visible)
 
 ---
 
-### Interior Spaces
+**Interior Spaces**
 
 **Lighting:**
 - Motivated light sources (windows, fixtures)
 - Dramatic shadows
-- God rays through破损 roof
+- God rays through damaged roof
 - Emergency lighting (red)
 
 **Clutter:**
@@ -317,7 +318,7 @@ Specialist: ██████  (Medium, tech visible)
 
 **Materials:**
 - Dirty, weathered surfaces
-- Graffiti và posters
+- Graffiti and posters
 - Water damage, mold
 - Broken equipment
 
@@ -477,7 +478,8 @@ Specialist: ██████  (Medium, tech visible)
 ### UI Elements
 
 **Buttons:**
-- Dark background với bright borders
+**Buttons:**
+- Dark background with bright borders
 - Hover: Glow effect
 - Press: Color shift
 - Icon + text combo
@@ -510,7 +512,7 @@ Specialist: ██████  (Medium, tech visible)
 - Walk: 1.0 sec loop, medium pace
 - Sprint: 0.7 sec loop, fast
 - Crouch Walk: 1.3 sec loop, slow
-- Idle: 3 sec loop với subtle breathing
+- Idle: 3 sec loop with subtle breathing
 
 **Combat:**
 - Fire weapon: 0.1-0.3 sec (weapon-dependent)
@@ -602,7 +604,7 @@ Specialist: ██████  (Medium, tech visible)
 
 **Texturing:**
 1. Base materials (Substance Painter)
-2. Weathering và details
+2. Weathering and details
 3. Export PBR maps
 4. Engine integration
 5. Optimization

@@ -308,7 +308,7 @@ Sprint completion status.
 
 **Tasks:**
 - [ ] Implement `AExtractionAICharacter`
-  - [ ] Inherit từ base character
+  - [ ] Inherit from base character
   - [ ] AI-specific behaviors
 
 - [ ] Create `AExtractionAIController`

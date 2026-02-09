@@ -2,11 +2,6 @@
 title: "Replication Strategy & Bandwidth Optimization"
 type: docs
 ---
-# Replication Strategy & Bandwidth Optimization
-
-**[← Back to Index](../README.md)** | **[Lag Compensation →](./LagCompensation.md)**
-
----
 
 ## 🏗️ The Problem: High Density
 Extraction Shooters have a unique networking challenge: **Huge Maps + High AI Count + High Loot Count.**
@@ -83,7 +78,5 @@ We implement a custom `UReplicationGraph` to manage the immense number of replic
 *   **Actions:** 20% (Firing, interacting).
 *   **Environment:** 10% (Doors, lights).
 *   **VOIP:** 10% (Ideally separate channel/server).
-
----
 
 

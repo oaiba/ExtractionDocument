@@ -2,11 +2,6 @@
 title: "Development Roadmap & TODO Tracking"
 type: docs
 ---
-# Development Roadmap & TODO Tracking
-
-**[← Previous: Optimization](../Performance/Optimization.md)** | **[Technical Index](../README.md)**
-
----
 
 ## Current Status
 
@@ -692,8 +687,5 @@ Sprint completion status.
 | ---------- | ------- | --------------- | ------ |
 | 2026-02-06 | 1.0     | Initial roadmap | Team   |
 
----
-
-**[← Previous: Performance Optimization](./08_PerformanceOptimization.md)** | **[Technical Index](./README.md)**
 
 

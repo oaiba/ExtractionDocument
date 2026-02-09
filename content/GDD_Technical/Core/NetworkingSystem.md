@@ -2,11 +2,6 @@
 title: "Networking System - Technical Design Document"
 type: docs
 ---
-# Networking System - Technical Design Document
-
-**[← Previous: Architecture](./Architecture.md)** | **[Index](../README.md)** | **[Next: Character System →](../Gameplay/CharacterSystem.md)**
-
----
 
 ## Overview
 
@@ -268,8 +263,5 @@ STRUCT LobbyMember:
     Attributes: Map<String, String> // Ready state, skin, char
 ```
 
----
-
-**[← Previous: Architecture](./Architecture.md)** | **[Index](../README.md)** | **[Next: Character System →](../Gameplay/CharacterSystem.md)**
 
 

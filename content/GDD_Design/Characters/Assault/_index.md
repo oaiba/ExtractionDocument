@@ -4,11 +4,6 @@ linkTitle: "Assault"
 type: docs
 weight: 1
 ---
-# Assault Class - Frontline Aggressors
-
-**[← Back to Operators](../Operators.md)** | **[Characters Index](../README.md)**
-
----
 
 ## Class Overview
 
@@ -121,11 +116,6 @@ The **Assault** class operators are designed for players who prefer aggressive, 
 
 ## Assault Operator Quick Links
 
-- 📄 [VIPER - Marcus Chen](./Viper.md)
-- 📄 [BLAZE - Elena Reyes](./Blaze.md)
-- 📄 [HAVOC - Anton Petrov](./Havoc.md)
 
----
 
-**[← Back to Operators](../Operators.md)** | **[Characters Index](../README.md)**
 

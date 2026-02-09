@@ -2,13 +2,6 @@
 title: "Social & Multiplayer System - Technical Specification"
 type: docs
 ---
-# Social & Multiplayer System - Technical Specification
-
-**[← Back to Index](../README.md)** | **[Next: Ranked System →](./RankedSystem.md)**
-
-**Reference:** [High-Level Social Design](../../GDD_HighLevel/Social/Multiplayer.md)
-
----
 
 ## Overview
 
@@ -213,8 +206,5 @@ STRUCT FriendData:
     RichPresence: String // "In Menu", "Playing Map X"
 ```
 
----
-
-**[← Back to Index](../README.md)** | **[Next: Ranked System →](./RankedSystem.md)**
 
 

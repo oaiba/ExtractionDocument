@@ -2,11 +2,6 @@
 title: "Build Pipeline & Release Engineering"
 type: docs
 ---
-# Build Pipeline & Release Engineering
-
-**[← Back to Index](../README.md)**
-
----
 
 ## 🏗️ Version Control Strategy
 
@@ -71,7 +66,5 @@ Run Nightly (03:00 AM) on `development`:
 3.  **Changelog:** Auto-generate from commit history. Manually curate for readability.
 4.  **Tagging:** Create Git Tag `v0.8.2`.
 5.  **Distribution:** Push to public branches (Steam Main, App Store Review).
-
----
 
 

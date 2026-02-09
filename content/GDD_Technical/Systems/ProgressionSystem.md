@@ -2,13 +2,6 @@
 title: "Progression System - Technical Specification"
 type: docs
 ---
-# Progression System - Technical Specification
-
-**[← Back to Index](../README.md)** | **[Next: Save System →](./SaveSystem.md)**
-
-**Reference:** [High-Level Progression & Monetization](../../GDD_HighLevel/GameDesign/Progression.md)
-
----
 
 ## Overview
 
@@ -1181,8 +1174,5 @@ CLASS DailyLoginManager:
 - [ ] Daily login streak tracks
 - [ ] No duplicate reward claims
 
----
-
-**[← Back to Index](../README.md)** | **[Next: Save System →](./SaveSystem.md)**
 
 

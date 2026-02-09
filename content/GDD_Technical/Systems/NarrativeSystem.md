@@ -2,13 +2,6 @@
 title: "Narrative System - Technical Specification"
 type: docs
 ---
-# Narrative System - Technical Specification
-
-**[← Back to Index](../README.md)** | **[Next: Live Ops System →](./LiveOpsSystem.md)**
-
-**Reference:** [High-Level Narrative Design](../../GDD_HighLevel/Story/Narrative.md)
-
----
 
 ## Overview
 
@@ -533,8 +526,5 @@ STRUCT CollectibleData:
 - [ ] Dynamic environmental dialogue
 - [ ] Codex UI implementation
 
----
-
-**[← Back to Index](../README.md)** | **[Next: Live Ops System →](./LiveOpsSystem.md)**
 
 

@@ -2,11 +2,6 @@
 title: "Soundscape - Environmental Audio Design"
 type: docs
 ---
-# Soundscape - Environmental Audio Design
-
-**[← Back to Sound Design](./SoundDesign.md)** | **[Index](../README.md)** | **[Next: Tactical Audio →](./TacticalAudio.md)**
-
----
 
 ## 🎧 Audio Design Philosophy
 
@@ -390,8 +385,5 @@ Allocation:
 └── VFX sounds: 25MB
 ```
 
----
-
-**[← Back to Sound Design](./SoundDesign.md)** | **[Index](../README.md)** | **[Next: Tactical Audio →](./TacticalAudio.md)**
 
 

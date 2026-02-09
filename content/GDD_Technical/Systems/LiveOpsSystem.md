@@ -2,13 +2,6 @@
 title: "Live Operations System - Technical Specification"
 type: docs
 ---
-# Live Operations System - Technical Specification
-
-**[← Back to Index](../README.md)** | **[Next: Social System →](./SocialSystem.md)**
-
-**Reference:** [High-Level Live Ops Design](../../GDD_HighLevel/GameDesign/LiveOps.md)
-
----
 
 ## Overview
 
@@ -305,8 +298,5 @@ STRUCT BattlePassTier:
 - [ ] A/B testing framework support
 - [ ] Advanced notification scheduling
 
----
-
-**[← Back to Index](../README.md)** | **[Next: Social System →](./SocialSystem.md)**
 
 

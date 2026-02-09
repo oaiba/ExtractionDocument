@@ -2,11 +2,6 @@
 title: "Audio Design & Soundscapes"
 type: docs
 ---
-# Audio Design & Soundscapes
-
-**[← Back to Index](../README.md)** | **[Next: User Interface →](../Visuals/UserInterface.md)**
-
----
 
 ## 🎧 Audio Design Philosophy
 
@@ -103,8 +98,5 @@ Silent hand signals triggers specific localized whispers:
     3.  Teammate Audio (Medium).
     4.  Ambience (Low - Ducks when shooting).
 
----
-
-**[← Back to Index](../README.md)** | **[Next: User Interface →](../Visuals/UserInterface.md)**
 
 

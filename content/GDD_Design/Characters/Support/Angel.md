@@ -2,11 +2,6 @@
 title: "ANGEL - Sister Maria Santos"
 type: docs
 ---
-# ANGEL - Sister Maria Santos
-
-**[← Back to Support Class](./README.md)** | **[All Operators](../Operators.md)**
-
----
 
 ## Operator Profile
 
@@ -357,8 +352,5 @@ The Vatican quietly approached her afterward, offering training with Swiss Guard
 | Audio            | Ambient choir humming, impacts distinct |
 | Networking       | Shield HP synced, visual client-side    |
 
----
-
-**[← Back to Support Class](./README.md)** | **[All Operators](../Operators.md)**
 
 

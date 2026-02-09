@@ -2,11 +2,6 @@
 title: "Map Design: The Mire (Wilderness Zone)"
 type: docs
 ---
-# Map Design: The Mire (Wilderness Zone)
-
-**[← Back to Index](../../README.md)** | **[Next: Art Direction →](../../Visuals/ArtDirection.md)**
-
----
 
 ## 🗺️ Map Overview
 
@@ -127,8 +122,5 @@ Surviving nature requires specific skills:
 *   **Auditory Illusion:** Sounds carry differently in fog. Gunshots sound closer than they are.
 *   **Hazards:** Mutated leeches in water (Drain Stamina), Gas pockets.
 
----
-
-**[← Previous: Map Design (Neon Slums)](./MapDesign_NeonSlums.md)** | **[Index](../../README.md)** | **[Next: Art Direction →](../../Visuals/ArtDirection.md)**
 
 

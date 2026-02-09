@@ -2,11 +2,6 @@
 title: "Economy & Monetization Design"
 type: docs
 ---
-# Economy & Monetization Design
-
-**[← Previous: Progression](./Progression.md)** | **[Index](../README.md)** | **[Next: Live Ops →](./LiveOps.md)**
-
----
 
 ## Overview
 
@@ -526,8 +521,5 @@ This document defines the **monetization strategy, currency design, pricing stru
 | **Ethics**          | Transparent, responsible, compliant             |
 | **Goal**            | Sustainable revenue through player satisfaction |
 
----
-
-**[← Previous: Progression](./Progression.md)** | **[Index](../README.md)** | **[Next: Live Ops →](./LiveOps.md)**
 
 

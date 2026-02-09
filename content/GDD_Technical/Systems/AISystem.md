@@ -2,13 +2,6 @@
 title: "AI System - Technical Specification"
 type: docs
 ---
-# AI System - Technical Specification
-
-**[← Back to Index](../README.md)** | **[Next: Map System →](./MapSystem.md)**
-
-**Reference:** [High-Level AI Design](../../GDD_HighLevel/AI/EnemyBehavior.md)
-
----
 
 ## Overview
 
@@ -1035,8 +1028,5 @@ CLASS AIPoolManager:
 - [ ] Performance within budget (30 AI at 30 FPS)
 - [ ] Object pooling prevents GC spikes
 
----
-
-**[← Back to Index](../README.md)** | **[Next: Map System →](./MapSystem.md)**
 
 

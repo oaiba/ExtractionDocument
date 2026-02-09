@@ -2,17 +2,6 @@
 title: "Core Gameplay Loop & Progression"
 type: docs
 ---
-# Core Gameplay Loop & Progression
-
-**[← Back to Index](../README.md)** | **[Next: Loot Distribution](../World/LootDistribution.md)**
-
----
-
-# Core Gameplay Loop & Progression
-
-**[← Back to Index](../README.md)** | **[Next: Loot Distribution](../World/LootDistribution.md)**
-
----
 
 ## 🔁 The Extraction Loop (The "Cycle")
 
@@ -90,7 +79,5 @@ To prevent hyper-inflation (where everyone has the best gear), we use a strict F
 ### Dynamic Balancing (The "Invisible Hand")
 *   **Trader Barters:** If "Gunpowder" becomes too common/cheap, Traders will demand *more* Gunpowder for high-tier trades, artificially increasing demand.
 *   **Scarcity Events:** "Fuel Shortage" events reduce spawn rates of fuel, draining cash reserves as players panic-buy.
-
----
 
 

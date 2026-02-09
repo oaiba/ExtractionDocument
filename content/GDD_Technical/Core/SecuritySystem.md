@@ -2,11 +2,6 @@
 title: "Security System - Technical Specification"
 type: docs
 ---
-# Security System - Technical Specification
-
-**[← Back to Index](../README.md)** | **[Next: Analytics System →](../Systems/AnalyticsSystem.md)**
-
----
 
 ## Overview
 
@@ -152,8 +147,5 @@ STRUCT ViolationRecord:
 - [ ] Hardware HWID banning
 - [ ] Third-party anti-cheat integration (EAC/BattlEye)
 
----
-
-**[← Back to Index](../README.md)** | **[Next: Analytics System →](../Systems/AnalyticsSystem.md)**
 
 

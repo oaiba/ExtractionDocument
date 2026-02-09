@@ -2,11 +2,6 @@
 title: "Quest Lines - Mission System"
 type: docs
 ---
-# Quest Lines - Mission System
-
-**[← Back to Factions](./Factions.md)** | **[Index](../README.md)** | **[Next: Backstory →](./Backstory.md)**
-
----
 
 ## 📋 Quest System Overview
 
@@ -375,8 +370,5 @@ Reward: Story conclusion, "Memorial" skin, 10,000 Credits
 - Faction quests: Unlimited (gated by reputation)
 - Main Story: Sequential unlock
 
----
-
-**[← Back to Factions](./Factions.md)** | **[Index](../README.md)** | **[Next: Backstory →](./Backstory.md)**
 
 

@@ -2,11 +2,6 @@
 title: "HAVOC - Anton Petrov"
 type: docs
 ---
-# HAVOC - Anton Petrov
-
-**[← Back to Assault Class](./README.md)** | **[All Operators](../Operators.md)**
-
----
 
 ## Operator Profile
 
@@ -367,8 +362,5 @@ Kill 4+: Capped at 20 seconds
 | Damage Modifier | Applies before armor calculation       |
 | Sounds          | Rage growl synced to all players       |
 
----
-
-**[← Back to Assault Class](./README.md)** | **[All Operators](../Operators.md)**
 
 

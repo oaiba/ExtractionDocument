@@ -2,11 +2,6 @@
 title: "Weapon System - Technical Design Document"
 type: docs
 ---
-# Weapon System - Technical Design Document
-
-**[← Previous: Character System](./CharacterSystem.md)** | **[Index](../README.md)** | **[Next: Inventory System →](./InventorySystem.md)**
-
----
 
 ## Related Documents
 
@@ -1279,8 +1274,5 @@ SERVER-SIDE:
 └─────────────────┘  └─────────────────┘  └─────────────────┘
 ```
 
----
-
-**[← Previous: Character System](./CharacterSystem.md)** | **[Index](../README.md)** | **[Next: Inventory System →](./InventorySystem.md)**
 
 

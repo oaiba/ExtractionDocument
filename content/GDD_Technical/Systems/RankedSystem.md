@@ -2,13 +2,6 @@
 title: "Ranked System - Technical Specification"
 type: docs
 ---
-# Ranked System - Technical Specification
-
-**[← Back to Index](../README.md)** | **[Next: Localization System →](./LocalizationSystem.md)**
-
-**Reference:** [High-Level Ranked Design](../../GDD_HighLevel/GameDesign/RankedMode.md)
-
----
 
 ## Overview
 
@@ -376,8 +369,5 @@ STRUCT LeaderboardEntry:
 - [ ] Career statistics tracking
 - [ ] Pro league integration features
 
----
-
-**[← Back to Index](../README.md)** | **[Next: Localization System →](./LocalizationSystem.md)**
 
 

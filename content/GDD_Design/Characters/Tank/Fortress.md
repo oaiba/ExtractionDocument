@@ -2,11 +2,6 @@
 title: "FORTRESS - Dmitri Kozlov"
 type: docs
 ---
-# FORTRESS - Dmitri Kozlov
-
-**[← Back to Tank Class](./README.md)** | **[All Operators](../Operators.md)**
-
----
 
 ## Operator Profile
 
@@ -151,8 +146,5 @@ After refusing orders that would have sacrificed his men for political optics, D
 | **SPECTER** | Old military contacts                      |
 | **ANGEL**   | Debates faith, mutual respect              |
 
----
-
-**[← Back to Tank Class](./README.md)** | **[All Operators](../Operators.md)**
 
 

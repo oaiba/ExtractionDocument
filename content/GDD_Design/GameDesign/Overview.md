@@ -2,11 +2,6 @@
 title: "Game Overview & Design Foundation"
 type: docs
 ---
-# Game Overview & Design Foundation
-
-**[← Back to Index](../README.md)** | **[Next: Core Gameplay →](./CoreGameplay.md)**
-
----
 
 ## Executive Summary
 
@@ -1049,8 +1044,5 @@ Q4: Holiday events, major balance pass
 **Our Promise to Players:**
 > "Your time matters. Your choices matter. Your skill matters. We will never compromise the integrity of the game for short-term profit. Every update will respect the hardcore tactical vision."
 
----
-
-**[← Back to Index](../README.md)** | **[Next: Core Gameplay →](./CoreGameplay.md)**
 
 

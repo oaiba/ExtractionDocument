@@ -2,11 +2,6 @@
 title: "Faction Behaviors & Ecology"
 type: docs
 ---
-# Faction Behaviors & Ecology
-
-**[← Back to Index](../README.md)** | **[Enemy Behavior (Basics) →](./EnemyBehavior.md)** | **[AI Tech (Implementation) →](../../GDD_Technical/AI/SensorySystem.md)**
-
----
 
 ## 🏛️ The Faction Ecosystem
 
@@ -96,7 +91,5 @@ Aethelgard is not just Player vs. AI. It is a living world where factions have t
 3.  **Extraction Denial:**
     *   *Trigger:* Peacekeepers lock down an extraction zone due to "contamination".
     *   *Result:* Players must find another way out or fight through the blockade.
-
----
 
 

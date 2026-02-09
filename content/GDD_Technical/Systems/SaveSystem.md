@@ -2,13 +2,6 @@
 title: "Save System - Technical Specification"
 type: docs
 ---
-# Save System - Technical Specification
-
-**[← Back to Index](../README.md)** | **[Next: Tutorial System →](./TutorialSystem.md)**
-
-**Reference:** [High-Level Persistence Design](../../GDD_HighLevel/Technical/Persistence.md)
-
----
 
 ## Overview
 
@@ -1576,8 +1569,5 @@ STRUCT AutoSaveConfig:
 - [ ] Match state recovery works
 - [ ] Auto-save triggers correctly
 
----
-
-**[← Back to Index](../README.md)** | **[Next: Tutorial System →](./TutorialSystem.md)**
 
 

@@ -2,11 +2,6 @@
 title: "VIPER - Marcus Chen"
 type: docs
 ---
-# VIPER - Marcus Chen
-
-**[← Back to Assault Class](./README.md)** | **[All Operators](../Operators.md)**
-
----
 
 ## Operator Profile
 
@@ -336,8 +331,5 @@ After a classified operation in Eastern Europe went sideways, Marcus was left fo
 | Stim end    | Heartbeat slowdown + exhale  |
 | Footsteps   | Heavy, military boots        |
 
----
-
-**[← Back to Assault Class](./README.md)** | **[All Operators](../Operators.md)**
 
 

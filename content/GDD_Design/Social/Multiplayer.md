@@ -2,11 +2,6 @@
 title: "Social & Multiplayer Systems"
 type: docs
 ---
-# Social & Multiplayer Systems
-
-**[← Back to Index](../README.md)** | **[Next: Core Gameplay →](../GameDesign/CoreGameplay.md)**
-
----
 
 ## 🎯 Social Design Philosophy
 
@@ -509,8 +504,5 @@ We utilize **Epic Online Services** to provide a seamless multiplayer experience
 - Mentorship program
 - Community tournaments
 
----
-
-**[← Back to Index](../README.md)** | **[Next: Core Gameplay →](../GameDesign/CoreGameplay.md)**
 
 

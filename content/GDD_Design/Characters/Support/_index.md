@@ -4,11 +4,6 @@ linkTitle: "Support"
 type: docs
 weight: 1
 ---
-# Support Class - Team Lifelines
-
-**[← Back to Operators](../Operators.md)** | **[Characters Index](../README.md)**
-
----
 
 ## Class Overview
 
@@ -113,10 +108,6 @@ The **Support** class operators are the backbone of any team, keeping allies ali
 
 ## Support Operator Quick Links
 
-- 📄 [DOC - Dr. James Morrison](./Doc.md)
-- 📄 [ANGEL - Sister Maria Santos](./Angel.md)
 
----
 
-**[← Back to Operators](../Operators.md)** | **[Characters Index](../README.md)**
 

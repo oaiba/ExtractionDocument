@@ -2,11 +2,6 @@
 title: "Map Layouts - Detailed Map Configurations"
 type: docs
 ---
-# Map Layouts - Detailed Map Configurations
-
-**[← Back to World](./MapDesign.md)** | **[Index](../README.md)** | **[Next: Environmental Narrative →](./EnvironmentalNarrative.md)**
-
----
 
 ## 📍 Points of Interest (POI)
 
@@ -107,8 +102,5 @@ type: docs
 **Mid Game (5-10m):** Contesting hot zones, fighting for Supply drops, Peak PvP encounters
 **Late Game (10-15m):** Securing escape routes → Moving to Extraction Points
 
----
-
-**[← Back to World](./MapDesign.md)** | **[Index](../README.md)** | **[Next: Environmental Narrative →](./EnvironmentalNarrative.md)**
 
 

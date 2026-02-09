@@ -2,11 +2,6 @@
 title: "Performance Optimization"
 type: docs
 ---
-# Performance Optimization
-
-**[← Previous: Map System](../Systems/MapSystem.md)** | **[Technical Index](../README.md)** | **[Next: Development Roadmap →](../Core/DevelopmentRoadmap.md)**
-
----
 
 ## Overview
 
@@ -924,8 +919,5 @@ private:
 - [ ] Network bandwidth optimization
 - [ ] Custom performance dashboard
 
----
-
-**[← Previous: Map System](./07_MapSystem.md)** | **[Technical Index](./README.md)** | **[Next: Development Roadmap →](./09_DevelopmentRoadmap.md)**
 
 

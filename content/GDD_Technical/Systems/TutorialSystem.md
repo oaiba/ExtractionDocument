@@ -2,13 +2,6 @@
 title: "Tutorial System - Technical Specification"
 type: docs
 ---
-# Tutorial System - Technical Specification
-
-**[← Back to Index](../README.md)** | **[Next: Save System →](./SaveSystem.md)**
-
-**Reference:** [High-Level Tutorial Design](../../GDD_HighLevel/GameDesign/Tutorial.md)
-
----
 
 ## Overview
 
@@ -382,8 +375,5 @@ STRUCT FeatureUnlockRequirement:
 - [ ] Tutorial skip logic
 - [ ] Replay tutorial functionality
 
----
-
-**[← Back to Index](../README.md)** | **[Next: Save System →](./SaveSystem.md)**
 
 

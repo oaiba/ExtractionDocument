@@ -3,25 +3,6 @@ title: "GDD Design"
 type: docs
 ---
 
-<pre>
-██████╗ ███████╗███████╗██╗ ██████╗ ███╗   ██╗    ██╗  ██╗██╗   ██╗██████╗ 
-██╔══██╗██╔════╝██╔════╝██║██╔════╝ ████╗  ██║    ██║  ██║██║   ██║██╔══██╗
-██║  ██║█████╗  ███████╗██║██║  ███╗██╔██╗ ██║    ███████║██║   ██║██████╔╝
-██║  ██║██╔══╝  ╚════██║██║██║   ██║██║╚██╗██║    ██╔══██║██║   ██║██╔══██╗
-██████╔╝███████╗███████║██║╚██████╔╝██║ ╚████║    ██║  ██║╚██████╔╝██████╔╝
-╚═════╝ ╚══════╝╚══════╝╚═╝ ╚═════╝ ╚═╝  ╚═══╝    ╚═╝  ╚═╝ ╚═════╝ ╚═════╝ 
-                      [ EXTRACTION SHOOTER PROJECT ]
-</pre>
-
-# High-Level Game Design Document
-## Extraction Topdown Mobile Multiplayer
-
-**For:** Game Designers, Artists, 3D Artists, Level Designers, Sound Designers, UI/UX Designers
-
-**[← Back to Main](/)** | **[View Technical GDD →](/GDD_Technical/)**
-
----
-
 ## Purpose
 
 This document focuses on **game design, art direction, and player experience**. This is the primary reference for:
@@ -227,14 +208,7 @@ Risks, boundaries, and project management
 
 **Project Management:**
 - Project risks → [Risks](./ProjectScope/Risks.md)
-- What we won't build → [Non-Goals](./ProjectScope/NonGoals.md)
 
 **Deep Dives:**
-- Combat systems → [Weapons](./Combat/Weapons.md) + [Items](./Combat/Items.md)
-- Visual design → [Art Direction](./Visuals/ArtDirection.md) + [UI](./Visuals/UserInterface.md)
-- Progression → [Progression](./GameDesign/Progression.md)
-- Controls & UX → [Controls](./GameDesign/Controls.md)
 
----
 
-**[← Back to Main](/)** | **[View Technical GDD →](/GDD_Technical/)**

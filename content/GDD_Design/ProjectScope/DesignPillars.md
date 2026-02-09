@@ -2,15 +2,6 @@
 title: "Design Pillars & Core Philosophy"
 type: docs
 ---
-# Design Pillars & Core Philosophy
-
-**[← Back to Index](../README.md)**
-
----
-
-# Design Pillars & Core Philosophy
-
-**[← Back to Index](../README.md)**
 
 ## 🏗️ Genre Pillars (Extraction Shooter Core)
 
@@ -146,7 +137,5 @@ Use this checklist for every new feature request:
 *   **v1.2 (2026-02-09):** Unified Pillars to 'Five Core Pillars' and standardized world name to 'Aethelgard'.
 *   **v1.1 (2026-02-09):** Added "Genre Pillars" section based on industry research.
 *   **v1.0 (2026-02-07):** Initial philosophy definition.
-
----
 
 

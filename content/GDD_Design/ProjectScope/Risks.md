@@ -2,11 +2,6 @@
 title: "Project Risks & Mitigation"
 type: docs
 ---
-# Project Risks & Mitigation
-
-**[← Back to Index](../README.md)** | **[Next: Non-Goals →](./NonGoals.md)**
-
----
 
 ## ⚠️ Risk Management Philosophy
 
@@ -408,8 +403,5 @@ This document identifies potential risks to the project across:
 | Monthly   | Full risk matrix review with leadership        |
 | Quarterly | Risk retrospective and new risk identification |
 
----
-
-**[← Back to Index](../README.md)** | **[Next: Non-Goals →](./NonGoals.md)**
 
 

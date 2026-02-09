@@ -2,11 +2,6 @@
 title: "Non-Goals & Explicit Exclusions"
 type: docs
 ---
-# Non-Goals & Explicit Exclusions
-
-**[← Back to Index](../README.md)** | **[Next: Overview →](../GameDesign/Overview.md)**
-
----
 
 ## 🚫 Purpose of This Document
 
@@ -436,8 +431,5 @@ When facing choices, we prioritize:
 | Social media features  | Social       | ✅ Final    |
 | Real-money trading     | Social       | ✅ Red Line |
 
----
-
-**[← Back to Index](../README.md)** | **[Next: Overview →](../GameDesign/Overview.md)**
 
 

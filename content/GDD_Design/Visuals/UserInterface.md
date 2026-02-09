@@ -2,11 +2,6 @@
 title: "User Interface"
 type: docs
 ---
-# User Interface
-
-**[← Previous: Art Direction](./ArtDirection.md)** | **[Index](../README.md)** | **[Next: Sound Design →](../Audio/SoundDesign.md)**
-
----
 
 ## UI Design Philosophy
 
@@ -768,8 +763,5 @@ Player3 💀  You             (Bottom, oldest)
 - One-handed mode (future)
 - External controller support
 
----
-
-**[← Previous: Audio Design](./06_AudioDesign.md)** | **[High-Level Index](./README.md)** | **[Next: Progression →](./08_Progression.md)**
 
 

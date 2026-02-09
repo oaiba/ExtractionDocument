@@ -2,11 +2,6 @@
 title: "Story & Narrative Design"
 type: docs
 ---
-# Story & Narrative Design
-
-**[← Back to Index](../README.md)** | **[Next: Characters →](../Characters/Operators.md)**
-
----
 
 ## 📖 Narrative Philosophy
 
@@ -529,8 +524,5 @@ Now: Uses skills for survival, seeking redemption
 - Expanded operator backstories
 - Community-driven lore content
 
----
-
-**[← Back to Index](../README.md)** | **[Next: Characters →](../Characters/Operators.md)**
 
 

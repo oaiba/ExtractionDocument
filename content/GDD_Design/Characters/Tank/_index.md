@@ -4,11 +4,6 @@ linkTitle: "Tank"
 type: docs
 weight: 1
 ---
-# Tank Class - Frontline Defenders
-
-**[← Back to Operators](../Operators.md)** | **[Characters Index](../README.md)**
-
----
 
 ## Class Overview
 
@@ -44,10 +39,6 @@ The **Tank** class operators absorb damage and protect teammates. They excel at 
 
 ## Tank Operator Quick Links
 
-- 📄 [BULWARK - Hans Richter](./Bulwark.md)
-- 📄 [FORTRESS - Dmitri Kozlov](./Fortress.md)
 
----
 
-**[← Back to Operators](../Operators.md)** | **[Characters Index](../README.md)**
 

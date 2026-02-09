@@ -2,11 +2,6 @@
 title: "AI Sensory System & Perception"
 type: docs
 ---
-# AI Sensory System & Perception
-
-**[← Back to Index](../README.md)** | **[Faction Behaviors (Design) →](../../GDD_Design/AI/FactionBehaviors.md)**
-
----
 
 ## 👂 The "Fair" AI Principle
 
@@ -110,7 +105,5 @@ AI agents share information within a squad radius (20m).
 | **LOD 2** | > 60m | Every 2.0s (0.5Hz) or Disabled |
 
 *   **Sense Deactivation:** Disable Sight/Hearing if AI is not rendered and > 200m from any player.
-
----
 
 

@@ -4,11 +4,6 @@ linkTitle: "Specialist"
 type: docs
 weight: 1
 ---
-# Specialist Class - Tech Disruptors
-
-**[← Back to Operators](../Operators.md)** | **[Characters Index](../README.md)**
-
----
 
 ## Class Overview
 
@@ -44,10 +39,6 @@ The **Specialist** class operators bring utility and disruption to the battlefie
 
 ## Specialist Operator Quick Links
 
-- 📄 [CIPHER - Alex Nakamura](./Cipher.md)
-- 📄 [FLUX - Maya Okonkwo](./Flux.md)
 
----
 
-**[← Back to Operators](../Operators.md)** | **[Characters Index](../README.md)**
 

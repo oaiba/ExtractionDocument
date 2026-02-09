@@ -2,11 +2,6 @@
 title: "Map Design: Industrial Zone (The \"Factory\")"
 type: docs
 ---
-# Map Design: Industrial Zone (The "Factory")
-
-**[← Back to Index](../../README.md)** | **[Next: Art Direction →](../../Visuals/ArtDirection.md)**
-
----
 
 ## 🗺️ Map Overview
 
@@ -157,8 +152,5 @@ Extraction shooters live and die by their Choke Points - areas where players are
 *   **Phase 2:** The "Lab" opens. New Boss added.
 *   **Phase 3:** Dynamic Event - "Chemical Leak" floods the lower tunnels, forcing players to high ground.
 
----
-
-**[← Previous: Operators](../Characters/Operators.md)** | **[Index](../../README.md)** | **[Next: Art Direction →](../../Visuals/ArtDirection.md)**
 
 

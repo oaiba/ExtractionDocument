@@ -16,6 +16,8 @@ params:
     type: flexsearch
     flexsearch:
       index: content
+  footer:
+    displayPoweredBy: false
 
 menu:
   main:

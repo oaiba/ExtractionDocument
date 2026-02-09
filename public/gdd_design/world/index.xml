@@ -1,0 +1,2637 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Extraction Document – World</title>
+    <link>http://localhost:1313/gdd_design/world/index.html</link>
+    <description>Recent content in World on Extraction Document</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	  <atom:link href="http://localhost:1313/gdd_design/world/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/gdd_design/world/environmentalnarrative.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/gdd_design/world/environmentalnarrative.html</guid>
+      <description>
+        
+        
+        &lt;h1&gt;Environmental Narrative - Storytelling Through Environment&lt;/h1&gt;&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;./MapLayouts.md&#34;&gt;← Back to Map Layouts&lt;/a&gt;&lt;/strong&gt; | &lt;strong&gt;&lt;a href=&#34;../README.md&#34;&gt;Index&lt;/a&gt;&lt;/strong&gt; | &lt;strong&gt;&lt;a href=&#34;./LootDistribution.md&#34;&gt;Next: Loot Distribution →&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2&gt;🎭 Environmental Storytelling Philosophy&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-environmental-storytelling-philosophy&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-environmental-storytelling-philosophy&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;Principle:&lt;/strong&gt; The world tells the story itself - no need for lengthy cutscenes.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Methods:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Visual clues (traces, items, graffiti)&lt;/li&gt;
+&lt;li&gt;Audio logs (short recordings 30-60s)&lt;/li&gt;
+&lt;li&gt;Environmental contrasts&lt;/li&gt;
+&lt;li&gt;Implied history through decay&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2&gt;🏭 Industrial Decay - Regional Stories&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-industrial-decay---regional-stories&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-industrial-decay---regional-stories&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;Reactor Tower - &amp;ldquo;The Meltdown&amp;rdquo;&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;reactor-tower---the-meltdown&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#reactor-tower---the-meltdown&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Lore Background:&lt;/strong&gt;
+Year 2029, the Power Plant was operating normally. When The Collapse occurred, the cooling system was hacked. Workers attempted a manual shutdown, but the radiation leak had already spread.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Environmental Traces:&lt;/strong&gt;&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Location&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Trace&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Implication&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Floor 1&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Worker corpses in protective suits&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Attempted manual shutdown&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Floor 2&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Barricade made of equipment&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Workers trapped above&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Floor 3&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Control panels destroyed&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Sabotage or panic&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Basement&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Bloodtrail leading to tunnel&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Survivors escaped&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;strong&gt;Audio Log #1: &amp;ldquo;Final Shift&amp;rdquo;&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;em&gt;&amp;ldquo;This is Foreman Lee&amp;hellip; Day 3 after the lockdown. The radiation is rising. We sealed the lower levels but&amp;hellip; [static] &amp;hellip;Martinez didn&amp;rsquo;t make it. If anyone finds this, the emergency tunnel leads to the workshops. Don&amp;rsquo;t trust the—&amp;rdquo; [cut off]&lt;/em&gt;&lt;/p&gt;
+
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Visual Details:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Clock stopped at 3:47 AM&lt;/li&gt;
+&lt;li&gt;Wall calendar: March 15, 2031&lt;/li&gt;
+&lt;li&gt;Emergency lights still flickering (separate generator)&lt;/li&gt;
+&lt;li&gt;Radiation warning signs freshly painted in red&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3&gt;Tech Labs - &amp;ldquo;Project Prometheus&amp;rdquo;&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;tech-labs---project-prometheus&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#tech-labs---project-prometheus&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Lore Background:&lt;/strong&gt;
+Secret research facility of Nexus Corporation. They were developing &amp;ldquo;Prometheus&amp;rdquo; - AI technology for human enhancement. The Outbreak might be related to escaped test subjects.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Environmental Traces:&lt;/strong&gt;&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Building&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Trace&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Implication&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Lab Alpha&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Cages broken from the inside&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Test subjects escaped&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Lab Beta&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Research notes burnt&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Cover-up attempt&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Lab Gamma&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Bodies in hazmat suits&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Containment failed&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;strong&gt;Audio Log #2: &amp;ldquo;Dr. Chen&amp;rsquo;s Warning&amp;rdquo;&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;em&gt;&amp;ldquo;Log 847. The Prometheus subjects are showing&amp;hellip; unexpected behavior. Enhanced aggression, reduced pain response. I&amp;rsquo;ve recommended immediate termination but Director Park insists we continue. If this gets out&amp;hellip; God help us all.&amp;rdquo;&lt;/em&gt;&lt;/p&gt;
+
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Visual Details:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&amp;ldquo;SUBJECT 7&amp;rdquo; graffiti in dried blood&lt;/li&gt;
+&lt;li&gt;Broken glass from inside the cell&lt;/li&gt;
+&lt;li&gt;Medical equipment intentionally destroyed&lt;/li&gt;
+&lt;li&gt;Vaccine vials scattered (quest item hint)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3&gt;Warehouse District - &amp;ldquo;The Smugglers&amp;rsquo; Haven&amp;rdquo;&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;warehouse-district---the-smugglers-haven&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#warehouse-district---the-smugglers-haven&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Lore Background:&lt;/strong&gt;
+After The Collapse, the warehouse became a hub for smuggling. The Underground Network used to base here before moving.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Environmental Traces:&lt;/strong&gt;&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Warehouse&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Trace&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Implication&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;W1&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Vehicle under repair&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Escape attempt&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;W2&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Hidden weapon cache&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Smuggler stash&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;W3&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Medical supply boxes&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Aid distribution&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;W4&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Smashed electronics&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Rage or looting&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;W5&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Sleeping bags, canned food&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Survivor camp&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;W6&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Hazmat equipment&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Contamination warning&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;strong&gt;Audio Log #3: &amp;ldquo;Broker&amp;rsquo;s Message&amp;rdquo;&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;em&gt;&amp;ldquo;To anyone listening on frequency 7: The Network is moving operations. Too much heat from Peacekeepers. If you need supplies, check W2 - leave something useful in exchange. Fair trades keep us alive. Remember: Trust no one, but trust us less.&amp;rdquo;&lt;/em&gt;&lt;/p&gt;
+
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;h3&gt;Office Complex - &amp;ldquo;Corporate Collapse&amp;rdquo;&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;office-complex---corporate-collapse&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#office-complex---corporate-collapse&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Lore Background:&lt;/strong&gt;
+Regional headquarters of Nexus Corp. When everything fell apart, executives tried to evacuate via the roof helipad - unsuccessfully.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Environmental Traces:&lt;/strong&gt;&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Floor&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Trace&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Implication&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;5F&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Helicopter crashed on roof&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Failed evacuation&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;4F&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Computers still on, data wiping&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Cover-up incomplete&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;3F&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Family photos, personal items&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Workers fled fast&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;2F&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Broken safes&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Looting aftermath&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;1F&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Barricades, bullet holes&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Someone made a stand&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;strong&gt;Audio Log #4: &amp;ldquo;Last Executive&amp;rdquo;&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;em&gt;&amp;ldquo;This is CFO Thompson. The helicopter is not coming. Park&amp;hellip; that bastard took the only evac for himself and his family. The rest of us are expendable. Security is breaking down&amp;hellip; I can hear them in the stairwell. To my wife: I&amp;rsquo;m sorry. The vault code is—&amp;rdquo; [gunfire, static]&lt;/em&gt;&lt;/p&gt;
+
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;h2&gt;🩸 Bloodstain Storytelling Guide&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-bloodstain-storytelling-guide&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-bloodstain-storytelling-guide&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;Bloodstain Types &amp;amp; Meanings&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;bloodstain-types--meanings&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#bloodstain-types--meanings&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Type&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Visual&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Story Implication&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Splatter&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Radial pattern&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Violence, gunfire&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Pool&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Large static puddle&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Body rested here&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Drag Mark&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Linear streak&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Body moved&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Handprint&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Palm on wall&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Wounded person walking&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Footprints&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Bloody shoe marks&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Walker through blood&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3&gt;Placement Guidelines&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;placement-guidelines&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#placement-guidelines&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;DO:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Lead to loot locations (reward exploration)&lt;/li&gt;
+&lt;li&gt;Create implied narratives&lt;/li&gt;
+&lt;li&gt;Vary from old (brown) to recent (red)&lt;/li&gt;
+&lt;li&gt;Connect to audio logs&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;DON&amp;rsquo;T:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Excessive gore without purpose&lt;/li&gt;
+&lt;li&gt;Random placement&lt;/li&gt;
+&lt;li&gt;Near spawn areas (immersion break)&lt;/li&gt;
+&lt;li&gt;Child-related violence&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2&gt;🎨 Atmospheric Design Per Zone&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-atmospheric-design-per-zone&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-atmospheric-design-per-zone&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;Industrial Decay Atmosphere Palette&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;industrial-decay-atmosphere-palette&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#industrial-decay-atmosphere-palette&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Zone&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Light&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Sound&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Mood&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Reactor&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Red emergency, flickering&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Geiger counter, dripping&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Dread, urgency&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Labs&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Clinical white, broken&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Machinery hum, alarms&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Unease, mystery&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Warehouse&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Natural (holes in roof)&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Wind, metal creaking&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Isolation&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Office&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Dim, monitors glow&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Static, distant gunfire&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Abandonment&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Forest&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Dappled sunlight&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Birds, leaves&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Relief (deceptive)&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr&gt;
+&lt;h2&gt;📜 Graffiti &amp;amp; Environmental Text&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-graffiti--environmental-text&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-graffiti--environmental-text&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;Graffiti Categories&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;graffiti-categories&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#graffiti-categories&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Survivor Messages:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&amp;ldquo;DAY 47 - NO HELP COMING&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;&amp;ldquo;WATER IS SAFE - FOOD IS NOT&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;&amp;ldquo;PEACEKEEPERS = MURDERERS&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;&amp;ldquo;THE BROKER KNOWS&amp;rdquo;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Faction Tags:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;⚙️ Salvage Corps gear symbol&lt;/li&gt;
+&lt;li&gt;👁️ Tech Syndicate eye pattern&lt;/li&gt;
+&lt;li&gt;🤝 Underground Network hands&lt;/li&gt;
+&lt;li&gt;🛡️ Peacekeepers shield&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Warning Signs:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&amp;ldquo;RADIATION - DO NOT ENTER&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;&amp;ldquo;SCAVS AHEAD&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;&amp;ldquo;TRAP - GO AROUND&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;&amp;ldquo;DEAD END&amp;rdquo;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2&gt;🔊 Audio Log Distribution&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-audio-log-distribution&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-audio-log-distribution&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;Per Map Allocation&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;per-map-allocation&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#per-map-allocation&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Map&lt;/th&gt;
+          &lt;th style=&#34;text-align: center&#34;&gt;Total Logs&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Faction Focus&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Themes&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Industrial Decay&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;15&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Mixed&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Origin of Collapse&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Urban Ruins&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;12&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Survivors&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Daily survival&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Military Base&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;10&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Peacekeepers&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Final orders&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3&gt;Audio Log Template&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;audio-log-template&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#audio-log-template&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;[LOG ID]: [Title]
+Speaker: [Name, Role]
+Duration: 30-60 seconds
+Location: [Specific POI]
+Trigger: Interact with [Object]
+
+---
+Script:
+[30-60 second monologue with environmental sounds]
+---
+
+Lore Revealed:
+- [Point 1]
+- [Point 2]
+
+Quest Connection: [If applicable]&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;hr&gt;
+&lt;h2&gt;🎯 Environmental Puzzle Hints&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-environmental-puzzle-hints&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-environmental-puzzle-hints&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;Hidden Loot Clues&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;hidden-loot-clues&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#hidden-loot-clues&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Pattern:&lt;/strong&gt; Environmental details hint at nearby secrets.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Examples:&lt;/strong&gt;&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Clue&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Location&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Secret&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Arrow graffiti&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Warehouse W5&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Hidden floor cache&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Scratched wall numbers&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Office 3F&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Safe code nearby&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Candles lit in circle&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Lab basement&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Special item spawn&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Fresh bloodtrail&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Any&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Recent PvP happened here&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;./MapLayouts.md&#34;&gt;← Back to Map Layouts&lt;/a&gt;&lt;/strong&gt; | &lt;strong&gt;&lt;a href=&#34;../README.md&#34;&gt;Index&lt;/a&gt;&lt;/strong&gt; | &lt;strong&gt;&lt;a href=&#34;./LootDistribution.md&#34;&gt;Next: Loot Distribution →&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/gdd_design/world/environmentalnarrative_guidelines.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/gdd_design/world/environmentalnarrative_guidelines.html</guid>
+      <description>
+        
+        
+        &lt;h1&gt;Environmental Narrative Guidelines: &amp;ldquo;Show, Don&amp;rsquo;t Tell&amp;rdquo;&lt;/h1&gt;&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;../README.md&#34;&gt;← Back to Index&lt;/a&gt;&lt;/strong&gt; | &lt;strong&gt;&lt;a href=&#34;./Visual_Style.md&#34;&gt;Visual Style&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2&gt;🏛️ The Silent Storyteller&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-the-silent-storyteller&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-the-silent-storyteller&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Our world, Aethelgard, is dead. There are no safe zones for NPCs to give quests. The &lt;em&gt;environment&lt;/em&gt; must be the primary method of delivering lore and plot.&lt;/p&gt;
+&lt;h3&gt;Core Principle: &amp;ldquo;The Aftermath&amp;rdquo;&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;core-principle-the-aftermath&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#core-principle-the-aftermath&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Every location should look like something &lt;em&gt;happened&lt;/em&gt; there right before the player arrived. Avoid static, perfect presets.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2&gt;🔍 Narrative Layers&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-narrative-layers&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-narrative-layers&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;Layer 1: The Panic (Immediate Past)&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;layer-1-the-panic-immediate-past&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#layer-1-the-panic-immediate-past&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;em&gt;Shows the moment society collapsed.&lt;/em&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Asset:&lt;/strong&gt; Suitcases spilled open on a highway.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Implication:&lt;/strong&gt; People fled in a hurry.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Asset:&lt;/strong&gt; Half-eaten meals on a restaurant table.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Implication:&lt;/strong&gt; The disaster struck instantly, unexpectedly.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Asset:&lt;/strong&gt; Cars crashed into barricades, not just parked.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Implication:&lt;/strong&gt; Drivers were desperate or terrified.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Layer 2: The Struggle (Recent Past)&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;layer-2-the-struggle-recent-past&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#layer-2-the-struggle-recent-past&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;em&gt;Shows survivors trying to live in the ruins.&lt;/em&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Asset:&lt;/strong&gt; A mattress in a bank vault.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Implication:&lt;/strong&gt; Someone thought money would keep them safe, or the thick walls were shelter.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Asset:&lt;/strong&gt; Rain collectors made of tarps.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Implication:&lt;/strong&gt; Water systems failed; desperation set in.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Asset:&lt;/strong&gt; Makeshift graves in a playground.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Implication:&lt;/strong&gt; High casualties; no space or time for proper burial.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Layer 3: The Decay (Present)&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;layer-3-the-decay-present&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#layer-3-the-decay-present&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;em&gt;Shows nature reclaiming the world.&lt;/em&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Asset:&lt;/strong&gt; Trees growing through office floors.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Implication:&lt;/strong&gt; It&amp;rsquo;s been years, not days.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Asset:&lt;/strong&gt; Rust streaks dripping down concrete.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Implication:&lt;/strong&gt; Maintenance stopped long ago.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Asset:&lt;/strong&gt; Animals nesting in vehicle engines.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Implication:&lt;/strong&gt; Wildlife no longer fears machinery.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2&gt;🖼️ &amp;ldquo;Micro-Stories&amp;rdquo; (Vignettes)&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-micro-stories-vignettes&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-micro-stories-vignettes&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Create small, self-contained scenes (dioramas) within the larger level.&lt;/p&gt;
+&lt;h3&gt;Example A: The Last Stand&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;example-a-the-last-stand&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#example-a-the-last-stand&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Setting:&lt;/strong&gt; A bathroom stall in a subway station.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Props:&lt;/strong&gt; A skeleton clutching a revolver. One spent casing on the floor. Door barricaded from the inside.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Story:&lt;/strong&gt; A survivor hid here, heard the monsters coming, realized escape was impossible, and took their own way out. NO TEXT LOG NEEDED.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Example B: The Deal Gone Wrong&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;example-b-the-deal-gone-wrong&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#example-b-the-deal-gone-wrong&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Setting:&lt;/strong&gt; An alleyway behind a pharmacy.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Props:&lt;/strong&gt; Two skeletons facing each other. A duffel bag of meds between them. Both have knives in their chests.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Story:&lt;/strong&gt; A trade turned violent. Greed killed both parties. The loot (meds) is still there for the player.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Example C: The Hopeless Signal&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;example-c-the-hopeless-signal&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#example-c-the-hopeless-signal&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Setting:&lt;/strong&gt; A rooftop with a generator and radio tower.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Props:&lt;/strong&gt; &amp;ldquo;SOS&amp;rdquo; painted in white on the roof. The generator is out of fuel. A skeleton sits by the radio, headphones on.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Story:&lt;/strong&gt; Someone waited for rescue that never came.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2&gt;📦 Loot Logic (Diegetic Placement)&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-loot-logic-diegetic-placement&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-loot-logic-diegetic-placement&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Loot must make sense in its context. This rewards players who &lt;em&gt;read&lt;/em&gt; the environment.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Medical Loot:&lt;/strong&gt; DO NOT put medkits in random wooden crates. Put them in:
+&lt;ul&gt;
+&lt;li&gt;Ambulances&lt;/li&gt;
+&lt;li&gt;Bathrooms (cabinets)&lt;/li&gt;
+&lt;li&gt;Triage tents&lt;/li&gt;
+&lt;li&gt;Offices (First Aid wall boxes)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Weapon Parts:&lt;/strong&gt; found on workbenches, gun store ruins, police trunks.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Food:&lt;/strong&gt; Kitchens, supermarkets, vending machines (broken).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2&gt;🔦 Lighting as Narrative&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-lighting-as-narrative&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-lighting-as-narrative&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Use lighting to highlight these stories, but also to set the emotional tone.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Red Light:&lt;/strong&gt; Danger, emergency, &amp;ldquo;Do Not Enter&amp;rdquo;. (Naturally attracts players due to curiosity).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Green Light:&lt;/strong&gt; Safety, medical, &amp;ldquo;Exit&amp;rdquo;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Flickering Light:&lt;/strong&gt; Instability, recent damage, tension. (e.g., A light flickering near a vent suggests something is moving inside the vent).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2&gt;🚫 Narrative Anti-Patterns&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-narrative-anti-patterns&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-narrative-anti-patterns&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Written Notes everywhere:&lt;/strong&gt; Avoid &amp;ldquo;My Dearest Diary&amp;hellip;&amp;rdquo; pages scattered in illogical places. Use environmental clues first.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Blood without a Body:&lt;/strong&gt; If there is a massive blood trail, it must lead &lt;em&gt;somewhere&lt;/em&gt; (a body, a drag mark, a monster den). It cannot just end at a wall.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Perfect Skeletons:&lt;/strong&gt; Skeletons should be disarticulated, scavenged by animals, or crushed. Avoid the &amp;ldquo;Halloween Prop&amp;rdquo; look.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/gdd_design/world/lootdistribution.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/gdd_design/world/lootdistribution.html</guid>
+      <description>
+        
+        
+        &lt;h1&gt;Loot Distribution&lt;/h1&gt;&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;./EnvironmentalNarrative.md&#34;&gt;← Back to Environmental Narrative&lt;/a&gt;&lt;/strong&gt; | &lt;strong&gt;&lt;a href=&#34;../README.md&#34;&gt;Index&lt;/a&gt;&lt;/strong&gt; | &lt;strong&gt;&lt;a href=&#34;../Story/Factions.md&#34;&gt;Next: Story →&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2&gt;📊 Overall Heat Map&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-overall-heat-map&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-overall-heat-map&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;Industrial Decay - Loot Heat Map&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;industrial-decay---loot-heat-map&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#industrial-decay---loot-heat-map&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;     NORTH
+       ↑
+       │   ⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜
+       │   ⬜⬜🟢🟢🟢🟡🟡🟡🟡🟢🟢🟢⬜⬜⬜⬜  ← Edge (Low Loot)
+       │   ⬜🟢🟢🟡🟡[OFFICE]🟡🟡🟢🟢⬜⬜⬜⬜
+       │   ⬜🟢🟡🟡🟠🟠🟠🟠🟠🟡🟡🟢⬜⬜⬜⬜  ← Mid (Moderate)
+       │   ⬜🟡[WARE]🟠🔴🔴🔴🔴🟠[LABS]🟡⬜⬜
+       │   ⬜🟡🟠🟠🔴🟣🟣🟣🔴🟠🟠🟡⬜⬜⬜⬜  ← Hot (High)
+       │   ⬜🟡🟠🟠🔴[REACTOR]🔴🟠🟠🟡⬜⬜⬜⬜  ← Extreme
+       │   ⬜🟡🟠🟠🔴🟣🟣🟣🔴🟠🟠🟡⬜⬜⬜⬜
+       │   ⬜🟡[WORK]🟠🔴🔴🔴🔴🟠[WATER]🟡⬜
+       │   ⬜🟢🟡🟡🟠🟠🟠🟠🟠🟡🟡🟢⬜⬜⬜⬜
+       │   ⬜🟢🟢🟡🟡🟡🟡🟡🟡🟡🟢🟢⬜⬜⬜⬜
+       │   ⬜⬜🟢🟢🟢🟢🟢🟢🟢🟢🟢⬜⬜⬜⬜⬜
+       └──────────────────────────────────→
+     SOUTH                              EAST
+
+Legend:
+🟣 = S-Tier (Legendary/Epic guaranteed)
+🔴 = A-Tier (Rare/Epic chance)
+🟠 = B-Tier (Uncommon/Rare)
+🟡 = C-Tier (Common/Uncommon)
+🟢 = D-Tier (Common only)
+⬜ = Out of bounds&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;hr&gt;
+&lt;h2&gt;🎯 Zone-Based Distribution&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-zone-based-distribution&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-zone-based-distribution&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Zone Type&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Loot Tier&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Spawn Rate&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Risk Level&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Edge Zone&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;D-C Tier&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;15%&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;🟢 Low&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Mid Zone&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;C-B Tier&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;35%&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;🟡 Medium&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Hot Zone&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;B-A Tier&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;35%&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;🟠 High&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Core Zone&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;A-S Tier&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;15%&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;🔴 Extreme&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr&gt;
+&lt;h2&gt;💎 Rarity Distribution&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-rarity-distribution&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-rarity-distribution&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;Overall Map Distribution&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;overall-map-distribution&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#overall-map-distribution&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Rarity&lt;/th&gt;
+          &lt;th style=&#34;text-align: center&#34;&gt;% Total Loot&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Location Focus&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Common&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;45%&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Edge, Mid zones&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Uncommon&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;30%&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Mid zones&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Rare&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;15%&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Hot zones&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Epic&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;8%&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Core, Boss drops&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Legendary&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;2%&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Random cache, Boss&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3&gt;Container Types &amp;amp; Contents&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;container-types--contents&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#container-types--contents&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Container&lt;/th&gt;
+          &lt;th style=&#34;text-align: center&#34;&gt;Symbol&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Locations&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Contents&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Basic Crate&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;📦&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Everywhere&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Common items, ammo&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Military Locker&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;🗄️&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Mid, Hot&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Uncommon weapons&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Rare Safe&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;🔐&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Hot zones&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Rare gear (lockpick)&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Epic Vault&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;🏦&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Core only&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Epic items (keycard)&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Legendary Cache&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;⭐&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Random&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Legendary guaranteed&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr&gt;
+&lt;h2&gt;🗺️ POI Loot Tables&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-poi-loot-tables&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-poi-loot-tables&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;Reactor Tower (S-Tier Location)&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;reactor-tower-s-tier-location&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#reactor-tower-s-tier-location&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Floor&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Container Types&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Loot Focus&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Notes&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Rooftop&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;1x Military&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Optics, ammo&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Sniper spot&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Floor 3&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;2x Epic Vault&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Best weapons&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Boss room&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Floor 2&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;4x Military&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Attachments&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Catwalks&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Floor 1&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;1x Legendary Cache&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;High-tier&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Radiation zone&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Basement&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;2x Rare Safe&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Medical&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Escape route&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3&gt;Tech Labs (A-Tier Location)&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;tech-labs-a-tier-location&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#tech-labs-a-tier-location&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Building&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Containers&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Loot Focus&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Lab Alpha&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;3x Rare Safe&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Quest items, Data&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Lab Beta&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;2x Epic Vault&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Prototype weapons&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Lab Gamma&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;4x Military&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Medical, Chemicals&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3&gt;Warehouse District (B-Tier Location)&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;warehouse-district-b-tier-location&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#warehouse-district-b-tier-location&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Warehouse&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Containers&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Loot Focus&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;W1&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;2x Military&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Vehicle parts&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;W2&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;3x Military&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Weapons cache&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;W3&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;4x Basic&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Medical supplies&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;W4&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;2x Rare Safe&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Electronics&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;W5&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;3x Basic&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Materials&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;W6&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;1x Epic Vault&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Hazmat gear&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr&gt;
+&lt;h2&gt;👤 Player Skill-Based Routes&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-player-skill-based-routes&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-player-skill-based-routes&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;🟢 Newbie Route (Low Risk)&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-newbie-route-low-risk&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-newbie-route-low-risk&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;Start → Edge Zone → Safe POIs → Early Extract
+
+Recommended Path:
+1. Spawn area (2-3 basic crates)
+2. Guard Shacks (ammo, keys)
+3. Warehouse W3/W5 (safe loot)
+4. Gate 03 extraction
+
+Expected Loot: 5-10k value
+Time: 5-8 minutes
+Risk: Low (avoid center)&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h3&gt;🟡 Intermediate Route (Balanced)&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-intermediate-route-balanced&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-intermediate-route-balanced&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;Start → Mid Zone → Moderate POIs → Mid Extract
+
+Recommended Path:
+1. Quick spawn loot
+2. Warehouses W1-W2 (weapons)
+3. Office Complex (Intel items)
+4. Helipad or Convoy extraction
+
+Expected Loot: 15-30k value
+Time: 10-12 minutes
+Risk: Medium (PvP possible)&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h3&gt;🔴 Veteran Route (High Risk/Reward)&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-veteran-route-high-riskreward&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-veteran-route-high-riskreward&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;Start → Hot Zone → Boss → Premium Extract
+
+Recommended Path:
+1. Rush to Bridge
+2. Tech Labs (quest items)
+3. Reactor Tower (Boss fight)
+4. Floor 3 Epic Vaults
+5. Helipad extraction
+
+Expected Loot: 50-100k&amp;#43; value
+Time: Full match (15 min)
+Risk: Extreme (guaranteed PvP)&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;hr&gt;
+&lt;h2&gt;📈 Loot Spawn Timing&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-loot-spawn-timing&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-loot-spawn-timing&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;Dynamic Loot Events&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;dynamic-loot-events&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#dynamic-loot-events&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Time&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Event&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Loot Impact&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;0:00&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Match Start&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;All containers active&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;5:00&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Supply Drop 1&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;A-Tier loot lands&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;10:00&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Supply Drop 2&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;S-Tier loot lands&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;12:00&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Contamination&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Edge loot inaccessible&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr&gt;
+&lt;h2&gt;🎲 Loot Table Examples&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-loot-table-examples&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-loot-table-examples&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;Military Locker&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;military-locker&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#military-locker&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Item Type&lt;/th&gt;
+          &lt;th style=&#34;text-align: center&#34;&gt;% Chance&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Examples&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Ammo&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;40%&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;30-60 rounds&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Weapons&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;25%&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Uncommon tier&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Armor&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;20%&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Vest, Helmet&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Medical&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;15%&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Bandage, Medkit&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3&gt;Epic Vault&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;epic-vault&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#epic-vault&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Item Type&lt;/th&gt;
+          &lt;th style=&#34;text-align: center&#34;&gt;% Chance&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Examples&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Weapons&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;35%&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Epic tier&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Attachments&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;25%&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Rare scopes&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Quest Items&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;20%&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Keycards&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Valuables&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;20%&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;High sell value&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr&gt;
+&lt;h2&gt;📊 Balance Metrics&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-balance-metrics&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-balance-metrics&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;Target Distribution KPIs&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;target-distribution-kpis&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#target-distribution-kpis&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Metric&lt;/th&gt;
+          &lt;th style=&#34;text-align: center&#34;&gt;Target&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Purpose&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Avg loot/player&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;15-25k&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Reward skilled play&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Extraction rate&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;40-50%&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Challenging but fair&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Hot zone deaths&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;50%&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Risk matches reward&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;./EnvironmentalNarrative.md&#34;&gt;← Back to Environmental Narrative&lt;/a&gt;&lt;/strong&gt; | &lt;strong&gt;&lt;a href=&#34;../README.md&#34;&gt;Index&lt;/a&gt;&lt;/strong&gt; | &lt;strong&gt;&lt;a href=&#34;../Story/Factions.md&#34;&gt;Next: Story →&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/gdd_design/world/mapdesign.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/gdd_design/world/mapdesign.html</guid>
+      <description>
+        
+        
+        &lt;h1&gt;World &amp;amp; Map Design&lt;/h1&gt;&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;../Characters/Operators.md&#34;&gt;← Previous: Operators&lt;/a&gt;&lt;/strong&gt; | &lt;strong&gt;&lt;a href=&#34;../README.md&#34;&gt;Index&lt;/a&gt;&lt;/strong&gt; | &lt;strong&gt;&lt;a href=&#34;../Visuals/ArtDirection.md&#34;&gt;Next: Art Direction →&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2&gt;Map Design Philosophy&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;map-design-philosophy&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#map-design-philosophy&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;Core Principles:&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Readability&lt;/strong&gt; - Top-down perspective requires clear visual hierarchy.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Tactical Depth&lt;/strong&gt; - Multiple routes, cover options, and vertical elements.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Risk vs Reward&lt;/strong&gt; - Loot quality scales with danger level.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Memorable Landmarks&lt;/strong&gt; - Facilitates easy navigation and team callouts.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;h2&gt;Extraction-Shooter Specifics&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;extraction-shooter-specifics&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#extraction-shooter-specifics&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Primary and secondary design factors adapted for the extraction genre, directly influencing zone layouts.&lt;/p&gt;
+&lt;h3&gt;Primary Factors&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;primary-factors&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#primary-factors&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Verticality&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Definition:&lt;/strong&gt; How height and layers affect play, visibility, and flanking.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Application:&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Hot Zones:&lt;/strong&gt; High verticality (3+ floors, catwalks) for complex CQB and vertical ambushes.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Mid Zones:&lt;/strong&gt; Moderate verticality (2 floors, accessible rooftops) for vantage points.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Edge Zones:&lt;/strong&gt; Mostly ground level with natural elevation changes.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Size&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Definition:&lt;/strong&gt; Horizontal scale relative to match duration (travel time vs. looting time).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Application:&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Hot Zones:&lt;/strong&gt; Condensed footprint with high asset density to force encounters.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Edge Zones:&lt;/strong&gt; Expansive areas to allow safe spawning and initial movement.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Population&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Definition:&lt;/strong&gt; Player and AI entity density per square meter.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Application:&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Hot Zones:&lt;/strong&gt; Maximum density (High player convergence + Elite AI squads).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Mid Zones:&lt;/strong&gt; Medium density (Roaming AI patrols, transiting players).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Edge Zones:&lt;/strong&gt; Low density (Scattered AI, spawning/extracting players).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;Secondary Factors&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;secondary-factors&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#secondary-factors&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Spawn/Exit Points:&lt;/strong&gt; Primarily located in &lt;strong&gt;Edge Zones&lt;/strong&gt; to force inward movement. Conditional high-risk exits (e.g., rooftop helipads) may exist in &lt;strong&gt;Hot Zones&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Event Pockets / POIs:&lt;/strong&gt; Dynamic areas (Supply Drops, Contamination) that can temporarily transform safe &lt;strong&gt;Mid Zones&lt;/strong&gt; into combat-heavy &lt;strong&gt;Hot Zones&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Line of Sight (LOS):&lt;/strong&gt; &lt;strong&gt;Hot Zones&lt;/strong&gt; feature frequent blind spots and LOS breaks for tactical movement; &lt;strong&gt;Edge Zones&lt;/strong&gt; offer longer sightlines but less hard cover.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Navigator Elements:&lt;/strong&gt; Ziplines, jump pads, and ladders are placed strategically to bridge &lt;strong&gt;Mid Zone&lt;/strong&gt; gaps or provide rapid access to &lt;strong&gt;Hot Zone&lt;/strong&gt; verticality.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2&gt;Map Structure&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;map-structure&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#map-structure&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;Zone Types&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;zone-types&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#zone-types&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;h4&gt;1. Hot Zones (Center Areas)&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;1-hot-zones-center-areas&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#1-hot-zones-center-areas&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;&lt;strong&gt;Characteristics:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;60% loot spawn rate&lt;/li&gt;
+&lt;li&gt;Rare and Epic items&lt;/li&gt;
+&lt;li&gt;Heavy AI presence (10-15 enemies)&lt;/li&gt;
+&lt;li&gt;Multiple entry points (5-7)&lt;/li&gt;
+&lt;li&gt;Vertical gameplay (multi-floor buildings)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Examples:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Power Plant central reactor&lt;/li&gt;
+&lt;li&gt;Military Command Center&lt;/li&gt;
+&lt;li&gt;Tech Research Facility&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Design Goals:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Create focal points for conflict&lt;/li&gt;
+&lt;li&gt;Reward brave players&lt;/li&gt;
+&lt;li&gt;Dynamic combat spaces&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h4&gt;2. Mid Zones (Transition Areas)&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;2-mid-zones-transition-areas&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#2-mid-zones-transition-areas&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;&lt;strong&gt;Characteristics:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;40% loot spawn rate&lt;/li&gt;
+&lt;li&gt;Uncommon and Rare items&lt;/li&gt;
+&lt;li&gt;Moderate AI (5-8 enemies)&lt;/li&gt;
+&lt;li&gt;3-4 entry points&lt;/li&gt;
+&lt;li&gt;Mixed indoor/outdoor environments&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Examples:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Office buildings&lt;/li&gt;
+&lt;li&gt;Warehouses&lt;/li&gt;
+&lt;li&gt;Residential blocks&lt;/li&gt;
+&lt;li&gt;Industrial workshops&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Design Goals:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Provide safer looting options&lt;/li&gt;
+&lt;li&gt;Connect hot zones to map edges&lt;/li&gt;
+&lt;li&gt;Offer tactical choices for engagement&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h4&gt;3. Edge Zones (Perimeter)&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;3-edge-zones-perimeter&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#3-edge-zones-perimeter&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;&lt;strong&gt;Characteristics:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;20% loot spawn rate&lt;/li&gt;
+&lt;li&gt;Common items, basic supplies&lt;/li&gt;
+&lt;li&gt;Minimal AI (0-3 enemies)&lt;/li&gt;
+&lt;li&gt;Open areas&lt;/li&gt;
+&lt;li&gt;Near extraction points&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Examples:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Forest perimeters&lt;/li&gt;
+&lt;li&gt;Parking lots&lt;/li&gt;
+&lt;li&gt;Abandoned camps&lt;/li&gt;
+&lt;li&gt;Roadways&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Design Goals:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Safe spawn areas&lt;/li&gt;
+&lt;li&gt;Quick escape routes&lt;/li&gt;
+&lt;li&gt;Extraction defense positions&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2&gt;Map Layouts&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;map-layouts&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#map-layouts&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;Map 1: &amp;ldquo;Industrial Decay&amp;rdquo;&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;map-1-industrial-decay&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#map-1-industrial-decay&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Theme:&lt;/strong&gt; Abandoned industrial complex
+&lt;strong&gt;Size:&lt;/strong&gt; 1600m x 1600m
+&lt;strong&gt;Player Capacity:&lt;/strong&gt; 12-16 players
+&lt;strong&gt;Match Duration:&lt;/strong&gt; 15 minutes&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Layout Overview:&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;                    NORTH
+       [Extraction]   [Extraction]
+            |             |
+    [Forest]--[Warehouse District]--[Forest]
+        |           |            |
+[Spawn]---[Offices]--[POWER]--[Labs]---[Spawn]
+        |           | PLANT|       |
+    [Parking]--[Workshops] --[Storage]
+            |             |
+       [Extraction]   [Extraction]
+                    SOUTH&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;Key Locations:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;1. Power Plant (Hot Zone - Center)&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;4 floors&lt;/li&gt;
+&lt;li&gt;Central reactor room (best loot)&lt;/li&gt;
+&lt;li&gt;Catwalks and tight corridors&lt;/li&gt;
+&lt;li&gt;AI Boss: &amp;ldquo;Reactor Guardian&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;Highly contested area&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;2. Warehouse District (Mid Zone - West)&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;6 large warehouses&lt;/li&gt;
+&lt;li&gt;Open floor plans&lt;/li&gt;
+&lt;li&gt;Good cover density&lt;/li&gt;
+&lt;li&gt;Vehicle section (future update: drivable)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;3. Tech Labs (Mid Zone - East)&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Research facility&lt;/li&gt;
+&lt;li&gt;Clean rooms (sterile environment)&lt;/li&gt;
+&lt;li&gt;Quest items spawn here&lt;/li&gt;
+&lt;li&gt;Vertical gameplay (3 floors)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;4. Office Complex (Mid Zone - North)&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Corporate offices&lt;/li&gt;
+&lt;li&gt;Cubicle maze&lt;/li&gt;
+&lt;li&gt;Excellent ambush spots&lt;/li&gt;
+&lt;li&gt;Medium tier loot&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;5. Workshops (Mid Zone - South)&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Industrial repair shops&lt;/li&gt;
+&lt;li&gt;Heavy machinery provides cover&lt;/li&gt;
+&lt;li&gt;Crafting materials abundant&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;6. Forest Perimeter (Edge Zone)&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Natural cover (trees and rocks)&lt;/li&gt;
+&lt;li&gt;Fewer sightlines&lt;/li&gt;
+&lt;li&gt;Player spawn points&lt;/li&gt;
+&lt;li&gt;4 extraction zones&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3&gt;Map 2: &amp;ldquo;Urban Ruins&amp;rdquo;&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;map-2-urban-ruins&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#map-2-urban-ruins&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Theme:&lt;/strong&gt; Post-disaster city zone
+&lt;strong&gt;Size:&lt;/strong&gt; 1800m x 1800m
+&lt;strong&gt;Player Capacity:&lt;/strong&gt; 16 players
+&lt;strong&gt;Match Duration:&lt;/strong&gt; 15 minutes&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Layout Overview:&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;         [Subway]--[Mall]--[Subway]
+              |      |        |
+    [Park]--[Apts]--[PLAZA]--[Hotel]
+         |      |      |         |
+[Extraction]--[Street]--[Street]--[Extraction]&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;Key Locations:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;1. Central Plaza (Hot Zone)&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Open square&lt;/li&gt;
+&lt;li&gt;Central fountain provides cover&lt;/li&gt;
+&lt;li&gt;Underground access points&lt;/li&gt;
+&lt;li&gt;Supply drop landing zone&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;2. Shopping Mall (Hot Zone)&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;2 floors&lt;/li&gt;
+&lt;li&gt;Stores contain high density loot&lt;/li&gt;
+&lt;li&gt;Food court ambush point&lt;/li&gt;
+&lt;li&gt;Skylights (dynamic lighting effects)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;3. Apartment Buildings (Mid Zone)&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;5-story buildings&lt;/li&gt;
+&lt;li&gt;Room-to-room CQB combat&lt;/li&gt;
+&lt;li&gt;Balcony sniping positions&lt;/li&gt;
+&lt;li&gt;Stairwell choke points&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;4. Subway System (Mid Zone)&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Underground tunnels network&lt;/li&gt;
+&lt;li&gt;Connects different map areas&lt;/li&gt;
+&lt;li&gt;Dark, close-quarters environment&lt;/li&gt;
+&lt;li&gt;Unique lighting challenges&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;5. Hotel (Mid Zone)&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Luxury location styling&lt;/li&gt;
+&lt;li&gt;Lobbies, guest rooms, rooftop bar&lt;/li&gt;
+&lt;li&gt;Quest item spawns&lt;/li&gt;
+&lt;li&gt;defensible position for extraction&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;6. City Park (Edge Zone)&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Trees and dense foliage&lt;/li&gt;
+&lt;li&gt;Open sightlines across paths&lt;/li&gt;
+&lt;li&gt;Extraction zones location&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3&gt;Map 3: &amp;ldquo;Desert Outpost&amp;rdquo; (Post-Launch)&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;map-3-desert-outpost-post-launch&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#map-3-desert-outpost-post-launch&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Theme:&lt;/strong&gt; Military desert base
+&lt;strong&gt;Size:&lt;/strong&gt; 2000m x 2000m (larger, more open)
+&lt;strong&gt;Weather:&lt;/strong&gt; Sandstorms (dynamic)&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Key Features:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Long sightlines (sniper-friendly)&lt;/li&gt;
+&lt;li&gt;Vehicle spawns&lt;/li&gt;
+&lt;li&gt;Underground bunker system&lt;/li&gt;
+&lt;li&gt;Dynamic sandstorm reduces visibility&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2&gt;Map Elements&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;map-elements&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#map-elements&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;Points of Interest (POI)&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;points-of-interest-poi&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#points-of-interest-poi&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Design Guidelines:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Each map: 12-15 major POIs&lt;/li&gt;
+&lt;li&gt;Spacing: 150-250m apart&lt;/li&gt;
+&lt;li&gt;Size variation: Small (single building) to Large (complex)&lt;/li&gt;
+&lt;li&gt;Unique identifiers (visual landmarks)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Naming Convention:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Memorable, short names&lt;/li&gt;
+&lt;li&gt;Easy radio callouts&lt;/li&gt;
+&lt;li&gt;Example: &amp;ldquo;Red Warehouse,&amp;rdquo; &amp;ldquo;Big Tower,&amp;rdquo; &amp;ldquo;Reactor&amp;rdquo;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3&gt;Cover System&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;cover-system&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#cover-system&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Cover Types:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Full Cover (100% protection)&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Concrete walls&lt;/li&gt;
+&lt;li&gt;Thick pillars&lt;/li&gt;
+&lt;li&gt;Armored vehicles&lt;/li&gt;
+&lt;li&gt;Metal containers&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Half Cover (60% protection)&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Wooden crates&lt;/li&gt;
+&lt;li&gt;Low walls&lt;/li&gt;
+&lt;li&gt;Cars&lt;/li&gt;
+&lt;li&gt;Machinery&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Soft Cover (30% protection)&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Bushes (visual obstruction)&lt;/li&gt;
+&lt;li&gt;Chain fences&lt;/li&gt;
+&lt;li&gt;Thin walls&lt;/li&gt;
+&lt;li&gt;Destructible objects&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Design Rules:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Never leave large open areas without cover&lt;/li&gt;
+&lt;li&gt;Cover spacing: 5-10m intervals&lt;/li&gt;
+&lt;li&gt;Mix cover heights&lt;/li&gt;
+&lt;li&gt;Consider top-down sightlines&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3&gt;Loot Distribution&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;loot-distribution&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#loot-distribution&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Container Types:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;1. Common Crates (Gray)&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Spawn: Edge và Mid zones&lt;/li&gt;
+&lt;li&gt;Contents: Basic supplies, ammo, common weapons&lt;/li&gt;
+&lt;li&gt;Quantity: 100-150 per map&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;2. Military Lockers (Green)&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Spawn: Mid zones&lt;/li&gt;
+&lt;li&gt;Contents: Uncommon weapons, armor, meds&lt;/li&gt;
+&lt;li&gt;Quantity: 60-80 per map&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;3. Rare Safes (Blue)&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Spawn: Hot zones, hidden locations&lt;/li&gt;
+&lt;li&gt;Contents: Rare weapons, valuable items&lt;/li&gt;
+&lt;li&gt;Quantity: 20-30 per map&lt;/li&gt;
+&lt;li&gt;Require: Lockpick or Specialist ability&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;4. Epic Vaults (Purple)&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Spawn: Hot zone centers&lt;/li&gt;
+&lt;li&gt;Contents: Epic+ items, quest items&lt;/li&gt;
+&lt;li&gt;Quantity: 5-8 per map&lt;/li&gt;
+&lt;li&gt;Require: Keycard (found in mid zones)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;5. Legendary Cache (Gold)&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Spawn: 1-2 per map, random locations&lt;/li&gt;
+&lt;li&gt;Contents: Legendary items guaranteed&lt;/li&gt;
+&lt;li&gt;Require: Special key or team effort&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3&gt;Extraction Zones&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;extraction-zones&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#extraction-zones&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Per Map:&lt;/strong&gt; 4-6 extraction points&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Placement Rules:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Near map edges&lt;/li&gt;
+&lt;li&gt;300-400m from hot zones&lt;/li&gt;
+&lt;li&gt;Cover available nearby&lt;/li&gt;
+&lt;li&gt;Multiple approach routes&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Extraction Types:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;1. Helicopter Extract&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Visual: Helicopter landing&lt;/li&gt;
+&lt;li&gt;Duration: 30 seconds&lt;/li&gt;
+&lt;li&gt;Max players: 4&lt;/li&gt;
+&lt;li&gt;Audio cue: Helicopter sounds from far&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;2. Vehicle Extract&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Visual: Armored truck&lt;/li&gt;
+&lt;li&gt;Duration: 30 seconds&lt;/li&gt;
+&lt;li&gt;Max players: 6&lt;/li&gt;
+&lt;li&gt;Audio cue: Engine sounds&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;3. Underground Tunnel&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Visual: Manhole entrance&lt;/li&gt;
+&lt;li&gt;Duration: 45 seconds (slower)&lt;/li&gt;
+&lt;li&gt;Max players: 2 (bottleneck)&lt;/li&gt;
+&lt;li&gt;Audio cue: Metal clanging&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Activation:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Random 2-3 active per match&lt;/li&gt;
+&lt;li&gt;Announced at 3-minute mark&lt;/li&gt;
+&lt;li&gt;Cannot be camped from spawn (protection timer)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3&gt;Dynamic Elements&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;dynamic-elements&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#dynamic-elements&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Supply Drops&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Timing: 5:00 and 10:00 into match&lt;/li&gt;
+&lt;li&gt;Landing: Random mid-to-hot zones&lt;/li&gt;
+&lt;li&gt;Visual: Signal flare, followed by parachute drop&lt;/li&gt;
+&lt;li&gt;Audio: Plane flyover, warning siren&lt;/li&gt;
+&lt;li&gt;Contents: High-tier loot, special weapons/items&lt;/li&gt;
+&lt;li&gt;Radius: Creates temporary high-heat zone&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Contamination Zone&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Timing: Starts at 12:00&lt;/li&gt;
+&lt;li&gt;Effect: Shrinking safe zone&lt;/li&gt;
+&lt;li&gt;Visual: Red fog, particle effects&lt;/li&gt;
+&lt;li&gt;Damage: Increasing over time (10→50 HP/sec)&lt;/li&gt;
+&lt;li&gt;Purpose: Forces player movement, prevents camping&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Environmental Hazards&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;1. Electrical Hazards&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Exposed/Broken power lines&lt;/li&gt;
+&lt;li&gt;Sparking machinery&lt;/li&gt;
+&lt;li&gt;Damage: 5 HP/sec within area&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;2. Radiation Zones&lt;/strong&gt; (Map-specific)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Contaminated areas&lt;/li&gt;
+&lt;li&gt;Damage: 10 HP/sec&lt;/li&gt;
+&lt;li&gt;Reward: Best loot located inside&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;3. Fire&lt;/strong&gt; (Dynamic)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Can be caused by explosions&lt;/li&gt;
+&lt;li&gt;Spreads slowly&lt;/li&gt;
+&lt;li&gt;Damage: 15 HP/sec&lt;/li&gt;
+&lt;li&gt;Blocks paths&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2&gt;Environmental Storytelling&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;environmental-storytelling&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#environmental-storytelling&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;Narrative Through Environment:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Industrial Decay Map:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Abandoned worker belongings and personal items&lt;/li&gt;
+&lt;li&gt;Evacuation warning signs&lt;/li&gt;
+&lt;li&gt;Broken and rusted machinery&lt;/li&gt;
+&lt;li&gt;Graffiti from survivors or scavengers&lt;/li&gt;
+&lt;li&gt;Evidence of environmental disasters&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Visual Clues:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Scattered documents (lore items)&lt;/li&gt;
+&lt;li&gt;Propaganda posters&lt;/li&gt;
+&lt;li&gt;Faction symbols and territorial markings&lt;/li&gt;
+&lt;li&gt;Timeline of events shown through decay levels&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Purpose:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Build world lore&lt;/li&gt;
+&lt;li&gt;Create atmosphere&lt;/li&gt;
+&lt;li&gt;Deepen player immersion&lt;/li&gt;
+&lt;li&gt;Provide context for Quests&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2&gt;Verticality&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;verticality&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#verticality&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;Top-Down Considerations:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Multi-Floor Buildings:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Clear visual distinction per floor&lt;/li&gt;
+&lt;li&gt;Stairs và elevators (future)&lt;/li&gt;
+&lt;li&gt;Different loot per floor&lt;/li&gt;
+&lt;li&gt;Rooftop access&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Visual Solutions:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Floor transparency when player above/below&lt;/li&gt;
+&lt;li&gt;Minimap floor indicators&lt;/li&gt;
+&lt;li&gt;Height markers on UI&lt;/li&gt;
+&lt;li&gt;Shadow effects&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Gameplay Impact:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Sniper positions (rooftops)&lt;/li&gt;
+&lt;li&gt;Ambush from above&lt;/li&gt;
+&lt;li&gt;Escape routes (parkour future)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2&gt;Navigation Design&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;navigation-design&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#navigation-design&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;Wayfinding:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Visual Landmarks:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Tall structures (towers, smokestacks)&lt;/li&gt;
+&lt;li&gt;Unique color schemes per area&lt;/li&gt;
+&lt;li&gt;Distinct lighting differences&lt;/li&gt;
+&lt;li&gt;Varied architectural styles&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Minimap Design:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Color-coded zones&lt;/li&gt;
+&lt;li&gt;POI icons&lt;/li&gt;
+&lt;li&gt;Extraction markers&lt;/li&gt;
+&lt;li&gt;Player/enemy indicators&lt;/li&gt;
+&lt;li&gt;Scale appropriate for mobile screens&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;In-World Signs:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Directional signs (diegetic/in-universe)&lt;/li&gt;
+&lt;li&gt;Zone markers&lt;/li&gt;
+&lt;li&gt;Extraction indicators (visible from distance)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2&gt;Spawn System&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;spawn-system&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#spawn-system&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;Spawn Points:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;8-12 spawn locations per map&lt;/li&gt;
+&lt;li&gt;Located near map edges only&lt;/li&gt;
+&lt;li&gt;Equidistant from hot zones (fairness)&lt;/li&gt;
+&lt;li&gt;Random assignment&lt;/li&gt;
+&lt;li&gt;10-second protection shield&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Spawn Balancing:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;No spawns near active combat&lt;/li&gt;
+&lt;li&gt;Distance check from other players (minimum 100m)&lt;/li&gt;
+&lt;li&gt;Visibility check (not in direct sightline)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2&gt;Map Balance Metrics&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;map-balance-metrics&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#map-balance-metrics&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;Target Metrics:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Loot Distribution:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Common items: 60%&lt;/li&gt;
+&lt;li&gt;Uncommon items: 25%&lt;/li&gt;
+&lt;li&gt;Rare items: 10%&lt;/li&gt;
+&lt;li&gt;Epic items: 4%&lt;/li&gt;
+&lt;li&gt;Legendary items: 1%&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Combat Density:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Hot zones: 40% of kills&lt;/li&gt;
+&lt;li&gt;Mid zones: 45% of kills&lt;/li&gt;
+&lt;li&gt;Edge zones: 15% of kills&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Extraction Success:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Per zone: 20-30% usage rate&lt;/li&gt;
+&lt;li&gt;No single zone dominates (&amp;gt;40%)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Heatmaps Tracking:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Player death locations&lt;/li&gt;
+&lt;li&gt;Loot pickup locations&lt;/li&gt;
+&lt;li&gt;Time spent per zone&lt;/li&gt;
+&lt;li&gt;Path travel frequency&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2&gt;Weather &amp;amp; Time of Day&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;weather--time-of-day&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#weather--time-of-day&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;Launch:&lt;/strong&gt; Static day lighting&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Post-Launch Features:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Weather System:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Clear (default)&lt;/li&gt;
+&lt;li&gt;Rain (reduced visibility, louder footsteps)&lt;/li&gt;
+&lt;li&gt;Fog (close-range combat favored)&lt;/li&gt;
+&lt;li&gt;Sandstorm (Desert map)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Time of Day:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Day (launch default)&lt;/li&gt;
+&lt;li&gt;Dusk (future - different aesthetics)&lt;/li&gt;
+&lt;li&gt;Night (future - flashlight mechanics)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2&gt;Map Rotation &amp;amp; Voting&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;map-rotation--voting&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#map-rotation--voting&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;Launch:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;2 maps in rotation&lt;/li&gt;
+&lt;li&gt;Random selection&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Post-Launch:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Map voting (3 options)&lt;/li&gt;
+&lt;li&gt;Weighted random (prevent repeats)&lt;/li&gt;
+&lt;li&gt;Featured map (events)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2&gt;Level Design Checklist&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;level-design-checklist&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#level-design-checklist&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;For each new map:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Layout:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Balanced hot/mid/edge zones&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Multiple routes between POIs&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; No dead-end areas&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Extraction zone placement&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Spawn point placement&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Loot:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Container placement (200-300)&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Rarity distribution balanced&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Quest item locations&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Supply drop landing zones&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Combat:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Cover density appropriate&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Sightline variety&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Flanking routes available&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Vertical elements considered&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Navigation:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Visual landmarks present&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Minimap readable&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Wayfinding clear&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Zone transitions smooth&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Performance:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Occlusion volumes set&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; LOD configured&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Draw calls optimized&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Collision simplified&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Playtesting:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 10+ internal playtests&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Heatmap analysis&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Balance adjustments&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Bug fixes&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2&gt;Future Map Concepts&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;future-map-concepts&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#future-map-concepts&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;Map 4: &amp;ldquo;Flooded City&amp;rdquo;&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Water mechanics&lt;/li&gt;
+&lt;li&gt;Boat navigation&lt;/li&gt;
+&lt;li&gt;Underwater areas&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Map 5: &amp;ldquo;Mountain Facility&amp;rdquo;&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Snowy environment&lt;/li&gt;
+&lt;li&gt;Cable cars&lt;/li&gt;
+&lt;li&gt;Avalanche hazards&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Map 6: &amp;ldquo;Abandoned Airport&amp;rdquo;&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Huge open tarmac&lt;/li&gt;
+&lt;li&gt;Airport terminals&lt;/li&gt;
+&lt;li&gt;Plane wrecks&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;hr&gt;
+&lt;h2&gt;📝 Document Ownership &amp;amp; Changelog&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-document-ownership--changelog&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-document-ownership--changelog&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Role&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Owner&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Approver&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Author&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Lead Level Designer&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Lead Game Designer&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Tech Review&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Environment Artist Lead&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Technical Artist&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;strong&gt;Recent Changes:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;v1.1 (2026-02-09):&lt;/strong&gt; Added &amp;ldquo;Extraction-Shooter Specifics&amp;rdquo; section.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;v1.0 (2026-02-07):&lt;/strong&gt; Initial map design documentation.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;./03_Characters.md&#34;&gt;← Previous: Characters&lt;/a&gt;&lt;/strong&gt; | &lt;strong&gt;&lt;a href=&#34;./README.md&#34;&gt;High-Level Index&lt;/a&gt;&lt;/strong&gt; | &lt;strong&gt;&lt;a href=&#34;./05_ArtDirection.md&#34;&gt;Next: Art Direction →&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/gdd_design/world/mapdesign_industrialzone.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/gdd_design/world/mapdesign_industrialzone.html</guid>
+      <description>
+        
+        
+        &lt;h1&gt;Map Design: Industrial Zone (The &amp;ldquo;Factory&amp;rdquo;)&lt;/h1&gt;&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;../../README.md&#34;&gt;← Back to Index&lt;/a&gt;&lt;/strong&gt; | &lt;strong&gt;&lt;a href=&#34;../../Visuals/ArtDirection.md&#34;&gt;Next: Art Direction →&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2&gt;🗺️ Map Overview&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-map-overview&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-map-overview&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Name:&lt;/strong&gt; Sector 7 Industrial Complex (aka &amp;ldquo;The Factory&amp;rdquo;)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Theme:&lt;/strong&gt; Abandoned Soviet-era processing plant repurposed for anomalous research.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Size:&lt;/strong&gt; Medium (1200m x 1200m)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Player Count:&lt;/strong&gt; 12 Players (Solo/Duo/Squads) + 20 AI Bots&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Raid Time:&lt;/strong&gt; 20 Minutes&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Difficulty:&lt;/strong&gt; Intermediate (Balanced Loot/Risk)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Narrative Context:&lt;/strong&gt;
+Once the primary refining facility for local crystalline resources. When the &amp;ldquo;Outbreak&amp;rdquo; occurred, the military sealed the exits, trapping workers inside. Now, it&amp;rsquo;s a scavenger&amp;rsquo;s paradise filled with raw materials, left-behind military gear, and dangerous chemical leaks.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2&gt;📍 Tactical Layout&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-tactical-layout&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-tactical-layout&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;The map is a &lt;strong&gt;&amp;ldquo;Bowl&amp;rdquo; design&lt;/strong&gt;: High ground on the perimeter (Forest/Hills), low ground in the center (Factory Complex), promoting inward movement.&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;       [Forest/Hills] (High Ground)
+      /      |       \
+     /   [Train Yard] \
+    |         |        |
+[Storage]--[BRIDGE]--[OFFICES]
+    |         |        |
+    |      [FACTORY]---|
+    |      (Low/Hot)   |
+[Parking]----|----[Main Gate]
+    |        |         |
+    \    [Perimeter]   /
+     \_______|________/&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h3&gt;Zone 1: The Perimeter (Green Zone)&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;zone-1-the-perimeter-green-zone&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#zone-1-the-perimeter-green-zone&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;em&gt;Safe start, low loot, long sightlines.&lt;/em&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;1A. Train Yard (North):&lt;/strong&gt; Rusted cargo trains. Good linear cover. Sniper vantage points on train cars.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;1B. Storage Units (West):&lt;/strong&gt; Rows of garage-style storage. Close-quarters combat (CQC). &amp;ldquo;Rat&amp;rdquo; looting spots.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;1C. Parking Lot (South):&lt;/strong&gt; Abandoned civilian cars. Open area, hazardous to cross.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Zone 2: The Complex (Yellow Zone)&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;zone-2-the-complex-yellow-zone&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#zone-2-the-complex-yellow-zone&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;em&gt;Moderate risk, industrial combat, verticality.&lt;/em&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;2A. Assembly Hall:&lt;/strong&gt; Huge open interior with conveyor belts. 2 levels (Ground + Catwalks). High verticality.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;2B. Offices:&lt;/strong&gt; 3-story brick building attached to the hall. Tight corridors, breaching doors, filing cabinets (Intel loot).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;2C. Cooling Towers:&lt;/strong&gt; Two massive towers. External spiral stairs leading to high ground sniping spots.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Zone 3: The Lab (Red Zone / Hotspot)&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;zone-3-the-lab-red-zone--hotspot&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#zone-3-the-lab-red-zone--hotspot&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;em&gt;Extreme risk, highest tier loot, Boss spawn.&lt;/em&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Location:&lt;/strong&gt; Underground, accessible via 2A Assembly Hall elevator shaft or 2B Office basement.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Layout:&lt;/strong&gt; Claustrophobic white corridors, broken glass, flickering lights.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Threats:&lt;/strong&gt; High-level AI guards, The &amp;ldquo;Warden&amp;rdquo; (Boss).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Loot:&lt;/strong&gt; Keycards, Injectors, High-tech weapon parts.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;hr&gt;
+&lt;hr&gt;
+&lt;h2&gt;🛠️ Operator Tactical Interactions&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-operator-tactical-interactions&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-operator-tactical-interactions&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Each class can exploit the map&amp;rsquo;s industrial nature differently:&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Class&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Interaction&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Benefit&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Location Examples&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;TANK&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Heavy Breach&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Smash through weak brick walls or force open rusted gates.&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Offices (1F)&lt;/strong&gt;: Create new entry points. &lt;strong&gt;Storage&lt;/strong&gt;: Break metal shutters.&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;RECON&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Signal Hack&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Hack CCTV cameras to reveal enemies on minimap for 30s.&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Security Room (offices)&lt;/strong&gt;, &lt;strong&gt;Factory Main Gate&lt;/strong&gt;.&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;SPECIALIST&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Generator Overload&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Turn on/off industrial lights or electrified water hazards.&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Cooling Towers&lt;/strong&gt;: Create noise cover. &lt;strong&gt;Canal&lt;/strong&gt;: Electrify water to kill rushers.&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;SUPPORT&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Cargo Lift&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Can operate heavy elevators to move squad vertically.&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Assembly Hall&lt;/strong&gt;: Move team to catwalks silently.&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Destructible Environment:&lt;/strong&gt; Catwalk railings can be shot out to drop enemies; Oil drums explode.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2&gt;💎 Loot Distribution &amp;amp; Heatmap&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-loot-distribution--heatmap&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-loot-distribution--heatmap&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Area / POI&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Loot Tier&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Item Types&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Danger Level&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Recommended For&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;The Lab (Underground)&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;S-Tier (Highest)&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Keycards, Boss Gear, Injectors&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;💀 &lt;strong&gt;Extreme&lt;/strong&gt; (Boss + Players)&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Squads / Geared Solos&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Assembly Hall&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;A-Tier (High)&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Weapon Parts, Industrial Tech&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;🔴 &lt;strong&gt;High&lt;/strong&gt; (Sniper Sightlines)&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;PvP Seekers&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Offices&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;B-Tier (Mid)&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Intel Items, Meds, Cash&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;🟠 &lt;strong&gt;Medium&lt;/strong&gt; (CQC Ambush)&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Solos / Scavengers&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Train Yard&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;C-Tier (Low)&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Ammo, Basic Components&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;🟢 &lt;strong&gt;Low&lt;/strong&gt; (Perimeter Spawn)&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Fresh Spawns / Snipe setup&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Storage Units&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;C-Tier (Low)&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Food, Construction Materials&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;🟢 &lt;strong&gt;Low&lt;/strong&gt; (Good Cover)&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&amp;ldquo;Rat&amp;rdquo; Runs&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Hotspot:&lt;/strong&gt; The Lab entrance (Assembly Hall) attracts 70% of players eventually.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Safe Route:&lt;/strong&gt; Skirting the perimeter from Storage → Train Yard → Gate 03 avoids most conflict but yields poor loot.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2&gt;⚔️ Choke Points &amp;amp; Flow&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-choke-points--flow&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-choke-points--flow&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Extraction shooters live and die by their Choke Points - areas where players are &lt;em&gt;forced&lt;/em&gt; to interact.&lt;/p&gt;
+&lt;h3&gt;1. &amp;ldquo;The Bridge&amp;rdquo; (Connecting West Storage to Factory)&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;1-the-bridge-connecting-west-storage-to-factory&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#1-the-bridge-connecting-west-storage-to-factory&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Description:&lt;/strong&gt; A narrow metal skybridge over a chemical canal.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Tactical:&lt;/strong&gt; The only direct path from West Spawn to the Hotspot without going through the open canal (slow movement).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Danger:&lt;/strong&gt; High. Easy to camp from the Office windows.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;2. &amp;ldquo;Main Gate&amp;rdquo; (Factory Entrance)&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;2-main-gate-factory-entrance&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#2-main-gate-factory-entrance&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Description:&lt;/strong&gt; The primary reinforced gate into the compound. Slightly open, creating a funnel.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Tactical:&lt;/strong&gt; High traffic area for vehicles (future) or squads rushing the center.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Danger:&lt;/strong&gt; Variable. AI Scavs often patrol here.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;3. &amp;ldquo;The Vent&amp;rdquo; (Lab Entrance)&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;3-the-vent-lab-entrance&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#3-the-vent-lab-entrance&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Description:&lt;/strong&gt; A destructible ventilation grate leading into the Lab.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Tactical:&lt;/strong&gt; Requires explosives or a crowbar to open. Noisy entry.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Danger:&lt;/strong&gt; Extreme. &amp;ldquo;Dinner bell&amp;rdquo; for nearby players.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2&gt;🚪 Extraction Points&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-extraction-points&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-extraction-points&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Name&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Type&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Requirements&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Location&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Gate 03&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Always Open&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;None&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;East Road (Perimeter)&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Sewer&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Conditional&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;No Backpack&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Central Canal (Under bridge)&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Helipad&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Signal&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Flare Gun (Calls Heli, waits 2m)&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Rooftop of Assembly Hall&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Armored Truck&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Paid&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;3000 Credits&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Front Gate (North)&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr&gt;
+&lt;h2&gt;🎨 Environmental Design &amp;amp; Atmosphere&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-environmental-design--atmosphere&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-environmental-design--atmosphere&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;Visual Identity&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;visual-identity&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#visual-identity&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Palette:&lt;/strong&gt; Rust Orange, Concrete Grey, Toxic Green (Chemicals).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Lighting:&lt;/strong&gt; Overcast day (Standard). Interiors are dim, requiring flashlights/NVGs in the Lab.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Details:&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;Storytelling:&lt;/em&gt; &amp;ldquo;Help Us&amp;rdquo; painted on the roof.&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Assets:&lt;/em&gt; Forklifts, pallets of rotting supplies, military checkpoints.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Audio Landscape&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;audio-landscape&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#audio-landscape&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Ambient:&lt;/strong&gt; Distant humming of the generator (directional clue), dripping water in tunnels, crows cawing outside.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Surfaces:&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;Metal (Catwalks):&lt;/em&gt; Loud, clanky. punishment for sprinting.&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Glass (Offices):&lt;/em&gt; Crunching noise (Crucial for hearing flankers).&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Puddles (Canal):&lt;/em&gt; Splashing sounds.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2&gt;🗓️ Evolution Plan (Live Ops)&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-evolution-plan-live-ops&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-evolution-plan-live-ops&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Phase 1 (Launch):&lt;/strong&gt; Ground floor &amp;amp; 1st floor only. Lab sealed.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Phase 2:&lt;/strong&gt; The &amp;ldquo;Lab&amp;rdquo; opens. New Boss added.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Phase 3:&lt;/strong&gt; Dynamic Event - &amp;ldquo;Chemical Leak&amp;rdquo; floods the lower tunnels, forcing players to high ground.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;../Characters/Operators.md&#34;&gt;← Previous: Operators&lt;/a&gt;&lt;/strong&gt; | &lt;strong&gt;&lt;a href=&#34;../../README.md&#34;&gt;Index&lt;/a&gt;&lt;/strong&gt; | &lt;strong&gt;&lt;a href=&#34;../../Visuals/ArtDirection.md&#34;&gt;Next: Art Direction →&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/gdd_design/world/mapdesign_neonslums.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/gdd_design/world/mapdesign_neonslums.html</guid>
+      <description>
+        
+        
+        &lt;h1&gt;Map Design: Neon Slums (The &amp;ldquo;Undercity&amp;rdquo;)&lt;/h1&gt;&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;../../README.md&#34;&gt;← Back to Index&lt;/a&gt;&lt;/strong&gt; | &lt;strong&gt;&lt;a href=&#34;../../Visuals/ArtDirection.md&#34;&gt;Next: Art Direction →&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2&gt;🗺️ Map Overview&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-map-overview&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-map-overview&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Name:&lt;/strong&gt; District 09 (aka &amp;ldquo;Neon Slums&amp;rdquo;)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Theme:&lt;/strong&gt; Cyberpunk-favela built on the ruins of a mega-city. Dense, vertical, and neon-lit.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Size:&lt;/strong&gt; Small/Dense (800m x 800m)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Player Count:&lt;/strong&gt; 8 Players (Focus on Solo/Duo)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Raid Time:&lt;/strong&gt; 15 Minutes&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Difficulty:&lt;/strong&gt; High (CQC focus, relentless verticality)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Unique Feature:&lt;/strong&gt; &lt;strong&gt;Dynamic Day/Night Cycle&lt;/strong&gt;. The raid starts at dusk and ends in pitch black night, forcing players to use flashlights or NVGs in the final minutes.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2&gt;📍 Tactical Layout&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-tactical-layout&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-tactical-layout&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;The map is a &lt;strong&gt;&amp;ldquo;Favela&amp;rdquo; design&lt;/strong&gt;: Layers built on top of layers. rooftops are highways; streets are death traps.&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt; LEVEL 3: [PENTHOUSE] (Sniper Nest)
+              |
+              | (Elevator/Scaffolding)
+              |
+ LEVEL 2: [Apt Block A]--[BRIDGE]--[Apt Block B]--[Arcade]
+              |            |            |
+              | (Stairs)   | (Jump)     | (Ramp)
+              |            v            |
+ LEVEL 1: [Market]----[Canal]----[Alleyways]
+              |
+              | (Stairs)
+              v
+ LEVEL 0: [Subway Station] (Underground)&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h3&gt;Zone 1: The Gutters (Street Level)&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;zone-1-the-gutters-street-level&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#zone-1-the-gutters-street-level&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;em&gt;Safe spawns, but dangerous to traverse.&lt;/em&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;1A. The Market:&lt;/strong&gt; Narrow alleyways cluttered with stalls. High occlusion (easy to hide, hard to see far).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;1B. Sewage Canal:&lt;/strong&gt; Runs through the center. Slow movement speed deep water.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;1C. Subway Entrance:&lt;/strong&gt; Only access to the localized underground metro station (Mid-tier loot).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Zone 2: The Stacks (Apartments)&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;zone-2-the-stacks-apartments&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#zone-2-the-stacks-apartments&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;em&gt;Room-to-room combat, ambush heaven.&lt;/em&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;2A. Apartment Block A &amp;amp; B:&lt;/strong&gt; 4-story buildings connected by makeshift bridges. Destructible walls.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;2B. The Arcade:&lt;/strong&gt; Neon-filled gaming hall. Loud ambient noise (distracts from footsteps). Good energy weapon loot.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Zone 3: The Penthouse (Hotspot)&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;zone-3-the-penthouse-hotspot&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#zone-3-the-penthouse-hotspot&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;em&gt;Highest ground, sniper paradise.&lt;/em&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Location:&lt;/strong&gt; Top of the central skyscraper ruin. Accessible only via elevator (noisy) or external scaffolding (exposed).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Threats:&lt;/strong&gt; Elite Sniper AI.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Loot:&lt;/strong&gt; Data Chips, Legendary Sniper Parts.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;hr&gt;
+&lt;hr&gt;
+&lt;h2&gt;🛠️ Operator Tactical Interactions&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-operator-tactical-interactions&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-operator-tactical-interactions&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Navigating the vertical favela requires special tools:&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Class&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Interaction&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Benefit&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Location Examples&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;RECON&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Zipline Setup&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Shoot a temporary zipline for the whole team.&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Rooftops&lt;/strong&gt;: Cross between Apartment A and B instantly.&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;ASSAULT&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Parkour Leap&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Jump further/higher to reach hidden balconies.&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Alleyways&lt;/strong&gt;: Reach 2nd floor windows without stairs.&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;SPECIALIST&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Drone Vent&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Send drones through small AC vents to scout rooms.&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Penthouse&lt;/strong&gt;: Check for campers before breaching.&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;TANK&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Shield Wall&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Deploy portable cover on narrow bridges.&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Bridge of Sighs&lt;/strong&gt;: Block sniper fire while crossing.&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Cyber-Hacks:&lt;/strong&gt; Hack neon signs to overload/explode them (Blind enemies). Hack Subway gates to lock sections.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2&gt;💎 Loot Distribution &amp;amp; Heatmap (Verticality Focus)&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-loot-distribution--heatmap-verticality-focus&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-loot-distribution--heatmap-verticality-focus&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Floor / Area&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Loot Tier&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Item Types&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Danger Level&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Recommended Key&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Penthouse (Lvl 3)&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;S-Tier&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Legendary Sniper Rifles&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;💀 &lt;strong&gt;Extreme&lt;/strong&gt; (1 Entry point)&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;King of the Hill&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Arcade (Lvl 2)&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;A-Tier&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Electronics, Energy Cells&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;🔴 &lt;strong&gt;High&lt;/strong&gt; (Loud Audio)&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Balanced Squads&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Apartments (Lvl 2)&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;B-Tier&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Domestic Items, Cash&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;🟠 &lt;strong&gt;Medium&lt;/strong&gt; (Wallbangs)&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Campers / CQC&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Market (Lvl 1)&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;C-Tier&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Food, Trash Loot&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;🔴 &lt;strong&gt;High&lt;/strong&gt; (Visible from above)&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Risky Transit&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Subway (Lvl 0)&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;B-Tier&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Tools, Quest Items&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;🟠 &lt;strong&gt;Medium&lt;/strong&gt; (Grenade traps)&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Flank Route&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Heatmap:&lt;/strong&gt; Most deaths occur at the &lt;strong&gt;&amp;ldquo;Bridge of Sighs&amp;rdquo;&lt;/strong&gt; and the &lt;strong&gt;Subway Entrance&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;The Trap:&lt;/strong&gt; The Market (Street Level) has low-tier loot but high danger from rooftop snipers. Avoid lingering here.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2&gt;⚔️ Choke Points &amp;amp; Flow&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-choke-points--flow&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-choke-points--flow&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;1. &amp;ldquo;Bridge of Sighs&amp;rdquo; (Connecting Apt A &amp;amp; B)&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;1-bridge-of-sighs-connecting-apt-a--b&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#1-bridge-of-sighs-connecting-apt-a--b&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Description:&lt;/strong&gt; A rickety wooden bridge connecting the 3rd floors of the two main buildings.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Tactical:&lt;/strong&gt; Fastest way to cross without dropping to street level.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Danger:&lt;/strong&gt; Exposed to snipers from The Penthouse.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;2. &amp;ldquo;The Metro Turnstile&amp;rdquo;&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;2-the-metro-turnstile&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#2-the-metro-turnstile&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Description:&lt;/strong&gt; Narrow entrance to the subway.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Danger:&lt;/strong&gt; Grenade trap heaven.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2&gt;🚪 Extraction Points&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-extraction-points&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-extraction-points&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Name&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Type&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Requirements&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Location&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Subway Train&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Timed&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Arrives every 5 mins&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Underground Station&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Rooftop Zipper&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Conditional&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Zipline Tool Required&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Apartment B Roof&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Sewer Grate&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Always Open&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;None&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Canal Finish Line&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr&gt;
+&lt;h2&gt;🎨 Environmental Design&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-environmental-design&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-environmental-design&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Palette:&lt;/strong&gt; Neon Pink/Blue, Dirty Concrete, Rain-slicked Asphalt.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Lighting:&lt;/strong&gt; High contrast. Dark shadows vs blinding neon signs.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Audio:&lt;/strong&gt; Constant rain (muffles light footsteps), distant sirens, cyberpunk synth music in the Arcade.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;./MapDesign_IndustrialZone.md&#34;&gt;← Previous: Map Design (Industrial)&lt;/a&gt;&lt;/strong&gt; | &lt;strong&gt;&lt;a href=&#34;../../README.md&#34;&gt;Index&lt;/a&gt;&lt;/strong&gt; | &lt;strong&gt;&lt;a href=&#34;./MapDesign_Wilderness.md&#34;&gt;Next: Map Design (Wilderness)&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/gdd_design/world/mapdesign_wilderness.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/gdd_design/world/mapdesign_wilderness.html</guid>
+      <description>
+        
+        
+        &lt;h1&gt;Map Design: The Mire (Wilderness Zone)&lt;/h1&gt;&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;../../README.md&#34;&gt;← Back to Index&lt;/a&gt;&lt;/strong&gt; | &lt;strong&gt;&lt;a href=&#34;../../Visuals/ArtDirection.md&#34;&gt;Next: Art Direction →&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2&gt;🗺️ Map Overview&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-map-overview&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-map-overview&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Name:&lt;/strong&gt; The Exclusion Mire (aka &amp;ldquo;The Swamp&amp;rdquo;)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Theme:&lt;/strong&gt; Flooded forest reclaiming a failed biological test site. Foggy, treacherous terrain.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Size:&lt;/strong&gt; Large (2000m x 2000m)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Player Count:&lt;/strong&gt; 16 Players (Duo/Squad Focus)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Raid Time:&lt;/strong&gt; 30 Minutes&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Difficulty:&lt;/strong&gt; Expert (Map knowledge critical for survival)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Unique Feature:&lt;/strong&gt; &lt;strong&gt;Dynamic Water Level&lt;/strong&gt;. Water rises and recedes slowly. Lootable areas become deadly traps; new paths open up.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2&gt;📍 Tactical Layout&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-tactical-layout&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-tactical-layout&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;The map is a &lt;strong&gt;&amp;ldquo;Archipelago&amp;rdquo; design&lt;/strong&gt;: Small islands of dry land connected by shallow water (slows movement) or deep channels (requires swimming/boat).&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;   [Hills]      [Old Road]
+      |            |
+ [Crash Site]--[Swamp Water]--[Sunken Village]
+      |            |             |
+      |       [Deep Lake]        |
+      |            |             |
+ [Fishing Huts]---[BIODOME]----[Watchtower]
+      |            (Lab)         |
+      \____________|_____________/
+              [Forest Mud]&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h3&gt;Zone 1: The Crash Site (West)&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;zone-1-the-crash-site-west&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#zone-1-the-crash-site-west&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;em&gt;Spawn area, basic loot.&lt;/em&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;1A. Plane Wreckage:&lt;/strong&gt; A crashed military transport. Cover is sparse but metal offers protection.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;1B. Fishing Huts:&lt;/strong&gt; Decaying wooden structures. Good for ambushes.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;1C. The Tree Line:&lt;/strong&gt; Dense foliage limiting visibility to 20m.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Zone 2: The Marshlands (Center)&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;zone-2-the-marshlands-center&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#zone-2-the-marshlands-center&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;em&gt;Dangerous crossing, high risk of getting stuck.&lt;/em&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;2A. Sunken Village:&lt;/strong&gt; Roofs are the only safe ground. Falling into water = huge noise + slow.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;2B. The Watchtower:&lt;/strong&gt; Only high ground in the map. Perfect vision, zero cover.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Zone 3: Bio-Dome Alpha (Hotspot)&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;zone-3-bio-dome-alpha-hotspot&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#zone-3-bio-dome-alpha-hotspot&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;em&gt;Sealed environment, chemical hazards.&lt;/em&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Location:&lt;/strong&gt; Center of the deepest lake. Accessible by bridge (exposed) or underwater pipe (requires Rebreather).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Layout:&lt;/strong&gt; Clean, white lab interiors contrasting with the muddy exterior.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Threats:&lt;/strong&gt; Mutated AI wildlife (fast, melee focus).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Loot:&lt;/strong&gt; Bio-samples, High-value medical injectors.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;hr&gt;
+&lt;hr&gt;
+&lt;h2&gt;🛠️ Operator Tactical Interactions&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-operator-tactical-interactions&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-operator-tactical-interactions&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Surviving nature requires specific skills:&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Class&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Interaction&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Benefit&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Location Examples&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;SUPPORT&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Bridge Layer&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Deploy a temporary plank bridge over mud/gaps.&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Swamp Channels&lt;/strong&gt;: Cross silently without swimming.&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;TANK&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Heavy Removal&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Lift fallen logs blocking paths or loot.&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Forest Paths&lt;/strong&gt;: Open shortcuts.&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;RECON&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Camouflage Net&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Set up a hidden observation post (invisible to thermal).&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;The Watchtower&lt;/strong&gt;: Ambush setup.&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;SPECIALIST&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Water Purify&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Turn toxic water into a stamina-boosting drink (Consumable).&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Bio-Dome&lt;/strong&gt;: Heal effects of poison.&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Trap Crafting:&lt;/strong&gt; Recons can rig tripwires on narrow swamp paths.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2&gt;💎 Loot Distribution &amp;amp; Heatmap&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-loot-distribution--heatmap&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-loot-distribution--heatmap&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Area / POI&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Loot Tier&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Item Types&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Complexity / Risk&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Best Equipment&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Bio-Dome Alpha&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;S-Tier&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Injectors, Stimpacks, Crafting Blueprints&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;💀 &lt;strong&gt;Max&lt;/strong&gt; (Gas/Radiation)&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Hazmat Suit / Gas Mask&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Watchtower&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;A-Tier&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Marksman Rifles, High-Zoom Scopes&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;🔴 &lt;strong&gt;High&lt;/strong&gt; (Exposed)&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Camouflage / Smoke&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Sunken Village&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;B-Tier&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Food, Tools, Scrap Metal&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;🟠 &lt;strong&gt;Medium&lt;/strong&gt; (Movement penalty)&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Light Armor&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Fishing Huts&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;C-Tier&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Basic Meds, Keys&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;🟢 &lt;strong&gt;Safe&lt;/strong&gt; (Perimeter)&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Any&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Swamp Channels&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Trash&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Driftwood (Crafting)&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;🔴 &lt;strong&gt;High&lt;/strong&gt; (Slow movement + No cover)&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Avoid if possible&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Heatmap:&lt;/strong&gt; High player density around &lt;strong&gt;&amp;ldquo;The Causeway&amp;rdquo;&lt;/strong&gt; bridge.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Tactical Warning:&lt;/strong&gt; Looting in deep water (Swamp Channels) is suicidal as water movement slows you by 40% and makes splashing noises.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2&gt;⚔️ Choke Points &amp;amp; Flow&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-choke-points--flow&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-choke-points--flow&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;1. &amp;ldquo;The Causeway&amp;rdquo; (Bridge to Bio-Dome)&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;1-the-causeway-bridge-to-bio-dome&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#1-the-causeway-bridge-to-bio-dome&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Description:&lt;/strong&gt; A long, straight concrete bridge. No cover except broken cars.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Tactical:&lt;/strong&gt; Suicide run for squads without smoke grenades.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Danger:&lt;/strong&gt; Any sniper in the Watchtower controls this.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;2. &amp;ldquo;Alligator Alley&amp;rdquo; (Shallow Channel)&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;2-alligator-alley-shallow-channel&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#2-alligator-alley-shallow-channel&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Description:&lt;/strong&gt; A narrow path through thick reeds.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Tactical:&lt;/strong&gt; The stealthy approach.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Danger:&lt;/strong&gt; Getting stuck in mud slows movement by 50%. Easy pickings for grenades.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2&gt;🚪 Extraction Points&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-extraction-points&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-extraction-points&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Name&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Type&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Requirements&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Location&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Hovercraft&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;One-Time&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Arrives if Signal Flare used&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;North Marsh&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Old Road&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Always Open&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;None&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;West Edge&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Bunker Elevator&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Conditional&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Bio-Keycard&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Inside Bio-Dome&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr&gt;
+&lt;h2&gt;🎨 Environmental Design&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-environmental-design&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-environmental-design&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Palette:&lt;/strong&gt; Mud Brown, Sickly Green, Fog Grey.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Auditory Illusion:&lt;/strong&gt; Sounds carry differently in fog. Gunshots sound closer than they are.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Hazards:&lt;/strong&gt; Mutated leeches in water (Drain Stamina), Gas pockets.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;./MapDesign_NeonSlums.md&#34;&gt;← Previous: Map Design (Neon Slums)&lt;/a&gt;&lt;/strong&gt; | &lt;strong&gt;&lt;a href=&#34;../../README.md&#34;&gt;Index&lt;/a&gt;&lt;/strong&gt; | &lt;strong&gt;&lt;a href=&#34;../../Visuals/ArtDirection.md&#34;&gt;Next: Art Direction →&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/gdd_design/world/maplayouts.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/gdd_design/world/maplayouts.html</guid>
+      <description>
+        
+        
+        &lt;h1&gt;Map Layouts - Detailed Map Configurations&lt;/h1&gt;&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;./MapDesign.md&#34;&gt;← Back to World&lt;/a&gt;&lt;/strong&gt; | &lt;strong&gt;&lt;a href=&#34;../README.md&#34;&gt;Index&lt;/a&gt;&lt;/strong&gt; | &lt;strong&gt;&lt;a href=&#34;./EnvironmentalNarrative.md&#34;&gt;Next: Environmental Narrative →&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2&gt;📍 Points of Interest (POI)&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-points-of-interest-poi&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-points-of-interest-poi&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;POI Tiers&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;poi-tiers&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#poi-tiers&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: center&#34;&gt;Tier&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Name&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Characteristics&lt;/th&gt;
+          &lt;th style=&#34;text-align: center&#34;&gt;Quantity/Map&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;&lt;strong&gt;S&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Landmark&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Major visual landmark, visible map-wide&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;1-2&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;&lt;strong&gt;A&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Major POI&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Primary area with high-tier loot&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;3-4&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;&lt;strong&gt;B&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Minor POI&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Secondary area, moderate loot&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;5-7&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;&lt;strong&gt;C&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Micro POI&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Small point, basic loot&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;8-12&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3&gt;Industrial Decay POIs&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;industrial-decay-pois&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#industrial-decay-pois&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;S-Tier: Reactor Tower&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Position: Map Center (800m, 800m)&lt;/li&gt;
+&lt;li&gt;Height: 45m (tallest), 4 floors + basement&lt;/li&gt;
+&lt;li&gt;Loot: Epic Vaults, Legendary Cache&lt;/li&gt;
+&lt;li&gt;AI: 15-20 enemies + Boss&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;A-Tier:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Tech Labs Complex (East) - 3 buildings, quest items&lt;/li&gt;
+&lt;li&gt;Warehouse District (West) - 6 warehouses, mechanical parts&lt;/li&gt;
+&lt;li&gt;Office Complex (North) - 5 floors, Intel documents&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2&gt;🔥 Hotspots - High Activity Zones&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-hotspots---high-activity-zones&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-hotspots---high-activity-zones&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;Hotspot 1: Reactor Core&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;hotspot-1-reactor-core&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#hotspot-1-reactor-core&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Heat:&lt;/strong&gt; 🔴🔴🔴🔴🔴 | Combat rate: 85% | Deaths/match: 8-12&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Entry Points (7):&lt;/strong&gt; Main entrance, Emergency stairs, Service ladder, Elevator, Roof access, Vent, Basement tunnel&lt;/p&gt;
+&lt;h3&gt;Hotspot 2: The Bridge&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;hotspot-2-the-bridge&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#hotspot-2-the-bridge&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Heat:&lt;/strong&gt; 🔴🔴🔴🔴⚪ | Combat rate: 70% | Deaths/match: 4-6&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;tactical Overview:&lt;/strong&gt; Crossing point between Warehouse and Office. Vulnerable to sniper fire from Office windows.&lt;/p&gt;
+&lt;h3&gt;Hotspot 3: Tech Labs Lobby&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;hotspot-3-tech-labs-lobby&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#hotspot-3-tech-labs-lobby&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Heat:&lt;/strong&gt; 🔴🔴🔴⚪⚪ | Combat rate: 55% | Deaths/match: 3-5&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Tactical Overview:&lt;/strong&gt; Single main entrance with a 3-floor atrium providing multiple vertical sightlines.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2&gt;🚧 Choke Points&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-choke-points&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-choke-points&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;Critical Chokes&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;critical-chokes&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#critical-chokes&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;ID&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Location&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Width&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Type&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Bypass&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;CH-1&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;The Bridge&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;3m&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Structural&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Canal, Tunnel&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;CH-2&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Reactor Entrance&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;4m&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Structural&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Vent, Ladder&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;CH-3&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Lab Lobby&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;5m&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Vertical&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Fire escape&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3&gt;Secondary Chokes&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;secondary-chokes&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#secondary-chokes&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;ID&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Location&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Width&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Notes&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;CH-4&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Warehouse W2&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;2m&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Roll-up shutter&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;CH-5&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Office Stairwell&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;1.5m&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;5 floor funnel&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;CH-6&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Water Pipe&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;1m&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Crouch required&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr&gt;
+&lt;h2&gt;🚁 Extraction Points&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-extraction-points&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-extraction-points&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;EX-1: Helipad (North)&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;ex-1-helipad-north&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#ex-1-helipad-north&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Type:&lt;/strong&gt; Signal (Flare Gun required)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Capacity:&lt;/strong&gt; 4 | &lt;strong&gt;Wait:&lt;/strong&gt; 90s | &lt;strong&gt;Risk:&lt;/strong&gt; 🔴 High&lt;/li&gt;
+&lt;li&gt;Visible map-wide, high PvP target&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;EX-2: Gate 03 (East)&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;ex-2-gate-03-east&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#ex-2-gate-03-east&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Type:&lt;/strong&gt; Always Open&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Capacity:&lt;/strong&gt; 6 | &lt;strong&gt;Wait:&lt;/strong&gt; 15s | &lt;strong&gt;Risk:&lt;/strong&gt; 🟡 Medium&lt;/li&gt;
+&lt;li&gt;Most used extraction&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;EX-3: Convoy (South)&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;ex-3-convoy-south&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#ex-3-convoy-south&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Type:&lt;/strong&gt; Paid (3000 Credits)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Capacity:&lt;/strong&gt; 8 | &lt;strong&gt;Wait:&lt;/strong&gt; 30s | &lt;strong&gt;Risk:&lt;/strong&gt; 🟡 Medium&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;EX-4: Sewer (Central)&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;ex-4-sewer-central&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#ex-4-sewer-central&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Type:&lt;/strong&gt; Conditional (No Backpack)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Capacity:&lt;/strong&gt; 2 | &lt;strong&gt;Wait:&lt;/strong&gt; 45s | &lt;strong&gt;Risk:&lt;/strong&gt; 🟢 Low&lt;/li&gt;
+&lt;li&gt;Emergency escape, hidden location&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;EX-5: Boat (West)&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;ex-5-boat-west&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#ex-5-boat-west&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Type:&lt;/strong&gt; Timer (&amp;lt;3:00 remaining)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Capacity:&lt;/strong&gt; 3 | &lt;strong&gt;Wait:&lt;/strong&gt; 20s | &lt;strong&gt;Risk:&lt;/strong&gt; 🔴 High&lt;/li&gt;
+&lt;li&gt;Late-game emergency option&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2&gt;📊 Traffic Flow&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-traffic-flow&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-traffic-flow&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;Early Game (0-5m):&lt;/strong&gt; Spawn → Rush to nearest POI → Move towards Mid zones
+&lt;strong&gt;Mid Game (5-10m):&lt;/strong&gt; Contesting hot zones, fighting for Supply drops, Peak PvP encounters
+&lt;strong&gt;Late Game (10-15m):&lt;/strong&gt; Securing escape routes → Moving to Extraction Points&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;./MapDesign.md&#34;&gt;← Back to World&lt;/a&gt;&lt;/strong&gt; | &lt;strong&gt;&lt;a href=&#34;../README.md&#34;&gt;Index&lt;/a&gt;&lt;/strong&gt; | &lt;strong&gt;&lt;a href=&#34;./EnvironmentalNarrative.md&#34;&gt;Next: Environmental Narrative →&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>

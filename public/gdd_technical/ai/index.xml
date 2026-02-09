@@ -1,0 +1,221 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Extraction Document – AI</title>
+    <link>http://localhost:1313/gdd_technical/ai/index.html</link>
+    <description>Recent content in AI on Extraction Document</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	  <atom:link href="http://localhost:1313/gdd_technical/ai/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/gdd_technical/ai/sensorysystem.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/gdd_technical/ai/sensorysystem.html</guid>
+      <description>
+        
+        
+        &lt;h1&gt;AI Sensory System &amp;amp; Perception&lt;/h1&gt;&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;../README.md&#34;&gt;← Back to Index&lt;/a&gt;&lt;/strong&gt; | &lt;strong&gt;&lt;a href=&#34;../../GDD_Design/AI/FactionBehaviors.md&#34;&gt;Faction Behaviors (Design) →&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2&gt;👂 The &amp;ldquo;Fair&amp;rdquo; AI Principle&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-the-fair-ai-principle&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-the-fair-ai-principle&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;AI must play by the same rules as the player. &lt;strong&gt;No Omniscience.&lt;/strong&gt;
+If a player is obscured by smoke, the AI cannot see them. If a player walks slowly (Sneak), the AI cannot hear them.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2&gt;👁️ Visual Perception (Sight)&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-visual-perception-sight&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-visual-perception-sight&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;Components&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;components&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#components&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;We use &lt;code&gt;UAIPerceptionComponent&lt;/code&gt; with a customized &lt;strong&gt;Sight Config&lt;/strong&gt;.&lt;/p&gt;
+&lt;h3&gt;1. Vision Cone (Frustum)&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;1-vision-cone-frustum&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#1-vision-cone-frustum&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Peripheral Vision Angle:&lt;/strong&gt; 90 degrees (Total 180 FOV).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Focus Vision Angle:&lt;/strong&gt; 30 degrees (Total 60 FOV).
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;Note:&lt;/em&gt; Detection speed is 2x faster inside the Focus cone.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;2. Detection Ranges (Meters)&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;2-detection-ranges-meters&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#2-detection-ranges-meters&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;State&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Detection Range&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Lose Sight Range&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Clear Day&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;60m&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;75m&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Night / Fog&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;20m&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;30m&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Flashlight On&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;40m (Beam only)&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;50m&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3&gt;3. Visibility Modifiers (The &amp;ldquo;Stealth&amp;rdquo; Formula)&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;3-visibility-modifiers-the-stealth-formula&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#3-visibility-modifiers-the-stealth-formula&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Every tick, the AI calculates a &lt;code&gt;VisibilityScore&lt;/code&gt; (0.0 to 1.0) for the target.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Distance Factor:&lt;/strong&gt; Closer = Higher Score.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Lighting Factor:&lt;/strong&gt; Player in Shadow (-50%), Player under Light (+50%).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Posture:&lt;/strong&gt; Standing (1.0), Crouching (0.6), Prone (0.3).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Movement:&lt;/strong&gt; Sprinting (1.2), Walking (1.0), Stationery (0.8).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Camouflage:&lt;/strong&gt; Ghillie Suit reduces score by 30% in foliage.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;Technical Note:&lt;/strong&gt; Use &lt;code&gt;LineOfSightTo()&lt;/code&gt; with channel &lt;code&gt;ecc_Visibility&lt;/code&gt;. Check for foliage blocking using &lt;code&gt;Masked&lt;/code&gt; material opacity.&lt;/p&gt;
+
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;h2&gt;👂 Auditory Perception (Hearing)&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-auditory-perception-hearing&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-auditory-perception-hearing&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;Components&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;components-1&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#components-1&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;We use &lt;code&gt;UAISense_Hearing&lt;/code&gt;.&lt;/p&gt;
+&lt;h3&gt;1. Stickiness of Sound&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;1-stickiness-of-sound&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#1-stickiness-of-sound&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;AI remembers the location where the sound was &lt;em&gt;generated&lt;/em&gt;, not where the player &lt;em&gt;is&lt;/em&gt;.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;Example:&lt;/em&gt; Player shoots at point A, then sprints to point B. AI will investigate point A first.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;2. Noise Levels (Radius)&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;2-noise-levels-radius&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#2-noise-levels-radius&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Action&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Radius (Meters)&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Loudness (0-1)&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Gunshot (Unsuppressed)&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;150m&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;1.0&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Gunshot (Suppressed)&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;40m&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;0.4&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Explosion&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;300m&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;1.0&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Sprint Footstep&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;25m&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;0.8&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Walk Footstep&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;15m&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;0.5&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Crouch Walk&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;3m&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;0.1&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Looting Container&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;5m&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;0.3&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Reloading&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;2m&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;0.2&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3&gt;3. Occlusion (Walls)&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;3-occlusion-walls&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#3-occlusion-walls&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;Sounds pass through walls but are dampened.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Algorithm:&lt;/strong&gt; Raycast from Source to Listener. If hit Wall -&amp;gt; Reduce Loudness by 50%.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Material matters:&lt;/strong&gt; Concrete dampens more than Wood.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2&gt;🧠 Memory &amp;amp; Investigation&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-memory--investigation&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-memory--investigation&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;Short-Term Memory (0-10s)&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;short-term-memory-0-10s&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#short-term-memory-0-10s&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;AI tracks the &lt;code&gt;LastKnownPosition&lt;/code&gt; (LKP).&lt;/li&gt;
+&lt;li&gt;If Line of Sight is broken, AI will:
+&lt;ol&gt;
+&lt;li&gt;Move to LKP.&lt;/li&gt;
+&lt;li&gt;Wait 2s.&lt;/li&gt;
+&lt;li&gt;Look around (animate head).&lt;/li&gt;
+&lt;li&gt;Resume patrol or enter &amp;ldquo;Search Mode&amp;rdquo;.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Long-Term Memory (10s - 2min)&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;long-term-memory-10s---2min&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#long-term-memory-10s---2min&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;AI remembers that &amp;ldquo;An enemy was in this sector&amp;rdquo;.&lt;/li&gt;
+&lt;li&gt;Readiness state remains &lt;code&gt;Alert&lt;/code&gt; (Weapon raised).&lt;/li&gt;
+&lt;li&gt;Patrol speed is slower; perception responsiveness increased.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2&gt;🗣️ Communication (The &amp;ldquo;Hive Mind&amp;rdquo;)&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-communication-the-hive-mind&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-communication-the-hive-mind&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;AI agents share information within a squad radius (20m).&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Direct Witness:&lt;/strong&gt; AI_1 sees Player.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Broadcast:&lt;/strong&gt; AI_1 shouts &amp;ldquo;Contact!&amp;rdquo; (State Switch).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Propagation:&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;AI_2 (within 20m) receives location data immediately.&lt;/li&gt;
+&lt;li&gt;AI_3 (50m away) hears the shout but &lt;em&gt;doesn&amp;rsquo;t&lt;/em&gt; know exact location; enters Alert state.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;h2&gt;⚙️ Optimization (Budget)&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-optimization-budget&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-optimization-budget&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;LOD Level&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Distance&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Perception Update Rate&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;LOD 0&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&amp;lt; 30m&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Every 0.1s (10Hz)&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;LOD 1&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;30m - 60m&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Every 0.5s (2Hz)&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;LOD 2&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&amp;gt; 60m&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Every 2.0s (0.5Hz) or Disabled&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Sense Deactivation:&lt;/strong&gt; Disable Sight/Hearing if AI is not rendered and &amp;gt; 200m from any player.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>

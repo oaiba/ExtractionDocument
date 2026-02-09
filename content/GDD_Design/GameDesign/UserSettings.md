@@ -3,6 +3,8 @@ title: "User Settings & Configuration"
 type: docs
 ---
 
+**[↔ View Technical Spec: Settings System](../../GDD_Technical/Systems/SettingsSystem.md)**
+
 ## ⚙️ Design Philosophy
 
 **"Power to the Player, Simplicity for the Casual."**

@@ -33,6 +33,7 @@ Character, combat, inventory, and UI mechanics
 - **[Weapon System](./Gameplay/WeaponSystem.md)** - Weapons, attachments, combat mechanics (enums & codenames)
 - **[Inventory System](./Gameplay/InventorySystem.md)** - Grid system, items, stash (enums & codenames)
 - **[Control System](./Gameplay/ControlSystem.md)** - Input abstraction, cross-platform controls, movement logic
+- **[Settings System](./Systems/SettingsSystem.md)** - Engine scalability, audio mixers, and persistence logic
 - **[UI System](./Systems/UISystem.md)** - HUD, menus, widgets, touch controls, notifications
 
 ---

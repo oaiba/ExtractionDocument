@@ -1,117 +1,94 @@
-# Extraction Shooter Project - Game Design Document (GDD)
+<pre>
+███████╗██╗  ██╗████████╗██████╗  █████╗  ██████╗████████╗██╗ ██████╗ ███╗   ██╗
+██╔════╝╚██╗██╔╝╚══██╔══╝██╔══██╗██╔══██╗██╔════╝╚══██╔══╝██║██╔═══██╗████╗  ██║
+█████╗   ╚███╔╝    ██║   ██████╔╝███████║██║        ██║   ██║██║   ██║██╔██╗ ██║
+██╔══╝   ██╔██╗    ██║   ██╔══██╗██╔══██║██║        ██║   ██║██║   ██║██║╚██╗██║
+███████╗██╔╝ ██╗   ██║   ██║  ██║██║  ██║╚██████╗   ██║   ██║╚██████╔╝██║ ╚████║
+╚══════╝╚═╝  ╚═╝   ╚═╝   ╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝   ╚═╝   ╚═╝ ╚═════╝ ╚═╝  ╚═══╝
+                      [ MASTER DOCUMENTATION PORTAL ]
+</pre>
+
+# Extraction Shooter - Game Design Document (GDD)
+
 
 <p align="center">
   <img src="assets/logo.svg" alt="Project Logo" width="180">
 </p>
 
-### 🚀 Quick Navigation
-*   **[GitHub Repo](https://github.com/oaiba/ExtractionDocument)**
-*   **[MVP Scope](/GDD_Design/ProjectScope/MVP.md)**
-*   **[Art Bible](/GDD_Design/Visuals/StyleGuide.md)**
-*   **[Core Loop](/GDD_Design/GameDesign/CoreGameplay.md)**
+This is the central repository and gateway for all documentation related to the Extraction Shooter project. It serves as the single source of truth for both the creative vision and the technical implementation of our top-down, high-stakes tactical experience.
 
 ---
 
-**Version:** 1.1  
-**Last Updated:** February 7, 2026  
-**Platform:** Mobile (iOS/Android), Windows PC, Controller support  
-**Engine:** Unreal Engine 5 (C++)  
-**Genre:** Extraction Shooter, Top-down, Multiplayer
+## Project Snapshot
+
+| Category               | Details                                   |
+| :--------------------- | :---------------------------------------- |
+| **Engine**             | Unreal Engine 5 (C++)                     |
+| **Primary Platform**   | Mobile (iOS / Android)-Controller Support |
+| **Secondary Platform** | Windows PC (Controller Support)           |
+| **Genre**              | Top-down Extraction Shooter, Multiplayer  |
+| **Current Phase**      | Pre-Production / Core Prototyping         |
 
 ---
 
-## ⚡ One-Page Summary
+## Project Portals
 
-**Concept:** A top-down, high-stakes extraction shooter for mobile where players risk their gear to scavenge valuable loot in hostile, post-collapse industrial zones.
-**Core Loop:** Infiltrate Zone → Scavenge Loot/Complete Intel Goals → Survive AI & Players → Extract.
-**USP:** "Tarkov-lite" for mobile. Realism-focused ballistics and economy, but with accessible top-down controls and 12-15 minute sessions.
-**Monetization:** Free-to-Play. Battle Pass & Cosmetics. NO Pay-to-Win (selling power).
-**Platform:** iOS, Android (Primary). PC (Secondary).
-**Status:** Pre-Production / Prototyping Phase.
+Access the specialized documentation hubs based on your role and current task.
 
----
+### Design & Creative Hub
+Focused on player experience, world-building, and visual/audio aesthetics.
+*   **[GDD Design Overview](./GDD_Design/README.md)** — Entry point for all design docs.
+*   **[World & Level Design](./GDD_Design/World/MapDesign.md)** — Maps, POIs, and environmental storytelling.
+*   **[Art & Visuals](./GDD_Design/Visuals/ArtDirection.md)** — Style guides, asset specs, and UI/UX.
+*   **[Core Gameplay Design](./GDD_Design/GameDesign/CoreGameplay.md)** — Loops, mechanics, and player journey.
+*   **[Audio Vision](./GDD_Design/Audio/SoundDesign.md)** — Tactical audio and immersive soundscapes.
 
-## Project Overview
-
-This is the central Game Design Document for a top-down extraction shooter. Players infiltrate hazardous zones, scavenge for valuable loot, fight hostile factions and other players, and extract to secure their gains. High stakes, tactical gameplay, and persistent progression are the core pillars.
-
----
-
-## 📚 Table of Contents
-
-### 1. World Building & Level Design
-Defines the setting, maps, and environmental storytelling.
-*   **[Map Design Overview](./GDD_Design/World/MapDesign.md)** - General philosophy and structure.
-*   **[Map Layouts](./GDD_Design/World/MapLayouts.md)** - Points of Interest (POIs), hotspots, and tactical choke points.
-*   **[Environmental Narrative](./GDD_Design/World/EnvironmentalNarrative.md)** - Lore integration into the map.
-*   **[Loot Distribution](./GDD_Design/World/LootDistribution.md)** - Heatmaps and loot rarity zones.
-*   **[Industrial Zone Design](./GDD_Design/World/MapDesign_IndustrialZone.md)** - Detailed spec for the first map.
-*   **[Neon Slums Design](./GDD_Design/World/MapDesign_NeonSlums.md)** - Draft for the urban map.
-*   **[Wilderness Design](./GDD_Design/World/MapDesign_Wilderness.md)** - Draft for the open area map.
-
-### 2. Narrative & Lore
-The story behind the collapse and the factions vying for control.
-*   **[Backstory & Timeline](./GDD_Design/Story/Backstory.md)** - History of the world and The Collapse.
-*   **[Factions](./GDD_Design/Story/Factions.md)** - Detailed breakdown of the 4 major groups.
-*   **[Quest Lines](./GDD_Design/Story/QuestLines.md)** - Mission structure and types.
-*   **[Narrative Overview](./GDD_Design/Story/Narrative.md)** - High-level story themes.
-
-### 3. Art Direction & Visuals
-Guidelines for maintaining a consistent and high-quality visual style.
-*   **[Art Direction Overview](./GDD_Design/Visuals/ArtDirection.md)** - Core visual pillars.
-*   **[Style Guide (Art Bible)](./GDD_Design/Visuals/StyleGuide.md)** - Color palettes, lighting, and mood.
-*   **[Asset Guidelines](./GDD_Design/Visuals/AssetGuidelines.md)** - Technical specs for 3D models and textures.
-*   **[User Interface (UI)](./GDD_Design/Visuals/UserInterface.md)** - UI style and layout concepts.
-
-### 4. Audio Design
-Sound strategy for immersion and tactical gameplay.
-*   **[Sound Design Overview](./GDD_Design/Audio/SoundDesign.md)** - General philosophy.
-*   **[Soundscape](./GDD_Design/Audio/Soundscape.md)** - Ambient audio and environmental effects.
-*   **[Tactical Audio](./GDD_Design/Audio/TacticalAudio.md)** - Footsteps, weapons, and combat feedback.
-*   **[Voice Lines](./GDD_Design/Audio/VoiceLines.md)** - Character dialogue and callouts.
-
-### 5. Gameplay & Combat
-Core mechanics, weapons, and combat systems.
-*   **[Core Gameplay Loop](./GDD_Design/GameDesign/CoreGameplay.md)** - The cycle of Infiltrate -> Loot -> Extract.
-*   **[Weapons](./GDD_Design/Combat/Weapons.md)** - List of firearms and melee weapons.
-*   **[Items](./GDD_Design/Combat/Items.md)** - Consumables, grenades, and utility items.
-*   **[Operators](./GDD_Design/Characters/Operators.md)** - Playable characters and classes.
-*   **[Controls](./GDD_Design/GameDesign/Controls.md)** - Input schemes for Mobile/PC.
-
-### 6. Systems & Economy
-Metagame progression and technical systems.
-*   **[Economy & Monetization](./GDD_Design/GameDesign/Economy.md)** - Currency, market, and store.
-*   **[Progression](./GDD_Design/GameDesign/Progression.md)** - Leveling and unlocks.
-*   **[Multiplayer Architecture](./GDD_Design/GameDesign/Multiplayer.md)** - Server/Client structure.
-*   **[Localization](./GDD_Design/GameDesign/Localization.md)** - Language support plan.
-*   **[Accessibility](./GDD_Design/GameDesign/Accessibility.md)** - Inclusive design features.
-
-### 7. Project Management
-Scope, risks, and planning documents.
-*   **[MVP Scope](./GDD_Design/ProjectScope/MVP.md)** - Features for Alpha/Beta.
-*   **[Risk Analysis](./GDD_Design/ProjectScope/Risks.md)** - Potential pitfalls and mitigation.
-*   **[Non-Goals](./GDD_Design/ProjectScope/NonGoals.md)** - What we are NOT building.
+### Technical & Engineering Hub
+Focused on implementation, systems architecture, and technical workflows.
+*   **[GDD Technical Overview](./GDD_Technical/README.md)** — Entry point for all technical docs.
+*   **[System Architecture](./GDD_Technical/Core/Architecture.md)** — Module structure and tech stack.
+*   **[Gameplay Systems](./GDD_Technical/Gameplay/CharacterSystem.md)** — Character, Weapon, and Inventory logic.
+*   **[Networking & Social](./GDD_Technical/Core/NetworkingSystem.md)** — Server-client model and multiplayer sync.
+*   **[AI & Systems](./GDD_Technical/Systems/AISystem.md)** — NPC behavior and world logic.
 
 ---
 
-## Recent Updates
+## Role Guidance
 
-*   **Audio:** Added full `Soundscape` and `Tactical Audio` documentation.
-*   **Visuals:** Created `Style Guide` and `Asset Guidelines`.
-*   **World:** Expanded `Map Layouts` and `Loot Distribution`.
-*   **Scope:** Defined `MVP` features for upcoming milestones.
+### For Design & Art Teams
+*   **Single Source of Truth**: Always refer to the [Design Hub](./GDD_Design/README.md) before starting any creative work.
+*   **Visual Consistency**: Follow the [Style Guide](./GDD_Design/Visuals/StyleGuide.md) strictly to ensure cross-platform visual fidelity.
+*   **Feedback Loop**: When updating mechanics, ensure the [Core Loop](./GDD_Design/GameDesign/CoreGameplay.md) is adjusted to reflect the change.
+*   **Asset Submission**: Use the technical specs in [Asset Guidelines](./GDD_Design/Visuals/AssetGuidelines.md) to prepare models for UE5.
 
----
-
-## Next Steps
-
-1.  **Prototype Implementation:** Begin coding the core extraction loop based on `CoreGameplay.md`.
-2.  **Map Greyboxing:** Start blocking out the Industrial Zone using `MapLayouts.md`.
-3.  **Character Art:** Create first pass of the Assault operator using `AssetGuidelines.md`.
-4.  **Audio Implementation:** Set up Wwise/FMOD project structure as per `SoundDesign.md`.
+### For Technical & Dev Teams
+*   **Implementation Specs**: All Enums, Codenames, and Interface contracts are defined in the [Technical Hub](./GDD_Technical/README.md).
+*   **Performance First**: Adhere to the budgets defined in the [Performance & Optimization](./GDD_Technical/Performance/Optimization.md) section.
+*   **Task Management**: Follow the [Development Roadmap](./GDD_Technical/Core/DevelopmentRoadmap.md) for milestone priorities.
+*   **Code Standards**: Maintain modularity as outlined in the [Architecture](./GDD_Technical/Core/Architecture.md) documentation.
 
 ---
 
-**[Contact & Contributors]**
-*   Lead Designer: [Name]
-*   Technical Lead: [Name]
+## Core Planning & Progress
+
+### Project Scope
+*   **[MVP Definition](./GDD_Design/ProjectScope/MVP.md)** — Minimum Viable Product features.
+*   **[Non-Goals](./GDD_Design/ProjectScope/NonGoals.md)** — Features explicitly out of current scope.
+*   **[Risk Assessment](./GDD_Design/ProjectScope/Risks.md)** — Known challenges and mitigation strategies.
+
+### Recent Milestones
+*   **Audio Architecture**: Completed `Soundscape` and `Tactical Audio` definitions.
+*   **Visual Direction**: Finalized `Art Bible` and `Mobile Performance Budgets`.
+*   **Map System**: Expanded `Industrial Zone` hotspots and loot heatmaps.
+
+---
+
+## Quick Start
+1.  **Read the [MVP Scope](./GDD_Design/ProjectScope/MVP.md)** to understand the current focus.
+2.  **Explore the [Core Loop](./GDD_Design/GameDesign/CoreGameplay.md)** to grasp the game's heartbeat.
+3.  **Review the [Technical Roadmap](./GDD_Technical/Core/DevelopmentRoadmap.md)** if you are contributing code.
+
+---
+*Last Updated: February 9, 2026*  
+*Lead Designer: [Name] | Technical Lead: [Name]*
+

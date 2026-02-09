@@ -1,5 +1,17 @@
 # Extraction Shooter Project - Game Design Document (GDD)
 
+<p align="center">
+  <img src="assets/logo.svg" alt="Project Logo" width="180">
+</p>
+
+### 🚀 Quick Navigation
+*   **[GitHub Repo](https://github.com/oaiba/ExtractionDocument)**
+*   **[MVP Scope](/GDD_Design/ProjectScope/MVP.md)**
+*   **[Art Bible](/GDD_Design/Visuals/StyleGuide.md)**
+*   **[Core Loop](/GDD_Design/GameDesign/CoreGameplay.md)**
+
+---
+
 **Version:** 1.1  
 **Last Updated:** February 7, 2026  
 **Platform:** Mobile (iOS/Android), Windows PC, Controller support  

@@ -1,3 +1,7 @@
+---
+title: "Map Layouts - Detailed Map Configurations"
+type: docs
+---
 # Map Layouts - Detailed Map Configurations
 
 **[← Back to World](./MapDesign.md)** | **[Index](../README.md)** | **[Next: Environmental Narrative →](./EnvironmentalNarrative.md)**
@@ -106,3 +110,5 @@
 ---
 
 **[← Back to World](./MapDesign.md)** | **[Index](../README.md)** | **[Next: Environmental Narrative →](./EnvironmentalNarrative.md)**
+
+

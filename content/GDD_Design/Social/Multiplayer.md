@@ -1,3 +1,7 @@
+---
+title: "Social & Multiplayer Systems"
+type: docs
+---
 # Social & Multiplayer Systems
 
 **[← Back to Index](../README.md)** | **[Next: Core Gameplay →](../GameDesign/CoreGameplay.md)**
@@ -508,3 +512,5 @@ We utilize **Epic Online Services** to provide a seamless multiplayer experience
 ---
 
 **[← Back to Index](../README.md)** | **[Next: Core Gameplay →](../GameDesign/CoreGameplay.md)**
+
+

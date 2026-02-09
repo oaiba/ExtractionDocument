@@ -1,3 +1,7 @@
+---
+title: "Build Pipeline & Release Engineering"
+type: docs
+---
 # Build Pipeline & Release Engineering
 
 **[← Back to Index](../README.md)**
@@ -69,3 +73,5 @@ Run Nightly (03:00 AM) on `development`:
 5.  **Distribution:** Push to public branches (Steam Main, App Store Review).
 
 ---
+
+

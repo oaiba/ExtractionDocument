@@ -1,3 +1,7 @@
+---
+title: "Accessibility Design"
+type: docs
+---
 # Accessibility Design
 
 **[← Back to Index](../README.md)** | **[Next: Controls →](./Controls.md)**
@@ -423,3 +427,5 @@ For every new feature, ask:
 ---
 
 **[← Back to Index](../README.md)** | **[Next: Controls →](./Controls.md)**
+
+

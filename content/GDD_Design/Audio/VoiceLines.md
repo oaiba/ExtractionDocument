@@ -1,3 +1,7 @@
+---
+title: "Voice Lines - Character Dialogue"
+type: docs
+---
 # Voice Lines - Character Dialogue
 
 **[← Back to Tactical Audio](./TacticalAudio.md)** | **[Index](../README.md)** | **[Next: Characters →](../Characters/Operators.md)**
@@ -496,3 +500,5 @@ Teammate Audio:
 ---
 
 **[← Back to Tactical Audio](./TacticalAudio.md)** | **[Index](../README.md)** | **[Next: Characters →](../Characters/Operators.md)**
+
+

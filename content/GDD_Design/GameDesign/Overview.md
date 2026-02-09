@@ -1,3 +1,7 @@
+---
+title: "Game Overview & Design Foundation"
+type: docs
+---
 # Game Overview & Design Foundation
 
 **[← Back to Index](../README.md)** | **[Next: Core Gameplay →](./CoreGameplay.md)**
@@ -1048,3 +1052,5 @@ Q4: Holiday events, major balance pass
 ---
 
 **[← Back to Index](../README.md)** | **[Next: Core Gameplay →](./CoreGameplay.md)**
+
+

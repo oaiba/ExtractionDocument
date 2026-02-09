@@ -1,3 +1,7 @@
+---
+title: "Save System - Technical Specification"
+type: docs
+---
 # Save System - Technical Specification
 
 **[← Back to Index](../README.md)** | **[Next: Tutorial System →](./TutorialSystem.md)**
@@ -1575,3 +1579,5 @@ STRUCT AutoSaveConfig:
 ---
 
 **[← Back to Index](../README.md)** | **[Next: Tutorial System →](./TutorialSystem.md)**
+
+

@@ -1,3 +1,7 @@
+---
+title: "ANGEL - Sister Maria Santos"
+type: docs
+---
 # ANGEL - Sister Maria Santos
 
 **[← Back to Support Class](./README.md)** | **[All Operators](../Operators.md)**
@@ -356,3 +360,5 @@ The Vatican quietly approached her afterward, offering training with Swiss Guard
 ---
 
 **[← Back to Support Class](./README.md)** | **[All Operators](../Operators.md)**
+
+

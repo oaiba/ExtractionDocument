@@ -1,3 +1,7 @@
+---
+title: "SPECTER - Viktor Volkov"
+type: docs
+---
 # SPECTER - Viktor Volkov
 
 **[← Back to Recon Class](./README.md)** | **[All Operators](../Operators.md)**
@@ -160,3 +164,5 @@ After growing disillusioned with the corruption eating Russia from within, Vikto
 ---
 
 **[← Back to Recon Class](./README.md)** | **[All Operators](../Operators.md)**
+
+

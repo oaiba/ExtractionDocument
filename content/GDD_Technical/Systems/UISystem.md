@@ -1,3 +1,7 @@
+---
+title: "UI System - Technical Specification"
+type: docs
+---
 # UI System - Technical Specification
 
 **[← Back to Index](../README.md)** | **[Next: Audio System →](./AudioSystem.md)**
@@ -1559,3 +1563,5 @@ ENUM CrosshairStyle:
 ---
 
 **[← Back to Index](../README.md)** | **[Next: Audio System →](./AudioSystem.md)**
+
+

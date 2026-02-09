@@ -1,3 +1,7 @@
+---
+title: "MVP Scope - Minimum Viable Product"
+type: docs
+---
 # MVP Scope - Minimum Viable Product
 
 **[← Back to Project Scope](./NonGoals.md)** | **[Index](../README.md)** | **[Next: Risk Analysis →](./Risks.md)**
@@ -108,3 +112,5 @@
 ---
 
 **[← Back to Project Scope](./NonGoals.md)** | **[Index](../README.md)** | **[Next: Risk Analysis →](./Risks.md)**
+
+

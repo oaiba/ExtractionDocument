@@ -1,3 +1,7 @@
+---
+title: "Map & Environment System - Technical Specification"
+type: docs
+---
 # Map & Environment System - Technical Specification
 
 **[← Back to Index](../README.md)** | **[Next: AI System →](./AISystem.md)**
@@ -1579,3 +1583,5 @@ CONST ZONE_STREAMING_CONFIGS = {
 ---
 
 **[← Back to Index](../README.md)** | **[Next: AI System →](./AISystem.md)**
+
+

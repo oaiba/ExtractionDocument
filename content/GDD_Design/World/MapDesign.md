@@ -1,3 +1,7 @@
+---
+title: "World & Map Design"
+type: docs
+---
 # World & Map Design
 
 **[← Previous: Operators](../Characters/Operators.md)** | **[Index](../README.md)** | **[Next: Art Direction →](../Visuals/ArtDirection.md)**
@@ -626,3 +630,5 @@ For each new map:
 ---
 
 **[← Previous: Characters](./03_Characters.md)** | **[High-Level Index](./README.md)** | **[Next: Art Direction →](./05_ArtDirection.md)**
+
+

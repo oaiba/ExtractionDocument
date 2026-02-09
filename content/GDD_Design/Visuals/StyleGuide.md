@@ -1,3 +1,7 @@
+---
+title: "Style Guide - Art Bible"
+type: docs
+---
 # Style Guide - Art Bible
 
 **[← Back to Art Direction](./ArtDirection.md)** | **[Index](../README.md)** | **[Next: Asset Guidelines →](./AssetGuidelines.md)**
@@ -444,3 +448,5 @@ Laser     → Side rail (visible red/green beam)
 ---
 
 **[← Back to Art Direction](./ArtDirection.md)** | **[Index](../README.md)** | **[Next: Asset Guidelines →](./AssetGuidelines.md)**
+
+

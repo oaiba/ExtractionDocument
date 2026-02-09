@@ -1,3 +1,7 @@
+---
+title: "AI Sensory System & Perception"
+type: docs
+---
 # AI Sensory System & Perception
 
 **[← Back to Index](../README.md)** | **[Faction Behaviors (Design) →](../../GDD_Design/AI/FactionBehaviors.md)**
@@ -108,3 +112,5 @@ AI agents share information within a squad radius (20m).
 *   **Sense Deactivation:** Disable Sight/Hearing if AI is not rendered and > 200m from any player.
 
 ---
+
+

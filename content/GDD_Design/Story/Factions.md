@@ -1,3 +1,7 @@
+---
+title: "Factions - Detailed Breakdown"
+type: docs
+---
 # Factions - Detailed Breakdown
 
 **[← Back to Narrative](./Narrative.md)** | **[Index](../README.md)** | **[Next: Quest Lines →](./QuestLines.md)**
@@ -332,3 +336,5 @@ Secret: Makes moral compromises she regrets
 ---
 
 **[← Back to Narrative](./Narrative.md)** | **[Index](../README.md)** | **[Next: Quest Lines →](./QuestLines.md)**
+
+

@@ -1,3 +1,7 @@
+---
+title: "UX Flows & Wireframes"
+type: docs
+---
 # UX Flows & Wireframes
 
 **[← Back to Index](../README.md)** | **[Visual Style →](./Visual_Style.md)**
@@ -113,3 +117,5 @@ graph TD
 *   **Process:** Spinner/Progress bar for long actions (e.g., Searching a body).
 
 ---
+
+

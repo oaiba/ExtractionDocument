@@ -1,3 +1,7 @@
+---
+title: "Environmental Narrative - Storytelling Through Environment"
+type: docs
+---
 # Environmental Narrative - Storytelling Through Environment
 
 **[← Back to Map Layouts](./MapLayouts.md)** | **[Index](../README.md)** | **[Next: Loot Distribution →](./LootDistribution.md)**
@@ -225,3 +229,5 @@ Quest Connection: [If applicable]
 ---
 
 **[← Back to Map Layouts](./MapLayouts.md)** | **[Index](../README.md)** | **[Next: Loot Distribution →](./LootDistribution.md)**
+
+

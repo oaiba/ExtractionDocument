@@ -1,3 +1,7 @@
+---
+title: "Economy & Monetization Design"
+type: docs
+---
 # Economy & Monetization Design
 
 **[← Previous: Progression](./Progression.md)** | **[Index](../README.md)** | **[Next: Live Ops →](./LiveOps.md)**
@@ -525,3 +529,5 @@ This document defines the **monetization strategy, currency design, pricing stru
 ---
 
 **[← Previous: Progression](./Progression.md)** | **[Index](../README.md)** | **[Next: Live Ops →](./LiveOps.md)**
+
+

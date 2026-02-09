@@ -1,3 +1,7 @@
+---
+title: "Live Operations System - Technical Specification"
+type: docs
+---
 # Live Operations System - Technical Specification
 
 **[← Back to Index](../README.md)** | **[Next: Social System →](./SocialSystem.md)**
@@ -304,3 +308,5 @@ STRUCT BattlePassTier:
 ---
 
 **[← Back to Index](../README.md)** | **[Next: Social System →](./SocialSystem.md)**
+
+

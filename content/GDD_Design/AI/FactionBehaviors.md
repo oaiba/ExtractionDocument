@@ -1,3 +1,7 @@
+---
+title: "Faction Behaviors & Ecology"
+type: docs
+---
 # Faction Behaviors & Ecology
 
 **[← Back to Index](../README.md)** | **[Enemy Behavior (Basics) →](./EnemyBehavior.md)** | **[AI Tech (Implementation) →](../../GDD_Technical/AI/SensorySystem.md)**
@@ -94,3 +98,5 @@ Aethelgard is not just Player vs. AI. It is a living world where factions have t
     *   *Result:* Players must find another way out or fight through the blockade.
 
 ---
+
+

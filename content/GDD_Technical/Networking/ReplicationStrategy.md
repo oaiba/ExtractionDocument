@@ -1,3 +1,7 @@
+---
+title: "Replication Strategy & Bandwidth Optimization"
+type: docs
+---
 # Replication Strategy & Bandwidth Optimization
 
 **[← Back to Index](../README.md)** | **[Lag Compensation →](./LagCompensation.md)**
@@ -81,3 +85,5 @@ We implement a custom `UReplicationGraph` to manage the immense number of replic
 *   **VOIP:** 10% (Ideally separate channel/server).
 
 ---
+
+

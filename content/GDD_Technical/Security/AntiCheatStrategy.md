@@ -1,3 +1,7 @@
+---
+title: "Security & Anti-Cheat Strategy"
+type: docs
+---
 # Security & Anti-Cheat Strategy
 
 **[← Back to Index](../README.md)**
@@ -61,3 +65,5 @@ Everything critical happens on the Server.
 *   **Review:** Human review required for permanent bans.
 
 ---
+
+

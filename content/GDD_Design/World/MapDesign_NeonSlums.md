@@ -1,3 +1,7 @@
+---
+title: "Map Design: Neon Slums (The \"Undercity\")"
+type: docs
+---
 # Map Design: Neon Slums (The "Undercity")
 
 **[← Back to Index](../../README.md)** | **[Next: Art Direction →](../../Visuals/ArtDirection.md)**
@@ -127,3 +131,5 @@ Navigating the vertical favela requires special tools:
 ---
 
 **[← Previous: Map Design (Industrial)](./MapDesign_IndustrialZone.md)** | **[Index](../../README.md)** | **[Next: Map Design (Wilderness)](./MapDesign_Wilderness.md)**
+
+

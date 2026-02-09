@@ -1,3 +1,7 @@
+---
+title: "Social & Multiplayer System - Technical Specification"
+type: docs
+---
 # Social & Multiplayer System - Technical Specification
 
 **[← Back to Index](../README.md)** | **[Next: Ranked System →](./RankedSystem.md)**
@@ -212,3 +216,5 @@ STRUCT FriendData:
 ---
 
 **[← Back to Index](../README.md)** | **[Next: Ranked System →](./RankedSystem.md)**
+
+

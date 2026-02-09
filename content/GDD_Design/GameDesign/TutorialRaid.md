@@ -1,3 +1,7 @@
+---
+title: "Tutorial Raid: \"Operation Zero\""
+type: docs
+---
 # Tutorial Raid: "Operation Zero"
 
 **[← Back to Index](../README.md)** | **[Controls →](../GameDesign/Controls.md)**
@@ -79,3 +83,5 @@ Completing the tutorial grants:
 This gear is *yours*. If you lose it in the next raid, it's gone forever. Welcome to Aethelgard.
 
 ---
+
+

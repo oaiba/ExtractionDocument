@@ -1,3 +1,7 @@
+---
+title: "Accessibility System - Technical Specification"
+type: docs
+---
 # Accessibility System - Technical Specification
 
 **[← Back to Index](../README.md)** | **[Next: AI System →](./AISystem.md)**
@@ -273,3 +277,5 @@ STRUCT AutoActionSettings:
 ---
 
 **[← Back to Index](../README.md)** | **[Next: AI System →](./AISystem.md)**
+
+

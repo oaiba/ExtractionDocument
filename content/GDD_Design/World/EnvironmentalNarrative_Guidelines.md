@@ -1,3 +1,7 @@
+---
+title: "Environmental Narrative Guidelines: \"Show, Don't Tell\""
+type: docs
+---
 # Environmental Narrative Guidelines: "Show, Don't Tell"
 
 **[← Back to Index](../README.md)** | **[Visual Style](./Visual_Style.md)**
@@ -95,3 +99,5 @@ Use lighting to highlight these stories, but also to set the emotional tone.
 3.  **Perfect Skeletons:** Skeletons should be disarticulated, scavenged by animals, or crushed. Avoid the "Halloween Prop" look.
 
 ---
+
+

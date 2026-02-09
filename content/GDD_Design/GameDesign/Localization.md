@@ -1,3 +1,7 @@
+---
+title: "Localization Strategy"
+type: docs
+---
 # Localization Strategy
 
 **[← Back to Index](../README.md)** | **[Next: Accessibility →](./Accessibility.md)**
@@ -374,3 +378,5 @@ English fallback (en-US)
 ---
 
 **[← Back to Index](../README.md)** | **[Next: Accessibility →](./Accessibility.md)**
+
+

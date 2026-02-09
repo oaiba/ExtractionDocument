@@ -1,3 +1,7 @@
+---
+title: "Core Gameplay Mechanics - Deep Dive"
+type: docs
+---
 # Core Gameplay Mechanics - Deep Dive
 
 **[← Previous: Overview](./Overview.md)** | **[Index](../README.md)** | **[Next: Progression →](./Progression.md)**
@@ -820,3 +824,5 @@ Match Start: 20 players
 ---
 
 **[← Previous: Overview](./Overview.md)** | **[Index](../README.md)** | **[Next: Progression →](./Progression.md)**
+
+

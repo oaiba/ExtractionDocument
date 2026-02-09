@@ -1,3 +1,7 @@
+---
+title: "Lag Compensation & Netcode Logic"
+type: docs
+---
 # Lag Compensation & Netcode Logic
 
 **[← Back to Index](../README.md)** | **[Replication Strategy ←](./ReplicationStrategy.md)**
@@ -55,3 +59,5 @@ When a player fires a hitscan weapon:
 *   **Prediction Limit:** Visuals stop predicting enemy movement beyond 300ms (preventing teleporting enemies).
 
 ---
+
+

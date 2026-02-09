@@ -1,3 +1,7 @@
+---
+title: "PHANTOM - Sarah Kim"
+type: docs
+---
 # PHANTOM - Sarah Kim
 
 **[← Back to Recon Class](./README.md)** | **[All Operators](../Operators.md)**
@@ -163,3 +167,5 @@ After a mole compromised her network, Sarah watched helplessly as her assets wer
 ---
 
 **[← Back to Recon Class](./README.md)** | **[All Operators](../Operators.md)**
+
+

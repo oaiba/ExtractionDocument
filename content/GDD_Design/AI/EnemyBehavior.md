@@ -1,3 +1,7 @@
+---
+title: "AI & Enemy Behavior Design"
+type: docs
+---
 # AI & Enemy Behavior Design
 
 **[← Back to Index](../README.md)** | **[Faction Behaviors (Ecology) →](./FactionBehaviors.md)** | **[AI Tech (Implementation) →](../../GDD_Technical/AI/SensorySystem.md)** | **[Next: Map Design →](../World/MapDesign.md)**
@@ -524,3 +528,5 @@ Each AI type has personality variants affecting behavior:
 ---
 
 **[← Back to Index](../README.md)** | **[Next: Map Design →](../World/MapDesign.md)**
+
+

@@ -1,3 +1,7 @@
+---
+title: "Security System - Technical Specification"
+type: docs
+---
 # Security System - Technical Specification
 
 **[← Back to Index](../README.md)** | **[Next: Analytics System →](../Systems/AnalyticsSystem.md)**
@@ -151,3 +155,5 @@ STRUCT ViolationRecord:
 ---
 
 **[← Back to Index](../README.md)** | **[Next: Analytics System →](../Systems/AnalyticsSystem.md)**
+
+

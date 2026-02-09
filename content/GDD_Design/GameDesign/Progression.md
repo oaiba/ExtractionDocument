@@ -1,3 +1,7 @@
+---
+title: "Progression & Monetization"
+type: docs
+---
 # Progression & Monetization
 
 **[← Previous: User Interface](../Visuals/UserInterface.md)** | **[Index](../README.md)** | **[Next: Weapons →](../Combat/Weapons.md)**
@@ -806,3 +810,5 @@ Exalted:    50,000 reputation
 ---
 
 **[← Previous: User Interface](../Visuals/UserInterface.md)** | **[Index](../README.md)** | **[Next: Weapons →](../Combat/Weapons.md)**
+
+

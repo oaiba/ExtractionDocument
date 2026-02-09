@@ -1,3 +1,7 @@
+---
+title: "Quest Lines - Mission System"
+type: docs
+---
 # Quest Lines - Mission System
 
 **[← Back to Factions](./Factions.md)** | **[Index](../README.md)** | **[Next: Backstory →](./Backstory.md)**
@@ -374,3 +378,5 @@ Reward: Story conclusion, "Memorial" skin, 10,000 Credits
 ---
 
 **[← Back to Factions](./Factions.md)** | **[Index](../README.md)** | **[Next: Backstory →](./Backstory.md)**
+
+

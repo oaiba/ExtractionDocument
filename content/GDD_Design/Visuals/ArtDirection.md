@@ -1,3 +1,7 @@
+---
+title: "Art Direction"
+type: docs
+---
 # Art Direction
 
 **[← Previous: Map Design](../World/MapDesign.md)** | **[Index](../README.md)** | **[Next: User Interface →](./UserInterface.md)**
@@ -666,3 +670,5 @@ Specialist: ██████  (Medium, tech visible)
 ---
 
 **[← Previous: World Design](./04_WorldDesign.md)** | **[High-Level Index](./README.md)** | **[Next: Audio Design →](./06_AudioDesign.md)**
+
+

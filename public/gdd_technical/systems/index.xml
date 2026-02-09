@@ -15,7 +15,7 @@
     
     
     <item>
-      <title></title>
+      <title>Accessibility System - Technical Specification</title>
       <link>http://localhost:1313/gdd_technical/systems/accessibilitysystem.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -514,7 +514,7 @@ STRUCT AutoActionSettings:
     </item>
     
     <item>
-      <title></title>
+      <title>AI System - Technical Specification</title>
       <link>http://localhost:1313/gdd_technical/systems/aisystem.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -2123,7 +2123,7 @@ END FUNCTION&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-
     </item>
     
     <item>
-      <title></title>
+      <title>Analytics System - Technical Specification</title>
       <link>http://localhost:1313/gdd_technical/systems/analyticssystem.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -2453,7 +2453,7 @@ STRUCT TelemetryConfig:
     </item>
     
     <item>
-      <title></title>
+      <title>Audio System - Technical Specification</title>
       <link>http://localhost:1313/gdd_technical/systems/audiosystem.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -4560,7 +4560,7 @@ ENUM AudioQuality:
     </item>
     
     <item>
-      <title></title>
+      <title>Build Pipeline &amp; Release Engineering</title>
       <link>http://localhost:1313/gdd_technical/systems/buildpipeline.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -4659,7 +4659,7 @@ ENUM AudioQuality:
     </item>
     
     <item>
-      <title></title>
+      <title>Live Operations System - Technical Specification</title>
       <link>http://localhost:1313/gdd_technical/systems/liveopssystem.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -5338,7 +5338,7 @@ STRUCT BattlePassTier:
     </item>
     
     <item>
-      <title></title>
+      <title>Localization System - Technical Specification</title>
       <link>http://localhost:1313/gdd_technical/systems/localizationsystem.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -6041,7 +6041,7 @@ STRUCT RTLLayoutHelper:
     </item>
     
     <item>
-      <title></title>
+      <title>Map &amp; Environment System - Technical Specification</title>
       <link>http://localhost:1313/gdd_technical/systems/mapsystem.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -8225,7 +8225,7 @@ CONST ZONE_STREAMING_CONFIGS = {
     </item>
     
     <item>
-      <title></title>
+      <title>Narrative System - Technical Specification</title>
       <link>http://localhost:1313/gdd_technical/systems/narrativesystem.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -9351,7 +9351,7 @@ STRUCT CollectibleData:
     </item>
     
     <item>
-      <title></title>
+      <title>Progression System - Technical Specification</title>
       <link>http://localhost:1313/gdd_technical/systems/progressionsystem.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -11090,7 +11090,7 @@ CONST OPERATOR_LEVEL_UNLOCKS = {
     </item>
     
     <item>
-      <title></title>
+      <title>Ranked System - Technical Specification</title>
       <link>http://localhost:1313/gdd_technical/systems/rankedsystem.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -11875,7 +11875,7 @@ STRUCT LeaderboardEntry:
     </item>
     
     <item>
-      <title></title>
+      <title>Save System - Technical Specification</title>
       <link>http://localhost:1313/gdd_technical/systems/savesystem.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -13882,7 +13882,7 @@ STRUCT StatisticsData:
     </item>
     
     <item>
-      <title></title>
+      <title>Social &amp; Multiplayer System - Technical Specification</title>
       <link>http://localhost:1313/gdd_technical/systems/socialsystem.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -14291,7 +14291,7 @@ STRUCT FriendData:
     </item>
     
     <item>
-      <title></title>
+      <title>Tutorial System - Technical Specification</title>
       <link>http://localhost:1313/gdd_technical/systems/tutorialsystem.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -15152,7 +15152,7 @@ STRUCT FeatureUnlockRequirement:
     </item>
     
     <item>
-      <title></title>
+      <title>UI System - Technical Specification</title>
       <link>http://localhost:1313/gdd_technical/systems/uisystem.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       

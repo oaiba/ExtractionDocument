@@ -1,3 +1,7 @@
+---
+title: "HAVOC - Anton Petrov"
+type: docs
+---
 # HAVOC - Anton Petrov
 
 **[← Back to Assault Class](./README.md)** | **[All Operators](../Operators.md)**
@@ -366,3 +370,5 @@ Kill 4+: Capped at 20 seconds
 ---
 
 **[← Back to Assault Class](./README.md)** | **[All Operators](../Operators.md)**
+
+

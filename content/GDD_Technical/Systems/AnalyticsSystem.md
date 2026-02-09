@@ -1,3 +1,7 @@
+---
+title: "Analytics System - Technical Specification"
+type: docs
+---
 # Analytics System - Technical Specification
 
 **[← Back to Index](../README.md)** | **[Next: Security System →](../Core/SecuritySystem.md)**
@@ -192,3 +196,5 @@ STRUCT TelemetryConfig:
 ---
 
 **[← Back to Index](../README.md)** | **[Next: Security System →](../Core/SecuritySystem.md)**
+
+

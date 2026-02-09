@@ -1,3 +1,7 @@
+---
+title: "Asset Guidelines"
+type: docs
+---
 # Asset Guidelines
 
 **[← Back to Style Guide](./StyleGuide.md)** | **[Index](../README.md)** | **[Next: User Interface →](./UserInterface.md)**
@@ -530,3 +534,5 @@ Draw Calls: < 2000
 ---
 
 **[← Back to Style Guide](./StyleGuide.md)** | **[Index](../README.md)** | **[Next: User Interface →](./UserInterface.md)**
+
+

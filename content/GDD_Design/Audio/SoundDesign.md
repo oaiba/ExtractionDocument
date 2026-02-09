@@ -1,3 +1,7 @@
+---
+title: "Audio Design & Soundscapes"
+type: docs
+---
 # Audio Design & Soundscapes
 
 **[← Back to Index](../README.md)** | **[Next: User Interface →](../Visuals/UserInterface.md)**
@@ -102,3 +106,5 @@ Silent hand signals triggers specific localized whispers:
 ---
 
 **[← Back to Index](../README.md)** | **[Next: User Interface →](../Visuals/UserInterface.md)**
+
+

@@ -1,3 +1,7 @@
+---
+title: "BULWARK - Hans Richter"
+type: docs
+---
 # BULWARK - Hans Richter
 
 **[← Back to Tank Class](./README.md)** | **[All Operators](../Operators.md)**
@@ -159,3 +163,5 @@ After a political scandal forced budget cuts that disbanded his unit, Hans could
 ---
 
 **[← Back to Tank Class](./README.md)** | **[All Operators](../Operators.md)**
+
+

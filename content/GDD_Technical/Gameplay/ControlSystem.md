@@ -1,3 +1,7 @@
+---
+title: "Control System - Technical Design Document"
+type: docs
+---
 # Control System - Technical Design Document
 
 **[← Back to Index](../README.md)** | **[Next: Character System](./CharacterSystem.md)**
@@ -1259,3 +1263,5 @@ CLASS CameraController:
 ---
 
 **[← Back to Index](../README.md)** | **[Next: Character System](./CharacterSystem.md)**
+
+

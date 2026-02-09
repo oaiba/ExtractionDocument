@@ -1,3 +1,7 @@
+---
+title: "Core Gameplay Loop & Progression"
+type: docs
+---
 # Core Gameplay Loop & Progression
 
 **[← Back to Index](../README.md)** | **[Next: Loot Distribution](../World/LootDistribution.md)**
@@ -88,3 +92,5 @@ To prevent hyper-inflation (where everyone has the best gear), we use a strict F
 *   **Scarcity Events:** "Fuel Shortage" events reduce spawn rates of fuel, draining cash reserves as players panic-buy.
 
 ---
+
+

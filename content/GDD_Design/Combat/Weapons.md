@@ -1,3 +1,7 @@
+---
+title: "Weapons & Combat Systems"
+type: docs
+---
 # Weapons & Combat Systems
 
 **[← Previous: Progression](../GameDesign/Progression.md)** | **[Index](../README.md)** | **[Next: Items →](./Items.md)**
@@ -775,3 +779,5 @@ Base Damage → Armor Absorption → Health Damage
 ---
 
 **[← Previous: Progression](./08_Progression.md)** | **[High-Level Index](./README.md)** | **[Next: Items & Economy →](./10_ItemsEconomy.md)**
+
+

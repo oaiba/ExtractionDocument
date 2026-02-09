@@ -1,3 +1,7 @@
+---
+title: "Control System - Design & Experience"
+type: docs
+---
 # Control System - Design & Experience
 
 **[← Back to Index](../README.md)** | **[Next: Progression →](./Progression.md)**
@@ -494,3 +498,5 @@ Understanding how players use controls helps us iterate.
 ---
 
 **[← Back to Index](../README.md)** | **[Next: Progression →](./Progression.md)**
+
+

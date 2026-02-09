@@ -1,3 +1,7 @@
+---
+title: "Story & Narrative Design"
+type: docs
+---
 # Story & Narrative Design
 
 **[← Back to Index](../README.md)** | **[Next: Characters →](../Characters/Operators.md)**
@@ -528,3 +532,5 @@ Now: Uses skills for survival, seeking redemption
 ---
 
 **[← Back to Index](../README.md)** | **[Next: Characters →](../Characters/Operators.md)**
+
+

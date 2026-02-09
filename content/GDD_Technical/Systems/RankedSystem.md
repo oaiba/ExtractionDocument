@@ -1,3 +1,7 @@
+---
+title: "Ranked System - Technical Specification"
+type: docs
+---
 # Ranked System - Technical Specification
 
 **[← Back to Index](../README.md)** | **[Next: Localization System →](./LocalizationSystem.md)**
@@ -375,3 +379,5 @@ STRUCT LeaderboardEntry:
 ---
 
 **[← Back to Index](../README.md)** | **[Next: Localization System →](./LocalizationSystem.md)**
+
+

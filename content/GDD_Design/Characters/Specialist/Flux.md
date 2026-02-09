@@ -1,3 +1,7 @@
+---
+title: "FLUX - Maya Okonkwo"
+type: docs
+---
 # FLUX - Maya Okonkwo
 
 **[← Back to Specialist Class](./README.md)** | **[All Operators](../Operators.md)**
@@ -293,3 +297,5 @@ When attempts to expose them through legal channels failed, Maya took matters in
 ---
 
 **[← Back to Specialist Class](./README.md)** | **[All Operators](../Operators.md)**
+
+

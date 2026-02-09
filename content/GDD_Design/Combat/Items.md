@@ -1,3 +1,7 @@
+---
+title: "Items & Economy Systems"
+type: docs
+---
 # Items & Economy Systems
 
 **[← Previous: Weapons](./Weapons.md)** | **[Index](../README.md)**
@@ -789,3 +793,5 @@
 ---
 
 **[← Previous: Weapons & Combat](./Weapons.md)** | **[High-Level Index](./README.md)**
+
+

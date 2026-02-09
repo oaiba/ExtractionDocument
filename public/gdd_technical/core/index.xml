@@ -15,489 +15,7 @@
     
     
     <item>
-      <title></title>
-      <link>http://localhost:1313/gdd_technical/core/architecture.html</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/gdd_technical/core/architecture.html</guid>
-      <description>
-        
-        
-        &lt;h1&gt;System Architecture - Technical Design Document&lt;/h1&gt;&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;../README.md&#34;&gt;← Technical Index&lt;/a&gt;&lt;/strong&gt; | &lt;strong&gt;&lt;a href=&#34;./NetworkingSystem.md&#34;&gt;Next: Networking →&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;hr&gt;
-&lt;h2&gt;Overview&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;overview&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#overview&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;Purpose&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;purpose&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#purpose&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;This document describes the &lt;strong&gt;high-level architecture&lt;/strong&gt; of the Extraction game, including core classes, module organization, and design patterns.&lt;/p&gt;
-&lt;h3&gt;Design Goals&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;design-goals&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#design-goals&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
-
-&lt;div&gt;&lt;pre&gt;&lt;code&gt;1. MAINTAINABLE - Clean separation of concerns
-2. TESTABLE - Components independently testable
-3. PERFORMANT - Strict budget for mobile devices
-4. SCALABLE - Easy to add new features
-5. SECURE - Server validates all actions&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
-  &lt;button
-    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
-    title=&#34;Copy code&#34;
-  &gt;
-    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
-&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
-  &lt;/button&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;hr&gt;
-&lt;h2&gt;System Architecture Diagram&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;system-architecture-diagram&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#system-architecture-diagram&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
-
-&lt;div&gt;&lt;pre&gt;&lt;code&gt;┌─────────────────────────────────────────────────────────────────────┐
-│                       EXTRACTION GAME                               │
-├─────────────────────────────────────────────────────────────────────┤
-│                                                                     │
-│  ┌───────────────────────────────────────────────────────────────┐  │
-│  │                    LAYER 0: CORE ENGINE                       │  │
-│  │   Engine  │  CoreUObject  │  InputCore  │  NavigationSystem   │  │
-│  └───────────────────────────────────────────────────────────────┘  │
-│                                    ▲                                │
-│  ┌─────────────────────────────────┴─────────────────────────────┐  │
-│  │                  LAYER 1: GAME MODULES                        │  │
-│  │   ┌────────────┐    ┌────────────┐    ┌────────────┐          │  │
-│  │   │  GAMEPLAY  │    │  NETWORK   │    │   DATA     │          │  │
-│  │   │  MODULE    │    │  MODULE    │    │  MODULE    │          │  │
-│  │   └────────────┘    └────────────┘    └────────────┘          │  │
-│  └───────────────────────────────────────────────────────────────┘  │
-│                                    ▲                                │
-│  ┌─────────────────────────────────┴─────────────────────────────┐  │
-│  │                  LAYER 2: FEATURE MODULES                     │  │
-│  │   ┌──────────┐  ┌──────────┐  ┌──────────┐  ┌──────────┐      │  │
-│  │   │   AI     │  │   UI     │  │  AUDIO   │  │ EFFECTS  │      │  │
-│  │   └──────────┘  └──────────┘  └──────────┘  └──────────┘      │  │
-│  └───────────────────────────────────────────────────────────────┘  │
-│                                                                     │
-└─────────────────────────────────────────────────────────────────────┘&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
-  &lt;button
-    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
-    title=&#34;Copy code&#34;
-  &gt;
-    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
-&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
-  &lt;/button&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;hr&gt;
-&lt;h2&gt;Enums &amp;amp; Types&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;enums--types&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#enums--types&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;ModuleType&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;moduletype&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#moduletype&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;table&gt;
-  &lt;thead&gt;
-      &lt;tr&gt;
-          &lt;th style=&#34;text-align: left&#34;&gt;Code Name&lt;/th&gt;
-          &lt;th style=&#34;text-align: left&#34;&gt;Display Name&lt;/th&gt;
-          &lt;th style=&#34;text-align: left&#34;&gt;Layer&lt;/th&gt;
-          &lt;th style=&#34;text-align: left&#34;&gt;Dependencies&lt;/th&gt;
-          &lt;th style=&#34;text-align: left&#34;&gt;Description&lt;/th&gt;
-      &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;&lt;code&gt;MT_Core&lt;/code&gt;&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;Core&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;0&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;None&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;Base engine modules&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;&lt;code&gt;MT_Gameplay&lt;/code&gt;&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;Gameplay&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;1&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;Core&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;Character, Weapons, Items&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;&lt;code&gt;MT_Network&lt;/code&gt;&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;Network&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;1&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;Core&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;Replication, Matchmaking&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;&lt;code&gt;MT_AI&lt;/code&gt;&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;AI&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;2&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;Core, Gameplay&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;Controllers, Behavior Trees&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;&lt;code&gt;MT_UI&lt;/code&gt;&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;UI&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;2&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;Core, Gameplay&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;Mobile-optimized widgets&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;&lt;code&gt;MT_Audio&lt;/code&gt;&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;Audio&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;2&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;Core&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;Sound system, Music&lt;/td&gt;
-      &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h3&gt;ActorCategory&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;actorcategory&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#actorcategory&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;table&gt;
-  &lt;thead&gt;
-      &lt;tr&gt;
-          &lt;th style=&#34;text-align: left&#34;&gt;Code Name&lt;/th&gt;
-          &lt;th style=&#34;text-align: left&#34;&gt;Display Name&lt;/th&gt;
-          &lt;th style=&#34;text-align: left&#34;&gt;Pooled&lt;/th&gt;
-          &lt;th style=&#34;text-align: left&#34;&gt;Max Count&lt;/th&gt;
-          &lt;th style=&#34;text-align: left&#34;&gt;Update Rate&lt;/th&gt;
-      &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;&lt;code&gt;AC_Player&lt;/code&gt;&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;Player&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;No&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;16&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;30 Hz&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;&lt;code&gt;AC_AICharacter&lt;/code&gt;&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;AI Character&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;Yes&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;60&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;15 Hz&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;&lt;code&gt;AC_Weapon&lt;/code&gt;&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;Weapon&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;Yes&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;32&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;30 Hz&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;&lt;code&gt;AC_Projectile&lt;/code&gt;&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;Projectile&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;Yes&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;100&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;60 Hz&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;&lt;code&gt;AC_Effect&lt;/code&gt;&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;Effect&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;Yes&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;200&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;30 Hz&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;&lt;code&gt;AC_Loot&lt;/code&gt;&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;Loot Container&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;No&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;300&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;On-demand&lt;/td&gt;
-      &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h3&gt;ComponentPriority&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;componentpriority&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#componentpriority&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;table&gt;
-  &lt;thead&gt;
-      &lt;tr&gt;
-          &lt;th style=&#34;text-align: left&#34;&gt;Code Name&lt;/th&gt;
-          &lt;th style=&#34;text-align: left&#34;&gt;Display Name&lt;/th&gt;
-          &lt;th style=&#34;text-align: left&#34;&gt;Tick Group&lt;/th&gt;
-          &lt;th style=&#34;text-align: left&#34;&gt;Order&lt;/th&gt;
-          &lt;th style=&#34;text-align: left&#34;&gt;Description&lt;/th&gt;
-      &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;&lt;code&gt;CP_Critical&lt;/code&gt;&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;Critical&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;PrePhysics&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;0&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;Input, Health&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;&lt;code&gt;CP_High&lt;/code&gt;&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;High&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;DuringPhysics&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;100&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;Movement, Combat&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;&lt;code&gt;CP_Normal&lt;/code&gt;&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;Normal&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;PostPhysics&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;200&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;Animation, Effects&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;&lt;code&gt;CP_Low&lt;/code&gt;&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;Low&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;PostUpdateWork&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;300&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;UI, Audio&lt;/td&gt;
-      &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h3&gt;DesignPattern&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;designpattern&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#designpattern&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;table&gt;
-  &lt;thead&gt;
-      &lt;tr&gt;
-          &lt;th style=&#34;text-align: left&#34;&gt;Code Name&lt;/th&gt;
-          &lt;th style=&#34;text-align: left&#34;&gt;Display Name&lt;/th&gt;
-          &lt;th style=&#34;text-align: left&#34;&gt;Use Case&lt;/th&gt;
-          &lt;th style=&#34;text-align: left&#34;&gt;Example&lt;/th&gt;
-      &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;&lt;code&gt;DP_Component&lt;/code&gt;&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;Component&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;Feature composition&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;HealthComponent&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;&lt;code&gt;DP_DataDriven&lt;/code&gt;&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;Data-Driven&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;Balance, Config&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;WeaponDataTable&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;&lt;code&gt;DP_ObjectPool&lt;/code&gt;&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;Object Pooling&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;Performance&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;Bullet pool&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;&lt;code&gt;DP_Observer&lt;/code&gt;&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;Observer&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;Events&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;OnHealthChanged&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;&lt;code&gt;DP_Strategy&lt;/code&gt;&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;Strategy&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;Abilities&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;OperatorAbility&lt;/td&gt;
-      &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-&lt;hr&gt;
-&lt;h2&gt;Code Names&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;code-names&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#code-names&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;System Events&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;system-events&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#system-events&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;table&gt;
-  &lt;thead&gt;
-      &lt;tr&gt;
-          &lt;th style=&#34;text-align: left&#34;&gt;Code Name&lt;/th&gt;
-          &lt;th style=&#34;text-align: left&#34;&gt;Trigger&lt;/th&gt;
-          &lt;th style=&#34;text-align: left&#34;&gt;Parameters&lt;/th&gt;
-          &lt;th style=&#34;text-align: left&#34;&gt;Description&lt;/th&gt;
-      &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;&lt;code&gt;SYS_INIT&lt;/code&gt;&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;System startup&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;ModuleList&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;Systems initialized&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;&lt;code&gt;SYS_SHUTDOWN&lt;/code&gt;&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;System shutdown&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;Reason&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;Clean shutdown&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;&lt;code&gt;SYS_ERROR&lt;/code&gt;&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;Critical error&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;ErrorCode, Message&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;Error occurred&lt;/td&gt;
-      &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h3&gt;Memory Events&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;memory-events&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#memory-events&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;table&gt;
-  &lt;thead&gt;
-      &lt;tr&gt;
-          &lt;th style=&#34;text-align: left&#34;&gt;Code Name&lt;/th&gt;
-          &lt;th style=&#34;text-align: left&#34;&gt;Trigger&lt;/th&gt;
-          &lt;th style=&#34;text-align: left&#34;&gt;Parameters&lt;/th&gt;
-          &lt;th style=&#34;text-align: left&#34;&gt;Description&lt;/th&gt;
-      &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;&lt;code&gt;MEM_POOL_CREATED&lt;/code&gt;&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;Pool initialized&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;PoolType, Capacity&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;Pool created&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;&lt;code&gt;MEM_POOL_EXHAUSTED&lt;/code&gt;&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;Pool depleted&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;PoolType&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;Pool empty&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;&lt;code&gt;MEM_GC_SPIKE&lt;/code&gt;&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;GC spike detected&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;Duration, FreedMB&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;GC spike&lt;/td&gt;
-      &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h3&gt;Performance Events&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;performance-events&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#performance-events&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;table&gt;
-  &lt;thead&gt;
-      &lt;tr&gt;
-          &lt;th style=&#34;text-align: left&#34;&gt;Code Name&lt;/th&gt;
-          &lt;th style=&#34;text-align: left&#34;&gt;Trigger&lt;/th&gt;
-          &lt;th style=&#34;text-align: left&#34;&gt;Parameters&lt;/th&gt;
-          &lt;th style=&#34;text-align: left&#34;&gt;Description&lt;/th&gt;
-      &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;&lt;code&gt;PERF_BUDGET_EXCEEDED&lt;/code&gt;&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;Budget exceeded&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;System, BudgetMs&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;Frame budget violation&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;&lt;code&gt;PERF_ACTOR_LIMIT&lt;/code&gt;&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;Actor limit&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;ActorType, Count&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;Actor count warning&lt;/td&gt;
-      &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-&lt;hr&gt;
-&lt;h2&gt;Core Class Hierarchy&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;core-class-hierarchy&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#core-class-hierarchy&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;Actor Classes&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;actor-classes&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#actor-classes&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
-
-&lt;div&gt;&lt;pre&gt;&lt;code&gt;Actor (Engine Base)
-├── GameModeBase
-│   └── ExtractionGameMode
-├── Character
-│   └── ExtractionCharacter
-│       ├── ExtractionPlayerCharacter
-│       └── ExtractionAICharacter
-├── Weapon
-│   ├── RangedWeapon
-│   └── MeleeWeapon
-├── ItemBase
-│   ├── PickupItem
-│   └── LootContainer
-└── ExtractionZone&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
-  &lt;button
-    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
-    title=&#34;Copy code&#34;
-  &gt;
-    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
-&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
-  &lt;/button&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;h3&gt;Component Classes&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;component-classes&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#component-classes&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
-
-&lt;div&gt;&lt;pre&gt;&lt;code&gt;ActorComponent
-├── HealthComponent      - HP, armor, damage
-├── InventoryComponent   - Grid inventory
-├── StaminaComponent     - Sprint resource
-├── MobileInputComponent - Touch input
-└── AIPerceptionComponent- Enemy detection&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
-  &lt;button
-    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
-    title=&#34;Copy code&#34;
-  &gt;
-    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
-&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
-  &lt;/button&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;hr&gt;
-&lt;h2&gt;Design Patterns&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;design-patterns&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#design-patterns&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;1. Component-Based Architecture&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;1-component-based-architecture&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#1-component-based-architecture&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
-
-&lt;div&gt;&lt;pre&gt;&lt;code&gt;CLASS ExtractionCharacter:
-    healthComponent: HealthComponent
-    inventoryComponent: InventoryComponent
-    staminaComponent: StaminaComponent
-    
-    FUNCTION Initialize():
-        healthComponent = CreateComponent(HealthComponent)
-        inventoryComponent = CreateComponent(InventoryComponent)
-        staminaComponent = CreateComponent(StaminaComponent)
-    END FUNCTION&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
-  &lt;button
-    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
-    title=&#34;Copy code&#34;
-  &gt;
-    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
-&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
-  &lt;/button&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;h3&gt;2. Data-Driven Design&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;2-data-driven-design&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#2-data-driven-design&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
-
-&lt;div&gt;&lt;pre&gt;&lt;code&gt;STRUCT WeaponTableRow:
-    Damage: Float
-    FireRate: Float
-    MagazineSize: Integer
-    RecoilPattern: RecoilPattern
-
-CLASS WeaponDatabase:
-    weaponTable: Map&amp;lt;String, WeaponTableRow&amp;gt;
-    
-    FUNCTION GetWeaponData(codeName: String) -&amp;gt; WeaponTableRow:
-        RETURN weaponTable[codeName]
-    END FUNCTION&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
-  &lt;button
-    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
-    title=&#34;Copy code&#34;
-  &gt;
-    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
-&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
-  &lt;/button&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;h3&gt;3. Object Pooling&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;3-object-pooling&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#3-object-pooling&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
-
-&lt;div&gt;&lt;pre&gt;&lt;code&gt;CLASS ObjectPoolSubsystem:
-    pools: Map&amp;lt;ActorClass, List&amp;lt;Actor&amp;gt;&amp;gt;
-    
-    FUNCTION GetFromPool(actorClass: ActorClass) -&amp;gt; Actor:
-        IF pools[actorClass].HasAvailable():
-             actor = pools[actorClass].Pop()
-             actor.Activate()
-             RETURN actor
-        ELSE:
-             actor = SpawnNew(actorClass)
-             RETURN actor
-        END IF
-    END FUNCTION&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
-  &lt;button
-    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
-    title=&#34;Copy code&#34;
-  &gt;
-    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
-&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
-  &lt;/button&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;hr&gt;
-&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;./README.md&#34;&gt;← Technical Index&lt;/a&gt;&lt;/strong&gt; | &lt;strong&gt;&lt;a href=&#34;./NetworkingSystem.md&#34;&gt;Next: Networking →&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-
-      </description>
-    </item>
-    
-    <item>
-      <title></title>
+      <title>Coding Standards &amp; Guidelines</title>
       <link>http://localhost:1313/gdd_technical/core/codingstandards.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -641,7 +159,7 @@ CLASS WeaponDatabase:
     </item>
     
     <item>
-      <title></title>
+      <title>Development Roadmap &amp; TODO Tracking</title>
       <link>http://localhost:1313/gdd_technical/core/developmentroadmap.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -1871,7 +1389,7 @@ CLASS WeaponDatabase:
     </item>
     
     <item>
-      <title></title>
+      <title>Networking System - Technical Design Document</title>
       <link>http://localhost:1313/gdd_technical/core/networkingsystem.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -2434,7 +1952,7 @@ STRUCT LobbyMember:
     </item>
     
     <item>
-      <title></title>
+      <title>Security System - Technical Specification</title>
       <link>http://localhost:1313/gdd_technical/core/securitysystem.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -2674,6 +2192,488 @@ STRUCT ViolationRecord:
 &lt;/ul&gt;
 &lt;hr&gt;
 &lt;p&gt;&lt;strong&gt;&lt;a href=&#34;../README.md&#34;&gt;← Back to Index&lt;/a&gt;&lt;/strong&gt; | &lt;strong&gt;&lt;a href=&#34;../Systems/AnalyticsSystem.md&#34;&gt;Next: Analytics System →&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>System Architecture - Technical Design Document</title>
+      <link>http://localhost:1313/gdd_technical/core/architecture.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/gdd_technical/core/architecture.html</guid>
+      <description>
+        
+        
+        &lt;h1&gt;System Architecture - Technical Design Document&lt;/h1&gt;&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;../README.md&#34;&gt;← Technical Index&lt;/a&gt;&lt;/strong&gt; | &lt;strong&gt;&lt;a href=&#34;./NetworkingSystem.md&#34;&gt;Next: Networking →&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2&gt;Overview&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;overview&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#overview&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;Purpose&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;purpose&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#purpose&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;This document describes the &lt;strong&gt;high-level architecture&lt;/strong&gt; of the Extraction game, including core classes, module organization, and design patterns.&lt;/p&gt;
+&lt;h3&gt;Design Goals&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;design-goals&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#design-goals&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;1. MAINTAINABLE - Clean separation of concerns
+2. TESTABLE - Components independently testable
+3. PERFORMANT - Strict budget for mobile devices
+4. SCALABLE - Easy to add new features
+5. SECURE - Server validates all actions&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;hr&gt;
+&lt;h2&gt;System Architecture Diagram&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;system-architecture-diagram&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#system-architecture-diagram&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;┌─────────────────────────────────────────────────────────────────────┐
+│                       EXTRACTION GAME                               │
+├─────────────────────────────────────────────────────────────────────┤
+│                                                                     │
+│  ┌───────────────────────────────────────────────────────────────┐  │
+│  │                    LAYER 0: CORE ENGINE                       │  │
+│  │   Engine  │  CoreUObject  │  InputCore  │  NavigationSystem   │  │
+│  └───────────────────────────────────────────────────────────────┘  │
+│                                    ▲                                │
+│  ┌─────────────────────────────────┴─────────────────────────────┐  │
+│  │                  LAYER 1: GAME MODULES                        │  │
+│  │   ┌────────────┐    ┌────────────┐    ┌────────────┐          │  │
+│  │   │  GAMEPLAY  │    │  NETWORK   │    │   DATA     │          │  │
+│  │   │  MODULE    │    │  MODULE    │    │  MODULE    │          │  │
+│  │   └────────────┘    └────────────┘    └────────────┘          │  │
+│  └───────────────────────────────────────────────────────────────┘  │
+│                                    ▲                                │
+│  ┌─────────────────────────────────┴─────────────────────────────┐  │
+│  │                  LAYER 2: FEATURE MODULES                     │  │
+│  │   ┌──────────┐  ┌──────────┐  ┌──────────┐  ┌──────────┐      │  │
+│  │   │   AI     │  │   UI     │  │  AUDIO   │  │ EFFECTS  │      │  │
+│  │   └──────────┘  └──────────┘  └──────────┘  └──────────┘      │  │
+│  └───────────────────────────────────────────────────────────────┘  │
+│                                                                     │
+└─────────────────────────────────────────────────────────────────────┘&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;hr&gt;
+&lt;h2&gt;Enums &amp;amp; Types&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;enums--types&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#enums--types&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;ModuleType&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;moduletype&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#moduletype&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Code Name&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Display Name&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Layer&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Dependencies&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Description&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;code&gt;MT_Core&lt;/code&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Core&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;0&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;None&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Base engine modules&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;code&gt;MT_Gameplay&lt;/code&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Gameplay&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;1&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Core&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Character, Weapons, Items&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;code&gt;MT_Network&lt;/code&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Network&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;1&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Core&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Replication, Matchmaking&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;code&gt;MT_AI&lt;/code&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;AI&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;2&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Core, Gameplay&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Controllers, Behavior Trees&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;code&gt;MT_UI&lt;/code&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;UI&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;2&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Core, Gameplay&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Mobile-optimized widgets&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;code&gt;MT_Audio&lt;/code&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Audio&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;2&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Core&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Sound system, Music&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3&gt;ActorCategory&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;actorcategory&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#actorcategory&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Code Name&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Display Name&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Pooled&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Max Count&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Update Rate&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;code&gt;AC_Player&lt;/code&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Player&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;No&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;16&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;30 Hz&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;code&gt;AC_AICharacter&lt;/code&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;AI Character&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Yes&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;60&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;15 Hz&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;code&gt;AC_Weapon&lt;/code&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Weapon&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Yes&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;32&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;30 Hz&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;code&gt;AC_Projectile&lt;/code&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Projectile&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Yes&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;100&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;60 Hz&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;code&gt;AC_Effect&lt;/code&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Effect&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Yes&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;200&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;30 Hz&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;code&gt;AC_Loot&lt;/code&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Loot Container&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;No&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;300&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;On-demand&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3&gt;ComponentPriority&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;componentpriority&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#componentpriority&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Code Name&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Display Name&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Tick Group&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Order&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Description&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;code&gt;CP_Critical&lt;/code&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Critical&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;PrePhysics&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;0&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Input, Health&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;code&gt;CP_High&lt;/code&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;High&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;DuringPhysics&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;100&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Movement, Combat&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;code&gt;CP_Normal&lt;/code&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Normal&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;PostPhysics&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;200&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Animation, Effects&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;code&gt;CP_Low&lt;/code&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Low&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;PostUpdateWork&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;300&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;UI, Audio&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3&gt;DesignPattern&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;designpattern&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#designpattern&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Code Name&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Display Name&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Use Case&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Example&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;code&gt;DP_Component&lt;/code&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Component&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Feature composition&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;HealthComponent&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;code&gt;DP_DataDriven&lt;/code&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Data-Driven&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Balance, Config&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;WeaponDataTable&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;code&gt;DP_ObjectPool&lt;/code&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Object Pooling&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Performance&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Bullet pool&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;code&gt;DP_Observer&lt;/code&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Observer&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Events&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;OnHealthChanged&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;code&gt;DP_Strategy&lt;/code&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Strategy&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Abilities&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;OperatorAbility&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr&gt;
+&lt;h2&gt;Code Names&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;code-names&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#code-names&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;System Events&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;system-events&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#system-events&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Code Name&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Trigger&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Parameters&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Description&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;code&gt;SYS_INIT&lt;/code&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;System startup&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;ModuleList&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Systems initialized&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;code&gt;SYS_SHUTDOWN&lt;/code&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;System shutdown&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Reason&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Clean shutdown&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;code&gt;SYS_ERROR&lt;/code&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Critical error&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;ErrorCode, Message&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Error occurred&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3&gt;Memory Events&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;memory-events&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#memory-events&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Code Name&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Trigger&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Parameters&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Description&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;code&gt;MEM_POOL_CREATED&lt;/code&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Pool initialized&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;PoolType, Capacity&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Pool created&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;code&gt;MEM_POOL_EXHAUSTED&lt;/code&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Pool depleted&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;PoolType&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Pool empty&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;code&gt;MEM_GC_SPIKE&lt;/code&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;GC spike detected&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Duration, FreedMB&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;GC spike&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3&gt;Performance Events&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;performance-events&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#performance-events&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Code Name&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Trigger&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Parameters&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Description&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;code&gt;PERF_BUDGET_EXCEEDED&lt;/code&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Budget exceeded&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;System, BudgetMs&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Frame budget violation&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;code&gt;PERF_ACTOR_LIMIT&lt;/code&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Actor limit&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;ActorType, Count&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Actor count warning&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr&gt;
+&lt;h2&gt;Core Class Hierarchy&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;core-class-hierarchy&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#core-class-hierarchy&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;Actor Classes&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;actor-classes&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#actor-classes&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;Actor (Engine Base)
+├── GameModeBase
+│   └── ExtractionGameMode
+├── Character
+│   └── ExtractionCharacter
+│       ├── ExtractionPlayerCharacter
+│       └── ExtractionAICharacter
+├── Weapon
+│   ├── RangedWeapon
+│   └── MeleeWeapon
+├── ItemBase
+│   ├── PickupItem
+│   └── LootContainer
+└── ExtractionZone&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h3&gt;Component Classes&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;component-classes&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#component-classes&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;ActorComponent
+├── HealthComponent      - HP, armor, damage
+├── InventoryComponent   - Grid inventory
+├── StaminaComponent     - Sprint resource
+├── MobileInputComponent - Touch input
+└── AIPerceptionComponent- Enemy detection&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;hr&gt;
+&lt;h2&gt;Design Patterns&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;design-patterns&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#design-patterns&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;1. Component-Based Architecture&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;1-component-based-architecture&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#1-component-based-architecture&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;CLASS ExtractionCharacter:
+    healthComponent: HealthComponent
+    inventoryComponent: InventoryComponent
+    staminaComponent: StaminaComponent
+    
+    FUNCTION Initialize():
+        healthComponent = CreateComponent(HealthComponent)
+        inventoryComponent = CreateComponent(InventoryComponent)
+        staminaComponent = CreateComponent(StaminaComponent)
+    END FUNCTION&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h3&gt;2. Data-Driven Design&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;2-data-driven-design&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#2-data-driven-design&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;STRUCT WeaponTableRow:
+    Damage: Float
+    FireRate: Float
+    MagazineSize: Integer
+    RecoilPattern: RecoilPattern
+
+CLASS WeaponDatabase:
+    weaponTable: Map&amp;lt;String, WeaponTableRow&amp;gt;
+    
+    FUNCTION GetWeaponData(codeName: String) -&amp;gt; WeaponTableRow:
+        RETURN weaponTable[codeName]
+    END FUNCTION&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h3&gt;3. Object Pooling&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;3-object-pooling&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#3-object-pooling&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;CLASS ObjectPoolSubsystem:
+    pools: Map&amp;lt;ActorClass, List&amp;lt;Actor&amp;gt;&amp;gt;
+    
+    FUNCTION GetFromPool(actorClass: ActorClass) -&amp;gt; Actor:
+        IF pools[actorClass].HasAvailable():
+             actor = pools[actorClass].Pop()
+             actor.Activate()
+             RETURN actor
+        ELSE:
+             actor = SpawnNew(actorClass)
+             RETURN actor
+        END IF
+    END FUNCTION&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;./README.md&#34;&gt;← Technical Index&lt;/a&gt;&lt;/strong&gt; | &lt;strong&gt;&lt;a href=&#34;./NetworkingSystem.md&#34;&gt;Next: Networking →&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
 
       </description>
     </item>

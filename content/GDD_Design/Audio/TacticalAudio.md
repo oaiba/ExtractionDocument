@@ -1,3 +1,7 @@
+---
+title: "Tactical Audio - Combat Sound Design"
+type: docs
+---
 # Tactical Audio - Combat Sound Design
 
 **[← Back to Soundscape](./Soundscape.md)** | **[Index](../README.md)** | **[Next: Voice Lines →](./VoiceLines.md)**
@@ -564,3 +568,5 @@ Subtitle Options:
 ---
 
 **[← Back to Soundscape](./Soundscape.md)** | **[Index](../README.md)** | **[Next: Voice Lines →](./VoiceLines.md)**
+
+

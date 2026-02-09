@@ -1,3 +1,7 @@
+---
+title: "Audio System - Technical Specification"
+type: docs
+---
 # Audio System - Technical Specification
 
 **[← Back to Index](../README.md)** | **[Next: Narrative System →](./NarrativeSystem.md)**
@@ -1487,3 +1491,5 @@ Master
 ---
 
 **[← Back to Index](../README.md)** | **[Next: Narrative System →](./NarrativeSystem.md)**
+
+

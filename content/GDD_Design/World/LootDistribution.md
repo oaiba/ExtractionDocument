@@ -1,3 +1,7 @@
+---
+title: "Loot Distribution"
+type: docs
+---
 # Loot Distribution
 
 **[← Back to Environmental Narrative](./EnvironmentalNarrative.md)** | **[Index](../README.md)** | **[Next: Story →](../Story/Factions.md)**
@@ -208,3 +212,5 @@ Risk: Extreme (guaranteed PvP)
 ---
 
 **[← Back to Environmental Narrative](./EnvironmentalNarrative.md)** | **[Index](../README.md)** | **[Next: Story →](../Story/Factions.md)**
+
+

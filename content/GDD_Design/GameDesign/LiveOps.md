@@ -1,3 +1,7 @@
+---
+title: "Live Operations & Events"
+type: docs
+---
 # Live Operations & Events
 
 **[← Back to Index](../README.md)** | **[Next: Overview →](./Overview.md)**
@@ -464,3 +468,5 @@ Thank you for your patience.
 ---
 
 **[← Back to Index](../README.md)** | **[Next: Overview →](./Overview.md)**
+
+

@@ -1,3 +1,7 @@
+---
+title: "Soundscape - Environmental Audio Design"
+type: docs
+---
 # Soundscape - Environmental Audio Design
 
 **[← Back to Sound Design](./SoundDesign.md)** | **[Index](../README.md)** | **[Next: Tactical Audio →](./TacticalAudio.md)**
@@ -389,3 +393,5 @@ Allocation:
 ---
 
 **[← Back to Sound Design](./SoundDesign.md)** | **[Index](../README.md)** | **[Next: Tactical Audio →](./TacticalAudio.md)**
+
+

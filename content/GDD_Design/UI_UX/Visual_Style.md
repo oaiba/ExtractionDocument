@@ -1,3 +1,7 @@
+---
+title: "Visual Style & Art Guidelines"
+type: docs
+---
 # Visual Style & Art Guidelines
 
 **[← Back to Index](../README.md)** | **[UX Flows ←](./UX_Flows.md)**
@@ -86,3 +90,5 @@ The game is Top-Down, so lighting is critical for depth perception.
 3.  **Contrast:** Playable areas are 20% brighter than non-playable areas.
 
 ---
+
+

@@ -1,3 +1,7 @@
+---
+title: "Tutorial System - Technical Specification"
+type: docs
+---
 # Tutorial System - Technical Specification
 
 **[← Back to Index](../README.md)** | **[Next: Save System →](./SaveSystem.md)**
@@ -381,3 +385,5 @@ STRUCT FeatureUnlockRequirement:
 ---
 
 **[← Back to Index](../README.md)** | **[Next: Save System →](./SaveSystem.md)**
+
+

@@ -1,3 +1,7 @@
+---
+title: "Performance Budgets & Technical Constraints"
+type: docs
+---
 # Performance Budgets & Technical Constraints
 
 **[← Back to Index](../README.md)**
@@ -79,3 +83,5 @@ Before checking in any asset or code, verify:
 4.  [ ] **Does code run in Tick()?** If yes, have you profiled it (`stat unit`)?
 
 ---
+
+

@@ -1,3 +1,7 @@
+---
+title: "Operators - Character System Overview"
+type: docs
+---
 # Operators - Character System Overview
 
 **[← Previous: Core Gameplay](../GameDesign/CoreGameplay.md)** | **[Index](../README.md)** | **[Next: Map Design →](../World/MapDesign.md)**
@@ -359,3 +363,5 @@ After reaching Level 50, operators can be **Prestiged**:
 ---
 
 **[← Previous: Core Gameplay](../GameDesign/CoreGameplay.md)** | **[Index](../README.md)** | **[Next: Map Design →](../World/MapDesign.md)**
+
+

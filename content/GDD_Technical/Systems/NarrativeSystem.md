@@ -1,3 +1,7 @@
+---
+title: "Narrative System - Technical Specification"
+type: docs
+---
 # Narrative System - Technical Specification
 
 **[← Back to Index](../README.md)** | **[Next: Live Ops System →](./LiveOpsSystem.md)**
@@ -532,3 +536,5 @@ STRUCT CollectibleData:
 ---
 
 **[← Back to Index](../README.md)** | **[Next: Live Ops System →](./LiveOpsSystem.md)**
+
+

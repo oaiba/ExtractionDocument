@@ -1,3 +1,7 @@
+---
+title: "Progression System - Technical Specification"
+type: docs
+---
 # Progression System - Technical Specification
 
 **[← Back to Index](../README.md)** | **[Next: Save System →](./SaveSystem.md)**
@@ -1180,3 +1184,5 @@ CLASS DailyLoginManager:
 ---
 
 **[← Back to Index](../README.md)** | **[Next: Save System →](./SaveSystem.md)**
+
+

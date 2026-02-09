@@ -1,3 +1,7 @@
+---
+title: "Non-Goals & Explicit Exclusions"
+type: docs
+---
 # Non-Goals & Explicit Exclusions
 
 **[← Back to Index](../README.md)** | **[Next: Overview →](../GameDesign/Overview.md)**
@@ -435,3 +439,5 @@ When facing choices, we prioritize:
 ---
 
 **[← Back to Index](../README.md)** | **[Next: Overview →](../GameDesign/Overview.md)**
+
+

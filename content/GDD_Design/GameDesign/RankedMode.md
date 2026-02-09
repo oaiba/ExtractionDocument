@@ -1,3 +1,7 @@
+---
+title: "Ranked Mode & Competitive Systems"
+type: docs
+---
 # Ranked Mode & Competitive Systems
 
 **[← Back to Index](../README.md)** | **[Next: Live Ops →](./LiveOps.md)**
@@ -418,3 +422,5 @@ Playing 10+ ranked games with same squad members:
 ---
 
 **[← Back to Index](../README.md)** | **[Next: Live Ops →](./LiveOps.md)**
+
+

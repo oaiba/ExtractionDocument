@@ -1,3 +1,7 @@
+---
+title: "Character System - Technical Design Document"
+type: docs
+---
 # Character System - Technical Design Document
 
 **[← Back to Index](../README.md)** | **[Next: Weapon System →](./WeaponSystem.md)**
@@ -1206,3 +1210,5 @@ CLIENT-SIDE PREDICTION FLOW:
 ---
 
 **[← Back to Index](../README.md)** | **[Next: Weapon System →](./WeaponSystem.md)**
+
+

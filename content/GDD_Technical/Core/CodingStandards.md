@@ -1,3 +1,7 @@
+---
+title: "Coding Standards & Guidelines"
+type: docs
+---
 # Coding Standards & Guidelines
 
 **[← Back to Index](../README.md)**
@@ -72,3 +76,5 @@ We strictly follow the [Unreal Engine Coding Standard](https://docs.unrealengine
 *   **Blueprint Logic:** Heavy math or complex loops must be C++. Blueprints are for configuration and simple flow.
 
 ---
+
+

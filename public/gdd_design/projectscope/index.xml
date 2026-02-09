@@ -15,7 +15,7 @@
     
     
     <item>
-      <title></title>
+      <title>Design Pillars &amp; Core Philosophy</title>
       <link>http://localhost:1313/gdd_design/projectscope/designpillars.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -222,7 +222,7 @@
     </item>
     
     <item>
-      <title></title>
+      <title>MVP Scope - Minimum Viable Product</title>
       <link>http://localhost:1313/gdd_design/projectscope/mvp.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -454,7 +454,7 @@
     </item>
     
     <item>
-      <title></title>
+      <title>Non-Goals &amp; Explicit Exclusions</title>
       <link>http://localhost:1313/gdd_design/projectscope/nongoals.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -1006,7 +1006,7 @@
     </item>
     
     <item>
-      <title></title>
+      <title>Project Risks &amp; Mitigation</title>
       <link>http://localhost:1313/gdd_design/projectscope/risks.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       

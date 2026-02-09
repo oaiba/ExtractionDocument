@@ -1,3 +1,7 @@
+---
+title: "Map Design: The Mire (Wilderness Zone)"
+type: docs
+---
 # Map Design: The Mire (Wilderness Zone)
 
 **[← Back to Index](../../README.md)** | **[Next: Art Direction →](../../Visuals/ArtDirection.md)**
@@ -126,3 +130,5 @@ Surviving nature requires specific skills:
 ---
 
 **[← Previous: Map Design (Neon Slums)](./MapDesign_NeonSlums.md)** | **[Index](../../README.md)** | **[Next: Art Direction →](../../Visuals/ArtDirection.md)**
+
+

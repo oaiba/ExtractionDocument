@@ -1,3 +1,7 @@
+---
+title: "VIPER - Marcus Chen"
+type: docs
+---
 # VIPER - Marcus Chen
 
 **[← Back to Assault Class](./README.md)** | **[All Operators](../Operators.md)**
@@ -335,3 +339,5 @@ After a classified operation in Eastern Europe went sideways, Marcus was left fo
 ---
 
 **[← Back to Assault Class](./README.md)** | **[All Operators](../Operators.md)**
+
+

@@ -1,3 +1,7 @@
+---
+title: "Map Design: Industrial Zone (The \"Factory\")"
+type: docs
+---
 # Map Design: Industrial Zone (The "Factory")
 
 **[← Back to Index](../../README.md)** | **[Next: Art Direction →](../../Visuals/ArtDirection.md)**
@@ -156,3 +160,5 @@ Extraction shooters live and die by their Choke Points - areas where players are
 ---
 
 **[← Previous: Operators](../Characters/Operators.md)** | **[Index](../../README.md)** | **[Next: Art Direction →](../../Visuals/ArtDirection.md)**
+
+

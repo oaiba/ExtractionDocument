@@ -1,3 +1,7 @@
+---
+title: "User Settings & Configuration"
+type: docs
+---
 # User Settings & Configuration
 
 **[← Back to Index](../README.md)** | **[Controls →](./Controls.md)**
@@ -226,3 +230,5 @@ Settings should offer granular control for competitive players while providing s
 *   **Delete Account:** GDPR compliance link.
 
 ---
+
+

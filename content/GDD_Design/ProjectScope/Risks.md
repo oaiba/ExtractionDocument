@@ -1,3 +1,7 @@
+---
+title: "Project Risks & Mitigation"
+type: docs
+---
 # Project Risks & Mitigation
 
 **[← Back to Index](../README.md)** | **[Next: Non-Goals →](./NonGoals.md)**
@@ -407,3 +411,5 @@ This document identifies potential risks to the project across:
 ---
 
 **[← Back to Index](../README.md)** | **[Next: Non-Goals →](./NonGoals.md)**
+
+

@@ -1,3 +1,7 @@
+---
+title: "Navigation & Map System Design"
+type: docs
+---
 # Navigation & Map System Design
 
 **[← Back to Index](../README.md)** | **[Next: Controls & Combat →](./Controls.md)**
@@ -170,3 +174,5 @@ Double-tapping the ping button *immediately* places a high-priority **RED DANGER
 ---
 
 **[← Back to Index](../README.md)** | **[Next: Controls & Combat →](./Controls.md)**
+
+

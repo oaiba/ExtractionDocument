@@ -1,3 +1,7 @@
+---
+title: "DOC - Dr. James Morrison"
+type: docs
+---
 # DOC - Dr. James Morrison
 
 **[← Back to Support Class](./README.md)** | **[All Operators](../Operators.md)**
@@ -344,3 +348,5 @@ After a hostile extraction went wrong, James watched helplessly as soldiers died
 ---
 
 **[← Back to Support Class](./README.md)** | **[All Operators](../Operators.md)**
+
+

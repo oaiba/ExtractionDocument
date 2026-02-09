@@ -1,3 +1,7 @@
+---
+title: "Design Pillars & Core Philosophy"
+type: docs
+---
 # Design Pillars & Core Philosophy
 
 **[← Back to Index](../README.md)**
@@ -144,3 +148,5 @@ Use this checklist for every new feature request:
 *   **v1.0 (2026-02-07):** Initial philosophy definition.
 
 ---
+
+

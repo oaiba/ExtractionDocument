@@ -1,3 +1,7 @@
+---
+title: "System Architecture - Technical Design Document"
+type: docs
+---
 # System Architecture - Technical Design Document
 
 **[← Technical Index](../README.md)** | **[Next: Networking →](./NetworkingSystem.md)**
@@ -215,3 +219,5 @@ CLASS ObjectPoolSubsystem:
 ---
 
 **[← Technical Index](./README.md)** | **[Next: Networking →](./NetworkingSystem.md)**
+
+

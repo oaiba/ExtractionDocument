@@ -1,3 +1,7 @@
+---
+title: "WRAITH - Yuki Tanaka"
+type: docs
+---
 # WRAITH - Yuki Tanaka
 
 **[← Back to Recon Class](./README.md)** | **[All Operators](../Operators.md)**
@@ -159,3 +163,5 @@ A failed mission in Taiwan left her squad dead and Yuki blamed by superiors look
 ---
 
 **[← Back to Recon Class](./README.md)** | **[All Operators](../Operators.md)**
+
+

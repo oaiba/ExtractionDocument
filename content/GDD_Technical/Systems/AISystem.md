@@ -1,3 +1,7 @@
+---
+title: "AI System - Technical Specification"
+type: docs
+---
 # AI System - Technical Specification
 
 **[← Back to Index](../README.md)** | **[Next: Map System →](./MapSystem.md)**
@@ -1034,3 +1038,5 @@ CLASS AIPoolManager:
 ---
 
 **[← Back to Index](../README.md)** | **[Next: Map System →](./MapSystem.md)**
+
+

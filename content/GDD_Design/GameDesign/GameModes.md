@@ -1,3 +1,7 @@
+---
+title: "Game Modes Design"
+type: docs
+---
 # Game Modes Design
 
 **[← Back to Index](../README.md)** | **[Next: Audio Design →](../Audio/SoundDesign.md)**
@@ -102,3 +106,5 @@ Special limited-time modes that mutate the core rules.
 ---
 
 **[← Back to Index](../README.md)** | **[Next: Audio Design →](../Audio/SoundDesign.md)**
+
+

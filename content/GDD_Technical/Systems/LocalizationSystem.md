@@ -1,3 +1,7 @@
+---
+title: "Localization System - Technical Specification"
+type: docs
+---
 # Localization System - Technical Specification
 
 **[← Back to Index](../README.md)** | **[Next: Accessibility System →](./AccessibilitySystem.md)**
@@ -253,3 +257,5 @@ STRUCT RTLLayoutHelper:
 ---
 
 **[← Back to Index](../README.md)** | **[Next: Accessibility System →](./AccessibilitySystem.md)**
+
+

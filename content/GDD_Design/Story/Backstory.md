@@ -1,3 +1,7 @@
+---
+title: "Backstory - World History"
+type: docs
+---
 # Backstory - World History
 
 **[← Back to Quest Lines](./QuestLines.md)** | **[Index](../README.md)** | **[Next: Characters →](../Characters/Operators.md)**
@@ -334,3 +338,5 @@ Destroy this memo after reading.
 ---
 
 **[← Back to Quest Lines](./QuestLines.md)** | **[Index](../README.md)** | **[Next: Characters →](../Characters/Operators.md)**
+
+

@@ -194,13 +194,13 @@ File Size:
 
 ## Core Design Pillars
 
-### Pillar #1: Meaningful Choices → Emotional Investment
+### Pillar #1: Task-Driven Agency (Meaningful Choices)
 
-**Philosophy:** Every decision should have weight
+**Philosophy:** Every decision should have weight, guided by clear objectives.
 
 **Manifestation in Gameplay:**
 
-**Pre-Match Choices:**
+**Pre-Match Choices (Preparation):**
 ```
 Loadout Decision Tree:
     ↓
@@ -224,19 +224,20 @@ Easy to replace       Painful to lose
 
 ---
 
-### Pillar #2: Risk vs Reward → The Core Tension
+### Pillar #2: Risk of Loss & Reward (High-Stakes Tension)
 
-**Philosophy:** The best rewards require the greatest risks
+**Philosophy:** The best rewards require the greatest risks; the fear of loss drives the thrill of gain.
 
 **Implementation:**
 
 **Loot Distribution Map:**
 ```
 ┌─────────────────────────────────────┐
-│         MAP LAYOUT                  │
+│             MAP LAYOUT              │
+│    (Aethelgard Industrial Zone)     │
 ├─────────────────────────────────────┤
 │                                     │
-│  🟢 Safe Zone (Edge)                │
+│  🟢 Safe Zone (Edge)               │
 │  ├─ Loot: Common                    │
 │  ├─ AI: Light                       │
 │  ├─ Players: Rare                   │
@@ -254,15 +255,16 @@ Easy to replace       Painful to lose
 │      ├─ Players: High               │
 │      └─ Risk: ★★★★★                │
 │                                     │
-│  💎 Supply Drop (Event)             │
-│  ├─ Loot: Epic-Legendary guaranteed │
-│  ├─ Alert: Map-wide notification    │
-│  ├─ Players: ALL converge           │
+│  💎 Supply Drop (Event)              │
+│  ├─ Loot: Epic-Legendary guaranteed  │
+│  ├─ Alert: Map-wide notification     │
+│  ├─ Players: ALL converge            │
 │  └─ Risk: ★★★★★★                  │
 └─────────────────────────────────────┘
 ```
 
-**Time-Based Risk:**
+
+**Time-Based Risk (The Time Pillar):**
 ```
 0-5 minutes:
 ├─ Low tension
@@ -313,13 +315,13 @@ Opens container → Rare item!
 
 ---
 
-### Pillar #3: Tactical Depth → Skill Expression
+### Pillar #3: Survival & Tactical Depth (Tactical Fluidity)
 
-**Philosophy:** Strategy and knowledge > Twitch reflexes
+**Philosophy:** Positioning, survival instincts, and knowledge > Twitch reflexes. Controls must be fluid to support complex combat situations.
 
 **Skill Dimensions:**
 
-#### 1. Map Knowledge
+#### 1. Map Knowledge (Aethelgard Mastery)
 ```
 Beginner:
 └─ Knows extraction points
@@ -337,16 +339,16 @@ Advanced:
 └─ Masters ambush points
 ```
 
-#### 2. Loadout Building
+#### 2. Loadout Building & Resource Management
 ```
 Amateur:
 └─ "Bring best gear always"
 
 Skilled:
-├─ Matches loadout to goal
+├─ Resource Heavy: Matches loadout to goal
 ├─ Balances cost vs effectiveness
 ├─ Considers operator synergy
-└─ Plans for weight management
+└─ Plans for grid-based inventory weight
 ```
 
 #### 3. Combat Tactics
@@ -362,37 +364,37 @@ Tactical Player:
 └─ Controls the engagement
 ```
 
-#### 4. Economy Management
+#### 4. Economy Management (The Stash)
 ```
 Poor Player:
 ├─ Always broke
 ├─ Can't afford gear
-└─ Stuck in poverty loop
+├─ Stuck in poverty loop
 
 Wealthy Player:
-├─ Knows what to loot
-├─ Sells smartly
+├─ Knows what to loot (value-per-slot)
+├─ Sells smartly to Traders
 ├─ Invests in right gear
 ├─ Completes profitable quests
 └─ Sustainable economy
 ```
 
-**Design Tools for Depth:**
+**Design Tools for Tactical Fluidity:**
 - **Information asymmetry** - UAV, sensors create advantage
 - **Positioning matters** - Cover, high ground, flanking
 - **Ability combos** - Operator synergies in squads
-- **Resource management** - Ammo, medical, stamina
+- **Resource management** - Ammo (mag checks), medical, stamina
 - **Economic decisions** - What to loot, what to leave
 
 ---
 
-### Pillar #4: Persistent Progression → Long-Term Investment
+### Pillar #4: Persistent Progression (Progression Tree & World)
 
-**Philosophy:** Your actions today impact tomorrow
+**Philosophy:** Your actions today impact tomorrow in Aethelgard. Long-term goals provide purpose beyond individual raids.
 
 **Progression Layers:**
 
-#### Account Progression (Never Lost)
+#### Account Progression (The Foundation)
 ```
 Level 1 → Level 50
 ├─ Unlocks: Operators, weapons, items
@@ -410,22 +412,22 @@ Mastery 0 → Mastery 10
 └─ Time Investment: ~20 hours per operator
 ```
 
-#### Stash Growth (Persistent Economy)
+#### Stash & Hideout Growth (Progression Tree)
 ```
 Starting Stash: 10x20 grid
 ├─ Extract loot → Add to stash
-├─ Sell for credits
-├─ Use for future raids
+├─ Sell for credits/Reputation
+├─ Upgrade Hideout (Base buffs)
 └─ Player wealth compounds
 ```
 
-####Quest Progression
+#### Quest Progression (Environmental Narratives)
 ```
 Quest Types:
 ├─ Tutorial Quests (1-5)
 │   └─ Teach mechanics
 ├─ Faction Quests (ongoing)
-│   └─ Story, unique rewards
+│   └─ Story, unique rewards, world lore
 ├─ Daily Quests (resets)
 │   └─ Bonus XP, credits
 └─ Weekly Challenges
@@ -434,6 +436,17 @@ Quest Types:
 
 **Progression Philosophy:**
 > "Lose battles, never the war. Extracted loot and XP are yours forever. Bad raids teach lessons. Good raids build wealth. Long-term success through strategic thinking, not lucky streaks."
+
+---
+
+### Pillar #5: Environmental Narratives (The Living World)
+
+**Philosophy:** Aethelgard is a character, not a backdrop. History is told through the placement of objects and atmosphere.
+
+**Key Concepts:**
+- **Environmental Storytelling:** Visual clues and audio logs reveal the Collapse.
+- **Logical Looting:** Items found in contexts that make sense (meds in clinics).
+- **Atmospheric Immersion:** Lighting and sound lead the player through the ruins.
 
 ---
 
@@ -602,11 +615,7 @@ $45 entry           →    Free-to-play
 
 ## Game World & Narrative
 
-### Setting: Post-Collapse Industrial Zones
-
-**Time Period:** 2035 (Near-Future)
-
-**Backstory:**
+### Setting: Aethelgard (Post-Collapse Industrial Zones)
 ```
 2030: Environmental Disasters
     ↓

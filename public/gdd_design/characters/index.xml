@@ -1,12 +1,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Extraction Document – Characters</title>
-    <link>http://localhost:1313/gdd_design/characters/index.html</link>
+    <link>http://localhost:52333/gdd_design/characters/index.html</link>
     <description>Recent content in Characters on Extraction Document</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     
-	  <atom:link href="http://localhost:1313/gdd_design/characters/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="http://localhost:52333/gdd_design/characters/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -16,10 +16,10 @@
     
     <item>
       <title>Assault</title>
-      <link>http://localhost:1313/gdd_design/characters/assault/index.html</link>
+      <link>http://localhost:52333/gdd_design/characters/assault/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/gdd_design/characters/assault/index.html</guid>
+      <guid>http://localhost:52333/gdd_design/characters/assault/index.html</guid>
       <description>
         
         
@@ -255,10 +255,10 @@
     
     <item>
       <title>Recon</title>
-      <link>http://localhost:1313/gdd_design/characters/recon/index.html</link>
+      <link>http://localhost:52333/gdd_design/characters/recon/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/gdd_design/characters/recon/index.html</guid>
+      <guid>http://localhost:52333/gdd_design/characters/recon/index.html</guid>
       <description>
         
         
@@ -430,10 +430,10 @@
     
     <item>
       <title>Specialist</title>
-      <link>http://localhost:1313/gdd_design/characters/specialist/index.html</link>
+      <link>http://localhost:52333/gdd_design/characters/specialist/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/gdd_design/characters/specialist/index.html</guid>
+      <guid>http://localhost:52333/gdd_design/characters/specialist/index.html</guid>
       <description>
         
         
@@ -540,10 +540,10 @@
     
     <item>
       <title>Support</title>
-      <link>http://localhost:1313/gdd_design/characters/support/index.html</link>
+      <link>http://localhost:52333/gdd_design/characters/support/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/gdd_design/characters/support/index.html</guid>
+      <guid>http://localhost:52333/gdd_design/characters/support/index.html</guid>
       <description>
         
         
@@ -784,10 +784,10 @@
     
     <item>
       <title>Tank</title>
-      <link>http://localhost:1313/gdd_design/characters/tank/index.html</link>
+      <link>http://localhost:52333/gdd_design/characters/tank/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/gdd_design/characters/tank/index.html</guid>
+      <guid>http://localhost:52333/gdd_design/characters/tank/index.html</guid>
       <description>
         
         
@@ -894,10 +894,10 @@
     
     <item>
       <title>Operators - Character System Overview</title>
-      <link>http://localhost:1313/gdd_design/characters/operators.html</link>
+      <link>http://localhost:52333/gdd_design/characters/operators.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/gdd_design/characters/operators.html</guid>
+      <guid>http://localhost:52333/gdd_design/characters/operators.html</guid>
       <description>
         
         

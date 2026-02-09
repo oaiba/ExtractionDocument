@@ -2,240 +2,240 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/gdd_design/ai/index.html</loc>
+    <loc>http://localhost:52333/gdd_design/ai/index.html</loc>
   </url><url>
-    <loc>http://localhost:1313/gdd_technical/ai/index.html</loc>
+    <loc>http://localhost:52333/gdd_technical/ai/index.html</loc>
   </url><url>
-    <loc>http://localhost:1313/gdd_design/characters/assault/index.html</loc>
+    <loc>http://localhost:52333/gdd_design/characters/assault/index.html</loc>
   </url><url>
-    <loc>http://localhost:1313/gdd_design/audio/index.html</loc>
+    <loc>http://localhost:52333/gdd_design/audio/index.html</loc>
   </url><url>
-    <loc>http://localhost:1313/gdd_design/characters/index.html</loc>
+    <loc>http://localhost:52333/gdd_design/characters/index.html</loc>
   </url><url>
-    <loc>http://localhost:1313/gdd_design/combat/index.html</loc>
+    <loc>http://localhost:52333/gdd_design/combat/index.html</loc>
   </url><url>
-    <loc>http://localhost:1313/gdd_technical/core/index.html</loc>
+    <loc>http://localhost:52333/gdd_technical/core/index.html</loc>
   </url><url>
-    <loc>http://localhost:1313/gdd_design/gamedesign/index.html</loc>
+    <loc>http://localhost:52333/gdd_design/gamedesign/index.html</loc>
   </url><url>
-    <loc>http://localhost:1313/gdd_design/gameplay/index.html</loc>
+    <loc>http://localhost:52333/gdd_design/gameplay/index.html</loc>
   </url><url>
-    <loc>http://localhost:1313/gdd_technical/gameplay/index.html</loc>
+    <loc>http://localhost:52333/gdd_technical/gameplay/index.html</loc>
   </url><url>
-    <loc>http://localhost:1313/gdd_technical/networking/index.html</loc>
+    <loc>http://localhost:52333/gdd_technical/networking/index.html</loc>
   </url><url>
-    <loc>http://localhost:1313/gdd_technical/performance/index.html</loc>
+    <loc>http://localhost:52333/gdd_technical/performance/index.html</loc>
   </url><url>
-    <loc>http://localhost:1313/gdd_design/projectscope/index.html</loc>
+    <loc>http://localhost:52333/gdd_design/projectscope/index.html</loc>
   </url><url>
-    <loc>http://localhost:1313/gdd_design/characters/recon/index.html</loc>
+    <loc>http://localhost:52333/gdd_design/characters/recon/index.html</loc>
   </url><url>
-    <loc>http://localhost:1313/gdd_technical/security/index.html</loc>
+    <loc>http://localhost:52333/gdd_technical/security/index.html</loc>
   </url><url>
-    <loc>http://localhost:1313/gdd_design/social/index.html</loc>
+    <loc>http://localhost:52333/gdd_design/social/index.html</loc>
   </url><url>
-    <loc>http://localhost:1313/gdd_design/characters/specialist/index.html</loc>
+    <loc>http://localhost:52333/gdd_design/characters/specialist/index.html</loc>
   </url><url>
-    <loc>http://localhost:1313/gdd_design/story/index.html</loc>
+    <loc>http://localhost:52333/gdd_design/story/index.html</loc>
   </url><url>
-    <loc>http://localhost:1313/gdd_design/characters/support/index.html</loc>
+    <loc>http://localhost:52333/gdd_design/characters/support/index.html</loc>
   </url><url>
-    <loc>http://localhost:1313/gdd_technical/systems/index.html</loc>
+    <loc>http://localhost:52333/gdd_technical/systems/index.html</loc>
   </url><url>
-    <loc>http://localhost:1313/gdd_design/characters/tank/index.html</loc>
+    <loc>http://localhost:52333/gdd_design/characters/tank/index.html</loc>
   </url><url>
-    <loc>http://localhost:1313/gdd_design/ui_ux/index.html</loc>
+    <loc>http://localhost:52333/gdd_design/ui_ux/index.html</loc>
   </url><url>
-    <loc>http://localhost:1313/gdd_design/visuals/index.html</loc>
+    <loc>http://localhost:52333/gdd_design/visuals/index.html</loc>
   </url><url>
-    <loc>http://localhost:1313/gdd_design/world/index.html</loc>
+    <loc>http://localhost:52333/gdd_design/world/index.html</loc>
   </url><url>
-    <loc>http://localhost:1313/_index_temp.html</loc>
+    <loc>http://localhost:52333/_index_temp.html</loc>
   </url><url>
-    <loc>http://localhost:1313/gdd_design/gamedesign/accessibility.html</loc>
+    <loc>http://localhost:52333/gdd_design/gamedesign/accessibility.html</loc>
   </url><url>
-    <loc>http://localhost:1313/gdd_technical/systems/accessibilitysystem.html</loc>
+    <loc>http://localhost:52333/gdd_technical/systems/accessibilitysystem.html</loc>
   </url><url>
-    <loc>http://localhost:1313/gdd_design/ai/enemybehavior.html</loc>
+    <loc>http://localhost:52333/gdd_design/ai/enemybehavior.html</loc>
   </url><url>
-    <loc>http://localhost:1313/gdd_technical/ai/sensorysystem.html</loc>
+    <loc>http://localhost:52333/gdd_technical/ai/sensorysystem.html</loc>
   </url><url>
-    <loc>http://localhost:1313/gdd_technical/systems/aisystem.html</loc>
+    <loc>http://localhost:52333/gdd_technical/systems/aisystem.html</loc>
   </url><url>
-    <loc>http://localhost:1313/gdd_technical/systems/analyticssystem.html</loc>
+    <loc>http://localhost:52333/gdd_technical/systems/analyticssystem.html</loc>
   </url><url>
-    <loc>http://localhost:1313/gdd_design/characters/support/angel.html</loc>
+    <loc>http://localhost:52333/gdd_design/characters/support/angel.html</loc>
   </url><url>
-    <loc>http://localhost:1313/gdd_design/visuals/artdirection.html</loc>
+    <loc>http://localhost:52333/gdd_design/visuals/artdirection.html</loc>
   </url><url>
-    <loc>http://localhost:1313/gdd_design/visuals/assetguidelines.html</loc>
+    <loc>http://localhost:52333/gdd_design/visuals/assetguidelines.html</loc>
   </url><url>
-    <loc>http://localhost:1313/gdd_design/audio/sounddesign.html</loc>
+    <loc>http://localhost:52333/gdd_design/audio/sounddesign.html</loc>
   </url><url>
-    <loc>http://localhost:1313/gdd_technical/systems/audiosystem.html</loc>
+    <loc>http://localhost:52333/gdd_technical/systems/audiosystem.html</loc>
   </url><url>
-    <loc>http://localhost:1313/gdd_design/story/backstory.html</loc>
+    <loc>http://localhost:52333/gdd_design/story/backstory.html</loc>
   </url><url>
-    <loc>http://localhost:1313/gdd_design/characters/assault/blaze.html</loc>
+    <loc>http://localhost:52333/gdd_design/characters/assault/blaze.html</loc>
   </url><url>
-    <loc>http://localhost:1313/gdd_technical/systems/buildpipeline.html</loc>
+    <loc>http://localhost:52333/gdd_technical/systems/buildpipeline.html</loc>
   </url><url>
-    <loc>http://localhost:1313/gdd_design/characters/tank/bulwark.html</loc>
+    <loc>http://localhost:52333/gdd_design/characters/tank/bulwark.html</loc>
   </url><url>
-    <loc>http://localhost:1313/categories/index.html</loc>
+    <loc>http://localhost:52333/categories/index.html</loc>
   </url><url>
-    <loc>http://localhost:1313/gdd_technical/gameplay/charactersystem.html</loc>
+    <loc>http://localhost:52333/gdd_technical/gameplay/charactersystem.html</loc>
   </url><url>
-    <loc>http://localhost:1313/gdd_design/characters/specialist/cipher.html</loc>
+    <loc>http://localhost:52333/gdd_design/characters/specialist/cipher.html</loc>
   </url><url>
-    <loc>http://localhost:1313/gdd_technical/core/codingstandards.html</loc>
+    <loc>http://localhost:52333/gdd_technical/core/codingstandards.html</loc>
   </url><url>
-    <loc>http://localhost:1313/gdd_design/gamedesign/controls.html</loc>
+    <loc>http://localhost:52333/gdd_design/gamedesign/controls.html</loc>
   </url><url>
-    <loc>http://localhost:1313/gdd_technical/gameplay/controlsystem.html</loc>
+    <loc>http://localhost:52333/gdd_technical/gameplay/controlsystem.html</loc>
   </url><url>
-    <loc>http://localhost:1313/gdd_design/gameplay/coreloop.html</loc>
+    <loc>http://localhost:52333/gdd_design/gameplay/coreloop.html</loc>
   </url><url>
-    <loc>http://localhost:1313/gdd_design/gamedesign/coregameplay.html</loc>
+    <loc>http://localhost:52333/gdd_design/gamedesign/coregameplay.html</loc>
   </url><url>
-    <loc>http://localhost:1313/gdd_design/projectscope/designpillars.html</loc>
+    <loc>http://localhost:52333/gdd_design/projectscope/designpillars.html</loc>
   </url><url>
-    <loc>http://localhost:1313/gdd_technical/core/developmentroadmap.html</loc>
+    <loc>http://localhost:52333/gdd_technical/core/developmentroadmap.html</loc>
   </url><url>
-    <loc>http://localhost:1313/gdd_design/characters/support/doc.html</loc>
+    <loc>http://localhost:52333/gdd_design/characters/support/doc.html</loc>
   </url><url>
-    <loc>http://localhost:1313/gdd_design/gamedesign/economy.html</loc>
+    <loc>http://localhost:52333/gdd_design/gamedesign/economy.html</loc>
   </url><url>
-    <loc>http://localhost:1313/gdd_design/world/environmentalnarrative.html</loc>
+    <loc>http://localhost:52333/gdd_design/world/environmentalnarrative.html</loc>
   </url><url>
-    <loc>http://localhost:1313/gdd_design/world/environmentalnarrative_guidelines.html</loc>
+    <loc>http://localhost:52333/gdd_design/world/environmentalnarrative_guidelines.html</loc>
   </url><url>
-    <loc>http://localhost:1313/index.html</loc>
+    <loc>http://localhost:52333/index.html</loc>
   </url><url>
-    <loc>http://localhost:1313/gdd_design/ai/factionbehaviors.html</loc>
+    <loc>http://localhost:52333/gdd_design/ai/factionbehaviors.html</loc>
   </url><url>
-    <loc>http://localhost:1313/gdd_design/story/factions.html</loc>
+    <loc>http://localhost:52333/gdd_design/story/factions.html</loc>
   </url><url>
-    <loc>http://localhost:1313/gdd_design/characters/specialist/flux.html</loc>
+    <loc>http://localhost:52333/gdd_design/characters/specialist/flux.html</loc>
   </url><url>
-    <loc>http://localhost:1313/gdd_design/characters/tank/fortress.html</loc>
+    <loc>http://localhost:52333/gdd_design/characters/tank/fortress.html</loc>
   </url><url>
-    <loc>http://localhost:1313/gdd_design/gamedesign/gamemodes.html</loc>
+    <loc>http://localhost:52333/gdd_design/gamedesign/gamemodes.html</loc>
   </url><url>
-    <loc>http://localhost:1313/gdd_design/gamedesign/overview.html</loc>
+    <loc>http://localhost:52333/gdd_design/gamedesign/overview.html</loc>
   </url><url>
-    <loc>http://localhost:1313/gdd_design/index.html</loc>
+    <loc>http://localhost:52333/gdd_design/index.html</loc>
   </url><url>
-    <loc>http://localhost:1313/gdd_technical/index.html</loc>
+    <loc>http://localhost:52333/gdd_technical/index.html</loc>
   </url><url>
-    <loc>http://localhost:1313/gdd_design/characters/assault/havoc.html</loc>
+    <loc>http://localhost:52333/gdd_design/characters/assault/havoc.html</loc>
   </url><url>
-    <loc>http://localhost:1313/gdd_technical/gameplay/inventorysystem.html</loc>
+    <loc>http://localhost:52333/gdd_technical/gameplay/inventorysystem.html</loc>
   </url><url>
-    <loc>http://localhost:1313/gdd_design/combat/items.html</loc>
+    <loc>http://localhost:52333/gdd_design/combat/items.html</loc>
   </url><url>
-    <loc>http://localhost:1313/gdd_technical/networking/lagcompensation.html</loc>
+    <loc>http://localhost:52333/gdd_technical/networking/lagcompensation.html</loc>
   </url><url>
-    <loc>http://localhost:1313/gdd_design/gamedesign/liveops.html</loc>
+    <loc>http://localhost:52333/gdd_design/gamedesign/liveops.html</loc>
   </url><url>
-    <loc>http://localhost:1313/gdd_technical/systems/liveopssystem.html</loc>
+    <loc>http://localhost:52333/gdd_technical/systems/liveopssystem.html</loc>
   </url><url>
-    <loc>http://localhost:1313/gdd_design/gamedesign/localization.html</loc>
+    <loc>http://localhost:52333/gdd_design/gamedesign/localization.html</loc>
   </url><url>
-    <loc>http://localhost:1313/gdd_technical/systems/localizationsystem.html</loc>
+    <loc>http://localhost:52333/gdd_technical/systems/localizationsystem.html</loc>
   </url><url>
-    <loc>http://localhost:1313/gdd_design/world/lootdistribution.html</loc>
+    <loc>http://localhost:52333/gdd_design/world/lootdistribution.html</loc>
   </url><url>
-    <loc>http://localhost:1313/gdd_technical/systems/mapsystem.html</loc>
+    <loc>http://localhost:52333/gdd_technical/systems/mapsystem.html</loc>
   </url><url>
-    <loc>http://localhost:1313/gdd_design/world/mapdesign_industrialzone.html</loc>
+    <loc>http://localhost:52333/gdd_design/world/mapdesign_industrialzone.html</loc>
   </url><url>
-    <loc>http://localhost:1313/gdd_design/world/mapdesign_neonslums.html</loc>
+    <loc>http://localhost:52333/gdd_design/world/mapdesign_neonslums.html</loc>
   </url><url>
-    <loc>http://localhost:1313/gdd_design/world/mapdesign_wilderness.html</loc>
+    <loc>http://localhost:52333/gdd_design/world/mapdesign_wilderness.html</loc>
   </url><url>
-    <loc>http://localhost:1313/gdd_design/world/maplayouts.html</loc>
+    <loc>http://localhost:52333/gdd_design/world/maplayouts.html</loc>
   </url><url>
-    <loc>http://localhost:1313/gdd_design/projectscope/mvp.html</loc>
+    <loc>http://localhost:52333/gdd_design/projectscope/mvp.html</loc>
   </url><url>
-    <loc>http://localhost:1313/gdd_technical/systems/narrativesystem.html</loc>
+    <loc>http://localhost:52333/gdd_technical/systems/narrativesystem.html</loc>
   </url><url>
-    <loc>http://localhost:1313/gdd_design/gamedesign/navigationandmap.html</loc>
+    <loc>http://localhost:52333/gdd_design/gamedesign/navigationandmap.html</loc>
   </url><url>
-    <loc>http://localhost:1313/gdd_technical/core/networkingsystem.html</loc>
+    <loc>http://localhost:52333/gdd_technical/core/networkingsystem.html</loc>
   </url><url>
-    <loc>http://localhost:1313/gdd_design/projectscope/nongoals.html</loc>
+    <loc>http://localhost:52333/gdd_design/projectscope/nongoals.html</loc>
   </url><url>
-    <loc>http://localhost:1313/gdd_design/characters/operators.html</loc>
+    <loc>http://localhost:52333/gdd_design/characters/operators.html</loc>
   </url><url>
-    <loc>http://localhost:1313/gdd_technical/performance/budgets.html</loc>
+    <loc>http://localhost:52333/gdd_technical/performance/budgets.html</loc>
   </url><url>
-    <loc>http://localhost:1313/gdd_technical/performance/optimization.html</loc>
+    <loc>http://localhost:52333/gdd_technical/performance/optimization.html</loc>
   </url><url>
-    <loc>http://localhost:1313/gdd_design/characters/recon/phantom.html</loc>
+    <loc>http://localhost:52333/gdd_design/characters/recon/phantom.html</loc>
   </url><url>
-    <loc>http://localhost:1313/gdd_design/gamedesign/progression.html</loc>
+    <loc>http://localhost:52333/gdd_design/gamedesign/progression.html</loc>
   </url><url>
-    <loc>http://localhost:1313/gdd_technical/systems/progressionsystem.html</loc>
+    <loc>http://localhost:52333/gdd_technical/systems/progressionsystem.html</loc>
   </url><url>
-    <loc>http://localhost:1313/gdd_design/projectscope/risks.html</loc>
+    <loc>http://localhost:52333/gdd_design/projectscope/risks.html</loc>
   </url><url>
-    <loc>http://localhost:1313/gdd_design/story/questlines.html</loc>
+    <loc>http://localhost:52333/gdd_design/story/questlines.html</loc>
   </url><url>
-    <loc>http://localhost:1313/gdd_design/gamedesign/rankedmode.html</loc>
+    <loc>http://localhost:52333/gdd_design/gamedesign/rankedmode.html</loc>
   </url><url>
-    <loc>http://localhost:1313/gdd_technical/systems/rankedsystem.html</loc>
+    <loc>http://localhost:52333/gdd_technical/systems/rankedsystem.html</loc>
   </url><url>
-    <loc>http://localhost:1313/gdd_technical/networking/replicationstrategy.html</loc>
+    <loc>http://localhost:52333/gdd_technical/networking/replicationstrategy.html</loc>
   </url><url>
-    <loc>http://localhost:1313/gdd_technical/systems/savesystem.html</loc>
+    <loc>http://localhost:52333/gdd_technical/systems/savesystem.html</loc>
   </url><url>
-    <loc>http://localhost:1313/gdd_technical/security/anticheatstrategy.html</loc>
+    <loc>http://localhost:52333/gdd_technical/security/anticheatstrategy.html</loc>
   </url><url>
-    <loc>http://localhost:1313/gdd_technical/core/securitysystem.html</loc>
+    <loc>http://localhost:52333/gdd_technical/core/securitysystem.html</loc>
   </url><url>
-    <loc>http://localhost:1313/gdd_technical/systems/socialsystem.html</loc>
+    <loc>http://localhost:52333/gdd_technical/systems/socialsystem.html</loc>
   </url><url>
-    <loc>http://localhost:1313/gdd_design/social/multiplayer.html</loc>
+    <loc>http://localhost:52333/gdd_design/social/multiplayer.html</loc>
   </url><url>
-    <loc>http://localhost:1313/gdd_design/audio/soundscape.html</loc>
+    <loc>http://localhost:52333/gdd_design/audio/soundscape.html</loc>
   </url><url>
-    <loc>http://localhost:1313/gdd_design/characters/recon/specter.html</loc>
+    <loc>http://localhost:52333/gdd_design/characters/recon/specter.html</loc>
   </url><url>
-    <loc>http://localhost:1313/gdd_design/story/narrative.html</loc>
+    <loc>http://localhost:52333/gdd_design/story/narrative.html</loc>
   </url><url>
-    <loc>http://localhost:1313/gdd_design/visuals/styleguide.html</loc>
+    <loc>http://localhost:52333/gdd_design/visuals/styleguide.html</loc>
   </url><url>
-    <loc>http://localhost:1313/gdd_technical/core/architecture.html</loc>
+    <loc>http://localhost:52333/gdd_technical/core/architecture.html</loc>
   </url><url>
-    <loc>http://localhost:1313/gdd_design/audio/tacticalaudio.html</loc>
+    <loc>http://localhost:52333/gdd_design/audio/tacticalaudio.html</loc>
   </url><url>
-    <loc>http://localhost:1313/tags/index.html</loc>
+    <loc>http://localhost:52333/tags/index.html</loc>
   </url><url>
-    <loc>http://localhost:1313/gdd_design/gamedesign/tutorialraid.html</loc>
+    <loc>http://localhost:52333/gdd_design/gamedesign/tutorialraid.html</loc>
   </url><url>
-    <loc>http://localhost:1313/gdd_technical/systems/tutorialsystem.html</loc>
+    <loc>http://localhost:52333/gdd_technical/systems/tutorialsystem.html</loc>
   </url><url>
-    <loc>http://localhost:1313/gdd_technical/systems/uisystem.html</loc>
+    <loc>http://localhost:52333/gdd_technical/systems/uisystem.html</loc>
   </url><url>
-    <loc>http://localhost:1313/gdd_design/visuals/userinterface.html</loc>
+    <loc>http://localhost:52333/gdd_design/visuals/userinterface.html</loc>
   </url><url>
-    <loc>http://localhost:1313/gdd_design/gamedesign/usersettings.html</loc>
+    <loc>http://localhost:52333/gdd_design/gamedesign/usersettings.html</loc>
   </url><url>
-    <loc>http://localhost:1313/gdd_design/ui_ux/ux_flows.html</loc>
+    <loc>http://localhost:52333/gdd_design/ui_ux/ux_flows.html</loc>
   </url><url>
-    <loc>http://localhost:1313/gdd_design/characters/assault/viper.html</loc>
+    <loc>http://localhost:52333/gdd_design/characters/assault/viper.html</loc>
   </url><url>
-    <loc>http://localhost:1313/gdd_design/ui_ux/visual_style.html</loc>
+    <loc>http://localhost:52333/gdd_design/ui_ux/visual_style.html</loc>
   </url><url>
-    <loc>http://localhost:1313/gdd_design/audio/voicelines.html</loc>
+    <loc>http://localhost:52333/gdd_design/audio/voicelines.html</loc>
   </url><url>
-    <loc>http://localhost:1313/gdd_technical/gameplay/weaponsystem.html</loc>
+    <loc>http://localhost:52333/gdd_technical/gameplay/weaponsystem.html</loc>
   </url><url>
-    <loc>http://localhost:1313/gdd_design/combat/weapons.html</loc>
+    <loc>http://localhost:52333/gdd_design/combat/weapons.html</loc>
   </url><url>
-    <loc>http://localhost:1313/gdd_design/world/mapdesign.html</loc>
+    <loc>http://localhost:52333/gdd_design/world/mapdesign.html</loc>
   </url><url>
-    <loc>http://localhost:1313/gdd_design/characters/recon/wraith.html</loc>
+    <loc>http://localhost:52333/gdd_design/characters/recon/wraith.html</loc>
   </url>
 </urlset>

@@ -1,12 +1,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Extraction Document – Recon</title>
-    <link>http://localhost:1313/gdd_design/characters/recon/index.html</link>
+    <link>http://localhost:52333/gdd_design/characters/recon/index.html</link>
     <description>Recent content in Recon on Extraction Document</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     
-	  <atom:link href="http://localhost:1313/gdd_design/characters/recon/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="http://localhost:52333/gdd_design/characters/recon/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -16,10 +16,10 @@
     
     <item>
       <title>PHANTOM - Sarah Kim</title>
-      <link>http://localhost:1313/gdd_design/characters/recon/phantom.html</link>
+      <link>http://localhost:52333/gdd_design/characters/recon/phantom.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/gdd_design/characters/recon/phantom.html</guid>
+      <guid>http://localhost:52333/gdd_design/characters/recon/phantom.html</guid>
       <description>
         
         
@@ -410,10 +410,10 @@
     
     <item>
       <title>SPECTER - Viktor Volkov</title>
-      <link>http://localhost:1313/gdd_design/characters/recon/specter.html</link>
+      <link>http://localhost:52333/gdd_design/characters/recon/specter.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/gdd_design/characters/recon/specter.html</guid>
+      <guid>http://localhost:52333/gdd_design/characters/recon/specter.html</guid>
       <description>
         
         
@@ -818,10 +818,10 @@
     
     <item>
       <title>WRAITH - Yuki Tanaka</title>
-      <link>http://localhost:1313/gdd_design/characters/recon/wraith.html</link>
+      <link>http://localhost:52333/gdd_design/characters/recon/wraith.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/gdd_design/characters/recon/wraith.html</guid>
+      <guid>http://localhost:52333/gdd_design/characters/recon/wraith.html</guid>
       <description>
         
         

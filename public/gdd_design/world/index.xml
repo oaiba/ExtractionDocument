@@ -1,12 +1,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Extraction Document – World</title>
-    <link>http://localhost:1313/gdd_design/world/index.html</link>
+    <link>http://localhost:52333/gdd_design/world/index.html</link>
     <description>Recent content in World on Extraction Document</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     
-	  <atom:link href="http://localhost:1313/gdd_design/world/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="http://localhost:52333/gdd_design/world/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -16,10 +16,10 @@
     
     <item>
       <title>Environmental Narrative - Storytelling Through Environment</title>
-      <link>http://localhost:1313/gdd_design/world/environmentalnarrative.html</link>
+      <link>http://localhost:52333/gdd_design/world/environmentalnarrative.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/gdd_design/world/environmentalnarrative.html</guid>
+      <guid>http://localhost:52333/gdd_design/world/environmentalnarrative.html</guid>
       <description>
         
         
@@ -451,10 +451,10 @@ Quest Connection: [If applicable]&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div cl
     
     <item>
       <title>Environmental Narrative Guidelines: &#34;Show, Don&#39;t Tell&#34;</title>
-      <link>http://localhost:1313/gdd_design/world/environmentalnarrative_guidelines.html</link>
+      <link>http://localhost:52333/gdd_design/world/environmentalnarrative_guidelines.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/gdd_design/world/environmentalnarrative_guidelines.html</guid>
+      <guid>http://localhost:52333/gdd_design/world/environmentalnarrative_guidelines.html</guid>
       <description>
         
         
@@ -554,10 +554,10 @@ Quest Connection: [If applicable]&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div cl
     
     <item>
       <title>Loot Distribution</title>
-      <link>http://localhost:1313/gdd_design/world/lootdistribution.html</link>
+      <link>http://localhost:52333/gdd_design/world/lootdistribution.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/gdd_design/world/lootdistribution.html</guid>
+      <guid>http://localhost:52333/gdd_design/world/lootdistribution.html</guid>
       <description>
         
         
@@ -1043,10 +1043,10 @@ Risk: Extreme (guaranteed PvP)&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class
     
     <item>
       <title>Map Design: Industrial Zone (The &#34;Factory&#34;)</title>
-      <link>http://localhost:1313/gdd_design/world/mapdesign_industrialzone.html</link>
+      <link>http://localhost:52333/gdd_design/world/mapdesign_industrialzone.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/gdd_design/world/mapdesign_industrialzone.html</guid>
+      <guid>http://localhost:52333/gdd_design/world/mapdesign_industrialzone.html</guid>
       <description>
         
         
@@ -1307,10 +1307,10 @@ Once the primary refining facility for local crystalline resources. When the &am
     
     <item>
       <title>Map Design: Neon Slums (The &#34;Undercity&#34;)</title>
-      <link>http://localhost:1313/gdd_design/world/mapdesign_neonslums.html</link>
+      <link>http://localhost:52333/gdd_design/world/mapdesign_neonslums.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/gdd_design/world/mapdesign_neonslums.html</guid>
+      <guid>http://localhost:52333/gdd_design/world/mapdesign_neonslums.html</guid>
       <description>
         
         
@@ -1531,10 +1531,10 @@ Once the primary refining facility for local crystalline resources. When the &am
     
     <item>
       <title>Map Design: The Mire (Wilderness Zone)</title>
-      <link>http://localhost:1313/gdd_design/world/mapdesign_wilderness.html</link>
+      <link>http://localhost:52333/gdd_design/world/mapdesign_wilderness.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/gdd_design/world/mapdesign_wilderness.html</guid>
+      <guid>http://localhost:52333/gdd_design/world/mapdesign_wilderness.html</guid>
       <description>
         
         
@@ -1754,10 +1754,10 @@ Once the primary refining facility for local crystalline resources. When the &am
     
     <item>
       <title>Map Layouts - Detailed Map Configurations</title>
-      <link>http://localhost:1313/gdd_design/world/maplayouts.html</link>
+      <link>http://localhost:52333/gdd_design/world/maplayouts.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/gdd_design/world/maplayouts.html</guid>
+      <guid>http://localhost:52333/gdd_design/world/maplayouts.html</guid>
       <description>
         
         
@@ -1938,10 +1938,10 @@ Once the primary refining facility for local crystalline resources. When the &am
     
     <item>
       <title>World &amp; Map Design</title>
-      <link>http://localhost:1313/gdd_design/world/mapdesign.html</link>
+      <link>http://localhost:52333/gdd_design/world/mapdesign.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/gdd_design/world/mapdesign.html</guid>
+      <guid>http://localhost:52333/gdd_design/world/mapdesign.html</guid>
       <description>
         
         

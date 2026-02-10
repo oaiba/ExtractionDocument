@@ -15,6 +15,7 @@ The heartbeat of the game. How it plays moment-to-moment.
 {{< cards cols="2" >}}
   {{< card link="overview.html" title="High-Level Vision" icon="light-bulb" subtitle="Target audience, market positioning, and USP." >}}
   {{< card link="coregameplay.html" title="The Core Loop" icon="refresh" subtitle="Infil -> Loot -> Fight -> Exfil -> Upgrade." >}}
+  {{< card link="../inventory_gear/" title="Inventory & Gear" icon="cube" subtitle="Grid system, gear slots, and looting mechanics." >}}
   {{< card link="controls.html" title="Control Scheme" icon="cursor-click" subtitle="Input mapping, aim assist, and movement mechanics." >}}
   {{< card link="gamemodes.html" title="Game Modes" icon="puzzle" subtitle="Standard Raid, Quick Match, Special Events." >}}
 {{< /cards >}}

@@ -1,5 +1,3 @@
---- START OF FILE Weapons_Modding.md ---
-
 ---
 title: "Weapon Modding (Gunsmith)"
 weight: 3

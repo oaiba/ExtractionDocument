@@ -1,5 +1,3 @@
---- START OF FILE Looting.md ---
-
 ---
 title: "Looting Mechanics"
 weight: 5

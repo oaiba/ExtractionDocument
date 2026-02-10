@@ -1,6 +1,9 @@
 ---
 title: "Extraction Shooter GDD"
 type: docs
+sidebar:
+  hide: true
+
 ---
 
 ## Project Snapshot
@@ -19,21 +22,10 @@ type: docs
 
 Access the specialized documentation hubs based on your role and current task.
 
-### Design & Creative Hub
-Focused on player experience, world-building, and visual/audio aesthetics.
-*   **[GDD Design Overview](/GDD_Design/)** — Entry point for all design docs.
-*   **[World & Level Design](/GDD_Design/World/MapDesign)** — Maps, POIs, and environmental storytelling.
-*   **[Art & Visuals](/GDD_Design/Visuals/ArtDirection)** — Style guides, asset specs, and UI/UX.
-*   **[Core Gameplay Design](/GDD_Design/GameDesign/CoreGameplay)** — Loops, mechanics, and player journey.
-*   **[Audio Vision](/GDD_Design/Audio/SoundDesign)** — Tactical audio and immersive soundscapes.
-
-### Technical & Engineering Hub
-Focused on implementation, systems architecture, and technical workflows.
-*   **[GDD Technical Overview](/GDD_Technical/)** — Entry point for all technical docs.
-*   **[System Architecture](/GDD_Technical/Core/Architecture)** — Module structure and tech stack.
-*   **[Gameplay Systems](/GDD_Technical/Gameplay/CharacterSystem)** — Character, Weapon, and Inventory logic.
-*   **[Networking & Social](/GDD_Technical/Core/NetworkingSystem)** — Server-client model and multiplayer sync.
-*   **[AI & Systems](/GDD_Technical/Systems/AISystem)** — NPC behavior and world logic.
+{{< cards cols="2" >}}
+  {{< card link="/GDD_Design/" title="Design & Creative Hub" icon="sparkles" subtitle="Player experience, world-building, and visual/audio aesthetics." >}}
+  {{< card link="/GDD_Technical/" title="Technical & Engineering Hub" icon="terminal" subtitle="Implementation, systems architecture, and technical workflows." >}}
+{{< /cards >}}
 
 ---
 

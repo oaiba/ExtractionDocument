@@ -3,6 +3,7 @@ title: "MVP Scope - Minimum Viable Product"
 type: docs
 ---
 
+
 ## 📅 Critical Milestones & Targets
 
 | Milestone                | Target Date | Key Deliverable                              | Dependency        |
@@ -27,43 +28,58 @@ type: docs
 
 ## 🎯 Alpha Scope (Technical Test)
 
-**Objective:** Validate core gameplay loop and server stability.
+**Objective:** Validate core gameplay loop, server stability, and "Game Feel".
 
 ### Features Included
-*   **Map:** Industrial Zone (Small version - "The Factory" only)
-*   **Game Loop:** Spawn -> Loot -> Fight/Sneak -> Extract
-*   **Operators:** 3 Basic Classes (Assault, Scout, Support)
+*   **Map:** "Industrial Zone" (Small, focused map ~500x500m)
+    *   3 Extraction Points (1 Always Open, 1 Conditional/Paid, 1 Chance)
+    *   High-Density Loot Areas vs. Low-Density Transit Routes
+*   **Game Loop:** Spawn -> Loot/Explore -> Combat/Sneak -> Extract/Die
+*   **Operators:** 3 Basic Classes (Archetypes)
+    *   **Assault:** Balanced stats, standard rig capacity.
+    *   **Scout:** High stamina, lower health, light rig only.
+    *   **Support:** Slow movement, high carry weight, medical bonuses.
+*   **Combat Mechanics:**
+    *   **Ballistics:** Projectile-based shooting (not hitscan) with bullet drop.
+    *   **Recoil:** Pattern-based recoil with randomization.
+    *   **Damage:** Location-based damage (Head, Thorax, Stomach, Limbs).
 *   **Weapons:** 
-    *   AR: AK-47, M4A1
-    *   SMG: MP5
-    *   Sidearm: Glock 17
-*   **Enemies:** Basic AI (Patrol behavior only)
-*   **Inventory:** Grid system, basic drag-and-drop
-*   **Metagame:** Stash, Basic Vendor (Sell only)
+    *   **AR:** AK-47 (High recoil, high damage), M4A1 (Moddable, stable).
+    *   **SMG:** MP5 (Close quarters, low pen).
+    *   **Sidearm:** Glock 17 (Emergency backup).
+*   **Enemies:** Basic AI (Scavs)
+    *   Behaviors: Patrol, Investigate Noise, Take Cover, Shout Callouts.
+    *   Spawn logic: Wave-based or zone-triggered.
+*   **Inventory:** 
+    *   **Grid System:** Different items take different shapes (1x1, 2x3).
+    *   **Containers:** Backpacks and Rigs have internal grids.
+*   **Metagame:** 
+    *   **Stash:** Persistent storage outside of raid.
+    *   **Vendor:** "The Fixer" (Buy basic ammo/meds, Sell loot for Credits).
 
 ### Features Excluded (For Beta)
-*   Quest System
-*   Crafting/Modding
-*   complex AI behaviors
-*   Friends/Party System
-*   Monetization Store
+*   Complex Quest System (Tasks, Multi-stage missions)
+*   Advanced Gunsmithing (only basic slot attachments for Alpha)
+*   Advanced AI (Bosses, Raiders, Flanking tactics)
+*   Party System / Squad Matchmaking (Solo only for Alpha stability)
+*   Real-money Store
 
 ---
 
 ## 🚀 Beta Scope (Soft Launch)
 
-**Objective:** Validate economy, retention, and progression.
+**Objective:** Validate economy balance, retention loops, and social systems.
 
 ### Features Added
-*   **Map:** Industrial Zone (Full) + Early Urban Zone
-*   **Operators:** Added Tank and Specialist (Total 5)
-*   **Weapons:** Added Shotguns, Snipers, DMRs
+*   **Map:** "Industrial Zone" (Expanded) + "Urban Ruins" (Early WIP)
+*   **Operators:** Added Tank (Heavy Armor) and Specialist (Tech/Gadget) - Total 5.
+*   **Weapons:** Shotguns (entry level), DMRs (mid-range), Snipers (high tier).
 *   **Systems:**
-    *   Gunsmith (Weapon modding)
-    *   Market (Trading with NPCs)
-    *   Quests (Daily + Main Story Ch.1)
-    *   Wounds/Status Effects
-*   **Social:** Party System, Friend List
+    *   **Gunsmith:** Deep weapon modding (Muzzles, Stocks, Grips affect handling stats).
+    *   **Market:** Dynamic pricing or Player-to-NPC trading adjustments.
+    *   **Quests:** Daily Contracts + Main Story Chapter 1 (Tutorialization).
+    *   **Health System:** Bleeding (Light/Heavy), Fractures, Pain (Screen effects).
+*   **Social:** Squad System (Up to 3 players), Friend List, Basic Spectator (Teammate only).
 
 ---
 
@@ -74,7 +90,7 @@ type: docs
 | **Maps**         |  Greybox  | 1 (Partial) | 1 (Full) + 1 (Partial) |    3 Maps     |
 | **Operators**    | 1 (Dummy) |      3      |           5            |      8+       |
 | **Weapons**      |     2     |      5      |          15+           |      30+      |
-| **AI Types**     |  Static   |   Patrol    |    Flanking, Cover     | Bosses, Elite |
+| **AI Behaviors** |  Static   |   Patrol    |      Cover, Flank      | Bosses, Elite |
 | **Loot System**  |  Random   |   Tables    |        Dynamic         |  Event-based  |
 | **Questing**     |     ❌     |      ❌      |         Basic          |   Campaign    |
 | **Progression**  |  Session  |    Wipe     |       Persistent       |    Seasons    |
@@ -84,12 +100,10 @@ type: docs
 
 ## 🛑 Cut Content (Backlog)
 
-*   **Vehicles:** Deferred to Year 2
-*   **Clan System:** Deferred to Post-Launch
-*   **Weather System:** Deferred to First Major Update
-*   **Spectator Mode:** Deferred to esports update
-
----
+*   **Vehicles:** Deferred to Year 2 (Requires physics overhaul).
+*   **Clan System:** Deferred to Post-Launch.
+*   **Dynamic Weather:** Deferred to First Major Update (Performance risk).
+*   **Killcam:** Deferred to esports update (Technical complexity/Anti-cheat risk).
 
 ---
 
@@ -101,8 +115,10 @@ type: docs
 | **Tech Review** | Technical Director | CTO                |
 
 **Recent Changes:**
+*   **v1.2 (2026-02-11):** Expanded Alpha/Beta features with specific mechanics (Ammo types, Health states).
 *   **v1.1 (2026-02-09):** Refined Milestones with specific deliverable targets and dependencies.
 *   **v1.0 (2026-02-07):** Initial MVP definition.
+
 
 
 

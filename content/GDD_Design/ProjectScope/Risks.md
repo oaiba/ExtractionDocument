@@ -259,7 +259,28 @@ This document identifies potential risks to the project across:
 
 ---
 
-### Risk B3: Platform Policy Changes
+### Risk B3: Hyper-Inflation of Economy
+| Aspect          | Details                                                                                  |
+| :-------------- | :--------------------------------------------------------------------------------------- |
+| **Risk**        | In-game currency becomes worthless as players accumulate wealth, removing the "Struggle" |
+| **Probability** | High (Likely in all extraction shooters eventually)                                      |
+| **Impact**      | High                                                                                     |
+| **Indicators**  | Flea market prices skyrocket, players only run "Meta" kits                               |
+
+**Mitigation:**
+1. Money Sinks (High repair costs, Taxes, Hideout upgrades)
+2. Seasonal Wipes (Hard or Soft resets)
+3. Dynamic Trader Pricing (Adjusts based on global supply)
+4. "Black Swan" events that destabilize currency
+
+**Contingency:**
+- Emergency price adjustments
+- Introduce new high-tier currency (e.g., Gold Bars)
+- Force a mid-season wipe (Last Resort)
+
+---
+
+### Risk B4: Platform Policy Changes
 
 | Aspect          | Details                                                                  |
 | :-------------- | :----------------------------------------------------------------------- |
@@ -281,7 +302,7 @@ This document identifies potential risks to the project across:
 
 ---
 
-### Risk B4: Negative Launch Reviews
+### Risk B5: Negative Launch Reviews
 
 | Aspect          | Details                                     |
 | :-------------- | :------------------------------------------ |

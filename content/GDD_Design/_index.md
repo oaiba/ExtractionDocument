@@ -41,9 +41,9 @@ World lore, factions, and character backstories
 ---
 
 ### 👥 Social & Multiplayer
-Squad systems, clans, and community features
+Squad systems, clans, karma, communication, and community features
 
-- **[Multiplayer](./Social/Multiplayer.md)** - Squad system, voice/text chat, ping system, clans, friends, anti-toxicity
+- **[Multiplayer](./Social/Multiplayer.md)** - Squad system, VOIP (spatial proximity chat), ping system, karma & trust, emotes & gestures, LFG, clans, friends, matchmaking (MMR/SBMM), social hub/hideout, dynamic in-raid interactions, anti-toxicity, post-match flow, cross-platform (EOS)
 
 ---
 

@@ -55,7 +55,7 @@ graph TD
 
 ```
 +------------------------------------------------------------+
-| [Profile: Lvl 12]  EXTRACTION ROYALE  [₽ 425,000] [$10]  |
+| [Profile: Lvl 12]  EXTRACTION ROYALE  [₽ 425,000] [$10]    |
 |                                                            |
 |              [3D OPERATOR MODEL - SPOTLIGHT]               |
 |         (Character Preview with Equipped Gear)             |
@@ -66,10 +66,10 @@ graph TD
 |                                                            |
 | +----------------+ +----------------+ +----------------+   |
 | | [LOADOUT]      | | [TRADERS]      | | [HIDEOUT]      |   |
-| | ⚙️ Customize    | | 🛒 Buy/Sell    | | 🏠 Upgrades    |   |
+| | ⚙️ Customize    | | 🛒 Buy/Sell    | | 🏠 Upgrades  |   |
 | +----------------+ +----------------+ +----------------+   |
 |                                                            |
-| [Battle Pass Tier 12/50]      [Friends Online: 3]  [⚙️]   |
+| [Battle Pass Tier 12/50]      [Friends Online: 3]  [⚙️]    |
 +------------------------------------------------------------+
 ```
 

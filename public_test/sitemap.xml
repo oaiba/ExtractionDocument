@@ -22,6 +22,8 @@
   </url><url>
     <loc>https://oaiba.github.io/ExtractionDocument/gdd_technical/gameplay/index.html</loc>
   </url><url>
+    <loc>https://oaiba.github.io/ExtractionDocument/gdd_design/ui_ux/menus.html</loc>
+  </url><url>
     <loc>https://oaiba.github.io/ExtractionDocument/gdd_design/story/narrative.html</loc>
   </url><url>
     <loc>https://oaiba.github.io/ExtractionDocument/gdd_technical/networking/index.html</loc>
@@ -53,6 +55,8 @@
     <loc>https://oaiba.github.io/ExtractionDocument/gdd_design/inventory_gear/containers.html</loc>
   </url><url>
     <loc>https://oaiba.github.io/ExtractionDocument/gdd_agents/rules/documentationstandards.html</loc>
+  </url><url>
+    <loc>https://oaiba.github.io/ExtractionDocument/gdd_design/ui_ux/hud_design.html</loc>
   </url><url>
     <loc>https://oaiba.github.io/ExtractionDocument/gdd_design/gameplay/movement_and_stamina.html</loc>
   </url><url>
@@ -87,6 +91,8 @@
     <loc>https://oaiba.github.io/ExtractionDocument/gdd_design/inventory_gear/looting.html</loc>
   </url><url>
     <loc>https://oaiba.github.io/ExtractionDocument/gdd_design/story/lore_delivery.html</loc>
+  </url><url>
+    <loc>https://oaiba.github.io/ExtractionDocument/gdd_design/ui_ux/notification_systems.html</loc>
   </url><url>
     <loc>https://oaiba.github.io/ExtractionDocument/gdd_design/gameplay/extraction_mechanics.html</loc>
   </url><url>
@@ -223,8 +229,6 @@
     <loc>https://oaiba.github.io/ExtractionDocument/gdd_design/world/mapdesign_wilderness.html</loc>
   </url><url>
     <loc>https://oaiba.github.io/ExtractionDocument/gdd_design/world/maplayouts.html</loc>
-  </url><url>
-    <loc>https://oaiba.github.io/ExtractionDocument/gdd_design/ui_ux/menus.html</loc>
   </url><url>
     <loc>https://oaiba.github.io/ExtractionDocument/gdd_design/projectscope/mvp.html</loc>
   </url><url>

@@ -8,46 +8,75 @@
 <link rel="icon" href="/ExtractionDocument/favicon-32x32.png" type="image/png" sizes="32x32" />
 <link rel="apple-touch-icon" href="/ExtractionDocument/apple-touch-icon.png" sizes="180x180" />
 <link fetchpriority="low" href="/ExtractionDocument/site.webmanifest" rel="manifest" />
-<title>Build Pipeline &amp; Release Engineering – Extraction Document</title>
-  <meta name="description" content="🏗️ Version Control StrategyBranching Model (Gitflow modified)main (Production): The “Gold” standard. Stable, playable, deployable. Locked. Rule: Only merge via Pull Request (PR) after passing Automated Tests. development (Staging): The integration branch for current sprint. Rule: Nightly builds run from here. feature/xyz (Task): Individual developer branches. Short-lived (&lt; 2 days). Naming: feature/loot-spawner, fix/crash-inventory CommitsMessage Format: [Category] Summary. Example: [Audio] Added reverb to warehouse zone Example: [Bugfix] Resolved inventory duping exploit 🤖 CI/CD Automation (Jenkins / GitHub Actions)Continuous Integration (CI)Run on every Push to feature/*:" /><link rel="canonical" href="https://oaiba.github.io/ExtractionDocument/gdd_technical/systems/buildpipeline.html" itemprop="url" />
+<title>In-Raid HUD Design – Extraction Document</title>
+  <meta name="description" content="HUD PhilosophyThe in-raid HUD follows one principle: show only what matters, when it matters.
+Rule Implementation Minimum obstruction HUD elements occupy no more than 15% of total screen area Contextual visibility Elements appear/disappear based on game state Glanceable design Any single HUD element must be readable in under 0.5 seconds No clutter stacking Maximum 3 notification types visible simultaneously Platform consistency Same information on all platforms, adapted layout for screen size Diegetic vs. Non-Diegetic ElementsType Description Examples Diegetic UI exists within the game world, seen by the character Weapon ammo count on the magazine, watch for time, geiger counter radiation display Non-Diegetic Traditional overlay HUD, visible only to the player Health bar, minimap, kill feed, extraction timer Spatial Exists in 3D space but not visible to the character Squad mate markers, objective waypoints, extraction zone indicators This game uses primarily non-diegetic HUD for clarity in top-down perspective, with spatial markers for squad and objective tracking." /><link rel="canonical" href="https://oaiba.github.io/ExtractionDocument/gdd_design/ui_ux/hud_design.html" itemprop="url" />
 
-<meta property="og:title" content="Build Pipeline &amp; Release Engineering">
+<meta property="og:title" content="In-Raid HUD Design">
 <meta
   property="og:description"
   content="
     
-      🏗️ Version Control Strategy
-    Branching Model (Gitflow modified)
+      HUD Philosophy
+    The in-raid HUD follows one principle: show only what matters, when it matters.
+
+  
+      
+          Rule
+          Implementation
+      
+  
+  
+      
+          Minimum obstruction
+          HUD elements occupy no more than 15% of total screen area
+      
+      
+          Contextual visibility
+          Elements appear/disappear based on game state
+      
+      
+          Glanceable design
+          Any single HUD element must be readable in under 0.5 seconds
+      
+      
+          No clutter stacking
+          Maximum 3 notification types visible simultaneously
+      
+      
+          Platform consistency
+          Same information on all platforms, adapted layout for screen size
+      
+  
+
+Diegetic vs. Non-Diegetic Elements
     
-main (Production): The &ldquo;Gold&rdquo; standard. Stable, playable, deployable. Locked.
+  
+      
+          Type
+          Description
+          Examples
+      
+  
+  
+      
+          Diegetic
+          UI exists within the game world, seen by the character
+          Weapon ammo count on the magazine, watch for time, geiger counter radiation display
+      
+      
+          Non-Diegetic
+          Traditional overlay HUD, visible only to the player
+          Health bar, minimap, kill feed, extraction timer
+      
+      
+          Spatial
+          Exists in 3D space but not visible to the character
+          Squad mate markers, objective waypoints, extraction zone indicators
+      
+  
 
-Rule: Only merge via Pull Request (PR) after passing Automated Tests.
-
-
-development (Staging): The integration branch for current sprint.
-
-Rule: Nightly builds run from here.
-
-
-feature/xyz (Task): Individual developer branches. Short-lived (&lt; 2 days).
-
-Naming: feature/loot-spawner, fix/crash-inventory
-
-
-
-Commits
-    
-Message Format: [Category] Summary.
-
-Example: [Audio] Added reverb to warehouse zone
-Example: [Bugfix] Resolved inventory duping exploit
-
-
-
-
-🤖 CI/CD Automation (Jenkins / GitHub Actions)
-    Continuous Integration (CI)
-    Run on every Push to feature/*:
+This game uses primarily non-diegetic HUD for clarity in top-down perspective, with spatial markers for squad and objective tracking.
     
   ">
 <meta
@@ -55,17 +84,19 @@ Example: [Bugfix] Resolved inventory duping exploit
   content="
     article
   ">
-<meta property="og:url" content="https://oaiba.github.io/ExtractionDocument/gdd_technical/systems/buildpipeline.html"><meta property="article:section" content="gdd_technical">
+<meta property="og:url" content="https://oaiba.github.io/ExtractionDocument/gdd_design/ui_ux/hud_design.html"><meta property="article:section" content="gdd_design">
 
 
 
 
-  <meta itemprop="name" content="Build Pipeline & Release Engineering">
-  <meta itemprop="description" content="🏗️ Version Control StrategyBranching Model (Gitflow modified)main (Production): The “Gold” standard. Stable, playable, deployable. Locked. Rule: Only merge via Pull Request (PR) after passing Automated Tests. development (Staging): The integration branch for current sprint. Rule: Nightly builds run from here. feature/xyz (Task): Individual developer branches. Short-lived (&lt; 2 days). Naming: feature/loot-spawner, fix/crash-inventory CommitsMessage Format: [Category] Summary. Example: [Audio] Added reverb to warehouse zone Example: [Bugfix] Resolved inventory duping exploit 🤖 CI/CD Automation (Jenkins / GitHub Actions)Continuous Integration (CI)Run on every Push to feature/*:">
-  <meta itemprop="wordCount" content="304">
+  <meta itemprop="name" content="In-Raid HUD Design">
+  <meta itemprop="description" content="HUD PhilosophyThe in-raid HUD follows one principle: show only what matters, when it matters.
+Rule Implementation Minimum obstruction HUD elements occupy no more than 15% of total screen area Contextual visibility Elements appear/disappear based on game state Glanceable design Any single HUD element must be readable in under 0.5 seconds No clutter stacking Maximum 3 notification types visible simultaneously Platform consistency Same information on all platforms, adapted layout for screen size Diegetic vs. Non-Diegetic ElementsType Description Examples Diegetic UI exists within the game world, seen by the character Weapon ammo count on the magazine, watch for time, geiger counter radiation display Non-Diegetic Traditional overlay HUD, visible only to the player Health bar, minimap, kill feed, extraction timer Spatial Exists in 3D space but not visible to the character Squad mate markers, objective waypoints, extraction zone indicators This game uses primarily non-diegetic HUD for clarity in top-down perspective, with spatial markers for squad and objective tracking.">
+  <meta itemprop="wordCount" content="1623">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Build Pipeline & Release Engineering">
-  <meta name="twitter:description" content="🏗️ Version Control StrategyBranching Model (Gitflow modified)main (Production): The “Gold” standard. Stable, playable, deployable. Locked. Rule: Only merge via Pull Request (PR) after passing Automated Tests. development (Staging): The integration branch for current sprint. Rule: Nightly builds run from here. feature/xyz (Task): Individual developer branches. Short-lived (&lt; 2 days). Naming: feature/loot-spawner, fix/crash-inventory CommitsMessage Format: [Category] Summary. Example: [Audio] Added reverb to warehouse zone Example: [Bugfix] Resolved inventory duping exploit 🤖 CI/CD Automation (Jenkins / GitHub Actions)Continuous Integration (CI)Run on every Push to feature/*:">
+  <meta name="twitter:title" content="In-Raid HUD Design">
+  <meta name="twitter:description" content="HUD PhilosophyThe in-raid HUD follows one principle: show only what matters, when it matters.
+Rule Implementation Minimum obstruction HUD elements occupy no more than 15% of total screen area Contextual visibility Elements appear/disappear based on game state Glanceable design Any single HUD element must be readable in under 0.5 seconds No clutter stacking Maximum 3 notification types visible simultaneously Platform consistency Same information on all platforms, adapted layout for screen size Diegetic vs. Non-Diegetic ElementsType Description Examples Diegetic UI exists within the game world, seen by the character Weapon ammo count on the magazine, watch for time, geiger counter radiation display Non-Diegetic Traditional overlay HUD, visible only to the player Health bar, minimap, kill feed, extraction timer Spatial Exists in 3D space but not visible to the character Squad mate markers, objective waypoints, extraction zone indicators This game uses primarily non-diegetic HUD for clarity in top-down perspective, with spatial markers for squad and objective tracking.">
 
     <link rel="preload" href="/ExtractionDocument/css/compiled/main.min.2dd785f1e80a1395818c74c83fbfb60704ab5a51c303c1ee199e6a0fd099cd06.css" as="style" integrity="sha256-LdeF8egKE5WBjHTIP7&#43;2BwSrWlHDA8HuGZ5qD9CZzQY=" />
     <link href="/ExtractionDocument/css/compiled/main.min.2dd785f1e80a1395818c74c83fbfb60704ab5a51c303c1ee199e6a0fd099cd06.css" rel="stylesheet" integrity="sha256-LdeF8egKE5WBjHTIP7&#43;2BwSrWlHDA8HuGZ5qD9CZzQY=" />
@@ -256,7 +287,7 @@ Example: [Bugfix] Resolved inventory duping exploit
 </div>
         </li></ul>
 </div></li>
-<li class=""><a class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+<li class="open"><a class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
       hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:text-gray-900 hx:contrast-more:dark:text-gray-50 hx:contrast-more:border-transparent hx:contrast-more:hover:border-gray-900 hx:contrast-more:dark:hover:border-gray-50" href="/ExtractionDocument/gdd_design/index.html" >GDD Design
     <span class="hextra-sidebar-collapsible-button"
         onclick="event.preventDefault(); event.stopPropagation(); this.closest('li').classList.toggle('open');"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"
@@ -602,8 +633,44 @@ Example: [Bugfix] Resolved inventory duping exploit
         class='hx:relative hx:flex hx:flex-col hx:gap-1 hx:before:absolute hx:before:inset-y-1 hx:before:w-px hx:before:bg-gray-200 hx:before:content-[""] hx:ltr:ml-3 hx:ltr:pl-3 hx:ltr:before:left-0 hx:rtl:mr-3 hx:rtl:pr-3 hx:rtl:before:right-0 hx:dark:before:bg-neutral-800'><li class="hx:flex hx:flex-col "><a class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
       hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:text-gray-900 hx:contrast-more:dark:text-gray-50 hx:contrast-more:border-transparent hx:contrast-more:hover:border-gray-900 hx:contrast-more:dark:hover:border-gray-50" href="/ExtractionDocument/gdd_design/ui_ux/menus.html" >Menus &amp; Screens</a>
             
-        </li><li class="hx:flex hx:flex-col "><a class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
-      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:text-gray-900 hx:contrast-more:dark:text-gray-50 hx:contrast-more:border-transparent hx:contrast-more:hover:border-gray-900 hx:contrast-more:dark:hover:border-gray-50" href="/ExtractionDocument/gdd_design/ui_ux/hud_design.html" >In-Raid HUD Design</a>
+        </li><li class="hx:flex hx:flex-col open"><a class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hextra-sidebar-active-item hx:bg-primary-100 hx:font-semibold hx:text-primary-800 hx:contrast-more:border hx:contrast-more:border-primary-500 hx:dark:bg-primary-400/10 hx:dark:text-primary-600 hx:contrast-more:dark:border-primary-500" href="/ExtractionDocument/gdd_design/ui_ux/hud_design.html" >In-Raid HUD Design</a>
+
+<ul
+    class='hx:flex hx:flex-col hx:gap-1 hx:relative hx:before:absolute hx:before:inset-y-1 hx:before:w-px hx:before:bg-gray-200 hx:before:content-[""] hx:dark:before:bg-neutral-800 hx:ltr:pl-3 hx:ltr:before:left-0 hx:rtl:pr-3 hx:rtl:before:right-0 hx:ltr:ml-3 hx:rtl:mr-3'><li>
+        <a href="#hud-philosophy"
+            class="hx:flex hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [word-break:break-word] hx:cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] hx:contrast-more:border hx:gap-2 hx:before:opacity-25 hx:before:content-['#'] hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:text-gray-900 hx:contrast-more:dark:text-gray-50 hx:contrast-more:border-transparent hx:contrast-more:hover:border-gray-900 hx:contrast-more:dark:hover:border-gray-50">HUD Philosophy</a>
+    </li>
+    <li>
+        <a href="#hud-element-catalog"
+            class="hx:flex hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [word-break:break-word] hx:cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] hx:contrast-more:border hx:gap-2 hx:before:opacity-25 hx:before:content-['#'] hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:text-gray-900 hx:contrast-more:dark:text-gray-50 hx:contrast-more:border-transparent hx:contrast-more:hover:border-gray-900 hx:contrast-more:dark:hover:border-gray-50">HUD Element Catalog</a>
+    </li>
+    <li>
+        <a href="#hud-layout--pc--console-landscape"
+            class="hx:flex hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [word-break:break-word] hx:cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] hx:contrast-more:border hx:gap-2 hx:before:opacity-25 hx:before:content-['#'] hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:text-gray-900 hx:contrast-more:dark:text-gray-50 hx:contrast-more:border-transparent hx:contrast-more:hover:border-gray-900 hx:contrast-more:dark:hover:border-gray-50">HUD Layout — PC / Console (Landscape)</a>
+    </li>
+    <li>
+        <a href="#hud-layout--mobile-portrait"
+            class="hx:flex hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [word-break:break-word] hx:cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] hx:contrast-more:border hx:gap-2 hx:before:opacity-25 hx:before:content-['#'] hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:text-gray-900 hx:contrast-more:dark:text-gray-50 hx:contrast-more:border-transparent hx:contrast-more:hover:border-gray-900 hx:contrast-more:dark:hover:border-gray-50">HUD Layout — Mobile (Portrait)</a>
+    </li>
+    <li>
+        <a href="#element-specifications"
+            class="hx:flex hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [word-break:break-word] hx:cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] hx:contrast-more:border hx:gap-2 hx:before:opacity-25 hx:before:content-['#'] hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:text-gray-900 hx:contrast-more:dark:text-gray-50 hx:contrast-more:border-transparent hx:contrast-more:hover:border-gray-900 hx:contrast-more:dark:hover:border-gray-50">Element Specifications</a>
+    </li>
+    <li>
+        <a href="#contextual-visibility-rules"
+            class="hx:flex hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [word-break:break-word] hx:cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] hx:contrast-more:border hx:gap-2 hx:before:opacity-25 hx:before:content-['#'] hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:text-gray-900 hx:contrast-more:dark:text-gray-50 hx:contrast-more:border-transparent hx:contrast-more:hover:border-gray-900 hx:contrast-more:dark:hover:border-gray-50">Contextual Visibility Rules</a>
+    </li>
+    <li>
+        <a href="#hud-customization-options"
+            class="hx:flex hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [word-break:break-word] hx:cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] hx:contrast-more:border hx:gap-2 hx:before:opacity-25 hx:before:content-['#'] hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:text-gray-900 hx:contrast-more:dark:text-gray-50 hx:contrast-more:border-transparent hx:contrast-more:hover:border-gray-900 hx:contrast-more:dark:hover:border-gray-50">HUD Customization Options</a>
+    </li>
+    <li>
+        <a href="#performance-budget"
+            class="hx:flex hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [word-break:break-word] hx:cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] hx:contrast-more:border hx:gap-2 hx:before:opacity-25 hx:before:content-['#'] hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:text-gray-900 hx:contrast-more:dark:text-gray-50 hx:contrast-more:border-transparent hx:contrast-more:hover:border-gray-900 hx:contrast-more:dark:hover:border-gray-50">Performance Budget</a>
+    </li>
+    </ul>
+
             
         </li><li class="hx:flex hx:flex-col "><a class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
       hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:text-gray-900 hx:contrast-more:dark:text-gray-50 hx:contrast-more:border-transparent hx:contrast-more:hover:border-gray-900 hx:contrast-more:dark:hover:border-gray-50" href="/ExtractionDocument/gdd_design/ui_ux/notification_systems.html" >Notification &amp; Feedback Systems</a>
@@ -745,7 +812,7 @@ Example: [Bugfix] Resolved inventory duping exploit
 </div>
         </li></ul>
 </div></li>
-<li class="open"><a class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+<li class=""><a class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
       hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:text-gray-900 hx:contrast-more:dark:text-gray-50 hx:contrast-more:border-transparent hx:contrast-more:hover:border-gray-900 hx:contrast-more:dark:hover:border-gray-50" href="/ExtractionDocument/gdd_technical/index.html" >GDD Technical
     <span class="hextra-sidebar-collapsible-button"
         onclick="event.preventDefault(); event.stopPropagation(); this.closest('li').classList.toggle('open');"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"
@@ -881,7 +948,7 @@ Example: [Bugfix] Resolved inventory duping exploit
             
         </li></ul>
 </div>
-        </li><li class="hx:flex hx:flex-col open"><a class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+        </li><li class="hx:flex hx:flex-col "><a class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
       hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:text-gray-900 hx:contrast-more:dark:text-gray-50 hx:contrast-more:border-transparent hx:contrast-more:hover:border-gray-900 hx:contrast-more:dark:hover:border-gray-50" href="/ExtractionDocument/gdd_technical/systems/index.html" >Systems
     <span class="hextra-sidebar-collapsible-button"
         onclick="event.preventDefault(); event.stopPropagation(); this.closest('li').classList.toggle('open');"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"
@@ -904,28 +971,8 @@ Example: [Bugfix] Resolved inventory duping exploit
         </li><li class="hx:flex hx:flex-col "><a class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
       hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:text-gray-900 hx:contrast-more:dark:text-gray-50 hx:contrast-more:border-transparent hx:contrast-more:hover:border-gray-900 hx:contrast-more:dark:hover:border-gray-50" href="/ExtractionDocument/gdd_technical/systems/audiosystem.html" >Audio System - Technical Specification</a>
             
-        </li><li class="hx:flex hx:flex-col open"><a class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
-      hextra-sidebar-active-item hx:bg-primary-100 hx:font-semibold hx:text-primary-800 hx:contrast-more:border hx:contrast-more:border-primary-500 hx:dark:bg-primary-400/10 hx:dark:text-primary-600 hx:contrast-more:dark:border-primary-500" href="/ExtractionDocument/gdd_technical/systems/buildpipeline.html" >Build Pipeline &amp; Release Engineering</a>
-
-<ul
-    class='hx:flex hx:flex-col hx:gap-1 hx:relative hx:before:absolute hx:before:inset-y-1 hx:before:w-px hx:before:bg-gray-200 hx:before:content-[""] hx:dark:before:bg-neutral-800 hx:ltr:pl-3 hx:ltr:before:left-0 hx:rtl:pr-3 hx:rtl:before:right-0 hx:ltr:ml-3 hx:rtl:mr-3'><li>
-        <a href="#-version-control-strategy"
-            class="hx:flex hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [word-break:break-word] hx:cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] hx:contrast-more:border hx:gap-2 hx:before:opacity-25 hx:before:content-['#'] hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:text-gray-900 hx:contrast-more:dark:text-gray-50 hx:contrast-more:border-transparent hx:contrast-more:hover:border-gray-900 hx:contrast-more:dark:hover:border-gray-50">🏗️ Version Control Strategy</a>
-    </li>
-    <li>
-        <a href="#-cicd-automation-jenkins--github-actions"
-            class="hx:flex hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [word-break:break-word] hx:cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] hx:contrast-more:border hx:gap-2 hx:before:opacity-25 hx:before:content-['#'] hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:text-gray-900 hx:contrast-more:dark:text-gray-50 hx:contrast-more:border-transparent hx:contrast-more:hover:border-gray-900 hx:contrast-more:dark:hover:border-gray-50">🤖 CI/CD Automation (Jenkins / GitHub Actions)</a>
-    </li>
-    <li>
-        <a href="#-quality-assurance-qa-process"
-            class="hx:flex hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [word-break:break-word] hx:cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] hx:contrast-more:border hx:gap-2 hx:before:opacity-25 hx:before:content-['#'] hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:text-gray-900 hx:contrast-more:dark:text-gray-50 hx:contrast-more:border-transparent hx:contrast-more:hover:border-gray-900 hx:contrast-more:dark:hover:border-gray-50">📋 Quality Assurance (QA) Process</a>
-    </li>
-    <li>
-        <a href="#-release-process"
-            class="hx:flex hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [word-break:break-word] hx:cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] hx:contrast-more:border hx:gap-2 hx:before:opacity-25 hx:before:content-['#'] hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:text-gray-900 hx:contrast-more:dark:text-gray-50 hx:contrast-more:border-transparent hx:contrast-more:hover:border-gray-900 hx:contrast-more:dark:hover:border-gray-50">🚀 Release Process</a>
-    </li>
-    </ul>
-
+        </li><li class="hx:flex hx:flex-col "><a class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:text-gray-900 hx:contrast-more:dark:text-gray-50 hx:contrast-more:border-transparent hx:contrast-more:hover:border-gray-900 hx:contrast-more:dark:hover:border-gray-50" href="/ExtractionDocument/gdd_technical/systems/buildpipeline.html" >Build Pipeline &amp; Release Engineering</a>
             
         </li><li class="hx:flex hx:flex-col "><a class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
       hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:text-gray-900 hx:contrast-more:dark:text-gray-50 hx:contrast-more:border-transparent hx:contrast-more:hover:border-gray-900 hx:contrast-more:dark:hover:border-gray-50" href="/ExtractionDocument/gdd_technical/systems/liveopssystem.html" >Live Operations System - Technical Specification</a>
@@ -1050,7 +1097,7 @@ Example: [Bugfix] Resolved inventory duping exploit
 </div>
         </li></ul>
 </div></li>
-<li class=""><a class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+<li class="open"><a class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
       hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:text-gray-900 hx:contrast-more:dark:text-gray-50 hx:contrast-more:border-transparent hx:contrast-more:hover:border-gray-900 hx:contrast-more:dark:hover:border-gray-50" href="/ExtractionDocument/gdd_design/index.html" >GDD Design
     <span class="hextra-sidebar-collapsible-button"
         onclick="event.preventDefault(); event.stopPropagation(); this.closest('li').classList.toggle('open');"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"
@@ -1396,8 +1443,8 @@ Example: [Bugfix] Resolved inventory duping exploit
         class='hx:relative hx:flex hx:flex-col hx:gap-1 hx:before:absolute hx:before:inset-y-1 hx:before:w-px hx:before:bg-gray-200 hx:before:content-[""] hx:ltr:ml-3 hx:ltr:pl-3 hx:ltr:before:left-0 hx:rtl:mr-3 hx:rtl:pr-3 hx:rtl:before:right-0 hx:dark:before:bg-neutral-800'><li class="hx:flex hx:flex-col "><a class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
       hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:text-gray-900 hx:contrast-more:dark:text-gray-50 hx:contrast-more:border-transparent hx:contrast-more:hover:border-gray-900 hx:contrast-more:dark:hover:border-gray-50" href="/ExtractionDocument/gdd_design/ui_ux/menus.html" >Menus &amp; Screens</a>
             
-        </li><li class="hx:flex hx:flex-col "><a class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
-      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:text-gray-900 hx:contrast-more:dark:text-gray-50 hx:contrast-more:border-transparent hx:contrast-more:hover:border-gray-900 hx:contrast-more:dark:hover:border-gray-50" href="/ExtractionDocument/gdd_design/ui_ux/hud_design.html" >In-Raid HUD Design</a>
+        </li><li class="hx:flex hx:flex-col open"><a class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hextra-sidebar-active-item hx:bg-primary-100 hx:font-semibold hx:text-primary-800 hx:contrast-more:border hx:contrast-more:border-primary-500 hx:dark:bg-primary-400/10 hx:dark:text-primary-600 hx:contrast-more:dark:border-primary-500" href="/ExtractionDocument/gdd_design/ui_ux/hud_design.html" >In-Raid HUD Design</a>
             
         </li><li class="hx:flex hx:flex-col "><a class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
       hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:text-gray-900 hx:contrast-more:dark:text-gray-50 hx:contrast-more:border-transparent hx:contrast-more:hover:border-gray-900 hx:contrast-more:dark:hover:border-gray-50" href="/ExtractionDocument/gdd_design/ui_ux/notification_systems.html" >Notification &amp; Feedback Systems</a>
@@ -1539,7 +1586,7 @@ Example: [Bugfix] Resolved inventory duping exploit
 </div>
         </li></ul>
 </div></li>
-<li class="open"><a class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+<li class=""><a class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
       hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:text-gray-900 hx:contrast-more:dark:text-gray-50 hx:contrast-more:border-transparent hx:contrast-more:hover:border-gray-900 hx:contrast-more:dark:hover:border-gray-50" href="/ExtractionDocument/gdd_technical/index.html" >GDD Technical
     <span class="hextra-sidebar-collapsible-button"
         onclick="event.preventDefault(); event.stopPropagation(); this.closest('li').classList.toggle('open');"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"
@@ -1675,7 +1722,7 @@ Example: [Bugfix] Resolved inventory duping exploit
             
         </li></ul>
 </div>
-        </li><li class="hx:flex hx:flex-col open"><a class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+        </li><li class="hx:flex hx:flex-col "><a class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
       hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:text-gray-900 hx:contrast-more:dark:text-gray-50 hx:contrast-more:border-transparent hx:contrast-more:hover:border-gray-900 hx:contrast-more:dark:hover:border-gray-50" href="/ExtractionDocument/gdd_technical/systems/index.html" >Systems
     <span class="hextra-sidebar-collapsible-button"
         onclick="event.preventDefault(); event.stopPropagation(); this.closest('li').classList.toggle('open');"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"
@@ -1698,8 +1745,8 @@ Example: [Bugfix] Resolved inventory duping exploit
         </li><li class="hx:flex hx:flex-col "><a class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
       hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:text-gray-900 hx:contrast-more:dark:text-gray-50 hx:contrast-more:border-transparent hx:contrast-more:hover:border-gray-900 hx:contrast-more:dark:hover:border-gray-50" href="/ExtractionDocument/gdd_technical/systems/audiosystem.html" >Audio System - Technical Specification</a>
             
-        </li><li class="hx:flex hx:flex-col open"><a class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
-      hextra-sidebar-active-item hx:bg-primary-100 hx:font-semibold hx:text-primary-800 hx:contrast-more:border hx:contrast-more:border-primary-500 hx:dark:bg-primary-400/10 hx:dark:text-primary-600 hx:contrast-more:dark:border-primary-500" href="/ExtractionDocument/gdd_technical/systems/buildpipeline.html" >Build Pipeline &amp; Release Engineering</a>
+        </li><li class="hx:flex hx:flex-col "><a class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:text-gray-900 hx:contrast-more:dark:text-gray-50 hx:contrast-more:border-transparent hx:contrast-more:hover:border-gray-900 hx:contrast-more:dark:hover:border-gray-50" href="/ExtractionDocument/gdd_technical/systems/buildpipeline.html" >Build Pipeline &amp; Release Engineering</a>
             
         </li><li class="hx:flex hx:flex-col "><a class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
       hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:text-gray-900 hx:contrast-more:dark:text-gray-50 hx:contrast-more:border-transparent hx:contrast-more:hover:border-gray-900 hx:contrast-more:dark:hover:border-gray-50" href="/ExtractionDocument/gdd_technical/systems/liveopssystem.html" >Live Operations System - Technical Specification</a>
@@ -1796,47 +1843,99 @@ Example: [Bugfix] Resolved inventory duping exploit
 <nav class="hextra-toc hx:order-last hx:hidden hx:w-64 hx:shrink-0 hx:xl:block hx:print:hidden hx:px-4" aria-label="table of contents">
     <div class="hextra-scrollbar hx:sticky hx:top-16 hx:overflow-y-auto hx:pr-4 hx:pt-6 hx:text-sm [hyphens:auto] hx:max-h-[calc(100vh-var(--navbar-height)-env(safe-area-inset-bottom))] hx:ltr:-mr-4 hx:rtl:-ml-4"><p class="hx:mb-4 hx:font-semibold hx:tracking-tight">On this page</p><ul>
       <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
-        <a class="hx:font-medium hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word" href="#-version-control-strategy">🏗️ Version Control Strategy
+        <a class="hx:font-medium hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word" href="#hud-philosophy">HUD Philosophy
         </a>
       </li>
       <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
-        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word" href="#branching-model-gitflow-modified">Branching Model (Gitflow modified)
+        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word" href="#diegetic-vs-non-diegetic-elements">Diegetic vs. Non-Diegetic Elements
         </a>
       </li>
       <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
-        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word" href="#commits">Commits
+        <a class="hx:font-medium hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word" href="#hud-element-catalog">HUD Element Catalog
         </a>
       </li>
       <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
-        <a class="hx:font-medium hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word" href="#-cicd-automation-jenkins--github-actions">🤖 CI/CD Automation (Jenkins / GitHub Actions)
+        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word" href="#complete-element-list">Complete Element List
         </a>
       </li>
       <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
-        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word" href="#continuous-integration-ci">Continuous Integration (CI)
+        <a class="hx:font-medium hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word" href="#hud-layout--pc--console-landscape">HUD Layout — PC / Console (Landscape)
         </a>
       </li>
       <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
-        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word" href="#continuous-delivery-cd">Continuous Delivery (CD)
+        <a class="hx:font-medium hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word" href="#hud-layout--mobile-portrait">HUD Layout — Mobile (Portrait)
         </a>
       </li>
       <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
-        <a class="hx:font-medium hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word" href="#-quality-assurance-qa-process">📋 Quality Assurance (QA) Process
+        <a class="hx:font-medium hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word" href="#element-specifications">Element Specifications
         </a>
       </li>
       <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
-        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word" href="#smoke-test-daily">“Smoke Test” (Daily)
+        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word" href="#health-and-armor-bar">Health and Armor Bar
         </a>
       </li>
       <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
-        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word" href="#feature-testing-weekly">Feature Testing (Weekly)
+        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word" href="#stamina-bar">Stamina Bar
         </a>
       </li>
       <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
-        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word" href="#release-candidate-rc-testing">Release Candidate (RC) Testing
+        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word" href="#ammo-counter-and-weapon-indicator">Ammo Counter and Weapon Indicator
         </a>
       </li>
       <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
-        <a class="hx:font-medium hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word" href="#-release-process">🚀 Release Process
+        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word" href="#minimap">Minimap
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word" href="#compass">Compass
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word" href="#extraction-timer">Extraction Timer
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word" href="#squad-panel">Squad Panel
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word" href="#interaction-prompt">Interaction Prompt
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word" href="#weight-indicator">Weight Indicator
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:font-medium hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word" href="#contextual-visibility-rules">Contextual Visibility Rules
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word" href="#fade-timing">Fade Timing
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:font-medium hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word" href="#hud-customization-options">HUD Customization Options
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word" href="#player-adjustable-settings">Player-Adjustable Settings
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word" href="#mobile-specific-customization">Mobile-Specific Customization
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:font-medium hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word" href="#performance-budget">Performance Budget
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word" href="#hud-rendering-rules">HUD Rendering Rules
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word" href="#platform-specific-hud-fps-targets">Platform-Specific HUD FPS Targets
         </a>
       </li></ul>
       <div class="hx:mt-8 hx:border-t hx:bg-white hx:pt-8 hx:shadow-[0_-12px_16px_white] hx:dark:bg-dark hx:dark:shadow-[0_-12px_16px_#111] hx:sticky hx:bottom-0 hx:flex hx:flex-col hx:items-start hx:gap-2 hx:pb-8 hx:border-gray-200 hx:dark:border-neutral-800 hx:contrast-more:border-t hx:contrast-more:border-neutral-400 hx:contrast-more:shadow-none hx:contrast-more:dark:border-neutral-400">
@@ -1855,114 +1954,877 @@ Example: [Bugfix] Resolved inventory duping exploit
       <main class="hx:w-full hx:min-w-0 hextra-max-content-width hx:px-6 hx:pt-4 hx:md:px-12">
         <div class="hx:mt-1.5 hx:flex hx:items-center hx:gap-1 hx:overflow-hidden hx:text-sm hx:text-gray-500 hx:dark:text-gray-400 hx:contrast-more:text-current">
         <div class="hx:whitespace-nowrap hx:transition-colors hx:min-w-[24px] hx:overflow-hidden hx:text-ellipsis hx:hover:text-gray-900 hx:dark:hover:text-gray-100">
-          <a href="/ExtractionDocument/gdd_technical/index.html">GDD Technical</a>
+          <a href="/ExtractionDocument/gdd_design/index.html">GDD Design</a>
         </div><svg class="hx:w-3.5 hx:shrink-0 hx:rtl:-rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
         <div class="hx:whitespace-nowrap hx:transition-colors hx:min-w-[24px] hx:overflow-hidden hx:text-ellipsis hx:hover:text-gray-900 hx:dark:hover:text-gray-100">
-          <a href="/ExtractionDocument/gdd_technical/systems/index.html">Systems</a>
-        </div><svg class="hx:w-3.5 hx:shrink-0 hx:rtl:-rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg><div class="hx:whitespace-nowrap hx:transition-colors hx:font-medium hx:text-gray-700 hx:contrast-more:font-bold hx:contrast-more:text-current hx:dark:text-gray-100 hx:contrast-more:dark:text-current">Build Pipeline &amp; Release Engineering</div>
+          <a href="/ExtractionDocument/gdd_design/ui_ux/index.html">UI/UX</a>
+        </div><svg class="hx:w-3.5 hx:shrink-0 hx:rtl:-rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg><div class="hx:whitespace-nowrap hx:transition-colors hx:font-medium hx:text-gray-700 hx:contrast-more:font-bold hx:contrast-more:text-current hx:dark:text-gray-100 hx:contrast-more:dark:text-current">In-Raid HUD Design</div>
   </div>
 
         <div class="content">
           
           <div class="hx:flex hx:flex-col hx:sm:flex-row hx:items-start hx:sm:items-center hx:sm:justify-between hx:gap-4 hx:mb-4">
-            <h1 class="hx:mb-0">Build Pipeline &amp; Release Engineering</h1>
+            <h1 class="hx:mb-0">In-Raid HUD Design</h1>
             
           </div>
           
-          <h2>🏗️ Version Control Strategy<span class="hx:absolute hx:-mt-20" id="-version-control-strategy"></span>
-    <a href="#-version-control-strategy" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><h3>Branching Model (Gitflow modified)<span class="hx:absolute hx:-mt-20" id="branching-model-gitflow-modified"></span>
-    <a href="#branching-model-gitflow-modified" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><ul>
-<li><strong><code>main</code> (Production):</strong> The &ldquo;Gold&rdquo; standard. Stable, playable, deployable. Locked.
-<ul>
-<li><em>Rule:</em> Only merge via Pull Request (PR) after passing Automated Tests.</li>
-</ul>
-</li>
-<li><strong><code>development</code> (Staging):</strong> The integration branch for current sprint.
-<ul>
-<li><em>Rule:</em> Nightly builds run from here.</li>
-</ul>
-</li>
-<li><strong><code>feature/xyz</code> (Task):</strong> Individual developer branches. Short-lived (&lt; 2 days).
-<ul>
-<li><em>Naming:</em> <code>feature/loot-spawner</code>, <code>fix/crash-inventory</code></li>
-</ul>
-</li>
-</ul>
-<h3>Commits<span class="hx:absolute hx:-mt-20" id="commits"></span>
-    <a href="#commits" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><ul>
-<li><strong>Message Format:</strong> <code>[Category] Summary</code>.
-<ul>
-<li><em>Example:</em> <code>[Audio] Added reverb to warehouse zone</code></li>
-<li><em>Example:</em> <code>[Bugfix] Resolved inventory duping exploit</code></li>
-</ul>
-</li>
-</ul>
+          <h2>HUD Philosophy<span class="hx:absolute hx:-mt-20" id="hud-philosophy"></span>
+    <a href="#hud-philosophy" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><p>The in-raid HUD follows one principle: <strong>show only what matters, when it matters</strong>.</p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Rule</th>
+          <th style="text-align: left">Implementation</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Minimum obstruction</td>
+          <td style="text-align: left">HUD elements occupy no more than 15% of total screen area</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Contextual visibility</td>
+          <td style="text-align: left">Elements appear/disappear based on game state</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Glanceable design</td>
+          <td style="text-align: left">Any single HUD element must be readable in under 0.5 seconds</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">No clutter stacking</td>
+          <td style="text-align: left">Maximum 3 notification types visible simultaneously</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Platform consistency</td>
+          <td style="text-align: left">Same information on all platforms, adapted layout for screen size</td>
+      </tr>
+  </tbody>
+</table>
+<h3>Diegetic vs. Non-Diegetic Elements<span class="hx:absolute hx:-mt-20" id="diegetic-vs-non-diegetic-elements"></span>
+    <a href="#diegetic-vs-non-diegetic-elements" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Type</th>
+          <th style="text-align: left">Description</th>
+          <th style="text-align: left">Examples</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><strong>Diegetic</strong></td>
+          <td style="text-align: left">UI exists within the game world, seen by the character</td>
+          <td style="text-align: left">Weapon ammo count on the magazine, watch for time, geiger counter radiation display</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Non-Diegetic</strong></td>
+          <td style="text-align: left">Traditional overlay HUD, visible only to the player</td>
+          <td style="text-align: left">Health bar, minimap, kill feed, extraction timer</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Spatial</strong></td>
+          <td style="text-align: left">Exists in 3D space but not visible to the character</td>
+          <td style="text-align: left">Squad mate markers, objective waypoints, extraction zone indicators</td>
+      </tr>
+  </tbody>
+</table>
+<p>This game uses primarily <strong>non-diegetic HUD</strong> for clarity in top-down perspective, with <strong>spatial markers</strong> for squad and objective tracking.</p>
 <hr>
-<h2>🤖 CI/CD Automation (Jenkins / GitHub Actions)<span class="hx:absolute hx:-mt-20" id="-cicd-automation-jenkins--github-actions"></span>
-    <a href="#-cicd-automation-jenkins--github-actions" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><h3>Continuous Integration (CI)<span class="hx:absolute hx:-mt-20" id="continuous-integration-ci"></span>
-    <a href="#continuous-integration-ci" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>Run on every Push to <code>feature/*</code>:</p>
-<ol>
-<li><strong>Code Compilation:</strong> Compile <code>Development Editor</code>. Fail on any warning.</li>
-<li><strong>Asset Validation:</strong> Check for broken references or missing textures.</li>
-<li><strong>Unit Tests:</strong> Run C++ core tests (Inventory logic, Damage calc).</li>
-</ol>
-<h3>Continuous Delivery (CD)<span class="hx:absolute hx:-mt-20" id="continuous-delivery-cd"></span>
-    <a href="#continuous-delivery-cd" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>Run Nightly (03:00 AM) on <code>development</code>:</p>
-<ol>
-<li><strong>Map Check:</strong> Open every map and verify no errors.</li>
-<li><strong>Lighting Build:</strong> Rebuild lighting on changed maps (Swarm Agent).</li>
-<li><strong>Package Build:</strong> Create <code>WindowsNoEditor</code> and <code>Android_ASTC</code> builds.</li>
-<li><strong>Upload:</strong> Push build to Steam (Beta branch) or Internal Server.</li>
-</ol>
+<h2>HUD Element Catalog<span class="hx:absolute hx:-mt-20" id="hud-element-catalog"></span>
+    <a href="#hud-element-catalog" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><h3>Complete Element List<span class="hx:absolute hx:-mt-20" id="complete-element-list"></span>
+    <a href="#complete-element-list" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Element</th>
+          <th style="text-align: left">Position</th>
+          <th style="text-align: left">Always Visible</th>
+          <th style="text-align: left">Priority</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Health &amp; Armor Bar</td>
+          <td style="text-align: left">Top-Left</td>
+          <td style="text-align: left">Yes</td>
+          <td style="text-align: left">Critical</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Stamina Bar</td>
+          <td style="text-align: left">Below Health</td>
+          <td style="text-align: left">During activity only</td>
+          <td style="text-align: left">High</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Ammo Counter</td>
+          <td style="text-align: left">Bottom-Left</td>
+          <td style="text-align: left">Yes (in combat)</td>
+          <td style="text-align: left">Critical</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Weapon Indicator</td>
+          <td style="text-align: left">Bottom-Left</td>
+          <td style="text-align: left">Yes</td>
+          <td style="text-align: left">High</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Minimap / Compass</td>
+          <td style="text-align: left">Top-Right</td>
+          <td style="text-align: left">Yes</td>
+          <td style="text-align: left">Critical</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Extraction Timer</td>
+          <td style="text-align: left">Top-Center</td>
+          <td style="text-align: left">Yes</td>
+          <td style="text-align: left">Critical</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Squad Panel</td>
+          <td style="text-align: left">Right edge</td>
+          <td style="text-align: left">Yes (in squad mode)</td>
+          <td style="text-align: left">High</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Weight Indicator</td>
+          <td style="text-align: left">Near inventory</td>
+          <td style="text-align: left">When near capacity only</td>
+          <td style="text-align: left">Medium</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Stance Indicator</td>
+          <td style="text-align: left">Near character</td>
+          <td style="text-align: left">When stance changes</td>
+          <td style="text-align: left">Low</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Interaction Prompt</td>
+          <td style="text-align: left">Center-Bottom</td>
+          <td style="text-align: left">When near interactable</td>
+          <td style="text-align: left">Medium</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Status Effect Icons</td>
+          <td style="text-align: left">Below Health</td>
+          <td style="text-align: left">When affected</td>
+          <td style="text-align: left">High</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Notification Feed</td>
+          <td style="text-align: left">Top-Left (below health)</td>
+          <td style="text-align: left">When triggered</td>
+          <td style="text-align: left">Medium</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Kill Feed</td>
+          <td style="text-align: left">Top-Right (below minimap)</td>
+          <td style="text-align: left">When triggered</td>
+          <td style="text-align: left">Medium</td>
+      </tr>
+  </tbody>
+</table>
 <hr>
-<h2>📋 Quality Assurance (QA) Process<span class="hx:absolute hx:-mt-20" id="-quality-assurance-qa-process"></span>
-    <a href="#-quality-assurance-qa-process" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><h3>&ldquo;Smoke Test&rdquo; (Daily)<span class="hx:absolute hx:-mt-20" id="smoke-test-daily"></span>
-    <a href="#smoke-test-daily" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><ul>
-<li><em>Before testing any new feature, verify basic game health:</em>
-<ol>
-<li>Can launch game?</li>
-<li>Can login / reach Main Menu?</li>
-<li>Can start a Raid (Solo)?</li>
-<li>Can shoot a gun?</li>
-<li>Can Extract?</li>
-</ol>
-</li>
-</ul>
-<h3>Feature Testing (Weekly)<span class="hx:absolute hx:-mt-20" id="feature-testing-weekly"></span>
-    <a href="#feature-testing-weekly" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><ul>
-<li><strong>New Mechanics:</strong> Test all edge cases. (e.g., Vaulting while reloading, Vaulting while dying).</li>
-<li><strong>Map Walkthrough:</strong> Fly-through map in collision view (<code>show Collision</code>) looking for holes.</li>
-</ul>
-<h3>Release Candidate (RC) Testing<span class="hx:absolute hx:-mt-20" id="release-candidate-rc-testing"></span>
-    <a href="#release-candidate-rc-testing" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><ul>
-<li><strong>&ldquo;Golden Path&rdquo;:</strong> Complete a full progression loop (Lvl 1 -&gt; Lvl 5).</li>
-<li><strong>Multiplayer Stress:</strong> 64 simulated clients connecting simultaneously.</li>
-<li><strong>Platform Compliance:</strong> Check TRCs (Technical Requirement Check) for Sony/Microsoft/Google.</li>
-</ul>
+<h2>HUD Layout — PC / Console (Landscape)<span class="hx:absolute hx:-mt-20" id="hud-layout--pc--console-landscape"></span>
+    <a href="#hud-layout--pc--console-landscape" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code">
+
+<div><pre><code>&#43;------------------------------------------------------------------&#43;
+|                                                                    |
+|  [HP: 85/100]  [ARMOR: 42]        EXTRACT: 22:15      [MINIMAP] |
+|  [STAMINA: ---|||||||||-- ]                              N        |
+|  [Bleed] [Fracture]                                   W   E      |
+|                                                          S        |
+|                                                                    |
+|                                                                    |
+|                                                                    |
+|                   [  GAMEPLAY AREA  ]                              |
+|                   (Maximum visibility)                             |
+|                                                                    |
+|                                                                    |
+|                          [Hold F: Loot Body]                       |
+|                                                                    |
+|  [PRIMARY]                                         [SQUAD]        |
+|  AK-74M                                           P1: 85HP [OK]  |
+|  [30 / 120] 7.62x39                               P2: 42HP [!]  |
+|  [FIRE MODE: Auto]                                P3: DEAD  [X]  |
+|  [GRENADE x2]                                                     |
+|                                                                    |
+&#43;------------------------------------------------------------------&#43;</code></pre></div><div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0">
+  <button
+    class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
+    title="Copy code"
+  >
+    <div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"></div>
+<div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"></div>
+  </button>
+</div>
+</div>
+<!-- REF_IMAGE: HUD layout annotated diagram — showing element positions with callout labels and safe zone boundaries for PC/Console -->
 <hr>
-<h2>🚀 Release Process<span class="hx:absolute hx:-mt-20" id="-release-process"></span>
-    <a href="#-release-process" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><ol>
-<li><strong>Code Freeze:</strong> No new commits to <code>development</code> 48 hours before build.</li>
-<li><strong>Versioning:</strong> Update <code>ProjectSettings</code> -&gt; <code>Version</code>.
-<ul>
-<li>Format: <code>Major.Minor.Patch</code> (e.g., <code>0.8.2</code>)</li>
-</ul>
-</li>
-<li><strong>Changelog:</strong> Auto-generate from commit history. Manually curate for readability.</li>
-<li><strong>Tagging:</strong> Create Git Tag <code>v0.8.2</code>.</li>
-<li><strong>Distribution:</strong> Push to public branches (Steam Main, App Store Review).</li>
-</ol>
+<h2>HUD Layout — Mobile (Portrait)<span class="hx:absolute hx:-mt-20" id="hud-layout--mobile-portrait"></span>
+    <a href="#hud-layout--mobile-portrait" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code">
+
+<div><pre><code>&#43;-----------------------------&#43;
+|  HP:85  ARM:42  [22:15] [M] |
+|  [Bleed]                     |
+|                              |
+|                              |
+|                              |
+|      [GAMEPLAY AREA]         |
+|                              |
+|                              |
+|                              |
+|                              |
+|  [Crouch]           [Reload] |
+|  [JOYSTICK]  AK 30/120 [AIM]|
+|              [FIRE]   [GREN] |
+&#43;-----------------------------&#43;
+
+Mobile-specific:
+- Touch controls overlay on bottom 25% of screen
+- HUD elements condensed to single status bar at top
+- Minimap: small icon, tap to expand full-screen
+- Squad panel: hidden by default, swipe from right edge</code></pre></div><div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0">
+  <button
+    class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
+    title="Copy code"
+  >
+    <div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"></div>
+<div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"></div>
+  </button>
+</div>
+</div>
+<!-- REF_IMAGE: Mobile HUD layout — showing condensed top bar, touch controls at bottom, gameplay area maximized -->
+<hr>
+<h2>Element Specifications<span class="hx:absolute hx:-mt-20" id="element-specifications"></span>
+    <a href="#element-specifications" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><h3>Health and Armor Bar<span class="hx:absolute hx:-mt-20" id="health-and-armor-bar"></span>
+    <a href="#health-and-armor-bar" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Property</th>
+          <th style="text-align: left">Specification</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Position</td>
+          <td style="text-align: left">Top-left corner, 16px from edges</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Size</td>
+          <td style="text-align: left">Health: 200x16px. Armor: 160x12px (below health)</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Health color</td>
+          <td style="text-align: left">Green (above 50%), Yellow (25-50%), Red (below 25%), Flashing red (below 10%)</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Armor color</td>
+          <td style="text-align: left">Steel Blue, segments break as armor degrades (each segment = 25%)</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Number display</td>
+          <td style="text-align: left">Current / Max shown in JetBrains Mono (e.g., &ldquo;85 / 100&rdquo;)</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Damage flash</td>
+          <td style="text-align: left">Bar briefly flashes white when taking damage (100ms)</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Healing animation</td>
+          <td style="text-align: left">Bar fills with brighter shade, sparkle particle at fill edge</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Low health warning</td>
+          <td style="text-align: left">Below 25%: subtle red vignette at screen edges, heartbeat sound</td>
+      </tr>
+  </tbody>
+</table>
+<h3>Stamina Bar<span class="hx:absolute hx:-mt-20" id="stamina-bar"></span>
+    <a href="#stamina-bar" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Property</th>
+          <th style="text-align: left">Specification</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Position</td>
+          <td style="text-align: left">Below health bar, same left alignment</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Size</td>
+          <td style="text-align: left">160x8px (thinner than health — less important)</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Visibility</td>
+          <td style="text-align: left">Fades in when sprinting/jumping, fades out 3 seconds after full recovery</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Color</td>
+          <td style="text-align: left">Blue gradient, drains left-to-right</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Empty state</td>
+          <td style="text-align: left">Bar pulses red, &ldquo;Exhausted&rdquo; text appears briefly, movement speed reduced</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Arm vs. Leg stamina</td>
+          <td style="text-align: left">Two sub-bars visible when relevant (sprinting depletes leg, aiming depletes arm)</td>
+      </tr>
+  </tbody>
+</table>
+<h3>Ammo Counter and Weapon Indicator<span class="hx:absolute hx:-mt-20" id="ammo-counter-and-weapon-indicator"></span>
+    <a href="#ammo-counter-and-weapon-indicator" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Property</th>
+          <th style="text-align: left">Specification</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Position</td>
+          <td style="text-align: left">Bottom-left corner, 16px from edges</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Layout</td>
+          <td style="text-align: left">Weapon icon + name on top line, ammo count on bottom line</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Ammo format</td>
+          <td style="text-align: left"><code>[Magazine / Reserve]</code> in JetBrains Mono (e.g., &ldquo;30 / 120&rdquo;)</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Magazine color</td>
+          <td style="text-align: left">White normally. Yellow at 25% remaining. Red at 10% or last magazine</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Fire mode</td>
+          <td style="text-align: left">Text indicator: &ldquo;Auto&rdquo;, &ldquo;Semi&rdquo;, &ldquo;Burst&rdquo;. Flashes when switched</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Grenade counter</td>
+          <td style="text-align: left">Small icon + count below ammo (e.g., grenade icon x2)</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Empty magazine</td>
+          <td style="text-align: left">Ammo text turns red, &ldquo;RELOAD&rdquo; text pulses</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Weapon swap</td>
+          <td style="text-align: left">Old weapon slides out left, new weapon slides in from left (200ms)</td>
+      </tr>
+  </tbody>
+</table>
+<h3>Minimap<span class="hx:absolute hx:-mt-20" id="minimap"></span>
+    <a href="#minimap" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Property</th>
+          <th style="text-align: left">Specification</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Position</td>
+          <td style="text-align: left">Top-right corner, 16px from edges</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Size</td>
+          <td style="text-align: left">180x180px circle (PC/Console), 100x100px (Mobile)</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Rotation</td>
+          <td style="text-align: left">Map rotates with player direction (north is NOT always up)</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Zoom</td>
+          <td style="text-align: left">2 zoom levels: Close (25m radius) and Far (75m radius). Toggle with key/button</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Player icon</td>
+          <td style="text-align: left">White arrow pointing in facing direction</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Squad icons</td>
+          <td style="text-align: left">Blue arrows with player name label</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Enemy icons</td>
+          <td style="text-align: left">NOT shown (no minimap enemy tracking — this is a hardcore shooter)</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Objective markers</td>
+          <td style="text-align: left">Yellow diamond for active quest objectives</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Extraction markers</td>
+          <td style="text-align: left">Green hexagon for open extractions, gray for closed</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Terrain</td>
+          <td style="text-align: left">Simplified floor plan (walls shown as dark lines, open areas as dark surface)</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Edge fade</td>
+          <td style="text-align: left">Circular fade at minimap border (no hard edge cutoff)</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Interactive</td>
+          <td style="text-align: left">Click/tap minimap to open full-screen tactical map</td>
+      </tr>
+  </tbody>
+</table>
+<!-- REF_IMAGE: Minimap specification diagram — showing icon legend, zoom level comparison, and terrain rendering style -->
+<h3>Compass<span class="hx:absolute hx:-mt-20" id="compass"></span>
+    <a href="#compass" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Property</th>
+          <th style="text-align: left">Specification</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Position</td>
+          <td style="text-align: left">Top-center, integrated into extraction timer area</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Style</td>
+          <td style="text-align: left">Horizontal strip showing 90-degree FOV arc with bearing marks</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Bearing marks</td>
+          <td style="text-align: left">N, NE, E, SE, S, SW, W, NW labeled. Minor ticks every 15 degrees</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Squad callouts</td>
+          <td style="text-align: left">When a squadmate pings, a colored marker appears on the compass at the correct bearing</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Quest objectives</td>
+          <td style="text-align: left">Yellow marker on compass bearing toward active objective</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Gunshot detection</td>
+          <td style="text-align: left">Brief red flash on compass in the direction of nearby gunfire (fades in 2 seconds)</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">No enemy tracking</td>
+          <td style="text-align: left">Compass does NOT show enemies. Only sound-based directional hints</td>
+      </tr>
+  </tbody>
+</table>
+<h3>Extraction Timer<span class="hx:absolute hx:-mt-20" id="extraction-timer"></span>
+    <a href="#extraction-timer" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Property</th>
+          <th style="text-align: left">Specification</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Position</td>
+          <td style="text-align: left">Top-center of screen</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Format</td>
+          <td style="text-align: left"><code>MM:SS</code> countdown in Oxanium Bold</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Color states</td>
+          <td style="text-align: left">White (normal), Yellow (under 10 minutes), Red (under 5 minutes), Flashing red (under 2 minutes)</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Audio cues</td>
+          <td style="text-align: left">Subtle tick sound starts at 5 minutes. Urgent alarm at 2 minutes</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Overtime</td>
+          <td style="text-align: left">If timer hits 0:00, &ldquo;EMERGENCY EXTRACT&rdquo; flashes. 60-second grace period begins</td>
+      </tr>
+  </tbody>
+</table>
+<h3>Squad Panel<span class="hx:absolute hx:-mt-20" id="squad-panel"></span>
+    <a href="#squad-panel" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Property</th>
+          <th style="text-align: left">Specification</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Position</td>
+          <td style="text-align: left">Right edge of screen, vertically stacked</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Visibility</td>
+          <td style="text-align: left">Always visible in squad mode. Hidden in solo</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Per-member info</td>
+          <td style="text-align: left">Name, HP bar (mini), Status icon</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Status icons</td>
+          <td style="text-align: left">Green check (alive + healthy), Yellow exclamation (wounded), Red X (dead), Blue arrow (extracting)</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Distance</td>
+          <td style="text-align: left">Shown in meters when squadmate is beyond 50m</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Voice indicator</td>
+          <td style="text-align: left">Small speaker icon animates when teammate is transmitting</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Click interaction</td>
+          <td style="text-align: left">PC: click teammate card to ping their location. Console: D-pad select + A</td>
+      </tr>
+  </tbody>
+</table>
+<h3>Interaction Prompt<span class="hx:absolute hx:-mt-20" id="interaction-prompt"></span>
+    <a href="#interaction-prompt" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Property</th>
+          <th style="text-align: left">Specification</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Position</td>
+          <td style="text-align: left">Center-bottom, 200px above screen bottom</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Trigger</td>
+          <td style="text-align: left">Player looks at or is within range of an interactable object</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Format</td>
+          <td style="text-align: left"><code>[Key/Button] + Action</code> (e.g., &ldquo;Hold F: Search Body&rdquo;, &ldquo;Press E: Open Door&rdquo;)</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Fade timing</td>
+          <td style="text-align: left">Appears: 200ms fade-in. Disappears: immediate when out of range</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Priority</td>
+          <td style="text-align: left">If multiple interactables overlap, show the closest one. Secondary shown as smaller text</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Progress bar</td>
+          <td style="text-align: left">For timed interactions (searching, healing), circular progress fills around the prompt</td>
+      </tr>
+  </tbody>
+</table>
+<h3>Weight Indicator<span class="hx:absolute hx:-mt-20" id="weight-indicator"></span>
+    <a href="#weight-indicator" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Property</th>
+          <th style="text-align: left">Specification</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Position</td>
+          <td style="text-align: left">Near the ammo counter, bottom-left area</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Visibility</td>
+          <td style="text-align: left">Hidden when below 60% capacity. Visible at 60%+. Prominent at 80%+</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Format</td>
+          <td style="text-align: left"><code>24.5 / 40.0 kg</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Color</td>
+          <td style="text-align: left">White (below 60%), Yellow (60-80%), Orange (80-95%), Red (95%+)</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Movement penalty</td>
+          <td style="text-align: left">Text below weight shows speed modifier: &ldquo;-15% movement&rdquo;</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Overweight</td>
+          <td style="text-align: left">Above 100%: Cannot sprint. Red flashing weight indicator. &ldquo;OVERLOADED&rdquo; text</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2>Contextual Visibility Rules<span class="hx:absolute hx:-mt-20" id="contextual-visibility-rules"></span>
+    <a href="#contextual-visibility-rules" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><p>HUD elements are not all visible at all times. The system uses game state to determine visibility:</p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Game State</th>
+          <th style="text-align: left">Visible Elements</th>
+          <th style="text-align: left">Hidden Elements</th>
+          <th style="text-align: left">Reason</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><strong>Idle</strong> (no combat, no interaction)</td>
+          <td style="text-align: left">Health, Minimap, Timer</td>
+          <td style="text-align: left">Stamina, Ammo (faded), Weight (if low)</td>
+          <td style="text-align: left">Reduce clutter during exploration</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Combat</strong> (shots fired, enemies detected)</td>
+          <td style="text-align: left">ALL elements at full opacity</td>
+          <td style="text-align: left">None</td>
+          <td style="text-align: left">Maximum information during danger</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Looting</strong> (interacting with container)</td>
+          <td style="text-align: left">Health, Ammo, Weight, Looting UI</td>
+          <td style="text-align: left">Minimap (shrunk), Squad (shrunk)</td>
+          <td style="text-align: left">Focus on loot decisions</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Healing</strong> (using medical item)</td>
+          <td style="text-align: left">Health (enlarged), Healing progress, Stamina</td>
+          <td style="text-align: left">Ammo, Minimap (dimmed)</td>
+          <td style="text-align: left">Focus on healing animation</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Extraction</strong> (in extraction zone)</td>
+          <td style="text-align: left">Timer (enlarged), Extraction progress, Health</td>
+          <td style="text-align: left">Most elements dimmed</td>
+          <td style="text-align: left">Focus on extraction countdown</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Low Health</strong> (below 25%)</td>
+          <td style="text-align: left">Health (enlarged + vignette), Status effects</td>
+          <td style="text-align: left">Non-critical elements dimmed</td>
+          <td style="text-align: left">Communicate danger urgently</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Death</strong></td>
+          <td style="text-align: left">Death screen takes over</td>
+          <td style="text-align: left">All HUD elements</td>
+          <td style="text-align: left">Transition to After Action Report</td>
+      </tr>
+  </tbody>
+</table>
+<h3>Fade Timing<span class="hx:absolute hx:-mt-20" id="fade-timing"></span>
+    <a href="#fade-timing" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Transition</th>
+          <th style="text-align: left">Duration</th>
+          <th style="text-align: left">Easing</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Element appears</td>
+          <td style="text-align: left">200ms</td>
+          <td style="text-align: left">Ease-out</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Element disappears</td>
+          <td style="text-align: left">500ms</td>
+          <td style="text-align: left">Ease-in (slow fade prevents jarring loss)</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">State change (idle → combat)</td>
+          <td style="text-align: left">150ms</td>
+          <td style="text-align: left">Ease-out (information appears fast)</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">State change (combat → idle)</td>
+          <td style="text-align: left">2000ms</td>
+          <td style="text-align: left">Ease-in (slow wind-down, safety buffer)</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2>HUD Customization Options<span class="hx:absolute hx:-mt-20" id="hud-customization-options"></span>
+    <a href="#hud-customization-options" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><h3>Player-Adjustable Settings<span class="hx:absolute hx:-mt-20" id="player-adjustable-settings"></span>
+    <a href="#player-adjustable-settings" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Setting</th>
+          <th style="text-align: left">Options</th>
+          <th style="text-align: left">Default</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">HUD Scale</td>
+          <td style="text-align: left">75% / 100% / 125% / 150%</td>
+          <td style="text-align: left">100%</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">HUD Opacity</td>
+          <td style="text-align: left">50% - 100% slider</td>
+          <td style="text-align: left">85%</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Minimap Size</td>
+          <td style="text-align: left">Small / Medium / Large</td>
+          <td style="text-align: left">Medium</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Minimap Rotation</td>
+          <td style="text-align: left">Rotate with player / Fixed north-up</td>
+          <td style="text-align: left">Rotate</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Health numbers</td>
+          <td style="text-align: left">Show / Hide numerical values</td>
+          <td style="text-align: left">Show</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Kill Feed</td>
+          <td style="text-align: left">Show / Hide</td>
+          <td style="text-align: left">Show</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Hit Markers</td>
+          <td style="text-align: left">Show / Hide</td>
+          <td style="text-align: left">Show</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Damage Numbers</td>
+          <td style="text-align: left">Show / Hide</td>
+          <td style="text-align: left">Hide (optional feature)</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Compass</td>
+          <td style="text-align: left">Show / Hide</td>
+          <td style="text-align: left">Show</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">FPS Counter</td>
+          <td style="text-align: left">Show / Hide</td>
+          <td style="text-align: left">Hide</td>
+      </tr>
+  </tbody>
+</table>
+<h3>Mobile-Specific Customization<span class="hx:absolute hx:-mt-20" id="mobile-specific-customization"></span>
+    <a href="#mobile-specific-customization" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Feature</th>
+          <th style="text-align: left">Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">HUD Layout Editor</td>
+          <td style="text-align: left">Drag-and-drop any touch control to custom position</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Button Size</td>
+          <td style="text-align: left">Per-button size adjustment (Small / Medium / Large)</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Button Opacity</td>
+          <td style="text-align: left">Per-button opacity slider (30% - 100%)</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Left/Right Handed</td>
+          <td style="text-align: left">Mirror HUD layout for left-handed players</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Preset Layouts</td>
+          <td style="text-align: left">3 saveable custom layouts</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Reset</td>
+          <td style="text-align: left">One button to restore default mobile layout</td>
+      </tr>
+  </tbody>
+</table>
+<!-- REF_IMAGE: Mobile HUD Layout Editor — showing drag handles on all touch controls with size/opacity adjustment panel -->
+<hr>
+<h2>Performance Budget<span class="hx:absolute hx:-mt-20" id="performance-budget"></span>
+    <a href="#performance-budget" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><h3>HUD Rendering Rules<span class="hx:absolute hx:-mt-20" id="hud-rendering-rules"></span>
+    <a href="#hud-rendering-rules" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Metric</th>
+          <th style="text-align: left">Budget</th>
+          <th style="text-align: left">Enforcement</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Draw calls (HUD total)</td>
+          <td style="text-align: left">Maximum 50 per frame</td>
+          <td style="text-align: left">Batch all HUD elements into 3 texture atlases</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Update frequency (health, ammo)</td>
+          <td style="text-align: left">Every frame (critical elements)</td>
+          <td style="text-align: left">Direct binding to game state</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Update frequency (minimap)</td>
+          <td style="text-align: left">Every 3 frames</td>
+          <td style="text-align: left">Reduces GPU cost of minimap rendering</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Update frequency (kill feed, notifications)</td>
+          <td style="text-align: left">Event-driven only</td>
+          <td style="text-align: left">No per-frame polling — triggered by game events</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Memory (HUD textures)</td>
+          <td style="text-align: left">Maximum 32MB</td>
+          <td style="text-align: left">Single 2048x2048 atlas for icons + elements</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Overdraw</td>
+          <td style="text-align: left">Maximum 2x for HUD region</td>
+          <td style="text-align: left">Semi-transparent elements use pre-multiplied alpha</td>
+      </tr>
+  </tbody>
+</table>
+<h3>Platform-Specific HUD FPS Targets<span class="hx:absolute hx:-mt-20" id="platform-specific-hud-fps-targets"></span>
+    <a href="#platform-specific-hud-fps-targets" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Platform</th>
+          <th style="text-align: left">HUD Rendering Target</th>
+          <th style="text-align: left">Notes</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">PC</td>
+          <td style="text-align: left">Matches game FPS (up to 144)</td>
+          <td style="text-align: left">HUD animations scale with delta time</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Console</td>
+          <td style="text-align: left">60 FPS</td>
+          <td style="text-align: left">HUD never drops below game FPS</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Mobile</td>
+          <td style="text-align: left">60 FPS target, 30 FPS minimum</td>
+          <td style="text-align: left">Simplified HUD shader on low-end devices</td>
+      </tr>
+  </tbody>
+</table>
 
         </div>
         <div class="hx:mt-16"></div><div class="hx:mb-8 hx:flex hx:items-center hx:border-t hx:pt-8 hx:border-gray-200 hx:dark:border-neutral-800 hx:contrast-more:border-neutral-400 hx:dark:contrast-more:border-neutral-400 hx:print:hidden"><a
-        href="/ExtractionDocument/gdd_technical/systems/audiosystem.html"
-        title="Audio System - Technical Specification"
+        href="/ExtractionDocument/gdd_design/ui_ux/menus.html"
+        title="Menus &amp; Screens"
         class="hx:flex hx:max-w-[50%] hx:items-center hx:gap-1 hx:py-4 hx:text-base hx:font-medium hx:text-gray-600 hx:transition-colors [word-break:break-word] hx:hover:text-primary-600 hx:dark:text-gray-300 hx:md:text-lg hx:ltr:pr-4 hx:rtl:pl-4"
-      ><svg class="hx:inline hx:h-5 hx:shrink-0 hx:ltr:rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>Audio System - Technical Specification</a><a
-        href="/ExtractionDocument/gdd_technical/systems/liveopssystem.html"
-        title="Live Operations System - Technical Specification"
+      ><svg class="hx:inline hx:h-5 hx:shrink-0 hx:ltr:rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>Menus &amp; Screens</a><a
+        href="/ExtractionDocument/gdd_design/ui_ux/notification_systems.html"
+        title="Notification &amp; Feedback Systems"
         class="hx:flex hx:max-w-[50%] hx:items-center hx:gap-1 hx:py-4 hx:text-base hx:font-medium hx:text-gray-600 hx:transition-colors [word-break:break-word] hx:hover:text-primary-600 hx:dark:text-gray-300 hx:md:text-lg hx:ltr:ml-auto hx:ltr:pl-4 hx:ltr:text-right hx:rtl:mr-auto hx:rtl:pr-4 hx:rtl:text-left"
-      >Live Operations System - Technical Specification<svg class="hx:inline hx:h-5 hx:shrink-0 hx:rtl:-rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg></a></div>
+      >Notification &amp; Feedback Systems<svg class="hx:inline hx:h-5 hx:shrink-0 hx:rtl:-rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg></a></div>
       </main>
     </article>
   </div>

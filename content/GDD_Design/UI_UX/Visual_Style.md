@@ -3,7 +3,7 @@ title: "Visual Style & Art Guidelines"
 type: docs
 ---
 
-## 🎨 Visual Identity
+## Visual Identity
 
 **Style:** Grounded Neo-Industrial  
 **Era:** Post-Collapse (Near Future 2035-2040)  
@@ -18,7 +18,9 @@ type: docs
 
 ---
 
-## 🌈 Global Color Palette
+## Global Color Palette
+
+<!-- REF_IMAGE: Color palette reference sheet — showing all primary, environmental, and rarity colors as labeled swatches with hex codes -->
 
 ### Primary Game Colors (Interactive UI)
 
@@ -61,7 +63,7 @@ Consistent across all platforms for instant recognition.
 
 ---
 
-## 📐 Typography System
+## Typography System
 
 ### Primary Font: **"Oxanium"** (Google Fonts)
 
@@ -119,7 +121,9 @@ Base multiplier: **1.2x** for touch targets
 
 ---
 
-## 🖼️ Iconography System
+## Iconography System
+
+<!-- REF_IMAGE: Icon sheet preview — showing weapon silhouettes, gear icons, consumables, ammo types, and status icons at 64x64 and 32x32 sizes -->
 
 ### Design Principles
 
@@ -177,7 +181,9 @@ Icons show actual bullet shapes for realism.
 
 ---
 
-## 💡 Lighting & Readability (Top-Down View)
+## Lighting and Readability (Top-Down View)
+
+<!-- REF_IMAGE: Lighting comparison — showing the same scene under Daytime, Overcast, and Nighttime conditions with character rim lighting visible -->
 
 The game is **Top-Down Isometric**, so lighting is critical for depth perception and character visibility.
 
@@ -233,7 +239,9 @@ Props and environment must NOT have visual noise that confuses character outline
 
 ---
 
-## 🎭 Visual Effects (VFX) Guidelines
+## Visual Effects (VFX) Guidelines
+
+<!-- REF_IMAGE: VFX reference sheet — showing muzzle flash sprite sheet, blood splatter decals, and extraction helicopter dust effect -->
 
 ### Muzzle Flash
 
@@ -255,7 +263,7 @@ Props and environment must NOT have visual noise that confuses character outline
 
 ---
 
-## 📱 Platform-Specific Visual Adaptations
+## Platform-Specific Visual Adaptations
 
 ### PC (High Fidelity)
 
@@ -298,7 +306,7 @@ Props and environment must NOT have visual noise that confuses character outline
 
 ---
 
-## 🎨 UI Mockup Standards
+## UI Mockup Standards
 
 ### Design Tool Requirements
 
@@ -320,7 +328,7 @@ Props and environment must NOT have visual noise that confuses character outline
 
 ---
 
-## 🖌️ Animation & Motion Design
+## Animation and Motion Design
 
 ### UI Animation Timing (Following Material Design Principles)
 
@@ -346,7 +354,7 @@ Props and environment must NOT have visual noise that confuses character outline
 
 ---
 
-## 🧪 Visual QA Checklist
+## Visual QA Checklist
 
 ### Pre-Release Validation
 
@@ -362,7 +370,7 @@ Props and environment must NOT have visual noise that confuses character outline
 
 ---
 
-## 📚 Reference Materials
+## Reference Materials
 
 ### Art Style Inspirations
 
@@ -381,7 +389,7 @@ Props and environment must NOT have visual noise that confuses character outline
 
 ---
 
-## 🔧 Technical Specifications
+## Technical Specifications
 
 ### Asset Naming Conventions
 
@@ -405,9 +413,3 @@ Font_Oxanium_Bold.ttf
 | **Fonts**             | TTF / WOFF2 | N/A         | WOFF2 for web builds                    |
 | **3D Models**         | FBX         | N/A         | Triangulated, <10k poly for UI elements |
 
----
-
-**Document Version:** 2.1  
-**Last Updated:** 2026-02-11  
-**Art Director Approval:** [Pending]  
-**Review Cycle:** Monthly (or with major visual overhauls)

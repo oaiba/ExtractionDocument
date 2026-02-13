@@ -3,7 +3,7 @@ title: "UX Flows & Wireframes"
 type: docs
 ---
 
-## 🧭 Player Journey Map
+## Player Journey Map
 
 ### Session Flow (The "Happy Path")
 
@@ -43,9 +43,11 @@ graph TD
     Summary -->|Quit| End(Session End)
 ```
 
+<!-- REF_IMAGE: Player session flow diagram — full-color version of the mermaid chart above with visual polish and game-specific artwork -->
+
 ---
 
-## 📱 Cross-Platform Wireframe Sets
+## Cross-Platform Wireframe Sets
 
 ### 1. Main Menu / Hideout (The Hub)
 
@@ -95,6 +97,8 @@ graph TD
 +---------------------------+
 ```
 
+<!-- REF_IMAGE: Main Menu high-fidelity mockup — showing both PC and Mobile layouts side-by-side with the Neo-Industrial visual style -->
+
 **Key Differences:**
 *   **Mobile:** Vertical stacking, simplified labels, larger touch targets
 *   **Desktop:** Horizontal layout, more info density, mouse-over tooltips
@@ -125,6 +129,8 @@ graph TD
 | [SELL ALL JUNK] [AUTO SORT]                              |                            |
 +------------------------------------------------------------+
 ```
+
+<!-- REF_IMAGE: Inventory Management mockup — showing PC drag-and-drop grid view, Console cursor mode, and Mobile list view -->
 
 #### **Console (Controller)**
 
@@ -270,7 +276,7 @@ ADAPTIVE CHANGES:
 
 ---
 
-## 🔄 State Machine Examples
+## State Machine Examples
 
 ### Button States (Universal Across Platforms)
 
@@ -300,7 +306,7 @@ ADAPTIVE CHANGES:
 
 ---
 
-## 🎮 Platform-Specific Navigation Patterns
+## Platform-Specific Navigation Patterns
 
 ### PC (Keyboard Priority)
 *   **Tab:** Cycle through HUD elements (Inventory → Map → Squad)
@@ -325,7 +331,7 @@ ADAPTIVE CHANGES:
 
 ---
 
-## 📊 Performance Optimization for UI
+## Performance Optimization for UI
 
 ### Rendering Best Practices
 *   **UI Canvas Resolution:** Locked to 1080p with upscaling for 4K (reduces draw calls)
@@ -345,7 +351,7 @@ ADAPTIVE CHANGES:
 
 ---
 
-## 🧪 User Testing Scenarios
+## User Testing Scenarios
 
 ### Scenario 1: First-Time Player (Tutorial)
 **Task:** Complete first raid without opening manual.  
@@ -370,7 +376,7 @@ ADAPTIVE CHANGES:
 
 ---
 
-## 🔐 Accessibility-Specific Flows
+## Accessibility-Specific Flows
 
 ### Colorblind Mode (Protanopia Example)
 *   **Red Enemy Indicators → Orange/Purple**
@@ -388,8 +394,3 @@ ADAPTIVE CHANGES:
 *   **Hold-to-Confirm Timeout:** Adjustable 0.5-3 seconds
 *   **Aim Assist Slider:** 0%-100% magnetism strength
 
----
-
-**Document Version:** 2.1  
-**Last Updated:** 2026-02-11  
-**Review Cycle:** Bi-weekly (with each major patch)

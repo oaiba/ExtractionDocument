@@ -9,34 +9,24 @@
 <link rel="apple-touch-icon" href="/ExtractionDocument/apple-touch-icon.png" sizes="180x180" />
 <link fetchpriority="low" href="/ExtractionDocument/site.webmanifest" rel="manifest" />
 <title>Menus &amp; Screens – Extraction Document</title>
-  <meta name="description" content="⏸️ Pause Menu⏸️ Pause Menu (System Overlay)Context: Accessed during gameplay by pressing ESC (PC) or Start/Menu (Console). Design Philosophy: In an Extraction Shooter, the game does not pause (in online raids). The menu acts as an overlay. It must allow the player to maintain situational awareness (visuals visible through blur, audio unmuted) while accessing critical system functions.
-Visual Style:
-Background: Heavy “Frosted Glass” blur (Gaussian Blur radius 15px). De-saturates the game world but keeps motion visible (e.g., if an enemy walks by, you see the shadow/shape). Layout: Left Column: Interaction Buttons (Resume, Settings, Leave). Right Column: Raid Status Panel (Timer, Raid ID, Connectivity). Center/Bottom: Contextual Squad Info (optional). Typography: Oxanium (Headers), Inter (Body). High contrast. Figure 1: conceptual reference. Note the “Tech” aesthetic and background visibility. Our design will use a similar layout but with more specific data." /><link rel="canonical" href="https://oaiba.github.io/ExtractionDocument/gdd_design/ui_ux/menus.html" itemprop="url" />
+  <meta name="description" content="Menu Design PhilosophyEvery menu screen follows these rules:
+Maximum 3 clicks to reach any action from the Main Menu Consistent back navigation — ESC/B always goes one level up, never closes the game No dead-end screens — every screen has a clear “next action” or “back” option Platform parity — same information across PC, Console, and Mobile, adapted for input method For settings screen details (graphics, audio, controls, gameplay), see User Settings." /><link rel="canonical" href="https://oaiba.github.io/ExtractionDocument/gdd_design/ui_ux/menus.html" itemprop="url" />
 
 <meta property="og:title" content="Menus &amp; Screens">
 <meta
   property="og:description"
   content="
     
-      ⏸️ Pause Menu
-    ⏸️ Pause Menu (System Overlay)
-    Context: Accessed during gameplay by pressing ESC (PC) or Start/Menu (Console).
-Design Philosophy:
-In an Extraction Shooter, the game does not pause (in online raids). The menu acts as an overlay. It must allow the player to maintain situational awareness (visuals visible through blur, audio unmuted) while accessing critical system functions.
-Visual Style:
+      Menu Design Philosophy
+    Every menu screen follows these rules:
 
-Background: Heavy &ldquo;Frosted Glass&rdquo; blur (Gaussian Blur radius 15px). De-saturates the game world but keeps motion visible (e.g., if an enemy walks by, you see the shadow/shape).
-Layout:
-
-Left Column: Interaction Buttons (Resume, Settings, Leave).
-Right Column: Raid Status Panel (Timer, Raid ID, Connectivity).
-Center/Bottom: Contextual Squad Info (optional).
+Maximum 3 clicks to reach any action from the Main Menu
+Consistent back navigation — ESC/B always goes one level up, never closes the game
+No dead-end screens — every screen has a clear &ldquo;next action&rdquo; or &ldquo;back&rdquo; option
+Platform parity — same information across PC, Console, and Mobile, adapted for input method
 
 
-Typography: Oxanium (Headers), Inter (Body). High contrast.
-
-
-Figure 1: conceptual reference. Note the &ldquo;Tech&rdquo; aesthetic and background visibility. Our design will use a similar layout but with more specific data.
+  For settings screen details (graphics, audio, controls, gameplay), see User Settings.
     
   ">
 <meta
@@ -50,15 +40,13 @@ Figure 1: conceptual reference. Note the &ldquo;Tech&rdquo; aesthetic and backgr
 
 
   <meta itemprop="name" content="Menus & Screens">
-  <meta itemprop="description" content="⏸️ Pause Menu⏸️ Pause Menu (System Overlay)Context: Accessed during gameplay by pressing ESC (PC) or Start/Menu (Console). Design Philosophy: In an Extraction Shooter, the game does not pause (in online raids). The menu acts as an overlay. It must allow the player to maintain situational awareness (visuals visible through blur, audio unmuted) while accessing critical system functions.
-Visual Style:
-Background: Heavy “Frosted Glass” blur (Gaussian Blur radius 15px). De-saturates the game world but keeps motion visible (e.g., if an enemy walks by, you see the shadow/shape). Layout: Left Column: Interaction Buttons (Resume, Settings, Leave). Right Column: Raid Status Panel (Timer, Raid ID, Connectivity). Center/Bottom: Contextual Squad Info (optional). Typography: Oxanium (Headers), Inter (Body). High contrast. Figure 1: conceptual reference. Note the “Tech” aesthetic and background visibility. Our design will use a similar layout but with more specific data.">
-  <meta itemprop="wordCount" content="314">
+  <meta itemprop="description" content="Menu Design PhilosophyEvery menu screen follows these rules:
+Maximum 3 clicks to reach any action from the Main Menu Consistent back navigation — ESC/B always goes one level up, never closes the game No dead-end screens — every screen has a clear “next action” or “back” option Platform parity — same information across PC, Console, and Mobile, adapted for input method For settings screen details (graphics, audio, controls, gameplay), see User Settings.">
+  <meta itemprop="wordCount" content="2985">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Menus & Screens">
-  <meta name="twitter:description" content="⏸️ Pause Menu⏸️ Pause Menu (System Overlay)Context: Accessed during gameplay by pressing ESC (PC) or Start/Menu (Console). Design Philosophy: In an Extraction Shooter, the game does not pause (in online raids). The menu acts as an overlay. It must allow the player to maintain situational awareness (visuals visible through blur, audio unmuted) while accessing critical system functions.
-Visual Style:
-Background: Heavy “Frosted Glass” blur (Gaussian Blur radius 15px). De-saturates the game world but keeps motion visible (e.g., if an enemy walks by, you see the shadow/shape). Layout: Left Column: Interaction Buttons (Resume, Settings, Leave). Right Column: Raid Status Panel (Timer, Raid ID, Connectivity). Center/Bottom: Contextual Squad Info (optional). Typography: Oxanium (Headers), Inter (Body). High contrast. Figure 1: conceptual reference. Note the “Tech” aesthetic and background visibility. Our design will use a similar layout but with more specific data.">
+  <meta name="twitter:description" content="Menu Design PhilosophyEvery menu screen follows these rules:
+Maximum 3 clicks to reach any action from the Main Menu Consistent back navigation — ESC/B always goes one level up, never closes the game No dead-end screens — every screen has a clear “next action” or “back” option Platform parity — same information across PC, Console, and Mobile, adapted for input method For settings screen details (graphics, audio, controls, gameplay), see User Settings.">
 
     <link rel="preload" href="/ExtractionDocument/css/compiled/main.min.2dd785f1e80a1395818c74c83fbfb60704ab5a51c303c1ee199e6a0fd099cd06.css" as="style" integrity="sha256-LdeF8egKE5WBjHTIP7&#43;2BwSrWlHDA8HuGZ5qD9CZzQY=" />
     <link href="/ExtractionDocument/css/compiled/main.min.2dd785f1e80a1395818c74c83fbfb60704ab5a51c303c1ee199e6a0fd099cd06.css" rel="stylesheet" integrity="sha256-LdeF8egKE5WBjHTIP7&#43;2BwSrWlHDA8HuGZ5qD9CZzQY=" />
@@ -597,15 +585,57 @@ Background: Heavy “Frosted Glass” blur (Gaussian Blur radius 15px). De-satur
 
 <ul
     class='hx:flex hx:flex-col hx:gap-1 hx:relative hx:before:absolute hx:before:inset-y-1 hx:before:w-px hx:before:bg-gray-200 hx:before:content-[""] hx:dark:before:bg-neutral-800 hx:ltr:pl-3 hx:ltr:before:left-0 hx:rtl:pr-3 hx:rtl:before:right-0 hx:ltr:ml-3 hx:rtl:mr-3'><li>
-        <a href="#-pause-menu"
-            class="hx:flex hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [word-break:break-word] hx:cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] hx:contrast-more:border hx:gap-2 hx:before:opacity-25 hx:before:content-['#'] hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:text-gray-900 hx:contrast-more:dark:text-gray-50 hx:contrast-more:border-transparent hx:contrast-more:hover:border-gray-900 hx:contrast-more:dark:hover:border-gray-50">⏸️ Pause Menu</a>
+        <a href="#menu-design-philosophy"
+            class="hx:flex hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [word-break:break-word] hx:cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] hx:contrast-more:border hx:gap-2 hx:before:opacity-25 hx:before:content-['#'] hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:text-gray-900 hx:contrast-more:dark:text-gray-50 hx:contrast-more:border-transparent hx:contrast-more:hover:border-gray-900 hx:contrast-more:dark:hover:border-gray-50">Menu Design Philosophy</a>
     </li>
     <li>
-        <a href="#-pause-menu-system-overlay"
-            class="hx:flex hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [word-break:break-word] hx:cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] hx:contrast-more:border hx:gap-2 hx:before:opacity-25 hx:before:content-['#'] hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:text-gray-900 hx:contrast-more:dark:text-gray-50 hx:contrast-more:border-transparent hx:contrast-more:hover:border-gray-900 hx:contrast-more:dark:hover:border-gray-50">⏸️ Pause Menu (System Overlay)</a>
+        <a href="#main-menu--hideout"
+            class="hx:flex hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [word-break:break-word] hx:cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] hx:contrast-more:border hx:gap-2 hx:before:opacity-25 hx:before:content-['#'] hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:text-gray-900 hx:contrast-more:dark:text-gray-50 hx:contrast-more:border-transparent hx:contrast-more:hover:border-gray-900 hx:contrast-more:dark:hover:border-gray-50">Main Menu / Hideout</a>
+    </li>
+    <li>
+        <a href="#loadout-screen"
+            class="hx:flex hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [word-break:break-word] hx:cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] hx:contrast-more:border hx:gap-2 hx:before:opacity-25 hx:before:content-['#'] hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:text-gray-900 hx:contrast-more:dark:text-gray-50 hx:contrast-more:border-transparent hx:contrast-more:hover:border-gray-900 hx:contrast-more:dark:hover:border-gray-50">Loadout Screen</a>
+    </li>
+    <li>
+        <a href="#trader--market-screen"
+            class="hx:flex hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [word-break:break-word] hx:cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] hx:contrast-more:border hx:gap-2 hx:before:opacity-25 hx:before:content-['#'] hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:text-gray-900 hx:contrast-more:dark:text-gray-50 hx:contrast-more:border-transparent hx:contrast-more:hover:border-gray-900 hx:contrast-more:dark:hover:border-gray-50">Trader / Market Screen</a>
+    </li>
+    <li>
+        <a href="#stash--inventory-management"
+            class="hx:flex hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [word-break:break-word] hx:cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] hx:contrast-more:border hx:gap-2 hx:before:opacity-25 hx:before:content-['#'] hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:text-gray-900 hx:contrast-more:dark:text-gray-50 hx:contrast-more:border-transparent hx:contrast-more:hover:border-gray-900 hx:contrast-more:dark:hover:border-gray-50">Stash / Inventory Management</a>
+    </li>
+    <li>
+        <a href="#map-selection-screen"
+            class="hx:flex hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [word-break:break-word] hx:cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] hx:contrast-more:border hx:gap-2 hx:before:opacity-25 hx:before:content-['#'] hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:text-gray-900 hx:contrast-more:dark:text-gray-50 hx:contrast-more:border-transparent hx:contrast-more:hover:border-gray-900 hx:contrast-more:dark:hover:border-gray-50">Map Selection Screen</a>
+    </li>
+    <li>
+        <a href="#squad--lobby-screen"
+            class="hx:flex hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [word-break:break-word] hx:cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] hx:contrast-more:border hx:gap-2 hx:before:opacity-25 hx:before:content-['#'] hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:text-gray-900 hx:contrast-more:dark:text-gray-50 hx:contrast-more:border-transparent hx:contrast-more:hover:border-gray-900 hx:contrast-more:dark:hover:border-gray-50">Squad / Lobby Screen</a>
+    </li>
+    <li>
+        <a href="#after-action-report"
+            class="hx:flex hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [word-break:break-word] hx:cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] hx:contrast-more:border hx:gap-2 hx:before:opacity-25 hx:before:content-['#'] hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:text-gray-900 hx:contrast-more:dark:text-gray-50 hx:contrast-more:border-transparent hx:contrast-more:hover:border-gray-900 hx:contrast-more:dark:hover:border-gray-50">After Action Report</a>
+    </li>
+    <li>
+        <a href="#battle-pass--seasonal-screen"
+            class="hx:flex hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [word-break:break-word] hx:cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] hx:contrast-more:border hx:gap-2 hx:before:opacity-25 hx:before:content-['#'] hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:text-gray-900 hx:contrast-more:dark:text-gray-50 hx:contrast-more:border-transparent hx:contrast-more:hover:border-gray-900 hx:contrast-more:dark:hover:border-gray-50">Battle Pass / Seasonal Screen</a>
+    </li>
+    <li>
+        <a href="#settings-menu"
+            class="hx:flex hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [word-break:break-word] hx:cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] hx:contrast-more:border hx:gap-2 hx:before:opacity-25 hx:before:content-['#'] hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:text-gray-900 hx:contrast-more:dark:text-gray-50 hx:contrast-more:border-transparent hx:contrast-more:hover:border-gray-900 hx:contrast-more:dark:hover:border-gray-50">Settings Menu</a>
+    </li>
+    <li>
+        <a href="#pause-menu-in-raid-system-overlay"
+            class="hx:flex hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [word-break:break-word] hx:cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] hx:contrast-more:border hx:gap-2 hx:before:opacity-25 hx:before:content-['#'] hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:text-gray-900 hx:contrast-more:dark:text-gray-50 hx:contrast-more:border-transparent hx:contrast-more:hover:border-gray-900 hx:contrast-more:dark:hover:border-gray-50">Pause Menu (In-Raid System Overlay)</a>
     </li>
     </ul>
 
+            
+        </li><li class="hx:flex hx:flex-col "><a class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:text-gray-900 hx:contrast-more:dark:text-gray-50 hx:contrast-more:border-transparent hx:contrast-more:hover:border-gray-900 hx:contrast-more:dark:hover:border-gray-50" href="/ExtractionDocument/gdd_design/ui_ux/hud_design.html" >In-Raid HUD Design</a>
+            
+        </li><li class="hx:flex hx:flex-col "><a class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:text-gray-900 hx:contrast-more:dark:text-gray-50 hx:contrast-more:border-transparent hx:contrast-more:hover:border-gray-900 hx:contrast-more:dark:hover:border-gray-50" href="/ExtractionDocument/gdd_design/ui_ux/notification_systems.html" >Notification &amp; Feedback Systems</a>
             
         </li><li class="hx:flex hx:flex-col "><a class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
       hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:text-gray-900 hx:contrast-more:dark:text-gray-50 hx:contrast-more:border-transparent hx:contrast-more:hover:border-gray-900 hx:contrast-more:dark:hover:border-gray-50" href="/ExtractionDocument/gdd_design/ui_ux/ux_flows.html" >UX Flows &amp; Wireframes</a>
@@ -1376,6 +1406,12 @@ Background: Heavy “Frosted Glass” blur (Gaussian Blur radius 15px). De-satur
       hextra-sidebar-active-item hx:bg-primary-100 hx:font-semibold hx:text-primary-800 hx:contrast-more:border hx:contrast-more:border-primary-500 hx:dark:bg-primary-400/10 hx:dark:text-primary-600 hx:contrast-more:dark:border-primary-500" href="/ExtractionDocument/gdd_design/ui_ux/menus.html" >Menus &amp; Screens</a>
             
         </li><li class="hx:flex hx:flex-col "><a class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:text-gray-900 hx:contrast-more:dark:text-gray-50 hx:contrast-more:border-transparent hx:contrast-more:hover:border-gray-900 hx:contrast-more:dark:hover:border-gray-50" href="/ExtractionDocument/gdd_design/ui_ux/hud_design.html" >In-Raid HUD Design</a>
+            
+        </li><li class="hx:flex hx:flex-col "><a class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:text-gray-900 hx:contrast-more:dark:text-gray-50 hx:contrast-more:border-transparent hx:contrast-more:hover:border-gray-900 hx:contrast-more:dark:hover:border-gray-50" href="/ExtractionDocument/gdd_design/ui_ux/notification_systems.html" >Notification &amp; Feedback Systems</a>
+            
+        </li><li class="hx:flex hx:flex-col "><a class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
       hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:text-gray-900 hx:contrast-more:dark:text-gray-50 hx:contrast-more:border-transparent hx:contrast-more:hover:border-gray-900 hx:contrast-more:dark:hover:border-gray-50" href="/ExtractionDocument/gdd_design/ui_ux/ux_flows.html" >UX Flows &amp; Wireframes</a>
             
         </li><li class="hx:flex hx:flex-col "><a class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
@@ -1769,11 +1805,143 @@ Background: Heavy “Frosted Glass” blur (Gaussian Blur radius 15px). De-satur
 <nav class="hextra-toc hx:order-last hx:hidden hx:w-64 hx:shrink-0 hx:xl:block hx:print:hidden hx:px-4" aria-label="table of contents">
     <div class="hextra-scrollbar hx:sticky hx:top-16 hx:overflow-y-auto hx:pr-4 hx:pt-6 hx:text-sm [hyphens:auto] hx:max-h-[calc(100vh-var(--navbar-height)-env(safe-area-inset-bottom))] hx:ltr:-mr-4 hx:rtl:-ml-4"><p class="hx:mb-4 hx:font-semibold hx:tracking-tight">On this page</p><ul>
       <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
-        <a class="hx:font-medium hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word" href="#-pause-menu">⏸️ Pause Menu
+        <a class="hx:font-medium hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word" href="#menu-design-philosophy">Menu Design Philosophy
         </a>
       </li>
       <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
-        <a class="hx:font-medium hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word" href="#-pause-menu-system-overlay">⏸️ Pause Menu (System Overlay)
+        <a class="hx:font-medium hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word" href="#main-menu--hideout">Main Menu / Hideout
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word" href="#layout-pcconsole">Layout (PC/Console)
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word" href="#layout-mobile-portrait">Layout (Mobile Portrait)
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word" href="#element-specifications">Element Specifications
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:font-medium hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word" href="#loadout-screen">Loadout Screen
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word" href="#layout">Layout
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word" href="#key-interactions">Key Interactions
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word" href="#preset-system">Preset System
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:font-medium hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word" href="#trader--market-screen">Trader / Market Screen
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word" href="#layout-1">Layout
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word" href="#trader-tab-modes">Trader Tab Modes
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word" href="#reputation-gating-visual">Reputation Gating Visual
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:font-medium hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word" href="#stash--inventory-management">Stash / Inventory Management
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word" href="#layout-2">Layout
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word" href="#grid-mechanics">Grid Mechanics
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word" href="#stash-upgrades">Stash Upgrades
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:font-medium hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word" href="#map-selection-screen">Map Selection Screen
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word" href="#layout-3">Layout
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word" href="#map-card-information">Map Card Information
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:font-medium hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word" href="#squad--lobby-screen">Squad / Lobby Screen
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word" href="#layout-4">Layout
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word" href="#squad-interactions">Squad Interactions
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:font-medium hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word" href="#after-action-report">After Action Report
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word" href="#layout-successful-extraction">Layout (Successful Extraction)
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word" href="#layout-death--failed-extraction">Layout (Death / Failed Extraction)
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word" href="#element-details">Element Details
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:font-medium hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word" href="#battle-pass--seasonal-screen">Battle Pass / Seasonal Screen
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word" href="#layout-5">Layout
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word" href="#battle-pass-rules">Battle Pass Rules
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:font-medium hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word" href="#settings-menu">Settings Menu
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word" href="#layout-6">Layout
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word" href="#settings-tab-overview">Settings Tab Overview
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:font-medium hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word" href="#pause-menu-in-raid-system-overlay">Pause Menu (In-Raid System Overlay)
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word" href="#visual-style">Visual Style
         </a>
       </li>
       <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
@@ -1781,7 +1949,7 @@ Background: Heavy “Frosted Glass” blur (Gaussian Blur radius 15px). De-satur
         </a>
       </li>
       <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
-        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word" href="#ux-interaction--safeguards">UX Interaction &amp; Safeguards
+        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word" href="#ux-safeguards">UX Safeguards
         </a>
       </li></ul>
       <div class="hx:mt-8 hx:border-t hx:bg-white hx:pt-8 hx:shadow-[0_-12px_16px_white] hx:dark:bg-dark hx:dark:shadow-[0_-12px_16px_#111] hx:sticky hx:bottom-0 hx:flex hx:flex-col hx:items-start hx:gap-2 hx:pb-8 hx:border-gray-200 hx:dark:border-neutral-800 hx:contrast-more:border-t hx:contrast-more:border-neutral-400 hx:contrast-more:shadow-none hx:contrast-more:dark:border-neutral-400">
@@ -1814,25 +1982,875 @@ Background: Heavy “Frosted Glass” blur (Gaussian Blur radius 15px). De-satur
             
           </div>
           
-          <h2>⏸️ Pause Menu<span class="hx:absolute hx:-mt-20" id="-pause-menu"></span>
-    <a href="#-pause-menu" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><h2>⏸️ Pause Menu (System Overlay)<span class="hx:absolute hx:-mt-20" id="-pause-menu-system-overlay"></span>
-    <a href="#-pause-menu-system-overlay" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><p><strong>Context:</strong> Accessed during gameplay by pressing <code>ESC</code> (PC) or <code>Start/Menu</code> (Console).
-<strong>Design Philosophy:</strong>
-In an Extraction Shooter, the game <strong>does not pause</strong> (in online raids). The menu acts as an overlay. It must allow the player to maintain <strong>situational awareness</strong> (visuals visible through blur, audio unmuted) while accessing critical system functions.</p>
-<p><strong>Visual Style:</strong></p>
-<ul>
-<li><strong>Background:</strong> Heavy &ldquo;Frosted Glass&rdquo; blur (Gaussian Blur radius 15px). De-saturates the game world but keeps motion visible (e.g., if an enemy walks by, you see the shadow/shape).</li>
-<li><strong>Layout:</strong>
-<ul>
-<li><strong>Left Column:</strong> Interaction Buttons (Resume, Settings, Leave).</li>
-<li><strong>Right Column:</strong> Raid Status Panel (Timer, Raid ID, Connectivity).</li>
-<li><strong>Center/Bottom:</strong> Contextual Squad Info (optional).</li>
+          <h2>Menu Design Philosophy<span class="hx:absolute hx:-mt-20" id="menu-design-philosophy"></span>
+    <a href="#menu-design-philosophy" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><p>Every menu screen follows these rules:</p>
+<ol>
+<li><strong>Maximum 3 clicks</strong> to reach any action from the Main Menu</li>
+<li><strong>Consistent back navigation</strong> — ESC/B always goes one level up, never closes the game</li>
+<li><strong>No dead-end screens</strong> — every screen has a clear &ldquo;next action&rdquo; or &ldquo;back&rdquo; option</li>
+<li><strong>Platform parity</strong> — same information across PC, Console, and Mobile, adapted for input method</li>
+</ol>
+<blockquote>
+  <p>For settings screen details (graphics, audio, controls, gameplay), see <a href="../../GameDesign/UserSettings/">User Settings</a>.</p>
+</blockquote>
+<hr>
+<h2>Main Menu / Hideout<span class="hx:absolute hx:-mt-20" id="main-menu--hideout"></span>
+    <a href="#main-menu--hideout" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><p>The Main Menu is the player&rsquo;s home base — it must communicate safety, progression, and readiness.</p>
+<h3>Layout (PC/Console)<span class="hx:absolute hx:-mt-20" id="layout-pcconsole"></span>
+    <a href="#layout-pcconsole" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code">
+
+<div><pre><code>&#43;------------------------------------------------------------------&#43;
+|  [Profile: Lv.12]      EXTRACTION PROTOCOL      [Credits: 425K]  |
+|  [Faction: Salvage 3]                            [Premium: 10]    |
+|------------------------------------------------------------------|
+|                                                                    |
+|              [3D OPERATOR MODEL - SPOTLIGHT RENDER]                |
+|         Equipped gear visible on model. Rotatable (drag/stick)    |
+|                                                                    |
+|                      [ START RAID ]                                |
+|                   (Primary CTA — pulsing border)                   |
+|                   [Solo | Duo | Squad  ▼]                          |
+|                                                                    |
+|  &#43;-------------&#43;  &#43;-------------&#43;  &#43;-------------&#43;  &#43;-----------&#43; |
+|  | LOADOUT     |  | TRADERS     |  | STASH       |  | HIDEOUT   | |
+|  | Gear Up     |  | Buy / Sell  |  | Manage Loot |  | Upgrades  | |
+|  &#43;-------------&#43;  &#43;-------------&#43;  &#43;-------------&#43;  &#43;-----------&#43; |
+|                                                                    |
+|  [Battle Pass: Tier 12/50]    [Daily Quests: 1/3]   [Friends: 3]  |
+|  [News / Events]              [Seasonal Timer]      [Settings]    |
+&#43;------------------------------------------------------------------&#43;</code></pre></div><div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0">
+  <button
+    class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
+    title="Copy code"
+  >
+    <div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"></div>
+<div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"></div>
+  </button>
+</div>
+</div>
+<!-- REF_IMAGE: Main Menu mockup — full-color render showing operator model, Start Raid button, and navigation cards with the Neo-Industrial visual style -->
+<h3>Layout (Mobile Portrait)<span class="hx:absolute hx:-mt-20" id="layout-mobile-portrait"></span>
+    <a href="#layout-mobile-portrait" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code">
+
+<div><pre><code>&#43;-----------------------------&#43;
+|  Lv.12    Credits: 425K     |
+|  [Faction Badge]   [$10]    |
+|-----------------------------|
+|                             |
+|  [3D OPERATOR - CENTERED]   |
+|  (Tap to rotate)            |
+|                             |
+|      [ START RAID ]         |
+|      [Solo|Duo|Squad ▼]    |
+|                             |
+|  [======== 12/50 ========]  |
+|  Battle Pass                |
+|                             |
+|  &#43;------&#43; &#43;------&#43; &#43;------&#43;|
+|  |LOAD  | |TRADE | |STASH ||
+|  |OUT   | |RS    | |      ||
+|  &#43;------&#43; &#43;------&#43; &#43;------&#43;|
+|                             |
+|  [Quests]  [Friends] [Gear] |
+&#43;-----------------------------&#43;</code></pre></div><div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0">
+  <button
+    class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
+    title="Copy code"
+  >
+    <div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"></div>
+<div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"></div>
+  </button>
+</div>
+</div>
+<h3>Element Specifications<span class="hx:absolute hx:-mt-20" id="element-specifications"></span>
+    <a href="#element-specifications" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Element</th>
+          <th style="text-align: left">Behavior</th>
+          <th style="text-align: left">Platform Differences</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Operator Model</td>
+          <td style="text-align: left">3D render, rotatable, shows equipped gear in real-time</td>
+          <td style="text-align: left">PC: mouse drag. Console: right stick. Mobile: finger swipe</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Start Raid Button</td>
+          <td style="text-align: left">Primary CTA. Animated border pulse (1s cycle). Leads to Map Selection</td>
+          <td style="text-align: left">Same across platforms. 60x200px min touch target on mobile</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Mode Selector</td>
+          <td style="text-align: left">Dropdown: Solo, Duo (2-player), Squad (3-4 player)</td>
+          <td style="text-align: left">PC: click dropdown. Console: cycle with bumpers. Mobile: horizontal swipe</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Navigation Cards</td>
+          <td style="text-align: left">Grid of 4 cards leading to sub-screens</td>
+          <td style="text-align: left">PC: hover highlight. Console: D-pad focus. Mobile: tap. 44x44px min</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Battle Pass Bar</td>
+          <td style="text-align: left">Progress bar showing current tier. Tap/click to open Battle Pass screen</td>
+          <td style="text-align: left">Same across. Shows &ldquo;NEW&rdquo; badge when unclaimed reward available</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Daily Quest Summary</td>
+          <td style="text-align: left">Shows X/3 daily quests completed. Click for full quest list</td>
+          <td style="text-align: left">Same across</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Friends List</td>
+          <td style="text-align: left">Count of online friends. Expandable panel</td>
+          <td style="text-align: left">PC: small overlay. Console: full-screen panel. Mobile: slide-up sheet</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2>Loadout Screen<span class="hx:absolute hx:-mt-20" id="loadout-screen"></span>
+    <a href="#loadout-screen" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><p>Players assemble their gear before entering a raid. The design must communicate: what you bring, what it costs, and what you risk losing.</p>
+<h3>Layout<span class="hx:absolute hx:-mt-20" id="layout"></span>
+    <a href="#layout" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code">
+
+<div><pre><code>&#43;------------------------------------------------------------------&#43;
+|  &lt; BACK               LOADOUT                    [PRESETS ▼]      |
+|------------------------------------------------------------------|
+|                                                                    |
+|  [OPERATOR MODEL]        EQUIPMENT SLOTS          STATS SUMMARY   |
+|  (Shows gear on body)    &#43;------------------&#43;    &#43;---------------&#43;|
+|                          | Primary    [AK-74]|    | Weight: 24kg  ||
+|  [ &lt; | Preset 1 | &gt; ]   | Secondary  [PM  ] |    | Armor: Lv.3   ||
+|                          | Melee     [Knife] |    | Speed: -15%   ||
+|                          | Helmet   [SSH-68] |    | Ergo: 42      ||
+|                          | Armor    [6B23-1] |    | Total: 125K   ||
+|                          | Rig      [Triton] |    &#43;---------------&#43;|
+|                          | Backpack [Berkut] |                     |
+|                          | Secure   [Alpha] |    [INSURE: 12,500]|
+|                          &#43;------------------&#43;    [INSURE ALL]     |
+|                                                                    |
+|  &#43;------------------------------------------------------------&#43;   |
+|  | STASH (Quick Access)       [Filter ▼] [Sort ▼] [Search]    |   |
+|  | [Item][Item][Item][Item][Item][Item][Item][Item][Item][Item] |   |
+|  | [Item][Item][Item][Item][Item][Item][Item][Item][Item][Item] |   |
+|  &#43;------------------------------------------------------------&#43;   |
+|                                                                    |
+|  [SAVE PRESET]    [CLEAR ALL]    [READY - GO TO MAP SELECTION]    |
+&#43;------------------------------------------------------------------&#43;</code></pre></div><div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0">
+  <button
+    class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
+    title="Copy code"
+  >
+    <div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"></div>
+<div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"></div>
+  </button>
+</div>
+</div>
+<!-- REF_IMAGE: Loadout screen mockup — showing operator model with gear, equipment slot grid, stats panel, and stash quick-access at bottom -->
+<h3>Key Interactions<span class="hx:absolute hx:-mt-20" id="key-interactions"></span>
+    <a href="#key-interactions" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Action</th>
+          <th style="text-align: left">PC</th>
+          <th style="text-align: left">Console</th>
+          <th style="text-align: left">Mobile</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Equip item</td>
+          <td style="text-align: left">Drag from stash to slot, or right-click &ldquo;Equip&rdquo;</td>
+          <td style="text-align: left">A on item → Equip option</td>
+          <td style="text-align: left">Tap item → Equip button</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Compare items</td>
+          <td style="text-align: left">Hover over item → tooltip with stat comparison</td>
+          <td style="text-align: left">Hold A on item → comparison overlay</td>
+          <td style="text-align: left">Long-press → comparison sheet</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Remove item</td>
+          <td style="text-align: left">Right-click → &ldquo;Unequip&rdquo; or drag back to stash</td>
+          <td style="text-align: left">X on equipped slot → returns to stash</td>
+          <td style="text-align: left">Swipe left on equipped slot</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Insure items</td>
+          <td style="text-align: left">Click &ldquo;Insure All&rdquo; or right-click individual items</td>
+          <td style="text-align: left">Y button → Insurance overlay</td>
+          <td style="text-align: left">Toggle checkbox per item, tap &ldquo;Insure&rdquo;</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Save preset</td>
+          <td style="text-align: left">Click &ldquo;Save Preset&rdquo; → name input → confirm</td>
+          <td style="text-align: left">Select &ldquo;Save Preset&rdquo; → virtual keyboard</td>
+          <td style="text-align: left">Tap &ldquo;Save&rdquo; → name input</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Switch preset</td>
+          <td style="text-align: left">Dropdown selector above loadout</td>
+          <td style="text-align: left">LB/RB to cycle presets</td>
+          <td style="text-align: left">Swipe left/right on preset name</td>
+      </tr>
+  </tbody>
+</table>
+<h3>Preset System<span class="hx:absolute hx:-mt-20" id="preset-system"></span>
+    <a href="#preset-system" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><ul>
+<li>Maximum <strong>10 saved presets</strong> per player</li>
+<li>Preset stores: all equipment slots, attachment configurations, ammo loads</li>
+<li>&ldquo;Smart Fill&rdquo; option: auto-fills a preset from stash using best available matching items</li>
+<li>Missing items highlighted in red with &ldquo;Find in Traders&rdquo; shortcut</li>
 </ul>
-</li>
-<li><strong>Typography:</strong> <em>Oxanium</em> (Headers), <em>Inter</em> (Body). High contrast.</li>
+<hr>
+<h2>Trader / Market Screen<span class="hx:absolute hx:-mt-20" id="trader--market-screen"></span>
+    <a href="#trader--market-screen" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><p>Players buy, sell, and barter with faction vendors. Each faction has its own trader with reputation-gated inventory.</p>
+<h3>Layout<span class="hx:absolute hx:-mt-20" id="layout-1"></span>
+    <a href="#layout-1" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code">
+
+<div><pre><code>&#43;------------------------------------------------------------------&#43;
+|  &lt; BACK        TRADERS         [Salvage | Tech | Underground | PK]|
+|------------------------------------------------------------------|
+|                                                                    |
+|  [TRADER PORTRAIT]    AVAILABLE ITEMS         YOUR OFFER          |
+|  Viktor Koval         &#43;------------------&#43;   &#43;------------------&#43; |
+|  Salvage Corps        | AK-74M    45,000 |   | From Stash:      | |
+|  Rep: Level 3         | 5.45 BP x60  800 |   | [Drag items here]| |
+|  &#34;Fair trades, kid.&#34;  | Medkit     2,500 |   |                  | |
+|                       | [LOCKED Lv.4]    |   | Total Value:     | |
+|  [BUY] [SELL] [BARTER]| [LOCKED Lv.5]    |   | 0 credits        | |
+|                       &#43;------------------&#43;   &#43;------------------&#43; |
+|                                                                    |
+|  FILTERS: [All | Weapons | Ammo | Gear | Meds | Barter]           |
+|  SORT:    [Price ▼ | Name | New | Favorites]                      |
+|                                                                    |
+|  &#43;------------------------------------------------------------&#43;   |
+|  | YOUR STASH (Sell Mode)                  [Quick-Sell Junk]   |   |
+|  | [Item][Item][Item][Item][Item][Item][Item][Item][Item]       |   |
+|  &#43;------------------------------------------------------------&#43;   |
+&#43;------------------------------------------------------------------&#43;</code></pre></div><div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0">
+  <button
+    class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
+    title="Copy code"
+  >
+    <div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"></div>
+<div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"></div>
+  </button>
+</div>
+</div>
+<!-- REF_IMAGE: Trader screen mockup — showing Viktor Koval portrait, inventory grid with locked items, sell panel, and filter bar -->
+<h3>Trader Tab Modes<span class="hx:absolute hx:-mt-20" id="trader-tab-modes"></span>
+    <a href="#trader-tab-modes" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Mode</th>
+          <th style="text-align: left">Left Panel</th>
+          <th style="text-align: left">Right Panel</th>
+          <th style="text-align: left">Action</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><strong>Buy</strong></td>
+          <td style="text-align: left">Trader inventory (items for sale)</td>
+          <td style="text-align: left">Player wallet + purchase summary</td>
+          <td style="text-align: left">Select items → &ldquo;Purchase&rdquo; button</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Sell</strong></td>
+          <td style="text-align: left">Player stash (sellable items)</td>
+          <td style="text-align: left">Sell value calculation</td>
+          <td style="text-align: left">Select items → &ldquo;Sell&rdquo; button</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Barter</strong></td>
+          <td style="text-align: left">Trader barter offers (item-for-item trades)</td>
+          <td style="text-align: left">Required items checklist from stash</td>
+          <td style="text-align: left">Drag required items → &ldquo;Trade&rdquo; button</td>
+      </tr>
+  </tbody>
+</table>
+<h3>Reputation Gating Visual<span class="hx:absolute hx:-mt-20" id="reputation-gating-visual"></span>
+    <a href="#reputation-gating-visual" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><ul>
+<li>Available items: normal opacity, colored border matching rarity</li>
+<li>Locked items (higher rep required): 30% opacity, lock icon overlay, tooltip shows &ldquo;Requires Reputation Level X&rdquo;</li>
+<li>Newly unlocked items: &ldquo;NEW&rdquo; badge for 48 hours after unlocking</li>
 </ul>
-<p><img src="https://www.gameuidatabase.com/uploads/Alien-Isolation12152020-025857-62996.jpg" alt="Pause Menu Reference"  loading="lazy" />
-<em>Figure 1: conceptual reference. Note the &ldquo;Tech&rdquo; aesthetic and background visibility. Our design will use a similar layout but with more specific data.</em></p>
+<hr>
+<h2>Stash / Inventory Management<span class="hx:absolute hx:-mt-20" id="stash--inventory-management"></span>
+    <a href="#stash--inventory-management" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><p>The primary item management screen, separate from the quick-access view in Loadout.</p>
+<h3>Layout<span class="hx:absolute hx:-mt-20" id="layout-2"></span>
+    <a href="#layout-2" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code">
+
+<div><pre><code>&#43;------------------------------------------------------------------&#43;
+|  &lt; BACK          STASH            [Search] [Filter ▼] [Sort ▼]   |
+|------------------------------------------------------------------|
+|                                                                    |
+|  GRID VIEW (12 columns x N rows)                                  |
+|  &#43;------------------------------------------------------------&#43;   |
+|  | [===][===][      ][==][  ][  ][  ][  ][  ][  ][  ][  ]     |   |
+|  | [===][Rifle     ][==][  ][  ][  ][  ][  ][  ][  ][  ][  ] |   |
+|  | [  ][           ][==][  ][  ][Vest      ][  ][  ][  ][  ] |   |
+|  | [  ][  ][  ][  ][  ][  ][           ][  ][  ][  ][  ][  ] |   |
+|  | [  ][  ][  ][  ][  ][  ][  ][  ][  ][  ][  ][  ][  ][  ] |   |
+|  &#43;------------------------------------------------------------&#43;   |
+|                                                                    |
+|  CAPACITY: 145 / 200 slots       TOTAL VALUE: 2,450,000 credits   |
+|                                                                    |
+|  ACTIONS: [Auto-Sort] [Sell Junk] [Move to Loadout] [Discard]     |
+&#43;------------------------------------------------------------------&#43;</code></pre></div><div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0">
+  <button
+    class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
+    title="Copy code"
+  >
+    <div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"></div>
+<div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"></div>
+  </button>
+</div>
+</div>
+<h3>Grid Mechanics<span class="hx:absolute hx:-mt-20" id="grid-mechanics"></span>
+    <a href="#grid-mechanics" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Mechanic</th>
+          <th style="text-align: left">Description</th>
+          <th style="text-align: left">Platform Input</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Item placement</td>
+          <td style="text-align: left">Items occupy grid cells based on size (1x1 to 2x4)</td>
+          <td style="text-align: left">PC: drag-drop. Console: cursor + A. Mobile: tap-to-select then tap-to-place</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Rotation</td>
+          <td style="text-align: left">Rotate items 90 degrees to optimize space</td>
+          <td style="text-align: left">PC: R key while dragging. Console: Y while holding. Mobile: rotate button</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Stacking</td>
+          <td style="text-align: left">Same ammo/consumables stack (max per type varies)</td>
+          <td style="text-align: left">Automatic when placed on matching stack</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Quick transfer</td>
+          <td style="text-align: left">Move item directly to equipped loadout slot</td>
+          <td style="text-align: left">PC: Ctrl+Click. Console: hold A. Mobile: double-tap</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Search</td>
+          <td style="text-align: left">Text filter highlights matching items, dims others</td>
+          <td style="text-align: left">PC: Ctrl+F. Console: Y → virtual keyboard. Mobile: search bar</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Auto-Sort</td>
+          <td style="text-align: left">Reorganize all items for optimal space usage</td>
+          <td style="text-align: left">Single button press. Maintains category grouping</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Quick-Sell</td>
+          <td style="text-align: left">Mark items for sale, batch sell to best-price trader</td>
+          <td style="text-align: left">PC: middle-click to tag. Console: X to tag. Mobile: swipe-left</td>
+      </tr>
+  </tbody>
+</table>
+<h3>Stash Upgrades<span class="hx:absolute hx:-mt-20" id="stash-upgrades"></span>
+    <a href="#stash-upgrades" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><table>
+  <thead>
+      <tr>
+          <th style="text-align: center">Level</th>
+          <th style="text-align: center">Slots</th>
+          <th style="text-align: left">Unlock Method</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: center">1 (Default)</td>
+          <td style="text-align: center">100</td>
+          <td style="text-align: left">Starting stash</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">2</td>
+          <td style="text-align: center">150</td>
+          <td style="text-align: left">Hideout upgrade (50K credits + 10 materials)</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">3</td>
+          <td style="text-align: center">200</td>
+          <td style="text-align: left">Hideout upgrade (200K credits + 25 materials)</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">4 (Maximum)</td>
+          <td style="text-align: center">300</td>
+          <td style="text-align: left">Hideout upgrade (500K credits + 50 materials)</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2>Map Selection Screen<span class="hx:absolute hx:-mt-20" id="map-selection-screen"></span>
+    <a href="#map-selection-screen" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><p>After pressing &ldquo;Start Raid,&rdquo; players choose their deployment destination.</p>
+<h3>Layout<span class="hx:absolute hx:-mt-20" id="layout-3"></span>
+    <a href="#layout-3" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code">
+
+<div><pre><code>&#43;------------------------------------------------------------------&#43;
+|  &lt; BACK              MAP SELECTION                    [READY]     |
+|------------------------------------------------------------------|
+|                                                                    |
+|  &#43;------------------&#43;  &#43;--------------------------------------&#43;   |
+|  | SECTOR 7         |  |                                      |   |
+|  | Industrial Decay  |  |  [MAP PREVIEW IMAGE]                |   |
+|  | Difficulty: Hard  |  |  Showing key landmarks and           |   |
+|  | Bosses: 1        |  |  extraction points                   |   |
+|  | Players: 8-12    |  |                                      |   |
+|  | [SELECTED]       |  &#43;--------------------------------------&#43;   |
+|  &#43;------------------&#43;                                              |
+|  &#43;------------------&#43;  EXTRACTION POINTS:                         |
+|  | DISTRICT 14      |  - Crossroads (Always open)                 |
+|  | Urban Ruins      |  - Boat Extract (30s wait, conditional)     |
+|  | Difficulty: Med  |  - Emergency Exit (last 5 min only)         |
+|  | Bosses: 0        |                                              |
+|  | Players: 6-10    |  TIME OF DAY: [Day | Dusk | Night ▼]       |
+|  | [SELECT]         |                                              |
+|  &#43;------------------&#43;  ESTIMATED WAIT: ~45 seconds                |
+|  &#43;------------------&#43;                                              |
+|  | FIREBASE DELTA   |  SQUAD STATUS:                              |
+|  | Military Outpost |  Player1 (You) — READY                      |
+|  | Difficulty: Extreme| Player2 — READY                           |
+|  | [LOCKED Lv.30]   |  Player3 — NOT READY                        |
+|  &#43;------------------&#43;                                              |
+&#43;------------------------------------------------------------------&#43;</code></pre></div><div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0">
+  <button
+    class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
+    title="Copy code"
+  >
+    <div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"></div>
+<div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"></div>
+  </button>
+</div>
+</div>
+<!-- REF_IMAGE: Map Selection screen mockup — showing map list on left, preview image center-right, extraction points listed, time-of-day selector -->
+<h3>Map Card Information<span class="hx:absolute hx:-mt-20" id="map-card-information"></span>
+    <a href="#map-card-information" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Field</th>
+          <th style="text-align: left">Source</th>
+          <th style="text-align: left">Purpose</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Map Name</td>
+          <td style="text-align: left">Static</td>
+          <td style="text-align: left">Identify the location</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Difficulty</td>
+          <td style="text-align: left">Static per map</td>
+          <td style="text-align: left">Set expectations for new players</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Boss Count</td>
+          <td style="text-align: left">Dynamic (season-dependent)</td>
+          <td style="text-align: left">Inform high-value target hunters</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Player Count</td>
+          <td style="text-align: left">Range (varies by server load)</td>
+          <td style="text-align: left">Indicate expected PvP density</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Extraction Points</td>
+          <td style="text-align: left">Dynamic (randomized per session)</td>
+          <td style="text-align: left">Pre-raid planning</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Time of Day</td>
+          <td style="text-align: left">Player selection (affects lighting, AI behavior)</td>
+          <td style="text-align: left">Tactical choice</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Lock Status</td>
+          <td style="text-align: left">Player level requirement</td>
+          <td style="text-align: left">Progression gate</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Estimated Wait</td>
+          <td style="text-align: left">Server matchmaking queue</td>
+          <td style="text-align: left">Manage expectations</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2>Squad / Lobby Screen<span class="hx:absolute hx:-mt-20" id="squad--lobby-screen"></span>
+    <a href="#squad--lobby-screen" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><p>The waiting room before a raid. Focused on readiness communication and social interaction.</p>
+<h3>Layout<span class="hx:absolute hx:-mt-20" id="layout-4"></span>
+    <a href="#layout-4" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code">
+
+<div><pre><code>&#43;------------------------------------------------------------------&#43;
+|  &lt; BACK              SQUAD LOBBY              [INVITE] [LEAVE]    |
+|------------------------------------------------------------------|
+|                                                                    |
+|  &#43;-------------------&#43;  &#43;-------------------&#43;  &#43;-----------------&#43;|
+|  | [OPERATOR MODEL]  |  | [OPERATOR MODEL]  |  | [EMPTY SLOT]   ||
+|  | You (Leader)      |  | Player2            |  | [INVITE FRIEND]||
+|  | Loadout: 24kg     |  | Loadout: 18kg     |  | or             ||
+|  | Status: READY     |  | Status: NOT READY |  | [MATCH FILL]   ||
+|  | [Inspect Gear]    |  | [Inspect Gear]    |  |                 ||
+|  &#43;-------------------&#43;  &#43;-------------------&#43;  &#43;-----------------&#43;|
+|                                                                    |
+|  MAP: Sector 7 — Industrial Decay                                 |
+|  TIME: Night                                                       |
+|  MODE: Squad (3-player)                                            |
+|                                                                    |
+|  [Voice Chat: ON]  [Text Chat Field________________] [Send]       |
+|                                                                    |
+|  [CHANGE MAP]   [CHANGE LOADOUT]   [ DEPLOY  ] (requires all READY)|
+&#43;------------------------------------------------------------------&#43;</code></pre></div><div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0">
+  <button
+    class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
+    title="Copy code"
+  >
+    <div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"></div>
+<div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"></div>
+  </button>
+</div>
+</div>
+<!-- REF_IMAGE: Squad Lobby mockup — showing 3 operator models side-by-side with readiness indicators, voice chat icons, and Deploy button -->
+<h3>Squad Interactions<span class="hx:absolute hx:-mt-20" id="squad-interactions"></span>
+    <a href="#squad-interactions" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Action</th>
+          <th style="text-align: left">Description</th>
+          <th style="text-align: left">Input</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Invite Friend</td>
+          <td style="text-align: left">Open friends list, select player to invite</td>
+          <td style="text-align: left">Button or slash command</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Match Fill</td>
+          <td style="text-align: left">Auto-fill empty slots with random matchmade players</td>
+          <td style="text-align: left">Toggle option, only squad leader</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Inspect Gear</td>
+          <td style="text-align: left">View teammate&rsquo;s equipped loadout (no item details, just silhouettes)</td>
+          <td style="text-align: left">Click/A on teammate card</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Ready Toggle</td>
+          <td style="text-align: left">Mark yourself as ready (green) or not ready (gray)</td>
+          <td style="text-align: left">Button press</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Deploy</td>
+          <td style="text-align: left">Squad leader only. Requires all members READY. Starts matchmaking</td>
+          <td style="text-align: left">Hold for 1 second (prevents misclick)</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Voice Test</td>
+          <td style="text-align: left">Microphone icon shows voice activity indicator</td>
+          <td style="text-align: left">Automatic (push-to-talk or open mic)</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Kick Player</td>
+          <td style="text-align: left">Squad leader only. Opens confirmation dialog</td>
+          <td style="text-align: left">Right-click / hold on player card</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2>After Action Report<span class="hx:absolute hx:-mt-20" id="after-action-report"></span>
+    <a href="#after-action-report" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><p>Post-raid summary screen. Must serve two purposes: emotional payoff (or processing) and data review.</p>
+<h3>Layout (Successful Extraction)<span class="hx:absolute hx:-mt-20" id="layout-successful-extraction"></span>
+    <a href="#layout-successful-extraction" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code">
+
+<div><pre><code>&#43;------------------------------------------------------------------&#43;
+|                    EXTRACTION SUCCESSFUL                           |
+|                    Sector 7 — Industrial Decay                     |
+|                    Raid Duration: 18:42                             |
+|------------------------------------------------------------------|
+|                                                                    |
+|  LOOT ACQUIRED (sorted by value)            XP BREAKDOWN          |
+|  &#43;----------------------------------&#43;      &#43;--------------------&#43; |
+|  | AK-74M (FIR)           45,000    |      | Kills:      &#43;450   | |
+|  | Body Armor Lv.4        38,000    |      | Looting:    &#43;320   | |
+|  | Prometheus Data (Quest) [QUEST]  |      | Healing:    &#43;80    | |
+|  | Medical Supplies x3     6,000    |      | Extraction: &#43;200   | |
+|  | Misc Components x12     4,800    |      | Quest:      &#43;500   | |
+|  &#43;----------------------------------&#43;      | Survival:   &#43;150   | |
+|  TOTAL VALUE: 93,800 credits               &#43;--------------------&#43; |
+|                                             TOTAL XP: &#43;1,700      |
+|  QUEST PROGRESS:                                                   |
+|  [x] Supply Run — Completed (3/3 rations delivered)                |
+|  [/] Lab Rat — In Progress (1/1 document found, need to turn in)  |
+|                                                                    |
+|  COMBAT STATS:                                                     |
+|  Kills: 5 (3 AI, 2 PMC)  |  Damage Dealt: 847  | Accuracy: 34%  |
+|  Damage Taken: 420        |  Heals Used: 3       | Headshots: 1   |
+|                                                                    |
+|  [CONTINUE TO STASH]          [VIEW REPLAY]         [MAIN MENU]  |
+&#43;------------------------------------------------------------------&#43;</code></pre></div><div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0">
+  <button
+    class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
+    title="Copy code"
+  >
+    <div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"></div>
+<div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"></div>
+  </button>
+</div>
+</div>
+<h3>Layout (Death / Failed Extraction)<span class="hx:absolute hx:-mt-20" id="layout-death--failed-extraction"></span>
+    <a href="#layout-death--failed-extraction" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code">
+
+<div><pre><code>&#43;------------------------------------------------------------------&#43;
+|                       KILLED IN ACTION                             |
+|                  Sector 7 — Industrial Decay                       |
+|                  Survived: 12:08 / 30:00                           |
+|------------------------------------------------------------------|
+|                                                                    |
+|  CAUSE OF DEATH: Headshot by [PlayerName] (SVD Dragunov)           |
+|                                                                    |
+|  ITEMS LOST:                   ITEMS SAVED (Secure Container):    |
+|  &#43;------------------------&#43;   &#43;------------------------------&#43;    |
+|  | AK-74M         -45,000 |   | Quest Key (Lab)    [SAFE]    |    |
+|  | Body Armor     -38,000 |   | Gold Chain         [SAFE]    |    |
+|  | Backpack       -12,000 |   &#43;------------------------------&#43;    |
+|  &#43;------------------------&#43;                                        |
+|  TOTAL LOST: 95,000 credits   INSURANCE RETURN: ETA 24 hours     |
+|                                                                    |
+|  XP EARNED (partial):          QUEST PROGRESS:                     |
+|  Kills: &#43;200 | Looting: &#43;150  | [x] Kill targets — Saved          |
+|  Total: &#43;350 (reduced 50%)    | [ ] Deliver items — Items lost    |
+|                                                                    |
+|  [CONTINUE]        [DEATH CAM]        [REPORT PLAYER]             |
+&#43;------------------------------------------------------------------&#43;</code></pre></div><div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0">
+  <button
+    class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
+    title="Copy code"
+  >
+    <div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"></div>
+<div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"></div>
+  </button>
+</div>
+</div>
+<!-- REF_IMAGE: After Action Report mockup — side by side comparison showing successful extraction (green theme) and KIA (red theme) layouts -->
+<h3>Element Details<span class="hx:absolute hx:-mt-20" id="element-details"></span>
+    <a href="#element-details" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Element</th>
+          <th style="text-align: left">Successful Extraction</th>
+          <th style="text-align: left">Failed Extraction</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Header color</td>
+          <td style="text-align: left">Signal Green accent</td>
+          <td style="text-align: left">Critical Red accent</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Loot panel</td>
+          <td style="text-align: left">Items acquired with values</td>
+          <td style="text-align: left">Items lost with negative values</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">XP display</td>
+          <td style="text-align: left">Full XP earned</td>
+          <td style="text-align: left">50% XP penalty applied</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Quest progress</td>
+          <td style="text-align: left">Shows completed and in-progress</td>
+          <td style="text-align: left">Shows which progress was saved vs. lost</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Combat stats</td>
+          <td style="text-align: left">Full stats displayed</td>
+          <td style="text-align: left">Same stats displayed</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Insurance</td>
+          <td style="text-align: left">Not shown (no loss)</td>
+          <td style="text-align: left">Shows estimated return time for insured items</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Death Cam</td>
+          <td style="text-align: left">Not available</td>
+          <td style="text-align: left">Replay of final 10 seconds from killer&rsquo;s perspective</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2>Battle Pass / Seasonal Screen<span class="hx:absolute hx:-mt-20" id="battle-pass--seasonal-screen"></span>
+    <a href="#battle-pass--seasonal-screen" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><h3>Layout<span class="hx:absolute hx:-mt-20" id="layout-5"></span>
+    <a href="#layout-5" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code">
+
+<div><pre><code>&#43;------------------------------------------------------------------&#43;
+|  &lt; BACK           SEASON 1: SHADOWS OF PROMETHEUS         [BUY]  |
+|------------------------------------------------------------------|
+|                                                                    |
+|  CURRENT TIER: 12 / 50         TIME REMAINING: 47 days            |
+|  [============================================-----------------]   |
+|  XP to next tier: 2,400 / 5,000                                   |
+|                                                                    |
+|  TIER TRACK (horizontal scroll):                                   |
+|  [10][11][ 12 ][13][14][15][16]...[48][49][50]                    |
+|   X    X  [YOU]  ?   ?   ?   ?          ?   ?   LEGENDARY        |
+|                                                                    |
+|  SELECTED TIER 12:                                                 |
+|  &#43;----------------------------------&#43;                              |
+|  | FREE:    Title — &#34;Zone Runner&#34;   |                              |
+|  | PREMIUM: Operator Skin — &#34;Ghost&#34; |                              |
+|  | [CLAIM FREE] [UNLOCK PREMIUM]    |                              |
+|  &#43;----------------------------------&#43;                              |
+|                                                                    |
+|  [VIEW ALL REWARDS]    [BUY PREMIUM PASS: $9.99]                  |
+&#43;------------------------------------------------------------------&#43;</code></pre></div><div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0">
+  <button
+    class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
+    title="Copy code"
+  >
+    <div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"></div>
+<div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"></div>
+  </button>
+</div>
+</div>
+<!-- REF_IMAGE: Battle Pass screen mockup — horizontal tier track with free/premium lanes, current progress indicator, seasonal artwork banner -->
+<h3>Battle Pass Rules<span class="hx:absolute hx:-mt-20" id="battle-pass-rules"></span>
+    <a href="#battle-pass-rules" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Rule</th>
+          <th style="text-align: left">Detail</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Free track</td>
+          <td style="text-align: left">All players earn tier progress. Cosmetics and minor consumables</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Premium track</td>
+          <td style="text-align: left">Paid upgrade. Exclusive skins, emotes, and bonus XP</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">XP sources</td>
+          <td style="text-align: left">Raids (time survived + extraction bonus), quest completion, daily/weekly</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Tier skip</td>
+          <td style="text-align: left">Players can purchase 1 tier skip per day (credits, not premium currency)</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Season end</td>
+          <td style="text-align: left">Unclaimed free rewards claimable for 2 weeks after season ends. Premium rewards locked</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">No gameplay advantage</td>
+          <td style="text-align: left">Battle pass NEVER contains weapons, armor, or gameplay-affecting items</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2>Settings Menu<span class="hx:absolute hx:-mt-20" id="settings-menu"></span>
+    <a href="#settings-menu" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><h3>Layout<span class="hx:absolute hx:-mt-20" id="layout-6"></span>
+    <a href="#layout-6" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code">
+
+<div><pre><code>&#43;------------------------------------------------------------------&#43;
+|  &lt; BACK              SETTINGS                                     |
+|------------------------------------------------------------------|
+|                                                                    |
+|  [Graphics]  [Audio]  [Controls]  [Gameplay]  [Accessibility]     |
+|                                                                    |
+|  &#43;------------------------------------------------------------&#43;   |
+|  |  GRAPHICS                                                   |   |
+|  |                                                             |   |
+|  |  Resolution:        [1920x1080 ▼]                           |   |
+|  |  Display Mode:      [Fullscreen ▼]                          |   |
+|  |  Quality Preset:    [High ▼]                                |   |
+|  |  V-Sync:            [On | Off]                              |   |
+|  |  FPS Limit:         [--- 144 ---]                           |   |
+|  |                                                             |   |
+|  |  ADVANCED:                                                  |   |
+|  |  Texture Quality:   [High ▼]                                |   |
+|  |  Shadow Quality:    [Medium ▼]                              |   |
+|  |  Anti-Aliasing:     [TAA ▼]                                 |   |
+|  |  ...                                                        |   |
+|  &#43;------------------------------------------------------------&#43;   |
+|                                                                    |
+|  [RESET TO DEFAULT]    [APPLY]    [CANCEL]                        |
+&#43;------------------------------------------------------------------&#43;</code></pre></div><div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0">
+  <button
+    class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
+    title="Copy code"
+  >
+    <div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"></div>
+<div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"></div>
+  </button>
+</div>
+</div>
+<blockquote>
+  <p>For the full list of settings options, descriptions, and platform-specific defaults, see <a href="../../GameDesign/UserSettings/">User Settings</a>.</p>
+</blockquote>
+<h3>Settings Tab Overview<span class="hx:absolute hx:-mt-20" id="settings-tab-overview"></span>
+    <a href="#settings-tab-overview" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Tab</th>
+          <th style="text-align: left">Key Settings</th>
+          <th style="text-align: left">Platform Differences</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Graphics</td>
+          <td style="text-align: left">Resolution, quality presets, FPS limit, individual graphical options</td>
+          <td style="text-align: left">PC: full control. Console: Performance/Quality toggle. Mobile: Low/Med/High preset</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Audio</td>
+          <td style="text-align: left">Master, Music, SFX, Voice, Voice Chat volume. Spatial audio toggle</td>
+          <td style="text-align: left">Same across platforms. Mobile adds speaker/headphone detection</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Controls</td>
+          <td style="text-align: left">Key bindings (PC), button mapping (console), HUD layout (mobile)</td>
+          <td style="text-align: left">Fully platform-specific. Cross-ref: each platform&rsquo;s control standards</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Gameplay</td>
+          <td style="text-align: left">Language, subtitle size, minimap style, auto-run, crosshair</td>
+          <td style="text-align: left">Same across platforms</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Accessibility</td>
+          <td style="text-align: left">Colorblind mode, text scaling, motion reduction, subtitles, aim assist</td>
+          <td style="text-align: left">Same across platforms</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2>Pause Menu (In-Raid System Overlay)<span class="hx:absolute hx:-mt-20" id="pause-menu-in-raid-system-overlay"></span>
+    <a href="#pause-menu-in-raid-system-overlay" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><p><strong>Context</strong>: Accessed during gameplay by pressing <code>ESC</code> (PC) or <code>Start/Menu</code> (Console). The game <strong>does not pause</strong> in online raids.</p>
+<p><strong>Design Philosophy</strong>: The menu acts as a translucent overlay. Players must maintain situational awareness — visuals remain visible through blur, and game audio continues unmuted.</p>
+<h3>Visual Style<span class="hx:absolute hx:-mt-20" id="visual-style"></span>
+    <a href="#visual-style" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><ul>
+<li><strong>Background</strong>: Heavy frosted glass blur (Gaussian radius 15px). De-saturates the game world but keeps motion visible (enemy shadows, explosions)</li>
+<li><strong>Typography</strong>: Oxanium (headers), Inter (body). High contrast white-on-dark</li>
+<li><strong>Layout</strong>: Left column (actions), Right column (raid status), Bottom (squad info)</li>
+</ul>
+<!-- REF_IMAGE: Pause Menu mockup — showing frosted glass overlay with resume/settings/abandon buttons on left, raid timer and extraction info on right -->
 <h3>Menu Structure<span class="hx:absolute hx:-mt-20" id="menu-structure"></span>
     <a href="#menu-structure" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><table>
   <thead>
@@ -1844,61 +2862,85 @@ In an Extraction Shooter, the game <strong>does not pause</strong> (in online ra
   </thead>
   <tbody>
       <tr>
-          <td style="text-align: left"><strong>Main Actions</strong></td>
+          <td style="text-align: left">Main Actions</td>
           <td style="text-align: left"><strong>Resume</strong></td>
-          <td style="text-align: left">Closes menu immediately.</td>
+          <td style="text-align: left">Closes menu immediately</td>
       </tr>
       <tr>
           <td style="text-align: left"></td>
           <td style="text-align: left"><strong>Options</strong></td>
-          <td style="text-align: left">Opens <a href="file:///d:/UE_Project/ExtractionDocument/content/GDD_Design/GameDesign/UserSettings.md">Settings Menu</a> (Graphics, Keybinds).</td>
+          <td style="text-align: left">Opens Settings Menu (graphics, keybinds)</td>
       </tr>
       <tr>
           <td style="text-align: left"></td>
           <td style="text-align: left"><strong>Statistics</strong></td>
-          <td style="text-align: left">Shows current session stats (Kills, Damage Dealt, XP gained <em>so far</em>).</td>
+          <td style="text-align: left">Current session stats (kills, damage, XP so far)</td>
       </tr>
       <tr>
           <td style="text-align: left"></td>
           <td style="text-align: left"><strong>Abandon Raid</strong></td>
-          <td style="text-align: left"><strong>[CRITICAL RED]</strong> Leaves session. Triggers &ldquo;Confirm Disconnect&rdquo; popup warning that gear will be lost.</td>
+          <td style="text-align: left">Critical Red button. Triggers &ldquo;Confirm Disconnect&rdquo; popup. Gear will be lost</td>
       </tr>
       <tr>
-          <td style="text-align: left"><strong>Raid Status</strong></td>
+          <td style="text-align: left">Raid Status</td>
           <td style="text-align: left"><strong>Raid Timer</strong></td>
-          <td style="text-align: left">Countdown content (e.g., <code>25:43</code>). Color turns red at &lt;10 mins.</td>
+          <td style="text-align: left">Countdown (e.g., <code>25:43</code>). Color turns red at under 10 minutes</td>
       </tr>
       <tr>
           <td style="text-align: left"></td>
           <td style="text-align: left"><strong>Extraction Points</strong></td>
-          <td style="text-align: left">List of available exits (e.g., &ldquo;Crossroads - Open&rdquo;, &ldquo;Boat - 30s Wait&rdquo;). Similar to <em>Tarkov</em> &lsquo;O&rsquo; double-tap but persistent here.</td>
+          <td style="text-align: left">List of available exits with status (Open, Conditional, Closed)</td>
       </tr>
       <tr>
           <td style="text-align: left"></td>
           <td style="text-align: left"><strong>Network Info</strong></td>
-          <td style="text-align: left">Ping (ms), Packet Loss (%), Raid Hash ID (bottom right).</td>
+          <td style="text-align: left">Ping (ms), Packet Loss (%), Raid Hash ID</td>
       </tr>
       <tr>
-          <td style="text-align: left"><strong>Squad Info</strong></td>
+          <td style="text-align: left">Squad Info</td>
           <td style="text-align: left"><strong>Teammate Cards</strong></td>
-          <td style="text-align: left">Small widgets showing Squadmate Name, HP Bar, and Status (Alive/Dead/Extracting). <em>Inspired by Hunt: Showdown.</em></td>
+          <td style="text-align: left">Small widgets: Name, HP bar, Status (Alive / Dead / Extracting)</td>
       </tr>
   </tbody>
 </table>
-<h3>UX Interaction &amp; Safeguards<span class="hx:absolute hx:-mt-20" id="ux-interaction--safeguards"></span>
-    <a href="#ux-interaction--safeguards" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><ul>
-<li><strong>&ldquo;Hold to Abandon&rdquo;:</strong> The &ldquo;Abandon Raid&rdquo; button requires a <strong>0.5s hold</strong> to activate, preventing accidental clicks during panic.</li>
-<li><strong>Audio Pass-through:</strong> Game audio is <strong>NOT</strong> muted. Footsteps and gunshots remain at 100% volume.</li>
-<li><strong>Cursor:</strong> Frees mouse cursor for UI interaction. Camera movement locked.</li>
-<li><strong>Input Override:</strong> Pressing <code>Tab</code> (Inventory) or <code>M</code> (Map) while in this menu immediately switches to those views.</li>
-</ul>
+<h3>UX Safeguards<span class="hx:absolute hx:-mt-20" id="ux-safeguards"></span>
+    <a href="#ux-safeguards" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Safeguard</th>
+          <th style="text-align: left">Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Hold to Abandon</td>
+          <td style="text-align: left">&ldquo;Abandon Raid&rdquo; requires a 0.5-second hold to prevent panic clicks</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Audio pass-through</td>
+          <td style="text-align: left">Game audio is NOT muted. Footsteps and gunshots remain at 100% volume</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Cursor mode</td>
+          <td style="text-align: left">Frees mouse cursor for UI interaction. Camera movement locked</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Input override</td>
+          <td style="text-align: left">Pressing Tab (Inventory) or M (Map) while in this menu immediately switches to those views</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Auto-dismiss</td>
+          <td style="text-align: left">If player takes damage while menu is open, menu closes automatically with a warning flash</td>
+      </tr>
+  </tbody>
+</table>
 
         </div>
         <div class="hx:mt-16"></div><div class="hx:mb-8 hx:flex hx:items-center hx:border-t hx:pt-8 hx:border-gray-200 hx:dark:border-neutral-800 hx:contrast-more:border-neutral-400 hx:dark:contrast-more:border-neutral-400 hx:print:hidden"><a
-        href="/ExtractionDocument/gdd_design/ui_ux/ux_flows.html"
-        title="UX Flows &amp; Wireframes"
+        href="/ExtractionDocument/gdd_design/ui_ux/hud_design.html"
+        title="In-Raid HUD Design"
         class="hx:flex hx:max-w-[50%] hx:items-center hx:gap-1 hx:py-4 hx:text-base hx:font-medium hx:text-gray-600 hx:transition-colors [word-break:break-word] hx:hover:text-primary-600 hx:dark:text-gray-300 hx:md:text-lg hx:ltr:ml-auto hx:ltr:pl-4 hx:ltr:text-right hx:rtl:mr-auto hx:rtl:pr-4 hx:rtl:text-left"
-      >UX Flows &amp; Wireframes<svg class="hx:inline hx:h-5 hx:shrink-0 hx:rtl:-rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg></a></div>
+      >In-Raid HUD Design<svg class="hx:inline hx:h-5 hx:shrink-0 hx:rtl:-rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg></a></div>
       </main>
     </article>
   </div>

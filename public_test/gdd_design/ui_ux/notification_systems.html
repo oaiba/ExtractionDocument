@@ -8,46 +8,296 @@
 <link rel="icon" href="/ExtractionDocument/favicon-32x32.png" type="image/png" sizes="32x32" />
 <link rel="apple-touch-icon" href="/ExtractionDocument/apple-touch-icon.png" sizes="180x180" />
 <link fetchpriority="low" href="/ExtractionDocument/site.webmanifest" rel="manifest" />
-<title>Build Pipeline &amp; Release Engineering – Extraction Document</title>
-  <meta name="description" content="🏗️ Version Control StrategyBranching Model (Gitflow modified)main (Production): The “Gold” standard. Stable, playable, deployable. Locked. Rule: Only merge via Pull Request (PR) after passing Automated Tests. development (Staging): The integration branch for current sprint. Rule: Nightly builds run from here. feature/xyz (Task): Individual developer branches. Short-lived (&lt; 2 days). Naming: feature/loot-spawner, fix/crash-inventory CommitsMessage Format: [Category] Summary. Example: [Audio] Added reverb to warehouse zone Example: [Bugfix] Resolved inventory duping exploit 🤖 CI/CD Automation (Jenkins / GitHub Actions)Continuous Integration (CI)Run on every Push to feature/*:" /><link rel="canonical" href="https://oaiba.github.io/ExtractionDocument/gdd_technical/systems/buildpipeline.html" itemprop="url" />
+<title>Notification &amp; Feedback Systems – Extraction Document</title>
+  <meta name="description" content="Notification Design PhilosophyThe notification system operates on one rule: information arrives in proportion to its urgency. Critical notifications interrupt; ambient notifications wait.
+Priority HierarchyPriority Category Behavior Duration Example 1 - Critical Survival Full-screen effect &#43; audio &#43; haptic Until resolved Low health vignette, incoming fire indicator 2 - High Combat Edge-of-screen indicator &#43; sound 3-5 seconds Kill confirmation, headshot, armor break 3 - Medium Progress Toast notification &#43; subtle sound 4 seconds Quest objective completed, item discovered 4 - Low Ambient Small text in feed &#43; no sound 3 seconds Player joined/left area, environmental event Queue Management RulesMaximum 3 notifications visible at any time If a new Priority 1 notification arrives, it replaces everything Priority 2-4 notifications queue in order, displayed sequentially If the queue exceeds 5 pending notifications, lowest priority items are dropped Duplicate notifications within 2 seconds are merged (e.g., “Picked up 5.45 ammo x3” instead of three separate toasts) Kill FeedPosition and LayoutProperty Specification Position Top-right corner, below minimap Width 300px maximum Entry height 24px per line Max visible entries 5 at a time Entry duration 5 seconds, then fade out over 500ms Font Inter Regular, 14px Scroll Newest entries push older ones up Entry Format[Killer Icon] [Killer Name] [Weapon Icon] [Victim Name]Color CodingEvent Killer Color Victim Color Special You killed someone Signal Green (#22C55E) White Bold text You were killed White Critical Red (#EF4444) Bold text Squadmate kill Tactical Blue (#3B82F6) White Normal weight Squadmate died White Tactical Blue (#3B82F6) Normal weight Other players Steel Gray (#6B7280) Steel Gray (#6B7280) Light weight AI kill (by player) Player color Muted gray Italic Special Kill IconsType Icon Audio Cue Headshot Crosshair on head silhouette Sharp “ding” sound Grenade kill Explosion icon None (explosion sound suffices) Melee kill Knife icon Slash sound Long-range kill (100m&#43;) Distance number in brackets Sniper “crack” echo Squad wipe Skull with X Distinct multi-kill chime Damage FeedbackHit Markers (Outgoing Damage)Property Specification Position Centered on crosshair Shape 4 short lines forming an X pattern around crosshair center Normal hit color White (#FFFFFF), 80% opacity Headshot color Critical Red (#EF4444), 100% opacity, thicker lines Armor hit color Tactical Blue (#3B82F6), with metallic sound Kill confirmation Hit marker briefly expands &#43; changes to Signal Green, accompanied by kill sound Duration 150ms (fast — must not obscure continued aiming) Size 16px radius from center, expanding to 20px on hit Hit Markers (Incoming Damage)Property Specification Position Screen edges, directional indicators Shape Red arc segments pointing toward the damage source Indicator count 1-4 arcs depending on damage amount (light graze = 1, heavy hit = 4) Color Critical Red (#EF4444) to dark red (#7F1D1D) gradient Duration 1 second, fading linearly Directional accuracy 45-degree arc resolution (8 possible directions) Multi-source Multiple attackers show separate directional indicators Unknown source If damage source is not visible, indicator flashes briefly in all directions Damage Numbers (Optional Toggle)Damage numbers are disabled by default (extraction shooters favor realism), but available as an option." /><link rel="canonical" href="https://oaiba.github.io/ExtractionDocument/gdd_design/ui_ux/notification_systems.html" itemprop="url" />
 
-<meta property="og:title" content="Build Pipeline &amp; Release Engineering">
+<meta property="og:title" content="Notification &amp; Feedback Systems">
 <meta
   property="og:description"
   content="
     
-      🏗️ Version Control Strategy
-    Branching Model (Gitflow modified)
+      Notification Design Philosophy
+    The notification system operates on one rule: information arrives in proportion to its urgency. Critical notifications interrupt; ambient notifications wait.
+Priority Hierarchy
     
-main (Production): The &ldquo;Gold&rdquo; standard. Stable, playable, deployable. Locked.
+  
+      
+          Priority
+          Category
+          Behavior
+          Duration
+          Example
+      
+  
+  
+      
+          1 - Critical
+          Survival
+          Full-screen effect &#43; audio &#43; haptic
+          Until resolved
+          Low health vignette, incoming fire indicator
+      
+      
+          2 - High
+          Combat
+          Edge-of-screen indicator &#43; sound
+          3-5 seconds
+          Kill confirmation, headshot, armor break
+      
+      
+          3 - Medium
+          Progress
+          Toast notification &#43; subtle sound
+          4 seconds
+          Quest objective completed, item discovered
+      
+      
+          4 - Low
+          Ambient
+          Small text in feed &#43; no sound
+          3 seconds
+          Player joined/left area, environmental event
+      
+  
 
-Rule: Only merge via Pull Request (PR) after passing Automated Tests.
-
-
-development (Staging): The integration branch for current sprint.
-
-Rule: Nightly builds run from here.
-
-
-feature/xyz (Task): Individual developer branches. Short-lived (&lt; 2 days).
-
-Naming: feature/loot-spawner, fix/crash-inventory
-
-
-
-Commits
+Queue Management Rules
     
-Message Format: [Category] Summary.
+Maximum 3 notifications visible at any time
+If a new Priority 1 notification arrives, it replaces everything
+Priority 2-4 notifications queue in order, displayed sequentially
+If the queue exceeds 5 pending notifications, lowest priority items are dropped
+Duplicate notifications within 2 seconds are merged (e.g., &ldquo;Picked up 5.45 ammo x3&rdquo; instead of three separate toasts)
 
-Example: [Audio] Added reverb to warehouse zone
-Example: [Bugfix] Resolved inventory duping exploit
+
+Kill Feed
+    Position and Layout
+    
+  
+      
+          Property
+          Specification
+      
+  
+  
+      
+          Position
+          Top-right corner, below minimap
+      
+      
+          Width
+          300px maximum
+      
+      
+          Entry height
+          24px per line
+      
+      
+          Max visible entries
+          5 at a time
+      
+      
+          Entry duration
+          5 seconds, then fade out over 500ms
+      
+      
+          Font
+          Inter Regular, 14px
+      
+      
+          Scroll
+          Newest entries push older ones up
+      
+  
+
+Entry Format
+    
+
+[Killer Icon] [Killer Name] [Weapon Icon] [Victim Name]
+  
+    
+
+  
+
+
+Color Coding
+    
+  
+      
+          Event
+          Killer Color
+          Victim Color
+          Special
+      
+  
+  
+      
+          You killed someone
+          Signal Green (#22C55E)
+          White
+          Bold text
+      
+      
+          You were killed
+          White
+          Critical Red (#EF4444)
+          Bold text
+      
+      
+          Squadmate kill
+          Tactical Blue (#3B82F6)
+          White
+          Normal weight
+      
+      
+          Squadmate died
+          White
+          Tactical Blue (#3B82F6)
+          Normal weight
+      
+      
+          Other players
+          Steel Gray (#6B7280)
+          Steel Gray (#6B7280)
+          Light weight
+      
+      
+          AI kill (by player)
+          Player color
+          Muted gray
+          Italic
+      
+  
+
+Special Kill Icons
+    
+  
+      
+          Type
+          Icon
+          Audio Cue
+      
+  
+  
+      
+          Headshot
+          Crosshair on head silhouette
+          Sharp &ldquo;ding&rdquo; sound
+      
+      
+          Grenade kill
+          Explosion icon
+          None (explosion sound suffices)
+      
+      
+          Melee kill
+          Knife icon
+          Slash sound
+      
+      
+          Long-range kill (100m&#43;)
+          Distance number in brackets
+          Sniper &ldquo;crack&rdquo; echo
+      
+      
+          Squad wipe
+          Skull with X
+          Distinct multi-kill chime
+      
+  
 
 
 
+Damage Feedback
+    Hit Markers (Outgoing Damage)
+    
+  
+      
+          Property
+          Specification
+      
+  
+  
+      
+          Position
+          Centered on crosshair
+      
+      
+          Shape
+          4 short lines forming an X pattern around crosshair center
+      
+      
+          Normal hit color
+          White (#FFFFFF), 80% opacity
+      
+      
+          Headshot color
+          Critical Red (#EF4444), 100% opacity, thicker lines
+      
+      
+          Armor hit color
+          Tactical Blue (#3B82F6), with metallic sound
+      
+      
+          Kill confirmation
+          Hit marker briefly expands &#43; changes to Signal Green, accompanied by kill sound
+      
+      
+          Duration
+          150ms (fast — must not obscure continued aiming)
+      
+      
+          Size
+          16px radius from center, expanding to 20px on hit
+      
+  
 
-🤖 CI/CD Automation (Jenkins / GitHub Actions)
-    Continuous Integration (CI)
-    Run on every Push to feature/*:
+Hit Markers (Incoming Damage)
+    
+  
+      
+          Property
+          Specification
+      
+  
+  
+      
+          Position
+          Screen edges, directional indicators
+      
+      
+          Shape
+          Red arc segments pointing toward the damage source
+      
+      
+          Indicator count
+          1-4 arcs depending on damage amount (light graze = 1, heavy hit = 4)
+      
+      
+          Color
+          Critical Red (#EF4444) to dark red (#7F1D1D) gradient
+      
+      
+          Duration
+          1 second, fading linearly
+      
+      
+          Directional accuracy
+          45-degree arc resolution (8 possible directions)
+      
+      
+          Multi-source
+          Multiple attackers show separate directional indicators
+      
+      
+          Unknown source
+          If damage source is not visible, indicator flashes briefly in all directions
+      
+  
+
+
+Damage Numbers (Optional Toggle)
+    Damage numbers are disabled by default (extraction shooters favor realism), but available as an option.
     
   ">
 <meta
@@ -55,17 +305,19 @@ Example: [Bugfix] Resolved inventory duping exploit
   content="
     article
   ">
-<meta property="og:url" content="https://oaiba.github.io/ExtractionDocument/gdd_technical/systems/buildpipeline.html"><meta property="article:section" content="gdd_technical">
+<meta property="og:url" content="https://oaiba.github.io/ExtractionDocument/gdd_design/ui_ux/notification_systems.html"><meta property="article:section" content="gdd_design">
 
 
 
 
-  <meta itemprop="name" content="Build Pipeline & Release Engineering">
-  <meta itemprop="description" content="🏗️ Version Control StrategyBranching Model (Gitflow modified)main (Production): The “Gold” standard. Stable, playable, deployable. Locked. Rule: Only merge via Pull Request (PR) after passing Automated Tests. development (Staging): The integration branch for current sprint. Rule: Nightly builds run from here. feature/xyz (Task): Individual developer branches. Short-lived (&lt; 2 days). Naming: feature/loot-spawner, fix/crash-inventory CommitsMessage Format: [Category] Summary. Example: [Audio] Added reverb to warehouse zone Example: [Bugfix] Resolved inventory duping exploit 🤖 CI/CD Automation (Jenkins / GitHub Actions)Continuous Integration (CI)Run on every Push to feature/*:">
-  <meta itemprop="wordCount" content="304">
+  <meta itemprop="name" content="Notification & Feedback Systems">
+  <meta itemprop="description" content="Notification Design PhilosophyThe notification system operates on one rule: information arrives in proportion to its urgency. Critical notifications interrupt; ambient notifications wait.
+Priority HierarchyPriority Category Behavior Duration Example 1 - Critical Survival Full-screen effect &#43; audio &#43; haptic Until resolved Low health vignette, incoming fire indicator 2 - High Combat Edge-of-screen indicator &#43; sound 3-5 seconds Kill confirmation, headshot, armor break 3 - Medium Progress Toast notification &#43; subtle sound 4 seconds Quest objective completed, item discovered 4 - Low Ambient Small text in feed &#43; no sound 3 seconds Player joined/left area, environmental event Queue Management RulesMaximum 3 notifications visible at any time If a new Priority 1 notification arrives, it replaces everything Priority 2-4 notifications queue in order, displayed sequentially If the queue exceeds 5 pending notifications, lowest priority items are dropped Duplicate notifications within 2 seconds are merged (e.g., “Picked up 5.45 ammo x3” instead of three separate toasts) Kill FeedPosition and LayoutProperty Specification Position Top-right corner, below minimap Width 300px maximum Entry height 24px per line Max visible entries 5 at a time Entry duration 5 seconds, then fade out over 500ms Font Inter Regular, 14px Scroll Newest entries push older ones up Entry Format[Killer Icon] [Killer Name] [Weapon Icon] [Victim Name]Color CodingEvent Killer Color Victim Color Special You killed someone Signal Green (#22C55E) White Bold text You were killed White Critical Red (#EF4444) Bold text Squadmate kill Tactical Blue (#3B82F6) White Normal weight Squadmate died White Tactical Blue (#3B82F6) Normal weight Other players Steel Gray (#6B7280) Steel Gray (#6B7280) Light weight AI kill (by player) Player color Muted gray Italic Special Kill IconsType Icon Audio Cue Headshot Crosshair on head silhouette Sharp “ding” sound Grenade kill Explosion icon None (explosion sound suffices) Melee kill Knife icon Slash sound Long-range kill (100m&#43;) Distance number in brackets Sniper “crack” echo Squad wipe Skull with X Distinct multi-kill chime Damage FeedbackHit Markers (Outgoing Damage)Property Specification Position Centered on crosshair Shape 4 short lines forming an X pattern around crosshair center Normal hit color White (#FFFFFF), 80% opacity Headshot color Critical Red (#EF4444), 100% opacity, thicker lines Armor hit color Tactical Blue (#3B82F6), with metallic sound Kill confirmation Hit marker briefly expands &#43; changes to Signal Green, accompanied by kill sound Duration 150ms (fast — must not obscure continued aiming) Size 16px radius from center, expanding to 20px on hit Hit Markers (Incoming Damage)Property Specification Position Screen edges, directional indicators Shape Red arc segments pointing toward the damage source Indicator count 1-4 arcs depending on damage amount (light graze = 1, heavy hit = 4) Color Critical Red (#EF4444) to dark red (#7F1D1D) gradient Duration 1 second, fading linearly Directional accuracy 45-degree arc resolution (8 possible directions) Multi-source Multiple attackers show separate directional indicators Unknown source If damage source is not visible, indicator flashes briefly in all directions Damage Numbers (Optional Toggle)Damage numbers are disabled by default (extraction shooters favor realism), but available as an option.">
+  <meta itemprop="wordCount" content="1635">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Build Pipeline & Release Engineering">
-  <meta name="twitter:description" content="🏗️ Version Control StrategyBranching Model (Gitflow modified)main (Production): The “Gold” standard. Stable, playable, deployable. Locked. Rule: Only merge via Pull Request (PR) after passing Automated Tests. development (Staging): The integration branch for current sprint. Rule: Nightly builds run from here. feature/xyz (Task): Individual developer branches. Short-lived (&lt; 2 days). Naming: feature/loot-spawner, fix/crash-inventory CommitsMessage Format: [Category] Summary. Example: [Audio] Added reverb to warehouse zone Example: [Bugfix] Resolved inventory duping exploit 🤖 CI/CD Automation (Jenkins / GitHub Actions)Continuous Integration (CI)Run on every Push to feature/*:">
+  <meta name="twitter:title" content="Notification & Feedback Systems">
+  <meta name="twitter:description" content="Notification Design PhilosophyThe notification system operates on one rule: information arrives in proportion to its urgency. Critical notifications interrupt; ambient notifications wait.
+Priority HierarchyPriority Category Behavior Duration Example 1 - Critical Survival Full-screen effect &#43; audio &#43; haptic Until resolved Low health vignette, incoming fire indicator 2 - High Combat Edge-of-screen indicator &#43; sound 3-5 seconds Kill confirmation, headshot, armor break 3 - Medium Progress Toast notification &#43; subtle sound 4 seconds Quest objective completed, item discovered 4 - Low Ambient Small text in feed &#43; no sound 3 seconds Player joined/left area, environmental event Queue Management RulesMaximum 3 notifications visible at any time If a new Priority 1 notification arrives, it replaces everything Priority 2-4 notifications queue in order, displayed sequentially If the queue exceeds 5 pending notifications, lowest priority items are dropped Duplicate notifications within 2 seconds are merged (e.g., “Picked up 5.45 ammo x3” instead of three separate toasts) Kill FeedPosition and LayoutProperty Specification Position Top-right corner, below minimap Width 300px maximum Entry height 24px per line Max visible entries 5 at a time Entry duration 5 seconds, then fade out over 500ms Font Inter Regular, 14px Scroll Newest entries push older ones up Entry Format[Killer Icon] [Killer Name] [Weapon Icon] [Victim Name]Color CodingEvent Killer Color Victim Color Special You killed someone Signal Green (#22C55E) White Bold text You were killed White Critical Red (#EF4444) Bold text Squadmate kill Tactical Blue (#3B82F6) White Normal weight Squadmate died White Tactical Blue (#3B82F6) Normal weight Other players Steel Gray (#6B7280) Steel Gray (#6B7280) Light weight AI kill (by player) Player color Muted gray Italic Special Kill IconsType Icon Audio Cue Headshot Crosshair on head silhouette Sharp “ding” sound Grenade kill Explosion icon None (explosion sound suffices) Melee kill Knife icon Slash sound Long-range kill (100m&#43;) Distance number in brackets Sniper “crack” echo Squad wipe Skull with X Distinct multi-kill chime Damage FeedbackHit Markers (Outgoing Damage)Property Specification Position Centered on crosshair Shape 4 short lines forming an X pattern around crosshair center Normal hit color White (#FFFFFF), 80% opacity Headshot color Critical Red (#EF4444), 100% opacity, thicker lines Armor hit color Tactical Blue (#3B82F6), with metallic sound Kill confirmation Hit marker briefly expands &#43; changes to Signal Green, accompanied by kill sound Duration 150ms (fast — must not obscure continued aiming) Size 16px radius from center, expanding to 20px on hit Hit Markers (Incoming Damage)Property Specification Position Screen edges, directional indicators Shape Red arc segments pointing toward the damage source Indicator count 1-4 arcs depending on damage amount (light graze = 1, heavy hit = 4) Color Critical Red (#EF4444) to dark red (#7F1D1D) gradient Duration 1 second, fading linearly Directional accuracy 45-degree arc resolution (8 possible directions) Multi-source Multiple attackers show separate directional indicators Unknown source If damage source is not visible, indicator flashes briefly in all directions Damage Numbers (Optional Toggle)Damage numbers are disabled by default (extraction shooters favor realism), but available as an option.">
 
     <link rel="preload" href="/ExtractionDocument/css/compiled/main.min.2dd785f1e80a1395818c74c83fbfb60704ab5a51c303c1ee199e6a0fd099cd06.css" as="style" integrity="sha256-LdeF8egKE5WBjHTIP7&#43;2BwSrWlHDA8HuGZ5qD9CZzQY=" />
     <link href="/ExtractionDocument/css/compiled/main.min.2dd785f1e80a1395818c74c83fbfb60704ab5a51c303c1ee199e6a0fd099cd06.css" rel="stylesheet" integrity="sha256-LdeF8egKE5WBjHTIP7&#43;2BwSrWlHDA8HuGZ5qD9CZzQY=" />
@@ -256,7 +508,7 @@ Example: [Bugfix] Resolved inventory duping exploit
 </div>
         </li></ul>
 </div></li>
-<li class=""><a class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+<li class="open"><a class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
       hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:text-gray-900 hx:contrast-more:dark:text-gray-50 hx:contrast-more:border-transparent hx:contrast-more:hover:border-gray-900 hx:contrast-more:dark:hover:border-gray-50" href="/ExtractionDocument/gdd_design/index.html" >GDD Design
     <span class="hextra-sidebar-collapsible-button"
         onclick="event.preventDefault(); event.stopPropagation(); this.closest('li').classList.toggle('open');"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"
@@ -605,8 +857,44 @@ Example: [Bugfix] Resolved inventory duping exploit
         </li><li class="hx:flex hx:flex-col "><a class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
       hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:text-gray-900 hx:contrast-more:dark:text-gray-50 hx:contrast-more:border-transparent hx:contrast-more:hover:border-gray-900 hx:contrast-more:dark:hover:border-gray-50" href="/ExtractionDocument/gdd_design/ui_ux/hud_design.html" >In-Raid HUD Design</a>
             
-        </li><li class="hx:flex hx:flex-col "><a class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
-      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:text-gray-900 hx:contrast-more:dark:text-gray-50 hx:contrast-more:border-transparent hx:contrast-more:hover:border-gray-900 hx:contrast-more:dark:hover:border-gray-50" href="/ExtractionDocument/gdd_design/ui_ux/notification_systems.html" >Notification &amp; Feedback Systems</a>
+        </li><li class="hx:flex hx:flex-col open"><a class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hextra-sidebar-active-item hx:bg-primary-100 hx:font-semibold hx:text-primary-800 hx:contrast-more:border hx:contrast-more:border-primary-500 hx:dark:bg-primary-400/10 hx:dark:text-primary-600 hx:contrast-more:dark:border-primary-500" href="/ExtractionDocument/gdd_design/ui_ux/notification_systems.html" >Notification &amp; Feedback Systems</a>
+
+<ul
+    class='hx:flex hx:flex-col hx:gap-1 hx:relative hx:before:absolute hx:before:inset-y-1 hx:before:w-px hx:before:bg-gray-200 hx:before:content-[""] hx:dark:before:bg-neutral-800 hx:ltr:pl-3 hx:ltr:before:left-0 hx:rtl:pr-3 hx:rtl:before:right-0 hx:ltr:ml-3 hx:rtl:mr-3'><li>
+        <a href="#notification-design-philosophy"
+            class="hx:flex hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [word-break:break-word] hx:cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] hx:contrast-more:border hx:gap-2 hx:before:opacity-25 hx:before:content-['#'] hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:text-gray-900 hx:contrast-more:dark:text-gray-50 hx:contrast-more:border-transparent hx:contrast-more:hover:border-gray-900 hx:contrast-more:dark:hover:border-gray-50">Notification Design Philosophy</a>
+    </li>
+    <li>
+        <a href="#kill-feed"
+            class="hx:flex hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [word-break:break-word] hx:cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] hx:contrast-more:border hx:gap-2 hx:before:opacity-25 hx:before:content-['#'] hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:text-gray-900 hx:contrast-more:dark:text-gray-50 hx:contrast-more:border-transparent hx:contrast-more:hover:border-gray-900 hx:contrast-more:dark:hover:border-gray-50">Kill Feed</a>
+    </li>
+    <li>
+        <a href="#damage-feedback"
+            class="hx:flex hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [word-break:break-word] hx:cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] hx:contrast-more:border hx:gap-2 hx:before:opacity-25 hx:before:content-['#'] hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:text-gray-900 hx:contrast-more:dark:text-gray-50 hx:contrast-more:border-transparent hx:contrast-more:hover:border-gray-900 hx:contrast-more:dark:hover:border-gray-50">Damage Feedback</a>
+    </li>
+    <li>
+        <a href="#status-effect-indicators"
+            class="hx:flex hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [word-break:break-word] hx:cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] hx:contrast-more:border hx:gap-2 hx:before:opacity-25 hx:before:content-['#'] hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:text-gray-900 hx:contrast-more:dark:text-gray-50 hx:contrast-more:border-transparent hx:contrast-more:hover:border-gray-900 hx:contrast-more:dark:hover:border-gray-50">Status Effect Indicators</a>
+    </li>
+    <li>
+        <a href="#toast-messages"
+            class="hx:flex hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [word-break:break-word] hx:cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] hx:contrast-more:border hx:gap-2 hx:before:opacity-25 hx:before:content-['#'] hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:text-gray-900 hx:contrast-more:dark:text-gray-50 hx:contrast-more:border-transparent hx:contrast-more:hover:border-gray-900 hx:contrast-more:dark:hover:border-gray-50">Toast Messages</a>
+    </li>
+    <li>
+        <a href="#contextual-prompts"
+            class="hx:flex hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [word-break:break-word] hx:cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] hx:contrast-more:border hx:gap-2 hx:before:opacity-25 hx:before:content-['#'] hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:text-gray-900 hx:contrast-more:dark:text-gray-50 hx:contrast-more:border-transparent hx:contrast-more:hover:border-gray-900 hx:contrast-more:dark:hover:border-gray-50">Contextual Prompts</a>
+    </li>
+    <li>
+        <a href="#danger-communication"
+            class="hx:flex hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [word-break:break-word] hx:cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] hx:contrast-more:border hx:gap-2 hx:before:opacity-25 hx:before:content-['#'] hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:text-gray-900 hx:contrast-more:dark:text-gray-50 hx:contrast-more:border-transparent hx:contrast-more:hover:border-gray-900 hx:contrast-more:dark:hover:border-gray-50">Danger Communication</a>
+    </li>
+    <li>
+        <a href="#audio-visual-sync-reference"
+            class="hx:flex hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [word-break:break-word] hx:cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] hx:contrast-more:border hx:gap-2 hx:before:opacity-25 hx:before:content-['#'] hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:text-gray-900 hx:contrast-more:dark:text-gray-50 hx:contrast-more:border-transparent hx:contrast-more:hover:border-gray-900 hx:contrast-more:dark:hover:border-gray-50">Audio-Visual Sync Reference</a>
+    </li>
+    </ul>
+
             
         </li><li class="hx:flex hx:flex-col "><a class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
       hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:text-gray-900 hx:contrast-more:dark:text-gray-50 hx:contrast-more:border-transparent hx:contrast-more:hover:border-gray-900 hx:contrast-more:dark:hover:border-gray-50" href="/ExtractionDocument/gdd_design/ui_ux/ux_flows.html" >UX Flows &amp; Wireframes</a>
@@ -745,7 +1033,7 @@ Example: [Bugfix] Resolved inventory duping exploit
 </div>
         </li></ul>
 </div></li>
-<li class="open"><a class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+<li class=""><a class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
       hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:text-gray-900 hx:contrast-more:dark:text-gray-50 hx:contrast-more:border-transparent hx:contrast-more:hover:border-gray-900 hx:contrast-more:dark:hover:border-gray-50" href="/ExtractionDocument/gdd_technical/index.html" >GDD Technical
     <span class="hextra-sidebar-collapsible-button"
         onclick="event.preventDefault(); event.stopPropagation(); this.closest('li').classList.toggle('open');"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"
@@ -881,7 +1169,7 @@ Example: [Bugfix] Resolved inventory duping exploit
             
         </li></ul>
 </div>
-        </li><li class="hx:flex hx:flex-col open"><a class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+        </li><li class="hx:flex hx:flex-col "><a class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
       hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:text-gray-900 hx:contrast-more:dark:text-gray-50 hx:contrast-more:border-transparent hx:contrast-more:hover:border-gray-900 hx:contrast-more:dark:hover:border-gray-50" href="/ExtractionDocument/gdd_technical/systems/index.html" >Systems
     <span class="hextra-sidebar-collapsible-button"
         onclick="event.preventDefault(); event.stopPropagation(); this.closest('li').classList.toggle('open');"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"
@@ -904,28 +1192,8 @@ Example: [Bugfix] Resolved inventory duping exploit
         </li><li class="hx:flex hx:flex-col "><a class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
       hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:text-gray-900 hx:contrast-more:dark:text-gray-50 hx:contrast-more:border-transparent hx:contrast-more:hover:border-gray-900 hx:contrast-more:dark:hover:border-gray-50" href="/ExtractionDocument/gdd_technical/systems/audiosystem.html" >Audio System - Technical Specification</a>
             
-        </li><li class="hx:flex hx:flex-col open"><a class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
-      hextra-sidebar-active-item hx:bg-primary-100 hx:font-semibold hx:text-primary-800 hx:contrast-more:border hx:contrast-more:border-primary-500 hx:dark:bg-primary-400/10 hx:dark:text-primary-600 hx:contrast-more:dark:border-primary-500" href="/ExtractionDocument/gdd_technical/systems/buildpipeline.html" >Build Pipeline &amp; Release Engineering</a>
-
-<ul
-    class='hx:flex hx:flex-col hx:gap-1 hx:relative hx:before:absolute hx:before:inset-y-1 hx:before:w-px hx:before:bg-gray-200 hx:before:content-[""] hx:dark:before:bg-neutral-800 hx:ltr:pl-3 hx:ltr:before:left-0 hx:rtl:pr-3 hx:rtl:before:right-0 hx:ltr:ml-3 hx:rtl:mr-3'><li>
-        <a href="#-version-control-strategy"
-            class="hx:flex hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [word-break:break-word] hx:cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] hx:contrast-more:border hx:gap-2 hx:before:opacity-25 hx:before:content-['#'] hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:text-gray-900 hx:contrast-more:dark:text-gray-50 hx:contrast-more:border-transparent hx:contrast-more:hover:border-gray-900 hx:contrast-more:dark:hover:border-gray-50">🏗️ Version Control Strategy</a>
-    </li>
-    <li>
-        <a href="#-cicd-automation-jenkins--github-actions"
-            class="hx:flex hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [word-break:break-word] hx:cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] hx:contrast-more:border hx:gap-2 hx:before:opacity-25 hx:before:content-['#'] hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:text-gray-900 hx:contrast-more:dark:text-gray-50 hx:contrast-more:border-transparent hx:contrast-more:hover:border-gray-900 hx:contrast-more:dark:hover:border-gray-50">🤖 CI/CD Automation (Jenkins / GitHub Actions)</a>
-    </li>
-    <li>
-        <a href="#-quality-assurance-qa-process"
-            class="hx:flex hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [word-break:break-word] hx:cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] hx:contrast-more:border hx:gap-2 hx:before:opacity-25 hx:before:content-['#'] hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:text-gray-900 hx:contrast-more:dark:text-gray-50 hx:contrast-more:border-transparent hx:contrast-more:hover:border-gray-900 hx:contrast-more:dark:hover:border-gray-50">📋 Quality Assurance (QA) Process</a>
-    </li>
-    <li>
-        <a href="#-release-process"
-            class="hx:flex hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [word-break:break-word] hx:cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] hx:contrast-more:border hx:gap-2 hx:before:opacity-25 hx:before:content-['#'] hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:text-gray-900 hx:contrast-more:dark:text-gray-50 hx:contrast-more:border-transparent hx:contrast-more:hover:border-gray-900 hx:contrast-more:dark:hover:border-gray-50">🚀 Release Process</a>
-    </li>
-    </ul>
-
+        </li><li class="hx:flex hx:flex-col "><a class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:text-gray-900 hx:contrast-more:dark:text-gray-50 hx:contrast-more:border-transparent hx:contrast-more:hover:border-gray-900 hx:contrast-more:dark:hover:border-gray-50" href="/ExtractionDocument/gdd_technical/systems/buildpipeline.html" >Build Pipeline &amp; Release Engineering</a>
             
         </li><li class="hx:flex hx:flex-col "><a class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
       hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:text-gray-900 hx:contrast-more:dark:text-gray-50 hx:contrast-more:border-transparent hx:contrast-more:hover:border-gray-900 hx:contrast-more:dark:hover:border-gray-50" href="/ExtractionDocument/gdd_technical/systems/liveopssystem.html" >Live Operations System - Technical Specification</a>
@@ -1050,7 +1318,7 @@ Example: [Bugfix] Resolved inventory duping exploit
 </div>
         </li></ul>
 </div></li>
-<li class=""><a class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+<li class="open"><a class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
       hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:text-gray-900 hx:contrast-more:dark:text-gray-50 hx:contrast-more:border-transparent hx:contrast-more:hover:border-gray-900 hx:contrast-more:dark:hover:border-gray-50" href="/ExtractionDocument/gdd_design/index.html" >GDD Design
     <span class="hextra-sidebar-collapsible-button"
         onclick="event.preventDefault(); event.stopPropagation(); this.closest('li').classList.toggle('open');"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"
@@ -1399,8 +1667,8 @@ Example: [Bugfix] Resolved inventory duping exploit
         </li><li class="hx:flex hx:flex-col "><a class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
       hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:text-gray-900 hx:contrast-more:dark:text-gray-50 hx:contrast-more:border-transparent hx:contrast-more:hover:border-gray-900 hx:contrast-more:dark:hover:border-gray-50" href="/ExtractionDocument/gdd_design/ui_ux/hud_design.html" >In-Raid HUD Design</a>
             
-        </li><li class="hx:flex hx:flex-col "><a class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
-      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:text-gray-900 hx:contrast-more:dark:text-gray-50 hx:contrast-more:border-transparent hx:contrast-more:hover:border-gray-900 hx:contrast-more:dark:hover:border-gray-50" href="/ExtractionDocument/gdd_design/ui_ux/notification_systems.html" >Notification &amp; Feedback Systems</a>
+        </li><li class="hx:flex hx:flex-col open"><a class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hextra-sidebar-active-item hx:bg-primary-100 hx:font-semibold hx:text-primary-800 hx:contrast-more:border hx:contrast-more:border-primary-500 hx:dark:bg-primary-400/10 hx:dark:text-primary-600 hx:contrast-more:dark:border-primary-500" href="/ExtractionDocument/gdd_design/ui_ux/notification_systems.html" >Notification &amp; Feedback Systems</a>
             
         </li><li class="hx:flex hx:flex-col "><a class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
       hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:text-gray-900 hx:contrast-more:dark:text-gray-50 hx:contrast-more:border-transparent hx:contrast-more:hover:border-gray-900 hx:contrast-more:dark:hover:border-gray-50" href="/ExtractionDocument/gdd_design/ui_ux/ux_flows.html" >UX Flows &amp; Wireframes</a>
@@ -1539,7 +1807,7 @@ Example: [Bugfix] Resolved inventory duping exploit
 </div>
         </li></ul>
 </div></li>
-<li class="open"><a class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+<li class=""><a class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
       hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:text-gray-900 hx:contrast-more:dark:text-gray-50 hx:contrast-more:border-transparent hx:contrast-more:hover:border-gray-900 hx:contrast-more:dark:hover:border-gray-50" href="/ExtractionDocument/gdd_technical/index.html" >GDD Technical
     <span class="hextra-sidebar-collapsible-button"
         onclick="event.preventDefault(); event.stopPropagation(); this.closest('li').classList.toggle('open');"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"
@@ -1675,7 +1943,7 @@ Example: [Bugfix] Resolved inventory duping exploit
             
         </li></ul>
 </div>
-        </li><li class="hx:flex hx:flex-col open"><a class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+        </li><li class="hx:flex hx:flex-col "><a class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
       hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:text-gray-900 hx:contrast-more:dark:text-gray-50 hx:contrast-more:border-transparent hx:contrast-more:hover:border-gray-900 hx:contrast-more:dark:hover:border-gray-50" href="/ExtractionDocument/gdd_technical/systems/index.html" >Systems
     <span class="hextra-sidebar-collapsible-button"
         onclick="event.preventDefault(); event.stopPropagation(); this.closest('li').classList.toggle('open');"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"
@@ -1698,8 +1966,8 @@ Example: [Bugfix] Resolved inventory duping exploit
         </li><li class="hx:flex hx:flex-col "><a class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
       hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:text-gray-900 hx:contrast-more:dark:text-gray-50 hx:contrast-more:border-transparent hx:contrast-more:hover:border-gray-900 hx:contrast-more:dark:hover:border-gray-50" href="/ExtractionDocument/gdd_technical/systems/audiosystem.html" >Audio System - Technical Specification</a>
             
-        </li><li class="hx:flex hx:flex-col open"><a class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
-      hextra-sidebar-active-item hx:bg-primary-100 hx:font-semibold hx:text-primary-800 hx:contrast-more:border hx:contrast-more:border-primary-500 hx:dark:bg-primary-400/10 hx:dark:text-primary-600 hx:contrast-more:dark:border-primary-500" href="/ExtractionDocument/gdd_technical/systems/buildpipeline.html" >Build Pipeline &amp; Release Engineering</a>
+        </li><li class="hx:flex hx:flex-col "><a class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:text-gray-900 hx:contrast-more:dark:text-gray-50 hx:contrast-more:border-transparent hx:contrast-more:hover:border-gray-900 hx:contrast-more:dark:hover:border-gray-50" href="/ExtractionDocument/gdd_technical/systems/buildpipeline.html" >Build Pipeline &amp; Release Engineering</a>
             
         </li><li class="hx:flex hx:flex-col "><a class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
       hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:text-gray-900 hx:contrast-more:dark:text-gray-50 hx:contrast-more:border-transparent hx:contrast-more:hover:border-gray-900 hx:contrast-more:dark:hover:border-gray-50" href="/ExtractionDocument/gdd_technical/systems/liveopssystem.html" >Live Operations System - Technical Specification</a>
@@ -1796,47 +2064,111 @@ Example: [Bugfix] Resolved inventory duping exploit
 <nav class="hextra-toc hx:order-last hx:hidden hx:w-64 hx:shrink-0 hx:xl:block hx:print:hidden hx:px-4" aria-label="table of contents">
     <div class="hextra-scrollbar hx:sticky hx:top-16 hx:overflow-y-auto hx:pr-4 hx:pt-6 hx:text-sm [hyphens:auto] hx:max-h-[calc(100vh-var(--navbar-height)-env(safe-area-inset-bottom))] hx:ltr:-mr-4 hx:rtl:-ml-4"><p class="hx:mb-4 hx:font-semibold hx:tracking-tight">On this page</p><ul>
       <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
-        <a class="hx:font-medium hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word" href="#-version-control-strategy">🏗️ Version Control Strategy
+        <a class="hx:font-medium hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word" href="#notification-design-philosophy">Notification Design Philosophy
         </a>
       </li>
       <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
-        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word" href="#branching-model-gitflow-modified">Branching Model (Gitflow modified)
+        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word" href="#priority-hierarchy">Priority Hierarchy
         </a>
       </li>
       <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
-        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word" href="#commits">Commits
+        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word" href="#queue-management-rules">Queue Management Rules
         </a>
       </li>
       <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
-        <a class="hx:font-medium hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word" href="#-cicd-automation-jenkins--github-actions">🤖 CI/CD Automation (Jenkins / GitHub Actions)
+        <a class="hx:font-medium hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word" href="#kill-feed">Kill Feed
         </a>
       </li>
       <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
-        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word" href="#continuous-integration-ci">Continuous Integration (CI)
+        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word" href="#position-and-layout">Position and Layout
         </a>
       </li>
       <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
-        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word" href="#continuous-delivery-cd">Continuous Delivery (CD)
+        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word" href="#entry-format">Entry Format
         </a>
       </li>
       <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
-        <a class="hx:font-medium hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word" href="#-quality-assurance-qa-process">📋 Quality Assurance (QA) Process
+        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word" href="#color-coding">Color Coding
         </a>
       </li>
       <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
-        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word" href="#smoke-test-daily">“Smoke Test” (Daily)
+        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word" href="#special-kill-icons">Special Kill Icons
         </a>
       </li>
       <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
-        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word" href="#feature-testing-weekly">Feature Testing (Weekly)
+        <a class="hx:font-medium hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word" href="#damage-feedback">Damage Feedback
         </a>
       </li>
       <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
-        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word" href="#release-candidate-rc-testing">Release Candidate (RC) Testing
+        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word" href="#hit-markers-outgoing-damage">Hit Markers (Outgoing Damage)
         </a>
       </li>
       <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
-        <a class="hx:font-medium hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word" href="#-release-process">🚀 Release Process
+        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word" href="#hit-markers-incoming-damage">Hit Markers (Incoming Damage)
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word" href="#damage-numbers-optional-toggle">Damage Numbers (Optional Toggle)
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word" href="#screen-effects-incoming-damage">Screen Effects (Incoming Damage)
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:font-medium hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word" href="#status-effect-indicators">Status Effect Indicators
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word" href="#icon-system">Icon System
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word" href="#status-icon-behavior">Status Icon Behavior
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:font-medium hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word" href="#toast-messages">Toast Messages
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word" href="#position-and-layout-1">Position and Layout
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word" href="#toast-categories">Toast Categories
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word" href="#toast-content-format">Toast Content Format
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:font-medium hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word" href="#contextual-prompts">Contextual Prompts
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word" href="#interaction-prompts">Interaction Prompts
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word" href="#prompt-visual-style">Prompt Visual Style
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:font-medium hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word" href="#danger-communication">Danger Communication
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word" href="#threat-proximity-system">Threat Proximity System
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word" href="#suppression-effect-details">Suppression Effect Details
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:font-medium hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word" href="#audio-visual-sync-reference">Audio-Visual Sync Reference
         </a>
       </li></ul>
       <div class="hx:mt-8 hx:border-t hx:bg-white hx:pt-8 hx:shadow-[0_-12px_16px_white] hx:dark:bg-dark hx:dark:shadow-[0_-12px_16px_#111] hx:sticky hx:bottom-0 hx:flex hx:flex-col hx:items-start hx:gap-2 hx:pb-8 hx:border-gray-200 hx:dark:border-neutral-800 hx:contrast-more:border-t hx:contrast-more:border-neutral-400 hx:contrast-more:shadow-none hx:contrast-more:dark:border-neutral-400">
@@ -1855,114 +2187,921 @@ Example: [Bugfix] Resolved inventory duping exploit
       <main class="hx:w-full hx:min-w-0 hextra-max-content-width hx:px-6 hx:pt-4 hx:md:px-12">
         <div class="hx:mt-1.5 hx:flex hx:items-center hx:gap-1 hx:overflow-hidden hx:text-sm hx:text-gray-500 hx:dark:text-gray-400 hx:contrast-more:text-current">
         <div class="hx:whitespace-nowrap hx:transition-colors hx:min-w-[24px] hx:overflow-hidden hx:text-ellipsis hx:hover:text-gray-900 hx:dark:hover:text-gray-100">
-          <a href="/ExtractionDocument/gdd_technical/index.html">GDD Technical</a>
+          <a href="/ExtractionDocument/gdd_design/index.html">GDD Design</a>
         </div><svg class="hx:w-3.5 hx:shrink-0 hx:rtl:-rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
         <div class="hx:whitespace-nowrap hx:transition-colors hx:min-w-[24px] hx:overflow-hidden hx:text-ellipsis hx:hover:text-gray-900 hx:dark:hover:text-gray-100">
-          <a href="/ExtractionDocument/gdd_technical/systems/index.html">Systems</a>
-        </div><svg class="hx:w-3.5 hx:shrink-0 hx:rtl:-rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg><div class="hx:whitespace-nowrap hx:transition-colors hx:font-medium hx:text-gray-700 hx:contrast-more:font-bold hx:contrast-more:text-current hx:dark:text-gray-100 hx:contrast-more:dark:text-current">Build Pipeline &amp; Release Engineering</div>
+          <a href="/ExtractionDocument/gdd_design/ui_ux/index.html">UI/UX</a>
+        </div><svg class="hx:w-3.5 hx:shrink-0 hx:rtl:-rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg><div class="hx:whitespace-nowrap hx:transition-colors hx:font-medium hx:text-gray-700 hx:contrast-more:font-bold hx:contrast-more:text-current hx:dark:text-gray-100 hx:contrast-more:dark:text-current">Notification &amp; Feedback Systems</div>
   </div>
 
         <div class="content">
           
           <div class="hx:flex hx:flex-col hx:sm:flex-row hx:items-start hx:sm:items-center hx:sm:justify-between hx:gap-4 hx:mb-4">
-            <h1 class="hx:mb-0">Build Pipeline &amp; Release Engineering</h1>
+            <h1 class="hx:mb-0">Notification &amp; Feedback Systems</h1>
             
           </div>
           
-          <h2>🏗️ Version Control Strategy<span class="hx:absolute hx:-mt-20" id="-version-control-strategy"></span>
-    <a href="#-version-control-strategy" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><h3>Branching Model (Gitflow modified)<span class="hx:absolute hx:-mt-20" id="branching-model-gitflow-modified"></span>
-    <a href="#branching-model-gitflow-modified" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><ul>
-<li><strong><code>main</code> (Production):</strong> The &ldquo;Gold&rdquo; standard. Stable, playable, deployable. Locked.
-<ul>
-<li><em>Rule:</em> Only merge via Pull Request (PR) after passing Automated Tests.</li>
-</ul>
-</li>
-<li><strong><code>development</code> (Staging):</strong> The integration branch for current sprint.
-<ul>
-<li><em>Rule:</em> Nightly builds run from here.</li>
-</ul>
-</li>
-<li><strong><code>feature/xyz</code> (Task):</strong> Individual developer branches. Short-lived (&lt; 2 days).
-<ul>
-<li><em>Naming:</em> <code>feature/loot-spawner</code>, <code>fix/crash-inventory</code></li>
-</ul>
-</li>
-</ul>
-<h3>Commits<span class="hx:absolute hx:-mt-20" id="commits"></span>
-    <a href="#commits" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><ul>
-<li><strong>Message Format:</strong> <code>[Category] Summary</code>.
-<ul>
-<li><em>Example:</em> <code>[Audio] Added reverb to warehouse zone</code></li>
-<li><em>Example:</em> <code>[Bugfix] Resolved inventory duping exploit</code></li>
-</ul>
-</li>
-</ul>
-<hr>
-<h2>🤖 CI/CD Automation (Jenkins / GitHub Actions)<span class="hx:absolute hx:-mt-20" id="-cicd-automation-jenkins--github-actions"></span>
-    <a href="#-cicd-automation-jenkins--github-actions" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><h3>Continuous Integration (CI)<span class="hx:absolute hx:-mt-20" id="continuous-integration-ci"></span>
-    <a href="#continuous-integration-ci" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>Run on every Push to <code>feature/*</code>:</p>
-<ol>
-<li><strong>Code Compilation:</strong> Compile <code>Development Editor</code>. Fail on any warning.</li>
-<li><strong>Asset Validation:</strong> Check for broken references or missing textures.</li>
-<li><strong>Unit Tests:</strong> Run C++ core tests (Inventory logic, Damage calc).</li>
-</ol>
-<h3>Continuous Delivery (CD)<span class="hx:absolute hx:-mt-20" id="continuous-delivery-cd"></span>
-    <a href="#continuous-delivery-cd" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>Run Nightly (03:00 AM) on <code>development</code>:</p>
-<ol>
-<li><strong>Map Check:</strong> Open every map and verify no errors.</li>
-<li><strong>Lighting Build:</strong> Rebuild lighting on changed maps (Swarm Agent).</li>
-<li><strong>Package Build:</strong> Create <code>WindowsNoEditor</code> and <code>Android_ASTC</code> builds.</li>
-<li><strong>Upload:</strong> Push build to Steam (Beta branch) or Internal Server.</li>
-</ol>
-<hr>
-<h2>📋 Quality Assurance (QA) Process<span class="hx:absolute hx:-mt-20" id="-quality-assurance-qa-process"></span>
-    <a href="#-quality-assurance-qa-process" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><h3>&ldquo;Smoke Test&rdquo; (Daily)<span class="hx:absolute hx:-mt-20" id="smoke-test-daily"></span>
-    <a href="#smoke-test-daily" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><ul>
-<li><em>Before testing any new feature, verify basic game health:</em>
-<ol>
-<li>Can launch game?</li>
-<li>Can login / reach Main Menu?</li>
-<li>Can start a Raid (Solo)?</li>
-<li>Can shoot a gun?</li>
-<li>Can Extract?</li>
-</ol>
-</li>
-</ul>
-<h3>Feature Testing (Weekly)<span class="hx:absolute hx:-mt-20" id="feature-testing-weekly"></span>
-    <a href="#feature-testing-weekly" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><ul>
-<li><strong>New Mechanics:</strong> Test all edge cases. (e.g., Vaulting while reloading, Vaulting while dying).</li>
-<li><strong>Map Walkthrough:</strong> Fly-through map in collision view (<code>show Collision</code>) looking for holes.</li>
-</ul>
-<h3>Release Candidate (RC) Testing<span class="hx:absolute hx:-mt-20" id="release-candidate-rc-testing"></span>
-    <a href="#release-candidate-rc-testing" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><ul>
-<li><strong>&ldquo;Golden Path&rdquo;:</strong> Complete a full progression loop (Lvl 1 -&gt; Lvl 5).</li>
-<li><strong>Multiplayer Stress:</strong> 64 simulated clients connecting simultaneously.</li>
-<li><strong>Platform Compliance:</strong> Check TRCs (Technical Requirement Check) for Sony/Microsoft/Google.</li>
+          <h2>Notification Design Philosophy<span class="hx:absolute hx:-mt-20" id="notification-design-philosophy"></span>
+    <a href="#notification-design-philosophy" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><p>The notification system operates on one rule: <strong>information arrives in proportion to its urgency</strong>. Critical notifications interrupt; ambient notifications wait.</p>
+<h3>Priority Hierarchy<span class="hx:absolute hx:-mt-20" id="priority-hierarchy"></span>
+    <a href="#priority-hierarchy" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><table>
+  <thead>
+      <tr>
+          <th style="text-align: center">Priority</th>
+          <th style="text-align: left">Category</th>
+          <th style="text-align: left">Behavior</th>
+          <th style="text-align: left">Duration</th>
+          <th style="text-align: left">Example</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: center"><strong>1 - Critical</strong></td>
+          <td style="text-align: left">Survival</td>
+          <td style="text-align: left">Full-screen effect + audio + haptic</td>
+          <td style="text-align: left">Until resolved</td>
+          <td style="text-align: left">Low health vignette, incoming fire indicator</td>
+      </tr>
+      <tr>
+          <td style="text-align: center"><strong>2 - High</strong></td>
+          <td style="text-align: left">Combat</td>
+          <td style="text-align: left">Edge-of-screen indicator + sound</td>
+          <td style="text-align: left">3-5 seconds</td>
+          <td style="text-align: left">Kill confirmation, headshot, armor break</td>
+      </tr>
+      <tr>
+          <td style="text-align: center"><strong>3 - Medium</strong></td>
+          <td style="text-align: left">Progress</td>
+          <td style="text-align: left">Toast notification + subtle sound</td>
+          <td style="text-align: left">4 seconds</td>
+          <td style="text-align: left">Quest objective completed, item discovered</td>
+      </tr>
+      <tr>
+          <td style="text-align: center"><strong>4 - Low</strong></td>
+          <td style="text-align: left">Ambient</td>
+          <td style="text-align: left">Small text in feed + no sound</td>
+          <td style="text-align: left">3 seconds</td>
+          <td style="text-align: left">Player joined/left area, environmental event</td>
+      </tr>
+  </tbody>
+</table>
+<h3>Queue Management Rules<span class="hx:absolute hx:-mt-20" id="queue-management-rules"></span>
+    <a href="#queue-management-rules" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><ul>
+<li>Maximum <strong>3 notifications visible</strong> at any time</li>
+<li>If a new Priority 1 notification arrives, it replaces everything</li>
+<li>Priority 2-4 notifications queue in order, displayed sequentially</li>
+<li>If the queue exceeds 5 pending notifications, lowest priority items are dropped</li>
+<li>Duplicate notifications within 2 seconds are merged (e.g., &ldquo;Picked up 5.45 ammo x3&rdquo; instead of three separate toasts)</li>
 </ul>
 <hr>
-<h2>🚀 Release Process<span class="hx:absolute hx:-mt-20" id="-release-process"></span>
-    <a href="#-release-process" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><ol>
-<li><strong>Code Freeze:</strong> No new commits to <code>development</code> 48 hours before build.</li>
-<li><strong>Versioning:</strong> Update <code>ProjectSettings</code> -&gt; <code>Version</code>.
-<ul>
-<li>Format: <code>Major.Minor.Patch</code> (e.g., <code>0.8.2</code>)</li>
-</ul>
-</li>
-<li><strong>Changelog:</strong> Auto-generate from commit history. Manually curate for readability.</li>
-<li><strong>Tagging:</strong> Create Git Tag <code>v0.8.2</code>.</li>
-<li><strong>Distribution:</strong> Push to public branches (Steam Main, App Store Review).</li>
-</ol>
+<h2>Kill Feed<span class="hx:absolute hx:-mt-20" id="kill-feed"></span>
+    <a href="#kill-feed" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><h3>Position and Layout<span class="hx:absolute hx:-mt-20" id="position-and-layout"></span>
+    <a href="#position-and-layout" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Property</th>
+          <th style="text-align: left">Specification</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Position</td>
+          <td style="text-align: left">Top-right corner, below minimap</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Width</td>
+          <td style="text-align: left">300px maximum</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Entry height</td>
+          <td style="text-align: left">24px per line</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Max visible entries</td>
+          <td style="text-align: left">5 at a time</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Entry duration</td>
+          <td style="text-align: left">5 seconds, then fade out over 500ms</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Font</td>
+          <td style="text-align: left">Inter Regular, 14px</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Scroll</td>
+          <td style="text-align: left">Newest entries push older ones up</td>
+      </tr>
+  </tbody>
+</table>
+<h3>Entry Format<span class="hx:absolute hx:-mt-20" id="entry-format"></span>
+    <a href="#entry-format" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code">
+
+<div><pre><code>[Killer Icon] [Killer Name] [Weapon Icon] [Victim Name]</code></pre></div><div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0">
+  <button
+    class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
+    title="Copy code"
+  >
+    <div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"></div>
+<div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"></div>
+  </button>
+</div>
+</div>
+<h3>Color Coding<span class="hx:absolute hx:-mt-20" id="color-coding"></span>
+    <a href="#color-coding" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Event</th>
+          <th style="text-align: left">Killer Color</th>
+          <th style="text-align: left">Victim Color</th>
+          <th style="text-align: left">Special</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">You killed someone</td>
+          <td style="text-align: left">Signal Green (#22C55E)</td>
+          <td style="text-align: left">White</td>
+          <td style="text-align: left">Bold text</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">You were killed</td>
+          <td style="text-align: left">White</td>
+          <td style="text-align: left">Critical Red (#EF4444)</td>
+          <td style="text-align: left">Bold text</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Squadmate kill</td>
+          <td style="text-align: left">Tactical Blue (#3B82F6)</td>
+          <td style="text-align: left">White</td>
+          <td style="text-align: left">Normal weight</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Squadmate died</td>
+          <td style="text-align: left">White</td>
+          <td style="text-align: left">Tactical Blue (#3B82F6)</td>
+          <td style="text-align: left">Normal weight</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Other players</td>
+          <td style="text-align: left">Steel Gray (#6B7280)</td>
+          <td style="text-align: left">Steel Gray (#6B7280)</td>
+          <td style="text-align: left">Light weight</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">AI kill (by player)</td>
+          <td style="text-align: left">Player color</td>
+          <td style="text-align: left">Muted gray</td>
+          <td style="text-align: left">Italic</td>
+      </tr>
+  </tbody>
+</table>
+<h3>Special Kill Icons<span class="hx:absolute hx:-mt-20" id="special-kill-icons"></span>
+    <a href="#special-kill-icons" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Type</th>
+          <th style="text-align: left">Icon</th>
+          <th style="text-align: left">Audio Cue</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Headshot</td>
+          <td style="text-align: left">Crosshair on head silhouette</td>
+          <td style="text-align: left">Sharp &ldquo;ding&rdquo; sound</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Grenade kill</td>
+          <td style="text-align: left">Explosion icon</td>
+          <td style="text-align: left">None (explosion sound suffices)</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Melee kill</td>
+          <td style="text-align: left">Knife icon</td>
+          <td style="text-align: left">Slash sound</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Long-range kill (100m+)</td>
+          <td style="text-align: left">Distance number in brackets</td>
+          <td style="text-align: left">Sniper &ldquo;crack&rdquo; echo</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Squad wipe</td>
+          <td style="text-align: left">Skull with X</td>
+          <td style="text-align: left">Distinct multi-kill chime</td>
+      </tr>
+  </tbody>
+</table>
+<!-- REF_IMAGE: Kill feed mockup — showing 5 stacked entries with different color coding, weapon icons, and headshot indicator -->
+<hr>
+<h2>Damage Feedback<span class="hx:absolute hx:-mt-20" id="damage-feedback"></span>
+    <a href="#damage-feedback" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><h3>Hit Markers (Outgoing Damage)<span class="hx:absolute hx:-mt-20" id="hit-markers-outgoing-damage"></span>
+    <a href="#hit-markers-outgoing-damage" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Property</th>
+          <th style="text-align: left">Specification</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Position</td>
+          <td style="text-align: left">Centered on crosshair</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Shape</td>
+          <td style="text-align: left">4 short lines forming an X pattern around crosshair center</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Normal hit color</td>
+          <td style="text-align: left">White (#FFFFFF), 80% opacity</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Headshot color</td>
+          <td style="text-align: left">Critical Red (#EF4444), 100% opacity, thicker lines</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Armor hit color</td>
+          <td style="text-align: left">Tactical Blue (#3B82F6), with metallic sound</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Kill confirmation</td>
+          <td style="text-align: left">Hit marker briefly expands + changes to Signal Green, accompanied by kill sound</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Duration</td>
+          <td style="text-align: left">150ms (fast — must not obscure continued aiming)</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Size</td>
+          <td style="text-align: left">16px radius from center, expanding to 20px on hit</td>
+      </tr>
+  </tbody>
+</table>
+<h3>Hit Markers (Incoming Damage)<span class="hx:absolute hx:-mt-20" id="hit-markers-incoming-damage"></span>
+    <a href="#hit-markers-incoming-damage" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Property</th>
+          <th style="text-align: left">Specification</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Position</td>
+          <td style="text-align: left">Screen edges, directional indicators</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Shape</td>
+          <td style="text-align: left">Red arc segments pointing toward the damage source</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Indicator count</td>
+          <td style="text-align: left">1-4 arcs depending on damage amount (light graze = 1, heavy hit = 4)</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Color</td>
+          <td style="text-align: left">Critical Red (#EF4444) to dark red (#7F1D1D) gradient</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Duration</td>
+          <td style="text-align: left">1 second, fading linearly</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Directional accuracy</td>
+          <td style="text-align: left">45-degree arc resolution (8 possible directions)</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Multi-source</td>
+          <td style="text-align: left">Multiple attackers show separate directional indicators</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Unknown source</td>
+          <td style="text-align: left">If damage source is not visible, indicator flashes briefly in all directions</td>
+      </tr>
+  </tbody>
+</table>
+<!-- REF_IMAGE: Hit marker diagram — showing outgoing (crosshair-centered X) and incoming (edge-of-screen directional arcs) examples side-by-side -->
+<h3>Damage Numbers (Optional Toggle)<span class="hx:absolute hx:-mt-20" id="damage-numbers-optional-toggle"></span>
+    <a href="#damage-numbers-optional-toggle" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>Damage numbers are <strong>disabled by default</strong> (extraction shooters favor realism), but available as an option.</p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Property</th>
+          <th style="text-align: left">Specification</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Toggle</td>
+          <td style="text-align: left">Settings &gt; Gameplay &gt; &ldquo;Damage Numbers: On / Off&rdquo;</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Position</td>
+          <td style="text-align: left">Float upward from point of impact on enemy</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Font</td>
+          <td style="text-align: left">JetBrains Mono Bold</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Normal damage</td>
+          <td style="text-align: left">White, 16px, floats up 30px over 600ms</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Critical / Headshot</td>
+          <td style="text-align: left">Yellow (#FACC15), 22px, bounces slightly</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Armor damage</td>
+          <td style="text-align: left">Blue (#3B82F6), 14px (smaller — less effective hit)</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Blocked (0 damage)</td>
+          <td style="text-align: left">Gray (#6B7280), &ldquo;BLOCKED&rdquo; text, 12px</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Stacking</td>
+          <td style="text-align: left">Rapid hits merge after 200ms (e.g., &ldquo;45 + 45 = 90&rdquo; displayed as &ldquo;90&rdquo;)</td>
+      </tr>
+  </tbody>
+</table>
+<h3>Screen Effects (Incoming Damage)<span class="hx:absolute hx:-mt-20" id="screen-effects-incoming-damage"></span>
+    <a href="#screen-effects-incoming-damage" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Effect</th>
+          <th style="text-align: left">Trigger</th>
+          <th style="text-align: left">Visual</th>
+          <th style="text-align: left">Duration</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Blood vignette</td>
+          <td style="text-align: left">Taking any damage</td>
+          <td style="text-align: left">Red-tinted edges, intensity proportional to damage</td>
+          <td style="text-align: left">2 seconds</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Screen shake</td>
+          <td style="text-align: left">Explosive damage or heavy caliber</td>
+          <td style="text-align: left">Subtle camera displacement (2-4px amplitude)</td>
+          <td style="text-align: left">300ms</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Suppression blur</td>
+          <td style="text-align: left">Bullets passing near player without hitting</td>
+          <td style="text-align: left">Mild radial blur at screen edges</td>
+          <td style="text-align: left">While suppressed + 1s fade</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Armor crack</td>
+          <td style="text-align: left">Armor durability reaches 0</td>
+          <td style="text-align: left">Crack pattern overlay briefly flashes</td>
+          <td style="text-align: left">500ms</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Near-death pulse</td>
+          <td style="text-align: left">Health below 15%</td>
+          <td style="text-align: left">Rhythmic red pulse matched to heartbeat sound</td>
+          <td style="text-align: left">Until healed or dead</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2>Status Effect Indicators<span class="hx:absolute hx:-mt-20" id="status-effect-indicators"></span>
+    <a href="#status-effect-indicators" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><h3>Icon System<span class="hx:absolute hx:-mt-20" id="icon-system"></span>
+    <a href="#icon-system" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>Status effects appear as small icons below the health bar, stacking horizontally:</p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Status</th>
+          <th style="text-align: left">Icon</th>
+          <th style="text-align: left">Color</th>
+          <th style="text-align: left">Screen Effect</th>
+          <th style="text-align: left">Audio</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><strong>Bleeding</strong></td>
+          <td style="text-align: left">Blood drop with timer</td>
+          <td style="text-align: left">Red (#EF4444)</td>
+          <td style="text-align: left">Small blood drops at screen edge, ticking HP loss</td>
+          <td style="text-align: left">Wet dripping sound</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Heavy Bleeding</strong></td>
+          <td style="text-align: left">Double blood drop, urgent</td>
+          <td style="text-align: left">Bright red, pulsing</td>
+          <td style="text-align: left">Stronger blood effect + periodic screen darken</td>
+          <td style="text-align: left">Faster drip + heartbeat</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Fracture</strong></td>
+          <td style="text-align: left">Cracked bone</td>
+          <td style="text-align: left">Orange (#F97316)</td>
+          <td style="text-align: left">Screen shakes on movement (micro-jitter)</td>
+          <td style="text-align: left">Bone grinding on movement</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Pain</strong></td>
+          <td style="text-align: left">Exclamation in triangle</td>
+          <td style="text-align: left">Yellow (#FACC15)</td>
+          <td style="text-align: left">Slight blur on screen edges</td>
+          <td style="text-align: left">Low moaning, breathing</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Contamination</strong></td>
+          <td style="text-align: left">Hazard trefoil</td>
+          <td style="text-align: left">Green (#22C55E)</td>
+          <td style="text-align: left">Green fog at screen edges, slowly increasing</td>
+          <td style="text-align: left">Geiger counter ticks</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Dehydration</strong></td>
+          <td style="text-align: left">Empty canteen</td>
+          <td style="text-align: left">Orange (#F97316)</td>
+          <td style="text-align: left">Slight desaturation, vision narrows</td>
+          <td style="text-align: left">Dry breathing sound</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Starvation</strong></td>
+          <td style="text-align: left">Empty plate</td>
+          <td style="text-align: left">Orange (#F97316)</td>
+          <td style="text-align: left">Screen brightness slowly decreases</td>
+          <td style="text-align: left">Stomach rumble</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Hypothermia</strong></td>
+          <td style="text-align: left">Snowflake</td>
+          <td style="text-align: left">Cyan (#06B6D4)</td>
+          <td style="text-align: left">Frost creep at screen edges</td>
+          <td style="text-align: left">Teeth chattering</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Overheating</strong></td>
+          <td style="text-align: left">Thermometer</td>
+          <td style="text-align: left">Red (#EF4444)</td>
+          <td style="text-align: left">Heat shimmer at screen edges</td>
+          <td style="text-align: left">Heavy panting</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Tremor</strong></td>
+          <td style="text-align: left">Shaky hand</td>
+          <td style="text-align: left">Yellow (#FACC15)</td>
+          <td style="text-align: left">Weapon sway increases</td>
+          <td style="text-align: left">None (mechanical effect)</td>
+      </tr>
+  </tbody>
+</table>
+<h3>Status Icon Behavior<span class="hx:absolute hx:-mt-20" id="status-icon-behavior"></span>
+    <a href="#status-icon-behavior" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Rule</th>
+          <th style="text-align: left">Implementation</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Maximum visible</td>
+          <td style="text-align: left">4 icons at a time. If more than 4 active, show highest severity</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Order</td>
+          <td style="text-align: left">Left to right by severity (most dangerous first)</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Timer</td>
+          <td style="text-align: left">Each icon shows remaining duration if applicable (e.g., painkiller suppressing pain)</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Stacking</td>
+          <td style="text-align: left">Same effect at higher tier replaces lower (e.g., Heavy Bleeding replaces Bleeding)</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Resolution</td>
+          <td style="text-align: left">Icon disappears immediately when status is cured. Brief green flash confirms cure</td>
+      </tr>
+  </tbody>
+</table>
+<!-- REF_IMAGE: Status effect icon strip — showing 4 active effects below health bar with timer indicators and severity ordering -->
+<hr>
+<h2>Toast Messages<span class="hx:absolute hx:-mt-20" id="toast-messages"></span>
+    <a href="#toast-messages" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><h3>Position and Layout<span class="hx:absolute hx:-mt-20" id="position-and-layout-1"></span>
+    <a href="#position-and-layout-1" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Property</th>
+          <th style="text-align: left">Specification</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Position</td>
+          <td style="text-align: left">Center-left, 200px from left edge, vertically centered</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Width</td>
+          <td style="text-align: left">350px maximum</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Height</td>
+          <td style="text-align: left">48px per toast</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Max visible</td>
+          <td style="text-align: left">3 stacked toasts</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Animation</td>
+          <td style="text-align: left">Slide in from left (200ms ease-out), slide out left (300ms ease-in)</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Duration</td>
+          <td style="text-align: left">4 seconds standard, 6 seconds for quest completions</td>
+      </tr>
+  </tbody>
+</table>
+<h3>Toast Categories<span class="hx:absolute hx:-mt-20" id="toast-categories"></span>
+    <a href="#toast-categories" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Category</th>
+          <th style="text-align: left">Icon</th>
+          <th style="text-align: left">Border Color</th>
+          <th style="text-align: left">Audio</th>
+          <th style="text-align: left">Example</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Quest Progress</td>
+          <td style="text-align: left">Clipboard icon</td>
+          <td style="text-align: left">Neon Yellow (#FACC15)</td>
+          <td style="text-align: left">Subtle chime</td>
+          <td style="text-align: left">&ldquo;Kill target: 2/5&rdquo;</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Quest Complete</td>
+          <td style="text-align: left">Green check</td>
+          <td style="text-align: left">Signal Green (#22C55E)</td>
+          <td style="text-align: left">Success fanfare</td>
+          <td style="text-align: left">&ldquo;Supply Run — COMPLETED&rdquo;</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Item Pickup</td>
+          <td style="text-align: left">Box icon</td>
+          <td style="text-align: left">White</td>
+          <td style="text-align: left">Soft click</td>
+          <td style="text-align: left">&ldquo;Picked up: AK-74M&rdquo;</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Rare Item</td>
+          <td style="text-align: left">Star icon</td>
+          <td style="text-align: left">Rarity color</td>
+          <td style="text-align: left">Rare discovery sound</td>
+          <td style="text-align: left">&ldquo;Found: Lab Keycard (Rare)&rdquo;</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Achievement</td>
+          <td style="text-align: left">Trophy icon</td>
+          <td style="text-align: left">Gold (#F59E0B)</td>
+          <td style="text-align: left">Achievement unlock sound</td>
+          <td style="text-align: left">&ldquo;First Blood — Kill first PMC&rdquo;</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">System Message</td>
+          <td style="text-align: left">Info icon</td>
+          <td style="text-align: left">Steel Gray (#6B7280)</td>
+          <td style="text-align: left">None</td>
+          <td style="text-align: left">&ldquo;Server: Auto-save complete&rdquo;</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Faction Rep</td>
+          <td style="text-align: left">Faction badge</td>
+          <td style="text-align: left">Faction color</td>
+          <td style="text-align: left">Rep gain/loss sound</td>
+          <td style="text-align: left">&ldquo;Salvage Corps: +0.05 Rep&rdquo;</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Skill Increase</td>
+          <td style="text-align: left">Arrow up</td>
+          <td style="text-align: left">Cyan (#06B6D4)</td>
+          <td style="text-align: left">Level-up chime</td>
+          <td style="text-align: left">&ldquo;Endurance: Level 3&rdquo;</td>
+      </tr>
+  </tbody>
+</table>
+<h3>Toast Content Format<span class="hx:absolute hx:-mt-20" id="toast-content-format"></span>
+    <a href="#toast-content-format" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code">
+
+<div><pre><code>&#43;-------------------------------------------&#43;
+|  [Icon]  [Title - Bold]                   |
+|          [Description - Regular, smaller]  |
+&#43;-------------------------------------------&#43;</code></pre></div><div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0">
+  <button
+    class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
+    title="Copy code"
+  >
+    <div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"></div>
+<div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"></div>
+  </button>
+</div>
+</div>
+<p>Example:</p>
+<div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code">
+
+<div><pre><code>&#43;-------------------------------------------&#43;
+|  [Clipboard]  Kill Target: 2/5            |
+|               Quest: Supply Run            |
+&#43;-------------------------------------------&#43;</code></pre></div><div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0">
+  <button
+    class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
+    title="Copy code"
+  >
+    <div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"></div>
+<div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"></div>
+  </button>
+</div>
+</div>
+<hr>
+<h2>Contextual Prompts<span class="hx:absolute hx:-mt-20" id="contextual-prompts"></span>
+    <a href="#contextual-prompts" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><h3>Interaction Prompts<span class="hx:absolute hx:-mt-20" id="interaction-prompts"></span>
+    <a href="#interaction-prompts" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>Appear when the player is near an interactable object:</p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Object Type</th>
+          <th style="text-align: left">Prompt Text</th>
+          <th style="text-align: left">Input</th>
+          <th style="text-align: left">Duration</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Door</td>
+          <td style="text-align: left">&ldquo;Open Door&rdquo; / &ldquo;Close Door&rdquo;</td>
+          <td style="text-align: left">Press E/A</td>
+          <td style="text-align: left">Instant</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Lootable Container</td>
+          <td style="text-align: left">&ldquo;Search [Container Name]&rdquo;</td>
+          <td style="text-align: left">Hold F/A (1.5s)</td>
+          <td style="text-align: left">Progress circle fills</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Dead Body</td>
+          <td style="text-align: left">&ldquo;Search Body&rdquo;</td>
+          <td style="text-align: left">Hold F/A (2.0s)</td>
+          <td style="text-align: left">Progress circle fills</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Quest Item</td>
+          <td style="text-align: left">&ldquo;Pick Up [Item Name]&rdquo;</td>
+          <td style="text-align: left">Press E/A</td>
+          <td style="text-align: left">Instant. Quest toast follows</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Locked Door</td>
+          <td style="text-align: left">&ldquo;Locked — Requires [Key Name]&rdquo;</td>
+          <td style="text-align: left">None (information only)</td>
+          <td style="text-align: left">Displayed while in range</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Extraction Point</td>
+          <td style="text-align: left">&ldquo;Extract — Hold [Key]&rdquo;</td>
+          <td style="text-align: left">Hold F/A (5.0s)</td>
+          <td style="text-align: left">Large progress circle</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Vehicle</td>
+          <td style="text-align: left">&ldquo;Enter Vehicle&rdquo;</td>
+          <td style="text-align: left">Press E/A</td>
+          <td style="text-align: left">Instant</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Teammate (downed)</td>
+          <td style="text-align: left">&ldquo;Revive [Player Name]&rdquo;</td>
+          <td style="text-align: left">Hold F/A (8.0s)</td>
+          <td style="text-align: left">Progress circle + revive animation</td>
+      </tr>
+  </tbody>
+</table>
+<h3>Prompt Visual Style<span class="hx:absolute hx:-mt-20" id="prompt-visual-style"></span>
+    <a href="#prompt-visual-style" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Property</th>
+          <th style="text-align: left">Specification</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Background</td>
+          <td style="text-align: left">Semi-transparent dark (#1E293B at 70% opacity)</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Border</td>
+          <td style="text-align: left">1px solid, color matches interaction type (yellow for loot, green for extract)</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Key indicator</td>
+          <td style="text-align: left">Rounded rectangle showing the keybind/button, styled as physical key</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Text</td>
+          <td style="text-align: left">Inter Semi-Bold, 16px, white</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Progress circle</td>
+          <td style="text-align: left">Circular fill around the key indicator. Color matches interaction type</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2>Danger Communication<span class="hx:absolute hx:-mt-20" id="danger-communication"></span>
+    <a href="#danger-communication" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><h3>Threat Proximity System<span class="hx:absolute hx:-mt-20" id="threat-proximity-system"></span>
+    <a href="#threat-proximity-system" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>Visual and audio cues that communicate danger without directly revealing enemy positions:</p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Threat Level</th>
+          <th style="text-align: left">Trigger</th>
+          <th style="text-align: left">Visual</th>
+          <th style="text-align: left">Audio</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><strong>Nearby gunfire</strong></td>
+          <td style="text-align: left">Shots fired within 100m</td>
+          <td style="text-align: left">Brief red compass pip in direction. No screen effect</td>
+          <td style="text-align: left">Gunshot sounds with environmental echo</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Suppression</strong></td>
+          <td style="text-align: left">Bullets pass within 2m of player</td>
+          <td style="text-align: left">Radial blur at screen edges, slight desaturation</td>
+          <td style="text-align: left">Bullet crack/whiz sound</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Sniper threat</strong></td>
+          <td style="text-align: left">Sustained scope aim at player (4+ seconds)</td>
+          <td style="text-align: left">NO visual indicator (realism) — audio only</td>
+          <td style="text-align: left">Distant scope glint sound (optional design)</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Being spotted</strong></td>
+          <td style="text-align: left">AI enemy detects player</td>
+          <td style="text-align: left">Enemy awareness icon above their head (!, !!, !!!)</td>
+          <td style="text-align: left">Alert sound (barking, shouting)</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Grenade warning</strong></td>
+          <td style="text-align: left">Grenade lands within 10m</td>
+          <td style="text-align: left">Red grenade icon with direction arrow</td>
+          <td style="text-align: left">&ldquo;Grenade!&rdquo; voice callout + bouncing sound</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Boss proximity</strong></td>
+          <td style="text-align: left">Within 50m of boss enemy</td>
+          <td style="text-align: left">Subtle environmental change (lights flicker, ground tremor)</td>
+          <td style="text-align: left">Bass rumble, unique boss audio theme</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Extraction available</strong></td>
+          <td style="text-align: left">Extraction window opens</td>
+          <td style="text-align: left">Green flash on extraction timer + compass marker</td>
+          <td style="text-align: left">Radio static + extraction announcement</td>
+      </tr>
+  </tbody>
+</table>
+<h3>Suppression Effect Details<span class="hx:absolute hx:-mt-20" id="suppression-effect-details"></span>
+    <a href="#suppression-effect-details" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Property</th>
+          <th style="text-align: left">Value</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Trigger distance</td>
+          <td style="text-align: left">Bullets passing within 2 meters of player camera</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Visual intensity</td>
+          <td style="text-align: left">Scales with number of near-miss bullets (1 bullet = 20% effect, 5+ = 100%)</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Effect</td>
+          <td style="text-align: left">Radial blur (radius 100px from edges), slight chromatic aberration, desaturation</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Recovery</td>
+          <td style="text-align: left">Effect fades over 1.5 seconds after last near-miss</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Gameplay impact</td>
+          <td style="text-align: left">Increased weapon sway while suppressed. No aim penalty</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Audio</td>
+          <td style="text-align: left">Bullet crack sounds, muffled hearing (low-pass filter on other sounds)</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2>Audio-Visual Sync Reference<span class="hx:absolute hx:-mt-20" id="audio-visual-sync-reference"></span>
+    <a href="#audio-visual-sync-reference" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><p>Every notification type has paired audio-visual feedback:</p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Event</th>
+          <th style="text-align: left">Visual</th>
+          <th style="text-align: left">Audio</th>
+          <th style="text-align: left">Haptic (Controller)</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Kill confirmed</td>
+          <td style="text-align: left">Hit marker → green + kill feed entry</td>
+          <td style="text-align: left">Kill sound (distinct &ldquo;thunk&rdquo;)</td>
+          <td style="text-align: left">Strong single pulse (300ms)</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Headshot kill</td>
+          <td style="text-align: left">Hit marker → red flash + headshot icon in kill feed</td>
+          <td style="text-align: left">&ldquo;Ding&rdquo; + kill sound</td>
+          <td style="text-align: left">Double pulse</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">You were hit</td>
+          <td style="text-align: left">Directional damage indicator + blood vignette</td>
+          <td style="text-align: left">Impact sound + grunt</td>
+          <td style="text-align: left">Sharp short pulse</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">You died</td>
+          <td style="text-align: left">Screen fades to gray + death overlay</td>
+          <td style="text-align: left">Flatline tone + fade to silence</td>
+          <td style="text-align: left">Long rumble (500ms)</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Quest complete</td>
+          <td style="text-align: left">Toast notification + XP flyout number</td>
+          <td style="text-align: left">Success chime (3-note ascending)</td>
+          <td style="text-align: left">Double tap</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Item picked up</td>
+          <td style="text-align: left">Brief item icon flash near hands</td>
+          <td style="text-align: left">Item-specific sound (metal, fabric, glass)</td>
+          <td style="text-align: left">Light tap</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Extraction started</td>
+          <td style="text-align: left">Green progress circle + screen tint</td>
+          <td style="text-align: left">Radio crackle + helicopter approach</td>
+          <td style="text-align: left">Slow building rumble</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Level up</td>
+          <td style="text-align: left">Full-screen flash + level number overlay</td>
+          <td style="text-align: left">Fanfare (4-note ascending, brass)</td>
+          <td style="text-align: left">Strong rumble pattern</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Empty magazine</td>
+          <td style="text-align: left">&ldquo;RELOAD&rdquo; text flash + red ammo counter</td>
+          <td style="text-align: left">Magazine click + dry fire sound</td>
+          <td style="text-align: left">Triple tap</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Low health</td>
+          <td style="text-align: left">Red vignette + heartbeat pulse</td>
+          <td style="text-align: left">Heartbeat audio + labored breathing</td>
+          <td style="text-align: left">Rhythmic pulse (matching BPM)</td>
+      </tr>
+  </tbody>
+</table>
 
         </div>
         <div class="hx:mt-16"></div><div class="hx:mb-8 hx:flex hx:items-center hx:border-t hx:pt-8 hx:border-gray-200 hx:dark:border-neutral-800 hx:contrast-more:border-neutral-400 hx:dark:contrast-more:border-neutral-400 hx:print:hidden"><a
-        href="/ExtractionDocument/gdd_technical/systems/audiosystem.html"
-        title="Audio System - Technical Specification"
+        href="/ExtractionDocument/gdd_design/ui_ux/hud_design.html"
+        title="In-Raid HUD Design"
         class="hx:flex hx:max-w-[50%] hx:items-center hx:gap-1 hx:py-4 hx:text-base hx:font-medium hx:text-gray-600 hx:transition-colors [word-break:break-word] hx:hover:text-primary-600 hx:dark:text-gray-300 hx:md:text-lg hx:ltr:pr-4 hx:rtl:pl-4"
-      ><svg class="hx:inline hx:h-5 hx:shrink-0 hx:ltr:rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>Audio System - Technical Specification</a><a
-        href="/ExtractionDocument/gdd_technical/systems/liveopssystem.html"
-        title="Live Operations System - Technical Specification"
+      ><svg class="hx:inline hx:h-5 hx:shrink-0 hx:ltr:rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>In-Raid HUD Design</a><a
+        href="/ExtractionDocument/gdd_design/ui_ux/ux_flows.html"
+        title="UX Flows &amp; Wireframes"
         class="hx:flex hx:max-w-[50%] hx:items-center hx:gap-1 hx:py-4 hx:text-base hx:font-medium hx:text-gray-600 hx:transition-colors [word-break:break-word] hx:hover:text-primary-600 hx:dark:text-gray-300 hx:md:text-lg hx:ltr:ml-auto hx:ltr:pl-4 hx:ltr:text-right hx:rtl:mr-auto hx:rtl:pr-4 hx:rtl:text-left"
-      >Live Operations System - Technical Specification<svg class="hx:inline hx:h-5 hx:shrink-0 hx:rtl:-rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg></a></div>
+      >UX Flows &amp; Wireframes<svg class="hx:inline hx:h-5 hx:shrink-0 hx:rtl:-rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg></a></div>
       </main>
     </article>
   </div>

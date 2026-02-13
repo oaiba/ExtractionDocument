@@ -9,8 +9,8 @@
 <link rel="apple-touch-icon" href="/ExtractionDocument/apple-touch-icon.png" sizes="180x180" />
 <link fetchpriority="low" href="/ExtractionDocument/site.webmanifest" rel="manifest" />
 <title>User Experience (UX) – Extraction Document</title>
-  <meta name="description" content="💆 Designing the InteractionGood UX is invisible. It gets the player into the game faster and makes complex systems intuitive. In a cross-platform topdown extraction shooter, every millisecond and every input counts.
-Core UX Pillars1. Speed Over ComplexityMinimal Clicks: Every action should take the minimum number of inputs across all platforms Quick Access: Critical systems (Inventory, Map, Comms) accessible within 2 inputs maximum Smart Defaults: Pre-select common choices to reduce decision fatigue 2. Multi-Platform FirstConsole First Philosophy: Design for gamepad D-Pad navigation, then scale up for PC Touch Optimization: Mobile requires 44x44px minimum touch targets (Apple HIG standard) Unified Visual Language: Same icons, colors, and feedback across all platforms 3. Tension &amp; FeedbackClear Feedback: Every button press must have visual/audio/haptic confirmation Risk Communication: UI must clearly show “you’re exposed” vs “you’re safe” Status at a Glance: Health, ammo, squad status visible without opening menus Platform-Specific ConsiderationsPC (Keyboard &#43; Mouse)Hotkeys for all major actions (I = Inventory, M = Map, TAB = Scoreboard) Cursor-based interactions for precision looting Scalable UI for 1080p to 4K displays FOV slider (60-120 degrees) Console (Controller)Radial menus for item selection (hold button &#43; analog stick direction) Contextual actions on single button press (A/X for “Use/Pickup/Open”) Safe zone margins for different TV overscan settings Aim assist options (configurable) Mobile (Touch)Customizable HUD layout (players can drag elements) Gyroscope aiming toggle Simplified inventory (swipe to sort, tap to equip) Auto-run toggle to reduce constant thumb pressure Extraction Shooter-Specific UXPre-Raid FlowLoadout Selection: Visual comparison of gear stats Map Preview: Show extraction points and danger zones Squad Formation: Clear roles and ready status Insurance: One-click insurance for high-value items In-Raid EssentialsExtraction Timer: Persistent countdown to final extract window Threat Level Indicator: Visual/audio cues for nearby players/AI Secure Container Access: Quick-slot protected items mid-raid Weight System: Real-time feedback on movement speed penalty Post-Raid DebriefLoot Summary: Rarity-coded item list with sell value XP Breakdown: Show what actions earned experience Quest Progress: Track objectives completed this session Replay Highlights: Death cam showing who/how you died 🎯 Accessibility StandardsFollowing WCAG 2.1 Level AA compliance:" /><link rel="canonical" href="https://oaiba.github.io/ExtractionDocument/gdd_design/ui_ux/index.html" itemprop="url" />
+  <meta name="description" content="Designing the InteractionGood UX is invisible. It gets the player into the game faster and makes complex systems intuitive. In a cross-platform top-down extraction shooter, every millisecond and every input counts.
+Core UX Pillars1. Speed Over ComplexityMinimal Clicks: Every action should take the minimum number of inputs across all platforms Quick Access: Critical systems (Inventory, Map, Comms) accessible within 2 inputs maximum Smart Defaults: Pre-select common choices to reduce decision fatigue 2. Multi-Platform FirstConsole First Philosophy: Design for gamepad D-Pad navigation, then scale up for PC Touch Optimization: Mobile requires 44x44px minimum touch targets (Apple HIG standard) Unified Visual Language: Same icons, colors, and feedback across all platforms 3. Tension and FeedbackClear Feedback: Every button press must have visual/audio/haptic confirmation Risk Communication: UI must clearly show “you’re exposed” vs. “you’re safe” Status at a Glance: Health, ammo, squad status visible without opening menus Platform-Specific ConsiderationsPC (Keyboard &#43; Mouse)Hotkeys for all major actions (I = Inventory, M = Map, TAB = Scoreboard) Cursor-based interactions for precision looting Scalable UI for 1080p to 4K displays FOV slider (60-120 degrees) Console (Controller)Radial menus for item selection (hold button &#43; analog stick direction) Contextual actions on single button press (A/X for “Use/Pickup/Open”) Safe zone margins for different TV overscan settings Aim assist options (configurable) Mobile (Touch)Customizable HUD layout (players can drag elements) Gyroscope aiming toggle Simplified inventory (swipe to sort, tap to equip) Auto-run toggle to reduce constant thumb pressure Extraction Shooter-Specific UXPre-Raid FlowLoadout Selection: Visual comparison of gear stats Map Preview: Show extraction points and danger zones Squad Formation: Clear roles and ready status Insurance: One-click insurance for high-value items In-Raid EssentialsExtraction Timer: Persistent countdown to final extract window Threat Level Indicator: Visual/audio cues for nearby players/AI Secure Container Access: Quick-slot protected items mid-raid Weight System: Real-time feedback on movement speed penalty Post-Raid DebriefLoot Summary: Rarity-coded item list with sell value XP Breakdown: Show what actions earned experience Quest Progress: Track objectives completed this session Replay Highlights: Death cam showing who/how you died Accessibility StandardsFollowing WCAG 2.1 Level AA compliance:" /><link rel="canonical" href="https://oaiba.github.io/ExtractionDocument/gdd_design/ui_ux/index.html" itemprop="url" />
 
 <meta property="og:title" content="User Experience (UX)">
 <meta
@@ -29,13 +29,13 @@ Core UX Pillars1. Speed Over ComplexityMinimal Clicks: Every action should tak
 
 
   <meta itemprop="name" content="User Experience (UX)">
-  <meta itemprop="description" content="💆 Designing the InteractionGood UX is invisible. It gets the player into the game faster and makes complex systems intuitive. In a cross-platform topdown extraction shooter, every millisecond and every input counts.
-Core UX Pillars1. Speed Over ComplexityMinimal Clicks: Every action should take the minimum number of inputs across all platforms Quick Access: Critical systems (Inventory, Map, Comms) accessible within 2 inputs maximum Smart Defaults: Pre-select common choices to reduce decision fatigue 2. Multi-Platform FirstConsole First Philosophy: Design for gamepad D-Pad navigation, then scale up for PC Touch Optimization: Mobile requires 44x44px minimum touch targets (Apple HIG standard) Unified Visual Language: Same icons, colors, and feedback across all platforms 3. Tension &amp; FeedbackClear Feedback: Every button press must have visual/audio/haptic confirmation Risk Communication: UI must clearly show “you’re exposed” vs “you’re safe” Status at a Glance: Health, ammo, squad status visible without opening menus Platform-Specific ConsiderationsPC (Keyboard &#43; Mouse)Hotkeys for all major actions (I = Inventory, M = Map, TAB = Scoreboard) Cursor-based interactions for precision looting Scalable UI for 1080p to 4K displays FOV slider (60-120 degrees) Console (Controller)Radial menus for item selection (hold button &#43; analog stick direction) Contextual actions on single button press (A/X for “Use/Pickup/Open”) Safe zone margins for different TV overscan settings Aim assist options (configurable) Mobile (Touch)Customizable HUD layout (players can drag elements) Gyroscope aiming toggle Simplified inventory (swipe to sort, tap to equip) Auto-run toggle to reduce constant thumb pressure Extraction Shooter-Specific UXPre-Raid FlowLoadout Selection: Visual comparison of gear stats Map Preview: Show extraction points and danger zones Squad Formation: Clear roles and ready status Insurance: One-click insurance for high-value items In-Raid EssentialsExtraction Timer: Persistent countdown to final extract window Threat Level Indicator: Visual/audio cues for nearby players/AI Secure Container Access: Quick-slot protected items mid-raid Weight System: Real-time feedback on movement speed penalty Post-Raid DebriefLoot Summary: Rarity-coded item list with sell value XP Breakdown: Show what actions earned experience Quest Progress: Track objectives completed this session Replay Highlights: Death cam showing who/how you died 🎯 Accessibility StandardsFollowing WCAG 2.1 Level AA compliance:">
-  <meta itemprop="wordCount" content="527">
+  <meta itemprop="description" content="Designing the InteractionGood UX is invisible. It gets the player into the game faster and makes complex systems intuitive. In a cross-platform top-down extraction shooter, every millisecond and every input counts.
+Core UX Pillars1. Speed Over ComplexityMinimal Clicks: Every action should take the minimum number of inputs across all platforms Quick Access: Critical systems (Inventory, Map, Comms) accessible within 2 inputs maximum Smart Defaults: Pre-select common choices to reduce decision fatigue 2. Multi-Platform FirstConsole First Philosophy: Design for gamepad D-Pad navigation, then scale up for PC Touch Optimization: Mobile requires 44x44px minimum touch targets (Apple HIG standard) Unified Visual Language: Same icons, colors, and feedback across all platforms 3. Tension and FeedbackClear Feedback: Every button press must have visual/audio/haptic confirmation Risk Communication: UI must clearly show “you’re exposed” vs. “you’re safe” Status at a Glance: Health, ammo, squad status visible without opening menus Platform-Specific ConsiderationsPC (Keyboard &#43; Mouse)Hotkeys for all major actions (I = Inventory, M = Map, TAB = Scoreboard) Cursor-based interactions for precision looting Scalable UI for 1080p to 4K displays FOV slider (60-120 degrees) Console (Controller)Radial menus for item selection (hold button &#43; analog stick direction) Contextual actions on single button press (A/X for “Use/Pickup/Open”) Safe zone margins for different TV overscan settings Aim assist options (configurable) Mobile (Touch)Customizable HUD layout (players can drag elements) Gyroscope aiming toggle Simplified inventory (swipe to sort, tap to equip) Auto-run toggle to reduce constant thumb pressure Extraction Shooter-Specific UXPre-Raid FlowLoadout Selection: Visual comparison of gear stats Map Preview: Show extraction points and danger zones Squad Formation: Clear roles and ready status Insurance: One-click insurance for high-value items In-Raid EssentialsExtraction Timer: Persistent countdown to final extract window Threat Level Indicator: Visual/audio cues for nearby players/AI Secure Container Access: Quick-slot protected items mid-raid Weight System: Real-time feedback on movement speed penalty Post-Raid DebriefLoot Summary: Rarity-coded item list with sell value XP Breakdown: Show what actions earned experience Quest Progress: Track objectives completed this session Replay Highlights: Death cam showing who/how you died Accessibility StandardsFollowing WCAG 2.1 Level AA compliance:">
+  <meta itemprop="wordCount" content="559">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="User Experience (UX)">
-  <meta name="twitter:description" content="💆 Designing the InteractionGood UX is invisible. It gets the player into the game faster and makes complex systems intuitive. In a cross-platform topdown extraction shooter, every millisecond and every input counts.
-Core UX Pillars1. Speed Over ComplexityMinimal Clicks: Every action should take the minimum number of inputs across all platforms Quick Access: Critical systems (Inventory, Map, Comms) accessible within 2 inputs maximum Smart Defaults: Pre-select common choices to reduce decision fatigue 2. Multi-Platform FirstConsole First Philosophy: Design for gamepad D-Pad navigation, then scale up for PC Touch Optimization: Mobile requires 44x44px minimum touch targets (Apple HIG standard) Unified Visual Language: Same icons, colors, and feedback across all platforms 3. Tension &amp; FeedbackClear Feedback: Every button press must have visual/audio/haptic confirmation Risk Communication: UI must clearly show “you’re exposed” vs “you’re safe” Status at a Glance: Health, ammo, squad status visible without opening menus Platform-Specific ConsiderationsPC (Keyboard &#43; Mouse)Hotkeys for all major actions (I = Inventory, M = Map, TAB = Scoreboard) Cursor-based interactions for precision looting Scalable UI for 1080p to 4K displays FOV slider (60-120 degrees) Console (Controller)Radial menus for item selection (hold button &#43; analog stick direction) Contextual actions on single button press (A/X for “Use/Pickup/Open”) Safe zone margins for different TV overscan settings Aim assist options (configurable) Mobile (Touch)Customizable HUD layout (players can drag elements) Gyroscope aiming toggle Simplified inventory (swipe to sort, tap to equip) Auto-run toggle to reduce constant thumb pressure Extraction Shooter-Specific UXPre-Raid FlowLoadout Selection: Visual comparison of gear stats Map Preview: Show extraction points and danger zones Squad Formation: Clear roles and ready status Insurance: One-click insurance for high-value items In-Raid EssentialsExtraction Timer: Persistent countdown to final extract window Threat Level Indicator: Visual/audio cues for nearby players/AI Secure Container Access: Quick-slot protected items mid-raid Weight System: Real-time feedback on movement speed penalty Post-Raid DebriefLoot Summary: Rarity-coded item list with sell value XP Breakdown: Show what actions earned experience Quest Progress: Track objectives completed this session Replay Highlights: Death cam showing who/how you died 🎯 Accessibility StandardsFollowing WCAG 2.1 Level AA compliance:">
+  <meta name="twitter:description" content="Designing the InteractionGood UX is invisible. It gets the player into the game faster and makes complex systems intuitive. In a cross-platform top-down extraction shooter, every millisecond and every input counts.
+Core UX Pillars1. Speed Over ComplexityMinimal Clicks: Every action should take the minimum number of inputs across all platforms Quick Access: Critical systems (Inventory, Map, Comms) accessible within 2 inputs maximum Smart Defaults: Pre-select common choices to reduce decision fatigue 2. Multi-Platform FirstConsole First Philosophy: Design for gamepad D-Pad navigation, then scale up for PC Touch Optimization: Mobile requires 44x44px minimum touch targets (Apple HIG standard) Unified Visual Language: Same icons, colors, and feedback across all platforms 3. Tension and FeedbackClear Feedback: Every button press must have visual/audio/haptic confirmation Risk Communication: UI must clearly show “you’re exposed” vs. “you’re safe” Status at a Glance: Health, ammo, squad status visible without opening menus Platform-Specific ConsiderationsPC (Keyboard &#43; Mouse)Hotkeys for all major actions (I = Inventory, M = Map, TAB = Scoreboard) Cursor-based interactions for precision looting Scalable UI for 1080p to 4K displays FOV slider (60-120 degrees) Console (Controller)Radial menus for item selection (hold button &#43; analog stick direction) Contextual actions on single button press (A/X for “Use/Pickup/Open”) Safe zone margins for different TV overscan settings Aim assist options (configurable) Mobile (Touch)Customizable HUD layout (players can drag elements) Gyroscope aiming toggle Simplified inventory (swipe to sort, tap to equip) Auto-run toggle to reduce constant thumb pressure Extraction Shooter-Specific UXPre-Raid FlowLoadout Selection: Visual comparison of gear stats Map Preview: Show extraction points and danger zones Squad Formation: Clear roles and ready status Insurance: One-click insurance for high-value items In-Raid EssentialsExtraction Timer: Persistent countdown to final extract window Threat Level Indicator: Visual/audio cues for nearby players/AI Secure Container Access: Quick-slot protected items mid-raid Weight System: Real-time feedback on movement speed penalty Post-Raid DebriefLoot Summary: Rarity-coded item list with sell value XP Breakdown: Show what actions earned experience Quest Progress: Track objectives completed this session Replay Highlights: Death cam showing who/how you died Accessibility StandardsFollowing WCAG 2.1 Level AA compliance:">
 
     <link rel="preload" href="/ExtractionDocument/css/compiled/main.min.2dd785f1e80a1395818c74c83fbfb60704ab5a51c303c1ee199e6a0fd099cd06.css" as="style" integrity="sha256-LdeF8egKE5WBjHTIP7&#43;2BwSrWlHDA8HuGZ5qD9CZzQY=" />
     <link href="/ExtractionDocument/css/compiled/main.min.2dd785f1e80a1395818c74c83fbfb60704ab5a51c303c1ee199e6a0fd099cd06.css" rel="stylesheet" integrity="sha256-LdeF8egKE5WBjHTIP7&#43;2BwSrWlHDA8HuGZ5qD9CZzQY=" />
@@ -570,20 +570,24 @@ Core UX Pillars1. Speed Over ComplexityMinimal Clicks: Every action should tak
 
 <ul
     class='hx:flex hx:flex-col hx:gap-1 hx:relative hx:before:absolute hx:before:inset-y-1 hx:before:w-px hx:before:bg-gray-200 hx:before:content-[""] hx:dark:before:bg-neutral-800 hx:ltr:pl-3 hx:ltr:before:left-0 hx:rtl:pr-3 hx:rtl:before:right-0 hx:ltr:ml-3 hx:rtl:mr-3'><li>
-        <a href="#-designing-the-interaction"
-            class="hx:flex hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [word-break:break-word] hx:cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] hx:contrast-more:border hx:gap-2 hx:before:opacity-25 hx:before:content-['#'] hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:text-gray-900 hx:contrast-more:dark:text-gray-50 hx:contrast-more:border-transparent hx:contrast-more:hover:border-gray-900 hx:contrast-more:dark:hover:border-gray-50">💆 Designing the Interaction</a>
+        <a href="#designing-the-interaction"
+            class="hx:flex hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [word-break:break-word] hx:cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] hx:contrast-more:border hx:gap-2 hx:before:opacity-25 hx:before:content-['#'] hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:text-gray-900 hx:contrast-more:dark:text-gray-50 hx:contrast-more:border-transparent hx:contrast-more:hover:border-gray-900 hx:contrast-more:dark:hover:border-gray-50">Designing the Interaction</a>
     </li>
     <li>
-        <a href="#-accessibility-standards"
-            class="hx:flex hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [word-break:break-word] hx:cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] hx:contrast-more:border hx:gap-2 hx:before:opacity-25 hx:before:content-['#'] hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:text-gray-900 hx:contrast-more:dark:text-gray-50 hx:contrast-more:border-transparent hx:contrast-more:hover:border-gray-900 hx:contrast-more:dark:hover:border-gray-50">🎯 Accessibility Standards</a>
+        <a href="#accessibility-standards"
+            class="hx:flex hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [word-break:break-word] hx:cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] hx:contrast-more:border hx:gap-2 hx:before:opacity-25 hx:before:content-['#'] hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:text-gray-900 hx:contrast-more:dark:text-gray-50 hx:contrast-more:border-transparent hx:contrast-more:hover:border-gray-900 hx:contrast-more:dark:hover:border-gray-50">Accessibility Standards</a>
     </li>
     <li>
-        <a href="#-cross-platform-testing-matrix"
-            class="hx:flex hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [word-break:break-word] hx:cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] hx:contrast-more:border hx:gap-2 hx:before:opacity-25 hx:before:content-['#'] hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:text-gray-900 hx:contrast-more:dark:text-gray-50 hx:contrast-more:border-transparent hx:contrast-more:hover:border-gray-900 hx:contrast-more:dark:hover:border-gray-50">📊 Cross-Platform Testing Matrix</a>
+        <a href="#cross-platform-testing-matrix"
+            class="hx:flex hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [word-break:break-word] hx:cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] hx:contrast-more:border hx:gap-2 hx:before:opacity-25 hx:before:content-['#'] hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:text-gray-900 hx:contrast-more:dark:text-gray-50 hx:contrast-more:border-transparent hx:contrast-more:hover:border-gray-900 hx:contrast-more:dark:hover:border-gray-50">Cross-Platform Testing Matrix</a>
     </li>
     <li>
-        <a href="#-continuous-improvement"
-            class="hx:flex hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [word-break:break-word] hx:cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] hx:contrast-more:border hx:gap-2 hx:before:opacity-25 hx:before:content-['#'] hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:text-gray-900 hx:contrast-more:dark:text-gray-50 hx:contrast-more:border-transparent hx:contrast-more:hover:border-gray-900 hx:contrast-more:dark:hover:border-gray-50">🔄 Continuous Improvement</a>
+        <a href="#section-contents"
+            class="hx:flex hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [word-break:break-word] hx:cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] hx:contrast-more:border hx:gap-2 hx:before:opacity-25 hx:before:content-['#'] hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:text-gray-900 hx:contrast-more:dark:text-gray-50 hx:contrast-more:border-transparent hx:contrast-more:hover:border-gray-900 hx:contrast-more:dark:hover:border-gray-50">Section Contents</a>
+    </li>
+    <li>
+        <a href="#continuous-improvement"
+            class="hx:flex hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [word-break:break-word] hx:cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] hx:contrast-more:border hx:gap-2 hx:before:opacity-25 hx:before:content-['#'] hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:text-gray-900 hx:contrast-more:dark:text-gray-50 hx:contrast-more:border-transparent hx:contrast-more:hover:border-gray-900 hx:contrast-more:dark:hover:border-gray-50">Continuous Improvement</a>
     </li>
     </ul>
 
@@ -591,6 +595,12 @@ Core UX Pillars1. Speed Over ComplexityMinimal Clicks: Every action should tak
     <ul
         class='hx:relative hx:flex hx:flex-col hx:gap-1 hx:before:absolute hx:before:inset-y-1 hx:before:w-px hx:before:bg-gray-200 hx:before:content-[""] hx:ltr:ml-3 hx:ltr:pl-3 hx:ltr:before:left-0 hx:rtl:mr-3 hx:rtl:pr-3 hx:rtl:before:right-0 hx:dark:before:bg-neutral-800'><li class="hx:flex hx:flex-col "><a class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
       hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:text-gray-900 hx:contrast-more:dark:text-gray-50 hx:contrast-more:border-transparent hx:contrast-more:hover:border-gray-900 hx:contrast-more:dark:hover:border-gray-50" href="/ExtractionDocument/gdd_design/ui_ux/menus.html" >Menus &amp; Screens</a>
+            
+        </li><li class="hx:flex hx:flex-col "><a class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:text-gray-900 hx:contrast-more:dark:text-gray-50 hx:contrast-more:border-transparent hx:contrast-more:hover:border-gray-900 hx:contrast-more:dark:hover:border-gray-50" href="/ExtractionDocument/gdd_design/ui_ux/hud_design.html" >In-Raid HUD Design</a>
+            
+        </li><li class="hx:flex hx:flex-col "><a class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:text-gray-900 hx:contrast-more:dark:text-gray-50 hx:contrast-more:border-transparent hx:contrast-more:hover:border-gray-900 hx:contrast-more:dark:hover:border-gray-50" href="/ExtractionDocument/gdd_design/ui_ux/notification_systems.html" >Notification &amp; Feedback Systems</a>
             
         </li><li class="hx:flex hx:flex-col "><a class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
       hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:text-gray-900 hx:contrast-more:dark:text-gray-50 hx:contrast-more:border-transparent hx:contrast-more:hover:border-gray-900 hx:contrast-more:dark:hover:border-gray-50" href="/ExtractionDocument/gdd_design/ui_ux/ux_flows.html" >UX Flows &amp; Wireframes</a>
@@ -1361,6 +1371,12 @@ Core UX Pillars1. Speed Over ComplexityMinimal Clicks: Every action should tak
       hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:text-gray-900 hx:contrast-more:dark:text-gray-50 hx:contrast-more:border-transparent hx:contrast-more:hover:border-gray-900 hx:contrast-more:dark:hover:border-gray-50" href="/ExtractionDocument/gdd_design/ui_ux/menus.html" >Menus &amp; Screens</a>
             
         </li><li class="hx:flex hx:flex-col "><a class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:text-gray-900 hx:contrast-more:dark:text-gray-50 hx:contrast-more:border-transparent hx:contrast-more:hover:border-gray-900 hx:contrast-more:dark:hover:border-gray-50" href="/ExtractionDocument/gdd_design/ui_ux/hud_design.html" >In-Raid HUD Design</a>
+            
+        </li><li class="hx:flex hx:flex-col "><a class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:text-gray-900 hx:contrast-more:dark:text-gray-50 hx:contrast-more:border-transparent hx:contrast-more:hover:border-gray-900 hx:contrast-more:dark:hover:border-gray-50" href="/ExtractionDocument/gdd_design/ui_ux/notification_systems.html" >Notification &amp; Feedback Systems</a>
+            
+        </li><li class="hx:flex hx:flex-col "><a class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
       hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:text-gray-900 hx:contrast-more:dark:text-gray-50 hx:contrast-more:border-transparent hx:contrast-more:hover:border-gray-900 hx:contrast-more:dark:hover:border-gray-50" href="/ExtractionDocument/gdd_design/ui_ux/ux_flows.html" >UX Flows &amp; Wireframes</a>
             
         </li><li class="hx:flex hx:flex-col "><a class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
@@ -1754,7 +1770,7 @@ Core UX Pillars1. Speed Over ComplexityMinimal Clicks: Every action should tak
 <nav class="hextra-toc hx:order-last hx:hidden hx:w-64 hx:shrink-0 hx:xl:block hx:print:hidden hx:px-4" aria-label="table of contents">
     <div class="hextra-scrollbar hx:sticky hx:top-16 hx:overflow-y-auto hx:pr-4 hx:pt-6 hx:text-sm [hyphens:auto] hx:max-h-[calc(100vh-var(--navbar-height)-env(safe-area-inset-bottom))] hx:ltr:-mr-4 hx:rtl:-ml-4"><p class="hx:mb-4 hx:font-semibold hx:tracking-tight">On this page</p><ul>
       <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
-        <a class="hx:font-medium hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word" href="#-designing-the-interaction">💆 Designing the Interaction
+        <a class="hx:font-medium hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word" href="#designing-the-interaction">Designing the Interaction
         </a>
       </li>
       <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
@@ -1770,7 +1786,7 @@ Core UX Pillars1. Speed Over ComplexityMinimal Clicks: Every action should tak
         </a>
       </li>
       <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
-        <a class="hx:ltr:pl-8 hx:rtl:pr-8 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word" href="#3-tension--feedback">3. Tension &amp; Feedback
+        <a class="hx:ltr:pl-8 hx:rtl:pr-8 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word" href="#3-tension-and-feedback">3. Tension and Feedback
         </a>
       </li>
       <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
@@ -1806,15 +1822,19 @@ Core UX Pillars1. Speed Over ComplexityMinimal Clicks: Every action should tak
         </a>
       </li>
       <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
-        <a class="hx:font-medium hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word" href="#-accessibility-standards">🎯 Accessibility Standards
+        <a class="hx:font-medium hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word" href="#accessibility-standards">Accessibility Standards
         </a>
       </li>
       <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
-        <a class="hx:font-medium hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word" href="#-cross-platform-testing-matrix">📊 Cross-Platform Testing Matrix
+        <a class="hx:font-medium hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word" href="#cross-platform-testing-matrix">Cross-Platform Testing Matrix
         </a>
       </li>
       <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
-        <a class="hx:font-medium hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word" href="#-continuous-improvement">🔄 Continuous Improvement
+        <a class="hx:font-medium hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word" href="#section-contents">Section Contents
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:font-medium hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word" href="#continuous-improvement">Continuous Improvement
         </a>
       </li></ul>
       <div class="hx:mt-8 hx:border-t hx:bg-white hx:pt-8 hx:shadow-[0_-12px_16px_white] hx:dark:bg-dark hx:dark:shadow-[0_-12px_16px_#111] hx:sticky hx:bottom-0 hx:flex hx:flex-col hx:items-start hx:gap-2 hx:pb-8 hx:border-gray-200 hx:dark:border-neutral-800 hx:contrast-more:border-t hx:contrast-more:border-neutral-400 hx:contrast-more:shadow-none hx:contrast-more:dark:border-neutral-400">
@@ -1844,43 +1864,43 @@ Core UX Pillars1. Speed Over ComplexityMinimal Clicks: Every action should tak
             
           </div>
           
-          <h2>💆 Designing the Interaction<span class="hx:absolute hx:-mt-20" id="-designing-the-interaction"></span>
-    <a href="#-designing-the-interaction" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><p>Good UX is invisible. It gets the player into the game faster and makes complex systems intuitive. In a cross-platform topdown extraction shooter, every millisecond and every input counts.</p>
+          <h2>Designing the Interaction<span class="hx:absolute hx:-mt-20" id="designing-the-interaction"></span>
+    <a href="#designing-the-interaction" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><p>Good UX is invisible. It gets the player into the game faster and makes complex systems intuitive. In a cross-platform top-down extraction shooter, every millisecond and every input counts.</p>
 <h3>Core UX Pillars<span class="hx:absolute hx:-mt-20" id="core-ux-pillars"></span>
-    <a href="#core-ux-pillars" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><h4><strong>1. Speed Over Complexity</strong><span class="hx:absolute hx:-mt-20" id="1-speed-over-complexity"></span>
+    <a href="#core-ux-pillars" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><h4>1. Speed Over Complexity<span class="hx:absolute hx:-mt-20" id="1-speed-over-complexity"></span>
     <a href="#1-speed-over-complexity" class="subheading-anchor" aria-label="Permalink for this section"></a></h4><ul>
-<li><strong>Minimal Clicks:</strong> Every action should take the minimum number of inputs across all platforms</li>
-<li><strong>Quick Access:</strong> Critical systems (Inventory, Map, Comms) accessible within 2 inputs maximum</li>
-<li><strong>Smart Defaults:</strong> Pre-select common choices to reduce decision fatigue</li>
+<li><strong>Minimal Clicks</strong>: Every action should take the minimum number of inputs across all platforms</li>
+<li><strong>Quick Access</strong>: Critical systems (Inventory, Map, Comms) accessible within 2 inputs maximum</li>
+<li><strong>Smart Defaults</strong>: Pre-select common choices to reduce decision fatigue</li>
 </ul>
-<h4><strong>2. Multi-Platform First</strong><span class="hx:absolute hx:-mt-20" id="2-multi-platform-first"></span>
+<h4>2. Multi-Platform First<span class="hx:absolute hx:-mt-20" id="2-multi-platform-first"></span>
     <a href="#2-multi-platform-first" class="subheading-anchor" aria-label="Permalink for this section"></a></h4><ul>
-<li><strong>Console First Philosophy:</strong> Design for gamepad D-Pad navigation, then scale up for PC</li>
-<li><strong>Touch Optimization:</strong> Mobile requires 44x44px minimum touch targets (Apple HIG standard)</li>
-<li><strong>Unified Visual Language:</strong> Same icons, colors, and feedback across all platforms</li>
+<li><strong>Console First Philosophy</strong>: Design for gamepad D-Pad navigation, then scale up for PC</li>
+<li><strong>Touch Optimization</strong>: Mobile requires 44x44px minimum touch targets (Apple HIG standard)</li>
+<li><strong>Unified Visual Language</strong>: Same icons, colors, and feedback across all platforms</li>
 </ul>
-<h4><strong>3. Tension &amp; Feedback</strong><span class="hx:absolute hx:-mt-20" id="3-tension--feedback"></span>
-    <a href="#3-tension--feedback" class="subheading-anchor" aria-label="Permalink for this section"></a></h4><ul>
-<li><strong>Clear Feedback:</strong> Every button press must have visual/audio/haptic confirmation</li>
-<li><strong>Risk Communication:</strong> UI must clearly show &ldquo;you&rsquo;re exposed&rdquo; vs &ldquo;you&rsquo;re safe&rdquo;</li>
-<li><strong>Status at a Glance:</strong> Health, ammo, squad status visible without opening menus</li>
+<h4>3. Tension and Feedback<span class="hx:absolute hx:-mt-20" id="3-tension-and-feedback"></span>
+    <a href="#3-tension-and-feedback" class="subheading-anchor" aria-label="Permalink for this section"></a></h4><ul>
+<li><strong>Clear Feedback</strong>: Every button press must have visual/audio/haptic confirmation</li>
+<li><strong>Risk Communication</strong>: UI must clearly show &ldquo;you&rsquo;re exposed&rdquo; vs. &ldquo;you&rsquo;re safe&rdquo;</li>
+<li><strong>Status at a Glance</strong>: Health, ammo, squad status visible without opening menus</li>
 </ul>
 <h3>Platform-Specific Considerations<span class="hx:absolute hx:-mt-20" id="platform-specific-considerations"></span>
-    <a href="#platform-specific-considerations" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><h4><strong>PC (Keyboard + Mouse)</strong><span class="hx:absolute hx:-mt-20" id="pc-keyboard--mouse"></span>
+    <a href="#platform-specific-considerations" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><h4>PC (Keyboard + Mouse)<span class="hx:absolute hx:-mt-20" id="pc-keyboard--mouse"></span>
     <a href="#pc-keyboard--mouse" class="subheading-anchor" aria-label="Permalink for this section"></a></h4><ul>
 <li>Hotkeys for all major actions (I = Inventory, M = Map, TAB = Scoreboard)</li>
 <li>Cursor-based interactions for precision looting</li>
 <li>Scalable UI for 1080p to 4K displays</li>
 <li>FOV slider (60-120 degrees)</li>
 </ul>
-<h4><strong>Console (Controller)</strong><span class="hx:absolute hx:-mt-20" id="console-controller"></span>
+<h4>Console (Controller)<span class="hx:absolute hx:-mt-20" id="console-controller"></span>
     <a href="#console-controller" class="subheading-anchor" aria-label="Permalink for this section"></a></h4><ul>
 <li>Radial menus for item selection (hold button + analog stick direction)</li>
 <li>Contextual actions on single button press (A/X for &ldquo;Use/Pickup/Open&rdquo;)</li>
 <li>Safe zone margins for different TV overscan settings</li>
 <li>Aim assist options (configurable)</li>
 </ul>
-<h4><strong>Mobile (Touch)</strong><span class="hx:absolute hx:-mt-20" id="mobile-touch"></span>
+<h4>Mobile (Touch)<span class="hx:absolute hx:-mt-20" id="mobile-touch"></span>
     <a href="#mobile-touch" class="subheading-anchor" aria-label="Permalink for this section"></a></h4><ul>
 <li>Customizable HUD layout (players can drag elements)</li>
 <li>Gyroscope aiming toggle</li>
@@ -1888,40 +1908,40 @@ Core UX Pillars1. Speed Over ComplexityMinimal Clicks: Every action should tak
 <li>Auto-run toggle to reduce constant thumb pressure</li>
 </ul>
 <h3>Extraction Shooter-Specific UX<span class="hx:absolute hx:-mt-20" id="extraction-shooter-specific-ux"></span>
-    <a href="#extraction-shooter-specific-ux" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><h4><strong>Pre-Raid Flow</strong><span class="hx:absolute hx:-mt-20" id="pre-raid-flow"></span>
+    <a href="#extraction-shooter-specific-ux" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><h4>Pre-Raid Flow<span class="hx:absolute hx:-mt-20" id="pre-raid-flow"></span>
     <a href="#pre-raid-flow" class="subheading-anchor" aria-label="Permalink for this section"></a></h4><ol>
-<li><strong>Loadout Selection:</strong> Visual comparison of gear stats</li>
-<li><strong>Map Preview:</strong> Show extraction points and danger zones</li>
-<li><strong>Squad Formation:</strong> Clear roles and ready status</li>
-<li><strong>Insurance:</strong> One-click insurance for high-value items</li>
+<li><strong>Loadout Selection</strong>: Visual comparison of gear stats</li>
+<li><strong>Map Preview</strong>: Show extraction points and danger zones</li>
+<li><strong>Squad Formation</strong>: Clear roles and ready status</li>
+<li><strong>Insurance</strong>: One-click insurance for high-value items</li>
 </ol>
-<h4><strong>In-Raid Essentials</strong><span class="hx:absolute hx:-mt-20" id="in-raid-essentials"></span>
+<h4>In-Raid Essentials<span class="hx:absolute hx:-mt-20" id="in-raid-essentials"></span>
     <a href="#in-raid-essentials" class="subheading-anchor" aria-label="Permalink for this section"></a></h4><ul>
-<li><strong>Extraction Timer:</strong> Persistent countdown to final extract window</li>
-<li><strong>Threat Level Indicator:</strong> Visual/audio cues for nearby players/AI</li>
-<li><strong>Secure Container Access:</strong> Quick-slot protected items mid-raid</li>
-<li><strong>Weight System:</strong> Real-time feedback on movement speed penalty</li>
+<li><strong>Extraction Timer</strong>: Persistent countdown to final extract window</li>
+<li><strong>Threat Level Indicator</strong>: Visual/audio cues for nearby players/AI</li>
+<li><strong>Secure Container Access</strong>: Quick-slot protected items mid-raid</li>
+<li><strong>Weight System</strong>: Real-time feedback on movement speed penalty</li>
 </ul>
-<h4><strong>Post-Raid Debrief</strong><span class="hx:absolute hx:-mt-20" id="post-raid-debrief"></span>
+<h4>Post-Raid Debrief<span class="hx:absolute hx:-mt-20" id="post-raid-debrief"></span>
     <a href="#post-raid-debrief" class="subheading-anchor" aria-label="Permalink for this section"></a></h4><ul>
-<li><strong>Loot Summary:</strong> Rarity-coded item list with sell value</li>
-<li><strong>XP Breakdown:</strong> Show what actions earned experience</li>
-<li><strong>Quest Progress:</strong> Track objectives completed this session</li>
-<li><strong>Replay Highlights:</strong> Death cam showing who/how you died</li>
+<li><strong>Loot Summary</strong>: Rarity-coded item list with sell value</li>
+<li><strong>XP Breakdown</strong>: Show what actions earned experience</li>
+<li><strong>Quest Progress</strong>: Track objectives completed this session</li>
+<li><strong>Replay Highlights</strong>: Death cam showing who/how you died</li>
 </ul>
 <hr>
-<h2>🎯 Accessibility Standards<span class="hx:absolute hx:-mt-20" id="-accessibility-standards"></span>
-    <a href="#-accessibility-standards" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><p>Following WCAG 2.1 Level AA compliance:</p>
+<h2>Accessibility Standards<span class="hx:absolute hx:-mt-20" id="accessibility-standards"></span>
+    <a href="#accessibility-standards" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><p>Following WCAG 2.1 Level AA compliance:</p>
 <ul>
-<li><strong>Colorblind Modes:</strong> Deuteranopia, Protanopia, Tritanopia filters</li>
-<li><strong>Text Scaling:</strong> 100%-200% without breaking layout</li>
-<li><strong>Subtitles:</strong> Directional audio indicators for hearing-impaired</li>
-<li><strong>Button Remapping:</strong> Full customization across all platforms</li>
-<li><strong>Motion Reduction:</strong> Toggle for screen shake and blur effects</li>
+<li><strong>Colorblind Modes</strong>: Deuteranopia, Protanopia, Tritanopia filters</li>
+<li><strong>Text Scaling</strong>: 100%-200% without breaking layout</li>
+<li><strong>Subtitles</strong>: Directional audio indicators for hearing-impaired</li>
+<li><strong>Button Remapping</strong>: Full customization across all platforms</li>
+<li><strong>Motion Reduction</strong>: Toggle for screen shake and blur effects</li>
 </ul>
 <hr>
-<h2>📊 Cross-Platform Testing Matrix<span class="hx:absolute hx:-mt-20" id="-cross-platform-testing-matrix"></span>
-    <a href="#-cross-platform-testing-matrix" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><table>
+<h2>Cross-Platform Testing Matrix<span class="hx:absolute hx:-mt-20" id="cross-platform-testing-matrix"></span>
+    <a href="#cross-platform-testing-matrix" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><table>
   <thead>
       <tr>
           <th style="text-align: left">Feature</th>
@@ -1934,67 +1954,78 @@ Core UX Pillars1. Speed Over ComplexityMinimal Clicks: Every action should tak
   <tbody>
       <tr>
           <td style="text-align: left">Controller Support</td>
-          <td style="text-align: center">✅</td>
-          <td style="text-align: center">✅</td>
-          <td style="text-align: center">⚠️</td>
+          <td style="text-align: center">Yes</td>
+          <td style="text-align: center">Yes</td>
+          <td style="text-align: center">Limited</td>
           <td style="text-align: center">High</td>
       </tr>
       <tr>
           <td style="text-align: left">Touch Controls</td>
-          <td style="text-align: center">❌</td>
-          <td style="text-align: center">❌</td>
-          <td style="text-align: center">✅</td>
+          <td style="text-align: center">No</td>
+          <td style="text-align: center">No</td>
+          <td style="text-align: center">Yes</td>
           <td style="text-align: center">High</td>
       </tr>
       <tr>
           <td style="text-align: left">Gyro Aiming</td>
-          <td style="text-align: center">❌</td>
-          <td style="text-align: center">✅*</td>
-          <td style="text-align: center">✅</td>
+          <td style="text-align: center">No</td>
+          <td style="text-align: center">PS5 only</td>
+          <td style="text-align: center">Yes</td>
           <td style="text-align: center">Medium</td>
       </tr>
       <tr>
           <td style="text-align: left">Text Chat</td>
-          <td style="text-align: center">✅</td>
-          <td style="text-align: center">⚠️</td>
-          <td style="text-align: center">⚠️</td>
+          <td style="text-align: center">Yes</td>
+          <td style="text-align: center">Limited</td>
+          <td style="text-align: center">Limited</td>
           <td style="text-align: center">Medium</td>
       </tr>
       <tr>
           <td style="text-align: left">Voice Chat (Proximity)</td>
-          <td style="text-align: center">✅</td>
-          <td style="text-align: center">✅</td>
-          <td style="text-align: center">✅</td>
+          <td style="text-align: center">Yes</td>
+          <td style="text-align: center">Yes</td>
+          <td style="text-align: center">Yes</td>
           <td style="text-align: center">Critical</td>
       </tr>
       <tr>
           <td style="text-align: left">Cross-Progression</td>
-          <td style="text-align: center">✅</td>
-          <td style="text-align: center">✅</td>
-          <td style="text-align: center">✅</td>
+          <td style="text-align: center">Yes</td>
+          <td style="text-align: center">Yes</td>
+          <td style="text-align: center">Yes</td>
           <td style="text-align: center">Critical</td>
       </tr>
   </tbody>
 </table>
-<p>✅ = Fully Supported | ⚠️ = Limited Support | ❌ = Not Supported<br>
-* = PlayStation DualSense only</p>
 <hr>
-<div class="hextra-cards hx:mt-4 hx:gap-4 hx:grid not-prose" style="--hextra-cards-grid-cols: 3;">
+<h2>Section Contents<span class="hx:absolute hx:-mt-20" id="section-contents"></span>
+    <a href="#section-contents" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><div class="hextra-cards hx:mt-4 hx:gap-4 hx:grid not-prose" style="--hextra-cards-grid-cols: 3;">
   <a
-    class="hextra-card hx:group hx:flex hx:flex-col hx:justify-start hx:overflow-hidden hx:rounded-lg hx:border hx:border-gray-200 hx:text-current hx:no-underline hx:dark:shadow-none hx:hover:shadow-gray-100 hx:dark:hover:shadow-none hx:shadow-gray-100 hx:active:shadow-sm hx:active:shadow-gray-200 hx:transition-all hx:duration-200 hx:hover:border-gray-300 hx:bg-transparent hx:shadow-xs hx:dark:border-neutral-800 hx:hover:bg-slate-50 hx:hover:shadow-md hx:dark:hover:border-neutral-700 hx:dark:hover:bg-neutral-900"href="ux_flows.html"
+    class="hextra-card hx:group hx:flex hx:flex-col hx:justify-start hx:overflow-hidden hx:rounded-lg hx:border hx:border-gray-200 hx:text-current hx:no-underline hx:dark:shadow-none hx:hover:shadow-gray-100 hx:dark:hover:shadow-none hx:shadow-gray-100 hx:active:shadow-sm hx:active:shadow-gray-200 hx:transition-all hx:duration-200 hx:hover:border-gray-300 hx:bg-transparent hx:shadow-xs hx:dark:border-neutral-800 hx:hover:bg-slate-50 hx:hover:shadow-md hx:dark:hover:border-neutral-700 hx:dark:hover:bg-neutral-900"href="Menus"
       ><div class="hx:mt-auto">
-      <span class="hextra-card-icon hx:flex hx:font-semibold hx:items-start hx:gap-2 hx:pt-4 hx:px-4 hx:text-gray-700 hx:hover:text-gray-900 hx:dark:text-neutral-200 hx:dark:hover:text-neutral-50"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122"/></svg>User Flows</span><div class="hextra-card-subtitle hx:line-clamp-3 hx:text-sm hx:font-normal hx:text-gray-500 hx:dark:text-gray-400 hx:px-4 hx:mb-4 hx:mt-2">Wireframes for inventory, matchmaking, looting, and extraction.</div></div></a>
+      <span class="hextra-card-icon hx:flex hx:font-semibold hx:items-start hx:gap-2 hx:pt-4 hx:px-4 hx:text-gray-700 hx:hover:text-gray-900 hx:dark:text-neutral-200 hx:dark:hover:text-neutral-50"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"/></svg>Menus &amp; Screens</span><div class="hextra-card-subtitle hx:line-clamp-3 hx:text-sm hx:font-normal hx:text-gray-500 hx:dark:text-gray-400 hx:px-4 hx:mb-4 hx:mt-2">All menu screens: Main Menu, Loadout, Trader, Stash, Map Selection, Squad, After Action Report, Pause</div></div></a>
   <a
-    class="hextra-card hx:group hx:flex hx:flex-col hx:justify-start hx:overflow-hidden hx:rounded-lg hx:border hx:border-gray-200 hx:text-current hx:no-underline hx:dark:shadow-none hx:hover:shadow-gray-100 hx:dark:hover:shadow-none hx:shadow-gray-100 hx:active:shadow-sm hx:active:shadow-gray-200 hx:transition-all hx:duration-200 hx:hover:border-gray-300 hx:bg-transparent hx:shadow-xs hx:dark:border-neutral-800 hx:hover:bg-slate-50 hx:hover:shadow-md hx:dark:hover:border-neutral-700 hx:dark:hover:bg-neutral-900"href="visual_style.html"
+    class="hextra-card hx:group hx:flex hx:flex-col hx:justify-start hx:overflow-hidden hx:rounded-lg hx:border hx:border-gray-200 hx:text-current hx:no-underline hx:dark:shadow-none hx:hover:shadow-gray-100 hx:dark:hover:shadow-none hx:shadow-gray-100 hx:active:shadow-sm hx:active:shadow-gray-200 hx:transition-all hx:duration-200 hx:hover:border-gray-300 hx:bg-transparent hx:shadow-xs hx:dark:border-neutral-800 hx:hover:bg-slate-50 hx:hover:shadow-md hx:dark:hover:border-neutral-700 hx:dark:hover:bg-neutral-900"href="HUD_Design"
       ><div class="hx:mt-auto">
-      <span class="hextra-card-icon hx:flex hx:font-semibold hx:items-start hx:gap-2 hx:pt-4 hx:px-4 hx:text-gray-700 hx:hover:text-gray-900 hx:dark:text-neutral-200 hx:dark:hover:text-neutral-50"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"/></svg>Interface Style</span><div class="hextra-card-subtitle hx:line-clamp-3 hx:text-sm hx:font-normal hx:text-gray-500 hx:dark:text-gray-400 hx:px-4 hx:mb-4 hx:mt-2">Color palettes, typography, iconography, and platform adaptations.</div></div></a>
+      <span class="hextra-card-icon hx:flex hx:font-semibold hx:items-start hx:gap-2 hx:pt-4 hx:px-4 hx:text-gray-700 hx:hover:text-gray-900 hx:dark:text-neutral-200 hx:dark:hover:text-neutral-50"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>In-Raid HUD Design</span><div class="hextra-card-subtitle hx:line-clamp-3 hx:text-sm hx:font-normal hx:text-gray-500 hx:dark:text-gray-400 hx:px-4 hx:mb-4 hx:mt-2">HUD element catalog, contextual visibility, minimap, compass, and customization options</div></div></a>
+  <a
+    class="hextra-card hx:group hx:flex hx:flex-col hx:justify-start hx:overflow-hidden hx:rounded-lg hx:border hx:border-gray-200 hx:text-current hx:no-underline hx:dark:shadow-none hx:hover:shadow-gray-100 hx:dark:hover:shadow-none hx:shadow-gray-100 hx:active:shadow-sm hx:active:shadow-gray-200 hx:transition-all hx:duration-200 hx:hover:border-gray-300 hx:bg-transparent hx:shadow-xs hx:dark:border-neutral-800 hx:hover:bg-slate-50 hx:hover:shadow-md hx:dark:hover:border-neutral-700 hx:dark:hover:bg-neutral-900"href="UX_Flows"
+      ><div class="hx:mt-auto">
+      <span class="hextra-card-icon hx:flex hx:font-semibold hx:items-start hx:gap-2 hx:pt-4 hx:px-4 hx:text-gray-700 hx:hover:text-gray-900 hx:dark:text-neutral-200 hx:dark:hover:text-neutral-50"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122"/></svg>UX Flows &amp; Wireframes</span><div class="hextra-card-subtitle hx:line-clamp-3 hx:text-sm hx:font-normal hx:text-gray-500 hx:dark:text-gray-400 hx:px-4 hx:mb-4 hx:mt-2">Player journey map, cross-platform wireframes, state machines, navigation patterns</div></div></a>
+  <a
+    class="hextra-card hx:group hx:flex hx:flex-col hx:justify-start hx:overflow-hidden hx:rounded-lg hx:border hx:border-gray-200 hx:text-current hx:no-underline hx:dark:shadow-none hx:hover:shadow-gray-100 hx:dark:hover:shadow-none hx:shadow-gray-100 hx:active:shadow-sm hx:active:shadow-gray-200 hx:transition-all hx:duration-200 hx:hover:border-gray-300 hx:bg-transparent hx:shadow-xs hx:dark:border-neutral-800 hx:hover:bg-slate-50 hx:hover:shadow-md hx:dark:hover:border-neutral-700 hx:dark:hover:bg-neutral-900"href="Notification_Systems"
+      ><div class="hx:mt-auto">
+      <span class="hextra-card-icon hx:flex hx:font-semibold hx:items-start hx:gap-2 hx:pt-4 hx:px-4 hx:text-gray-700 hx:hover:text-gray-900 hx:dark:text-neutral-200 hx:dark:hover:text-neutral-50"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"/></svg>Notification &amp; Feedback Systems</span><div class="hextra-card-subtitle hx:line-clamp-3 hx:text-sm hx:font-normal hx:text-gray-500 hx:dark:text-gray-400 hx:px-4 hx:mb-4 hx:mt-2">Kill feed, damage feedback, status effects, toast messages, danger communication</div></div></a>
+  <a
+    class="hextra-card hx:group hx:flex hx:flex-col hx:justify-start hx:overflow-hidden hx:rounded-lg hx:border hx:border-gray-200 hx:text-current hx:no-underline hx:dark:shadow-none hx:hover:shadow-gray-100 hx:dark:hover:shadow-none hx:shadow-gray-100 hx:active:shadow-sm hx:active:shadow-gray-200 hx:transition-all hx:duration-200 hx:hover:border-gray-300 hx:bg-transparent hx:shadow-xs hx:dark:border-neutral-800 hx:hover:bg-slate-50 hx:hover:shadow-md hx:dark:hover:border-neutral-700 hx:dark:hover:bg-neutral-900"href="Visual_Style"
+      ><div class="hx:mt-auto">
+      <span class="hextra-card-icon hx:flex hx:font-semibold hx:items-start hx:gap-2 hx:pt-4 hx:px-4 hx:text-gray-700 hx:hover:text-gray-900 hx:dark:text-neutral-200 hx:dark:hover:text-neutral-50"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"/></svg>Visual Style &amp; Art Guidelines</span><div class="hextra-card-subtitle hx:line-clamp-3 hx:text-sm hx:font-normal hx:text-gray-500 hx:dark:text-gray-400 hx:px-4 hx:mb-4 hx:mt-2">Color palettes, typography, iconography, lighting, VFX, and platform adaptations</div></div></a>
 </div>
 
 <hr>
-<h2>🔄 Continuous Improvement<span class="hx:absolute hx:-mt-20" id="-continuous-improvement"></span>
-    <a href="#-continuous-improvement" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><p><strong>Analytics to Track:</strong></p>
+<h2>Continuous Improvement<span class="hx:absolute hx:-mt-20" id="continuous-improvement"></span>
+    <a href="#continuous-improvement" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><p><strong>Analytics to Track:</strong></p>
 <ul>
-<li>Average time to enter first raid (target: &lt;90 seconds)</li>
+<li>Average time to enter first raid (target: under 90 seconds)</li>
 <li>Inventory management time per session</li>
 <li>Drop-off points in tutorial (first 3 missions)</li>
 <li>Platform-specific crash reports</li>

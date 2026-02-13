@@ -4,13 +4,13 @@ type: docs
 weight: 2
 ---
 
-## 📝 Documentation Standards for AI Agents
+## Documentation Standards for AI Agents
 
 These rules govern how AI agents should write and format GDD documentation, technical docs, and inline comments across the project.
 
 ---
 
-### 📋 General Rules
+### General Rules
 
 | Rule | Description |
 |:-----|:------------|
@@ -22,7 +22,7 @@ These rules govern how AI agents should write and format GDD documentation, tech
 
 ---
 
-### 📁 File Structure
+### File Structure
 
 #### Frontmatter (Required)
 
@@ -67,31 +67,31 @@ Links to related documents, image placeholders, inspiration games.
 
 ---
 
-### 🖼️ Image Placeholders
+### Image Placeholders
 
 When a visual reference is needed but not yet available, use this exact format:
 
 ```html
-<!-- 📸 IMAGE PLACEHOLDER: [Description of what the image should show] -->
+<!-- IMAGE PLACEHOLDER: [Description of what the image should show] -->
 ```
 
 **Examples:**
 
 ```html
-<!-- 📸 IMAGE PLACEHOLDER: Wireframe of the inventory grid UI with item dragging -->
-<!-- 📸 IMAGE PLACEHOLDER: Flowchart showing matchmaking queue logic -->
-<!-- 📸 IMAGE PLACEHOLDER: Screenshot reference from Escape from Tarkov's stash system -->
+<!-- IMAGE PLACEHOLDER: Wireframe of the inventory grid UI with item dragging -->
+<!-- IMAGE PLACEHOLDER: Flowchart showing matchmaking queue logic -->
+<!-- IMAGE PLACEHOLDER: Screenshot reference from Escape from Tarkov's stash system -->
 ```
 
 **Rules:**
 - One placeholder per distinct visual concept
 - Be specific about what should be shown
 - Place near the text the image supports
-- Prefix with the camera emoji `📸` for easy searching
+- Prefix with `IMAGE PLACEHOLDER` for easy searching
 
 ---
 
-### 📊 Tables
+### Tables
 
 Use tables for structured data (stats, comparisons, enums):
 
@@ -110,7 +110,7 @@ Use tables for structured data (stats, comparisons, enums):
 
 ---
 
-### 📐 ASCII Wireframes
+### ASCII Wireframes
 
 For UI mockups within documentation, use ASCII art:
 
@@ -133,31 +133,7 @@ For UI mockups within documentation, use ASCII art:
 
 ---
 
-### 🏷️ Section Emojis
-
-Use consistent emojis for section headers:
-
-| Emoji | Usage |
-|:------|:------|
-| 📋 | Overview, Summary |
-| 🎯 | Goals, Objectives |
-| ⚙️ | Configuration, Settings |
-| 🔧 | Technical, Implementation |
-| 🎮 | Gameplay, Mechanics |
-| 🤖 | AI, Automation |
-| 👥 | Social, Multiplayer |
-| 🎨 | Art, Visual, UI |
-| 🔊 | Audio, Sound |
-| 📊 | Data, Analytics, Stats |
-| ⚖️ | Balance, Economy |
-| 🗺️ | Maps, World |
-| 📚 | Reference, Links |
-| ⚠️ | Warnings, Caution |
-| 💡 | Tips, Notes |
-
----
-
-### 📝 Hugo/Hextra Callouts
+### Hugo/Hextra Callouts
 
 When using the Hugo documentation framework, use shortcode callouts:
 
@@ -175,7 +151,7 @@ Available types: `info`, `warning`, `error`
 
 ---
 
-### 🔗 Cross-References
+### Cross-References
 
 Link to other documents using relative paths:
 
@@ -191,12 +167,12 @@ Refer to [Coding Standards](../../GDD_Technical/CodingStandards.md) for naming r
 
 ---
 
-### 📅 Changelog Format
+### Changelog Format
 
 When updating documents, add to the changelog table at the bottom:
 
 ```markdown
-## 📅 Update Log
+## Update Log
 
 | Date       | Section    | Changes                          | Updated By |
 | ---------- | ---------- | -------------------------------- | ---------- |
@@ -206,7 +182,7 @@ When updating documents, add to the changelog table at the bottom:
 
 ---
 
-### 🚫 Anti-Patterns
+### Anti-Patterns
 
 | Don't Do This | Do This Instead |
 |:--------------|:----------------|

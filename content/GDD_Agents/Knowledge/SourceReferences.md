@@ -4,27 +4,27 @@ type: docs
 weight: 1
 ---
 
-## 📖 Knowledge Source References
+## Knowledge Source References
 
 This document organizes all key reference materials, documentation links, and learning resources for AI agents and developers working on this project.
 
 ---
 
-### 🔴 Project-Internal Documentation (Read First)
+### Project-Internal Documentation (Read First)
 
 | Document | Path | Priority |
 |:---------|:-----|:---------|
-| **Coding & Asset Standards** | [GDD_Technical/CodingStandards.md](../../GDD_Technical/CodingStandards.md) | 🔴 CRITICAL |
-| **Code Generation Rules** | [GDD_Agents/Rules/CodeGeneration.md](../Rules/CodeGeneration.md) | 🔴 CRITICAL |
-| **Documentation Standards** | [GDD_Agents/Rules/DocumentationStandards.md](../Rules/DocumentationStandards.md) | 🔴 CRITICAL |
-| **GDD Technical Index** | [GDD_Technical/_index.md](../../GDD_Technical/_index.md) | 🟡 HIGH |
-| **GDD Design Index** | [GDD_Design/_index.md](../../GDD_Design/_index.md) | 🟡 HIGH |
-| **Feature Workflow** | [GDD_Agents/Workflows/FeatureImplementation.md](../Workflows/FeatureImplementation.md) | 🟡 HIGH |
-| **UE5 Skills** | [GDD_Agents/Skills/UnrealEngine.md](../Skills/UnrealEngine.md) | 🟡 HIGH |
+| **Coding & Asset Standards** | [GDD_Technical/CodingStandards.md](../../GDD_Technical/CodingStandards.md) | CRITICAL |
+| **Code Generation Rules** | [GDD_Agents/Rules/CodeGeneration.md](../Rules/CodeGeneration.md) | CRITICAL |
+| **Documentation Standards** | [GDD_Agents/Rules/DocumentationStandards.md](../Rules/DocumentationStandards.md) | CRITICAL |
+| **GDD Technical Index** | [GDD_Technical/_index.md](../../GDD_Technical/_index.md) | HIGH |
+| **GDD Design Index** | [GDD_Design/_index.md](../../GDD_Design/_index.md) | HIGH |
+| **Feature Workflow** | [GDD_Agents/Workflows/FeatureImplementation.md](../Workflows/FeatureImplementation.md) | HIGH |
+| **UE5 Skills** | [GDD_Agents/Skills/UnrealEngine.md](../Skills/UnrealEngine.md) | HIGH |
 
 ---
 
-### 🔵 Official Unreal Engine Documentation
+### Official Unreal Engine Documentation
 
 #### Core Standards & Conventions
 
@@ -57,7 +57,7 @@ This document organizes all key reference materials, documentation links, and le
 
 ---
 
-### 🟢 Game Design References
+### Game Design References
 
 #### UI/UX Design
 
@@ -97,23 +97,23 @@ This document organizes all key reference materials, documentation links, and le
 
 ---
 
-### 🟡 Extraction Shooter References
+### Extraction Shooter References
 
 Games studied for design inspiration:
 
 | Game | Key Systems Studied | Relevance |
 |:-----|:--------------------|:----------|
-| **Escape from Tarkov** | Karma (Scav/PMC), Hideout, VOIP, co-op extracts, inventory grid | 🔴 Primary reference for core loop |
-| **Hunt: Showdown** | MMR/SBMM (star rating), squad balancing, bounty extraction | 🔴 Primary reference for matchmaking |
-| **DMZ (Warzone)** | LFG culture, faction missions, casual extraction loop | 🟡 Reference for accessibility |
-| **Dark and Darker** | Emotes/gestures, dungeon social dynamics | 🟢 Reference for social systems |
-| **The Finals** | Cross-platform parties, emote wheel, destruction | 🟢 Reference for UX polish |
-| **ARC Raiders** | Social hub, team synergy | 🟢 Reference for co-op design |
-| **Arena Breakout** | After action report, mobile extraction shooter | 🟢 Reference for post-match flow |
+| **Escape from Tarkov** | Karma (Scav/PMC), Hideout, VOIP, co-op extracts, inventory grid | Primary reference for core loop |
+| **Hunt: Showdown** | MMR/SBMM (star rating), squad balancing, bounty extraction | Primary reference for matchmaking |
+| **DMZ (Warzone)** | LFG culture, faction missions, casual extraction loop | Reference for accessibility |
+| **Dark and Darker** | Emotes/gestures, dungeon social dynamics | Reference for social systems |
+| **The Finals** | Cross-platform parties, emote wheel, destruction | Reference for UX polish |
+| **ARC Raiders** | Social hub, team synergy | Reference for co-op design |
+| **Arena Breakout** | After action report, mobile extraction shooter | Reference for post-match flow |
 
 ---
 
-### 🔧 Development Tools
+### Development Tools
 
 | Tool | URL | Use For |
 |:-----|:----|:--------|

@@ -4,7 +4,7 @@ type: docs
 weight: 1
 ---
 
-## 📏 Code Generation Rules for AI Agents
+## Code Generation Rules for AI Agents
 
 These rules are **mandatory** for all AI agents generating C++ or Blueprint code for this Unreal Engine 5 project. Violations will cause build failures, UHT errors, or inconsistency with the team's codebase.
 
@@ -12,13 +12,13 @@ These rules are **mandatory** for all AI agents generating C++ or Blueprint code
 
 ---
 
-### 🔴 Critical Rules (Must Never Violate)
+### Critical Rules (Must Never Violate)
 
 #### 1. UE5 Type Prefixes
 Every class, struct, enum, and interface **must** use the correct prefix:
 
 ```cpp
-// ✅ Mandatory prefixes
+// Mandatory prefixes
 A  → Actors              (AExtractionCharacter)
 U  → UObject subclasses  (UInventoryComponent)
 F  → Structs / non-UE    (FWeaponData, FItemSlot)
@@ -31,12 +31,12 @@ b  → Booleans           (bIsAlive, bCanFire)
 
 #### 2. Generated Header Must Be Last Include
 ```cpp
-// ✅ Correct
+// Correct
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
 #include "MyActor.generated.h"  // ALWAYS last
 
-// ❌ Wrong — will cause UHT compilation failure
+// Wrong — will cause UHT compilation failure
 #include "MyActor.generated.h"
 #include "CoreMinimal.h"
 ```
@@ -55,29 +55,29 @@ class MYMODULE_API AMyActor : public AActor
 
 #### 4. Forward Declare Over Include (in Headers)
 ```cpp
-// ✅ Good — forward declare in .h
+// Good — forward declare in .h
 class UInventoryComponent;
 class AWeaponBase;
 
-// ❌ Bad — include in .h when forward declaration suffices
+// Bad — include in .h when forward declaration suffices
 #include "Components/InventoryComponent.h"
 #include "Weapons/WeaponBase.h"
 ```
 
 #### 5. Use TObjectPtr<> for UPROPERTY Pointers
 ```cpp
-// ✅ UE5 style
+// UE5 style
 UPROPERTY()
 TObjectPtr<UInventoryComponent> InventoryComp;
 
-// ❌ Raw pointers (UE4 legacy)
+// Raw pointers (UE4 legacy)
 UPROPERTY()
 UInventoryComponent* InventoryComp;
 ```
 
 ---
 
-### 🟡 High Priority Rules
+### High Priority Rules
 
 #### 6. Class Organization Order
 Follow this order inside every class:
@@ -94,11 +94,11 @@ Follow this order inside every class:
 Always use hierarchical categories:
 
 ```cpp
-// ✅ Hierarchical
+// Hierarchical
 UPROPERTY(EditDefaultsOnly, Category = "Weapon|Stats")
 UPROPERTY(EditDefaultsOnly, Category = "Weapon|Ammo")
 
-// ❌ Flat or inconsistent
+// Flat or inconsistent
 UPROPERTY(EditDefaultsOnly, Category = "Damage")
 UPROPERTY(EditDefaultsOnly, Category = "WeaponAmmo")
 ```
@@ -115,13 +115,13 @@ UPROPERTY(EditDefaultsOnly, Category = "WeaponAmmo")
 
 #### 9. Braces on New Line (Allman Style)
 ```cpp
-// ✅ Epic standard
+// Epic standard
 if (bIsAlive)
 {
     TakeDamage(Amount);
 }
 
-// ❌ K&R style
+// K&R style
 if (bIsAlive) {
     TakeDamage(Amount);
 }
@@ -129,20 +129,20 @@ if (bIsAlive) {
 
 #### 10. Always Include Braces for Single-Statement Blocks
 ```cpp
-// ✅ Always braces
+// Always braces
 if (bCanFire)
 {
     Fire();
 }
 
-// ❌ No braces
+// No braces
 if (bCanFire)
     Fire();
 ```
 
 ---
 
-### 🟢 Style Rules
+### Style Rules
 
 #### 11. Naming Consistency
 - Variables: **PascalCase** nouns (`CurrentHealth`, `MaxAmmo`)
@@ -187,20 +187,20 @@ UE_LOG(LogExtractionGameplay, Warning, TEXT("Player %s failed to extract"), *Pla
 
 #### 15. Avoid Magic Numbers
 ```cpp
-// ✅ Named constant
+// Named constant
 static constexpr float DefaultSprintSpeedMultiplier = 1.5f;
 
-// ✅ Or use UPROPERTY for designer tuning
+// Or use UPROPERTY for designer tuning
 UPROPERTY(EditDefaultsOnly, Category = "Movement")
 float SprintSpeedMultiplier = 1.5f;
 
-// ❌ Magic number
+// Magic number
 MovementSpeed *= 1.5f;
 ```
 
 ---
 
-### 🚫 Common Mistakes to Avoid
+### Common Mistakes to Avoid
 
 | Mistake | Why It's Wrong | Correct Approach |
 |:--------|:---------------|:-----------------|
@@ -215,7 +215,7 @@ MovementSpeed *= 1.5f;
 
 ---
 
-### 📋 Code Generation Checklist
+### Code Generation Checklist
 
 Before submitting any generated code, verify:
 

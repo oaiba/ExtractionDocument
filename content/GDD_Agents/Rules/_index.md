@@ -4,7 +4,7 @@ type: docs
 weight: 1
 ---
 
-## 📏 Agent Rules
+## Agent Rules
 
 Mandatory constraints for AI agents working on this project.
 

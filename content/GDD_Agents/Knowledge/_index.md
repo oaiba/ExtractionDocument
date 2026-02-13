@@ -4,7 +4,7 @@ type: docs
 weight: 4
 ---
 
-## 📖 Knowledge Sources
+## Knowledge Sources
 
 Reference documentation and learning resources.
 

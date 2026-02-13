@@ -4,13 +4,13 @@ type: docs
 weight: 1
 ---
 
-## 🧠 Unreal Engine 5 Skills for AI Agents
+## Unreal Engine 5 Skills for AI Agents
 
 This document covers essential UE5 patterns, frameworks, and best practices that agents must understand and apply correctly.
 
 ---
 
-### 🎮 Gameplay Ability System (GAS)
+### Gameplay Ability System (GAS)
 
 GAS is the preferred framework for abilities, effects, and attribute management.
 
@@ -49,7 +49,7 @@ UAS_Survival        // Attribute Set — Survival attributes
 
 ---
 
-### 🎯 Enhanced Input System
+### Enhanced Input System
 
 Use Enhanced Input (not the legacy system) for all player input:
 
@@ -79,7 +79,7 @@ void AExtractionPlayerController::SetupInputComponent()
 
 ---
 
-### 🌐 Replication & Networking
+### Replication & Networking
 
 #### Property Replication
 
@@ -135,7 +135,7 @@ void Multicast_OnFired();
 
 ---
 
-### 🖥️ UMG (UI Framework)
+### UMG (UI Framework)
 
 ```cpp
 // Widget Classes
@@ -167,7 +167,7 @@ protected:
 
 ---
 
-### 📦 Subsystem Pattern
+### Subsystem Pattern
 
 Use subsystems for global managers that don't need to be Actors:
 
@@ -212,7 +212,7 @@ UExtractionSubsystem* Ext = GetWorld()->GetSubsystem<UExtractionSubsystem>();
 
 ---
 
-### 📋 Data-Driven Design
+### Data-Driven Design
 
 Prefer Data Assets and Data Tables over hardcoded values:
 
@@ -249,7 +249,7 @@ public:
 
 ---
 
-### 📚 Key UE5 Documentation Links
+### Key UE5 Documentation Links
 
 | Topic | URL |
 |:------|:----|

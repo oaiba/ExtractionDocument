@@ -4,7 +4,7 @@ type: docs
 weight: 2
 ---
 
-## 🐛 Bug Fix Workflow
+## Bug Fix Workflow
 
 A systematic approach for AI agents and developers to diagnose, fix, and verify bugs.
 
@@ -62,7 +62,7 @@ Saved/Crashes/                   ← Crash dumps
 5. **Update comments** — Explain *why* the fix is needed
 
 ```cpp
-// ✅ Good fix — guard + log
+// Good fix — guard + log
 void AExtractionZone::OnPlayerEnter(AExtractionCharacter* Player)
 {
     if (!Player)

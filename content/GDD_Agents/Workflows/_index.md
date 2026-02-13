@@ -4,7 +4,7 @@ type: docs
 weight: 2
 ---
 
-## 🔄 Agent Workflows
+## Agent Workflows
 
 Step-by-step procedures for common development tasks.
 

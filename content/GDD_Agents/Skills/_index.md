@@ -4,7 +4,7 @@ type: docs
 weight: 3
 ---
 
-## 🧠 Agent Skills
+## Agent Skills
 
 Specialized UE5 competencies for AI agents.
 

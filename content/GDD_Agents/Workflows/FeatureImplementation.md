@@ -4,7 +4,7 @@ type: docs
 weight: 1
 ---
 
-## 🔄 Feature Implementation Workflow
+## Feature Implementation Workflow
 
 This workflow defines the step-by-step process for AI agents (and developers) to implement a new gameplay feature from concept to verification.
 

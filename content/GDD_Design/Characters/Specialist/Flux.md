@@ -238,36 +238,50 @@ When attempts to expose them through legal channels failed, Maya took matters in
 
 ### Default Appearance
 
-- **Outfit:** White lab coat over tactical vest (functional scientist)
-- **Headgear** | High-tech visor / AR glasses
-- **Gloves** | White latex gloves
-- **Features** | Short natural hair, confident stance
+- **Outfit:** White lab coat over lightweight tactical vest, nanobot canisters on belt
+- **Headgear:** High-tech visor / AR glasses with data readouts
+- **Gloves:** White latex gloves (medical/scientific aesthetic)
+- **Features:** Short natural hair, confident stance, silver nano-trace patterns on forearms
+
+<!-- REF_IMAGE: FLUX default skin — top-down view showing lab coat over vest silhouette, AR glasses, nano canisters visible on belt, silver-particle aura effect -->
 
 ### Unlockable Skins
 
-| Skin               | Rarity    | Unlock         |
-| :----------------- | :-------- | :------------- |
-| **Lab Technician** | Common    | Level 10       |
-| **Biohazard**      | Uncommon  | 1,000 Credits  |
-| **Nanosuit**       | Rare      | Level 25       |
-| **Synthwave**      | Epic      | Battle Pass S2 |
-| **Singularity**    | Legendary | Season 4 Event |
+| Skin | Rarity | Unlock |
+| :--- | :----- | :----- |
+| **Lab Technician** | Common | Level 10 |
+| **Biohazard** | Uncommon | 1,000 Credits |
+| **Nanosuit** | Rare | Level 25 |
+| **Synthwave** | Epic | Battle Pass S2 |
+| **Singularity** | Legendary | Season 4 Event |
+
+### Signature Items
+
+| Item | Description |
+| :--- | :---------- |
+| **Nano Canisters** | Glowing silver canisters on belt harness |
+| **Cambridge Pin** | University crest pin on lab coat lapel |
+| **Silver Trace** | Faint silver nano-patterns visible on forearms (the bots in her blood) |
 
 ---
 
 ## Lore Connections
 
-| Character  | Relationship                                  |
-| :--------- | :-------------------------------------------- |
-| **CIPHER** | Fellow outcasts, share tech knowledge         |
-| **DOC**    | Medical debate partners, different approaches |
-| **ANGEL**  | Faith vs Science discussions                  |
+### Relationships
+
+| Character | Relationship |
+| :-------- | :----------- |
+| **CIPHER** | Fellow outcasts, share tech knowledge — closest friend/collaborator |
+| **DOC** | Medical debate partners — DOC uses traditional medicine, FLUX uses nanotech. Mutual professional respect |
+| **ANGEL** | Faith vs Science discussions — ANGEL prays, FLUX programs. Surprisingly good friends |
+| **VIPER** | VIPER finds her nanobots unsettling — "Keep those things away from me" |
 
 ### Story Hooks
 
-- Hunting the executives who stole her research
-- Developing new nanobot applications in the field
-- Secretly working on a cure for DOC's condition
+- Hunting the executives who stole her research at the pharmaceutical conglomerate
+- Developing new nanobot applications in the field (quest chain: test prototypes for rewards)
+- Secretly working on a cure for DOC's chronic condition using nano-medicine
+- Discovered that Corporation is mass-producing her stolen nano-swarm tech for military use
 
 ---
 
@@ -275,19 +289,38 @@ When attempts to expose them through legal channels failed, Maya took matters in
 
 ### Balance Considerations
 
-- Swarm is powerful but stationary
-- Dual purpose (damage + heal) is unique
-- EMP hard-counters it
-- Self-healing passive needs cooldown
+- Swarm is the only dual-purpose ability (damage + heal) — monitor effective healing per match
+- Stationary deployment is the primary weakness — enemies can simply walk away
+- Mobile Swarm upgrade (Slot 2) should cap at 1 m/s movement — too fast makes it oppressive
+- Dual Deployment (Slot 3) splits radius — 2x 4m swarms instead of 1x 6m, total area is less
+- EMP hard-counters Nano Swarm — this is intentional and should NOT be changed
+- Self-healing passive (2 HP/sec out of combat) prevents chip-damage attrition — 5 second delay is critical
+- Symbiosis upgrade (double heal in own swarm) makes FLUX nearly unkillable in swarm — she must sacrifice other Slot 3 options
 
 ### Technical Notes
 
-| System               | Notes                            |
-| :------------------- | :------------------------------- |
-| Swarm Particles      | GPU particle system, limit 5000  |
-| Damage Tick          | Every 0.5 seconds                |
-| Ally/Enemy Detection | Server-side, client feedback     |
-| Audio                | Constant buzzing when near swarm |
+| System | Notes |
+| :----- | :---- |
+| Swarm Particles | GPU particle system, limit 5000 particles per swarm |
+| Damage Tick | Every 0.5 seconds (8 x 2 = 16 ticks per 12s duration) |
+| Ally/Enemy Detection | Server-side detection, client-side visual feedback |
+| Dual Swarm | Each swarm is independent particle system |
 
+### Animation Requirements
 
+- Swarm deploy animation (0.7 seconds — throw canister, nanobots emerge)
+- Swarm active VFX (silver particle cloud, shimmering, semi-transparent)
+- Healing VFX (green particle trails toward allies in swarm)
+- Damage VFX (red particle trails targeting enemies in swarm)
+- Death animation: nanobots visibly scatter from body (dramatic tech failure)
 
+### Audio Requirements
+
+| Sound | Notes |
+| :---- | :---- |
+| Swarm deploy | Canister crack + rising electronic buzz |
+| Swarm active | Persistent insect-like buzzing (louder near center) |
+| Swarm healing | Soft harmonic hum overlay (ally feedback) |
+| Swarm damage | Aggressive buzz + crackling (enemy perspective) |
+| Swarm end | Descending buzz, particles settle |
+| Footsteps | Standard weight — tactical sneakers |

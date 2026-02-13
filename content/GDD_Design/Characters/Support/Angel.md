@@ -19,6 +19,8 @@ type: docs
 | **Height**      | 165 cm (5'5")             |
 | **Weight**      | 58 kg (128 lbs)           |
 
+<!-- REF_IMAGE: ANGEL operator portrait — tactical nun habit, serene expression, golden energy shield projector active -->
+
 ### Background
 
 Maria Santos was a nun and nurse at a missionary hospital in Manila before a terrorist attack changed everything. When armed men stormed the hospital, Maria picked up a fallen soldier's weapon and held them off for three hours until reinforcements arrived, saving 47 patients and staff.
@@ -284,9 +286,9 @@ The Vatican quietly approached her afterward, offering training with Swiss Guard
 ### Default Appearance
 
 - **Outfit:** Modified nun's habit (tactical), white and blue
-- **Headgear** | Modern wimple with tactical additions
-- **Gloves** | White medical gloves
-- **Face** | Calm expression, prayer beads around neck
+- **Headgear:** Modern wimple with tactical headset
+- **Gloves:** White medical gloves
+- **Face:** Serene expression, prayer beads around neck
 
 ### Unlockable Skins
 

@@ -19,6 +19,8 @@ type: docs
 | **Height**      | 191 cm (6'3")             |
 | **Weight**      | 98 kg (216 lbs)           |
 
+<!-- REF_IMAGE: HAVOC operator portrait — massive scar on face, thick spetsnaz armor, heavy shotgun, berserker rage visible in eyes -->
+
 ### Background
 
 Anton Petrov was a legendary figure in Spetsnaz Alpha Group before a failed operation in Chechnya left him the sole survivor of his unit. Blamed for the disaster by corrupt superiors, he was dishonorably discharged and erased from official records.

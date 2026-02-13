@@ -19,6 +19,8 @@ type: docs
 | **Height**      | 170 cm (5'7")     |
 | **Weight**      | 62 kg (137 lbs)   |
 
+<!-- REF_IMAGE: BLAZE operator portrait — firefighter gear modified for combat, red bandana, intense eyes, holding Molotov or flamethrower nozzle -->
+
 ### Background
 
 Elena Reyes grew up in the borderlands of Arizona, where she developed a reputation as a wildfire fighter of exceptional skill. Her ability to predict fire behavior and work under extreme conditions caught the attention of military recruiters.

@@ -19,6 +19,8 @@ type: docs
 | **Height**      | 183 cm (6'0")               |
 | **Weight**      | 85 kg (187 lbs)             |
 
+<!-- REF_IMAGE: VIPER operator portrait — athletic build, tactical cap, green eyes, holding combat knife, aggressive stance -->
+
 ### Background
 
 Marcus Chen served 10 years in the US Army's 75th Ranger Regiment before joining the private military contractor sphere. Known for his calculated aggression and ability to remain calm under fire, he earned the callsign "Viper" for his quick-strike tactics and deadly precision.

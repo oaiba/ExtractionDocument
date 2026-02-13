@@ -80,11 +80,11 @@ He leaked what he could and went underground, using his skills to level the play
 
 #### What Gets Disabled
 
-| Category        | Affected                                             |
-| :-------------- | :--------------------------------------------------- |
-| ✅ **Destroyer** | ANGEL Shield, Healing Drone, Motion Sensors, Turrets |
-| ✅ **Disables**  | Combat Stim, Berserker, UAV Scan, Smoke Emitters     |
-| ❌ **Immune**    | Passive abilities, Weapons, Armor                    |
+| Category | Affected |
+| :------- | :------- |
+| **Destroys** | ANGEL Shield, Healing Drone, Motion Sensors, Turrets |
+| **Disables** | Combat Stim, Berserker, UAV Scan, Smoke Emitters |
+| **Immune** | Passive abilities, Weapons, Armor |
 
 #### Upgrade Slots
 
@@ -241,30 +241,77 @@ He leaked what he could and went underground, using his skills to level the play
 
 ### Default Appearance
 
-- **Outfit:** Black hoodie under tactical vest
-- **Headgear** | Black beanie with tech goggles
-- **Gloves** | Fingerless gloves (hacker aesthetic)
-- **Face** | Youthful, slight stubble, always watching screens
+- **Outfit:** Black hoodie under lightweight tactical vest, multiple USB drives on belt
+- **Headgear:** Black beanie with tech goggles pushed up on forehead
+- **Gloves:** Fingerless gloves (hacker aesthetic, touch-screen compatible)
+- **Face:** Youthful, slight stubble, always watching screens
+
+<!-- REF_IMAGE: CIPHER default skin — top-down view showing lean silhouette, hoodie under vest, tech goggles on forehead, utility belt with EMP device -->
 
 ### Unlockable Skins
 
-| Skin                   | Rarity    | Unlock                         |
-| :--------------------- | :-------- | :----------------------------- |
-| **White Hat**          | Common    | Level 10                       |
-| **Darknet**            | Uncommon  | 1,000 Credits                  |
-| **Anonymous**          | Rare      | Level 25 (Guy Fawkes inspired) |
-| **Mainframe**          | Epic      | Battle Pass S2                 |
-| **Ghost in the Shell** | Legendary | Crossover Event                |
+| Skin | Rarity | Unlock |
+| :--- | :----- | :----- |
+| **White Hat** | Common | Level 10 |
+| **Darknet** | Uncommon | 1,000 Credits |
+| **Anonymous** | Rare | Level 25 |
+| **Mainframe** | Epic | Battle Pass S2 |
+| **Ghost in the Shell** | Legendary | Crossover Event |
+
+### Signature Items
+
+| Item | Description |
+| :--- | :---------- |
+| **USB Bandolier** | Row of encrypted USB drives on chest harness |
+| **Binary Tattoo** | Circuit-pattern tattoo on left forearm |
+| **Laptop Stickers** | Hacker collective logos on laptop (visible in lobby) |
 
 ---
 
 ## Lore Connections
 
-| Character   | Relationship                              |
-| :---------- | :---------------------------------------- |
-| **PHANTOM** | Complicated - she hunted leakers like him |
-| **FLUX**    | Fellow outcasts, tech partners            |
-| **ANGEL**   | She represents institutions he hates      |
+### Relationships
 
+| Character | Relationship |
+| :-------- | :----------- |
+| **PHANTOM** | Complicated — she hunted leakers like him at the CIA, now forced allies |
+| **FLUX** | Fellow outcasts, share tech knowledge — closest friend in the roster |
+| **ANGEL** | She represents the institutions he hates — philosophical tension |
+| **VIPER** | VIPER distrusts him — "Too many secrets." CIPHER finds the suspicion amusing |
 
+### Story Hooks
 
+- Leaked NSA surveillance tools are now being used by Corporation — feels responsible
+- Maintains a dark web presence under the alias "Z3R0_DAY"
+- Seeking the pharmaceutical exec who weaponized FLUX's nano research
+- Dead drop quest chain — encrypted messages hidden across all maps
+
+---
+
+## Design Notes (For Developers)
+
+### Balance Considerations
+
+- EMP Blast is the strongest counter-ability in the game — 110s cooldown is justified
+- EMP should NOT cancel passive abilities or deactivate weapons — only active abilities and deployables
+- Shield Destruction is instant and permanent — ANGEL and BULWARK players should hear a distinct "shield broken" audio cue
+- -10% weapon accuracy class trait ensures CIPHER loses straight gunfights — his power is in disruption timing
+- Cascade Failure upgrade (Slot 2) explosive damage should have a minimum range to prevent self-harm from nearby gadget destruction
+
+### Animation Requirements
+
+- EMP activation (0.8 seconds — pull device from vest, slam button)
+- EMP pulse VFX (expanding blue-white ring from operator)
+- Hacking animation (fast typing gesture on arm-mounted interface)
+- Gadget detection HUD (blue outline through walls at 5m)
+- Death animation: collapses backward, device sparks (tech failure)
+
+### Audio Requirements
+
+| Sound | Notes |
+| :---- | :---- |
+| EMP activate | Rising electronic whine + sharp pulse crack |
+| EMP effect (enemy perspective) | Static burst + HUD distortion noise |
+| Hacking interaction | Rapid keyboard clicks + data transfer chirps |
+| Gadget detected | Soft electronic ping (only CIPHER hears) |
+| Footsteps | Standard weight — sneakers on concrete |

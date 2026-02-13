@@ -19,6 +19,8 @@ type: docs
 | **Height**      | 178 cm (5'10")            |
 | **Weight**      | 76 kg (168 lbs)           |
 
+<!-- REF_IMAGE: DOC operator portrait — field medic gear, white cross on vest, kindly but tired expression, medical drone hovering nearby -->
+
 ### Background
 
 Dr. Morrison was a trauma surgeon with the Royal Army Medical Corps, serving in conflict zones across the Middle East and Africa. His ability to perform miracles under fire earned him the respect of soldiers who'd seen him pull men back from the brink of death.
@@ -272,9 +274,9 @@ After a hostile extraction went wrong, James watched helplessly as soldiers died
 ### Default Appearance
 
 - **Outfit:** White tactical vest with red cross, khaki pants
-- **Headgear** | Medical cap with goggles
-- **Gloves** | Blue surgical gloves
-- **Face** | Graying beard, kind but tired eyes
+- **Headgear:** Medical cap with tactical goggles
+- **Gloves:** Blue surgical gloves
+- **Face:** Graying beard, kind but tired eyes
 
 ### Unlockable Skins
 

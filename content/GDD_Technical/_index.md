@@ -27,102 +27,90 @@ Coding patterns, naming rules, and project organization
 ### 🏗️ Core Systems
 Foundation architecture and networking
 
-- **[Architecture](./Core/Architecture.md)** - System architecture, tech stack, module structure
-- **[Networking System](./Core/NetworkingSystem.md)** - Client-server model, sync, matchmaking
-- **[Development Roadmap](./Core/DevelopmentRoadmap.md)** - Sprint planning, milestones, priorities
+{{< cards cols="3" >}}
+  {{< card link="Core/Architecture" title="Architecture" icon="server" subtitle="System architecture, tech stack, module structure" >}}
+  {{< card link="Core/NetworkingSystem" title="Networking" icon="globe-alt" subtitle="Client-server model, sync, matchmaking" >}}
+  {{< card link="Core/DevelopmentRoadmap" title="Roadmap" icon="map" subtitle="Sprint planning, milestones, priorities" >}}
+{{< /cards >}}
 
 ---
 
 ### 🎮 Gameplay Systems
 Character, combat, inventory, and UI mechanics
 
-- **[Character System](./Gameplay/CharacterSystem.md)** - Operator classes, abilities, stats (enums & codenames)
-- **[Weapon System](./Gameplay/WeaponSystem.md)** - Weapons, attachments, combat mechanics (enums & codenames)
-- **[Inventory System](./Gameplay/InventorySystem.md)** - Grid system, items, stash (enums & codenames)
-- **[Control System](./Gameplay/ControlSystem.md)** - Input abstraction, cross-platform controls, movement logic
-- **[Settings System](./Systems/SettingsSystem.md)** - Engine scalability, audio mixers, and persistence logic
-- **[UI System](./Systems/UISystem.md)** - HUD, menus, widgets, touch controls, notifications
+{{< cards cols="3" >}}
+  {{< card link="Gameplay/CharacterSystem" title="Character System" icon="user" subtitle="Operator classes, abilities, stats" >}}
+  {{< card link="Gameplay/WeaponSystem" title="Weapon System" icon="crosshair" subtitle="Weapons, attachments, ballistics" >}}
+  {{< card link="Gameplay/InventorySystem" title="Inventory System" icon="briefcase" subtitle="Grid system, items, stash, loot" >}}
+  {{< card link="Gameplay/ControlSystem" title="Control System" icon="command-line" subtitle="Input abstraction, movement logic" >}}
+  {{< card link="Systems/SettingsSystem" title="Settings System" icon="cog" subtitle="Scalability, audio, persistence" >}}
+  {{< card link="Systems/UISystem" title="UI System" icon="window" subtitle="HUD, menus, widgets, touch controls" >}}
+{{< /cards >}}
 
 ---
 
 ### 🤖 AI & World Systems
 AI behavior, map, and narrative
 
-- **[AI System](./Systems/AISystem.md)** - Enemy types, behavior trees, perception, combat AI, bosses
-- **[Map System](./Systems/MapSystem.md)** - Zones, extraction, containers, supply drops, contamination, hazards
-- **[Narrative System](./Systems/NarrativeSystem.md)** - Quests, factions, dialogue, collectibles, operator stories
+{{< cards cols="3" >}}
+  {{< card link="Systems/AISystem" title="AI System" icon="cpu-chip" subtitle="Enemy behavior, combat AI, bosses" >}}
+  {{< card link="Systems/MapSystem" title="Map System" icon="map-pin" subtitle="Zones, extraction, hazards, loot containers" >}}
+  {{< card link="Systems/NarrativeSystem" title="Narrative System" icon="book-open" subtitle="Quests, factions, dialogue, story" >}}
+{{< /cards >}}
 
 ---
 
 ### 👥 Social & Competitive Systems
-Multiplayer, ranked, progression, and community features
+Multiplayer, ranked, progression, and community
 
-- **[Social System](./Systems/SocialSystem.md)** - Squads, voice/text chat, clans, friends, reporting
-- **[Ranked System](./Systems/RankedSystem.md)** - RP, matchmaking, seasons, leaderboards, anti-cheat
-- **[Progression System](./Systems/ProgressionSystem.md)** - XP, leveling, currencies, quests, Battle Pass
-- **[Live Ops System](./Systems/LiveOpsSystem.md)** - Events, challenges, shop, notifications
+{{< cards cols="3" >}}
+  {{< card link="Systems/SocialSystem" title="Social System" icon="users" subtitle="Squads, voice/text chat, clans, friends" >}}
+  {{< card link="Systems/RankedSystem" title="Ranked System" icon="trophy" subtitle="RP, matchmaking, seasons, anti-cheat" >}}
+  {{< card link="Systems/ProgressionSystem" title="Progression" icon="trending-up" subtitle="XP, leveling, currencies, Battle Pass" >}}
+  {{< card link="Systems/LiveOpsSystem" title="Live Ops" icon="calendar" subtitle="Events, challenges, shop, notifications" >}}
+{{< /cards >}}
 
 ---
 
 ### ♿ Platform & Accessibility
-Localization, accessibility, persistence, and audio features
+Localization, accessibility, persistence, and audio
 
-- **[Localization System](./Systems/LocalizationSystem.md)** - Languages, text, fonts, RTL, voice localization
-- **[Accessibility System](./Systems/AccessibilitySystem.md)** - Colorblind, subtitles, aim assist, motor/cognitive
-- **[Audio System](./Systems/AudioSystem.md)** - Sound, music, voice lines, 3D audio, mixing
-- **[Save System](./Systems/SaveSystem.md)** - Save/load, cloud sync, data persistence, migration
-- **[Tutorial System](./Systems/TutorialSystem.md)** - Onboarding, hints, tooltips, training mode
+{{< cards cols="3" >}}
+  {{< card link="Systems/LocalizationSystem" title="Localization" icon="translate" subtitle="Languages, text, RTL, voice" >}}
+  {{< card link="Systems/AccessibilitySystem" title="Accessibility" icon="hand-raised" subtitle="Colorblind, subtitles, aim assist" >}}
+  {{< card link="Systems/AudioSystem" title="Audio System" icon="speaker-wave" subtitle="Sound, music, voice lines, mixing" >}}
+  {{< card link="Systems/SaveSystem" title="Save System" icon="cloud-arrow-up" subtitle="Save/load, cloud sync, persistence" >}}
+  {{< card link="Systems/TutorialSystem" title="Tutorial System" icon="academic-cap" subtitle="Onboarding, hints, training mode" >}}
+{{< /cards >}}
 
 ---
 
 ### ⚡ Performance & Optimization
 Mobile optimization and profiling
 
-- **[Optimization](./Performance/Optimization.md)** - Mobile performance, memory, battery, profiling
+{{< cards cols="3" >}}
+  {{< card link="Performance/Optimization" title="Optimization" icon="bolt" subtitle="Mobile performance, memory, profiling" >}}
+{{< /cards >}}
 
 ---
 
 ## 📖 How to Use This Document
 
-**For Developers:**
-- Reference enum/codename definitions
-- Check TODO lists for implementation status
-- Understand system contracts and interfaces
-- Follow architecture guidelines
-
-**For Technical Artists:**
-- Understand data structures for assets
-- Reference naming conventions
-- Check performance budgets
-- Coordinate with system requirements
-
-**For DevOps:**
-- Review infrastructure requirements
-- Understand scaling needs
-- Check deployment pipeline
-- Monitor performance metrics
+{{< cards cols="3" >}}
+  {{< card title="For Developers" icon="code-bracket" subtitle="Reference enum/codenames, check TODOs, follow architecture." >}}
+  {{< card title="For Tech Artists" icon="paint-brush" subtitle="Check asset structures, naming conventions, performance budgets." >}}
+  {{< card title="For DevOps" icon="server-stack" subtitle="Review infra requirements, scaling, deployment pipelines." >}}
+{{< /cards >}}
 
 ---
 
 ## 🎯 Technical Philosophy
 
-**Clean Architecture:**
-- Separation of concerns
-- Dependency injection
-- Interface-driven design
-- Testable components
-
-**Mobile-First:**
-- Performance budgets enforced
-- Memory constraints respected
-- Battery efficiency prioritized
-- Touch-optimized controls
-
-**Scalable:**
-- Modular system design
-- Easy to extend
-- Minimal coupling
-- Clear contracts
+{{< cards cols="3" >}}
+  {{< card title="Clean Architecture" icon="cube" subtitle="Separation of concerns, DI, interface-driven, testable." >}}
+  {{< card title="Mobile-First" icon="device-phone-mobile" subtitle="Performance budgets, battery efficiency, touch inputs." >}}
+  {{< card title="Scalable" icon="arrow-trending-up" subtitle="Modular design, easy to extend, minimal coupling." >}}
+{{< /cards >}}
 
 ---
 
@@ -154,7 +142,7 @@ Mobile optimization and profiling
 ## 📝 Naming Conventions
 
 ### Enums
-```csharp
+```cpp
 // PascalCase with namespace prefix
 public enum EWeaponType { ... }
 public enum EOperatorClass { ... }
@@ -162,7 +150,7 @@ public enum ERarity { ... }
 ```
 
 ### Code Names (Identifiers)
-```csharp
+```cpp
 // Format: CATEGORY_SUBCATEGORY_NAME
 // Examples:
 WPN_AR_AK47          // Weapon - Assault Rifle - AK47
@@ -172,7 +160,7 @@ ATT_OPTIC_REDDOT     // Attachment - Optic - RedDot
 ```
 
 ### TODO Format
-```csharp
+```cpp
 // TODO(priority): Description
 // Priority: P0 (critical), P1 (high), P2 (medium), P3 (low)
 // TODO(P0): Implement core movement system
@@ -194,27 +182,13 @@ ATT_OPTIC_REDDOT     // Attachment - Optic - RedDot
 - Adding new item → [Inventory System](./Gameplay/InventorySystem.md)
 - Optimizing performance → [Optimization](./Performance/Optimization.md)
 
-**New Systems:**
-- AI & enemies → [AI System](./Systems/AISystem.md)
-- Map & extraction → [Map System](./Systems/MapSystem.md)
-- Quests & story → [Narrative System](./Systems/NarrativeSystem.md)
-- Multiplayer & squads → [Social System](./Systems/SocialSystem.md)
-- Ranked & matchmaking → [Ranked System](./Systems/RankedSystem.md)
-- XP & leveling → [Progression System](./Systems/ProgressionSystem.md)
-- Events & Battle Pass → [Live Ops System](./Systems/LiveOpsSystem.md)
-- Sound & music → [Audio System](./Systems/AudioSystem.md)
-- HUD & menus → [UI System](./Systems/UISystem.md)
-- Save & cloud → [Save System](./Systems/SaveSystem.md)
-- Onboarding → [Tutorial System](./Systems/TutorialSystem.md)
-- Localization → [Localization System](./Systems/LocalizationSystem.md)
-- Accessibility → [Accessibility System](./Systems/AccessibilitySystem.md)
-
 ---
 
 ## 📅 Update Log
 
 | Date       | Section   | Changes                            | Updated By |
 | ---------- | --------- | ---------------------------------- | ---------- |
+| 2026-02-13 | Structure | Converted lists to card layout     | Agent      |
 | 2026-02-07 | Systems   | Added ProgressionSystem.md         | Team       |
 | 2026-02-07 | Systems   | Added SaveSystem.md                | Team       |
 | 2026-02-07 | Systems   | Added TutorialSystem.md            | Team       |

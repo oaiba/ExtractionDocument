@@ -11,7 +11,7 @@ Guidelines, budgets, and strategies for maintaining high framerates and memory e
 
 {{< cards cols="2" >}}
   {{< card link="Budgets" title="Performance Budgets" icon="chart-bar" subtitle="Frame time, draw calls, poly counts, and texture memory limits." >}}
-  {{< card link="Optimization" title="Optimization Guide" icon="bolt" subtitle="CPU/GPU profiling, LODs, HLODs, and material complexity." >}}
+  {{< card link="Optimization" title="Optimization Guide" icon="lightning-bolt" subtitle="CPU/GPU profiling, LODs, HLODs, and material complexity." >}}
 {{< /cards >}}
 
 ---

@@ -1,5 +1,5 @@
 ---
-title: "Extraction Shooter GDD"
+# title: "Extraction Shooter GDD"
 type: docs
 sidebar:
   hide: true
@@ -30,8 +30,8 @@ This is the central repository and gateway for all documentation related to the 
 
 {{< cards cols="3" >}}
   {{< card title="Engine" icon="server" subtitle="Unreal Engine 5 (C++)" >}}
-  {{< card title="Platform" icon="device-phone-mobile" subtitle="Mobile (iOS/Android) + PC" >}}
-  {{< card title="Genre" icon="crosshair" subtitle="Top-down Extraction Shooter" >}}
+  {{< card title="Platform" icon="device-mobile" subtitle="Mobile (iOS/Android) + PC" >}}
+  {{< card title="Genre" icon="fire" subtitle="Top-down Extraction Shooter" >}}
 {{< /cards >}}
 
 **Current Phase:** Pre-Production / Core Prototyping
@@ -43,38 +43,31 @@ This is the central repository and gateway for all documentation related to the 
 Access the specialized documentation portals based on your role and current task.
 
 {{< cards cols="2" >}}
-  {{< card link="/GDD_Design/" title="Design & Creative Hub" icon="sparkles" subtitle="Player experience, world-building, visual/audio aesthetics, and narrative." >}}
-  {{< card link="/GDD_Technical/" title="Technical & Engineering Hub" icon="terminal" subtitle="Implementation specs, systems architecture, networking, and performance." >}}
+  {{< card link="/ExtractionDocument/gdd_design/" title="Design & Creative Hub" icon="sparkles" subtitle="Player experience, world-building, visual/audio aesthetics, and narrative." >}}
+  {{< card link="/ExtractionDocument/gdd_technical/" title="Technical & Engineering Hub" icon="terminal" subtitle="Implementation specs, systems architecture, networking, and performance." >}}
 {{< /cards >}}
 
 {{< cards cols="2" >}}
-  {{< card link="/GDD_Agents/" title="AI Agent Guidelines" icon="cpu-chip" subtitle="Rules, workflows, and skills for AI coding agents (Gemini, Copilot, Cursor)." >}}
-  {{< card link="/GDD_Documentation_Guide/" title="Documentation Guide" icon="book-open" subtitle="How to write, structure, and maintain GDD documentation." >}}
+  {{< card link="/ExtractionDocument/gdd_agents/" title="AI Agent Guidelines" icon="chip" subtitle="Rules, workflows, and skills for AI coding agents (Gemini, Copilot, Cursor)." >}}
 {{< /cards >}}
 
 ---
 
 ## Quick Start by Role
 
-{{< cards cols="2" >}}
-  {{< card title="For Design & Art Teams" icon="paint-brush" >}}
-  
-  - **Single Source of Truth**: Always refer to the [Design Hub](/GDD_Design/) before starting creative work
-  - **Visual Consistency**: Follow the [Style Guide](/GDD_Design/Visuals/StyleGuide) for cross-platform fidelity
-  - **Core Loop**: Keep the [Core Gameplay](/GDD_Design/GameDesign/CoreGameplay) aligned with mechanic changes
-  - **Asset Submission**: Use [Asset Guidelines](/GDD_Design/Visuals/AssetGuidelines) for UE5 specs
+### 🎨 For Design & Art Teams
 
-  {{< /card >}}
-  
-  {{< card title="For Technical & Dev Teams" icon="code-bracket" >}}
-  
-  - **Implementation Specs**: All enums, codenames, and interfaces are in the [Technical Hub](/GDD_Technical/)
-  - **Performance First**: Adhere to [Performance Budgets](/GDD_Technical/Performance/Optimization)
-  - **Task Management**: Follow the [Development Roadmap](/GDD_Technical/Core/DevelopmentRoadmap)
-  - **Code Standards**: Maintain modularity per [Architecture](/GDD_Technical/Core/Architecture) docs
+- **Single Source of Truth**: Always refer to the [Design Hub](/GDD_Design/) before starting creative work
+- **Visual Consistency**: Follow the [Style Guide](/GDD_Design/Visuals/StyleGuide) for cross-platform fidelity
+- **Core Loop**: Keep the [Core Gameplay](/GDD_Design/GameDesign/CoreGameplay) aligned with mechanic changes
+- **Asset Submission**: Use [Asset Guidelines](/GDD_Design/Visuals/AssetGuidelines) for UE5 specs
 
-  {{< /card >}}
-{{< /cards >}}
+### 💻 For Technical & Dev Teams
+
+- **Implementation Specs**: All enums, codenames, and interfaces are in the [Technical Hub](/GDD_Technical/)
+- **Performance First**: Adhere to [Performance Budgets](/GDD_Technical/Performance/Optimization)
+- **Task Management**: Follow the [Development Roadmap](/GDD_Technical/Core/DevelopmentRoadmap)
+- **Code Standards**: Maintain modularity per [Architecture](/GDD_Technical/Core/Architecture) docs
 
 ---
 
@@ -83,14 +76,14 @@ Access the specialized documentation portals based on your role and current task
 {{< cards cols="3" >}}
   {{< card link="/GDD_Design/ProjectScope/MVP" title="MVP Definition" icon="flag" subtitle="Minimum Viable Product features and scope boundaries." >}}
   {{< card link="/GDD_Design/ProjectScope/NonGoals" title="Non-Goals" icon="x-circle" subtitle="Features explicitly out of current scope." >}}
-  {{< card link="/GDD_Design/ProjectScope/Risks" title="Risk Assessment" icon="exclamation-triangle" subtitle="Known challenges and mitigation strategies." >}}
+  {{< card link="/GDD_Design/ProjectScope/Risks" title="Risk Assessment" icon="exclamation-circle" subtitle="Known challenges and mitigation strategies." >}}
 {{< /cards >}}
 
 ### Recent Milestones
 
 {{< cards cols="3" >}}
-  {{< card title="Audio Architecture" icon="speaker-wave" subtitle="Completed Soundscape and Tactical Audio definitions" >}}
-  {{< card title="Visual Direction" icon="photo" subtitle="Finalized Art Bible and Mobile Performance Budgets" >}}
+  {{< card title="Audio Architecture" icon="volume-up" subtitle="Completed Soundscape and Tactical Audio definitions" >}}
+  {{< card title="Visual Direction" icon="photograph" subtitle="Finalized Art Bible and Mobile Performance Budgets" >}}
   {{< card title="Map System" icon="map" subtitle="Expanded Industrial Zone hotspots and loot heatmaps" >}}
 {{< /cards >}}
 

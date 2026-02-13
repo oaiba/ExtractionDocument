@@ -11,7 +11,7 @@ The backbone of the project, defining the technical structure, networking model,
 
 {{< cards cols="2" >}}
   {{< card link="Architecture" title="System Architecture" icon="server" subtitle="Tech stack, module structure, and class hierarchy." >}}
-  {{< card link="NetworkingSystem" title="Networking System" icon="globe-alt" subtitle="Replication, EOS integration, and dedicated servers." >}}
+  {{< card link="NetworkingSystem" title="Networking System" icon="globe" subtitle="Replication, EOS integration, and dedicated servers." >}}
   {{< card link="SecuritySystem" title="Security & Anti-Cheat" icon="shield-check" subtitle="Protection against cheats and exploits." >}}
   {{< card link="DevelopmentRoadmap" title="Development Roadmap" icon="map" subtitle="Milestones, sprint planning, and feature priorities." >}}
 {{< /cards >}}

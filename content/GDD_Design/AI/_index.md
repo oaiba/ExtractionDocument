@@ -15,7 +15,7 @@ The system is built on two main components:
 
 {{< cards cols="2" >}}
   {{< card link="enemybehavior.html" title="Enemy Behaviors" icon="chip" subtitle="Archetypes, states, combat tactics, and difficulty scaling." >}}
-  {{< card link="factionbehaviors.html" title="Faction Ecology" icon="user-group" subtitle="Relationships between Scavengers, Syndicate, UN-PK, and Wildlife." >}}
+  {{< card link="factionbehaviors.html" title="Faction Ecology" icon="users" subtitle="Relationships between Scavengers, Syndicate, UN-PK, and Wildlife." >}}
 {{< /cards >}}
 
 ---

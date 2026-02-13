@@ -29,7 +29,7 @@ Foundation architecture and networking
 
 {{< cards cols="3" >}}
   {{< card link="Core/Architecture" title="Architecture" icon="server" subtitle="System architecture, tech stack, module structure" >}}
-  {{< card link="Core/NetworkingSystem" title="Networking" icon="globe-alt" subtitle="Client-server model, sync, matchmaking" >}}
+  {{< card link="Core/NetworkingSystem" title="Networking" icon="globe" subtitle="Client-server model, sync, matchmaking" >}}
   {{< card link="Core/DevelopmentRoadmap" title="Roadmap" icon="map" subtitle="Sprint planning, milestones, priorities" >}}
 {{< /cards >}}
 
@@ -40,11 +40,11 @@ Character, combat, inventory, and UI mechanics
 
 {{< cards cols="3" >}}
   {{< card link="Gameplay/CharacterSystem" title="Character System" icon="user" subtitle="Operator classes, abilities, stats" >}}
-  {{< card link="Gameplay/WeaponSystem" title="Weapon System" icon="crosshair" subtitle="Weapons, attachments, ballistics" >}}
+  {{< card link="Gameplay/WeaponSystem" title="Weapon System" icon="fire" subtitle="Weapons, attachments, ballistics" >}}
   {{< card link="Gameplay/InventorySystem" title="Inventory System" icon="briefcase" subtitle="Grid system, items, stash, loot" >}}
-  {{< card link="Gameplay/ControlSystem" title="Control System" icon="command-line" subtitle="Input abstraction, movement logic" >}}
+  {{< card link="Gameplay/ControlSystem" title="Control System" icon="cursor-click" subtitle="Input abstraction, movement logic" >}}
   {{< card link="Systems/SettingsSystem" title="Settings System" icon="cog" subtitle="Scalability, audio, persistence" >}}
-  {{< card link="Systems/UISystem" title="UI System" icon="window" subtitle="HUD, menus, widgets, touch controls" >}}
+  {{< card link="Systems/UISystem" title="UI System" icon="template" subtitle="HUD, menus, widgets, touch controls" >}}
 {{< /cards >}}
 
 ---
@@ -53,8 +53,8 @@ Character, combat, inventory, and UI mechanics
 AI behavior, map, and narrative
 
 {{< cards cols="3" >}}
-  {{< card link="Systems/AISystem" title="AI System" icon="cpu-chip" subtitle="Enemy behavior, combat AI, bosses" >}}
-  {{< card link="Systems/MapSystem" title="Map System" icon="map-pin" subtitle="Zones, extraction, hazards, loot containers" >}}
+  {{< card link="Systems/AISystem" title="AI System" icon="chip" subtitle="Enemy behavior, combat AI, bosses" >}}
+  {{< card link="Systems/MapSystem" title="Map System" icon="location-marker" subtitle="Zones, extraction, hazards, loot containers" >}}
   {{< card link="Systems/NarrativeSystem" title="Narrative System" icon="book-open" subtitle="Quests, factions, dialogue, story" >}}
 {{< /cards >}}
 
@@ -65,7 +65,7 @@ Multiplayer, ranked, progression, and community
 
 {{< cards cols="3" >}}
   {{< card link="Systems/SocialSystem" title="Social System" icon="users" subtitle="Squads, voice/text chat, clans, friends" >}}
-  {{< card link="Systems/RankedSystem" title="Ranked System" icon="trophy" subtitle="RP, matchmaking, seasons, anti-cheat" >}}
+  {{< card link="Systems/RankedSystem" title="Ranked System" icon="star" subtitle="RP, matchmaking, seasons, anti-cheat" >}}
   {{< card link="Systems/ProgressionSystem" title="Progression" icon="trending-up" subtitle="XP, leveling, currencies, Battle Pass" >}}
   {{< card link="Systems/LiveOpsSystem" title="Live Ops" icon="calendar" subtitle="Events, challenges, shop, notifications" >}}
 {{< /cards >}}
@@ -77,9 +77,9 @@ Localization, accessibility, persistence, and audio
 
 {{< cards cols="3" >}}
   {{< card link="Systems/LocalizationSystem" title="Localization" icon="translate" subtitle="Languages, text, RTL, voice" >}}
-  {{< card link="Systems/AccessibilitySystem" title="Accessibility" icon="hand-raised" subtitle="Colorblind, subtitles, aim assist" >}}
-  {{< card link="Systems/AudioSystem" title="Audio System" icon="speaker-wave" subtitle="Sound, music, voice lines, mixing" >}}
-  {{< card link="Systems/SaveSystem" title="Save System" icon="cloud-arrow-up" subtitle="Save/load, cloud sync, persistence" >}}
+  {{< card link="Systems/AccessibilitySystem" title="Accessibility" icon="eye" subtitle="Colorblind, subtitles, aim assist" >}}
+  {{< card link="Systems/AudioSystem" title="Audio System" icon="volume-up" subtitle="Sound, music, voice lines, mixing" >}}
+  {{< card link="Systems/SaveSystem" title="Save System" icon="cloud-upload" subtitle="Save/load, cloud sync, persistence" >}}
   {{< card link="Systems/TutorialSystem" title="Tutorial System" icon="academic-cap" subtitle="Onboarding, hints, training mode" >}}
 {{< /cards >}}
 
@@ -89,7 +89,7 @@ Localization, accessibility, persistence, and audio
 Mobile optimization and profiling
 
 {{< cards cols="3" >}}
-  {{< card link="Performance/Optimization" title="Optimization" icon="bolt" subtitle="Mobile performance, memory, profiling" >}}
+  {{< card link="Performance/Optimization" title="Optimization" icon="lightning-bolt" subtitle="Mobile performance, memory, profiling" >}}
 {{< /cards >}}
 
 ---
@@ -97,9 +97,9 @@ Mobile optimization and profiling
 ## 📖 How to Use This Document
 
 {{< cards cols="3" >}}
-  {{< card title="For Developers" icon="code-bracket" subtitle="Reference enum/codenames, check TODOs, follow architecture." >}}
-  {{< card title="For Tech Artists" icon="paint-brush" subtitle="Check asset structures, naming conventions, performance budgets." >}}
-  {{< card title="For DevOps" icon="server-stack" subtitle="Review infra requirements, scaling, deployment pipelines." >}}
+  {{< card title="For Developers" icon="code" subtitle="Reference enum/codenames, check TODOs, follow architecture." >}}
+  {{< card title="For Tech Artists" icon="color-swatch" subtitle="Check asset structures, naming conventions, performance budgets." >}}
+  {{< card title="For DevOps" icon="server" subtitle="Review infra requirements, scaling, deployment pipelines." >}}
 {{< /cards >}}
 
 ---
@@ -108,8 +108,8 @@ Mobile optimization and profiling
 
 {{< cards cols="3" >}}
   {{< card title="Clean Architecture" icon="cube" subtitle="Separation of concerns, DI, interface-driven, testable." >}}
-  {{< card title="Mobile-First" icon="device-phone-mobile" subtitle="Performance budgets, battery efficiency, touch inputs." >}}
-  {{< card title="Scalable" icon="arrow-trending-up" subtitle="Modular design, easy to extend, minimal coupling." >}}
+  {{< card title="Mobile-First" icon="device-mobile" subtitle="Performance budgets, battery efficiency, touch inputs." >}}
+  {{< card title="Scalable" icon="trending-up" subtitle="Modular design, easy to extend, minimal coupling." >}}
 {{< /cards >}}
 
 ---

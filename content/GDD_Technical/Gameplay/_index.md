@@ -11,9 +11,9 @@ Core mechanics defining the moment-to-moment experience: movement, combat, inter
 
 {{< cards cols="2" >}}
   {{< card link="CharacterSystem" title="Character System" icon="user" subtitle="Operator classes, abilities, attributes (Health, Stamina), and state machines." >}}
-  {{< card link="WeaponSystem" title="Weapon System" icon="crosshair" subtitle="Ballistics, attachments, recoil patterns, and damage models." >}}
+  {{< card link="WeaponSystem" title="Weapon System" icon="fire" subtitle="Ballistics, attachments, recoil patterns, and damage models." >}}
   {{< card link="InventorySystem" title="Inventory System" icon="briefcase" subtitle="Grid-based inventory, looting, stash management, and item data." >}}
-  {{< card link="ControlSystem" title="Control System" icon="command-line" subtitle="Input abstraction, movement logic, and cross-platform controls." >}}
+  {{< card link="ControlSystem" title="Control System" icon="cursor-click" subtitle="Input abstraction, movement logic, and cross-platform controls." >}}
 {{< /cards >}}
 
 ---

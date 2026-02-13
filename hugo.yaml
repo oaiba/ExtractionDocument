@@ -21,12 +21,15 @@ params:
 
 menu:
   main:
-    - name: Design GDD
-      url: /GDD_Design/
+    - name: Agents
+      url: /GDD_Agents/
       weight: 1
-    - name: Technical GDD
-      url: /GDD_Technical/
+    - name: Design
+      url: /GDD_Design/
       weight: 2
+    - name: Technical
+      url: /GDD_Technical/
+      weight: 3
     - name: Search
       weight: 10
       params:

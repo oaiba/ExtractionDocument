@@ -1,284 +1,252 @@
 ---
-title: "User Interface"
+title: "User Interface Visual Design"
 type: docs
+weight: 4
 ---
 
 ## UI Design Philosophy
 
-**Mobile-First Principles:**
-1. **Thumb-Friendly** - Controls within reach
-2. **Clear Hierarchy** - Important info stands out
-3. **Minimalist** - Not cluttered
-4. **Responsive** - Instant feedback
-5. **Accessible** - Readable, colorblind-safe
+The UI visual design supports the **Cyberpunk Neo-Industrial** art direction. Interfaces feel like military-grade tech terminals — dark panels with neon accent borders, holographic-style overlays, and crisp typography. The design must work seamlessly across **PC, Console, and Mobile**.
+
+**Cross-Platform Principles:**
+
+| Principle | PC | Console | Mobile |
+| :-------- | :- | :------ | :----- |
+| Primary Input | Mouse + Keyboard | Gamepad | Touch |
+| Interaction Model | Click, hover, scroll wheel | D-pad focus, face buttons | Tap, swipe, long-press |
+| Information Density | High (small text OK) | Medium (living room distance) | Low (thumb zone priority) |
+| Min Touch Target | N/A | 44x44 dp (focus highlight) | 48x48 dp (Apple HIG + buffer) |
+| Button Spacing | 8px minimum | 12px minimum | 16px minimum |
+
+**Design Hierarchy:**
+1. **Readability** — Information is instantly scannable
+2. **Consistency** — Every screen uses the same component library
+3. **Feedback** — Every interaction has visual + audio confirmation
+4. **Cyberpunk Identity** — Orange-cyan accents, dark panels, subtle tech effects
 
 ---
 
-## Touch Control Standards
+## UI Visual Style
 
-### Minimum Touch Targets
+### Panel Design
+
+**Base Panel:**
+
+| Property | Value |
+| :------- | :---- |
+| Background | Void Black (#0A0A0B) at 85% opacity |
+| Border | 1px solid, color varies by context |
+| Border Color (default) | Steel (#374151) |
+| Border Color (active) | Signal Orange (#F97316) or Tactical Cyan (#06B6D4) |
+| Corner Radius | 4px (sharp, tactical) |
+| Inner Glow | Subtle 2px glow matching border color at 15% opacity |
+| Backdrop Blur | 8px Gaussian (PC/Console), 4px (Mobile), disabled on Low settings |
+
+**Cyberpunk Panel Effects:**
+- Panels have a faint **scan line overlay** (horizontal lines at 1% opacity)
+- On appearance, panels play a brief **digital glitch** animation (50ms RGB shift)
+- Critical panels (danger warnings, extraction) pulse their border color slowly (2s cycle)
+
+<!-- REF_IMAGE: UI panel design system — showing default, active, critical, and disabled panel states with border colors and glow effects -->
+
+### Button Design
+
+**Standard Button:**
+
+| State | Background | Border | Text Color | Effect |
+| :---- | :--------- | :----- | :--------- | :----- |
+| Default | #1E293B | #374151 (1px) | #F8FAFC (white) | None |
+| Hover / Focus | #1E293B | #F97316 (orange, 2px) | #F97316 | Subtle glow |
+| Pressed | #F97316 (orange fill) | #F97316 (2px) | #0A0A0B (black) | Brief flash |
+| Disabled | #111827 | #1F2937 (1px) | #4B5563 (gray) | 50% opacity |
+
+**Primary Action Button (CTA):**
+
+| State | Background | Border | Text | Effect |
+| :---- | :--------- | :----- | :--- | :----- |
+| Default | Gradient: #F97316 → #EA580C | None | #0A0A0B (black, bold) | Subtle pulse glow |
+| Hover / Focus | Solid #FB923C (lighter) | #FDBA74 (1px) | #0A0A0B | Expanded glow |
+| Pressed | Solid #C2410C (darker) | None | #F8FAFC (white) | Compress effect |
 
 **Button Sizes:**
-- Small buttons: 60x60 px (minimum)
-- Medium buttons: 80x80 px (recommended)
-- Large buttons: 100x100 px (primary actions)
-- Touch zones: +20px padding around visual
 
-**Spacing:**
-- Between buttons: 16px minimum
-- Screen edges: 24px margin
-- Grouped elements: 8px gap
+| Size | Min Width | Height | Font Size | Usage |
+| :--- | :-------- | :----- | :-------- | :---- |
+| Small | 80px | 32px | 12px | Filters, secondary actions |
+| Medium | 120px | 40px | 14px | Standard interactions |
+| Large | 200px | 48px | 16px | Primary actions (PLAY, DEPLOY) |
+| Full-Width | 100% parent | 56px | 18px | Mobile primary actions |
 
----
+### Typography
 
-### Control Zones
+| Element | Font | Weight | Size | Color | Tracking |
+| :------ | :--- | :----- | :--- | :---- | :------- |
+| Screen Title | Oxanium | Bold | 28px | #F8FAFC | +2% |
+| Section Header | Oxanium | Semi-Bold | 20px | #F8FAFC | +1% |
+| Body Text | Inter | Regular | 14px | #CBD5E1 | 0% |
+| Label | Inter | Medium | 12px | #94A3B8 | +1% |
+| Value / Number | JetBrains Mono | Bold | 16px | #F8FAFC | 0% |
+| Currency / Price | JetBrains Mono | Bold | 18px | #FBBF24 | 0% |
+| Alert Text | Inter | Bold | 14px | #EF4444 | +1% |
 
-```
-┌─────────────────────────────┐
-│  [HP][Stamina]    [Timer]   │ Top (Status)
-│                  [Players]  │
-│                             │
-│     [Minimap]               │ Top-Right (Info)
-│                             │
-│                             │ Center (Gameplay)
-│         [Crosshair]         │
-│                             │
-│                             │
-│ [Joystick]      [Fire Btn]  │ Bottom (Controls)
-│ [Crouch]    [Reload][Swap]  │
-│ [Interact]     [Inventory]  │
-└─────────────────────────────┘
-```
+### Icon Design
 
-**Thumb Zones:**
-- Left thumb: Movement, crouch, interact
-- Right thumb: Fire, reload, swap, inventory
-- Top: Non-critical info only (no buttons)
+| Property | Specification |
+| :------- | :------------ |
+| Style | Line art, consistent 2px stroke width |
+| Min size | 24x24 px (never smaller) |
+| Color (default) | #94A3B8 (muted gray) |
+| Color (active) | #F97316 (orange) or #06B6D4 (cyan) |
+| Color (alert) | #EF4444 (red) |
+| Category fills | Weapon icons: outlined. Status icons: filled. Navigation: outlined |
 
 ---
 
-## Main Menu & Screens
+## Control Standards by Platform
 
-### Home Screen
+### PC (Keyboard + Mouse)
 
-**Layout:**
+- Hotkey bindings for all major screens (I = Inventory, M = Map, TAB = Scoreboard, ESC = Menu)
+- Cursor-based interactions: click, drag-and-drop, right-click context menus
+- Scroll wheel for lists, zoom on map
+- Tooltip popups on hover (200ms delay)
+- Scalable UI: 80%-150% scaling for 1080p to 4K displays
 
-```
-┌─────────────────────────────┐
-│ [Logo]          [Settings]  │
-│                 [Profile]   │
-│                             │
-│   ┌─────────────────────┐   │
-│   │  Operator Preview   │   │ 3D Model Showcase
-│   │    [Character]      │   │
-│   └─────────────────────┘   │
-│                             │
-│      [═ PLAY MATCH ═]       │ Large, prominent
-│                             │
-│  [Loadout] [Stash] [Quests] │ Secondary actions
-│                             │
-│ ┌─────────────┐ ┌─────────┐ │
-│ │Daily Reward │ │  News   │ │ Info panels
-│ └─────────────┘ └─────────┘ │
-│                             │
-│ [Friends] [Clan] [Store]    │ Social/monetization
-└─────────────────────────────┘
-```
+### Console (Gamepad)
 
-**Elements:**
+- **D-pad** navigation with visible focus highlight (orange border, 2px)
+- **Face buttons** for primary actions (A/X = Select, B/Circle = Back, Y/Triangle = Context, X/Square = Alt Action)
+- **Bumpers** for tab switching (LB/RB cycle through screen tabs)
+- **Triggers** for quick actions (RT = Confirm in menus, LT = Quick-sell)
+- Radial menus for item selection (hold button + analog stick direction)
+- Safe zone margins for TV overscan (configurable in Settings)
 
-**Operator Display:**
-- 3D model preview
-- Current operator name
-- Level progress bar
-- Tap to change operator
+### Mobile (Touch)
 
-**Play Button:**
-- Size: 300x80px (large)
-- Color: Bright cyan
-- Animation: Pulse glow
-- Haptic feedback on press
-
-**Daily Reward Banner:**
-- Countdown timer
-- Reward preview
-- Tap to claim
-- New reward indicator (red dot)
-
-**News Panel:**
-- Latest updates
-- Events
-- Patch notes link
+- **Touch targets**: minimum 48x48 dp with 16px spacing
+- **Swipe gestures**: swipe to dismiss notifications, swipe between tabs
+- **Long-press**: context menu on items (inspect, equip, sell)
+- **Drag-and-drop**: inventory management with ghost item preview
+- **Customizable HUD layout**: players can drag and reposition HUD elements
+- **Auto-hide controls**: buttons fade to 40% opacity when not in use
+- **Gyroscope aiming**: toggle in Settings
 
 ---
 
-### Operator Selection Screen
+## Main Menu and Screens
 
-**Layout:**
+### Home Screen (The Hub)
 
 ```
-┌─────────────────────────────┐
-│  ← Back     OPERATORS       │
-│                             │
-│ ┌───┐ ┌───┐ ┌───┐ ┌───┐ ┌───┐ │
-│ │ A │ │ S │ │ R │ │ T │ │ Sp│ │ Operator Cards
-│ └───┘ └───┘ └───┘ └───┘ └───┘ │
-│  ✓              🔒    🔒     │ Lock indicators
-│                             │
-│   ┌─────────────────────┐   │
-│   │  Selected Operator  │   │ Preview
-│   │      3D Model       │   │
-│   └─────────────────────┘   │
-│                             │
-│  Class: ASSAULT             │ Info
-│  Level: 12  [Progress Bar] │
-│                             │
-│  Ability: Combat Stim       │ Ability
-│  ┌─────────────────────┐   │ description
-│  │ +25% damage for     │   │
-│  │ 10 seconds          │   │
-│  └─────────────────────┘   │
-│                             │
-│         [SELECT]            │ Confirm button
-└─────────────────────────────┘
+┌─────────────────────────────────────────┐
+│ [Logo]                      [Settings]  │
+│ [Season Pass]               [Profile]   │
+│                                         │
+│   ┌───────────────────────────────┐     │
+│   │     Operator 3D Preview       │     │  3D model with
+│   │       [Character Model]       │     │  cyberpunk lighting
+│   │    Neon orange rim light      │     │
+│   └───────────────────────────────┘     │
+│                                         │
+│        [====  DEPLOY  ====]             │  Large CTA button
+│                                         │  (orange gradient, pulse)
+│   [Loadout]  [Stash]  [Traders]         │  Secondary navigation
+│                                         │
+│   ┌──────────────┐  ┌──────────────┐    │
+│   │ Daily Reward  │  │   News /     │    │  Info panels
+│   │  [Claim]      │  │   Events     │    │
+│   └──────────────┘  └──────────────┘    │
+│                                         │
+│   [Squad]   [Shop]   [Battle Pass]      │  Tertiary navigation
+└─────────────────────────────────────────┘
 ```
 
-**Operator Cards:**
-- Portrait thumbnail
-- Class icon
-- Level number
-- Locked overlay (if locked)
-- Tap to preview
+**Cyberpunk Visual Treatment:**
+- Background: darkened 3D scene of the Hideout with neon ambient lighting
+- Operator preview: full 3D model with orange rim light, cyan fill light
+- Deploy button: orange gradient with slow pulse animation and subtle particle effect
+- Panel borders: thin orange or cyan lines with soft inner glow
+- Transition: screen elements slide in with brief glitch effect on load
 
-**Unlock Indicators:**
-- Gray overlay + padlock
-- "Level 10 Required"
-- "Complete Quest" button
-- Or "Purchase" option
-
----
+<!-- REF_IMAGE: Home screen high-fidelity mockup — showing operator preview with cyberpunk lighting, orange deploy button, and dark panel layout -->
 
 ### Loadout Screen
 
-**Layout:**
-
 ```
-┌─────────────────────────────┐
-│ ← Back      LOADOUT         │
-│                             │
-│ Operator: ASSAULT [Change]  │
-│                             │
-│ Primary Weapon:             │
-│ ┌─────────────┐             │
-│ │ [AR Image]  │ AK-47       │ Weapon slot
-│ │             │ DMG: 35     │
-│ │             │ FR:  600RPM │
-│ └─────────────┘ [Change]    │
-│                             │
-│ Secondary Weapon:           │
-│ ┌─────────────┐             │
-│ │ [Pistol Img]│ Glock 19    │
-│ └─────────────┘ [Change]    │
-│                             │
-│ Armor:                      │
-│ │ ████████░░  │ Medium (80) │ Armor bar
-│                  [Change]   │
-│                             │
-│ Equipment:                  │
-│ ┌───┐ ┌───┐ ┌───┐           │
-│ │Gren││Med││ - │  [Add]     │ Gear slots
-│ └───┘ └───┘ └───┘           │
-│                             │
-│ Perks: (Choose 2)           │
-│ [✓ Sprint+] [  Armor+]      │ Perk selection
-│ [  Reload+] [  Detection-]  │
-│                             │
-│ Total Gear Value: $15,250   │ Risk indicator
-│                             │
-│    [Save Loadout] [Ready]   │ Actions
-└─────────────────────────────┘
+┌─────────────────────────────────────────┐
+│ <- Back          LOADOUT         [Save] │
+│                                         │
+│ Operator: ASSAULT       [Change Class]  │
+│                                         │
+│ ┌────────────────┐  ┌────────────────┐  │
+│ │ Primary Weapon │  │  Weapon Stats  │  │
+│ │ ┌────────────┐ │  │  DMG:  35      │  │
+│ │ │  [Weapon   │ │  │  RPM:  650     │  │
+│ │ │   Image]   │ │  │  Range: 80m    │  │
+│ │ └────────────┘ │  │  Recoil: Med   │  │
+│ │  AK-74M  [Edit]│  └────────────────┘  │
+│ └────────────────┘                      │
+│                                         │
+│ Secondary:  Glock-19         [Edit]     │
+│ Armor:      Level 3 Vest     [Edit]     │
+│ Rig:        Tactical 8-slot  [Edit]     │
+│                                         │
+│ Equipment:  [Frag] [Medkit] [  +  ]     │
+│                                         │
+│ Insurance:  [Insure All - $2,400]       │
+│                                         │
+│ Gear Value: $15,250   Weight: 24.5 kg   │
+│             Risk: MEDIUM                │
+│                                         │
+│      [Save Preset]    [DEPLOY]          │
+└─────────────────────────────────────────┘
 ```
 
-**Weapon Selection Modal:**
-- Grid of owned weapons
-- Filter by type
-- Sort by: Level, Rarity, Damage
-- Preview stats comparison
-- "From Stash" indicator
+**Visual Notes:**
+- Weapon images rendered in real-time 3D with cyberpunk lighting
+- Stats displayed in monospace font (JetBrains Mono) for clean alignment
+- Risk indicator uses color coding: Low (green), Medium (amber), High (red), Extreme (pulsing red)
+- Insurance button has cyan border — optional but recommended UI pattern
 
-**Loadout Presets:**
-- Save up to 5 loadouts
-- Quick-select buttons
-- Rename loadouts
-- "Budget" vs "Premium" labels
-
----
-
-### Stash/Inventory Screen
-
-**Layout:**
+### Stash / Inventory Screen
 
 ```
-┌─────────────────────────────┐
-│ ← Back      STASH           │
-│ [Filter▼] [Sort▼] [Search] │
-│                             │
-│ ┌─────────────────────────┐ │
-│ │ ┌──┬──┬──┬──┬──┬──┬──┬──┐ │ │
-│ │ │██│  │██│  │  │  │  │  │ │ │
-│ │ ├──┼──┼──┼──┼──┼──┼──┼──┤ │ │
-│ │ │██│  │██│  │  │  │  │  │ │ │ Grid inventory
-│ │ ├──┼──┼──┼──┼──┼──┼──┼──┤ │ │ (drag & drop)
-│ │ │  │  │  │  │  │  │  │  │ │ │
-│ │ ├──┼──┼──┼──┼──┼──┼──┼──┤ │ │
-│ │ │  │  │  │  │  │  │  │  │ │ │
-│ │ └──┴──┴──┴──┴──┴──┴──┴──┘ │ │
-│ └─────────────────────────┘ │
-│                             │
-│ Selected Item:              │ Item details
-│ ┌─────────────┐             │ panel
-│ │ [Item Img]  │             │
-│ │             │ AK-47       │
-│ │             │ Rarity: Rare│
-│ └─────────────┘             │
-│ Damage: 35  | Fire Rate: 600│
-│ Value: $2,500               │
-│                             │
-│ [Equip] [Sell] [Details]    │ Actions
-│                             │
-│ Inventory: 145/200 slots    │ Capacity
-│ Value: $125,430 total       │
-└─────────────────────────────┘
+┌─────────────────────────────────────────┐
+│ <- Back          STASH                  │
+│ [Filter v]  [Sort v]  [Search...]       │
+│                                         │
+│ ┌────────────────────────────────────┐  │
+│ │ ┌──┬──┬──┬──┬──┬──┬──┬──┬──┬──┐  │  │
+│ │ │██│  │██│  │  │  │  │  │  │  │  │  │
+│ │ ├──┼──┼──┼──┼──┼──┼──┼──┼──┼──┤  │  │
+│ │ │██│  │██│  │  │  │  │  │  │  │  │  │  Grid inventory
+│ │ ├──┼──┼──┼──┼──┼──┼──┼──┼──┼──┤  │  │  (drag and drop)
+│ │ │  │  │  │  │  │  │  │  │  │  │  │  │
+│ │ ├──┼──┼──┼──┼──┼──┼──┼──┼──┼──┤  │  │
+│ │ │  │  │  │  │  │  │  │  │  │  │  │  │
+│ │ └──┴──┴──┴──┴──┴──┴──┴──┴──┴──┘  │  │
+│ └────────────────────────────────────┘  │
+│                                         │
+│ Selected:                               │
+│ ┌──────────────┐                        │
+│ │  [Item Img]  │  AK-74M                │
+│ │              │  Rarity: Rare (blue)    │
+│ │              │  DMG: 35 | RPM: 650    │
+│ └──────────────┘  Value: $2,500         │
+│                                         │
+│ [Equip]  [Sell]  [Inspect]  [Insure]    │
+│                                         │
+│ Capacity: 145/200 slots                 │
+│ Total Value: $125,430                   │
+└─────────────────────────────────────────┘
 ```
 
-**Features:**
-
-**Drag & Drop:**
-- Touch and hold to grab
-- Drag to position
-- Visual feedback (ghost item)
-- Auto-snap to grid
-- Haptic feedback on snap
-
-**Filters:**
-- All items
-- Weapons
-- Armor
-- Consumables
-- Materials
-- Quest items
-
-**Sort Options:**
-- Rarity
-- Value
-- Name (A-Z)
-- Recent (newly acquired)
-- Type
-
-**Quick Actions:**
-- Long-press for context menu
-- Swipe to sell (with confirmation)
-- Double-tap for details
+**Visual Notes:**
+- Item cells have rarity-colored borders (thin, 1px)
+- Drag-and-drop on PC/Mobile, cursor-select on Console
+- Empty cells: dark grid pattern with subtle scan line texture
+- Hover/focus: orange border highlight + item name tooltip
+- New items: pulsing border + "NEW" badge
 
 ---
 
@@ -286,482 +254,241 @@ type: docs
 
 ### Core HUD Layout
 
+For detailed functional specifications, see [HUD Design](../../UI_UX/HUD_Design/).
+
 ```
-┌─────────────────────────────┐
-│ ███ Health                  │ Top Left
-│ ███ Armor          12:45    │ (Status)
-│ ███ Stamina      12 Players │
-│                             │
-│           ┌───────┐         │ Top Right
-│           │ MAP   │         │ (Minimap)
-│           └───────┘         │
-│                             │
-│                             │
-│         ⊕                   │ Center
-│                             │ (Crosshair)
-│                             │
-│                   ┌──────┐  │ Right Side
-│                   │Loot  │  │ (Notifications)
-│                   │Found!│  │
-│                   └──────┘  │
-│ ◎                         ◉ │ Bottom
-│ Movement    30/30  [R] Fire │ (Controls)
-│ [C]rouch    [⟳]  [Inv]      │
-└─────────────────────────────┘
+┌─────────────────────────────────────────┐
+│ ███ Health                              │  Top-left: Status
+│ ███ Armor              12:45            │  Top-right: Timer
+│ ███ Stamina          12 Players         │
+│                                         │
+│                    ┌───────────┐        │
+│                    │  Minimap  │        │  Minimap
+│                    └───────────┘        │
+│                                         │
+│              +                          │  Crosshair
+│                                         │
+│                          ┌──────────┐   │
+│                          │ Loot     │   │  Notifications
+│                          │ Found!   │   │  (right side)
+│                          └──────────┘   │
+│                                         │
+│ [Move]              30/30  [R]  [Fire]  │  Bottom: Controls
+│ [Crouch]       [Reload] [Swap] [Inv]    │  (Mobile layout)
+└─────────────────────────────────────────┘
 ```
 
----
+**HUD Visual Treatment:**
+- All HUD elements use semi-transparent dark panels (#0A0A0B at 70%)
+- Status bars: segmented, bright colors against dark background
+- Minimap: circular, dark background, orange player marker, cyan teammate markers
+- Text: Inter font, white with black text shadow for readability on any background
 
-### Health & Status Bars
+### Health and Status Bars
 
-**Health Bar:**
-- Location: Top-left
-- Style: Segmented (10 segments x 10 HP each)
-- Color: Bright red (#DC2626)
-- Animation: Smooth depletion, flash on damage
-- Size: 200x20px
-
-**Armor Bar:**
-- Below health bar
-- Style: Segmented (matching health)
-- Color: Bright blue (#3B82F6)
-- Shows before health depletes
-
-**Stamina Bar:**
-- Below armor
-- Style: Solid bar (no segments)
-- Color: Yellow (#FBBF24)
-- Auto-hide when full
-- Pulsing when low (<20%)
-
-**Design Notes:**
-- High contrast colors
-- Visible against any background
-- Large enough for glance reading
-- Damage direction indicators around bars
-
----
-
-### Minimap
-
-For detailed functional design, see **[Navigation & Map System](../GameDesign/NavigationAndMap.md)**.
-
-**Position:** Top-right corner
-**Size:** 150x150px (scalable in settings)
-**Style:** Top-down. Default: Rotating with player.
-
-**Elements:**
-
-**Player:**
-- Cyan triangle (pointing forward)
-- Fixed center (default) or North-up mode
-
-**Teammates:**
-- Blue circles with ID numbers
-- Off-screen direction indicators
-
-**Enemies:**
-- **Visual:** Red solid dot (if scanned/detected)
-- **Audio:** Pulsing waves pointing to sound source (See [Navigation GDD](../GameDesign/NavigationAndMap.md))
-
-**POIs:**
-- Loot containers: White dots
-- Extraction zones: Green helicopter icons
-- Supply drop: Yellow parachute
-- Contamination: Red pulsing circle
-
-**Map Features:**
-- Building outlines (simplified)
-- Roads (gray lines)
-- Zone boundaries
-- Zoom levels: Auto-zoom based on movement speed
-
----
+| Bar | Color | Style | Size | Animation |
+| :-- | :---- | :---- | :--- | :-------- |
+| Health | Red #DC2626 | Segmented (10 chunks) | 200x20 px | Smooth depletion, flash white on damage |
+| Armor | Cyan #06B6D4 | Segmented (matches health) | 200x16 px | Depletes before health |
+| Stamina | Amber #FBBF24 | Solid continuous bar | 200x8 px | Auto-hides when full, pulses when low |
 
 ### Ammo Counter
 
-**Position:** Bottom-right (near fire button)  
-**Style:**
+**Position:** Bottom-right (near fire button on Mobile, screen corner on PC/Console)
 
 ```
-    30  Current mag
+    30     ← Current magazine (large, bold)
    ───
-   120  Reserve ammo
+   120     ← Reserve ammo (smaller, muted)
 ```
 
-**States:**
-- Normal: White text
-- Low (<10 rounds): Yellow text
-- Empty: Red text + warning icon
-- Reloading: Progress circle animation
-
----
+| State | Text Color | Extra |
+| :---- | :--------- | :---- |
+| Normal (>30%) | White #F8FAFC | None |
+| Low (<10 rounds) | Amber #FBBF24 | None |
+| Empty | Red #EF4444 | "RELOAD" text flash + warning icon |
+| Reloading | Cyan #06B6D4 | Circular progress indicator |
 
 ### Crosshair
 
 **Position:** Screen center  
-**Style:** Minimal, tactical
+**Style:** Minimal, tactical, cyberpunk-influenced
 
-**States:**
-
-**Default:**
-```
-    │
-  ─ ⊕ ─
-    │
-```
-
-**Aiming (smaller):**
-```
-   │
- ─ + ─
-   │
-```
-
-**Enemy in sights (red):**
-```
-   │
- ─ ⊕ ─  (Red color)
-   │
-```
+| State | Visual | Color |
+| :---- | :----- | :---- |
+| Default | 4-line cross with center gap | White #F8FAFC |
+| Aiming (tighter) | Smaller cross, thinner lines | White |
+| Enemy in sights | Same cross, color shift | Red #EF4444 |
+| Friendly in sights | Same cross, color shift | Cyan #06B6D4 |
+| Spread indicator | Cross lines expand with distance | White, lines scale |
 
 **Customization Options:**
-- Color (white, green, cyan, red)
-- Size (small, medium, large)
-- Style (cross, dot, circle)
-- Opacity (50-100%)
-
----
-
-### Virtual Joystick
-
-**Position:** Bottom-left  
-**Size:** 120x120px touch area, 80x80px visual
-
-**Design:**
-```
-     ╔═══╗
-     ║ ◉ ║  Outer ring (fixed)
-     ╚═══╝
-       ●    Inner dot (follows thumb)
-```
-
-**Behavior:**
-- Appears on touch
-- Follows thumb within deadzone
-- Returns to center on release
-- Visual opacity: 60% (not blocking view)
-- Deadzone: 15% (no movement in center)
-
-**Haptic Feedback:**
-- Light pulse at edge of deadzone
-- Helps thumb positioning without looking
-
----
-
-### Action Buttons
-
-**Fire Button:**
-- Position: Bottom-right corner
-- Size: 100x100px (largest button)
-- Color: Red (#EF4444)
-- Icon: Crosshair target
-- Behavior: Hold to auto-fire, tap for single shot
-
-**Reload Button:**
-- Position: Above right side, middle
-- Size: 70x70px
-- Color: Yellow (#FBBF24)
-- Icon: Circular arrows
-- Auto-hidden when full ammo
-
-**Weapon Swap:**
-- Position: Right of reload
-- Size: 60x60px
-- Color: Gray (#6B7280)
-- Icon: Two rifles crossed
-- Shows current weapon icon
-
-**Crouch Button:**
-- Position: Next to joystick
-- Size: 70x70px
-- Color: Gray (normal), Blue (crouched)
-- Icon: Person crouching
-- Toggle behavior
-
-**Interaction Button:**
-- Position: Below joystick
-- Size: 80x80px
-- Color: Cyan (#06B6D4)
-- Icon: Hand (changes contextual)
-- Context: "Open", "Pick Up", "Revive"
-- Only appears when near interactable
-
-**Inventory Button:**
-- Position: Bottom-right, below fire
-- Size: 60x60px
-- Color: Gray
-- Icon: Backpack
-- Opens inventory overlay
-
----
-
-### Damage Indicators
-
-**Hit Direction:**
-- Red arc on screen edge
-- Direction of damage source
-- Fades over 1 second
-- Intensity shows damage amount
-
-**Damage Numbers:**
-- Float up from hit location
-- Size scales with damage
-- Color: Yellow (normal), Red (critical), White (armor)
-- Optional toggle in settings
-
----
-
-### Kill Feed
-
-**Position:** Top-right, below timer  
-**Style:** Scrolling list (3 recent kills)
-
-**Format:**
-```
-[Killer] 🔫 [Victim]        (Top, newest)
-  You   🔫  Enemy2          (Middle)
-Player3 💀  You             (Bottom, oldest)
-```
-
-**Icons:**
-- 🔫 Gun kill (shows weapon icon)
-- 💥 Explosion
-- 🔪 Melee
-- 💀 Died to contamination/fall
-
-**Behavior:**
-- Fades in (0.3s)
-- Stays (5s)
-- Fades out (0.5s)
-- Scrolls up for new kills
-
----
-
-### Objective & Quest Tracker
-
-**Position:** Left side, middle  
-**Style:** Minimal list
-
-```
-├ Main Quest: Extract $5,000
-│  ├ Progress: $3,245 / $5,000
-│  └ Time: 8:32 remaining
-│
-└ Daily: Kill 5 enemies
-   └ Progress: 3 / 5
-```
-
-**Behavior:**
-- Collapsible (tap to minimize)
-- Updates real-time
-- Flash on progress
-- Completion animation
-
----
-
-### Extraction UI
-
-**Extraction Call:**
-- Large button appears near extraction zone
-- "Call Extraction" (green, pulsing)
-- Shows zone name
-- Tap to activate
-
-**Extraction Timer:**
-```
-┌─────────────────┐
-│  EXTRACTING     │
-│                 │
-│   ⏱ 00:24      │  Large countdown
-│                 │
-│  ████████░░░░   │  Progress bar
-│                 │
-│ Stay in zone!   │  Instruction
-└─────────────────┘
-```
-
-**States:**
-- Countdown: Green
-- Interrupted: Red flash + alert
-- Success: Gold + checkmark
-- Failed: Gray + X
-
----
-
-### Notification System
-
-**Types:**
-
-**Toast Notifications:**
-- Position: Top-center
-- Duration: 3 seconds
-- Examples: "Quest completed!", "Level up!"
-
-**Popup Notifications:**
-- Position: Center screen (modal)
-- Requires dismiss
-- Examples: "Achievement unlocked"
-
-**Loot Notifications:**
-- Position: Right side, scrolling
-- Shows item icon + name + rarity color
-- Auto-dismisses after 4 seconds
-
-**Alert Notifications:**
-- Position: Center-top
-- Urgent warnings
-- Examples: "Contamination approaching!"
-- Red background, pulsing
+- Color: white, green, cyan, red, orange (user choice)
+- Size: small, medium, large
+- Style: cross, dot, circle, dot-cross hybrid
+- Opacity: 50%-100%
+- Dynamic spread: On/Off
 
 ---
 
 ## Post-Match Screens
 
-### Victory Screen
+### Extraction Success
 
 ```
-┌─────────────────────────────┐
-│        EXTRACTED!           │
-│                             │
-│   ┌─────────────────────┐   │
-│   │  Operator Standing  │   │ 3D model
-│   │   (Victory Pose)    │   │ celebration
-│   └─────────────────────┘   │
-│                             │
-│ Loot Extracted:             │
-│ ┌──────────────────┐        │
-│ │ [Item] [Item]    │        │ Scrolling
-│ │ [Item] [Item]    │        │ loot list
-│ │                  │        │
-│ └──────────────────┘        │
-│ Total Value: $8,450         │
-│                             │
-│ ┌──────┬──────┬──────┐      │
-│ │ XP   │Kills│ Time │      │ Stats
-│ │+1250 │  3  │12:34 │      │
-│ └──────┴──────┴──────┘      │
-│                             │
-│ [Continue] [Play Again]     │
-└─────────────────────────────┘
+┌─────────────────────────────────────────┐
+│            ★ EXTRACTED ★                │  Title: gold text,
+│                                         │  neon glow
+│   ┌───────────────────────────────┐     │
+│   │    Operator Victory Pose      │     │  3D Model with
+│   │     (cyberpunk lighting)      │     │  orange rim light
+│   └───────────────────────────────┘     │
+│                                         │
+│  Loot Extracted:                        │
+│  ┌─────────────────────────────────┐    │
+│  │ [Icon] AK-74M          $2,500  │    │  Scrolling list
+│  │ [Icon] 5.45 Ammo x120    $240  │    │  (rarity borders)
+│  │ [Icon] Med Kit x2         $400  │    │
+│  │ [Icon] Lab Keycard      $8,000  │    │  Rare items glow
+│  └─────────────────────────────────┘    │
+│  Total Value: $11,140                   │
+│                                         │
+│  ┌────────┬─────────┬──────────┐        │
+│  │ XP     │  Kills  │  Time    │        │  Stats
+│  │ +1,250 │    3    │  12:34   │        │
+│  └────────┴─────────┴──────────┘        │
+│                                         │
+│  [Continue]          [Deploy Again]     │
+└─────────────────────────────────────────┘
 ```
 
 **Animations:**
-- Loot icons fly in
-- XP bar fills with satisfying sound
-- Rare items glow
-- Victory music
+- Loot icons fly in from left one by one
+- Rare items have glow pulse on reveal
+- XP bar fills with satisfying progress sound
+- Total value counter animates (counting up)
+- Victory music: cyberpunk synth with triumphant brass
+
+### Elimination (Death)
+
+```
+┌─────────────────────────────────────────┐
+│            ELIMINATED                   │  Title: red text,
+│                                         │  glitch effect
+│  Killed by: PlayerXYZ                   │
+│  Weapon: AK-74M                        │
+│  Distance: 45m                          │
+│                                         │
+│  Items Lost:                            │
+│  ┌─────────────────────────────────┐    │
+│  │ [Icon] AK-74M (grayed)  $2,500 │    │  Grayed-out icons
+│  │ [Icon] Armor Vest        $1,200 │    │  (lost items)
+│  │ [Icon] 5.45 Ammo x90      $180 │    │
+│  └─────────────────────────────────┘    │
+│  Value Lost: $3,880                     │
+│                                         │
+│  Secure Container Saved:                │
+│  [Icon] Lab Keycard          $8,000     │  Green highlight
+│                                         │
+│  ┌────────┬─────────┬──────────┐        │
+│  │ XP     │  Kills  │  Time    │        │  Consolation
+│  │  +250  │    1    │  7:23    │        │  stats
+│  └────────┴─────────┴──────────┘        │
+│                                         │
+│  [Replay Death]      [Deploy Again]     │
+└─────────────────────────────────────────┘
+```
+
+**Visual Treatment:**
+- Screen briefly glitches (500ms) before death screen appears
+- Lost items displayed with desaturated icons and strikethrough value
+- Secure container items highlighted with green border (survived)
+- Tone: informative, not punishing — always show what was saved
+- Music: somber cyberpunk ambient, no sudden silence
 
 ---
 
-### Defeat Screen
+## Settings UI Overview
+
+For detailed settings specifications, see [User Settings documentation](../../UserSettings/).
+
+### Settings Panel Layout
 
 ```
-┌─────────────────────────────┐
-│          KILLED             │
-│                             │
-│ Eliminated by: PlayerXYZ    │ Killer info
-│ Weapon: AK-47               │
-│ Distance: 45m               │
-│                             │
-│ You Lost:                   │
-│ ┌──────────────────┐        │
-│ │ [Item] [Item]    │        │ Lost loot
-│ │ [Item] [Item]    │        │ (grayed out)
-│ └──────────────────┘        │
-│ Value Lost: $12,340         │
-│                             │
-│ ┌──────┬──────┬──────┐      │
-│ │ XP   │Kills│ Time │      │ Consolation
-│ │ +250 │  1  │7:23  │      │ stats
-│ └──────┴──────┴──────┘      │
-│                             │
-│ [View Replay] [Try Again]   │
-└─────────────────────────────┘
+┌─────────────────────────────────────────┐
+│ <- Back          SETTINGS               │
+│                                         │
+│ [Graphics] [Audio] [Controls]           │  Tab bar
+│ [Gameplay] [Accessibility] [Account]    │  (bumpers cycle)
+│                                         │
+│ ┌─────────────────────────────────────┐ │
+│ │                                     │ │
+│ │  Setting Group                      │ │
+│ │  ├─ Setting Name     [Value    v]   │ │  Content area
+│ │  ├─ Setting Name     [Slider ●──]   │ │  (scrollable)
+│ │  ├─ Setting Name     [Toggle  ON]   │ │
+│ │  └─ Setting Name     [  Button  ]   │ │
+│ │                                     │ │
+│ └─────────────────────────────────────┘ │
+│                                         │
+│ [Reset to Default]  [Apply]  [Cancel]   │  Action bar
+└─────────────────────────────────────────┘
 ```
 
-**Tone:**
-- Not overly negative
-- Show what was lost (learning)
-- Encourage retry
-- Somber music
-
----
-
-## Settings UI
-
-### Settings Categories
-
-**Graphics:**
-- Quality presets (Low/Med/High/Ultra)
-- Resolution
-- Frame rate cap
-- Effects quality
-- Shadow quality
-- Anti-aliasing
-
-**Audio:**
-- Master volume
-- Music volume
-- SFX volume
-- Voice volume
-- Mono audio (accessibility)
-
-**Controls:**
-- Sensitivity (aim, movement)
-- Invert Y-axis
-- Fire button: Tap/Hold
-- Left-handed mode
-- Button size scaling
-- Button opacity
-
-**Gameplay:**
-- Auto-pickup
-- Aim assist strength
-- Crosshair customization
-- HUD scaling
-- Colorblind modes
-
-**Account:**
-- Linked accounts
-- Language
-- Logout
+**Key Visual Rules:**
+- Active tab: orange underline
+- Changed settings: amber dot indicator next to setting name (unsaved change)
+- Applied settings: brief green flash confirmation
+- Sliders: filled portion in orange (#F97316), unfilled in dark gray (#374151)
+- Toggles: on = orange (#F97316), off = dark gray (#374151)
 
 ---
 
 ## Accessibility Features
 
-**Colorblind Modes:**
-- Deuteranopia (red-green)
-- Protanopia (red-green)
-- Tritanopia (blue-yellow)
-- Adjusts UI colors, not art
+All UI must meet the following accessibility standards:
 
-**Visual Aids:**
-- High contrast mode
-- Larger text option
-- Screen reader support (future)
-- Simplified UI option
+| Feature | Implementation |
+| :------ | :------------- |
+| Colorblind Modes | Deuteranopia, Protanopia, Tritanopia filters. Adjusts UI colors only |
+| High Contrast Mode | Increases border visibility, enhances text shadow, boosts icon opacity |
+| Text Scaling | 100%-200% without breaking layout (responsive containers) |
+| Subtitles | Directional audio indicators for hearing-impaired players |
+| Button Remapping | Full customization across all platforms |
+| Motion Reduction | Toggle for screen shake, glitch effects, scan lines, and particle density |
+| One-Handed Mode | Mobile: simplified layout with larger touch zones on one side |
+| Screen Reader | Future feature — semantic UI elements prepared now |
 
-**Audio Aids:**
-- Subtitles for voice lines
-- Visual sound indicators
-- Mono audio option
+---
 
-**Controls:**
-- Customizable button layouts
-- One-handed mode (future)
-- External controller support
+## Responsive Design Rules
 
+### Aspect Ratio Support
 
+| Aspect Ratio | Platform | UI Adaptation |
+| :----------- | :------- | :------------ |
+| 16:9 | PC, Console, Tablet | Default layout |
+| 21:9 | Ultrawide PC | Extended peripheral view, anchored UI elements |
+| 18:9 / 19.5:9 | Mobile (modern) | Safe zone margins, bottom bar adjusted |
+| 4:3 | Older tablets | Centered layout, reduced side panels |
 
+### Safe Zone Margins
+
+| Platform | Top | Bottom | Left | Right |
+| :------- | :-- | :----- | :--- | :---- |
+| PC | 16px | 16px | 16px | 16px |
+| Console | 48px (configurable for TV overscan) | 48px | 48px | 48px |
+| Mobile | 24px + notch avoidance | 24px + home bar avoidance | 24px | 24px |
+
+### Performance Targets
+
+| UI Element | Render Budget | Update Frequency | Notes |
+| :--------- | :------------ | :--------------- | :---- |
+| HUD (in-game) | < 50 draw calls | Every frame | Minimal overdraw |
+| Menu screens | < 100 draw calls | On interaction | Lazy load panels |
+| Inventory grid | < 80 draw calls | On scroll/drag | Virtualized list |
+| Notifications | < 10 draw calls | On event | Pool and reuse |
+| Total UI | < 200 draw calls | — | Never exceed |
+| Texture budget | 32 MB max | — | Atlas aggressively |
+
+<!-- REF_IMAGE: UI component library sheet — showing buttons, panels, sliders, toggles, tabs, and icons at all states with cyberpunk visual treatment -->

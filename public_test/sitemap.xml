@@ -22,6 +22,8 @@
   </url><url>
     <loc>https://oaiba.github.io/ExtractionDocument/gdd_technical/gameplay/index.html</loc>
   </url><url>
+    <loc>https://oaiba.github.io/ExtractionDocument/gdd_design/story/narrative.html</loc>
+  </url><url>
     <loc>https://oaiba.github.io/ExtractionDocument/gdd_technical/networking/index.html</loc>
   </url><url>
     <loc>https://oaiba.github.io/ExtractionDocument/gdd_technical/performance/index.html</loc>
@@ -56,7 +58,11 @@
   </url><url>
     <loc>https://oaiba.github.io/ExtractionDocument/gdd_agents/workflows/index.html</loc>
   </url><url>
+    <loc>https://oaiba.github.io/ExtractionDocument/gdd_design/story/backstory.html</loc>
+  </url><url>
     <loc>https://oaiba.github.io/ExtractionDocument/gdd_design/characters/index.html</loc>
+  </url><url>
+    <loc>https://oaiba.github.io/ExtractionDocument/gdd_design/story/factions.html</loc>
   </url><url>
     <loc>https://oaiba.github.io/ExtractionDocument/gdd_design/gameplay/medical_system.html</loc>
   </url><url>
@@ -72,11 +78,15 @@
   </url><url>
     <loc>https://oaiba.github.io/ExtractionDocument/gdd_design/gameplay/looting_interactions.html</loc>
   </url><url>
+    <loc>https://oaiba.github.io/ExtractionDocument/gdd_design/story/questlines.html</loc>
+  </url><url>
     <loc>https://oaiba.github.io/ExtractionDocument/gdd_design/gameplay/environmental_hazards.html</loc>
   </url><url>
     <loc>https://oaiba.github.io/ExtractionDocument/gdd_design/gamedesign/index.html</loc>
   </url><url>
     <loc>https://oaiba.github.io/ExtractionDocument/gdd_design/inventory_gear/looting.html</loc>
+  </url><url>
+    <loc>https://oaiba.github.io/ExtractionDocument/gdd_design/story/lore_delivery.html</loc>
   </url><url>
     <loc>https://oaiba.github.io/ExtractionDocument/gdd_design/gameplay/extraction_mechanics.html</loc>
   </url><url>
@@ -87,8 +97,6 @@
     <loc>https://oaiba.github.io/ExtractionDocument/gdd_design/projectscope/index.html</loc>
   </url><url>
     <loc>https://oaiba.github.io/ExtractionDocument/gdd_design/social/index.html</loc>
-  </url><url>
-    <loc>https://oaiba.github.io/ExtractionDocument/gdd_design/story/index.html</loc>
   </url><url>
     <loc>https://oaiba.github.io/ExtractionDocument/gdd_design/ui_ux/index.html</loc>
   </url><url>
@@ -142,8 +150,6 @@
   </url><url>
     <loc>https://oaiba.github.io/ExtractionDocument/gdd_technical/systems/audiosystem.html</loc>
   </url><url>
-    <loc>https://oaiba.github.io/ExtractionDocument/gdd_design/story/backstory.html</loc>
-  </url><url>
     <loc>https://oaiba.github.io/ExtractionDocument/gdd_design/characters/assault/blaze.html</loc>
   </url><url>
     <loc>https://oaiba.github.io/ExtractionDocument/gdd_technical/systems/buildpipeline.html</loc>
@@ -177,8 +183,6 @@
     <loc>https://oaiba.github.io/ExtractionDocument/gdd_design/world/environmentalnarrative_guidelines.html</loc>
   </url><url>
     <loc>https://oaiba.github.io/ExtractionDocument/gdd_design/ai/factionbehaviors.html</loc>
-  </url><url>
-    <loc>https://oaiba.github.io/ExtractionDocument/gdd_design/story/factions.html</loc>
   </url><url>
     <loc>https://oaiba.github.io/ExtractionDocument/gdd_design/characters/specialist/flux.html</loc>
   </url><url>
@@ -244,8 +248,6 @@
   </url><url>
     <loc>https://oaiba.github.io/ExtractionDocument/gdd_design/projectscope/risks.html</loc>
   </url><url>
-    <loc>https://oaiba.github.io/ExtractionDocument/gdd_design/story/questlines.html</loc>
-  </url><url>
     <loc>https://oaiba.github.io/ExtractionDocument/gdd_design/gamedesign/rankedmode.html</loc>
   </url><url>
     <loc>https://oaiba.github.io/ExtractionDocument/gdd_technical/systems/rankedsystem.html</loc>
@@ -268,7 +270,7 @@
   </url><url>
     <loc>https://oaiba.github.io/ExtractionDocument/gdd_design/characters/recon/specter.html</loc>
   </url><url>
-    <loc>https://oaiba.github.io/ExtractionDocument/gdd_design/story/narrative.html</loc>
+    <loc>https://oaiba.github.io/ExtractionDocument/gdd_design/story/index.html</loc>
   </url><url>
     <loc>https://oaiba.github.io/ExtractionDocument/gdd_design/visuals/styleguide.html</loc>
   </url><url>

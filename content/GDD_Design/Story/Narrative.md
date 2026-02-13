@@ -1,528 +1,244 @@
 ---
-title: "Story & Narrative Design"
+title: "Narrative Design Bible"
 type: docs
+weight: 1
 ---
 
-## 📖 Narrative Philosophy
+## Narrative Philosophy
 
-**Storytelling Approach:** Environmental & Emergent
+This game tells its story through the **world itself**, not through the player. The narrative exists whether or not anyone is watching — the player is an intruder in a world that continued without them.
 
-Our game tells its story through:
-- **Environmental storytelling** - The world itself reveals what happened
-- **Faction lore** - Quest givers provide context and motivation
-- **Emergent narratives** - Player experiences create personal stories
-- **Minimal cutscenes** - Respect mobile session time
+### Storytelling Hierarchy
 
-**NOT:**
-- Long cutscenes interrupting gameplay
-- Heavy dialogue trees
-- Linear story progression
+| Priority | Channel | Player Effort | Example |
+| :------: | :------ | :------------ | :------ |
+| 1 | **Environmental** | Zero — player sees it naturally | Skeleton clutching a family photo near an exit door |
+| 2 | **Mechanical** | Zero — gameplay communicates it | The weight of looted gear creating anxiety about extraction |
+| 3 | **Audio Logs** | Low — interact with object | A panicked recording from a worker during The Collapse |
+| 4 | **Quest NPC Dialogue** | Medium — accept and complete quests | Viktor Koval explaining why a supply route matters |
+| 5 | **Collectible Documents** | High — seek and find | A classified Nexus Corp memo hidden behind a locked door |
+| 6 | **Codex Entries** | High — menu reading | Compiled lore entries unlocked through gameplay |
 
----
+**The rule**: A player who never reads a document or listens to a log should still *feel* the story through the environment and mechanics. A player who seeks lore should be rewarded with depth.
 
-## 🌍 World Lore
+### What This Game Is NOT
 
-### The Collapse (Year Zero)
+- **Not a cinematic experience**: No pre-rendered cutscenes. No camera-stealing moments. The player is always in control.
+- **Not a dialogue RPG**: NPC interactions are brief and purposeful. No branching dialogue trees.
+- **Not a linear narrative**: The story unfolds through exploration, not progression gates. Players discover lore in any order.
 
-**What Happened:**
-
-In 2031, a catastrophic event known as **"The Collapse"** struck the world. A combination of:
-- Global economic meltdown
-- Simultaneous infrastructure cyberattacks
-- Weaponized pandemic outbreak
-- Resource wars escalation
-
-Within 18 months, 60% of the world's governments had fallen. Cities became lawless. Corporations retreated to fortified compounds. The military fractured into warlord factions.
-
-### The Exclusion Zones (Year 3-5)
-
-**What They Are:**
-
-As the chaos settled, certain areas became too dangerous or valuable to ignore:
-- **Contaminated zones** - Areas affected by chemical/biological agents
-- **Resource hotspots** - Abandoned industrial complexes with valuable materials
-- **Failed military zones** - Bases with prototype weapons and supplies
-- **Corporate ruins** - Tech companies with salvageable data and equipment
-
-These became known as **"Exclusion Zones"** - officially off-limits, but ripe for exploitation.
-
-### The Extraction Economy (Year 5+)
-
-**The New Order:**
-
-A black market economy emerged around the Exclusion Zones:
-- **Contractors** (like our Operators) venture into zones
-- **Extract valuable items** (weapons, tech, data, resources)
-- **Sell to Factions** who control the outside world
-- **Risk everything** - death means losing your gear
-
-This is the world players enter.
+> For detailed environmental storytelling guidelines and art direction, see [Environmental Narrative](../../World/EnvironmentalNarrative/) and [Guidelines](../../World/EnvironmentalNarrative_Guidelines/).
+> For individual operator backstories and character profiles, see [Characters & Operators](../../Characters/).
 
 ---
 
-## 🗺️ Setting: Neo-Asia Exclusion Zone
+## Thematic Pillars
 
-### Location
+Every piece of narrative content must reinforce at least one of these core themes:
 
-The game takes place in a fictional region called the **Neo-Asia Industrial Corridor** - a massive area spanning what was once a thriving manufacturing hub.
+### 1. Trust and Betrayal
 
-**Inspired by:**
-- Abandoned Chinese ghost cities
-- Korean DMZ aesthetic  
-- Japanese industrial zones
-- Southeast Asian urban sprawl
+The post-Collapse world runs on trust — but trust is currency that can be counterfeited.
 
-### Zone Characteristics
+| Expression | Example |
+| :--------- | :------ |
+| Faction relationships | The Broker's identity is unknown — but everyone depends on them |
+| Squad gameplay | Your teammate could take your loot if you die |
+| Quest design | Some NPCs lie about quest objectives for their own benefit |
+| Environmental | Graffiti warning "DON'T TRUST THE PEACEKEEPERS" near a civilian mass grave |
 
-**Industrial Decay (Map 1)**
-```
-Former: Massive manufacturing complex
-Now: Rusted factories, collapsed warehouses
-Hazards: Unstable structures, chemical leaks
-Loot: Industrial materials, old-world tech, weapons caches
-Atmosphere: Silent except for creaking metal, dripping water
-```
+### 2. Survival Ethics
 
-**Urban Ruins (Map 2)**
-```
-Former: Commercial district, residential high-rises
-Now: Overgrown streets, looted apartments
-Hazards: Hostile scavengers, structural collapse
-Loot: Consumer electronics, medical supplies, personal valuables
-Atmosphere: Eerie quiet, occasional distant gunfire
-```
+What are you willing to do to survive? Where is the line?
 
-**Military Outpost (Map 3 - Future)**
-```
-Former: Joint military base, weapons depot
-Now: Contested territory, partially active defenses
-Hazards: Automated turrets, minefields, elite AI
-Loot: Military-grade weapons, armor, classified data
-Atmosphere: Tense, organized chaos
-```
+| Expression | Example |
+| :--------- | :------ |
+| Faction philosophy | Salvage Corps values fair work; Underground values survival at any price |
+| Quest moral choices | Save a civilian vs. loot their supplies — both options have consequences |
+| Environmental | Medical triage notes showing who was saved and who was left to die |
+| Player behavior | The extraction mechanic itself — you choose when "enough is enough" |
 
----
+### 3. Corporate Sin
 
-## 🏴 Factions
+Nexus Corporation's greed created the Collapse. Their sins echo through every ruined building.
 
-Factions are **NOT playable**. They serve as:
-- Quest givers
-- Lore sources
-- Vendors for unique rewards
-- Reputation systems
+| Expression | Example |
+| :--------- | :------ |
+| Project Prometheus | Human experimentation for profit — the AI bosses are their victims |
+| Environmental | Corporate memos discussing cost-benefit of containment vs. cover-up |
+| Quest revelations | Discovering that The Collapse was preventable if Nexus had acted early |
+| World design | Pristine executive suites next to crumbling worker dormitories |
 
-### 1. Salvage Corps
+### 4. Identity in Ruins
 
-**Identity:**
-```
-Motto: "Honest Work in Lawless Lands"
-Color: Orange & Gray
-Symbol: Crossed wrenches over a gear
-Leader: "Foreman" Viktor Koval
-```
+Who are you when civilization is gone? Do your old credentials matter?
 
-**Background:**
-Former industrial workers who banded together after The Collapse. They believe in practical salvage - recycling the old world to build the new. They're the most accessible faction for new players.
-
-**Philosophy:**
-- Value hard work and fair trade
-- Despise corporate exploitation
-- Neutral in faction conflicts
-- Focus on reconstruction, not destruction
-
-**Quest Types:**
-- Retrieve industrial materials (metal, electronics, fuel)
-- Repair/activate machinery
-- Clear routes for salvage operations
-- Protect supply convoys (escort missions)
-
-**Unique Rewards:**
-- Crafting materials
-- Practical gear (backpacks, tools)
-- Stash expansions
-- Vehicle access (future)
-
-**Reputation Levels:**
-| Level | Title           | Benefit                             |
-| :---- | :-------------- | :---------------------------------- |
-| 1     | Newcomer        | Access to basic quests              |
-| 2     | Worker          | 5% discount on Salvage items        |
-| 3     | Foreman's Pick  | Exclusive gear unlocks              |
-| 4     | Trusted         | Access to high-value salvage quests |
-| 5     | Salvage Veteran | Unique cosmetics, title             |
+| Expression | Example |
+| :--------- | :------ |
+| Operator backstories | Each operator is defined by who they were *before* vs. who they are *now* |
+| Faction identity | Peacekeepers cling to old-world authority; Underground builds new rules |
+| Player identity | The loadout you choose reflects your identity — rat, chad, healer, lone wolf |
+| Environmental | Personal effects showing someone's past life (diplomas, uniforms, toys) |
 
 ---
 
-### 2. Tech Syndicate
+## Tone Guide
 
-**Identity:**
-```
-Motto: "Knowledge is the Ultimate Currency"
-Color: Cyan & Black
-Symbol: Circuit pattern forming an eye
-Leader: "Director" Seo-Yun Park
-```
+### General Tone
 
-**Background:**
-A coalition of former tech workers, hackers, and corporate defectors. They seek to preserve and exploit pre-Collapse technology. They operate from hidden server farms and communicate through encrypted channels.
+The narrative tone is **grim but not nihilistic**. The world is broken, but people are still trying. Hope exists, but it costs something.
 
-**Philosophy:**
-- Information is power
-- Technology should be controlled by those who understand it
-- Corporate secrets deserve to be exposed
-- The future belongs to the connected
+| Tone Axis | Where We Sit | Reference |
+| :-------- | :----------- | :-------- |
+| Hopeful ← → Bleak | 70% bleak, 30% hope | *The Road* (McCarthy) meets *Metro 2033* |
+| Serious ← → Humorous | 85% serious, 15% dark humor | Gallows humor from soldiers and scavengers |
+| Realistic ← → Fantastical | 90% grounded, 10% sci-fi | Near-future tech, no magic, minimal supernatural |
+| Personal ← → Epic | 60% personal, 40% epic | Personal stories against an epic backdrop |
 
-**Quest Types:**
-- Retrieve data drives and servers
-- Hack security systems
-- Recover prototype tech
-- Eliminate corporate remnants
+### Tone by Context
 
-**Unique Rewards:**
-- Electronic attachments
-- Hacking tools
-- Specialist gear
-- Intel on map secrets
+| Context | Tone | Example |
+| :------ | :--- | :------ |
+| Audio Logs (Workers) | Scared, confused, human | "I just want to go home. My daughter's birthday is tomorrow." |
+| Audio Logs (Military) | Terse, procedural, cracking | "All units fall back to Rally Point Bravo. That is an order. ...Please." |
+| Audio Logs (Corporate) | Cold, calculated, eventually panicked | "Quarterly projections remain on target despite containment issues." |
+| NPC Dialogue (Salvage) | Practical, fatherly, tired | "You look rough, kid. Grab a coffee. Then I need you to grab something else." |
+| NPC Dialogue (Tech) | Precise, guarded, intellectual | "The data is incomplete. I need someone I can... rely on. Are you that person?" |
+| NPC Dialogue (Underground) | Cryptic, transactional, darkly funny | "I know a guy who knows a guy. You don't want to know the guy." |
+| NPC Dialogue (Peacekeepers) | Authoritative, weary, principled | "I've seen too many good people die following bad orders. My orders are good." |
+| Item descriptions | Factual + one flavor sentence | "Standard 7.62mm FMJ. Cheap, reliable, and responsible for more deaths than any virus." |
+| Loading screen tips | In-character, faction-attributed | "The Broker says: 'Information is free. Accurate information costs extra.'" |
 
-**Reputation Levels:**
-| Level | Title        | Benefit                        |
-| :---- | :----------- | :----------------------------- |
-| 1     | Unknown      | Basic access                   |
-| 2     | Registered   | Tech item discounts            |
-| 3     | Trusted Node | Electronic gadget unlocks      |
-| 4     | Inner Circle | Secret quest lines             |
-| 5     | Elite Hacker | Exclusive skins, special tools |
+<!-- REF_IMAGE: Tone mood board — collage showing reference imagery from Metro 2033, The Last of Us, Stalker, and Escape from Tarkov with tone annotations -->
 
 ---
 
-### 3. Underground Network
+## Narrative Pacing Framework
 
-**Identity:**
+### Per-Raid Emotional Arc
+
+Every raid session should follow an implicit emotional narrative:
+
 ```
-Motto: "Survive Together or Die Alone"
-Color: Purple & Gold
-Symbol: Hands clasped in shadows
-Leader: "The Broker" (identity unknown)
+Entry (Dread)
+  "What's waiting for me in there?"
+    |
+Early Raid (Curiosity + Caution)
+  "What's that sound? What's in this room?"
+    |
+Mid-Raid (Tension + Greed)
+  "I found something good. Should I push further?"
+    |
+Late Raid (Urgency + Fear)
+  "Timer's running. I need to get out NOW."
+    |
+Extraction (Relief or Devastation)
+  "I made it!" or "I lost everything."
+    |
+Post-Raid (Reflection + Planning)
+  "What did I learn? What will I do differently?"
 ```
 
-**Background:**
-A loose alliance of survivors, refugees, and opportunists. They control the black market and information trade. No one knows who truly leads them - communication goes through intermediaries.
+### Per-Season Narrative Arc
 
-**Philosophy:**
-- Survival at any cost
-- Loyalty is earned, not given
-- Everyone has a price
-- Stay in the shadows
+| Season | Narrative Focus | Emotional Arc | Player Knowledge |
+| :----- | :-------------- | :------------ | :--------------- |
+| Season 1 (Launch) | Introduction to the world | Curiosity → Unease | "Something terrible happened here" |
+| Season 2 | Faction conflicts escalate | Loyalty → Doubt | "These factions are more complex than they seem" |
+| Season 3 | Collapse truth revealed | Shock → Anger | "Nexus Corp could have stopped this" |
+| Season 4 | The Broker's identity | Betrayal → Resolution | "Nothing in this world is what it appears" |
+| Year 2+ | Player agency | Empowerment → Responsibility | "My choices shape what happens next" |
 
-**Quest Types:**
-- Smuggle contraband
-- Eliminate rival operators
-- Gather intel on other factions
-- High-risk, high-reward heists
+### Lore Progression Gating
 
-**Unique Rewards:**
-- Rare weapons
-- Black market cosmetics
-- Credits bonuses
-- "Hot" items (questionable origin)
+Not all lore should be available immediately. Gate by these methods:
 
-**Reputation Levels:**
-| Level | Title          | Benefit                       |
-| :---- | :------------- | :---------------------------- |
-| 1     | Nobody         | Basic black market access     |
-| 2     | Known Face     | Better buy/sell prices        |
-| 3     | Trusted Runner | Smuggling quests              |
-| 4     | Inner Circle   | Assassination contracts       |
-| 5     | Shadow Elite   | Legendary items, unique title |
+| Gating Method | What It Gates | Design Purpose |
+| :------------ | :------------ | :------------- |
+| Map access (new maps per season) | Regional history, new faction NPCs | Rewards long-term engagement |
+| Player level | Main story quest chapters | Prevents spoilers, paces revelations |
+| Faction reputation | Faction-specific dialogue and quest lore | Rewards faction loyalty |
+| Exploration (hidden areas) | Easter eggs, deep lore, "true history" | Rewards thorough players |
+| Seasonal events | Limited-time narrative content | Creates urgency and community discussion |
 
 ---
 
-### 4. Peacekeepers
+## Dialogue Writing Guidelines
 
-**Identity:**
+### Structure for Quest NPCs
+
+Every NPC interaction follows this format. Total dialogue should be **under 30 seconds of spoken audio**:
+
 ```
-Motto: "Order From Chaos"
-Color: Blue & White
-Symbol: Shield with olive branches
-Leader: Commander Helena Vance
+1. GREETING (1-2 sentences)
+   - Acknowledge the player. Reference recent events if applicable.
+   - "You're back. Good. I was starting to think Sector 7 swallowed you whole."
+
+2. CONTEXT (2-3 sentences)
+   - Why does this quest matter? What's at stake?
+   - "We've got a supply convoy stuck at the loading docks. Scavs hit them
+     at dawn. Three of my people are still in there."
+
+3. OBJECTIVE (1-2 sentences)
+   - Clear, unambiguous instruction.
+   - "Get to the docks, clear the hostiles, and signal for pickup.
+     The convoy has to move before nightfall."
+
+4. REWARD MENTION (1 sentence)
+   - What the player gets. Always mention it.
+   - "Do this, and I'll open our armory to you. Fair trade."
+
+5. SEND-OFF (1 sentence)
+   - Character-specific farewell.
+   - Viktor: "Go. And try not to die — good workers are hard to find."
+   - The Broker: "You have 40 minutes. After that, this conversation
+     never happened."
 ```
-
-**Background:**
-Remnants of pre-Collapse military and law enforcement who still believe in order. They're attempting to establish safe zones and restore civilization. They're the most "lawful" faction but not without moral compromises.
-
-**Philosophy:**
-- Order must be restored
-- Some sacrifices are necessary
-- Protect the innocent
-- Justice, even if delayed
-
-**Quest Types:**
-- Eliminate hostile AI bosses
-- Secure extraction points
-- Rescue survivors (timed missions)
-- Destroy contraband caches
-
-**Unique Rewards:**
-- Military-grade armor
-- Tactical equipment
-- Medic supplies
-- Safe house access (future)
-
-**Reputation Levels:**
-| Level | Title             | Benefit                         |
-| :---- | :---------------- | :------------------------------ |
-| 1     | Civilian          | Basic recognition               |
-| 2     | Auxiliary         | Medical item discounts          |
-| 3     | Deputy            | Armor unlocks                   |
-| 4     | Officer           | Elite quest access              |
-| 5     | Commander's Trust | Legendary gear, exclusive title |
-
----
-
-## 👤 Operator Backstories
-
-### ASSAULT - "Ghost" (Real Name: Marcus Chen)
-
-**Background:**
-```
-Age: 34
-Origin: Former Hong Kong Special Forces
-Pre-Collapse: Counter-terrorism operative
-The Collapse: Unit was decimated during the chaos
-Now: Freelance contractor, motivated by survivor's guilt
-```
-
-**Personality:**
-- Aggressive, impulsive
-- Haunted by fallen comrades
-- Uses combat to cope with trauma
-- Secretly generous to civilians
-
-**Voice Personality:**
-- Growls orders
-- Dark humor
-- Occasional vulnerability
-
-**Personal Quest Chain: "Ghosts of Unit Seven"**
-1. Find intel on old squad members
-2. Discover survivor location
-3. Rescue or confirm deaths
-4. Confront traitor who sold them out
-5. **Reward:** Unique skin "Memorial" + backstory completion
-
----
-
-### SUPPORT - "Angel" (Real Name: Dr. Amara Okonkwo)
-
-**Background:**
-```
-Age: 38
-Origin: Nigerian field medic, Doctors Without Borders
-Pre-Collapse: Emergency medicine in conflict zones
-The Collapse: Hospital overrun, forced to flee
-Now: Healer for hire, still follows medical ethics
-```
-
-**Personality:**
-- Compassionate but realistic
-- Values every life (even enemies, if surrendered)
-- Refuses to leave wounded behind
-- Struggles with the violence required to survive
-
-**Voice Personality:**
-- Calm under pressure
-- Encouraging teammates
-- Grief when allies fall
-
-**Personal Quest Chain: "First, Do No Harm"**
-1. Deliver medical supplies to survivor camp
-2. Treat critically wounded civilian
-3. Secure medicine from hostile territory
-4. Confront ethical dilemma (save many or one)
-5. **Reward:** Unique skin "Healer's Oath" + backstory completion
-
----
-
-### RECON - "Specter" (Real Name: Yuki Tanaka)
-
-**Background:**
-```
-Age: 29
-Origin: Japanese Intelligence Agency operative
-Pre-Collapse: Corporate espionage specialist
-The Collapse: Agency dissolved, data became worthless
-Now: Information broker, sells intel to highest bidder
-```
-
-**Personality:**
-- Cold, calculating
-- Trust issues (betrayed by employer)
-- Values information over relationships
-- Secretly lonely
-
-**Voice Personality:**
-- Quiet, precise
-- Rarely shows emotion
-- Cryptic hints
-
-**Personal Quest Chain: "The Files"**
-1. Recover personal data from old employer
-2. Decrypt classified information
-3. Discover employer's role in The Collapse
-4. Choose: Expose truth or sell it
-5. **Reward:** Unique skin "Truth Seeker" + backstory completion
-
----
-
-### TANK - "Fortress" (Real Name: Dmitri Volkov)
-
-**Background:**
-```
-Age: 42
-Origin: Russian Federal Security Service
-Pre-Collapse: VIP protection detail
-The Collapse: Watched clients abandon innocent people
-Now: Protector of the weak, disillusioned with authority
-```
-
-**Personality:**
-- Stoic, paternal
-- Protects teammates above all
-- Distrusts leaders and politicians
-- Soft spot for children and elderly
-
-**Voice Personality:**
-- Deep, reassuring
-- Few words, meaningful
-- Protective warnings
-
-**Personal Quest Chain: "The Last Oath"**
-1. Find the family he failed to protect
-2. Discover they survived
-3. Clear path to their safe zone
-4. Defend against overwhelming odds
-5. **Reward:** Unique skin "Guardian" + backstory completion
-
----
-
-### SPECIALIST - "Circuit" (Real Name: Alex Rivera)
-
-**Background:**
-```
-Age: 26
-Origin: Silicon Valley prodigy, MIT dropout
-Pre-Collapse: Worked on classified military AI
-The Collapse: Partially responsible (guilt)
-Now: Uses skills for survival, seeking redemption
-```
-
-**Personality:**
-- Brilliant but anxious
-- Carries heavy guilt
-- Talks to tech like friends
-- Desperate to "fix" mistakes
-
-**Voice Personality:**
-- Nervous, fast-talking
-- Tech jargon
-- Apologetic
-
-**Personal Quest Chain: "Debugging Guilt"**
-1. Find evidence of their role in The Collapse
-2. Disable rogue AI they created
-3. Face survivors affected by their work
-4. Make amends (sabotage or repair)
-5. **Reward:** Unique skin "Redemption.exe" + backstory completion
-
----
-
-## 📝 Environmental Storytelling Guidelines
-
-### How to Tell Story Without Words
-
-**Props & Set Dressing:**
-- Skeleton poses tell a story (embracing, fighting, fleeing)
-- Graffiti hints at timeline ("Day 47 - no help coming")
-- Personal items suggest past lives (children's drawings, wedding photos)
-- Makeshift barricades show desperate last stands
-
-**Audio Logs (Rare Collectibles):**
-- 30-60 second recordings
-- First-person accounts of The Collapse
-- Faction perspectives
-- Survivor stories
-- Total: 50 logs across all maps
-
-**Visual Contrasts:**
-- Nature reclaiming urban spaces (hope)
-- Burned buildings next to pristine areas (randomness)
-- Child toys near violence (tragedy)
-- Corporate logos in ruins (irony)
-
----
-
-## 🎭 Dialogue Guidelines
 
 ### Voice Line Categories
 
-**Combat Callouts (Gameplay Priority):**
-- Short, clear, no ambiguity
-- Examples: "Enemy spotted!", "Reloading!", "Grenade out!"
+| Category | Length | Trigger | Priority |
+| :------- | :----: | :------ | :------- |
+| Combat Callouts | 1-3 words | Gameplay events | Highest — must be heard clearly |
+| Tactical Information | 1 sentence | Context-specific | High — gameplay-relevant |
+| Character Flavor | 1 sentence | Idle, entering areas | Medium — atmosphere |
+| Pain/Injury Reactions | 1-2 words | Taking damage | High — feedback |
+| Extraction Lines | 1 sentence | Near extraction zone | Medium — emotional payoff |
 
-**Character Moments (Flavor):**
-- Show personality without disrupting gameplay
-- Examples: "This place gives me the creeps...", "Almost reminds me of home."
-
-**Faction Interactions (Quest NPCs):**
-- Brief, purposeful
-- Always end with clear next step
-- Example structure:
-  1. Greeting (2-3 sentences)
-  2. Quest explanation (3-4 sentences)
-  3. Reward mention (1 sentence)
-  4. Send-off (1 sentence)
-
-### Writing Style
+### Writing Style Rules
 
 **DO:**
-- Keep it short
-- Use active voice
-- Show, don't tell emotions
-- Include tactical information when relevant
+- Use active voice ("Clear the hostiles" not "The hostiles should be cleared")
+- Keep sentences under 15 words for spoken dialogue
+- Give each NPC a verbal tic or speech pattern (Viktor's metaphors, The Broker's redactions)
+- Include tactical information when possible ("They've got elevated positions on the east side")
+- Show emotion through word choice, not stage directions
 
 **DON'T:**
-- Long monologues
-- Exposition dumps
-- Breaking immersion with meta-references
-- Offensive stereotypes
+- Use real-world brand names, religions, or political parties
+- Write monologues longer than 4 sentences
+- Include meta-game references ("Press E to interact")
+- Use slang that dates the writing (no current-year memes)
+- Stereotype accents or cultures
 
 ---
 
-## 🗓️ Story Content Roadmap
+## Narrative Content Production Pipeline
 
-### Launch (Season 1)
-- Core world lore established
-- 4 factions introduced
-- 5 operator backstories (1 quest each)
-- 20 audio logs (Industrial Decay map)
+### Per-Season Deliverables
 
-### Season 2
-- First major story event (Faction War)
-- 2 new operators with backstories
-- 15 additional audio logs (Urban Ruins map)
-- New faction questlines
+| Content Type | Season 1 | Season 2 | Season 3 | Per Season After |
+| :----------- | :------: | :------: | :------: | :--------------: |
+| Main Story Quests | 5 | 5 | 5 | 3-5 |
+| Faction Quests (per faction) | 5 | 5 | 5 | 3-5 |
+| Audio Logs (per map) | 15-20 | 12-15 | 10-12 | 8-10 |
+| Collectible Documents | 10 | 10 | 10 | 8 |
+| NPC Voice Lines (per NPC) | 30-50 | 20-30 | 20-30 | 15-20 |
+| Loading Screen Tips | 20 | 15 | 15 | 10 |
+| Item Descriptions (new items) | All launch items | New items only | New items only | New items only |
 
-### Season 3
-- Story revelation (Who caused The Collapse?)
-- New faction introduced
-- 2 new operators
-- Map 3 story content
+### Review Process
 
-### Year 2+
-- Ongoing narrative events
-- Player choices affecting world state (global events)
-- Expanded operator backstories
-- Community-driven lore content
+1. **Writer drafts** → 2. **Narrative Lead reviews for tone/lore consistency** → 3. **Gameplay Designer validates quest flow** → 4. **Localization review** → 5. **Voice acting recording** → 6. **In-engine integration and QA**
 
-
-
+<!-- REF_IMAGE: Narrative production pipeline flowchart — showing each stage from concept to in-game implementation with responsible team roles -->

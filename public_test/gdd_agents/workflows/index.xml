@@ -1,0 +1,348 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Extraction Document – Workflows</title>
+    <link>https://oaiba.github.io/ExtractionDocument/gdd_agents/workflows/index.html</link>
+    <description>Recent content in Workflows on Extraction Document</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	  <atom:link href="https://oaiba.github.io/ExtractionDocument/gdd_agents/workflows/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Feature Implementation Workflow</title>
+      <link>https://oaiba.github.io/ExtractionDocument/gdd_agents/workflows/featureimplementation.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://oaiba.github.io/ExtractionDocument/gdd_agents/workflows/featureimplementation.html</guid>
+      <description>
+        
+        
+        &lt;h2&gt;Feature Implementation Workflow&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;feature-implementation-workflow&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#feature-implementation-workflow&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;This workflow defines the step-by-step process for AI agents (and developers) to implement a new gameplay feature from concept to verification.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3&gt;Phase 0: Understand Requirements&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;phase-0-understand-requirements&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#phase-0-understand-requirements&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;pre class=&#34;mermaid hx:mt-6&#34;&gt;
+  graph LR
+    A[Read GDD Feature Doc] --&amp;gt; B[Identify Dependencies]
+    B --&amp;gt; C[Check Existing Systems]
+    C --&amp;gt; D[List Technical Constraints]
+    D --&amp;gt; E[Create Plan]
+&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;Steps:&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Read the GDD&lt;/strong&gt; — Find the relevant design document in &lt;code&gt;GDD_Design/&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Read the Technical Spec&lt;/strong&gt; — Check &lt;code&gt;GDD_Technical/&lt;/code&gt; for related system docs&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Read Coding Standards&lt;/strong&gt; — Review &lt;a href=&#34;../../GDD_Technical/CodingStandards.md&#34;&gt;CodingStandards.md&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Identify module&lt;/strong&gt; — Determine which module/plugin this feature belongs to&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;List dependencies&lt;/strong&gt; — What existing classes/systems does this feature need?&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Check for conflicts&lt;/strong&gt; — Will this break existing systems?&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;Output:&lt;/strong&gt; Implementation plan with file list and dependency graph.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3&gt;Phase 1: Create Data Layer&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;phase-1-create-data-layer&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#phase-1-create-data-layer&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Create the data structures and enums first (no logic yet):&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Define enums&lt;/strong&gt; (&lt;code&gt;E&lt;/code&gt; prefix) in the Core module&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Define structs&lt;/strong&gt; (&lt;code&gt;F&lt;/code&gt; prefix) for data containers&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Define interfaces&lt;/strong&gt; (&lt;code&gt;I&lt;/code&gt; prefix) for cross-module communication&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Define Gameplay Tags&lt;/strong&gt; in the appropriate &lt;code&gt;.ini&lt;/code&gt; file&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Create Data Assets&lt;/strong&gt; (&lt;code&gt;DA_&lt;/code&gt; prefix) if needed&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-cpp&#34; data-lang=&#34;cpp&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;// Example: New &amp;#34;Extraction Zone&amp;#34; feature
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;// 1. Enum (in ExtractionCore)
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;UENUM(BlueprintType)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;enum&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;EExtractionZoneState&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; uint8
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;{
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    Inactive,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    Active,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    Occupied,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    Extracting,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    Completed,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;};
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;// 2. Struct (in ExtractionCore)
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;USTRUCT(BlueprintType)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;struct&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;FExtractionZoneConfig&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;{
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    GENERATED_BODY()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    UPROPERTY(EditDefaultsOnly, Category &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Extraction&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;float&lt;/span&gt; ExtractionTime &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;7.f&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    UPROPERTY(EditDefaultsOnly, Category &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Extraction&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    int32 MaxPlayers &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;};
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;// 3. Interface (in ExtractionCore)
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;UINTERFACE(MinimalAPI)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;UExtractable&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;public&lt;/span&gt; UInterface
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;{
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    GENERATED_BODY()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;};
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;IExtractable&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;{
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    GENERATED_BODY()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;public&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;virtual&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;bool&lt;/span&gt; CanExtract() &lt;span style=&#34;color:#66d9ef&#34;&gt;const&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;virtual&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;void&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;OnExtractionStarted&lt;/span&gt;() &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;virtual&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;void&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;OnExtractionCompleted&lt;/span&gt;() &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;};&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;hr&gt;
+&lt;h3&gt;Phase 2: Implement Core Logic&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;phase-2-implement-core-logic&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#phase-2-implement-core-logic&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Build the main classes:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Create the primary class&lt;/strong&gt; (Actor, Component, or Subsystem)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Use &lt;code&gt;#pragma region&lt;/code&gt;&lt;/strong&gt; to organize by feature area&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Add UPROPERTY/UFUNCTION&lt;/strong&gt; with proper categories&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Implement the constructor&lt;/strong&gt; with default values&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Implement lifecycle&lt;/strong&gt; (BeginPlay, EndPlay)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Implement core logic&lt;/strong&gt; with null checks and early returns&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;Quality Checklist:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; All pointers validated before use&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; &lt;code&gt;Super::&lt;/code&gt; called in all overrides&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Delegates broadcast on state changes&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Log messages using module log category&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; No tick unless absolutely necessary&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3&gt;Phase 3: Add Replication (If Multiplayer)&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;phase-3-add-replication-if-multiplayer&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#phase-3-add-replication-if-multiplayer&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Mark replicated properties&lt;/strong&gt; with &lt;code&gt;Replicated&lt;/code&gt; or &lt;code&gt;ReplicatedUsing&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Implement &lt;code&gt;GetLifetimeReplicatedProps()&lt;/code&gt;&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Create Server RPCs&lt;/strong&gt; for client → server actions&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Create Client RPCs&lt;/strong&gt; for server → client notifications&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Create OnRep functions&lt;/strong&gt; for replicated property changes&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-cpp&#34; data-lang=&#34;cpp&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;void&lt;/span&gt; AExtractionZone&lt;span style=&#34;color:#f92672&#34;&gt;::&lt;/span&gt;GetLifetimeReplicatedProps(TArray&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt;FLifetimeProperty&lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&amp;amp;&lt;/span&gt; OutLifetimeProps) &lt;span style=&#34;color:#66d9ef&#34;&gt;const&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;{
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    Super&lt;span style=&#34;color:#f92672&#34;&gt;::&lt;/span&gt;GetLifetimeReplicatedProps(OutLifetimeProps);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    DOREPLIFETIME(AExtractionZone, ZoneState);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    DOREPLIFETIME_CONDITION(AExtractionZone, ExtractionProgress, COND_OwnerOnly);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;hr&gt;
+&lt;h3&gt;Phase 4: Create UI&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;phase-4-create-ui&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#phase-4-create-ui&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Create Widget Blueprint&lt;/strong&gt; (&lt;code&gt;WBP_&lt;/code&gt; prefix)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Create C++ Widget class&lt;/strong&gt; (&lt;code&gt;U&lt;/code&gt; prefix, inheriting &lt;code&gt;UUserWidget&lt;/code&gt;)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Bind to delegates&lt;/strong&gt; from the gameplay class&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Follow UI naming&lt;/strong&gt; from CodingStandards&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;h3&gt;Phase 5: Integrate &amp;amp; Test&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;phase-5-integrate--test&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#phase-5-integrate--test&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Create test level&lt;/strong&gt; in &lt;code&gt;Content/Maps/Test/&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Add Blueprint test actor&lt;/strong&gt; if needed&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Verify compilation&lt;/strong&gt; — zero warnings&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Test in PIE&lt;/strong&gt; — Play-In-Editor with multiple clients&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Verify replication&lt;/strong&gt; — Check server/client sync&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Check performance&lt;/strong&gt; — No unnecessary ticks or allocations&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;h3&gt;Phase 6: Document&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;phase-6-document&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#phase-6-document&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Update GDD&lt;/strong&gt; if behavior differs from spec&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Add code comments&lt;/strong&gt; (JavaDoc-style)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Update TODO list&lt;/strong&gt; in relevant technical doc&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Update changelog&lt;/strong&gt; in the document footer&lt;/li&gt;
+&lt;/ol&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Bug Fix Workflow</title>
+      <link>https://oaiba.github.io/ExtractionDocument/gdd_agents/workflows/bugfix.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://oaiba.github.io/ExtractionDocument/gdd_agents/workflows/bugfix.html</guid>
+      <description>
+        
+        
+        &lt;h2&gt;Bug Fix Workflow&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;bug-fix-workflow&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#bug-fix-workflow&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;A systematic approach for AI agents and developers to diagnose, fix, and verify bugs.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3&gt;Phase 1: Reproduce &amp;amp; Understand&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;phase-1-reproduce--understand&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#phase-1-reproduce--understand&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Read the bug report&lt;/strong&gt; — Understand the expected vs. actual behavior&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Identify the system&lt;/strong&gt; — Which module/plugin is affected?&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Reproduce the issue&lt;/strong&gt; — Confirm the bug exists in the current build&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Check logs&lt;/strong&gt; — Look for relevant &lt;code&gt;UE_LOG&lt;/code&gt; output, warnings, errors&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;// Key log files to check
+Saved/Logs/ExtractionGame.log    ← Full session log
+Saved/Crashes/                   ← Crash dumps&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;Key Questions:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Does it reproduce consistently?&lt;/li&gt;
+&lt;li&gt;Is it client-only, server-only, or both?&lt;/li&gt;
+&lt;li&gt;Does it only happen with specific data/configuration?&lt;/li&gt;
+&lt;li&gt;When did it start occurring? (check recent commits)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3&gt;Phase 2: Diagnose&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;phase-2-diagnose&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#phase-2-diagnose&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Trace the call stack&lt;/strong&gt; — Start from the symptom, work backwards&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Check recent changes&lt;/strong&gt; — &lt;code&gt;git log --oneline -20&lt;/code&gt; for last 20 commits&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Add temporary logging&lt;/strong&gt; — Use &lt;code&gt;UE_LOG&lt;/code&gt; with &lt;code&gt;Verbose&lt;/code&gt; level&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Use breakpoints&lt;/strong&gt; — In Visual Studio or Rider&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Check replication&lt;/strong&gt; — Is the state mismatched between server/client?&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;Common Bug Categories:&lt;/strong&gt;&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Category&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Symptoms&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Likely Cause&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Null pointer&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Crash with access violation&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Missing null check, wrong initialization order&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Replication&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Client shows wrong value&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Missing &lt;code&gt;DOREPLIFETIME&lt;/code&gt;, wrong condition&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Timing&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Works sometimes, not others&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Race condition, order of BeginPlay&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Data&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Wrong values&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Data Asset typo, wrong enum value&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;UI&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Widget not updating&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Delegate not bound, wrong binding target&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Animation&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Wrong pose/montage&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;ABP state error, wrong slot&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Physics&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Falling through floor&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Missing collision, wrong channel&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr&gt;
+&lt;h3&gt;Phase 3: Fix&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;phase-3-fix&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#phase-3-fix&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Make the minimal fix&lt;/strong&gt; — Change as little code as possible&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Follow coding standards&lt;/strong&gt; — &lt;a href=&#34;../../GDD_Technical/CodingStandards.md&#34;&gt;CodingStandards.md&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Add a guard/check&lt;/strong&gt; — Prevent the root cause, not just the symptom&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Add logging&lt;/strong&gt; — Log warnings for edge cases that should not happen&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Update comments&lt;/strong&gt; — Explain &lt;em&gt;why&lt;/em&gt; the fix is needed&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-cpp&#34; data-lang=&#34;cpp&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;// Good fix — guard + log
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;void&lt;/span&gt; AExtractionZone&lt;span style=&#34;color:#f92672&#34;&gt;::&lt;/span&gt;OnPlayerEnter(AExtractionCharacter&lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt; Player)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;{
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; (&lt;span style=&#34;color:#f92672&#34;&gt;!&lt;/span&gt;Player)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        UE_LOG(LogExtraction, Warning, TEXT(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;OnPlayerEnter called with null player&amp;#34;&lt;/span&gt;));
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#75715e&#34;&gt;// Previous bug: player could enter while already extracting elsewhere
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; (Player&lt;span style=&#34;color:#f92672&#34;&gt;-&amp;gt;&lt;/span&gt;IsCurrentlyExtracting())
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        UE_LOG(LogExtraction, Verbose, TEXT(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Player %s already extracting, ignoring zone enter&amp;#34;&lt;/span&gt;), &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;Player&lt;span style=&#34;color:#f92672&#34;&gt;-&amp;gt;&lt;/span&gt;GetName());
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#75715e&#34;&gt;// ...
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;hr&gt;
+&lt;h3&gt;Phase 4: Verify&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;phase-4-verify&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#phase-4-verify&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Reproduce the original bug&lt;/strong&gt; — Confirm it no longer occurs&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Test edge cases&lt;/strong&gt; — Null inputs, boundary values, rapid actions&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Test multiplayer&lt;/strong&gt; — If the bug involves replication&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Check for regressions&lt;/strong&gt; — Test related systems still work&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Compile clean&lt;/strong&gt; — Zero warnings, zero errors&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;h3&gt;Phase 5: Commit&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;phase-5-commit&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#phase-5-commit&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Commit message format&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git commit -m &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;[Bugfix] Fix extraction timer not resetting on zone exit (EXT-456)&amp;#34;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;Update relevant documentation if the bug exposed a design gap.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>

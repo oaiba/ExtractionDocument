@@ -1,0 +1,2822 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Extraction Document – Narrative &amp; World Building</title>
+    <link>https://oaiba.github.io/ExtractionDocument/gdd_design/story/index.html</link>
+    <description>Recent content in Narrative &amp; World Building on Extraction Document</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	  <atom:link href="https://oaiba.github.io/ExtractionDocument/gdd_design/story/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Backstory - World History</title>
+      <link>https://oaiba.github.io/ExtractionDocument/gdd_design/story/backstory.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://oaiba.github.io/ExtractionDocument/gdd_design/story/backstory.html</guid>
+      <description>
+        
+        
+        &lt;h2&gt;📜 General Timeline&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-general-timeline&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-general-timeline&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;Pre-Collapse Era (2020-2030)&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;pre-collapse-era-2020-2030&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#pre-collapse-era-2020-2030&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;2020-2025: Era of Instability
+├── Global pandemic (COVID-19 and variants)
+├── Escalating geopolitical conflicts
+├── Energy and resource crises
+└── Tech corporations gain immense power
+
+2025-2029: The Corporate Age
+├── Nexus Corporation becomes a mega-conglomerate
+├── Project Prometheus initiates (classified)
+├── Governments weaken, corporations rise
+└── Neo-Asia Industrial Corridor develops rapidly
+
+2030: The Final Year
+├── Q1: Signs of systemic instability
+├── Q2: First major Nexus data leak
+├── Q3: Widespread protests and civil unrest
+├── Q4: Harbingers of The Collapse&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;hr&gt;
+&lt;h2&gt;💥 The Collapse (2031)&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-the-collapse-2031&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-the-collapse-2031&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;The Causes - Triangle of Disaster&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;the-causes---triangle-of-disaster&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#the-causes---triangle-of-disaster&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;            [CYBERATTACK]
+               /    \
+              /      \
+             /   💀   \
+            /  PERFECT \
+           /   STORM   \
+          /____________\
+   [PANDEMIC]     [RESOURCE WAR]&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;1. The Cyberattack (January 2031)&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Hacker groups simultaneously attack global infrastructure&lt;/li&gt;
+&lt;li&gt;Power grids, banking, and transport systems paralyzed&lt;/li&gt;
+&lt;li&gt;Origin: Unknown (Did the Tech Syndicate know?)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;2. The Second Pandemic (February-March 2031)&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;New virus outbreak: &amp;ldquo;Crimson Flu&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;Mortality rate: 15-20%&lt;/li&gt;
+&lt;li&gt;Origin: Lab leak? (Project Prometheus connection?)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;3. The Resource War (March-April 2031)&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Food and fuel shortages&lt;/li&gt;
+&lt;li&gt;Conflicts between nations over remaining resources&lt;/li&gt;
+&lt;li&gt;Militaries fracture into warlord factions&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Detailed Event Chain&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;detailed-event-chain&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#detailed-event-chain&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Date&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Event&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Consequence&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Jan 15&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Global blackout&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;72-hour global power loss&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Jan 20&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Bank system crash&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Economic collapse&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Feb 1&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Crimson Flu appears&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Hospitals overwhelmed&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Feb 14&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Quarantine fails&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Virus spreads globally&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Mar 1&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Food riots&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Widespread violence&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Mar 15&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Military splinters&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Army factions form&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Apr 1&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Government falls&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;State dissolution&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Apr 15&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;The Collapse complete&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;The old world ends&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr&gt;
+&lt;h2&gt;🧪 The Outbreak - Project Prometheus Secrets&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-the-outbreak---project-prometheus-secrets&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-the-outbreak---project-prometheus-secrets&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;What is Project Prometheus?&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;what-is-project-prometheus&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#what-is-project-prometheus&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;┌─────────────────────────────────────────────┐
+│          PROJECT PROMETHEUS                  │
+│     &amp;#34;Enhancement Through Integration&amp;#34;        │
+├─────────────────────────────────────────────┤
+│ Goal: Create the perfect human              │
+│ Method: Combine AI &amp;#43; Human biology          │
+│ Result: Subjects lost control               │
+│ Consequence: The Outbreak                   │
+└─────────────────────────────────────────────┘&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;Project Phases:&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Phase 1 (2026-2027):&lt;/strong&gt; Neural interface testing&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Phase 2 (2028):&lt;/strong&gt; First human trials (volunteers)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Phase 3 (2029):&lt;/strong&gt; Forced trials (prisoners)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Phase 4 (2030):&lt;/strong&gt; &amp;ldquo;Enhancement&amp;rdquo; subjects deployed&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Phase 5 (Jan 2031):&lt;/strong&gt; &lt;strong&gt;CONTAINMENT FAILURE&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;The Subjects&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;the-subjects&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#the-subjects&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Subject Characteristics:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Enhanced strength and reflexes&lt;/li&gt;
+&lt;li&gt;Reduced pain response&lt;/li&gt;
+&lt;li&gt;Increased aggression&lt;/li&gt;
+&lt;li&gt;Diminished humanity&lt;/li&gt;
+&lt;li&gt;Connection to central AI (broken during Collapse)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Current Status:&lt;/strong&gt; Subjects are now AI Bosses in the game&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&amp;ldquo;Reactor Guardian&amp;rdquo; = Subject 7 (former worker)&lt;/li&gt;
+&lt;li&gt;&amp;ldquo;The Scientist&amp;rdquo; = Dr. Volkov (project creator)&lt;/li&gt;
+&lt;li&gt;&amp;ldquo;The Warden&amp;rdquo; = Security Chief Marcus (Labs guard)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2&gt;🏚️ The Exclusion Zones (2031-2036)&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-the-exclusion-zones-2031-2036&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-the-exclusion-zones-2031-2036&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;Formation of Quarantine Zones&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;formation-of-quarantine-zones&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#formation-of-quarantine-zones&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Phase 1: Chaos (2031-2032)&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Survivors seek shelter&lt;/li&gt;
+&lt;li&gt;Contamination zones expand&lt;/li&gt;
+&lt;li&gt;Old military remnants establish checkpoints&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Phase 2: Stabilization (2033-2034)&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Factions form and consolidate power&lt;/li&gt;
+&lt;li&gt;Trade routes established&lt;/li&gt;
+&lt;li&gt;Exclusion Zones officially designated&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Phase 3: Extraction Economy (2035-2036)&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Contractors (Players) appear&lt;/li&gt;
+&lt;li&gt;Black market develops&lt;/li&gt;
+&lt;li&gt;The Game begins at this point in time&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Neo-Asia Exclusion Zone&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;neo-asia-exclusion-zone&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#neo-asia-exclusion-zone&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Location:&lt;/strong&gt; Fictional region, inspired by:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Abandoned Chinese ghost cities&lt;/li&gt;
+&lt;li&gt;Korean DMZ aesthetic&lt;/li&gt;
+&lt;li&gt;Japanese industrial zones&lt;/li&gt;
+&lt;li&gt;Southeast Asian urban sprawl&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Characteristics:&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;Area: ~5000 km²
+Pre-Collapse Population: 3 million
+Post-Collapse Population: ~50,000 (survivors, scavengers)
+Status: Partially contaminated
+Control: Contested (factions fighting for dominance)&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;hr&gt;
+&lt;h2&gt;🏭 Regional History&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-regional-history&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-regional-history&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;Industrial Decay - &amp;ldquo;Sector 7&amp;rdquo;&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;industrial-decay---sector-7&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#industrial-decay---sector-7&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Pre-Collapse:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Largest industrial zone in the region&lt;/li&gt;
+&lt;li&gt;50,000 workers&lt;/li&gt;
+&lt;li&gt;Power plants, chemical processing, electronics manufacturing&lt;/li&gt;
+&lt;li&gt;Nexus Corp secret facility (The Labs)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;During The Collapse:&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;Timeline:
+Day 1: Power loss, workers trapped inside
+Day 3: Radiation leak from reactor
+Day 7: Military seals perimeter
+Day 14: Last known survivor transmission
+Day 30: Silence&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;Present Day:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;AI threats (enhanced subjects + automated machines)&lt;/li&gt;
+&lt;li&gt;Radiation pockets&lt;/li&gt;
+&lt;li&gt;Valuable salvage (industrial materials)&lt;/li&gt;
+&lt;li&gt;Hidden Nexus secrets waiting to be uncovered&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3&gt;Urban Ruins - &amp;ldquo;District 14&amp;rdquo;&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;urban-ruins---district-14&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#urban-ruins---district-14&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Pre-Collapse:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Commercial and residential hub&lt;/li&gt;
+&lt;li&gt;Population: 200,000&lt;/li&gt;
+&lt;li&gt;Shopping malls, apartments, hotels&lt;/li&gt;
+&lt;li&gt;Subway system connecting to other areas&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;During The Collapse:&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;Week 1: Panic, looting
+Week 2: Crimson Flu hits hard
+Week 3: Military quarantine fails
+Week 4: Mass evacuation (partial success)
+Month 2: Scavengers move in&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;Present Day:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Underground Network territory&lt;/li&gt;
+&lt;li&gt;Survivor communities (hostile/friendly)&lt;/li&gt;
+&lt;li&gt;Overgrown nature reclaiming the city&lt;/li&gt;
+&lt;li&gt;Subway = dangerous shortcut route&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3&gt;Military Outpost - &amp;ldquo;Firebase Delta&amp;rdquo; (Future Map)&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;military-outpost---firebase-delta-future-map&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#military-outpost---firebase-delta-future-map&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Pre-Collapse:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Joint military research base&lt;/li&gt;
+&lt;li&gt;Weapons testing facility&lt;/li&gt;
+&lt;li&gt;Emergency command center&lt;/li&gt;
+&lt;li&gt;&amp;ldquo;Last stand&amp;rdquo; location&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;During The Collapse:&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;Day 1: Activated as emergency HQ
+Day 7: Overrun by infected subjects
+Day 14: Nuclear fail-safe considered
+Day 21: Abandoned, automated defenses left active&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;Present Day:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Peacekeeper interest (reclaim mission)&lt;/li&gt;
+&lt;li&gt;Automated turrets still functional&lt;/li&gt;
+&lt;li&gt;Prototype weapon caches&lt;/li&gt;
+&lt;li&gt;Classified intel about The Collapse&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2&gt;🔮 Mysteries &amp;amp; Revelations&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-mysteries--revelations&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-mysteries--revelations&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;Core Mysteries (Unlocked via Gameplay)&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;core-mysteries-unlocked-via-gameplay&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#core-mysteries-unlocked-via-gameplay&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Mystery 1: Who Caused The Collapse?&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;Hints scattered across:
+- Audio logs (30% reveal)
+- Quest chains (50% reveal)
+- Environmental storytelling (20% reveal)
+
+Answer: Combination of factors, but Nexus Corp&amp;#39;s 
+Project Prometheus was the primary catalyst.&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;Mystery 2: What is The Broker&amp;rsquo;s Identity?&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;In-game theories:
+- Surviving Nexus executive
+- AI that achieved consciousness
+- Collective of information brokers
+- Someone the player knows from the tutorial
+
+Truth: [REDACTED - Season 3 reveal]&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;Mystery 3: Is There a Cure?&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;Quest hints:
+- Dr. Chen&amp;#39;s research (Tech Labs)
+- Vaccine development data found in bunkers
+- Underground medical experiments
+
+Status: Possible, requires finding scattered research.&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;hr&gt;
+&lt;h2&gt;📖 Key Lore Documents (In-Game)&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-key-lore-documents-in-game&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-key-lore-documents-in-game&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;Audio Log Categories&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;audio-log-categories&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#audio-log-categories&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Category&lt;/th&gt;
+          &lt;th style=&#34;text-align: center&#34;&gt;Count&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Location Focus&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Theme&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Worker Diaries&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;10&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Industrial&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Daily life → collapse&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Executive Memos&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;8&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Offices&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Cover-up attempts&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Military Orders&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;7&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Various&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Chain of command break&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Survivor Stories&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;12&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;All maps&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Personal tragedies&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Nexus Research&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;8&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Labs&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Project Prometheus&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Faction Origins&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;5&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Safe zones&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;How factions formed&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3&gt;Sample Document: &amp;ldquo;Nexus Memo #7&amp;rdquo;&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;sample-document-nexus-memo-7&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#sample-document-nexus-memo-7&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;FROM: Director Seo-Yun Park
+TO: Project Prometheus Team
+DATE: January 10, 2031
+SUBJECT: Subject 7 Incident
+
+The containment breach in Lab Alpha is now 
+classified Level Black. Do NOT engage Subject 7 
+directly. Enhanced capabilities exceed projections 
+by 340%.
+
+All research data is to be transferred to 
+off-site backup immediately. If this facility 
+is compromised, initiate Protocol PHOENIX.
+
+Destroy this memo after reading.
+
+[Handwritten note at bottom]:
+&amp;#34;God forgive us for what we&amp;#39;ve done.&amp;#34;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;hr&gt;
+&lt;h2&gt;🗓️ Lore Reveal Roadmap&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-lore-reveal-roadmap&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-lore-reveal-roadmap&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;Season 1 (Launch)&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;season-1-launch&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#season-1-launch&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;The Collapse basics established&lt;/li&gt;
+&lt;li&gt;Introduction to 4 main factions&lt;/li&gt;
+&lt;li&gt;Hints about Project Prometheus&lt;/li&gt;
+&lt;li&gt;First audio logs (Industrial map)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Season 2&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;season-2&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#season-2&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;The Outbreak detailed explanation&lt;/li&gt;
+&lt;li&gt;Nexus Corporation history depth&lt;/li&gt;
+&lt;li&gt;Dr. Chen&amp;rsquo;s full story arc&lt;/li&gt;
+&lt;li&gt;Urban Ruins lore expansion&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Season 3&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;season-3&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#season-3&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;Who caused The Collapse (full reveal)&lt;/li&gt;
+&lt;li&gt;The Broker identity hints&lt;/li&gt;
+&lt;li&gt;Military Outpost secrets&lt;/li&gt;
+&lt;li&gt;Player choices begin to impact lore events&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Year 2+&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;year-2&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#year-2&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;Cure possibility explored&lt;/li&gt;
+&lt;li&gt;New external threats emerge&lt;/li&gt;
+&lt;li&gt;World expansion beyond Neo-Asia&lt;/li&gt;
+&lt;li&gt;Player-driven narrative events&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Factions - Detailed Breakdown</title>
+      <link>https://oaiba.github.io/ExtractionDocument/gdd_design/story/factions.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://oaiba.github.io/ExtractionDocument/gdd_design/story/factions.html</guid>
+      <description>
+        
+        
+        &lt;h2&gt;🏴 Faction System Overview&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-faction-system-overview&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-faction-system-overview&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;Role of Factions&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;role-of-factions&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#role-of-factions&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Factions are &lt;strong&gt;NOT&lt;/strong&gt; playable sides. They function as:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Quest Givers&lt;/strong&gt;: Provide missions and objectives&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Vendors&lt;/strong&gt;: Sell exclusive items based on reputation&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Lore Sources&lt;/strong&gt;: Expand world building&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Reputation System&lt;/strong&gt;: Unlock rewards through loyalty&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2&gt;⚔️ Faction Relationship Matrix&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-faction-relationship-matrix&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-faction-relationship-matrix&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;Inter-Faction Relationships&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;inter-faction-relationships&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#inter-faction-relationships&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;                 SALVAGE   TECH    UNDERGROUND   PEACEKEEPERS
+SALVAGE CORPS      ■        ○          ○             ●
+TECH SYNDICATE     ○        ■          ●             ✕
+UNDERGROUND        ○        ●          ■             ✕
+PEACEKEEPERS       ●        ✕          ✕             ■
+
+Legend:
+■ = Self
+● = Friendly (Trade, non-aggression)
+○ = Neutral (Cautious cooperation)
+✕ = Hostile (Active conflict)&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h3&gt;Relationship Details&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;relationship-details&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#relationship-details&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Faction A&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Faction B&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Status&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Reason&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Salvage&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Tech&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Neutral&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Trade tech for materials&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Salvage&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Underground&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Neutral&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Occasional supply deals&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Salvage&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Peacekeepers&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Friendly&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Non-political workers&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Tech&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Underground&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Friendly&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Information exchange&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Tech&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Peacekeepers&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Hostile&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Corp secrets exposed&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Underground&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Peacekeepers&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Hostile&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Criminal vs Law&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr&gt;
+&lt;h2&gt;🔧 Salvage Corps&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-salvage-corps&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-salvage-corps&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;Identity&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;identity&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#identity&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Attribute&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Value&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Motto&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&amp;ldquo;Honest Work in Lawless Lands&amp;rdquo;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Colors&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Orange &amp;amp; Gray&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Symbol&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Crossed wrenches over gear ⚙️&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Leader&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&amp;ldquo;Foreman&amp;rdquo; Viktor Koval&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Base&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Converted factory (off-map)&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3&gt;Leadership Profile&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;leadership-profile&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#leadership-profile&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Viktor Koval - &amp;ldquo;The Foreman&amp;rdquo;&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;Age: 52
+Origin: Ukrainian factory supervisor
+Pre-Collapse: Plant manager, 200 workers
+The Collapse: Organized survivors into work crews
+Philosophy: &amp;#34;Build, don&amp;#39;t destroy&amp;#34;
+Voice: Gruff, fatherly, practical&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h3&gt;Faction Structure&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;faction-structure&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#faction-structure&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;         [Foreman Viktor Koval]
+                 │
+    ┌────────────┼────────────┐
+    │            │            │
+[Chief Engineer] [Quartermaster] [Recruiter]
+    Yuri         Mama Rosa      &amp;#34;Wrench&amp;#34; Lee
+    │            │            │
+[Work Crews]  [Supply Team] [New Contractors]&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h3&gt;Key NPCs&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;key-npcs&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#key-npcs&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Name&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Role&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Quest Type&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Location&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Viktor Koval&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Leader&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Main story&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Safe Zone&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Yuri&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Engineer&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Repair missions&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Field&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Mama Rosa&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Quartermaster&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Supply runs&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Safe Zone&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&amp;ldquo;Wrench&amp;rdquo; Lee&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Recruiter&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Introduction&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Anywhere&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3&gt;Reputation System&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;reputation-system&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#reputation-system&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: center&#34;&gt;Level&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Title&lt;/th&gt;
+          &lt;th style=&#34;text-align: center&#34;&gt;Rep Required&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Benefits&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;1&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Newcomer&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;0&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Basic quests&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;2&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Worker&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;1,000&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;5% discount&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;3&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Foreman&amp;rsquo;s Pick&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;3,000&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Gear unlocks&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;4&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Trusted&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;7,000&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;High-value quests&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;5&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Veteran&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;15,000&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Unique cosmetics&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3&gt;Unique Items (Reputation Locked)&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;unique-items-reputation-locked&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#unique-items-reputation-locked&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Item&lt;/th&gt;
+          &lt;th style=&#34;text-align: center&#34;&gt;Level&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Type&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Stats&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Worker&amp;rsquo;s Backpack&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;2&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Storage&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;+2 slots&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Heavy-Duty Tool&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;3&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Utility&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Faster looting&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Foreman&amp;rsquo;s Vest&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;4&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Armor&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;+15% carry weight&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Salvage Legend Skin&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;5&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Cosmetic&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Orange/Gray theme&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr&gt;
+&lt;h2&gt;💻 Tech Syndicate&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-tech-syndicate&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-tech-syndicate&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;Identity&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;identity-1&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#identity-1&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Attribute&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Value&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Motto&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&amp;ldquo;Knowledge is the Ultimate Currency&amp;rdquo;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Colors&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Cyan &amp;amp; Black&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Symbol&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Circuit pattern forming eye 👁️&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Leader&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&amp;ldquo;Director&amp;rdquo; Seo-Yun Park&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Base&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Hidden server farm (unknown)&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3&gt;Leadership Profile&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;leadership-profile-1&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#leadership-profile-1&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Seo-Yun Park - &amp;ldquo;The Director&amp;rdquo;&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;Age: 41
+Origin: Korean tech executive (Nexus Corp defector)
+Pre-Collapse: Chief Data Officer
+The Collapse: Stole corporate secrets, went underground
+Philosophy: &amp;#34;Information sets you free&amp;#34;
+Voice: Cold, calculated, occasional warmth
+Secret: Knows more about The Collapse than she reveals&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h3&gt;Faction Structure&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;faction-structure-1&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#faction-structure-1&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;          [Director Seo-Yun Park]
+                   │
+      ┌────────────┼────────────┐
+      │            │            │
+ [Lead Hacker]  [Archivist]  [Field Ops]
+   &amp;#34;Zero&amp;#34;       Dr. Huang     &amp;#34;Glitch&amp;#34;
+      │            │            │
+[Cyber Team]  [Data Team]  [Operatives]&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h3&gt;Key NPCs&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;key-npcs-1&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#key-npcs-1&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Name&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Role&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Quest Type&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Location&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Seo-Yun Park&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Director&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Main story&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Encrypted comms&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&amp;ldquo;Zero&amp;rdquo;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Lead Hacker&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Tech missions&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Remote&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Dr. Huang&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Archivist&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Data recovery&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Safe Zone&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&amp;ldquo;Glitch&amp;rdquo;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Field Ops&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Recon missions&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Field&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3&gt;Reputation System&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;reputation-system-1&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#reputation-system-1&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: center&#34;&gt;Level&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Title&lt;/th&gt;
+          &lt;th style=&#34;text-align: center&#34;&gt;Rep Required&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Benefits&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;1&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Unknown&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;0&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Basic access&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;2&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Registered&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;1,500&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Tech discounts&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;3&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Trusted Node&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;4,000&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Gadget unlocks&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;4&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Inner Circle&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;9,000&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Secret quest lines&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;5&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Elite Hacker&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;20,000&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Exclusive skins&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3&gt;Unique Items&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;unique-items&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#unique-items&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Item&lt;/th&gt;
+          &lt;th style=&#34;text-align: center&#34;&gt;Level&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Type&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Stats&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Signal Scanner&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;2&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Gadget&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Reveal nearby enemies&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Crypto Wallet&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;3&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Utility&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;+10% credit gain&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Stealth Module&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;4&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Attachment&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Reduced detection&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Syndicate Ghost Skin&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;5&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Cosmetic&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Cyan/Black theme&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr&gt;
+&lt;h2&gt;🤝 Underground Network&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-underground-network&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-underground-network&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;Identity&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;identity-2&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#identity-2&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Attribute&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Value&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Motto&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&amp;ldquo;Survive Together or Die Alone&amp;rdquo;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Colors&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Purple &amp;amp; Gold&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Symbol&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Clasped hands in shadows 🤝&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Leader&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&amp;ldquo;The Broker&amp;rdquo; (unknown identity)&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Base&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Multiple safehouses&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3&gt;Leadership Profile&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;leadership-profile-2&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#leadership-profile-2&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;&amp;ldquo;The Broker&amp;rdquo; - Identity Unknown&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;Age: Unknown (voice suggests 30-50)
+Origin: Unknown (accent shifts)
+Pre-Collapse: Unknown
+The Collapse: Emerged as information kingpin
+Philosophy: &amp;#34;Everyone has a price&amp;#34;
+Voice: Distorted, never seen in person
+Secret: May be multiple people or AI&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h3&gt;Faction Structure&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;faction-structure-2&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#faction-structure-2&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;              [The Broker]
+                   │ (voice only)
+                   │
+      ┌────────────┼────────────┐
+      │            │            │
+  [Fixers]    [Smugglers]   [Enforcers]
+  Madame X    &amp;#34;Rat King&amp;#34;    &amp;#34;Big Bear&amp;#34;
+      │            │            │
+ [Informants] [Runners]    [Muscle]&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h3&gt;Key NPCs&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;key-npcs-2&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#key-npcs-2&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Name&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Role&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Quest Type&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Location&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;The Broker&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Leader&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Directives&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Voice only&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Madame X&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Fixer&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Contract kills&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Hidden&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&amp;ldquo;Rat King&amp;rdquo;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Smuggler&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Delivery quests&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Sewers&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&amp;ldquo;Big Bear&amp;rdquo;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Enforcer&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Elimination&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Field&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3&gt;Reputation System&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;reputation-system-2&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#reputation-system-2&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: center&#34;&gt;Level&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Title&lt;/th&gt;
+          &lt;th style=&#34;text-align: center&#34;&gt;Rep Required&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Benefits&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;1&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Nobody&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;0&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Black market access&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;2&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Known Face&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;2,000&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Better prices&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;3&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Trusted Runner&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;5,000&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Smuggling quests&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;4&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Inner Circle&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;12,000&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Assassination contracts&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;5&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Shadow Elite&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;25,000&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Legendary items&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3&gt;Unique Items&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;unique-items-1&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#unique-items-1&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Item&lt;/th&gt;
+          &lt;th style=&#34;text-align: center&#34;&gt;Level&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Type&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Stats&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Forged ID&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;2&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Utility&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Access restricted areas&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Silencer Kit&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;3&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Attachment&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;-50% gunfire sound&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Broker&amp;rsquo;s Favor&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;4&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Consumable&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;One-time quest boost&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Shadow Wraith Skin&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;5&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Cosmetic&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Purple/Gold theme&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr&gt;
+&lt;h2&gt;🛡️ Peacekeepers&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-peacekeepers&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-peacekeepers&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;Identity&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;identity-3&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#identity-3&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Attribute&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Value&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Motto&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&amp;ldquo;Order From Chaos&amp;rdquo;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Colors&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Blue &amp;amp; White&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Symbol&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Shield with olive branches 🛡️&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Leader&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Commander Helena Vance&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Base&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Fortified outpost (map edge)&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3&gt;Leadership Profile&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;leadership-profile-3&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#leadership-profile-3&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Helena Vance - &amp;ldquo;The Commander&amp;rdquo;&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;Age: 47
+Origin: Former UN Peacekeeper
+Pre-Collapse: Deployed to conflict zones
+The Collapse: Tried to maintain order, saw the worst
+Philosophy: &amp;#34;Law is all that separates us from animals&amp;#34;
+Voice: Stern but weary, occasional hope
+Secret: Makes moral compromises she regrets&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h3&gt;Faction Structure&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;faction-structure-3&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#faction-structure-3&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;         [Commander Helena Vance]
+                   │
+      ┌────────────┼────────────┐
+      │            │            │
+  [Captain]    [Sergeant]   [Medical]
+  Reyes        &amp;#34;Stone&amp;#34;      Dr. Wells
+      │            │            │
+[Patrol Units] [Combat Team] [Medics]&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h3&gt;Key NPCs&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;key-npcs-3&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#key-npcs-3&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Name&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Role&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Quest Type&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Location&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Helena Vance&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Commander&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Main story&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Command Post&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Captain Reyes&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Patrol Lead&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Sweep missions&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Field&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Sergeant &amp;ldquo;Stone&amp;rdquo;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Combat&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Elimination&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Hotspots&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Dr. Wells&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Medical Officer&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Rescue missions&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Medical&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3&gt;Reputation System&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;reputation-system-3&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#reputation-system-3&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: center&#34;&gt;Level&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Title&lt;/th&gt;
+          &lt;th style=&#34;text-align: center&#34;&gt;Rep Required&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Benefits&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;1&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Civilian&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;0&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Basic recognition&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;2&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Auxiliary&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;1,200&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Medical discounts&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;3&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Deputy&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;3,500&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Armor unlocks&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;4&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Officer&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;8,000&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Elite quests&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;5&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Commander&amp;rsquo;s Trust&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;18,000&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Legendary gear&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3&gt;Unique Items&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;unique-items-2&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#unique-items-2&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Item&lt;/th&gt;
+          &lt;th style=&#34;text-align: center&#34;&gt;Level&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Type&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Stats&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;First Aid Training&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;2&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Passive&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;+20% heal speed&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Tactical Vest&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;3&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Armor&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;+20 armor&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Commander&amp;rsquo;s Radio&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;4&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Gadget&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Call backup&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Peacekeeper Elite Skin&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;5&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Cosmetic&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Blue/White theme&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr&gt;
+&lt;h2&gt;📊 Faction Comparison Summary&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-faction-comparison-summary&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-faction-comparison-summary&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Aspect&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Salvage&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Tech&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Underground&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Peacekeepers&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Focus&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Materials&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Data&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Contraband&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Security&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Playstyle&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Gathering&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Stealth&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Risk/Reward&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Combat&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Morality&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Neutral&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Gray&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Dark&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Light Gray&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Difficulty&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Easy&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Medium&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Hard&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Medium&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Best For&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;New players&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Scouts&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Veterans&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Teams&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Quest Lines - Mission System</title>
+      <link>https://oaiba.github.io/ExtractionDocument/gdd_design/story/questlines.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://oaiba.github.io/ExtractionDocument/gdd_design/story/questlines.html</guid>
+      <description>
+        
+        
+        &lt;h2&gt;📋 Quest System Overview&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-quest-system-overview&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-quest-system-overview&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;Quest Categories&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;quest-categories&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#quest-categories&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Category&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Duration&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Complexity&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Rewards&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Main Story&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Multi-session&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;High&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Major unlocks&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Faction Quests&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;1-3 sessions&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Medium&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Reputation + Items&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Daily Quests&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Single session&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Low&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Credits + XP&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Weekly Quests&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Multi-session&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Medium&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Premium rewards&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Challenge Quests&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Varies&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Very High&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Unique items&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr&gt;
+&lt;h2&gt;🎯 Main Story Quests&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-main-story-quests&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-main-story-quests&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;Chapter 1: &amp;ldquo;The Newcomer&amp;rdquo; (Tutorial Arc)&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;chapter-1-the-newcomer-tutorial-arc&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#chapter-1-the-newcomer-tutorial-arc&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Quest 1.1: First Steps&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;Giver: System Tutorial
+Objective: Complete extraction with any loot
+Rewards: 500 Credits, Basic Loadout
+Duration: 1 match&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;Quest 1.2: Meet the Factions&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;Giver: Safe Zone NPC
+Objective: Talk to all 4 faction representatives
+Rewards: 250 Rep each faction, Map Intel
+Duration: Safe zone only&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;Quest 1.3: Prove Your Worth&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;Giver: Viktor Koval (Salvage Corps)
+Objective: Extract with 3 Industrial Materials
+Rewards: 1000 Credits, Salvage Rep &amp;#43;500
+Duration: 1-2 matches&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h3&gt;Chapter 2: &amp;ldquo;Whispers of Collapse&amp;rdquo; (Lore Arc)&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;chapter-2-whispers-of-collapse-lore-arc&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#chapter-2-whispers-of-collapse-lore-arc&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Quest 2.1: The First Clue&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;Giver: Dr. Huang (Tech Syndicate)
+Objective: Retrieve Data Drive from Tech Labs
+Map: Industrial Decay
+Location: Lab Alpha, 3rd Floor
+Enemies: 5-7 AI guards
+Rewards: 2000 Credits, Tech Rep &amp;#43;750, Audio Log #1&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;Quest 2.2: Survivor&amp;rsquo;s Account&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;Giver: Madame X (Underground)
+Objective: Find and extract the &amp;#34;Witness&amp;#34; (NPC rescue)
+Map: Industrial Decay &amp;gt; Urban Ruins
+Stakes: Witness carries key information
+Rewards: 3000 Credits, Underground Rep &amp;#43;1000, Lore unlock&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;hr&gt;
+&lt;h2&gt;🏴 Faction Quest Templates&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-faction-quest-templates&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-faction-quest-templates&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;Salvage Corps Quest Types&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;salvage-corps-quest-types&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#salvage-corps-quest-types&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Type A: Resource Gathering&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;Template: &amp;#34;Collect [X] of [Material Type]&amp;#34;
+Difficulty: Easy-Medium
+Time: 1-2 matches
+
+Example: &amp;#34;Steel Shortage&amp;#34;
+- Collect 10 Metal Scraps
+- Bonus: Find High-Grade Steel (&amp;#43;500 Rep)
+- Reward: 1500 Credits, Worker&amp;#39;s Toolbox&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;Type B: Repair Missions&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;Template: &amp;#34;Repair/Activate [Object] at [Location]&amp;#34;
+Difficulty: Medium
+Time: 1 match
+
+Example: &amp;#34;Power Restored&amp;#34;
+- Reach Generator Room (Reactor F1)
+- Repair Generator (30 second interaction)
+- Extract successfully
+- Reward: 2000 Credits, Reputation &amp;#43;800&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;Type C: Convoy Protection&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;Template: &amp;#34;Escort [NPC/Object] to [Extraction]&amp;#34;
+Difficulty: Hard
+Time: Full match
+
+Example: &amp;#34;Supply Run&amp;#34;
+- Meet supply cart at Loading Docks
+- Escort to Gate 03 (NPC takes damage)
+- Protect from 3 AI ambush waves
+- Reward: 4000 Credits, Reputation &amp;#43;1200, Rare Item&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h3&gt;Tech Syndicate Quest Types&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;tech-syndicate-quest-types&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#tech-syndicate-quest-types&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Type A: Data Recovery&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;Template: &amp;#34;Retrieve [Data Object] from [Secure Location]&amp;#34;
+Difficulty: Medium
+Time: 1 match
+
+Example: &amp;#34;Project Prometheus Files&amp;#34;
+- Locate Server Room in Lab Beta
+- Hack terminal (15 seconds, creates noise)
+- Download complete, extract with drive
+- Reward: 2000 Credits, Intel item, Rep &amp;#43;750&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;Type B: Hack Missions&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;Template: &amp;#34;Hack [System] without being detected&amp;#34;
+Difficulty: Hard (stealth optional)
+Time: 1 match
+
+Example: &amp;#34;Blind Eyes&amp;#34;
+- Disable 3 Security Cameras in Offices
+- Remain undetected (bonus objective)
+- Reward: 2500 Credits, Stealth bonus &amp;#43;500&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h3&gt;Underground Network Quest Types&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;underground-network-quest-types&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#underground-network-quest-types&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Type A: Delivery/Smuggling&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;Template: &amp;#34;Transport [Package] to [Dead Drop]&amp;#34;
+Difficulty: Medium
+Time: 1 match
+
+Example: &amp;#34;Hot Goods&amp;#34;
+- Pick up package at Warehouse W2 (marked)
+- Deliver to Dead Drop in Sewers
+- Avoid Peacekeepers patrol (optional)
+- Reward: 3000 Credits, Black Market access&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;Type B: Elimination&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;Template: &amp;#34;Eliminate [Target] in [Zone]&amp;#34;
+Difficulty: Hard
+Time: 1 match
+
+Example: &amp;#34;No Witnesses&amp;#34;
+- Kill named AI target &amp;#34;The Informant&amp;#34;
+- Location: Office Complex, Floor 4
+- Target has bodyguards (3 AI)
+- Bonus: Retrieve documents from body
+- Reward: 5000 Credits, Rep &amp;#43;1500&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h3&gt;Peacekeepers Quest Types&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;peacekeepers-quest-types&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#peacekeepers-quest-types&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Type A: Zone Clearing&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;Template: &amp;#34;Eliminate [X] hostiles in [Zone]&amp;#34;
+Difficulty: Medium
+Time: 1 match
+
+Example: &amp;#34;Clean Sweep&amp;#34;
+- Kill 15 Scav AI in Warehouse District
+- Bonus: No civilian casualties
+- Reward: 2000 Credits, Ammo crate&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;Type B: Rescue Operations&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;Template: &amp;#34;Rescue [Survivor] from [Danger]&amp;#34;
+Difficulty: Hard (timed)
+Time: 1 match, time limit
+
+Example: &amp;#34;Trapped&amp;#34;
+- Locate survivor in collapsed building
+- Clear 5 enemies guarding area
+- Escort survivor to Convoy extraction
+- Time limit: 8 minutes
+- Reward: 4000 Credits, Medical supplies, Rep &amp;#43;1200&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;hr&gt;
+&lt;h2&gt;📅 Daily Quest System&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-daily-quest-system&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-daily-quest-system&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;Daily Quest Pool (Rotating)&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;daily-quest-pool-rotating&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#daily-quest-pool-rotating&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Easy Tier (Pick 1):&lt;/strong&gt;&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Quest&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Objective&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Reward&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Loot Run&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Extract with 5+ items&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;500 Credits&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Scavenger&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Loot 10 containers&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;400 Credits&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Survivor&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Extract 2 matches&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;600 Credits&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;strong&gt;Medium Tier (Pick 1):&lt;/strong&gt;&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Quest&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Objective&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Reward&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Combat Expert&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Kill 10 AI enemies&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;800 Credits&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Valuable Find&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Extract with Rare+ item&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;1000 Credits&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Hot Zone Hero&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Loot from Hot Zone&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;900 Credits&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;strong&gt;Hard Tier (Pick 1):&lt;/strong&gt;&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Quest&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Objective&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Reward&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Untouchable&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Extract without taking damage&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;1500 Credits&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Boss Hunter&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Kill any AI Boss&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;2000 Credits&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Full Bag&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Extract with full inventory&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;1200 Credits&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3&gt;Daily Reset&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;daily-reset&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#daily-reset&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;Resets at: 00:00 UTC&lt;/li&gt;
+&lt;li&gt;Cannot stack uncompleted quests&lt;/li&gt;
+&lt;li&gt;Completed quests give bonus streak&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2&gt;📆 Weekly Quest System&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-weekly-quest-system&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-weekly-quest-system&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;Weekly Challenge Format&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;weekly-challenge-format&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#weekly-challenge-format&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Week Example: &amp;ldquo;Industrial Dominance&amp;rdquo;&lt;/strong&gt;&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Day&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Objective&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Individual Reward&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Mon&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Extract 3 times from Industrial Decay&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;1000 Credits&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Tue&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Kill 25 AI in Industrial Decay&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;1200 Credits&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Wed&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Loot the Reactor Core&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;1500 Credits&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Thu&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Complete 1 Faction Quest&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;2000 Credits&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Fri&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Defeat Reactor Guardian Boss&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;2500 Credits&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Sat-Sun&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Complete ALL objectives&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;BONUS: Rare Weapon&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;strong&gt;Completion Bonus:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;5/5 Days = Rare Weapon Crate&lt;/li&gt;
+&lt;li&gt;7/7 Days = Epic Cosmetic&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2&gt;🏆 Challenge Quests (Special)&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-challenge-quests-special&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-challenge-quests-special&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;Operator Personal Quests&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;operator-personal-quests&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#operator-personal-quests&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Example: Ghost&amp;rsquo;s Quest Chain &amp;ldquo;Ghosts of Unit Seven&amp;rdquo;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Part 1: &amp;ldquo;Dog Tags&amp;rdquo;&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;Unlock: Level 3 with Ghost operator
+Objective: Find Unit Seven memorial in Office Complex
+Location: Floor 5, locked room (keycard)
+Reward: Audio Log, Ghost backstory, 2000 Credits&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;Part 2: &amp;ldquo;One Survivor&amp;rdquo;&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;Unlock: Complete Part 1
+Objective: Retrieve encrypted comm device from Tech Labs
+Location: Lab Beta, Server Room
+Challenge: Stealth recommended, alarms alert extra AI
+Reward: Lore reveal, Quest item, 3000 Credits&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;Part 3: &amp;ldquo;The Rendezvous&amp;rdquo;&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;Unlock: Complete Part 2
+Objective: Extract from Helipad at specific time (10:00-11:00)
+Challenge: High-traffic time, PvP likely
+Trigger: NPC contact appears with information
+Reward: Major lore, Ghost exclusive skin unlock progress&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;Part 4: &amp;ldquo;Traitor&amp;rsquo;s End&amp;rdquo;&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;Unlock: Complete Part 3
+Objective: Eliminate special AI target &amp;#34;The Betrayer&amp;#34;
+Location: Rotating spawn
+Challenge: Boss-tier enemy with unique patterns
+Reward: Story conclusion, &amp;#34;Memorial&amp;#34; skin, 10,000 Credits&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;hr&gt;
+&lt;h2&gt;🎨 Quest Design Template&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-quest-design-template&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-quest-design-template&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;Standard Quest Document&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;standard-quest-document&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#standard-quest-document&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-markdown&#34; data-lang=&#34;markdown&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;# Quest: [QUEST NAME]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;## Meta Information
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;-&lt;/span&gt; **Quest ID:** [Unique ID]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;-&lt;/span&gt; **Category:** [Main/Faction/Daily/Weekly/Challenge]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;-&lt;/span&gt; **Giver:** [NPC Name]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;-&lt;/span&gt; **Faction:** [Associated Faction]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;-&lt;/span&gt; **Difficulty:** [Easy/Medium/Hard/Extreme]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;-&lt;/span&gt; **Duration:** [Estimated time/matches]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;## Objectives
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;### Primary
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;1.&lt;/span&gt; [Main objective - required for completion]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;### Secondary (Optional)
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;1.&lt;/span&gt; [Bonus objective - extra rewards]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;2.&lt;/span&gt; [Bonus objective - reputation]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;## Requirements
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;-&lt;/span&gt; **Level:** [Minimum player level]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;-&lt;/span&gt; **Reputation:** [Faction rep needed]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;-&lt;/span&gt; **Prerequisites:** [Previous quests]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;-&lt;/span&gt; **Items Needed:** [Keys, tools, etc.]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;## Location Data
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;-&lt;/span&gt; **Map:** [Map name]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;-&lt;/span&gt; **Zone:** [Specific zone]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;-&lt;/span&gt; **POI:** [Exact location]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;-&lt;/span&gt; **AI Presence:** [Number and type]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;## Rewards
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;| Reward Type | Amount           |
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;| :---------- | :--------------- |
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;| Credits     | [X]              |
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;| Reputation  | [Faction +X]     |
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;| Items       | [Specific items] |
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;| Unlocks     | [New content]    |
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;## Dialogue
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;### Quest Accept
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;&amp;gt; &lt;/span&gt;&lt;span style=&#34;font-style:italic&#34;&gt;&amp;#34;[NPC dialogue when accepting]&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;font-style:italic&#34;&gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;### Quest Reminder
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;&amp;gt; &lt;/span&gt;&lt;span style=&#34;font-style:italic&#34;&gt;&amp;#34;[NPC dialogue when incomplete]&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;font-style:italic&#34;&gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;### Quest Complete
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;&amp;gt; &lt;/span&gt;&lt;span style=&#34;font-style:italic&#34;&gt;&amp;#34;[NPC dialogue on completion]&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;font-style:italic&#34;&gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;## Design Notes
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;-&lt;/span&gt; [Technical implementation notes]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;-&lt;/span&gt; [Balance considerations]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;- [Narrative connections]&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;hr&gt;
+&lt;h2&gt;📊 Quest Balance Guidelines&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-quest-balance-guidelines&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-quest-balance-guidelines&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;Reward Scaling&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;reward-scaling&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#reward-scaling&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Difficulty&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Time Est.&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Credit Reward&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Rep Reward&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Easy&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;5-10 min&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;500-1000&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;200-400&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Medium&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;10-20 min&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;1000-2500&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;500-800&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Hard&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;20-30 min&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;2500-5000&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;800-1200&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Extreme&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;30+ min&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;5000-10000&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;1200-2000&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3&gt;Quest Availability Rules&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;quest-availability-rules&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#quest-availability-rules&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;Max 3 Daily quests active&lt;/li&gt;
+&lt;li&gt;Max 1 Weekly quest chain&lt;/li&gt;
+&lt;li&gt;Faction quests: Unlimited (gated by reputation)&lt;/li&gt;
+&lt;li&gt;Main Story: Sequential unlock&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Story &amp; Narrative Design</title>
+      <link>https://oaiba.github.io/ExtractionDocument/gdd_design/story/narrative.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://oaiba.github.io/ExtractionDocument/gdd_design/story/narrative.html</guid>
+      <description>
+        
+        
+        &lt;h2&gt;📖 Narrative Philosophy&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-narrative-philosophy&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-narrative-philosophy&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;Storytelling Approach:&lt;/strong&gt; Environmental &amp;amp; Emergent&lt;/p&gt;
+&lt;p&gt;Our game tells its story through:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Environmental storytelling&lt;/strong&gt; - The world itself reveals what happened&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Faction lore&lt;/strong&gt; - Quest givers provide context and motivation&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Emergent narratives&lt;/strong&gt; - Player experiences create personal stories&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Minimal cutscenes&lt;/strong&gt; - Respect mobile session time&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;NOT:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Long cutscenes interrupting gameplay&lt;/li&gt;
+&lt;li&gt;Heavy dialogue trees&lt;/li&gt;
+&lt;li&gt;Linear story progression&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2&gt;🌍 World Lore&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-world-lore&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-world-lore&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;The Collapse (Year Zero)&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;the-collapse-year-zero&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#the-collapse-year-zero&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;What Happened:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;In 2031, a catastrophic event known as &lt;strong&gt;&amp;ldquo;The Collapse&amp;rdquo;&lt;/strong&gt; struck the world. A combination of:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Global economic meltdown&lt;/li&gt;
+&lt;li&gt;Simultaneous infrastructure cyberattacks&lt;/li&gt;
+&lt;li&gt;Weaponized pandemic outbreak&lt;/li&gt;
+&lt;li&gt;Resource wars escalation&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Within 18 months, 60% of the world&amp;rsquo;s governments had fallen. Cities became lawless. Corporations retreated to fortified compounds. The military fractured into warlord factions.&lt;/p&gt;
+&lt;h3&gt;The Exclusion Zones (Year 3-5)&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;the-exclusion-zones-year-3-5&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#the-exclusion-zones-year-3-5&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;What They Are:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;As the chaos settled, certain areas became too dangerous or valuable to ignore:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Contaminated zones&lt;/strong&gt; - Areas affected by chemical/biological agents&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Resource hotspots&lt;/strong&gt; - Abandoned industrial complexes with valuable materials&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Failed military zones&lt;/strong&gt; - Bases with prototype weapons and supplies&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Corporate ruins&lt;/strong&gt; - Tech companies with salvageable data and equipment&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;These became known as &lt;strong&gt;&amp;ldquo;Exclusion Zones&amp;rdquo;&lt;/strong&gt; - officially off-limits, but ripe for exploitation.&lt;/p&gt;
+&lt;h3&gt;The Extraction Economy (Year 5+)&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;the-extraction-economy-year-5&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#the-extraction-economy-year-5&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;The New Order:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;A black market economy emerged around the Exclusion Zones:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Contractors&lt;/strong&gt; (like our Operators) venture into zones&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Extract valuable items&lt;/strong&gt; (weapons, tech, data, resources)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Sell to Factions&lt;/strong&gt; who control the outside world&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Risk everything&lt;/strong&gt; - death means losing your gear&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;This is the world players enter.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2&gt;🗺️ Setting: Neo-Asia Exclusion Zone&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-setting-neo-asia-exclusion-zone&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-setting-neo-asia-exclusion-zone&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;Location&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;location&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#location&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;The game takes place in a fictional region called the &lt;strong&gt;Neo-Asia Industrial Corridor&lt;/strong&gt; - a massive area spanning what was once a thriving manufacturing hub.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Inspired by:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Abandoned Chinese ghost cities&lt;/li&gt;
+&lt;li&gt;Korean DMZ aesthetic&lt;/li&gt;
+&lt;li&gt;Japanese industrial zones&lt;/li&gt;
+&lt;li&gt;Southeast Asian urban sprawl&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Zone Characteristics&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;zone-characteristics&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#zone-characteristics&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Industrial Decay (Map 1)&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;Former: Massive manufacturing complex
+Now: Rusted factories, collapsed warehouses
+Hazards: Unstable structures, chemical leaks
+Loot: Industrial materials, old-world tech, weapons caches
+Atmosphere: Silent except for creaking metal, dripping water&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;Urban Ruins (Map 2)&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;Former: Commercial district, residential high-rises
+Now: Overgrown streets, looted apartments
+Hazards: Hostile scavengers, structural collapse
+Loot: Consumer electronics, medical supplies, personal valuables
+Atmosphere: Eerie quiet, occasional distant gunfire&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;Military Outpost (Map 3 - Future)&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;Former: Joint military base, weapons depot
+Now: Contested territory, partially active defenses
+Hazards: Automated turrets, minefields, elite AI
+Loot: Military-grade weapons, armor, classified data
+Atmosphere: Tense, organized chaos&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;hr&gt;
+&lt;h2&gt;🏴 Factions&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-factions&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-factions&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Factions are &lt;strong&gt;NOT playable&lt;/strong&gt;. They serve as:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Quest givers&lt;/li&gt;
+&lt;li&gt;Lore sources&lt;/li&gt;
+&lt;li&gt;Vendors for unique rewards&lt;/li&gt;
+&lt;li&gt;Reputation systems&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;1. Salvage Corps&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;1-salvage-corps&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#1-salvage-corps&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Identity:&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;Motto: &amp;#34;Honest Work in Lawless Lands&amp;#34;
+Color: Orange &amp;amp; Gray
+Symbol: Crossed wrenches over a gear
+Leader: &amp;#34;Foreman&amp;#34; Viktor Koval&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;Background:&lt;/strong&gt;
+Former industrial workers who banded together after The Collapse. They believe in practical salvage - recycling the old world to build the new. They&amp;rsquo;re the most accessible faction for new players.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Philosophy:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Value hard work and fair trade&lt;/li&gt;
+&lt;li&gt;Despise corporate exploitation&lt;/li&gt;
+&lt;li&gt;Neutral in faction conflicts&lt;/li&gt;
+&lt;li&gt;Focus on reconstruction, not destruction&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Quest Types:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Retrieve industrial materials (metal, electronics, fuel)&lt;/li&gt;
+&lt;li&gt;Repair/activate machinery&lt;/li&gt;
+&lt;li&gt;Clear routes for salvage operations&lt;/li&gt;
+&lt;li&gt;Protect supply convoys (escort missions)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Unique Rewards:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Crafting materials&lt;/li&gt;
+&lt;li&gt;Practical gear (backpacks, tools)&lt;/li&gt;
+&lt;li&gt;Stash expansions&lt;/li&gt;
+&lt;li&gt;Vehicle access (future)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Reputation Levels:&lt;/strong&gt;&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Level&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Title&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Benefit&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;1&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Newcomer&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Access to basic quests&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;2&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Worker&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;5% discount on Salvage items&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;3&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Foreman&amp;rsquo;s Pick&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Exclusive gear unlocks&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;4&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Trusted&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Access to high-value salvage quests&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;5&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Salvage Veteran&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Unique cosmetics, title&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr&gt;
+&lt;h3&gt;2. Tech Syndicate&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;2-tech-syndicate&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#2-tech-syndicate&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Identity:&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;Motto: &amp;#34;Knowledge is the Ultimate Currency&amp;#34;
+Color: Cyan &amp;amp; Black
+Symbol: Circuit pattern forming an eye
+Leader: &amp;#34;Director&amp;#34; Seo-Yun Park&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;Background:&lt;/strong&gt;
+A coalition of former tech workers, hackers, and corporate defectors. They seek to preserve and exploit pre-Collapse technology. They operate from hidden server farms and communicate through encrypted channels.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Philosophy:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Information is power&lt;/li&gt;
+&lt;li&gt;Technology should be controlled by those who understand it&lt;/li&gt;
+&lt;li&gt;Corporate secrets deserve to be exposed&lt;/li&gt;
+&lt;li&gt;The future belongs to the connected&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Quest Types:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Retrieve data drives and servers&lt;/li&gt;
+&lt;li&gt;Hack security systems&lt;/li&gt;
+&lt;li&gt;Recover prototype tech&lt;/li&gt;
+&lt;li&gt;Eliminate corporate remnants&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Unique Rewards:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Electronic attachments&lt;/li&gt;
+&lt;li&gt;Hacking tools&lt;/li&gt;
+&lt;li&gt;Specialist gear&lt;/li&gt;
+&lt;li&gt;Intel on map secrets&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Reputation Levels:&lt;/strong&gt;&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Level&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Title&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Benefit&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;1&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Unknown&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Basic access&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;2&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Registered&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Tech item discounts&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;3&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Trusted Node&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Electronic gadget unlocks&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;4&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Inner Circle&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Secret quest lines&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;5&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Elite Hacker&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Exclusive skins, special tools&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr&gt;
+&lt;h3&gt;3. Underground Network&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;3-underground-network&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#3-underground-network&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Identity:&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;Motto: &amp;#34;Survive Together or Die Alone&amp;#34;
+Color: Purple &amp;amp; Gold
+Symbol: Hands clasped in shadows
+Leader: &amp;#34;The Broker&amp;#34; (identity unknown)&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;Background:&lt;/strong&gt;
+A loose alliance of survivors, refugees, and opportunists. They control the black market and information trade. No one knows who truly leads them - communication goes through intermediaries.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Philosophy:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Survival at any cost&lt;/li&gt;
+&lt;li&gt;Loyalty is earned, not given&lt;/li&gt;
+&lt;li&gt;Everyone has a price&lt;/li&gt;
+&lt;li&gt;Stay in the shadows&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Quest Types:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Smuggle contraband&lt;/li&gt;
+&lt;li&gt;Eliminate rival operators&lt;/li&gt;
+&lt;li&gt;Gather intel on other factions&lt;/li&gt;
+&lt;li&gt;High-risk, high-reward heists&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Unique Rewards:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Rare weapons&lt;/li&gt;
+&lt;li&gt;Black market cosmetics&lt;/li&gt;
+&lt;li&gt;Credits bonuses&lt;/li&gt;
+&lt;li&gt;&amp;ldquo;Hot&amp;rdquo; items (questionable origin)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Reputation Levels:&lt;/strong&gt;&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Level&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Title&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Benefit&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;1&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Nobody&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Basic black market access&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;2&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Known Face&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Better buy/sell prices&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;3&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Trusted Runner&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Smuggling quests&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;4&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Inner Circle&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Assassination contracts&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;5&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Shadow Elite&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Legendary items, unique title&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr&gt;
+&lt;h3&gt;4. Peacekeepers&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;4-peacekeepers&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#4-peacekeepers&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Identity:&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;Motto: &amp;#34;Order From Chaos&amp;#34;
+Color: Blue &amp;amp; White
+Symbol: Shield with olive branches
+Leader: Commander Helena Vance&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;Background:&lt;/strong&gt;
+Remnants of pre-Collapse military and law enforcement who still believe in order. They&amp;rsquo;re attempting to establish safe zones and restore civilization. They&amp;rsquo;re the most &amp;ldquo;lawful&amp;rdquo; faction but not without moral compromises.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Philosophy:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Order must be restored&lt;/li&gt;
+&lt;li&gt;Some sacrifices are necessary&lt;/li&gt;
+&lt;li&gt;Protect the innocent&lt;/li&gt;
+&lt;li&gt;Justice, even if delayed&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Quest Types:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Eliminate hostile AI bosses&lt;/li&gt;
+&lt;li&gt;Secure extraction points&lt;/li&gt;
+&lt;li&gt;Rescue survivors (timed missions)&lt;/li&gt;
+&lt;li&gt;Destroy contraband caches&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Unique Rewards:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Military-grade armor&lt;/li&gt;
+&lt;li&gt;Tactical equipment&lt;/li&gt;
+&lt;li&gt;Medic supplies&lt;/li&gt;
+&lt;li&gt;Safe house access (future)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Reputation Levels:&lt;/strong&gt;&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Level&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Title&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Benefit&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;1&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Civilian&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Basic recognition&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;2&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Auxiliary&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Medical item discounts&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;3&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Deputy&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Armor unlocks&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;4&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Officer&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Elite quest access&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;5&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Commander&amp;rsquo;s Trust&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Legendary gear, exclusive title&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr&gt;
+&lt;h2&gt;👤 Operator Backstories&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-operator-backstories&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-operator-backstories&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;ASSAULT - &amp;ldquo;Ghost&amp;rdquo; (Real Name: Marcus Chen)&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;assault---ghost-real-name-marcus-chen&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#assault---ghost-real-name-marcus-chen&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Background:&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;Age: 34
+Origin: Former Hong Kong Special Forces
+Pre-Collapse: Counter-terrorism operative
+The Collapse: Unit was decimated during the chaos
+Now: Freelance contractor, motivated by survivor&amp;#39;s guilt&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;Personality:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Aggressive, impulsive&lt;/li&gt;
+&lt;li&gt;Haunted by fallen comrades&lt;/li&gt;
+&lt;li&gt;Uses combat to cope with trauma&lt;/li&gt;
+&lt;li&gt;Secretly generous to civilians&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Voice Personality:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Growls orders&lt;/li&gt;
+&lt;li&gt;Dark humor&lt;/li&gt;
+&lt;li&gt;Occasional vulnerability&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Personal Quest Chain: &amp;ldquo;Ghosts of Unit Seven&amp;rdquo;&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Find intel on old squad members&lt;/li&gt;
+&lt;li&gt;Discover survivor location&lt;/li&gt;
+&lt;li&gt;Rescue or confirm deaths&lt;/li&gt;
+&lt;li&gt;Confront traitor who sold them out&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Reward:&lt;/strong&gt; Unique skin &amp;ldquo;Memorial&amp;rdquo; + backstory completion&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;h3&gt;SUPPORT - &amp;ldquo;Angel&amp;rdquo; (Real Name: Dr. Amara Okonkwo)&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;support---angel-real-name-dr-amara-okonkwo&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#support---angel-real-name-dr-amara-okonkwo&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Background:&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;Age: 38
+Origin: Nigerian field medic, Doctors Without Borders
+Pre-Collapse: Emergency medicine in conflict zones
+The Collapse: Hospital overrun, forced to flee
+Now: Healer for hire, still follows medical ethics&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;Personality:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Compassionate but realistic&lt;/li&gt;
+&lt;li&gt;Values every life (even enemies, if surrendered)&lt;/li&gt;
+&lt;li&gt;Refuses to leave wounded behind&lt;/li&gt;
+&lt;li&gt;Struggles with the violence required to survive&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Voice Personality:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Calm under pressure&lt;/li&gt;
+&lt;li&gt;Encouraging teammates&lt;/li&gt;
+&lt;li&gt;Grief when allies fall&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Personal Quest Chain: &amp;ldquo;First, Do No Harm&amp;rdquo;&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Deliver medical supplies to survivor camp&lt;/li&gt;
+&lt;li&gt;Treat critically wounded civilian&lt;/li&gt;
+&lt;li&gt;Secure medicine from hostile territory&lt;/li&gt;
+&lt;li&gt;Confront ethical dilemma (save many or one)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Reward:&lt;/strong&gt; Unique skin &amp;ldquo;Healer&amp;rsquo;s Oath&amp;rdquo; + backstory completion&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;h3&gt;RECON - &amp;ldquo;Specter&amp;rdquo; (Real Name: Yuki Tanaka)&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;recon---specter-real-name-yuki-tanaka&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#recon---specter-real-name-yuki-tanaka&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Background:&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;Age: 29
+Origin: Japanese Intelligence Agency operative
+Pre-Collapse: Corporate espionage specialist
+The Collapse: Agency dissolved, data became worthless
+Now: Information broker, sells intel to highest bidder&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;Personality:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Cold, calculating&lt;/li&gt;
+&lt;li&gt;Trust issues (betrayed by employer)&lt;/li&gt;
+&lt;li&gt;Values information over relationships&lt;/li&gt;
+&lt;li&gt;Secretly lonely&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Voice Personality:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Quiet, precise&lt;/li&gt;
+&lt;li&gt;Rarely shows emotion&lt;/li&gt;
+&lt;li&gt;Cryptic hints&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Personal Quest Chain: &amp;ldquo;The Files&amp;rdquo;&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Recover personal data from old employer&lt;/li&gt;
+&lt;li&gt;Decrypt classified information&lt;/li&gt;
+&lt;li&gt;Discover employer&amp;rsquo;s role in The Collapse&lt;/li&gt;
+&lt;li&gt;Choose: Expose truth or sell it&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Reward:&lt;/strong&gt; Unique skin &amp;ldquo;Truth Seeker&amp;rdquo; + backstory completion&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;h3&gt;TANK - &amp;ldquo;Fortress&amp;rdquo; (Real Name: Dmitri Volkov)&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;tank---fortress-real-name-dmitri-volkov&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#tank---fortress-real-name-dmitri-volkov&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Background:&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;Age: 42
+Origin: Russian Federal Security Service
+Pre-Collapse: VIP protection detail
+The Collapse: Watched clients abandon innocent people
+Now: Protector of the weak, disillusioned with authority&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;Personality:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Stoic, paternal&lt;/li&gt;
+&lt;li&gt;Protects teammates above all&lt;/li&gt;
+&lt;li&gt;Distrusts leaders and politicians&lt;/li&gt;
+&lt;li&gt;Soft spot for children and elderly&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Voice Personality:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Deep, reassuring&lt;/li&gt;
+&lt;li&gt;Few words, meaningful&lt;/li&gt;
+&lt;li&gt;Protective warnings&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Personal Quest Chain: &amp;ldquo;The Last Oath&amp;rdquo;&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Find the family he failed to protect&lt;/li&gt;
+&lt;li&gt;Discover they survived&lt;/li&gt;
+&lt;li&gt;Clear path to their safe zone&lt;/li&gt;
+&lt;li&gt;Defend against overwhelming odds&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Reward:&lt;/strong&gt; Unique skin &amp;ldquo;Guardian&amp;rdquo; + backstory completion&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;h3&gt;SPECIALIST - &amp;ldquo;Circuit&amp;rdquo; (Real Name: Alex Rivera)&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;specialist---circuit-real-name-alex-rivera&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#specialist---circuit-real-name-alex-rivera&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Background:&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;Age: 26
+Origin: Silicon Valley prodigy, MIT dropout
+Pre-Collapse: Worked on classified military AI
+The Collapse: Partially responsible (guilt)
+Now: Uses skills for survival, seeking redemption&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;Personality:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Brilliant but anxious&lt;/li&gt;
+&lt;li&gt;Carries heavy guilt&lt;/li&gt;
+&lt;li&gt;Talks to tech like friends&lt;/li&gt;
+&lt;li&gt;Desperate to &amp;ldquo;fix&amp;rdquo; mistakes&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Voice Personality:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Nervous, fast-talking&lt;/li&gt;
+&lt;li&gt;Tech jargon&lt;/li&gt;
+&lt;li&gt;Apologetic&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Personal Quest Chain: &amp;ldquo;Debugging Guilt&amp;rdquo;&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Find evidence of their role in The Collapse&lt;/li&gt;
+&lt;li&gt;Disable rogue AI they created&lt;/li&gt;
+&lt;li&gt;Face survivors affected by their work&lt;/li&gt;
+&lt;li&gt;Make amends (sabotage or repair)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Reward:&lt;/strong&gt; Unique skin &amp;ldquo;Redemption.exe&amp;rdquo; + backstory completion&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;h2&gt;📝 Environmental Storytelling Guidelines&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-environmental-storytelling-guidelines&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-environmental-storytelling-guidelines&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;How to Tell Story Without Words&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;how-to-tell-story-without-words&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#how-to-tell-story-without-words&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Props &amp;amp; Set Dressing:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Skeleton poses tell a story (embracing, fighting, fleeing)&lt;/li&gt;
+&lt;li&gt;Graffiti hints at timeline (&amp;ldquo;Day 47 - no help coming&amp;rdquo;)&lt;/li&gt;
+&lt;li&gt;Personal items suggest past lives (children&amp;rsquo;s drawings, wedding photos)&lt;/li&gt;
+&lt;li&gt;Makeshift barricades show desperate last stands&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Audio Logs (Rare Collectibles):&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;30-60 second recordings&lt;/li&gt;
+&lt;li&gt;First-person accounts of The Collapse&lt;/li&gt;
+&lt;li&gt;Faction perspectives&lt;/li&gt;
+&lt;li&gt;Survivor stories&lt;/li&gt;
+&lt;li&gt;Total: 50 logs across all maps&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Visual Contrasts:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Nature reclaiming urban spaces (hope)&lt;/li&gt;
+&lt;li&gt;Burned buildings next to pristine areas (randomness)&lt;/li&gt;
+&lt;li&gt;Child toys near violence (tragedy)&lt;/li&gt;
+&lt;li&gt;Corporate logos in ruins (irony)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2&gt;🎭 Dialogue Guidelines&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-dialogue-guidelines&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-dialogue-guidelines&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;Voice Line Categories&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;voice-line-categories&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#voice-line-categories&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Combat Callouts (Gameplay Priority):&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Short, clear, no ambiguity&lt;/li&gt;
+&lt;li&gt;Examples: &amp;ldquo;Enemy spotted!&amp;rdquo;, &amp;ldquo;Reloading!&amp;rdquo;, &amp;ldquo;Grenade out!&amp;rdquo;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Character Moments (Flavor):&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Show personality without disrupting gameplay&lt;/li&gt;
+&lt;li&gt;Examples: &amp;ldquo;This place gives me the creeps&amp;hellip;&amp;rdquo;, &amp;ldquo;Almost reminds me of home.&amp;rdquo;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Faction Interactions (Quest NPCs):&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Brief, purposeful&lt;/li&gt;
+&lt;li&gt;Always end with clear next step&lt;/li&gt;
+&lt;li&gt;Example structure:
+&lt;ol&gt;
+&lt;li&gt;Greeting (2-3 sentences)&lt;/li&gt;
+&lt;li&gt;Quest explanation (3-4 sentences)&lt;/li&gt;
+&lt;li&gt;Reward mention (1 sentence)&lt;/li&gt;
+&lt;li&gt;Send-off (1 sentence)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Writing Style&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;writing-style&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#writing-style&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;DO:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Keep it short&lt;/li&gt;
+&lt;li&gt;Use active voice&lt;/li&gt;
+&lt;li&gt;Show, don&amp;rsquo;t tell emotions&lt;/li&gt;
+&lt;li&gt;Include tactical information when relevant&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;DON&amp;rsquo;T:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Long monologues&lt;/li&gt;
+&lt;li&gt;Exposition dumps&lt;/li&gt;
+&lt;li&gt;Breaking immersion with meta-references&lt;/li&gt;
+&lt;li&gt;Offensive stereotypes&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2&gt;🗓️ Story Content Roadmap&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-story-content-roadmap&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-story-content-roadmap&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;Launch (Season 1)&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;launch-season-1&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#launch-season-1&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;Core world lore established&lt;/li&gt;
+&lt;li&gt;4 factions introduced&lt;/li&gt;
+&lt;li&gt;5 operator backstories (1 quest each)&lt;/li&gt;
+&lt;li&gt;20 audio logs (Industrial Decay map)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Season 2&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;season-2&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#season-2&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;First major story event (Faction War)&lt;/li&gt;
+&lt;li&gt;2 new operators with backstories&lt;/li&gt;
+&lt;li&gt;15 additional audio logs (Urban Ruins map)&lt;/li&gt;
+&lt;li&gt;New faction questlines&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Season 3&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;season-3&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#season-3&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;Story revelation (Who caused The Collapse?)&lt;/li&gt;
+&lt;li&gt;New faction introduced&lt;/li&gt;
+&lt;li&gt;2 new operators&lt;/li&gt;
+&lt;li&gt;Map 3 story content&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Year 2+&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;year-2&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#year-2&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;Ongoing narrative events&lt;/li&gt;
+&lt;li&gt;Player choices affecting world state (global events)&lt;/li&gt;
+&lt;li&gt;Expanded operator backstories&lt;/li&gt;
+&lt;li&gt;Community-driven lore content&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>

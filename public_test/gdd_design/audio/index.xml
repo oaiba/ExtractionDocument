@@ -1,0 +1,2777 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Extraction Document – Audio Design &amp; Soundscapes</title>
+    <link>https://oaiba.github.io/ExtractionDocument/gdd_design/audio/index.html</link>
+    <description>Recent content in Audio Design &amp; Soundscapes on Extraction Document</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	  <atom:link href="https://oaiba.github.io/ExtractionDocument/gdd_design/audio/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Audio Design &amp; Soundscapes</title>
+      <link>https://oaiba.github.io/ExtractionDocument/gdd_design/audio/sounddesign.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://oaiba.github.io/ExtractionDocument/gdd_design/audio/sounddesign.html</guid>
+      <description>
+        
+        
+        &lt;h2&gt;🎧 Audio Design Philosophy&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-audio-design-philosophy&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-audio-design-philosophy&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;In an Extraction Shooter, &lt;strong&gt;Sound is Information&lt;/strong&gt;.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Tactical Priority:&lt;/strong&gt; Every sound must have a gameplay purpose. If it doesn&amp;rsquo;t help the player survive, it&amp;rsquo;s noise.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Occlusion &amp;amp; Propagation:&lt;/strong&gt; Sounds must react realistically to walls, floors, and distance.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Mobile Enhancement:&lt;/strong&gt; Since many play without headphones, we use &lt;strong&gt;Visual Sound Indicators&lt;/strong&gt; (See &lt;a href=&#34;../GameDesign/NavigationAndMap.md&#34;&gt;Navigation Map&lt;/a&gt;) to complement the audio.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2&gt;🔊 The Soundscape (By Zone)&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-the-soundscape-by-zone&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-the-soundscape-by-zone&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;1. Industrial Zone (&amp;ldquo;The Factory&amp;rdquo;)&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;1-industrial-zone-the-factory&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#1-industrial-zone-the-factory&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Key Mood:&lt;/strong&gt; Oppressive, Mechanic, Echoing.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Ambience:&lt;/strong&gt; Low-frequency hum of generators (50Hz), distant metal stress groans, dripping water in tunnels.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Reverb:&lt;/strong&gt; Large halls have long decay (2-3s). Tight offices have short, dry slap-back.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Unique Cue:&lt;/strong&gt; &lt;em&gt;The Alarm&lt;/em&gt;. When the &amp;ldquo;Lab&amp;rdquo; opens, a klaxon blares for 10s, masking footsteps.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;2. Neon Slums (&amp;ldquo;The Undercity&amp;rdquo;)&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;2-neon-slums-the-undercity&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#2-neon-slums-the-undercity&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Key Mood:&lt;/strong&gt; Chaotic, Cyberpunk, Wet.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Ambience:&lt;/strong&gt; Constant heavy rain (White noise masking distant shots), neon lights buzzing, distant police sirens.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Vertical Audio:&lt;/strong&gt; Critical distinction between footsteps &amp;ldquo;Above&amp;rdquo; (Metal/Roof) vs &amp;ldquo;Below&amp;rdquo; (Wet Concrete/Street).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Unique Cue:&lt;/strong&gt; &lt;em&gt;The Train&lt;/em&gt;. Every 5 mins, a subway passes underground, shaking the screen and drowning out ALL audio for 15s.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;3. The Wilderness (&amp;ldquo;The Mire&amp;rdquo;)&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;3-the-wilderness-the-mire&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#3-the-wilderness-the-mire&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Key Mood:&lt;/strong&gt; Isolation, Organic, Deceptive.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Ambience:&lt;/strong&gt; Wind howling through trees, flies buzzing near bodies, squishing mud.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Occlusion:&lt;/strong&gt; Fog dampens high frequencies. Gunshots sound &amp;ldquo;duller&amp;rdquo; and harder to pinpoint directionally.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Unique Cue:&lt;/strong&gt; &lt;em&gt;Heartbeat&lt;/em&gt;. Within the chemical gas zones, the player&amp;rsquo;s heartbeat becomes audible and speeds up.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2&gt;⚔️ Weapon &amp;amp; Combat Audio&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-weapon--combat-audio&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-weapon--combat-audio&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;Weapon Signatures&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;weapon-signatures&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#weapon-signatures&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Every gun must be instantly identifiable by its &amp;ldquo;Crack&amp;rdquo; (Supersonic snap) and &amp;ldquo;Thump&amp;rdquo; (Muzzle blast).&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Weapon Class&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Audio Profile&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Distant Read&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Sniper&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Sharp, high-pitch crack. Long tail echo.&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&amp;ldquo;Thunder clap&amp;rdquo;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Shotgun&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Low-end boom. Short decay.&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&amp;ldquo;Heavy slam&amp;rdquo;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;SMG&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Rapid, lighter pops. Like a zipper.&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&amp;ldquo;Typewriter&amp;rdquo;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Surpressed&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Mechanical bolt click &amp;gt; Muzzle gas hiss.&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&amp;ldquo;Stapler&amp;rdquo;&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3&gt;Impact Sounds (Material Physics)&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;impact-sounds-material-physics&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#impact-sounds-material-physics&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Flesh:&lt;/strong&gt; Wet &amp;ldquo;Thud&amp;rdquo;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Helmet/Armor:&lt;/strong&gt; Distinct &amp;ldquo;Dink&amp;rdquo; or &amp;ldquo;Crack&amp;rdquo; to confirm hits.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Concrete:&lt;/strong&gt; Dry &amp;ldquo;Chip&amp;rdquo;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Metal:&lt;/strong&gt; Loud &amp;ldquo;Ping&amp;rdquo; (Richochet).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2&gt;👣 Movement &amp;amp; Foley&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-movement--foley&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-movement--foley&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;Footsteps (The Meta)&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;footsteps-the-meta&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#footsteps-the-meta&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Footsteps are the #1 way players track each other.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Walk:&lt;/strong&gt; Audible up to 20m.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Sprint:&lt;/strong&gt; Audible up to 40m. Heavier bass impact.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Crouch:&lt;/strong&gt; Audible up to 5m. Very soft shuffle.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Stationary (Aiming):&lt;/strong&gt; Fabric rustle only when turning quickly.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Surface Materials&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;surface-materials&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#surface-materials&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Concrete:&lt;/strong&gt; Standard boot clop.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Metal Grate:&lt;/strong&gt; Hollow, metallic resonance (Loudest).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Water/Mud:&lt;/strong&gt; Splashing/Sucking sound (Distinctive).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Glass/Crunch:&lt;/strong&gt; Sharp, high-frequency crunch (Dangerous).&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;h2&gt;🎙️ Voice &amp;amp; Dialogue&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-voice--dialogue&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-voice--dialogue&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;Operator Barks (Automatic)&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;operator-barks-automatic&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#operator-barks-automatic&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Characters react to game states automatically (can be muted in &amp;ldquo;Tactical Mode&amp;rdquo;).&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;Reloading:&lt;/em&gt; &amp;ldquo;Dry!&amp;rdquo; or &amp;ldquo;Mag out!&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Taking Damage:&lt;/em&gt; Pained grunt (Directional).&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Throwing Grenade:&lt;/em&gt; &amp;ldquo;Frag out!&amp;rdquo;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Gestural Wheel&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;gestural-wheel&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#gestural-wheel&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Silent hand signals triggers specific localized whispers:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&amp;ldquo;Hold fire.&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;&amp;ldquo;On me.&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;&amp;ldquo;Enemy ahead.&amp;rdquo;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2&gt;💿 Technical Implementation&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-technical-implementation&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-technical-implementation&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Wwise / FMOD Integration:&lt;/strong&gt; For dynamic mixing.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Priority System:&lt;/strong&gt;
+&lt;ol&gt;
+&lt;li&gt;Enemy Footsteps within 10m (High Priority).&lt;/li&gt;
+&lt;li&gt;Incoming Fire (High Priority).&lt;/li&gt;
+&lt;li&gt;Teammate Audio (Medium).&lt;/li&gt;
+&lt;li&gt;Ambience (Low - Ducks when shooting).&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Soundscape - Environmental Audio Design</title>
+      <link>https://oaiba.github.io/ExtractionDocument/gdd_design/audio/soundscape.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://oaiba.github.io/ExtractionDocument/gdd_design/audio/soundscape.html</guid>
+      <description>
+        
+        
+        &lt;h2&gt;🎧 Audio Design Philosophy&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-audio-design-philosophy&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-audio-design-philosophy&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;Core Principles&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;core-principles&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#core-principles&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;&amp;ldquo;Sound is the Second Eye&amp;rdquo;&lt;/strong&gt; - In extraction shooters, audio is a survival tool.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Pillars:&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Information First&lt;/strong&gt;: Every sound must provide gameplay information&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Realistic Propagation&lt;/strong&gt;: Audio must follow realistic physics&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Atmospheric Immersion&lt;/strong&gt;: Create distinctive atmosphere for each zone&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Mobile Consideration&lt;/strong&gt;: Support visual sound indicators&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;h2&gt;🌍 Ambient Soundscape By Zone&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-ambient-soundscape-by-zone&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-ambient-soundscape-by-zone&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;Industrial Decay - &amp;ldquo;The Factory&amp;rdquo;&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;industrial-decay---the-factory&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#industrial-decay---the-factory&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Mood Keywords:&lt;/strong&gt; Oppressive, Mechanical, Echoing, Abandoned&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Layer Structure:&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;┌────────────────────────────────────────────┐
+│ Layer 4: EVENT SOUNDS (Dynamic)            │
+│ └── Explosions, gunfire, player actions    │
+├────────────────────────────────────────────┤
+│ Layer 3: DETAIL SOUNDS (Contextual)        │
+│ └── Dripping water, sparking wires         │
+├────────────────────────────────────────────┤
+│ Layer 2: ZONE AMBIENCE (Mid)               │
+│ └── Metal groans, wind through holes       │
+├────────────────────────────────────────────┤
+│ Layer 1: BASE DRONE (Constant)             │
+│ └── Generator hum, distant machinery       │
+└────────────────────────────────────────────┘&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;Specific Sounds:&lt;/strong&gt;&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Sound&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Description&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Volume&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Loop&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Generator Hum&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;50Hz low drone&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;-18dB&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Yes&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Metal Stress&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Groaning steel&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;-24dB&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Random&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Dripping Water&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Cave-like echoes&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;-30dB&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Yes&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Steam Vents&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Periodic hiss&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;-20dB&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Trigger&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Distant Collapse&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Rumbling debris&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;-28dB&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Random&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Wind Through Holes&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Whistling&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;-26dB&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Yes&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Electrical Spark&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Crackling&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;-22dB&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Random&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Radiation Click&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Geiger counter&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;-20dB&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Zone&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;strong&gt;Reverb Settings:&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;Large Halls:
+├── Pre-delay: 25ms
+├── Decay Time: 2.5s
+├── High Frequency Damping: 0.6
+└── Wet/Dry Mix: 40%
+
+Tight Corridors:
+├── Pre-delay: 5ms
+├── Decay Time: 0.8s
+├── High Frequency Damping: 0.8
+└── Wet/Dry Mix: 25%
+
+Underground/Labs:
+├── Pre-delay: 15ms
+├── Decay Time: 1.8s
+├── High Frequency Damping: 0.4 (bright)
+└── Wet/Dry Mix: 35%&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;hr&gt;
+&lt;h3&gt;Urban Ruins - &amp;ldquo;District 14&amp;rdquo;&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;urban-ruins---district-14&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#urban-ruins---district-14&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Mood Keywords:&lt;/strong&gt; Eerie, Abandoned Life, Nature Reclaiming, Echo&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Layer Structure:&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;┌────────────────────────────────────────────┐
+│ Layer 4: LIFE SIGNS (Random)               │
+│ └── Distant dogs, car alarms              │
+├────────────────────────────────────────────┤
+│ Layer 3: NATURE RETURN (Contextual)        │
+│ └── Birds, insects, rustling leaves       │
+├────────────────────────────────────────────┤
+│ Layer 2: URBAN DECAY (Mid)                 │
+│ └── Creaking buildings, broken glass      │
+├────────────────────────────────────────────┤
+│ Layer 1: WIND &amp;amp; SILENCE (Constant)         │
+│ └── Wind channels, dead air               │
+└────────────────────────────────────────────┘&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;Specific Sounds:&lt;/strong&gt;&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Sound&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Description&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Volume&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Location&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Wind Channel&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Between buildings&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;-20dB&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Outdoor&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Bird Calls&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Crows, pigeons&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;-28dB&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Outdoor&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Creaking Structure&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Wood, metal&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;-26dB&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Indoor&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Broken Glass Tinkle&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Wind-blown shards&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;-30dB&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Window areas&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Distant Dog Bark&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Feral pack&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;-32dB&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Random&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Paper Rustling&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Scattered debris&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;-28dB&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Indoor&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Subway Rumble&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Underground train&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;-15dB&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Subway areas&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Water Drip Echo&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Flooded basements&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;-24dB&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Underground&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;strong&gt;Weather Variations:&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;Clear Day:
+├── Bird activity: High
+├── Wind: Light
+└── Visibility sounds: Normal
+
+Rain (If implemented):
+├── Rain on surfaces: Loud (-10dB)
+├── Puddle splashes: Prominent
+├── Thunder: Random events
+└── Masking effect: &amp;#43;20% (harder to hear footsteps)
+
+Fog (If implemented):
+├── Dampened high frequencies
+├── Muffled distant sounds
+└── Close sounds: Louder feel&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;hr&gt;
+&lt;h3&gt;Wilderness - &amp;ldquo;The Mire&amp;rdquo;&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;wilderness---the-mire&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#wilderness---the-mire&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Mood Keywords:&lt;/strong&gt; Isolated, Organic, Threatening Nature, Deceptive&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Layer Structure:&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;┌────────────────────────────────────────────┐
+│ Layer 4: PREDATOR HINTS (Tension)          │
+│ └── Unseen movement, branch snaps          │
+├────────────────────────────────────────────┤
+│ Layer 3: WILDLIFE (Dense)                  │
+│ └── Insects, frogs, birds                  │
+├────────────────────────────────────────────┤
+│ Layer 2: VEGETATION (Wind-driven)          │
+│ └── Rustling leaves, swaying grass         │
+├────────────────────────────────────────────┤
+│ Layer 1: WIND &amp;amp; WATER (Constant)           │
+│ └── Wind through trees, distant stream     │
+└────────────────────────────────────────────┘&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;Specific Sounds:&lt;/strong&gt;&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Sound&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Description&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Volume&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Condition&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Wind Through Trees&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Constant rustle&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;-18dB&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Always&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Insect Chorus&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Crickets, cicadas&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;-22dB&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Always&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Frog Croaks&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Near water&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;-26dB&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Swamp areas&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Bird Calls&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Various species&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;-24dB&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Random&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Branch Snap&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Sudden, nearby&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;-20dB&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Random/AI&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Leaves Underfoot&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Player-caused&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;-16dB&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Movement&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Water Stream&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Flowing water&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;-20dB&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;River areas&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Flies Buzzing&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Near corpses&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;-24dB&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Loot areas&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;strong&gt;Contamination Zone Sounds:&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;Chemical Gas Zone:
+├── Player Heartbeat: Audible, accelerating
+├── Breathing: Labored, filtered (mask)
+├── Tinnitus: High frequency ring
+├── Muffled exterior: -20dB reduction
+└── Geiger clicks: Increasing rate&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;hr&gt;
+&lt;h2&gt;🎵 Dynamic Audio States&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-dynamic-audio-states&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-dynamic-audio-states&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;Tension System&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;tension-system&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#tension-system&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Combat States:&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;┌─────────────────────────────────────────────┐
+│ State      │ Trigger              │ Effect  │
+├─────────────────────────────────────────────┤
+│ PASSIVE    │ No threats nearby    │ 100% amb│
+│ ALERT      │ Gunfire heard        │ 70% amb │
+│ COMBAT     │ Player takes fire    │ 40% amb │
+│ DANGER     │ Low health           │ 20% amb │
+│ EXTRACTION │ Exit timer active    │ 50% amb │
+└─────────────────────────────────────────────┘&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;Transition Rules:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;PASSIVE → ALERT: Fade over 0.5s&lt;/li&gt;
+&lt;li&gt;ALERT → COMBAT: Immediate snap&lt;/li&gt;
+&lt;li&gt;COMBAT → PASSIVE: 10 second delay, fade 2s&lt;/li&gt;
+&lt;li&gt;Any → DANGER: Immediate + heartbeat layer&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Time-Based Variations&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;time-based-variations&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#time-based-variations&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Match Timeline Audio:&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;0:00-5:00   │ Full ambience, peaceful start
+5:00-10:00  │ Tension subtly increases (&amp;#43;5% bass)
+10:00-12:00 │ Heightened alertness (faster ambient events)
+12:00-15:00 │ Urgency layer (subtle pulse in mix)
+Last 60s    │ Extraction urgency (low freq pulse)&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;hr&gt;
+&lt;h2&gt;🔊 Occlusion &amp;amp; Propagation&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-occlusion--propagation&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-occlusion--propagation&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;Sound Occlusion Rules&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;sound-occlusion-rules&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#sound-occlusion-rules&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Material Attenuation:&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;┌─────────────────────────────────────────────┐
+│ Material          │Attenuation │ Freq Cut   │
+├─────────────────────────────────────────────┤
+│ Air (open)        │ -0dB/m     │ None       │
+│ Glass             │ -8dB       │ -2kHz      │
+│ Wood (thin)       │ -12dB      │ -3kHz      │
+│ Drywall           │ -15dB      │ -4kHz      │
+│ Concrete (thin)   │ -20dB      │ -6kHz      │
+│ Concrete (thick)  │ -30dB      │ -8kHz      │
+│ Metal             │ -25dB      │ -5kHz      │
+└─────────────────────────────────────────────┘&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;Distance Attenuation:&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;Close (0-10m):    Full frequency, full volume
+Near (10-30m):    -6dB, slight HF roll-off
+Medium (30-60m):  -12dB, noticeable HF cut
+Far (60-100m):    -18dB, mostly low-mid
+Distant (100m&amp;#43;):  -24dB, bass-heavy&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h3&gt;Vertical Audio&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;vertical-audio&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#vertical-audio&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Floor Separation:&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;Same Floor:      Normal propagation
+1 Floor Apart:   -10dB, muffled
+2&amp;#43; Floors Apart: -20dB, very muffled
+
+Stairwells: Reduced occlusion (sound travels)
+Ventilation: Sound channels (connects rooms)&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;hr&gt;
+&lt;h2&gt;🎚️ Audio Mix Priorities&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-audio-mix-priorities&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-audio-mix-priorities&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;Priority Hierarchy&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;priority-hierarchy&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#priority-hierarchy&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;Priority 1 (CRITICAL - Never duck):
+├── Enemy footsteps within 10m
+├── Incoming fire (bullets passing)
+├── Player damage indicators
+└── Extraction timer beeps
+
+Priority 2 (HIGH - Slight duck allowed):
+├── All gunfire
+├── Explosions
+├── Ability sounds
+└── Reload sounds
+
+Priority 3 (MEDIUM - Ducks during combat):
+├── Teammate audio
+├── AI enemy callouts
+├── Interactive object sounds
+└── Loot pickup sounds
+
+Priority 4 (LOW - Heavy duck):
+├── Ambient soundscape
+├── Music (if any)
+├── Distant events
+└── Environmental details&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h3&gt;Voice Channel Limits&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;voice-channel-limits&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#voice-channel-limits&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;Max Simultaneous Voices: 64
+
+Allocation:
+├── Player sounds: 8 reserved
+├── Nearby combat: 16 reserved
+├── Ambience: 12 reserved
+├── UI/Feedback: 4 reserved
+└── Dynamic pool: 24 shared&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;hr&gt;
+&lt;h2&gt;📻 Special Audio Events&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-special-audio-events&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-special-audio-events&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;Map Events&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;map-events&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#map-events&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Supply Drop:&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;Sequence:
+1. Distant plane engine (10s before) → -20dB, panning
+2. Overhead pass (3s) → -8dB, doppler effect
+3. Parachute deploy → Fabric flutter
+4. Impact → Thud based on terrain
+5. Beacon → Rhythmic ping for 30s&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;Contamination Zone Expansion:&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;Warning Phase (30s before):
+├── Siren wail: Distant, ominous
+├── Building to urgency
+└── Radio static bursts
+
+Active Phase:
+├── Gas hiss: Constant
+├── Toxic ambience layer
+└── Heartbeat (player in zone)&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;Extraction Vehicle:&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;Helicopter:
+├── Distant rotor (30s out): -28dB, growing
+├── Approach (15s): -18dB, getting loud
+├── Hover: -10dB, constant rotor wash
+├── Departure: Doppler fade
+
+Truck:
+├── Engine start: Rumble
+├── Idle: Low frequency vibration
+├── Horn: Warning signal
+├── Departure: Diesel acceleration&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;hr&gt;
+&lt;h2&gt;🔧 Technical Specifications&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-technical-specifications&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-technical-specifications&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;Audio Format Standards&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;audio-format-standards&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#audio-format-standards&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;Ambient Loops:
+├── Format: OGG Vorbis
+├── Sample Rate: 44.1kHz
+├── Bit Depth: 16-bit
+├── Channels: Stereo
+└── Loop: Seamless
+
+Sound Effects:
+├── Format: WAV
+├── Sample Rate: 48kHz
+├── Bit Depth: 24-bit (source), 16-bit (runtime)
+├── Channels: Mono (3D), Stereo (UI)
+└── Length: &amp;lt; 5 seconds
+
+Voice Lines:
+├── Format: OGG Vorbis
+├── Sample Rate: 44.1kHz
+├── Bit Depth: 16-bit
+├── Channels: Mono
+└── Compression: -4 quality&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h3&gt;Memory Budget&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;memory-budget&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#memory-budget&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;Total Audio Memory: &amp;lt; 150MB (mobile)
+
+Allocation:
+├── Weapon sounds: 30MB
+├── Footsteps/Foley: 20MB
+├── Ambience (streaming): 25MB
+├── Voice lines: 40MB
+├── UI sounds: 10MB
+└── VFX sounds: 25MB&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Tactical Audio - Combat Sound Design</title>
+      <link>https://oaiba.github.io/ExtractionDocument/gdd_design/audio/tacticalaudio.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://oaiba.github.io/ExtractionDocument/gdd_design/audio/tacticalaudio.html</guid>
+      <description>
+        
+        
+        &lt;h2&gt;👣 Footstep Audio System&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-footstep-audio-system&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-footstep-audio-system&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;Philosophy&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;philosophy&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#philosophy&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;&amp;ldquo;Footsteps are the Meta&amp;rdquo;&lt;/strong&gt; - In extraction shooters, footsteps are the most important information source for tracking enemies.&lt;/p&gt;
+&lt;h3&gt;Movement Mode Audio&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;movement-mode-audio&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#movement-mode-audio&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Hearing Ranges:&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;┌─────────────────────────────────────────────────┐
+│ Movement Mode │ Range │ Volume │ Character     │
+├─────────────────────────────────────────────────┤
+│ Sprint        │ 40m   │ -6dB   │ Heavy, urgent │
+│ Run           │ 30m   │ -10dB  │ Clear, rhythmic│
+│ Walk          │ 20m   │ -16dB  │ Moderate pace │
+│ Crouch Walk   │ 8m    │ -24dB  │ Soft shuffle  │
+│ Crouch Idle   │ 3m    │ -32dB  │ Fabric rustle │
+│ Prone (future)│ 5m    │ -28dB  │ Scraping      │
+└─────────────────────────────────────────────────┘&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h3&gt;Surface Materials&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;surface-materials&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#surface-materials&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;h4&gt;Concrete/Asphalt (Most Common)&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;concreteasphalt-most-common&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#concreteasphalt-most-common&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;Sound Character: Solid, neutral boot impact
+Frequency Focus: Mid-range (500Hz-2kHz)
+Variations: 8 samples per movement type
+
+Walking:
+├── Step_Concrete_Walk_01 → Standard boot clop
+├── Step_Concrete_Walk_02 → Slight scuff
+├── Step_Concrete_Walk_03 → Heel first
+└── ... (8 variations)
+
+Running:
+├── Heavier impact
+├── Faster cadence
+└── More bass content&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h4&gt;Metal Grating (LOUDEST - High Risk)&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;metal-grating-loudest---high-risk&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#metal-grating-loudest---high-risk&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;Sound Character: Hollow, resonant, metallic ring
+Frequency Focus: High-mids (1kHz-4kHz) &amp;#43; low resonance
+Hearing Bonus: &amp;#43;50% range (60m sprint audible)
+
+Distinctive traits:
+├── Hollow &amp;#34;clang&amp;#34; on impact
+├── Structural vibration tail
+├── Very high recognition factor
+└── Players AVOID this surface&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h4&gt;Water/Mud (DISTINCTIVE)&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;watermud-distinctive&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#watermud-distinctive&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;Sound Character: Wet, splashing, sucking
+Frequency Focus: Broadband splash &amp;#43; low squelch
+Hearing Bonus: &amp;#43;30% range
+
+Shallow Water (ankle):
+├── Splash on step
+├── Dripping on lift
+└── Rhythmic sloshing
+
+Deep Water (knee&amp;#43;):
+├── Heavy displacement
+├── Wading sounds
+├── Movement speed penalty (audio cue: slower)
+
+Mud:
+├── Sucking sound on lift
+├── Squelch on step
+├── Sticky, labored feel&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h4&gt;Grass/Vegetation&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;grassvegetation&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#grassvegetation&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;Sound Character: Soft, rustling, organic
+Frequency Focus: High frequencies (2kHz-6kHz)
+Hearing Range: Reduced by 20%
+
+Dry Grass:
+├── Crisp crackle
+├── Swishing sound
+└── Light footfall
+
+Wet Grass:
+├── Muffled steps
+├── Occasional squish
+└── Quieter overall&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h4&gt;Wood (Flooring/Platforms)&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;wood-flooringplatforms&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#wood-flooringplatforms&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;Sound Character: Creaky, hollow, resonant
+Frequency Focus: Low-mids with creaks
+
+Old Wood:
+├── Creaking boards (random)
+├── Hollow resonance
+├── Distinct from concrete
+
+Solid Wood:
+├── Thud-like impact
+├── Less creak
+└── Moderate resonance&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h4&gt;Glass/Debris (DANGER - Noise Trap)&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;glassdebris-danger---noise-trap&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#glassdebris-danger---noise-trap&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;Sound Character: Sharp, high-pitched crunch
+Frequency Focus: High (4kHz-8kHz)
+Hearing Bonus: &amp;#43;60% range (cannot stealth)
+
+Behavior:
+├── Unavoidable crunch sound
+├── Alerts nearby players/AI
+├── Environmental hazard for stealth
+└── Can be seen and avoided&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h4&gt;Carpet/Fabric (Indoor - Quietest)&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;carpetfabric-indoor---quietest&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#carpetfabric-indoor---quietest&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;Sound Character: Muffled, soft, dampened
+Frequency Focus: Very low presence
+Hearing Range: Reduced by 40%
+
+Benefits:
+├── Ideal for stealth approaches
+├── Near-silent at crouch
+└── Found in offices, hotels&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;hr&gt;
+&lt;h2&gt;🔫 Weapon Audio&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-weapon-audio&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-weapon-audio&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;Gunfire Characteristics&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;gunfire-characteristics&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#gunfire-characteristics&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Audio Components:&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;Every gunshot = 4 layers:
+
+1. MUZZLE BLAST (Source)
+   └── The explosion at barrel end
+   └── Defines weapon &amp;#34;punch&amp;#34;
+
+2. MECHANICAL ACTION (Source)
+   └── Bolt cycling, hammer strike
+   └── Adds detail and rhythm
+
+3. SUPERSONIC CRACK (If applicable)
+   └── Bullet breaking sound barrier
+   └── Heard before muzzle blast at distance
+
+4. TAIL/REVERB (Environment)
+   └── Reflections and decay
+   └── Changes by location&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h3&gt;Weapon Audio Profiles&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;weapon-audio-profiles&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#weapon-audio-profiles&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;h4&gt;Assault Rifles&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;assault-rifles&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#assault-rifles&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;┌─────────────────────────────────────────────────┐
+│ Weapon    │ Character        │ Distant Sound   │
+├─────────────────────────────────────────────────┤
+│ AK-47     │ Heavy, punchy    │ &amp;#34;Thunderclaps&amp;#34;  │
+│ M4/AR-15  │ Sharp, snappy    │ &amp;#34;Crackling&amp;#34;     │
+│ SCAR      │ Balanced, solid  │ &amp;#34;Deep pops&amp;#34;     │
+└─────────────────────────────────────────────────┘
+
+Fire Rate Audio: Distinct rhythm per weapon
+Magazine Empty: Click sound (no more firing)&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h4&gt;SMGs&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;smgs&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#smgs&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;┌─────────────────────────────────────────────────┐
+│ Weapon    │ Character        │ Distant Sound   │
+├─────────────────────────────────────────────────┤
+│ MP5       │ Rapid, contained │ &amp;#34;Sewing machine&amp;#34;│
+│ Vector    │ Ultra-fast, light│ &amp;#34;Zipper&amp;#34;        │
+│ UMP       │ Slower, thumpier │ &amp;#34;Stapler&amp;#34;       │
+└─────────────────────────────────────────────────┘
+
+Note: Higher fire rate = more blended sound&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h4&gt;Sniper Rifles&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;sniper-rifles&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#sniper-rifles&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;┌─────────────────────────────────────────────────┐
+│ Weapon    │ Character            │ Distant     │
+├─────────────────────────────────────────────────┤
+│ AWM       │ Massive boom         │ &amp;#34;Thunder&amp;#34;   │
+│ SVD       │ Sharp crack          │ &amp;#34;Whip crack&amp;#34;│
+│ M24       │ Deep, echoing        │ &amp;#34;Distant boom&amp;#34;│
+└─────────────────────────────────────────────────┘
+
+Characteristic: Long reverb tail, unmistakable&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h4&gt;Shotguns&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;shotguns&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#shotguns&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;┌─────────────────────────────────────────────────┐
+│ Weapon    │ Character            │ Distant     │
+├─────────────────────────────────────────────────┤
+│ Pump      │ Massive low-end      │ &amp;#34;Cannon&amp;#34;    │
+│ Semi-Auto │ Rapid booms          │ &amp;#34;Drum beats&amp;#34;│
+│ Double    │ Two-shot thunder     │ &amp;#34;Double tap&amp;#34;│
+└─────────────────────────────────────────────────┘
+
+Pump Action: Distinct &amp;#34;chunk-chunk&amp;#34; between shots&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h4&gt;Suppressed Weapons&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;suppressed-weapons&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#suppressed-weapons&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;Sound Reduction: -15dB to -25dB
+Range Reduction: 70% less audible distance
+
+Components:
+├── Muzzle: Hissing gas release
+├── Mechanical: Bolt action prominent
+├── Supersonic: Still audible (unless subsonic ammo)
+└── Tail: Minimal reverb
+
+Distant Sound: &amp;#34;Stapler&amp;#34; or &amp;#34;Nail gun&amp;#34;
+Player Advantage: Harder to pinpoint direction&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h3&gt;Distance-Based Gunfire&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;distance-based-gunfire&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#distance-based-gunfire&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;┌─────────────────────────────────────────────────┐
+│ Distance  │ Sound Character                     │
+├─────────────────────────────────────────────────┤
+│ 0-20m     │ Full impact, all frequencies        │
+│ 20-50m    │ -6dB, losing high end               │
+│ 50-100m   │ -12dB, muffled, delay noticeable    │
+│ 100-200m  │ -18dB, mostly crack/thump           │
+│ 200-400m  │ -24dB, distant rumble               │
+│ 400m&amp;#43;     │ Very faint, directional hint only   │
+└─────────────────────────────────────────────────┘&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;hr&gt;
+&lt;h2&gt;🔄 Reload Audio&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-reload-audio&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-reload-audio&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;Reload Sound Design&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;reload-sound-design&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#reload-sound-design&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Philosophy:&lt;/strong&gt; Reload sounds must be:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Distinctive&lt;/strong&gt; per weapon type&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Informative&lt;/strong&gt; about reload progress&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Satisfying&lt;/strong&gt; with clear feedback&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;Reload Phases&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;reload-phases&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#reload-phases&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;STANDARD RELOAD (2-3 seconds):
+
+Phase 1: Magazine Release (0.3s)
+├── Button click
+├── Magazine slide out
+└── Magazine drop (if empty)
+
+Phase 2: New Magazine (0.5s)
+├── Magazine grab (fabric)
+├── Magazine orient
+└── Magazine insert (click)
+
+Phase 3: Chamber (0.3s) - If needed
+├── Bolt pull
+├── Bolt release
+└── Weapon ready
+
+Phase 4: Ready (0.1s)
+└── Subtle weapon settle&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h3&gt;Reload Audio by Weapon Type&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;reload-audio-by-weapon-type&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#reload-audio-by-weapon-type&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;Assault Rifle:
+├── Mag release: Metallic click
+├── Mag out: Sliding metal
+├── Mag in: Solid click confirmation
+├── Bolt: If chamber empty
+└── Total: 2.5-3.0 seconds
+
+Pistol:
+├── Mag release: Small click
+├── Mag drop: Light clatter
+├── Mag slam: Quick insertion
+├── Slide release: Sharp snap
+└── Total: 1.5-2.0 seconds
+
+Shotgun (Shell by shell):
+├── Port open: Mechanical chunk
+├── Shell insert: Per shell click
+├── Chamber: Pump sound
+└── Total: 4-6 seconds (full reload)
+
+Sniper (Bolt Action):
+├── Bolt up: Mechanical lift
+├── Bolt back: Heavy slide
+├── Mag/Round: Insert sound
+├── Bolt forward/down: Locking sounds
+└── Total: 3-4 seconds&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;hr&gt;
+&lt;h2&gt;💥 Combat Audio Feedback&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-combat-audio-feedback&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-combat-audio-feedback&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;Bullet Impact Sounds&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;bullet-impact-sounds&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#bullet-impact-sounds&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;On Enemy (Confirmation):&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;┌─────────────────────────────────────────────────┐
+│ Hit Type    │ Sound              │ Purpose      │
+├─────────────────────────────────────────────────┤
+│ Body        │ Wet thud           │ Confirm hit  │
+│ Armor       │ Metallic clang     │ Reduced damage│
+│ Helmet      │ Sharp ring         │ Headshot armor│
+│ Headshot    │ Critical sound     │ High damage  │
+│ Kill        │ Distinct chime     │ Enemy down   │
+└─────────────────────────────────────────────────┘&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;On Environment:&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;┌─────────────────────────────────────────────────┐
+│ Surface     │ Sound              │ Visual       │
+├─────────────────────────────────────────────────┤
+│ Concrete    │ Dry chip/dust      │ Dust puff    │
+│ Metal       │ Ping &amp;#43; ricochet    │ Spark        │
+│ Wood        │ Splintering crack  │ Splinters    │
+│ Glass       │ Shatter            │ Glass break  │
+│ Water       │ Splash             │ Water spout  │
+│ Dirt        │ Soft thud          │ Dirt spray   │
+└─────────────────────────────────────────────────┘&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h3&gt;Bullet Whiz/Crack (Near Misses)&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;bullet-whizcrack-near-misses&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#bullet-whizcrack-near-misses&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;When bullets pass near player:
+
+Close Miss (within 2m):
+├── Supersonic crack: Very loud
+├── Directional: Clear left/right
+├── Heart rate increase (audio)
+└── Player flinch (visual)
+
+Medium Miss (2-5m):
+├── Softer whiz
+├── Directional cue
+└── Alerting effect
+
+Far Miss (5-10m):
+├── Distant snap
+├── General direction
+└── Awareness prompt&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;hr&gt;
+&lt;h2&gt;💊 Ability &amp;amp; Item Audio&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-ability--item-audio&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-ability--item-audio&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;Ability Sound Design&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;ability-sound-design&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#ability-sound-design&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;ASSAULT - Combat Stim:&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;Activation: Injection hiss &amp;#43; heartbeat spike
+Active: Pulsing bass undertone
+Duration: Rhythmic pulse matching timer
+Deactivation: Exhale &amp;#43; return to normal&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;SUPPORT - Healing Drone:&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;Deploy: Mechanical whir &amp;#43; propeller spin
+Active: Gentle hum &amp;#43; healing chime
+Healing: Soft positive tones per tick
+Recall/Destroy: Drone shutdown sound&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;RECON - UAV Scan:&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;Activation: Beep &amp;#43; radar sweep sound
+Scanning: Sonar ping (expanding circle)
+Enemy Detected: Alert chime per enemy
+Duration End: Power down beep&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;TANK - Riot Shield:&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;Deploy: Heavy metal clank
+Bullets Hitting: Impact sounds (no damage)
+Taking Damage: Shield stress sounds
+Breaking: Shattering &amp;#43; vulnerability alert&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;SPECIALIST - EMP Blast:&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;Charging: Electrical buildup
+Release: Massive electrical discharge
+Effect: Static zap on affected targets
+Recovery: Systems coming back online&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h3&gt;Grenade Audio&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;grenade-audio&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#grenade-audio&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;Frag Grenade:
+├── Throw: Arm movement whoosh
+├── Flight: Air whistle
+├── Land: Bounce based on surface
+├── Fuse: Hissing (0.5s warning)
+└── Explosion: Massive boom &amp;#43; debris
+
+Flashbang:
+├── Flight: Same as frag
+├── Detonation: Bright audio pop
+├── Effect: Ringing tinnitus (affected)
+└── Duration: 3-5 second ring fade
+
+Smoke Grenade:
+├── Deploy: Pop &amp;#43; hiss
+├── Active: Continuous hissing
+├── Ambience: Muffled sounds inside
+└── Duration: Hiss fades as smoke clears&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;hr&gt;
+&lt;h2&gt;📍 Directional Audio System&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-directional-audio-system&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-directional-audio-system&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;3D Audio Implementation&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;3d-audio-implementation&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#3d-audio-implementation&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Spatial Audio Requirements:&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;HRTF (Head-Related Transfer Function):
+├── Enabled for: Footsteps, gunfire, abilities
+├── 360° horizontal accuracy
+├── Vertical distinction (above/below)
+└── Distance-based filtering
+
+Stereo Fallback (No headphones):
+├── Left/Right panning
+├── Volume for distance
+├── Visual indicators supplement&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h3&gt;Audio Compass Accuracy&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;audio-compass-accuracy&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#audio-compass-accuracy&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;Directional Precision:
+├── 0-30m: ±15° accuracy
+├── 30-60m: ±30° accuracy
+├── 60-100m: ±45° accuracy
+└── 100m&amp;#43;: General direction only&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h3&gt;Vertical Audio Cues&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;vertical-audio-cues&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#vertical-audio-cues&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;Same Level:
+└── Normal playback
+
+Above (1&amp;#43; floors):
+├── Muffled
+├── Creaking/footstep overhead feel
+└── Reverb suggests height
+
+Below (1&amp;#43; floors):
+├── More muffled
+├── Bass-heavy
+└── Rumbling quality&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;hr&gt;
+&lt;h2&gt;🎮 Player Feedback Audio&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-player-feedback-audio&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-player-feedback-audio&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;Damage Indicators&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;damage-indicators&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#damage-indicators&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;Taking Damage:
+├── Direction indicator: Whoosh from hit direction
+├── Severity: Audio varies with damage amount
+├── Low health: Heartbeat overlay
+└── Critical: Urgent warning tone
+
+Damage Sources:
+├── Bullet: Sharp impact &amp;#43; direction
+├── Explosion: Bass boom &amp;#43; tinnitus
+├── Fire: Burning sound &amp;#43; pain
+├── Poison/Gas: Coughing &amp;#43; labored breathing&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h3&gt;Status Effects Audio&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;status-effects-audio&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#status-effects-audio&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;Bleeding:
+└── Dripping sound, heartbeat
+
+Poisoned:
+└── Nausea undertone, distorted audio
+
+Stunned:
+└── Ringing, muffled world audio
+
+Low Stamina:
+└── Heavy breathing
+
+Overweight:
+└── Labored steps, grunting&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;hr&gt;
+&lt;h2&gt;🔊 Audio Settings Options&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-audio-settings-options&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-audio-settings-options&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;Player Customization&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;player-customization&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#player-customization&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;Audio Options Menu:
+├── Master Volume: 0-100%
+├── Music Volume: 0-100%
+├── SFX Volume: 0-100%
+├── Voice Volume: 0-100%
+├── Footstep Volume: 50-150% (boost option)
+├── Teammate Audio: On/Off
+├── HRTF: On/Off
+├── Visual Sound Indicators: On/Off
+└── Voice Chat Volume: 0-100%&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h3&gt;Accessibility&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;accessibility&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#accessibility&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;Visual Sound Indicators:
+├── Footstep direction markers
+├── Gunfire direction &amp;#43; distance
+├── Ability sound visualized
+└── Important audio events shown
+
+Subtitle Options:
+├── Operator callouts shown
+├── Environmental audio described
+└── Combat events captioned&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Voice Lines - Character Dialogue</title>
+      <link>https://oaiba.github.io/ExtractionDocument/gdd_design/audio/voicelines.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://oaiba.github.io/ExtractionDocument/gdd_design/audio/voicelines.html</guid>
+      <description>
+        
+        
+        &lt;h2&gt;🎙️ Voice Design Philosophy&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-voice-design-philosophy&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-voice-design-philosophy&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;Core Principles&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;core-principles&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#core-principles&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;&amp;ldquo;Short, Clear, Character&amp;rdquo;&lt;/strong&gt; - Every voice line must be:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Functional&lt;/strong&gt;: Provide gameplay information&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Brief&lt;/strong&gt;: No longer than 3 seconds&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Distinctive&lt;/strong&gt;: Identify the character&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Contextual&lt;/strong&gt;: Fit the situation&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;h2&gt;👤 Operator Voice Profiles&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-operator-voice-profiles&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-operator-voice-profiles&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;ASSAULT - &amp;ldquo;Ghost&amp;rdquo; (Marcus Chen)&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;assault---ghost-marcus-chen&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#assault---ghost-marcus-chen&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Voice Characteristics:&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;Tone: Deep, gravelly
+Accent: Slight Hong Kong English
+Pace: Clipped, military-precise
+Emotion: Suppressed anger, dark humor
+Age Sound: Mid-30s&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;Voice Actor Direction:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Sounds like someone who&amp;rsquo;s seen too much&lt;/li&gt;
+&lt;li&gt;Rarely raises voice (controlled intensity)&lt;/li&gt;
+&lt;li&gt;Occasional dark sarcasm&lt;/li&gt;
+&lt;li&gt;Protective undertone when mentioning teammates&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Combat Callouts:&lt;/strong&gt;&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Trigger&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Line Options&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Reloading&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&amp;ldquo;Mag out.&amp;rdquo; / &amp;ldquo;Reloading, cover.&amp;rdquo; / &amp;ldquo;Changing mag.&amp;rdquo;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Low Ammo&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&amp;ldquo;Running dry.&amp;rdquo; / &amp;ldquo;Last mag.&amp;rdquo; / &amp;ldquo;Need ammo.&amp;rdquo;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Enemy Spotted&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&amp;ldquo;Contact.&amp;rdquo; / &amp;ldquo;Eyes on hostile.&amp;rdquo; / &amp;ldquo;Enemy, 12 o&amp;rsquo;clock.&amp;rdquo;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Taking Fire&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&amp;ldquo;Taking fire!&amp;rdquo; / &amp;ldquo;Under attack!&amp;rdquo; / &amp;ldquo;Shots incoming!&amp;rdquo;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Grenade Throw&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&amp;ldquo;Frag out.&amp;rdquo; / &amp;ldquo;Grenade.&amp;rdquo; / &amp;ldquo;Fire in the hole.&amp;rdquo;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Kill&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&amp;ldquo;Target down.&amp;rdquo; / &amp;ldquo;One less.&amp;rdquo; / &amp;ldquo;Eliminated.&amp;rdquo;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Headshot&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&amp;ldquo;Clean shot.&amp;rdquo; / &amp;ldquo;Perfect.&amp;rdquo; / &amp;ldquo;Right between the eyes.&amp;rdquo;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Downed&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&amp;ldquo;I&amp;rsquo;m hit&amp;hellip; bad.&amp;rdquo; / &amp;ldquo;Going down&amp;hellip;&amp;rdquo; / &amp;ldquo;Man down&amp;hellip;&amp;rdquo;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Reviving&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&amp;ldquo;I got you.&amp;rdquo; / &amp;ldquo;Stay with me.&amp;rdquo; / &amp;ldquo;You&amp;rsquo;re not dying today.&amp;rdquo;&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;strong&gt;Ability Lines:&lt;/strong&gt;&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Ability&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Activation&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;During&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;End&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Combat Stim&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&amp;ldquo;Juicing up.&amp;rdquo;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;em&gt;heavy breathing&lt;/em&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&amp;ldquo;Coming down&amp;hellip;&amp;rdquo;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&amp;ldquo;Let&amp;rsquo;s do this.&amp;rdquo;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;em&gt;heartbeat sounds&lt;/em&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&amp;ldquo;That&amp;rsquo;s the stuff.&amp;rdquo;&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;strong&gt;Situational Lines:&lt;/strong&gt;&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Situation&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Lines&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Match Start&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&amp;ldquo;Lock and load.&amp;rdquo; / &amp;ldquo;Let&amp;rsquo;s get this done.&amp;rdquo;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Extraction Called&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&amp;ldquo;Evac incoming, move.&amp;rdquo; / &amp;ldquo;Ride&amp;rsquo;s here.&amp;rdquo;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Successful Extract&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&amp;ldquo;We made it.&amp;rdquo; / &amp;ldquo;Another day.&amp;rdquo;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Teammate Death&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&amp;ldquo;Damn it&amp;hellip;&amp;rdquo; / &lt;em&gt;silent moment&lt;/em&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Finding Good Loot&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&amp;ldquo;This&amp;rsquo;ll do.&amp;rdquo; / &amp;ldquo;Not bad.&amp;rdquo;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Low Health&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;em&gt;pained breathing&lt;/em&gt; / &amp;ldquo;Just a scratch&amp;hellip;&amp;rdquo;&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr&gt;
+&lt;h3&gt;SUPPORT - &amp;ldquo;Angel&amp;rdquo; (Dr. Amara Okonkwo)&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;support---angel-dr-amara-okonkwo&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#support---angel-dr-amara-okonkwo&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Voice Characteristics:&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;Tone: Warm, calm, reassuring
+Accent: Nigerian-British
+Pace: Measured, clear pronunciation
+Emotion: Compassionate, occasionally stern
+Age Sound: Late 30s&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;Voice Actor Direction:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Steady under pressure (emergency room training)&lt;/li&gt;
+&lt;li&gt;Maternal quality when helping teammates&lt;/li&gt;
+&lt;li&gt;Firm when giving medical orders&lt;/li&gt;
+&lt;li&gt;Grief when losing someone&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Combat Callouts:&lt;/strong&gt;&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Trigger&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Line Options&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Reloading&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&amp;ldquo;Reloading.&amp;rdquo; / &amp;ldquo;Cover me, changing.&amp;rdquo; / &amp;ldquo;Mag swap.&amp;rdquo;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Low Ammo&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&amp;ldquo;Low on ammunition.&amp;rdquo; / &amp;ldquo;Need to resupply.&amp;rdquo;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Enemy Spotted&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&amp;ldquo;Hostile sighted.&amp;rdquo; / &amp;ldquo;Enemy ahead.&amp;rdquo; / &amp;ldquo;Contact ahead.&amp;rdquo;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Taking Fire&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&amp;ldquo;Under fire!&amp;rdquo; / &amp;ldquo;Taking hits!&amp;rdquo; / &amp;ldquo;Incoming!&amp;rdquo;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Grenade Throw&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&amp;ldquo;Grenade, clear out!&amp;rdquo; / &amp;ldquo;Throwing!&amp;rdquo;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Kill&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&amp;ldquo;Threat neutralized.&amp;rdquo; / &amp;ldquo;Target down.&amp;rdquo;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Headshot&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&amp;ldquo;Precise shot.&amp;rdquo; / &amp;ldquo;Critical hit.&amp;rdquo;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Downed&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&amp;ldquo;I need help&amp;hellip;&amp;rdquo; / &amp;ldquo;Medic down&amp;hellip;&amp;rdquo; / &amp;ldquo;Can&amp;rsquo;t move&amp;hellip;&amp;rdquo;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Reviving&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&amp;ldquo;Hold still.&amp;rdquo; / &amp;ldquo;I&amp;rsquo;ve got you.&amp;rdquo; / &amp;ldquo;You&amp;rsquo;ll be fine.&amp;rdquo;&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;strong&gt;Ability Lines:&lt;/strong&gt;&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Ability&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Activation&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;During&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;End&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Healing Drone&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&amp;ldquo;Deploying medical support.&amp;rdquo;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&amp;ldquo;Drone active.&amp;rdquo;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&amp;ldquo;Drone returning.&amp;rdquo;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&amp;ldquo;Sending the drone.&amp;rdquo;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&amp;ldquo;Stay in range.&amp;rdquo;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&amp;ldquo;Pack it up.&amp;rdquo;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Team Heal&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&amp;ldquo;Everyone, group up for healing.&amp;rdquo;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;em&gt;healing sounds&lt;/em&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&amp;ldquo;That should help.&amp;rdquo;&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;strong&gt;Unique Support Lines:&lt;/strong&gt;&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Situation&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Lines&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Healing Teammate&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&amp;ldquo;You&amp;rsquo;re stable now.&amp;rdquo; / &amp;ldquo;Stay close to me.&amp;rdquo;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Teammate Critical&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&amp;ldquo;Get to cover, you&amp;rsquo;re bleeding out!&amp;rdquo;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;No Meds Left&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&amp;ldquo;I&amp;rsquo;m out of supplies.&amp;rdquo; / &amp;ldquo;Need medical equipment.&amp;rdquo;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Revive Success&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&amp;ldquo;Back on your feet.&amp;rdquo; / &amp;ldquo;Not today, death.&amp;rdquo;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Teammate Death&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&amp;ldquo;No&amp;hellip; I&amp;rsquo;m sorry.&amp;rdquo; / &lt;em&gt;pause&lt;/em&gt; &amp;ldquo;We keep moving.&amp;rdquo;&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;strong&gt;Situational Lines:&lt;/strong&gt;&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Situation&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Lines&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Match Start&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&amp;ldquo;Let&amp;rsquo;s bring everyone home.&amp;rdquo; / &amp;ldquo;Stay safe out there.&amp;rdquo;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Extraction Called&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&amp;ldquo;Extraction en route, stay together.&amp;rdquo;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Successful Extract&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&amp;ldquo;We all made it. Good work.&amp;rdquo;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Finding Meds&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&amp;ldquo;Medical supplies secured.&amp;rdquo;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Low Health&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&amp;ldquo;I can patch this&amp;hellip;&amp;rdquo; / &lt;em&gt;pained&lt;/em&gt; &amp;ldquo;I&amp;rsquo;ll manage.&amp;rdquo;&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr&gt;
+&lt;h3&gt;RECON - &amp;ldquo;Specter&amp;rdquo; (Yuki Tanaka)&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;recon---specter-yuki-tanaka&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#recon---specter-yuki-tanaka&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Voice Characteristics:&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;Tone: Cool, detached, precise
+Accent: Japanese with perfect English
+Pace: Quick, efficient
+Emotion: Rarely shown, occasional dry wit
+Age Sound: Late 20s&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;Voice Actor Direction:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Speak as if every word costs money&lt;/li&gt;
+&lt;li&gt;Clinical, analytical delivery&lt;/li&gt;
+&lt;li&gt;Subtle superiority complex&lt;/li&gt;
+&lt;li&gt;Rare moments of genuine emotion (buried deep)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Combat Callouts:&lt;/strong&gt;&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Trigger&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Line Options&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Reloading&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&amp;ldquo;Changing.&amp;rdquo; / &amp;ldquo;Reload.&amp;rdquo; / &lt;em&gt;silence, just does it&lt;/em&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Low Ammo&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&amp;ldquo;Low.&amp;rdquo; / &amp;ldquo;Need ammunition.&amp;rdquo;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Enemy Spotted&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&amp;ldquo;Contact.&amp;rdquo; / &amp;ldquo;Eyes on.&amp;rdquo; / &amp;ldquo;Three hostiles, bearing north.&amp;rdquo;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Taking Fire&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&amp;ldquo;Contact!&amp;rdquo; / &amp;ldquo;Under fire.&amp;rdquo; / &amp;ldquo;Engaging.&amp;rdquo;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Grenade Throw&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&amp;ldquo;Throwing.&amp;rdquo; / &amp;ldquo;Grenade out.&amp;rdquo;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Kill&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&amp;ldquo;Down.&amp;rdquo; / &amp;ldquo;Eliminated.&amp;rdquo; / &amp;ldquo;Next.&amp;rdquo;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Headshot&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&amp;ldquo;Clean.&amp;rdquo; / &amp;ldquo;Efficient.&amp;rdquo; / &lt;em&gt;satisfied silence&lt;/em&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Downed&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&amp;ldquo;&amp;hellip;Compromised.&amp;rdquo; / &amp;ldquo;I&amp;rsquo;m hit.&amp;rdquo; / &amp;ldquo;Status critical.&amp;rdquo;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Reviving&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&amp;ldquo;Don&amp;rsquo;t move.&amp;rdquo; / &amp;ldquo;Hold.&amp;rdquo; / &amp;ldquo;Getting you up.&amp;rdquo;&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;strong&gt;Ability Lines:&lt;/strong&gt;&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Ability&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Activation&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;During&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;End&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;UAV Scan&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&amp;ldquo;Scanning.&amp;rdquo;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&amp;ldquo;Area sweep in progress.&amp;rdquo;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&amp;ldquo;Scan complete.&amp;rdquo;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&amp;ldquo;Eyes in the sky.&amp;rdquo;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&amp;ldquo;Processing&amp;hellip;&amp;rdquo;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&amp;ldquo;Data received.&amp;rdquo;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Mark Target&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&amp;ldquo;Marking target.&amp;rdquo; / &amp;ldquo;Tagged.&amp;rdquo;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;—&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&amp;ldquo;Target lost.&amp;rdquo;&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;strong&gt;Unique Recon Lines:&lt;/strong&gt;&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Situation&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Lines&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Spotting Multiple&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&amp;ldquo;Multiple contacts. Count: [number].&amp;rdquo;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Flank Warning&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&amp;ldquo;Movement on flank.&amp;rdquo; / &amp;ldquo;They&amp;rsquo;re flanking.&amp;rdquo;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Clear Area&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&amp;ldquo;Area clear.&amp;rdquo; / &amp;ldquo;No contacts.&amp;rdquo;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Sniper Position&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&amp;ldquo;Sniper position acquired.&amp;rdquo;&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;strong&gt;Situational Lines:&lt;/strong&gt;&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Situation&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Lines&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Match Start&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&amp;ldquo;Beginning operation.&amp;rdquo; / &amp;ldquo;Moving out.&amp;rdquo;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Extraction Called&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&amp;ldquo;Extraction point marked. Moving.&amp;rdquo;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Successful Extract&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&amp;ldquo;Objective complete.&amp;rdquo; / &amp;ldquo;Mission success.&amp;rdquo;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Finding Intel&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&amp;ldquo;Interesting&amp;hellip;&amp;rdquo; / &amp;ldquo;This could be useful.&amp;rdquo;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Low Health&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;em&gt;controlled breathing&lt;/em&gt; / &amp;ldquo;&amp;hellip;Manageable.&amp;rdquo;&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr&gt;
+&lt;h3&gt;TANK - &amp;ldquo;Fortress&amp;rdquo; (Dmitri Volkov)&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;tank---fortress-dmitri-volkov&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#tank---fortress-dmitri-volkov&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Voice Characteristics:&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;Tone: Deep, rumbling, powerful
+Accent: Heavy Russian
+Pace: Slow, deliberate
+Emotion: Stoic, paternal, protective
+Age Sound: Early 40s&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;Voice Actor Direction:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Voice like a protective wall&lt;/li&gt;
+&lt;li&gt;Few words, but meaningful&lt;/li&gt;
+&lt;li&gt;Softer when protecting teammates&lt;/li&gt;
+&lt;li&gt;Rage when teammates are threatened&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Combat Callouts:&lt;/strong&gt;&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Trigger&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Line Options&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Reloading&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&amp;ldquo;Reloading.&amp;rdquo; / &amp;ldquo;Magazine.&amp;rdquo; / &amp;ldquo;Wait.&amp;rdquo;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Low Ammo&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&amp;ldquo;Need bullets.&amp;rdquo; / &amp;ldquo;Running low.&amp;rdquo;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Enemy Spotted&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&amp;ldquo;Enemy.&amp;rdquo; / &amp;ldquo;Hostiles ahead.&amp;rdquo; / &amp;ldquo;I see them.&amp;rdquo;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Taking Fire&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&amp;ldquo;Taking hits!&amp;rdquo; / &amp;ldquo;Rounds incoming!&amp;rdquo; / &amp;ldquo;They shoot at me.&amp;rdquo;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Grenade Throw&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&amp;ldquo;Grenade! Move!&amp;rdquo; / &amp;ldquo;Throwing!&amp;rdquo;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Kill&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&amp;ldquo;Done.&amp;rdquo; / &amp;ldquo;Finished.&amp;rdquo; / &amp;ldquo;Sleep now.&amp;rdquo;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Headshot&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&amp;ldquo;Good.&amp;rdquo; / &amp;ldquo;Ha.&amp;rdquo; / &amp;ldquo;Perfect shot.&amp;rdquo;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Downed&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;em&gt;heavy grunt&lt;/em&gt; / &amp;ldquo;&amp;hellip;They got me.&amp;rdquo; / &amp;ldquo;I fall&amp;hellip;&amp;rdquo;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Reviving&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&amp;ldquo;Get up, soldier.&amp;rdquo; / &amp;ldquo;Not your time.&amp;rdquo; / &amp;ldquo;I have you.&amp;rdquo;&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;strong&gt;Ability Lines:&lt;/strong&gt;&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Ability&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Activation&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;During&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;End&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Riot Shield&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&amp;ldquo;Shield up.&amp;rdquo;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;em&gt;impact sounds&lt;/em&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&amp;ldquo;Shield down.&amp;rdquo;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&amp;ldquo;Get behind me.&amp;rdquo;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&amp;ldquo;Stay close!&amp;rdquo;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&amp;ldquo;Shield broken!&amp;rdquo;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&amp;ldquo;I am wall.&amp;rdquo;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&amp;ldquo;Holding line!&amp;rdquo;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&amp;ldquo;Cover gone.&amp;rdquo;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Taunt/Aggro&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&amp;ldquo;Come, fight me!&amp;rdquo; / &amp;ldquo;Over here!&amp;rdquo;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;—&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;—&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;strong&gt;Unique Tank Lines:&lt;/strong&gt;&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Situation&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Lines&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Protecting Teammate&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&amp;ldquo;Behind me!&amp;rdquo; / &amp;ldquo;I cover you.&amp;rdquo;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Taking Heavy Fire&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&amp;ldquo;They focus me. Good.&amp;rdquo; / &amp;ldquo;Keep shooting.&amp;rdquo;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Shield Breaking&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&amp;ldquo;Shield failing!&amp;rdquo; / &amp;ldquo;Need new shield!&amp;rdquo;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Absorbing Damage&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;em&gt;grunt&lt;/em&gt; &amp;ldquo;Is this all?&amp;rdquo; / &amp;ldquo;I&amp;rsquo;ve had worse.&amp;rdquo;&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;strong&gt;Situational Lines:&lt;/strong&gt;&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Situation&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Lines&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Match Start&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&amp;ldquo;Forward.&amp;rdquo; / &amp;ldquo;Stay together.&amp;rdquo; / &amp;ldquo;I lead.&amp;rdquo;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Extraction Called&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&amp;ldquo;Extraction. Move, now.&amp;rdquo;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Successful Extract&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&amp;ldquo;Good. Everyone safe.&amp;rdquo;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Teammate Death&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;em&gt;angry grunt&lt;/em&gt; &amp;ldquo;You will pay for this.&amp;rdquo;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Finding Armor&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&amp;ldquo;Good armor.&amp;rdquo; / &amp;ldquo;This will do.&amp;rdquo;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Low Health&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;em&gt;heavy breathing&lt;/em&gt; &amp;ldquo;Not&amp;hellip; finished&amp;hellip;&amp;rdquo;&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr&gt;
+&lt;h3&gt;SPECIALIST - &amp;ldquo;Circuit&amp;rdquo; (Alex Rivera)&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;specialist---circuit-alex-rivera&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#specialist---circuit-alex-rivera&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Voice Characteristics:&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;Tone: Nervous energy, quick-witted
+Accent: American (California tech)
+Pace: Fast, sometimes rambling
+Emotion: Anxious, eager to prove, guilty
+Age Sound: Mid-20s&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;Voice Actor Direction:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Talks to fill nervous silences&lt;/li&gt;
+&lt;li&gt;Technical jargon when stressed&lt;/li&gt;
+&lt;li&gt;Self-deprecating humor&lt;/li&gt;
+&lt;li&gt;Moments of surprising competence&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Combat Callouts:&lt;/strong&gt;&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Trigger&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Line Options&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Reloading&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&amp;ldquo;Changing mag, uh, gimme a sec!&amp;rdquo; / &amp;ldquo;Reload!&amp;rdquo;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Low Ammo&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&amp;ldquo;Low on ammo, guys!&amp;rdquo; / &amp;ldquo;Need bullets, like, now!&amp;rdquo;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Enemy Spotted&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&amp;ldquo;Uh, contact! Contact!&amp;rdquo; / &amp;ldquo;Bad guys, over there!&amp;rdquo;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Taking Fire&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&amp;ldquo;Taking fire!&amp;rdquo; / &amp;ldquo;They&amp;rsquo;re shooting at me!&amp;rdquo; / &amp;ldquo;Help?!&amp;rdquo;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Grenade Throw&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&amp;ldquo;Grenade out!&amp;rdquo; / &amp;ldquo;Throwing something explodey!&amp;rdquo;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Kill&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&amp;ldquo;Got one!&amp;rdquo; / &amp;ldquo;Yes! Target down!&amp;rdquo; / &amp;ldquo;Okay, okay, I can do this.&amp;rdquo;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Headshot&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&amp;ldquo;Did you see that?!&amp;rdquo; / &amp;ldquo;Clean headshot, baby!&amp;rdquo;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Downed&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&amp;ldquo;I&amp;rsquo;m down, I&amp;rsquo;m down!&amp;rdquo; / &amp;ldquo;This is bad&amp;hellip;&amp;rdquo; / &amp;ldquo;Ow ow ow&amp;hellip;&amp;rdquo;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Reviving&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&amp;ldquo;I got you, hold on!&amp;rdquo; / &amp;ldquo;Don&amp;rsquo;t die, don&amp;rsquo;t die!&amp;rdquo;&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;strong&gt;Ability Lines:&lt;/strong&gt;&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Ability&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Activation&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;During&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;End&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;EMP Blast&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&amp;ldquo;EMP charging!&amp;rdquo;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&amp;ldquo;Firing&amp;hellip; NOW!&amp;rdquo;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&amp;ldquo;Systems fried!&amp;rdquo;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&amp;ldquo;Gonna shut them down!&amp;rdquo;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;em&gt;electrical sounds&lt;/em&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&amp;ldquo;That&amp;rsquo;s what I&amp;rsquo;m talking about!&amp;rdquo;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Hack&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&amp;ldquo;Hacking in&amp;hellip;&amp;rdquo;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&amp;ldquo;Just need a second&amp;hellip;&amp;rdquo;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&amp;ldquo;We&amp;rsquo;re in!&amp;rdquo;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Trap Deploy&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&amp;ldquo;Setting up a surprise.&amp;rdquo;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;—&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&amp;ldquo;Trap triggered!&amp;rdquo;&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;strong&gt;Unique Specialist Lines:&lt;/strong&gt;&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Situation&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Lines&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Hacking Success&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&amp;ldquo;I&amp;rsquo;m a genius!&amp;rdquo; / &amp;ldquo;Too easy.&amp;rdquo;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Hacking Fail&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&amp;ldquo;Uh oh.&amp;rdquo; / &amp;ldquo;That&amp;rsquo;s not good.&amp;rdquo;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Tech Found&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&amp;ldquo;Ooh, tech!&amp;rdquo; / &amp;ldquo;This is the good stuff!&amp;rdquo;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Nervous Babble&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&amp;ldquo;Okay, okay, we got this, right? Right?&amp;rdquo;&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;strong&gt;Situational Lines:&lt;/strong&gt;&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Situation&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Lines&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Match Start&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&amp;ldquo;Okay, let&amp;rsquo;s do this. Don&amp;rsquo;t screw up, don&amp;rsquo;t screw up&amp;hellip;&amp;rdquo;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Extraction Called&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&amp;ldquo;Ride&amp;rsquo;s here! Let&amp;rsquo;s go go go!&amp;rdquo;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Successful Extract&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&amp;ldquo;We made it! Holy crap, we made it!&amp;rdquo;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Teammate Death&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&amp;ldquo;No no no&amp;hellip; this is my fault&amp;hellip;&amp;rdquo;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Finding Loot&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&amp;ldquo;Jackpot!&amp;rdquo; / &amp;ldquo;Score!&amp;rdquo;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Low Health&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&amp;ldquo;This is fine. Everything&amp;rsquo;s fine. I&amp;rsquo;m fine.&amp;rdquo;&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr&gt;
+&lt;h2&gt;🎭 Faction NPC Voice Lines&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-faction-npc-voice-lines&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-faction-npc-voice-lines&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;Salvage Corps - Viktor Koval (Foreman)&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;salvage-corps---viktor-koval-foreman&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#salvage-corps---viktor-koval-foreman&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Voice Profile:&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;Accent: Ukrainian
+Tone: Gruff, fatherly, practical
+Character: Tough but fair boss&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;Quest Dialogue:&lt;/strong&gt;&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Context&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Lines&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Quest Offer&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&amp;ldquo;Got a job for you. Good pay, honest work.&amp;rdquo;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&amp;ldquo;You look capable. Need someone to fetch some materials.&amp;rdquo;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Quest Accept&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&amp;ldquo;Good. Don&amp;rsquo;t come back empty-handed.&amp;rdquo;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Quest Decline&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&amp;ldquo;Your loss. Work waits for no one.&amp;rdquo;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Quest Turn-in&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&amp;ldquo;This is good work. Payment&amp;rsquo;s ready.&amp;rdquo;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&amp;ldquo;You did well. The Corps remembers.&amp;rdquo;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Greeting&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&amp;ldquo;Back again? Good. Always need hands.&amp;rdquo;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Farewell&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&amp;ldquo;Stay safe out there. Zone doesn&amp;rsquo;t forgive mistakes.&amp;rdquo;&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr&gt;
+&lt;h3&gt;Tech Syndicate - Seo-Yun Park (Director)&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;tech-syndicate---seo-yun-park-director&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#tech-syndicate---seo-yun-park-director&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Voice Profile:&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;Accent: Korean with precise English
+Tone: Cold, calculating, occasionally warm
+Character: Dangerous intelligence&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;Quest Dialogue:&lt;/strong&gt;&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Context&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Lines&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Quest Offer&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&amp;ldquo;I have&amp;hellip; a delicate matter. Your skills are required.&amp;rdquo;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&amp;ldquo;Information is everything. Help me acquire some.&amp;rdquo;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Quest Accept&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&amp;ldquo;Excellent choice. Don&amp;rsquo;t disappoint me.&amp;rdquo;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Quest Decline&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&amp;ldquo;A pity. Perhaps you&amp;rsquo;re not as useful as I thought.&amp;rdquo;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Quest Turn-in&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&amp;ldquo;Precisely what I needed. Your payment is transferred.&amp;rdquo;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;em&gt;slight smile in voice&lt;/em&gt; &amp;ldquo;You continue to impress.&amp;rdquo;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Greeting&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&amp;ldquo;You&amp;rsquo;re here. Good. Time is valuable.&amp;rdquo;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Farewell&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&amp;ldquo;Until next time. And there will be a next time.&amp;rdquo;&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr&gt;
+&lt;h3&gt;Underground Network - &amp;ldquo;The Broker&amp;rdquo; (Voice Distorted)&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;underground-network---the-broker-voice-distorted&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#underground-network---the-broker-voice-distorted&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Voice Profile:&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;Accent: Distorted, shifts between accents
+Tone: Mysterious, unsettling, knowing
+Character: Enigma with unknown motives&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;Quest Dialogue:&lt;/strong&gt;&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Context&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Lines&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Quest Offer&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&amp;ldquo;I know what you need. The question is&amp;hellip; what will you do for it?&amp;rdquo;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;em&gt;static&lt;/em&gt; &amp;ldquo;A package needs moving. Discretion required.&amp;rdquo;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Quest Accept&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&amp;ldquo;Smart choice. Keep it that way.&amp;rdquo;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Quest Decline&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&amp;ldquo;Everyone comes around eventually. &lt;em&gt;static&lt;/em&gt; Eventually.&amp;rdquo;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Quest Turn-in&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&amp;ldquo;The Network thanks you. &lt;em&gt;pause&lt;/em&gt; I thank you.&amp;rdquo;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&amp;ldquo;Payment delivered. We never spoke.&amp;rdquo;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Greeting&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&amp;ldquo;I see you.&amp;rdquo; / &amp;ldquo;You&amp;rsquo;re being watched. By friends.&amp;rdquo;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Farewell&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&amp;ldquo;Trust no one. &lt;em&gt;static&lt;/em&gt; &amp;hellip;Trust us less.&amp;rdquo;&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr&gt;
+&lt;h3&gt;Peacekeepers - Helena Vance (Commander)&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;peacekeepers---helena-vance-commander&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#peacekeepers---helena-vance-commander&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Voice Profile:&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;Accent: American military
+Tone: Authoritative, weary, hopeful
+Character: Soldier trying to rebuild&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;Quest Dialogue:&lt;/strong&gt;&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Context&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Lines&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Quest Offer&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&amp;ldquo;We need boots on the ground. You interested in helping restore order?&amp;rdquo;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&amp;ldquo;There&amp;rsquo;s a situation. I need someone I can rely on.&amp;rdquo;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Quest Accept&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&amp;ldquo;Welcome aboard. Don&amp;rsquo;t make me regret this.&amp;rdquo;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Quest Decline&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&amp;ldquo;I understand. Not everyone&amp;rsquo;s cut out for the hard choices.&amp;rdquo;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Quest Turn-in&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&amp;ldquo;Mission accomplished. The Peacekeepers are grateful.&amp;rdquo;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&amp;ldquo;Good work out there. You&amp;rsquo;ve earned this.&amp;rdquo;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Greeting&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&amp;ldquo;Contractor. What can the Peacekeepers do for you?&amp;rdquo;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Farewell&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&amp;ldquo;Stay vigilant. We&amp;rsquo;re counting on people like you.&amp;rdquo;&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr&gt;
+&lt;h2&gt;📋 Voice Line Categories&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-voice-line-categories&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-voice-line-categories&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;Automatic Callouts (AI-Triggered)&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;automatic-callouts-ai-triggered&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#automatic-callouts-ai-triggered&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;Combat Callouts:
+├── Reload: When reloading begins
+├── Low Ammo: When magazine &amp;lt; 25%
+├── Enemy Spotted: First contact with enemy
+├── Taking Fire: When receiving damage
+├── Grenade: When throwing or enemy throws
+├── Kill: On elimination
+├── Special Kill: Headshot, multi-kill
+├── Downed: When entering downed state
+└── Reviving: When reviving teammate
+
+Status Callouts:
+├── Low Health: Below 25% HP
+├── Healing: When using healing items
+├── Ability Ready: Cooldown complete
+├── Ability Use: Activation
+└── Loot Found: Discovering high-tier items&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h3&gt;Manual Callouts (Player-Triggered)&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;manual-callouts-player-triggered&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#manual-callouts-player-triggered&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;Communication Wheel:
+├── &amp;#34;Enemy Here&amp;#34; - Ping location
+├── &amp;#34;Follow Me&amp;#34; - Rally command
+├── &amp;#34;Wait&amp;#34;/&amp;#34;Hold&amp;#34; - Stop movement
+├── &amp;#34;Need Help&amp;#34; - Request assistance
+├── &amp;#34;Thanks&amp;#34; - Appreciation
+├── &amp;#34;Yes&amp;#34;/&amp;#34;Affirmative&amp;#34; - Confirm
+├── &amp;#34;No&amp;#34;/&amp;#34;Negative&amp;#34; - Decline
+└── &amp;#34;Good Game&amp;#34; - Match end courtesy&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;hr&gt;
+&lt;h2&gt;🔊 Voice Technical Specs&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-voice-technical-specs&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-voice-technical-specs&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;Recording Requirements&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;recording-requirements&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#recording-requirements&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;Format: WAV 48kHz, 24-bit
+Delivery: OGG Vorbis for runtime
+Noise Floor: &amp;lt; -60dB
+Peak Level: -3dB max
+Room Tone: Recorded, matched to game
+
+Per Operator:
+├── Combat lines: 60-80 lines
+├── Ability lines: 15-20 lines
+├── Situational: 30-40 lines
+├── Effort sounds: 50&amp;#43; variations
+└── Total: ~150-200 unique files
+
+Per NPC:
+├── Quest dialogue: 20-30 lines
+├── Greetings: 5-10 variations
+├── Farewells: 5-10 variations
+└── Total: ~40-50 unique files&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h3&gt;Playback Rules&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;playback-rules&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#playback-rules&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;Cooldown Between Lines: 3 seconds minimum
+Priority System:
+├── Critical (Grenade warning): Interrupt all
+├── Combat (Reload, contact): High priority
+├── Status (Low ammo): Medium priority
+└── Flavor (Loot): Low priority, can be skipped
+
+Teammate Audio:
+├── Reduced by 50% vs own operator
+├── Spatially positioned
+└── Can be muted in settings&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>

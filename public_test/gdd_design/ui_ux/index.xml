@@ -1,0 +1,1290 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Extraction Document – User Experience (UX)</title>
+    <link>https://oaiba.github.io/ExtractionDocument/gdd_design/ui_ux/index.html</link>
+    <description>Recent content in User Experience (UX) on Extraction Document</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	  <atom:link href="https://oaiba.github.io/ExtractionDocument/gdd_design/ui_ux/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Menus &amp; Screens</title>
+      <link>https://oaiba.github.io/ExtractionDocument/gdd_design/ui_ux/menus.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://oaiba.github.io/ExtractionDocument/gdd_design/ui_ux/menus.html</guid>
+      <description>
+        
+        
+        &lt;h2&gt;⏸️ Pause Menu&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-pause-menu&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-pause-menu&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h2&gt;⏸️ Pause Menu (System Overlay)&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-pause-menu-system-overlay&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-pause-menu-system-overlay&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;Context:&lt;/strong&gt; Accessed during gameplay by pressing &lt;code&gt;ESC&lt;/code&gt; (PC) or &lt;code&gt;Start/Menu&lt;/code&gt; (Console).
+&lt;strong&gt;Design Philosophy:&lt;/strong&gt;
+In an Extraction Shooter, the game &lt;strong&gt;does not pause&lt;/strong&gt; (in online raids). The menu acts as an overlay. It must allow the player to maintain &lt;strong&gt;situational awareness&lt;/strong&gt; (visuals visible through blur, audio unmuted) while accessing critical system functions.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Visual Style:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Background:&lt;/strong&gt; Heavy &amp;ldquo;Frosted Glass&amp;rdquo; blur (Gaussian Blur radius 15px). De-saturates the game world but keeps motion visible (e.g., if an enemy walks by, you see the shadow/shape).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Layout:&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Left Column:&lt;/strong&gt; Interaction Buttons (Resume, Settings, Leave).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Right Column:&lt;/strong&gt; Raid Status Panel (Timer, Raid ID, Connectivity).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Center/Bottom:&lt;/strong&gt; Contextual Squad Info (optional).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Typography:&lt;/strong&gt; &lt;em&gt;Oxanium&lt;/em&gt; (Headers), &lt;em&gt;Inter&lt;/em&gt; (Body). High contrast.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;https://www.gameuidatabase.com/uploads/Alien-Isolation12152020-025857-62996.jpg&#34; alt=&#34;Pause Menu Reference&#34;  loading=&#34;lazy&#34; /&gt;
+&lt;em&gt;Figure 1: conceptual reference. Note the &amp;ldquo;Tech&amp;rdquo; aesthetic and background visibility. Our design will use a similar layout but with more specific data.&lt;/em&gt;&lt;/p&gt;
+&lt;h3&gt;Menu Structure&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;menu-structure&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#menu-structure&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Section&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Elements&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Functionality&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Main Actions&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Resume&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Closes menu immediately.&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Options&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Opens &lt;a href=&#34;file:///d:/UE_Project/ExtractionDocument/content/GDD_Design/GameDesign/UserSettings.md&#34;&gt;Settings Menu&lt;/a&gt; (Graphics, Keybinds).&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Statistics&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Shows current session stats (Kills, Damage Dealt, XP gained &lt;em&gt;so far&lt;/em&gt;).&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Abandon Raid&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;[CRITICAL RED]&lt;/strong&gt; Leaves session. Triggers &amp;ldquo;Confirm Disconnect&amp;rdquo; popup warning that gear will be lost.&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Raid Status&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Raid Timer&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Countdown content (e.g., &lt;code&gt;25:43&lt;/code&gt;). Color turns red at &amp;lt;10 mins.&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Extraction Points&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;List of available exits (e.g., &amp;ldquo;Crossroads - Open&amp;rdquo;, &amp;ldquo;Boat - 30s Wait&amp;rdquo;). Similar to &lt;em&gt;Tarkov&lt;/em&gt; &amp;lsquo;O&amp;rsquo; double-tap but persistent here.&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Network Info&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Ping (ms), Packet Loss (%), Raid Hash ID (bottom right).&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Squad Info&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Teammate Cards&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Small widgets showing Squadmate Name, HP Bar, and Status (Alive/Dead/Extracting). &lt;em&gt;Inspired by Hunt: Showdown.&lt;/em&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3&gt;UX Interaction &amp;amp; Safeguards&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;ux-interaction--safeguards&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#ux-interaction--safeguards&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;&amp;ldquo;Hold to Abandon&amp;rdquo;:&lt;/strong&gt; The &amp;ldquo;Abandon Raid&amp;rdquo; button requires a &lt;strong&gt;0.5s hold&lt;/strong&gt; to activate, preventing accidental clicks during panic.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Audio Pass-through:&lt;/strong&gt; Game audio is &lt;strong&gt;NOT&lt;/strong&gt; muted. Footsteps and gunshots remain at 100% volume.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Cursor:&lt;/strong&gt; Frees mouse cursor for UI interaction. Camera movement locked.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Input Override:&lt;/strong&gt; Pressing &lt;code&gt;Tab&lt;/code&gt; (Inventory) or &lt;code&gt;M&lt;/code&gt; (Map) while in this menu immediately switches to those views.&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>UX Flows &amp; Wireframes</title>
+      <link>https://oaiba.github.io/ExtractionDocument/gdd_design/ui_ux/ux_flows.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://oaiba.github.io/ExtractionDocument/gdd_design/ui_ux/ux_flows.html</guid>
+      <description>
+        
+        
+        &lt;h2&gt;🧭 Player Journey Map&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-player-journey-map&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-player-journey-map&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;Session Flow (The &amp;ldquo;Happy Path&amp;rdquo;)&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;session-flow-the-happy-path&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#session-flow-the-happy-path&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;pre class=&#34;mermaid hx:mt-6&#34;&gt;
+  graph TD
+    Start(App Launch) --&amp;gt; Platform{Platform Check}
+    Platform --&amp;gt;|PC/Console| Login{Auth Check}
+    Platform --&amp;gt;|Mobile| MobileOpt[Mobile-Optimized Splash]
+    MobileOpt --&amp;gt; Login
+    
+    Login -- New User --&amp;gt; Tutorial[Tutorial Mission]
+    Login -- Returning --&amp;gt; DailyReward{Daily Login Bonus}
+    DailyReward --&amp;gt; MainMenu[Main Menu / Hideout]
+    Tutorial --&amp;gt; MainMenu
+    
+    MainMenu --&amp;gt; Prep[Preparation Phase]
+    Prep --&amp;gt;|Select Loadout| LoadoutUI[Loadout Screen]
+    Prep --&amp;gt;|Browse Traders| TradersUI[Traders / Market]
+    Prep --&amp;gt;|Manage Stash| InventoryUI[Inventory / Stash]
+    
+    LoadoutUI --&amp;gt;|Ready| MatchmakingUI[Matchmaking Lobby]
+    MatchmakingUI --&amp;gt;|Squad Full| MapSelection[Map Selection]
+    MapSelection --&amp;gt; Loading{Loading Level}
+    
+    Loading --&amp;gt; Spawn[In-Raid Gameplay]
+    
+    Spawn --&amp;gt;|Death| DefeatScreen[Death Screen]
+    Spawn --&amp;gt;|Extract Success| ExtractionUI[Extraction Animation]
+    Spawn --&amp;gt;|Time Expired| ForceExtractUI[Emergency Extraction]
+    
+    DefeatScreen --&amp;gt; DeathCam[Death Replay]
+    ExtractionUI --&amp;gt; Summary[After Action Report]
+    ForceExtractUI --&amp;gt; Summary
+    DeathCam --&amp;gt; Summary
+    
+    Summary --&amp;gt;|Continue| MainMenu
+    Summary --&amp;gt;|Quit| End(Session End)
+&lt;/pre&gt;&lt;hr&gt;
+&lt;h2&gt;📱 Cross-Platform Wireframe Sets&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-cross-platform-wireframe-sets&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-cross-platform-wireframe-sets&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;1. Main Menu / Hideout (The Hub)&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;1-main-menu--hideout-the-hub&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#1-main-menu--hideout-the-hub&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Goal:&lt;/strong&gt; Immediate &amp;ldquo;Play&amp;rdquo; CTA while showcasing progression across all platforms.&lt;/p&gt;
+&lt;h4&gt;&lt;strong&gt;Desktop/Console Layout (16:9 Landscape)&lt;/strong&gt;&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;desktopconsole-layout-169-landscape&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#desktopconsole-layout-169-landscape&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;&amp;#43;------------------------------------------------------------&amp;#43;
+| [Profile: Lvl 12]  EXTRACTION ROYALE  [₽ 425,000] [$10]    |
+|                                                            |
+|              [3D OPERATOR MODEL - SPOTLIGHT]               |
+|         (Character Preview with Equipped Gear)             |
+|                                                            |
+|                    [ ▶ START RAID ]                        |
+|               (Pulsing Orange Action Button)               |
+|                   [Solo | Duo | Squad ▼]                   |
+|                                                            |
+| &amp;#43;----------------&amp;#43; &amp;#43;----------------&amp;#43; &amp;#43;----------------&amp;#43;   |
+| | [LOADOUT]      | | [TRADERS]      | | [HIDEOUT]      |   |
+| | ⚙️ Customize    | | 🛒 Buy/Sell    | | 🏠 Upgrades  |   |
+| &amp;#43;----------------&amp;#43; &amp;#43;----------------&amp;#43; &amp;#43;----------------&amp;#43;   |
+|                                                            |
+| [Battle Pass Tier 12/50]      [Friends Online: 3]  [⚙️]    |
+&amp;#43;------------------------------------------------------------&amp;#43;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h4&gt;&lt;strong&gt;Mobile Layout (9:16 Portrait)&lt;/strong&gt;&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;mobile-layout-916-portrait&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#mobile-layout-916-portrait&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;&amp;#43;---------------------------&amp;#43;
+|  LVL 12    ₽425K    $10   |
+|                           |
+| [3D OPERATOR - CENTERED]  |
+|                           |
+|    [ ▶ START RAID ]       |
+|    [Solo|Duo|Squad ▼]     |
+|                           |
+| [━━━━━━━━━━━━] 12/50      | (Battle Pass)
+|                           |
+| &amp;#43;-----&amp;#43;  &amp;#43;-----&amp;#43;  &amp;#43;-----&amp;#43; |
+| |LOAD |  |TRADE|  |HIDE | |
+| |OUT  |  |RS   |  |OUT  | |
+| &amp;#43;-----&amp;#43;  &amp;#43;-----&amp;#43;  &amp;#43;-----&amp;#43; |
+|                           |
+| [👥 3 Friends] [⚙️ Settings]|
+&amp;#43;---------------------------&amp;#43;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;Key Differences:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Mobile:&lt;/strong&gt; Vertical stacking, simplified labels, larger touch targets&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Desktop:&lt;/strong&gt; Horizontal layout, more info density, mouse-over tooltips&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Console:&lt;/strong&gt; D-Pad grid navigation with clear highlight states&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3&gt;2. Inventory Management (&amp;ldquo;The Tetris&amp;rdquo;)&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;2-inventory-management-the-tetris&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#2-inventory-management-the-tetris&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Goal:&lt;/strong&gt; Efficient sorting and equipping across input methods.&lt;/p&gt;
+&lt;h4&gt;&lt;strong&gt;Desktop (Mouse + Keyboard)&lt;/strong&gt;&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;desktop-mouse--keyboard&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#desktop-mouse--keyboard&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;&amp;#43;------------------------------------------------------------&amp;#43;
+| &amp;lt; BACK          STASH (12x40 Grid)          [Sort ▼] [🔍] |
+| -------------------------------------------------------- |
+| [GRID VIEW - DRAG &amp;amp; DROP]                                | [EQUIPPED LOADOUT]         |
+| [🔫][🔫][  ][💊][  ][  ]                                    | &amp;#43;------------------------&amp;#43; |
+| [  ][Rifle    ][  ][  ]                                  |                            | PRIMARY: AK-74M   |                       |
+| [  ][         ][🔋][  ]                                   |                            | DMG: 45  RPM: 650 |                       |
+| [  ][  ][Vest      ][  ]                                 | &amp;#43;------------------------&amp;#43; |
+| [  ][  ][         ][  ]                                  | [HELMET]  [ARMOR Lv3]      |
+|                                                          | [RIG 12sl] [BACKPACK 24L]  |
+| FILTERS:                                                 | [SECURE 4sl] (Protected)   |
+| [ Weapons                                                | Meds                       | Ammo ]            | Weight: 24.5kg / 40kg |
+|                                                          | Speed: -15%                |
+| [SELL ALL JUNK] [AUTO SORT]                              |                            |
+&amp;#43;------------------------------------------------------------&amp;#43;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h4&gt;&lt;strong&gt;Console (Controller)&lt;/strong&gt;&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;console-controller&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#console-controller&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;&amp;#43;------------------------------------------------------------&amp;#43;
+| STASH                         [LB/RB Tabs] [Y=Sort]       |
+| --------------------------------------------------------- |
+| GRID CURSOR MODE               [EQUIPPED LOADOUT]         |
+| &amp;#43;--[Selected Item]--&amp;#43;          &amp;#43;------------------------&amp;#43; |
+|                                                           | AK-74M Rifle        |                            | PRIMARY: [Empty Slot] |  |
+|                                                           | Durability: 85%     | &amp;#43;------------------------&amp;#43; |
+|                                                           | Value: ₽45,000      | [HELMET]  [ARMOR]          |
+| &amp;#43;-------------------&amp;#43;          [RIG]      [BACKPACK]      |
+|                                                           |
+| [A] Equip  [X] Drop  [B] Back  [Y] Quick-Sell             |
+|                                                           |
+| Navigation: D-Pad (Grid)                                  | Left Stick (Scroll) |
+&amp;#43;------------------------------------------------------------&amp;#43;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h4&gt;&lt;strong&gt;Mobile (Touch)&lt;/strong&gt;&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;mobile-touch&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#mobile-touch&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;&amp;#43;---------------------------&amp;#43;
+| STASH      [Sort][Filter] |
+| ------------------------- |
+| [SWIPE SCROLL LIST VIEW]  |
+| &amp;#43;---------------------&amp;#43;   |
+|                           | 🔫 AK-74M   [Equip] |  |
+|                           | 💊 Medkit   [Use]   |  |
+|                           | 🔋 Battery  [Drop]  |  |
+| &amp;#43;---------------------&amp;#43;   |
+|                           |
+| [EQUIPPED]  [Weight Bar]  |
+| [Rifle][Helmet][Armor]    |
+|                           |
+| [TAP TO EQUIP]            |
+&amp;#43;---------------------------&amp;#43;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;Platform Interactions:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;PC:&lt;/strong&gt; Drag &amp;amp; Drop primary. Right-click context menus. Middle-click to quick-examine.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Console:&lt;/strong&gt; Cursor-based grid navigation. Hold button to preview stats. Double-tap to equip.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Mobile:&lt;/strong&gt; Swipe to scroll. Tap to select. Long-press for context menu. Pinch to zoom grid.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3&gt;3. In-Raid HUD (Gameplay Overlay)&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;3-in-raid-hud-gameplay-overlay&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#3-in-raid-hud-gameplay-overlay&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Goal:&lt;/strong&gt; Minimal obstruction, maximum information. Adapt to screen size &amp;amp; input.&lt;/p&gt;
+&lt;h4&gt;&lt;strong&gt;PC/Console (Landscape)&lt;/strong&gt;&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;pcconsole-landscape&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#pcconsole-landscape&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;&amp;#43;------------------------------------------------------------&amp;#43;
+| [HEALTH]  [STAMINA]          EXTRACT: 15:32    [MINIMAP]  |
+| [❤️ 100] [🏃 85%]                               [🗺️ NE ]  |
+|                                                            |
+|                                                            |
+|                    [GAMEPLAY AREA]                         |
+|               (Minimal HUD Interference)                   |
+|                                                            |
+|                                                            |
+| [PRIMARY 🔫]                               [SQUAD]         |
+| [AK-74 | 30/120]                           [👤 Player1 ✅] |
+| [GRENADE x2]                               [👤 Player2 ⚠️] |
+|                                            [👤 Player3 ❌] |
+&amp;#43;------------------------------------------------------------&amp;#43;
+
+PROXIMITY INDICATORS (Dynamic):
+- Red pips on compass for nearby enemies (180° FOV)
+- Blue markers for squadmates (through walls)
+- Yellow ! for loot containers (within 25m)&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h4&gt;&lt;strong&gt;Mobile (Portrait - Condensed)&lt;/strong&gt;&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;mobile-portrait---condensed&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#mobile-portrait---condensed&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;&amp;#43;---------------------------&amp;#43;
+| ❤️100 🏃85% [⏱️15:32][🗺️] |
+|                           |
+|                           |
+|   [GAMEPLAY]              |
+|                           |
+|                           |
+|                           |
+| [🎯] [FIRE] [RELOAD][JUMP]|
+| [JOYSTICK] AK 30/120      |
+&amp;#43;---------------------------&amp;#43;
+
+ADAPTIVE CHANGES:
+- Auto-hide UI elements after 3 seconds of inactivity
+- Tap minimap to expand full-screen
+- Swipe down from top to access inventory (pauses movement)&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;hr&gt;
+&lt;h3&gt;4. Looting Interface (In-Raid Risk/Reward)&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;4-looting-interface-in-raid-riskreward&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#4-looting-interface-in-raid-riskreward&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Goal:&lt;/strong&gt; Speed vs. Risk. Looting partially blocks vision and movement.&lt;/p&gt;
+&lt;h4&gt;&lt;strong&gt;PC (Fast Cursor-Based)&lt;/strong&gt;&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;pc-fast-cursor-based&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#pc-fast-cursor-based&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;&amp;#43;------------------------------------------------------------&amp;#43;
+| (75% BLURRED GAME BACKGROUND - DANGER VISIBLE)    [X]     |
+|                                                            |
+| CONTAINER: Dead PMC              YOUR BACKPACK             |
+| &amp;#43;----------------------&amp;#43;      &amp;#43;------------------------&amp;#43;   |
+| | 🔫 M4A1      [TAKE]  |  &amp;gt;&amp;gt;  | 🔫 AK-74               |   |
+| | 💊 IFAK      [TAKE]  |      | 💊 Medkit              |   |
+| | 🔑 Key308    [TAKE]  |      | [____Empty Slot____]   |   |
+| | 💰 ₽15,000   [TAKE]  |      | [____Empty Slot____]   |   |
+| &amp;#43;----------------------&amp;#43;      &amp;#43;------------------------&amp;#43;   |
+|                                                            |
+| [TAKE ALL] (Hold F - 2 sec)    Weight: 32kg / 40kg        |
+|                                Movement: -25% Speed        |
+&amp;#43;------------------------------------------------------------&amp;#43;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h4&gt;&lt;strong&gt;Console (Simplified List)&lt;/strong&gt;&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;console-simplified-list&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#console-simplified-list&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;&amp;#43;------------------------------------------------------------&amp;#43;
+| LOOTING CONTAINER                                 [B] CLOSE|
+|                                                            |
+| D-PAD TO SELECT:                                           |
+| &amp;gt; 🔫 M4A1 Rifle                            [A] Take        |
+|   💊 IFAK Medkit                           [A] Take        |
+|   🔑 Marked Room Key                       [A] Take        |
+|   💰 Rubles (₽15,000)                      [A] Take        |
+|                                                            |
+| [Y] LOOT ALL (Hold 2 sec)         Backpack: 32/40 kg      |
+&amp;#43;------------------------------------------------------------&amp;#43;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;Tension Mechanics:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Screen Obstruction:&lt;/strong&gt; 60-75% screen coverage (can still see threats)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Movement Penalty:&lt;/strong&gt; Cannot sprint while looting&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Audio Cue:&lt;/strong&gt; Looting sounds attract nearby AI/players&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Progress Bar:&lt;/strong&gt; &amp;ldquo;Loot All&amp;rdquo; requires 2-second commitment (animation lock)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2&gt;🔄 State Machine Examples&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-state-machine-examples&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-state-machine-examples&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;Button States (Universal Across Platforms)&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;button-states-universal-across-platforms&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#button-states-universal-across-platforms&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Normal:&lt;/strong&gt; Default color (Steel Gray #6B7280), 100% opacity&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Hover (PC):&lt;/strong&gt; Highlight border (Tactical Blue #3B82F6), 110% scale&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Selected (Console):&lt;/strong&gt; Gold outline (#FACC15), subtle pulse animation&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Pressed:&lt;/strong&gt; 90% scale + haptic feedback (controller/mobile)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Disabled:&lt;/strong&gt; 50% opacity, grayscale filter&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Loading:&lt;/strong&gt; Spinner overlay, 75% opacity&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;Feedback Loop Standards&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;feedback-loop-standards&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#feedback-loop-standards&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;h4&gt;&lt;strong&gt;Positive Actions&lt;/strong&gt; (Success)&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;positive-actions-success&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#positive-actions-success&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Visual:&lt;/strong&gt; Green flash (#22C55E), item icon flies to inventory slot&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Audio:&lt;/strong&gt; Satisfying &amp;ldquo;click&amp;rdquo; + item-specific sound (metal clank, fabric rustle)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Haptic:&lt;/strong&gt; Single medium pulse (200ms)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;&lt;strong&gt;Negative Actions&lt;/strong&gt; (Error)&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;negative-actions-error&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#negative-actions-error&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Visual:&lt;/strong&gt; Red shake animation (5px amplitude, 3 cycles)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Audio:&lt;/strong&gt; Error buzz (low pitch, 100ms)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Haptic:&lt;/strong&gt; Double short pulse (100ms each)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;&lt;strong&gt;Process Indicators&lt;/strong&gt; (Ongoing)&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;process-indicators-ongoing&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#process-indicators-ongoing&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Searching Body:&lt;/strong&gt; Circular progress bar around cursor/crosshair (2 seconds)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Healing:&lt;/strong&gt; Radial fill around health bar (5-10 seconds)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Reloading:&lt;/strong&gt; Magazine icon slide animation (weapon-specific timing)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2&gt;🎮 Platform-Specific Navigation Patterns&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-platform-specific-navigation-patterns&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-platform-specific-navigation-patterns&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;PC (Keyboard Priority)&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;pc-keyboard-priority&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#pc-keyboard-priority&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Tab:&lt;/strong&gt; Cycle through HUD elements (Inventory → Map → Squad)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;ESC:&lt;/strong&gt; Hierarchical back (closes deepest menu first)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Spacebar:&lt;/strong&gt; Confirm/Select (secondary to mouse click)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Hold Shift:&lt;/strong&gt; Quick-loot mode (auto-transfers items to backpack)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Console (D-Pad Grid)&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;console-d-pad-grid&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#console-d-pad-grid&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;D-Pad:&lt;/strong&gt; Navigate UI grid (horizontal/vertical)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Analog Stick:&lt;/strong&gt; Free cursor mode in menus (toggleable)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;A/X (Confirm):&lt;/strong&gt; Context-sensitive (Pickup/Use/Open/Talk)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;B/Circle (Cancel):&lt;/strong&gt; Always goes back one menu level&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Shoulder Buttons (LB/RB):&lt;/strong&gt; Tab switching in multi-panel menus&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Mobile (Gesture-Based)&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;mobile-gesture-based&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#mobile-gesture-based&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Tap:&lt;/strong&gt; Select/Confirm&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Double-Tap:&lt;/strong&gt; Quick equip (bypass confirmation)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Long-Press:&lt;/strong&gt; Context menu (Discard/Examine/Use)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Swipe Left/Right:&lt;/strong&gt; Navigate tabs (Stash → Traders → Hideout)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Pinch:&lt;/strong&gt; Zoom in inventory grid (mobile-exclusive)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Two-Finger Swipe Down:&lt;/strong&gt; Quick access to settings (global gesture)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2&gt;📊 Performance Optimization for UI&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-performance-optimization-for-ui&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-performance-optimization-for-ui&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;Rendering Best Practices&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;rendering-best-practices&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#rendering-best-practices&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;UI Canvas Resolution:&lt;/strong&gt; Locked to 1080p with upscaling for 4K (reduces draw calls)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Texture Atlases:&lt;/strong&gt; All icons in 2048x2048 sprite sheets (max 3 atlases total)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Dynamic Batching:&lt;/strong&gt; UI elements grouped by material to minimize state changes&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Occlusion Culling:&lt;/strong&gt; Hidden menus fully disabled, not just invisible&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Platform-Specific FPS Targets&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;platform-specific-fps-targets&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#platform-specific-fps-targets&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Platform&lt;/th&gt;
+          &lt;th style=&#34;text-align: center&#34;&gt;UI Target FPS&lt;/th&gt;
+          &lt;th style=&#34;text-align: center&#34;&gt;Gameplay Target FPS&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;PC (High-End)&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;144 FPS&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;120-144 FPS&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;PC (Mid-Range)&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;60 FPS&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;60 FPS&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Console (Next-Gen)&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;60 FPS&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;60 FPS (Performance) / 30 FPS (Quality)&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Console (Last-Gen)&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;30 FPS&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;30 FPS&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Mobile (Flagship)&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;60 FPS&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;60 FPS&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Mobile (Mid-Tier)&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;30 FPS&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;30 FPS&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr&gt;
+&lt;h2&gt;🧪 User Testing Scenarios&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-user-testing-scenarios&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-user-testing-scenarios&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;Scenario 1: First-Time Player (Tutorial)&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;scenario-1-first-time-player-tutorial&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#scenario-1-first-time-player-tutorial&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Task:&lt;/strong&gt; Complete first raid without opening manual.&lt;br&gt;
+&lt;strong&gt;Success Metrics:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;No tutorial skips&lt;/li&gt;
+&lt;li&gt;&amp;lt;5% drop-off before first extraction&lt;/li&gt;
+&lt;li&gt;Post-mission comprehension quiz &amp;gt;70% correct&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Scenario 2: Experienced Player (Speed)&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;scenario-2-experienced-player-speed&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#scenario-2-experienced-player-speed&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Task:&lt;/strong&gt; Equip loadout and enter matchmaking.&lt;br&gt;
+&lt;strong&gt;Success Metrics:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;PC: &amp;lt;15 seconds&lt;/li&gt;
+&lt;li&gt;Console: &amp;lt;25 seconds&lt;/li&gt;
+&lt;li&gt;Mobile: &amp;lt;30 seconds&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Scenario 3: Cross-Platform Switching&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;scenario-3-cross-platform-switching&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#scenario-3-cross-platform-switching&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Task:&lt;/strong&gt; Player moves from PC to Mobile mid-session.&lt;br&gt;
+&lt;strong&gt;Success Metrics:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Zero confusion on control scheme (auto-detect)&lt;/li&gt;
+&lt;li&gt;All progression synced within 5 seconds&lt;/li&gt;
+&lt;li&gt;No re-tutorial required&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2&gt;🔐 Accessibility-Specific Flows&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-accessibility-specific-flows&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-accessibility-specific-flows&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;Colorblind Mode (Protanopia Example)&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;colorblind-mode-protanopia-example&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#colorblind-mode-protanopia-example&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Red Enemy Indicators → Orange/Purple&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Green Friendly Markers → Blue&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Yellow Loot → White with border&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Rarity Colors:&lt;/strong&gt; Use shapes + text labels, not just color&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Screen Reader Support (Mobile Priority)&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;screen-reader-support-mobile-priority&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#screen-reader-support-mobile-priority&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;All buttons have accessible labels (&amp;ldquo;Equip Primary Weapon&amp;rdquo; not &amp;ldquo;Button 5&amp;rdquo;)&lt;/li&gt;
+&lt;li&gt;Menu navigation reads current position (&amp;ldquo;Inventory, Item 3 of 15&amp;rdquo;)&lt;/li&gt;
+&lt;li&gt;Critical alerts read aloud (&amp;ldquo;Extraction available. 2 minutes remaining.&amp;rdquo;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Motor Impairment Assist&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;motor-impairment-assist&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#motor-impairment-assist&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Auto-Run Toggle:&lt;/strong&gt; Single tap to move (no constant pressure)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Hold-to-Confirm Timeout:&lt;/strong&gt; Adjustable 0.5-3 seconds&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Aim Assist Slider:&lt;/strong&gt; 0%-100% magnetism strength&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;Document Version:&lt;/strong&gt; 2.1&lt;br&gt;
+&lt;strong&gt;Last Updated:&lt;/strong&gt; 2026-02-11&lt;br&gt;
+&lt;strong&gt;Review Cycle:&lt;/strong&gt; Bi-weekly (with each major patch)&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Visual Style &amp; Art Guidelines</title>
+      <link>https://oaiba.github.io/ExtractionDocument/gdd_design/ui_ux/visual_style.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://oaiba.github.io/ExtractionDocument/gdd_design/ui_ux/visual_style.html</guid>
+      <description>
+        
+        
+        &lt;h2&gt;🎨 Visual Identity&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-visual-identity&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-visual-identity&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;Style:&lt;/strong&gt; Grounded Neo-Industrial&lt;br&gt;
+&lt;strong&gt;Era:&lt;/strong&gt; Post-Collapse (Near Future 2035-2040)&lt;br&gt;
+&lt;strong&gt;Mood:&lt;/strong&gt; Desperate Survival meets Tactical Professionalism&lt;/p&gt;
+&lt;h3&gt;Design Philosophy&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;design-philosophy&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#design-philosophy&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Decay with Memory:&lt;/strong&gt; Every rusted panel was once new. Every ruin was a home. The world is &lt;em&gt;overgrown&lt;/em&gt;, not just dirty.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Tactical Clarity:&lt;/strong&gt; Gameplay elements (cover, loot, enemies) must be instantly readable against the chaotic background.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Functional Fashion:&lt;/strong&gt; Gear looks practical. No glowing magical armor. Duct tape, zip ties, worn metal, and field repairs.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Asymmetric Beauty:&lt;/strong&gt; Nothing is perfectly clean or symmetrical. Weathering, dirt, and damage tell stories.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2&gt;🌈 Global Color Palette&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-global-color-palette&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-global-color-palette&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;Primary Game Colors (Interactive UI)&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;primary-game-colors-interactive-ui&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#primary-game-colors-interactive-ui&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;em&gt;Used for UI elements and gameplay feedback across all platforms.&lt;/em&gt;&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Role&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Color Name&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Hex&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;RGB&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;CMYK&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Usage&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Accessibility&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Friendly&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Tactical Blue&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;code&gt;#3B82F6&lt;/code&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;59,130,246&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;76,47,0,4&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Minimap Markers, Squad HUD, Objective Indicators&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;WCAG AA Pass (4.5:1 on dark BG)&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Hostile&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Critical Red&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;code&gt;#EF4444&lt;/code&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;239,68,68&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;0,72,72,6&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Enemy Highlights, Damage Flash, Alert States&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;WCAG AA Pass (4.5:1 on dark BG)&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Loot/Interact&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Neon Yellow&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;code&gt;#FACC15&lt;/code&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;250,204,21&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;0,18,92,2&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Interactive Objects, Pickup Prompts, Quest Items&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;WCAG AAA Pass (7:1 on dark BG)&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Objective&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Signal Green&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;code&gt;#22C55E&lt;/code&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;34,197,94&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;83,0,52,23&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Extraction Zones, Completed Tasks, Success States&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;WCAG AA Pass (4.5:1 on dark BG)&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Neutral&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Steel Gray&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;code&gt;#6B7280&lt;/code&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;107,114,128&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;16,11,0,50&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;HUD Backgrounds, Non-Interactive UI, Disabled States&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;WCAG AA Pass (3:1 min)&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Warning&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Hazard Orange&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;code&gt;#F97316&lt;/code&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;249,115,22&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;0,54,91,2&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Danger Zones, Low Health, Critical Alerts&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;WCAG AA Pass (4.5:1 on dark BG)&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3&gt;Environmental Base (Atmospheric Palette)&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;environmental-base-atmospheric-palette&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#environmental-base-atmospheric-palette&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;em&gt;Used for level design, lighting, and world-building.&lt;/em&gt;&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Category&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Color Name&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Hex&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Usage&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Material Examples&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Industrial&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Rust Orange&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;code&gt;#D97706&lt;/code&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Metal structures, decaying machinery, oxidized surfaces&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Corrugated steel, chain-link fences, shipping containers&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Urban&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Concrete Gray&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;code&gt;#94A3B8&lt;/code&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Buildings, roads, rubble, brutalist architecture&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Cracked pavement, rebar-exposed walls, abandoned infrastructure&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Nature&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Overgrowth Green&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;code&gt;#166534&lt;/code&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Vines, moss reclaiming the city, wild vegetation&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Creeping ivy on walls, moss on concrete, saplings through asphalt&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Lighting&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Sodium Vapor&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;code&gt;#FBBF24&lt;/code&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Streetlights, old factory lamps, artificial light pollution&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Flickering lamps, emergency lighting, generator-powered bulbs&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Darkness&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Shadow Blue&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;code&gt;#1E293B&lt;/code&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Deep shadows, night ambiance, unlit areas&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Moonlit corners, basement darkness, storm clouds&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Accent&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Cyan Highlight&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;code&gt;#06B6D4&lt;/code&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Tech elements, holographic UI, futuristic remnants&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;AR markers, terminal screens, drone indicators&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3&gt;Rarity System (Loot &amp;amp; Items)&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;rarity-system-loot--items&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#rarity-system-loot--items&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Consistent across all platforms for instant recognition.&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Tier&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Color&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Hex&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Item Drop Rate&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Visual Treatment&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Common&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Gray&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;code&gt;#9CA3AF&lt;/code&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;60%&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;No outline, matte finish&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Uncommon&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Green&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;code&gt;#10B981&lt;/code&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;25%&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Thin outline, slight sheen&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Rare&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Blue&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;code&gt;#3B82F6&lt;/code&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;10%&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Medium outline, subtle glow&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Epic&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Purple&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;code&gt;#A855F7&lt;/code&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;4%&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Thick outline, pulsing glow&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Legendary&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Gold&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;code&gt;#F59E0B&lt;/code&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;0.9%&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Double outline, particle effects&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Unique/Quest&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Orange-Red&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;code&gt;#F97316&lt;/code&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Story-locked&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Animated outline, unique icon badge&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr&gt;
+&lt;h2&gt;📐 Typography System&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-typography-system&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-typography-system&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;Primary Font: &lt;strong&gt;&amp;ldquo;Oxanium&amp;rdquo;&lt;/strong&gt; (Google Fonts)&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;primary-font--google-fonts&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#primary-font--google-fonts&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Usage:&lt;/strong&gt; Headings, UI headers, important stats, timers&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Style:&lt;/strong&gt; Cyber-industrial but legible. Square letterforms with subtle chamfered edges&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Weights:&lt;/strong&gt; Regular (400), Medium (500), Bold (700)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;License:&lt;/strong&gt; Open Font License (safe for commercial use)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Character Set:&lt;/strong&gt; Latin, Cyrillic (for localization)&lt;/p&gt;
+&lt;h3&gt;Secondary Font: &lt;strong&gt;&amp;ldquo;Inter&amp;rdquo;&lt;/strong&gt; (Google Fonts)&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;secondary-font--google-fonts&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#secondary-font--google-fonts&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Usage:&lt;/strong&gt; Body text, item descriptions, dialogue, tutorials&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Style:&lt;/strong&gt; Clean sans-serif, highly readable at small sizes, excellent kerning&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Weights:&lt;/strong&gt; Regular (400), Semi-Bold (600)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;License:&lt;/strong&gt; Open Font License&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Character Set:&lt;/strong&gt; Latin Extended, Cyrillic, Vietnamese (full localization support)&lt;/p&gt;
+&lt;h3&gt;Monospace Font: &lt;strong&gt;&amp;ldquo;JetBrains Mono&amp;rdquo;&lt;/strong&gt; (Google Fonts)&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;monospace-font--google-fonts&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#monospace-font--google-fonts&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Usage:&lt;/strong&gt; Numerical stats, damage numbers, coordinates, code-like elements&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Style:&lt;/strong&gt; Developer-focused monospace, clear distinction between similar characters (0/O, 1/I/l)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Weights:&lt;/strong&gt; Regular (400), Bold (700)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3&gt;Font Hierarchy &amp;amp; Platform Scaling&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;font-hierarchy--platform-scaling&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#font-hierarchy--platform-scaling&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;h4&gt;&lt;strong&gt;Desktop/Console (1080p Base)&lt;/strong&gt;&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;desktopconsole-1080p-base&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#desktopconsole-1080p-base&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Level&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Font&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Size&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Weight&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Use Case&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;H1&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Oxanium&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;48px&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Bold&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Screen titles, main menu headers&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;H2&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Oxanium&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;32px&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Semi-Bold&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Section headers, modal titles&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;H3&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Oxanium&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;24px&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Medium&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Sub-sections, tab labels&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Body&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Inter&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;16px&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Regular&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Item descriptions, dialogue, tooltips&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Small&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Inter&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;14px&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Regular&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Secondary info, timestamps, hints&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Micro&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;JetBrains Mono&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;12px&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Regular&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Stat numbers, ammo count, coordinates&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h4&gt;&lt;strong&gt;Mobile (Adaptive Scaling)&lt;/strong&gt;&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;mobile-adaptive-scaling&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#mobile-adaptive-scaling&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;Base multiplier: &lt;strong&gt;1.2x&lt;/strong&gt; for touch targets&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Level&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Font&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Size (Mobile)&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Adjustments&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;H1&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Oxanium&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;40px&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Reduced to fit smaller screens&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;H2&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Oxanium&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;28px&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Maintains hierarchy ratio&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Body&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Inter&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;18px&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Increased for readability&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Small&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Inter&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;16px&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Never below 14px (iOS HIG minimum)&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;strong&gt;Safe Area Margins:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;iOS:&lt;/strong&gt; 44pt top/bottom, 20pt sides (for notch/home bar)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Android:&lt;/strong&gt; 48dp top, 16dp sides&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2&gt;🖼️ Iconography System&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-iconography-system&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-iconography-system&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;Design Principles&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;design-principles&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#design-principles&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Style:&lt;/strong&gt; Flat vector, minimal gradients (solid fills preferred)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Stroke Width:&lt;/strong&gt; 2px consistent across all icons (scalable)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Fill:&lt;/strong&gt; Transparent background, solid or semi-transparent fill&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Canvas Size:&lt;/strong&gt; 64x64px base (upscales to 128x128px for high-DPI)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Metaphor:&lt;/strong&gt; Real-world objects (specific, not generic)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Icon Set Categories&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;icon-set-categories&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#icon-set-categories&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;h4&gt;&lt;strong&gt;Weapons (Silhouette Recognition)&lt;/strong&gt;&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;weapons-silhouette-recognition&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#weapons-silhouette-recognition&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;Icons must be recognizable even at 32x32px (minimap size).&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Assault Rifle:&lt;/strong&gt; AK-74M silhouette (not generic &amp;ldquo;rifle&amp;rdquo;)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;SMG:&lt;/strong&gt; MP5 profile&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Sniper:&lt;/strong&gt; SVD Dragunov long barrel shape&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Shotgun:&lt;/strong&gt; M870 pump-action&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Pistol:&lt;/strong&gt; Makarov PM compact frame&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Melee:&lt;/strong&gt; Combat knife (KA-BAR style)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;&lt;strong&gt;Gear &amp;amp; Equipment&lt;/strong&gt;&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;gear--equipment&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#gear--equipment&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Armor:&lt;/strong&gt; Plate Carrier vest (3A/4/5 variants by thickness)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Helmet:&lt;/strong&gt; Fast MT tactical helmet (with NVG mount)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Backpack:&lt;/strong&gt; MOLLE tactical pack (size = capacity)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Rig:&lt;/strong&gt; Chest rig with visible mag pouches&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;&lt;strong&gt;Consumables&lt;/strong&gt;&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;consumables&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#consumables&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Medkit:&lt;/strong&gt; IFAK pouch with red cross badge&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Bandage:&lt;/strong&gt; Rolled gauze with tape&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Painkiller:&lt;/strong&gt; Pill bottle silhouette&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Food:&lt;/strong&gt; MRE pack (not generic apple icon)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Water:&lt;/strong&gt; Military canteen&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;&lt;strong&gt;Ammunition (Caliber-Specific)&lt;/strong&gt;&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;ammunition-caliber-specific&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#ammunition-caliber-specific&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;Icons show actual bullet shapes for realism.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;5.56x45mm NATO:&lt;/strong&gt; Shorter, tapered&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;7.62x39mm:&lt;/strong&gt; Slightly longer, straight case&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;9x19mm Parabellum:&lt;/strong&gt; Short pistol round&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;12 Gauge:&lt;/strong&gt; Shotgun shell (red or green tip)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;&lt;strong&gt;Status Icons&lt;/strong&gt;&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;status-icons&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#status-icons&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Health:&lt;/strong&gt; Medical cross inside tactical patch&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Stamina:&lt;/strong&gt; Running figure silhouette&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Hunger:&lt;/strong&gt; Fork + knife (not apple)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Thirst:&lt;/strong&gt; Water droplet in canteen&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Bleed:&lt;/strong&gt; Blood drop with timer bar&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Fracture:&lt;/strong&gt; Bone with crack line&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2&gt;💡 Lighting &amp;amp; Readability (Top-Down View)&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-lighting--readability-top-down-view&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-lighting--readability-top-down-view&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;The game is &lt;strong&gt;Top-Down Isometric&lt;/strong&gt;, so lighting is critical for depth perception and character visibility.&lt;/p&gt;
+&lt;h3&gt;Character Lighting Rules&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;character-lighting-rules&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#character-lighting-rules&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;h4&gt;&lt;strong&gt;1. Rim Lighting (Fresnel Effect)&lt;/strong&gt;&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;1-rim-lighting-fresnel-effect&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#1-rim-lighting-fresnel-effect&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;All characters MUST have a subtle rim light to pop from the background.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Player Character:&lt;/strong&gt; Cyan rim light (&lt;code&gt;#06B6D4&lt;/code&gt;, 10% intensity)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Squadmates:&lt;/strong&gt; Blue rim light (&lt;code&gt;#3B82F6&lt;/code&gt;, 8% intensity)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Enemy Players:&lt;/strong&gt; Red rim light (&lt;code&gt;#EF4444&lt;/code&gt;, 12% intensity) – brighter for clarity&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;AI Scavs:&lt;/strong&gt; Yellow-orange rim light (&lt;code&gt;#FACC15&lt;/code&gt;, 6% intensity)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Technical Implementation:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Shader-based fresnel calculation&lt;/li&gt;
+&lt;li&gt;Intensity fades with distance (closer = brighter)&lt;/li&gt;
+&lt;li&gt;Always visible through light foliage/smoke&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;&lt;strong&gt;2. Silhouette Priority&lt;/strong&gt;&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;2-silhouette-priority&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#2-silhouette-priority&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;Props and environment must NOT have visual noise that confuses character outlines.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Character Contrast:&lt;/strong&gt; 30% minimum luminance difference from ground&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Outline Shader:&lt;/strong&gt; 1-2px black outline on characters (optional setting)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Shadow Quality:&lt;/strong&gt; Soft shadows preferred (hard shadows = visual clutter)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;&lt;strong&gt;3. Playable vs. Non-Playable Areas&lt;/strong&gt;&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;3-playable-vs-non-playable-areas&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#3-playable-vs-non-playable-areas&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Playable Zones:&lt;/strong&gt; 20-30% brighter ambient lighting&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Out of Bounds:&lt;/strong&gt; 50% darker, desaturated colors&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Transition Zones:&lt;/strong&gt; Gradual vignette darkening (3-meter fade)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Environmental Lighting Scenarios&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;environmental-lighting-scenarios&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#environmental-lighting-scenarios&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;h4&gt;&lt;strong&gt;Daytime (Clear)&lt;/strong&gt;&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;daytime-clear&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#daytime-clear&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Sun Angle:&lt;/strong&gt; 45-60 degrees (mid-morning/afternoon)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Shadow Softness:&lt;/strong&gt; Medium (soft penumbra)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Skybox Tint:&lt;/strong&gt; Pale blue with haze&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Ambient Occlusion:&lt;/strong&gt; Subtle (no hard black corners)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;&lt;strong&gt;Overcast/Storm&lt;/strong&gt;&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;overcaststorm&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#overcaststorm&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Sun Angle:&lt;/strong&gt; Diffused overhead (no hard shadows)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Shadow Softness:&lt;/strong&gt; Very soft / nearly absent&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Skybox Tint:&lt;/strong&gt; Gray-blue with clouds&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Rain VFX:&lt;/strong&gt; Diagonal rain streaks, puddle reflections&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;&lt;strong&gt;Nighttime (Limited Visibility)&lt;/strong&gt;&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;nighttime-limited-visibility&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#nighttime-limited-visibility&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Moon Lighting:&lt;/strong&gt; Cool blue-white (&lt;code&gt;#CBD5E1&lt;/code&gt;)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Artificial Lights:&lt;/strong&gt; Sodium vapor lamps (&lt;code&gt;#FBBF24&lt;/code&gt;) in cities&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;NVG Mode:&lt;/strong&gt; Green monochrome filter + grain noise&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Flashlight Cone:&lt;/strong&gt; 60-degree cone, 15-meter range&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2&gt;🎭 Visual Effects (VFX) Guidelines&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-visual-effects-vfx-guidelines&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-visual-effects-vfx-guidelines&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;Muzzle Flash&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;muzzle-flash&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#muzzle-flash&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Duration:&lt;/strong&gt; 1-2 frames (60 FPS) for realism&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Color:&lt;/strong&gt; Yellow-orange core, white-hot center&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Sprite Sheet:&lt;/strong&gt; 4x4 grid (16 variations for randomization)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Blood Splatter (Age-Gated Content)&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;blood-splatter-age-gated-content&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#blood-splatter-age-gated-content&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Impact:&lt;/strong&gt; Small particle burst (5-10 droplets)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Decal Lifespan:&lt;/strong&gt; 30 seconds before fade&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Color:&lt;/strong&gt; Dark red &lt;code&gt;#7F1D1D&lt;/code&gt; (not bright cartoon red)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Extraction Helicopter Effect&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;extraction-helicopter-effect&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#extraction-helicopter-effect&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Arrival:&lt;/strong&gt; Dust particle cloud, rotor wash&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Sound:&lt;/strong&gt; Bass-heavy engine hum (sub-bass for immersion)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Visual Marker:&lt;/strong&gt; Green smoke grenade (&lt;code&gt;#22C55E&lt;/code&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2&gt;📱 Platform-Specific Visual Adaptations&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-platform-specific-visual-adaptations&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-platform-specific-visual-adaptations&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;PC (High Fidelity)&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;pc-high-fidelity&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#pc-high-fidelity&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Texture Resolution:&lt;/strong&gt; 2K-4K (based on VRAM)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Post-Processing:&lt;/strong&gt; Full suite (bloom, DOF, motion blur, SSAO)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Draw Distance:&lt;/strong&gt; Maximum (500-meter visibility)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Shadow Quality:&lt;/strong&gt; Ultra (4096x4096 shadow maps)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Particle Count:&lt;/strong&gt; 10,000+ active particles&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Console (Optimized Balance)&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;console-optimized-balance&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#console-optimized-balance&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;h4&gt;&lt;strong&gt;Next-Gen (PS5/Xbox Series X)&lt;/strong&gt;&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;next-gen-ps5xbox-series-x&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#next-gen-ps5xbox-series-x&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Texture Resolution:&lt;/strong&gt; 2K base&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Post-Processing:&lt;/strong&gt; Reduced bloom, no motion blur (60 FPS mode)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Draw Distance:&lt;/strong&gt; 300 meters&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Shadow Quality:&lt;/strong&gt; High (2048x2048 shadow maps)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Particle Count:&lt;/strong&gt; 5,000 active particles&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;&lt;strong&gt;Last-Gen (PS4/Xbox One)&lt;/strong&gt;&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;last-gen-ps4xbox-one&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#last-gen-ps4xbox-one&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Texture Resolution:&lt;/strong&gt; 1K base&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Post-Processing:&lt;/strong&gt; Minimal (FXAA only)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Draw Distance:&lt;/strong&gt; 150 meters&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Shadow Quality:&lt;/strong&gt; Medium (1024x1024 shadow maps)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Particle Count:&lt;/strong&gt; 2,000 active particles&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Mobile (Performance Priority)&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;mobile-performance-priority&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#mobile-performance-priority&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Texture Resolution:&lt;/strong&gt; 512px-1K max&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Post-Processing:&lt;/strong&gt; Disabled (raw performance)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Draw Distance:&lt;/strong&gt; 100 meters&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Shadow Quality:&lt;/strong&gt; Low (baked shadows where possible)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Particle Count:&lt;/strong&gt; 500 active particles&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;LOD Switching:&lt;/strong&gt; Aggressive (3 tiers: 10m, 50m, 100m)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;&lt;strong&gt;Mobile-Specific Optimizations&lt;/strong&gt;&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;mobile-specific-optimizations&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#mobile-specific-optimizations&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Shader Complexity:&lt;/strong&gt; Mobile-optimized shaders (fewer texture samples)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Mesh Poly Count:&lt;/strong&gt; 50% reduction from PC version&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;UI Texture Atlas:&lt;/strong&gt; Single 2048x2048 sheet for all UI icons&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Battery Saver Mode:&lt;/strong&gt; 30 FPS lock, reduced particle density&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2&gt;🎨 UI Mockup Standards&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-ui-mockup-standards&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-ui-mockup-standards&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;Design Tool Requirements&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;design-tool-requirements&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#design-tool-requirements&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Primary Tool:&lt;/strong&gt; Figma (collaborative, cloud-based)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Prototyping:&lt;/strong&gt; Figma + Protopie (for complex interactions)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Asset Handoff:&lt;/strong&gt; Zeplin or Figma Dev Mode&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Version Control:&lt;/strong&gt; Figma version history + Abstract (for large files)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Artboard Sizes (Figma Templates)&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;artboard-sizes-figma-templates&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#artboard-sizes-figma-templates&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Platform&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Resolution&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Artboard Name&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Safe Area Margins&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;PC 16:9&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;1920x1080&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Desktop_Standard&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;None (full bleed)&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;PC Ultrawide&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;2560x1080&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Desktop_Ultrawide&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Center 1920px content&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Console&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;1920x1080&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Console_TV&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;5% edge margin (TV overscan)&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Mobile Portrait&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;1170x2532 (iPhone 14 Pro)&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Mobile_Portrait&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;iOS Safe Area (44pt top/bottom)&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Mobile Landscape&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;2532x1170&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Mobile_Landscape&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;20pt sides&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Tablet&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;2048x2732 (iPad Pro 12.9&amp;quot;)&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Tablet_Portrait&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;20pt all sides&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr&gt;
+&lt;h2&gt;🖌️ Animation &amp;amp; Motion Design&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-animation--motion-design&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-animation--motion-design&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;UI Animation Timing (Following Material Design Principles)&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;ui-animation-timing-following-material-design-principles&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#ui-animation-timing-following-material-design-principles&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Fast Actions:&lt;/strong&gt; 100-200ms (button press, toggle switch)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Standard Transitions:&lt;/strong&gt; 300-400ms (menu slide, fade-in/out)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Complex Animations:&lt;/strong&gt; 500-700ms (card flip, modal entrance)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Cinematic Moments:&lt;/strong&gt; 1000ms+ (victory screen, level transition)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Easing Curves&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;easing-curves&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#easing-curves&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Ease-Out (Deceleration):&lt;/strong&gt; Use for entering elements (menu slides in)
+&lt;ul&gt;
+&lt;li&gt;Cubic-bezier: &lt;code&gt;(0.0, 0.0, 0.2, 1)&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Ease-In (Acceleration):&lt;/strong&gt; Use for exiting elements (menu slides out)
+&lt;ul&gt;
+&lt;li&gt;Cubic-bezier: &lt;code&gt;(0.4, 0.0, 1, 1)&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Ease-In-Out (Standard):&lt;/strong&gt; Use for property changes (color transition)
+&lt;ul&gt;
+&lt;li&gt;Cubic-bezier: &lt;code&gt;(0.4, 0.0, 0.2, 1)&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Platform-Specific Frame Rates&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;platform-specific-frame-rates&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#platform-specific-frame-rates&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;PC:&lt;/strong&gt; 144 FPS capable (animation deltas scale with FPS)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Console:&lt;/strong&gt; 60 FPS locked (or 30 FPS in quality mode)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Mobile:&lt;/strong&gt; 60 FPS target, 30 FPS fallback&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2&gt;🧪 Visual QA Checklist&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-visual-qa-checklist&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-visual-qa-checklist&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;Pre-Release Validation&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;pre-release-validation&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#pre-release-validation&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; &lt;strong&gt;Colorblind Simulation:&lt;/strong&gt; Test with all 3 major types (Protanopia, Deuteranopia, Tritanopia)&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; &lt;strong&gt;Contrast Ratios:&lt;/strong&gt; WCAG AA minimum for all text/icons (use Stark plugin)&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; &lt;strong&gt;Scale Testing:&lt;/strong&gt; UI readable at 720p, 1080p, 1440p, 4K&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; &lt;strong&gt;Safe Zones:&lt;/strong&gt; No critical UI elements in outer 5% (console overscan)&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; &lt;strong&gt;Font Rendering:&lt;/strong&gt; Anti-aliasing enabled on all platforms&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; &lt;strong&gt;Animation Smoothness:&lt;/strong&gt; No stuttering at target FPS per platform&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; &lt;strong&gt;Texture Compression:&lt;/strong&gt; Proper compression format per platform (BC7 PC, ASTC mobile)&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; &lt;strong&gt;Memory Budget:&lt;/strong&gt; UI textures &amp;lt;100MB total per scene&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; &lt;strong&gt;Load Time:&lt;/strong&gt; All UI assets load &amp;lt;2 seconds on HDD (not just SSD)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2&gt;📚 Reference Materials&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-reference-materials&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-reference-materials&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;Art Style Inspirations&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;art-style-inspirations&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#art-style-inspirations&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Escape from Tarkov:&lt;/strong&gt; Realistic gear modeling, worn textures&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;The Division 2:&lt;/strong&gt; Post-apocalyptic urban decay, lighting mood&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Metro Exodus:&lt;/strong&gt; Industrial ruin aesthetics, atmospheric fog&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Stalker Series:&lt;/strong&gt; Eastern European architecture, Zone atmosphere&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Real-World Reference:&lt;/strong&gt; Pripyat, Chernobyl, abandoned Soviet infrastructure&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;UI/UX Benchmarks&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;uiux-benchmarks&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#uiux-benchmarks&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Apex Legends:&lt;/strong&gt; Clean HUD, excellent readability&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Valorant:&lt;/strong&gt; Minimalist UI, high contrast&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Destiny 2:&lt;/strong&gt; Smooth transitions, sci-fi visual language&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Call of Duty: Warzone:&lt;/strong&gt; Tactical map design, loadout screens&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2&gt;🔧 Technical Specifications&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;-technical-specifications&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#-technical-specifications&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;Asset Naming Conventions&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;asset-naming-conventions&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#asset-naming-conventions&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;[Type]_[Name]_[Variant]_[Resolution].[Format]
+
+Examples:
+UI_Button_Primary_Idle_1080.png
+Icon_Weapon_AK74_Legendary_64.svg
+VFX_MuzzleFlash_AR_01.fbx
+Font_Oxanium_Bold.ttf&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h3&gt;File Format Standards&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;file-format-standards&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#file-format-standards&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Asset Type&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Format&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Compression&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Notes&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;UI Icons&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;PNG / SVG&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Lossless&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;SVG for scaling, PNG for raster effects&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Textures (PC)&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;TGA / PNG&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;DXT5 / BC7&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Alpha channel required&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Textures (Mobile)&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;PNG&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;ASTC 4x4&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;iOS/Android optimized&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Fonts&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;TTF / WOFF2&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;N/A&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;WOFF2 for web builds&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;3D Models&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;FBX&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;N/A&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Triangulated, &amp;lt;10k poly for UI elements&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;Document Version:&lt;/strong&gt; 2.1&lt;br&gt;
+&lt;strong&gt;Last Updated:&lt;/strong&gt; 2026-02-11&lt;br&gt;
+&lt;strong&gt;Art Director Approval:&lt;/strong&gt; [Pending]&lt;br&gt;
+&lt;strong&gt;Review Cycle:&lt;/strong&gt; Monthly (or with major visual overhauls)&lt;/p&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>

@@ -15,6 +15,13 @@ This document focuses on **technical implementation, enums, codenames, and featu
 
 ---
 
+### 📐 Standards & Conventions
+Coding patterns, naming rules, and project organization
+
+- **[Coding & Asset Standards](./CodingStandards.md)** - C++ naming conventions (Epic standard), UE5 asset naming, content folder structure, module architecture, UPROPERTY/UFUNCTION guidelines, Gameplay Tags, Blueprint standards, source control conventions
+
+---
+
 ## 📚 Documentation Structure
 
 ### 🏗️ Core Systems
@@ -121,24 +128,26 @@ Mobile optimization and profiling
 
 ## 🔧 Tech Stack
 
-### Client (Unity)
-- **Engine:** Unity 2022 LTS
-- **Language:** C#
-- **Networking:** Mirror / Photon (TBD)
-- **UI:** Unity UI / UI Toolkit
-- **Platform:** iOS, Android
+### Client (Unreal Engine 5)
+- **Engine:** Unreal Engine 5.4+
+- **Language:** C++ (primary), Blueprints (prototyping & design)
+- **Networking:** Unreal Replication, EOS (Epic Online Services)
+- **UI:** UMG (Unreal Motion Graphics), Slate (editor tools)
+- **Platform:** PC (primary), Console (future)
+- **Voice Chat:** Vivox / EOS Voice
 
 ### Server
-- **Language:** Node.js / Go (TBD)
-- **Database:** PostgreSQL (main), Redis (cache)
+- **Dedicated Server:** UE5 Dedicated Server builds
+- **Backend Services:** EOS for matchmaking, authentication, social
+- **Database:** PostgreSQL (persistent), Redis (cache, sessions)
 - **Hosting:** AWS / GCP (TBD)
 - **CDN:** CloudFlare
 
 ### Tools
-- **Version Control:** Git
+- **Version Control:** Git (with Git LFS for assets)
 - **CI/CD:** GitHub Actions / Jenkins
-- **Analytics:** Firebase Analytics
-- **Crash Reporting:** Crashlytics
+- **Analytics:** Epic Analytics / Firebase
+- **Crash Reporting:** Crashlytics / Sentry
 
 ---
 

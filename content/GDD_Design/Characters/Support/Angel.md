@@ -56,7 +56,58 @@ The Vatican quietly approached her afterward, offering training with Swiss Guard
 | Shield Regeneration | 20 HP/second (when not hit) |
 | Shield Radius       | 5 meters                    |
 
----
+### Expanded Combat Statistics
+
+| Parameter | Value | Notes |
+| :-------- | :---- | :---- |
+| **Stamina Pool** | 100 | Standard (Support class) |
+| **Sprint Drain** | 10/second | Standard |
+| **Recovery Rate** | 8/second | Standard |
+| **Net Sprint Duration** | 10.0 seconds | Average |
+| **Footstep Volume** | 85% | Quiet — nun's habit of moving silently |
+| **Ability Audio Radius** | 30 meters | Shield dome hum + angelic choir is distinctive |
+
+### Status Effect Resistances
+
+| Effect | Resistance | Notes |
+| :----- | :--------- | :---- |
+| Stun | 0% | Full duration |
+| Slow | 10% | Slight resist (Support class) |
+| Burn | 0% | Full DoT |
+| EMP | 0% | Guardian Shield destroyed instantly by EMP |
+
+### Top-Down Visual Spec
+
+| Property | Value |
+| :------- | :---- |
+| **Hitbox Capsule** | 34 cm radius, 164 cm height |
+| **Head Sphere** | 13 cm radius |
+| **Collision Profile** | Standard |
+| **Silhouette From Above** | Slim build, shield generator on back, white cross on shoulders |
+| **Class Accent Zones** | White/Green (#22C55E) on armband and backpack cross |
+| **Shield VFX (Top-Down)** | Blue-white hemispherical dome visible from above, 5m radius circle on ground |
+| **Shield Audio Radius** | 30m — angelic choir hum is a strong audio tell |
+
+<!-- REF_IMAGE: ANGEL top-down view — showing operator with Guardian Shield deployed, blue-white dome visible from above as 5m radius circle -->
+
+### Guardian Shield Stat Block
+
+| Property | Value | Notes |
+| :------- | :---- | :---- |
+| **Shield HP** | 200 | Absorbs damage until depleted |
+| **Shield Radius** | 5 meters | Dome — visible as circle from above |
+| **Duration** | 10 seconds | Or until HP depleted |
+| **Regen Rate** | 20 HP/sec | Only when not taking damage for 2s |
+| **Projectile Blocking** | One-way | Allies shoot out, enemies cannot shoot in |
+| **Player Walk-Through** | Yes | Enemies can physically enter dome |
+| **Fire Pass-Through** | No | BLAZE fire blocked by shield wall |
+| **Nano Swarm Pass-Through** | Yes | FLUX swarm passes through shield |
+| **EMP Vulnerability** | Destroyed instantly | Primary counterplay |
+
+### Difficulty Rating
+
+**Difficulty: 3/5** — Shield placement timing is critical. Deploying too early wastes duration; too late and team takes damage. Positioning within dome matters.
+
 
 ## Abilities
 
@@ -81,7 +132,28 @@ The Vatican quietly approached her afterward, offering training with Swiss Guard
 | Allies Can Shoot Out | Yes       | One-way protection                    |
 | Enemies Can Enter    | Yes       | Walk through, but can't shoot through |
 
-#### Visual & Audio Cues
+#### Shield Interaction Rules
+
+| Interaction | Result |
+| :---------- | :----- |
+| **Shield + EMP (CIPHER)** | Shield destroyed instantly — primary counter |
+| **Shield + Fire (BLAZE)** | Fire does NOT pass through shield wall |
+| **Shield + Nano Swarm (FLUX)** | Swarm passes through shield — does not block |
+| **Shield + HAVOC Melee** | HAVOC can push through shield |
+| **Shield + UAV Scan (PHANTOM)** | Scan does NOT reveal operators inside shield |
+| **Shield + Smoke (WRAITH)** | Smoke passes through shield dome |
+| **Shield + BULWARK Shield** | Both shields stack (dome + flat shield) |
+
+#### Top-Down Shield VFX
+
+| State | VFX From Above |
+| :---- | :------------- |
+| Shield deploy | Blue-white flash, dome expands outward from ANGEL |
+| Shield active | Translucent blue-white dome, 5m radius circle on ground, faint glow |
+| Shield taking damage | Shield sparks at impact point, slight flicker |
+| Shield low HP (<50) | Shield cracks visible, rapid flickering |
+| Shield break | Shatter effect burst outward, ANGEL staggers |
+
 
 **Self:**
 - Golden dome effect around team
@@ -354,5 +426,10 @@ The Vatican quietly approached her afterward, offering training with Swiss Guard
 | Audio            | Ambient choir humming, impacts distinct |
 | Networking       | Shield HP synced, visual client-side    |
 
+### Top-Down Specific Notes
 
-
+- Shield dome from above reads as a 5m radius circle with translucent blue-white fill
+- Shield must be visible at minimum zoom — critical gameplay information
+- When shield is active, allies inside should have a subtle blue tint from above (friendly indicator)
+- Shield break shatter VFX should communicate urgency — team now exposed
+- One-way projectile blocking is the core mechanic — visual differentiation between inside and outside is essential

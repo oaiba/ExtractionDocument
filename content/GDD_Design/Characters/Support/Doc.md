@@ -57,7 +57,57 @@ After a hostile extraction went wrong, James watched helplessly as soldiers died
 | Surgery Kit   | 100 HP    | +20%      | 120 HP   |
 | Healing Drone | 5 HP/sec  | +20%      | 6 HP/sec |
 
----
+### Expanded Combat Statistics
+
+| Parameter | Value | Notes |
+| :-------- | :---- | :---- |
+| **Stamina Pool** | 100 | Standard (Support class) |
+| **Sprint Drain** | 10/second | Standard |
+| **Recovery Rate** | 8/second | Standard |
+| **Net Sprint Duration** | 10.0 seconds | Average |
+| **Footstep Volume** | 90% | Slightly quieter — designed not to alert patients |
+| **Ability Audio Radius** | 15 meters | Drone hum is subtle, only close-range detection |
+
+### Status Effect Resistances
+
+| Effect | Resistance | Notes |
+| :----- | :--------- | :---- |
+| Stun | 0% | Full duration |
+| Slow | 10% | Slight resist (Support class) — reach downed allies |
+| Burn | 0% | Full DoT |
+| EMP | 0% | Healing Drone destroyed by EMP |
+
+### Top-Down Visual Spec
+
+| Property | Value |
+| :------- | :---- |
+| **Hitbox Capsule** | 38 cm radius, 176 cm height |
+| **Head Sphere** | 14 cm radius |
+| **Collision Profile** | Standard |
+| **Silhouette From Above** | Medium build, large medical backpack, cross markings on shoulders |
+| **Class Accent Zones** | White/Green (#22C55E) on armband cross and backpack |
+| **Drone VFX (Top-Down)** | Green pulsing circle on ground (10m radius), drone model hovering at center |
+| **Drone Audio Radius** | 15m — subtle hum, quietest deployable in the game |
+
+<!-- REF_IMAGE: DOC top-down view — showing operator silhouette with medical gear, healing drone deployed with green radius circle visible from above -->
+
+### Healing Drone Stat Block
+
+| Property | Value | Notes |
+| :------- | :---- | :---- |
+| **Drone HP** | 50 | Destroyable — key counterplay |
+| **Heal Rate** | 6 HP/sec | With DOC class bonus |
+| **Heal Radius** | 10 meters | Ground-plane circle |
+| **Duration** | 20 seconds | Total lifetime |
+| **Max Heal Total** | 120 HP/ally | Over full duration |
+| **Deploy Range** | Throw (15m max) | Drone lands where thrown |
+| **Can Heal Through Walls** | No | Line of sight to drone required |
+| **Can Heal Through Floors** | Yes | If on adjacent floor |
+
+### Difficulty Rating
+
+**Difficulty: 1/5** — Most beginner-friendly operator. Deploy drone, stay alive, heal team. No complex mechanics or timing required.
+
 
 ## Abilities
 
@@ -81,7 +131,27 @@ After a hostile extraction went wrong, James watched helplessly as soldiers died
 | Max Heal per Deploy | 100 HP per ally      | 5 HP × 20 seconds                |
 | Targets             | All allies in radius | Including DOC                    |
 
-#### Visual & Audio Cues
+#### Drone Interaction Rules
+
+| Interaction | Result |
+| :---------- | :----- |
+| **Drone + EMP (CIPHER)** | Drone destroyed instantly |
+| **Drone + Fire (BLAZE)** | Not affected — drone hovers above fire |
+| **Drone + Nano Swarm (FLUX)** | Not affected — swarm targets ground units |
+| **Drone + UAV Scan (PHANTOM)** | Drone position revealed to scanning team |
+| **Drone + BULWARK Shield** | Drone heals through shield |
+| **Drone + Smoke (WRAITH)** | Drone heals through smoke |
+
+#### Top-Down Drone VFX
+
+| State | VFX From Above |
+| :---- | :------------- |
+| Drone deploy | Green flash at throw point, drone rises to hover height |
+| Drone active | Green pulsing circle on ground (10m), drone model visible at center |
+| Healing pulse | Green particle streams from drone to allies in radius |
+| Drone low HP | Sparking particles, circle flickers |
+| Drone destroyed | Electrical burst, debris falls, circle disappears |
+
 
 **Self:**
 - Drone deployment animation
@@ -342,5 +412,10 @@ After a hostile extraction went wrong, James watched helplessly as soldiers died
 | Healing pulse   | Gentle heartbeat rhythm         |
 | Drone destroyed | Electrical fizzle + crash       |
 
+### Top-Down Specific Notes
 
-
+- Healing drone green circle must be visible at minimum zoom — key gameplay information for both teams
+- Drone model should be slightly larger than realistic to ensure visibility from above
+- Green healing particles from drone to allies must be visible but not obscure combat (thin streams)
+- Drone destruction VFX should be dramatic enough to communicate to the team that healing is gone
+- Drone position revealed by PHANTOM UAV — this is a deliberate counterplay vector

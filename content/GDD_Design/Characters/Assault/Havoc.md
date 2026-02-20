@@ -58,7 +58,46 @@ For years, Anton wandered Eastern Europe as a mercenary, his reputation growing 
 | Melee Damage (Base)      | 50                      |
 | Melee Damage (Berserker) | 67                      |
 
----
+### Expanded Combat Statistics
+
+| Parameter | Value | Notes |
+| :-------- | :---- | :---- |
+| **Stamina Pool** | 120 | +20% (Assault class) |
+| **Sprint Drain** | 10/second | Standard |
+| **Recovery Rate** | 8.8/second | +10% (Assault class) |
+| **Net Sprint Duration** | 12.0 seconds | Longest sprint tier |
+| **Footstep Volume** | 110% | Slightly louder — heavy build |
+| **Ability Audio Radius** | 50 meters | Rage roar is the loudest activation in the game |
+| **Melee Lunge Range** | 3.5 meters | Extended melee lunge during Berserker Rage |
+
+### Status Effect Resistances
+
+| Effect | Resistance | Notes |
+| :----- | :--------- | :---- |
+| Stun | 0% | Full duration — critical vulnerability |
+| Slow | 0% | Full duration — devastating during Rage |
+| Burn | 0% | Full DoT |
+| EMP | 0% | Rage cancelled immediately by EMP |
+
+### Top-Down Visual Spec
+
+| Property | Value |
+| :------- | :---- |
+| **Hitbox Capsule** | 44 cm radius, 190 cm height |
+| **Head Sphere** | 15 cm radius |
+| **Collision Profile** | Standard (largest among Assault) |
+| **Silhouette From Above** | Broad-shouldered, aggressive stance, largest Assault operator |
+| **Class Accent Zones** | Orange (#F97316) + Red (#DC2626) during Rage |
+| **Rage Active VFX (Top-Down)** | Red pulsing glow on body, wider aggressive stance, ground crack effects on melee |
+| **Melee VFX (Top-Down)** | Red arc slash visible on ground plane, 3.5m range |
+| **Rage Audio Radius** | 50m — loudest ability activation in roster |
+
+<!-- REF_IMAGE: HAVOC top-down view — showing operator in normal vs Berserker Rage stance from above, red glow and melee range arc visible -->
+
+### Difficulty Rating
+
+**Difficulty: 4/5** — High risk/reward. Must close distance without dying, manage kill chain timer, and accept +10% incoming damage. Requires aggressive confidence.
+
 
 ## Abilities
 
@@ -83,7 +122,27 @@ For years, Anton wandered Eastern Europe as a mercenary, his reputation growing 
 | Damage Taken   | +10%   | Trade-off             |
 | Kill Extension | +3 sec | Encourages aggression |
 
-#### Visual & Audio Cues
+#### Ability Interactions
+
+| Interaction | Result |
+| :---------- | :----- |
+| **Rage + EMP** | Rage cancelled immediately, kill chain timer lost |
+| **Rage + Stun** | Full stun duration — wastes precious Rage seconds |
+| **Rage + ANGEL Shield** | HAVOC melee CAN push through Guardian Shield |
+| **Rage + BULWARK Shield** | Melee bash staggers shield (1s), does not break through |
+| **Rage + Burn** | Burn damage stacks with +10% incoming damage modifier |
+| **Rage + Kill (PHANTOM scanned target)** | Kill still extends duration even if target was scanned |
+
+#### Top-Down Rage VFX
+
+| State | VFX From Above |
+| :---- | :------------- |
+| Rage activation | Red flash burst from operator, ground cracks radiate outward (1m) |
+| Rage active | Persistent red body glow, widened stance animation |
+| Melee swing | Red arc slash on ground (3.5m forward cone) |
+| Kill chain (kill during rage) | Brief bright flash + timer refresh indicator |
+| Rage ending | Glow dims, operator visibly exhales (hunched posture) |
+
 
 **Self:**
 - Screen pulses red
@@ -364,5 +423,10 @@ Kill 4+: Capped at 20 seconds
 | Damage Modifier | Applies before armor calculation       |
 | Sounds          | Rage growl synced to all players       |
 
+### Top-Down Specific Notes
 
-
+- Rage red glow must be visible at minimum zoom — brightest self-buff VFX in the game
+- Melee lunge animation from top-down should show clear forward movement (3.5m)
+- Melee arc VFX on ground plane helps teammates and enemies judge range
+- Kill chain timer is intentionally hidden from enemies to prevent them timing disengagements
+- +10% incoming damage during Rage means HAVOC drops faster — encourage burst or kiting counterplay

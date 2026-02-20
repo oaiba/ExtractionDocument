@@ -111,3 +111,67 @@ The **Assault** class operators are designed for players who prefer aggressive, 
 
 > [!WARNING]
 > **Not Recommended** but can work: VIPER + BLAZE + HAVOC. Overwhelming damage, no sustain. Win fast or lose fast.
+
+---
+
+## Top-Down Visual Identity
+
+Assault operators share a **medium-athletic silhouette** with prominent cross-chest ammo belts. From the top-down camera, the key distinguishing features are:
+
+| Feature | Design Rule | Visibility |
+| :------ | :---------- | :--------- |
+| **Shoulder Width** | Medium (between Recon and Tank) | 60+ units |
+| **Headgear** | Medium tactical helmet with visor glow | 60+ units |
+| **Color Accent** | Orange (#F97316) on shoulder patches and ammo belt | 80+ units |
+| **Weapon Profile** | Primary weapon extends forward from model, visible barrel | 50+ units |
+| **Movement Anim** | Fast, forward-leaning sprint — distinguishable from Tank trudge and Recon crouch | 40+ units |
+
+<!-- REF_IMAGE: Assault class top-down silhouette comparison — VIPER, BLAZE, HAVOC as seen from 60-degree camera angle at 50% zoom, with accent color zones highlighted -->
+
+### Operator-Specific Top-Down Tells
+
+| Operator | Unique Visual From Above |
+| :------- | :----------------------- |
+| VIPER | Orange glow on hands/arms when stim is active |
+| BLAZE | Fire trail visible behind character during Incendiary Rush |
+| HAVOC | Red pulsing body glow during Berserker Rage, larger stance |
+
+---
+
+## Class Stamina Profile
+
+| Parameter | Assault Value | Comparison |
+| :-------- | :------------ | :--------- |
+| **Stamina Pool** | 120 (+20%) | Longest sprint duration |
+| **Sprint Drain** | 10/second | Standard |
+| **Recovery Rate** | 8.8/second (+10%) | Fast recovery between pushes |
+| **Net Sprint Duration** | 12.0 seconds | Best in class |
+
+**Design Intent:** Assault operators can sprint to engagement distance and have stamina remaining for repositioning during combat.
+
+---
+
+## Status Effect Modifiers
+
+| Effect | Assault Resistance | Notes |
+| :----- | :----------------- | :---- |
+| Stun | 0% | Full stun duration — punishes reckless entry |
+| Slow | 0% | Full slow duration — devastating if caught |
+| Burn | 0% | Full burn damage — avoid friendly fire |
+| EMP | 0% | Stim and Rage cancelled by EMP |
+
+**Design Intent:** Assault has zero resistances. Their strength is raw damage output, not damage mitigation. Being caught by CC abilities is a hard punishment for bad positioning.
+
+---
+
+## Map Suitability
+
+| Map Archetype | Suitability | Recommended Operator | Why |
+| :------------ | :---------- | :------------------- | :-- |
+| **Open Fields** | High | VIPER | Long sightlines favor stim-boosted accuracy |
+| **Tight Corridors** | High | HAVOC | Berserker Rage excels in close quarters |
+| **Multi-Floor** | Medium | BLAZE | Fire denies vertical access routes |
+| **Large Industrial** | Medium | VIPER or BLAZE | Depends on engagement distance |
+| **Dense Urban** | Low | Any | Too many flanking routes, hard to control space |
+
+See [World Design](../../World/) for detailed map layouts.

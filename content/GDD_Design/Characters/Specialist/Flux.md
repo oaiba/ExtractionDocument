@@ -46,7 +46,57 @@ When attempts to expose them through legal channels failed, Maya took matters in
 | **Walk Speed**      | 3.5 m/s | -              | 3.5 m/s |
 | **Weapon Accuracy** | 100%    | -10%           | 90%     |
 
----
+### Expanded Combat Statistics
+
+| Parameter | Value | Notes |
+| :-------- | :---- | :---- |
+| **Stamina Pool** | 100 | Standard (Specialist class) |
+| **Sprint Drain** | 10/second | Standard |
+| **Recovery Rate** | 8/second | Standard |
+| **Net Sprint Duration** | 10.0 seconds | Average |
+| **Footstep Volume** | 95% | Standard — tactical sneakers |
+| **Ability Audio Radius** | 25 meters | Swarm buzzing is moderate volume |
+
+### Status Effect Resistances
+
+| Effect | Resistance | Notes |
+| :----- | :--------- | :---- |
+| Stun | 0% | Full duration |
+| Slow | 0% | Full duration |
+| Burn | 0% | Full DoT |
+| EMP | 0% | Nano Swarm destroyed by EMP |
+
+### Top-Down Visual Spec
+
+| Property | Value |
+| :------- | :---- |
+| **Hitbox Capsule** | 36 cm radius, 168 cm height |
+| **Head Sphere** | 13 cm radius |
+| **Collision Profile** | Standard |
+| **Silhouette From Above** | Slim build, nano-canister harness on chest, tech goggles |
+| **Class Accent Zones** | Yellow (#EAB308) on harness strips and goggle glow |
+| **Swarm VFX (Top-Down)** | Silver particle cloud on ground (6m radius), shimmering/pulsing |
+| **Swarm Audio Radius** | 25m — persistent insect-like buzzing |
+
+<!-- REF_IMAGE: FLUX top-down view — showing operator with Nano Swarm deployed, silver particle cloud visible from above as 6m radius shimmer -->
+
+### Nano Swarm Stat Block
+
+| Property | Value | Notes |
+| :------- | :---- | :---- |
+| **Swarm Radius** | 6 meters | Stationary (can be redirected) |
+| **Swarm Height** | 3 meters | Covers ground to upper floor |
+| **Enemy Damage** | 8 HP/second | Tick every 0.5s |
+| **Ally Healing** | 4 HP/second | Half of damage rate |
+| **Enemy Slow** | -20% movement | While in swarm |
+| **Duration** | 12 seconds | Full lifetime |
+| **EMP Vulnerability** | Dispersed instantly | Primary counter |
+| **Fire Interaction** | Not affected | Fire does not destroy nanobots |
+
+### Difficulty Rating
+
+**Difficulty: 4/5** — Swarm placement and redirection require spatial awareness. Dual-purpose (damage + heal) means constant decision-making about positioning.
+
 
 ## Abilities
 
@@ -69,7 +119,30 @@ When attempts to expose them through legal channels failed, Maya took matters in
 | Slow    | Enemies          | -20% movement      |
 | Vision  | Enemies          | Reduced visibility |
 
-#### Swarm Properties
+#### Swarm Interaction Rules
+
+| Interaction | Result |
+| :---------- | :----- |
+| **Swarm + EMP (CIPHER)** | Swarm dispersed instantly — primary counter |
+| **Swarm + Fire (BLAZE)** | Both effects stack on enemies in overlap zone |
+| **Swarm + Smoke (WRAITH)** | Swarm operates through smoke normally |
+| **Swarm + ANGEL Shield** | Swarm passes through Guardian Shield |
+| **Swarm + BULWARK Shield** | Swarm ignores Riot Shield — passes through |
+| **Swarm + SPECTER Sensors** | Swarm does not affect sensors |
+| **Swarm + DOC Drone** | Swarm heal + drone heal stack on allies |
+
+#### Top-Down Swarm VFX
+
+| State | VFX From Above |
+| :---- | :------------- |
+| Swarm deploy | Canister crack, silver particles expand to 6m radius |
+| Swarm active | Shimmering silver cloud on ground, semi-transparent |
+| Enemy in swarm | Red damage particles trail toward enemy |
+| Ally in swarm | Green healing particles trail toward ally |
+| Swarm redirected | Cloud moves toward new target position |
+| Swarm ending | Particles settle downward, shimmer fades |
+| Swarm EMP'd | Brief blue flash, all particles scatter and vanish |
+
 
 | Property   | Value                          |
 | :--------- | :----------------------------- |
@@ -324,3 +397,13 @@ When attempts to expose them through legal channels failed, Maya took matters in
 | Swarm damage | Aggressive buzz + crackling (enemy perspective) |
 | Swarm end | Descending buzz, particles settle |
 | Footsteps | Standard weight — tactical sneakers |
+
+### Top-Down Specific Notes
+
+- Swarm silver cloud must be visible at minimum zoom — area denial information for both teams
+- Red (enemy damage) and green (ally heal) particle streams provide instant team understanding from above
+- Swarm cloud should be clearly distinct from WRAITH smoke: silver/shimmering vs gray/opaque
+- Dual Deployment upgrade splits into 2x 4m swarms — each should be independently visible
+- Swarm redirection animation should show cloud flowing toward new position (1-2 second travel time)
+- -10% weapon accuracy (Specialist class) means FLUX should avoid straight gunfights
+

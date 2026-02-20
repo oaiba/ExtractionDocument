@@ -55,9 +55,46 @@ After a classified operation in Eastern Europe went sideways, Marcus was left fo
 | Base Weapon Damage  | +5% (Class) |
 | Combat Stim Active  | +25%        |
 | Combat Stim + Class | +30% total  |
-| Headshot Multiplier | 2.0×        |
+| Headshot Multiplier | 2.0x        |
 
----
+### Expanded Combat Statistics
+
+| Parameter | Value | Notes |
+| :-------- | :---- | :---- |
+| **Stamina Pool** | 120 | +20% (Assault class) |
+| **Sprint Drain** | 10/second | Standard |
+| **Recovery Rate** | 8.8/second | +10% (Assault class) |
+| **Net Sprint Duration** | 12.0 seconds | Longest sprint tier |
+| **Footstep Volume** | 100% | Standard — no stealth bonus |
+| **Ability Audio Radius** | 25 meters | Stim inject hiss audible to nearby enemies |
+
+### Status Effect Resistances
+
+| Effect | Resistance | Notes |
+| :----- | :--------- | :---- |
+| Stun | 0% | Full duration |
+| Slow | 0% | Full duration — devastating during stim |
+| Burn | 0% | Full DoT |
+| EMP | 0% | Stim cancelled immediately by EMP |
+
+### Top-Down Visual Spec
+
+| Property | Value |
+| :------- | :---- |
+| **Hitbox Capsule** | 40 cm radius, 180 cm height |
+| **Head Sphere** | 14 cm radius |
+| **Collision Profile** | Standard |
+| **Silhouette From Above** | Medium athletic build, cross-chest ammo belt visible, medium helmet |
+| **Class Accent Zones** | Orange (#F97316) on shoulder patches and ammo belt |
+| **Stim Active VFX (Top-Down)** | Orange body glow, subtle particle trail when moving |
+| **Stim Audio Radius** | 25m — enemies within range hear injection hiss |
+
+<!-- REF_IMAGE: VIPER top-down view — showing operator silhouette from 60-degree camera with orange accent zones highlighted, stim active vs inactive comparison -->
+
+### Difficulty Rating
+
+**Difficulty: 2/5** — Straightforward kit. Press stim, shoot better. Low mechanical complexity, rewards good aim timing.
+
 
 ## Abilities
 
@@ -78,6 +115,25 @@ After a classified operation in Eastern Europe went sideways, Marcus was left fo
 | Damage Boost   | +25%  | Stacks with class bonus  |
 | Movement Speed | +10%  | All movement types       |
 | Reload Speed   | +15%  | Faster reload animations |
+
+#### Ability Interactions
+
+| Interaction | Result |
+| :---------- | :----- |
+| **Stim + EMP** | Stim cancelled immediately, remaining duration lost |
+| **Stim + Burn** | Stim does NOT cleanse burn — damage stacks |
+| **Stim + Slow** | Stim movement boost partially counters slow (net +0% to -5% depending on slow source) |
+| **Stim + Mark** | Stim does not remove mark status |
+
+#### Top-Down VFX Description
+
+| State | VFX From Above |
+| :---- | :------------- |
+| Stim inject | Brief orange flash on operator model (0.5s) |
+| Stim active | Persistent orange glow on body, subtle particle trail on ground behind movement |
+| Stim ending (last 2s) | Glow flickers, particles diminish |
+| Stim expired | Glow fades, brief gray exhale particle |
+
 
 #### Visual & Audio Cues
 
@@ -333,5 +389,9 @@ After a classified operation in Eastern Europe went sideways, Marcus was left fo
 | Stim end    | Heartbeat slowdown + exhale  |
 | Footsteps   | Heavy, military boots        |
 
+### Top-Down Specific Notes
 
-
+- Stim orange glow must remain visible at minimum zoom (furthest camera distance)
+- Stim audio cue must be directional — enemies should be able to locate VIPER by sound
+- Particle trail during stim should be subtle enough not to obscure ground loot but visible enough for enemy awareness
+- When viewed from top-down, stim injection animation should show arm movement clearly (not hidden by body)

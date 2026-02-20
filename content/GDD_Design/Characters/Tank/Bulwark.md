@@ -57,7 +57,59 @@ After a political scandal forced budget cuts that disbanded his unit, Hans could
 | Standing still (Living Wall) | +15% damage resistance |
 | In cover (Living Wall) | +20% damage resistance |
 
----
+### Expanded Combat Statistics
+
+| Parameter | Value | Notes |
+| :-------- | :---- | :---- |
+| **Stamina Pool** | 80 | -20% (Tank class) |
+| **Sprint Drain** | 12/second | +20% (Tank class) |
+| **Recovery Rate** | 7.2/second | -10% (Tank class) |
+| **Net Sprint Duration** | 6.7 seconds | Shortest in roster |
+| **Footstep Volume** | 120% | Loudest operator — armored boots |
+| **Ability Audio Radius** | 35 meters | Shield deploy slam is very loud |
+
+### Status Effect Resistances
+
+| Effect | Resistance | Notes |
+| :----- | :--------- | :---- |
+| Stun | 25% | Tank class resist |
+| Slow | 25% | Tank class resist |
+| Burn | 10% | Minor fire resist from armor |
+| EMP | 0% | Shield disabled for 5 seconds by EMP |
+
+### Top-Down Visual Spec
+
+| Property | Value |
+| :------- | :---- |
+| **Hitbox Capsule** | 48 cm radius, 188 cm height |
+| **Head Sphere** | 15 cm radius |
+| **Collision Profile** | Heavy (+5% from mesh) |
+| **Silhouette From Above** | Widest operator, shield visible on back when stowed, massive shoulder plates |
+| **Class Accent Zones** | Steel Blue (#3B82F6) on shoulder plates and visor edge |
+| **Shield VFX (Top-Down)** | 120-degree arc indicator on ground when deployed, metallic surface visible |
+| **Shield Audio** | 35m — deploy slam + constant metallic scraping when walking |
+
+<!-- REF_IMAGE: BULWARK top-down view — showing operator with riot shield deployed, 120-degree arc visible from above, widest operator silhouette -->
+
+### Riot Shield Stat Block
+
+| Property | Value | Notes |
+| :------- | :---- | :---- |
+| **Shield Coverage** | 180-degree frontal arc | Indestructible |
+| **Duration** | 15 seconds | Active time |
+| **Movement Penalty** | -40% | Very slow while deployed |
+| **Weapon Access** | Secondary only | Pistol only |
+| **Shield Bash Damage** | 30 | + 1.5s stun |
+| **Shield Bash Range** | 2 meters | Close range only |
+| **Shield Bash Cooldown** | 5 seconds | Internal cooldown |
+| **EMP Vulnerability** | Disabled 5s | Not destroyed, temporarily disabled |
+| **Fire Pass-Through** | No | Blocks BLAZE fire trail |
+| **Smoke Pass-Through** | Yes | Smoke passes through shield |
+
+### Difficulty Rating
+
+**Difficulty: 2/5** — Simple concept: deploy shield, push forward. Low mechanical complexity but requires positional awareness to avoid flanks.
+
 
 ## Abilities
 
@@ -80,7 +132,28 @@ After a political scandal forced budget cuts that disbanded his unit, Hans could
 | Weapon Use | Secondary only | Pistol while shield deployed |
 | Melee | Yes | Shield bash causes stun |
 
-#### Shield Bash
+#### Shield Interaction Rules
+
+| Interaction | Result |
+| :---------- | :----- |
+| **Shield + EMP (CIPHER)** | Shield disabled for 5 seconds (not destroyed) |
+| **Shield + Fire (BLAZE)** | Fire does NOT pass through riot shield |
+| **Shield + Nano Swarm (FLUX)** | Swarm ignores shield — passes through |
+| **Shield + HAVOC Melee** | Melee bash staggers shield (1s), does not break |
+| **Shield + UAV Scan (PHANTOM)** | Does not reveal shielded operator |
+| **Shield + Smoke (WRAITH)** | Smoke blocks vision around/through shield |
+
+#### Top-Down Shield VFX
+
+| State | VFX From Above |
+| :---- | :------------- |
+| Shield deploy | Flash + 120-degree arc indicator appears on ground |
+| Shield active | Metallic surface visible from above, arc indicator persistent |
+| Shield taking fire | Spark particles on shield surface |
+| Shield bash | Forward thrust VFX, stun spark on target |
+| Shield EMP'd | Blue static flash, arc indicator flickers off for 5s |
+| Shield stow | Arc indicator fades |
+
 
 | Property | Value |
 | :------- | :---- |
@@ -348,3 +421,12 @@ After a political scandal forced budget cuts that disbanded his unit, Hans could
 | Shield bash | Heavy slam + enemy stagger grunt |
 | Shield stow | Metallic slide + lock click |
 | Footsteps | Heaviest in roster — armored boots on floor |
+
+### Top-Down Specific Notes
+
+- Shield arc indicator (120-degree) must be visible at minimum zoom — shows teammates and enemies the protected zone
+- Shield is visually distinct from ANGEL's dome: flat metallic surface vs translucent dome
+- Shield walking animation from top-down should show heavy foot plants with dust/ground disturbance
+- When EMP disabled, shield visually flickers (communicates vulnerability window to both teams)
+- BULWARK is the widest silhouette in the game — easily identifiable even at max zoom
+

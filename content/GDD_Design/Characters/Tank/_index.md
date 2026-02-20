@@ -117,3 +117,66 @@ Tanks often overcommit. Your job is to absorb damage, not chase kills. If your a
 | **HAVOC** | Shield + CQB | BULWARK leads, HAVOC flanks behind shield chaos |
 | **BLAZE** | Tank + Area Denial | Hold chokepoint, set fire to flanking routes |
 | **ANGEL** | Double Defense | Guardian Shield + Riot Shield = near-invulnerable extraction |
+
+---
+
+## Top-Down Visual Identity
+
+Tank operators have the **widest silhouette** in the roster. From the top-down camera, they are immediately recognizable by their broad shoulder plates and heavy armor profile.
+
+| Feature | Design Rule | Visibility |
+| :------ | :---------- | :--------- |
+| **Shoulder Width** | Widest in roster — 1.5x standard | 100+ units |
+| **Headgear** | Heavy riot visor or full-face helmet | 80+ units |
+| **Color Accent** | Steel Blue (#3B82F6) on shoulder plates and visor edge | 100+ units |
+| **Back Profile** | Shield (BULWARK) or armor pack (FORTRESS) visible from above | 80+ units |
+| **Movement Anim** | Slow, deliberate trudge — heaviest footfalls in roster | 60+ units |
+
+<!-- REF_IMAGE: Tank class top-down silhouette comparison — BULWARK and FORTRESS as seen from 60-degree camera angle at 50% zoom, showing widest operator profiles with shield/armor visible on back -->
+
+### Operator-Specific Top-Down Tells
+
+| Operator | Unique Visual From Above |
+| :------- | :----------------------- |
+| BULWARK | Riot shield visible on back when stowed; 120-degree arc indicator when deployed |
+| FORTRESS | Glowing armor plates when Overcharge is active, blue energy pulse effect |
+
+---
+
+## Class Stamina Profile
+
+| Parameter | Tank Value | Comparison |
+| :-------- | :--------- | :--------- |
+| **Stamina Pool** | 80 (-20%) | Lowest sprint duration |
+| **Sprint Drain** | 12/second (+20%) | Drains fast |
+| **Recovery Rate** | 7.2/second (-10%) | Slow recovery |
+| **Net Sprint Duration** | 6.7 seconds | Shortest in roster |
+
+**Design Intent:** Tanks commit to positions. Sprinting to cover is a short burst, not a sustained run. This forces deliberate positioning decisions and prevents Tanks from excessively rotating.
+
+---
+
+## Status Effect Modifiers
+
+| Effect | Tank Resistance | Notes |
+| :----- | :-------------- | :---- |
+| Stun | 25% | Reduced stun duration — harder to lock down |
+| Slow | 25% | Partial slow resist — already slow, further slow is punishing |
+| Burn | 10% | Minor fire resistance from heavy armor |
+| EMP | 0% | Shield and Overcharge fully disabled by EMP |
+
+**Design Intent:** Tanks resist physical CC effects (stun, slow) but are fully vulnerable to tech disruption (EMP). This creates the core Tank vs Specialist counterplay dynamic.
+
+---
+
+## Map Suitability
+
+| Map Archetype | Suitability | Recommended Operator | Why |
+| :------------ | :---------- | :------------------- | :-- |
+| **Tight Corridors** | Highest | BULWARK | Shield covers entire corridor width |
+| **Extraction Zones** | High | FORTRESS | Armor Overcharge protects team during extraction |
+| **Multi-Floor** | Medium | BULWARK | Shield protects against single-direction threats |
+| **Open Fields** | Low | Neither | Easy to flank around shield, no cover advantage |
+| **Dense Urban** | Low | Neither | Too many angles to protect against |
+
+See [World Design](../../World/) for detailed map layouts.

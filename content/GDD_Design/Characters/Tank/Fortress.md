@@ -57,7 +57,44 @@ After refusing orders that would have sacrificed his men for political optics, D
 | Armor Overcharge active (self) | +15% damage resistance |
 | Headshot Multiplier | 2.0x |
 
----
+### Expanded Combat Statistics
+
+| Parameter | Value | Notes |
+| :-------- | :---- | :---- |
+| **Stamina Pool** | 80 | -20% (Tank class) |
+| **Sprint Drain** | 12/second | +20% (Tank class) |
+| **Recovery Rate** | 7.2/second | -10% (Tank class) |
+| **Net Sprint Duration** | 6.7 seconds | Shortest in roster |
+| **Footstep Volume** | 115% | Very loud — armored boots |
+| **Ability Audio Radius** | 30 meters | Overcharge power-up hum is distinctive |
+
+### Status Effect Resistances
+
+| Effect | Resistance | Notes |
+| :----- | :--------- | :---- |
+| Stun | 25% | Tank class resist |
+| Slow | 25% + immunity during Overcharge | Tank resist + ability grants full immunity |
+| Burn | 10% | Minor fire resist from armor |
+| EMP | 0% | Overcharge bonus armor stripped instantly |
+
+### Top-Down Visual Spec
+
+| Property | Value |
+| :------- | :---- |
+| **Hitbox Capsule** | 46 cm radius, 186 cm height |
+| **Head Sphere** | 15 cm radius |
+| **Collision Profile** | Heavy (+5% from mesh) |
+| **Silhouette From Above** | Wide build, heavy armor pack visible, LMG barrel extends forward |
+| **Class Accent Zones** | Steel Blue (#3B82F6) on shoulder plates and armor pack |
+| **Overcharge VFX (Top-Down)** | Blue energy glow on armor plates, 8m radius pulse circle on ground for ally buff range |
+| **Overcharge Audio** | 30m — deep power-up hum |
+
+<!-- REF_IMAGE: FORTRESS top-down view — showing operator with Armor Overcharge active, blue glow on armor plates, 8m buff radius circle visible from above -->
+
+### Difficulty Rating
+
+**Difficulty: 3/5** — Must manage Brotherhood positioning (5m ally proximity) and Overcharge timing. Simple mechanics but requires team coordination.
+
 
 ## Abilities
 
@@ -80,7 +117,26 @@ After refusing orders that would have sacrificed his men for political optics, D
 | Damage Resistance | +15% (self only) | During ability |
 | Slow Immunity | Yes | Cannot be slowed during overcharge |
 
-#### Upgrade Slots
+#### Overcharge Interaction Rules
+
+| Interaction | Result |
+| :---------- | :----- |
+| **Overcharge + EMP (CIPHER)** | Bonus armor stripped instantly, ability cancelled |
+| **Overcharge + Fire (BLAZE)** | Overcharge does not protect against fire DoT — extra armor absorbs it |
+| **Overcharge + HAVOC Rage** | Both buffs active simultaneously — neither cancels the other |
+| **Overcharge + ANGEL Shield** | Stack — overcharge armor + shield HP for maximum defense |
+| **Overcharge + UAV Scan (PHANTOM)** | Overcharge does not interact with scans |
+
+#### Top-Down Overcharge VFX
+
+| State | VFX From Above |
+| :---- | :------------- |
+| Overcharge activation | Blue energy burst from FORTRESS, pulse wave expands to 8m |
+| Overcharge active | Blue glow on armor plates, faint 8m radius circle on ground |
+| Ally receiving buff | Blue armor particle stream from FORTRESS to ally |
+| Overcharge ending | Glow dims, energy dissipates |
+| Overcharge EMP'd | Blue static burst, armor plates go dark |
+
 
 **Slot 1 (Level 5):**
 
@@ -338,3 +394,12 @@ After refusing orders that would have sacrificed his men for political optics, D
 | Brotherhood proximity | Subtle heartbeat sync (both players hear it) |
 | Footsteps | Heavy, authoritative — military boots, armor clink |
 | LMG fire | Deep, sustained — signature sound in combat |
+
+### Top-Down Specific Notes
+
+- Overcharge 8m radius circle must be visible to teammates at minimum zoom — shows buff zone
+- Blue armor glow should be clearly distinct from ANGEL shield's blue-white — use deeper steel blue
+- Brotherhood passive proximity (5m) should show a subtle connecting line between FORTRESS and nearby ally
+- LMG barrel extending forward from the model makes FORTRESS identifiable by weapon type from above
+- Overcharge armor stripping by EMP should have dramatic VFX — communicate vulnerability to both teams
+

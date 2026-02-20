@@ -56,6 +56,174 @@ Our Operator design draws inspiration from:
 
 ---
 
+## Top-Down Viewport Design
+
+In a top-down perspective, character readability is fundamentally different from first-person or third-person games. Players see operators from above at a steep camera angle (~60 degrees), making **silhouette shape**, **color accent placement**, and **VFX radial clarity** the primary identification tools.
+
+### Silhouette Principles
+
+| Principle | Rule | Rationale |
+| :-------- | :--- | :-------- |
+| **Oversized Shoulders** | All operators use exaggerated shoulder/backpack proportions | At 50% zoom, shoulder shape is the most visible feature |
+| **Headgear Silhouette** | Each class has a distinct headgear profile visible from above | Helmet vs hood vs cap vs visor enables instant class ID |
+| **Weapon Readability** | Primary weapon extends visibly from character model | Players must see what weapon type an enemy carries |
+| **Color Accent Zones** | Class accent color placed on shoulders and backpack (top surfaces) | Top surfaces receive the most camera exposure from above |
+| **Distinct Body Mass** | Tank = widest, Recon = narrowest, others scaled between | Body width is the fastest subconscious class identifier |
+
+### VFX Readability from Above
+
+Ability VFX must read clearly from the top-down camera. All area-effect abilities use **radial indicators** projected onto the ground plane.
+
+| VFX Type | Design Rule | Example |
+| :------- | :---------- | :------ |
+| **Area of Effect** | Circular ground decal with class-colored edge ring | FLUX Nano Swarm = silver/green circle on ground |
+| **Directional** | Cone or line projected forward from operator | BULWARK Shield = 120-degree arc indicator |
+| **Self-Buff** | Subtle glow on operator model + minimap icon change | VIPER Combat Stim = orange body glow |
+| **Deployable** | World-space model with pulsing radius indicator | DOC Healing Drone = green pulsing circle |
+| **Status Applied** | Colored icon above affected character's head | Burn = flame icon, Slow = chain icon |
+
+> [!NOTE]
+> All VFX must remain readable at **minimum zoom** (furthest camera distance). If a VFX effect is only visible at maximum zoom, it fails the readability requirement. See [Art Direction](../Visuals/ArtDirection/) for VFX particle budgets and performance tiers.
+
+<!-- REF_IMAGE: Top-down VFX readability comparison — 4 panels showing FLUX swarm, BULWARK shield arc, DOC drone radius, and BLAZE fire trail as seen from above at both max and min zoom levels -->
+
+### Class Color Identification (Top-Down)
+
+| Class | Accent Color | Hex | Top-Surface Placement | Visibility Distance |
+| :---- | :----------- | :-- | :-------------------- | :------------------ |
+| Assault | Orange | #F97316 | Shoulder patches, ammo belt | 80+ units |
+| Support | White/Green | #22C55E | Cross armband, backpack | 80+ units |
+| Recon | Cyan | #06B6D4 | Goggle glow, tech strips | 60+ units |
+| Tank | Steel Blue | #3B82F6 | Shoulder plates, visor | 100+ units |
+| Specialist | Amber | #F59E0B | Utility markings, goggles | 60+ units |
+
+See [Style Guide](../Visuals/StyleGuide/) for full color coding specifications.
+
+---
+
+## Hitbox & Collision
+
+All operators use **capsule-based collision** with a separate head hitbox sphere. Hitbox dimensions vary by class to reflect body mass differences visible from above.
+
+### Hitbox Dimensions
+
+| Operator | Capsule Radius | Capsule Height | Head Sphere Radius | Collision Profile |
+| :------- | :------------- | :------------- | :----------------- | :---------------- |
+| VIPER | 40 cm | 180 cm | 14 cm | Standard |
+| BLAZE | 36 cm | 168 cm | 13 cm | Standard |
+| HAVOC | 44 cm | 190 cm | 15 cm | Standard |
+| DOC | 38 cm | 176 cm | 14 cm | Standard |
+| ANGEL | 34 cm | 164 cm | 13 cm | Standard |
+| PHANTOM | 34 cm | 170 cm | 13 cm | Slim |
+| SPECTER | 40 cm | 182 cm | 14 cm | Slim |
+| WRAITH | 32 cm | 160 cm | 12 cm | Slim |
+| BULWARK | 48 cm | 188 cm | 15 cm | Heavy |
+| FORTRESS | 46 cm | 186 cm | 15 cm | Heavy |
+| CIPHER | 36 cm | 175 cm | 13 cm | Standard |
+| FLUX | 38 cm | 172 cm | 13 cm | Standard |
+
+**Collision Profiles:**
+- **Slim** — 10% smaller hitbox than body mesh for Recon class advantage
+- **Standard** — Hitbox matches body mesh 1:1
+- **Heavy** — 5% larger hitbox than body mesh (trade-off for Tank armor)
+
+**Head Hitbox Rules:**
+- Headshot multiplier: 2.0x (see [Combat](../Combat/) for damage formulas)
+- Head sphere is always at the top of the capsule, regardless of animation state
+- From top-down view, head hitbox is the primary visible target — this is intentional
+
+<!-- REF_IMAGE: Hitbox comparison — side-by-side showing WRAITH (smallest), VIPER (standard), and BULWARK (largest) capsule colliders with head spheres highlighted -->
+
+---
+
+## Status Effect System
+
+Abilities can apply status effects to operators. Each effect has a base duration modified by class resistances.
+
+### Status Effects
+
+| Effect | Icon | Base Duration | Source Abilities | Visual Cue (Top-Down) |
+| :----- | :--- | :------------ | :--------------- | :-------------------- |
+| **Stun** | Lightning bolt | 1.5 seconds | BULWARK Shield Bash, Flashbang grenade | Character freezes, spark particles above head |
+| **Slow** | Chain links | 3.0 seconds | FLUX Nano Swarm (Napalm Stick upgrade), BLAZE fire exit | Movement trail turns blue, character model drags |
+| **Burn** | Flame | 5.0 seconds (15 DPS) | BLAZE Incendiary Rush, Molotov | Orange flame particles on character, smoke trail |
+| **EMP** | Circuit break | 4.0 seconds | CIPHER EMP Blast | Blue static particles, HUD distortion (self view) |
+| **Blind** | Eye cross | 2.0 seconds | Flashbang grenade, BLAZE Flashpoint upgrade | White flash on operator model (top-down: bright white glow) |
+| **Mark** | Crosshair | 5.0 seconds | PHANTOM UAV Scan, SPECTER Motion Sensor, HAVOC Predator upgrade | Red outline visible through walls and from above |
+
+### Class Resistances
+
+| Class | Stun Resist | Slow Resist | Burn Resist | EMP Resist | Notes |
+| :---- | :---------- | :---------- | :---------- | :--------- | :---- |
+| Assault | 0% | 0% | 0% | 0% | No resistances — pure offense |
+| Support | 0% | 10% | 0% | 0% | Slight slow resist for reaching downed allies |
+| Recon | 15% | 0% | 0% | 0% | Stun resist for evasion |
+| Tank | 25% | 25% | 10% | 0% | Broad physical resistance |
+| Specialist | 0% | 0% | 0% | 50% | Half EMP duration — they build the tech |
+
+> [!NOTE]
+> Individual operator passives may further modify resistances. See each operator's "Expanded Combat Statistics" section for operator-specific modifiers.
+
+---
+
+## Stamina System
+
+Sprinting consumes stamina. When stamina is depleted, operators cannot sprint until partial recovery.
+
+### Base Stamina
+
+| Parameter | Value | Notes |
+| :-------- | :---- | :---- |
+| **Stamina Pool** | 100 | Universal base |
+| **Sprint Drain** | 10/second | 10 seconds of continuous sprint |
+| **Recovery Rate** | 8/second | Recovers while walking or idle |
+| **Recovery Delay** | 1.5 seconds | Delay after sprinting before recovery starts |
+| **Exhaustion Threshold** | 0 | Cannot sprint at 0 stamina |
+| **Minimum to Sprint** | 20 | Must have 20+ stamina to start sprinting |
+
+### Class Stamina Modifiers
+
+| Class | Pool Modifier | Drain Modifier | Recovery Modifier | Net Sprint Duration |
+| :---- | :------------ | :------------- | :---------------- | :------------------ |
+| Assault | +20% (120) | Standard (10/s) | +10% (8.8/s) | 12.0 seconds |
+| Support | Standard (100) | Standard (10/s) | Standard (8/s) | 10.0 seconds |
+| Recon | +10% (110) | -10% (9/s) | +20% (9.6/s) | 12.2 seconds |
+| Tank | -20% (80) | +20% (12/s) | -10% (7.2/s) | 6.7 seconds |
+| Specialist | Standard (100) | Standard (10/s) | Standard (8/s) | 10.0 seconds |
+
+**Design Intent:** Tank operators commit to positions. They cannot sprint long distances — choosing where to fight is critical. Recon operators can reposition frequently. Assault operators have the longest sprint for aggressive entry.
+
+---
+
+## Ability Interaction Matrix
+
+When abilities collide, the following rules apply. This matrix defines **what happens when one ability meets another** — critical for balance and counterplay.
+
+### Deployable vs. Ability Interactions
+
+| Deployable | EMP Blast | Incendiary Rush | Nano Swarm | Smoke Screen | Berserker Rage | UAV Scan |
+| :--------- | :-------- | :-------------- | :--------- | :----------- | :------------- | :------- |
+| **Healing Drone** (DOC) | Destroyed | Not affected | Not affected | Not affected | N/A | Revealed |
+| **Guardian Shield** (ANGEL) | Destroyed | Fire does NOT pass through | Swarm ignores shield (passes through) | Smoke passes through | N/A | Does not reveal shield users inside |
+| **Motion Sensors** (SPECTER) | Destroyed | Destroyed by fire | Not affected | Not affected | N/A | N/A |
+| **UAV** (PHANTOM) | Destroyed (falls) | Not affected (airborne) | Not affected (airborne) | Blocks scan LOS to ground targets | N/A | N/A |
+| **Nano Swarm** (FLUX) | Destroyed | Fire burns through swarm (both damage stack on enemies inside) | N/A | Smoke does not interact | N/A | Revealed |
+| **Riot Shield** (BULWARK) | Disabled (5 sec) | Fire does NOT pass through | Swarm ignores shield | Smoke passes through | N/A | Does not reveal shielded operator |
+
+### Buff vs. Debuff Interactions
+
+| Buff/Ability | Can be EMP'd? | Cleansed by Stim? | Blocked by Shield? | Affected by Smoke? |
+| :----------- | :------------ | :----------------- | :----------------- | :----------------- |
+| **Combat Stim** (VIPER) | Yes — cancelled immediately | N/A (is the stim) | N/A | No |
+| **Berserker Rage** (HAVOC) | Yes — cancelled immediately | No | N/A | No |
+| **Armor Overcharge** (FORTRESS) | Yes — bonus armor stripped | No | N/A | No |
+| **Burn** (BLAZE) | No — not tech-based | No | Guardian Shield blocks fire source, not existing burn | No |
+| **Mark** (PHANTOM/SPECTER) | No — already applied | No | No | Smoke blocks NEW scans but does not remove existing marks |
+
+<!-- REF_IMAGE: Ability interaction web diagram — showing all 12 operator abilities with arrows indicating counter/synergy relationships, color-coded by interaction type (destroy, disable, ignore, synergize) -->
+
+---
+
 ## Operator Classes
 
 ### Class Overview Matrix
@@ -197,41 +365,43 @@ ACCOUNT LEVEL 28 -> Specialist (FLUX) - 15,000 Credits or Quest
 
 ### Combat Statistics
 
-| Operator | Class | Combat Power | Survivability | Utility | Team Value | Solo Viability |
-| :------- | :---- | :----------: | :-----------: | :-----: | :--------: | :------------: |
-| VIPER | Assault | 9/10 | 6/10 | 4/10 | 6/10 | 8/10 |
-| BLAZE | Assault | 8/10 | 5/10 | 6/10 | 7/10 | 7/10 |
-| HAVOC | Assault | 10/10 | 4/10 | 3/10 | 5/10 | 9/10 |
-| DOC | Support | 5/10 | 7/10 | 8/10 | 10/10 | 4/10 |
-| ANGEL | Support | 4/10 | 8/10 | 9/10 | 10/10 | 3/10 |
-| PHANTOM | Recon | 6/10 | 5/10 | 9/10 | 8/10 | 9/10 |
-| SPECTER | Recon | 7/10 | 5/10 | 8/10 | 7/10 | 8/10 |
-| WRAITH | Recon | 5/10 | 6/10 | 10/10 | 8/10 | 7/10 |
-| BULWARK | Tank | 7/10 | 10/10 | 5/10 | 8/10 | 5/10 |
-| FORTRESS | Tank | 6/10 | 9/10 | 7/10 | 9/10 | 4/10 |
-| CIPHER | Specialist | 5/10 | 6/10 | 10/10 | 7/10 | 7/10 |
-| FLUX | Specialist | 6/10 | 5/10 | 9/10 | 8/10 | 6/10 |
+| Operator | Class | Difficulty | Combat Power | Survivability | Utility | Team Value | Solo Viability | Total |
+| :------- | :---- | :--------: | :----------: | :-----------: | :-----: | :--------: | :------------: | :---: |
+| VIPER | Assault | 2/5 | 9/10 | 6/10 | 4/10 | 6/10 | 8/10 | 33 |
+| BLAZE | Assault | 3/5 | 8/10 | 5/10 | 6/10 | 7/10 | 7/10 | 33 |
+| HAVOC | Assault | 4/5 | 10/10 | 4/10 | 3/10 | 5/10 | 9/10 | 31 |
+| DOC | Support | 1/5 | 5/10 | 7/10 | 8/10 | 10/10 | 4/10 | 34 |
+| ANGEL | Support | 3/5 | 4/10 | 8/10 | 9/10 | 10/10 | 3/10 | 34 |
+| PHANTOM | Recon | 2/5 | 6/10 | 5/10 | 9/10 | 8/10 | 9/10 | 37 |
+| SPECTER | Recon | 4/5 | 7/10 | 5/10 | 8/10 | 7/10 | 8/10 | 35 |
+| WRAITH | Recon | 5/5 | 5/10 | 6/10 | 10/10 | 8/10 | 7/10 | 36 |
+| BULWARK | Tank | 2/5 | 7/10 | 10/10 | 5/10 | 8/10 | 5/10 | 35 |
+| FORTRESS | Tank | 3/5 | 6/10 | 9/10 | 7/10 | 9/10 | 4/10 | 35 |
+| CIPHER | Specialist | 4/5 | 5/10 | 6/10 | 10/10 | 7/10 | 7/10 | 35 |
+| FLUX | Specialist | 5/5 | 6/10 | 5/10 | 9/10 | 8/10 | 6/10 | 34 |
 
-**Balance Philosophy:** No operator should exceed 8/10 in more than two categories. Total score across all categories should fall within 32-36 points to maintain parity. See [Gameplay Balance](../Gameplay/) for detailed tuning rules.
+**Difficulty Key:** 1/5 = Beginner-friendly, 5/5 = Requires deep game knowledge and precise ability timing.
+
+**Balance Philosophy:** No operator should exceed 8/10 in more than two categories. Total score across all categories should fall within 31-37 points to maintain parity. See [Gameplay Balance](../Gameplay/) for detailed tuning rules.
 
 ### Counter Matrix
 
-| Operator | Strong Against | Weak Against |
-| :------- | :------------- | :----------- |
-| VIPER | PHANTOM, DOC | BULWARK, CIPHER |
-| BLAZE | WRAITH, FORTRESS | SPECTER, FLUX |
-| HAVOC | ANGEL, CIPHER | BULWARK, DOC |
-| DOC | All (Sustain) | VIPER, HAVOC |
-| ANGEL | BLAZE, HAVOC | CIPHER, SPECTER |
-| PHANTOM | FORTRESS, FLUX | VIPER, WRAITH |
-| SPECTER | BLAZE, HAVOC | CIPHER, ANGEL |
-| WRAITH | BULWARK, VIPER | PHANTOM, FLUX |
-| BULWARK | VIPER, HAVOC | WRAITH, CIPHER |
-| FORTRESS | BLAZE, SPECTER | PHANTOM, FLUX |
-| CIPHER | ANGEL, BULWARK | VIPER, HAVOC |
-| FLUX | PHANTOM, SPECTER | BLAZE, WRAITH |
+| Operator | Strong Against | Weak Against | Key Ability Interaction |
+| :------- | :------------- | :----------- | :---------------------- |
+| VIPER | PHANTOM, DOC | BULWARK, CIPHER | Stim cancelled by EMP; stim out-damages DOC heal rate |
+| BLAZE | WRAITH, FORTRESS | SPECTER, FLUX | Fire destroys Motion Sensors; fire + swarm stack damage on shared targets |
+| HAVOC | ANGEL, CIPHER | BULWARK, DOC | Rage cancelled by EMP; can push through Guardian Shield |
+| DOC | All (Sustain) | VIPER, HAVOC | Drone destroyed by EMP; stim burst exceeds heal rate |
+| ANGEL | BLAZE, HAVOC | CIPHER, SPECTER | Shield destroyed instantly by EMP; fire cannot pass through shield |
+| PHANTOM | FORTRESS, FLUX | VIPER, WRAITH | Scan blocked by smoke; scan reveals all deployables |
+| SPECTER | BLAZE, HAVOC | CIPHER, ANGEL | Sensors destroyed by EMP and fire; sensors detect Berserker approach |
+| WRAITH | BULWARK, VIPER | PHANTOM, FLUX | Smoke blocks shield vision; smoke blocks UAV scan LOS |
+| BULWARK | VIPER, HAVOC | WRAITH, CIPHER | Shield disabled by EMP (5s); shield blocks fire and bullets |
+| FORTRESS | BLAZE, SPECTER | PHANTOM, FLUX | Overcharge armor stripped by EMP; absorbs fire DoT |
+| CIPHER | ANGEL, BULWARK | VIPER, HAVOC | EMP destroys all deployables and disables active buffs |
+| FLUX | PHANTOM, SPECTER | BLAZE, WRAITH | Swarm destroyed by EMP; swarm ignores shields (passes through) |
 
-**Reading the Counter Matrix:** "Strong Against" means the operator has an inherent advantage in a 1v1 scenario due to ability matchups. Skill always matters more than counters — a skilled BULWARK can beat a WRAITH.
+**Reading the Counter Matrix:** "Strong Against" means the operator has an inherent advantage in a 1v1 scenario due to ability matchups. The "Key Ability Interaction" column explains WHY — this is critical for balance discussions. Skill always matters more than counters.
 
 <!-- REF_IMAGE: Counter matrix diagram — visual web showing counter relationships with arrows, color-coded by class -->
 

@@ -57,7 +57,44 @@ A failed mission in Taiwan left her squad dead and Yuki blamed by superiors look
 | Toxic Smoke tick (upgrade) | 3 HP/sec |
 | Headshot Multiplier | 2.0x |
 
----
+### Expanded Combat Statistics
+
+| Parameter | Value | Notes |
+| :-------- | :---- | :---- |
+| **Stamina Pool** | 110 | +10% (Recon class) |
+| **Sprint Drain** | 9/second | -10% (Recon class) |
+| **Recovery Rate** | 9.6/second | +20% (Recon class) |
+| **Net Sprint Duration** | 12.2 seconds | Best efficiency |
+| **Footstep Volume** | 60% | -30% (class) + additional -10% (Shadow Step passive) |
+| **Ability Audio Radius** | 20 meters | Smoke canister hiss audible |
+
+### Status Effect Resistances
+
+| Effect | Resistance | Notes |
+| :----- | :--------- | :---- |
+| Stun | 15% | Partial resist (Recon class) |
+| Slow | 0% | Full duration |
+| Burn | 0% | Full DoT |
+| EMP | 0% | No tech-based abilities to disable |
+
+### Top-Down Visual Spec
+
+| Property | Value |
+| :------- | :---- |
+| **Hitbox Capsule** | 32 cm radius, 160 cm height |
+| **Head Sphere** | 12 cm radius |
+| **Collision Profile** | Slim (-10% from mesh) — smallest operator |
+| **Silhouette From Above** | Smallest operator, hooded head, no visible backpack |
+| **Class Accent Zones** | Cyan (#06B6D4) on goggle glow, subtle strips on hood |
+| **Smoke VFX (Top-Down)** | Dense gray cloud on ground (8m radius), character fades to near-invisibility inside |
+| **Smoke Audio Radius** | 20m — canister hiss on deploy, atmospheric whoosh during duration |
+
+<!-- REF_IMAGE: WRAITH top-down view — showing operator with smoke cloud deployed, 8m radius gray cloud on ground, character partially faded inside -->
+
+### Difficulty Rating
+
+**Difficulty: 5/5** — Hardest operator to master. Requires perfect smoke placement timing, in-smoke awareness, and exploiting Shadow Step first-attack bonus. Maximum game sense required.
+
 
 ## Abilities
 
@@ -79,6 +116,28 @@ A failed mission in Taiwan left her squad dead and Yuki blamed by superiors look
 | Vision Block | 100% | Cannot see through |
 | WRAITH Bonus | Can see enemy outlines in own smoke | 10m range |
 | Firing Reveals | Muzzle flash briefly visible | 1 second duration |
+
+#### Smoke Interaction Rules
+
+| Interaction | Result |
+| :---------- | :----- |
+| **Smoke + PHANTOM UAV** | Smoke blocks scan LOS — enemies in smoke not revealed |
+| **Smoke + Fire (BLAZE)** | Fire burns through smoke — smoke does not extinguish fire |
+| **Smoke + Nano Swarm (FLUX)** | Smoke does not interact with swarm |
+| **Smoke + ANGEL Shield** | Smoke passes through shield dome |
+| **Smoke + BULWARK Shield** | Smoke blocks vision through shield |
+| **Smoke + SPECTER Sensors** | Sensors still detect through smoke |
+
+#### Top-Down Smoke VFX
+
+| State | VFX From Above |
+| :---- | :------------- |
+| Smoke deploy | Canister lands, gray cloud expands rapidly to 8m radius |
+| Smoke active | Dense gray cloud on ground plane, opaque from above |
+| WRAITH inside (ally view) | Faint outline visible to teammates only |
+| Enemy inside (enemy view) | Completely hidden, no outline |
+| Smoke clearing (last 3s) | Cloud thins, visibility gradually returns |
+
 
 #### Tactical Uses
 
@@ -344,3 +403,12 @@ A failed mission in Taiwan left her squad dead and Yuki blamed by superiors look
 | Shadow Step activate | Soft footstep acceleration (barely audible) |
 | Footsteps | Lightest in roster — bare minimum contact sounds |
 | Melee kill | Swift blade draw + single cut impact |
+
+### Top-Down Specific Notes
+
+- Smoke cloud must be opaque from above — top-down camera sees dense gray circle on ground
+- WRAITH inside own smoke is nearly invisible from top-down (faint shimmer for teammates only)
+- Smoke must NOT block friendly minimap detection — allies can still see teammate dots through smoke
+- Smoke edge should be well-defined from above (clear boundary between vision/no vision)
+- First attack from smoke (+15% damage) applies only to the first bullet/hit, not sustained fire
+

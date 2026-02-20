@@ -46,7 +46,44 @@ He leaked what he could and went underground, using his skills to level the play
 | **Walk Speed**      | 3.5 m/s | -              | 3.5 m/s |
 | **Weapon Accuracy** | 100%    | -10%           | 90%     |
 
----
+### Expanded Combat Statistics
+
+| Parameter | Value | Notes |
+| :-------- | :---- | :---- |
+| **Stamina Pool** | 100 | Standard (Specialist class) |
+| **Sprint Drain** | 10/second | Standard |
+| **Recovery Rate** | 8/second | Standard |
+| **Net Sprint Duration** | 10.0 seconds | Average |
+| **Footstep Volume** | 95% | Slightly quieter than average — sneakers |
+| **Ability Audio Radius** | 40 meters | EMP pulse is very loud — major audio tell |
+
+### Status Effect Resistances
+
+| Effect | Resistance | Notes |
+| :----- | :--------- | :---- |
+| Stun | 0% | Full duration |
+| Slow | 0% | Full duration |
+| Burn | 0% | Full DoT |
+| EMP | 100% | Immune to enemy CIPHER EMP |
+
+### Top-Down Visual Spec
+
+| Property | Value |
+| :------- | :---- |
+| **Hitbox Capsule** | 38 cm radius, 175 cm height |
+| **Head Sphere** | 14 cm radius |
+| **Collision Profile** | Standard |
+| **Silhouette From Above** | Medium build, antenna array on backpack, arm-mounted hacking interface visible |
+| **Class Accent Zones** | Yellow (#EAB308) on tech strips and backpack antenna |
+| **EMP VFX (Top-Down)** | Blue-white expanding ring from operator (15m radius), static distortion on affected units |
+| **EMP Audio Radius** | 40m — loud pulse crack audible at extreme range |
+
+<!-- REF_IMAGE: CIPHER top-down view — showing operator with EMP blast active, blue-white expanding ring visible from above, static effects on enemies in radius -->
+
+### Difficulty Rating
+
+**Difficulty: 4/5** — EMP timing is everything. Using it too early wastes it; too late and shields/drones already did their job. Reading enemy tech usage is critical.
+
 
 ## Abilities
 
@@ -69,7 +106,32 @@ He leaked what he could and went underground, using his skills to level the play
 | HUD Disruption     | Enemies                | 5 seconds  |
 | Shield Destruction | ANGEL, BULWARK shields | Instant    |
 
-#### Area of Effect
+#### EMP Interaction Matrix
+
+| Target | Effect | Duration |
+| :----- | :----- | :------- |
+| **ANGEL Guardian Shield** | Destroyed instantly | Permanent (until redeployed) |
+| **BULWARK Riot Shield** | Disabled (not destroyed) | 5 seconds |
+| **DOC Healing Drone** | Destroyed instantly | Permanent |
+| **PHANTOM UAV** | Destroyed, falls from sky | Permanent |
+| **SPECTER Sensors** | All in radius destroyed | Permanent |
+| **FLUX Nano Swarm** | Dispersed instantly | Permanent |
+| **VIPER Combat Stim** | Cancelled | Immediate |
+| **HAVOC Berserker Rage** | Cancelled | Immediate |
+| **WRAITH Smoke Screen** | Not affected | N/A — smoke is chemical, not tech |
+| **FORTRESS Overcharge** | Bonus armor stripped | Immediate |
+| **Enemy HUD** | Static distortion | 5 seconds |
+
+#### Top-Down EMP VFX
+
+| State | VFX From Above |
+| :---- | :------------- |
+| EMP charging | Blue-white glow building on CIPHER's arm device |
+| EMP blast | Blue-white ring expanding outward from operator (15m radius) |
+| EMP on enemy | Blue static sparks on affected operator, HUD disruption VFX |
+| Gadget destroyed | Blue flash + debris scatter from gadget position |
+| Shield broken | Dramatic shatter VFX on ANGEL dome / BULWARK arc flicker |
+
 
 | Property       | Value                  |
 | :------------- | :--------------------- |
@@ -315,3 +377,13 @@ He leaked what he could and went underground, using his skills to level the play
 | Hacking interaction | Rapid keyboard clicks + data transfer chirps |
 | Gadget detected | Soft electronic ping (only CIPHER hears) |
 | Footsteps | Standard weight — sneakers on concrete |
+
+### Top-Down Specific Notes
+
+- EMP expanding ring must be visible at minimum zoom — largest VFX radius in the game (15m)
+- Static distortion on affected enemies should be visible from top-down (blue sparking particles)
+- Gadget destruction VFX must clearly communicate which gadgets were destroyed
+- CIPHER is immune to enemy EMP — this is a critical balance point in mirror matchups
+- -10% weapon accuracy penalty means CIPHER should lose aim duels — his power is in EMP timing
+- Tech Scavenge passive (hack enemy gadgets) should show a clear interaction prompt from above
+

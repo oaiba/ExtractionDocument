@@ -56,7 +56,57 @@ After growing disillusioned with the corruption eating Russia from within, Vikto
 | Trap-assisted kill | +15 bonus damage from Shock Trap (upgrade) |
 | Headshot Multiplier | 2.0x |
 
----
+### Expanded Combat Statistics
+
+| Parameter | Value | Notes |
+| :-------- | :---- | :---- |
+| **Stamina Pool** | 110 | +10% (Recon class) |
+| **Sprint Drain** | 9/second | -10% (Recon class) |
+| **Recovery Rate** | 9.6/second | +20% (Recon class) |
+| **Net Sprint Duration** | 12.2 seconds | Best efficiency |
+| **Footstep Volume** | 70% | -30% (Recon class trait) |
+| **Ability Audio Radius** | 5 meters | Sensors are nearly silent when deployed |
+
+### Status Effect Resistances
+
+| Effect | Resistance | Notes |
+| :----- | :--------- | :---- |
+| Stun | 15% | Partial resist (Recon class) |
+| Slow | 0% | Full duration |
+| Burn | 0% | Full DoT — sensors destroyed by fire |
+| EMP | 0% | All sensors destroyed instantly by EMP |
+
+### Top-Down Visual Spec
+
+| Property | Value |
+| :------- | :---- |
+| **Hitbox Capsule** | 40 cm radius, 182 cm height |
+| **Head Sphere** | 14 cm radius |
+| **Collision Profile** | Slim (-10% from mesh) |
+| **Silhouette From Above** | Medium-slim build, tech harness visible, sensor pouches on belt |
+| **Class Accent Zones** | Cyan (#06B6D4) on goggle glow and harness strips |
+| **Sensor VFX (Top-Down)** | Small blinking devices on ground, 8m detection radius shown as faint circle when ally walks near |
+| **Sensor Audio** | Nearly silent — <5m detection range for enemies |
+
+<!-- REF_IMAGE: SPECTER top-down view — showing operator with 3 motion sensors deployed, detection radius circles visible from above -->
+
+### Motion Sensor Stat Block
+
+| Property | Value | Notes |
+| :------- | :---- | :---- |
+| **Sensors Per Activation** | 3 | Deploy individually |
+| **Detection Range** | 8 meters each | Overlapping for full coverage |
+| **Sensor HP** | 20 | One-shot destroyable |
+| **Duration** | Permanent | Until destroyed or match end |
+| **Mark Duration** | 4 seconds | After detection |
+| **EMP Vulnerability** | Destroyed instantly | Primary counter |
+| **Fire Vulnerability** | Destroyed on contact | Secondary counter |
+| **Visibility** | Subtle blinking light | Camo Sensors upgrade removes this |
+
+### Difficulty Rating
+
+**Difficulty: 4/5** — Sensor placement and coverage optimization require deep map knowledge. Trap Sense passive demands awareness of enemy Recon setups.
+
 
 ## Abilities
 
@@ -79,7 +129,26 @@ After growing disillusioned with the corruption eating Russia from within, Vikto
 | Alert Type | Audio + Visual ping | Directional indicator on HUD |
 | Mark Duration | 4 seconds after detection | Enemies visible through walls |
 
-#### Sensor Placement Tips
+#### Sensor Interaction Rules
+
+| Interaction | Result |
+| :---------- | :----- |
+| **Sensor + EMP (CIPHER)** | All sensors in EMP radius destroyed instantly |
+| **Sensor + Fire (BLAZE)** | Sensors destroyed by fire contact |
+| **Sensor + Nano Swarm (FLUX)** | Sensors not affected by swarm |
+| **Sensor + UAV Scan (PHANTOM)** | N/A — both are intel abilities |
+| **Sensor + Smoke (WRAITH)** | Sensors still detect through smoke |
+| **Sensor + HAVOC Rage** | Sensors detect raging HAVOC (louder footsteps trigger faster) |
+
+#### Top-Down Sensor VFX
+
+| State | VFX From Above |
+| :---- | :------------- |
+| Sensor deploy | Brief cyan flash on landing point |
+| Sensor active | Small blinking device on ground (friendly: green glow, enemy: not visible unless detected) |
+| Sensor triggered | Red pulse expanding from sensor (8m radius flash), alarm chime |
+| Sensor destroyed | Brief electrical spark + pop |
+
 
 | Location | Effectiveness |
 | :------- | :------------ |
@@ -341,3 +410,12 @@ After growing disillusioned with the corruption eating Russia from within, Vikto
 | Sensor destroyed | Electric crackle + pop |
 | Footsteps | Standard Recon — quiet tactical boots |
 | Trap Sense alert | Low warning buzz when near enemy trap |
+
+### Top-Down Specific Notes
+
+- Sensors on the ground should be visible to the owning team as small green dots from minimum zoom
+- Enemy sensors should only appear if within detection range of friendly teams or revealed by Trap Sense
+- Sensor trigger red pulse must be visible at minimum zoom — critical audio/visual alert
+- Sensor placement animation should be quick (0.5s) and not interrupt movement flow
+- Camo Sensors upgrade visual shimmer should be subtle but discoverable by attentive players at max zoom
+

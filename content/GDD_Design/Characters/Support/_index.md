@@ -105,3 +105,66 @@ The **Support** class operators are the backbone of any team, keeping allies ali
 | **VIPER** | Assault + Sustain | Push harder, heal after |
 | **BULWARK** | Tank + Healer | Classic defensive combo |
 | **PHANTOM** | Intel + Safety | Know when to heal, when to hide |
+
+---
+
+## Top-Down Visual Identity
+
+Support operators have a **medium silhouette** with medical/utility pack on their back as the primary identifier from above.
+
+| Feature | Design Rule | Visibility |
+| :------ | :---------- | :--------- |
+| **Shoulder Width** | Standard — between Recon and Assault | 60+ units |
+| **Headgear** | Medical cap or visor with cross markings | 60+ units |
+| **Color Accent** | White/Green (#22C55E) on cross armband and backpack | 80+ units |
+| **Back Profile** | Large medical pack (DOC) or shield generator (ANGEL) | 80+ units |
+| **Movement Anim** | Standard pace, slightly cautious posture | 50+ units |
+
+<!-- REF_IMAGE: Support class top-down silhouette comparison — DOC and ANGEL as seen from 60-degree camera angle at 50% zoom, showing medical gear and cross markings visible from above -->
+
+### Operator-Specific Top-Down Tells
+
+| Operator | Unique Visual From Above |
+| :------- | :----------------------- |
+| DOC | Green pulsing circle around Healing Drone when deployed |
+| ANGEL | Blue-white hemispherical shield dome visible from above when active |
+
+---
+
+## Class Stamina Profile
+
+| Parameter | Support Value | Comparison |
+| :-------- | :------------ | :--------- |
+| **Stamina Pool** | 100 (Standard) | Average |
+| **Sprint Drain** | 10/second | Standard |
+| **Recovery Rate** | 8/second | Standard |
+| **Net Sprint Duration** | 10.0 seconds | Average |
+
+**Design Intent:** Support has standard stamina. They do not need to sprint to engage (like Assault) or reposition (like Recon). Their -5% movement speed class trait is the real limitation, not stamina.
+
+---
+
+## Status Effect Modifiers
+
+| Effect | Support Resistance | Notes |
+| :----- | :----------------- | :---- |
+| Stun | 0% | Full stun duration |
+| Slow | 10% | Slight slow resist for reaching downed allies |
+| Burn | 0% | Full burn damage |
+| EMP | 0% | Healing Drone and Guardian Shield destroyed by EMP |
+
+**Design Intent:** Support has minimal resistances. Their value comes from sustaining teammates, not from personal survivability. The slight slow resist ensures they can still reach wounded allies during combat.
+
+---
+
+## Map Suitability
+
+| Map Archetype | Suitability | Recommended Operator | Why |
+| :------------ | :---------- | :------------------- | :-- |
+| **Extraction Zones** | Highest | ANGEL | Guardian Shield protects team during extraction countdown |
+| **Tight Corridors** | High | DOC | Healing Drone radius covers corridor width |
+| **Multi-Floor** | Medium | DOC | Drone heals through floors if placed on correct level |
+| **Open Fields** | Low | ANGEL | Shield provides cover in open terrain |
+| **Dense Urban** | Medium | Either | Multiple engagement points require mobile healing |
+
+See [World Design](../../World/) for detailed map layouts.

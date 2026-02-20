@@ -57,7 +57,44 @@ After serving as a combat engineer specializing in incendiary weapons, Elena bec
 | Fire + Direct Hit      | 75 total (if standing in fire) |
 | Fire Resistance (Self) | Immune to own fire             |
 
----
+### Expanded Combat Statistics
+
+| Parameter | Value | Notes |
+| :-------- | :---- | :---- |
+| **Stamina Pool** | 120 | +20% (Assault class) |
+| **Sprint Drain** | 10/second | Standard |
+| **Recovery Rate** | 8.8/second | +10% (Assault class) |
+| **Net Sprint Duration** | 12.0 seconds | Longest sprint tier |
+| **Footstep Volume** | 100% | Standard |
+| **Ability Audio Radius** | 40 meters | Fire crackle is loud and directional |
+
+### Status Effect Resistances
+
+| Effect | Resistance | Notes |
+| :----- | :--------- | :---- |
+| Stun | 0% | Full duration |
+| Slow | 0% | Full duration |
+| Burn | 100% (self only) | Immune to own fire, full damage from enemy fire |
+| EMP | 0% | Incendiary Rush cancelled immediately by EMP |
+
+### Top-Down Visual Spec
+
+| Property | Value |
+| :------- | :---- |
+| **Hitbox Capsule** | 36 cm radius, 168 cm height |
+| **Head Sphere** | 13 cm radius |
+| **Collision Profile** | Standard |
+| **Silhouette From Above** | Compact athletic build, lighter gear, visible grenade belt |
+| **Class Accent Zones** | Orange (#F97316) on shoulder patches, flame decals on armor |
+| **Fire Trail VFX (Top-Down)** | Bright orange line on ground, 2m wide, flickering flame particles |
+| **Fire Audio Radius** | 40m — crackling fire audible from distance |
+
+<!-- REF_IMAGE: BLAZE top-down view — showing fire trail behind operator as seen from above during Incendiary Rush, 2m trail width visible -->
+
+### Difficulty Rating
+
+**Difficulty: 3/5** — Requires spatial awareness for fire placement. Trail creation during sprint demands good map knowledge to create effective area denial.
+
 
 ## Abilities
 
@@ -80,6 +117,26 @@ After serving as a combat engineer specializing in incendiary weapons, Elena bec
 | Fire Damage      | 15 HP/second    | Standing in fire           |
 | Sprint Bonus     | +20%            | While ability active       |
 | Trail Length     | Up to 30 meters | Depends on sprint distance |
+
+#### Fire Interaction Rules
+
+| Interaction | Result |
+| :---------- | :----- |
+| **Fire + SPECTER Sensors** | Sensors destroyed by fire contact |
+| **Fire + FLUX Nano Swarm** | Both damage effects stack on enemies caught in overlap zone |
+| **Fire + ANGEL Shield** | Fire does NOT pass through Guardian Shield |
+| **Fire + BULWARK Shield** | Fire does NOT pass through Riot Shield |
+| **Fire + Smoke (WRAITH)** | Fire burns through smoke — smoke does not extinguish |
+| **Fire + EMP (CIPHER)** | EMP cancels Incendiary Rush immediately, existing fire persists |
+
+#### Top-Down Fire Trail VFX
+
+| State | VFX From Above |
+| :---- | :------------- |
+| Trail creation | Bright orange line on ground behind sprinting operator |
+| Fire active | Flickering flame particles, 2m wide, orange-yellow glow on ground |
+| Fire fading (last 2s) | Flames shrink, glow dims, smoke wisps rise |
+| Fire expired | Dark scorch mark on ground (fades after 5s) |
 
 #### Visual & Audio Cues
 
@@ -348,5 +405,10 @@ After serving as a combat engineer specializing in incendiary weapons, Elena bec
 | Collision   | Fire is non-physical, just damage zone               |
 | Networking  | Fire positions synced, damage calculated server-side |
 
+### Top-Down Specific Notes
 
-
+- Fire trail must be clearly visible at minimum zoom — bright orange on ground plane
+- Fire trail width (2m) should read as a meaningful barrier from above, not a thin line
+- Scorch marks after fire expires provide temporary intel on where BLAZE has been
+- Fire particle effects must not obscure loot items on ground within fire zone
+- Sprint path prediction: server calculates fire spawn points every 0.5m along the actual path taken

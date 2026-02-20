@@ -117,3 +117,66 @@ The **Specialist** class operators bring utility and disruption to the battlefie
 | **FORTRESS** | Tank + Disruption | FORTRESS absorbs, CIPHER strips enemy buffs |
 | **SPECTER** | Traps + Swarm | SPECTER sensors detect, FLUX swarm punishes approach |
 | **DOC** | Sustain + Utility | DOC keeps Specialist alive long enough for gadgets to matter |
+
+---
+
+## Top-Down Visual Identity
+
+Specialist operators have a **standard silhouette** with visible tool pockets and utility belts. From the top-down camera, they are identified by amber utility markings and compact gadget profiles.
+
+| Feature | Design Rule | Visibility |
+| :------ | :---------- | :--------- |
+| **Shoulder Width** | Standard — utility vest slightly wider than Recon | 60+ units |
+| **Headgear** | Work goggles pushed up or side-mounted hacking visor | 60+ units |
+| **Color Accent** | Amber (#F59E0B) utility markings and caution tape strips | 60+ units |
+| **Back Profile** | Tool pack with visible cables and gadget holsters | 60+ units |
+| **Movement Anim** | Standard pace, occasional gadget-checking idle animation | 50+ units |
+
+<!-- REF_IMAGE: Specialist class top-down silhouette comparison — CIPHER and FLUX as seen from 60-degree camera angle at 50% zoom, showing tool belts and amber accent markings -->
+
+### Operator-Specific Top-Down Tells
+
+| Operator | Unique Visual From Above |
+| :------- | :----------------------- |
+| CIPHER | Blue EMP pulse ring expanding rapidly from operator position |
+| FLUX | Swirling silver/green nano cloud visible as area-denial zone on ground |
+
+---
+
+## Class Stamina Profile
+
+| Parameter | Specialist Value | Comparison |
+| :-------- | :--------------- | :--------- |
+| **Stamina Pool** | 100 (Standard) | Average |
+| **Sprint Drain** | 10/second | Standard |
+| **Recovery Rate** | 8/second | Standard |
+| **Net Sprint Duration** | 10.0 seconds | Average |
+
+**Design Intent:** Specialist stamina is standard. Their strength comes from gadget timing and knowledge, not from movement. The +20% gadget interaction speed class trait is their unique mobility advantage (faster door hacking, terminal access).
+
+---
+
+## Status Effect Modifiers
+
+| Effect | Specialist Resistance | Notes |
+| :----- | :-------------------- | :---- |
+| Stun | 0% | Full stun duration |
+| Slow | 0% | Full slow duration |
+| Burn | 0% | Full burn damage |
+| EMP | 50% | Half EMP duration — they build the tech, they resist it |
+
+**Design Intent:** Specialist operators are the tech experts. They designed EMP technology, so they have built-in shielding. This creates an important counter dynamic: CIPHER's EMP is less effective against enemy CIPHER or FLUX than against other classes.
+
+---
+
+## Map Suitability
+
+| Map Archetype | Suitability | Recommended Operator | Why |
+| :------------ | :---------- | :------------------- | :-- |
+| **Dense Urban** | Highest | CIPHER | Many hackable doors and terminals, lots of deployables to EMP |
+| **Multi-Floor** | High | FLUX | Nano Swarm blocks stairwells and vertical access |
+| **Large Industrial** | High | CIPHER | Hackable containers and terminals throughout |
+| **Tight Corridors** | Medium | FLUX | Swarm covers corridor width for area denial |
+| **Open Fields** | Low | Neither | Few gadgets to interact with, EMP range limits utility |
+
+See [World Design](../../World/) for detailed map layouts.

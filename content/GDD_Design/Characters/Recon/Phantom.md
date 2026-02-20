@@ -56,7 +56,57 @@ After a mole compromised her network, Sarah watched helplessly as her assets wer
 | First Shot from Stealth | +10% (Ghost Protocol passive) |
 | Headshot Multiplier | 2.0x |
 
----
+### Expanded Combat Statistics
+
+| Parameter | Value | Notes |
+| :-------- | :---- | :---- |
+| **Stamina Pool** | 110 | +10% (Recon class) |
+| **Sprint Drain** | 9/second | -10% (Recon class) |
+| **Recovery Rate** | 9.6/second | +20% (Recon class) |
+| **Net Sprint Duration** | 12.2 seconds | Best efficiency |
+| **Footstep Volume** | 70% | -30% (Recon class trait) |
+| **Ability Audio Radius** | 20 meters | UAV drone buzz audible to nearby enemies |
+
+### Status Effect Resistances
+
+| Effect | Resistance | Notes |
+| :----- | :--------- | :---- |
+| Stun | 15% | Partial resist (Recon class) |
+| Slow | 0% | Full duration |
+| Burn | 0% | Full DoT |
+| EMP | 0% | UAV destroyed instantly by EMP |
+
+### Top-Down Visual Spec
+
+| Property | Value |
+| :------- | :---- |
+| **Hitbox Capsule** | 34 cm radius, 170 cm height |
+| **Head Sphere** | 13 cm radius |
+| **Collision Profile** | Slim (-10% from mesh) |
+| **Silhouette From Above** | Slim build, tech goggle glow visible from above, compact UAV pack on back |
+| **Class Accent Zones** | Cyan (#06B6D4) on goggle glow and tech strips on armor |
+| **Scan VFX (Top-Down)** | Cyan pulse rings expanding from operator, enemy outlines appear |
+| **UAV Audio Radius** | 20m — drone buzz is moderate volume |
+
+<!-- REF_IMAGE: PHANTOM top-down view — showing operator with UAV scan active, cyan pulse rings expanding outward, enemy silhouettes highlighted through walls -->
+
+### UAV Stat Block
+
+| Property | Value | Notes |
+| :------- | :---- | :---- |
+| **Scan Radius** | 30 meters | From PHANTOM position |
+| **Duration** | 8 seconds | Continuous scan |
+| **Enemy Reveal** | Real-time outlines | Cyan silhouettes through geometry |
+| **Team Sharing** | Yes | All allies see scanned enemies |
+| **UAV Altitude** | 15 meters above | Cannot be shot by ground fire |
+| **EMP Vulnerability** | Destroyed instantly (falls) | Primary counter |
+| **Smoke Interaction** | Blocks scan LOS | Cannot scan through WRAITH smoke |
+| **Deployable Detection** | Yes | Reveals enemy deployables (sensors, drones, shields) |
+
+### Difficulty Rating
+
+**Difficulty: 2/5** — Simple activation: press ability, see enemies. Low mechanical demand, but high strategic value in knowing when to scan.
+
 
 ## Abilities
 
@@ -79,7 +129,27 @@ After a mole compromised her network, Sarah watched helplessly as her assets wer
 | Team Sharing | Yes | All allies see marked enemies |
 | Update Rate | Continuous | Not just snapshot |
 
-#### Visual & Audio Cues
+#### UAV Interaction Rules
+
+| Interaction | Result |
+| :---------- | :----- |
+| **UAV + EMP (CIPHER)** | UAV destroyed instantly, falls from sky |
+| **UAV + Fire (BLAZE)** | Not affected — UAV is airborne |
+| **UAV + Nano Swarm (FLUX)** | Not affected — swarm only targets ground |
+| **UAV + Smoke (WRAITH)** | Scan blocked through smoke — LOS required |
+| **UAV + ANGEL Shield** | UAV cannot reveal operators inside shield dome |
+| **UAV + BULWARK Shield** | Does not reveal shielded operator |
+
+#### Top-Down Scan VFX
+
+| State | VFX From Above |
+| :---- | :------------- |
+| UAV deploy | Drone rises from operator's back, ascends to scan height |
+| Scan active | Cyan pulse rings expanding from operator position (30m radius) |
+| Enemy detected | Red outline appears on enemy model, visible through walls |
+| Scan ending | Pulse rings fade, drone descends |
+| UAV EMP'd | Flash burst, drone falls to ground as debris |
+
 
 **Self:**
 - Radar pulse animation on HUD
@@ -344,3 +414,12 @@ After a mole compromised her network, Sarah watched helplessly as her assets wer
 | Scan end | Drone recall sound + descending buzz |
 | Enemy detected ping | Sharp, directional chime |
 | Footsteps | Light, tactical boots — quieter than all classes |
+
+### Top-Down Specific Notes
+
+- Scan pulse rings must be visible at minimum zoom — clearly shows scan radius to teammates
+- Enemy outlines should be visible through geometry from top-down camera (red silhouettes)
+- UAV drone model above the battlefield should be visible as a small cyan dot from max zoom
+- Ghost Protocol first-shot bonus is not visually indicated to enemies — incentivizes stealth play
+- Scan does NOT show enemy health bars — only position outlines
+

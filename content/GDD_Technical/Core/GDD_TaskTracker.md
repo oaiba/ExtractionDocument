@@ -3,8 +3,6 @@ title: "GDD Task Tracker"
 type: docs
 ---
 
-# GDD Task Tracker
-
 > **Purpose:** A comprehensive project-wide task tracking document broken down by Phase, Month, and Week. Every task includes: Priority, Difficulty, Risk, Estimate, Status, Review checklist, and Reference Documents.
 >
 > **Core Principle:** GDD Doc Tasks (DOC-XXX) are strict prerequisites for Feature Tasks (TASK-XXX). Implementation must not begin until the associated GDD section is officially approved.

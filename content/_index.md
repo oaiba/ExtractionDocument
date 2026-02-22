@@ -18,6 +18,8 @@ sidebar:
 
 **MASTER DOCUMENTATION PORTAL**
 
+**[👉 Go to GDD Task Tracker](/ExtractionDocument/tracker/tasks/gdd_tasktracker/)**
+
 </div>
 
 ---
@@ -48,6 +50,7 @@ Access the specialized documentation portals based on your role and current task
 {{< /cards >}}
 
 {{< cards cols="2" >}}
+  {{< card link="/ExtractionDocument/tracker/tasks/gdd_tasktracker/" title="Task Tracker" icon="list-check" subtitle="Comprehensive project-wide task tracking and milestones." >}}
   {{< card link="/ExtractionDocument/gdd_agents/" title="AI Agent Guidelines" icon="chip" subtitle="Rules, workflows, and skills for AI coding agents (Gemini, Copilot, Cursor)." >}}
 {{< /cards >}}
 
@@ -97,6 +100,7 @@ Access the specialized documentation portals based on your role and current task
 3. **Review the [Technical Roadmap](/GDD_Technical/Core/DevelopmentRoadmap)** if you are contributing code
 
 ### Key Systems Documentation
+- **Task Tracker** → [GDD Task Tracker](/ExtractionDocument/tracker/tasks/gdd_tasktracker/)
 - **World & Maps** → [Map Design](/GDD_Design/World/MapDesign)
 - **Combat & Weapons** → [Weapon System](/GDD_Technical/Gameplay/WeaponSystem)
 - **Inventory & Loot** → [Inventory System](/GDD_Technical/Gameplay/InventorySystem)

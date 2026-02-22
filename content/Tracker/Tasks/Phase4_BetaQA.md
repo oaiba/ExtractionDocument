@@ -59,3 +59,4 @@ weight: 40
 | Milestone Gate Review | Scheduled exclusively at the end of each predefined Phase cycle | Half-day session | Full Team + External Key Stakeholders | Exhaustive project review; decisive decision point determining strict Go/No-Go actions necessary to progress toward the subsequent project Phase |
 
 ---
+

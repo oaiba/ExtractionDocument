@@ -21,133 +21,141 @@ weight: 30
 
 ---
 
-- [ ] <details style="display: inline-block; width: 95%; vertical-align: top;"><summary><b>DOC-014: Complete GDD — Operator Classes & Abilities (Alpha Trio)</b> <code>[Critical]</code> <code>[Not Started]</code></summary>
+<details><summary>{{< badge content="Not Started" color="gray" >}} {{< badge content="Critical" color="red" >}} <b>DOC-014: Complete GDD — Operator Classes & Abilities (Alpha Trio)</b></summary>
 
-    | Field | Value |
-  |---|---|
-  | Difficulty | Hard |
-  | Estimate | 3 days |
-  | Owner | Game Designer |
-  | Output | Finalize CharacterSystem.md and the specific Operators documents for the Assault, Scout, and Support archetypes: detailing stats, unique abilities, and strict cooldown parameters |
-  | Refs | [GDD_Design/Characters/](../../GDD_Design/Characters/), [Gameplay/CharacterSystem.md](../Gameplay/CharacterSystem.md) |
+| Field | Value |
+|---|---|
+| Difficulty | Hard |
+| Estimate | 3 days |
+| Owner | Game Designer |
+| Output | Finalize CharacterSystem.md and the specific Operators documents for the Assault, Scout, and Support archetypes: detailing stats, unique abilities, and strict cooldown parameters |
+| Refs | [GDD_Design/Characters/](../../GDD_Design/Characters/), [Gameplay/CharacterSystem.md](../Gameplay/CharacterSystem.md) |
 
-  </details>
+</details>
+
 ---
 
-- [ ] <details style="display: inline-block; width: 95%; vertical-align: top;"><summary><b>TASK-019: Implement Operator Class System (3 Alpha Operators)</b> <code>[Critical]</code> <code>[Not Started]</code></summary>
+<details><summary>{{< badge content="Not Started" color="gray" >}} {{< badge content="Critical" color="red" >}} <b>TASK-019: Implement Operator Class System (3 Alpha Operators)</b></summary>
 
-    | Field | Value |
-  |---|---|
-  | Difficulty | Very Hard |
-  | Risk | High — Ability system balance invariably requires multiple intensive iteration cycles; carries significant scope creep risk |
-  | Estimate | 10 days |
-  | Owner | Senior Programmer + Game Designer |
-  | Dependencies | DOC-014, TASK-003 |
-  | Review | `[ ]` All 3 Operators spawn bearing correct stats  `[ ]` Unique abilities trigger and activate correctly  `[ ]` Cooldown timers sync accurately across target networks  `[ ]` Comprehensive balance playtest conducted |
-  | Refs | [Gameplay/CharacterSystem.md](../Gameplay/CharacterSystem.md), [GDD_Design/Characters/](../../GDD_Design/Characters/) |
-  
-  **Sub-tasks:**
-  - Construct foundation `UOperatorAbility` class and integrated Cooldown manager
-  - Implement Assault ability: Combat Stim (Applying speed boost + damage boost for 10s window)
-  - Implement Scout ability: UAV Scan (Highlight enemy signatures within set operational range)
-  - Implement Support ability: Healing Drone (Deploy physical drone to emit healing aura for teammates)
-  - Design and integrate the pre-match Operator selection UI screen
-  - Ensure robust network replication of complex ability state effects
+| Field | Value |
+|---|---|
+| Difficulty | Very Hard |
+| Risk | High — Ability system balance invariably requires multiple intensive iteration cycles; carries significant scope creep risk |
+| Estimate | 10 days |
+| Owner | Senior Programmer + Game Designer |
+| Dependencies | DOC-014, TASK-003 |
+| Review | `[ ]` All 3 Operators spawn bearing correct stats  `[ ]` Unique abilities trigger and activate correctly  `[ ]` Cooldown timers sync accurately across target networks  `[ ]` Comprehensive balance playtest conducted |
+| Refs | [Gameplay/CharacterSystem.md](../Gameplay/CharacterSystem.md), [GDD_Design/Characters/](../../GDD_Design/Characters/) |
 
-  </details>
+**Sub-tasks:**
+- Construct foundation `UOperatorAbility` class and integrated Cooldown manager
+- Implement Assault ability: Combat Stim (Applying speed boost + damage boost for 10s window)
+- Implement Scout ability: UAV Scan (Highlight enemy signatures within set operational range)
+- Implement Support ability: Healing Drone (Deploy physical drone to emit healing aura for teammates)
+- Design and integrate the pre-match Operator selection UI screen
+- Ensure robust network replication of complex ability state effects
+
+</details>
+
 ---
 
 #### Week 21-22: Weapon Expansion & Attachments
 
 ---
 
-- [ ] <details style="display: inline-block; width: 95%; vertical-align: top;"><summary><b>DOC-015: Complete GDD — Full Weapon Roster & Attachment System</b> <code>[High]</code> <code>[Not Started]</code></summary>
+<details><summary>{{< badge content="Not Started" color="gray" >}} {{< badge content="High" color="orange" >}} <b>DOC-015: Complete GDD — Full Weapon Roster & Attachment System</b></summary>
 
-    | Field | Value |
-  |---|---|
-  | Difficulty | Medium |
-  | Estimate | 2 days |
-  | Owner | Game Designer |
-  | Output | Updated WeaponSystem.md reflecting expansion specifications for 15+ weapons alongside intricate attachment system logic design |
-  | Refs | [Gameplay/WeaponSystem.md](../Gameplay/WeaponSystem.md), [GDD_Design/Combat/Weapons.md](../../GDD_Design/Combat/Weapons.md) |
+| Field | Value |
+|---|---|
+| Difficulty | Medium |
+| Estimate | 2 days |
+| Owner | Game Designer |
+| Output | Updated WeaponSystem.md reflecting expansion specifications for 15+ weapons alongside intricate attachment system logic design |
+| Refs | [Gameplay/WeaponSystem.md](../Gameplay/WeaponSystem.md), [GDD_Design/Combat/Weapons.md](../../GDD_Design/Combat/Weapons.md) |
 
-  </details>
+</details>
+
 ---
 
-- [ ] <details style="display: inline-block; width: 95%; vertical-align: top;"><summary><b>TASK-020: Implement 10+ Additional Weapons</b> <code>[High]</code> <code>[Not Started]</code></summary>
+<details><summary>{{< badge content="Not Started" color="gray" >}} {{< badge content="High" color="orange" >}} <b>TASK-020: Implement 10+ Additional Weapons</b></summary>
 
-    | Field | Value |
-  |---|---|
-  | Difficulty | Medium |
-  | Risk | Medium — Expansive arsenals require careful balancing; highly susceptible to power creep issues |
-  | Estimate | 7 days |
-  | Owner | Programmer + Game Designer |
-  | Dependencies | DOC-015, TASK-006 |
-  | Review | `[ ]` New weapons appropriately load data from target DataTables  `[ ]` Initial rough balance pass verified  `[ ]` Dedicated QA test sequence passes without crashes |
-  | Refs | [Gameplay/WeaponSystem.md](../Gameplay/WeaponSystem.md) |
+| Field | Value |
+|---|---|
+| Difficulty | Medium |
+| Risk | Medium — Expansive arsenals require careful balancing; highly susceptible to power creep issues |
+| Estimate | 7 days |
+| Owner | Programmer + Game Designer |
+| Dependencies | DOC-015, TASK-006 |
+| Review | `[ ]` New weapons appropriately load data from target DataTables  `[ ]` Initial rough balance pass verified  `[ ]` Dedicated QA test sequence passes without crashes |
+| Refs | [Gameplay/WeaponSystem.md](../Gameplay/WeaponSystem.md) |
 
-  </details>
+</details>
+
 ---
 
 #### Week 23-24: HUD & Main Menu UI
 
 ---
 
-- [ ] <details style="display: inline-block; width: 95%; vertical-align: top;"><summary><b>DOC-016: Complete GDD — UI/UX Screens Specification</b> <code>[High]</code> <code>[Not Started]</code></summary>
+<details><summary>{{< badge content="Not Started" color="gray" >}} {{< badge content="High" color="orange" >}} <b>DOC-016: Complete GDD — UI/UX Screens Specification</b></summary>
 
-    | Field | Value |
-  |---|---|
-  | Difficulty | Medium |
-  | Estimate | 3 days |
-  | Owner | UI/UX Designer |
-  | Output | Finalize UISystem.md including high-fidelity wireframes encompassing: Main Menu, combat HUD, full Inventory screen setup, and final Post-match results screen |
-  | Refs | [Systems/UISystem.md](../Systems/UISystem.md), [GDD_Design/UI_UX/](../../GDD_Design/UI_UX/), [GDD_Design/Visuals/UserInterface.md](../../GDD_Design/Visuals/UserInterface.md) |
+| Field | Value |
+|---|---|
+| Difficulty | Medium |
+| Estimate | 3 days |
+| Owner | UI/UX Designer |
+| Output | Finalize UISystem.md including high-fidelity wireframes encompassing: Main Menu, combat HUD, full Inventory screen setup, and final Post-match results screen |
+| Refs | [Systems/UISystem.md](../Systems/UISystem.md), [GDD_Design/UI_UX/](../../GDD_Design/UI_UX/), [GDD_Design/Visuals/UserInterface.md](../../GDD_Design/Visuals/UserInterface.md) |
 
-  </details>
+</details>
+
 ---
 
-- [ ] <details style="display: inline-block; width: 95%; vertical-align: top;"><summary><b>TASK-021: Implement In-Game HUD</b> <code>[High]</code> <code>[Not Started]</code></summary>
+<details><summary>{{< badge content="Not Started" color="gray" >}} {{< badge content="High" color="orange" >}} <b>TASK-021: Implement In-Game HUD</b></summary>
 
-    | Field | Value |
-  |---|---|
-  | Difficulty | Medium |
-  | Risk | Low |
-  | Estimate | 5 days |
-  | Owner | UI Programmer |
-  | Dependencies | DOC-016 |
-  | Review | `[ ]` HP/Armor bars reflect correct persistent data  `[ ]` Minimap displays properly  `[ ]` Functional active ammo counters  `[ ]` Extraction timers distinctly visualize when player occupies zone |
-  | Refs | [Systems/UISystem.md](../Systems/UISystem.md), [GDD_Design/UI_UX/](../../GDD_Design/UI_UX/) |
+| Field | Value |
+|---|---|
+| Difficulty | Medium |
+| Risk | Low |
+| Estimate | 5 days |
+| Owner | UI Programmer |
+| Dependencies | DOC-016 |
+| Review | `[ ]` HP/Armor bars reflect correct persistent data  `[ ]` Minimap displays properly  `[ ]` Functional active ammo counters  `[ ]` Extraction timers distinctly visualize when player occupies zone |
+| Refs | [Systems/UISystem.md](../Systems/UISystem.md), [GDD_Design/UI_UX/](../../GDD_Design/UI_UX/) |
 
-  </details>
+</details>
+
 ---
 
-- [ ] <details style="display: inline-block; width: 95%; vertical-align: top;"><summary><b>TASK-022: Implement Main Menu & Operator Selection</b> <code>[High]</code> <code>[Not Started]</code></summary>
+<details><summary>{{< badge content="Not Started" color="gray" >}} {{< badge content="High" color="orange" >}} <b>TASK-022: Implement Main Menu & Operator Selection</b></summary>
 
-    | Field | Value |
-  |---|---|
-  | Difficulty | Medium |
-  | Risk | Low |
-  | Estimate | 5 days |
-  | Owner | UI Programmer |
-  | Dependencies | DOC-016, TASK-019 |
-  | Review | `[ ]` Main menu screens navigate cleanly  `[ ]` Operator selection locks properly  `[ ]` Global settings options easily accessible |
-  | Refs | [Systems/UISystem.md](../Systems/UISystem.md) |
+| Field | Value |
+|---|---|
+| Difficulty | Medium |
+| Risk | Low |
+| Estimate | 5 days |
+| Owner | UI Programmer |
+| Dependencies | DOC-016, TASK-019 |
+| Review | `[ ]` Main menu screens navigate cleanly  `[ ]` Operator selection locks properly  `[ ]` Global settings options easily accessible |
+| Refs | [Systems/UISystem.md](../Systems/UISystem.md) |
 
-  </details>
+</details>
+
 ---
 
-- [ ] <details style="display: inline-block; width: 95%; vertical-align: top;"><summary><b>TEST-004: Alpha Internal (M3) Review</b> <code>[Critical]</code> <code>[Not Started]</code></summary>
+<details><summary>{{< badge content="Not Started" color="gray" >}} {{< badge content="Critical" color="red" >}} <b>TEST-004: Alpha Internal (M3) Review</b></summary>
 
-    | Field | Value |
-  |---|---|
-  | Difficulty | Medium |
-  | Risk | High |
-  | Estimate | 3 days |
-  | Owner | Team Lead + Dedicated QA |
-  | Review | `[ ]` Map fully operational utilizing basic art pass  `[ ]` All 3 feature Operators playable effectively  `[ ]` Arsenal confirms 10+ Weapons functional  `[ ]` Complete on-screen HUD  `[ ]` Full internal team playtest over a 1-week period completes successfully |
-  | Refs | [ProjectScope/MVP.md](../../GDD_Design/ProjectScope/MVP.md) |
+| Field | Value |
+|---|---|
+| Difficulty | Medium |
+| Risk | High |
+| Estimate | 3 days |
+| Owner | Team Lead + Dedicated QA |
+| Review | `[ ]` Map fully operational utilizing basic art pass  `[ ]` All 3 feature Operators playable effectively  `[ ]` Arsenal confirms 10+ Weapons functional  `[ ]` Complete on-screen HUD  `[ ]` Full internal team playtest over a 1-week period completes successfully |
+| Refs | [ProjectScope/MVP.md](../../GDD_Design/ProjectScope/MVP.md) |
 
-  </details>
+</details>
+
 ---
 
 ### Month 6 — August 2026: Economy, Progression & Bug Fixes [OUTLINE]
@@ -176,3 +184,4 @@ weight: 30
 - TEST-006: Milestone M4 — Official Closed Beta Launch Readiness Evaluation
 
 ---
+

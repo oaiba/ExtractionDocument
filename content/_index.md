@@ -50,7 +50,7 @@ Access the specialized documentation portals based on your role and current task
 {{< /cards >}}
 
 {{< cards cols="2" >}}
-  {{< card link="/ExtractionDocument/tracker/tasks/gdd_tasktracker/" title="Task Tracker" icon="list-check" subtitle="Comprehensive project-wide task tracking and milestones." >}}
+  {{< card link="/ExtractionDocument/tracker/tasks/gdd_tasktracker/" title="Task Tracker" icon="clipboard-list" subtitle="Comprehensive project-wide task tracking and milestones." >}}
   {{< card link="/ExtractionDocument/gdd_agents/" title="AI Agent Guidelines" icon="chip" subtitle="Rules, workflows, and skills for AI coding agents (Gemini, Copilot, Cursor)." >}}
 {{< /cards >}}
 

@@ -17,8 +17,13 @@ This section details the specific **interaction mechanics** — how players phys
 {{< /cards >}}
 
 {{< cards cols="2" >}}
+  {{< card link="Gear_Mechanics" title="Gear Mechanics" icon="briefcase" subtitle="How loadout (weight, rig, armor) affects mobility, stamina, and extraction flow." >}}
   {{< card link="Medical_System" title="Medical System" icon="heart" subtitle="Body part health, injury types, healing triage, toxicity, and overdose." >}}
+{{< /cards >}}
+
+{{< cards cols="2" >}}
   {{< card link="Looting_Interactions" title="Looting & Inventory" icon="collection" subtitle="Container interaction, grid inventory, secure container, keys, and barter items." >}}
+  {{< card link="Hero_Abilities" title="Hero Abilities" icon="user" subtitle="Operator classes, passive/active/signature abilities, and Operator Mastery." >}}
 {{< /cards >}}
 
 {{< cards cols="2" >}}

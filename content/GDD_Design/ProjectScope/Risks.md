@@ -99,6 +99,8 @@ This document identifies potential risks to the project across:
 - Disable cross-play by default if imbalance severe
 - Platform-specific balancing
 
+**Owner:** Lead Designer. **Review cadence:** Monthly (see [Scope Review & Planning](project-scope-review-and-planning.html) §5.3).
+
 ---
 
 ### Risk D5: Content Drought
@@ -278,6 +280,8 @@ This document identifies potential risks to the project across:
 - Introduce new high-tier currency (e.g., Gold Bars)
 - Force a mid-season wipe (Last Resort)
 
+**Owner:** Economy Lead / Live Ops. **Review cadence:** Monthly (see [Scope Review & Planning](project-scope-review-and-planning.html) §5.3).
+
 ---
 
 ### Risk B4: Platform Policy Changes
@@ -421,7 +425,7 @@ This document identifies potential risks to the project across:
 | :-------- | :--------------------------------------------- |
 | Weekly    | Team leads review active risks                 |
 | Bi-weekly | Risk status update in sprint review            |
-| Monthly   | Full risk matrix review with leadership        |
+| Monthly   | Full risk matrix review with leadership; **D4 (Cross-Platform)** and **B3 (Economy inflation)** owners report (see [Scope Review & Planning](project-scope-review-and-planning.html) §5.3). |
 | Quarterly | Risk retrospective and new risk identification |
 
 

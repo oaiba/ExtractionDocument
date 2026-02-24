@@ -55,6 +55,7 @@ These six foundational pillars define the extraction shooter genre based on indu
 - ⚠️ Session length (DMZ: 15min, Tarkov: 45min)
 
 **Our positioning:**
+- **Perspective**: Top-down (hero shooter looter extraction; operators with classes/abilities).
 - **Target Session**: 15-20 minutes (mobile-friendly)
 - **PvP Intensity**: Medium-High (not Tarkov hardcore, not CoD casual)
 - **Realism**: Tactical (believable, not simulator)
@@ -982,7 +983,6 @@ Use this checklist for **every new feature request**. If a feature fails 3+ chec
 - [Inventory & Gear Systems](inventory-gear-systems-enhanced.md) - Deep dive on loot mechanics
 
 **Implementation Guides:**
-- [AI Agent Implementation Plan](ai-agent-implementation-plan.md) - Development roadmap
 - [Competitive Analysis](competitive-analysis-extraction-shooters.md) - Market positioning
 
 **Player-Facing:**

@@ -18,6 +18,19 @@ type: docs
 
 ---
 
+## 📆 MVP ↔ Quarterly Roadmap
+
+Mapping milestones to quarters for stakeholder reporting and alignment with genre benchmarks (e.g. HAWKED, Tarkov). *See [Scope Review & Planning](project-scope-review-and-planning.html) for full planning.*
+
+| Quarter | Milestones | Content theme | Key deliverables (high-level) |
+| :------ | :--------- | :------------ | :---------------------------- |
+| **Q1** | M1 Prototype, M2 Vertical Slice | Foundation | Playable greybox, one polished zone, full combat loop; server-authoritative validated; asset pipeline. |
+| **Q2** | M3 Alpha (Internal) | Core loop | Map 1 full, 3 operators, Scav AI, inventory/stash, vendor "The Fixer". |
+| **Q3** | M4 Beta (Closed), M5 Soft Launch | Economy & social | Economy, quests, 5 operators, gunsmith, squad; store + live ops pipeline. |
+| **Q4** | M6 Global Launch | Launch | Marketing push, events, platform cert complete. |
+
+---
+
 ## 🔗 Technical Dependencies
 
 *   **Server Architecture:** Dedicated servers (Agones/K8s) must be validated by **M2**.
@@ -115,6 +128,7 @@ type: docs
 | **Tech Review** | Technical Director | CTO                |
 
 **Recent Changes:**
+*   **v1.3 (2026-02-12):** Aligned with [Scope Review & Planning](project-scope-review-and-planning.html): added MVP ↔ Quarterly Roadmap (Q1–Q4), content themes.
 *   **v1.2 (2026-02-11):** Expanded Alpha/Beta features with specific mechanics (Ammo types, Health states).
 *   **v1.1 (2026-02-09):** Refined Milestones with specific deliverable targets and dependencies.
 *   **v1.0 (2026-02-07):** Initial MVP definition.

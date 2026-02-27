@@ -30,3 +30,7 @@ This section details the specific **interaction mechanics** — how players phys
   {{< card link="Environmental_Hazards" title="Environmental Hazards" icon="cloud" subtitle="Weather, zone hazards, contamination, dynamic events, and raid timer." >}}
   {{< card link="Extraction_Mechanics" title="Extraction Mechanics" icon="logout" subtitle="Zone types, extraction process, interruption rules, and counter-play." >}}
 {{< /cards >}}
+
+{{< cards cols="2" >}}
+  {{< card link="LOS_Fog_Visibility" title="LOS & Fog of War" icon="eye" subtitle="Line of sight, visibility layers, shared team vision, and minimap fog." >}}
+{{< /cards >}}

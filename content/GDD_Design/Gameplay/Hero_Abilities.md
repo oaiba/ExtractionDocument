@@ -97,6 +97,8 @@ Each operator has three layers of abilities. Numbers below are first-pass design
 | **Signature** | Overdrive       | +20% move speed, +15% rate of fire, -10% recoil for 10 s. Taking lethal damage during Overdrive leaves Viper at 1 HP instead (once per activation). | 10 s                        | 180 s    | War cry voice line + bass rumble | Red aura glow around character        |
 
 
+**LOS/Visibility:** Flashbang — vision denial: blinds enemies 2.5 s in 5 m radius (no fog clear, no shared intel).
+
 **Synergy notes:** Viper's Flashbang enables aggressive pushes for the entire squad. Overdrive is best used to close distance or win a 1v2. Frag Charge covers flanks or extract zones.
 
 ---
@@ -117,6 +119,8 @@ Each operator has three layers of abilities. Numbers below are first-pass design
 
 
 **Synergy notes:** Hawk's intel feeds the entire squad's decision-making. Spotter Drone before pushing a room eliminates blind spots. Ghost Cloak enables flanking or emergency extraction escape.
+
+**LOS/Visibility:** Spotter Drone — vision proxy 25 m (drone LOS); clears fog for squad; marks shared to squad. Motion Sensor — intel only (no LOS); pings moving enemies in 10 m; shared to squad; does not clear fog (ping only). Ghost Cloak — self-concealment; reduces visibility to enemies (shimmer within 8 m); not a vision proxy for squad.
 
 **Counterplay:** Shoot the drone (30 HP). Crouch/prone to avoid Motion Sensor. Watch for cloak shimmer within 8 m.
 
@@ -141,6 +145,8 @@ Each operator has three layers of abilities. Numbers below are first-pass design
 
 **Counterplay:** Field Hospital zone is visible and audible — throw grenades or push while enemies are stationary healing. Stim Shot does not restore HP.
 
+**LOS/Visibility:** Field Hospital — zone is visible to all (enemy LOS not blocked); does not reveal or block vision.
+
 **Extraction interaction:** Medkit Drop and Field Hospital both count as *healing actions* — **using them cancels extraction timer** if the user is in an extract zone. Cross must stop healing to extract.
 
 ---
@@ -162,6 +168,8 @@ Each operator has three layers of abilities. Numbers below are first-pass design
 
 **Synergy notes:** Bulwark anchors a position while allies loot or extract. Deployable Cover creates instant defensive positions. Fortress Protocol during extraction timer makes the squad much harder to kill.
 
+**LOS/Visibility:** Deployable Cover — one-direction LOS blocker; blocks vision (and shots) from one side; does not reveal.
+
 **Counterplay:** Deployable Cover only blocks one direction — flank it. Fortress Protocol locks Bulwark to walk speed — disengage and reposition. Concussion Blast is short-range — maintain distance.
 
 ---
@@ -182,6 +190,8 @@ Each operator has three layers of abilities. Numbers below are first-pass design
 
 
 **Synergy notes:** Cipher counters other operators' gadgets and provides decisive intel for squad pushes. EMP Drone before a push disables Hawk's drones and Bulwark's cover (electronics only — physical cover unaffected). Tactical Overlay enables coordinated squad assaults.
+
+**LOS/Visibility:** Tech Savvy — see traps (Motion Sensors, mines) within 8 m through walls (UI highlight); no enemy reveal. Tactical Overlay — vision proxy 40 m; minimap reveal; last-known when enemy in cover; shared to squad.
 
 **Counterplay:** EMP Drone is fragile (20 HP) — shoot it mid-flight. Signal Jammer is destroyable and audible. Tactical Overlay only reveals for 10 s and requires Cipher to be alive — kill Cipher to end the effect early.
 
@@ -243,6 +253,25 @@ Per [Gear Mechanics](Gear_Mechanics.md), some operators have gear constraints:
 | Tank (Bulwark)                       | Heavy or Armored rig only (12 slots). Cannot equip Light rig. Must bring Class 3+ armor.         | Enforces tank fantasy; prevents tank from being a fast flanker.           |
 | Support (Cross)                      | +5 kg carry weight per tier (via Pack Mule passive). Starts at higher effective weight capacity. | Supports "team mule" and "loot carrier" roles.                            |
 | Assault (Viper), Specialist (Cipher) | No restrictions.                                                                                 | Flexibility as generalist / tech roles.                                   |
+
+
+### Interaction with LOS/Visibility
+
+Per [LOS, Fog of War & Visibility](LOS_Fog_Visibility.md), abilities that reveal or block vision integrate with the shared team vision system. Summary:
+
+| Operator | Ability | LOS/Visibility role | Range/Radius | Fog clearing? | Shared to squad? | Counterplay |
+| :------- | :------ | :------------------ | :------------ | :------------ | :---------------- | :---------- |
+| Hawk | Spotter Drone | Vision proxy | 25 m | Yes (drone LOS) | Yes | Shoot drone (30 HP) |
+| Hawk | Motion Sensor | Intel | 10 m | No (ping only) | Yes | Crouch/prone; destroy (15 HP) |
+| Hawk | Ghost Cloak | Self-conceal | 8 m shimmer | No | No | Shimmer visible 8 m; damage breaks |
+| Cipher | Tech Savvy | Exception (traps) | 8 m | No | No (self) | N/A |
+| Cipher | Tactical Overlay | Vision proxy | 40 m | Yes | Yes | Kill Cipher; hard cover |
+| Wraith (Recon) | Smoke | Blocker | 8 m radius | No | N/A | Avoid smoke; Thermal Block |
+| Viper | Flashbang | Vision denial | 5 m | No | No | Look away; cover |
+| Bulwark | Deployable Cover | LOS blocker | Directional | No | N/A | Flank; destroy (300 HP) |
+| Cross | Field Hospital | Zone visible | 4 m zone | No | N/A (enemies see zone) | N/A |
+
+Passives such as **Light Step** (Hawk) and **Tech Savvy** (Cipher) affect visibility indirectly (reduced sound detection; see traps through walls) but do not create vision proxies for the squad. All intel and vision from the abilities above is merged into the squad's shared visibility state (minimap fog, HUD marks). Counterplay preserves fair visibility per design pillars.
 
 
 ---

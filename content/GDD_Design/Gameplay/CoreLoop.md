@@ -90,7 +90,11 @@ Sound is the most critical information tool in the infiltration phase:
 | Looting sounds | 5-10m | Medium | None — passive |
 | Loot beam (Rare+ items) | 30m | High | Reveals your position if looting |
 
-**Design Intent**: The infiltration phase teaches players that information is more valuable than firepower. A player who listens carefully has a significant advantage over one who sprints carelessly.
+**Squad shared vision:** The minimap uses merged visibility from the whole squad — any area seen by at least one teammate (or by intel abilities like Spotter Drone, Tactical Overlay) is revealed for the team. Fog of war shows explored-but-unseen areas; pings and marks from teammates persist in fog as last-known info. See [LOS, Fog of War & Visibility](LOS_Fog_Visibility.md) for full specification.
+
+**Operator intel roles:** Hawk (Scout) and Cipher (Specialist) provide vision proxies and intel (drone, sensor, overlay) to clear fog and reveal enemies for the whole team; smoke (Wraith/Recon) and deployable cover (Bulwark) can block LOS. Details in [LOS, Fog of War & Visibility](LOS_Fog_Visibility.md) and [Hero Abilities](Hero_Abilities.md).
+
+**Design Intent**: The infiltration phase teaches players that information is more valuable than firepower. A player who listens carefully has a significant advantage over one who sprints carelessly. Shared team vision rewards coordination: one scout can clear fog for the squad and feed intel without everyone being in the same room.
 
 <!-- REF_IMAGE: Sound propagation diagram — concentric circles showing audible ranges for different actions overlaid on a map section -->
 

@@ -152,6 +152,10 @@ Any information **one** squad member sees (in their LOS or via an ability) is tr
 - **Pings** and **"Enemy spotted"** callouts from teammates.
 - **Sound cues** (gunshot direction, footsteps) mapped to compass or HUD as in Extraction and design pillars.
 
+### Cross-Platform
+
+Visibility state, fog layers, and squad-merged vision data are identical on PC, console, and mobile. Minimap and HUD show the same information; layout and size may adapt per platform (see [User Interface](../../Visuals/UserInterface.md)). Ping/mark input may differ (e.g. radial menu vs keybind); server-authoritative visibility ensures parity. See [Controls](../../GameDesign/Controls.md) for input by platform.
+
 ---
 
 ## Abilities and Environmental Modifiers

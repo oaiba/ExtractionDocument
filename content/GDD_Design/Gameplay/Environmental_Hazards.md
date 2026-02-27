@@ -74,6 +74,10 @@ Certain map areas contain persistent environmental dangers that restrict movemen
 3. **Audio Warning**: Each hazard has a distinct ambient sound (Geiger counter ticking, chemical hissing, structural groaning) that alerts attentive players before they enter the danger zone.
 4. **Bypass Options**: Every hazardous zone has a safe (but longer) route around it. The hazard creates a choice: fast and dangerous, or slow and safe.
 
+### Performance (Cross-Platform)
+
+Weather and hazard effects use the same gameplay rules on all platforms. On mobile and low-end devices, particle density, fog resolution, and distant weather LOD may be reduced for performance; damage, visibility ranges, and audio cues remain unchanged. See [Asset Guidelines](../../Visuals/AssetGuidelines.md) for cross-platform LOD and effect budgets.
+
 ---
 
 ## Contamination Mechanic
@@ -89,6 +93,8 @@ Contamination is the primary end-of-raid pressure system. It replaces a traditio
 | 13:30 | **Contamination Escalation (Phase 2)**: Zone shrinks further | 25 HP/sec. Only central zones remain safe. Extraction becomes critical |
 | 14:30 | **Final Push (Phase 3)**: Almost entire map is contaminated | 50 HP/sec. Only extraction zone interiors are safe |
 | 15:00 | **Match Ends**: All remaining players die | Total loss of gear. No extraction possible |
+
+For **standard raids** (25–30 min, see [Core Gameplay Loop](CoreLoop.md)), contamination triggers in the final third of the raid; phases scale proportionally. The table above is for a **15-min Quick Raid** or reference scale.
 
 ### Contamination Visual and Audio Design
 

@@ -10,6 +10,14 @@ The core engagement loop is designed to create a "Hero's Journey" in miniature, 
 
 > See [Core Gameplay Mechanics](../../GameDesign/CoreGameplay/) for the detailed per-minute match timeline, combat system numbers, and control scheme specifications.
 
+### Session Length & Pacing
+
+**Target session:** 15–20 minutes (mobile-friendly). Standard raid timer is 25–30 minutes so that a typical run (infiltrate, loot, extract) fits within one session; players who extract early or die early can queue again within the target window. An optional **Quick Raid** mode (e.g. 15-minute raid timer, smaller map or reduced objectives) may be offered for players who want a guaranteed short session. Design pillars: [Design Pillars](../../ProjectScope/design-pillars-enhanced.md). Mechanics benchmark: [Gameplay Review Checklist](Gameplay_Review_Checklist.md).
+
+**Design decisions (re-planning):** Medical depth is kept (full body-part health, bleed, fracture, pain, blacked limb) for tactical identity. Operator abilities use cooldowns only (no per-raid charge limit); maximum ~2 signature uses per 20-minute raid.
+
+**Cross-platform:** Same rules on all platforms (PC, console, mobile). Input and UX vary by device (e.g. hold E vs tap-and-hold for extract, keybinds vs touch layout); see [Controls](../../GameDesign/Controls.md) and [Gameplay Review Checklist](Gameplay_Review_Checklist.md).
+
 ---
 
 ## Phase 1: Preparation (Safety & Investment)

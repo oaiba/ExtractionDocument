@@ -33,4 +33,5 @@ This section details the specific **interaction mechanics** — how players phys
 
 {{< cards cols="2" >}}
   {{< card link="LOS_Fog_Visibility" title="LOS & Fog of War" icon="eye" subtitle="Line of sight, visibility layers, shared team vision, and minimap fog." >}}
+  {{< card link="Gameplay_Review_Checklist" title="Review Checklist & Benchmark" icon="check-square" subtitle="Pillar alignment, competitor benchmark, and cross-platform review." >}}
 {{< /cards >}}

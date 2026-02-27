@@ -118,6 +118,10 @@ Extraction is the climax of every raid. It is the singular moment where all accu
 
 <!-- REF_IMAGE: Extraction timer HUD mockup — showing the 30-second countdown, zone boundary indicator, and the "Extracting..." status bar with helicopter silhouette approaching -->
 
+### Cross-Platform
+
+Extraction rules are identical on PC, console, and mobile. **Activate extraction:** PC/console use hold (e.g. Hold E); mobile may use tap-and-hold or a dedicated button with the same 1.5 s commit. **Timer visibility:** The countdown and zone boundary are shown on HUD on all platforms; layout and size may adapt (see [Controls](../../GameDesign/Controls.md) and [User Interface](../../Visuals/UserInterface.md)). Same interruption rules apply regardless of input method.
+
 ---
 
 ## Interruption Rules

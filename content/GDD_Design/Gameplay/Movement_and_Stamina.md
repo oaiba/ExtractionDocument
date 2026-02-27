@@ -60,6 +60,10 @@ Standing (Walk)
 
 **Design Intent**: Jumping is deliberately expensive to prevent bunny-hopping. The game rewards ground-level tactical movement, not aerial acrobatics.
 
+### Cross-Platform
+
+Movement values (speed multipliers, stamina costs, noise) are identical on PC, console, and mobile. **Input:** PC uses WASD + Shift/C; mobile uses virtual stick and buttons; console uses left stick and face buttons. Same state transitions and penalties apply. See [Controls](../../GameDesign/Controls.md) for platform input layout.
+
 ---
 
 ## Stamina System

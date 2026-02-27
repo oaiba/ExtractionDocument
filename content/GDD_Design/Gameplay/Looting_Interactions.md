@@ -132,6 +132,10 @@ The Secure Container is the single most important item in the game. Everything p
 | Drag + R | Rotate item 90 degrees | Manual placement optimization |
 | Discard (Del key) | Drop item on ground | Drops at player's feet. Other players can pick it up |
 
+### Cross-Platform
+
+Grid rules, search times, and container behavior are identical on PC, console, and mobile. **Input:** PC uses drag-and-drop and shortcuts (Ctrl+Click, Alt+Click); mobile uses tap-to-transfer and optional auto-sort; console uses cursor or d-pad selection. Same vulnerability window and noise rules apply. See [Controls](../../GameDesign/Controls.md) and [Gear Mechanics](Gear_Mechanics.md) for platform input and inventory UX.
+
 ---
 
 ## Looting Risk Design

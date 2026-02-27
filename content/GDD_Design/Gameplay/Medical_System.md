@@ -48,6 +48,10 @@ The medical system prioritizes realistic injury management over arcade-style HP 
 
 <!-- REF_IMAGE: HUD mockup — bottom-left body silhouette showing a blacked left leg, light bleed indicator, and pain effect overlay on the screen edges -->
 
+### Cross-Platform
+
+Triage rules, body-part HP, and treatment effects are the same on all platforms. **Input:** PC uses hotkeys for meds (rig slots); mobile may use a heal wheel or quick-select; console uses d-pad or radial menu. Animation lock and vulnerability during healing apply regardless of input. See [Controls](../../GameDesign/Controls.md) for platform-specific bindings.
+
 ---
 
 ## Healing Priority Flowchart

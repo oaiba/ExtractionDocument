@@ -144,27 +144,125 @@ Double-tapping the ping button *immediately* places a high-priority **RED DANGER
 
 ---
 
-## 🧭 Compass Ring (Top-Down Optimized)
+## 🏢 Multi-Floor Building Navigation (Top-Down Specific)
+
+Top-down perspective requires unique handling of vertical space. When indoors, the camera cuts away the roof to reveal the layout per [Camera System](../Gameplay/Camera_System.md). Multi-story buildings need additional map affordances.
+
+### Floor Layer System
+
+| Floor | How Player Switches | Camera Behavior | Minimap Behavior |
+| :---- | :------------------ | :-------------- | :--------------- |
+| Ground (Floor 0) | Starting floor | Standard altitude (18m) | Full floor footprint shown |
+| Floor 1 (upper) | Walk up stairs / climb ladder | Altitude lowers to show Floor 1 layout (12m) | Only Floor 1 rooms visible; Floor 0 grayed |
+| Floor 2+ | Continue up | Altitude lowers further (8m) | Only current floor visible |
+| Basement (below ground) | Descend stairs / hatch | Altitude 6m; roof removed | Basement layout renders; surface grayed |
+
+**Floor indicator:** HUD shows a small floor icon and number (e.g., `[F2]`) in the corner of the minimap. Changes when crossing a floor threshold (staircase reach).
+
+**Invisible floors:** When on Floor 2, Floor 0 and 1 are rendered at 20% opacity (silhouettes) so the player can see through to navigate — but Floor 2 is solid and fully lit.
+
+### Minimap Floor Behavior
+
+- **Minimap always shows current floor only** — switching floors transitions with a 0.3s cross-fade.
+- **Staircase icons** (↑↓ arrow) on minimap mark staircase/ladder locations between floors — visible on all floors.
+- **Teammate floor indicator**: teammate icon on minimap has a small `↑` or `↓` badge if they are on a different floor than local player.
+
+### Inter-Floor Audio
+
+Being on Floor 2 above a floor-1 firefight:
+- **Footsteps:** Heard at −40% normal volume through the floor.
+- **Gunfire:** Heard at full volume (not attenuated by floors).
+- **Explosions:** Full volume + screen shake regardless of floor.
+
+> Design intent: players above enemies can hear them and prepare — but cannot see through the floor. Information asymmetry creates vertical tactical play.
 
 ---
 
-## 🚧 Implementation & Tech Constraints
+## 🔊 Sound Visualization System
 
-### Network Optimization
-*   **Minimap Updates:** Player positions update @ 10Hz. Enemy sound markers update @ 20Hz (priority).
-*   **Fog of War:** Calculated client-side based on server-sent visibility radius to save bandwidth.
+Extraction shooters use audio as primary information. For players with sound disabilities, and for mobile players in public spaces, the minimap visualizes sound sources:
 
-### Performance (Mobile)
-*   **3D Markers:** Use **Screen Space UI** (not World Space Canvas) where possible for batching.
-*   **Occlusion:** Markers for loot deep within buildings should handle occlusion intelligently (e.g., show "Through Wall" icon style).
+### Sound Rings on Minimap
+
+| Sound Event | Minimap Effect | Duration | Range Rule |
+| :---------- | :------------- | :------- | :--------- |
+| **Enemy footsteps** | Ripple wave ring at sound location | 1.5s fade | Only if within actual hearing range per [Movement & Stamina](../Gameplay/Movement_and_Stamina.md) |
+| **Enemy gunfire** | Burst flash icon + direction arc | 3s fade | Audible range per weapon (20–80m) |
+| **Explosion** | Large ring (radius = explosion range) | 2s | Always shown if within 120m |
+| **Door break/open** | Brief pulse at door location | 1s | Within 15m |
+| **Enemy voice/call-out** | Humanoid icon pulse | 2s | Within 25m |
+| **Item pickup noise** | Small dot flash | 0.5s | Within 5m |
+
+**Accuracy caveat:** Sound visualization shows *direction and approximate distance* only. It does NOT pinpoint the exact grid position. This maintains the game's intel-over-omniscience principle.
+
+**Mobile accessibility:** Sound rings are enabled by default on mobile. PC/Console: off by default, opt-in in Accessibility settings.
 
 ---
 
-## 🔍 Reference Inspirations
-*   **Apex Legends:** Contextual Ping system and Ping Wheel.
-*   **Arena Breakout / Lost Light:** Sound visualization on Minimap (footstep waves).
-*   **Call of Duty Mobile:** Map grid system and footprint indicators.
-*   **The Division:** 3D AR lines floating in the world (for pathfinding integration).
+## 📍 Extraction Zone Discovery System
+
+Extraction zones are not all visible at raid start. This creates exploration incentive and prevents immediate camping.
+
+### Zone Visibility States
+
+| State | Minimap Display | How Reached |
+| :---- | :-------------- | :---------- |
+| **Unknown** | Greyed area, no icon | Has never been physically visited this raid |
+| **Discovered** | Icon visible, status shown | Player or teammate walked within 30m of zone entrance |
+| **Active** | Pulsing green icon | Extraction window open; can attempt extract |
+| **Closed** | Red X icon | Extraction window has closed (timed or conditional) |
+| **Conditional** | Yellow lock icon | Available but requires item/payment |
+
+**Shared discovery:** When one squad member discovers an extraction zone, it reveals on **all teammates' minimaps** simultaneously.
+
+**Map screen — extraction tab:** Tactical map has a dedicated extraction tab showing all zones, their current state, estimated remaining availability window, and conditions (if any). Zones remain greyed if undiscovered (not shown in tab either — must be physically found).
+
+### Zone Types on Map
+
+| Icon | Type | Notes |
+| :--- | :--- | :---- |
+| 🟢 Door | Standard | Walk-in, hold timer |
+| 🚁 Helicopter | Vehicle | Must be activated; leaves when full |
+| 🟡 🔒 | Conditional (paid/item) | Lock icon with cost shown on hover |
+| 🔵 Dual | Cooperative | Two players required per [Extraction Mechanics](../Gameplay/Extraction_Mechanics.md) |
+| 🔴 Emergency | Expensive | Always available; flare cost shown |
+
+---
+
+## 🖥️ Top-Down Specific Design Notes
+
+### Why This Map System Differs from FPS Maps
+
+In a first-person game, the player sees the world from the character's eye level. In top-down, the player sees a live aerial view. This creates unique opportunities and constraints:
+
+| Design Question | FPS Solution | Top-Down Solution |
+| :-------------- | :----------- | :---------------- |
+| "Where am I on the map?" | Minimap as supplement | Minimap matches exactly what player sees in camera |
+| "Where is the enemy relative to me?" | Audio + compass arc | Sound visualization rings + camera shows visible enemies directly |
+| "Which floor am I on?" | Not a concern (FPS is single-plane mostly) | Floor indicator + minimap floor layers |
+| "Is this area safe?" | FPS uses cover and wall lean | Top-down uses overhead camera + LOS blocking |
+| "How do I call out a position?" | "At the corner" descriptions | Grid callout system (A4, C7) always North-Up on BigMap |
+
+### Camera-Map Integration
+
+Because the in-game camera IS a top-down view, the minimap is essentially a zoomed-out version of what the player already sees: 
+
+- **Minimap FOV ~80m radius** vs. camera's 26m visible radius — minimap shows further area than camera.
+- **Minimap is always lit** (no fog of render distance). Camera is fog-affected.
+- **Enemy dots on minimap only appear via LOS or ability scan** — they don't appear just from camera range.
+
+---
+
+## 🔗 Cross-References
+
+- [Camera System](../Gameplay/Camera_System.md) — Camera altitude per floor, indoor building handling, and compass offset.
+- [LOS, Fog & Visibility](../Gameplay/LOS_Fog_Visibility.md) — Fog of War rules; when enemies appear on minimap; ability LOS reveals.
+- [Movement & Stamina](../Gameplay/Movement_and_Stamina.md) — Surface sound ranges; stairs/ladder traversal affecting sound emission.
+- [Hero Abilities](../Gameplay/Hero_Abilities.md) — Hawk's motion sensor and drone adding minimap pings; Cipher's tactical overlay.
+- [Extraction Mechanics](../Gameplay/Extraction_Mechanics.md) — Extraction zone types, timers, conditional requirements.
+- [AI Enemy Behavior](../Gameplay/AI_Enemy_Behavior.md) — AI alert states that trigger audio visualization events.
+- [GameDesign/Controls](Controls.md) — Ping button input mapping (single tap, hold, double tap) per platform.
+
 
 
 

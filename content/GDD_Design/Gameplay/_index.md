@@ -62,5 +62,11 @@ This section details the specific **interaction mechanics** — how players phys
 {{< /cards >}}
 
 {{< cards cols="2" >}}
+  {{< card link="Operator_Synergy_Guide" title="Operator Synergy Guide" icon="puzzle" subtitle="4 Tier 1 combos, counter matrix, meta compositions by playstyle, and balance guardrails." >}}
+  {{< card link="Weapon_Attachment_System" title="Weapon Attachment System" icon="wrench" subtitle="8 slot types, stat trade-offs, in-raid swap, preset system, and Workbench crafting gates." >}}
+{{< /cards >}}
+
+{{< cards cols="2" >}}
   {{< card link="Gameplay_Review_Checklist" title="Review Checklist & Benchmark" icon="check-square" subtitle="Pillar alignment, competitor benchmark, cross-platform review, and consistency fixes." >}}
 {{< /cards >}}
+

@@ -9,7 +9,7 @@ weight: 6
 
 This section details the specific **interaction mechanics** — how players physically interact with the world and its systems. While [Game Design](../GameDesign/) covers high-level system specifications with concrete numbers, and [Combat](../Combat/) covers weapons and armor, this section focuses on the *feel*, *flow*, and *design intent* behind each mechanic.
 
-> **Cross-Reference**: For per-minute match timelines, control scheme layouts, and raw balance numbers, see [Core Gameplay Mechanics](../GameDesign/CoreGameplay/).
+> **Cross-Reference**: For per-minute match timelines, control scheme layouts, and raw balance numbers, see [Core Gameplay Mechanics](../GameDesign/CoreGameplay/). For weapon arsenals and item catalogue, see the [Weapon Arsenal](WeaponArsenal) and [Items & Gear](ItemsAndGear) GDDs in this section.
 
 {{< cards cols="2" >}}
   {{< card link="CoreLoop" title="Core Gameplay Loop" icon="refresh" subtitle="The five-phase extraction cycle, psychological hooks, and economy design." >}}
@@ -68,5 +68,10 @@ This section details the specific **interaction mechanics** — how players phys
 
 {{< cards cols="2" >}}
   {{< card link="Gameplay_Review_Checklist" title="Review Checklist & Benchmark" icon="check-square" subtitle="Pillar alignment, competitor benchmark, cross-platform review, and consistency fixes." >}}
+{{< /cards >}}
+
+{{< cards cols="2" >}}
+  {{< card link="WeaponArsenal" title="Weapon Arsenal" icon="adjustments" subtitle="Full weapon bible: 5 primary categories, ammo caliber tables, attachment reference, damage/recoil/TTK mechanics." >}}
+  {{< card link="ItemsAndGear" title="Items & Gear Catalogue" icon="archive" subtitle="Armor, medical, consumables, tactical gear, keys, crafting materials — all item specs, values, and grid sizes." >}}
 {{< /cards >}}
 

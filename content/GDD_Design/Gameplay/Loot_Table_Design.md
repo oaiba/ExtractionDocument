@@ -225,3 +225,74 @@ To prevent farming predictability, each server instance shuffles loot:
 - [Quest & Objective System](Quest_Objective_System.md) — Quest items and their container spawn rules.
 - [Hideout & Crafting](Hideout_Crafting.md) — Crafting materials as primary Tier 2 loot category.
 - [GameDesign/Economy](../../GameDesign/Economy.md) — Macro economy calibration; loot as primary faucet.
+- [Items & Gear](ItemsAndGear.md) — Full item catalogue with values, weights, and drop categories.
+
+---
+
+## Dynamic Loot Scaling
+
+The loot system adjusts dynamically based on in-raid conditions to maintain meaningful play throughout each session.
+
+### Player Count Adjustment
+
+| Trigger | Effect | Purpose |
+| :------ | :----- | :------ |
+| More players alive → | More loot containers activated | Prevents loot drought in high-population sessions |
+| Players eliminated → | Small loot quality increase globally | Compensates surviving players; rewards skilled survival |
+| Fewer than 4 players remaining → | Tier +1 upgrade applied to remaining containers | Incentivizes holding out vs early extract |
+
+### Time-Based Scaling
+
+| Time Range | Loot Quality State |
+| :--------- | :----------------- |
+| 0–5 min | Base table — Common/Uncommon dominant |
+| 5–10 min | Mid-tier push — Rare rate +20% globally |
+| 10+ min | Late quality — Elite containers enter hot zones |
+| Contamination Zone active | Peak quality — best loot before match end |
+
+### Death-Based Scaling
+
+Each confirmed player kill in the match triggers a +2% loot quality modifier globally (stacks up to +20%). This creates a positive feedback loop for survivors — the longer you live, the better the loot becomes.
+
+---
+
+## Seasonal Economy Events
+
+Seasonal events temporarily shift the loot economy to create predictable spikes in supply or demand that fuel the marketplace.
+
+| Event | Duration | Loot Effect | Market Effect |
+| :---- | :------- | :---------- | :------------ |
+| **Double Loot Weekend** | 48h | Container fill rate +25%; quality tier +1 | Prices drop due to supply surge; good time to stock up |
+| **Scarcity Week** | 7 days | Container fill rate −30% | Prices rise 20–50% — good time to sell stockpiles |
+| **Rare Item Event** | 3–5 days | Specific weapon type spawn rate ×3 (e.g., "Sniper Week") | Target item price crashes; other categories less affected |
+| **Trader Special** | 3 days | NPC vendors 20–30% discount on selected categories | Buy from traders instead of marketplace; drives market balance |
+| **Faction War Loot Boost** | 7 days | Faction-specific AI loot enriched ±30% | Encourages fighting over zone control — affects zone competition |
+| **Contamination Surge** | Live event | New Contamination Sample items spawn (quest-only category) | No market impact (cannot sell) — affects quest progress speed |
+
+**Design intent:** Seasonal events give media coverage angles ("Scarcity Week forces market panic"), create predictable planning opportunities for veteran players, and generate community discussion on forums and social channels.
+
+---
+
+## Economic Balance Goals
+
+### Health Indicators
+
+The loot system is the primary economic faucet. These metrics indicate a balanced economy:
+
+| Indicator | Healthy Range | Problem Threshold |
+| :-------- | :-----------: | :---------------- |
+| Average player wealth | $50,000–$150,000 | < $20,000 (poverty loop) or > $500,000 (hyperinflation) |
+| Inflation rate | < 5%/month | > 15%/month = emergency intervention |
+| Market activity | 60%+ players trade monthly | < 30% = dead market |
+| Price stability | < 20% fluctuation/week | > 50% weekly swing = market manipulation |
+
+### Developer Interventions
+
+| Problem | Lever |
+| :------ | :---- |
+| Hyperinflation | Reduce loot fill rates, increase placeholder taxes |
+| Item scarcity | Increase spawn rate via targeted Rare Item Event |
+| Wealth concentration | Adjust trader pricing for mid-tier items downward |
+| Dead market | Run Double Loot Weekend + Trader Special simultaneously |
+| Bot farming detected | Emergency fill-rate reduction + item sink event |
+

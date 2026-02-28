@@ -211,6 +211,7 @@ An item does **not** have FIR status if:
 
 ---
 
+
 ## Barter Items
 
 ### Categories
@@ -230,3 +231,95 @@ An item does **not** have FIR status if:
 - **Unknown items**: First encounter shows "Unidentified [category]" until examined (takes 2 seconds). This rewards players who study the loot pool.
 
 <!-- REF_IMAGE: Barter item reference grid — a visual catalog of 20-30 common barter items with their icons, names, approximate values, and primary uses listed -->
+
+---
+
+## Marketplace & Player Trading
+
+> **Item Catalogue:** For all item specs, values, and grid sizes, see [Items & Gear](ItemsAndGear.md). This section covers the *trading mechanics* — how items move between players.
+
+### Face-to-Face Trading (Lobby)
+
+Direct trades between players without marketplace fees.
+
+| Feature | Detail |
+| :------ | :----- |
+| **When** | Post-raid lobby, Home Screen — not in-raid |
+| **Initiation** | Right-click player nameplate → "Trade" |
+| **Interface** | Split-panel — your offer left / their offer right |
+| **Completion** | Both players must "Accept" simultaneously |
+| **Safety** | No fee; trade window shows both sides before confirmation |
+| **Scam prevention** | Each player sees the full trade contents; last-second changes reset both accepted states |
+| **Audit log** | Trade recorded in both players' trade history (view in profile) |
+
+---
+
+### Auction House (Flea Market)
+
+The player-driven market — the primary economic hub outside of NPC traders.
+
+#### Listing Items
+
+| Parameter | Rule |
+| :-------- | :--- |
+| **FIR required** | Yes — only Found-in-Raid items eligible for listing |
+| **Starting bid** | Set by seller |
+| **Buyout price** | Optional — instant-purchase price |
+| **Listing fee** | 5% of starting bid (non-refundable, even if unsold) |
+| **Duration options** | 24h / 48h / 72h |
+| **Max active listings** | 5 (increases with Hideout upgrade) |
+
+#### Bidding
+
+| Feature | Detail |
+| :------ | :----- |
+| **Bid increment** | Minimum +5% over current bid |
+| **Auto-outbid notifications** | Push notification when outbid |
+| **Anti-snipe extension** | Bids in last 60 seconds extend auction by 5 minutes |
+| **Instant buyout** | Ends auction immediately at listed buyout price |
+
+#### Fees
+
+| Fee | Amount | Paid By | Purpose |
+| :-- | :----: | :------ | :------ |
+| Listing fee | 5% of starting bid | Seller (upfront) | Discourages spam listings |
+| Sale tax | 10% of final sale price | Seller (on sale) | Credit sink |
+| **Total seller cost** | ~15% of sale | — | Stabilizes economy |
+
+#### Market Dynamics
+
+| Mechanism | Detail |
+| :-------- | :----- |
+| **Price floors** | Each item has a minimum vendor-buyback value — prevents complete price crashes |
+| **Price cap** | Max 50% price change per day (server-enforced) — prevents artificial spikes |
+| **Whale detection** | Bulk purchases above 10× average volume flagged for review |
+| **Price history** | 7-day price chart visible on each item listing — lets players assess fair market value |
+| **Weekend events affect prices** | Double Loot weekends increase supply, driving prices down; Scarcity Events increase prices |
+
+---
+
+### Black Market (In-Raid AI Trader)
+
+A high-risk premium vendor concept — an AI trader that spawns in the contaminated zone during late-game.
+
+| Property | Detail |
+| :------- | :----- |
+| **Activation** | Spawns at 10:00 minute mark in contamination zone (map-wide announcement: "Vendor is open") |
+| **Location** | Rotates between 3 preset spots per map — players must find him |
+| **Payment** | Cash only — in-raid currency looted during that raid (cannot use Credits from stash) |
+| **Inventory** | Rotating — 4–6 items: always at least 1 Epic+ item; mix of weapons, armor, stims |
+| **Risk** | Players must enter contamination zone → receive damage; also known PvP hotspot |
+| **Design intent** | Creates late-game decision point: extract with what you have, or gamble on Black Market item |
+
+---
+
+## Cross-References
+
+- [Items & Gear](ItemsAndGear.md) — Full item catalogue with values, grid sizes, weights, and use descriptions.
+- [Loot Table Design](Loot_Table_Design.md) — What spawns in each container type and zone; supply drop loot.
+- [Gear Mechanics](Gear_Mechanics.md) — Weight encumbrance, item condition, and armor repair.
+- [Hideout & Crafting](Hideout_Crafting.md) — Crafting recipes; Hideout upgrades that expand marketplace listing slots.
+- [Quest & Objectives](Quest_Objective_System.md) — Quest items require FIR; some quests require buying from traders.
+- [GameDesign/Economy](../../GameDesign/Economy.md) — Macro economy design: trader tiers, credit sinks, inflation control.
+- [GameDesign/Insurance System](../../GameDesign/InsuranceSystem.md) — Insurance pre-checkout as part of pre-raid loadout flow.
+

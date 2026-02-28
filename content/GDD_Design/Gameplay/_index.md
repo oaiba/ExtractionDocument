@@ -33,5 +33,34 @@ This section details the specific **interaction mechanics** — how players phys
 
 {{< cards cols="2" >}}
   {{< card link="LOS_Fog_Visibility" title="LOS & Fog of War" icon="eye" subtitle="Line of sight, visibility layers, shared team vision, and minimap fog." >}}
-  {{< card link="Gameplay_Review_Checklist" title="Review Checklist & Benchmark" icon="check-square" subtitle="Pillar alignment, competitor benchmark, and cross-platform review." >}}
+  {{< card link="Camera_System" title="Camera System" icon="camera" subtitle="Top-down camera: altitude states, zoom, indoor geometry, and mobile controls." >}}
+{{< /cards >}}
+
+{{< cards cols="2" >}}
+  {{< card link="AI_Enemy_Behavior" title="AI & Enemy Behavior" icon="chip" subtitle="Enemy types, alert states, bosses, Player-as-Scav, and karma system." >}}
+  {{< card link="Matchmaking_Lobby" title="Matchmaking & Lobby" icon="server" subtitle="Queue system, squad config, ABMM, cross-platform pools, and reconnect rules." >}}
+{{< /cards >}}
+
+{{< cards cols="2" >}}
+  {{< card link="Hydration_Energy" title="Hydration & Energy" icon="droplet" subtitle="Survival bars, food/water items, threshold effects, and stomach damage link." >}}
+  {{< card link="Hideout_Crafting" title="Hideout & Crafting" icon="home" subtitle="Module upgrade tree, Bitcoin Farm, crafting recipes, and seasonal wipe." >}}
+{{< /cards >}}
+
+{{< cards cols="2" >}}
+  {{< card link="Quest_Objective_System" title="Quest & Objectives" icon="flag" subtitle="5 quest categories, 5 NPC traders, quest chains, daily/weekly tasks, and HUD integration." >}}
+  {{< card link="Loot_Table_Design" title="Loot Table Design" icon="archive" subtitle="Zone-tier loot tables, AI/boss loot, dynamic density, seasonal modifiers." >}}
+{{< /cards >}}
+
+{{< cards cols="2" >}}
+  {{< card link="Downstate_Revive" title="Downstate & Revive" icon="shield" subtitle="Downed HP pool, revive process, operator interactions, and escalating bleedout." >}}
+  {{< card link="Combat_Feel_Topdown" title="Combat Feel (Top-Down)" icon="cursor-click" subtitle="Aim cone recoil, cover footprint system, suppression, range degradation." >}}
+{{< /cards >}}
+
+{{< cards cols="2" >}}
+  {{< card link="Anti_Cheat_Fair_Play" title="Anti-Cheat & Fair Play" icon="lock-closed" subtitle="Server-authoritative architecture, cheat vector prevention, reporting, soft isolation." >}}
+  {{< card link="Post_Game_Debrief" title="Post-Game Debrief" icon="chart-bar" subtitle="Outcome screen, XP breakdown, loot summary, combat stats, death replay." >}}
+{{< /cards >}}
+
+{{< cards cols="2" >}}
+  {{< card link="Gameplay_Review_Checklist" title="Review Checklist & Benchmark" icon="check-square" subtitle="Pillar alignment, competitor benchmark, cross-platform review, and consistency fixes." >}}
 {{< /cards >}}

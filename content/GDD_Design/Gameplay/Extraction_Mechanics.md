@@ -214,7 +214,8 @@ This three-way dynamic creates emergent gameplay. A camper might be ambushed by 
 - If a player dies and their body is **not looted** by another player, insured items have a chance to be returned:
   - **Standard Insurance**: 24-hour return delay, 70% recovery chance, costs 10% of item value
   - **Premium Insurance**: 12-hour return delay, 90% recovery chance, costs 20% of item value
-  - **Insurance does NOT cover**: Items placed in backpack loot (only equipped gear)
+  - **Insurance covers**: All equipped gear AND items stored in rig and backpack (both are insured). Items in the Secure Container do not need insurance — they are always kept.
+  - **Insurance does NOT cover**: Items explicitly removed from the body by another player (if looted, insurance is void for that specific item)
   - If an enemy loots the item from the body, insurance is void for that specific item
 
 ---

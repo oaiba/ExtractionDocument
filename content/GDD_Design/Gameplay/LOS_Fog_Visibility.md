@@ -93,7 +93,7 @@ A point **B** is "in LOS" of viewer **A** if there exists an unobstructed ray fr
 | Spotter Drone (Hawk) | Vision proxy | 25 m | Yes (drone LOS) | Yes | No (drone LOS only) | Shoot drone (30 HP) |
 | Motion Sensor (Hawk) | Intel | 10 m | No (ping only) | Yes | N/A (motion) | Crouch/prone; destroy (15 HP) |
 | Tactical Overlay (Cipher) | Vision proxy | 40 m | Yes | Yes | No (last-known in cover) | Kill Cipher; hard cover |
-| Smoke (Wraith/Recon) | Blocker | 8 m radius | No | N/A | N/A (blocks all through smoke) | Avoid smoke; Thermal Block upgrade |
+| Smoke Grenade (Viper / future operator) | Blocker | 8 m radius | No | N/A | N/A (blocks all through smoke) | Avoid smoke area; wait for dissipation |
 | Flashbang (Viper) | Vision denial | 5 m | No | No | No | Look away; cover |
 | Deployable Cover (Bulwark) | LOS blocker | N/A (directional) | No | N/A | One direction | Flank; destroy (300 HP) |
 | Tech Savvy (Cipher) | Exception (traps) | 8 m | No | No (self) | Yes (traps only) | N/A |

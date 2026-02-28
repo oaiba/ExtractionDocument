@@ -441,6 +441,101 @@ Every ability has at least one hard counter and one soft counter:
 
 ---
 
+## Operators 6–10 — Pipeline (Launch and Beyond)
+
+> **Status:** Concept-level. Numbers TBD in full design pass. These operators are designed to expand the meta-game by countering patterns established by the Alpha/Beta roster and serving underrepresented playstyles.
+
+### Design Goals for Operators 6–10
+
+| Goal | Detail |
+| :--- | :----- |
+| Expand class depth | Add a second Assault, second Scout, and a solo-viable class |
+| Counter existing meta | Each new operator should have at least one ability that naturally counters an existing operator's strength |
+| No class duplication without differentiation | Two Assault-class operators must feel distinct — different fantasy, different counterplay |
+| Solo-viability design | One operator specifically designed to feel strong in solo queue (reduced squad dependency) |
+| Diversity in fantasy | Different visual/character fantasy from existing 5 |
+
+---
+
+### Operator 6 — "PHAEDRA" · Class: Sniper (NEW CLASS)
+
+> *A precision contractor who turns information into lethal advantage. Patient. Methodical. Devastating at range.*
+
+| Layer | Ability | Detail |
+| :---- | :------ | :----- |
+| **Passive** | Eagle Eye | Aims slow walk has no aim cone penalty (other operators have slight penalty at slow walk). Headshot kills grant +20% stamina recovery instantly. |
+| **Active 1** | Spotter Round | Fires a non-lethal tagging bullet (30s cooldown). Tagged enemy is revealed on squad minimap for 15s (shared vision). Does not interrupt the target. | 
+| **Active 2** | Hold Breath | Activates for 4s: no aim cone drift while ADS (removes passive recoil bloom). Manual trigger, not passive. 45s cooldown. |
+| **Signature** | Steel Sight | For 8s, Phaedra's bullets ignore armor (full damage to HP regardless of class). 180s cooldown. Screen effect: silver HUD tint. |
+| **Counter** | Close range — Phaedra has no mobility tool and slowest sprint speed (95%). Flashbang disrupts Steel Sight. |
+| **Meta role** | Long-range objective denial; boss fights from safe distance; punishes static players. |
+| **Solo viability** | High — Phaedra is designed to thrive with patience and positioning, not squad coordination. |
+
+---
+
+### Operator 7 — "GHOST" · Class: Support (Support-B variant)
+
+> *A field medic who believes no teammate should die within reach of her hands. Revision of planned support archetype with revive specialty.*
+
+| Layer | Ability | Detail |
+| :---- | :------ | :----- |
+| **Passive** | Triage Instinct | Automatically identifies teammates' most critical status effect (bleed, fracture, etc.) when within 5m — overlaid HUD icon. Hands never shake during medical use (no aim penalty while eating/drinking). |
+| **Active 1** | Field Medic | Revive speed reduced 8s → 5s. Second revive per session available before 90s cooldown kicks in. (Key differentiator vs all other classes — see [Downstate & Revive](Downstate_Revive.md)) |
+| **Active 2** | Med Pack Toss | Throws a medical item from inventory to a teammate (up to 8m range). No animation lock — can throw while crouching. 20s cooldown (per use). |
+| **Signature** | Mass Stabilize | 12m radius pulse: all squad members within range immediately have any Bleed status stopped (no healing, just bleed halt). Removes Pain briefly. 150s cooldown. |
+| **Counter** | Ghost has lowest offensive capability of any operator. Reliant on squad proximity. Isolation = weakness. Bulwark's aggression pushes Ghost out of position. |
+| **Meta role** | Keeps squad alive through firefights; enables second-chance play; essential in boss fights. |
+
+---
+
+### Operator 8 — "FUSE" · Class: Specialist (Specialist-B variant)
+
+> *An explosive expert and saboteur. Creates zone denial that forces enemies to move toward danger.*
+
+| Layer | Ability | Detail |
+| :---- | :------ | :----- |
+| **Passive** | Demolitionist | Explosive radius +15%; Fuse does not receive self-damage from own explosives. Grenade throw range +20%. |
+| **Active 1** | Trip Mine | Places a proximity mine on any surface (floor, wall, door frame). Triggers on enemy movement within 1m. Deals 80 damage + Fractures the nearest limb. Max 3 active at once. 30s cooldown per charge. |
+| **Active 2** | Breach Charge | Places a charge on a door or wall section. Triggered remotely (no delay). Creates 3×3m breach hole (destroys thin walls only). Extremely loud (audible 60m). 60s cooldown. |
+| **Signature** | Minefield | Instantly places 5 Trip Mines in a 6m radius pattern around Fuse's position. Area denial zone lasts 90s or until all mines triggered. 200s cooldown. |
+| **Counter** | Slow-walk near mines — Fuse mines are triggered by sprint/walk (not prone). Prone players move safely past mines. Hawk's Motion Sensor detects mine placement direction. |
+| **Meta role** | Holds extraction zones, denies corridors, disrupts AI boss positioning. Strong in duo/solo. |
+
+---
+
+### Operator 9 — "IRONCLAD" · Class: Tank (Tank-B variant)
+
+> *A bulldozer of a fighter. Built for punishment and pushing aggressively forward.*
+
+| Layer | Ability | Detail |
+| :---- | :------ | :----- |
+| **Passive** | Juggernaut | Takes 10% less damage from explosives; breaking doors instantly (no crouch-interact needed). Movement speed penalty from armor is halved. |
+| **Active 1** | Suppressive Advance | For 6s: moving forward at sprint speed generates a directional shield (front-arc only, -40% incoming damage from straight ahead). Cannot change direction. 70s cooldown. |
+| **Active 2** | Armor Slam | Sprints into a door or light cover piece and destroys it (wood doors, thin barricades), stunning any enemy within 2m for 1.5s. 45s cooldown. |
+| **Signature** | Iron Tide | Ironclad and adjacent squadmates within 3m receive a 30s window where HP cannot be reduced below 1 (one-time per signature). After 30s, HP resumes normal damage. 240s cooldown. |
+| **Counter** | Flanking — Suppressive Advance only blocks frontal damage. Fuse's Trip Mines trigger during Suppressive Advance sprint. Phaedra's Steel Sight bypasses armor. |
+| **Meta role** | Objective pushing, boss fights front-line, extraction zone holding as anchor. |
+
+---
+
+### Operator 10 — "WRAITH" · Class: Scout (Scout-B variant)
+
+> *The ghost of the roster. Stealth, deception, and controlled chaos. No operator should know if Wraith is in the raid until it's too late.*
+
+| Layer | Ability | Detail |
+| :---- | :------ | :----- |
+| **Passive** | Ghost Step | Slow-walking produces zero sound (0m audible range vs standard 4m). Moving through foliage and soft surfaces produces no extra noise. |
+| **Active 1** | Smoke Grenade | Throws a smoke grenade (8m cloud, 20s duration). Blocks LOS through smoke per [LOS, Fog & Visibility](LOS_Fog_Visibility.md). Shoot-through possible but at −3° aim cone penalty. 35s cooldown. |
+| **Active 2** | Decoy Ping | Places a fake player-signature ping on the minimap at a target location (within 15m). Appears as a "player detected" blip on enemies' minimaps for 8s. 50s cooldown. |
+| **Signature** | Phase Shift | Becomes fully invisible and silent for 6s. Any attack (shooting, using abilities) breaks cloak immediately. Movement speed is 90% while cloaked. 180s cooldown. Screen effect: shimmer visible at 8m. |
+| **Counter** | Emerging from smoke or cloak produces a brief shimmer (visible 8m top-down). Fuse's Trip Mines: Wraith still triggers them (Phase Shift does not prevent mine trigger). Motion Sensor (Hawk) detects Wraith through Phase Shift. |
+| **Meta role** | Infiltration, quest objective completion, flanking enemies during firefights. Extreme skill ceiling. |
+| **Solo viability** | Very High — Wraith is the premier solo operator; self-sufficient, evasive, never reliant on teammates. |
+
+> **Note on "Wraith" name:** This is the planned operator whose smoke ability was referenced in `LOS_Fog_Visibility.md`. The smoke reference in that document has been updated to reflect this as a future operator. See the `Gameplay_Review_Checklist.md` consistency fix §3.
+
+---
+
 ## Cross-References
 
 - [Core Gameplay Loop](CoreLoop.md) — Operator choice in pre-raid preparation, loadout philosophy.
@@ -448,6 +543,9 @@ Every ability has at least one hard counter and one soft counter:
 - [Medical System](Medical_System.md) — Healing items and triage; heal abilities interact with same body-part and status rules.
 - [Gear Mechanics](Gear_Mechanics.md) — Loadout and weight; operators have different rig/weight constraints.
 - [Movement & Stamina](Movement_and_Stamina.md) — Speed modifiers, stamina interaction, inertia.
+- [Downstate & Revive](Downstate_Revive.md) — Ghost's Field Medic unique revive mechanic.
+- [LOS, Fog & Visibility](LOS_Fog_Visibility.md) — Wraith smoke, Phase Shift shimmer, Hawk detection.
 - [Design Pillars](../../ProjectScope/design-pillars-enhanced.md) — Operator Choice (Task-Driven Agency), Operator Mastery (Persistent Progression).
 - [MVP Scope](../../ProjectScope/MVP.md) — 3 operators Alpha, 5 Beta, 8+ Launch.
+
 

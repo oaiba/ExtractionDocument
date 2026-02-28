@@ -217,30 +217,69 @@ Physical attributes improve through repeated use over the course of a wipe cycle
 | 25 | 92 | +5 kg per tier | |
 | 40 | 100 | +8 kg per tier | |
 | 51 (Elite) | 110 | +10 kg per tier, melee damage +20% | |
-
 **Design Intent**: Skills provide long-term progression that incentivizes continued play. However, the bonuses are incremental (not transformative), so a skilled low-level player can still outperform a high-level player through better positioning and decision-making.
 
 ---
 
-## Design Rationale
+## Vertical Movement & Special Traversal
 
-### Why Deliberate Movement?
+### Stairs
 
-Extraction shooters differentiate themselves from arena shooters through movement that is *heavy and consequential*. Every movement choice communicates information:
+Stairs are navigated as flat ramps in gameplay (no step-over animation per stair). From top-down they appear as diagonal crosshatch lines.
 
-- Sprinting announces your presence within a 25-30m radius
-- Crouching gives you information advantage at the cost of speed
-- Prone makes you nearly invisible but almost immobile
-- The weight you carry determines how fast you can escape
+| Property | Value |
+| :------- | :---- |
+| Movement speed on stairs | 80% of flat speed (upward), 90% (downward) |
+| Stamina drain on stairs | +20% upward; normal downward |
+| Noise generation | Same surface type as floor material connected to stairs |
+| Camera on stairs | Smooth altitude transition between floors (0.5s interpolation per [Camera System](Camera_System.md)) |
+| Prone on stairs | Not allowed — character auto-stands when entering stair zone |
 
-This system ensures that **no engagement is decided by movement tech alone**. A player cannot bunny-hop or slide-cancel their way out of a bad position. They must think, plan, and commit.
+### Ladders
 
-### Reference: Movement Feel Targets
+Ladders provide vertical access between floors in specific buildings.
 
-| Reference Game | Movement Feel | What We Borrow |
-| :------------- | :------------ | :------------- |
-| Escape from Tarkov | Heavy, realistic, inertia-based | Weight system, dual stamina, surface sounds |
-| Hunt: Showdown | Deliberate, sound-critical | Surface noise differences, audio as primary information tool |
-| Ground Branch | Tactical, gear-dependent | Encumbrance affecting combat capability |
+| Property | Value |
+| :------- | :---- |
+| Ladder climb speed | 1.5 m/s (very slow — deliberate vulnerability) |
+| Stamina drain (climbing) | **Arm Stamina** only — 15 points/sec |
+| Combat on ladder | Cannot fire primary weapon while climbing. Pistol can be drawn but with −20% accuracy. |
+| Noise on ladder | Metal rung contact — audible 12m |
+| Dismount options | Top: step off (1.5s animation). Bottom: fast drop (instant, no fall damage from ladder bottom). |
+| Camera on ladder | Fixed overhead for horizontal; transitions smoothly as altitude changes |
+| Arm Stamina depletion at 0 on ladder | Character begins to lose grip → forces dismount. Fall damage may apply from height. |
+
+### Fall Damage
+
+| Fall Distance | Damage | Status Effect | Notes |
+| :------------ | :----: | :------------ | :---- |
+| 0–2m | 0 HP | None | Safe jump height |
+| 2–4m | 20–40 HP to Legs | None | Moderate fall; survivable |
+| 4–6m | 60–100 HP to Legs | Fracture (50% chance to one Leg) | Serious fall |
+| 6–8m | 150+ HP to Legs + Thorax | Fracture (80% chance, both legs possible) | Often lethal without treatment |
+| 8m+ | Lethal (1000 damage) | — | Instant kill zone; avoid at all costs |
+
+**Fall damage mitigation:**
+- Crouching on land (hold crouch button during fall): −30% fall damage and fracture chance if timed within 0.5s of landing.
+- Prone immediately on land (hold prone during fall): −50% fall damage for very low falls only (≤3m).
+- Scout class passive (if applicable in future iteration): reduced fall damage.
+
+**Overweight + fall:** Critical and Overweight encumbrance adds +30% to fall damage (less control during impact).
+
+### Water Traversal (Swimming)
+
+| Property | Value |
+| :------- | :---- |
+| **Swim speed** | 0.35x (1.75 m/s) — slower than prone walk |
+| **Stamina drain (swim)** | Both Leg and Arm stamina drain simultaneously at 8 pts/sec |
+| **Noise (swimming)** | Splashing — audible 20m |
+| **Combat in water** | Can hold pistol above water — fire with −30% accuracy. No primary weapons while swimming. |
+| **Gear in water** | Wet gear: armored rigs and backpacks absorb water — weight increases by +10% while wet. Returns to normal weight after 30s out of water. |
+| **Depth threshold** | Shallow water (≤0.5m): normal walk speed, minor splash noise. Deep water (>0.5m): swimming state activates. |
+| **Camera in water** | Standard top-down altitude; water surface rendered semi-transparent to show character underneath. |
+| **Drowning** | If Arm and Leg Stamina both reach 0 while swimming: −10 HP/sec until one stamina bar recovers. Not instantly lethal — but creates extreme urgency. |
+| **Contaminated water** | Flooded areas during Chemical Spill hazard: −5 HP/sec in addition to normal contamination damage. See [Environmental Hazards](Environmental_Hazards.md). |
+
+---
 
 <!-- REF_IMAGE: Movement comparison chart — side-by-side animation frames showing the feel of walk/sprint/crouch for our game vs. reference titles -->

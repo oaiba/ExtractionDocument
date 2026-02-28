@@ -5,6 +5,12 @@ type: docs
 weight: 12
 ---
 
+> [!IMPORTANT]
+> **📋 Directory Migration Notice:** The Story & World documentation has been merged into a unified [**NarrativeWorld/**](../NarrativeWorld/) section. The map design and environmental narrative files below are preserved for reference, but the **canonical, up-to-date GDDs** are in `NarrativeWorld/`. New work should be done there.
+>
+> **New canonical documents:** [Map Design Bible](../NarrativeWorld/MapBible) (merges `MapDesign.md` + `EnvironmentalNarrative_Guidelines.md`), [Industrial Decay Map Lore](../NarrativeWorld/MapLore_Industrial), [Urban Ruins Map Lore](../NarrativeWorld/MapLore_Urban), [Faction Territories](../NarrativeWorld/FactionTerritories).
+
+
 ## 🌍 The Map is the Main Character
 
 In an extraction shooter, map knowledge is the highest skill ceiling. Our levels are designed with specific **choke points**, **sniping lanes**, and **flank routes** to force player interaction.

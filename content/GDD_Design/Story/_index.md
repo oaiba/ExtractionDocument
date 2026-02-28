@@ -5,6 +5,11 @@ sidebar:
   open: true
 ---
 
+> [!IMPORTANT]
+> **📋 Directory Migration Notice:** The Story & World documentation has been merged into a unified [**NarrativeWorld/**](../NarrativeWorld/) section. All files below are preserved for reference, but the **canonical, up-to-date GDDs** are in `NarrativeWorld/`. New work should be done there.
+>
+> **New additions (not in this directory):** [Faction Territories](../NarrativeWorld/FactionTerritories), [Map Design Bible](../NarrativeWorld/MapBible), [Industrial Decay Map Lore](../NarrativeWorld/MapLore_Industrial), [Urban Ruins Map Lore](../NarrativeWorld/MapLore_Urban), [Firebase Delta Map Lore](../NarrativeWorld/MapLore_Military).
+
 ## Overview
 
 The narrative design for this extraction shooter uses **three storytelling modes** that layer to create a rich, discoverable world:

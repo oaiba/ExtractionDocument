@@ -1,0 +1,213 @@
+---
+title: "Map Lore: Firebase Delta (Future — Season 3)"
+linkTitle: "Firebase Delta"
+type: docs
+weight: 10
+---
+
+> **Content Status:** Firebase Delta is a Season 3 map. This document covers the confirmed lore and design intent. Sections marked `[FUTURE CONTENT]` will be expanded in the Season 3 pre-production phase.
+
+---
+
+## Map Identity Card
+
+| Property | Value |
+| :------- | :---- |
+| **In-Game Name** | Firebase Delta |
+| **Lore Designation** | Firebase Delta, Former NAIC Military Emergency HQ |
+| **Theme** | The military's last stand — a base designed to manage any crisis, overwhelmed by one it wasn't built to stop |
+| **Planned Size** | 2,000m × 2,000m |
+| **Player Capacity** | 16 players |
+| **Match Duration** | 20 minutes (larger map) |
+| **Difficulty** | Extreme — highest difficulty map in the game |
+| **Dominant Faction** | Contested — Peacekeepers want to reclaim, Tech Syndicate wants data first |
+| **Unique Feature** | Automated turret systems — still operational, non-faction (attack ALL players) |
+| **Season Availability** | Season 3 |
+
+> **Cross-References:** Faction territory projections → [Faction Territories](FactionTerritories.md); full backstory → [World History & Backstory](Backstory.md#firebase-delta-military-outpost-future-map); relevant faction motivations → [Factions](Factions.md).
+
+---
+
+## Pre-Collapse History
+
+### Firebase Delta Before The Collapse (2025–2031)
+
+Firebase Delta was the NAIC's military backbone — a joint installation housing emergency response, weapons research, and classified intelligence operations.
+
+| Facility | Purpose | Classification |
+| :------- | :------ | :------------- |
+| **Command Bunker** | NAIC emergency command center activated during crises | Top Secret |
+| **Weapons Lab** | Prototype military technology testing — officially "non-lethal crowd control R&D" | Top Secret |
+| **Airfield** | Military transport and rapid deployment capability | Secret |
+| **Barracks** | Permanent garrison of 800 military personnel | Standard |
+| **Underground Armory** | Deep storage of classified weapons systems | Highest classification — location known to 6 people |
+
+### The Nexus–Military Partnership
+
+Firebase Delta was not operated by the national military alone. Nexus Corporation had a **classified co-development agreement** established in 2026:
+
+```
+MEMORANDUM OF UNDERSTANDING — CLASSIFIED
+Nexus Corporation × NAIC Military Command — July 12, 2027
+
+Project Prometheus requires military-grade testing facilities.
+Firebase Delta's Weapons Lab will host Phase 4 deployment trials
+of Project Prometheus subjects as part of the "Advanced Exoskeleton
+Program" cover project. Military command will maintain deniability.
+Nexus Corporation will provide resource compensation equivalent to
+[REDACTED] per annum.
+
+Signed:
+General Li Wei, NAIC Military Commander [signature]
+Director Seo-Yun Park, Nexus Corp NAIC Division [signature]
+```
+
+*This document — found in Firebase Delta Command Bunker in Season 3 — is the single most important piece of evidence in the game. Director Park signed it. The military knew. This is what makes Season 3's revelation so devastating.*
+
+---
+
+## The Collapse: What Happened at Firebase Delta
+
+### Timeline (January–April 2031)
+
+| Date | Event | Significance |
+| :--- | :---- | :----------- |
+| **Jan 15** | Firebase Delta activated as NAIC Emergency Command HQ | Last surviving governmental authority in NAIC |
+| **Jan 15, 04:00** | News arrives: Subject 7 has breached Sector 7 containment | Delta becomes the crisis management center |
+| **Jan 20** | General Li Wei formally considers nuclear option — destroy all of NAIC to stop the Enhanced Subjects | The "Nuclear Option" debate recording exists in the Bunker |
+| **Jan 22** | Nuclear option voted down, 4–2. Alternative: electromagnetic pulse to disable Enhanced Subjects' neural implants (unproven) | Evidence of this exists in the Bunker |
+| **Feb 7** | Enhanced Subjects reach Firebase Delta perimeter | The Weapons Lab "exoskeleton" project comes home |
+| **Feb 14** | Delta overrun. Automated defenses activated on autonomous mode. Last command transmission: "All personnel evacuate. God help us." | Recording exists |
+| **Mar 1** | Firebase Delta goes silent. No survivors confirmed | Automated systems continue running |
+| **2031–2036** | Firebase Delta operates on full automation — turrets fire at all biological entities | Players face turrets as well as AI |
+
+### "The Nuclear Option" — The Game's Most Important Recording
+
+**Location: Command Bunker, Secure Vault (requires Delta Access Keycard — endgame quest)**
+
+> *[Recording timestamp: January 20, 2031, 02:47]*
+>
+> *GENERAL LI WEI: "Then let me say it plainly. We can eliminate the threat in Sector 7 with a tactical nuclear strike. This facility supports that capability. Clean. Final."*
+>
+> *VOICE 2 (Colonel Adeyemi): "Two million people live in NAIC. Forty kilometers of exclusion zone doesn't make it a clean strike."*
+>
+> *LI WEI: "Two million people are about to become zero if those things spread. I'm offering a solution."*
+>
+> *VOICE 3 (unknown civilian official): "General — the Enhanced Subjects were created by Nexus Corporation in cooperation with this installation. We helped build those... things. We don't get to bury our mistake by—"*
+>
+> *LI WEI: "We have a vote. All in favor?"*
+>
+> *[Four seconds of silence. Two voices respond affirmatively. Four voices are silent.]*
+>
+> *LI WEI: "Motion fails. Then we evacuate what we can and we try the pulse. God help us if it doesn't work."*
+>
+> *[Recording ends]*
+
+*Lore Impact: Two members of the council voted yes. Their identity is revealed through subsequent documents. One of them is connected to a major NPC faction leader. Season 3.*
+
+---
+
+## Present Day (2036) — What Players Will Find
+
+### Overall Atmosphere `[FUTURE CONTENT — Detail to expand in S3 pre-production]`
+
+```
+FIREBASE DELTA — ATMOSPHERIC OVERVIEW
+
+AIRFIELD (Open Zone)
+  Sound:  Wind across exposed tarmac + automated turret servo tracking sounds
+  Light:  Natural (no cover from sky) — incredibly exposed
+  Mood:   FEATURELESS MENACE — the turrets are always watching
+
+COMMAND BUNKER (Deep Underground)
+  Sound:  Emergency backup power hum + data terminal alerts (5 years of unread alerts)
+  Light:  Red emergency lighting throughout; pure darkness in offline wings
+  Mood:   THE TRUTH IS HERE — players know the most important revelations are in this room
+
+WEAPONS LAB (Restricted)
+  Sound:  Prototype systems still calibrating + the occasional activation of untested hardware
+  Light:  Clean laboratory lighting (self-sustaining power cell)
+  Mood:   WHAT WERE THEY BUILDING? — this room is deeply unsettling
+
+BARRACKS (Mid Zone)
+  Sound:  Silence where there should be hundreds of voices
+  Light:  Military-grade efficient; most still working
+  Mood:   THE WEIGHT OF ABSENCE — personal effects of 800 soldiers, no bodies (evacuated)
+
+UNDERGROUND ARMORY (S-Tier Hot Zone — hidden entrance)
+  Sound:  Absolute silence — thick concrete insulation
+  Light:  None — full darkness (flashlight required)
+  Mood:   THE PRIZE — players know the best gear in the game is behind this door
+```
+
+---
+
+## Zone Layout `[PLACEHOLDER — Season 3 detail]`
+
+```
+                        NORTH
+         [Airfield North]    [Airfield South]
+                |                  |
+     [Barracks]--[COMMAND BUNKER]--[Weapons Lab]
+         |              |                |
+     [Motor Pool]--[OPEN GROUND]--[Research Wing]
+         |              |                |
+     [Underground|  [Guard Towers]  [Storage]
+       Armory]   |        |
+                 |   [Main Gate]
+                        SOUTH
+
+Zone Types: [FULL DETAIL TO BE ADDED IN S3]
+```
+
+---
+
+## Key Lore Objectives (Season 3 Design Intent)
+
+| Objective | Location | Purpose |
+| :-------- | :------- | :------- |
+| **"Nuclear Option Recording"** | Command Bunker secure vault | The critical Season 3 revelation — who voted yes |
+| **"Nexus-Military MoU"** | Command Bunker File 7-C | Director Park's signature on Prometheus co-development |
+| **"General Li Wei's Final Entry"** | Command Bunker personal terminal | Li Wei's last known thoughts before evacuation |
+| **"The Underground Armory"** | Hidden basement entrance | Best military loot in the game; hidden quest chain |
+| **"Prototype Recovery"** | Weapons Lab | Tech Syndicate quest — recover pre-Collapse Nexus weapon designs |
+| **"Peacekeeper Homecoming"** | Command Bunker | Peacekeeper quest — claim the base as new HQ; changes map faction control from Season 4 |
+| **"Who Voted Yes?"** | Cross-map document trail | Season 3 meta-mystery — 5 documents spread across all POIs identify the two "yes" voters |
+
+---
+
+## Faction Stakes — Season 3 Territorial Opening
+
+| Faction | Objective | If They Win |
+| :------ | :-------- | :---------- |
+| **Peacekeepers** | Reclaim Firebase Delta as legitimate HQ | Commander Vance gains government-like authority. Season 4 changes: Peacekeepers become slightly less morally gray. |
+| **Tech Syndicate** | Reach Weapons Lab + Prometheus prototype data before Peacekeepers | Director Park's full Prometheus role exposed (but controlled by her — she decides what gets released). |
+| **Underground** | Access Underground Armory — the paywall of the entire game | Broker gets unprecedented military-grade weapons access. Economy shifts. |
+| **Salvage Corps** | Recover military engineering equipment from Barracks | Viktor gets the tools to potentially reactivate Nexus infrastructure. Long-term economy change. |
+
+---
+
+## Season 3 Audio Log Set `[PLACEHOLDER — 10 logs confirmed, scripts TBD]`
+
+| Log ID | Title | Speaker | Location |
+| :----- | :---- | :------ | :------- |
+| DELTA-CMD-001 | "The Vote" | General Li Wei | Command Bunker |
+| DELTA-CMD-002 | "Commander Vance Was Here" | Helena Vance (pre-founding) | Command Bunker |
+| DELTA-CMD-003 | "Park's Last Message" | Director Park | Weapons Lab terminal |
+| DELTA-WPN-001 | "What We Built" | Weapons Lab researcher | Weapons Lab |
+| DELTA-WPN-002 | "Exoskeleton Debrief" | Military officer | Weapons Lab |
+| DELTA-BAR-001 | "Last Night in Barracks" | Private Chen (same name as Lab guard — different person) | Barracks |
+| DELTA-BAR-002 | "Desertion Notice" | Unnamed soldier | Barracks exit |
+| DELTA-AIR-001 | "Final Evacuation Log" | Air Traffic Controller | Airfield tower |
+| DELTA-ARM-001 | "What's Down Here" | Unknown Underground operative | Armory entrance |
+| DELTA-ARM-002 | "The Broker Knew" | The Broker (distorted voice) | Armory inner chamber |
+
+---
+
+## Cross-References
+
+- [Faction Territories](FactionTerritories.md) — Firebase Delta territorial design intent; Season 3 opening scenario.
+- [World History & Backstory](Backstory.md) — Full Firebase Delta timeline; General Li Wei profile; nuclear option context.
+- [Factions](Factions.md) — Commander Vance's Firebase Delta motivation; Tech Syndicate data mission.
+- [Quest Lines](QuestLines.md) — Season 3 quest dependency chains linking District 14 to Firebase Delta.
+- [MapBible](MapBible.md) — Zone type system; automated turret as environmental hazard.

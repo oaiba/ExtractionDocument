@@ -5,7 +5,7 @@ type: docs
 
 ## 🏛️ The Silent Storyteller
 
-Our world, Aethelgard, is dead. There are no safe zones for NPCs to give quests. The *environment* must be the primary method of delivering lore and plot.
+The **Neo-Asia Industrial Corridor (NAIC)** is dead — five years after The Collapse. There are no functioning governments, no emergency services, no safe zones. The *environment* must be the primary method of delivering lore — every rusted beam and bloodstained wall tells a story the player discovers, never a story they are told.
 
 ### Core Principle: "The Aftermath"
 Every location should look like something *happened* there right before the player arrived. Avoid static, perfect presets.

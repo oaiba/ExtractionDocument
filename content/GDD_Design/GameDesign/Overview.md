@@ -28,22 +28,49 @@ type: docs
 ### 1. True Extraction Mechanics on Mobile (First of Its Kind)
 
 **Market Gap:**
-- **PC:** Tarkov, The Cycle → Hardcore but not portable
-- **Mobile:** PUBG, COD Mobile → Battle Royale, not extraction
-- **Our Solution:** Genuine extraction shooter built for mobile
+- **PC (Hardcore):** Escape from Tarkov, The Cycle: Frontier → Deep but inaccessible on mobile; high-friction prep; PC/console only
+- **PC (Casual Extraction):** ARC Raiders (2025, buy-to-play, $40), Hunt: Showdown → Better accessibility but still PC/Console; ARC Raiders won Best Multiplayer TGA 2025 — the bar is rising
+- **PC/Console (F2P Extraction):** Hawked (2024, F2P) → Colorful but shallow; mixed 56% Steam reception; no mobile
+- **Mobile:** PUBG Mobile, COD Mobile, Farlight 84 → Battle Royale format, not extraction; no gear-loss economy
+
+**Our Position: Unoccupied Niche**
+> A genuine extraction shooter on mobile with hero operators — no direct competitor exists at launch.
+
+### Competitive Landscape
+
+| Game | Platform | Perspective | Monetization | Gear Loss | Mobile Native | Status (2025) |
+| :--- | :------- | :---------- | :----------- | :-------- | :------------ | :------------ |
+| **Escape from Tarkov** | PC | FPS | Buy-to-play | Yes (hardcore) | ❌ | Dominant PC reference |
+| **ARC Raiders** | PC/PS5/XSX | 3rd Person | $40 Buy-to-play | Yes (safe pocket) | ❌ | 9/10 IGN; TGA Best Multiplayer 2025 |
+| **Hunt: Showdown 2** | PC/Console | FPS | F2P+DLC | Yes (Hunter dies) | ❌ | Live, active player base |
+| **Hawked** | PC/Console | 3rd Person | F2P | Artifacts only | ❌ | Mixed reception; ongoing updates |
+| **The Cycle: Frontier** | PC | FPS | F2P | Yes | ❌ | Shut down 2023; lessons learned |
+| **PUBG Mobile** | Mobile | 3rd Person | F2P | No (Battle Royale) | ✅ | Market leader mobile BR |
+| **Our Game** | **Mobile-first** | **Top-Down** | **F2P** | **Yes** | **✅** | **Unoccupied niche** |
+
+### What We Learn From Each Competitor
+
+| Competitor | Lesson Applied to Our Design |
+| :--------- | :--------------------------- |
+| **Tarkov** | Deep economy ✅, insurance ✅, quest traders ✅ — BUT: reduce prep friction, add visual character identity (Tarkov has none) |
+| **ARC Raiders** | Centralized hub (Speranza) → adopt as Hideout; skill tree branching → operator ability trees; avoid their high $40 entry price barrier |
+| **Hawked** | Guild system → our Clan System; colorful readability → critical for top-down; lesson: F2P with poor monetization balance = player anger |
+| **Hunt: Showdown** | Hunter identity = emotional attachment → hero operator system solves this; duo/trio squad → our default squad sizes |
+| **The Cycle** | Server shutdown = player trust destroyed → never monetize survival or core systems; keep economy ethical |
 
 **Key Differentiators:**
 ```
-Traditional Mobile Shooters  |  Our Game
-────────────────────────────────────────────
-• Start equal each match     |  • Bring your own gear
-• Battle Royale format        |  • Extraction-based
-• Casual, fast-paced          |  • Tactical, high-stakes
-• No permanent progression    |  • Persistent economy
-• Low consequence             |  • Meaningful death penalty
+All Mobile Competitors        |  Our Game
+──────────────────────────────────────────────────────
+• Start equal each match      |  • Bring your own gear (trained loadout)
+• Battle Royale format        |  • Extraction-based sessions (15 min)
+• No persistent economy       |  • Full stash, hideout, trader progression
+• Cosmetic-only identity      |  • Hero operators with distinct abilities
+• No gear fear                |  • Meaningful death penalty + insurance
+• No clan/social system       |  • Full Clan System + Faction Wars
 ```
 
----
+
 
 ### 2. Permanent Loss System (THE Core Mechanic)
 

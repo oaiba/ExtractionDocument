@@ -99,12 +99,16 @@ Premium Loadout ($40,000-60,000)
 - Review death log → Learn from mistakes
 
 **UI Elements:**
-- **Risk Indicator** - Shows total loadout value
-- **Insurance Option** - Future feature for partial recovery
-- **Recommended Loadouts** - Based on quest/skill
-- **Quick Loadout Slots** - Save favorite builds (5 slots)
+- **Risk Indicator** — Shows total loadout value at risk (uninsured highlighted separately)
+- **Insurance Panel** — Insure gear with Viktor or Ada before deploying; see [Insurance System](InsuranceSystem.md) for full rules and insurer tradeoffs
+- **Recommended Loadouts** — Based on active quest needs and account level
+- **Quick Loadout Slots** — Save favorite builds (5–10 slots, unlocks via level progression)
 
----
+> **🔗 Loadout Preparation GDD:** The full pre-raid screen UI specification — including the 3-column PC layout, mobile tab design, stash quick-access panel, gear preview viewport, squad team ready screen, and matchmaking transition — is documented in detail in [Loadout Preparation](LoadoutPreparation.md). This section covers the *design intent*; that GDD covers *implementation*.
+
+> **🔗 Map & Zone Design:** Selection of which map to deploy to, weather conditions, and loot bias are detailed in [Map Design](MapDesign.md). Map cards shown on the prep screen pull zone tier and weather data from that document.
+
+
 
 ### Matchmaking (15-60 seconds)
 

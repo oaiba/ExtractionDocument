@@ -1,8 +1,8 @@
 ---
-
-## title: "Hero Abilities (Operators)"
+title: "Hero Abilities (Operators)"
 type: docs
 weight: 5
+---
 
 ## Overview
 

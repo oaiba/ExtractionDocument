@@ -1,5 +1,5 @@
 ---
-title: "CIPHER - Alex Nakamura"
+title: "GLITCH - Maya Torres"
 type: docs
 ---
 
@@ -11,19 +11,19 @@ type: docs
 
 | Attribute       | Value                     |
 | :-------------- | :------------------------ |
-| **Real Name**   | Alexander "Alex" Nakamura |
-| **Codename**    | CIPHER                    |
+| **Real Name**   | Maya Torres |
+| **Codename**    | GLITCH                    |
 | **Class**       | Specialist                |
-| **Nationality** | Japanese-American         |
+| **Nationality** | American |
 | **Age**         | 27                        |
 | **Height**      | 175 cm (5'9")             |
 | **Weight**      | 68 kg (150 lbs)           |
 
 ### Background
 
-Alex Nakamura was a prodigy at MIT before dropping out to join the NSA's elite cyber warfare division. His ability to find exploits in any system made him invaluable—until he discovered the agency was using his tools for mass surveillance on American citizens.
+Maya Torres was a prodigy at MIT before dropping out to join the NSA's elite cyber warfare division. His ability to find exploits in any system made him invaluable—until he discovered the agency was using his tools for mass surveillance on American citizens.
 
-He leaked what he could and went underground, using his skills to level the playing field for those without technological advantages. In the Exclusion Zone, where tech can mean the difference between life and death, CIPHER makes sure no one has an unfair edge.
+He leaked what he could and went underground, using his skills to level the playing field for those without technological advantages. In the Exclusion Zone, where tech can mean the difference between life and death, GLITCH makes sure no one has an unfair edge.
 
 ### Personality Traits
 
@@ -64,7 +64,7 @@ He leaked what he could and went underground, using his skills to level the play
 | Stun | 0% | Full duration |
 | Slow | 0% | Full duration |
 | Burn | 0% | Full DoT |
-| EMP | 100% | Immune to enemy CIPHER EMP |
+| EMP | 100% | Immune to enemy GLITCH EMP |
 
 ### Top-Down Visual Spec
 
@@ -78,7 +78,7 @@ He leaked what he could and went underground, using his skills to level the play
 | **EMP VFX (Top-Down)** | Blue-white expanding ring from operator (15m radius), static distortion on affected units |
 | **EMP Audio Radius** | 40m — loud pulse crack audible at extreme range |
 
-<!-- REF_IMAGE: CIPHER top-down view — showing operator with EMP blast active, blue-white expanding ring visible from above, static effects on enemies in radius -->
+<!-- REF_IMAGE: GLITCH top-down view — showing operator with EMP blast active, blue-white expanding ring visible from above, static effects on enemies in radius -->
 
 ### Difficulty Rating
 
@@ -126,7 +126,7 @@ He leaked what he could and went underground, using his skills to level the play
 
 | State | VFX From Above |
 | :---- | :------------- |
-| EMP charging | Blue-white glow building on CIPHER's arm device |
+| EMP charging | Blue-white glow building on GLITCH's arm device |
 | EMP blast | Blue-white ring expanding outward from operator (15m radius) |
 | EMP on enemy | Blue static sparks on affected operator, HUD disruption VFX |
 | Gadget destroyed | Blue flash + debris scatter from gadget position |
@@ -308,7 +308,7 @@ He leaked what he could and went underground, using his skills to level the play
 - **Gloves:** Fingerless gloves (hacker aesthetic, touch-screen compatible)
 - **Face:** Youthful, slight stubble, always watching screens
 
-<!-- REF_IMAGE: CIPHER default skin — top-down view showing lean silhouette, hoodie under vest, tech goggles on forehead, utility belt with EMP device -->
+<!-- REF_IMAGE: GLITCH default skin — top-down view showing lean silhouette, hoodie under vest, tech goggles on forehead, utility belt with EMP device -->
 
 ### Unlockable Skins
 
@@ -339,7 +339,7 @@ He leaked what he could and went underground, using his skills to level the play
 | **PHANTOM** | Complicated — she hunted leakers like him at the CIA, now forced allies |
 | **FLUX** | Fellow outcasts, share tech knowledge — closest friend in the roster |
 | **ANGEL** | She represents the institutions he hates — philosophical tension |
-| **VIPER** | VIPER distrusts him — "Too many secrets." CIPHER finds the suspicion amusing |
+| **VIPER** | VIPER distrusts him — "Too many secrets." GLITCH finds the suspicion amusing |
 
 ### Story Hooks
 
@@ -357,7 +357,7 @@ He leaked what he could and went underground, using his skills to level the play
 - EMP Blast is the strongest counter-ability in the game — 110s cooldown is justified
 - EMP should NOT cancel passive abilities or deactivate weapons — only active abilities and deployables
 - Shield Destruction is instant and permanent — ANGEL and BULWARK players should hear a distinct "shield broken" audio cue
-- -10% weapon accuracy class trait ensures CIPHER loses straight gunfights — his power is in disruption timing
+- -10% weapon accuracy class trait ensures GLITCH loses straight gunfights — his power is in disruption timing
 - Cascade Failure upgrade (Slot 2) explosive damage should have a minimum range to prevent self-harm from nearby gadget destruction
 
 ### Animation Requirements
@@ -375,7 +375,7 @@ He leaked what he could and went underground, using his skills to level the play
 | EMP activate | Rising electronic whine + sharp pulse crack |
 | EMP effect (enemy perspective) | Static burst + HUD distortion noise |
 | Hacking interaction | Rapid keyboard clicks + data transfer chirps |
-| Gadget detected | Soft electronic ping (only CIPHER hears) |
+| Gadget detected | Soft electronic ping (only GLITCH hears) |
 | Footsteps | Standard weight — sneakers on concrete |
 
 ### Top-Down Specific Notes
@@ -383,7 +383,7 @@ He leaked what he could and went underground, using his skills to level the play
 - EMP expanding ring must be visible at minimum zoom — largest VFX radius in the game (15m)
 - Static distortion on affected enemies should be visible from top-down (blue sparking particles)
 - Gadget destruction VFX must clearly communicate which gadgets were destroyed
-- CIPHER is immune to enemy EMP — this is a critical balance point in mirror matchups
-- -10% weapon accuracy penalty means CIPHER should lose aim duels — his power is in EMP timing
+- GLITCH is immune to enemy EMP — this is a critical balance point in mirror matchups
+- -10% weapon accuracy penalty means GLITCH should lose aim duels — his power is in EMP timing
 - Tech Scavenge passive (hack enemy gadgets) should show a clear interaction prompt from above
 

@@ -123,7 +123,7 @@ The operator runs a real-time animation state machine with 5 states. Transitions
 
 Each operator must have the following voice lines recorded for Home Screen use:
 
-| Category | Count | Examples (Viper — Assault) |
+| Category | Count | Examples (Mamba — Assault) |
 | :-------- | :---: | :------------------------- |
 | Greeting (first hover) | 3 | "Ready when you are." / "Another run?" / "Let's do this." |
 | Readiness (hover) | 5 | "Locked and loaded." / "Zone's waiting." / "Light me up." |
@@ -169,7 +169,7 @@ Each operator must have the following voice lines recorded for Home Screen use:
 │              │  │ SQUAD: [P1] [+] [+]    │  │  ┌────────────────────────┐  │
 │              │  └────────────────────────┘  │  │  FRIENDS ONLINE (4)    │  │
 │              │                              │  │  ○ Kai_V  [Hawk] Lv29  │  │
-│              │                              │  │  ○ DXTR   [Viper] Lv41 │  │
+│              │                              │  │  ○ DXTR   [Mamba] Lv41 │  │
 │              │                              │  │  + 2 more...            │  │
 │              │                              │  └────────────────────────┘  │
 ├──────────────┴──────────────────────────────┴──────────────────────────────┤
@@ -405,7 +405,7 @@ Located at the top of the Right Sidebar (PC) or as a pull-down panel (Mobile).
 
 ```
 ┌────────────────────────────────────────────┐
-│  ◈  VIPER           Mastery ★★★★☆          │
+│  ◈  MAMBA           Mastery ★★★★☆          │
 │                                            │
 │  ▌ACCOUNT Lv.34    ████████████░░░  74%   │
 │  ▌SEASON  S3       ████████░░░░░░░  44/100│
@@ -440,10 +440,10 @@ Located at the top of the Right Sidebar (PC) or as a pull-down panel (Mobile).
 │  ● Kai_Virtanen    [Hawk]   Lv.29          │
 │    > In Raid — Industrial Zone             │
 │                         [Invite to Squad]  │
-│  ● Dxt_Raptor      [Viper]  Lv.41          │
+│  ● Dxt_Raptor      [Mamba]  Lv.41          │
 │    > In Lobby — Solo queue                 │
 │                         [Join Their Squad] │
-│  ● NightSeal99     [Cipher] Lv.17          │
+│  ● NightSeal99     [Glitch] Lv.17          │
 │    > In Hideout                            │
 │                         [Invite to Squad]  │
 │  ● 4R3S             [Ghost] Lv.55          │
@@ -485,14 +485,14 @@ The operator showcase viewport includes a quick-access cosmetics panel, expandin
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
-│  VIPER — CUSTOMIZATION                         [Full Armory]│
+│  MAMBA — CUSTOMIZATION                         [Full Armory]│
 │  ─────────────────────────────────────────────────────────  │
 │  Skin:    [Tactical Black ▼]   [Shadow Ops ▼]  [◀ ▶]       │
 │  Emote:   [Lock & Load ▼]                      [◀ ▶]       │
 │  Badge:   [Iron Extraction ★]                  [◀ ▶]       │
 │  Title:   ["The Last Extract"]                 [◀ ▶]       │
 │  ─────────────────────────────────────────────────────────  │
-│  OPERATOR SWITCH:  [Hawk] [Cipher] [Bulwark] [Ghost] [+...]  │
+│  OPERATOR SWITCH:  [Hawk] [Glitch] [Bastion] [Ghost] [+...]  │
 └─────────────────────────────────────────────────────────────┘
 ```
 
@@ -593,7 +593,7 @@ When the Home Screen loads (first launch or return from raid):
 
 | Element | Behavior |
 | :------ | :------- |
-| Operator displayed | Viper (default / first operator selected in Tutorial) |
+| Operator displayed | Mamba (default / first operator selected in Tutorial) |
 | Background | Exterior: Aethelgard Dusk (non-customizable on first launch) |
 | News feed | "WELCOME TO AETHELGARD" banner + link to tutorial |
 | Operator animation | Operator waves at camera on first load (1× only, never repeats) |

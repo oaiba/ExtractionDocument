@@ -364,7 +364,7 @@ While individual raids carry the risk of loss, the **account's power and influen
 - **Unlocks**: New skins, voice lines, signature weapons
 
 **Examples:**
-- **Assault Operator (Viper)**: +10% sprint speed at Lvl 50
+- **Assault Operator (Mamba)**: +10% sprint speed at Lvl 50
 - **Scout Operator (Hawk)**: +20% ADS speed at Lvl 50
 - **Medic Operator (Cross)**: +30% heal speed at Lvl 50
 

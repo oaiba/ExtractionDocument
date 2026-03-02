@@ -301,7 +301,7 @@ Bosses are unique high-difficulty spawns that award the best loot in the game. E
 3. At 50% HP, Kommandant activates radio for reinforcements (30s delay for arrivals)
 4. Killing Kommandant does not despawn bodyguards; they continue fighting
 
-#### Boss Type 2 — "Wraith" (Residential District)
+#### Boss Type 2 — "Obsidian" (Residential District)
 
 > *A former scout-class operative. Unpredictable, fast, cloaks briefly.*
 
@@ -327,10 +327,10 @@ Bosses are unique high-difficulty spawns that award the best loot in the game. E
 | **Armor** | Class 6 full torso (like Zabralo Mk.2) |
 | **Weapon** | LMG (Tier 4, suppression-focused) |
 | **Bodyguards** | 6 × Sec-Force guards spread across checkpoint |
-| **Ability** | Every 60s, enters "Fortress" stance for 10s (-70% incoming damage; cannot move) |
+| **Ability** | Every 60s, enters "Goliath" stance for 10s (-70% incoming damage; cannot move) |
 | **Unique behavior** | Holds checkpoint entrance. Flanking required — frontal attack wastes ammo against Class 6. |
 | **Loot on kill** | Guaranteed Class 5–6 armor (heavily degraded), LMG, military keycard tier |
-| **Counterplay** | Attack during non-Fortress window. EMP Drone disrupts Fortress stance (gadget disruption). Flank from three sides to force reorientation. High-AP ammo mandatory. |
+| **Counterplay** | Attack during non-Goliath window. EMP Drone disrupts Goliath stance (gadget disruption). Flank from three sides to force reorientation. High-AP ammo mandatory. |
 
 ---
 

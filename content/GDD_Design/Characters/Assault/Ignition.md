@@ -1,5 +1,5 @@
 ---
-title: "BLAZE - Elena Reyes"
+title: "IGNITION - Ji-yoon Kwon"
 type: docs
 ---
 
@@ -11,10 +11,10 @@ type: docs
 
 | Attribute       | Value             |
 | :-------------- | :---------------- |
-| **Real Name**   | Elena Maria Reyes |
-| **Codename**    | BLAZE             |
+| **Real Name**   | Ji-yoon Kwon      |
+| **Codename**    | IGNITION          |
 | **Class**       | Assault           |
-| **Nationality** | Mexican-American  |
+| **Nationality** | South Korean      |
 | **Age**         | 28                |
 | **Height**      | 170 cm (5'7")     |
 | **Weight**      | 62 kg (137 lbs)   |
@@ -23,9 +23,9 @@ type: docs
 
 ### Background
 
-Elena Reyes grew up in the borderlands of Arizona, where she developed a reputation as a wildfire fighter of exceptional skill. Her ability to predict fire behavior and work under extreme conditions caught the attention of military recruiters.
+Ji-yoon Kwon grew up in Seoul, where she developed a reputation as a volatile pyrotechnics engineer of exceptional skill. Her ability to mold fire and work under extreme conditions caught the attention of military recruiters.
 
-After serving as a combat engineer specializing in incendiary weapons, Elena became disillusioned with chain of command after her unit was ordered to destroy a civilian village. She went AWOL and now operates in the Exclusion Zone, using her pyrotechnic expertise to clear rooms and deny enemy positions.
+After serving as a combat engineer specializing in incendiary weapons, Ji-yoon became disillusioned with the chain of command. She went AWOL and now operates in the Exclusion Zone, using her pyrotechnic expertise to clear rooms and deny enemy positions with chaotic glee.
 
 ### Personality Traits
 
@@ -219,7 +219,7 @@ After serving as a combat engineer specializing in incendiary weapons, Elena bec
 | Secondary | Flare Gun  | Extra fire (meme but fun)    |
 | Tactical  | Molotov ×2 | Maximum fire coverage        |
 
-**Balanced Blaze:**
+**Balanced Ignition:**
 | Slot      | Item                 | Why                  |
 | :-------- | :------------------- | :------------------- |
 | Primary   | AK-74u               | Good damage at range |

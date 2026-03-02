@@ -32,11 +32,11 @@ The **Assault** class operators are designed for players who prefer aggressive, 
 
 | Operator | Codename | Specialty | Unlock |
 | :------- | :------- | :-------- | :----- |
-| [Marcus Chen](./Viper/) | VIPER | Damage Amplification | Free Starter |
-| [Elena Reyes](./Blaze/) | BLAZE | Area Denial | Level 5, 5,000 Credits |
-| [Anton Petrov](./Havoc/) | HAVOC | Close Combat | Level 22, 12,000 Credits |
+| [Thuy Nguyen](./Mamba/) | MAMBA | Damage Amplification | Free Starter |
+| [Ji-yoon Kwon](./Ignition/) | IGNITION | Area Denial | Level 5, 5,000 Credits |
+| [Carlos Mendes](./Tartarus/) | TARTARUS | Close Combat | Level 22, 12,000 Credits |
 
-<!-- REF_IMAGE: Assault class operator trio — VIPER, BLAZE, HAVOC standing in aggressive stances with class-themed orange accent lighting -->
+<!-- REF_IMAGE: Assault class operator trio — MAMBA, IGNITION, TARTARUS standing in aggressive stances with class-themed orange accent lighting -->
 
 ---
 
@@ -83,9 +83,9 @@ The **Assault** class operators are designed for players who prefer aggressive, 
 
 | Operator | Counter Strategy |
 | :------- | :--------------- |
-| **VIPER** | Wait out Combat Stim (10s), then engage |
-| **BLAZE** | Avoid fire zones, use long-range |
-| **HAVOC** | Kite at range, do not let close |
+| **MAMBA** | Wait out Combat Stim (10s), then engage |
+| **IGNITION** | Avoid fire zones, use long-range |
+| **TARTARUS** | Kite at range, do not let close |
 
 ### Best Counters to Assault
 
@@ -110,7 +110,7 @@ The **Assault** class operators are designed for players who prefer aggressive, 
 ### Triple Assault Cheese
 
 > [!WARNING]
-> **Not Recommended** but can work: VIPER + BLAZE + HAVOC. Overwhelming damage, no sustain. Win fast or lose fast.
+> **Not Recommended** but can work: MAMBA + IGNITION + TARTARUS. Overwhelming damage, no sustain. Win fast or lose fast.
 
 ---
 
@@ -126,15 +126,15 @@ Assault operators share a **medium-athletic silhouette** with prominent cross-ch
 | **Weapon Profile** | Primary weapon extends forward from model, visible barrel | 50+ units |
 | **Movement Anim** | Fast, forward-leaning sprint — distinguishable from Tank trudge and Recon crouch | 40+ units |
 
-<!-- REF_IMAGE: Assault class top-down silhouette comparison — VIPER, BLAZE, HAVOC as seen from 60-degree camera angle at 50% zoom, with accent color zones highlighted -->
+<!-- REF_IMAGE: Assault class top-down silhouette comparison — MAMBA, IGNITION, TARTARUS as seen from 60-degree camera angle at 50% zoom, with accent color zones highlighted -->
 
 ### Operator-Specific Top-Down Tells
 
 | Operator | Unique Visual From Above |
 | :------- | :----------------------- |
-| VIPER | Orange glow on hands/arms when stim is active |
-| BLAZE | Fire trail visible behind character during Incendiary Rush |
-| HAVOC | Red pulsing body glow during Berserker Rage, larger stance |
+| MAMBA | Orange glow on hands/arms when stim is active |
+| IGNITION | Fire trail visible behind character during Incendiary Rush |
+| TARTARUS | Red pulsing body glow during Berserker Rage, larger stance |
 
 ---
 
@@ -168,10 +168,10 @@ Assault operators share a **medium-athletic silhouette** with prominent cross-ch
 
 | Map Archetype | Suitability | Recommended Operator | Why |
 | :------------ | :---------- | :------------------- | :-- |
-| **Open Fields** | High | VIPER | Long sightlines favor stim-boosted accuracy |
-| **Tight Corridors** | High | HAVOC | Berserker Rage excels in close quarters |
-| **Multi-Floor** | Medium | BLAZE | Fire denies vertical access routes |
-| **Large Industrial** | Medium | VIPER or BLAZE | Depends on engagement distance |
+| **Open Fields** | High | MAMBA | Long sightlines favor stim-boosted accuracy |
+| **Tight Corridors** | High | TARTARUS | Berserker Rage excels in close quarters |
+| **Multi-Floor** | Medium | IGNITION | Fire denies vertical access routes |
+| **Large Industrial** | Medium | MAMBA or IGNITION | Depends on engagement distance |
 | **Dense Urban** | Low | Any | Too many flanking routes, hard to control space |
 
 See [World Design](../../World/) for detailed map layouts.

@@ -32,10 +32,10 @@ The **Tank** class operators absorb damage and protect teammates. They excel at 
 
 | Operator | Codename | Specialty | Unlock |
 | :------- | :------- | :-------- | :----- |
-| [Hans Richter](./Bulwark/) | BULWARK | Frontal Protection | Level 10, 7,500 Credits |
-| [Dmitri Kozlov](./Fortress/) | FORTRESS | Team Defense | Level 20, 12,000 Credits |
+| [Mikhail Ivanov](./Bastion/) | BASTION | Frontal Protection | Level 10, 7,500 Credits |
+| [Wei Chen](./Goliath/) | GOLIATH | Team Defense | Level 20, 12,000 Credits |
 
-<!-- REF_IMAGE: Tank class operator duo — showing BULWARK with riot shield and FORTRESS with heavy armor, both in cyberpunk neo-industrial gear -->
+<!-- REF_IMAGE: Tank class operator duo — showing BASTION with riot shield and GOLIATH with heavy armor, both in cyberpunk neo-industrial gear -->
 
 ---
 
@@ -94,8 +94,8 @@ Tanks often overcommit. Your job is to absorb damage, not chase kills. If your a
 
 | Operator | Counter Strategy |
 | :------- | :--------------- |
-| **BULWARK** | Flank behind the shield, use grenades around corners, wait out shield duration (15s) |
-| **FORTRESS** | Focus fire before armor overcharge completes, use EMP to strip bonus armor |
+| **BASTION** | Flank behind the shield, use grenades around corners, wait out shield duration (15s) |
+| **GOLIATH** | Focus fire before armor overcharge completes, use EMP to strip bonus armor |
 
 ### Best Counters to Tank
 
@@ -114,7 +114,7 @@ Tanks often overcommit. Your job is to absorb damage, not chase kills. If your a
 | Partner | Synergy | Notes |
 | :------ | :------ | :---- |
 | **DOC** | Tank + Healer | Sustain through any fight, classic combo |
-| **HAVOC** | Shield + CQB | BULWARK leads, HAVOC flanks behind shield chaos |
+| **HAVOC** | Shield + CQB | BASTION leads, HAVOC flanks behind shield chaos |
 | **BLAZE** | Tank + Area Denial | Hold chokepoint, set fire to flanking routes |
 | **ANGEL** | Double Defense | Guardian Shield + Riot Shield = near-invulnerable extraction |
 
@@ -129,17 +129,17 @@ Tank operators have the **widest silhouette** in the roster. From the top-down c
 | **Shoulder Width** | Widest in roster — 1.5x standard | 100+ units |
 | **Headgear** | Heavy riot visor or full-face helmet | 80+ units |
 | **Color Accent** | Steel Blue (#3B82F6) on shoulder plates and visor edge | 100+ units |
-| **Back Profile** | Shield (BULWARK) or armor pack (FORTRESS) visible from above | 80+ units |
+| **Back Profile** | Shield (BASTION) or armor pack (GOLIATH) visible from above | 80+ units |
 | **Movement Anim** | Slow, deliberate trudge — heaviest footfalls in roster | 60+ units |
 
-<!-- REF_IMAGE: Tank class top-down silhouette comparison — BULWARK and FORTRESS as seen from 60-degree camera angle at 50% zoom, showing widest operator profiles with shield/armor visible on back -->
+<!-- REF_IMAGE: Tank class top-down silhouette comparison — BASTION and GOLIATH as seen from 60-degree camera angle at 50% zoom, showing widest operator profiles with shield/armor visible on back -->
 
 ### Operator-Specific Top-Down Tells
 
 | Operator | Unique Visual From Above |
 | :------- | :----------------------- |
-| BULWARK | Riot shield visible on back when stowed; 120-degree arc indicator when deployed |
-| FORTRESS | Glowing armor plates when Overcharge is active, blue energy pulse effect |
+| BASTION | Riot shield visible on back when stowed; 120-degree arc indicator when deployed |
+| GOLIATH | Glowing armor plates when Overcharge is active, blue energy pulse effect |
 
 ---
 
@@ -173,9 +173,9 @@ Tank operators have the **widest silhouette** in the roster. From the top-down c
 
 | Map Archetype | Suitability | Recommended Operator | Why |
 | :------------ | :---------- | :------------------- | :-- |
-| **Tight Corridors** | Highest | BULWARK | Shield covers entire corridor width |
-| **Extraction Zones** | High | FORTRESS | Armor Overcharge protects team during extraction |
-| **Multi-Floor** | Medium | BULWARK | Shield protects against single-direction threats |
+| **Tight Corridors** | Highest | BASTION | Shield covers entire corridor width |
+| **Extraction Zones** | High | GOLIATH | Armor Overcharge protects team during extraction |
+| **Multi-Floor** | Medium | BASTION | Shield protects against single-direction threats |
 | **Open Fields** | Low | Neither | Easy to flank around shield, no cover advantage |
 | **Dense Urban** | Low | Neither | Too many angles to protect against |
 

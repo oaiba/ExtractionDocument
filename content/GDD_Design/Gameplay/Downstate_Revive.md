@@ -111,9 +111,9 @@ After being revived, the same player can be downed again and revived again — w
 | Operator | Downstate Interaction |
 | :------- | :-------------------- |
 | **Hawk** (Scout) | Spotter Drone can detect nearby enemies during YOUR downstate — the drone continues operating. Drone shares reviver squad's LOS while Hawk is down. |
-| **Cipher** (Specialist) | Tactical Overlay (if active when downed) fades to last-known position pings. Does not update while Cipher is down. |
-| **Viper** (Assault) | Adrenaline Rush passive: first time downed per raid, automatically receives one free tourniquet application. |
-| **Bulwark** (Tank) | Last Stand: at 15% HP (before going down), triggers 3-second immunity window. If healed above 15% during this window, avoids downstate. |
+| **Glitch** (Specialist) | Tactical Overlay (if active when downed) fades to last-known position pings. Does not update while Glitch is down. |
+| **Mamba** (Assault) | Adrenaline Rush passive: first time downed per raid, automatically receives one free tourniquet application. |
+| **Bastion** (Tank) | Last Stand: at 15% HP (before going down), triggers 3-second immunity window. If healed above 15% during this window, avoids downstate. |
 | **Ghost** (Support) | **"Field Medic"** — Revive ability reduced from 8s to 5s. Can revive twice before requiring a 90s cooldown. Unique class-specific mechanic. |
 
 > **Ghost's Field Medic** is the only ability that directly modifies the revive mechanic and is a key class differentiator. Supporting teammates with fast revives is Ghost's primary role in squad meta.

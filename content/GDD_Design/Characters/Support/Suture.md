@@ -1,5 +1,5 @@
 ---
-title: "DOC - Dr. James Morrison"
+title: "SUTURE - Tariq Al-Sayed"
 type: docs
 ---
 
@@ -11,10 +11,10 @@ type: docs
 
 | Attribute       | Value                     |
 | :-------------- | :------------------------ |
-| **Real Name**   | Dr. James Edward Morrison |
-| **Codename**    | DOC                       |
+| **Real Name**   | Tariq Al-Sayed            |
+| **Codename**    | SUTURE                    |
 | **Class**       | Support                   |
-| **Nationality** | British                   |
+| **Nationality** | Egyptian                  |
 | **Age**         | 42                        |
 | **Height**      | 178 cm (5'10")            |
 | **Weight**      | 76 kg (168 lbs)           |
@@ -23,9 +23,9 @@ type: docs
 
 ### Background
 
-Dr. Morrison was a trauma surgeon with the Royal Army Medical Corps, serving in conflict zones across the Middle East and Africa. His ability to perform miracles under fire earned him the respect of soldiers who'd seen him pull men back from the brink of death.
+Tariq Al-Sayed was a trauma surgeon serving in conflict zones across the Middle East and Africa. His ability to perform miracles under fire and his clinical, precise approach earned him the respect of soldiers who'd seen him pull men back from the brink of death.
 
-After a hostile extraction went wrong, James watched helplessly as soldiers died waiting for evacuation that never came. Disillusioned with military bureaucracy, he retired from service but couldn't escape the call of medicine in war zones. Now he operates in the Exclusion Zone, because someone has to keep people alive.
+After a hostile extraction went wrong, Tariq watched helplessly as soldiers died waiting for evacuation that never came. Disillusioned with military bureaucracy, he retired from service but couldn't escape the call of medicine in war zones. Now he operates in the Exclusion Zone, treating combat as a messy equation to be solved.
 
 ### Personality Traits
 
@@ -50,7 +50,7 @@ After a hostile extraction went wrong, James watched helplessly as soldiers died
 
 ### Healing Modifiers
 
-| Item          | Base Heal | DOC Bonus | Final    |
+| Item          | Base Heal | SUTURE Bonus | Final    |
 | :------------ | :-------- | :-------- | :------- |
 | Small Medkit  | 30 HP     | +20%      | 36 HP    |
 | Medkit        | 50 HP     | +20%      | 60 HP    |
@@ -89,14 +89,14 @@ After a hostile extraction went wrong, James watched helplessly as soldiers died
 | **Drone VFX (Top-Down)** | Green pulsing circle on ground (10m radius), drone model hovering at center |
 | **Drone Audio Radius** | 15m — subtle hum, quietest deployable in the game |
 
-<!-- REF_IMAGE: DOC top-down view — showing operator silhouette with medical gear, healing drone deployed with green radius circle visible from above -->
+<!-- REF_IMAGE: SUTURE top-down view — showing operator silhouette with medical gear, healing drone deployed with green radius circle visible from above -->
 
 ### Healing Drone Stat Block
 
 | Property | Value | Notes |
 | :------- | :---- | :---- |
 | **Drone HP** | 50 | Destroyable — key counterplay |
-| **Heal Rate** | 6 HP/sec | With DOC class bonus |
+| **Heal Rate** | 6 HP/sec | With SUTURE class bonus |
 | **Heal Radius** | 10 meters | Ground-plane circle |
 | **Duration** | 20 seconds | Total lifetime |
 | **Max Heal Total** | 120 HP/ally | Over full duration |
@@ -129,7 +129,7 @@ After a hostile extraction went wrong, James watched helplessly as soldiers died
 | Heal Rate           | 5 HP/second          | +20% = 6 HP/sec with class bonus |
 | Heal Radius         | 10 meters            | Centered on drone                |
 | Max Heal per Deploy | 100 HP per ally      | 5 HP × 20 seconds                |
-| Targets             | All allies in radius | Including DOC                    |
+| Targets             | All allies in radius | Including SUTURE                    |
 
 #### Drone Interaction Rules
 
@@ -185,7 +185,7 @@ After a hostile extraction went wrong, James watched helplessly as soldiers died
 | Option             | Effect                       |
 | :----------------- | :--------------------------- |
 | **Armored Drone**  | Drone HP +30 (80 total)      |
-| **Mobile Unit**    | Drone follows DOC slowly     |
+| **Mobile Unit**    | Drone follows SUTURE slowly     |
 | **Expanded Range** | Radius +5 meters (15m total) |
 
 **Slot 3 (Level 35):**
@@ -207,7 +207,7 @@ After a hostile extraction went wrong, James watched helplessly as soldiers died
 | Self Heal          | Can use healing items 20% faster   |
 | Downed Ally Nearby | See health bar through walls (10m) |
 
-**Design Intent:** DOC should always know who needs help and get to them fast.
+**Design Intent:** SUTURE should always know who needs help and get to them fast.
 
 ---
 

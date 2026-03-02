@@ -76,16 +76,16 @@ Ability VFX must read clearly from the top-down camera. All area-effect abilitie
 
 | VFX Type | Design Rule | Example |
 | :------- | :---------- | :------ |
-| **Area of Effect** | Circular ground decal with class-colored edge ring | FLUX Nano Swarm = silver/green circle on ground |
-| **Directional** | Cone or line projected forward from operator | BULWARK Shield = 120-degree arc indicator |
-| **Self-Buff** | Subtle glow on operator model + minimap icon change | VIPER Combat Stim = orange body glow |
-| **Deployable** | World-space model with pulsing radius indicator | DOC Healing Drone = green pulsing circle |
+| **Area of Effect** | Circular ground decal with class-colored edge ring | PULSE Nano Swarm = silver/green circle on ground |
+| **Directional** | Cone or line projected forward from operator | BASTION Shield = 120-degree arc indicator |
+| **Self-Buff** | Subtle glow on operator model + minimap icon change | MAMBA Combat Stim = orange body glow |
+| **Deployable** | World-space model with pulsing radius indicator | SUTURE Healing Drone = green pulsing circle |
 | **Status Applied** | Colored icon above affected character's head | Burn = flame icon, Slow = chain icon |
 
 > [!NOTE]
 > All VFX must remain readable at **minimum zoom** (furthest camera distance). If a VFX effect is only visible at maximum zoom, it fails the readability requirement. See [Art Direction](../Visuals/ArtDirection/) for VFX particle budgets and performance tiers.
 
-<!-- REF_IMAGE: Top-down VFX readability comparison — 4 panels showing FLUX swarm, BULWARK shield arc, DOC drone radius, and BLAZE fire trail as seen from above at both max and min zoom levels -->
+<!-- REF_IMAGE: Top-down VFX readability comparison — 4 panels showing PULSE swarm, BASTION shield arc, SUTURE drone radius, and IGNITION fire trail as seen from above at both max and min zoom levels -->
 
 ### Class Color Identification (Top-Down)
 
@@ -109,18 +109,18 @@ All operators use **capsule-based collision** with a separate head hitbox sphere
 
 | Operator | Capsule Radius | Capsule Height | Head Sphere Radius | Collision Profile |
 | :------- | :------------- | :------------- | :----------------- | :---------------- |
-| VIPER | 40 cm | 180 cm | 14 cm | Standard |
-| BLAZE | 36 cm | 168 cm | 13 cm | Standard |
-| HAVOC | 44 cm | 190 cm | 15 cm | Standard |
-| DOC | 38 cm | 176 cm | 14 cm | Standard |
-| ANGEL | 34 cm | 164 cm | 13 cm | Standard |
-| PHANTOM | 34 cm | 170 cm | 13 cm | Slim |
-| SPECTER | 40 cm | 182 cm | 14 cm | Slim |
-| WRAITH | 32 cm | 160 cm | 12 cm | Slim |
-| BULWARK | 48 cm | 188 cm | 15 cm | Heavy |
-| FORTRESS | 46 cm | 186 cm | 15 cm | Heavy |
-| CIPHER | 36 cm | 175 cm | 13 cm | Standard |
-| FLUX | 38 cm | 172 cm | 13 cm | Standard |
+| MAMBA | 40 cm | 180 cm | 14 cm | Standard |
+| IGNITION | 36 cm | 168 cm | 13 cm | Standard |
+| TARTARUS | 44 cm | 190 cm | 15 cm | Standard |
+| SUTURE | 38 cm | 176 cm | 14 cm | Standard |
+| AEGIS | 34 cm | 164 cm | 13 cm | Standard |
+| SONAR | 34 cm | 170 cm | 13 cm | Slim |
+| MIRAGE | 40 cm | 182 cm | 14 cm | Slim |
+| OBSIDIAN | 32 cm | 160 cm | 12 cm | Slim |
+| BASTION | 48 cm | 188 cm | 15 cm | Heavy |
+| GOLIATH | 46 cm | 186 cm | 15 cm | Heavy |
+| GLITCH | 36 cm | 175 cm | 13 cm | Standard |
+| PULSE | 38 cm | 172 cm | 13 cm | Standard |
 
 **Collision Profiles:**
 - **Slim** — 10% smaller hitbox than body mesh for Recon class advantage
@@ -132,7 +132,7 @@ All operators use **capsule-based collision** with a separate head hitbox sphere
 - Head sphere is always at the top of the capsule, regardless of animation state
 - From top-down view, head hitbox is the primary visible target — this is intentional
 
-<!-- REF_IMAGE: Hitbox comparison — side-by-side showing WRAITH (smallest), VIPER (standard), and BULWARK (largest) capsule colliders with head spheres highlighted -->
+<!-- REF_IMAGE: Hitbox comparison — side-by-side showing OBSIDIAN (smallest), MAMBA (standard), and BASTION (largest) capsule colliders with head spheres highlighted -->
 
 ---
 
@@ -144,12 +144,12 @@ Abilities can apply status effects to operators. Each effect has a base duration
 
 | Effect | Icon | Base Duration | Source Abilities | Visual Cue (Top-Down) |
 | :----- | :--- | :------------ | :--------------- | :-------------------- |
-| **Stun** | Lightning bolt | 1.5 seconds | BULWARK Shield Bash, Flashbang grenade | Character freezes, spark particles above head |
-| **Slow** | Chain links | 3.0 seconds | FLUX Nano Swarm (Napalm Stick upgrade), BLAZE fire exit | Movement trail turns blue, character model drags |
-| **Burn** | Flame | 5.0 seconds (15 DPS) | BLAZE Incendiary Rush, Molotov | Orange flame particles on character, smoke trail |
-| **EMP** | Circuit break | 4.0 seconds | CIPHER EMP Blast | Blue static particles, HUD distortion (self view) |
-| **Blind** | Eye cross | 2.0 seconds | Flashbang grenade, BLAZE Flashpoint upgrade | White flash on operator model (top-down: bright white glow) |
-| **Mark** | Crosshair | 5.0 seconds | PHANTOM UAV Scan, SPECTER Motion Sensor, HAVOC Predator upgrade | Red outline visible through walls and from above |
+| **Stun** | Lightning bolt | 1.5 seconds | BASTION Shield Bash, Flashbang grenade | Character freezes, spark particles above head |
+| **Slow** | Chain links | 3.0 seconds | PULSE Nano Swarm (Napalm Stick upgrade), IGNITION fire exit | Movement trail turns blue, character model drags |
+| **Burn** | Flame | 5.0 seconds (15 DPS) | IGNITION Incendiary Rush, Molotov | Orange flame particles on character, smoke trail |
+| **EMP** | Circuit break | 4.0 seconds | GLITCH EMP Blast | Blue static particles, HUD distortion (self view) |
+| **Blind** | Eye cross | 2.0 seconds | Flashbang grenade, IGNITION Flashpoint upgrade | White flash on operator model (top-down: bright white glow) |
+| **Mark** | Crosshair | 5.0 seconds | SONAR UAV Scan, MIRAGE Motion Sensor, TARTARUS Predator upgrade | Red outline visible through walls and from above |
 
 ### Class Resistances
 
@@ -203,22 +203,22 @@ When abilities collide, the following rules apply. This matrix defines **what ha
 
 | Deployable | EMP Blast | Incendiary Rush | Nano Swarm | Smoke Screen | Berserker Rage | UAV Scan |
 | :--------- | :-------- | :-------------- | :--------- | :----------- | :------------- | :------- |
-| **Healing Drone** (DOC) | Destroyed | Not affected | Not affected | Not affected | N/A | Revealed |
-| **Guardian Shield** (ANGEL) | Destroyed | Fire does NOT pass through | Swarm ignores shield (passes through) | Smoke passes through | N/A | Does not reveal shield users inside |
-| **Motion Sensors** (SPECTER) | Destroyed | Destroyed by fire | Not affected | Not affected | N/A | N/A |
-| **UAV** (PHANTOM) | Destroyed (falls) | Not affected (airborne) | Not affected (airborne) | Blocks scan LOS to ground targets | N/A | N/A |
-| **Nano Swarm** (FLUX) | Destroyed | Fire burns through swarm (both damage stack on enemies inside) | N/A | Smoke does not interact | N/A | Revealed |
-| **Riot Shield** (BULWARK) | Disabled (5 sec) | Fire does NOT pass through | Swarm ignores shield | Smoke passes through | N/A | Does not reveal shielded operator |
+| **Healing Drone** (SUTURE) | Destroyed | Not affected | Not affected | Not affected | N/A | Revealed |
+| **Guardian Shield** (AEGIS) | Destroyed | Fire does NOT pass through | Swarm ignores shield (passes through) | Smoke passes through | N/A | Does not reveal shield users inside |
+| **Motion Sensors** (MIRAGE) | Destroyed | Destroyed by fire | Not affected | Not affected | N/A | N/A |
+| **UAV** (SONAR) | Destroyed (falls) | Not affected (airborne) | Not affected (airborne) | Blocks scan LOS to ground targets | N/A | N/A |
+| **Nano Swarm** (PULSE) | Destroyed | Fire burns through swarm (both damage stack on enemies inside) | N/A | Smoke does not interact | N/A | Revealed |
+| **Riot Shield** (BASTION) | Disabled (5 sec) | Fire does NOT pass through | Swarm ignores shield | Smoke passes through | N/A | Does not reveal shielded operator |
 
 ### Buff vs. Debuff Interactions
 
 | Buff/Ability | Can be EMP'd? | Cleansed by Stim? | Blocked by Shield? | Affected by Smoke? |
 | :----------- | :------------ | :----------------- | :----------------- | :----------------- |
-| **Combat Stim** (VIPER) | Yes — cancelled immediately | N/A (is the stim) | N/A | No |
-| **Berserker Rage** (HAVOC) | Yes — cancelled immediately | No | N/A | No |
-| **Armor Overcharge** (FORTRESS) | Yes — bonus armor stripped | No | N/A | No |
-| **Burn** (BLAZE) | No — not tech-based | No | Guardian Shield blocks fire source, not existing burn | No |
-| **Mark** (PHANTOM/SPECTER) | No — already applied | No | No | Smoke blocks NEW scans but does not remove existing marks |
+| **Combat Stim** (MAMBA) | Yes — cancelled immediately | N/A (is the stim) | N/A | No |
+| **Berserker Rage** (TARTARUS) | Yes — cancelled immediately | No | N/A | No |
+| **Armor Overcharge** (GOLIATH) | Yes — bonus armor stripped | No | N/A | No |
+| **Burn** (IGNITION) | No — not tech-based | No | Guardian Shield blocks fire source, not existing burn | No |
+| **Mark** (SONAR/MIRAGE) | No — already applied | No | No | Smoke blocks NEW scans but does not remove existing marks |
 
 <!-- REF_IMAGE: Ability interaction web diagram — showing all 12 operator abilities with arrows indicating counter/synergy relationships, color-coded by interaction type (destroy, disable, ignore, synergize) -->
 
@@ -239,21 +239,21 @@ When abilities collide, the following rules apply. This matrix defines **what ha
 ### Unlock Progression
 
 ```
-ACCOUNT LEVEL 1  -> Assault (VIPER) - Free starter
-ACCOUNT LEVEL 1  -> Support (DOC) - Free starter
-ACCOUNT LEVEL 5  -> Assault (BLAZE) - 5,000 Credits or Quest
-ACCOUNT LEVEL 8  -> Recon (PHANTOM) - 5,000 Credits or Quest
-ACCOUNT LEVEL 10 -> Tank (BULWARK) - 7,500 Credits or Quest
-ACCOUNT LEVEL 12 -> Recon (SPECTER) - 7,500 Credits or Quest
-ACCOUNT LEVEL 15 -> Specialist (CIPHER) - 10,000 Credits or Quest
-ACCOUNT LEVEL 18 -> Support (ANGEL) - 10,000 Credits or Quest
-ACCOUNT LEVEL 20 -> Tank (FORTRESS) - 12,000 Credits or Quest
-ACCOUNT LEVEL 22 -> Assault (HAVOC) - 12,000 Credits or Quest
-ACCOUNT LEVEL 25 -> Recon (WRAITH) - 15,000 Credits or Quest
-ACCOUNT LEVEL 28 -> Specialist (FLUX) - 15,000 Credits or Quest
+ACCOUNT LEVEL 1  -> Assault (MAMBA) - Free starter
+ACCOUNT LEVEL 1  -> Support (SUTURE) - Free starter
+ACCOUNT LEVEL 5  -> Assault (IGNITION) - 5,000 Credits or Quest
+ACCOUNT LEVEL 8  -> Recon (SONAR) - 5,000 Credits or Quest
+ACCOUNT LEVEL 10 -> Tank (BASTION) - 7,500 Credits or Quest
+ACCOUNT LEVEL 12 -> Recon (MIRAGE) - 7,500 Credits or Quest
+ACCOUNT LEVEL 15 -> Specialist (GLITCH) - 10,000 Credits or Quest
+ACCOUNT LEVEL 18 -> Support (AEGIS) - 10,000 Credits or Quest
+ACCOUNT LEVEL 20 -> Tank (GOLIATH) - 12,000 Credits or Quest
+ACCOUNT LEVEL 22 -> Assault (TARTARUS) - 12,000 Credits or Quest
+ACCOUNT LEVEL 25 -> Recon (OBSIDIAN) - 15,000 Credits or Quest
+ACCOUNT LEVEL 28 -> Specialist (PULSE) - 15,000 Credits or Quest
 ```
 
-**Design Intent:** Starter operators (VIPER, DOC) represent the two core loops — killing and surviving. New classes unlock steadily to introduce complexity without overwhelming new players.
+**Design Intent:** Starter operators (MAMBA, SUTURE) represent the two core loops — killing and surviving. New classes unlock steadily to introduce complexity without overwhelming new players.
 
 ---
 
@@ -272,9 +272,9 @@ ACCOUNT LEVEL 28 -> Specialist (FLUX) - 15,000 Credits or Quest
 
 | Operator | Codename | Ability | Specialty |
 | :------- | :------- | :------ | :-------- |
-| [Marcus "Viper" Chen](./Assault/Viper/) | VIPER | Combat Stim | Damage Amplification |
-| [Elena "Blaze" Reyes](./Assault/Blaze/) | BLAZE | Incendiary Rush | Area Denial |
-| [Anton "Havoc" Petrov](./Assault/Havoc/) | HAVOC | Berserker Rage | Close Combat |
+| [Thuy "Mamba" Nguyen](./Assault/Mamba/) | MAMBA | Combat Stim | Damage Amplification |
+| [Ji-yoon "Ignition" Kwon](./Assault/Ignition/) | IGNITION | Incendiary Rush | Area Denial |
+| [Carlos "Tartarus" Mendes](./Assault/Tartarus/) | TARTARUS | Berserker Rage | Close Combat |
 
 [View All Assault Operators](./Assault/)
 
@@ -293,8 +293,8 @@ ACCOUNT LEVEL 28 -> Specialist (FLUX) - 15,000 Credits or Quest
 
 | Operator | Codename | Ability | Specialty |
 | :------- | :------- | :------ | :-------- |
-| [Dr. James "Doc" Morrison](./Support/Doc/) | DOC | Healing Drone | Area Healing |
-| [Sister Maria "Angel" Santos](./Support/Angel/) | ANGEL | Guardian Shield | Damage Prevention |
+| [Tariq "Suture" Al-Sayed](./Support/Suture/) | SUTURE | Healing Drone | Area Healing |
+| [Victoria "Aegis" Sterling](./Support/Aegis/) | AEGIS | Guardian Shield | Damage Prevention |
 
 [View All Support Operators](./Support/)
 
@@ -313,9 +313,9 @@ ACCOUNT LEVEL 28 -> Specialist (FLUX) - 15,000 Credits or Quest
 
 | Operator | Codename | Ability | Specialty |
 | :------- | :------- | :------ | :-------- |
-| [Sarah "Phantom" Kim](./Recon/Phantom/) | PHANTOM | UAV Scan | Area Reveal |
-| [Viktor "Specter" Volkov](./Recon/Specter/) | SPECTER | Motion Sensors | Trap Detection |
-| [Yuki "Wraith" Tanaka](./Recon/Wraith/) | WRAITH | Smoke Screen | Visual Denial |
+| [Kaito "Sonar" Nakamura](./Recon/Sonar/) | SONAR | UAV Scan | Area Reveal |
+| [Ananya "Mirage" Patel](./Recon/Mirage/) | MIRAGE | Motion Sensors | Trap Detection |
+| [Unit N-7 "Obsidian" "Nero"](./Recon/Obsidian/) | OBSIDIAN | Smoke Screen | Visual Denial |
 
 [View All Recon Operators](./Recon/)
 
@@ -334,8 +334,8 @@ ACCOUNT LEVEL 28 -> Specialist (FLUX) - 15,000 Credits or Quest
 
 | Operator | Codename | Ability | Specialty |
 | :------- | :------- | :------ | :-------- |
-| [Hans "Bulwark" Richter](./Tank/Bulwark/) | BULWARK | Riot Shield | Frontal Protection |
-| [Dmitri "Fortress" Kozlov](./Tank/Fortress/) | FORTRESS | Armor Overcharge | Team Defense |
+| [Mikhail "Bastion" Ivanov](./Tank/Bastion/) | BASTION | Riot Shield | Frontal Protection |
+| [Wei "Goliath" Chen](./Tank/Goliath/) | GOLIATH | Armor Overcharge | Team Defense |
 
 [View All Tank Operators](./Tank/)
 
@@ -354,8 +354,8 @@ ACCOUNT LEVEL 28 -> Specialist (FLUX) - 15,000 Credits or Quest
 
 | Operator | Codename | Ability | Specialty |
 | :------- | :------- | :------ | :-------- |
-| [Alex "Cipher" Nakamura](./Specialist/Cipher/) | CIPHER | EMP Blast | Ability Denial |
-| [Maya "Flux" Okonkwo](./Specialist/Flux/) | FLUX | Nano Swarm | Area Control |
+| [Maya "Glitch" Torres](./Specialist/Glitch/) | GLITCH | EMP Blast | Ability Denial |
+| [D-84 "Pulse" "Ohm"](./Specialist/Pulse/) | PULSE | Nano Swarm | Area Control |
 
 [View All Specialist Operators](./Specialist/)
 
@@ -367,18 +367,18 @@ ACCOUNT LEVEL 28 -> Specialist (FLUX) - 15,000 Credits or Quest
 
 | Operator | Class | Difficulty | Combat Power | Survivability | Utility | Team Value | Solo Viability | Total |
 | :------- | :---- | :--------: | :----------: | :-----------: | :-----: | :--------: | :------------: | :---: |
-| VIPER | Assault | 2/5 | 9/10 | 6/10 | 4/10 | 6/10 | 8/10 | 33 |
-| BLAZE | Assault | 3/5 | 8/10 | 5/10 | 6/10 | 7/10 | 7/10 | 33 |
-| HAVOC | Assault | 4/5 | 10/10 | 4/10 | 3/10 | 5/10 | 9/10 | 31 |
-| DOC | Support | 1/5 | 5/10 | 7/10 | 8/10 | 10/10 | 4/10 | 34 |
-| ANGEL | Support | 3/5 | 4/10 | 8/10 | 9/10 | 10/10 | 3/10 | 34 |
-| PHANTOM | Recon | 2/5 | 6/10 | 5/10 | 9/10 | 8/10 | 9/10 | 37 |
-| SPECTER | Recon | 4/5 | 7/10 | 5/10 | 8/10 | 7/10 | 8/10 | 35 |
-| WRAITH | Recon | 5/5 | 5/10 | 6/10 | 10/10 | 8/10 | 7/10 | 36 |
-| BULWARK | Tank | 2/5 | 7/10 | 10/10 | 5/10 | 8/10 | 5/10 | 35 |
-| FORTRESS | Tank | 3/5 | 6/10 | 9/10 | 7/10 | 9/10 | 4/10 | 35 |
-| CIPHER | Specialist | 4/5 | 5/10 | 6/10 | 10/10 | 7/10 | 7/10 | 35 |
-| FLUX | Specialist | 5/5 | 6/10 | 5/10 | 9/10 | 8/10 | 6/10 | 34 |
+| MAMBA | Assault | 2/5 | 9/10 | 6/10 | 4/10 | 6/10 | 8/10 | 33 |
+| IGNITION | Assault | 3/5 | 8/10 | 5/10 | 6/10 | 7/10 | 7/10 | 33 |
+| TARTARUS | Assault | 4/5 | 10/10 | 4/10 | 3/10 | 5/10 | 9/10 | 31 |
+| SUTURE | Support | 1/5 | 5/10 | 7/10 | 8/10 | 10/10 | 4/10 | 34 |
+| AEGIS | Support | 3/5 | 4/10 | 8/10 | 9/10 | 10/10 | 3/10 | 34 |
+| SONAR | Recon | 2/5 | 6/10 | 5/10 | 9/10 | 8/10 | 9/10 | 37 |
+| MIRAGE | Recon | 4/5 | 7/10 | 5/10 | 8/10 | 7/10 | 8/10 | 35 |
+| OBSIDIAN | Recon | 5/5 | 5/10 | 6/10 | 10/10 | 8/10 | 7/10 | 36 |
+| BASTION | Tank | 2/5 | 7/10 | 10/10 | 5/10 | 8/10 | 5/10 | 35 |
+| GOLIATH | Tank | 3/5 | 6/10 | 9/10 | 7/10 | 9/10 | 4/10 | 35 |
+| GLITCH | Specialist | 4/5 | 5/10 | 6/10 | 10/10 | 7/10 | 7/10 | 35 |
+| PULSE | Specialist | 5/5 | 6/10 | 5/10 | 9/10 | 8/10 | 6/10 | 34 |
 
 **Difficulty Key:** 1/5 = Beginner-friendly, 5/5 = Requires deep game knowledge and precise ability timing.
 
@@ -388,18 +388,18 @@ ACCOUNT LEVEL 28 -> Specialist (FLUX) - 15,000 Credits or Quest
 
 | Operator | Strong Against | Weak Against | Key Ability Interaction |
 | :------- | :------------- | :----------- | :---------------------- |
-| VIPER | PHANTOM, DOC | BULWARK, CIPHER | Stim cancelled by EMP; stim out-damages DOC heal rate |
-| BLAZE | WRAITH, FORTRESS | SPECTER, FLUX | Fire destroys Motion Sensors; fire + swarm stack damage on shared targets |
-| HAVOC | ANGEL, CIPHER | BULWARK, DOC | Rage cancelled by EMP; can push through Guardian Shield |
-| DOC | All (Sustain) | VIPER, HAVOC | Drone destroyed by EMP; stim burst exceeds heal rate |
-| ANGEL | BLAZE, HAVOC | CIPHER, SPECTER | Shield destroyed instantly by EMP; fire cannot pass through shield |
-| PHANTOM | FORTRESS, FLUX | VIPER, WRAITH | Scan blocked by smoke; scan reveals all deployables |
-| SPECTER | BLAZE, HAVOC | CIPHER, ANGEL | Sensors destroyed by EMP and fire; sensors detect Berserker approach |
-| WRAITH | BULWARK, VIPER | PHANTOM, FLUX | Smoke blocks shield vision; smoke blocks UAV scan LOS |
-| BULWARK | VIPER, HAVOC | WRAITH, CIPHER | Shield disabled by EMP (5s); shield blocks fire and bullets |
-| FORTRESS | BLAZE, SPECTER | PHANTOM, FLUX | Overcharge armor stripped by EMP; absorbs fire DoT |
-| CIPHER | ANGEL, BULWARK | VIPER, HAVOC | EMP destroys all deployables and disables active buffs |
-| FLUX | PHANTOM, SPECTER | BLAZE, WRAITH | Swarm destroyed by EMP; swarm ignores shields (passes through) |
+| MAMBA | SONAR, SUTURE | BASTION, GLITCH | Stim cancelled by EMP; stim out-damages SUTURE heal rate |
+| IGNITION | OBSIDIAN, GOLIATH | MIRAGE, PULSE | Fire destroys Motion Sensors; fire + swarm stack damage on shared targets |
+| TARTARUS | AEGIS, GLITCH | BASTION, SUTURE | Rage cancelled by EMP; can push through Guardian Shield |
+| SUTURE | All (Sustain) | MAMBA, TARTARUS | Drone destroyed by EMP; stim burst exceeds heal rate |
+| AEGIS | IGNITION, TARTARUS | GLITCH, MIRAGE | Shield destroyed instantly by EMP; fire cannot pass through shield |
+| SONAR | GOLIATH, PULSE | MAMBA, OBSIDIAN | Scan blocked by smoke; scan reveals all deployables |
+| MIRAGE | IGNITION, TARTARUS | GLITCH, AEGIS | Sensors destroyed by EMP and fire; sensors detect Berserker approach |
+| OBSIDIAN | BASTION, MAMBA | SONAR, PULSE | Smoke blocks shield vision; smoke blocks UAV scan LOS |
+| BASTION | MAMBA, TARTARUS | OBSIDIAN, GLITCH | Shield disabled by EMP (5s); shield blocks fire and bullets |
+| GOLIATH | IGNITION, MIRAGE | SONAR, PULSE | Overcharge armor stripped by EMP; absorbs fire DoT |
+| GLITCH | AEGIS, BASTION | MAMBA, TARTARUS | EMP destroys all deployables and disables active buffs |
+| PULSE | SONAR, MIRAGE | IGNITION, OBSIDIAN | Swarm destroyed by EMP; swarm ignores shields (passes through) |
 
 **Reading the Counter Matrix:** "Strong Against" means the operator has an inherent advantage in a 1v1 scenario due to ability matchups. The "Key Ability Interaction" column explains WHY — this is critical for balance discussions. Skill always matters more than counters.
 
@@ -413,21 +413,21 @@ ACCOUNT LEVEL 28 -> Specialist (FLUX) - 15,000 Credits or Quest
 
 | Comp Name | Composition | Playstyle | Strength | Weakness |
 | :-------- | :---------- | :-------- | :------- | :------- |
-| **Rush Meta** | VIPER + HAVOC + DOC | Aggressive push | High damage, sustained | No intel, no area control |
-| **Intel Control** | PHANTOM + SPECTER + CIPHER | Information dominance | Never surprised | Low damage output |
-| **Fortress Hold** | BULWARK + DOC + BLAZE | Defensive extraction | Hard to push | Slow rotations |
-| **Balanced** | VIPER + DOC + PHANTOM | All-around | Flexible | No hard counter to Tanks |
-| **Stealth Extract** | WRAITH + SPECTER + FLUX | Avoid combat | Maximum loot, low risk | Loses direct fights |
+| **Rush Meta** | MAMBA + TARTARUS + SUTURE | Aggressive push | High damage, sustained | No intel, no area control |
+| **Intel Control** | SONAR + MIRAGE + GLITCH | Information dominance | Never surprised | Low damage output |
+| **Fortress Hold** | BASTION + SUTURE + IGNITION | Defensive extraction | Hard to push | Slow rotations |
+| **Balanced** | MAMBA + SUTURE + SONAR | All-around | Flexible | No hard counter to Tanks |
+| **Stealth Extract** | OBSIDIAN + MIRAGE + PULSE | Avoid combat | Maximum loot, low risk | Loses direct fights |
 
 ### Duo Synergies
 
 | Duo | Synergy | Strategy |
 | :-- | :------ | :------- |
-| VIPER + DOC | Assault heals | Aggressive pushing with sustain backup |
-| BULWARK + HAVOC | Tank leads, Assault follows | Shield creates opening, HAVOC closes |
-| PHANTOM + CIPHER | Intel + Disable | Full information control of engagement |
-| FORTRESS + ANGEL | Double defense | Nearly unkillable extraction fortress |
-| WRAITH + SPECTER | Stealth duo | Silent map traversal, avoid all combat |
+| MAMBA + SUTURE | Assault heals | Aggressive pushing with sustain backup |
+| BASTION + TARTARUS | Tank leads, Assault follows | Shield creates opening, TARTARUS closes |
+| SONAR + GLITCH | Intel + Disable | Full information control of engagement |
+| GOLIATH + AEGIS | Double defense | Nearly unkillable extraction fortress |
+| OBSIDIAN + MIRAGE | Stealth duo | Silent map traversal, avoid all combat |
 
 ---
 
@@ -507,7 +507,7 @@ All cosmetics are purely visual — no gameplay advantage. See [Art Direction](.
 | Operator | Class | Ability Preview | Design Status |
 | :------- | :---- | :-------------- | :------------ |
 | **SHADOW** | Recon | Invisibility cloak (limited duration, breaks on fire) | Concept |
-| **ENGINEER** | Specialist | Deployable turret (limited ammo, hackable by CIPHER) | Concept |
+| **ENGINEER** | Specialist | Deployable turret (limited ammo, hackable by GLITCH) | Concept |
 
 ### Season 2 (6 months)
 

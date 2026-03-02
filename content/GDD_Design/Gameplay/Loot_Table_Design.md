@@ -153,7 +153,7 @@ Each map has 4-5 named zones. Zone tier determines which loot tables are used.
 | Boss | Guaranteed | Random Drop (50% each) | Unique Drop (15%) |
 | :--- | :--------- | :--------------------- | :---------------- |
 | **Kommandant** | Tier 4 weapon, Class 5 armor, Vault Room keycard | Stim ×2, $15,000–$30,000, blueprint | "Kommandant's Sidearm" unique pistol |
-| **Wraith** | Suppressed Tier 3–4 weapon, Intel item | Light rig, $10,000–$20,000 | "Wraith's Cloak Module" — unique gadget component |
+| **Obsidian** | Suppressed Tier 3–4 weapon, Intel item | Light rig, $10,000–$20,000 | "Obsidian's Cloak Module" — unique gadget component |
 | **Iron Wall** | LMG (Tier 4), Military keycard | Class 5 armor (heavy), $20,000–$40,000 | "Iron Wall's Core" — quest-chain-only barter item |
 
 ---

@@ -76,7 +76,7 @@ A point **B** is "in LOS" of viewer **A** if there exists an unobstructed ray fr
 | Blocker Type | Examples |
 | :----------- | :------- |
 | **Blocking geometry** | Walls, closed doors, solid terrain (top-down: 2D hitbox or blocking tiles). |
-| **Vision blockers** | Smoke (e.g. Wraith), deployable cover (directional if applicable). |
+| **Vision blockers** | Smoke (e.g. Obsidian), deployable cover (directional if applicable). |
 
 ### Range and Top-Down Implementation
 
@@ -92,11 +92,11 @@ A point **B** is "in LOS" of viewer **A** if there exists an unobstructed ray fr
 | :------ | :--- | :----------- | :------------ | :--------------- | :------------- | :---------- |
 | Spotter Drone (Hawk) | Vision proxy | 25 m | Yes (drone LOS) | Yes | No (drone LOS only) | Shoot drone (30 HP) |
 | Motion Sensor (Hawk) | Intel | 10 m | No (ping only) | Yes | N/A (motion) | Crouch/prone; destroy (15 HP) |
-| Tactical Overlay (Cipher) | Vision proxy | 40 m | Yes | Yes | No (last-known in cover) | Kill Cipher; hard cover |
-| Smoke Grenade (Viper / future operator) | Blocker | 8 m radius | No | N/A | N/A (blocks all through smoke) | Avoid smoke area; wait for dissipation |
-| Flashbang (Viper) | Vision denial | 5 m | No | No | No | Look away; cover |
-| Deployable Cover (Bulwark) | LOS blocker | N/A (directional) | No | N/A | One direction | Flank; destroy (300 HP) |
-| Tech Savvy (Cipher) | Exception (traps) | 8 m | No | No (self) | Yes (traps only) | N/A |
+| Tactical Overlay (Glitch) | Vision proxy | 40 m | Yes | Yes | No (last-known in cover) | Kill Glitch; hard cover |
+| Smoke Grenade (Mamba / future operator) | Blocker | 8 m radius | No | N/A | N/A (blocks all through smoke) | Avoid smoke area; wait for dissipation |
+| Flashbang (Mamba) | Vision denial | 5 m | No | No | No | Look away; cover |
+| Deployable Cover (Bastion) | LOS blocker | N/A (directional) | No | N/A | One direction | Flank; destroy (300 HP) |
+| Tech Savvy (Glitch) | Exception (traps) | 8 m | No | No (self) | Yes (traps only) | N/A |
 | Ghost Cloak (Hawk) | Self-conceal | 8 m shimmer | No | No | N/A | Shimmer visible 8 m; damage breaks |
 
 See [Hero Abilities](Hero_Abilities.md) for full specs and the "Interaction with LOS/Visibility" section in that doc.
@@ -108,7 +108,7 @@ These passives do not create vision proxies or clear fog, but they affect how vi
 | Passive | Effect on LOS/Visibility |
 | :------ | :------------------------ |
 | **Light Step (Hawk)** | Reduces footstep audible range; does not change LOS or fog, but reduces the chance enemies locate Hawk by sound. |
-| **Tech Savvy (Cipher)** | Reveals trap devices (Motion Sensors, mines) within 8 m through walls (UI highlight); does not reveal players. |
+| **Tech Savvy (Glitch)** | Reveals trap devices (Motion Sensors, mines) within 8 m through walls (UI highlight); does not reveal players. |
 | **Ghost Cloak (Hawk)** | Reduces Hawk's visibility to enemies (shimmer within 8 m); does not provide intel to squad. |
 
 ---
@@ -129,7 +129,7 @@ Any information **one** squad member sees (in their LOS or via an ability) is tr
 | **Camera** | Each player keeps their own top-down camera; no requirement to "see through teammate eyes." |
 | **Minimap** | Uses **merged** squad vision: explored + revealed areas; teammate positions; pings/marks; enemies when revealed or marked. |
 | **World view** | Rendered from local viewport only. Optional future: picture-in-picture or teammate view. |
-| **Ping / mark** | Teammates can mark locations (enemy, loot, extract, danger). Marks persist in explored/fog as "last known" (e.g. Cipher overlay last-known when enemy goes to cover). |
+| **Ping / mark** | Teammates can mark locations (enemy, loot, extract, danger). Marks persist in explored/fog as "last known" (e.g. Glitch overlay last-known when enemy goes to cover). |
 
 ### Alignment with Design Pillars and Core Loop
 
@@ -162,10 +162,10 @@ Visibility state, fog layers, and squad-merged vision data are identical on PC, 
 
 ### Abilities as Vision Proxies
 
-Spotter Drone (Hawk), Motion Sensor (Hawk), and Tactical Overlay (Cipher) add vision or intel into the **Squad Vision Merge**. Rules:
+Spotter Drone (Hawk), Motion Sensor (Hawk), and Tactical Overlay (Glitch) add vision or intel into the **Squad Vision Merge**. Rules:
 
 - Each ability "sees" only within its spec (range, LOS, "not through walls" for Overlay).
-- Counters remain: shoot drone, destroy sensor, kill Cipher to end overlay.
+- Counters remain: shoot drone, destroy sensor, kill Glitch to end overlay.
 
 ### Environment
 
@@ -198,7 +198,7 @@ These points are for downstream technical design and implementation.
 | **Shared vision** | Merge LOS and ability-derived vision for the whole squad; minimap and intel (mark/ping) use merged state. |
 | **LOS** | Raycast 2D/tile; blocking = walls, doors, smoke; per-viewer sight range. |
 | **Fairness** | Enemies revealed only when in valid LOS/range or by abilities with counterplay. |
-| **Abilities** | Hawk/Cipher/Wraith integrate as vision proxies or blockers (drone, sensor, overlay, smoke). |
+| **Abilities** | Hawk/Glitch/Obsidian integrate as vision proxies or blockers (drone, sensor, overlay, smoke). |
 | **Authority** | Server-authoritative visibility for anti-cheat. |
 
 ---

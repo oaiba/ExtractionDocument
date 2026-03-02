@@ -27,7 +27,7 @@ Before Operation Zero begins, the player is guided through the **Operator Select
 | Step | What Happens | UI State |
 | :--- | :----------- | :------- |
 | 1 | Welcome message: "Choose your Operator — each has unique skills." | Pulsing arrow pointing to operator grid |
-| 2 | Three operators shown: **Viper** (Assault), **Hawk** (Scout), **Cipher** (Specialist) | Other operators greyed — Beta+ |
+| 2 | Three operators shown: **Mamba** (Assault), **Hawk** (Scout), **Glitch** (Specialist) | Other operators greyed — Beta+ |
 | 3 | Player hovers each — ability preview appears (passive + active tooltip) | Tooltip shows simplified ability summary |
 | 4 | Player selects one — confirmed with audio sting | Brief character voice line |
 | 5 | "This is your Operator for this training raid. You can change before each real raid." | Fade into loadout screen |
@@ -70,9 +70,9 @@ Before Operation Zero begins, the player is guided through the **Operator Select
 
 | Operator chosen | Ability shown |
 | :-------------- | :------------ |
-| **Viper** | Adrenaline Rush — sprint boost. "Use this to close distance fast or escape." |
+| **Mamba** | Adrenaline Rush — sprint boost. "Use this to close distance fast or escape." |
 | **Hawk** | Spotter Drone — deploy and view from drone. "Use this to scout before pushing." |
-| **Cipher** | Tactical Overlay — minimap reveal. "Use this when enemies are hidden behind cover." |
+| **Glitch** | Tactical Overlay — minimap reveal. "Use this when enemies are hidden behind cover." |
 
 - Ability cooldown explained: timer shown, "It recharges on its own — no resources needed."
 - **Loot camp:** Scav bodies have food, ammo, and a Keycard (quest item). Quest item glow introduced.

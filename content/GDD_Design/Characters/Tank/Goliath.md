@@ -1,5 +1,5 @@
 ---
-title: "FORTRESS - Dmitri Kozlov"
+title: "GOLIATH - Wei Chen"
 type: docs
 ---
 
@@ -11,19 +11,19 @@ type: docs
 
 | Attribute | Value |
 | :-------- | :---- |
-| **Real Name** | Dmitri Ivanovich Kozlov |
-| **Codename** | FORTRESS |
+| **Real Name** | Wei Chen |
+| **Codename** | GOLIATH |
 | **Class** | Tank |
-| **Nationality** | Russian |
+| **Nationality** | Chinese |
 | **Age** | 48 |
 | **Height** | 188 cm (6'2") |
 | **Weight** | 105 kg (231 lbs) |
 
-<!-- REF_IMAGE: FORTRESS operator portrait — broad-shouldered, heavy LMG, worn body armor with team insignia patches, cyberpunk power cells on belt -->
+<!-- REF_IMAGE: GOLIATH operator portrait — broad-shouldered, heavy LMG, worn body armor with team insignia patches, cyberpunk power cells on belt -->
 
 ### Background
 
-Colonel Dmitri Kozlov commanded Russia's elite VDV (Airborne Troops) for 15 years, known for his unbreakable defensive tactics and unwavering loyalty to his men. His philosophy: a unit that protects each other can survive anything.
+Wei Chen commanded Russia's elite VDV (Airborne Troops) for 15 years, known for his unbreakable defensive tactics and unwavering loyalty to his men. His philosophy: a unit that protects each other can survive anything.
 
 After refusing orders that would have sacrificed his men for political optics, Dmitri was quietly discharged. Now he brings his protective leadership to the Exclusion Zone, where his team-focused abilities keep squads alive against impossible odds.
 
@@ -89,7 +89,7 @@ After refusing orders that would have sacrificed his men for political optics, D
 | **Overcharge VFX (Top-Down)** | Blue energy glow on armor plates, 8m radius pulse circle on ground for ally buff range |
 | **Overcharge Audio** | 30m — deep power-up hum |
 
-<!-- REF_IMAGE: FORTRESS top-down view — showing operator with Armor Overcharge active, blue glow on armor plates, 8m buff radius circle visible from above -->
+<!-- REF_IMAGE: GOLIATH top-down view — showing operator with Armor Overcharge active, blue glow on armor plates, 8m buff radius circle visible from above -->
 
 ### Difficulty Rating
 
@@ -131,9 +131,9 @@ After refusing orders that would have sacrificed his men for political optics, D
 
 | State | VFX From Above |
 | :---- | :------------- |
-| Overcharge activation | Blue energy burst from FORTRESS, pulse wave expands to 8m |
+| Overcharge activation | Blue energy burst from GOLIATH, pulse wave expands to 8m |
 | Overcharge active | Blue glow on armor plates, faint 8m radius circle on ground |
-| Ally receiving buff | Blue armor particle stream from FORTRESS to ally |
+| Ally receiving buff | Blue armor particle stream from GOLIATH to ally |
 | Overcharge ending | Glow dims, energy dissipates |
 | Overcharge EMP'd | Blue static burst, armor plates go dark |
 
@@ -174,7 +174,7 @@ After refusing orders that would have sacrificed his men for political optics, D
 | Ally downed within 10 meters | +20% movement speed toward them |
 | Reviving | Take 25% less damage during revive |
 
-**Design Intent:** FORTRESS is the team Tank. While BULWARK blocks damage for one direction, FORTRESS buffs the entire team. His power scales with team proximity — solo FORTRESS is weak, but a FORTRESS team is nearly unkillable.
+**Design Intent:** GOLIATH is the team Tank. While BULWARK blocks damage for one direction, GOLIATH buffs the entire team. His power scales with team proximity — solo GOLIATH is weak, but a GOLIATH team is nearly unkillable.
 
 ---
 
@@ -199,7 +199,7 @@ After refusing orders that would have sacrificed his men for political optics, D
 | Secondary | Makarov Pistol | Backup |
 | Tactical | Armor Plates x3 | Maximum team armor distribution |
 
-**Mobile Fortress (Aggressive):**
+**Mobile Goliath (Aggressive):**
 
 | Slot | Item | Why |
 | :--- | :--- | :-- |
@@ -221,7 +221,7 @@ After refusing orders that would have sacrificed his men for political optics, D
 **Secondary Role:** Revive Specialist
 - Brotherhood gives +20% sprint speed toward downed allies
 - 25% damage resistance during revive makes pickups safer
-- FORTRESS + DOC revive combo is the strongest in the game
+- GOLIATH + DOC revive combo is the strongest in the game
 
 ### Combat Loop
 
@@ -323,7 +323,7 @@ After refusing orders that would have sacrificed his men for political optics, D
 - **Gloves:** Heavy leather field gloves
 - **Face:** Thick salt-and-pepper beard, deep-set eyes with crow's feet, small orthodox cross tattoo on neck
 
-<!-- REF_IMAGE: FORTRESS default skin — top-down view showing broad silhouette, LMG visible, heavy vest with armor plates, team-focused posture -->
+<!-- REF_IMAGE: GOLIATH default skin — top-down view showing broad silhouette, LMG visible, heavy vest with armor plates, team-focused posture -->
 
 ### Unlockable Skins
 
@@ -351,10 +351,10 @@ After refusing orders that would have sacrificed his men for political optics, D
 
 | Character | Relationship |
 | :-------- | :----------- |
-| **HAVOC** | Fellow Russian — FORTRESS worries about HAVOC's self-destructive tendencies, tries to mentor him |
+| **HAVOC** | Fellow Russian — GOLIATH worries about HAVOC's self-destructive tendencies, tries to mentor him |
 | **SPECTER** | Old military contacts from overlapping operations — share tactical intelligence |
 | **ANGEL** | Debates faith — both deeply religious, different traditions, mutual respect |
-| **BULWARK** | Mentorship — BULWARK teaches shield work, FORTRESS teaches squad leadership |
+| **BULWARK** | Mentorship — BULWARK teaches shield work, GOLIATH teaches squad leadership |
 
 ### Story Hooks
 
@@ -371,15 +371,15 @@ After refusing orders that would have sacrificed his men for political optics, D
 
 - Armor Overcharge is team-dependent — solo activation is wasteful
 - +25 temporary armor for allies is strong but requires 5m proximity — positioning is the skill expression
-- Brotherhood passive must NOT stack with multiple FORTRESS operators — cap at one instance
+- Brotherhood passive must NOT stack with multiple GOLIATH operators — cap at one instance
 - Reactive Armor upgrade (20% negate chance) should not apply to headshots
 - Last Stand upgrade is emotionally powerful but mechanically niche — buff remaining duration gives team 4-6 seconds post-down
-- FORTRESS + DOC combo is intentionally the strongest duo in the game — counter with CIPHER EMP
+- GOLIATH + DOC combo is intentionally the strongest duo in the game — counter with CIPHER EMP
 
 ### Animation Requirements
 
 - Overcharge activation (0.6 seconds — fist clench, armor plates glow orange)
-- Overcharge VFX (expanding orange pulse from FORTRESS, team armor plates glow)
+- Overcharge VFX (expanding orange pulse from GOLIATH, team armor plates glow)
 - Brotherhood proximity indicator (subtle UI pulse when allies are in range)
 - Revive animation (faster/more stable than standard due to damage resistance)
 - Death animation: falls slowly, reaches toward nearest ally (dramatic, team-focused)
@@ -399,7 +399,7 @@ After refusing orders that would have sacrificed his men for political optics, D
 
 - Overcharge 8m radius circle must be visible to teammates at minimum zoom — shows buff zone
 - Blue armor glow should be clearly distinct from ANGEL shield's blue-white — use deeper steel blue
-- Brotherhood passive proximity (5m) should show a subtle connecting line between FORTRESS and nearby ally
-- LMG barrel extending forward from the model makes FORTRESS identifiable by weapon type from above
+- Brotherhood passive proximity (5m) should show a subtle connecting line between GOLIATH and nearby ally
+- LMG barrel extending forward from the model makes GOLIATH identifiable by weapon type from above
 - Overcharge armor stripping by EMP should have dramatic VFX — communicate vulnerability to both teams
 

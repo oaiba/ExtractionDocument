@@ -1,5 +1,5 @@
 ---
-title: "PHANTOM - Sarah Kim"
+title: "SONAR - Sarah Kim"
 type: docs
 ---
 
@@ -12,14 +12,14 @@ type: docs
 | Attribute | Value |
 | :-------- | :---- |
 | **Real Name** | Sarah Ji-Young Kim |
-| **Codename** | PHANTOM |
+| **Codename** | SONAR |
 | **Class** | Recon |
 | **Nationality** | Korean-American |
 | **Age** | 29 |
 | **Height** | 168 cm (5'6") |
 | **Weight** | 57 kg (126 lbs) |
 
-<!-- REF_IMAGE: PHANTOM operator portrait — lean build, tactical headset with holographic HUD overlay, dark clothing with subtle cyan data-stream accents -->
+<!-- REF_IMAGE: SONAR operator portrait — lean build, tactical headset with holographic HUD overlay, dark clothing with subtle cyan data-stream accents -->
 
 ### Background
 
@@ -88,13 +88,13 @@ After a mole compromised her network, Sarah watched helplessly as her assets wer
 | **Scan VFX (Top-Down)** | Cyan pulse rings expanding from operator, enemy outlines appear |
 | **UAV Audio Radius** | 20m — drone buzz is moderate volume |
 
-<!-- REF_IMAGE: PHANTOM top-down view — showing operator with UAV scan active, cyan pulse rings expanding outward, enemy silhouettes highlighted through walls -->
+<!-- REF_IMAGE: SONAR top-down view — showing operator with UAV scan active, cyan pulse rings expanding outward, enemy silhouettes highlighted through walls -->
 
 ### UAV Stat Block
 
 | Property | Value | Notes |
 | :------- | :---- | :---- |
-| **Scan Radius** | 30 meters | From PHANTOM position |
+| **Scan Radius** | 30 meters | From SONAR position |
 | **Duration** | 8 seconds | Continuous scan |
 | **Enemy Reveal** | Real-time outlines | Cyan silhouettes through geometry |
 | **Team Sharing** | Yes | All allies see scanned enemies |
@@ -124,7 +124,7 @@ After a mole compromised her network, Sarah watched helplessly as her assets wer
 
 | Effect | Value | Notes |
 | :----- | :---- | :---- |
-| Scan Radius | 30 meters | Centered on PHANTOM |
+| Scan Radius | 30 meters | Centered on SONAR |
 | Enemy Reveal | Real-time | Enemies visible through walls |
 | Team Sharing | Yes | All allies see marked enemies |
 | Update Rate | Continuous | Not just snapshot |
@@ -199,7 +199,7 @@ After a mole compromised her network, Sarah watched helplessly as her assets wer
 | In cover for 3 seconds | Reduced enemy visibility (harder to spot) |
 | Not firing for 5 seconds | Do not appear on enemy minimaps |
 
-**Design Intent:** Rewards patient, information-first gameplay. PHANTOM should always know more than her enemies.
+**Design Intent:** Rewards patient, information-first gameplay. SONAR should always know more than her enemies.
 
 ---
 
@@ -345,7 +345,7 @@ After a mole compromised her network, Sarah watched helplessly as her assets wer
 - **Gloves:** Gray thin operator gloves (touch-screen compatible)
 - **Face:** Short black hair, focused expression, data-stream tattoo behind left ear
 
-<!-- REF_IMAGE: PHANTOM default skin — top-down view showing silhouette with UAV drone in hand, dark outfit with cyan tech accents -->
+<!-- REF_IMAGE: SONAR default skin — top-down view showing silhouette with UAV drone in hand, dark outfit with cyan tech accents -->
 
 ### Unlockable Skins
 

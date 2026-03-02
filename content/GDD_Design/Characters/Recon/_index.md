@@ -32,11 +32,11 @@ The **Recon** class operators excel at gathering intelligence and controlling in
 
 | Operator | Codename | Specialty | Unlock |
 | :------- | :------- | :-------- | :----- |
-| [Sarah Kim](./Phantom/) | PHANTOM | Area Reveal | Level 8, 5,000 Credits |
-| [Viktor Volkov](./Specter/) | SPECTER | Trap Detection | Level 12, 7,500 Credits |
-| [Yuki Tanaka](./Wraith/) | WRAITH | Visual Denial | Level 25, 15,000 Credits |
+| [Kaito Nakamura](./Sonar/) | SONAR | Area Reveal | Level 8, 5,000 Credits |
+| [Ananya Patel](./Mirage/) | MIRAGE | Trap Detection | Level 12, 7,500 Credits |
+| [Unit N-7 "Nero"](./Obsidian/) | OBSIDIAN | Visual Denial | Level 25, 15,000 Credits |
 
-<!-- REF_IMAGE: Recon class operator trio — PHANTOM with UAV drone, SPECTER with motion sensor, WRAITH in smoke, stealthy cyberpunk aesthetic -->
+<!-- REF_IMAGE: Recon class operator trio — SONAR with UAV drone, MIRAGE with motion sensor, OBSIDIAN in smoke, stealthy cyberpunk aesthetic -->
 
 ---
 
@@ -73,9 +73,9 @@ The **Recon** class operators excel at gathering intelligence and controlling in
 
 | Operator | Counter Strategy |
 | :------- | :--------------- |
-| **PHANTOM** | Stay moving, do not get scanned in place |
-| **SPECTER** | Do not trigger traps, check corners |
-| **WRAITH** | Push through smoke, do not wait |
+| **SONAR** | Stay moving, do not get scanned in place |
+| **MIRAGE** | Do not trigger traps, check corners |
+| **OBSIDIAN** | Push through smoke, do not wait |
 
 ### Best Counters to Recon
 
@@ -112,15 +112,15 @@ Recon operators have the **slimmest silhouette** in the roster. From the top-dow
 | **Back Profile** | Compact tech pack (drone, sensor kit) | 40+ units |
 | **Movement Anim** | Low crouch-walk, smooth transitions — stealthiest movement | 40+ units |
 
-<!-- REF_IMAGE: Recon class top-down silhouette comparison — PHANTOM, SPECTER, WRAITH as seen from 60-degree camera angle at 50% zoom, showing slim profiles with tech gear visible -->
+<!-- REF_IMAGE: Recon class top-down silhouette comparison — SONAR, MIRAGE, OBSIDIAN as seen from 60-degree camera angle at 50% zoom, showing slim profiles with tech gear visible -->
 
 ### Operator-Specific Top-Down Tells
 
 | Operator | Unique Visual From Above |
 | :------- | :----------------------- |
-| PHANTOM | Cyan scanning pulse rings expanding from operator during UAV scan |
-| SPECTER | Small sensor device visible when placed on ground, blinking indicator |
-| WRAITH | Smoke cloud expanding from position, character model fades in opacity |
+| SONAR | Cyan scanning pulse rings expanding from operator during UAV scan |
+| MIRAGE | Small sensor device visible when placed on ground, blinking indicator |
+| OBSIDIAN | Smoke cloud expanding from position, character model fades in opacity |
 
 ---
 
@@ -154,10 +154,10 @@ Recon operators have the **slimmest silhouette** in the roster. From the top-dow
 
 | Map Archetype | Suitability | Recommended Operator | Why |
 | :------------ | :---------- | :------------------- | :-- |
-| **Dense Urban** | Highest | SPECTER | Many corners and flank routes to trap |
-| **Multi-Floor** | High | PHANTOM | UAV scans through floors for vertical intel |
-| **Large Industrial** | High | WRAITH | Smoke breaks long sightlines, enables repositioning |
-| **Tight Corridors** | Medium | PHANTOM | Scan range covers entire corridor |
-| **Open Fields** | Low | WRAITH | Only smoke provides utility, limited cover |
+| **Dense Urban** | Highest | MIRAGE | Many corners and flank routes to trap |
+| **Multi-Floor** | High | SONAR | UAV scans through floors for vertical intel |
+| **Large Industrial** | High | OBSIDIAN | Smoke breaks long sightlines, enables repositioning |
+| **Tight Corridors** | Medium | SONAR | Scan range covers entire corridor |
+| **Open Fields** | Low | OBSIDIAN | Only smoke provides utility, limited cover |
 
 See [World Design](../../World/) for detailed map layouts.

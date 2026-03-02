@@ -1,5 +1,5 @@
 ---
-title: "SPECTER - Viktor Volkov"
+title: "MIRAGE - Ananya Patel"
 type: docs
 ---
 
@@ -11,15 +11,15 @@ type: docs
 
 | Attribute | Value |
 | :-------- | :---- |
-| **Real Name** | Viktor Andreevich Volkov |
-| **Codename** | SPECTER |
+| **Real Name** | Ananya Patel |
+| **Codename** | MIRAGE |
 | **Class** | Recon |
-| **Nationality** | Russian |
+| **Nationality** | Indian |
 | **Age** | 44 |
 | **Height** | 175 cm (5'9") |
 | **Weight** | 72 kg (159 lbs) |
 
-<!-- REF_IMAGE: SPECTER operator portrait — stocky build, tactical vest with sensor nodes, cold expression, cyberpunk utility belt with motion sensors -->
+<!-- REF_IMAGE: MIRAGE operator portrait — stocky build, tactical vest with sensor nodes, cold expression, cyberpunk utility belt with motion sensors -->
 
 ### Background
 
@@ -88,7 +88,7 @@ After growing disillusioned with the corruption eating Russia from within, Vikto
 | **Sensor VFX (Top-Down)** | Small blinking devices on ground, 8m detection radius shown as faint circle when ally walks near |
 | **Sensor Audio** | Nearly silent — <5m detection range for enemies |
 
-<!-- REF_IMAGE: SPECTER top-down view — showing operator with 3 motion sensors deployed, detection radius circles visible from above -->
+<!-- REF_IMAGE: MIRAGE top-down view — showing operator with 3 motion sensors deployed, detection radius circles visible from above -->
 
 ### Motion Sensor Stat Block
 
@@ -195,7 +195,7 @@ After growing disillusioned with the corruption eating Russia from within, Vikto
 | Crouch detecting | Can see trap outline through walls |
 | Destroy enemy trap | Gain 5-second enemy position reveal |
 
-**Design Intent:** SPECTER is the anti-trap specialist. While PHANTOM provides active intel through scanning, SPECTER provides persistent, passive territorial control. He is the defensive Recon.
+**Design Intent:** MIRAGE is the anti-trap specialist. While PHANTOM provides active intel through scanning, MIRAGE provides persistent, passive territorial control. He is the defensive Recon.
 
 ---
 
@@ -340,7 +340,7 @@ After growing disillusioned with the corruption eating Russia from within, Vikto
 - **Gloves:** Dark leather field gloves
 - **Face:** Short graying beard, scar across bridge of nose, calculating eyes
 
-<!-- REF_IMAGE: SPECTER default skin — top-down view showing stocky silhouette with sensor equipment visible on belt, muted military color scheme -->
+<!-- REF_IMAGE: MIRAGE default skin — top-down view showing stocky silhouette with sensor equipment visible on belt, muted military color scheme -->
 
 ### Unlockable Skins
 
@@ -369,7 +369,7 @@ After growing disillusioned with the corruption eating Russia from within, Vikto
 | Character | Relationship |
 | :-------- | :----------- |
 | **PHANTOM** | Former adversaries during Cold War-era proxy ops — uneasy respect born from mutual competence |
-| **HAVOC** | Both Russian, but different ideology — SPECTER despises HAVOC's recklessness |
+| **HAVOC** | Both Russian, but different ideology — MIRAGE despises HAVOC's recklessness |
 | **FORTRESS** | Old military connection — served in same regional command, share tactical language |
 | **WRAITH** | Hunted her once during a covert operation in Japan — failed, respects her evasion |
 

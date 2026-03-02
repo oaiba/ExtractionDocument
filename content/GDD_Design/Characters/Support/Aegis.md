@@ -1,5 +1,5 @@
 ---
-title: "ANGEL - Sister Maria Santos"
+title: "AEGIS - Sister Maria Santos"
 type: docs
 ---
 
@@ -12,14 +12,14 @@ type: docs
 | Attribute       | Value                     |
 | :-------------- | :------------------------ |
 | **Real Name**   | Sister Maria Elena Santos |
-| **Codename**    | ANGEL                     |
+| **Codename**    | AEGIS                     |
 | **Class**       | Support                   |
 | **Nationality** | Filipino                  |
 | **Age**         | 35                        |
 | **Height**      | 165 cm (5'5")             |
 | **Weight**      | 58 kg (128 lbs)           |
 
-<!-- REF_IMAGE: ANGEL operator portrait — tactical nun habit, serene expression, golden energy shield projector active -->
+<!-- REF_IMAGE: AEGIS operator portrait — tactical nun habit, serene expression, golden energy shield projector active -->
 
 ### Background
 
@@ -88,7 +88,7 @@ The Vatican quietly approached her afterward, offering training with Swiss Guard
 | **Shield VFX (Top-Down)** | Blue-white hemispherical dome visible from above, 5m radius circle on ground |
 | **Shield Audio Radius** | 30m — angelic choir hum is a strong audio tell |
 
-<!-- REF_IMAGE: ANGEL top-down view — showing operator with Guardian Shield deployed, blue-white dome visible from above as 5m radius circle -->
+<!-- REF_IMAGE: AEGIS top-down view — showing operator with Guardian Shield deployed, blue-white dome visible from above as 5m radius circle -->
 
 ### Guardian Shield Stat Block
 
@@ -148,16 +148,16 @@ The Vatican quietly approached her afterward, offering training with Swiss Guard
 
 | State | VFX From Above |
 | :---- | :------------- |
-| Shield deploy | Blue-white flash, dome expands outward from ANGEL |
+| Shield deploy | Blue-white flash, dome expands outward from AEGIS |
 | Shield active | Translucent blue-white dome, 5m radius circle on ground, faint glow |
 | Shield taking damage | Shield sparks at impact point, slight flicker |
 | Shield low HP (<50) | Shield cracks visible, rapid flickering |
-| Shield break | Shatter effect burst outward, ANGEL staggers |
+| Shield break | Shatter effect burst outward, AEGIS staggers |
 
 
 **Self:**
 - Golden dome effect around team
-- Angelic humming audio
+- Aegisic humming audio
 - Shield cracks as it takes damage
 
 **Enemy Perspective:**
@@ -176,7 +176,7 @@ The Vatican quietly approached her afterward, offering training with Swiss Guard
 
 #### Key Difference from DOC
 
-| DOC                      | ANGEL                        |
+| DOC                      | AEGIS                        |
 | :----------------------- | :--------------------------- |
 | Heals damage after taken | Prevents damage entirely     |
 | Passive, fire-and-forget | Active, requires positioning |
@@ -197,12 +197,12 @@ The Vatican quietly approached her afterward, offering training with Swiss Guard
 | :------------------- | :---------------------------------------- |
 | **Healing Light**    | Allies in dome heal 3 HP/sec              |
 | **Blinding Barrier** | Enemies entering dome are briefly blinded |
-| **Mobile Sanctuary** | Shield slowly moves with ANGEL (1 m/s)    |
+| **Mobile Sanctuary** | Shield slowly moves with AEGIS (1 m/s)    |
 
 **Slot 3 (Level 35):**
 | Option              | Effect                                              |
 | :------------------ | :-------------------------------------------------- |
-| **Martyr Protocol** | When shield breaks, ANGEL gains 50 temp HP          |
+| **Martyr Protocol** | When shield breaks, AEGIS gains 50 temp HP          |
 | **Resurrection**    | Downed allies in dome auto-revive (once per deploy) |
 | **Divine Wrath**    | Shield breaking deals 30 damage to nearby enemies   |
 
@@ -218,7 +218,7 @@ The Vatican quietly approached her afterward, offering training with Swiss Guard
 | Reviving allies          | Take 20% less damage            |
 | Ally dies within 10m     | Cooldown reduced by 10 seconds  |
 
-**Design Intent:** ANGEL should always be moving toward danger to save allies.
+**Design Intent:** AEGIS should always be moving toward danger to save allies.
 
 ---
 
@@ -235,14 +235,14 @@ The Vatican quietly approached her afterward, offering training with Swiss Guard
 
 ### Recommended Loadouts
 
-**Defensive Angel:**
+**Defensive Aegis:**
 | Slot      | Item     | Why                     |
 | :-------- | :------- | :---------------------- |
 | Primary   | MP5      | Reliable, accurate      |
 | Secondary | G17      | Standard                |
 | Tactical  | Smoke ×2 | Extra cover for revives |
 
-**Aggressive Angel:**
+**Aggressive Aegis:**
 | Slot      | Item         | Why             |
 | :-------- | :----------- | :-------------- |
 | Primary   | Vector       | High fire rate  |
@@ -414,7 +414,7 @@ The Vatican quietly approached her afterward, offering training with Swiss Guard
 
 - Shield deployment: Prayer gesture + dome expansion
 - Shield active: Golden particles, angelic audio
-- Shield break: Shatter effect + ANGEL staggers
+- Shield break: Shatter effect + AEGIS staggers
 - Idle: Occasionally makes sign of the cross
 
 ### Technical Notes

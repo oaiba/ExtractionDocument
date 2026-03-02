@@ -258,7 +258,7 @@ Because the in-game camera IS a top-down view, the minimap is essentially a zoom
 - [Camera System](../Gameplay/Camera_System.md) — Camera altitude per floor, indoor building handling, and compass offset.
 - [LOS, Fog & Visibility](../Gameplay/LOS_Fog_Visibility.md) — Fog of War rules; when enemies appear on minimap; ability LOS reveals.
 - [Movement & Stamina](../Gameplay/Movement_and_Stamina.md) — Surface sound ranges; stairs/ladder traversal affecting sound emission.
-- [Hero Abilities](../Gameplay/Hero_Abilities.md) — Hawk's motion sensor and drone adding minimap pings; Cipher's tactical overlay.
+- [Hero Abilities](../Gameplay/Hero_Abilities.md) — Hawk's motion sensor and drone adding minimap pings; Glitch's tactical overlay.
 - [Extraction Mechanics](../Gameplay/Extraction_Mechanics.md) — Extraction zone types, timers, conditional requirements.
 - [AI Enemy Behavior](../Gameplay/AI_Enemy_Behavior.md) — AI alert states that trigger audio visualization events.
 - [GameDesign/Controls](Controls.md) — Ping button input mapping (single tap, hold, double tap) per platform.

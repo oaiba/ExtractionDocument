@@ -32,10 +32,10 @@ The **Support** class operators are the backbone of any team, keeping allies ali
 
 | Operator | Codename | Specialty | Unlock |
 | :------- | :------- | :-------- | :----- |
-| [Dr. James Morrison](./Doc/) | DOC | Area Healing | Free Starter |
-| [Sister Maria Santos](./Angel/) | ANGEL | Damage Prevention | Level 18, 10,000 Credits |
+| [Tariq Al-Sayed](./Suture/) | SUTURE | Area Healing | Free Starter |
+| [Victoria Sterling](./Aegis/) | AEGIS | Damage Prevention | Level 18, 10,000 Credits |
 
-<!-- REF_IMAGE: Support class operator duo — DOC with healing drone deployed, ANGEL with guardian shield up, medical cyberpunk aesthetic -->
+<!-- REF_IMAGE: Support class operator duo — SUTURE with healing drone deployed, AEGIS with guardian shield up, medical cyberpunk aesthetic -->
 
 ---
 
@@ -83,8 +83,8 @@ The **Support** class operators are the backbone of any team, keeping allies ali
 
 | Operator | Counter Strategy |
 | :------- | :--------------- |
-| **DOC** | Kill drone first, then focus DOC |
-| **ANGEL** | Wait for shield duration, then burst |
+| **SUTURE** | Kill drone first, then focus SUTURE |
+| **AEGIS** | Wait for shield duration, then burst |
 
 ### Best Counters to Support
 
@@ -117,17 +117,17 @@ Support operators have a **medium silhouette** with medical/utility pack on thei
 | **Shoulder Width** | Standard — between Recon and Assault | 60+ units |
 | **Headgear** | Medical cap or visor with cross markings | 60+ units |
 | **Color Accent** | White/Green (#22C55E) on cross armband and backpack | 80+ units |
-| **Back Profile** | Large medical pack (DOC) or shield generator (ANGEL) | 80+ units |
+| **Back Profile** | Large medical pack (SUTURE) or shield generator (AEGIS) | 80+ units |
 | **Movement Anim** | Standard pace, slightly cautious posture | 50+ units |
 
-<!-- REF_IMAGE: Support class top-down silhouette comparison — DOC and ANGEL as seen from 60-degree camera angle at 50% zoom, showing medical gear and cross markings visible from above -->
+<!-- REF_IMAGE: Support class top-down silhouette comparison — SUTURE and AEGIS as seen from 60-degree camera angle at 50% zoom, showing medical gear and cross markings visible from above -->
 
 ### Operator-Specific Top-Down Tells
 
 | Operator | Unique Visual From Above |
 | :------- | :----------------------- |
-| DOC | Green pulsing circle around Healing Drone when deployed |
-| ANGEL | Blue-white hemispherical shield dome visible from above when active |
+| SUTURE | Green pulsing circle around Healing Drone when deployed |
+| AEGIS | Blue-white hemispherical shield dome visible from above when active |
 
 ---
 
@@ -161,10 +161,10 @@ Support operators have a **medium silhouette** with medical/utility pack on thei
 
 | Map Archetype | Suitability | Recommended Operator | Why |
 | :------------ | :---------- | :------------------- | :-- |
-| **Extraction Zones** | Highest | ANGEL | Guardian Shield protects team during extraction countdown |
-| **Tight Corridors** | High | DOC | Healing Drone radius covers corridor width |
-| **Multi-Floor** | Medium | DOC | Drone heals through floors if placed on correct level |
-| **Open Fields** | Low | ANGEL | Shield provides cover in open terrain |
+| **Extraction Zones** | Highest | AEGIS | Guardian Shield protects team during extraction countdown |
+| **Tight Corridors** | High | SUTURE | Healing Drone radius covers corridor width |
+| **Multi-Floor** | Medium | SUTURE | Drone heals through floors if placed on correct level |
+| **Open Fields** | Low | AEGIS | Shield provides cover in open terrain |
 | **Dense Urban** | Medium | Either | Multiple engagement points require mobile healing |
 
 See [World Design](../../World/) for detailed map layouts.

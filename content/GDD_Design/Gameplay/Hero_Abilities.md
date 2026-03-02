@@ -82,7 +82,7 @@ Each operator has three layers of abilities. Numbers below are first-pass design
 
 ## Full Operator Specifications
 
-### Assault — "Viper"
+### Assault — "Mamba"
 
 > *"First in, last standing."*
 
@@ -91,15 +91,15 @@ Each operator has three layers of abilities. Numbers below are first-pass design
 
 | Layer         | Ability         | Effect                                                                                                                                              | Duration                    | Cooldown | Audio tell                       | Visual tell                           |
 | ------------- | --------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------- | -------- | -------------------------------- | ------------------------------------- |
-| **Passive**   | Adrenaline Rush | On kill: +12% move speed, +8% reload speed for 5 s. Stacks up to 2x.                                                                                | 5 s per stack               | N/A      | Heartbeat SFX (self only)        | Subtle red vignette on Viper's screen |
+| **Passive**   | Adrenaline Rush | On kill: +12% move speed, +8% reload speed for 5 s. Stacks up to 2x.                                                                                | 5 s per stack               | N/A      | Heartbeat SFX (self only)        | Subtle red vignette on Mamba's screen |
 | **Active 1**  | Flashbang       | Throw flashbang grenade. Enemies in 5 m radius: blinded 2.5 s, deafened 1.5 s. Allies in radius: minor flash 0.8 s.                                 | Instant (2.5 s effect)      | 60 s     | Pin-pull click + loud detonation | Bright white flash sphere             |
 | **Active 2**  | Frag Charge     | Place directional explosive on surface. Detonates on proximity (2 m trigger) or manual trigger. 65 damage in 3 m cone.                              | Until triggered (max 120 s) | 75 s     | Beep when armed (audible 5 m)    | Small blinking red light              |
-| **Signature** | Overdrive       | +20% move speed, +15% rate of fire, -10% recoil for 10 s. Taking lethal damage during Overdrive leaves Viper at 1 HP instead (once per activation). | 10 s                        | 180 s    | War cry voice line + bass rumble | Red aura glow around character        |
+| **Signature** | Overdrive       | +20% move speed, +15% rate of fire, -10% recoil for 10 s. Taking lethal damage during Overdrive leaves Mamba at 1 HP instead (once per activation). | 10 s                        | 180 s    | War cry voice line + bass rumble | Red aura glow around character        |
 
 
 **LOS/Visibility:** Flashbang — vision denial: blinds enemies 2.5 s in 5 m radius (no fog clear, no shared intel).
 
-**Synergy notes:** Viper's Flashbang enables aggressive pushes for the entire squad. Overdrive is best used to close distance or win a 1v2. Frag Charge covers flanks or extract zones.
+**Synergy notes:** Mamba's Flashbang enables aggressive pushes for the entire squad. Overdrive is best used to close distance or win a 1v2. Frag Charge covers flanks or extract zones.
 
 ---
 
@@ -151,7 +151,7 @@ Each operator has three layers of abilities. Numbers below are first-pass design
 
 ---
 
-### Tank — "Bulwark" (Beta)
+### Tank — "Bastion" (Beta)
 
 > *"Hold this ground."*
 
@@ -163,18 +163,18 @@ Each operator has three layers of abilities. Numbers below are first-pass design
 | **Passive**   | Hardened          | +15% armor durability (armor degrades 15% slower). Blunt damage from blocked rounds reduced by 30%.                                              | Always on            | N/A      | None                                        | Reinforced armor visual (extra plate visible) |
 | **Active 1**  | Deployable Cover  | Place a waist-high ballistic shield on the ground. 300 HP, blocks bullets from one direction. Lasts 60 s or until destroyed. Max 1 active.       | 60 s                 | 75 s     | Heavy metal clank on deploy (audible 15 m)  | Visible metal barricade                       |
 | **Active 2**  | Concussion Blast  | Short-range (4 m cone) shockwave. Enemies hit: stagger 1.5 s, -30% move speed for 3 s, weapon sway +200% for 2 s. Costs 20 Arm Stamina.          | Instant (3 s effect) | 60 s     | Loud thump (audible 20 m)                   | Visible shockwave ripple                      |
-| **Signature** | Fortress Protocol | For 15 s: -50% incoming damage, cannot sprint (locked to walk speed), +30% accuracy (reduced sway). Allies within 5 m gain -20% incoming damage. | 15 s                 | 240 s    | Metallic activation sequence (audible 25 m) | Orange glow + energy shield visual            |
+| **Signature** | Goliath Protocol | For 15 s: -50% incoming damage, cannot sprint (locked to walk speed), +30% accuracy (reduced sway). Allies within 5 m gain -20% incoming damage. | 15 s                 | 240 s    | Metallic activation sequence (audible 25 m) | Orange glow + energy shield visual            |
 
 
-**Synergy notes:** Bulwark anchors a position while allies loot or extract. Deployable Cover creates instant defensive positions. Fortress Protocol during extraction timer makes the squad much harder to kill.
+**Synergy notes:** Bastion anchors a position while allies loot or extract. Deployable Cover creates instant defensive positions. Goliath Protocol during extraction timer makes the squad much harder to kill.
 
 **LOS/Visibility:** Deployable Cover — one-direction LOS blocker; blocks vision (and shots) from one side; does not reveal.
 
-**Counterplay:** Deployable Cover only blocks one direction — flank it. Fortress Protocol locks Bulwark to walk speed — disengage and reposition. Concussion Blast is short-range — maintain distance.
+**Counterplay:** Deployable Cover only blocks one direction — flank it. Goliath Protocol locks Bastion to walk speed — disengage and reposition. Concussion Blast is short-range — maintain distance.
 
 ---
 
-### Specialist — "Cipher" (Beta)
+### Specialist — "Glitch" (Beta)
 
 > *"Knowledge is the weapon."*
 
@@ -186,14 +186,14 @@ Each operator has three layers of abilities. Numbers below are first-pass design
 | **Passive**   | Tech Savvy       | Interact with electronic devices 25% faster (doors, terminals, quest objectives). Can see trap devices (Motion Sensors, mines) within 8 m through walls (UI highlight).                                                                       | Always on              | N/A                                         | None                            | Highlighted traps show through walls |
 | **Active 1**  | EMP Drone        | Launch a small drone that detonates at target location. 6 m radius EMP: disables enemy gadgets (drones, sensors, turrets) for 15 s, disrupts enemy HUD for 3 s (no compass, no stamina bar, no weight indicator). Drone has 20 HP mid-flight. | Instant (15 s disable) | 75 s                                        | Drone flight buzz + EMP crackle | Blue electric burst                  |
 | **Active 2**  | Signal Jammer    | Place a device that prevents enemies within 12 m radius from using active abilities for 10 s. Does not affect passives. Jammer has 25 HP and can be destroyed. Max 1 active.                                                                  | 10 s                   | 90 s                                        | Electronic whine (audible 10 m) | Small device with blue glow          |
-| **Signature** | Tactical Overlay | For 10 s: reveal all enemies within 40 m on the minimap for the entire squad. Enemies are shown as real-time pings (update every 0.5 s). Does not reveal through walls — shows last-known position if enemy enters cover.                     | 10 s                   | 210 s (or charge: assists, gadget destroys) | Radar ping sound (audible 20 m) | Blue scan wave emanates from Cipher  |
+| **Signature** | Tactical Overlay | For 10 s: reveal all enemies within 40 m on the minimap for the entire squad. Enemies are shown as real-time pings (update every 0.5 s). Does not reveal through walls — shows last-known position if enemy enters cover.                     | 10 s                   | 210 s (or charge: assists, gadget destroys) | Radar ping sound (audible 20 m) | Blue scan wave emanates from Glitch  |
 
 
-**Synergy notes:** Cipher counters other operators' gadgets and provides decisive intel for squad pushes. EMP Drone before a push disables Hawk's drones and Bulwark's cover (electronics only — physical cover unaffected). Tactical Overlay enables coordinated squad assaults.
+**Synergy notes:** Glitch counters other operators' gadgets and provides decisive intel for squad pushes. EMP Drone before a push disables Hawk's drones and Bastion's cover (electronics only — physical cover unaffected). Tactical Overlay enables coordinated squad assaults.
 
 **LOS/Visibility:** Tech Savvy — see traps (Motion Sensors, mines) within 8 m through walls (UI highlight); no enemy reveal. Tactical Overlay — vision proxy 40 m; minimap reveal; last-known when enemy in cover; shared to squad.
 
-**Counterplay:** EMP Drone is fragile (20 HP) — shoot it mid-flight. Signal Jammer is destroyable and audible. Tactical Overlay only reveals for 10 s and requires Cipher to be alive — kill Cipher to end the effect early.
+**Counterplay:** EMP Drone is fragile (20 HP) — shoot it mid-flight. Signal Jammer is destroyable and audible. Tactical Overlay only reveals for 10 s and requires Glitch to be alive — kill Glitch to end the effect early.
 
 ---
 
@@ -208,7 +208,7 @@ Each operator has three layers of abilities. Numbers below are first-pass design
 | Active abilities | Usable when off cooldown. 0.5–1.0 s cast animation — interruptible by damage/stun (50% cooldown refund).                                                   |
 | Signature        | Usable when charged or off cooldown. 1.0 s activation animation — interruptible (75% cooldown/charge refund).                                              |
 | Ability noise    | All active/signature abilities produce audio cues. Range varies per ability (see specs above).                                                             |
-| Ability stacking | Same ability from two operators of the same class does NOT stack (prevents double-Viper Overdrive). Different abilities from different operators DO stack. |
+| Ability stacking | Same ability from two operators of the same class does NOT stack (prevents double-Mamba Overdrive). Different abilities from different operators DO stack. |
 | Down state       | Downed players cannot use abilities. Passive deactivates in down state.                                                                                    |
 
 
@@ -223,7 +223,7 @@ Per [Extraction Mechanics](Extraction_Mechanics.md):
 | Offensive active (Flashbang, Frag Charge, Concussion Blast, EMP Drone)             | Yes                    | No                        |
 | Intel active (Spotter Drone, Motion Sensor, Signal Jammer, Tactical Overlay)       | Yes                    | No                        |
 | **Healing active** (Medkit Drop, Stim Shot, Field Hospital)                        | Yes, but...            | **Yes — cancels extract** |
-| Signature (offensive: Overdrive, Ghost Cloak, Fortress Protocol, Tactical Overlay) | Yes                    | No                        |
+| Signature (offensive: Overdrive, Ghost Cloak, Goliath Protocol, Tactical Overlay) | Yes                    | No                        |
 | **Signature (healing: Field Hospital)**                                            | Yes, but...            | **Yes — cancels extract** |
 
 
@@ -250,9 +250,9 @@ Per [Gear Mechanics](Gear_Mechanics.md), some operators have gear constraints:
 | Operator                             | Gear constraint                                                                                  | Reason                                                                    |
 | ------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------- |
 | Scout (Hawk)                         | Light or Standard rig only (max 9 slots). Cannot equip Heavy rig or Armored rig.                 | Maintains scout mobility identity; prevents scout from also being a tank. |
-| Tank (Bulwark)                       | Heavy or Armored rig only (12 slots). Cannot equip Light rig. Must bring Class 3+ armor.         | Enforces tank fantasy; prevents tank from being a fast flanker.           |
+| Tank (Bastion)                       | Heavy or Armored rig only (12 slots). Cannot equip Light rig. Must bring Class 3+ armor.         | Enforces tank fantasy; prevents tank from being a fast flanker.           |
 | Support (Cross)                      | +5 kg carry weight per tier (via Pack Mule passive). Starts at higher effective weight capacity. | Supports "team mule" and "loot carrier" roles.                            |
-| Assault (Viper), Specialist (Cipher) | No restrictions.                                                                                 | Flexibility as generalist / tech roles.                                   |
+| Assault (Mamba), Specialist (Glitch) | No restrictions.                                                                                 | Flexibility as generalist / tech roles.                                   |
 
 
 ### Interaction with LOS/Visibility
@@ -264,14 +264,14 @@ Per [LOS, Fog of War & Visibility](LOS_Fog_Visibility.md), abilities that reveal
 | Hawk | Spotter Drone | Vision proxy | 25 m | Yes (drone LOS) | Yes | Shoot drone (30 HP) |
 | Hawk | Motion Sensor | Intel | 10 m | No (ping only) | Yes | Crouch/prone; destroy (15 HP) |
 | Hawk | Ghost Cloak | Self-conceal | 8 m shimmer | No | No | Shimmer visible 8 m; damage breaks |
-| Cipher | Tech Savvy | Exception (traps) | 8 m | No | No (self) | N/A |
-| Cipher | Tactical Overlay | Vision proxy | 40 m | Yes | Yes | Kill Cipher; hard cover |
-| Wraith (Recon) | Smoke | Blocker | 8 m radius | No | N/A | Avoid smoke; Thermal Block |
-| Viper | Flashbang | Vision denial | 5 m | No | No | Look away; cover |
-| Bulwark | Deployable Cover | LOS blocker | Directional | No | N/A | Flank; destroy (300 HP) |
+| Glitch | Tech Savvy | Exception (traps) | 8 m | No | No (self) | N/A |
+| Glitch | Tactical Overlay | Vision proxy | 40 m | Yes | Yes | Kill Glitch; hard cover |
+| Obsidian (Recon) | Smoke | Blocker | 8 m radius | No | N/A | Avoid smoke; Thermal Block |
+| Mamba | Flashbang | Vision denial | 5 m | No | No | Look away; cover |
+| Bastion | Deployable Cover | LOS blocker | Directional | No | N/A | Flank; destroy (300 HP) |
 | Cross | Field Hospital | Zone visible | 4 m zone | No | N/A (enemies see zone) | N/A |
 
-Passives such as **Light Step** (Hawk) and **Tech Savvy** (Cipher) affect visibility indirectly (reduced sound detection; see traps through walls) but do not create vision proxies for the squad. All intel and vision from the abilities above is merged into the squad's shared visibility state (minimap fog, HUD marks). Counterplay preserves fair visibility per design pillars.
+Passives such as **Light Step** (Hawk) and **Tech Savvy** (Glitch) affect visibility indirectly (reduced sound detection; see traps through walls) but do not create vision proxies for the squad. All intel and vision from the abilities above is merged into the squad's shared visibility state (minimap fog, HUD marks). Counterplay preserves fair visibility per design pillars.
 
 
 ---
@@ -285,7 +285,7 @@ Passives such as **Light Step** (Hawk) and **Tech Savvy** (Cipher) affect visibi
 | ------------------ | ---------------------------- | ---------------------------------- | ----------------------------- | --------------------------------------- |
 | **Balanced**       | Assault + Scout + Support    | Push, intel, sustain               | Covers all roles; consistent  | No exceptional strength                 |
 | **Aggro Rush**     | Assault + Assault + Scout    | Fast push, double flash + intel    | High kill potential           | Low sustain; one bad fight = squad wipe |
-| **Fortress**       | Tank + Support + Specialist  | Hold position, deny area, heal     | Near-impenetrable defense     | Slow rotation; vulnerable to flanks     |
+| **Goliath**       | Tank + Support + Specialist  | Hold position, deny area, heal     | Near-impenetrable defense     | Slow rotation; vulnerable to flanks     |
 | **Intel Dominant** | Scout + Specialist + Assault | Map control, information advantage | Always know where enemies are | Less direct firepower and healing       |
 | **Economy**        | Support + Scout + any        | High extract rate, carry more loot | Max loot extraction           | Weaker in direct PvP                    |
 
@@ -293,13 +293,13 @@ Passives such as **Light Step** (Hawk) and **Tech Savvy** (Cipher) affect visibi
 ### Operator Synergy Matrix
 
 
-|             | Viper | Hawk                                  | Cross                     | Bulwark                      | Cipher                       |
+|             | Mamba | Hawk                                  | Cross                     | Bastion                      | Glitch                       |
 | ----------- | ----- | ------------------------------------- | ------------------------- | ---------------------------- | ---------------------------- |
-| **Viper**   | —     | ★★★ (flash + push on scanned enemies) | ★★ (heals after aggro)    | ★★ (breach while tank holds) | ★★★ (EMP then push)          |
+| **Mamba**   | —     | ★★★ (flash + push on scanned enemies) | ★★ (heals after aggro)    | ★★ (breach while tank holds) | ★★★ (EMP then push)          |
 | **Hawk**    | ★★★   | —                                     | ★★ (intel for safe heals) | ★★ (scout for anchor)        | ★★★ (double intel dominance) |
 | **Cross**   | ★★    | ★★                                    | —                         | ★★★ (heal the tank)          | ★★ (general utility)         |
-| **Bulwark** | ★★    | ★★                                    | ★★★                       | —                            | ★★ (cover + jammer)          |
-| **Cipher**  | ★★★   | ★★★                                   | ★★                        | ★★                           | —                            |
+| **Bastion** | ★★    | ★★                                    | ★★★                       | —                            | ★★ (cover + jammer)          |
+| **Glitch**  | ★★★   | ★★★                                   | ★★                        | ★★                           | —                            |
 
 
 ★ = Low synergy | ★★ = Moderate synergy | ★★★ = High synergy
@@ -328,19 +328,19 @@ Every ability has at least one hard counter and one soft counter:
 
 | Ability                     | Hard counter                                                | Soft counter                                                      |
 | --------------------------- | ----------------------------------------------------------- | ----------------------------------------------------------------- |
-| Flashbang (Viper)           | Look away (reduces effect 70%)                              | Pre-positioned cover                                              |
-| Frag Charge (Viper)         | Cipher's Tech Savvy reveals it; shoot it (15 HP)            | Slow-walk to avoid proximity trigger                              |
+| Flashbang (Mamba)           | Look away (reduces effect 70%)                              | Pre-positioned cover                                              |
+| Frag Charge (Mamba)         | Glitch's Tech Savvy reveals it; shoot it (15 HP)            | Slow-walk to avoid proximity trigger                              |
 | Spotter Drone (Hawk)        | Shoot it down (30 HP); EMP Drone destroys it                | Stay behind cover (drone marks LOS only)                          |
-| Motion Sensor (Hawk)        | Crouch/prone avoids detection; Cipher sees it through walls | Destroy it (15 HP)                                                |
+| Motion Sensor (Hawk)        | Crouch/prone avoids detection; Glitch sees it through walls | Destroy it (15 HP)                                                |
 | Ghost Cloak (Hawk)          | AoE damage reveals; shimmer visible at 8 m                  | Audio cue on activation; predict movement                         |
 | Medkit Drop (Cross)         | Push while enemy is healing (animation lock)                | Deny area where medkit dropped                                    |
 | Field Hospital (Cross)      | Grenade into the zone; push stationary targets              | Disengage and wait out 12 s                                       |
-| Deployable Cover (Bulwark)  | Flank around it; grenades over it                           | EMP disables? No — physical object; must destroy (300 HP)         |
-| Concussion Blast (Bulwark)  | Stay beyond 4 m range                                       | Pre-aim before entering range                                     |
-| Fortress Protocol (Bulwark) | Disengage — he can't chase (walk speed only)                | Focus fire allies instead                                         |
-| EMP Drone (Cipher)          | Shoot it mid-flight (20 HP)                                 | Spread out to limit AoE                                           |
-| Signal Jammer (Cipher)      | Destroy it (25 HP); push outside 12 m                       | Wait out 10 s duration                                            |
-| Tactical Overlay (Cipher)   | Kill Cipher to end effect                                   | Use hard cover to break LOS (shows last-known, not through walls) |
+| Deployable Cover (Bastion)  | Flank around it; grenades over it                           | EMP disables? No — physical object; must destroy (300 HP)         |
+| Concussion Blast (Bastion)  | Stay beyond 4 m range                                       | Pre-aim before entering range                                     |
+| Goliath Protocol (Bastion) | Disengage — he can't chase (walk speed only)                | Focus fire allies instead                                         |
+| EMP Drone (Glitch)          | Shoot it mid-flight (20 HP)                                 | Spread out to limit AoE                                           |
+| Signal Jammer (Glitch)      | Destroy it (25 HP); push outside 12 m                       | Wait out 10 s duration                                            |
+| Tactical Overlay (Glitch)   | Kill Glitch to end effect                                   | Use hard cover to break LOS (shows last-known, not through walls) |
 
 
 ---
@@ -364,13 +364,13 @@ Every ability has at least one hard counter and one soft counter:
 | Level | Reward type                                               | Example                                   |
 | ----- | --------------------------------------------------------- | ----------------------------------------- |
 | 5     | Operator skin (uncommon)                                  | Alternate color scheme                    |
-| 10    | Passive bonus +1%                                         | Viper: +1% sprint speed on kill           |
+| 10    | Passive bonus +1%                                         | Mamba: +1% sprint speed on kill           |
 | 15    | Voice line pack                                           | Unique callouts                           |
 | 20    | Passive bonus +2% (cumulative)                            | Hawk: +2% reduced footstep range          |
 | 25    | Operator skin (rare)                                      | Tactical variant                          |
 | 30    | Passive bonus +3% (cumulative)                            | Cross: +3% heal speed                     |
 | 35    | Signature weapon skin                                     | Unique camo for operator's "canon" weapon |
-| 40    | Passive bonus +4% (cumulative)                            | Bulwark: +4% armor durability             |
+| 40    | Passive bonus +4% (cumulative)                            | Bastion: +4% armor durability             |
 | 45    | Operator title + badge                                    | Displayed on squad loadout screen         |
 | 50    | Passive bonus +5% (cumulative) + Mastery skin (legendary) | Final bonus; gold/prestige skin           |
 
@@ -384,11 +384,11 @@ Every ability has at least one hard counter and one soft counter:
 
 | Operator              | Unlock method                         | Approximate time                   |
 | --------------------- | ------------------------------------- | ---------------------------------- |
-| Assault (Viper)       | Free — starting operator              | Immediate                          |
+| Assault (Mamba)       | Free — starting operator              | Immediate                          |
 | Scout (Hawk)          | Free — starting operator              | Immediate                          |
 | Support (Cross)       | Free — starting operator              | Immediate                          |
-| Tank (Bulwark)        | Account level 10 OR 50,000 currency   | ~15–20 hours played                |
-| Specialist (Cipher)   | Account level 15 OR 75,000 currency   | ~25–30 hours played                |
+| Tank (Bastion)        | Account level 10 OR 50,000 currency   | ~15–20 hours played                |
+| Specialist (Glitch)   | Account level 15 OR 75,000 currency   | ~25–30 hours played                |
 | Future operators (8+) | Account level requirement OR currency | Varies; never real-money exclusive |
 
 
@@ -483,7 +483,7 @@ Every ability has at least one hard counter and one soft counter:
 | **Active 1** | Field Medic | Revive speed reduced 8s → 5s. Second revive per session available before 90s cooldown kicks in. (Key differentiator vs all other classes — see [Downstate & Revive](Downstate_Revive.md)) |
 | **Active 2** | Med Pack Toss | Throws a medical item from inventory to a teammate (up to 8m range). No animation lock — can throw while crouching. 20s cooldown (per use). |
 | **Signature** | Mass Stabilize | 12m radius pulse: all squad members within range immediately have any Bleed status stopped (no healing, just bleed halt). Removes Pain briefly. 150s cooldown. |
-| **Counter** | Ghost has lowest offensive capability of any operator. Reliant on squad proximity. Isolation = weakness. Bulwark's aggression pushes Ghost out of position. |
+| **Counter** | Ghost has lowest offensive capability of any operator. Reliant on squad proximity. Isolation = weakness. Bastion's aggression pushes Ghost out of position. |
 | **Meta role** | Keeps squad alive through firefights; enables second-chance play; essential in boss fights. |
 
 ---
@@ -518,9 +518,9 @@ Every ability has at least one hard counter and one soft counter:
 
 ---
 
-### Operator 10 — "WRAITH" · Class: Scout (Scout-B variant)
+### Operator 10 — "OBSIDIAN" · Class: Scout (Scout-B variant)
 
-> *The ghost of the roster. Stealth, deception, and controlled chaos. No operator should know if Wraith is in the raid until it's too late.*
+> *The ghost of the roster. Stealth, deception, and controlled chaos. No operator should know if Obsidian is in the raid until it's too late.*
 
 | Layer | Ability | Detail |
 | :---- | :------ | :----- |
@@ -528,11 +528,11 @@ Every ability has at least one hard counter and one soft counter:
 | **Active 1** | Smoke Grenade | Throws a smoke grenade (8m cloud, 20s duration). Blocks LOS through smoke per [LOS, Fog & Visibility](LOS_Fog_Visibility.md). Shoot-through possible but at −3° aim cone penalty. 35s cooldown. |
 | **Active 2** | Decoy Ping | Places a fake player-signature ping on the minimap at a target location (within 15m). Appears as a "player detected" blip on enemies' minimaps for 8s. 50s cooldown. |
 | **Signature** | Phase Shift | Becomes fully invisible and silent for 6s. Any attack (shooting, using abilities) breaks cloak immediately. Movement speed is 90% while cloaked. 180s cooldown. Screen effect: shimmer visible at 8m. |
-| **Counter** | Emerging from smoke or cloak produces a brief shimmer (visible 8m top-down). Fuse's Trip Mines: Wraith still triggers them (Phase Shift does not prevent mine trigger). Motion Sensor (Hawk) detects Wraith through Phase Shift. |
+| **Counter** | Emerging from smoke or cloak produces a brief shimmer (visible 8m top-down). Fuse's Trip Mines: Obsidian still triggers them (Phase Shift does not prevent mine trigger). Motion Sensor (Hawk) detects Obsidian through Phase Shift. |
 | **Meta role** | Infiltration, quest objective completion, flanking enemies during firefights. Extreme skill ceiling. |
-| **Solo viability** | Very High — Wraith is the premier solo operator; self-sufficient, evasive, never reliant on teammates. |
+| **Solo viability** | Very High — Obsidian is the premier solo operator; self-sufficient, evasive, never reliant on teammates. |
 
-> **Note on "Wraith" name:** This is the planned operator whose smoke ability was referenced in `LOS_Fog_Visibility.md`. The smoke reference in that document has been updated to reflect this as a future operator. See the `Gameplay_Review_Checklist.md` consistency fix §3.
+> **Note on "Obsidian" name:** This is the planned operator whose smoke ability was referenced in `LOS_Fog_Visibility.md`. The smoke reference in that document has been updated to reflect this as a future operator. See the `Gameplay_Review_Checklist.md` consistency fix §3.
 
 ---
 
@@ -544,7 +544,7 @@ Every ability has at least one hard counter and one soft counter:
 - [Gear Mechanics](Gear_Mechanics.md) — Loadout and weight; operators have different rig/weight constraints.
 - [Movement & Stamina](Movement_and_Stamina.md) — Speed modifiers, stamina interaction, inertia.
 - [Downstate & Revive](Downstate_Revive.md) — Ghost's Field Medic unique revive mechanic.
-- [LOS, Fog & Visibility](LOS_Fog_Visibility.md) — Wraith smoke, Phase Shift shimmer, Hawk detection.
+- [LOS, Fog & Visibility](LOS_Fog_Visibility.md) — Obsidian smoke, Phase Shift shimmer, Hawk detection.
 - [Design Pillars](../../ProjectScope/design-pillars-enhanced.md) — Operator Choice (Task-Driven Agency), Operator Mastery (Persistent Progression).
 - [MVP Scope](../../ProjectScope/MVP.md) — 3 operators Alpha, 5 Beta, 8+ Launch.
 

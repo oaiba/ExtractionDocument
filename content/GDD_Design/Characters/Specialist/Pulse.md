@@ -1,5 +1,5 @@
 ---
-title: "FLUX - Maya Okonkwo"
+title: "PULSE - D-84 \"Ohm\""
 type: docs
 ---
 
@@ -11,17 +11,17 @@ type: docs
 
 | Attribute       | Value               |
 | :-------------- | :------------------ |
-| **Real Name**   | Maya Adaeze Okonkwo |
-| **Codename**    | FLUX                |
+| **Real Name**   | D-84 "Ohm" |
+| **Codename**    | PULSE |
 | **Class**       | Specialist          |
-| **Nationality** | Nigerian-British    |
+| **Nationality** | German |
 | **Age**         | 31                  |
 | **Height**      | 173 cm (5'8")       |
 | **Weight**      | 65 kg (143 lbs)     |
 
 ### Background
 
-Dr. Maya Okonkwo was a leading nanotechnology researcher at Cambridge University, pioneering medical applications for nanobots. Her breakthrough in programmable nano-swarms could have revolutionized medicine—until a pharmaceutical conglomerate stole her research and weaponized it.
+D-84 "Ohm" was a leading nanotechnology researcher at Cambridge University, pioneering medical applications for nanobots. Her breakthrough in programmable nano-swarms could have revolutionized medicine—until a pharmaceutical conglomerate stole her research and weaponized it.
 
 When attempts to expose them through legal channels failed, Maya took matters into her own hands. She recreated her technology from memory and now uses it in the Exclusion Zone, proving that her creations can save lives—and end those who abuse power.
 
@@ -78,7 +78,7 @@ When attempts to expose them through legal channels failed, Maya took matters in
 | **Swarm VFX (Top-Down)** | Silver particle cloud on ground (6m radius), shimmering/pulsing |
 | **Swarm Audio Radius** | 25m — persistent insect-like buzzing |
 
-<!-- REF_IMAGE: FLUX top-down view — showing operator with Nano Swarm deployed, silver particle cloud visible from above as 6m radius shimmer -->
+<!-- REF_IMAGE: PULSE top-down view — showing operator with Nano Swarm deployed, silver particle cloud visible from above as 6m radius shimmer -->
 
 ### Nano Swarm Stat Block
 
@@ -174,12 +174,12 @@ When attempts to expose them through legal channels failed, Maya took matters in
 | :------------------- | :-------------------------------- |
 | **Medical Protocol** | Healing +3 HP/sec (7 total)       |
 | **Corrosive Bots**   | Enemies in swarm take +10% damage |
-| **Mobile Swarm**     | Swarm slowly follows FLUX (1 m/s) |
+| **Mobile Swarm**     | Swarm slowly follows PULSE (1 m/s) |
 
 **Slot 3 (Level 35):**
 | Option                | Effect                           |
 | :-------------------- | :------------------------------- |
-| **Symbiosis**         | FLUX heals double in own swarm   |
+| **Symbiosis**         | PULSE heals double in own swarm   |
 | **Armor Dissolution** | Swarm reduces enemy armor by 20% |
 | **Dual Deployment**   | 2 smaller swarms instead of 1    |
 
@@ -316,7 +316,7 @@ When attempts to expose them through legal channels failed, Maya took matters in
 - **Gloves:** White latex gloves (medical/scientific aesthetic)
 - **Features:** Short natural hair, confident stance, silver nano-trace patterns on forearms
 
-<!-- REF_IMAGE: FLUX default skin — top-down view showing lab coat over vest silhouette, AR glasses, nano canisters visible on belt, silver-particle aura effect -->
+<!-- REF_IMAGE: PULSE default skin — top-down view showing lab coat over vest silhouette, AR glasses, nano canisters visible on belt, silver-particle aura effect -->
 
 ### Unlockable Skins
 
@@ -345,8 +345,8 @@ When attempts to expose them through legal channels failed, Maya took matters in
 | Character | Relationship |
 | :-------- | :----------- |
 | **CIPHER** | Fellow outcasts, share tech knowledge — closest friend/collaborator |
-| **DOC** | Medical debate partners — DOC uses traditional medicine, FLUX uses nanotech. Mutual professional respect |
-| **ANGEL** | Faith vs Science discussions — ANGEL prays, FLUX programs. Surprisingly good friends |
+| **DOC** | Medical debate partners — DOC uses traditional medicine, PULSE uses nanotech. Mutual professional respect |
+| **ANGEL** | Faith vs Science discussions — ANGEL prays, PULSE programs. Surprisingly good friends |
 | **VIPER** | VIPER finds her nanobots unsettling — "Keep those things away from me" |
 
 ### Story Hooks
@@ -368,7 +368,7 @@ When attempts to expose them through legal channels failed, Maya took matters in
 - Dual Deployment (Slot 3) splits radius — 2x 4m swarms instead of 1x 6m, total area is less
 - EMP hard-counters Nano Swarm — this is intentional and should NOT be changed
 - Self-healing passive (2 HP/sec out of combat) prevents chip-damage attrition — 5 second delay is critical
-- Symbiosis upgrade (double heal in own swarm) makes FLUX nearly unkillable in swarm — she must sacrifice other Slot 3 options
+- Symbiosis upgrade (double heal in own swarm) makes PULSE nearly unkillable in swarm — she must sacrifice other Slot 3 options
 
 ### Technical Notes
 
@@ -405,5 +405,5 @@ When attempts to expose them through legal channels failed, Maya took matters in
 - Swarm cloud should be clearly distinct from WRAITH smoke: silver/shimmering vs gray/opaque
 - Dual Deployment upgrade splits into 2x 4m swarms — each should be independently visible
 - Swarm redirection animation should show cloud flowing toward new position (1-2 second travel time)
-- -10% weapon accuracy (Specialist class) means FLUX should avoid straight gunfights
+- -10% weapon accuracy (Specialist class) means PULSE should avoid straight gunfights
 

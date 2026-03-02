@@ -1,5 +1,5 @@
 ---
-title: "VIPER - Marcus Chen"
+title: "MAMBA - Thuy Nguyen"
 type: docs
 ---
 
@@ -11,21 +11,21 @@ type: docs
 
 | Attribute       | Value                       |
 | :-------------- | :-------------------------- |
-| **Real Name**   | Marcus Chen                 |
-| **Codename**    | VIPER                       |
+| **Real Name**   | Thuy Nguyen                 |
+| **Codename**    | MAMBA                       |
 | **Class**       | Assault                     |
-| **Nationality** | American (Chinese heritage) |
-| **Age**         | 32                          |
-| **Height**      | 183 cm (6'0")               |
-| **Weight**      | 85 kg (187 lbs)             |
+| **Nationality** | Vietnamese                  |
+| **Age**         | 26                          |
+| **Height**      | 168 cm (5'6")               |
+| **Weight**      | 60 kg (132 lbs)             |
 
 <!-- REF_IMAGE: VIPER operator portrait — athletic build, tactical cap, green eyes, holding combat knife, aggressive stance -->
 
 ### Background
 
-Marcus Chen served 10 years in the US Army's 75th Ranger Regiment before joining the private military contractor sphere. Known for his calculated aggression and ability to remain calm under fire, he earned the callsign "Viper" for his quick-strike tactics and deadly precision.
+Thuy Nguyen served in the Dac Cong (Vietnamese Special Forces) before transitioning to underground mercenary work. Known for her calculated aggression and lethal, fast-striking tactics, she earned the callsign "Mamba" for striking without warning and leaving no survivors.
 
-After a classified operation in Eastern Europe went sideways, Marcus was left for dead by his handlers. Surviving against all odds, he now operates as a freelance contractor in the Exclusion Zone, using his skills to extract valuable assets and occasionally settle old scores.
+After a classified operation went sideways, she was left for dead by her handlers. Surviving against all odds, she now operates as a freelance contractor in the Exclusion Zone, using her skills to extract valuable assets and occasionally settle old scores.
 
 ### Personality Traits
 

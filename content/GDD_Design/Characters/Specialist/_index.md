@@ -32,10 +32,10 @@ The **Specialist** class operators bring utility and disruption to the battlefie
 
 | Operator | Codename | Specialty | Unlock |
 | :------- | :------- | :-------- | :----- |
-| [Alex Nakamura](./Cipher/) | CIPHER | Ability Denial | Level 15, 10,000 Credits |
-| [Maya Okonkwo](./Flux/) | FLUX | Area Control | Level 28, 15,000 Credits |
+| [Maya Torres](./Glitch/) | GLITCH | Ability Denial | Level 15, 10,000 Credits |
+| [D-84 "Ohm"](./Pulse/) | PULSE | Area Control | Level 28, 15,000 Credits |
 
-<!-- REF_IMAGE: Specialist class operator duo — showing CIPHER with EMP device and FLUX with nano swarm tech, cyberpunk utility gear visible -->
+<!-- REF_IMAGE: Specialist class operator duo — showing GLITCH with EMP device and PULSE with nano swarm tech, cyberpunk utility gear visible -->
 
 ---
 
@@ -94,8 +94,8 @@ The **Specialist** class operators bring utility and disruption to the battlefie
 
 | Operator | Counter Strategy  |
 | :------- | :---------------- |
-| **CIPHER** | Bait EMP before using abilities, rush during 90s cooldown window |
-| **FLUX** | Stay mobile, don't cluster — swarm targets grouped enemies. Push through or around swarm zone |
+| **GLITCH** | Bait EMP before using abilities, rush during 90s cooldown window |
+| **PULSE** | Stay mobile, don't cluster — swarm targets grouped enemies. Push through or around swarm zone |
 
 ### Best Counters to Specialist
 
@@ -113,9 +113,9 @@ The **Specialist** class operators bring utility and disruption to the battlefie
 
 | Partner | Synergy | Notes |
 | :------ | :------ | :---- |
-| **PHANTOM** | Intel + Denial | Scan reveals, CIPHER disables — full information control |
-| **FORTRESS** | Tank + Disruption | FORTRESS absorbs, CIPHER strips enemy buffs |
-| **SPECTER** | Traps + Swarm | SPECTER sensors detect, FLUX swarm punishes approach |
+| **PHANTOM** | Intel + Denial | Scan reveals, GLITCH disables — full information control |
+| **FORTRESS** | Tank + Disruption | FORTRESS absorbs, GLITCH strips enemy buffs |
+| **SPECTER** | Traps + Swarm | SPECTER sensors detect, PULSE swarm punishes approach |
 | **DOC** | Sustain + Utility | DOC keeps Specialist alive long enough for gadgets to matter |
 
 ---
@@ -132,14 +132,14 @@ Specialist operators have a **standard silhouette** with visible tool pockets an
 | **Back Profile** | Tool pack with visible cables and gadget holsters | 60+ units |
 | **Movement Anim** | Standard pace, occasional gadget-checking idle animation | 50+ units |
 
-<!-- REF_IMAGE: Specialist class top-down silhouette comparison — CIPHER and FLUX as seen from 60-degree camera angle at 50% zoom, showing tool belts and amber accent markings -->
+<!-- REF_IMAGE: Specialist class top-down silhouette comparison — GLITCH and PULSE as seen from 60-degree camera angle at 50% zoom, showing tool belts and amber accent markings -->
 
 ### Operator-Specific Top-Down Tells
 
 | Operator | Unique Visual From Above |
 | :------- | :----------------------- |
-| CIPHER | Blue EMP pulse ring expanding rapidly from operator position |
-| FLUX | Swirling silver/green nano cloud visible as area-denial zone on ground |
+| GLITCH | Blue EMP pulse ring expanding rapidly from operator position |
+| PULSE | Swirling silver/green nano cloud visible as area-denial zone on ground |
 
 ---
 
@@ -165,7 +165,7 @@ Specialist operators have a **standard silhouette** with visible tool pockets an
 | Burn | 0% | Full burn damage |
 | EMP | 50% | Half EMP duration — they build the tech, they resist it |
 
-**Design Intent:** Specialist operators are the tech experts. They designed EMP technology, so they have built-in shielding. This creates an important counter dynamic: CIPHER's EMP is less effective against enemy CIPHER or FLUX than against other classes.
+**Design Intent:** Specialist operators are the tech experts. They designed EMP technology, so they have built-in shielding. This creates an important counter dynamic: GLITCH's EMP is less effective against enemy GLITCH or PULSE than against other classes.
 
 ---
 
@@ -173,10 +173,10 @@ Specialist operators have a **standard silhouette** with visible tool pockets an
 
 | Map Archetype | Suitability | Recommended Operator | Why |
 | :------------ | :---------- | :------------------- | :-- |
-| **Dense Urban** | Highest | CIPHER | Many hackable doors and terminals, lots of deployables to EMP |
-| **Multi-Floor** | High | FLUX | Nano Swarm blocks stairwells and vertical access |
-| **Large Industrial** | High | CIPHER | Hackable containers and terminals throughout |
-| **Tight Corridors** | Medium | FLUX | Swarm covers corridor width for area denial |
+| **Dense Urban** | Highest | GLITCH | Many hackable doors and terminals, lots of deployables to EMP |
+| **Multi-Floor** | High | PULSE | Nano Swarm blocks stairwells and vertical access |
+| **Large Industrial** | High | GLITCH | Hackable containers and terminals throughout |
+| **Tight Corridors** | Medium | PULSE | Swarm covers corridor width for area denial |
 | **Open Fields** | Low | Neither | Few gadgets to interact with, EMP range limits utility |
 
 See [World Design](../../World/) for detailed map layouts.

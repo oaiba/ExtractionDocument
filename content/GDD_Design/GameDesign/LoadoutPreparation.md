@@ -71,7 +71,7 @@ The loadout preparation screen is a **single unified screen** — no navigation 
 │  └─────────────┘  │  │  [████████░░░░░░]  Tier 1 ││  ├───────────────────────────┤│
 │  ┌─────────────┐  │  │  DRAG TO EQUIP:         ││  │   SQUAD                   ││
 │  │ HELMET     ▼│  │  │  Slots: [Primary]       ││  │   ┌─── Slot 1: YOU ──────┐││
-│  │ [M/65 Helm.]│  │  │         [Secondary]     ││  │   │ [Viper]  12.4kg  🛡✅ │││
+│  │ [M/65 Helm.]│  │  │         [Secondary]     ││  │   │ [Mamba]  12.4kg  🛡✅ │││
 │  └─────────────┘  │  │         [Armor]         ││  │   └──────────────────────┘││
 │                   │  │         [Helmet]        ││  │   ┌─── Slot 2: Kai_V ────┐││
 │  ┌─────────────┐  │  │         [Backpack]      ││  │   │ [Hawk]   8.1kg   🛡✅ │││
@@ -119,7 +119,7 @@ On mobile, the loadout prep screen uses a **4-tab layout** with a persistent bot
 │  ━━━━━━━━ GEAR TAB (active) ━━━━━━━ │
 │                                     │
 │  [Operator 3D — compact, 30% height]│
-│  Viper   Wt: 12.4kg   Val: $24,500  │
+│  Mamba   Wt: 12.4kg   Val: $24,500  │
 │                                     │
 │  PRIMARY    [M4A1 ────────────── ▼] │
 │  SECONDARY  [Glock 17 ──────── ▼]   │
@@ -408,7 +408,7 @@ Each squad slot displays:
 ```
 ┌────────────────────────────────────────────────────────┐
 │  Slot 1: YOU (Leader)                                   │
-│  [Viper — Assault]   Wt: 12.4 kg 🟢 Light   🛡 Insured │
+│  [Mamba — Assault]   Wt: 12.4 kg 🟢 Light   🛡 Insured │
 │  ● READY                                                │
 └────────────────────────────────────────────────────────┘
 ┌────────────────────────────────────────────────────────┐

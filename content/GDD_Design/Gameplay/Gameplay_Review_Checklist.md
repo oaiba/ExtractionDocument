@@ -24,7 +24,7 @@ This document supports the review and re-planning of Gameplay mechanics for the 
 | Hero_Abilities.md | Aligned: gunplay first, counterplay, extraction-aware | Cooldown vs ARC/Hawked | Already has Cross-Platform Ability Balance | LOS refs | ✅ |
 | Environmental_Hazards.md | Aligned: time pressure, tactical adaptation | Weather/hazard vs Tarkov/Hunt | Subsection added (performance/LOD) | Timer scale note confirmed | ✅ |
 | Extraction_Mechanics.md | Aligned: climax, time vulnerability | Zone types vs genre | Subsection added (hold vs tap, timer visibility) | Insurance fixed — see §3 | ✅ |
-| LOS_Fog_Visibility.md | Aligned: fair visibility, intel | Shared vision vs team shooters | Subsection added (minimap/HUD same data) | Wraith ref fixed — see §3 | ✅ |
+| LOS_Fog_Visibility.md | Aligned: fair visibility, intel | Shared vision vs team shooters | Subsection added (minimap/HUD same data) | Obsidian ref fixed — see §3 | ✅ |
 | **Camera_System.md** *(NEW)* | Aligned: topdown-specific; info parity no exploit | Unique to topdown genre — no competitor comparison | Full mobile, console, PC section | Inertia coupled to Gear_Mechanics | ✅ |
 | **AI_Enemy_Behavior.md** *(NEW)* | Aligned: tactical pressure, sound-critical, Scav karma | Tarkov AI depth; ARC machine variety | Same AI rules all platforms | Sound ranges from Movement & Stamina | ✅ |
 | **Matchmaking_Lobby.md** *(NEW)* | Aligned: cross-platform parity, fair play, no SBMM | ABMM inspired by ARC Raiders | Full cross-platform pool section | Disconnect rule from Extraction | ✅ |
@@ -59,10 +59,10 @@ This document supports the review and re-planning of Gameplay mechanics for the 
 | # | Bug | Files Affected | Fix Applied |
 | - | --- | -------------- | ----------- |
 | 1 | **Insurance contradiction**: Extraction_Mechanics.md said "backpack NOT covered"; Gear_Mechanics.md said "rig AND backpack covered" | Extraction_Mechanics.md | Extraction_Mechanics.md updated — backpack items ARE insured. Now matches Gear_Mechanics.md. |
-| 2 | **"Wraith/Recon" operator** referenced in LOS_Fog_Visibility.md smoke table — operator does not exist in Hero_Abilities.md roster | LOS_Fog_Visibility.md | Replaced with "Smoke Grenade (Viper / future operator)". Wraith reserved for future expansion in P1. |
+| 2 | **"Obsidian/Recon" operator** referenced in LOS_Fog_Visibility.md smoke table — operator does not exist in Hero_Abilities.md roster | LOS_Fog_Visibility.md | Replaced with "Smoke Grenade (Mamba / future operator)". Obsidian reserved for future expansion in P1. |
 | 3 | **Contamination timer scale** in Environmental_Hazards.md uses 15-min Quick Raid table | Environmental_Hazards.md | Clarification note already present in doc (line 97). Verified correct — no change needed. |
 | 4 | **Scav Mode vs AI Scav Wave** — CoreLoop.md and Environmental_Hazards.md used the terms interchangeably | AI_Enemy_Behavior.md (new) | Resolved by AI_Enemy_Behavior.md §"Player-as-Scav" and §"AI Scav Raid Event" cleanly separating both concepts. |
-| 5 | **Bulwark Fortress + Extraction** — Fortress Protocol reduces damage; unclear if reduced damage still resets extraction timer | Hero_Abilities.md, Extraction_Mechanics.md | **Design decision (recorded here):** Any damage, even reduced through Fortress, resets the extraction timer. Damage reduction affects HP loss only. No file edit needed. |
+| 5 | **Bastion Goliath + Extraction** — Goliath Protocol reduces damage; unclear if reduced damage still resets extraction timer | Hero_Abilities.md, Extraction_Mechanics.md | **Design decision (recorded here):** Any damage, even reduced through Goliath, resets the extraction timer. Damage reduction affects HP loss only. No file edit needed. |
 
 ---
 

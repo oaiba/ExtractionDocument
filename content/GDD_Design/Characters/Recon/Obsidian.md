@@ -1,5 +1,5 @@
 ---
-title: "WRAITH - Yuki Tanaka"
+title: "OBSIDIAN - Unit N-7 \"Nero\""
 type: docs
 ---
 
@@ -11,15 +11,15 @@ type: docs
 
 | Attribute | Value |
 | :-------- | :---- |
-| **Real Name** | Yuki Tanaka |
-| **Codename** | WRAITH |
+| **Real Name** | Unit N-7 "Nero" |
+| **Codename** | OBSIDIAN |
 | **Class** | Recon |
-| **Nationality** | Japanese |
+| **Nationality** | Unknown (Machine) |
 | **Age** | 26 |
 | **Height** | 162 cm (5'4") |
 | **Weight** | 52 kg (115 lbs) |
 
-<!-- REF_IMAGE: WRAITH operator portrait — small, agile frame, face half-obscured by tactical mask, smoke grenades on belt, dark stealth suit with faint cyan circuitry -->
+<!-- REF_IMAGE: OBSIDIAN operator portrait — small, agile frame, face half-obscured by tactical mask, smoke grenades on belt, dark stealth suit with faint cyan circuitry -->
 
 ### Background
 
@@ -89,7 +89,7 @@ A failed mission in Taiwan left her squad dead and Yuki blamed by superiors look
 | **Smoke VFX (Top-Down)** | Dense gray cloud on ground (8m radius), character fades to near-invisibility inside |
 | **Smoke Audio Radius** | 20m — canister hiss on deploy, atmospheric whoosh during duration |
 
-<!-- REF_IMAGE: WRAITH top-down view — showing operator with smoke cloud deployed, 8m radius gray cloud on ground, character partially faded inside -->
+<!-- REF_IMAGE: OBSIDIAN top-down view — showing operator with smoke cloud deployed, 8m radius gray cloud on ground, character partially faded inside -->
 
 ### Difficulty Rating
 
@@ -114,7 +114,7 @@ A failed mission in Taiwan left her squad dead and Yuki blamed by superiors look
 | :----- | :---- | :---- |
 | Smoke Radius | 8 meters | Large area denial |
 | Vision Block | 100% | Cannot see through |
-| WRAITH Bonus | Can see enemy outlines in own smoke | 10m range |
+| OBSIDIAN Bonus | Can see enemy outlines in own smoke | 10m range |
 | Firing Reveals | Muzzle flash briefly visible | 1 second duration |
 
 #### Smoke Interaction Rules
@@ -134,7 +134,7 @@ A failed mission in Taiwan left her squad dead and Yuki blamed by superiors look
 | :---- | :------------- |
 | Smoke deploy | Canister lands, gray cloud expands rapidly to 8m radius |
 | Smoke active | Dense gray cloud on ground plane, opaque from above |
-| WRAITH inside (ally view) | Faint outline visible to teammates only |
+| OBSIDIAN inside (ally view) | Faint outline visible to teammates only |
 | Enemy inside (enemy view) | Completely hidden, no outline |
 | Smoke clearing (last 3s) | Cloud thins, visibility gradually returns |
 
@@ -165,13 +165,13 @@ A failed mission in Taiwan left her squad dead and Yuki blamed by superiors look
 | :----- | :----- |
 | **Toxic Smoke** | Enemies in smoke take 3 HP/sec |
 | **Thermal Block** | Also blocks thermal/scan vision |
-| **Mobile Cloud** | Smoke slowly follows WRAITH |
+| **Mobile Cloud** | Smoke slowly follows OBSIDIAN |
 
 **Slot 3 (Level 35):**
 
 | Option | Effect |
 | :----- | :----- |
-| **Ghost Walk** | WRAITH is invisible in own smoke |
+| **Ghost Walk** | OBSIDIAN is invisible in own smoke |
 | **Disorienting** | Enemies exiting smoke are briefly confused (1.5s sway) |
 | **Double Screen** | 2 smoke charges |
 
@@ -187,7 +187,7 @@ A failed mission in Taiwan left her squad dead and Yuki blamed by superiors look
 | Exit smoke | 3-second speed boost (+10%) |
 | First attack from smoke | +15% damage |
 
-**Design Intent:** WRAITH is the only operator who thrives in zero-visibility conditions. Smoke is not just a tool — it is her natural habitat. The first-strike bonus incentivizes aggressive plays from concealment, not just passive running.
+**Design Intent:** OBSIDIAN is the only operator who thrives in zero-visibility conditions. Smoke is not just a tool — it is her natural habitat. The first-strike bonus incentivizes aggressive plays from concealment, not just passive running.
 
 ---
 
@@ -332,7 +332,7 @@ A failed mission in Taiwan left her squad dead and Yuki blamed by superiors look
 - **Gloves:** Thin black stealth gloves
 - **Face:** Sharp features, focused eyes, faint scar along jawline
 
-<!-- REF_IMAGE: WRAITH default skin — top-down view showing smallest silhouette in roster, smoke grenades visible, dark outfit with minimal reflective surfaces -->
+<!-- REF_IMAGE: OBSIDIAN default skin — top-down view showing smallest silhouette in roster, smoke grenades visible, dark outfit with minimal reflective surfaces -->
 
 ### Unlockable Skins
 
@@ -379,11 +379,11 @@ A failed mission in Taiwan left her squad dead and Yuki blamed by superiors look
 ### Balance Considerations
 
 - Smoke Screen is unique as the only full vision-block ability in the game
-- WRAITH's in-smoke vision is her most powerful mechanic — 10m outline range keeps it fair
+- OBSIDIAN's in-smoke vision is her most powerful mechanic — 10m outline range keeps it fair
 - First-strike +15% damage from Shadow Step should only apply to the very first attack, not sustained fire from smoke
 - Ghost Walk upgrade makes her invisible but NOT invulnerable — damage still hits, audio still present
 - Thermal Block upgrade (Slot 2) is the primary counter to PHANTOM — this is an intentional rock-paper-scissors dynamic
-- Mobile Cloud should move at 50% of WRAITH's movement speed — too fast makes it oppressive
+- Mobile Cloud should move at 50% of OBSIDIAN's movement speed — too fast makes it oppressive
 
 ### Animation Requirements
 
@@ -407,7 +407,7 @@ A failed mission in Taiwan left her squad dead and Yuki blamed by superiors look
 ### Top-Down Specific Notes
 
 - Smoke cloud must be opaque from above — top-down camera sees dense gray circle on ground
-- WRAITH inside own smoke is nearly invisible from top-down (faint shimmer for teammates only)
+- OBSIDIAN inside own smoke is nearly invisible from top-down (faint shimmer for teammates only)
 - Smoke must NOT block friendly minimap detection — allies can still see teammate dots through smoke
 - Smoke edge should be well-defined from above (clear boundary between vision/no vision)
 - First attack from smoke (+15% damage) applies only to the first bullet/hit, not sustained fire

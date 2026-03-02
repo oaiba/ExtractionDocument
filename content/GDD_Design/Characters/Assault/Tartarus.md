@@ -1,5 +1,5 @@
 ---
-title: "HAVOC - Anton Petrov"
+title: "TARTARUS - Carlos Mendes"
 type: docs
 ---
 
@@ -11,10 +11,10 @@ type: docs
 
 | Attribute       | Value                     |
 | :-------------- | :------------------------ |
-| **Real Name**   | Anton Mikhailovich Petrov |
-| **Codename**    | HAVOC                     |
+| **Real Name**   | Carlos Mendes             |
+| **Codename**    | TARTARUS                  |
 | **Class**       | Assault                   |
-| **Nationality** | Russian                   |
+| **Nationality** | Brazilian                 |
 | **Age**         | 38                        |
 | **Height**      | 191 cm (6'3")             |
 | **Weight**      | 98 kg (216 lbs)           |
@@ -23,9 +23,9 @@ type: docs
 
 ### Background
 
-Anton Petrov was a legendary figure in Spetsnaz Alpha Group before a failed operation in Chechnya left him the sole survivor of his unit. Blamed for the disaster by corrupt superiors, he was dishonorably discharged and erased from official records.
+Carlos Mendes was a legendary figure in Brazil's BOPE before a failed operation left him the sole survivor of his unit. Blamed for the disaster by corrupt superiors, he was dishonorably discharged and erased from official records.
 
-For years, Anton wandered Eastern Europe as a mercenary, his reputation growing as a one-man wrecking crew. He doesn't seek teammates - he seeks targets. The Exclusion Zone is just another battlefield, and Anton has never lost a fight he started.
+For years, Carlos wandered as a mercenary, his reputation growing as a one-man wrecking crew. He doesn't seek teammates - he seeks targets. The Exclusion Zone is just another battlefield, and Carlos has never lost a fight he started.
 
 ### Personality Traits
 
@@ -92,7 +92,7 @@ For years, Anton wandered Eastern Europe as a mercenary, his reputation growing 
 | **Melee VFX (Top-Down)** | Red arc slash visible on ground plane, 3.5m range |
 | **Rage Audio Radius** | 50m — loudest ability activation in roster |
 
-<!-- REF_IMAGE: HAVOC top-down view — showing operator in normal vs Berserker Rage stance from above, red glow and melee range arc visible -->
+<!-- REF_IMAGE: TARTARUS top-down view — showing operator in normal vs Berserker Rage stance from above, red glow and melee range arc visible -->
 
 ### Difficulty Rating
 
@@ -128,7 +128,7 @@ For years, Anton wandered Eastern Europe as a mercenary, his reputation growing 
 | :---------- | :----- |
 | **Rage + EMP** | Rage cancelled immediately, kill chain timer lost |
 | **Rage + Stun** | Full stun duration — wastes precious Rage seconds |
-| **Rage + ANGEL Shield** | HAVOC melee CAN push through Guardian Shield |
+| **Rage + ANGEL Shield** | TARTARUS melee CAN push through Guardian Shield |
 | **Rage + BULWARK Shield** | Melee bash staggers shield (1s), does not break through |
 | **Rage + Burn** | Burn damage stacks with +10% incoming damage modifier |
 | **Rage + Kill (PHANTOM scanned target)** | Kill still extends duration even if target was scanned |
@@ -150,7 +150,7 @@ For years, Anton wandered Eastern Europe as a mercenary, his reputation growing 
 - Blood splatter on screen edges
 
 **Enemy Perspective:**
-- Red glow around Havoc
+- Red glow around Tartarus
 - Audible roar on activation
 - Movements appear more aggressive
 
@@ -205,7 +205,7 @@ Kill 4+: Capped at 20 seconds
 
 **Synergy with Berserker:** Combined with rage mode at low health = devastating damage output.
 
-**Design Intent:** Makes HAVOC terrifying when cornered. Never assume a low-health HAVOC is easy.
+**Design Intent:** Makes TARTARUS terrifying when cornered. Never assume a low-health TARTARUS is easy.
 
 ---
 
@@ -277,7 +277,7 @@ Kill 4+: Capped at 20 seconds
 | 10-20m | SMG only, don't engage if avoidable |
 | 20m+   | Disengage, reposition               |
 
-### When NOT to Pick HAVOC
+### When NOT to Pick TARTARUS
 
 - Long-range maps (open areas)
 - Enemy team has multiple Tanks
@@ -429,4 +429,4 @@ Kill 4+: Capped at 20 seconds
 - Melee lunge animation from top-down should show clear forward movement (3.5m)
 - Melee arc VFX on ground plane helps teammates and enemies judge range
 - Kill chain timer is intentionally hidden from enemies to prevent them timing disengagements
-- +10% incoming damage during Rage means HAVOC drops faster — encourage burst or kiting counterplay
+- +10% incoming damage during Rage means TARTARUS drops faster — encourage burst or kiting counterplay

@@ -130,7 +130,7 @@ last_updated: 2026-02-12
 |:--|:---------|:------|:------------|
 | 1 | Map MVP milestones (M1–M6) sang roadmap Q1–Q4 (ví dụ M1–M2 = Q1, M3 = Q2, M4–M5 = Q3, M6 = Q4). | Lead Producer | Bảng “MVP ↔ Quarterly roadmap” trong MVP.md hoặc doc riêng. |
 | 2 | Thêm subsection “Genre positioning” (hero shooter looter extraction top-down) vào _index hoặc design-pillars. | Creative Director | 1 paragraph trong scope/vision. |
-| 3 | Cập nhật _index: link Competitive Analysis, Scope Review & Planning. | Doc maintainer | _index.md với cards/links. |
+| 3 | Cập nhật _index: link Competitive Analysis, Scope Review & Planning. | Suture maintainer | _index.md với cards/links. |
 | 4 | Gắn Risk owner + review cadence rõ (ví dụ D4, B3 review hàng tháng). | Producer | Risks.md updated. |
 
 ### 5.2 Phase 2: Hoàn thiện GDD theo Master Plan (4–6 tuần)
@@ -200,5 +200,5 @@ Có thể thêm cột “Content themes” (ví dụ Q3 = “Economy & Quests”
 | 1.1 | 2026-02-12 | — | Applied planning to group: genre positioning (_index), MVP↔Q1–Q4 (MVP.md), Owner+Review for D4/B3 (Risks.md), top-down/hero in Design Pillars. |
 | 1.0 | 2026-02-12 | — | Initial: review ProjectScope, benchmark roadmaps/GDD, planning phases, recommendations. |
 
-**Owner:** Lead Producer / Doc maintainer.  
+**Owner:** Lead Producer / Suture maintainer.  
 **Review:** Quarterly hoặc khi có thay đổi lớn scope/roadmap.

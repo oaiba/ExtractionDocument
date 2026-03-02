@@ -1,5 +1,5 @@
 ---
-title: "BULWARK - Hans Richter"
+title: "BASTION - Mikhail Ivanov"
 type: docs
 ---
 
@@ -11,15 +11,15 @@ type: docs
 
 | Attribute | Value |
 | :-------- | :---- |
-| **Real Name** | Hans Friedrich Richter |
-| **Codename** | BULWARK |
+| **Real Name** | Mikhail Ivanov |
+| **Codename** | BASTION |
 | **Class** | Tank |
-| **Nationality** | German |
+| **Nationality** | Russian |
 | **Age** | 41 |
 | **Height** | 195 cm (6'5") |
 | **Weight** | 110 kg (243 lbs) |
 
-<!-- REF_IMAGE: BULWARK operator portrait — massive frame, riot shield on back, heavy tactical vest, cyberpunk-style reinforced plating with orange accent strips -->
+<!-- REF_IMAGE: BASTION operator portrait — massive frame, riot shield on back, heavy tactical vest, cyberpunk-style reinforced plating with orange accent strips -->
 
 ### Background
 
@@ -89,7 +89,7 @@ After a political scandal forced budget cuts that disbanded his unit, Hans could
 | **Shield VFX (Top-Down)** | 120-degree arc indicator on ground when deployed, metallic surface visible |
 | **Shield Audio** | 35m — deploy slam + constant metallic scraping when walking |
 
-<!-- REF_IMAGE: BULWARK top-down view — showing operator with riot shield deployed, 120-degree arc visible from above, widest operator silhouette -->
+<!-- REF_IMAGE: BASTION top-down view — showing operator with riot shield deployed, 120-degree arc visible from above, widest operator silhouette -->
 
 ### Riot Shield Stat Block
 
@@ -200,7 +200,7 @@ After a political scandal forced budget cuts that disbanded his unit, Hans could
 | In cover | +20% damage resistance |
 | Taking fire | Generate Aggro (enemies more likely to target you in PvE) |
 
-**Design Intent:** BULWARK is the anchor. His shield is the most powerful single defensive ability in the game, but the trade-off is severe: almost no offensive capability while deployed. He creates space — teammates use it.
+**Design Intent:** BASTION is the anchor. His shield is the most powerful single defensive ability in the game, but the trade-off is severe: almost no offensive capability while deployed. He creates space — teammates use it.
 
 ---
 
@@ -350,7 +350,7 @@ After a political scandal forced budget cuts that disbanded his unit, Hans could
 - **Gloves:** Reinforced knuckle gloves
 - **Face:** Clean-shaven, square jaw, small scar above right eyebrow, focused eyes
 
-<!-- REF_IMAGE: BULWARK default skin — top-down view showing largest silhouette in roster, shield visible on back, heavy armor profile -->
+<!-- REF_IMAGE: BASTION default skin — top-down view showing largest silhouette in roster, shield visible on back, heavy armor profile -->
 
 ### Unlockable Skins
 
@@ -378,10 +378,10 @@ After a political scandal forced budget cuts that disbanded his unit, Hans could
 
 | Character | Relationship |
 | :-------- | :----------- |
-| **VIPER** | Rival philosophies — VIPER attacks, BULWARK defends. Mutual respect despite constant arguments |
+| **VIPER** | Rival philosophies — VIPER attacks, BASTION defends. Mutual respect despite constant arguments |
 | **DOC** | Old friends from joint NATO training. Saved each other's lives. Closest bond in the roster |
-| **HAVOC** | Professional animosity — BULWARK considers HAVOC too reckless, a danger to teammates |
-| **FORTRESS** | Fellow Tank. Paternal bond — BULWARK mentors the younger FORTRESS in shield work |
+| **HAVOC** | Professional animosity — BASTION considers HAVOC too reckless, a danger to teammates |
+| **FORTRESS** | Fellow Tank. Paternal bond — BASTION mentors the younger FORTRESS in shield work |
 
 ### Story Hooks
 
@@ -398,9 +398,9 @@ After a political scandal forced budget cuts that disbanded his unit, Hans could
 
 - Riot Shield is indestructible by design — counterplay is flanking, EMP, or waiting it out
 - 180-degree coverage means back and sides are always vulnerable
-- -40% movement penalty is critical — BULWARK cannot chase or flee effectively
+- -40% movement penalty is critical — BASTION cannot chase or flee effectively
 - Shield Bash stun (1.5s) is strong but has 5s internal cooldown to prevent stunlock
-- Team Aura upgrade (Slot 3) must require strict positioning — allies must be within 3m of BULWARK's back arc
+- Team Aura upgrade (Slot 3) must require strict positioning — allies must be within 3m of BASTION's back arc
 - Living Wall passive should NOT stack with Shield — choose one or the other
 
 ### Animation Requirements
@@ -428,5 +428,5 @@ After a political scandal forced budget cuts that disbanded his unit, Hans could
 - Shield is visually distinct from ANGEL's dome: flat metallic surface vs translucent dome
 - Shield walking animation from top-down should show heavy foot plants with dust/ground disturbance
 - When EMP disabled, shield visually flickers (communicates vulnerability window to both teams)
-- BULWARK is the widest silhouette in the game — easily identifiable even at max zoom
+- BASTION is the widest silhouette in the game — easily identifiable even at max zoom
 

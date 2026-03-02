@@ -36,7 +36,7 @@ The Player Profile is a **living trophy case** — the public-facing record of a
 │  ┌─────────────────────────────────────────────────────────────┐    │
 │  │           [CUSTOM BANNER — animated or static]              │    │
 │  │   [OPERATOR 3D — idle animation, holding weapon]           │    │
-│  │   Viper — Assault                Account Lvl 47            │    │
+│  │   Mamba — Assault                Account Lvl 47            │    │
 │  │   [WOLF] — Veteran               RankSeason8: Platinum III │    │
 │  └─────────────────────────────────────────────────────────────┘    │
 │                                                                      │
@@ -52,7 +52,7 @@ The Player Profile is a **living trophy case** — the public-facing record of a
 │  Damage:       1.4M         Wealth Extr.:   $2,840,000               │
 │  Wealth Extr:  $18M         Peak Rank:      Platinum III             │
 │                                                                      │
-│  FAVORITE OPERATOR:  Viper (480 raids)                              │
+│  FAVORITE OPERATOR:  Mamba (480 raids)                              │
 │  BEST MAP:           Aethelgard Industrial  68% extract rate         │
 │  MOST USED WEAPON:   M4A1                   710 kills                │
 │                                                                      │
@@ -206,7 +206,7 @@ Last **50 matches** shown in list form, with expandable detail per match.
 ┌──────────────────────────────────────────────────────────────────────┐
 │  [✅ EXTRACTED]  Aethelgard Industrial  •  The Raid  •  Trio        │
 │  Duration: 12:34 min    Kills: 3    Wealth: $18,200    RP: +42      │
-│  Feb 28, 2026  14:06   [Viper — Assault]                             │
+│  Feb 28, 2026  14:06   [Mamba — Assault]                             │
 │  Squad: Kai_V, Dxt_Raptor                          [▼ Details]       │
 └──────────────────────────────────────────────────────────────────────┘
 ```

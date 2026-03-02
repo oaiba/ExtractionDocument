@@ -22,7 +22,7 @@ This is distinct from **[Inventory & Gear](../Inventory_Gear/)** (Inventory_Gear
 | Section | Description |
 | :------ | :---------- |
 | [Armor Gear](ArmorGear/) | Body armor, helmets, face shields, headsets: classes, zones, materials, penetration, blunt damage, ricochet. Master database, handling, balance, progression, visual identity. |
-| [Storage Gear](StorageGear/) | Tactical rigs, backpacks, secure containers, stash-only cases: grid layouts, reload rule, nesting/folding, balance, stash progression. |
+| [Storage Gear](StorageGear/) | Tactical rigs, backpacks, secure containers, stash-only cases: grid layouts, reload rule, nesting and backpack collapse, balance, stash progression. |
 
 ### Related Sections
 

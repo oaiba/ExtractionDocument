@@ -6,7 +6,7 @@ weight: 1
 
 ## Overview
 
-This document is the **canonical list** of all storage gear: tactical rigs (unarmored and armored), backpacks, secure containers, and stash-only cases. For slot layouts and reload rule see [Storage Slot Layouts](Storage_Slot_Layouts.md); for nesting and folding see [Storage Nesting & Folding](Storage_Nesting_Folding.md); for balance see [Storage Balance Framework](Storage_Balance_Framework.md) and [Stash & Container Progression](Stash_Container_Progression.md).
+This document is the **canonical list** of all storage gear: tactical rigs (unarmored and armored), backpacks, secure containers, and stash-only cases. For slot layouts and reload rule see [Storage Slot Layouts](Storage_Slot_Layouts.md); for nesting and backpack collapse see [Storage Nesting & Folding](Storage_Nesting_Folding.md); for balance see [Storage Balance Framework](Storage_Balance_Framework.md) and [Stash & Container Progression](Stash_Container_Progression.md).
 
 ### Grid Inventory & Subgrid Model
 
@@ -111,7 +111,7 @@ Used only in the global Stash (not carried in-raid). **External size** = cells t
 ## Cross-References
 
 - [Storage Slot Layouts](Storage_Slot_Layouts.md) — Per-rig grid diagrams, reload rule, hotkey mapping.
-- [Storage Nesting & Folding](Storage_Nesting_Folding.md) — Bag-in-bag, weapon fold, backpack collapse.
+- [Storage Nesting & Folding](Storage_Nesting_Folding.md) — Bag-in-bag, backpack collapse.
 - [Storage Balance Framework](Storage_Balance_Framework.md) — Capacity vs mobility, cost per slot.
 - [Stash & Container Progression](Stash_Container_Progression.md) — Stash size, unlock order, secure path.
 - [Armor Master Database — Armored Rigs](../ArmorGear/Armor_Master_Database.md#armored-rigs) — Armor class and zones for armored rigs.

@@ -90,7 +90,7 @@ Grid drag-drop, color coding (green/red/yellow), tooltips (name, weight, size, v
 
 ### 4.1 Item Dimensions & Rotation
 
-All items: Width × Height in 1×1 cells. Rotation: 90° (R while dragging).
+All items: Width × Height in 1×1 cells. Rotation: 90° (R while dragging). **Weapon grid size is fixed per weapon type;** adding or removing attachments does not change the weapon's inventory size.
 
 | Category     | Typical Size | Examples |
 | :----------- | :----------- | :------- |
@@ -111,7 +111,7 @@ Stackable: ammo (e.g. 60/stack), currency, crafting materials. Non-stackable: we
 
 ### 4.3 Nesting & Folding
 
-**Bag-in-bag:** Inner bag total capacity ≤ 60% outer total capacity; same-ID nesting blocked; max 2 depth. **Weapon folding:** Foldable stocks reduce grid size; firing folded = heavy recoil/ergo penalty. **Backpack collapse:** Empty backpacks can collapse to smaller size. Full rules: [Gears — Storage Nesting & Folding](../Gears/StorageGear/Storage_Nesting_Folding.md).
+**Bag-in-bag:** Total size = child container's footprint (cells) + sum of all items inside the child; must fit in parent's free capacity; same-ID nesting blocked; max 2 depth. **Backpack collapse:** Empty backpacks can collapse to smaller size. Full rules: [Gears — Storage Nesting & Folding](../Gears/StorageGear/Storage_Nesting_Folding.md).
 
 ---
 
@@ -138,7 +138,6 @@ Total weight = equipped gear + inventory + nested contents. Weight tiers (Light 
 | Discard          | Del                  | Drop |
 | Rotate           | R                    | 90° while dragging |
 | Examine          | Middle Click         | Identify |
-| Fold stock       | Middle Click (weapon)| Toggle fold |
 
 ### 6.3 Value & Priority
 

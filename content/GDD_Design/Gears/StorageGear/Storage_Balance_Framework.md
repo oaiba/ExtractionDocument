@@ -36,7 +36,7 @@ When tuning storage in patches:
 3. **Weight (empty)** — Affects when player enters next weight tier (Light/Medium/Heavy/Critical).
 4. **Speed penalty** — Direct movement cost for backpacks.
 5. **Noise radius** — Stealth cost; larger bags audible from farther.
-6. **Collapsed size** — Affects nesting and stash efficiency; smaller collapsed = more attractive for “bring extra bag” play.
+6. **Collapsed size** — Affects stash efficiency and space when storing extra backpacks as items; smaller collapsed = more attractive for “bring extra bag” play.
 7. **Price** — Economic gating; higher cost delays access.
 
 ---

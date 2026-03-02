@@ -12,7 +12,7 @@ Managing space is a core gameplay loop. Containers grant the ability to carry lo
 
 ## 1. Backpacks
 
-Primary method of bulk transport. Grid size and capacity scale from small (e.g. 2×3, 6 cells) to raid-sized (e.g. 5×6–6×8, 30–48 cells). Capacity = total cells; see [Storage Master Database](../Gears/StorageGear/Storage_Master_Database.md). Larger bags add speed penalty and noise. **Quick Drop:** Double-tap (e.g. Z) drops backpack to regain combat speed. **Nesting:** Smaller bags can go inside larger bags; rules prevent infinite stacking. See [Storage Nesting & Folding](../Gears/StorageGear/Storage_Nesting_Folding.md).
+Primary method of bulk transport. Grid size and capacity scale from small (e.g. 2×3, 6 cells) to raid-sized (e.g. 5×6–6×8, 30–48 cells). Capacity = total cells; see [Storage Master Database](../Gears/StorageGear/Storage_Master_Database.md). Larger bags add speed penalty and noise. **Quick Drop:** Double-tap (e.g. Z) drops backpack to regain combat speed. **Flat storage:** Bags, rigs, and other items are stored as normal items in a single grid; no bag-in-bag. Empty backpacks can be collapsed. See [Storage: Flat Storage & Folding](../Gears/StorageGear/Storage_Flat_Storage_Folding.md).
 
 ---
 

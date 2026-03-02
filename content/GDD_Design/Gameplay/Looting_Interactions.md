@@ -77,7 +77,7 @@ Capacity = **total cells** (sum of subgrids); see [Storage Master Database](../.
 | Secure Container (Standard) | 2×2 | 4 — Protected items; never lost on death |
 | Secure Container (Upgraded) | 2×3 or 3×3 | 6 or 9 — Progression reward for quest completion |
 
-Full rig/backpack/secure container list, slot layouts, reload rule, and in-raid secure container restrictions: [Gears — Storage Gear](../../Gears/StorageGear/) ([Storage Master Database](../../Gears/StorageGear/Storage_Master_Database.md), [Storage Slot Layouts](../../Gears/StorageGear/Storage_Slot_Layouts.md), [Storage Nesting & Folding](../../Gears/StorageGear/Storage_Nesting_Folding.md)).
+Full rig/backpack/secure container list, slot layouts, reload rule, and in-raid secure container restrictions: [Gears — Storage Gear](../../Gears/StorageGear/) ([Storage Master Database](../../Gears/StorageGear/Storage_Master_Database.md), [Storage Slot Layouts](../../Gears/StorageGear/Storage_Slot_Layouts.md), [Storage: Flat Storage & Folding](../../Gears/StorageGear/Storage_Flat_Storage_Folding.md)).
 
 ### Item Sizes
 
@@ -320,7 +320,7 @@ A high-risk premium vendor concept — an AI trader that spawns in the contamina
 ## Cross-References
 
 - [Items & Gear](ItemsAndGear.md) — Full item catalogue with values, grid sizes, weights, and use descriptions.
-- [Gears — Storage Gear](../../Gears/StorageGear/) — Storage Master Database, Slot Layouts (reload rule, hotkeys), Nesting & Folding, Secure Container restrictions.
+- [Gears — Storage Gear](../../Gears/StorageGear/) — Storage Master Database, Slot Layouts (reload rule, hotkeys), Flat Storage & Folding, Secure Container restrictions.
 - [Loot Table Design](Loot_Table_Design.md) — What spawns in each container type and zone; supply drop loot.
 - [Gear Mechanics](Gear_Mechanics.md) — Weight encumbrance, item condition, and armor repair.
 - [Hideout & Crafting](Hideout_Crafting.md) — Crafting recipes; Hideout upgrades that expand marketplace listing slots.

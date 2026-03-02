@@ -6,13 +6,13 @@ weight: 1
 
 ## Overview
 
-This document is the **canonical list** of all storage gear: tactical rigs (unarmored and armored), backpacks, secure containers, and stash-only cases. For slot layouts and reload rule see [Storage Slot Layouts](Storage_Slot_Layouts.md); for nesting and backpack collapse see [Storage Nesting & Folding](Storage_Nesting_Folding.md); for balance see [Storage Balance Framework](Storage_Balance_Framework.md) and [Stash & Container Progression](Stash_Container_Progression.md).
+This document is the **canonical list** of all storage gear: tactical rigs (unarmored and armored), backpacks, secure containers, and stash-only cases. For slot layouts and reload rule see [Storage Slot Layouts](Storage_Slot_Layouts.md); for flat storage (no bag-in-bag) and backpack collapse see [Storage: Flat Storage & Folding](Storage_Flat_Storage_Folding.md); for balance see [Storage Balance Framework](Storage_Balance_Framework.md) and [Stash & Container Progression](Stash_Container_Progression.md).
 
 ### Grid Inventory & Subgrid Model
 
 Storage is **grid inventory** but a container can have **one or more subgrids** inside. Each **subgrid** has dimensions (W×H), optional slot-type constraints (e.g. 1×1 only, or allows 1×2), optional hotkey (quick-access), and a role/name (e.g. mag pouch, utility, main compartment).
 
-- **Total capacity** = **sum of all cells in all subgrids**. This is the primary capacity number for balance, cost-per-slot, and nesting checks — not "width × height" of a single rectangle.
+- **Total capacity** = **sum of all cells in all subgrids**. This is the primary capacity number for balance, cost-per-slot, and capacity checks — not "width × height" of a single rectangle.
 - **Tactical depth:** Where the player places items (which subgrid) matters: subgrids with hotkey = quick access and reload source; other subgrids require opening inventory. Rigs with distinct mag vs utility subgrids create meaningful loadout choices.
 
 ---
@@ -48,7 +48,7 @@ Armored rigs provide built-in body armor and **replace** a separate vest. Armor 
 
 ## Backpacks
 
-Backpacks provide grid storage only; no hotkey. Contents lost on death (except as insured). **Capacity** = total cells (sum of subgrids). Grid (external) = footprint when worn or collapsed size reference; see [Storage Nesting & Folding](Storage_Nesting_Folding.md).
+Backpacks provide grid storage only; no hotkey. Contents lost on death (except as insured). **Capacity** = total cells (sum of subgrids). Grid (external) = footprint when worn or collapsed size reference; see [Storage: Flat Storage & Folding](Storage_Flat_Storage_Folding.md) (flat storage, collapse).
 
 | Code | Display Name | Grid (external) | Capacity (cells) | Subgrids | Weight (empty) | Speed penalty | Noise radius | Collapsed size | Value ($) | Trader | Rarity |
 | :--- | :----------- | :--------------- | :--------------: | :------- | :-------------: | :-----------: | :----------: | :-------------: | -------: | :----- | :----- |
@@ -111,7 +111,7 @@ Used only in the global Stash (not carried in-raid). **External size** = cells t
 ## Cross-References
 
 - [Storage Slot Layouts](Storage_Slot_Layouts.md) — Per-rig grid diagrams, reload rule, hotkey mapping.
-- [Storage Nesting & Folding](Storage_Nesting_Folding.md) — Bag-in-bag, backpack collapse.
+- [Storage: Flat Storage & Folding](Storage_Flat_Storage_Folding.md) — Flat storage, backpack collapse.
 - [Storage Balance Framework](Storage_Balance_Framework.md) — Capacity vs mobility, cost per slot.
 - [Stash & Container Progression](Stash_Container_Progression.md) — Stash size, unlock order, secure path.
 - [Armor Master Database — Armored Rigs](../ArmorGear/Armor_Master_Database.md#armored-rigs) — Armor class and zones for armored rigs.

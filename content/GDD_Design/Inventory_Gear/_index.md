@@ -109,15 +109,15 @@ All items: Width × Height in 1×1 cells. Rotation: 90° (R while dragging). **W
 
 Stackable: ammo (e.g. 60/stack), currency, crafting materials. Non-stackable: weapons, armor, attachments, keys, quest items. Consolidate partial stacks before raid.
 
-### 4.3 Nesting & Folding
+### 4.3 Flat Storage & Folding
 
-**Bag-in-bag:** Total size = child container's footprint (cells) + sum of all items inside the child; must fit in parent's free capacity; same-ID nesting blocked; max 2 depth. **Backpack collapse:** Empty backpacks can collapse to smaller size. Full rules: [Gears — Storage Nesting & Folding](../Gears/StorageGear/Storage_Nesting_Folding.md).
+**No bag-in-bag:** Each Storage Gear has a single Storage; all items in it are at the same level (flat). Bags, rigs, armor, weapons, and attachments placed in a container are normal items (footprint only). **Backpack collapse:** Empty backpacks can collapse to smaller size. Full rules: [Gears — Flat Storage & Folding](../Gears/StorageGear/Storage_Flat_Storage_Folding.md).
 
 ---
 
 ## 5. Encumbrance & Movement
 
-Total weight = equipped gear + inventory + nested contents. Weight tiers (Light → Medium → Heavy → Critical → Overweight) affect movement speed, sprint, inertia, jump, noise. Full formula, thresholds, inertia, stamina regen: [Gear Mechanics](../Gameplay/Gear_Mechanics.md) and [Movement & Stamina](../Gameplay/Movement_and_Stamina.md).
+Total weight = equipped gear + inventory (all items in all Storage Gears and slots). Weight tiers (Light → Medium → Heavy → Critical → Overweight) affect movement speed, sprint, inertia, jump, noise. Full formula, thresholds, inertia, stamina regen: [Gear Mechanics](../Gameplay/Gear_Mechanics.md) and [Movement & Stamina](../Gameplay/Movement_and_Stamina.md).
 
 ---
 
@@ -159,7 +159,7 @@ Stash size by edition and Hideout level; container unlock path (Scav Junkbox, Am
 
 ## 9. Implementation Notes
 
-- **Data:** Item placement uses grid coordinates, rotation, parentId (container), slotId. Server validates overlap, weight, nesting rules.
+- **Data:** Item placement uses grid coordinates, rotation, parentId (container), slotId. Server validates overlap, weight, placement rules.
 - **Anti-cheat:** Server-side grid and weight checks; no client trust for capacity or duplicates.
 - **UX:** Drag state, valid/invalid placement feedback, snap-to-grid, SFX. See existing technical notes in repo.
 

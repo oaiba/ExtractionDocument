@@ -12,7 +12,7 @@ This document defines **stash size** by edition and Hideout level, **container u
 
 ## Stash Size Progression
 
-Stash is the player’s persistent out-of-raid storage. Grid size can increase with edition or Hideout upgrades.
+Stash is the player’s persistent out-of-raid storage. **Stash capacity = total cells** (single grid; 10×28 = 280 cells, etc.). Grid size can increase with edition or Hideout upgrades.
 
 | Edition / source | Stash grid | Total cells | Unlock cost / note |
 | :--------------- | :--------- | :---------: | :------------------ |
@@ -44,9 +44,9 @@ Order in which stash-only containers and key tools become available. Exact level
 
 ## Secure Container Upgrade Path
 
-Secure container size is upgraded via quests or edition; it is not purchased as a consumable.
+Secure container size is upgraded via quests or edition; it is not purchased as a consumable. **Cells** in the table below = **total capacity** (see [Storage Master Database](Storage_Master_Database.md)).
 
-| Container | Grid | Cells | Unlock method |
+| Container | Grid | Cells (total capacity) | Unlock method |
 | :-------- | :--: | :---: | :------------ |
 | Alpha | 2×2 | 4 | Default (all editions) |
 | Beta | 2×3 | 6 | Quest (e.g. Punisher line, mid-game) |

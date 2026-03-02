@@ -103,7 +103,7 @@ All items: Width × Height in 1×1 cells. Rotation: 90° (R while dragging).
 | Sniper       | 5×2 – 6×2    | SVD, M700 |
 | Helmets      | 2×2          | Tactical helmets |
 | Armor Vests  | 3×3 – 4×4    | Plate carriers |
-| Backpacks    | 3×3 – 7×8    | Collapsed vs deployed |
+| Backpacks    | 3×3 – 7×8    | Collapsed vs deployed; capacity = total cells per container (see [Storage Master Database](../Gears/StorageGear/Storage_Master_Database.md)) |
 
 ### 4.2 Stacking
 
@@ -111,7 +111,7 @@ Stackable: ammo (e.g. 60/stack), currency, crafting materials. Non-stackable: we
 
 ### 4.3 Nesting & Folding
 
-**Bag-in-bag:** Inner bag must fit in outer; same-ID nesting blocked; max 2 depth. **Weapon folding:** Foldable stocks reduce grid size; firing folded = heavy recoil/ergo penalty. **Backpack collapse:** Empty backpacks can collapse to smaller size. Full rules: [Gears — Storage Nesting & Folding](../Gears/StorageGear/Storage_Nesting_Folding.md).
+**Bag-in-bag:** Inner bag total capacity ≤ 60% outer total capacity; same-ID nesting blocked; max 2 depth. **Weapon folding:** Foldable stocks reduce grid size; firing folded = heavy recoil/ergo penalty. **Backpack collapse:** Empty backpacks can collapse to smaller size. Full rules: [Gears — Storage Nesting & Folding](../Gears/StorageGear/Storage_Nesting_Folding.md).
 
 ---
 

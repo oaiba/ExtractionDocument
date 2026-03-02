@@ -54,6 +54,8 @@ The stash is the central inventory repository. All out-of-raid items, loot, and 
 | 3 | 10×48 (480 slots) | $150,000 + 3 GPU + 5 Circuit Boards | Generator Lvl 2 |
 | 4 | 10×62 (620 slots) | $400,000 + 5 GPU + 10 Mechanical Parts + quest chain | Generator Lvl 3 |
 
+*Slots = total stash capacity (cells).*
+
 ### Generator
 
 Powers all other modules. Required before any upgrade path.

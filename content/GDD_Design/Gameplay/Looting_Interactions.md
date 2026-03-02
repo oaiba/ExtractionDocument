@@ -64,16 +64,18 @@ APPROACH CONTAINER
 
 ### Grid Dimensions
 
-| Container | Grid Size | Typical Capacity |
-| :-------- | :------- | :--------------- |
-| Pockets | 4 slots (1x4 strip) | Small items only: keys, cash, ammo stacks |
-| Tactical Rig (Light) | 2x3 (6 slots) | Magazines, medical supplies |
-| Tactical Rig (Heavy) | 3x4 (12 slots) | Full medical loadout + grenades |
-| Backpack (Small) | 3x3 (9 slots) | Budget runs, light looting |
-| Backpack (Medium) | 4x4 (16 slots) | Standard loadout |
-| Backpack (Large) | 5x5 (25 slots) | Maximum capacity, heavy weight penalty |
-| Secure Container (Standard) | 2x2 (4 slots) | Protected items — never lost on death |
-| Secure Container (Upgraded) | 2x3 or 3x3 | Progression reward for quest completion |
+Capacity = **total cells** (sum of subgrids); see [Storage Master Database](../../Gears/StorageGear/Storage_Master_Database.md).
+
+| Container | Grid Size | Capacity (cells) |
+| :-------- | :------- | :---------------- |
+| Pockets | 4 slots (1×4 strip) | Small items only: keys, cash, ammo stacks |
+| Tactical Rig (Light) | 2×3 | 6 — Magazines, medical supplies |
+| Tactical Rig (Heavy) | 3×4 | 12 — Full medical loadout + grenades |
+| Backpack (Small) | 3×3 | 9 — Budget runs, light looting |
+| Backpack (Medium) | 4×4 | 16 — Standard loadout |
+| Backpack (Large) | 5×5 | 25 — Maximum capacity, heavy weight penalty |
+| Secure Container (Standard) | 2×2 | 4 — Protected items; never lost on death |
+| Secure Container (Upgraded) | 2×3 or 3×3 | 6 or 9 — Progression reward for quest completion |
 
 Full rig/backpack/secure container list, slot layouts, reload rule, and in-raid secure container restrictions: [Gears — Storage Gear](../../Gears/StorageGear/) ([Storage Master Database](../../Gears/StorageGear/Storage_Master_Database.md), [Storage Slot Layouts](../../Gears/StorageGear/Storage_Slot_Layouts.md), [Storage Nesting & Folding](../../Gears/StorageGear/Storage_Nesting_Folding.md)).
 

@@ -10,43 +10,62 @@ This document defines **per-rig grid layouts**, the **reload-from-rig rule**, **
 
 ---
 
+## Subgrid & Placement Rules
+
+A container is made of **one or more subgrids**. Each subgrid has dimensions (W×H) and optional **slot-type constraints** (e.g. 1×1 only, or allows 1×2, 2×2).
+
+- **Placement:** An item can be placed only if it **fits in at least one subgrid** — i.e. the item’s width and height do not exceed that subgrid’s W and H, and the subgrid’s slot-type rules allow that item size (e.g. 1×2 mag in a subgrid that allows 1×2).
+- **Hotkey:** Hotkeys are assigned only to cells in **quick-access subgrids** (e.g. rig: mag pouch and utility subgrids = hotkey; main compartment may have no hotkey or hotkey in a second row). Which subgrids are “quick access” is per container in [Storage Master Database](Storage_Master_Database.md).
+
+---
+
 ## Reload Rule
 
 **Magazines can only be loaded into the weapon from the Tactical Rig or Pockets.** Magazines stored in the Backpack or Secure Container are not available for the reload key (e.g. R); the player must open the inventory screen, drag a magazine from backpack to rig (or weapon), then close inventory — a 1.0+ second vulnerable window. This rewards putting mags in the rig and punishes “mags only in backpack” loadouts.
+
+*Optional design:* Reload may be restricted to magazines in a **quick-access (Mag Pouch) subgrid** only; if so, mags in other rig subgrids would require opening inventory to reload. Current baseline: reload from **any cell in the rig** for simplicity.
 
 ---
 
 ## Rig Slot Layouts (Examples)
 
-Layouts define which cells are 1×1, 1×2, 2×2, or 1×3. Hotkey slots are assigned in order (e.g. left-to-right, top-to-bottom) up to the rig’s hotkey count.
+Layouts are defined by **subgrids**; each subgrid has W×H and optional slot-type (1×1, 1×2, 2×2, 1×3). **Total capacity = sum of all subgrid cells.** Hotkey slots map to quick-access subgrids (see [Storage Master Database](Storage_Master_Database.md)).
 
-### Standard Rig (3×3, 9 slots)
+### Standard Rig — Total capacity 9 cells
+
+Subgrid A (Main): 3×2 = 6 cells. Subgrid B (Mag): 1×3 = 3 cells.
 
 ```
-+---+---+---+
-|1x1|1x1|1x1|   Row 1: grenades, loose ammo, meds
-+---+---+---+
-|  1x2  |1x1|   Row 2: magazine + med/painkiller
-+---+---+---+
-|  1x2  |1x1|   Row 3: magazine + utility
-+---+---+---+
-Hotkey: typically slots 1–4 = first four eligible cells (e.g. top row + first 1×2)
+Subgrid A (Main, 3×2):          Subgrid B (Mag, 1×3):
++---+---+---+                   +---+
+|1x1|1x1|1x1|  hotkey 1–3       |1x2|
++---+---+---+                   +---+
+|  1x2  |1x1|  hotkey 4         |1x2|  hotkey
++---+---+---+                   +---+
+                                |1x1|
+                                +---+
 ```
 
-### Heavy Rig (3×4, 12 slots)
+**Total capacity = 9 cells.** Hotkey typically maps to Subgrid A (4 slots) and Subgrid B (mag slots). Mags in Subgrid B = quick reload.
+
+### Heavy Rig — Total capacity 12 cells
+
+Single subgrid (Main) 3×4 = 12 cells; all cells can be hotkey-eligible (6 hotkey slots).
 
 ```
 +---+---+---+---+
-|1x1|1x1|1x1|1x1|
+|1x1|1x1|1x1|1x1|   Row 1
 +---+---+---+---+
-|  1x2  |  1x2  |
+|  1x2  |  1x2  |   Row 2
 +---+---+---+---+
-|  1x2  |1x1|1x1|
+|  1x2  |1x1|1x1|   Row 3
 +---+---+---+---+
 Hotkey: 6 slots — e.g. top row (4) + first two 1×2 (2)
 ```
 
-Exact layout per rig (Chest Harness, Light, Recon, Assault, Heavy, Blackrock, each armored rig) should be defined in data/design docs; the above illustrates the pattern. Slot type (1×1, 1×2, 2×2, 1×3) determines what items can be placed (e.g. 1×2 = standard mags, 2×2 = drum mag or large med).
+**Total capacity = 12 cells.** Reload can be from any rig cell (or, as a design option, restricted to a dedicated “Mag Pouch” subgrid when the rig has one).
+
+Exact layout per rig (Chest Harness, Light, Recon, Assault, Heavy, Blackrock, each armored rig) is in [Storage Master Database](Storage_Master_Database.md); the above illustrates the subgrid pattern. Slot type (1×1, 1×2, 2×2, 1×3) determines what items can be placed (e.g. 1×2 = standard mags, 2×2 = drum mag or large med).
 
 ---
 

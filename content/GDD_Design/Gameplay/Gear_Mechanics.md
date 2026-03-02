@@ -78,8 +78,10 @@ The distinction between rig and backpack is central to combat flow:
 
 ### Rig Tiers
 
-| Rig | Grid | Slots | Weight | Hotkey slots | Typical cost | Notes |
-| :-- | :--- | :---- | :----- | :----------- | :----------- | :---- |
+Slots = **total capacity (cells)**; see [Storage Master Database](../../Gears/StorageGear/Storage_Master_Database.md).
+
+| Rig | Grid | Capacity (cells) | Weight | Hotkey slots | Typical cost | Notes |
+| :-- | :--- | :-------------- | :----- | :----------- | :----------- | :---- |
 | Chest Harness | 2×2 | 4 | 0.3 kg | 2 | 2,000 | Minimal; scav default |
 | Light Rig | 2×3 | 6 | 0.4 kg | 3 | 5,000 | Scout/rat standard |
 | Standard Rig | 3×3 | 9 | 0.6 kg | 4 | 12,000 | Balanced |
@@ -88,8 +90,8 @@ The distinction between rig and backpack is central to combat flow:
 
 ### Backpack Tiers
 
-| Backpack | Grid | Slots | Weight (empty) | Speed penalty | Noise | Typical cost |
-| :------- | :--- | :---- | :------------- | :------------ | :---- | :----------- |
+| Backpack | Grid | Capacity (cells) | Weight (empty) | Speed penalty | Noise | Typical cost |
+| :------- | :--- | :--------------- | :------------- | :------------ | :---- | :----------- |
 | Sling Bag | 2×3 | 6 | 0.3 kg | None | None | 1,500 |
 | Small | 3×3 | 9 | 0.5 kg | None | None | 4,000 |
 | Medium | 4×4 | 16 | 1.0 kg | -2% speed | Slight rustle | 10,000 |

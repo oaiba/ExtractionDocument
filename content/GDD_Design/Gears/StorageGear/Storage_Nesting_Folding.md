@@ -14,7 +14,8 @@ This document defines **bag-in-bag (nesting)** rules, **weapon folding** (grid s
 
 | Rule | Description |
 | :--- | :---------- |
-| **Size check** | Inner container’s width×height (in cells) must be ≤ 60% of outer container’s total cells (or equivalent fit rule). Inner must physically fit in the outer grid. |
+| **Size check (capacity)** | Inner container's **total capacity** (sum of all subgrid cells) must be ≤ 60% of outer container's **total capacity**. Total capacity is the primary number; see [Storage Master Database](Storage_Master_Database.md). |
+| **Physical fit (optional)** | Optionally, inner must also physically fit in the outer grid: e.g. inner's largest subgrid (or bounding box) W×H fits inside **one** of the outer's subgrids (outer subgrid with W ≥ inner W, H ≥ inner H). If not used, only the capacity check above applies. |
 | **Same-ID block** | Cannot nest a container that has the same template ID as another container already in the same nesting chain (prevents infinite space exploit). |
 | **Depth limit** | Maximum 2 levels: bag inside bag. “Bag in bag in bag” is blocked. |
 | **Weight passthrough** | All items inside nested containers count toward total carried weight. |
@@ -41,7 +42,7 @@ Some weapons have **foldable stocks**. When folded, grid size is reduced (e.g. o
 
 ## Backpack Collapse
 
-**Empty** backpacks can be **collapsed** to a smaller grid size for storage or nesting. Collapse/uncollapse has a short animation (e.g. 0.5–1.0 s). When the backpack contains any item, it must be in full (deployed) size.
+**Empty** backpacks can be **collapsed** to a smaller grid size (footprint) for storage or nesting. **Capacity (total cells) is unchanged** when collapsed — only the footprint (W×H when placed in stash or inside another bag) is reduced. Collapse/uncollapse has a short animation (e.g. 0.5–1.0 s). When the backpack contains any item, it must be in full (deployed) size.
 
 | Backpack (example) | Full size | Collapsed size | Collapse time |
 | :----------------- | :-------: | :------------: | :-----------: |

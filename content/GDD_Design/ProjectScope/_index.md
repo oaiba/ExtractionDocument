@@ -31,5 +31,5 @@ What we are building, and what we are explicitly cutting.
 Benchmarks and scope planning aligned with the genre.
 {{< cards cols="2" >}}
   {{< card link="competitive-analysis-extraction-shooters.html" title="Competitive Analysis" icon="search" subtitle="Extraction shooter market & inventory benchmarks." >}}
-  {{< card link="project-scope-review-and-planning.html" title="Scope Review & Planning" icon="route" subtitle="Review, benchmarks, and quarterly planning." >}}
+  {{< card link="project-scope-review-and-planning.html" title="Scope Review & Planning" icon="map" subtitle="Review, benchmarks, and quarterly planning." >}}
 {{< /cards >}}

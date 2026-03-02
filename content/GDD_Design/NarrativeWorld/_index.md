@@ -59,7 +59,7 @@ Each map has a unified lore + layout document tying together history, atmosphere
 {{< /cards >}}
 
 {{< cards cols="2" >}}
-  {{< card link="MapLore_Military" title="Firebase Delta (Future — S3)" icon="shield" subtitle="The military's last stand. Classified intel, prototype weapons, the Nuclear Option debate." >}}
+  {{< card link="MapLore_Military" title="Firebase Delta (Future — S3)" icon="shield-check" subtitle="The military's last stand. Classified intel, prototype weapons, the Nuclear Option debate." >}}
 {{< /cards >}}
 
 ---

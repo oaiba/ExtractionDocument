@@ -97,7 +97,31 @@ Combat in Extraction Shooter is built on five principles:
 
 ---
 
-### 4. Sniper Rifles
+### 4. Designated Marksman Rifles (DMR)
+
+**Role:** Semi-auto precision at medium-long range; bridge between AR and Sniper. Faster follow-up than bolt-action; lower per-shot damage than sniper.
+
+| Property | Value |
+| :-------- | :---- |
+| Damage | 55–80 per shot |
+| Fire Rate | 120–220 RPM (semi-auto) |
+| Effective Range | 40–80 m |
+| Magazine | 10–20 rounds |
+
+**Tactical Notes:** 2–3 shot kills at optimal range. Reposition between shots; use cover for reload. Best used from positions between AR and Sniper engagement ranges. See [Weapon Categories Deep Dive](../Weapons/Weapon_Categories_Deep_Dive.md) for DMR doctrine and matchups.
+
+#### DMR Full Reference
+
+| Code Name | Display Name | Caliber | Rarity | Damage | RPM | Mag | Range (m) | Value ($) | Notes |
+| :-------- | :----------- | :------ | :----- | :----: | :-: | :-: | :-------: | --------: | :---- |
+| WPN_DMR_SKS | SKS | 7.62×39mm | Common | 55 | 120 | 10 | 45 | 2,000 | Budget DMR; semi-auto |
+| WPN_DMR_SVD | SVD Dragunov | 7.62×54mmR | Uncommon | 75 | 180 | 10 | 80 | 5,000 | Semi-auto; faster follow-up |
+| WPN_DMR_SR25 | SR-25 | 7.62×51mm | Rare | 78 | 200 | 20 | 75 | 9,000 | Precision marksman |
+| WPN_DMR_MK14 | MK 14 EBR | 7.62×51mm | Epic | 80 | 220 | 20 | 80 | 14,000 | Peak DMR; versatile |
+
+---
+
+### 5. Sniper Rifles
 
 **Role:** Long-range elimination, overwatch.
 
@@ -116,13 +140,12 @@ Combat in Extraction Shooter is built on five principles:
 | :-------- | :----------- | :------ | :----- | :----: | :-: | :-: | :-------: | :---------- | --------: | :---- |
 | WPN_SR_M24 | M24 | 7.62×51mm | Rare | 85 | 50 | 5 | 100 | Fast | 8,000 | Bolt-action, reliable |
 | WPN_SR_AWP | AWP | .338 Lapua | Epic | 120 | 40 | 5 | 120 | Very Fast | 16,000 | One-shot chest kill |
-| WPN_SR_SVD | SVD Dragunov | 7.62×54mmR | Uncommon | 75 | 180 | 10 | 80 | Medium | 5,000 | Semi-auto, faster follow-up |
 | WPN_SR_M107 | Barrett M107 | .50 BMG | Legendary | 130 | 35 | 10 | 150 | Fast | 25,000 | Anti-materiel, penetrates all |
 | WPN_SR_VSS | VSS Vintorez | 9×39mm | Rare | 65 | 120 | 20 | 60 | Medium | 7,500 | Integrated suppressor, subsonic |
 
 ---
 
-### 5. Light Machine Guns (LMG)
+### 6. Light Machine Guns (LMG)
 
 **Role:** Suppression, sustained fire, area denial.
 
@@ -453,6 +476,8 @@ See [Items & Gear](ItemsAndGear.md) for full item tables with stack sizes, weigh
 ## Cross-References
 
 - [Weapon Attachment System](Weapon_Attachment_System.md) — Full attachment slot rules, stat modifiers per attach slot, in-raid swap system.
+- [Weapons — Weapon Categories Deep Dive](../Weapons/Weapon_Categories_Deep_Dive.md) — Per-genre doctrine, hero synergy, build archetypes, matchup matrices (includes DMR).
+- [Weapons — Weapon Master Database](../Weapons/Weapon_Master_Database.md) — Base and fully modded stats, mod slot counts, role per weapon.
 - [Combat Feel (Top-Down)](Combat_Feel_Topdown.md) — Recoil cone model for top-down perspective, suppression, cover footprint.
 - [Items & Gear](ItemsAndGear.md) — Armor tiers, throwable item tables, ammo stack sizes and weights.
 - [Loot Table Design](Loot_Table_Design.md) — Spawn rates by zone tier; which weapons are in which container tables.

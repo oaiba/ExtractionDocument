@@ -133,12 +133,12 @@ After growing disillusioned with the corruption eating Russia from within, Vikto
 
 | Interaction | Result |
 | :---------- | :----- |
-| **Sensor + EMP (CIPHER)** | All sensors in EMP radius destroyed instantly |
-| **Sensor + Fire (BLAZE)** | Sensors destroyed by fire contact |
-| **Sensor + Nano Swarm (FLUX)** | Sensors not affected by swarm |
-| **Sensor + UAV Scan (PHANTOM)** | N/A — both are intel abilities |
-| **Sensor + Smoke (WRAITH)** | Sensors still detect through smoke |
-| **Sensor + HAVOC Rage** | Sensors detect raging HAVOC (louder footsteps trigger faster) |
+| **Sensor + EMP (GLITCH)** | All sensors in EMP radius destroyed instantly |
+| **Sensor + Fire (IGNITION)** | Sensors destroyed by fire contact |
+| **Sensor + Nano Swarm (PULSE)** | Sensors not affected by swarm |
+| **Sensor + UAV Scan (SONAR)** | N/A — both are intel abilities |
+| **Sensor + Smoke (OBSIDIAN)** | Sensors still detect through smoke |
+| **Sensor + TARTARUS Rage** | Sensors detect raging TARTARUS (louder footsteps trigger faster) |
 
 #### Top-Down Sensor VFX
 
@@ -195,7 +195,7 @@ After growing disillusioned with the corruption eating Russia from within, Vikto
 | Crouch detecting | Can see trap outline through walls |
 | Destroy enemy trap | Gain 5-second enemy position reveal |
 
-**Design Intent:** MIRAGE is the anti-trap specialist. While PHANTOM provides active intel through scanning, MIRAGE provides persistent, passive territorial control. He is the defensive Recon.
+**Design Intent:** MIRAGE is the anti-trap specialist. While SONAR provides active intel through scanning, MIRAGE provides persistent, passive territorial control. He is the defensive Recon.
 
 ---
 
@@ -241,7 +241,7 @@ After growing disillusioned with the corruption eating Russia from within, Vikto
 
 **Secondary Role:** Counter-Intel
 - Detect and destroy enemy traps
-- Deny PHANTOM scans by detecting sensors
+- Deny SONAR scans by detecting sensors
 - Clear buildings ahead of team push
 
 ### Combat Loop
@@ -276,25 +276,25 @@ After growing disillusioned with the corruption eating Russia from within, Vikto
 
 | Opponent | Why Favorable | Tactic |
 | :------- | :------------ | :----- |
-| **BLAZE** | Incendiary Rush is loud and predictable — sensors detect approach easily | Trap doorways, pre-aim fire paths |
-| **HAVOC** | Berserker Rush is linear — sensors give warning for easy kiting | Place sensors at CQB approach, backpedal and shoot |
-| **FORTRESS** | Slow rotations, easy to track with sensor network | Surround with sensors, never let him close |
+| **IGNITION** | Incendiary Rush is loud and predictable — sensors detect approach easily | Trap doorways, pre-aim fire paths |
+| **TARTARUS** | Berserker Rush is linear — sensors give warning for easy kiting | Place sensors at CQB approach, backpedal and shoot |
+| **GOLIATH** | Slow rotations, easy to track with sensor network | Surround with sensors, never let him close |
 
 ### Even Matchups
 
 | Opponent | Notes | Key to Winning |
 | :------- | :---- | :------------- |
-| **PHANTOM** | Both intel operators — scan vs. traps | Pre-place sensors before scan, maintain awareness |
-| **ANGEL** | Guardian Shield protects pushes through traps | Stack sensors to overwhelm shield timing |
-| **VIPER** | Combat Stim rushes can outrun sensor alerts | Layer sensors deeper, not just at entry |
+| **SONAR** | Both intel operators — scan vs. traps | Pre-place sensors before scan, maintain awareness |
+| **AEGIS** | Guardian Shield protects pushes through traps | Stack sensors to overwhelm shield timing |
+| **MAMBA** | Combat Stim rushes can outrun sensor alerts | Layer sensors deeper, not just at entry |
 
 ### Unfavorable Matchups
 
 | Opponent | Why Difficult | Counter Strategy |
 | :------- | :------------ | :--------------- |
-| **CIPHER** | EMP destroys all deployed sensors instantly | Space sensors apart, keep reserves |
-| **WRAITH** | Smoke blocks sensor engagement value | Push through smoke to trigger sensors manually |
-| **DOC** | Healing drone sustains through trap damage | Focus fire DOC directly, ignore drone |
+| **GLITCH** | EMP destroys all deployed sensors instantly | Space sensors apart, keep reserves |
+| **OBSIDIAN** | Smoke blocks sensor engagement value | Push through smoke to trigger sensors manually |
+| **SUTURE** | Healing drone sustains through trap damage | Focus fire SUTURE directly, ignore drone |
 
 ---
 
@@ -368,10 +368,10 @@ After growing disillusioned with the corruption eating Russia from within, Vikto
 
 | Character | Relationship |
 | :-------- | :----------- |
-| **PHANTOM** | Former adversaries during Cold War-era proxy ops — uneasy respect born from mutual competence |
-| **HAVOC** | Both Russian, but different ideology — MIRAGE despises HAVOC's recklessness |
-| **FORTRESS** | Old military connection — served in same regional command, share tactical language |
-| **WRAITH** | Hunted her once during a covert operation in Japan — failed, respects her evasion |
+| **SONAR** | Former adversaries during Cold War-era proxy ops — uneasy respect born from mutual competence |
+| **TARTARUS** | Both Russian, but different ideology — MIRAGE despises TARTARUS's recklessness |
+| **GOLIATH** | Old military connection — served in same regional command, share tactical language |
+| **OBSIDIAN** | Hunted her once during a covert operation in Japan — failed, respects her evasion |
 
 ### Story Hooks
 

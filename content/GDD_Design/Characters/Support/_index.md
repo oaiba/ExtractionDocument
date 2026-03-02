@@ -90,9 +90,9 @@ The **Support** class operators are the backbone of any team, keeping allies ali
 
 | Counter Pick | Why |
 | :----------- | :-- |
-| **VIPER** | Burst damage exceeds healing |
-| **HAVOC** | CQB kills before healing matters |
-| **CIPHER** | EMP disables support abilities |
+| **MAMBA** | Burst damage exceeds healing |
+| **TARTARUS** | CQB kills before healing matters |
+| **GLITCH** | EMP disables support abilities |
 
 ---
 
@@ -102,9 +102,9 @@ The **Support** class operators are the backbone of any team, keeping allies ali
 
 | Partner | Synergy | Notes |
 | :------ | :------ | :---- |
-| **VIPER** | Assault + Sustain | Push harder, heal after |
-| **BULWARK** | Tank + Healer | Classic defensive combo |
-| **PHANTOM** | Intel + Safety | Know when to heal, when to hide |
+| **MAMBA** | Assault + Sustain | Push harder, heal after |
+| **BASTION** | Tank + Healer | Classic defensive combo |
+| **SONAR** | Intel + Safety | Know when to heal, when to hide |
 
 ---
 

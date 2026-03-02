@@ -68,7 +68,7 @@ Age Sound: Mid-30s
 
 ---
 
-### SUPPORT - "Angel" (Dr. Amara Okonkwo)
+### SUPPORT - "Aegis" (Dr. Amara Okonkwo)
 
 **Voice Characteristics:**
 ```
@@ -129,7 +129,7 @@ Age Sound: Late 30s
 
 ---
 
-### RECON - "Specter" (Yuki Tanaka)
+### RECON - "Mirage" (Yuki Tanaka)
 
 **Voice Characteristics:**
 ```
@@ -189,7 +189,7 @@ Age Sound: Late 20s
 
 ---
 
-### TANK - "Fortress" (Dmitri Volkov)
+### TANK - "Goliath" (Dmitri Volkov)
 
 **Voice Characteristics:**
 ```
@@ -251,7 +251,7 @@ Age Sound: Early 40s
 
 ---
 
-### SPECIALIST - "Circuit" (Alex Rivera)
+### SPECIALIST - "Glitch" (Alex Rivera)
 
 **Voice Characteristics:**
 ```

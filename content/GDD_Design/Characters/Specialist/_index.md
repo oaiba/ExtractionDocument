@@ -101,9 +101,9 @@ The **Specialist** class operators bring utility and disruption to the battlefie
 
 | Counter Pick | Why |
 | :----------- | :-- |
-| **VIPER** | Raw damage overwhelms low combat power before abilities matter |
-| **HAVOC** | CQB kills Specialist before gadgets deploy |
-| **WRAITH** | Smoke blocks line of sight for EMP targeting |
+| **MAMBA** | Raw damage overwhelms low combat power before abilities matter |
+| **TARTARUS** | CQB kills Specialist before gadgets deploy |
+| **OBSIDIAN** | Smoke blocks line of sight for EMP targeting |
 
 ---
 
@@ -113,10 +113,10 @@ The **Specialist** class operators bring utility and disruption to the battlefie
 
 | Partner | Synergy | Notes |
 | :------ | :------ | :---- |
-| **PHANTOM** | Intel + Denial | Scan reveals, GLITCH disables — full information control |
-| **FORTRESS** | Tank + Disruption | FORTRESS absorbs, GLITCH strips enemy buffs |
-| **SPECTER** | Traps + Swarm | SPECTER sensors detect, PULSE swarm punishes approach |
-| **DOC** | Sustain + Utility | DOC keeps Specialist alive long enough for gadgets to matter |
+| **SONAR** | Intel + Denial | Scan reveals, GLITCH disables — full information control |
+| **GOLIATH** | Tank + Disruption | GOLIATH absorbs, GLITCH strips enemy buffs |
+| **MIRAGE** | Traps + Swarm | MIRAGE sensors detect, PULSE swarm punishes approach |
+| **SUTURE** | Sustain + Utility | SUTURE keeps Specialist alive long enough for gadgets to matter |
 
 ---
 

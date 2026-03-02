@@ -121,12 +121,12 @@ A failed mission in Taiwan left her squad dead and Yuki blamed by superiors look
 
 | Interaction | Result |
 | :---------- | :----- |
-| **Smoke + PHANTOM UAV** | Smoke blocks scan LOS — enemies in smoke not revealed |
-| **Smoke + Fire (BLAZE)** | Fire burns through smoke — smoke does not extinguish fire |
-| **Smoke + Nano Swarm (FLUX)** | Smoke does not interact with swarm |
-| **Smoke + ANGEL Shield** | Smoke passes through shield dome |
-| **Smoke + BULWARK Shield** | Smoke blocks vision through shield |
-| **Smoke + SPECTER Sensors** | Sensors still detect through smoke |
+| **Smoke + SONAR UAV** | Smoke blocks scan LOS — enemies in smoke not revealed |
+| **Smoke + Fire (IGNITION)** | Fire burns through smoke — smoke does not extinguish fire |
+| **Smoke + Nano Swarm (PULSE)** | Smoke does not interact with swarm |
+| **Smoke + AEGIS Shield** | Smoke passes through shield dome |
+| **Smoke + BASTION Shield** | Smoke blocks vision through shield |
+| **Smoke + MIRAGE Sensors** | Sensors still detect through smoke |
 
 #### Top-Down Smoke VFX
 
@@ -269,25 +269,25 @@ A failed mission in Taiwan left her squad dead and Yuki blamed by superiors look
 
 | Opponent | Why Favorable | Tactic |
 | :------- | :------------ | :----- |
-| **BULWARK** | Shield is useless when he cannot see — smoke negates his entire kit | Smoke, flank behind shield, melee |
-| **VIPER** | Combat Stim is wasted if he cannot find a target in smoke | Deploy smoke when stim activates, wait it out |
-| **FORTRESS** | Slow rotations make him vulnerable to smoke flanks | Smoke his position, attack from behind |
+| **BASTION** | Shield is useless when he cannot see — smoke negates his entire kit | Smoke, flank behind shield, melee |
+| **MAMBA** | Combat Stim is wasted if he cannot find a target in smoke | Deploy smoke when stim activates, wait it out |
+| **GOLIATH** | Slow rotations make him vulnerable to smoke flanks | Smoke his position, attack from behind |
 
 ### Even Matchups
 
 | Opponent | Notes | Key to Winning |
 | :------- | :---- | :------------- |
-| **BLAZE** | Fire vs. smoke — fire reveals you, smoke hides you | Avoid fire zones, use smoke to block fire sightlines |
-| **ANGEL** | Guardian Shield works in smoke | Wait for shield down, then push through smoke |
-| **DOC** | Healing extends fights — smoke delays but does not prevent healing | Rush DOC in smoke before drone can reposition |
+| **IGNITION** | Fire vs. smoke — fire reveals you, smoke hides you | Avoid fire zones, use smoke to block fire sightlines |
+| **AEGIS** | Guardian Shield works in smoke | Wait for shield down, then push through smoke |
+| **SUTURE** | Healing extends fights — smoke delays but does not prevent healing | Rush SUTURE in smoke before drone can reposition |
 
 ### Unfavorable Matchups
 
 | Opponent | Why Difficult | Counter Strategy |
 | :------- | :------------ | :--------------- |
-| **PHANTOM** | UAV Scan sees through smoke (unless Thermal Block upgrade) | Prioritize Thermal Block upgrade, or avoid PHANTOM scan zones |
-| **FLUX** | Nano Swarm targets area, not vision — works in smoke | Exit smoke away from swarm, reposition to fresh cover |
-| **SPECTER** | Motion sensors trigger regardless of smoke — reveals your position | Destroy sensors before deploying smoke |
+| **SONAR** | UAV Scan sees through smoke (unless Thermal Block upgrade) | Prioritize Thermal Block upgrade, or avoid SONAR scan zones |
+| **PULSE** | Nano Swarm targets area, not vision — works in smoke | Exit smoke away from swarm, reposition to fresh cover |
+| **MIRAGE** | Motion sensors trigger regardless of smoke — reveals your position | Destroy sensors before deploying smoke |
 
 ---
 
@@ -340,7 +340,7 @@ A failed mission in Taiwan left her squad dead and Yuki blamed by superiors look
 | :--- | :----- | :----- |
 | **Mist Walker** | Common | Level 10 |
 | **Sakura Shadow** | Uncommon | 1,000 Credits |
-| **Neon Phantom** | Rare | Level 25 |
+| **Neon Sonar** | Rare | Level 25 |
 | **Kunoichi** | Epic | Battle Pass S1 |
 | **Yuurei** | Legendary | Season 1 Event |
 
@@ -360,10 +360,10 @@ A failed mission in Taiwan left her squad dead and Yuki blamed by superiors look
 
 | Character | Relationship |
 | :-------- | :----------- |
-| **PHANTOM** | Respects her intel capabilities but dislikes being tracked — friendly rivalry |
-| **BLAZE** | Fire burns smoke — natural enemy on the battlefield, no personal grudge |
-| **CIPHER** | Mutual understanding of being outcasts from their own governments |
-| **SPECTER** | He hunted her once during a covert operation — she escaped, earning his respect |
+| **SONAR** | Respects her intel capabilities but dislikes being tracked — friendly rivalry |
+| **IGNITION** | Fire burns smoke — natural enemy on the battlefield, no personal grudge |
+| **GLITCH** | Mutual understanding of being outcasts from their own governments |
+| **MIRAGE** | He hunted her once during a covert operation — she escaped, earning his respect |
 
 ### Story Hooks
 
@@ -382,7 +382,7 @@ A failed mission in Taiwan left her squad dead and Yuki blamed by superiors look
 - OBSIDIAN's in-smoke vision is her most powerful mechanic — 10m outline range keeps it fair
 - First-strike +15% damage from Shadow Step should only apply to the very first attack, not sustained fire from smoke
 - Ghost Walk upgrade makes her invisible but NOT invulnerable — damage still hits, audio still present
-- Thermal Block upgrade (Slot 2) is the primary counter to PHANTOM — this is an intentional rock-paper-scissors dynamic
+- Thermal Block upgrade (Slot 2) is the primary counter to SONAR — this is an intentional rock-paper-scissors dynamic
 - Mobile Cloud should move at 50% of OBSIDIAN's movement speed — too fast makes it oppressive
 
 ### Animation Requirements

@@ -19,7 +19,7 @@ type: docs
 | **Height**      | 170 cm (5'7")     |
 | **Weight**      | 62 kg (137 lbs)   |
 
-<!-- REF_IMAGE: BLAZE operator portrait — firefighter gear modified for combat, red bandana, intense eyes, holding Molotov or flamethrower nozzle -->
+<!-- REF_IMAGE: IGNITION operator portrait — firefighter gear modified for combat, red bandana, intense eyes, holding Molotov or flamethrower nozzle -->
 
 ### Background
 
@@ -89,7 +89,7 @@ After serving as a combat engineer specializing in incendiary weapons, Ji-yoon b
 | **Fire Trail VFX (Top-Down)** | Bright orange line on ground, 2m wide, flickering flame particles |
 | **Fire Audio Radius** | 40m — crackling fire audible from distance |
 
-<!-- REF_IMAGE: BLAZE top-down view — showing fire trail behind operator as seen from above during Incendiary Rush, 2m trail width visible -->
+<!-- REF_IMAGE: IGNITION top-down view — showing fire trail behind operator as seen from above during Incendiary Rush, 2m trail width visible -->
 
 ### Difficulty Rating
 
@@ -122,12 +122,12 @@ After serving as a combat engineer specializing in incendiary weapons, Ji-yoon b
 
 | Interaction | Result |
 | :---------- | :----- |
-| **Fire + SPECTER Sensors** | Sensors destroyed by fire contact |
-| **Fire + FLUX Nano Swarm** | Both damage effects stack on enemies caught in overlap zone |
-| **Fire + ANGEL Shield** | Fire does NOT pass through Guardian Shield |
-| **Fire + BULWARK Shield** | Fire does NOT pass through Riot Shield |
-| **Fire + Smoke (WRAITH)** | Fire burns through smoke — smoke does not extinguish |
-| **Fire + EMP (CIPHER)** | EMP cancels Incendiary Rush immediately, existing fire persists |
+| **Fire + MIRAGE Sensors** | Sensors destroyed by fire contact |
+| **Fire + PULSE Nano Swarm** | Both damage effects stack on enemies caught in overlap zone |
+| **Fire + AEGIS Shield** | Fire does NOT pass through Guardian Shield |
+| **Fire + BASTION Shield** | Fire does NOT pass through Riot Shield |
+| **Fire + Smoke (OBSIDIAN)** | Fire burns through smoke — smoke does not extinguish |
+| **Fire + EMP (GLITCH)** | EMP cancels Incendiary Rush immediately, existing fire persists |
 
 #### Top-Down Fire Trail VFX
 
@@ -275,25 +275,25 @@ After serving as a combat engineer specializing in incendiary weapons, Ji-yoon b
 
 | Opponent     | Why Favorable                 | Tactic                     |
 | :----------- | :---------------------------- | :------------------------- |
-| **FORTRESS** | Slow, can't escape fire       | Trap in fire zones         |
-| **BULWARK**  | Shield doesn't stop fire      | Circle around, create fire |
-| **ANGEL**    | Shield can't heal fire damage | Burn through shield value  |
+| **GOLIATH** | Slow, can't escape fire       | Trap in fire zones         |
+| **BASTION**  | Shield doesn't stop fire      | Circle around, create fire |
+| **AEGIS**    | Shield can't heal fire damage | Burn through shield value  |
 
 ### Even Matchups
 
 | Opponent    | Notes                             | Key to Winning            |
 | :---------- | :-------------------------------- | :------------------------ |
-| **VIPER**   | Stim vs Fire, different strengths | Avoid direct gunfight     |
-| **DOC**     | Can heal through fire             | Kill drone first          |
-| **PHANTOM** | Intel vs area denial              | Fire blocks common routes |
+| **MAMBA**   | Stim vs Fire, different strengths | Avoid direct gunfight     |
+| **SUTURE**     | Can heal through fire             | Kill drone first          |
+| **SONAR** | Intel vs area denial              | Fire blocks common routes |
 
 ### Unfavorable Matchups
 
 | Opponent    | Why Difficult                 | Counter Strategy                     |
 | :---------- | :---------------------------- | :----------------------------------- |
-| **SPECTER** | Traps counter your aggression | Clear traps carefully                |
-| **FLUX**    | Nano swarm can zone you back  | Trade zones, don't engage in swarm   |
-| **WRAITH**  | Smoke negates fire visibility | Use fire for area denial, not vision |
+| **MIRAGE** | Traps counter your aggression | Clear traps carefully                |
+| **PULSE**    | Nano swarm can zone you back  | Trade zones, don't engage in swarm   |
+| **OBSIDIAN**  | Smoke negates fire visibility | Use fire for area denial, not vision |
 
 ---
 
@@ -367,10 +367,10 @@ After serving as a combat engineer specializing in incendiary weapons, Ji-yoon b
 
 | Character  | Relationship                              |
 | :--------- | :---------------------------------------- |
-| **VIPER**  | Friendly rivalry, respects his directness |
-| **DOC**    | Treated her burns, she owes him           |
-| **WRAITH** | Dislikes smoke interfering with fire      |
-| **HAVOC**  | Kindred spirits, both reckless            |
+| **MAMBA**  | Friendly rivalry, respects his directness |
+| **SUTURE**    | Treated her burns, she owes him           |
+| **OBSIDIAN** | Dislikes smoke interfering with fire      |
+| **TARTARUS**  | Kindred spirits, both reckless            |
 
 ### Story Hooks
 
@@ -409,6 +409,6 @@ After serving as a combat engineer specializing in incendiary weapons, Ji-yoon b
 
 - Fire trail must be clearly visible at minimum zoom — bright orange on ground plane
 - Fire trail width (2m) should read as a meaningful barrier from above, not a thin line
-- Scorch marks after fire expires provide temporary intel on where BLAZE has been
+- Scorch marks after fire expires provide temporary intel on where IGNITION has been
 - Fire particle effects must not obscure loot items on ground within fire zone
 - Sprint path prediction: server calculates fire spawn points every 0.5m along the actual path taken

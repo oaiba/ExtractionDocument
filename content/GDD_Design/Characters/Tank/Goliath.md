@@ -121,11 +121,11 @@ After refusing orders that would have sacrificed his men for political optics, D
 
 | Interaction | Result |
 | :---------- | :----- |
-| **Overcharge + EMP (CIPHER)** | Bonus armor stripped instantly, ability cancelled |
-| **Overcharge + Fire (BLAZE)** | Overcharge does not protect against fire DoT — extra armor absorbs it |
-| **Overcharge + HAVOC Rage** | Both buffs active simultaneously — neither cancels the other |
-| **Overcharge + ANGEL Shield** | Stack — overcharge armor + shield HP for maximum defense |
-| **Overcharge + UAV Scan (PHANTOM)** | Overcharge does not interact with scans |
+| **Overcharge + EMP (GLITCH)** | Bonus armor stripped instantly, ability cancelled |
+| **Overcharge + Fire (IGNITION)** | Overcharge does not protect against fire DoT — extra armor absorbs it |
+| **Overcharge + TARTARUS Rage** | Both buffs active simultaneously — neither cancels the other |
+| **Overcharge + AEGIS Shield** | Stack — overcharge armor + shield HP for maximum defense |
+| **Overcharge + UAV Scan (SONAR)** | Overcharge does not interact with scans |
 
 #### Top-Down Overcharge VFX
 
@@ -174,7 +174,7 @@ After refusing orders that would have sacrificed his men for political optics, D
 | Ally downed within 10 meters | +20% movement speed toward them |
 | Reviving | Take 25% less damage during revive |
 
-**Design Intent:** GOLIATH is the team Tank. While BULWARK blocks damage for one direction, GOLIATH buffs the entire team. His power scales with team proximity — solo GOLIATH is weak, but a GOLIATH team is nearly unkillable.
+**Design Intent:** GOLIATH is the team Tank. While BASTION blocks damage for one direction, GOLIATH buffs the entire team. His power scales with team proximity — solo GOLIATH is weak, but a GOLIATH team is nearly unkillable.
 
 ---
 
@@ -221,7 +221,7 @@ After refusing orders that would have sacrificed his men for political optics, D
 **Secondary Role:** Revive Specialist
 - Brotherhood gives +20% sprint speed toward downed allies
 - 25% damage resistance during revive makes pickups safer
-- GOLIATH + DOC revive combo is the strongest in the game
+- GOLIATH + SUTURE revive combo is the strongest in the game
 
 ### Combat Loop
 
@@ -241,7 +241,7 @@ After refusing orders that would have sacrificed his men for political optics, D
 **Good Positions:**
 - Center of team formation (Brotherhood range)
 - Near chokepoints with team around
-- Behind BULWARK (stack both Tank passives)
+- Behind BASTION (stack both Tank passives)
 - At extraction zone with full team
 
 **Bad Positions:**
@@ -258,25 +258,25 @@ After refusing orders that would have sacrificed his men for political optics, D
 
 | Opponent | Why Favorable | Tactic |
 | :------- | :------------ | :----- |
-| **BLAZE** | Overcharge armor absorbs incendiary damage, team stays alive | Overcharge, push through fire zone as a group |
-| **SPECTER** | Sensors reveal position but overcharge negates trap damage | Accept detection, push with armor advantage |
-| **ANGEL** | Guardian Shield is short duration — Overcharge outlasts it | Wait for shield to drop, then push with armored team |
+| **IGNITION** | Overcharge armor absorbs incendiary damage, team stays alive | Overcharge, push through fire zone as a group |
+| **MIRAGE** | Sensors reveal position but overcharge negates trap damage | Accept detection, push with armor advantage |
+| **AEGIS** | Guardian Shield is short duration — Overcharge outlasts it | Wait for shield to drop, then push with armored team |
 
 ### Even Matchups
 
 | Opponent | Notes | Key to Winning |
 | :------- | :---- | :------------- |
-| **BULWARK** | Fellow Tank — neither kills the other fast | Whoever has better team support wins the attrition |
-| **DOC** | Healing vs Armor — both extend team fights | Focus fire single targets to overwhelm healing |
-| **WRAITH** | Smoke disrupts formation but armor persists | Maintain team proximity in smoke, Brotherhood still active |
+| **BASTION** | Fellow Tank — neither kills the other fast | Whoever has better team support wins the attrition |
+| **SUTURE** | Healing vs Armor — both extend team fights | Focus fire single targets to overwhelm healing |
+| **OBSIDIAN** | Smoke disrupts formation but armor persists | Maintain team proximity in smoke, Brotherhood still active |
 
 ### Unfavorable Matchups
 
 | Opponent | Why Difficult | Counter Strategy |
 | :------- | :------------ | :--------------- |
-| **PHANTOM** | Scan reveals entire team position, enabling flanks that split formation | Push as group before scan intel can be acted on |
-| **FLUX** | Nano Swarm damages through armor, DoT bypasses flat resistance | Move team out of swarm — do not try to tank it |
-| **CIPHER** | EMP does not destroy Overcharge but strips temporary armor from allies | Activate Overcharge AFTER EMP, not before |
+| **SONAR** | Scan reveals entire team position, enabling flanks that split formation | Push as group before scan intel can be acted on |
+| **PULSE** | Nano Swarm damages through armor, DoT bypasses flat resistance | Move team out of swarm — do not try to tank it |
+| **GLITCH** | EMP does not destroy Overcharge but strips temporary armor from allies | Activate Overcharge AFTER EMP, not before |
 
 ---
 
@@ -351,10 +351,10 @@ After refusing orders that would have sacrificed his men for political optics, D
 
 | Character | Relationship |
 | :-------- | :----------- |
-| **HAVOC** | Fellow Russian — GOLIATH worries about HAVOC's self-destructive tendencies, tries to mentor him |
-| **SPECTER** | Old military contacts from overlapping operations — share tactical intelligence |
-| **ANGEL** | Debates faith — both deeply religious, different traditions, mutual respect |
-| **BULWARK** | Mentorship — BULWARK teaches shield work, GOLIATH teaches squad leadership |
+| **TARTARUS** | Fellow Russian — GOLIATH worries about TARTARUS's self-destructive tendencies, tries to mentor him |
+| **MIRAGE** | Old military contacts from overlapping operations — share tactical intelligence |
+| **AEGIS** | Debates faith — both deeply religious, different traditions, mutual respect |
+| **BASTION** | Mentorship — BASTION teaches shield work, GOLIATH teaches squad leadership |
 
 ### Story Hooks
 
@@ -374,7 +374,7 @@ After refusing orders that would have sacrificed his men for political optics, D
 - Brotherhood passive must NOT stack with multiple GOLIATH operators — cap at one instance
 - Reactive Armor upgrade (20% negate chance) should not apply to headshots
 - Last Stand upgrade is emotionally powerful but mechanically niche — buff remaining duration gives team 4-6 seconds post-down
-- GOLIATH + DOC combo is intentionally the strongest duo in the game — counter with CIPHER EMP
+- GOLIATH + SUTURE combo is intentionally the strongest duo in the game — counter with GLITCH EMP
 
 ### Animation Requirements
 
@@ -398,7 +398,7 @@ After refusing orders that would have sacrificed his men for political optics, D
 ### Top-Down Specific Notes
 
 - Overcharge 8m radius circle must be visible to teammates at minimum zoom — shows buff zone
-- Blue armor glow should be clearly distinct from ANGEL shield's blue-white — use deeper steel blue
+- Blue armor glow should be clearly distinct from AEGIS shield's blue-white — use deeper steel blue
 - Brotherhood passive proximity (5m) should show a subtle connecting line between GOLIATH and nearby ally
 - LMG barrel extending forward from the model makes GOLIATH identifiable by weapon type from above
 - Overcharge armor stripping by EMP should have dramatic VFX — communicate vulnerability to both teams

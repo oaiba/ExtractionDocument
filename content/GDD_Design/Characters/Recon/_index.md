@@ -81,9 +81,9 @@ The **Recon** class operators excel at gathering intelligence and controlling in
 
 | Counter Pick | Why |
 | :----------- | :-- |
-| **VIPER** | Burst damage kills before intel matters |
-| **HAVOC** | CQB overwhelms fragile Recon operators |
-| **FLUX** | Nano Swarm blocks escape routes |
+| **MAMBA** | Burst damage kills before intel matters |
+| **TARTARUS** | CQB overwhelms fragile Recon operators |
+| **PULSE** | Nano Swarm blocks escape routes |
 
 ---
 
@@ -93,10 +93,10 @@ The **Recon** class operators excel at gathering intelligence and controlling in
 
 | Partner | Synergy | Notes |
 | :------ | :------ | :---- |
-| **DOC** | Intel + Sustain | Know threats, heal through encounters |
-| **CIPHER** | Scan + EMP | Full information control — scan reveals, EMP disables |
-| **VIPER** | Intel + Damage | Scan position, burst down |
-| **FORTRESS** | Intel + Tank | Reveal flankers, FORTRESS anchors position |
+| **SUTURE** | Intel + Sustain | Know threats, heal through encounters |
+| **GLITCH** | Scan + EMP | Full information control — scan reveals, EMP disables |
+| **MAMBA** | Intel + Damage | Scan position, burst down |
+| **GOLIATH** | Intel + Tank | Reveal flankers, GOLIATH anchors position |
 
 ---
 

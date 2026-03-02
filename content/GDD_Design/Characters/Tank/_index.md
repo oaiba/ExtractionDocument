@@ -51,7 +51,7 @@ The **Tank** class operators absorb damage and protect teammates. They excel at 
 
 **Avoid Tank when:**
 - Map requires fast rotations between objectives
-- Enemy team has multiple flankers (WRAITH, SPECTER)
+- Enemy team has multiple flankers (OBSIDIAN, MIRAGE)
 - Your team already has a Tank
 - You are playing solo and need to cover ground quickly
 
@@ -101,9 +101,9 @@ Tanks often overcommit. Your job is to absorb damage, not chase kills. If your a
 
 | Counter Pick | Why |
 | :----------- | :-- |
-| **WRAITH** | Smoke flanks around shield, attacks from blind angle |
-| **CIPHER** | EMP disables Shield and strips Overcharge armor |
-| **PHANTOM** | Intel reveals Tank position for flanking setup |
+| **OBSIDIAN** | Smoke flanks around shield, attacks from blind angle |
+| **GLITCH** | EMP disables Shield and strips Overcharge armor |
+| **SONAR** | Intel reveals Tank position for flanking setup |
 
 ---
 
@@ -113,10 +113,10 @@ Tanks often overcommit. Your job is to absorb damage, not chase kills. If your a
 
 | Partner | Synergy | Notes |
 | :------ | :------ | :---- |
-| **DOC** | Tank + Healer | Sustain through any fight, classic combo |
-| **HAVOC** | Shield + CQB | BASTION leads, HAVOC flanks behind shield chaos |
-| **BLAZE** | Tank + Area Denial | Hold chokepoint, set fire to flanking routes |
-| **ANGEL** | Double Defense | Guardian Shield + Riot Shield = near-invulnerable extraction |
+| **SUTURE** | Tank + Healer | Sustain through any fight, classic combo |
+| **TARTARUS** | Shield + CQB | BASTION leads, TARTARUS flanks behind shield chaos |
+| **IGNITION** | Tank + Area Denial | Hold chokepoint, set fire to flanking routes |
+| **AEGIS** | Double Defense | Guardian Shield + Riot Shield = near-invulnerable extraction |
 
 ---
 

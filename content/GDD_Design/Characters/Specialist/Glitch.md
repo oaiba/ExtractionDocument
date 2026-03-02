@@ -104,22 +104,22 @@ He leaked what he could and went underground, using his skills to level the play
 | Ability Disable    | Enemy operators        | 10 seconds |
 | Gadget Destruction | All gadgets in range   | Permanent  |
 | HUD Disruption     | Enemies                | 5 seconds  |
-| Shield Destruction | ANGEL, BULWARK shields | Instant    |
+| Shield Destruction | AEGIS, BASTION shields | Instant    |
 
 #### EMP Interaction Matrix
 
 | Target | Effect | Duration |
 | :----- | :----- | :------- |
-| **ANGEL Guardian Shield** | Destroyed instantly | Permanent (until redeployed) |
-| **BULWARK Riot Shield** | Disabled (not destroyed) | 5 seconds |
-| **DOC Healing Drone** | Destroyed instantly | Permanent |
-| **PHANTOM UAV** | Destroyed, falls from sky | Permanent |
-| **SPECTER Sensors** | All in radius destroyed | Permanent |
-| **FLUX Nano Swarm** | Dispersed instantly | Permanent |
-| **VIPER Combat Stim** | Cancelled | Immediate |
-| **HAVOC Berserker Rage** | Cancelled | Immediate |
-| **WRAITH Smoke Screen** | Not affected | N/A — smoke is chemical, not tech |
-| **FORTRESS Overcharge** | Bonus armor stripped | Immediate |
+| **AEGIS Guardian Shield** | Destroyed instantly | Permanent (until redeployed) |
+| **BASTION Riot Shield** | Disabled (not destroyed) | 5 seconds |
+| **SUTURE Healing Drone** | Destroyed instantly | Permanent |
+| **SONAR UAV** | Destroyed, falls from sky | Permanent |
+| **MIRAGE Sensors** | All in radius destroyed | Permanent |
+| **PULSE Nano Swarm** | Dispersed instantly | Permanent |
+| **MAMBA Combat Stim** | Cancelled | Immediate |
+| **TARTARUS Berserker Rage** | Cancelled | Immediate |
+| **OBSIDIAN Smoke Screen** | Not affected | N/A — smoke is chemical, not tech |
+| **GOLIATH Overcharge** | Bonus armor stripped | Immediate |
 | **Enemy HUD** | Static distortion | 5 seconds |
 
 #### Top-Down EMP VFX
@@ -130,7 +130,7 @@ He leaked what he could and went underground, using his skills to level the play
 | EMP blast | Blue-white ring expanding outward from operator (15m radius) |
 | EMP on enemy | Blue static sparks on affected operator, HUD disruption VFX |
 | Gadget destroyed | Blue flash + debris scatter from gadget position |
-| Shield broken | Dramatic shatter VFX on ANGEL dome / BULWARK arc flicker |
+| Shield broken | Dramatic shatter VFX on AEGIS dome / BASTION arc flicker |
 
 
 | Property       | Value                  |
@@ -144,7 +144,7 @@ He leaked what he could and went underground, using his skills to level the play
 
 | Category | Affected |
 | :------- | :------- |
-| **Destroys** | ANGEL Shield, Healing Drone, Motion Sensors, Turrets |
+| **Destroys** | AEGIS Shield, Healing Drone, Motion Sensors, Turrets |
 | **Disables** | Combat Stim, Berserker, UAV Scan, Smoke Emitters |
 | **Immune** | Passive abilities, Weapons, Armor |
 
@@ -254,26 +254,26 @@ He leaked what he could and went underground, using his skills to level the play
 
 | Opponent    | Why Favorable              | Tactic               |
 | :---------- | :------------------------- | :------------------- |
-| **ANGEL**   | Shield destroyed instantly | EMP > Push           |
-| **DOC**     | Drone destroyed            | Kill drone first     |
-| **BULWARK** | Shield disabled            | EMP ends his defense |
-| **SPECTER** | Sensors destroyed          | Clear his traps      |
+| **AEGIS**   | Shield destroyed instantly | EMP > Push           |
+| **SUTURE**     | Drone destroyed            | Kill drone first     |
+| **BASTION** | Shield disabled            | EMP ends his defense |
+| **MIRAGE** | Sensors destroyed          | Clear his traps      |
 
 ### Even Matchups
 
 | Opponent     | Notes                   | Key to Winning    |
 | :----------- | :---------------------- | :---------------- |
-| **PHANTOM**  | Both tech-focused       | Timing war        |
-| **FLUX**     | Both disable            | Who EMPs first    |
-| **FORTRESS** | Armor buff not disabled | Focus fire anyway |
+| **SONAR**  | Both tech-focused       | Timing war        |
+| **PULSE**     | Both disable            | Who EMPs first    |
+| **GOLIATH** | Armor buff not disabled | Focus fire anyway |
 
 ### Unfavorable Matchups
 
 | Opponent  | Why Difficult                           | Counter Strategy |
 | :-------- | :-------------------------------------- | :--------------- |
-| **VIPER** | After EMP, he still out-guns you        | Team support     |
-| **HAVOC** | Berserker can activate before/after EMP | Keep range       |
-| **BLAZE** | Fire isn't tech                         | Avoid fire zones |
+| **MAMBA** | After EMP, he still out-guns you        | Team support     |
+| **TARTARUS** | Berserker can activate before/after EMP | Keep range       |
+| **IGNITION** | Fire isn't tech                         | Avoid fire zones |
 
 ---
 
@@ -336,16 +336,16 @@ He leaked what he could and went underground, using his skills to level the play
 
 | Character | Relationship |
 | :-------- | :----------- |
-| **PHANTOM** | Complicated — she hunted leakers like him at the CIA, now forced allies |
-| **FLUX** | Fellow outcasts, share tech knowledge — closest friend in the roster |
-| **ANGEL** | She represents the institutions he hates — philosophical tension |
-| **VIPER** | VIPER distrusts him — "Too many secrets." GLITCH finds the suspicion amusing |
+| **SONAR** | Complicated — she hunted leakers like him at the CIA, now forced allies |
+| **PULSE** | Fellow outcasts, share tech knowledge — closest friend in the roster |
+| **AEGIS** | She represents the institutions he hates — philosophical tension |
+| **MAMBA** | MAMBA distrusts him — "Too many secrets." GLITCH finds the suspicion amusing |
 
 ### Story Hooks
 
 - Leaked NSA surveillance tools are now being used by Corporation — feels responsible
 - Maintains a dark web presence under the alias "Z3R0_DAY"
-- Seeking the pharmaceutical exec who weaponized FLUX's nano research
+- Seeking the pharmaceutical exec who weaponized PULSE's nano research
 - Dead drop quest chain — encrypted messages hidden across all maps
 
 ---
@@ -356,7 +356,7 @@ He leaked what he could and went underground, using his skills to level the play
 
 - EMP Blast is the strongest counter-ability in the game — 110s cooldown is justified
 - EMP should NOT cancel passive abilities or deactivate weapons — only active abilities and deployables
-- Shield Destruction is instant and permanent — ANGEL and BULWARK players should hear a distinct "shield broken" audio cue
+- Shield Destruction is instant and permanent — AEGIS and BASTION players should hear a distinct "shield broken" audio cue
 - -10% weapon accuracy class trait ensures GLITCH loses straight gunfights — his power is in disruption timing
 - Cascade Failure upgrade (Slot 2) explosive damage should have a minimum range to prevent self-harm from nearby gadget destruction
 

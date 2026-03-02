@@ -123,13 +123,13 @@ When attempts to expose them through legal channels failed, Maya took matters in
 
 | Interaction | Result |
 | :---------- | :----- |
-| **Swarm + EMP (CIPHER)** | Swarm dispersed instantly — primary counter |
-| **Swarm + Fire (BLAZE)** | Both effects stack on enemies in overlap zone |
-| **Swarm + Smoke (WRAITH)** | Swarm operates through smoke normally |
-| **Swarm + ANGEL Shield** | Swarm passes through Guardian Shield |
-| **Swarm + BULWARK Shield** | Swarm ignores Riot Shield — passes through |
-| **Swarm + SPECTER Sensors** | Swarm does not affect sensors |
-| **Swarm + DOC Drone** | Swarm heal + drone heal stack on allies |
+| **Swarm + EMP (GLITCH)** | Swarm dispersed instantly — primary counter |
+| **Swarm + Fire (IGNITION)** | Both effects stack on enemies in overlap zone |
+| **Swarm + Smoke (OBSIDIAN)** | Swarm operates through smoke normally |
+| **Swarm + AEGIS Shield** | Swarm passes through Guardian Shield |
+| **Swarm + BASTION Shield** | Swarm ignores Riot Shield — passes through |
+| **Swarm + MIRAGE Sensors** | Swarm does not affect sensors |
+| **Swarm + SUTURE Drone** | Swarm heal + drone heal stack on allies |
 
 #### Top-Down Swarm VFX
 
@@ -238,7 +238,7 @@ When attempts to expose them through legal channels failed, Maya took matters in
 - Provide ambient healing
 
 **Secondary Role:** Hybrid Support
-- Not a full healer, but supplements DOC/ANGEL
+- Not a full healer, but supplements SUTURE/AEGIS
 - Self-sustaining flanker
 - Extended presence in combat
 
@@ -263,25 +263,25 @@ When attempts to expose them through legal channels failed, Maya took matters in
 
 | Opponent    | Why Favorable                | Tactic                 |
 | :---------- | :--------------------------- | :--------------------- |
-| **VIPER**   | Swarm slows his rush         | Fight in swarm         |
-| **HAVOC**   | Slows his CQB approach       | Keep distance in swarm |
-| **BULWARK** | Swarm damages through shield | Surround with nano     |
+| **MAMBA**   | Swarm slows his rush         | Fight in swarm         |
+| **TARTARUS**   | Slows his CQB approach       | Keep distance in swarm |
+| **BASTION** | Swarm damages through shield | Surround with nano     |
 
 ### Even Matchups
 
 | Opponent     | Notes               | Key to Winning             |
 | :----------- | :------------------ | :------------------------- |
-| **DOC**      | Both sustain        | Your damage vs his healing |
-| **FORTRESS** | Armor vs nano       | Focus single target        |
-| **SPECTER**  | Control specialists | Map control battle         |
+| **SUTURE**      | Both sustain        | Your damage vs his healing |
+| **GOLIATH** | Armor vs nano       | Focus single target        |
+| **MIRAGE**  | Control specialists | Map control battle         |
 
 ### Unfavorable Matchups
 
 | Opponent    | Why Difficult         | Counter Strategy   |
 | :---------- | :-------------------- | :----------------- |
-| **CIPHER**  | EMP destroys swarm    | Deploy after EMP   |
-| **BLAZE**   | Fire damages you back | Avoid fire zones   |
-| **PHANTOM** | Can see you in swarm  | Move unpredictably |
+| **GLITCH**  | EMP destroys swarm    | Deploy after EMP   |
+| **IGNITION**   | Fire damages you back | Avoid fire zones   |
+| **SONAR** | Can see you in swarm  | Move unpredictably |
 
 ---
 
@@ -344,16 +344,16 @@ When attempts to expose them through legal channels failed, Maya took matters in
 
 | Character | Relationship |
 | :-------- | :----------- |
-| **CIPHER** | Fellow outcasts, share tech knowledge — closest friend/collaborator |
-| **DOC** | Medical debate partners — DOC uses traditional medicine, PULSE uses nanotech. Mutual professional respect |
-| **ANGEL** | Faith vs Science discussions — ANGEL prays, PULSE programs. Surprisingly good friends |
-| **VIPER** | VIPER finds her nanobots unsettling — "Keep those things away from me" |
+| **GLITCH** | Fellow outcasts, share tech knowledge — closest friend/collaborator |
+| **SUTURE** | Medical debate partners — SUTURE uses traditional medicine, PULSE uses nanotech. Mutual professional respect |
+| **AEGIS** | Faith vs Science discussions — AEGIS prays, PULSE programs. Surprisingly good friends |
+| **MAMBA** | MAMBA finds her nanobots unsettling — "Keep those things away from me" |
 
 ### Story Hooks
 
 - Hunting the executives who stole her research at the pharmaceutical conglomerate
 - Developing new nanobot applications in the field (quest chain: test prototypes for rewards)
-- Secretly working on a cure for DOC's chronic condition using nano-medicine
+- Secretly working on a cure for SUTURE's chronic condition using nano-medicine
 - Discovered that Corporation is mass-producing her stolen nano-swarm tech for military use
 
 ---
@@ -402,7 +402,7 @@ When attempts to expose them through legal channels failed, Maya took matters in
 
 - Swarm silver cloud must be visible at minimum zoom — area denial information for both teams
 - Red (enemy damage) and green (ally heal) particle streams provide instant team understanding from above
-- Swarm cloud should be clearly distinct from WRAITH smoke: silver/shimmering vs gray/opaque
+- Swarm cloud should be clearly distinct from OBSIDIAN smoke: silver/shimmering vs gray/opaque
 - Dual Deployment upgrade splits into 2x 4m swarms — each should be independently visible
 - Swarm redirection animation should show cloud flowing toward new position (1-2 second travel time)
 - -10% weapon accuracy (Specialist class) means PULSE should avoid straight gunfights

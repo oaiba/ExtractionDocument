@@ -19,7 +19,7 @@ type: docs
 | **Height**      | 168 cm (5'6")               |
 | **Weight**      | 60 kg (132 lbs)             |
 
-<!-- REF_IMAGE: VIPER operator portrait — athletic build, tactical cap, green eyes, holding combat knife, aggressive stance -->
+<!-- REF_IMAGE: MAMBA operator portrait — athletic build, tactical cap, green eyes, holding combat knife, aggressive stance -->
 
 ### Background
 
@@ -89,7 +89,7 @@ After a classified operation went sideways, she was left for dead by her handler
 | **Stim Active VFX (Top-Down)** | Orange body glow, subtle particle trail when moving |
 | **Stim Audio Radius** | 25m — enemies within range hear injection hiss |
 
-<!-- REF_IMAGE: VIPER top-down view — showing operator silhouette from 60-degree camera with orange accent zones highlighted, stim active vs inactive comparison -->
+<!-- REF_IMAGE: MAMBA top-down view — showing operator silhouette from 60-degree camera with orange accent zones highlighted, stim active vs inactive comparison -->
 
 ### Difficulty Rating
 
@@ -261,25 +261,25 @@ After a classified operation went sideways, she was left for dead by her handler
 
 | Opponent    | Why Favorable                | Tactic                        |
 | :---------- | :--------------------------- | :---------------------------- |
-| **DOC**     | Cannot outheal your damage   | Rush before drone deploys     |
-| **PHANTOM** | Fragile, no combat advantage | Win aim duel                  |
-| **FLUX**    | Low combat power             | Aggressive push through swarm |
+| **SUTURE**     | Cannot outheal your damage   | Rush before drone deploys     |
+| **SONAR** | Fragile, no combat advantage | Win aim duel                  |
+| **PULSE**    | Low combat power             | Aggressive push through swarm |
 
 ### Even Matchups
 
 | Opponent    | Notes                      | Key to Winning                    |
 | :---------- | :------------------------- | :-------------------------------- |
-| **BLAZE**   | Similar role, fire vs stim | Avoid fire zones, use range       |
-| **SPECTER** | Traps are annoying         | Check corners, don't rush blindly |
-| **ANGEL**   | Shield is strong           | Wait for shield to drop           |
+| **IGNITION**   | Similar role, fire vs stim | Avoid fire zones, use range       |
+| **MIRAGE** | Traps are annoying         | Check corners, don't rush blindly |
+| **AEGIS**   | Shield is strong           | Wait for shield to drop           |
 
 ### Unfavorable Matchups
 
 | Opponent    | Why Difficult            | Counter Strategy              |
 | :---------- | :----------------------- | :---------------------------- |
-| **BULWARK** | Shield blocks all damage | Flank or wait for shield down |
-| **CIPHER**  | EMP cancels your stim    | Bait EMP, then engage         |
-| **HAVOC**   | Out-damages you in CQB   | Keep range, use cover         |
+| **BASTION** | Shield blocks all damage | Flank or wait for shield down |
+| **GLITCH**  | EMP cancels your stim    | Bait EMP, then engage         |
+| **TARTARUS**   | Out-damages you in CQB   | Keep range, use cover         |
 
 ---
 
@@ -351,10 +351,10 @@ After a classified operation went sideways, she was left for dead by her handler
 
 | Character   | Relationship                    |
 | :---------- | :------------------------------ |
-| **DOC**     | Served together, mutual respect |
-| **BULWARK** | Rival, different philosophies   |
-| **CIPHER**  | Distrusts - "Too many secrets"  |
-| **PHANTOM** | Professional admiration         |
+| **SUTURE**     | Served together, mutual respect |
+| **BASTION** | Rival, different philosophies   |
+| **GLITCH**  | Distrusts - "Too many secrets"  |
+| **SONAR** | Professional admiration         |
 
 ### Story Hooks
 
@@ -392,6 +392,6 @@ After a classified operation went sideways, she was left for dead by her handler
 ### Top-Down Specific Notes
 
 - Stim orange glow must remain visible at minimum zoom (furthest camera distance)
-- Stim audio cue must be directional — enemies should be able to locate VIPER by sound
+- Stim audio cue must be directional — enemies should be able to locate MAMBA by sound
 - Particle trail during stim should be subtle enough not to obscure ground loot but visible enough for enemy awareness
 - When viewed from top-down, stim injection animation should show arm movement clearly (not hidden by body)

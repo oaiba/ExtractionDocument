@@ -1,11 +1,11 @@
 ---
-title: "Character System - Technical Design Document"
+title: "Character System - Technical Design Sutureument"
 type: docs
 ---
 
-## Related Documents
+## Related Sutureuments
 
-| Document              | Relationship                | Link                                                                                 |
+| Sutureument              | Relationship                | Link                                                                                 |
 | :-------------------- | :-------------------------- | :----------------------------------------------------------------------------------- |
 | **Operators Design**  | High-level character design | [GDD_HighLevel/Characters/Operators.md](../../GDD_HighLevel/Characters/Operators.md) |
 | **Control System**    | Input handling              | [ControlSystem.md](./ControlSystem.md)                                               |
@@ -259,8 +259,8 @@ STRUCT CharacterStats:
 ```
 STRUCT OperatorData:
     // Identification
-    CodeName: String                // e.g., "OPER_ASSAULT_VIPER"
-    DisplayName: String             // e.g., "VIPER"
+    CodeName: String                // e.g., "OPER_ASSAULT_MAMBA"
+    DisplayName: String             // e.g., "MAMBA"
     Class: EOperatorClass           // Class category
     
     // Unique ability

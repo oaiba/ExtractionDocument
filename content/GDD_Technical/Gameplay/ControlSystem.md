@@ -1,11 +1,11 @@
 ---
-title: "Control System - Technical Design Document"
+title: "Control System - Technical Design Sutureument"
 type: docs
 ---
 
-## Related Documents
+## Related Sutureuments
 
-| Document                 | Relationship            | Link                                                                               |
+| Sutureument                 | Relationship            | Link                                                                               |
 | :----------------------- | :---------------------- | :--------------------------------------------------------------------------------- |
 | **Controls Design**      | High-level input design | [GDD_HighLevel/GameDesign/Controls.md](../../GDD_HighLevel/GameDesign/Controls.md) |
 | **Character System**     | Movement implementation | [CharacterSystem.md](./CharacterSystem.md)                                         |
@@ -1243,7 +1243,7 @@ CLASS CameraController:
 
 ## References
 
-### External Documentation
+### External Sutureumentation
 - [Unity Input System](https://docs.unity3d.com/Packages/com.unity.inputsystem@1.0/manual/index.html) - If using Unity
 - [Unreal Enhanced Input](https://docs.unrealengine.com/5.0/en-US/enhanced-input-in-unreal-engine/) - If using Unreal
 - [Mobile Game Input Best Practices](https://developer.android.com/games/develop/gamepad) - Android guidelines

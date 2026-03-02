@@ -100,8 +100,8 @@ The Vatican quietly approached her afterward, offering training with Swiss Guard
 | **Regen Rate** | 20 HP/sec | Only when not taking damage for 2s |
 | **Projectile Blocking** | One-way | Allies shoot out, enemies cannot shoot in |
 | **Player Walk-Through** | Yes | Enemies can physically enter dome |
-| **Fire Pass-Through** | No | BLAZE fire blocked by shield wall |
-| **Nano Swarm Pass-Through** | Yes | FLUX swarm passes through shield |
+| **Fire Pass-Through** | No | IGNITION fire blocked by shield wall |
+| **Nano Swarm Pass-Through** | Yes | PULSE swarm passes through shield |
 | **EMP Vulnerability** | Destroyed instantly | Primary counterplay |
 
 ### Difficulty Rating
@@ -136,13 +136,13 @@ The Vatican quietly approached her afterward, offering training with Swiss Guard
 
 | Interaction | Result |
 | :---------- | :----- |
-| **Shield + EMP (CIPHER)** | Shield destroyed instantly — primary counter |
-| **Shield + Fire (BLAZE)** | Fire does NOT pass through shield wall |
-| **Shield + Nano Swarm (FLUX)** | Swarm passes through shield — does not block |
-| **Shield + HAVOC Melee** | HAVOC can push through shield |
-| **Shield + UAV Scan (PHANTOM)** | Scan does NOT reveal operators inside shield |
-| **Shield + Smoke (WRAITH)** | Smoke passes through shield dome |
-| **Shield + BULWARK Shield** | Both shields stack (dome + flat shield) |
+| **Shield + EMP (GLITCH)** | Shield destroyed instantly — primary counter |
+| **Shield + Fire (IGNITION)** | Fire does NOT pass through shield wall |
+| **Shield + Nano Swarm (PULSE)** | Swarm passes through shield — does not block |
+| **Shield + TARTARUS Melee** | TARTARUS can push through shield |
+| **Shield + UAV Scan (SONAR)** | Scan does NOT reveal operators inside shield |
+| **Shield + Smoke (OBSIDIAN)** | Smoke passes through shield dome |
+| **Shield + BASTION Shield** | Both shields stack (dome + flat shield) |
 
 #### Top-Down Shield VFX
 
@@ -174,9 +174,9 @@ The Vatican quietly approached her afterward, offering training with Swiss Guard
 | **Advance Shield**    | Walk forward, team shoots through |
 | **Emergency Cover**   | No natural cover? Create it       |
 
-#### Key Difference from DOC
+#### Key Difference from SUTURE
 
-| DOC                      | AEGIS                        |
+| SUTURE                      | AEGIS                        |
 | :----------------------- | :--------------------------- |
 | Heals damage after taken | Prevents damage entirely     |
 | Passive, fire-and-forget | Active, requires positioning |
@@ -298,25 +298,25 @@ The Vatican quietly approached her afterward, offering training with Swiss Guard
 
 | Opponent  | Why Favorable               | Tactic               |
 | :-------- | :-------------------------- | :------------------- |
-| **VIPER** | Shield absorbs stim damage  | Tank his burst       |
-| **BLAZE** | Fire can't penetrate shield | Protect from fire    |
-| **HAVOC** | He can't reach you in dome  | Shield and burst him |
+| **MAMBA** | Shield absorbs stim damage  | Tank his burst       |
+| **IGNITION** | Fire can't penetrate shield | Protect from fire    |
+| **TARTARUS** | He can't reach you in dome  | Shield and burst him |
 
 ### Even Matchups
 
 | Opponent    | Notes                     | Key to Winning     |
 | :---------- | :------------------------ | :----------------- |
-| **DOC**     | Different support styles  | Team comp decides  |
-| **BULWARK** | Shield vs Shield          | Positioning battle |
-| **PHANTOM** | Intel useless if shielded | Timing matters     |
+| **SUTURE**     | Different support styles  | Team comp decides  |
+| **BASTION** | Shield vs Shield          | Positioning battle |
+| **SONAR** | Intel useless if shielded | Timing matters     |
 
 ### Unfavorable Matchups
 
 | Opponent    | Why Difficult                 | Counter Strategy         |
 | :---------- | :---------------------------- | :----------------------- |
-| **CIPHER**  | EMP destroys shield instantly | Stay out of EMP range    |
-| **SPECTER** | Traps inside dome still work  | Clear area before dome   |
-| **FLUX**    | Swarm ignores shield          | Exit dome to fight swarm |
+| **GLITCH**  | EMP destroys shield instantly | Stay out of EMP range    |
+| **MIRAGE** | Traps inside dome still work  | Clear area before dome   |
+| **PULSE**    | Swarm ignores shield          | Exit dome to fight swarm |
 
 ---
 
@@ -388,10 +388,10 @@ The Vatican quietly approached her afterward, offering training with Swiss Guard
 
 | Character    | Relationship                           |
 | :----------- | :------------------------------------- |
-| **DOC**      | Deep mutual respect, different methods |
-| **VIPER**    | Saved his soul, he protects her        |
-| **FORTRESS** | Orthodox vs Catholic debates           |
-| **PHANTOM**  | She finds her methods troubling        |
+| **SUTURE**      | Deep mutual respect, different methods |
+| **MAMBA**    | Saved his soul, he protects her        |
+| **GOLIATH** | Orthodox vs Catholic debates           |
+| **SONAR**  | She finds her methods troubling        |
 
 ### Story Hooks
 

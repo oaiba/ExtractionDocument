@@ -19,7 +19,7 @@ type: docs
 | **Height**      | 178 cm (5'10")            |
 | **Weight**      | 76 kg (168 lbs)           |
 
-<!-- REF_IMAGE: DOC operator portrait — field medic gear, white cross on vest, kindly but tired expression, medical drone hovering nearby -->
+<!-- REF_IMAGE: SUTURE operator portrait — field medic gear, white cross on vest, kindly but tired expression, medical drone hovering nearby -->
 
 ### Background
 
@@ -135,12 +135,12 @@ After a hostile extraction went wrong, Tariq watched helplessly as soldiers died
 
 | Interaction | Result |
 | :---------- | :----- |
-| **Drone + EMP (CIPHER)** | Drone destroyed instantly |
-| **Drone + Fire (BLAZE)** | Not affected — drone hovers above fire |
-| **Drone + Nano Swarm (FLUX)** | Not affected — swarm targets ground units |
-| **Drone + UAV Scan (PHANTOM)** | Drone position revealed to scanning team |
-| **Drone + BULWARK Shield** | Drone heals through shield |
-| **Drone + Smoke (WRAITH)** | Drone heals through smoke |
+| **Drone + EMP (GLITCH)** | Drone destroyed instantly |
+| **Drone + Fire (IGNITION)** | Not affected — drone hovers above fire |
+| **Drone + Nano Swarm (PULSE)** | Not affected — swarm targets ground units |
+| **Drone + UAV Scan (SONAR)** | Drone position revealed to scanning team |
+| **Drone + BASTION Shield** | Drone heals through shield |
+| **Drone + Smoke (OBSIDIAN)** | Drone heals through smoke |
 
 #### Top-Down Drone VFX
 
@@ -284,25 +284,25 @@ After a hostile extraction went wrong, Tariq watched helplessly as soldiers died
 
 | Opponent     | Why Favorable                   | Tactic                 |
 | :----------- | :------------------------------ | :--------------------- |
-| **SPECTER**  | Traps can't kill if you heal    | Out-sustain the damage |
-| **FLUX**     | Nano swarm is slow damage       | Heal through it        |
-| **FORTRESS** | Low offense, you sustain better | Attrition warfare      |
+| **MIRAGE**  | Traps can't kill if you heal    | Out-sustain the damage |
+| **PULSE**     | Nano swarm is slow damage       | Heal through it        |
+| **GOLIATH** | Low offense, you sustain better | Attrition warfare      |
 
 ### Even Matchups
 
 | Opponent    | Notes                       | Key to Winning          |
 | :---------- | :-------------------------- | :---------------------- |
-| **ANGEL**   | Both Support, comes to team | Your team's DPS matters |
-| **PHANTOM** | Intel vs healing            | Stay hidden, heal safe  |
-| **WRAITH**  | Smoke disrupts drone        | Place drone carefully   |
+| **AEGIS**   | Both Support, comes to team | Your team's DPS matters |
+| **SONAR** | Intel vs healing            | Stay hidden, heal safe  |
+| **OBSIDIAN**  | Smoke disrupts drone        | Place drone carefully   |
 
 ### Unfavorable Matchups
 
 | Opponent    | Why Difficult               | Counter Strategy         |
 | :---------- | :-------------------------- | :----------------------- |
-| **VIPER**   | Burst exceeds healing       | Focus fire him first     |
-| **HAVOC**   | Kills before heal matters   | Stay far from engagement |
-| **BULWARK** | Protected DPS behind shield | Wait for push to end     |
+| **MAMBA**   | Burst exceeds healing       | Focus fire him first     |
+| **TARTARUS**   | Kills before heal matters   | Stay far from engagement |
+| **BASTION** | Protected DPS behind shield | Wait for push to end     |
 
 ---
 
@@ -355,8 +355,8 @@ After a hostile extraction went wrong, Tariq watched helplessly as soldiers died
 | **Field Surgeon**     | Common    | Level 10        |
 | **Desert Medic**      | Uncommon  | 1,000 Credits   |
 | **Trauma Team**       | Rare      | Level 25        |
-| **Battlefield Angel** | Epic      | Battle Pass S1  |
-| **Plague Doctor**     | Legendary | Halloween Event |
+| **Battlefield Aegis** | Epic      | Battle Pass S1  |
+| **Plague Suturetor**     | Legendary | Halloween Event |
 
 ### Signature Items
 
@@ -374,10 +374,10 @@ After a hostile extraction went wrong, Tariq watched helplessly as soldiers died
 
 | Character   | Relationship                          |
 | :---------- | :------------------------------------ |
-| **VIPER**   | Served together, saved his life twice |
-| **BLAZE**   | Treated her burns, protective of her  |
-| **ANGEL**   | Respects her dedication               |
-| **BULWARK** | Old friends, philosophical opposites  |
+| **MAMBA**   | Served together, saved his life twice |
+| **IGNITION**   | Treated her burns, protective of her  |
+| **AEGIS**   | Respects her dedication               |
+| **BASTION** | Old friends, philosophical opposites  |
 
 ### Story Hooks
 
@@ -418,4 +418,4 @@ After a hostile extraction went wrong, Tariq watched helplessly as soldiers died
 - Drone model should be slightly larger than realistic to ensure visibility from above
 - Green healing particles from drone to allies must be visible but not obscure combat (thin streams)
 - Drone destruction VFX should be dramatic enough to communicate to the team that healing is gone
-- Drone position revealed by PHANTOM UAV — this is a deliberate counterplay vector
+- Drone position revealed by SONAR UAV — this is a deliberate counterplay vector

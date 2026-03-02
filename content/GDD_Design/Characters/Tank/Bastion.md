@@ -103,7 +103,7 @@ After a political scandal forced budget cuts that disbanded his unit, Hans could
 | **Shield Bash Range** | 2 meters | Close range only |
 | **Shield Bash Cooldown** | 5 seconds | Internal cooldown |
 | **EMP Vulnerability** | Disabled 5s | Not destroyed, temporarily disabled |
-| **Fire Pass-Through** | No | Blocks BLAZE fire trail |
+| **Fire Pass-Through** | No | Blocks IGNITION fire trail |
 | **Smoke Pass-Through** | Yes | Smoke passes through shield |
 
 ### Difficulty Rating
@@ -136,12 +136,12 @@ After a political scandal forced budget cuts that disbanded his unit, Hans could
 
 | Interaction | Result |
 | :---------- | :----- |
-| **Shield + EMP (CIPHER)** | Shield disabled for 5 seconds (not destroyed) |
-| **Shield + Fire (BLAZE)** | Fire does NOT pass through riot shield |
-| **Shield + Nano Swarm (FLUX)** | Swarm ignores shield — passes through |
-| **Shield + HAVOC Melee** | Melee bash staggers shield (1s), does not break |
-| **Shield + UAV Scan (PHANTOM)** | Does not reveal shielded operator |
-| **Shield + Smoke (WRAITH)** | Smoke blocks vision around/through shield |
+| **Shield + EMP (GLITCH)** | Shield disabled for 5 seconds (not destroyed) |
+| **Shield + Fire (IGNITION)** | Fire does NOT pass through riot shield |
+| **Shield + Nano Swarm (PULSE)** | Swarm ignores shield — passes through |
+| **Shield + TARTARUS Melee** | Melee bash staggers shield (1s), does not break |
+| **Shield + UAV Scan (SONAR)** | Does not reveal shielded operator |
+| **Shield + Smoke (OBSIDIAN)** | Smoke blocks vision around/through shield |
 
 #### Top-Down Shield VFX
 
@@ -284,25 +284,25 @@ After a political scandal forced budget cuts that disbanded his unit, Hans could
 
 | Opponent | Why Favorable | Tactic |
 | :------- | :------------ | :----- |
-| **VIPER** | Shield blocks all Combat Stim damage | Face him, let stim timer expire |
-| **HAVOC** | Shield stops Berserker Rush completely | Shield up when he charges, bash stun |
-| **BLAZE** | Shield blocks incendiary rounds | Walk through fire zones protected |
+| **MAMBA** | Shield blocks all Combat Stim damage | Face him, let stim timer expire |
+| **TARTARUS** | Shield stops Berserker Rush completely | Shield up when he charges, bash stun |
+| **IGNITION** | Shield blocks incendiary rounds | Walk through fire zones protected |
 
 ### Even Matchups
 
 | Opponent | Notes | Key to Winning |
 | :------- | :---- | :------------- |
-| **FORTRESS** | Both Tanks, neither can kill the other quickly | Whoever has team support wins |
-| **DOC** | Cannot damage him faster than drone heals | Focus drone with bash, then DOC |
-| **ANGEL** | Guardian Shield vs Riot Shield — stalemate | Wait for her shield duration, then push |
+| **GOLIATH** | Both Tanks, neither can kill the other quickly | Whoever has team support wins |
+| **SUTURE** | Cannot damage him faster than drone heals | Focus drone with bash, then SUTURE |
+| **AEGIS** | Guardian Shield vs Riot Shield — stalemate | Wait for her shield duration, then push |
 
 ### Unfavorable Matchups
 
 | Opponent | Why Difficult | Counter Strategy |
 | :------- | :------------ | :--------------- |
-| **WRAITH** | Smoke negates shield — cannot see targets | Drop shield in smoke, use primary weapon with audio |
-| **CIPHER** | EMP instantly disables Riot Shield | Bait EMP before deploying, or pre-deploy and absorb EMP |
-| **PHANTOM** | UAV reveals flanking teammates — shield becomes useless without team pressure | Coordinate push timing with team, rush during scan cooldown |
+| **OBSIDIAN** | Smoke negates shield — cannot see targets | Drop shield in smoke, use primary weapon with audio |
+| **GLITCH** | EMP instantly disables Riot Shield | Bait EMP before deploying, or pre-deploy and absorb EMP |
+| **SONAR** | UAV reveals flanking teammates — shield becomes useless without team pressure | Coordinate push timing with team, rush during scan cooldown |
 
 ---
 
@@ -358,7 +358,7 @@ After a political scandal forced budget cuts that disbanded his unit, Hans could
 | :--- | :----- | :----- |
 | **Iron Wall** | Common | Level 10 |
 | **Winter Guard** | Uncommon | 1,000 Credits |
-| **Crimson Fortress** | Rare | Level 25 |
+| **Crimson Goliath** | Rare | Level 25 |
 | **GSG 9 Classic** | Epic | Battle Pass S1 |
 | **Siegebreaker** | Legendary | Season 1 Event |
 
@@ -378,10 +378,10 @@ After a political scandal forced budget cuts that disbanded his unit, Hans could
 
 | Character | Relationship |
 | :-------- | :----------- |
-| **VIPER** | Rival philosophies — VIPER attacks, BASTION defends. Mutual respect despite constant arguments |
-| **DOC** | Old friends from joint NATO training. Saved each other's lives. Closest bond in the roster |
-| **HAVOC** | Professional animosity — BASTION considers HAVOC too reckless, a danger to teammates |
-| **FORTRESS** | Fellow Tank. Paternal bond — BASTION mentors the younger FORTRESS in shield work |
+| **MAMBA** | Rival philosophies — MAMBA attacks, BASTION defends. Mutual respect despite constant arguments |
+| **SUTURE** | Old friends from joint NATO training. Saved each other's lives. Closest bond in the roster |
+| **TARTARUS** | Professional animosity — BASTION considers TARTARUS too reckless, a danger to teammates |
+| **GOLIATH** | Fellow Tank. Paternal bond — BASTION mentors the younger GOLIATH in shield work |
 
 ### Story Hooks
 
@@ -425,7 +425,7 @@ After a political scandal forced budget cuts that disbanded his unit, Hans could
 ### Top-Down Specific Notes
 
 - Shield arc indicator (120-degree) must be visible at minimum zoom — shows teammates and enemies the protected zone
-- Shield is visually distinct from ANGEL's dome: flat metallic surface vs translucent dome
+- Shield is visually distinct from AEGIS's dome: flat metallic surface vs translucent dome
 - Shield walking animation from top-down should show heavy foot plants with dust/ground disturbance
 - When EMP disabled, shield visually flickers (communicates vulnerability window to both teams)
 - BASTION is the widest silhouette in the game — easily identifiable even at max zoom

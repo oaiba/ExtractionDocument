@@ -19,7 +19,7 @@ type: docs
 | **Height**      | 191 cm (6'3")             |
 | **Weight**      | 98 kg (216 lbs)           |
 
-<!-- REF_IMAGE: HAVOC operator portrait — massive scar on face, thick spetsnaz armor, heavy shotgun, berserker rage visible in eyes -->
+<!-- REF_IMAGE: TARTARUS operator portrait — massive scar on face, thick spetsnaz armor, heavy shotgun, berserker rage visible in eyes -->
 
 ### Background
 
@@ -117,7 +117,7 @@ For years, Carlos wandered as a mercenary, his reputation growing as a one-man w
 | Effect         | Value  | Notes                 |
 | :------------- | :----- | :-------------------- |
 | Melee Damage   | +35%   | Makes melee viable    |
-| Weapon Damage  | +15%   | Less than VIPER stim  |
+| Weapon Damage  | +15%   | Less than MAMBA stim  |
 | Movement Speed | +15%   | All movement types    |
 | Damage Taken   | +10%   | Trade-off             |
 | Kill Extension | +3 sec | Encourages aggression |
@@ -128,10 +128,10 @@ For years, Carlos wandered as a mercenary, his reputation growing as a one-man w
 | :---------- | :----- |
 | **Rage + EMP** | Rage cancelled immediately, kill chain timer lost |
 | **Rage + Stun** | Full stun duration — wastes precious Rage seconds |
-| **Rage + ANGEL Shield** | TARTARUS melee CAN push through Guardian Shield |
-| **Rage + BULWARK Shield** | Melee bash staggers shield (1s), does not break through |
+| **Rage + AEGIS Shield** | TARTARUS melee CAN push through Guardian Shield |
+| **Rage + BASTION Shield** | Melee bash staggers shield (1s), does not break through |
 | **Rage + Burn** | Burn damage stacks with +10% incoming damage modifier |
-| **Rage + Kill (PHANTOM scanned target)** | Kill still extends duration even if target was scanned |
+| **Rage + Kill (SONAR scanned target)** | Kill still extends duration even if target was scanned |
 
 #### Top-Down Rage VFX
 
@@ -292,26 +292,26 @@ Kill 4+: Capped at 20 seconds
 
 | Opponent    | Why Favorable           | Tactic                    |
 | :---------- | :---------------------- | :------------------------ |
-| **DOC**     | Fragile up close        | Rush before drone deploys |
-| **PHANTOM** | No combat advantage     | Close distance fast       |
-| **CIPHER**  | Low combat stats        | Overwhelm with aggression |
-| **ANGEL**   | Can't escape your speed | Push through shield       |
+| **SUTURE**     | Fragile up close        | Rush before drone deploys |
+| **SONAR** | No combat advantage     | Close distance fast       |
+| **GLITCH**  | Low combat stats        | Overwhelm with aggression |
+| **AEGIS**   | Can't escape your speed | Push through shield       |
 
 ### Even Matchups
 
 | Opponent    | Notes                         | Key to Winning           |
 | :---------- | :---------------------------- | :----------------------- |
-| **VIPER**   | Both aggressive, comes to aim | Land first shot          |
-| **BLAZE**   | Fire vs Rage                  | Avoid fire while closing |
-| **SPECTER** | Traps slow you down           | Clear traps, then push   |
+| **MAMBA**   | Both aggressive, comes to aim | Land first shot          |
+| **IGNITION**   | Fire vs Rage                  | Avoid fire while closing |
+| **MIRAGE** | Traps slow you down           | Clear traps, then push   |
 
 ### Unfavorable Matchups
 
 | Opponent     | Why Difficult                 | Counter Strategy        |
 | :----------- | :---------------------------- | :---------------------- |
-| **BULWARK**  | Shield completely blocks you  | Flank only, never front |
-| **FORTRESS** | Team armor absorbs your burst | Focus teammates first   |
-| **FLUX**     | Nano swarm slows you          | Wait for swarm to end   |
+| **BASTION**  | Shield completely blocks you  | Flank only, never front |
+| **GOLIATH** | Team armor absorbs your burst | Focus teammates first   |
+| **PULSE**     | Nano swarm slows you          | Wait for swarm to end   |
 
 ---
 
@@ -385,10 +385,10 @@ Kill 4+: Capped at 20 seconds
 
 | Character    | Relationship                         |
 | :----------- | :----------------------------------- |
-| **VIPER**    | Mutual respect between soldiers      |
-| **FORTRESS** | Former comrade from Russian military |
-| **BULWARK**  | Considers him a worthy opponent      |
-| **BLAZE**    | Kindred spirit in chaos              |
+| **MAMBA**    | Mutual respect between soldiers      |
+| **GOLIATH** | Former comrade from Russian military |
+| **BASTION**  | Considers him a worthy opponent      |
+| **IGNITION**    | Kindred spirit in chaos              |
 
 ### Story Hooks
 

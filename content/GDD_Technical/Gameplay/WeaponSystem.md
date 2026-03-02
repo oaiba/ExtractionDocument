@@ -1,11 +1,11 @@
 ---
-title: "Weapon System - Technical Design Document"
+title: "Weapon System - Technical Design Sutureument"
 type: docs
 ---
 
-## Related Documents
+## Related Sutureuments
 
-| Document             | Relationship             | Link                                                                     |
+| Sutureument             | Relationship             | Link                                                                     |
 | :------------------- | :----------------------- | :----------------------------------------------------------------------- |
 | **Weapons Design**   | High-level weapon design | [GDD_HighLevel/Combat/Weapons.md](../../GDD_HighLevel/Combat/Weapons.md) |
 | **Character System** | Weapon equipping         | [CharacterSystem.md](./CharacterSystem.md)                               |

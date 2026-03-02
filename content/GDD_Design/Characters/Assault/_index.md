@@ -91,9 +91,9 @@ The **Assault** class operators are designed for players who prefer aggressive, 
 
 | Counter Pick | Why |
 | :----------- | :-- |
-| **BULWARK** | Shield blocks all frontal damage |
-| **CIPHER** | EMP cancels all Assault abilities |
-| **PHANTOM** | Intel prevents ambush |
+| **BASTION** | Shield blocks all frontal damage |
+| **GLITCH** | EMP cancels all Assault abilities |
+| **SONAR** | Intel prevents ambush |
 
 ---
 
@@ -103,9 +103,9 @@ The **Assault** class operators are designed for players who prefer aggressive, 
 
 | Partner | Synergy | Notes |
 | :------ | :------ | :---- |
-| **DOC** | Healing sustain | Push harder, heal after |
-| **PHANTOM** | Intel + Damage | Know where to push |
-| **BULWARK** | Shield + Damage | Tank leads, Assault follows |
+| **SUTURE** | Healing sustain | Push harder, heal after |
+| **SONAR** | Intel + Damage | Know where to push |
+| **BASTION** | Shield + Damage | Tank leads, Assault follows |
 
 ### Triple Assault Cheese
 

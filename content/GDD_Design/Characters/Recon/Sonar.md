@@ -100,7 +100,7 @@ After a mole compromised her network, Sarah watched helplessly as her assets wer
 | **Team Sharing** | Yes | All allies see scanned enemies |
 | **UAV Altitude** | 15 meters above | Cannot be shot by ground fire |
 | **EMP Vulnerability** | Destroyed instantly (falls) | Primary counter |
-| **Smoke Interaction** | Blocks scan LOS | Cannot scan through WRAITH smoke |
+| **Smoke Interaction** | Blocks scan LOS | Cannot scan through OBSIDIAN smoke |
 | **Deployable Detection** | Yes | Reveals enemy deployables (sensors, drones, shields) |
 
 ### Difficulty Rating
@@ -133,12 +133,12 @@ After a mole compromised her network, Sarah watched helplessly as her assets wer
 
 | Interaction | Result |
 | :---------- | :----- |
-| **UAV + EMP (CIPHER)** | UAV destroyed instantly, falls from sky |
-| **UAV + Fire (BLAZE)** | Not affected — UAV is airborne |
-| **UAV + Nano Swarm (FLUX)** | Not affected — swarm only targets ground |
-| **UAV + Smoke (WRAITH)** | Scan blocked through smoke — LOS required |
-| **UAV + ANGEL Shield** | UAV cannot reveal operators inside shield dome |
-| **UAV + BULWARK Shield** | Does not reveal shielded operator |
+| **UAV + EMP (GLITCH)** | UAV destroyed instantly, falls from sky |
+| **UAV + Fire (IGNITION)** | Not affected — UAV is airborne |
+| **UAV + Nano Swarm (PULSE)** | Not affected — swarm only targets ground |
+| **UAV + Smoke (OBSIDIAN)** | Scan blocked through smoke — LOS required |
+| **UAV + AEGIS Shield** | UAV cannot reveal operators inside shield dome |
+| **UAV + BASTION Shield** | Does not reveal shielded operator |
 
 #### Top-Down Scan VFX
 
@@ -280,25 +280,25 @@ After a mole compromised her network, Sarah watched helplessly as her assets wer
 
 | Opponent | Why Favorable | Tactic |
 | :------- | :------------ | :----- |
-| **FORTRESS** | Scan reveals position, then flank behind shield | Scan, mark, let team focus fire |
-| **FLUX** | Low combat stats, Nano Swarm easy to avoid with intel | Maintain distance, call out swarm |
-| **DOC** | Fragile when caught alone, drone position revealed | Snipe drone first, then DOC |
+| **GOLIATH** | Scan reveals position, then flank behind shield | Scan, mark, let team focus fire |
+| **PULSE** | Low combat stats, Nano Swarm easy to avoid with intel | Maintain distance, call out swarm |
+| **SUTURE** | Fragile when caught alone, drone position revealed | Snipe drone first, then SUTURE |
 
 ### Even Matchups
 
 | Opponent | Notes | Key to Winning |
 | :------- | :---- | :------------- |
-| **SPECTER** | Both intel operators, sensor vs. scan | Scan detects sensors, destroy them |
-| **BLAZE** | Fire zones limit movement options | Avoid fire, use range advantage |
-| **ANGEL** | Shield blocks but scan reveals timing | Wait for shield down, then burst |
+| **MIRAGE** | Both intel operators, sensor vs. scan | Scan detects sensors, destroy them |
+| **IGNITION** | Fire zones limit movement options | Avoid fire, use range advantage |
+| **AEGIS** | Shield blocks but scan reveals timing | Wait for shield down, then burst |
 
 ### Unfavorable Matchups
 
 | Opponent | Why Difficult | Counter Strategy |
 | :------- | :------------ | :--------------- |
-| **VIPER** | Combat Stim out-damages you in any duel | Avoid direct combat, use intel to evade |
-| **WRAITH** | Smoke breaks sightlines, ruins scan value | Push through or wait out smoke duration |
-| **HAVOC** | CQB monster, you are fragile | Never let HAVOC close the gap |
+| **MAMBA** | Combat Stim out-damages you in any duel | Avoid direct combat, use intel to evade |
+| **OBSIDIAN** | Smoke breaks sightlines, ruins scan value | Push through or wait out smoke duration |
+| **TARTARUS** | CQB monster, you are fragile | Never let TARTARUS close the gap |
 
 ---
 
@@ -355,7 +355,7 @@ After a mole compromised her network, Sarah watched helplessly as her assets wer
 | **Winter Intel** | Uncommon | 1,000 Credits |
 | **Neon Ghost** | Rare | Level 25 |
 | **Black Site** | Epic | Battle Pass S1 |
-| **Digital Wraith** | Legendary | Season 1 Event |
+| **Digital Obsidian** | Legendary | Season 1 Event |
 
 ### Signature Items
 
@@ -373,10 +373,10 @@ After a mole compromised her network, Sarah watched helplessly as her assets wer
 
 | Character | Relationship |
 | :-------- | :----------- |
-| **VIPER** | Professional respect, different methods — he leads from the front, she leads from the shadows |
-| **CIPHER** | Uneasy allies, both have secrets — share intelligence cautiously |
-| **SPECTER** | Former adversaries during Cold War-era proxy ops, now grudging respect |
-| **DOC** | Trusts him most — he saved one of her assets years ago |
+| **MAMBA** | Professional respect, different methods — he leads from the front, she leads from the shadows |
+| **GLITCH** | Uneasy allies, both have secrets — share intelligence cautiously |
+| **MIRAGE** | Former adversaries during Cold War-era proxy ops, now grudging respect |
+| **SUTURE** | Trusts him most — he saved one of her assets years ago |
 
 ### Story Hooks
 

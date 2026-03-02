@@ -415,7 +415,7 @@ ACCOUNT LEVEL 28 -> Specialist (PULSE) - 15,000 Credits or Quest
 | :-------- | :---------- | :-------- | :------- | :------- |
 | **Rush Meta** | MAMBA + TARTARUS + SUTURE | Aggressive push | High damage, sustained | No intel, no area control |
 | **Intel Control** | SONAR + MIRAGE + GLITCH | Information dominance | Never surprised | Low damage output |
-| **Fortress Hold** | BASTION + SUTURE + IGNITION | Defensive extraction | Hard to push | Slow rotations |
+| **Goliath Hold** | BASTION + SUTURE + IGNITION | Defensive extraction | Hard to push | Slow rotations |
 | **Balanced** | MAMBA + SUTURE + SONAR | All-around | Flexible | No hard counter to Tanks |
 | **Stealth Extract** | OBSIDIAN + MIRAGE + PULSE | Avoid combat | Maximum loot, low risk | Loses direct fights |
 
@@ -526,7 +526,7 @@ All cosmetics are purely visual — no gameplay advantage. See [Art Direction](.
 
 ## Cross-References
 
-| Topic | Document | What It Covers |
+| Topic | Sutureument | What It Covers |
 | :---- | :------- | :------------- |
 | Character visuals | [Art Direction](../Visuals/ArtDirection/) | Operator model specs, silhouette guide, poly budgets, cyberpunk elements |
 | Character style | [Style Guide](../Visuals/StyleGuide/) | Class color coding, gear layering system, top-down readability |

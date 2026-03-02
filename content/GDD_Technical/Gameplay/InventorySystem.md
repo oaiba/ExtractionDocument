@@ -1,11 +1,11 @@
 ---
-title: "Inventory System - Technical Design Document"
+title: "Inventory System - Technical Design Sutureument"
 type: docs
 ---
 
-## Related Documents
+## Related Sutureuments
 
-| Document             | Relationship           | Link                                                                 |
+| Sutureument             | Relationship           | Link                                                                 |
 | :------------------- | :--------------------- | :------------------------------------------------------------------- |
 | **Items Design**     | High-level item design | [GDD_HighLevel/Combat/Items.md](../../GDD_HighLevel/Combat/Items.md) |
 | **Weapon System**    | Weapon storage         | [WeaponSystem.md](./WeaponSystem.md)                                 |

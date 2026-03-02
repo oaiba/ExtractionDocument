@@ -14,47 +14,49 @@ This document is the **authoritative item catalogue** for all equipable, consuma
 
 ## 1. Armor — Helmets
 
-Helmets reduce headshot damage multiplier based on Armor Value and durability class.
+Helmets reduce headshot damage multiplier based on **Armor Class** (1–6) and durability. Display value maps from class; see [Gears — Armor & Ballistics](../Gears/ArmorGear/Armor.md#mapping-armor-class-to-display-value).
 
-| Code Name | Display Name | Rarity | Armor Value | Headshot Reduction | Durability (Hits) | Weight (kg) | Grid Size | Value ($) | Special |
-| :-------- | :----------- | :----- | :---------: | :----------------: | :---------------: | :---------: | :-------: | --------: | :------ |
-| ITEM_HELM_LIGHT | Light Helmet | Common | 30 | 25% | 3–5 | 0.8 | 2×2 | 800 | Basic protection |
-| ITEM_HELM_MEDIUM | Medium Helmet | Uncommon | 50 | 40% | 5–8 | 1.2 | 2×2 | 2,500 | Good balance |
-| ITEM_HELM_HEAVY | Heavy Helmet | Rare | 75 | 50% | 8–12 | 1.8 | 2×2 | 6,000 | High protection |
-| ITEM_HELM_TACTICAL | Tactical Helmet | Epic | 100 | 60% | 12–15 | 1.5 | 2×2 | 12,000 | Built-in night vision |
-| ITEM_HELM_SPEC | Specialist Helmet | Rare | 60 | 45% | 6–10 | 1.0 | 2×2 | 4,500 | +10% hearing range |
+| Code Name | Display Name | Rarity | Class | Headshot Reduction | Weight (kg) | Grid | Value ($) | Special |
+| :-------- | :----------- | :----- | :---: | :----------------: | :---------: | :--: | --------: | :------ |
+| ITEM_HELM_LIGHT | Light Helmet | Common | 2 | 25% | 0.8 | 2×2 | 800 | Basic protection |
+| ITEM_HELM_MEDIUM | Medium Helmet | Uncommon | 3 | 40% | 1.2 | 2×2 | 2,500 | Good balance |
+| ITEM_HELM_HEAVY | Heavy Helmet | Rare | 4 | 50% | 1.8 | 2×2 | 6,000 | High protection |
+| ITEM_HELM_TACTICAL | Tactical Helmet | Epic | 5 | 60% | 1.5 | 2×2 | 12,000 | Built-in night vision |
+| ITEM_HELM_SPEC | Specialist Helmet | Rare | 3 | 45% | 1.0 | 2×2 | 4,500 | +10% hearing range |
 
-**Headshot multiplier system:** See [Weapon Arsenal — Hit Location Multipliers](WeaponArsenal.md#hit-location-multipliers).
+**Full spec** (zones, material, ricochet, durability): [Gears — Armor Master Database](../Gears/ArmorGear/Armor_Master_Database.md). **Headshot multiplier system:** [Weapon Arsenal — Hit Location Multipliers](WeaponArsenal.md#hit-location-multipliers).
 
 ---
 
 ## 2. Armor — Body Vests
 
-Body vests absorb damage to the chest/torso. Armor Value degrades with each hit and must be repaired at the Hideout Repair Bench.
+Body vests absorb damage to the chest/torso. **Armor Class** (1–6) and durability define protection; repair at Hideout Repair Bench.
 
-| Code Name | Display Name | Rarity | Armor Value | Coverage | Move Penalty | Weight (kg) | Grid Size | Inventory Bonus | Value ($) |
-| :-------- | :----------- | :----- | :---------: | :------- | :----------: | :---------: | :-------: | :-------------- | --------: |
-| ITEM_VEST_LIGHT | Light Vest | Common | 30 | Chest only | 0% | 2.0 | 2×3 | — | 1,000 |
-| ITEM_VEST_MEDIUM | Medium Vest | Uncommon | 50 | Chest + Back | −5% | 3.5 | 2×3 | — | 3,000 |
-| ITEM_VEST_HEAVY | Heavy Vest | Rare | 80 | Full torso | −10% | 5.5 | 2×3 | — | 8,000 |
-| ITEM_VEST_TACTICAL | Tactical Rig | Epic | 100 | Full torso + arms | −15% | 6.0 | 2×3 | +4 slots | 15,000 |
-| ITEM_VEST_CARRIER | Plate Carrier | Rare | 90 | Full torso | −8% | 4.8 | 2×3 | +2 slots | 10,000 |
+| Code Name | Display Name | Rarity | Class | Coverage | Move Penalty | Weight (kg) | Grid | Value ($) |
+| :-------- | :----------- | :----- | :---: | :------- | :----------: | :---------: | :--: | --------: |
+| ITEM_VEST_LIGHT | Light Vest | Common | 2 | Chest only | 0% | 2.0 | 2×3 | 1,000 |
+| ITEM_VEST_MEDIUM | Medium Vest | Uncommon | 3 | Chest + Back | −5% | 3.5 | 2×3 | 3,000 |
+| ITEM_VEST_HEAVY | Heavy Vest | Rare | 4 | Full torso | −10% | 5.5 | 2×3 | 8,000 |
+| ITEM_VEST_TACTICAL | Tactical Rig | Epic | 5 | Full torso + arms | −15% | 6.0 | 2×3 | 15,000 |
+| ITEM_VEST_CARRIER | Plate Carrier | Rare | 4 | Full torso | −8% | 4.8 | 2×3 | 10,000 |
+
+**Full spec** (zones, material, durability, repair): [Gears — Armor Master Database](../Gears/ArmorGear/Armor_Master_Database.md).
 
 ---
 
 ## 3. Backpacks & Storage
 
-Backpacks increase inventory capacity. All backpack contents are **lost on death** (only Secure Container is protected).
+Backpacks increase inventory capacity. All backpack contents are **lost on death** (only Secure Container is protected). Tactical rigs provide hotkey slots; reload is from rig only.
 
-| Code Name | Display Name | Rarity | Inventory Slots | Grid Layout | Move Penalty | Weight (kg) | Value ($) |
-| :-------- | :----------- | :----- | :-------------: | :---------: | :----------: | :---------: | --------: |
+| Code Name | Display Name | Rarity | Slots | Grid Layout | Move Penalty | Weight (kg) | Value ($) |
+| :-------- | :----------- | :----- | :---: | :---------: | :----------: | :---------: | --------: |
 | ITEM_BAG_SMALL | Small Backpack | Common | +6 | 2×3 | 0% | 0.5 | 500 |
 | ITEM_BAG_MEDIUM | Medium Backpack | Uncommon | +12 | 3×4 | 0% | 1.0 | 1,500 |
 | ITEM_BAG_LARGE | Large Backpack | Rare | +20 | 4×5 | 0% | 1.5 | 4,000 |
 | ITEM_BAG_TACTICAL | Tactical Backpack | Epic | +30 | 5×6 | −5% | 2.0 | 10,000 |
 | ITEM_BAG_ASSAULT | Assault Pack | Uncommon | +15 | 3×5 | 0% | 1.2 | 2,500 |
 
-**Weight and Encumbrance:** → see [Gear Mechanics](Gear_Mechanics.md) for threshold table.
+**Full spec** (rigs, backpacks, secure containers, slot layouts): [Gears — Storage Gear](../Gears/StorageGear/) and [Storage Master Database](../Gears/StorageGear/Storage_Master_Database.md). **Weight and Encumbrance:** [Gear Mechanics](Gear_Mechanics.md).
 
 ---
 

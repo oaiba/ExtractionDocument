@@ -6,9 +6,9 @@ weight: 4
 
 ## Overview
 
-This document defines how bullets interact with armor, durability, distance, and materials: penetration chance, damage falloff, armor degradation, blunt damage, ricochet, and caliber sharing. Armor classes and zones are in [Armor & Ballistics](../Inventory_Gear/Armor.md).
+This document defines how bullets interact with armor, durability, distance, and materials: penetration chance, damage falloff, armor degradation, blunt damage, ricochet, and caliber sharing. Armor classes and zones are in [Gears — Armor & Ballistics](../Gears/ArmorGear/Armor.md).
 
-> **Cross-References:** [Weapon Arsenal](../Gameplay/WeaponArsenal.md) — ammo tables by caliber; [Weapon Balance Framework](Weapon_Balance_Framework.md) — TTK and balance; [Inventory & Gear — Armor](../Inventory_Gear/Armor.md) — armor classes 1–6, zones, materials.
+> **Cross-References:** [Weapon Arsenal](../Gameplay/WeaponArsenal.md) — ammo tables by caliber; [Weapon Balance Framework](Weapon_Balance_Framework.md) — TTK and balance; [Gears — Armor & Ballistics](../Gears/ArmorGear/Armor.md) — armor classes 1–6, zones, materials; [Armor Master Database](../Gears/ArmorGear/Armor_Master_Database.md) — per-item coverage and class.
 
 ---
 
@@ -76,7 +76,7 @@ Capped per hit (e.g. max 12%). Stopped rounds dump more energy into the plate.
 
 When a bullet is **blocked** by armor, the wearer still takes blunt trauma.
 
-**Formula (from [Armor](../Inventory_Gear/Armor.md)):**  
+**Formula (from [Gears — Armor](../Gears/ArmorGear/Armor.md)):**  
 `BluntDmg = BaseDmg × BluntFactor × (1 - DurabilityPercent)`
 
 **BluntFactor** by caliber family (example values):
@@ -165,6 +165,6 @@ Weapons that share the same caliber share ammo pools. Strategic implication: one
 ## Cross-References
 
 - [Weapon Arsenal](../Gameplay/WeaponArsenal.md) — Ammo types, penetration class, velocity per caliber.
-- [Inventory & Gear — Armor](../Inventory_Gear/Armor.md) — Armor classes, zones, materials, damage mechanics.
+- [Gears — Armor & Ballistics](../Gears/ArmorGear/Armor.md) — Armor classes, zones, materials, damage mechanics; [Armor Master Database](../Gears/ArmorGear/Armor_Master_Database.md) — per-item specs.
 - [Weapon Balance Framework](Weapon_Balance_Framework.md) — TTK and balance targets.
 - [Gear Mechanics](../Gameplay/Gear_Mechanics.md) — Armor durability and weight tier.

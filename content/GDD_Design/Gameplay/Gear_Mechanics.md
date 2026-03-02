@@ -6,7 +6,7 @@ weight: 3
 
 ## Overview
 
-Gear is a primary gameplay lever: every loadout choice affects mobility, capacity, survivability, and risk. This document describes **how equipment interacts with the raid** — movement, stamina, looting, extraction, and combat flow — rather than item specifications (those live in [Inventory & Gear](../../Inventory_Gear/)).
+Gear is a primary gameplay lever: every loadout choice affects mobility, capacity, survivability, and risk. This document describes **how equipment interacts with the raid** — movement, stamina, looting, extraction, and combat flow — rather than item specifications (armor and storage specs: [Gears](../../Gears/) — ArmorGear & StorageGear; inventory system overview: [Inventory & Gear](../../Inventory_Gear/)).
 
 **Core principles:**
 
@@ -102,7 +102,7 @@ The distinction between rig and backpack is central to combat flow:
 
 ## Armor and Survivability vs Speed
 
-Armor class, materials, and hit zones are defined in [Inventory & Gear — Armor](../../Inventory_Gear/Armor.md). This section covers the gameplay trade-off.
+Armor class, materials, and hit zones are defined in [Gears — Armor & Ballistics](../../Gears/ArmorGear/Armor.md). This section covers the gameplay trade-off.
 
 ### Armor Weight vs Protection
 
@@ -277,7 +277,7 @@ Since the game targets cross-platform (PC + mobile), gear mechanics must account
 - [Extraction Mechanics](Extraction_Mechanics.md) — Extraction process, timer, rules during extract.
 - [Hero Abilities](Hero_Abilities.md) — Operator-specific gear constraints (Scout light rig only, Tank armor affinity).
 - [Medical System](Medical_System.md) — Med item weights, heal timing, animation lock.
-- [Inventory & Gear](../../Inventory_Gear/) — Armor classes, container types, item stats (design specs).
-- [Inventory & Gear — Armor](../../Inventory_Gear/Armor.md) — Armor tiers, zones, materials, penetration.
+- [Gears](../../Gears/) — Armor and storage gear specs: [ArmorGear](../../Gears/ArmorGear/) (classes, zones, materials, master database), [StorageGear](../../Gears/StorageGear/) (rigs, backpacks, secure containers, slot layouts).
+- [Inventory & Gear](../../Inventory_Gear/) — Inventory system overview, paper doll, grid, encumbrance.
 
 For per-minute match timeline and raw balance numbers, see [Core Gameplay Mechanics](../../GameDesign/CoreGameplay/) if available.

@@ -46,6 +46,6 @@ Looting a player is the ultimate reward.
 *   **Dogtag:** A specialized 1-slot item on the body.
     *   *Contains:* Level, Killer Name, Weapon Used, Distance.
     *   *Value:* Higher Level = Higher Sell Price. Can be bartered for end-game gear.
-*   **Weight Management:** You cannot carry everything. Choosing to take a dead enemy's heavy Class 6 Armor means dropping your own or moving at snail's pace.
+*   **Weight Management:** You cannot carry everything. Choosing to take a dead enemy's heavy Class 6 Armor means dropping your own or moving at snail's pace. For container types, rig/backpack capacities, and secure container rules, see [Gears — Storage Gear](../Gears/StorageGear/) and [Containers](Containers.md).
 
 ---

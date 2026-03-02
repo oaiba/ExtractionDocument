@@ -28,82 +28,26 @@ type: docs
 
 ### 2. Armor & Protection
 
-#### Helmets
+Armor uses **Class 1–6** (GOST-style) with zone-based protection. Display values and headshot reduction map from class; see [Gears — Armor & Ballistics](../Gears/ArmorGear/Armor.md) for mapping and [Gears — Armor Master Database](../Gears/ArmorGear/Armor_Master_Database.md) for full spec, materials, and zone coverage per item.
 
-**Light Helmet (Common)**
-- Armor Value: 30
-- Headshot Reduction: 25%
-- Durability: 3-5 hits
-- Value: $800
-
-**Medium Helmet (Uncommon)**
-- Armor Value: 50
-- Headshot Reduction: 40%
-- Durability: 5-8 hits
-- Value: $2,500
-
-**Heavy Helmet (Rare)**
-- Armor Value: 75
-- Headshot Reduction: 50%
-- Durability: 8-12 hits
-- Value: $6,000
-
-**Tactical Helmet (Epic)**
-- Armor Value: 100
-- Headshot Reduction: 60%
-- Durability: 12-15 hits
-- Special: Built-in night vision
-- Value: $12,000
-
----
-
-#### Body Armor
-
-**Light Vest (Common)**
-- Armor Value: 30
-- Coverage: Chest only
-- Movement: Normal speed
-- Value: $1,000
-
-**Medium Vest (Uncommon)**
-- Armor Value: 50
-- Coverage: Chest + Back
-- Movement: -5% speed
-- Value: $3,000
-
-**Heavy Vest (Rare)**
-- Armor Value: 80
-- Coverage: Full torso
-- Movement: -10% speed
-- Value: $8,000
-
-**Tactical Rig (Epic)**
-- Armor Value: 100
-- Coverage: Full torso + arms
-- Movement: -15% speed
-- Special: +4 inventory slots
-- Value: $15,000
+| Type        | Class (example) | Coverage (example)     | Move penalty | Value range |
+| :---------- | :-------------: | :--------------------- | :----------- | ----------- |
+| Light       | 2              | Chest only             | 0%           | ~$800–1,000 |
+| Medium      | 3              | Chest + Back           | −5%          | ~$2,500–3,000 |
+| Heavy       | 4              | Full torso             | −10%         | ~$6,000–8,000 |
+| Tactical/Elite | 5–6         | Full torso + arms/neck | −15%         | ~$10,000–15,000 |
 
 ---
 
 ### 3. Backpacks & Storage
 
-**Small Backpack (Common)**
-- Inventory Slots: +6 (2x3)
-- Value: $500
+Backpacks and tactical rigs define carry capacity and hotkey access. Full list and grid layouts: [Gears — Storage Gear](../Gears/StorageGear/) and [Storage Master Database](../Gears/StorageGear/Storage_Master_Database.md).
 
-**Medium Backpack (Uncommon)**
-- Inventory Slots: +12 (3x4)
-- Value: $1,500
-
-**Large Backpack (Rare)**
-- Inventory Slots: +20 (4x5)
-- Value: $4,000
-
-**Tactical Backpack (Epic)**
-- Inventory Slots: +30 (5x6)
-- Movement: -5% speed (trade-off)
-- Value: $10,000
+| Tier   | Slots (example) | Move penalty | Value range |
+| :----- | :-------------: | :----------- | ----------- |
+| Small  | 6 (2×3)         | 0%           | ~$500       |
+| Medium | 12–16 (3×4–4×4)| 0–−2%        | ~$1,500–10,000 |
+| Large  | 20–30 (4×5–5×6)| −5% to −8%   | ~$4,000–40,000 |
 
 ---
 
@@ -249,37 +193,11 @@ type: docs
 
 ### Armor & Protection - Complete Specifications
 
-#### Helmets
-
-| Code Name          | Display Name      | Rarity   | Armor Value | Headshot Reduction | Durability (Hits) | Weight (kg) | Grid Size | Value ($) | Special Features      |
-| ------------------ | ----------------- | -------- | ----------- | ------------------ | ----------------- | ----------- | --------- | --------- | --------------------- |
-| ITEM_HELM_LIGHT    | Light Helmet      | Common   | 30          | 25%                | 3-5               | 0.8         | 2x2       | 800       | Basic protection      |
-| ITEM_HELM_MEDIUM   | Medium Helmet     | Uncommon | 50          | 40%                | 5-8               | 1.2         | 2x2       | 2,500     | Good balance          |
-| ITEM_HELM_HEAVY    | Heavy Helmet      | Rare     | 75          | 50%                | 8-12              | 1.8         | 2x2       | 6,000     | High protection       |
-| ITEM_HELM_TACTICAL | Tactical Helmet   | Epic     | 100         | 60%                | 12-15             | 1.5         | 2x2       | 12,000    | Built-in night vision |
-| ITEM_HELM_SPEC     | Specialist Helmet | Rare     | 60          | 45%                | 6-10              | 1.0         | 2x2       | 4,500     | +10% hearing range    |
-
-#### Body Armor
-
-| Code Name          | Display Name  | Rarity   | Armor Value | Coverage          | Movement Penalty | Weight (kg) | Grid Size | Inventory Bonus | Value ($) |
-| ------------------ | ------------- | -------- | ----------- | ----------------- | ---------------- | ----------- | --------- | --------------- | --------- |
-| ITEM_VEST_LIGHT    | Light Vest    | Common   | 30          | Chest only        | 0%               | 2.0         | 2x3       | -               | 1,000     |
-| ITEM_VEST_MEDIUM   | Medium Vest   | Uncommon | 50          | Chest + Back      | -5%              | 3.5         | 2x3       | -               | 3,000     |
-| ITEM_VEST_HEAVY    | Heavy Vest    | Rare     | 80          | Full torso        | -10%             | 5.5         | 2x3       | -               | 8,000     |
-| ITEM_VEST_TACTICAL | Tactical Rig  | Epic     | 100         | Full torso + arms | -15%             | 6.0         | 2x3       | +4 slots        | 15,000    |
-| ITEM_VEST_CARRIER  | Plate Carrier | Rare     | 90          | Full torso        | -8%              | 4.8         | 2x3       | +2 slots        | 10,000    |
-
----
+Full spec (per-item class, zones, material, durability, value): **[Gears — Armor Master Database](../Gears/ArmorGear/Armor_Master_Database.md)**. Hit locations and damage model: [Weapon Arsenal](../Gameplay/WeaponArsenal.md#hit-location-multipliers).
 
 ### Backpacks & Storage
 
-| Code Name         | Display Name      | Rarity   | Inventory Slots | Grid Layout | Movement Penalty | Weight (kg) | Value ($) | Durability      |
-| ----------------- | ----------------- | -------- | --------------- | ----------- | ---------------- | ----------- | --------- | --------------- |
-| ITEM_BAG_SMALL    | Small Backpack    | Common   | +6              | 2x3         | 0%               | 0.5         | 500       | Standard        |
-| ITEM_BAG_MEDIUM   | Medium Backpack   | Uncommon | +12             | 3x4         | 0%               | 1.0         | 1,500     | Standard        |
-| ITEM_BAG_LARGE    | Large Backpack    | Rare     | +20             | 4x5         | 0%               | 1.5         | 4,000     | Standard        |
-| ITEM_BAG_TACTICAL | Tactical Backpack | Epic     | +30             | 5x6         | -5%              | 2.0         | 10,000    | Reinforced      |
-| ITEM_BAG_ASSAULT  | Assault Pack      | Uncommon | +15             | 3x5         | 0%               | 1.2         | 2,500     | Water-resistant |
+Full spec (rigs, backpacks, secure containers, stash cases): **[Gears — Storage Master Database](../Gears/StorageGear/Storage_Master_Database.md)**.
 
 ---
 

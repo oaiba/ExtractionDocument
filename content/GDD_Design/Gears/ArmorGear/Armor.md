@@ -21,6 +21,21 @@ We follow a 6-tier classification system (GOST standard equivalent):
 | **5** | Heavy AP            | 7.62x54mm LPS, M855A1              | Very High (Elite)        |
 | **6** | Anti-Materiel       | .338 Lapua, 7.62x54mm SNB          | Extreme (Juggernaut)     |
 
+### Mapping Armor Class to Display Value
+
+For UI, economy, and legacy compatibility, armor class maps to a **display value** and **headshot reduction**. Ballistics and penetration use **Class** and durability; display/tooltips can show Value. See [Caliber & Ballistics System](../../Weapons/Caliber_Ballistics_System.md) for penetration math.
+
+| Class | Armor Value (Display) | Headshot Reduction | Typical Pen Threshold (PP) |
+| :---- | :-------------------: | :----------------: | :-----------------------: |
+| 1     | 15                    | 10%                | PP &lt; 10                |
+| 2     | 30                    | 25%                | PP &lt; 20                |
+| 3     | 50                    | 40%                | PP &lt; 35                |
+| 4     | 75                    | 50%                | PP &lt; 45                |
+| 5     | 90                    | 55%                | PP &lt; 55                |
+| 6     | 100                   | 60%                | PP &lt; 65                |
+
+Full item specs (per-vest, per-helmet) are in [Armor Master Database](Armor_Master_Database.md).
+
 ## Hitboxes & Coverage Zones
 
 Armor does not cover the entire torso magically. It protects specific **Collider Zones**.
@@ -29,7 +44,7 @@ Armor does not cover the entire torso magically. It protects specific **Collider
 1.  **Thorax (Upper Chest):** Vital zone. 0 HP = Death.
 2.  **Stomach:** Non-vital. 0 HP = High dehydration/energy loss + "coughing" (noise).
 3.  **Sides/Ribs:** Often unprotected by Plate Carriers, protected by Soft Armor wraps.
-4.  **Neck:** Letal zone. Requires specific "Neck Guard" attachments.
+4.  **Neck:** Lethal zone. Requires specific "Neck Guard" attachments.
 
 ### Helmet Zones
 1.  **Top of Head:** Standard helmet coverage.
@@ -44,12 +59,12 @@ Material determines durability loss and repair efficiency.
 
 | Material      | Durability | Repairability | Weight     | Destructibility    |
 | :------------ | :--------- | :------------ | :--------- | :----------------- |
-| **Aramid**    | Low        | Great         | Very Light | Low                |
-| **UHMWPE**    | High       | Good          | Light      | Medium             |
-| **Titanium**  | High       | Good          | Medium     | Low                |
-| **Aluminium** | Medium     | Bad           | Medium     | High               |
-| **Steel**     | Very High  | Very Good     | Heavy      | Low                |
-| **Ceramic**   | High       | Terrible      | Medium     | Extreme (Shatters) |
+| **Aramid**   | Low        | Great         | Very Light | Low                |
+| **UHMWPE**   | High       | Good          | Light      | Medium             |
+| **Titanium** | High       | Good          | Medium     | Low                |
+| **Aluminium**| Medium     | Bad           | Medium     | High               |
+| **Steel**    | Very High  | Very Good     | Heavy      | Low                |
+| **Ceramic**  | High       | Terrible      | Medium     | Extreme (Shatters) |
 
 ## Damage Mechanics
 
@@ -60,8 +75,12 @@ When a bullet hits armor, the server compares **Bullet Penetration Power** vs. *
 
 ### 2. Blunt Damage
 Even if a bullet is stopped, the impact transfers energy.
-*   **calculation:** `Damage * BluntFactor * (1 - Durability%)`
+*   **Calculation:** `Damage * BluntFactor * (1 - Durability%)`
 *   Result: Player takes 1-5 HP damage and minor stamina drain even on non-pen.
 
 ### 3. Ricochet
 Helmets (and some armor) have a `Ricochet Chance` (Low/Med/High). Even a high-pen bullet can bounce off a round helmet at a shallow angle, causing "concussion" (ringing ears, blurry vision) but 0 HP damage.
+
+## Armored Rigs
+
+Some **tactical rigs** include built-in armor (armored rigs). They occupy the rig slot and provide both storage and body protection; they replace a separate body armor vest. For grid layout, slot count, and hotkey mapping see [Storage Gear — Storage Master Database](../StorageGear/Storage_Master_Database.md) and [Storage Slot Layouts](../StorageGear/Storage_Slot_Layouts.md). For armor class, zones, and material of each armored rig, see [Armor Master Database](Armor_Master_Database.md#armored-rigs).

@@ -4,7 +4,7 @@ linkTitle: "Narrative World"
 type: docs
 weight: 5
 sidebar:
-  open: true
+  open: false
 ---
 
 ## Story and World Are Inseparable

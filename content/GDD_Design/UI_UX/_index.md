@@ -4,7 +4,7 @@ linkTitle: "UI/UX"
 type: docs
 weight: 10
 sidebar:
-  open: true
+  open: false
 ---
 
 ## Designing the Interaction

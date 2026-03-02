@@ -2,7 +2,7 @@
 title: "Story & Narrative"
 type: docs
 sidebar:
-  open: true
+  open: false
 ---
 
 > [!IMPORTANT]

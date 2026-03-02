@@ -4,7 +4,7 @@ linkTitle: "Visuals"
 type: docs
 weight: 3
 sidebar:
-  open: true
+  open: false
 ---
 
 ## Art Direction

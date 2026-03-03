@@ -36,9 +36,25 @@ Main screen type classification.
 | `ST_Quests`         | Quests          | Yes   | Slide      | Yes      | Mission tracker            |
 | `ST_Social`         | Social          | Yes   | Slide      | Yes      | Friends and clan           |
 | `ST_Settings`       | Settings        | Yes   | Scale      | Yes      | Options and configuration  |
-| `ST_MatchLoading`   | Match Loading   | No    | Fade       | No       | Pre-match loading          |
+| `ST_MatchLoading`   | Match Loading   | No    | Fade       | No       | Pre-match loading (L4)     |
 | `ST_InGame`         | In Game         | No    | None       | No       | HUD during match           |
 | `ST_PostMatch`      | Post Match      | No    | Fade       | No       | Victory/defeat results     |
+
+> **Loading Screen Types:** For full taxonomy (L1–L8), content types, and layouts, see [Loading Screen Design](../../GDD_Design/UI_UX/LoadingScreen_Design.md).
+
+### LoadingType
+Loading phase classification. Maps to Loading Screen Design taxonomy.
+
+| Code Name            | Display Name           | ScreenType Equivalent | Description                    |
+| :------------------- | :--------------------- | :-------------------- | :----------------------------- |
+| `LT_Boot`            | Boot                   | —                     | Cold start (L1)                |
+| `LT_Splash`          | Splash                 | —                     | Publisher/dev logo (L2)        |
+| `LT_PostLogin`       | Post-Login             | —                     | After auth to lobby (L3)      |
+| `LT_LobbyToMatch`    | Lobby to Match         | `ST_MatchLoading`     | Deploy to in-raid (L4)        |
+| `LT_IngameToResult`   | In-Raid to Result      | —                     | Extract/death to AAR (L5)      |
+| `LT_ResultToMain`    | Result to Main         | —                     | AAR continue to home (L6)     |
+| `LT_MapTransition`    | Map Transition         | —                     | Multi-zone raid (L7)           |
+| `LT_Reconnect`       | Reconnect              | —                     | Disconnect recovery (L8)       |
 
 ---
 

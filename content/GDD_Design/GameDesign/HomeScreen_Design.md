@@ -578,12 +578,14 @@ The operator model displayed on the Home Screen is a **LOD2 variant** of the in-
 
 **Low-end fallback:** On low-end devices, the operator is displayed as a high-quality static 2D render (not a 3D model) with a subtle idle breathing animation via sprite-frame swap. This is still visually engaging but removes 3D rendering overhead.
 
-### Loading State
+### Loading State (L3_PostLogin)
 
-When the Home Screen loads (first launch or return from raid):
+This loading phase corresponds to **L3_PostLogin** in the [Loading Screen Design](../UI_UX/LoadingScreen_Design.md) taxonomy. When the Home Screen loads (first launch or return from raid):
 - **0–300ms:** Background loads first (instant for static; fade-in for dynamic)
 - **300–800ms:** Operator model shimmer-in animation (render appears with 0→100% opacity + slight scale from 0.95→1.0)
 - **800ms+:** Animation state machine activates; idle loop begins
+
+For full L3 layout (operator showcase, tips, fun facts, progress bar), see [Loading Screen Design — L3_PostLogin](../UI_UX/LoadingScreen_Design.md#43-l3_postlogin).
 
 ---
 
@@ -626,6 +628,7 @@ Triggered once per 7-day session gap. On first login after long absence:
 
 ## 14. Cross-References
 
+- [Loading Screen Design](../UI_UX/LoadingScreen_Design.md) — L3_PostLogin loading phase; operator showcase, tips, fun facts during load.
 - [Hero Abilities](../Gameplay/Hero_Abilities.md) — Operator names, class descriptions, and ability names shown in operator tooltip on Home Screen.
 - [GameModes](GameModes.md) — All 5 game modes (Raid, Blitz, Scav Run, Ranked, Co-op) with descriptions used in Mode Quick Access Panel.
 - [Progression](Progression.md) — Account Level XP thresholds, Season Rank data source for Progression Widget.

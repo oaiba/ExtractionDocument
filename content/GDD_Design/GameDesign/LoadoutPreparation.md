@@ -507,13 +507,17 @@ After pressing DEPLOY, the matchmaking waiting screen plays:
 └────────────────────────────────────────────────────────────────┘
 ```
 
-### Loading Tip Rotation
+### Loading Tip Rotation (L4_LobbyToMatch)
 
-Tips rotate every 8s. Players can manually page through them. Categories:
-- Tactical (combat, cover, flanking)
-- Economy (insurance, what to sell, trader rep)
-- Exploration (loot zones, map callouts, extraction routes)
-- Operator-specific (one tip per operator about the currently selected operator's ability)
+During the [6] Loading Screen phase (L4_LobbyToMatch per [Loading Screen Design](../UI_UX/LoadingScreen_Design.md)), tips rotate every 8s. Players can manually page through them. Categories:
+
+| Category | Content |
+| :------- | :------ |
+| **Tactical** | Combat, cover, flanking |
+| **Economy** | Insurance, what to sell, trader rep |
+| **Exploration** | Loot zones, map callouts, extraction routes |
+| **Operator-specific** | One tip per operator about the currently selected operator's ability |
+| **Fun Fact / Lore** | Per [Lore Delivery](../Story/Lore_Delivery.md) — lore fragments, faction philosophy |
 
 ### Match Found Transition
 
@@ -545,6 +549,7 @@ First insurance is **FREE** — Viktor sponsors the first raid insurance to teac
 
 ## Cross-References
 
+- [Loading Screen Design](../UI_UX/LoadingScreen_Design.md) — L4_LobbyToMatch layout, content types, async loading flow.
 - [Home Screen & Lobby](HomeScreen_Design.md) — Deploy button on Home Screen opens this Loadout Preparation screen.
 - [Gear Mechanics](../Gameplay/Gear_Mechanics.md) — Weight tier thresholds (Tier 1/2/3), durability degradation rules.
 - [Weapon Attachment System](../Gameplay/Weapon_Attachment_System.md) — Attachments visible on operator preview; quick-access attachment editor from viewport click.

@@ -9,15 +9,18 @@ type: docs
 
 ```mermaid
 graph TD
-    Start(App Launch) --> Platform{Platform Check}
+    Start(App Launch) --> L1[L1 Boot]
+    L1 --> L2[L2 Splash]
+    L2 --> Platform{Platform Check}
     Platform -->|PC/Console| Login{Auth Check}
     Platform -->|Mobile| MobileOpt[Mobile-Optimized Splash]
     MobileOpt --> Login
     
     Login -- New User --> Tutorial[Tutorial Mission]
     Login -- Returning --> DailyReward{Daily Login Bonus}
-    DailyReward --> MainMenu[Main Menu / Hideout]
-    Tutorial --> MainMenu
+    DailyReward --> L3[L3 PostLogin]
+    Tutorial --> L3
+    L3 --> MainMenu[Main Menu / Hideout]
     
     MainMenu --> Prep[Preparation Phase]
     Prep -->|Select Loadout| LoadoutUI[Loadout Screen]
@@ -26,22 +29,27 @@ graph TD
     
     LoadoutUI -->|Ready| MatchmakingUI[Matchmaking Lobby]
     MatchmakingUI -->|Squad Full| MapSelection[Map Selection]
-    MapSelection --> Loading{Loading Level}
+    MapSelection --> L4[L4 LobbyToMatch]
     
-    Loading --> Spawn[In-Raid Gameplay]
+    L4 --> Spawn[In-Raid Gameplay]
     
     Spawn -->|Death| DefeatScreen[Death Screen]
     Spawn -->|Extract Success| ExtractionUI[Extraction Animation]
     Spawn -->|Time Expired| ForceExtractUI[Emergency Extraction]
     
     DefeatScreen --> DeathCam[Death Replay]
-    ExtractionUI --> Summary[After Action Report]
-    ForceExtractUI --> Summary
-    DeathCam --> Summary
+    ExtractionUI --> L5[L5 IngameToResult]
+    ForceExtractUI --> L5
+    DeathCam --> L5
     
-    Summary -->|Continue| MainMenu
+    L5 --> Summary[After Action Report]
+    
+    Summary -->|Continue| L6[L6 ResultToMain]
     Summary -->|Quit| End(Session End)
+    L6 --> MainMenu
 ```
+
+**Loading nodes (L1–L8):** See [Loading Screen Design](LoadingScreen_Design.md) for full taxonomy. L7 (Map Transition) and L8 (Reconnect) apply to multi-zone raids and disconnect recovery respectively.
 
 <!-- REF_IMAGE: Player session flow diagram — full-color version of the mermaid chart above with visual polish and game-specific artwork -->
 

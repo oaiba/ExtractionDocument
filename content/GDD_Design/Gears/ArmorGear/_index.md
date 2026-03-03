@@ -22,6 +22,7 @@ This section covers all armor worn by the Operator: body vests, helmets, face sh
 
 ### Related Sections
 
+- **[Gear Tier System](../Gear_Tier_System.md)** — Armor Tier (1–5) definition; progression = Tier + Rarity + player/trader level.
 - **[Storage Gear — Armored Rigs](../StorageGear/)** — Rigs that include built-in armor; see Storage Master Database.
 - **[Weapons — Caliber & Ballistics](../../Weapons/Caliber_Ballistics_System.md)** — Penetration power vs armor class, blunt damage formula.
 - **[Gameplay — Gear Mechanics](../../Gameplay/Gear_Mechanics.md)** — Armor weight vs protection table, loadout examples.

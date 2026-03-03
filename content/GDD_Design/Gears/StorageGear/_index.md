@@ -21,6 +21,7 @@ This section covers all storage that the Operator carries in-raid: tactical rigs
 
 ### Related Sections
 
+- **[Gear Tier System](../Gear_Tier_System.md)** — Storage Tier (1–4) definition; progression = Tier + Rarity + player/trader level.
 - **[Armor Gear — Armored Rigs](../ArmorGear/)** — Rigs with built-in armor class; see Armor Master Database for armor stats.
 - **[Inventory & Gear](../../Inventory_Gear/)** — Grid system overview, paper doll, encumbrance; [Containers](../../Inventory_Gear/Containers.md) for high-level container types.
 - **[Gameplay — Gear Mechanics](../../Gameplay/Gear_Mechanics.md)** — Rig vs backpack tiers, access times, weight budget examples.

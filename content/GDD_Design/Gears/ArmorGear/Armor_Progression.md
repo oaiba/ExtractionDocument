@@ -12,7 +12,7 @@ This document covers **trader unlock gating**, **Safe House repair bench progres
 
 ## Trader Unlock Gating
 
-Armor tier is gated by trader level, quests, and player level so that early game is not dominated by top-tier armor.
+Armor tier (per [Gear Tier System](../Gear_Tier_System.md)) is gated by trader level, quests, and player level so that early game is not dominated by top-tier armor.
 
 | Armor tier | Trader level required | Quest gate | Level gate |
 | :--------- | :-------------------: | :--------- | :--------: |
@@ -63,6 +63,7 @@ Crafting provides an alternative to trader purchase and FIR loot, and consumes b
 
 ## Cross-References
 
+- [Gear Tier System](../Gear_Tier_System.md) — Armor Tier (1–5) definition; progression = Tier + Rarity + player/trader level.
 - [Armor Master Database](Armor_Master_Database.md) — Trader column per item.
 - [Safe House Design](../../GameDesign/Safe_House_Design.md) — Crafting recipes, bench requirements.
 - [Progression](../../GameDesign/Progression.md) — Player and trader progression framework.

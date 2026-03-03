@@ -94,10 +94,13 @@ When tuning armor in patches, use these levers:
 
 **Rule:** No single item should be strictly best in every stat. E.g. Class 6 Steel (very heavy) vs Class 5 UHMWPE (almost as good protection, much lighter) — situational and loadout-dependent.
 
+**Tier** (per [Gear Tier System](../Gear_Tier_System.md)) is used for balance bracket and cost curve; progression = Tier + Rarity + player/trader level.
+
 ---
 
 ## Cross-References
 
+- [Gear Tier System](../Gear_Tier_System.md) — Armor Tier (1–5) definition; balance bracket, cost curve.
 - [Armor & Ballistics](Armor.md) — Penetration check, blunt, material table.
 - [Caliber & Ballistics System](../../Weapons/Caliber_Ballistics_System.md) — Penetration power, armor degradation formula.
 - [Weapon Balance Framework](../../Weapons/Weapon_Balance_Framework.md) — TTK matrix, DPS, cost-efficiency.

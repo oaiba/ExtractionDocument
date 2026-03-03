@@ -21,6 +21,7 @@ This is distinct from **[Inventory & Gear](../Inventory_Gear/)** (Inventory_Gear
 
 | Section | Description |
 | :------ | :---------- |
+| [Gear Tier System](Gear_Tier_System.md) | Canonical Gear Tier for Armor (1–5) and Storage (1–4). Progression = Tier + Rarity + player/trader level; no item level. Used for loot, craft, economy, UI. |
 | [Armor Gear](ArmorGear/) | Body armor, helmets, face shields, headsets: classes, zones, materials, penetration, blunt damage, ricochet. Master database, handling, balance, progression, visual identity. |
 | [Storage Gear](StorageGear/) | Tactical rigs, backpacks, secure containers, stash-only cases: grid layouts, reload rule, flat storage and backpack collapse, balance, stash progression. |
 

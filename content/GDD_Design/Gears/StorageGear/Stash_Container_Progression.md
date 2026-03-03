@@ -29,7 +29,7 @@ All editions can reach the same maximum (e.g. 10×68) via Safe House; premium/ul
 
 ## Container Unlock Path
 
-Order in which stash-only containers and key tools become available. Exact levels and quest names are placeholders.
+Order in which stash-only containers and key tools become available. Exact levels and quest names are placeholders. Container unlock phase maps to **Storage Tier** in [Gear Tier System](../Gear_Tier_System.md) for consistency with loot and economy.
 
 | Phase | Container (examples) | How to unlock | Estimated level |
 | :---- | :------------------- | :------------ | :-------------- |
@@ -59,6 +59,7 @@ Standard-edition players can reach Gamma/Kappa by progression; premium gives Gam
 
 ## Cross-References
 
+- [Gear Tier System](../Gear_Tier_System.md) — Storage Tier (1–4) definition; container unlock phase maps to Tier.
 - [Storage Master Database](Storage_Master_Database.md) — Secure containers, stash-only cases, values.
 - [Inventory & Gear — Stash](../../Inventory_Gear/_index.md#8-stash--containers) — Stash overview, organization tips.
 - [Safe House Design](../../GameDesign/Safe_House_Design.md) — Safe House levels, upgrade costs.

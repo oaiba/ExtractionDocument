@@ -10,7 +10,7 @@ The Insurance System is one of the defining mechanics of the extraction genre �
 
 **Core loop:** Insure gear before raid → Die → Hope others don't loot your gear → Items returned after delay.
 
-> **Cross-References:** [Loadout Preparation](LoadoutPreparation.md) — Insurance UI integrated into prep screen; [Economy](Economy.md) — Insurance costs scaled to credit values; [Hideout & Crafting](../Gameplay/Hideout_Crafting.md) — Insurance inbox accessed via Hideout mail station; [Traders](../Gameplay/Quest_Objective_System.md) — Viktor and Ada are traders who also offer insurance.
+> **Cross-References:** [Loadout Preparation](LoadoutPreparation.md) — Insurance UI integrated into prep screen; [Economy](Economy.md) — Insurance costs scaled to credit values; [Safe House Design](Safe_House_Design.md) — Insurance inbox accessed via Safe House mail station; [Traders](../Gameplay/Quest_Objective_System.md) — Viktor and Ada are traders who also offer insurance.
 
 ---
 
@@ -136,7 +136,7 @@ Insurance status must be **visually obvious at all times** — in stash, in load
 | Insured (Ada) | 🛡 Grey shield icon — top-left corner of item tile |
 | Not insured | No icon |
 | Insurance pending (in queue) | 🕐 Clock icon overlay — item is currently being "processed" |
-| Insurance returned (inbox) | 📬 Animated notification badge on Hideout mail button |
+| Insurance returned (inbox) | 📬 Animated notification badge on Safe House mail button |
 
 ### Color Coding in Loadout Gear Slots
 
@@ -205,17 +205,17 @@ Server logs: which insured items were looted vs. uncollected
     ▼
 After [Return Time] (Viktor: 12–16h / Ada: 36–48h):
     │
-    ├─ Uncollected items → Added to Insurance Inbox in Hideout
+    ├─ Uncollected items → Added to Insurance Inbox in Safe House
     └─ Looted items → Lost permanently (no return)
     │
     ▼
 Player receives push notification: "3 items returned by Viktor"
     │
     ▼
-Player visits Hideout Mail Station → Claims items to stash
+Player visits Safe House Mail Station → Claims items to stash
 ```
 
-### Insurance Inbox UI (Hideout Mail Station)
+### Insurance Inbox UI (Safe House Mail Station)
 
 ```
 ┌────────────────────────────────────────────────────────────┐
@@ -327,9 +327,9 @@ When a weapon is insured, its equipped attachments are **automatically included*
 | Viktor Tier 2 | Salvage Corps Honored (5,000 rep) | Return time reduced: 12h → 10h |
 | Viktor Tier 3 | Salvage Corps Revered (15,000 rep) | Return time reduced: 10h → 8h; hold time extended to 5 days |
 | Ada Tier 2 | Tech Syndicate Honored (5,000 rep) | Durability bonus on return: 10% → 20% |
-| Hideout: Insurance Office Level 1 | Hideout upgrade | Hold time +1 day for all insurers |
-| Hideout: Insurance Office Level 2 | Hideout upgrade | Can insure containers — items inside automatically included |
-| Hideout: Insurance Office Level 3 | Hideout upgrade | Insurance refund on successful extract increased: 2% fee → 0% (full refund) |
+| Safe House: Insurance Office Level 1 | Safe House upgrade | Hold time +1 day for all insurers |
+| Safe House: Insurance Office Level 2 | Safe House upgrade | Can insure containers — items inside automatically included |
+| Safe House: Insurance Office Level 3 | Safe House upgrade | Insurance refund on successful extract increased: 2% fee → 0% (full refund) |
 
 ---
 
@@ -337,7 +337,7 @@ When a weapon is insured, its equipped attachments are **automatically included*
 
 - [Loadout Preparation](LoadoutPreparation.md) — Insurance UI and insurer selection integrated into the pre-raid prep screen.
 - [Economy](Economy.md) — Insurance costs draw from Credits; credit sinks and balance considerations.
-- [Hideout & Crafting](../Gameplay/Hideout_Crafting.md) — Insurance Office upgrade module; mail station for claiming returned items.
+- [Safe House Design](Safe_House_Design.md) — Insurance Office upgrade module; mail station for claiming returned items.
 - [Quest & Objective System](../Gameplay/Quest_Objective_System.md) — Quest items flagged as FIR are excluded from insurance; trader reputation required to unlock Ada.
 - [Gear Mechanics](../Gameplay/Gear_Mechanics.md) — Item condition/durability system used in insurance cost calculation.
 - [Post-Game Debrief](../Gameplay/Post_Game_Debrief.md) — Death screen shows which items were looted vs. insured; links to insurance inbox.

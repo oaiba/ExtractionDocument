@@ -317,7 +317,7 @@ Base Damage → Armor Absorption → Health Damage
 **Armor Mechanics:**
 - Absorbs 70% of incoming damage (at full condition)
 - Depletes with each hit — does not regenerate during raid
-- Must be replaced or repaired (Hideout repair bench)
+- Must be replaced or repaired (Safe House repair bench)
 - Armor class determines which ammo types can penetrate — see caliber table above
 
 **Health Model:**
@@ -437,7 +437,7 @@ See [Items & Gear](ItemsAndGear.md) for full item tables with stack sizes, weigh
 | Purchase from Stash/Traders | — | ✅ |
 | Quest rewards | — | ✅ |
 | Battle Pass rewards | — | ✅ |
-| Hideout crafting | — | ✅ |
+| Safe House crafting | — | ✅ |
 
 ---
 

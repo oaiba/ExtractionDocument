@@ -53,7 +53,7 @@ type: docs
 | Competitor | Lesson Applied to Our Design |
 | :--------- | :--------------------------- |
 | **Tarkov** | Deep economy ✅, insurance ✅, quest traders ✅ — BUT: reduce prep friction, add visual character identity (Tarkov has none) |
-| **ARC Raiders** | Centralized hub (Speranza) → adopt as Hideout; skill tree branching → operator ability trees; avoid their high $40 entry price barrier |
+| **ARC Raiders** | Centralized hub (Speranza) → adopt as Safe House; skill tree branching → operator ability trees; avoid their high $40 entry price barrier |
 | **Hawked** | Guild system → our Clan System; colorful readability → critical for top-down; lesson: F2P with poor monetization balance = player anger |
 | **Hunt: Showdown** | Hunter identity = emotional attachment → hero operator system solves this; duo/trio squad → our default squad sizes |
 | **The Cycle** | Server shutdown = player trust destroyed → never monetize survival or core systems; keep economy ethical |
@@ -64,7 +64,7 @@ All Mobile Competitors        |  Our Game
 ──────────────────────────────────────────────────────
 • Start equal each match      |  • Bring your own gear (trained loadout)
 • Battle Royale format        |  • Extraction-based sessions (15 min)
-• No persistent economy       |  • Full stash, hideout, trader progression
+• No persistent economy       |  • Full stash, Safe House, trader progression
 • Cosmetic-only identity      |  • Hero operators with distinct abilities
 • No gear fear                |  • Meaningful death penalty + insurance
 • No clan/social system       |  • Full Clan System + Faction Wars
@@ -438,12 +438,12 @@ Mastery 0 → Mastery 10
 └─ Time Investment: ~20 hours per operator
 ```
 
-#### Stash & Hideout Growth (Progression Tree)
+#### Stash & Safe House Growth (Progression Tree)
 ```
 Starting Stash: 10x20 grid
 ├─ Extract loot → Add to stash
 ├─ Sell for credits/Reputation
-├─ Upgrade Hideout (Base buffs)
+├─ Upgrade Safe House (Base buffs)
 └─ Player wealth compounds
 ```
 

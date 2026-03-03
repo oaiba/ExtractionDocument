@@ -173,7 +173,7 @@ Each operator must have the following voice lines recorded for Home Screen use:
 │              │                              │  │  + 2 more...            │  │
 │              │                              │  └────────────────────────┘  │
 ├──────────────┴──────────────────────────────┴──────────────────────────────┤
-│  [Home]  [Armory]  [Stash]  [Hideout]  [Traders]  [Ranked]  [Shop]  [⚙️]   │
+│  [Home]  [Armory]  [Stash]  [Safe House]  [Traders]  [Ranked]  [Shop]  [⚙️]   │
 └─────────────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -184,7 +184,7 @@ Each operator must have the following voice lines recorded for Home Screen use:
 | **Home** | 🏠 House | `H` | Returns to operator showcase + deploy panel |
 | **Armory** | 🔫 Gun | `A` | Weapon loadout, attachment editor, operator skin |
 | **Stash** | 📦 Box | `S` | Full stash grid, item management, insurance queue |
-| **Hideout** | 🏚️ Shelter | `D` | Hideout modules, crafting queue, upgrade tree |
+| **Safe House** | 🏚️ Shelter | `D` | Safe House modules, crafting queue, upgrade tree. See [Safe House Design](Safe_House_Design.md). |
 | **Traders** | 🏪 Shop | `T` | 5 trader screens, quest turn-in, barter |
 | **Ranked** | 🏆 Trophy | `R` | Season rank, leaderboard, ranked queue |
 | **Shop** | 💎 Diamond | `P` | Cosmetics store, battle pass |
@@ -242,12 +242,12 @@ Each operator must have the following voice lines recorded for Home Screen use:
 | :-- | :--- | :------ |
 | **Home** | 🏠 | Operator showcase + deploy |
 | **Armory** | 🔫 | Loadout + weapon + operator cosmetics |
-| **Stash** | 📦 | Stash + hideout combined |
+| **Stash** | 📦 | Stash + Safe House combined |
 | **Missions** | 📋 | Quests + traders + objectives |
 | **Social** | 👥 | Friends + squad + recent players |
 | **Shop** | 💎 | Store + battle pass |
 
-> **Note on mobile vs PC:** Hideout and Traders are merged under "Missions" tab on mobile to stay within 6-tab limit (the thumb-reachable zone). Both are listed as sub-tabs within.
+> **Note on mobile vs PC:** Safe House and Traders are merged under "Missions" tab on mobile to stay within 6-tab limit (the thumb-reachable zone). Both are listed as sub-tabs within.
 
 ---
 
@@ -444,7 +444,7 @@ Located at the top of the Right Sidebar (PC) or as a pull-down panel (Mobile).
 │    > In Lobby — Solo queue                 │
 │                         [Join Their Squad] │
 │  ● NightSeal99     [Glitch] Lv.17          │
-│    > In Hideout                            │
+│    > In Safe House                         │
 │                         [Invite to Squad]  │
 │  ● 4R3S             [Ghost] Lv.55          │
 │    > In Ranked Lobby                       │

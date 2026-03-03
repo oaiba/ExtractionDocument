@@ -43,7 +43,7 @@ This section details the specific **interaction mechanics** — how players phys
 
 {{< cards cols="2" >}}
   {{< card link="Hydration_Energy" title="Hydration & Energy" icon="beaker" subtitle="Survival bars, food/water items, threshold effects, and stomach damage link." >}}
-  {{< card link="Hideout_Crafting" title="Hideout & Crafting" icon="home" subtitle="Module upgrade tree, Bitcoin Farm, crafting recipes, and seasonal wipe." >}}
+  {{< card link="../GameDesign/Safe_House_Design" title="Safe House" icon="home" subtitle="Operator base, Stash Room, Trophy Vault, Workbench, crafting, and seasonal wipe. See GameDesign." >}}
 {{< /cards >}}
 
 {{< cards cols="2" >}}

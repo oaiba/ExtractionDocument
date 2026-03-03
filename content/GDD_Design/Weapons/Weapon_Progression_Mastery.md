@@ -8,7 +8,7 @@ weight: 5
 
 Weapon progression gives players long-term goals per weapon model: proficiency levels, attachment unlocks, mastery challenges, and seasonal weapon pass integration. Design reference: Delta Force per-weapon attachment unlock progression, Arena Breakout weapon mastery.
 
-> **Cross-References:** [Weapon Arsenal](../Gameplay/WeaponArsenal.md) — weapon list; [Weapon Attachment System](../Gameplay/Weapon_Attachment_System.md) — attachment unlocks; [Hideout & Crafting](../Gameplay/Hideout_Crafting.md) — Workbench and crafting; [Quest & Objective System](../Gameplay/Quest_Objective_System.md) — quest-gated unlocks.
+> **Cross-References:** [Weapon Arsenal](../Gameplay/WeaponArsenal.md) — weapon list; [Weapon Attachment System](../Gameplay/Weapon_Attachment_System.md) — attachment unlocks; [Safe House Design](../GameDesign/Safe_House_Design.md) — Workbench and crafting; [Quest & Objective System](../Gameplay/Quest_Objective_System.md) — quest-gated unlocks.
 
 ---
 
@@ -127,6 +127,6 @@ Seasonal weapons or variants do not replace base weapons; they add choice or fla
 
 - [Weapon Arsenal](../Gameplay/WeaponArsenal.md) — Weapon list and categories.
 - [Weapon Attachment System](../Gameplay/Weapon_Attachment_System.md) — Attachment slots and crafting.
-- [Hideout & Crafting](../Gameplay/Hideout_Crafting.md) — Workbench levels and recipes.
+- [Safe House Design](../GameDesign/Safe_House_Design.md) — Workbench levels and recipes.
 - [Quest & Objective System](../Gameplay/Quest_Objective_System.md) — Quest-gated weapon and blueprint unlocks.
 - [Weapon Balance Framework](Weapon_Balance_Framework.md) — Seasonal rotation and meta.

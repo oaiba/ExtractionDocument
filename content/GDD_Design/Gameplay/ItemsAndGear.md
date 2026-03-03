@@ -6,9 +6,9 @@ weight: 26
 
 ## Overview
 
-This document is the **authoritative item catalogue** for all equipable, consumable, and deployable items in the game. All items listed here exist in the game's loot economy and stash — they can be found in-raid, purchased from traders, or crafted in the Hideout.
+This document is the **authoritative item catalogue** for all equipable, consumable, and deployable items in the game. All items listed here exist in the game's loot economy and stash — they can be found in-raid, purchased from traders, or crafted in the Safe House.
 
-> **Cross-References:** [Weapon Arsenal](WeaponArsenal.md) — weapons and attachments as items; [Gear Mechanics](Gear_Mechanics.md) — how armor condition, weight, and encumbrance rules work; [Medical System](Medical_System.md) — full medical healing rules, body-part HP, toxicity; [Loot Table Design](Loot_Table_Design.md) — where these items spawn per zone tier; [Looting & Inventory](Looting_Interactions.md) — inventory grid, secure container, FIR status, marketplace; [Hideout & Crafting](Hideout_Crafting.md) — crafting recipes using crafting materials.
+> **Cross-References:** [Weapon Arsenal](WeaponArsenal.md) — weapons and attachments as items; [Gear Mechanics](Gear_Mechanics.md) — how armor condition, weight, and encumbrance rules work; [Medical System](Medical_System.md) — full medical healing rules, body-part HP, toxicity; [Loot Table Design](Loot_Table_Design.md) — where these items spawn per zone tier; [Looting & Inventory](Looting_Interactions.md) — inventory grid, secure container, FIR status, marketplace; [Safe House Design](../GameDesign/Safe_House_Design.md) — crafting recipes using crafting materials.
 
 ---
 
@@ -30,7 +30,7 @@ Helmets reduce headshot damage multiplier based on **Armor Class** (1–6) and d
 
 ## 2. Armor — Body Vests
 
-Body vests absorb damage to the chest/torso. **Armor Class** (1–6) and durability define protection; repair at Hideout Repair Bench.
+Body vests absorb damage to the chest/torso. **Armor Class** (1–6) and durability define protection; repair at Safe House Repair Bench.
 
 | Code Name | Display Name | Rarity | Class | Coverage | Move Penalty | Weight (kg) | Grid | Value ($) |
 | :-------- | :----------- | :----- | :---: | :------- | :----------: | :---------: | :--: | --------: |
@@ -139,9 +139,9 @@ Keys unlock gated loot areas. Single-use keys are permanently destroyed after us
 
 ## 9. Crafting Materials
 
-Materials used in Hideout crafting recipes. High-value bulk trade items on the marketplace.
+Materials used in Safe House crafting recipes. High-value bulk trade items on the marketplace.
 
-> See [Hideout & Crafting](Hideout_Crafting.md) for full crafting recipes, Hideout module requirements, and crafting timers.
+> See [Safe House Design](../GameDesign/Safe_House_Design.md) for full crafting recipes, Safe House module requirements, and crafting timers.
 
 | Code Name | Display Name | Rarity | Use | Stack | Weight (kg) | Grid | Value ($) | Found In |
 | :-------- | :----------- | :----- | :-- | :---: | :---------: | :--: | --------: | :------- |
@@ -227,6 +227,6 @@ Understanding where items enter and leave the economy is critical for balance.
 - [Medical System](Medical_System.md) — Full healing rules; medical item interactions with body-part HP, toxicity, bleed.
 - [Loot Table Design](Loot_Table_Design.md) — Container types, zone loot tables, and where each category spawns.
 - [Looting & Inventory](Looting_Interactions.md) — Grid inventory system, Secure Container rules, FIR status, marketplace/auction house.
-- [Hideout & Crafting](Hideout_Crafting.md) — Crafting material consumption; Hideout module unlock gates; crafting recipe list.
+- [Safe House Design](../GameDesign/Safe_House_Design.md) — Crafting material consumption; Safe House module unlock gates; crafting recipe list.
 - [GameDesign/Economy](../../GameDesign/Economy.md) — Macro economy design: flea market, trader tiers, inflation control.
 - [GameDesign/Insurance System](../../GameDesign/InsuranceSystem.md) — Insurance cost formula and which items are insurable.

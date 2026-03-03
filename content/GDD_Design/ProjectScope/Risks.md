@@ -270,7 +270,7 @@ This document identifies potential risks to the project across:
 | **Indicators**  | Flea market prices skyrocket, players only run "Meta" kits                               |
 
 **Mitigation:**
-1. Money Sinks (High repair costs, Taxes, Hideout upgrades)
+1. Money Sinks (High repair costs, Taxes, Safe House upgrades)
 2. Seasonal Wipes (Hard or Soft resets)
 3. Dynamic Trader Pricing (Adjusts based on global supply)
 4. "Black Swan" events that destabilize currency

@@ -153,7 +153,7 @@ Weapons are platforms with 40–100+ attachments per family. Node-based build (r
 
 ## 8. Stash & Containers
 
-Stash size by edition and Hideout level; container unlock path (Scav Junkbox, Ammo/Med/Weapon Case, Items Case, THICC); secure container upgrade (Alpha → Beta → Gamma/Kappa). Full tables and progression: [Gears — Stash & Container Progression](../Gears/StorageGear/Stash_Container_Progression.md). Organize stash in zones (active gear top, containers middle, long-term bottom).
+See **[Stash Design](../Stash_Design.md)** for the full Stash specification (grid, containers, progression, UI/UX). Stash size by edition and Safe House level; container unlock path (Scav Junkbox, Ammo/Med/Weapon Case, Items Case, THICC); secure container upgrade (Alpha → Beta → Gamma/Kappa). Full tables: [Gears — Stash & Container Progression](../Gears/StorageGear/Stash_Container_Progression.md).
 
 ---
 
@@ -173,6 +173,7 @@ Stash size by edition and Hideout level; container unlock path (Scav Junkbox, Am
 
 ## Appendix B: Related Docs
 
+- **[Stash Design](../Stash_Design.md)** — Full Stash specification (independent document).
 - **[Gears](../Gears/)** — Armor & Storage gear specs (ArmorGear, StorageGear).
 - **[Gameplay — Gear Mechanics](../Gameplay/Gear_Mechanics.md)** — Weight tiers, loadout philosophy, extraction.
 - **[Gameplay — Looting & Inventory](../Gameplay/Looting_Interactions.md)** — Container search times, grid dimensions.

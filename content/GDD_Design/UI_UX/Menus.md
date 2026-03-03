@@ -17,7 +17,7 @@ Every menu screen follows these rules:
 
 ---
 
-## Main Menu / Hideout
+## Main Menu / Safe House
 
 The Main Menu is the player's home base — it must communicate safety, progression, and readiness.
 
@@ -234,9 +234,9 @@ The primary item management screen, separate from the quick-access view in Loado
 | Level | Slots | Unlock Method |
 | :---: | :---: | :------------ |
 | 1 (Default) | 100 | Starting stash |
-| 2 | 150 | Hideout upgrade (50K credits + 10 materials) |
-| 3 | 200 | Hideout upgrade (200K credits + 25 materials) |
-| 4 (Maximum) | 300 | Hideout upgrade (500K credits + 50 materials) |
+| 2 | 150 | Safe House upgrade (50K credits + 10 materials) |
+| 3 | 200 | Safe House upgrade (200K credits + 25 materials) |
+| 4 (Maximum) | 300 | Safe House upgrade (500K credits + 50 materials) |
 
 ---
 

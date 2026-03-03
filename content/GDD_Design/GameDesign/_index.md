@@ -28,7 +28,7 @@ The heartbeat of the game. How it plays moment-to-moment.
 Identify why players return day after day.
 
 {{< cards cols="2" >}}
-  {{< card link="progression.html" title="Player Growth" icon="chart-bar" subtitle="XP curves, trader reputation, hideout upgrades." >}}
+  {{< card link="progression.html" title="Player Growth" icon="chart-bar" subtitle="XP curves, trader reputation, Safe House upgrades." >}}
   {{< card link="economy.html" title="Economy & Trading" icon="currency-dollar" subtitle="Flea market, currency sinks, inflation control." >}}
   {{< card link="rankedmode.html" title="Competitive Ranked" icon="star" subtitle="MMR, seasonal ladders, exclusive rewards." >}}
   {{< card link="liveops.html" title="Live Operations" icon="calendar" subtitle="Battle pass, limited-time events, content roadmap." >}}
@@ -41,6 +41,7 @@ Ensuring the game is playable and understandable for everyone.
 
 {{< cards cols="3" >}}
   {{< card link="homescreen_design.html" title="Home Screen & Lobby" icon="home" subtitle="Operator showcase, navigation layout, mode select, social panel, and audio design." >}}
+  {{< card link="safe_house_design.html" title="Safe House" icon="home" subtitle="Operator base, Stash Room, Trophy Vault, Workbench, crafting, and meta-game hub." >}}
   {{< card link="loadoutpreparation.html" title="Loadout Preparation" icon="adjustments" subtitle="Pre-raid gear screen: presets, insurance, stash access, map selection, and squad readiness." >}}
   {{< card link="accessibility.html" title="Accessibility" icon="hand" subtitle="Colorblind modes, subtitles, input remapping." >}}
   {{< card link="localization.html" title="Localization" icon="translate" subtitle="Language support and cultural adaptation." >}}

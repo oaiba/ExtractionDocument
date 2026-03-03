@@ -10,7 +10,7 @@ Our game modes are designed to cater to different player intensities and time co
 **Design Pillars:**
 1.  **High Stakes:** Gear fear is real. Death has consequences.
 2.  **Variability:** No two raids feel the same (Dynamic weather, spawn points).
-3.  **Progression:** Every mode feeds into the main progression (Hideout/Trader).
+3.  **Progression:** Every mode feeds into the main progression (Safe House/Trader).
 
 ---
 
@@ -42,7 +42,7 @@ A risk-free mode to recover from losses or learn maps.
 *   **Goal:** Loot "leftovers" from a live PMC raid and extract.
 *   **Risk:** Zero. Death costs nothing.
 *   **Reward:** You keep everything you extract with.
-*   **Cooldown:** 20 Minutes (Reducible with Hideout upgrades).
+*   **Cooldown:** 20 Minutes (Reducible with Safe House upgrades).
 
 **Design Purpose:** 
 *   Prevents "bankruptcy" (players losing everything).

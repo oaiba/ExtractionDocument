@@ -29,7 +29,7 @@ This document supports the review and re-planning of Gameplay mechanics for the 
 | **AI_Enemy_Behavior.md** *(NEW)* | Aligned: tactical pressure, sound-critical, Scav karma | Tarkov AI depth; ARC machine variety | Same AI rules all platforms | Sound ranges from Movement & Stamina | ✅ |
 | **Matchmaking_Lobby.md** *(NEW)* | Aligned: cross-platform parity, fair play, no SBMM | ABMM inspired by ARC Raiders | Full cross-platform pool section | Disconnect rule from Extraction | ✅ |
 | **Hydration_Energy.md** *(NEW)* | Aligned: survival priority, gear packing depth | Tarkov hydration/energy model adapted | Same bars/rules all platforms; HUD adapts | Stomach link to Medical_System | ✅ |
-| **Hideout_Crafting.md** *(NEW)* | Aligned: persistent progression, economy sinks | Tarkov hideout depth; ARC Speranza | Server-clock timers; mobile offline notify | Economy refs to GameDesign/Economy | ✅ |
+| **Safe_House_Design.md** | Aligned: persistent progression, economy sinks | Tarkov hideout depth; ARC Speranza | Server-clock timers; mobile offline notify | Economy refs to GameDesign/Economy | ✅ |
 
 ---
 
@@ -47,7 +47,7 @@ This document supports the review and re-planning of Gameplay mechanics for the 
 | **AI system** | Deep Scav + bosses | Grunt/boss types | Basic AI | Limited | Machine AI types | Tier 1–4 enemies + 3 bosses + Player-as-Scav karma |
 | **Matchmaking** | Regional, no SBMM | Regional | Regional | Regional | ABMM (beta) | Regional + soft ABMM for new players |
 | **Hydration/Energy** | Yes (full) | No | No | No | No | Yes (stomach-linked survival bars) |
-| **Hideout** | Yes (deep) | Camp (limited) | Limited | Limited | Speranza | Module tree + Bitcoin Farm + crafting |
+| **Safe House** | Yes (deep) | Camp (limited) | Limited | Limited | Speranza | Module tree + Bitcoin Farm + crafting |
 | **Camera** | FPS | FPS | FPS | Third-person | Third-person | **Top-down (new design pillar)** |
 
 **Decisions recorded:** Raid timer 25–30 min with optional Quick Raid 15 min for 15–20 min session target. Medical depth kept (tactical pillar). Ability economy: cooldown-only, no per-raid charge limit; max ~2 signature uses per 20 min. Cross-platform: subsection in each Gameplay doc; same rules, input/UX by platform (see Controls). Five new GDDs created 2026-02-28 to fill critical gaps.
@@ -76,4 +76,4 @@ This document supports the review and re-planning of Gameplay mechanics for the 
 - [AI Enemy Behavior](AI_Enemy_Behavior.md) — Enemy types, detection, bosses, Scav karma.
 - [Matchmaking & Lobby](Matchmaking_Lobby.md) — Queue, squad, reconnect.
 - [Hydration & Energy](Hydration_Energy.md) — Survival resource bars.
-- [Hideout & Crafting](Hideout_Crafting.md) — Module tree, passive income.
+- [Safe House Design](../GameDesign/Safe_House_Design.md) — Module tree, passive income.

@@ -98,7 +98,7 @@ Hydration and Energy are survival resource bars that deplete over the course of 
 | Juice Box | +15 | Instant | 1.5 s | 1×1 | Compact; weak |
 | Sports Drink | +35 | Instant | 2.0 s | 1×2 | Higher tier; some Energy bonus (+5) |
 | IV Saline (Medical crossover) | +50 | Instant | 4.0 s | 1×2 | Medical item; double use. Also removes minor dehydration effect instantly |
-| Purified Water (Hideout craft) | +60 | Instant | 2.5 s | 1×2 | Best in category; craftable |
+| Purified Water (Safe House craft) | +60 | Instant | 2.5 s | 1×2 | Best in category; craftable |
 
 ### Food Items (Energy)
 
@@ -108,7 +108,7 @@ Hydration and Energy are survival resource bars that deplete over the course of 
 | Canned Beef Stew | +30 | −5 | 3.0 s | 1×2 | Common stash item |
 | MRE (Meal, Ready-to-Eat) | +50 | +10 (includes drink) | 4.0 s | 2×2 | All-in-one; bulky |
 | Energy Bar | +20 | 0 | 2.0 s | 1×1 | Compact; good ratio |
-| Hot Meal (Hideout cook) | +60 | +15 | 3.5 s | 2×2 | Crafted; best food item |
+| Hot Meal (Safe House cook) | +60 | +15 | 3.5 s | 2×2 | Crafted; best food item |
 | Golden Star Balm (crossover) | +15 Energy | 0 | 2.0 s | 1×1 | Pain remover + Energy; per [Medical System](Medical_System.md) |
 
 ### Consumption Rules
@@ -178,6 +178,18 @@ Toxicity accumulation from stimulant injectors (per [Medical System](Medical_Sys
 
 ---
 
+## Out-of-Raid Recovery in Safe House
+
+Between raids, players restore Energy and Hydration in the [Safe House](../GameDesign/Safe_House_Design.md):
+
+- **Consume from Stash:** Food and water items in the Stash can be consumed in the Safe House before deploying. Consumed items restore Energy/Hydration; starting values (90 Hydration, 85 Energy) reflect the Operator's state when entering the next raid.
+- **Nutrition Unit:** Crafts Purified Water (+60 Hydration) and Hot Meal (+60 Energy, +15 Hydration) for provisioning.
+- **Pre-raid provisioning:** Players who consume food/water in Safe House before raid start enter with higher values; those who skip enter at default (or depleted if they died with low values).
+
+See [Safe House Design — Out-of-Raid Operator State](../GameDesign/Safe_House_Design.md#3-out-of-raid-operator-state) for full details.
+
+---
+
 ## Cross-References
 
 - [Medical System](Medical_System.md) — Body part HP (Stomach = depletion multiplier); toxicity system; stimulant item effects.
@@ -185,3 +197,4 @@ Toxicity accumulation from stimulant injectors (per [Medical System](Medical_Sys
 - [Gear Mechanics](Gear_Mechanics.md) — Food/water item weight in loadout budget.
 - [Core Gameplay Loop](CoreLoop.md) — Phase 1 preparation; loadout packing decisions.
 - [Environmental Hazards](Environmental_Hazards.md) — Hot environment accelerated drain.
+- [Safe House Design](../GameDesign/Safe_House_Design.md) — Out-of-raid Energy/Hydration recovery.

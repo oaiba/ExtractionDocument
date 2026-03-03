@@ -194,7 +194,7 @@ Every looting action has a cost measured in seconds of vulnerability:
 
 An item has "Found-in-Raid" (FIR) status if:
 1. It was picked up from a world spawn (container, loose loot, AI corpse)
-2. It was crafted in the hideout
+2. It was crafted in the Safe House
 3. It was received as a quest reward
 
 An item does **not** have FIR status if:
@@ -222,12 +222,12 @@ An item does **not** have FIR status if:
 
 | Category | Examples | Primary Use |
 | :------- | :------- | :---------- |
-| Electronics | GPU, CPU, Circuit Board, Flash Drive | Hideout upgrades, high-value trader barters |
+| Electronics | GPU, CPU, Circuit Board, Flash Drive | Safe House upgrades, high-value trader barters |
 | Medical Supplies | Saline, Surgical Instruments, Blood Set | Medical station crafting, quest turn-ins |
-| Mechanical Parts | Bolts, Nuts, Screws, Springs | Weapon crafting, hideout construction |
+| Mechanical Parts | Bolts, Nuts, Screws, Springs | Weapon crafting, Safe House construction |
 | Valuables | Gold Chain, Rollex, Bitcoins | Direct sale for high credit value |
-| Provisions | Canned food, MREs, Water bottles | Sustain Hydration/Energy in-raid, hideout fuel |
-| Functional Items | Fuel, Car Battery, Wires | Hideout power, generator fuel |
+| Provisions | Canned food, MREs, Water bottles | Sustain Hydration/Energy in-raid, Safe House fuel |
+| Functional Items | Fuel, Car Battery, Wires | Safe House power, generator fuel |
 
 ### Item Identification
 
@@ -271,7 +271,7 @@ The player-driven market — the primary economic hub outside of NPC traders.
 | **Buyout price** | Optional — instant-purchase price |
 | **Listing fee** | 5% of starting bid (non-refundable, even if unsold) |
 | **Duration options** | 24h / 48h / 72h |
-| **Max active listings** | 5 (increases with Hideout upgrade) |
+| **Max active listings** | 5 (increases with Safe House upgrade) |
 
 #### Bidding
 
@@ -323,7 +323,7 @@ A high-risk premium vendor concept — an AI trader that spawns in the contamina
 - [Gears — Storage Gear](../../Gears/StorageGear/) — Storage Master Database, Slot Layouts (reload rule, hotkeys), Flat Storage & Folding, Secure Container restrictions.
 - [Loot Table Design](Loot_Table_Design.md) — What spawns in each container type and zone; supply drop loot.
 - [Gear Mechanics](Gear_Mechanics.md) — Weight encumbrance, item condition, and armor repair.
-- [Hideout & Crafting](Hideout_Crafting.md) — Crafting recipes; Hideout upgrades that expand marketplace listing slots.
+- [Safe House Design](../GameDesign/Safe_House_Design.md) — Crafting recipes; Safe House upgrades that expand marketplace listing slots.
 - [Quest & Objectives](Quest_Objective_System.md) — Quest items require FIR; some quests require buying from traders.
 - [GameDesign/Economy](../../GameDesign/Economy.md) — Macro economy design: trader tiers, credit sinks, inflation control.
 - [GameDesign/Insurance System](../../GameDesign/InsuranceSystem.md) — Insurance pre-checkout as part of pre-raid loadout flow.

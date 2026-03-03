@@ -16,7 +16,7 @@ Most players quit Extraction Shooters because they loot, get lost, and die to a 
 4. Operator selection & ability use
 5. Economy, extraction, and the debrief loop
 
-> **Cross-References:** [Core Gameplay Loop](../Gameplay/CoreLoop.md) — Phase 1–5 overview; [Hero Abilities](../Gameplay/Hero_Abilities.md) — operator selection; [Matchmaking & Lobby](../Gameplay/Matchmaking_Lobby.md) — tutorial routing; [Hideout & Crafting](../Gameplay/Hideout_Crafting.md) — post-tutorial hideout introduction; [Post-Game Debrief](../Gameplay/Post_Game_Debrief.md) — first-run debrief experience.
+> **Cross-References:** [Core Gameplay Loop](../Gameplay/CoreLoop.md) — Phase 1–5 overview; [Hero Abilities](../Gameplay/Hero_Abilities.md) — operator selection; [Matchmaking & Lobby](../Gameplay/Matchmaking_Lobby.md) — tutorial routing; [Safe House Design](Safe_House_Design.md) — post-tutorial hideout introduction; [Post-Game Debrief](../Gameplay/Post_Game_Debrief.md) — first-run debrief experience.
 
 ---
 
@@ -128,7 +128,7 @@ After extraction, a special first-run debrief plays:
 | **XP earned** | Guided tooltip on each XP line — "This is how you grow your operator." | First-run only: each line has explanation popup |
 | **Loot kept** | Inventory shown — "These items are now in your Stash." | |
 | **Starter Kit granted** | See reward table below | Auto-deposited into stash |
-| **"Next Step" guidance** | "Visit your Hideout → then deploy on your first real raid." | Highlighted button |
+| **"Next Step" guidance** | "Visit your Safe House → then deploy on your first real raid." | Highlighted button |
 
 ---
 
@@ -149,15 +149,15 @@ Completing the tutorial grants:
 
 ---
 
-## 🏠 Post-Tutorial: Hideout Onboarding
+## 🏠 Post-Tutorial: Safe House Onboarding
 
-After the tutorial debrief, the player is guided through the Hideout for the first time:
+After the tutorial debrief, the player is guided through the Safe House for the first time:
 
 | Step | Prompt | What's Shown |
 | :--- | :----- | :----------- |
-| 1 | "This is your Hideout — your base between raids." | Full Hideout view |
+| 1 | "This is your Safe House — your base between raids." | Full Safe House view |
 | 2 | "Your Stash holds everything you've kept." | Stash grid with starter kit items highlighted |
-| 3 | "The Generator powers your Hideout. Keep it fueled." | Generator module, fuel icon |
+| 3 | "The Generator powers your Safe House. Keep it fueled." | Generator module, fuel icon |
 | 4 | "The Scav Box generates passive loot over time." | Scav Box, 6h timer |
 | 5 | "Visit Viktor to get your first mission." | Trader highlight — Viktor |
 | 6 | "Ready to deploy? Use the Deploy button when prepared." | Deploy button pulsing |
@@ -205,6 +205,6 @@ Don't rely just on the raid. Use the downtime:
 - [Extraction Mechanics](../Gameplay/Extraction_Mechanics.md) — Extraction hold, timer reset on damage, zone types.
 - [Camera System](../Gameplay/Camera_System.md) — Indoor camera transition in Phase 3 Bunker.
 - [Matchmaking & Lobby](../Gameplay/Matchmaking_Lobby.md) — Tutorial routing; new accounts auto-routed to tutorial once.
-- [Hideout & Crafting](../Gameplay/Hideout_Crafting.md) — Hideout onboarding step after tutorial debrief.
+- [Safe House Design](Safe_House_Design.md) — Safe House onboarding step after tutorial debrief.
 - [Post-Game Debrief](../Gameplay/Post_Game_Debrief.md) — Tutorial uses custom version of debrief; normal version first-run after.
 - [NavigationAndMap](NavigationAndMap.md) — Minimap and ping system taught in Phase 4.

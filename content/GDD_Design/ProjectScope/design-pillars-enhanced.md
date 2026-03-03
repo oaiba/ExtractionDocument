@@ -34,7 +34,7 @@ These six foundational pillars define the extraction shooter genre based on indu
 | :------------------- | :--------------- | :----------------- | :--------------- |
 | **Risk of Loss** | Constant awareness that progress can be lost. Dying = losing equipped gear. | **Full Loot Drop:** Everything equipped is at risk. Creates emotional investment in each raid. | **Insurance System:** 70% return rate for unlooted gear after 24h (anti-frustration) |
 | **Survival Priority** | Survival prioritized over unnecessary combat. Avoiding fights is valid. | **Health Scarcity:** Meds are expensive. Every engagement drains resources. Stealth is viable. | **Sound-First Design:** Footsteps audible 20m+, silencers viable, prone reduces noise 80% |
-| **Progression Tree** | Permanent, learnable advantages that persist through death. | **Hideout & Trader Rep:** XP and reputation unlock better gear and passive buffs. | **Skill Mastery:** Weapon-specific expertise (recoil reduction, reload speed) persists |
+| **Progression Tree** | Permanent, learnable advantages that persist through death. | **Safe House & Trader Rep:** XP and reputation unlock better gear and passive buffs. | **Skill Mastery:** Weapon-specific expertise (recoil reduction, reload speed) persists |
 | **Resource Heavy** | Strong emphasis on inventory management and looting. | **Tetris Grid:** Spatial puzzle. Ammo tracking manual (mag checking). Weight affects movement. | **Smart Inventory AI:** Optional "suggest discard" highlights low-value items when full |
 | **Task Driven** | Clear objectives guide decisions beyond "kill everyone." | **Faction Quests:** Specific goals (mark territory, retrieve data, eliminate HVT). | **Dynamic Objectives:** Quest difficulty scales with player count in zone |
 | **Time Pressure** | Staying longer increases risk and reward. | **Match Timer & Scav Waves:** 25-30min raids. Late-game scav spawn. Extracts close dynamically. | **Hot Zones:** High-value loot spawns announce globally, creating PvP magnets |
@@ -307,7 +307,7 @@ Players should never be "just wandering." Every action is driven by a quest, a r
 **Mantra:** *"Lose the Raid, Build the War."*
 
 **Philosophy:**  
-While individual raids carry the risk of loss, the **account's power and influence grow persistently**. Your actions today improve your capabilities tomorrow through the Hideout, Traders, and Reputation. Even failure teaches lessons (XP, unlocks). This creates the "one more raid" loop.
+While individual raids carry the risk of loss, the **account's power and influence grow persistently**. Your actions today improve your capabilities tomorrow through the Safe House, Traders, and Reputation. Even failure teaches lessons (XP, unlocks). This creates the "one more raid" loop.
 
 **Progression Layers:**
 
@@ -315,14 +315,14 @@ While individual raids carry the risk of loss, the **account's power and influen
 |:------|:-----------|:----------------|:------------|
 | **Stash (Inventory)** | Permanent | Death (lost gear), Extract (saved gear) | Economic wealth, gear variety |
 | **Account Level** | Permanent | Never (seasonal soft reset) | Skill unlocks, prestige |
-| **Hideout Upgrades** | Permanent | Never | Passive bonuses, crafting |
+| **Safe House Upgrades** | Permanent | Never | Passive bonuses, crafting |
 | **Trader Reputation** | Permanent | Rare (faction betrayal) | Gear availability, discounts |
 | **Operator Mastery** | Permanent | Never | Combat effectiveness, specialization |
 | **Weapon Proficiency** | Permanent | Never | Recoil reduction, reload speed |
 | **Map Knowledge** | Player Memory | Never (brain-based!) | Tactical advantage, loot efficiency |
 | **Season Pass** | Seasonal | Every 3 months | Cosmetics, exclusive loot |
 
-**Hideout System (Meta-Game Hub):**
+**Safe House System (Meta-Game Hub):**
 
 **Purpose**: Persistent base that provides passive bonuses and crafting
 
@@ -392,7 +392,7 @@ While individual raids carry the risk of loss, the **account's power and influen
 - Soft reset (rank reset, leaderboards)
 
 **What DOESN'T Reset:**
-- Hideout levels
+- Safe House levels
 - Trader reputation
 - Operator mastery
 - Weapon proficiency
@@ -408,11 +408,11 @@ While individual raids carry the risk of loss, the **account's power and influen
 - ❌ No mandatory daily login rewards (respects player time)
 
 **Player Testimonial Goal:**  
-*"I lost my best gear today, but I unlocked Level 2 Hideout and got closer to Honored with the Militia. Still feels like progress."* - Target Player Review
+*"I lost my best gear today, but I unlocked Level 2 Safe House and got closer to Honored with the Militia. Still feels like progress."* - Target Player Review
 
 **Metrics:**
 - Average account level after 1 month: 25-30
-- Hideout module upgrade rate: >2 per week
+- Safe House module upgrade rate: >2 per week
 - Operator mastery diversity: >3 operators at Lvl 10+
 - Player-reported "feels rewarding even when losing": >65%
 - Retention (30-day): >50% (strong progression hook)
@@ -504,7 +504,7 @@ When core pillars contradict each other, use this **hierarchy** to decide:
 
 **Resolution**: **Progression wins** (Priority 5)
 - **Decision**: Opt-in wipes only (hardcore mode)
-- **Compromise**: Seasonal soft resets (ranks, leaderboards, not hideout)
+- **Compromise**: Seasonal soft resets (ranks, leaderboards, not Safe House)
 - **Reward**: Exclusive cosmetics for wipe participants
 
 ---
@@ -561,7 +561,7 @@ Week 1: LEARN
 Week 2: OPTIMIZE
 - Favorite weapon identified
 - Main quests progressing
-- First Hideout upgrade
+- First Safe House upgrade
 - Map knowledge improving
 
 Week 3: MASTER
@@ -573,7 +573,7 @@ Week 3: MASTER
 Week 4: ENDGAME
 - High-tier raids
 - Faction quest grinding
-- Hideout Level 2+
+- Safe House Level 2+
 - Seasonal event participation
 ```
 
@@ -604,7 +604,7 @@ Week 4: ENDGAME
 4. **PROGRESS** (2-3 minutes):
    - Sell loot to traders (economy management)
    - Repair damaged gear (durability system)
-   - Upgrade Hideout (long-term investment)
+   - Upgrade Safe House (long-term investment)
    - Increase Trader Reputation (quest turn-ins)
    - Check progression stats (dopamine hit)
    - Plan next raid (loop restart)
@@ -887,7 +887,7 @@ Use this checklist for **every new feature request**. If a feature fails 3+ chec
 **5. Persistent Progression:**
 - 30-day retention: >50%
 - Average account level at 1 month: 25-30
-- Hideout upgrade frequency: >2/week
+- Safe House upgrade frequency: >2/week
 - "Rewarding even when losing": >65%
 
 ### Holistic Success Metrics

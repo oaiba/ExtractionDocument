@@ -633,7 +633,7 @@ Weekly objectives that all clan members contribute toward collectively:
 | **Online**         | 🟢   | In menus, available            | Yes       |
 | **In Lobby**       | 🟡   | In pre-match lobby             | If open   |
 | **In Match**       | 🔴   | Currently in a raid            | No        |
-| **In Hideout**     | 🏠   | In social hub/hideout          | Visit     |
+| **In Safe House**  | 🏠   | In Safe House (social hub)     | Visit     |
 | **Away**           | 🟠   | Idle 10+ minutes               | Yes       |
 | **Do Not Disturb** | ⛔   | Blocks all invites/messages    | No        |
 | **Invisible**      | ⚫   | Appears offline to all         | No        |
@@ -642,13 +642,13 @@ Weekly objectives that all clan members contribute toward collectively:
 
 ---
 
-## 🏠 Social Hub (Hideout)
+## 🏠 Safe House (Social Hub)
 
 > *Inspired by Tarkov's Hideout and ARC Raiders' Social Hub. A persistent safe space where players interact between raids.*
 
 ### Hub Overview
 
-The **Hideout** is a personal instanced space that serves as the player's home base. It can also be opened to friends for **social visits**.
+The **Safe House** is a personal instanced space that serves as the player's home base. It can also be opened to friends for **social visits**. Full specification: [Safe House Design](../GameDesign/Safe_House_Design.md).
 
 **Functions:**
 | Area              | Function                                              |
@@ -664,17 +664,15 @@ The **Hideout** is a personal instanced space that serves as the player's home b
 ### Social Visits
 
 **How It Works:**
-- Friends can "Visit Hideout" from the friend list
+- Friends can "Visit Safe House" from the friend list
 - Up to 4 visitors at once
 - Visitors can see your trophy wall, inspect your stash (view-only), and use the squad planning table
 - Voice chat active during visits (private channel)
 - Drop items on the ground to trade with visitors
 
-<!-- 📸 IMAGE PLACEHOLDER: Concept art of the Hideout interior showing different functional areas (stash, workbench, trophy wall, intel board) -->
+<!-- 📸 IMAGE PLACEHOLDER: Concept art of the Safe House interior showing different functional areas (stash, workbench, trophy wall, intel board) -->
 
-<!-- 📸 IMAGE PLACEHOLDER: Screenshot reference of Escape from Tarkov's Hideout screen -->
-
-### Trading Post (In-Hideout)
+### Trading Post (In-Safe House)
 
 **Direct Trade:**
 - Each player places items in a trade window
@@ -976,7 +974,7 @@ We utilize **Epic Online Services** to provide a seamless multiplayer experience
 | **One Identity**        | Link accounts across Steam, PlayStation, Xbox, Google, Apple. Progress and purchases sync. |
 | **Universal Friends**   | See friends from *all* platforms in one unified list.               |
 | **Cross-Platform Voice** | High-quality Opus voice chat between mobile and PC without Discord. |
-| **Cloud Save**          | Hideout progress, settings, and stash sync across devices.          |
+| **Cloud Save**          | Safe House progress, settings, and stash sync across devices.          |
 
 ### 🎮 Unified Lobbies & Parties
 
@@ -984,7 +982,7 @@ We utilize **Epic Online Services** to provide a seamless multiplayer experience
 - **Persistent Parties** — Your squad stays together after the match ends. No re-invite needed.
 - **Drop-In / Drop-Out** — Friends can join your lobby while in the main menu (if privacy set to "Friends Only").
 - **Cross-Platform Invites** — Send game invites directly via EOS Overlay or in-game Social Panel, regardless of platform.
-- **Party Transfer** — All party members follow the leader between modes (lobby → hideout → raid).
+- **Party Transfer** — All party members follow the leader between modes (lobby → Safe House → raid).
 
 ### ⚔️ Cross-Play Settings
 
@@ -1084,7 +1082,7 @@ We utilize **Epic Online Services** to provide a seamless multiplayer experience
 | Clan leaderboards         | 🔲     | P2       |
 | Co-op extraction points   | 🔲     | P1       |
 | Expanded emote system     | 🔲     | P2       |
-| Social Hub / Hideout      | 🔲     | P2       |
+| Social Hub / Safe House   | 🔲     | P2       |
 | After Action Report (AAR) | 🔲     | P1       |
 
 ### Phase 4: Competitive Social (v1.3 — Season 2)
@@ -1094,7 +1092,7 @@ We utilize **Epic Online Services** to provide a seamless multiplayer experience
 | Clan wars events          | 🔲     | P3       |
 | Mentorship program        | 🔲     | P3       |
 | Community tournaments     | 🔲     | P3       |
-| In-hideout trading        | 🔲     | P2       |
+| In-Safe House trading     | 🔲     | P2       |
 | Advanced karma (bounties) | 🔲     | P2       |
 | Spectator mode (enhanced) | 🔲     | P3       |
 

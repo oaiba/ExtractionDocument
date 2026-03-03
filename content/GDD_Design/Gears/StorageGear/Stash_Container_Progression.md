@@ -6,24 +6,24 @@ weight: 5
 
 ## Overview
 
-This document defines **stash size** by edition and Hideout level, **container unlock path** (order and method), and **secure container upgrade path**. For container specs see [Storage Master Database](Storage_Master_Database.md).
+This document defines **stash size** by edition and Safe House level, **container unlock path** (order and method), and **secure container upgrade path**. For container specs see [Storage Master Database](Storage_Master_Database.md). For full Stash design see [Stash Design](../../Stash_Design.md).
 
 ---
 
 ## Stash Size Progression
 
-Stash is the player’s persistent out-of-raid storage. **Stash capacity = total cells** (single grid; 10×28 = 280 cells, etc.). Grid size can increase with edition or Hideout upgrades.
+Stash is the player’s persistent out-of-raid storage. **Stash capacity = total cells** (single grid; 10×28 = 280 cells, etc.). Grid size can increase with edition or Safe House upgrades.
 
 | Edition / source | Stash grid | Total cells | Unlock cost / note |
 | :--------------- | :--------- | :---------: | :------------------ |
 | Standard Edition | 10×28 | 280 | Free |
-| Hideout Lvl 2 | 10×38 | 380 | 3.5M + materials |
-| Hideout Lvl 3 | 10×48 | 480 | 8.5M + materials |
-| Hideout Lvl 4 | 10×68 | 680 | 15M + materials |
+| Safe House Lvl 2 | 10×38 | 380 | 3.5M + materials |
+| Safe House Lvl 3 | 10×48 | 480 | 8.5M + materials |
+| Safe House Lvl 4 | 10×68 | 680 | 15M + materials |
 | Premium Edition | 10×48 | 480 | Free (start) |
 | Ultimate Edition | 10×68 | 680 | Free (start) |
 
-All editions can reach the same maximum (e.g. 10×68) via Hideout; premium/ultimate start with a larger grid.
+All editions can reach the same maximum (e.g. 10×68) via Safe House; premium/ultimate start with a larger grid.
 
 ---
 
@@ -61,6 +61,6 @@ Standard-edition players can reach Gamma/Kappa by progression; premium gives Gam
 
 - [Storage Master Database](Storage_Master_Database.md) — Secure containers, stash-only cases, values.
 - [Inventory & Gear — Stash](../../Inventory_Gear/_index.md#8-stash--containers) — Stash overview, organization tips.
-- [Hideout & Crafting](../../Gameplay/Hideout_Crafting.md) — Hideout levels, upgrade costs.
+- [Safe House Design](../../GameDesign/Safe_House_Design.md) — Safe House levels, upgrade costs.
 - [Progression](../../GameDesign/Progression.md) — Player and trader level framework.
 - [Quest Objective System](../../Gameplay/Quest_Objective_System.md) — Quest gates for containers and secure upgrades.

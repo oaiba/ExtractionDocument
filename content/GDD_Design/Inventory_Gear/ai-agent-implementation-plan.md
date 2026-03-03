@@ -425,7 +425,7 @@ TASK 6.4: Search & Filter
 Priority: HIGH | Est: 3 days
 
 TASK 6.5: Stash Upgrades
-- Create hideout integration hooks
+- Create Safe House integration hooks
 - Build stash expansion logic
 - Implement edition-specific starting sizes
 - Add smooth grid expansion animation
@@ -966,7 +966,7 @@ POST /api/player/calculate-weight
 - Item values used for flea market pricing
 - Trader buy/sell prices referenced
 - Quest item requirements checked
-- Hideout upgrade materials validated
+- Safe House upgrade materials validated
 
 **Network Synchronization:**
 - Inventory state replicated to server

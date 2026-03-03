@@ -10,7 +10,7 @@ The **Loadout Preparation Screen** is the tactical gateway between the Home Scre
 
 **Design goal:** A player who has never played our game before should be able to equip a weapon, insure it, select a map, and deploy within **90 seconds** on their first attempt. A veteran player should be able to execute a full kit swap from the previous raid's losses within **30 seconds**.
 
-> **Cross-References:** [Home Screen & Lobby](HomeScreen_Design.md) — Deploy button flows into this screen; [Hideout & Crafting](../Gameplay/Hideout_Crafting.md) — Workbench/stash accessed from this screen; [Matchmaking & Lobby](../Gameplay/Matchmaking_Lobby.md) — queue begins after Deploy confirmation; [Gear Mechanics](../Gameplay/Gear_Mechanics.md) — weight tiers, durability rules; [Gears](../Gears/) — [ArmorGear](../Gears/ArmorGear/) and [StorageGear](../Gears/StorageGear/) for armor/rig/backpack/secure container specs and loadout slots; [Weapon Attachment System](../Gameplay/Weapon_Attachment_System.md) — weapon mod changes accessible here; [Economy](Economy.md) — credit cost of insurance; [GameModes](GameModes.md) — the 5 game modes selectable on this screen; [Quest & Objective System](../Gameplay/Quest_Objective_System.md) — active quests drive loadout recommendations.
+> **Cross-References:** [Home Screen & Lobby](HomeScreen_Design.md) — Deploy button flows into this screen; [Safe House Design](Safe_House_Design.md) — Workbench/stash accessed from Safe House; Loadout Preparation occurs in Operator Lounge within Safe House; [Matchmaking & Lobby](../Gameplay/Matchmaking_Lobby.md) — queue begins after Deploy confirmation; [Gear Mechanics](../Gameplay/Gear_Mechanics.md) — weight tiers, durability rules; [Gears](../Gears/) — [ArmorGear](../Gears/ArmorGear/) and [StorageGear](../Gears/StorageGear/) for armor/rig/backpack/secure container specs and loadout slots; [Weapon Attachment System](../Gameplay/Weapon_Attachment_System.md) — weapon mod changes accessible here; [Economy](Economy.md) — credit cost of insurance; [GameModes](GameModes.md) — the 5 game modes selectable on this screen; [Quest & Objective System](../Gameplay/Quest_Objective_System.md) — active quests drive loadout recommendations.
 
 ---
 
@@ -464,7 +464,7 @@ When a member is not ready:
 | **Low balance warning** | If credit balance < loadout value + insurance cost, orange banner: "⚠ Low funds — you may not afford this loadout" |
 | **Weight tier alert** | If loadout crosses into Tier 3 (Heavy), popup: "You will be unable to sprint. Consider removing low-value items." |
 | **Quest item reminder** | If a quest requires a specific item to be brought into raid, yellow quest badge appears on relevant stash slot. "Required for: Viktor Quest 3" |
-| **Quick repair** | If a weapon or armor is at <50% durability, red ⚠ on that slot + "Repair at Hideout Workbench — $500" tooltip |
+| **Quick repair** | If a weapon or armor is at <50% durability, red ⚠ on that slot + "Repair at Safe House Workbench — $500" tooltip |
 | **Insure All shortcut** | Single-click bottom rail button insures all currently equipped insurable items with selected insurer |
 | **Deploy confirmation** | If uninsured value > $10,000, a confirmation dialog appears: "You have $12,000 in uninsured gear. Deploy anyway?" — prevents accidental costly runs |
 | **Auto-calculate insurance** | Insurance total updates in real-time as items are swapped |
@@ -553,7 +553,7 @@ First insurance is **FREE** — Viktor sponsors the first raid insurance to teac
 - [Home Screen & Lobby](HomeScreen_Design.md) — Deploy button on Home Screen opens this Loadout Preparation screen.
 - [Gear Mechanics](../Gameplay/Gear_Mechanics.md) — Weight tier thresholds (Tier 1/2/3), durability degradation rules.
 - [Weapon Attachment System](../Gameplay/Weapon_Attachment_System.md) — Attachments visible on operator preview; quick-access attachment editor from viewport click.
-- [Hideout & Crafting](../Gameplay/Hideout_Crafting.md) — Repair shortcut links to Workbench; Insurance queue managed via Hideout mail.
+- [Safe House Design](Safe_House_Design.md) — Repair shortcut links to Workbench; Insurance queue managed via Safe House mail.
 - [Matchmaking & Lobby](../Gameplay/Matchmaking_Lobby.md) — Squad formation, queue parameters, server-side match assembly.
 - [GameModes](GameModes.md) — Mode rules referenced in mode pill descriptions.
 - [Economy](Economy.md) — Insurance costs calculated as % of item credit value; Viktor/Ada as economy NPCs.

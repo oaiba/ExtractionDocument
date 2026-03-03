@@ -8,7 +8,7 @@ weight: 17
 
 The loot table system governs what items spawn in the world, at what rarity, and in which containers per map zone. It is the **most direct lever for economic balance** — loot tables set the volume of items flowing into the game each raid, directly affecting prices on the flea market and trader stock. This document specifies container types, zone loot tiers, item category weights, and spawn density rules.
 
-> **Cross-References:** [Looting & Inventory](Looting_Interactions.md) — container interaction mechanic, grid inventory, FIR status; [AI Enemy Behavior](AI_Enemy_Behavior.md) — AI corpse loot; [Environmental Hazards](Environmental_Hazards.md) — supply drop loot, boss loot tables; [Hideout & Crafting](Hideout_Crafting.md) — crafting materials as loot category; [GameDesign/Economy](../../GameDesign/Economy.md) — faucet/sink calibration.
+> **Cross-References:** [Looting & Inventory](Looting_Interactions.md) — container interaction mechanic, grid inventory, FIR status; [AI Enemy Behavior](AI_Enemy_Behavior.md) — AI corpse loot; [Environmental Hazards](Environmental_Hazards.md) — supply drop loot, boss loot tables; [Safe House Design](../GameDesign/Safe_House_Design.md) — crafting materials as loot category; [GameDesign/Economy](../../GameDesign/Economy.md) — faucet/sink calibration.
 
 ---
 
@@ -127,7 +127,7 @@ Each map has 4-5 named zones. Zone tier determines which loot tables are used.
 | **Cash ($)** | 10% | $8,000–$25,000 |
 | **Keycard (rare)** | 8% | Gold keycard, Lab card |
 | **Unique Quest Item** | 5% | Intel artifact, boss key, mission files |
-| **Weapon Blueprint** | 2% | Hideout crafting recipe (unique) |
+| **Weapon Blueprint** | 2% | Safe House crafting recipe (unique) |
 
 > **Expected loot value per container:** ~$40,000
 
@@ -223,7 +223,7 @@ To prevent farming predictability, each server instance shuffles loot:
 - [AI Enemy Behavior](AI_Enemy_Behavior.md) — AI corpse loot tables; boss loot.
 - [Environmental Hazards](Environmental_Hazards.md) — Supply drop event and Scav Raid wave loot.
 - [Quest & Objective System](Quest_Objective_System.md) — Quest items and their container spawn rules.
-- [Hideout & Crafting](Hideout_Crafting.md) — Crafting materials as primary Tier 2 loot category.
+- [Safe House Design](../GameDesign/Safe_House_Design.md) — Crafting materials as primary Tier 2 loot category.
 - [GameDesign/Economy](../../GameDesign/Economy.md) — Macro economy calibration; loot as primary faucet.
 - [Items & Gear](ItemsAndGear.md) — Full item catalogue with values, weights, and drop categories.
 

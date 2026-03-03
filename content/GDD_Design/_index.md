@@ -30,6 +30,8 @@ Core game design, mechanics, progression, and monetization systems
 - **[Live Ops](./GameDesign/LiveOps.md)** - Events, content calendar, monetization events, community management
 - **[Accessibility](./GameDesign/Accessibility.md)** - Visual, auditory, motor, cognitive accessibility features
 - **[Localization](./GameDesign/Localization.md)** - Supported languages, text guidelines, cultural adaptation
+- **[Safe House](./GameDesign/Safe_House_Design.md)** - Operator base, Stash Room, Trophy Vault, Workbench, crafting, meta-game hub
+- **[Stash](./Stash_Design.md)** - Permanent storage for extracted items, grid system, containers, progression
 
 ---
 
@@ -43,7 +45,7 @@ World lore, factions, and character backstories
 ### 👥 Social & Multiplayer
 Squad systems, clans, karma, communication, and community features
 
-- **[Multiplayer](./Social/Multiplayer.md)** - Squad system, VOIP (spatial proximity chat), ping system, karma & trust, emotes & gestures, LFG, clans, friends, matchmaking (MMR/SBMM), social hub/hideout, dynamic in-raid interactions, anti-toxicity, post-match flow, cross-platform (EOS)
+- **[Multiplayer](./Social/Multiplayer.md)** - Squad system, VOIP (spatial proximity chat), ping system, karma & trust, emotes & gestures, LFG, clans, friends, matchmaking (MMR/SBMM), social hub (Safe House), dynamic in-raid interactions, anti-toxicity, post-match flow, cross-platform (EOS)
 
 ---
 
@@ -201,6 +203,8 @@ Risks, boundaries, and project management
 **Economy & Monetization:**
 - Currencies & pricing → [Economy](./GameDesign/Economy.md)
 - Items & marketplace → [Items](./Combat/Items.md)
+- Stash & storage → [Stash Design](./Stash_Design.md)
+- Safe House & crafting → [Safe House Design](./GameDesign/Safe_House_Design.md)
 
 **Platform & Accessibility:**
 - Accessibility features → [Accessibility](./GameDesign/Accessibility.md)

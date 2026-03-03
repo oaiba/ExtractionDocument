@@ -162,7 +162,7 @@ The UI visual design supports the **Cyberpunk Neo-Industrial** art direction. In
 ```
 
 **Cyberpunk Visual Treatment:**
-- Background: darkened 3D scene of the Hideout with neon ambient lighting
+- Background: darkened 3D scene of the Safe House with neon ambient lighting
 - Operator preview: full 3D model with orange rim light, cyan fill light
 - Deploy button: orange gradient with slow pulse animation and subtle particle effect
 - Panel borders: thin orange or cyan lines with soft inner glow

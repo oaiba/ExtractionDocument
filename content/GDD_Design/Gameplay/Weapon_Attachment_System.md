@@ -8,7 +8,7 @@ weight: 23
 
 The Weapon Attachment System allows players to modify their weapons before raids (in the Stash and Workbench) and — to a limited degree — in-raid with found attachments. Attachments create meaningful gear customization that reinforces the game's **Preparation Phase** and provides value for high-tier loot found during raids.
 
-> **Cross-References:** [Gear Mechanics](Gear_Mechanics.md) — weapon weight contribution to encumbrance; [Looting & Inventory](Looting_Interactions.md) — attachments as loot category (FIR status); [Hideout & Crafting](Hideout_Crafting.md) — Workbench crafting of attachments; [Loot Table Design](Loot_Table_Design.md) — attachment spawn rates by zone tier; [Combat Feel (Top-Down)](Combat_Feel_Topdown.md) — aim cone, recoil system that attachments directly modify; [Quest & Objective System](Quest_Objective_System.md) — Viktor quest chain unlocks weapon mod blueprints.
+> **Cross-References:** [Gear Mechanics](Gear_Mechanics.md) — weapon weight contribution to encumbrance; [Looting & Inventory](Looting_Interactions.md) — attachments as loot category (FIR status); [Safe House Design](../GameDesign/Safe_House_Design.md) — Workbench crafting of attachments; [Loot Table Design](Loot_Table_Design.md) — attachment spawn rates by zone tier; [Combat Feel (Top-Down)](Combat_Feel_Topdown.md) — aim cone, recoil system that attachments directly modify; [Quest & Objective System](Quest_Objective_System.md) — Viktor quest chain unlocks weapon mod blueprints.
 
 ---
 
@@ -16,7 +16,7 @@ The Weapon Attachment System allows players to modify their weapons before raids
 
 - **Every attachment has trade-offs.** No attachment is a pure upgrade. Adding a suppressor reduces velocity; adding a heavy barrel improves accuracy but increases weight. Players make deliberate choices.
 - **Top-down visibility matters.** Weapon length, muzzle flash size, and suppressor barrel extension are visible in the top-down camera. Visual feedback reinforces the modification's purpose.
-- **Workbench dependency.** Full weapon modding requires Workbench Lvl 1+ in the Hideout. Players can swap attachments freely in stash; fabrication requires the Workbench.
+- **Workbench dependency.** Full weapon modding requires Workbench Lvl 1+ in the Safe House. Players can swap attachments freely in stash; fabrication requires the Workbench.
 - **In-raid scavenging.** Compatible attachments found in-raid can be installed on the weapon at a 5-second interaction cost. This is high-risk (standing still) but high-reward (free upgrade mid-raid).
 - **Durability tracking.** Attachments degrade with use. A suppressed weapon after heavy fire will have a worn suppressor — reducing effectiveness until repaired at Workbench.
 
@@ -153,7 +153,7 @@ Players can save **named weapon presets** in the stash:
 
 ## Crafting Attachments (Workbench)
 
-Per [Hideout & Crafting](Hideout_Crafting.md) Workbench recipes:
+Per [Safe House Design](../GameDesign/Safe_House_Design.md) Workbench recipes:
 
 | Workbench Level | Craftable Attachments |
 | :-------------- | :-------------------- |
@@ -199,7 +199,7 @@ A heavy-modded weapon can push a player from Tier 2 (moderate) to Tier 3 (heavy)
 - [Gear Mechanics](Gear_Mechanics.md) — Weapon weight contribution to total encumbrance and weight tier.
 - [Combat Feel (Top-Down)](Combat_Feel_Topdown.md) — Aim cone bloom, recoil recovery rates modified by attachments.
 - [Looting & Inventory](Looting_Interactions.md) — Attachments as separate loot items; FIR status; inventory slots.
-- [Hideout & Crafting](Hideout_Crafting.md) — Workbench crafting of attachments; level gates.
+- [Safe House Design](../GameDesign/Safe_House_Design.md) — Workbench crafting of attachments; level gates.
 - [Loot Table Design](Loot_Table_Design.md) — Attachment spawn rates; tier 3/4 zones for rare attachments.
 - [Quest & Objective System](Quest_Objective_System.md) — Viktor quest chain unlocks weapon mod blueprints.
 - [Camera System](Camera_System.md) — Weapon zoom interaction with optics in top-down perspective.

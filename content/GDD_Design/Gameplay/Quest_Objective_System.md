@@ -65,7 +65,7 @@ Retrieve specific items and extract with them. These are the most common quest t
 | Single item | "Find 1 Golden Chip and extract with it" | High-value single item; rare spawn |
 | Multiple same item | "Extract with 3 Military Laptops" | Requires 3 separate raids or lucky loot |
 | Variety pack | "Extract with 1 Medkit, 1 Military Case, and 1 Keycard" | Forces specific loot combination |
-| Crafted item | "Extract with 1 Purified Water (crafted)" | Links hideout crafting to quest |
+| Crafted item | "Extract with 1 Purified Water (crafted)" | Links Safe House crafting to quest |
 | Item condition | "Extract with a weapon in >60% durability" | No degraded war trophies |
 
 **FIR requirement:** All collection quests require items to have "Found-in-Raid" status per [Looting & Inventory](Looting_Interactions.md). Items purchased from traders or the flea market cannot be used.
@@ -243,6 +243,6 @@ In addition to main chains, dynamic quests refresh on a timer:
 - [AI Enemy Behavior](AI_Enemy_Behavior.md) — AI faction affiliations; boss kill quests.
 - [Extraction Mechanics](Extraction_Mechanics.md) — Cooperative extraction zone quest; zone-specific extraction quests.
 - [Matchmaking & Lobby](Matchmaking_Lobby.md) — Private raid disables quest completion.
-- [Hideout & Crafting](Hideout_Crafting.md) — Hideout upgrades gated behind trader quest chain completion.
+- [Safe House Design](../GameDesign/Safe_House_Design.md) — Safe House upgrades gated behind trader quest chain completion.
 - [GameDesign/Progression](../../GameDesign/Progression.md) — Loyalty Level system; quest XP integration.
 - [GameDesign/Economy](../../GameDesign/Economy.md) — Quest cash rewards as economy faucet.

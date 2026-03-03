@@ -210,7 +210,7 @@ The recovery phase bridges one raid to the next. It transforms raw loot into pro
 1. **Result Screen** — Display survival time, kills, loot acquired, XP earned
 2. **Stash Management** — Organize the "Tetris" inventory, decide what to keep vs. sell
 3. **Market Interaction** — Sell excess loot to NPC traders or list on the player flea market
-4. **Hideout Upgrades** — Invest materials into passive bonuses (Bitcoin Farm, Medical Station, Workbench)
+4. **Safe House Upgrades** — Invest materials into passive bonuses (Bitcoin Farm, Medical Station, Workbench)
 5. **Quest Turn-In** — Complete quest objectives, unlock new trader tiers
 6. **Next Raid Prep** — The loop restarts
 
@@ -246,7 +246,7 @@ Why do players come back? The extraction loop leverages multiple proven psycholo
 | :--- | :------ | :------------- |
 | **Variable Ratio Reinforcement** | "The Slot Machine" | Loot containers have random contents. You pull the lever (open the box) hoping for a jackpot. Most times it is junk, but the *chance* keeps you searching. |
 | **Loss Aversion** | "It's Mine Now" | Once you loot an item, you feel ownership. Dying feels like having it *stolen*. This anger drives the "one more game" mentality to reclaim losses. |
-| **Sunk Cost Fallacy** | "I'm Committed" | Upgrading the hideout requires massive resource investment. Players play to "justify" the time and money already spent. |
+| **Sunk Cost Fallacy** | "I'm Committed" | Upgrading the Safe House requires massive resource investment. Players play to "justify" the time and money already spent. |
 | **Mastery Curve** | "I'm Getting Better" | Learning map angles, recoil patterns, and spawn timings is a permanent skill that persists through death and seasonal wipes. |
 | **Endowment Effect** | "This Is Worth More To Me" | Players overvalue items they found themselves vs. identical items bought from traders. Found-in-raid status reinforces this. |
 | **Near-Miss Design** | "So Close..." | Dying with $50,000 in loot at the extraction door is devastating — but it guarantees the player will queue again to "make up for it." |
@@ -265,7 +265,7 @@ These inject value into the economy:
 | :----- | :---------- | :-------------- |
 | Raid Loot | Server-spawned items in containers and on AI enemies | Control spawn tables per map per patch |
 | Scav Mode | Free zero-risk runs with random loadouts | Limit frequency (1 per 20 min cooldown), moderate loot quality |
-| Passive Income | Hideout modules (Bitcoin Farm, Scav Case) generate currency over time | Cap output, require significant investment to build |
+| Passive Income | Safe House modules (Bitcoin Farm, Scav Case) generate currency over time | Cap output, require significant investment to build |
 | Trader Stock | Infinite supply of basic ammo, meds, food from NPC vendors | Price floor prevents value collapse |
 | Quest Rewards | Credits and items for completing objectives | One-time per quest line |
 
@@ -279,7 +279,7 @@ These remove value to maintain scarcity:
 | Consumables | Ammo, meds, food, grenades are one-time use | High-tier ammo is the biggest recurring money sink |
 | Insurance Fees | 10-20% of item value for a *chance* of recovery | Only returns items not looted by others |
 | Market Tax | Progressive tax on flea market transactions | Prevents infinite money circulation |
-| Hideout Costs | Massive material dumps required for upgrades | Long-term progression sink |
+| Safe House Costs | Massive material dumps required for upgrades | Long-term progression sink |
 | Repair Degradation | Armor and weapons lose max durability when repaired, eventually becoming scrap | Forces gear rotation, prevents hoarding |
 
 ### Dynamic Balancing ("The Invisible Hand")

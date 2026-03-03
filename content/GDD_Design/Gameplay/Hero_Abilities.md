@@ -419,7 +419,7 @@ Every ability has at least one hard counter and one soft counter:
 | Same-class ability stacking blocked                             | Two Vipers in a squad: only one Flashbang at a time (second enters cooldown if first is active) | Prevents degenerate double-flash          |
 | Healing during extraction cancels timer                         | Field Hospital and Medkit Drop reset the 15–30 s extract timer                                  | Prevents infinite heal-tanking at extract |
 | Signature charge does not carry between raids                   | Charge resets to 0 at raid start; must build in-raid                                            | Prevents pre-charged ultimate farming     |
-| Abilities disabled in safe zones (hideout, vendors)             | No ability use outside raids                                                                    | Prevents griefing / exploit in menus      |
+| Abilities disabled in safe zones (Safe House, vendors)             | No ability use outside raids                                                                    | Prevents griefing / exploit in menus      |
 | Ability damage does not contribute to insurance fraud detection | Intentional self-damage with abilities is flagged                                               | Anti-exploit                              |
 
 

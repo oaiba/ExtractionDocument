@@ -6,7 +6,7 @@ weight: 5
 
 ## Overview
 
-This document covers **trader unlock gating**, **Hideout repair bench progression**, **armor crafting**, and **Found-in-Raid (FIR) armor** rules. For item list see [Armor Master Database](Armor_Master_Database.md); for balance see [Armor Balance Framework](Armor_Balance_Framework.md).
+This document covers **trader unlock gating**, **Safe House repair bench progression**, **armor crafting**, and **Found-in-Raid (FIR) armor** rules. For item list see [Armor Master Database](Armor_Master_Database.md); for balance see [Armor Balance Framework](Armor_Balance_Framework.md).
 
 ---
 
@@ -26,9 +26,9 @@ Exact quest names and level numbers are placeholders; adjust to match [Progressi
 
 ---
 
-## Hideout Repair Bench Progression
+## Safe House Repair Bench Progression
 
-Repair bench level determines which armor classes and materials can be repaired in-raid or in Hideout, and repair efficiency.
+Repair bench level determines which armor classes and materials can be repaired in-raid or in Safe House, and repair efficiency.
 
 | Bench level | Repairable class | Repairable materials | Notes |
 | :---------- | :--------------- | :------------------- | :---- |
@@ -36,20 +36,20 @@ Repair bench level determines which armor classes and materials can be repaired 
 | 2 | Class 1–4 | All materials | Full material set |
 | 3 | Class 1–6 | All materials | Reduced repair max loss (−2% per repair) |
 
-Trader repair remains available for all classes and materials but uses standard material repair loss; Hideout Lvl 3 bench is the best long-term option for high-tier armor.
+Trader repair remains available for all classes and materials but uses standard material repair loss; Safe House Lvl 3 bench is the best long-term option for high-tier armor.
 
 ---
 
-## Armor Crafting (Hideout)
+## Armor Crafting (Safe House)
 
-Selected armor pieces can be crafted at the Hideout. Recipes consume materials and time; output is one armor item at fixed durability (e.g. 80–100%).
+Selected armor pieces can be crafted at the Safe House. Recipes consume materials and time; output is one armor item at fixed durability (e.g. 80–100%).
 
 **Example recipes (placeholder):**
 
 - **Class 3 vest:** 5× Polymer + 3× Rare Components + 2 h → 1× Ceramic Carrier (80% durability).
 - **Class 2 vest:** 3× Aramid + 2× Scrap Metal + 30 min → 1× Press Vest (90% durability).
 
-Crafting provides an alternative to trader purchase and FIR loot, and consumes barter/crafting materials. Full recipe list should live in [Hideout & Crafting](../../Gameplay/Hideout_Crafting.md) with references here.
+Crafting provides an alternative to trader purchase and FIR loot, and consumes barter/crafting materials. Full recipe list should live in [Safe House Design](../../GameDesign/Safe_House_Design.md) with references here.
 
 ---
 
@@ -64,6 +64,6 @@ Crafting provides an alternative to trader purchase and FIR loot, and consumes b
 ## Cross-References
 
 - [Armor Master Database](Armor_Master_Database.md) — Trader column per item.
-- [Hideout & Crafting](../../Gameplay/Hideout_Crafting.md) — Crafting recipes, bench requirements.
+- [Safe House Design](../../GameDesign/Safe_House_Design.md) — Crafting recipes, bench requirements.
 - [Progression](../../GameDesign/Progression.md) — Player and trader progression framework.
 - [Quest Objective System](../../Gameplay/Quest_Objective_System.md) — Quest gates for armor unlocks.

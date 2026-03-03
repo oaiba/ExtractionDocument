@@ -20,7 +20,7 @@ graph TD
     Login -- Returning --> DailyReward{Daily Login Bonus}
     DailyReward --> L3[L3 PostLogin]
     Tutorial --> L3
-    L3 --> MainMenu[Main Menu / Hideout]
+    L3 --> MainMenu[Main Menu / Safe House]
     
     MainMenu --> Prep[Preparation Phase]
     Prep -->|Select Loadout| LoadoutUI[Loadout Screen]
@@ -57,7 +57,7 @@ graph TD
 
 ## Cross-Platform Wireframe Sets
 
-### 1. Main Menu / Hideout (The Hub)
+### 1. Main Menu / Safe House (The Hub)
 
 **Goal:** Immediate "Play" CTA while showcasing progression across all platforms.
 
@@ -333,7 +333,7 @@ ADAPTIVE CHANGES:
 *   **Tap:** Select/Confirm
 *   **Double-Tap:** Quick equip (bypass confirmation)
 *   **Long-Press:** Context menu (Discard/Examine/Use)
-*   **Swipe Left/Right:** Navigate tabs (Stash → Traders → Hideout)
+*   **Swipe Left/Right:** Navigate tabs (Stash → Traders → Safe House)
 *   **Pinch:** Zoom in inventory grid (mobile-exclusive)
 *   **Two-Finger Swipe Down:** Quick access to settings (global gesture)
 

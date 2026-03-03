@@ -8,7 +8,7 @@ weight: 6
 
 Special and exotic weapons are variants or unique models obtained through bosses, quests, seasons, or crafting. They offer distinct traits, cosmetics, or stat tweaks without replacing the core weapon roster. For base weapon stats see [Weapon Arsenal](../Gameplay/WeaponArsenal.md) and [Weapon Master Database](Weapon_Master_Database.md).
 
-> **Cross-References:** [Loot Table Design](../Gameplay/Loot_Table_Design.md) — boss and zone loot; [Quest & Objective System](../Gameplay/Quest_Objective_System.md) — quest rewards; [Hideout & Crafting](../Gameplay/Hideout_Crafting.md) — Workbench crafting.
+> **Cross-References:** [Loot Table Design](../Gameplay/Loot_Table_Design.md) — boss and zone loot; [Quest & Objective System](../Gameplay/Quest_Objective_System.md) — quest rewards; [Safe House Design](../GameDesign/Safe_House_Design.md) — Workbench crafting.
 
 ---
 
@@ -56,7 +56,7 @@ Weapons or variants introduced for a limited time (e.g. one season). They may ro
 
 ## Crafted Weapons
 
-Weapon variants or base models that can be crafted at the Hideout Workbench. See [Hideout & Crafting](../Gameplay/Hideout_Crafting.md) for Workbench levels and recipes.
+Weapon variants or base models that can be crafted at the Safe House Workbench. See [Safe House Design](../GameDesign/Safe_House_Design.md) for Workbench levels and recipes.
 
 | Workbench Level | Craftable Weapon (example) | Materials |
 | :-------------- | :------------------------- | :-------- |
@@ -93,5 +93,5 @@ Weapons found in raid (loot, AI, bosses) spawn with a **durability range**. This
 - [Weapon Master Database](Weapon_Master_Database.md) — Per-weapon base and modded stats.
 - [Loot Table Design](../Gameplay/Loot_Table_Design.md) — Boss and zone loot tables.
 - [Quest & Objective System](../Gameplay/Quest_Objective_System.md) — Quest rewards and FIR.
-- [Hideout & Crafting](../Gameplay/Hideout_Crafting.md) — Workbench and crafting recipes.
+- [Safe House Design](../GameDesign/Safe_House_Design.md) — Workbench and crafting recipes.
 - [Inventory & Gear — Weapon Modding](../Inventory_Gear/Weapons_Modding.md) — Durability and MOA.

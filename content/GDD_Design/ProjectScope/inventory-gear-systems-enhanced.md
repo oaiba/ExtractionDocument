@@ -546,7 +546,7 @@ TotalWeight = EquippedGear + InventoryContents + NestedContainers
 3. Keys (infinite value potential)
 4. Small high-tier ammo
 5. Weapon parts (specific meta items)
-6. Barter items for hideout upgrades
+6. Barter items for Safe House upgrades
 7. Weapons (only if space efficient or needed)
 8. Low value/slot items (ditch immediately)
 
@@ -649,7 +649,7 @@ TotalWeight = EquippedGear + InventoryContents + NestedContainers
 - **Prepare for Escape Edition**: 10×48 (480 cells)
 - **Edge of Darkness (EOD)**: 10×68 (680 cells)
 
-**Stash Upgrades (Hideout):**
+**Stash Upgrades (Safe House):**
 - Level 1 → 2: +10 rows (+100 cells), Cost: 3.5M₽
 - Level 2 → 3: +10 rows, Cost: 8.5M₽
 - Level 3 → 4: +10 rows, Cost: 15M₽
@@ -692,7 +692,7 @@ TotalWeight = EquippedGear + InventoryContents + NestedContainers
   
 - **Bottom Zone** (Rows 41+): Long-term storage
   - Quest items for future tasks
-  - Hideout upgrade materials
+  - Safe House upgrade materials
   - Rarely used items
 
 **Auto-Sort Controversy:**
@@ -722,7 +722,7 @@ Rows 51-68: THICC Cases ×3 (ultimate storage)
 |:----------|:-----------|:-----------|
 | Weapons | Not using within 3 raids | Meta build or needed for quest |
 | Armor | Durability <40% | Class 5+ and >60% |
-| Barter Items | Not needed for hideout | Required for upgrade or craft |
+| Barter Items | Not needed for Safe House | Required for upgrade or craft |
 | Ammo | Have 500+ rounds | Good AP ammo, <300 rounds |
 | Meds | Have 20+ of type | Rare or valuable (Surv12) |
 | Keys | Looted room 5+ times | Rare spawns or quest |
@@ -730,7 +730,7 @@ Rows 51-68: THICC Cases ×3 (ultimate storage)
 **Value Timing Strategy:**
 - Some items spike in value during events
 - Quest items more valuable when quest is active
-- Hideout materials surge when new upgrades unlock
+- Safe House materials surge when new upgrades unlock
 - Monitor Flea Market trends for profit
 
 ---
@@ -877,7 +877,7 @@ function canPlaceItem(item, gridX, gridY, rotation):
 ├─────────────────────────────┤
 │ Required for:               │
 │ • Quest "Punisher Pt. 4"    │
-│ • Hideout Upgrade: Lvl 2    │
+│ • Safe House Upgrade: Lvl 2 │
 └─────────────────────────────┘
 ```
 

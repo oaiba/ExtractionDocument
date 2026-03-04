@@ -71,7 +71,7 @@ Crafted weapons have **no inherent stat bonus** over vendor or loot versions; th
 
 ## Weapon Condition (Found-in-Raid)
 
-Weapons found in raid (loot, AI, bosses) spawn with a **durability range**. This affects performance (see [Weapon Modding](../Inventory_Gear/Weapons_Modding.md) — MOA degrades at low durability) and value.
+Weapons found in raid (loot, AI, bosses) spawn with a **durability range**. This affects performance (see [Weapon Modding](../Inventory_System/Gunsmith_System.md) — MOA degrades at low durability) and value.
 
 | Source | Durability Range (typical) | Notes |
 | :----- | :------------------------- | :---- |
@@ -94,4 +94,4 @@ Weapons found in raid (loot, AI, bosses) spawn with a **durability range**. This
 - [Loot Table Design](../Gameplay/Loot_Table_Design.md) — Boss and zone loot tables.
 - [Quest & Objective System](../Gameplay/Quest_Objective_System.md) — Quest rewards and FIR.
 - [Safe House Design](../GameDesign/Safe_House_Design.md) — Workbench and crafting recipes.
-- [Inventory & Gear — Weapon Modding](../Inventory_Gear/Weapons_Modding.md) — Durability and MOA.
+- [Inventory & Gear — Weapon Modding](../Inventory_System/Gunsmith_System.md) — Durability and MOA.

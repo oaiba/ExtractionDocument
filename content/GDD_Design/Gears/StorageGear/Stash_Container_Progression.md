@@ -61,7 +61,7 @@ Standard-edition players can reach Gamma/Kappa by progression; premium gives Gam
 
 - [Gear Tier System](../Gear_Tier_System.md) — Storage Tier (1–4) definition; container unlock phase maps to Tier.
 - [Storage Master Database](Storage_Master_Database.md) — Secure containers, stash-only cases, values.
-- [Inventory & Gear — Stash](../../Inventory_Gear/_index.md#8-stash--containers) — Stash overview, organization tips.
+- [Inventory & Gear — Stash](../../Inventory_System/_index.md#8-stash--containers) — Stash overview, organization tips.
 - [Safe House Design](../../GameDesign/Safe_House_Design.md) — Safe House levels, upgrade costs.
 - [Progression](../../GameDesign/Progression.md) — Player and trader level framework.
 - [Quest Objective System](../../Gameplay/Quest_Objective_System.md) — Quest gates for containers and secure upgrades.

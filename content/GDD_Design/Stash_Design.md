@@ -9,7 +9,7 @@ weight: 25
 
 The **Stash** is the player's permanent out-of-raid storage for all items extracted from Raid Extraction. Items in the Stash are never lost on death — only gear brought into raid can be lost. The Stash is the central inventory repository that bridges raids and enables the preparation phase.
 
-> **Document Status:** Independent design document — not part of Inventory_Gear section.  
+> **Document Status:** Independent design document — not part of Inventory_System section.  
 > **Location:** Stash is physically housed in the **Stash Room** within the [Safe House](GameDesign/Safe_House_Design.md). Access from Loadout Preparation and Safe House.
 
 ---
@@ -181,4 +181,4 @@ The Stash is located in the **Stash Room** within the [Safe House](GameDesign/Sa
 - [Storage Master Database](Gears/StorageGear/Storage_Master_Database.md) — Container specs, stash-only cases
 - [Menus — Stash / Inventory Management](UI_UX/Menus.md) — UI layout details
 - [Loadout Preparation](GameDesign/LoadoutPreparation.md) — Quick Stash Access panel
-- [Inventory & Gear](Inventory_Gear/_index.md) — Paper doll, equipment slots, looting UX
+- [Inventory System](Inventory_System/_index.md) — Paper doll, equipment slots, looting UX

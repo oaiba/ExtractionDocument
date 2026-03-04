@@ -9,7 +9,7 @@ weight: 7
 
 **Gears** are the physical equipment that the Operator wears or carries in-raid: body armor, helmets, tactical rigs, backpacks, and secure containers. This section is the canonical hub for armor and storage gear design — specs, handling, balance, progression, and master databases.
 
-This is distinct from **[Inventory & Gear](../Inventory_Gear/)** (Inventory_Gear), which covers the general inventory system: grid mechanics, paper doll, looting flow, and future container types (stash, vehicle inventory, crate inventory). Gears = *what the Operator wears/carries*. Inventory_Gear = *how inventory works overall*.
+This is distinct from **[Inventory & Gear](../Inventory_System/)** (Inventory_System), which covers the general inventory system: grid mechanics, paper doll, looting flow, and future container types (stash, vehicle inventory, crate inventory). Gears = *what the Operator wears/carries*. Inventory_System = *how inventory works overall*.
 
 ### Design Pillars
 
@@ -27,7 +27,7 @@ This is distinct from **[Inventory & Gear](../Inventory_Gear/)** (Inventory_Gear
 
 ### Related Sections
 
-- **[Inventory & Gear](../Inventory_Gear/)** — Grid system, paper doll, equipment slots, encumbrance overview, looting UX.
+- **[Inventory & Gear](../Inventory_System/)** — Grid system, paper doll, equipment slots, encumbrance overview, looting UX.
 - **[Gameplay — Gear Mechanics](../Gameplay/Gear_Mechanics.md)** — How gear affects raid: weight tiers, inertia, rig/backpack gameplay, loadout philosophy.
 - **[Gameplay — Looting & Inventory](../Gameplay/Looting_Interactions.md)** — Container interaction flow, search times, grid dimensions.
 - **[Weapons — Caliber & Ballistics](../Weapons/Caliber_Ballistics_System.md)** — Penetration vs armor class, blunt damage formula, armor degradation.

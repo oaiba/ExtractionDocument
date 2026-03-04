@@ -26,5 +26,5 @@ This section is the canonical hub for **weapon system design** — categories, h
 
 - **[Gameplay — Weapon Arsenal](../Gameplay/WeaponArsenal.md)** — Primary weapon categories, ammo tables, attachment reference, damage model, TTK.
 - **[Gameplay — Weapon Attachment System](../Gameplay/Weapon_Attachment_System.md)** — Attachment slots, in-raid swap, presets, Workbench crafting.
-- **[Inventory & Gear — Weapon Modding](../Inventory_Gear/Weapons_Modding.md)** — Gunsmith anatomy, ergonomics, recoil, malfunctions.
+- **[Inventory System — Gunsmith System](../Inventory_System/Gunsmith_System.md)** — Gunsmith anatomy, ergonomics, recoil, malfunctions.
 - **[Combat — Weapons](../Combat/Weapons.md)** — Combat philosophy (canonical weapon content in Weapon Arsenal).

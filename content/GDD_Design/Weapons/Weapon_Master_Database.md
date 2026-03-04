@@ -9,7 +9,7 @@ weight: 0
 Weapons follow a "Realism-Lite" approach. Key stats:
 
 - **Recoil:** Vertical (climb) and horizontal (bounce). Lower is better. See [Combat Feel (Top-Down)](../Gameplay/Combat_Feel_Topdown.md).
-- **Ergonomics:** ADS speed, stamina drain, noise. Higher (0–100) is better. See [Weapon Modding](../Inventory_Gear/Weapons_Modding.md).
+- **Ergonomics:** ADS speed, stamina drain, noise. Higher (0–100) is better. See [Weapon Modding](../Inventory_System/Gunsmith_System.md).
 - **Fire Rate (RPM):** Fixed per receiver; not changed by mods.
 - **MOA (Accuracy):** Dispersion at 100 m. Lower is better.
 
@@ -131,6 +131,6 @@ Full category design: [Weapon Categories Deep Dive](Weapon_Categories_Deep_Dive.
 - [Weapon Arsenal](../Gameplay/WeaponArsenal.md) — Full specs, ammo tables, attachment reference.
 - [Weapon Categories Deep Dive](Weapon_Categories_Deep_Dive.md) — Role, doctrine, hero synergy, matchups.
 - [Weapon Balance Framework](Weapon_Balance_Framework.md) — DPS, TTK, cost-efficiency.
-- [Weapon Modding (Gunsmith)](../Inventory_Gear/Weapons_Modding.md) — Ergonomics, recoil, MOA, malfunctions.
+- [Weapon Modding (Gunsmith)](../Inventory_System/Gunsmith_System.md) — Ergonomics, recoil, MOA, malfunctions.
 - [Weapon Attachment System](../Gameplay/Weapon_Attachment_System.md) — Slot types and compatibility.
 

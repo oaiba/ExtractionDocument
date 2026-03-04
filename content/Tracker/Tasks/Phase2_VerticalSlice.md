@@ -23,7 +23,7 @@ Inventory, Loot & AI
 | Estimate | 3 days |
 | Owner | Game Designer |
 | Output | Detailed InventorySystem.md and Items.md: grid parameters, item types, specific weight values, and slot restriction rules |
-| Refs | [Gameplay/InventorySystem.md](../Gameplay/InventorySystem.md), [GDD_Design/Inventory_Gear/](../../GDD_Design/Inventory_Gear/), [GDD_Design/Combat/Items.md](../../GDD_Design/Combat/Items.md) |
+| Refs | [Gameplay/InventorySystem.md](../Gameplay/InventorySystem.md), [GDD_Design/Inventory_System/](../../GDD_Design/Inventory_System/), [GDD_Design/Combat/Items.md](../../GDD_Design/Combat/Items.md) |
 
 </details>
 
@@ -64,7 +64,7 @@ Inventory, Loot & AI
 | Owner | UI Programmer |
 | Dependencies | TASK-012, DOC-009 |
 | Review | `[ ]` Drag-and-drop mechanics function  `[ ]` Tooltips accurately display item data  `[ ]` Transfers between distinct inventories successful  `[ ]` Mobile-friendly interaction test |
-| Refs | [Systems/UISystem.md](../Systems/UISystem.md), [GDD_Design/UI_UX/](../../GDD_Design/UI_UX/), [GDD_Design/Inventory_Gear/](../../GDD_Design/Inventory_Gear/) |
+| Refs | [Systems/UISystem.md](../Systems/UISystem.md), [GDD_Design/UI_UX/](../../GDD_Design/UI_UX/), [GDD_Design/Inventory_System/](../../GDD_Design/Inventory_System/) |
 
 **Description:**
 - Develop base widgets for the player inventory screen and external loot containers
@@ -90,7 +90,7 @@ Inventory, Loot & AI
 | Estimate | 2 days |
 | Owner | Game Designer |
 | Output | Finalize loot tables representing the Alpha map, assign specific rarity weights, and detail zone-based distribution rules |
-| Refs | [Systems/MapSystem.md](../Systems/MapSystem.md), [GDD_Design/Inventory_Gear/](../../GDD_Design/Inventory_Gear/), [GDD_Design/World/MapDesign.md](../../GDD_Design/World/MapDesign.md) |
+| Refs | [Systems/MapSystem.md](../Systems/MapSystem.md), [GDD_Design/Inventory_System/](../../GDD_Design/Inventory_System/), [GDD_Design/World/MapDesign.md](../../GDD_Design/World/MapDesign.md) |
 
 </details>
 

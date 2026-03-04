@@ -8,7 +8,7 @@ weight: 10
 
 This document supports the review and re-planning of Gameplay mechanics for the Multiplayer Hero Shooter Top-down Extraction cross-platform game. It contains: (1) a per-doc review checklist aligned to design pillars and cross-platform parity, (2) a mechanics benchmark table vs. competitors, and (3) a record of consistency fixes applied across docs.
 
-> **Reference:** [Design Pillars](../../ProjectScope/design-pillars-enhanced.md), [Controls](../../GameDesign/Controls.md), [Competitive Analysis](../../Inventory_Gear/competitive-analysis-extraction-shooters.md).
+> **Reference:** [Design Pillars](../../ProjectScope/design-pillars-enhanced.md), [Controls](../../GameDesign/Controls.md), [Competitive Analysis](../../Inventory_System/Competitive_Analysis_Inventory.md).
 
 ---
 
@@ -71,7 +71,7 @@ This document supports the review and re-planning of Gameplay mechanics for the 
 - [Core Gameplay Loop](CoreLoop.md) — Session length & pacing, extraction flow.
 - [Design Pillars](../../ProjectScope/design-pillars-enhanced.md) — Genre pillars, our positioning, target session.
 - [Controls](../../GameDesign/Controls.md) — Input and UX by platform (PC, Mobile, Console).
-- [Competitive Analysis](../../Inventory_Gear/competitive-analysis-extraction-shooters.md) — Market and competitor mechanics.
+- [Competitive Analysis](../../Inventory_System/Competitive_Analysis_Inventory.md) — Market and competitor mechanics.
 - [Camera System](Camera_System.md) — Top-down camera design, altitude, FOV.
 - [AI Enemy Behavior](AI_Enemy_Behavior.md) — Enemy types, detection, bosses, Scav karma.
 - [Matchmaking & Lobby](Matchmaking_Lobby.md) — Queue, squad, reconnect.

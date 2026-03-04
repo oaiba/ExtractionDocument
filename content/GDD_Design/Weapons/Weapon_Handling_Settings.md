@@ -8,7 +8,7 @@ weight: 1
 
 Weapon handling defines how quickly and smoothly players can ready, aim, and fire their weapons. These parameters are tuned per weapon class and are modified by attachments (ergonomics) and [Gear Mechanics](../Gameplay/Gear_Mechanics.md) (weight tier). Design reference: Tarkov ergonomics, Arena Breakout handling stats, Delta Force per-weapon progression.
 
-> **Cross-References:** [Weapon Modding (Gunsmith)](../Inventory_Gear/Weapons_Modding.md) — ergonomics stat affecting ADS and stamina; [Weapon Attachment System](../Gameplay/Weapon_Attachment_System.md) — attachment weight and stat modifiers; [Combat Feel (Top-Down)](../Gameplay/Combat_Feel_Topdown.md) — aim cone and recoil recovery.
+> **Cross-References:** [Weapon Modding (Gunsmith)](../Inventory_System/Gunsmith_System.md) — ergonomics stat affecting ADS and stamina; [Weapon Attachment System](../Gameplay/Weapon_Attachment_System.md) — attachment weight and stat modifiers; [Combat Feel (Top-Down)](../Gameplay/Combat_Feel_Topdown.md) — aim cone and recoil recovery.
 
 ---
 
@@ -27,7 +27,7 @@ Time to switch to a weapon (draw) or stow it (holster). Affects weapon-swap and 
 | Sniper Rifle | 0.70 s | 0.60 s | Long barrel, scope |
 | LMG | 1.20 s | 1.00 s | Heavy; deliberate swap |
 
-**Modifiers:** Ergonomics from [Weapon Modding](../Inventory_Gear/Weapons_Modding.md) adjusts draw/holster by ±10%. Weight tier (Heavy/Critical) adds +0.1–0.2 s to LMG and Sniper.
+**Modifiers:** Ergonomics from [Weapon Modding](../Inventory_System/Gunsmith_System.md) adjusts draw/holster by ±10%. Weight tier (Heavy/Critical) adds +0.1–0.2 s to LMG and Sniper.
 
 ---
 
@@ -186,7 +186,7 @@ Mobile uses the same draw, ADS, and reload times as PC; only input and feedback 
 
 ## Cross-References
 
-- [Weapon Modding (Gunsmith)](../Inventory_Gear/Weapons_Modding.md) — Ergonomics, recoil control, MOA.
+- [Weapon Modding (Gunsmith)](../Inventory_System/Gunsmith_System.md) — Ergonomics, recoil control, MOA.
 - [Weapon Attachment System](../Gameplay/Weapon_Attachment_System.md) — Attachment effects on weight and handling.
 - [Gear Mechanics](../Gameplay/Gear_Mechanics.md) — Weight tier and mobility.
 - [Combat Feel (Top-Down)](../Gameplay/Combat_Feel_Topdown.md) — Aim cone, recoil bloom, recovery.

@@ -1,10 +1,10 @@
 ---
-title: "Inventory & Gear Systems - Enhanced Edition"
-linkTitle: "Inventory & Gear"
+title: "Inventory System — Core Mechanics"
+linkTitle: "Inventory System"
 type: docs
 weight: 60
-version: 2.0
-last_updated: 2026-02-11
+version: 2.1
+last_updated: 2026-03-04
 ---
 
 > **Document Status**: Living Document - Updated Regularly  
@@ -17,7 +17,7 @@ last_updated: 2026-02-11
 
 **Gears** ([../Gears/](../Gears/)) = physical equipment the Operator **wears or carries** in-raid: body armor, helmets, tactical rigs, backpacks, secure containers. All armor and storage **specs** (classes, materials, slot layouts, balance) live under **Gears/ArmorGear** and **Gears/StorageGear**.
 
-**Inventory_Gear** (this section) = **general inventory system**: grid mechanics, paper doll, equipment slots, encumbrance overview, looting UX. Later expansion may add: Vehicle_Inventory, Global_Stash_System, Crate_System, etc.
+**Inventory_System** (this section) = **general inventory system**: grid mechanics, paper doll, equipment slots, encumbrance overview, looting UX. Later expansion may add: Vehicle_Inventory, Global_Stash_System, Crate_System, etc.
 
 ---
 
@@ -147,7 +147,7 @@ Value/slot = Price ÷ (W×H). Priority: quest items → high value/slot → keys
 
 ## 7. Weapon Modding (Gunsmith)
 
-Weapons are platforms with 40–100+ attachments per family. Node-based build (receiver, barrel, handguard, optics, stock, etc.); live stat comparison; presets and sharing. Full UI and compatibility: [Weapons Modding](Weapons_Modding.md). Weapon specs: [Weapon Arsenal](../Gameplay/WeaponArsenal.md) and [Weapons](../Weapons/) section.
+Weapons are platforms with 40–100+ attachments per family. Node-based build (receiver, barrel, handguard, optics, stock, etc.); live stat comparison; presets and sharing. Full UI and compatibility: [Gunsmith System](Gunsmith_System.md). Weapon specs: [Weapon Arsenal](../Gameplay/WeaponArsenal.md) and [Weapons](../Weapons/) section.
 
 ---
 
@@ -177,5 +177,7 @@ See **[Stash Design](../Stash_Design.md)** for the full Stash specification (gri
 - **[Gears](../Gears/)** — Armor & Storage gear specs (ArmorGear, StorageGear).
 - **[Gameplay — Gear Mechanics](../Gameplay/Gear_Mechanics.md)** — Weight tiers, loadout philosophy, extraction.
 - **[Gameplay — Looting & Inventory](../Gameplay/Looting_Interactions.md)** — Container search times, grid dimensions.
-- **[Containers](Containers.md)** — High-level container types and mechanics.
-- **[Looting](Looting.md)** — Loot loop, FIR, corpse looting.
+- **[Container Mechanics](Container_Mechanics.md)** — High-level container types and mechanics (secure containers, nesting).
+- **[Looting & FIR Rules](Looting_And_FIR_Rules.md)** — Loot loop, FIR status, corpse looting.
+- **[Medical & Survival Systems](Medical_And_Survival_Systems.md)** — Injury types, meds, stimulants, hydration/energy.
+- **[Gunsmith System](Gunsmith_System.md)** — Weapon modding, ergonomics, malfunctions, overheating.

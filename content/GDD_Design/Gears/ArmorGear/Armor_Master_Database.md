@@ -1,8 +1,8 @@
 ---
-
-## title: "Armor Master Database"
+title: "Armor Master Database"
 type: docs
 weight: 2
+---
 
 ## Overview
 

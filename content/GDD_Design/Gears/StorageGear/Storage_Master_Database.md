@@ -1,8 +1,8 @@
 ---
-
-## title: "Storage Master Database"
+title: "Storage Master Database"
 type: docs
 weight: 1
+---
 
 ## Overview
 

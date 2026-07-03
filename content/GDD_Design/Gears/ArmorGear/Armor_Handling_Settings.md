@@ -1,8 +1,8 @@
 ---
-
-## title: "Armor Handling Settings"
+title: "Armor Handling Settings"
 type: docs
 weight: 3
+---
 
 ## Overview
 

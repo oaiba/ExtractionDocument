@@ -1,8 +1,8 @@
 ---
-
-## title: "Weapon Master Database"
+title: "Weapon Master Database"
 type: docs
 weight: 0
+---
 
 ## Philosophy & Baseline
 

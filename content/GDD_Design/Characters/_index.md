@@ -17,7 +17,13 @@ In **Extraction Shooter**, characters are defined not just by stats, but by thei
 
 #### Class Roster
 
-\{{< cards cols="3" >\}} \{{< card link="Assault/" title="Assault" icon="fire" subtitle="Fraggers. Breachers. Frontline engage." >\}} \{{< card link="Recon/" title="Recon" icon="eye" subtitle="Intel gathering. Sniping. Flanking." >\}} \{{< card link="Support/" title="Support" icon="plus-circle" subtitle="Healing. Ammo resupply. Utility." >\}} \{{< card link="Tank/" title="Tank" icon="shield-check" subtitle="Area denial. Heavy weapons. Crowd control." >\}} \{{< card link="Specialist/" title="Specialist" icon="chip" subtitle="Cyberwarfare. Traps. Gadgets." >\}} \{{< /cards >\}}
+{{< cards cols="3" >}}
+{{< card link="Assault/" title="Assault" icon="fire" subtitle="Fraggers. Breachers. Frontline engage." >}}
+{{< card link="Recon/" title="Recon" icon="eye" subtitle="Intel gathering. Sniping. Flanking." >}}
+{{< card link="Support/" title="Support" icon="plus-circle" subtitle="Healing. Ammo resupply. Utility." >}}
+{{< card link="Tank/" title="Tank" icon="shield-check" subtitle="Area denial. Heavy weapons. Crowd control." >}}
+{{< card link="Specialist/" title="Specialist" icon="chip" subtitle="Cyberwarfare. Traps. Gadgets." >}}
+{{< /cards >}}
 
 ***
 

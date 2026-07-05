@@ -16,7 +16,10 @@ The system is built on two main components:
 1. **Individual Behavior:** How a single unit thinks, fights, and reacts.
 2. **Faction Ecology:** How groups of AI interact with the world and each other.
 
-\{{< cards cols="2" >\}} \{{< card link="enemybehavior.html" title="Enemy Behaviors" icon="chip" subtitle="Archetypes, states, combat tactics, and difficulty scaling." >\}} \{{< card link="factionbehaviors.html" title="Faction Ecology" icon="users" subtitle="Relationships between Scavengers, Syndicate, UN-PK, and Wildlife." >\}} \{{< /cards >\}}
+{{< cards cols="2" >}}
+{{< card link="enemybehavior.html" title="Enemy Behaviors" icon="chip" subtitle="Archetypes, states, combat tactics, and difficulty scaling." >}}
+{{< card link="factionbehaviors.html" title="Faction Ecology" icon="users" subtitle="Relationships between Scavengers, Syndicate, UN-PK, and Wildlife." >}}
+{{< /cards >}}
 
 ***
 

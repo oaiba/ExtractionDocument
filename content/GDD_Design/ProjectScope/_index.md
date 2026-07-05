@@ -15,12 +15,24 @@ Defining what the game **IS** is as important as defining what it is **NOT**. Th
 
 ## Design Integrity
 
-The core pillars that every feature must support. \{{< cards >\}} \{{< card link="design-pillars-enhanced.html" title="Design Pillars" icon="scale" subtitle="The immutable laws of our game design." >\}} \{{< /cards >\}}
+The core pillars that every feature must support.
+{{< cards >}}
+{{< card link="design-pillars-enhanced.html" title="Design Pillars" icon="scale" subtitle="The immutable laws of our game design." >}}
+{{< /cards >}}
 
 ## Scope Management
 
-What we are building, and what we are explicitly cutting. \{{< cards cols="3" >\}} \{{< card link="mvp.html" title="Minimum Viable Product" icon="badge-check" subtitle="Day 1 feature set requirements." >\}} \{{< card link="nongoals.html" title="Non-Goals" icon="x-circle" subtitle="Explicit exclusions to avoid scope creep." >\}} \{{< card link="risks.html" title="Risk Assessment" icon="exclamation" subtitle="Technical and design challenges to mitigate." >\}} \{{< /cards >\}}
+What we are building, and what we are explicitly cutting.
+{{< cards cols="3" >}}
+{{< card link="mvp.html" title="Minimum Viable Product" icon="badge-check" subtitle="Day 1 feature set requirements." >}}
+{{< card link="nongoals.html" title="Non-Goals" icon="x-circle" subtitle="Explicit exclusions to avoid scope creep." >}}
+{{< card link="risks.html" title="Risk Assessment" icon="exclamation" subtitle="Technical and design challenges to mitigate." >}}
+{{< /cards >}}
 
 ## Research & Planning
 
-Benchmarks and scope planning aligned with the genre. \{{< cards cols="2" >\}} \{{< card link="competitive-analysis-extraction-shooters.html" title="Competitive Analysis" icon="search" subtitle="Extraction shooter market & inventory benchmarks." >\}} \{{< card link="project-scope-review-and-planning.html" title="Scope Review & Planning" icon="map" subtitle="Review, benchmarks, and quarterly planning." >\}} \{{< /cards >\}}
+Benchmarks and scope planning aligned with the genre.
+{{< cards cols="2" >}}
+{{< card link="competitive-analysis-extraction-shooters.html" title="Competitive Analysis" icon="search" subtitle="Extraction shooter market & inventory benchmarks." >}}
+{{< card link="project-scope-review-and-planning.html" title="Scope Review & Planning" icon="map" subtitle="Review, benchmarks, and quarterly planning." >}}
+{{< /cards >}}

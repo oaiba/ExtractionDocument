@@ -27,7 +27,11 @@ This is the central repository and gateway for all documentation related to the 
 
 ### Project Snapshot
 
-\{{< cards cols="3" >\}} \{{< card title="Engine" icon="server" subtitle="Unreal Engine 5 (C++)" >\}} \{{< card title="Platform" icon="device-mobile" subtitle="Mobile (iOS/Android) + PC" >\}} \{{< card title="Genre" icon="fire" subtitle="Top-down Extraction Shooter" >\}} \{{< /cards >\}}
+{{< cards cols="3" >}}
+{{< card title="Engine" icon="server" subtitle="Unreal Engine 5 (C++)" >}}
+{{< card title="Platform" icon="device-mobile" subtitle="Mobile (iOS/Android) + PC" >}}
+{{< card title="Genre" icon="fire" subtitle="Top-down Extraction Shooter" >}}
+{{< /cards >}}
 
 **Current Phase:** Pre-Production / Core Prototyping
 
@@ -37,9 +41,15 @@ This is the central repository and gateway for all documentation related to the 
 
 Access the specialized documentation portals based on your role and current task.
 
-\{{< cards cols="2" >\}} \{{< card link="/ExtractionDocument/gdd\_design/" title="Design & Creative Hub" icon="sparkles" subtitle="Player experience, world-building, visual/audio aesthetics, and narrative." >\}} \{{< card link="/ExtractionDocument/gdd\_technical/" title="Technical & Engineering Hub" icon="terminal" subtitle="Implementation specs, systems architecture, networking, and performance." >\}} \{{< /cards >\}}
+{{< cards cols="2" >}}
+{{< card link="/ExtractionDocument/gdd_design/" title="Design & Creative Hub" icon="sparkles" subtitle="Player experience, world-building, visual/audio aesthetics, and narrative." >}}
+{{< card link="/ExtractionDocument/gdd_technical/" title="Technical & Engineering Hub" icon="terminal" subtitle="Implementation specs, systems architecture, networking, and performance." >}}
+{{< /cards >}}
 
-\{{< cards cols="2" >\}} \{{< card link="/ExtractionDocument/tracker/tasks/gdd\_tasktracker/" title="Task Tracker" icon="clipboard-list" subtitle="Comprehensive project-wide task tracking and milestones." >\}} \{{< card link="/ExtractionDocument/gdd\_agents/" title="AI Agent Guidelines" icon="chip" subtitle="Rules, workflows, and skills for AI coding agents (Gemini, Copilot, Cursor)." >\}} \{{< /cards >\}}
+{{< cards cols="2" >}}
+{{< card link="/ExtractionDocument/tracker/tasks/gdd_tasktracker/" title="Task Tracker" icon="clipboard-list" subtitle="Comprehensive project-wide task tracking and milestones." >}}
+{{< card link="/ExtractionDocument/gdd_agents/" title="AI Agent Guidelines" icon="chip" subtitle="Rules, workflows, and skills for AI coding agents (Gemini, Copilot, Cursor)." >}}
+{{< /cards >}}
 
 ***
 
@@ -63,11 +73,19 @@ Access the specialized documentation portals based on your role and current task
 
 ### Project Scope & Progress
 
-\{{< cards cols="3" >\}} \{{< card link="/GDD\_Design/ProjectScope/MVP" title="MVP Definition" icon="flag" subtitle="Minimum Viable Product features and scope boundaries." >\}} \{{< card link="/GDD\_Design/ProjectScope/NonGoals" title="Non-Goals" icon="x-circle" subtitle="Features explicitly out of current scope." >\}} \{{< card link="/GDD\_Design/ProjectScope/Risks" title="Risk Assessment" icon="exclamation-circle" subtitle="Known challenges and mitigation strategies." >\}} \{{< /cards >\}}
+{{< cards cols="3" >}}
+{{< card link="/GDD_Design/ProjectScope/MVP" title="MVP Definition" icon="flag" subtitle="Minimum Viable Product features and scope boundaries." >}}
+{{< card link="/GDD_Design/ProjectScope/NonGoals" title="Non-Goals" icon="x-circle" subtitle="Features explicitly out of current scope." >}}
+{{< card link="/GDD_Design/ProjectScope/Risks" title="Risk Assessment" icon="exclamation-circle" subtitle="Known challenges and mitigation strategies." >}}
+{{< /cards >}}
 
 #### Recent Milestones
 
-\{{< cards cols="3" >\}} \{{< card title="Audio Architecture" icon="volume-up" subtitle="Completed Soundscape and Tactical Audio definitions" >\}} \{{< card title="Visual Direction" icon="photograph" subtitle="Finalized Art Bible and Mobile Performance Budgets" >\}} \{{< card title="Map System" icon="map" subtitle="Expanded Industrial Zone hotspots and loot heatmaps" >\}} \{{< /cards >\}}
+{{< cards cols="3" >}}
+{{< card title="Audio Architecture" icon="volume-up" subtitle="Completed Soundscape and Tactical Audio definitions" >}}
+{{< card title="Visual Direction" icon="photograph" subtitle="Finalized Art Bible and Mobile Performance Budgets" >}}
+{{< card title="Map System" icon="map" subtitle="Expanded Industrial Zone hotspots and loot heatmaps" >}}
+{{< /cards >}}
 
 ***
 

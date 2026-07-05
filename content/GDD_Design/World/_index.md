@@ -25,10 +25,19 @@ In an extraction shooter, map knowledge is the highest skill ceiling. Our levels
 
 #### Core Maps & Zones
 
-\{{< cards cols="3" >\}} \{{< card link="mapdesign\_industrialzone.html" title="Industrial Zone" icon="cog" subtitle="CQC focus. Vertical factories. High loot density." >\}} \{{< card link="mapdesign\_neonslums.html" title="Neon Slums" icon="office-building" subtitle="Urban warfare. Tight alleys and rooftops." >\}} \{{< card link="mapdesign\_wilderness.html" title="The Wilderness" icon="cloud" subtitle="Long range. Forests and open fields." >\}} \{{< /cards >\}}
+{{< cards cols="3" >}}
+{{< card link="mapdesign_industrialzone.html" title="Industrial Zone" icon="cog" subtitle="CQC focus. Vertical factories. High loot density." >}}
+{{< card link="mapdesign_neonslums.html" title="Neon Slums" icon="office-building" subtitle="Urban warfare. Tight alleys and rooftops." >}}
+{{< card link="mapdesign_wilderness.html" title="The Wilderness" icon="cloud" subtitle="Long range. Forests and open fields." >}}
+{{< /cards >}}
 
 ***
 
 #### Systems & Mechanics
 
-\{{< cards cols="2" >\}} \{{< card link="lootdistribution.html" title="Loot Economy" icon="gift" subtitle="Spawning logic, container types, and heatmaps." >\}} \{{< card link="maplayouts.html" title="Blueprints" icon="map" subtitle="Top-down views and tactical overlays." >\}} \{{< card link="environmentalnarrative.html" title="Storytelling" icon="book-open" subtitle="Telling stories without words." >\}} \{{< card link="environmentalnarrative\_guidelines.html" title="Level Art Rules" icon="pencil" subtitle="Placement rules for props and decals." >\}} \{{< /cards >\}}
+{{< cards cols="2" >}}
+{{< card link="lootdistribution.html" title="Loot Economy" icon="gift" subtitle="Spawning logic, container types, and heatmaps." >}}
+{{< card link="maplayouts.html" title="Blueprints" icon="map" subtitle="Top-down views and tactical overlays." >}}
+{{< card link="environmentalnarrative.html" title="Storytelling" icon="book-open" subtitle="Telling stories without words." >}}
+{{< card link="environmentalnarrative_guidelines.html" title="Level Art Rules" icon="pencil" subtitle="Placement rules for props and decals." >}}
+{{< /cards >}}

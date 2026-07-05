@@ -27,4 +27,10 @@ The narrative design for this extraction shooter uses **three storytelling modes
 
 ### Section Contents
 
-\{{< cards >\}} \{{< card link="Narrative" title="Narrative Design Bible" icon="pencil" subtitle="Tone guide, thematic pillars, dialogue guidelines, and narrative pacing framework" >\}} \{{< card link="Backstory" title="World History & Backstory" icon="book-open" subtitle="Complete timeline, The Collapse, Project Prometheus, regional history, and mysteries" >\}} \{{< card link="Factions" title="Factions" icon="user-group" subtitle="Faction profiles, NPC details, reputation systems, inter-faction dynamics, and territory control" >\}} \{{< card link="QuestLines" title="Quest System & Quest Lines" icon="clipboard-list" subtitle="Main story chapters, faction quests, daily/weekly system, hidden quests, and branching design" >\}} \{{< card link="Lore\_Delivery" title="Lore Delivery Systems" icon="document-text" subtitle="Audio logs, epistolary framework, codex system, item descriptions, and lore gating" >\}} \{{< /cards >\}}
+{{< cards >}}
+{{< card link="Narrative" title="Narrative Design Bible" icon="pencil" subtitle="Tone guide, thematic pillars, dialogue guidelines, and narrative pacing framework" >}}
+{{< card link="Backstory" title="World History & Backstory" icon="book-open" subtitle="Complete timeline, The Collapse, Project Prometheus, regional history, and mysteries" >}}
+{{< card link="Factions" title="Factions" icon="user-group" subtitle="Faction profiles, NPC details, reputation systems, inter-faction dynamics, and territory control" >}}
+{{< card link="QuestLines" title="Quest System & Quest Lines" icon="clipboard-list" subtitle="Main story chapters, faction quests, daily/weekly system, hidden quests, and branching design" >}}
+{{< card link="Lore_Delivery" title="Lore Delivery Systems" icon="document-text" subtitle="Audio logs, epistolary framework, codex system, item descriptions, and lore gating" >}}
+{{< /cards >}}

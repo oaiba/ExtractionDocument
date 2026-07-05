@@ -102,7 +102,7 @@ Following WCAG 2.1 Level AA compliance:
 
 {{< cards >}}
   {{< card link="Menus" title="Menus & Screens" icon="view-grid" subtitle="All menu screens: Main Menu, Loadout, Trader, Stash, Map Selection, Squad, After Action Report, Pause" >}}
-  {{< card link="LoadingScreen_Design" title="Async Loading Screen Design" icon="loader" subtitle="Loading type taxonomy L1-L8, content types, layouts, async loading flow" >}}
+  {{< card link="LoadingScreen_Design" title="Async Loading Screen Design" icon="clock" subtitle="Loading type taxonomy L1-L8, content types, layouts, async loading flow" >}}
   {{< card link="HUD_Design" title="In-Raid HUD Design" icon="eye" subtitle="HUD element catalog, contextual visibility, minimap, compass, and customization options" >}}
   {{< card link="UX_Flows" title="UX Flows & Wireframes" icon="cursor-click" subtitle="Player journey map, cross-platform wireframes, state machines, navigation patterns" >}}
   {{< card link="Notification_Systems" title="Notification & Feedback Systems" icon="bell" subtitle="Kill feed, damage feedback, status effects, toast messages, danger communication" >}}

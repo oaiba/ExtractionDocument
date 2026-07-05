@@ -1,10 +1,12 @@
 ---
-title: "Menus & Screens"
+title: Menus & Screens
 type: docs
 weight: 1
 ---
 
-## Menu Design Philosophy
+# Menus & Screens
+
+### Menu Design Philosophy
 
 Every menu screen follows these rules:
 
@@ -13,15 +15,15 @@ Every menu screen follows these rules:
 3. **No dead-end screens** — every screen has a clear "next action" or "back" option
 4. **Platform parity** — same information across PC, Console, and Mobile, adapted for input method
 
-> For settings screen details (graphics, audio, controls, gameplay), see [User Settings](../../GameDesign/UserSettings/).
+> For settings screen details (graphics, audio, controls, gameplay), see [User Settings](https://github.com/oaiba/ExtractionDocument/blob/main/content/GameDesign/UserSettings/README.md).
 
----
+***
 
-## Main Menu / Safe House
+### Main Menu / Safe House
 
 The Main Menu is the player's home base — it must communicate safety, progression, and readiness.
 
-### Layout (PC/Console)
+#### Layout (PC/Console)
 
 ```
 +------------------------------------------------------------------+
@@ -46,9 +48,7 @@ The Main Menu is the player's home base — it must communicate safety, progress
 +------------------------------------------------------------------+
 ```
 
-<!-- REF_IMAGE: Main Menu mockup — full-color render showing operator model, Start Raid button, and navigation cards with the Neo-Industrial visual style -->
-
-### Layout (Mobile Portrait)
+#### Layout (Mobile Portrait)
 
 ```
 +-----------------------------+
@@ -74,25 +74,25 @@ The Main Menu is the player's home base — it must communicate safety, progress
 +-----------------------------+
 ```
 
-### Element Specifications
+#### Element Specifications
 
-| Element | Behavior | Platform Differences |
-| :------ | :------- | :------------------- |
-| Operator Model | 3D render, rotatable, shows equipped gear in real-time | PC: mouse drag. Console: right stick. Mobile: finger swipe |
-| Start Raid Button | Primary CTA. Animated border pulse (1s cycle). Leads to Map Selection | Same across platforms. 60x200px min touch target on mobile |
-| Mode Selector | Dropdown: Solo, Duo (2-player), Squad (3-4 player) | PC: click dropdown. Console: cycle with bumpers. Mobile: horizontal swipe |
-| Navigation Cards | Grid of 4 cards leading to sub-screens | PC: hover highlight. Console: D-pad focus. Mobile: tap. 44x44px min |
-| Battle Pass Bar | Progress bar showing current tier. Tap/click to open Battle Pass screen | Same across. Shows "NEW" badge when unclaimed reward available |
-| Daily Quest Summary | Shows X/3 daily quests completed. Click for full quest list | Same across |
-| Friends List | Count of online friends. Expandable panel | PC: small overlay. Console: full-screen panel. Mobile: slide-up sheet |
+| Element             | Behavior                                                                | Platform Differences                                                      |
+| ------------------- | ----------------------------------------------------------------------- | ------------------------------------------------------------------------- |
+| Operator Model      | 3D render, rotatable, shows equipped gear in real-time                  | PC: mouse drag. Console: right stick. Mobile: finger swipe                |
+| Start Raid Button   | Primary CTA. Animated border pulse (1s cycle). Leads to Map Selection   | Same across platforms. 60x200px min touch target on mobile                |
+| Mode Selector       | Dropdown: Solo, Duo (2-player), Squad (3-4 player)                      | PC: click dropdown. Console: cycle with bumpers. Mobile: horizontal swipe |
+| Navigation Cards    | Grid of 4 cards leading to sub-screens                                  | PC: hover highlight. Console: D-pad focus. Mobile: tap. 44x44px min       |
+| Battle Pass Bar     | Progress bar showing current tier. Tap/click to open Battle Pass screen | Same across. Shows "NEW" badge when unclaimed reward available            |
+| Daily Quest Summary | Shows X/3 daily quests completed. Click for full quest list             | Same across                                                               |
+| Friends List        | Count of online friends. Expandable panel                               | PC: small overlay. Console: full-screen panel. Mobile: slide-up sheet     |
 
----
+***
 
-## Loadout Screen
+### Loadout Screen
 
 Players assemble their gear before entering a raid. The design must communicate: what you bring, what it costs, and what you risk losing.
 
-### Layout
+#### Layout
 
 ```
 +------------------------------------------------------------------+
@@ -121,33 +121,31 @@ Players assemble their gear before entering a raid. The design must communicate:
 +------------------------------------------------------------------+
 ```
 
-<!-- REF_IMAGE: Loadout screen mockup — showing operator model with gear, equipment slot grid, stats panel, and stash quick-access at bottom -->
+#### Key Interactions
 
-### Key Interactions
+| Action        | PC                                                 | Console                                 | Mobile                                 |
+| ------------- | -------------------------------------------------- | --------------------------------------- | -------------------------------------- |
+| Equip item    | Drag from stash to slot, or right-click "Equip"    | A on item → Equip option                | Tap item → Equip button                |
+| Compare items | Hover over item → tooltip with stat comparison     | Hold A on item → comparison overlay     | Long-press → comparison sheet          |
+| Remove item   | Right-click → "Unequip" or drag back to stash      | X on equipped slot → returns to stash   | Swipe left on equipped slot            |
+| Insure items  | Click "Insure All" or right-click individual items | Y button → Insurance overlay            | Toggle checkbox per item, tap "Insure" |
+| Save preset   | Click "Save Preset" → name input → confirm         | Select "Save Preset" → virtual keyboard | Tap "Save" → name input                |
+| Switch preset | Dropdown selector above loadout                    | LB/RB to cycle presets                  | Swipe left/right on preset name        |
 
-| Action | PC | Console | Mobile |
-| :----- | :- | :------ | :----- |
-| Equip item | Drag from stash to slot, or right-click "Equip" | A on item → Equip option | Tap item → Equip button |
-| Compare items | Hover over item → tooltip with stat comparison | Hold A on item → comparison overlay | Long-press → comparison sheet |
-| Remove item | Right-click → "Unequip" or drag back to stash | X on equipped slot → returns to stash | Swipe left on equipped slot |
-| Insure items | Click "Insure All" or right-click individual items | Y button → Insurance overlay | Toggle checkbox per item, tap "Insure" |
-| Save preset | Click "Save Preset" → name input → confirm | Select "Save Preset" → virtual keyboard | Tap "Save" → name input |
-| Switch preset | Dropdown selector above loadout | LB/RB to cycle presets | Swipe left/right on preset name |
+#### Preset System
 
-### Preset System
+* Maximum **10 saved presets** per player
+* Preset stores: all equipment slots, attachment configurations, ammo loads
+* "Smart Fill" option: auto-fills a preset from stash using best available matching items
+* Missing items highlighted in red with "Find in Traders" shortcut
 
-- Maximum **10 saved presets** per player
-- Preset stores: all equipment slots, attachment configurations, ammo loads
-- "Smart Fill" option: auto-fills a preset from stash using best available matching items
-- Missing items highlighted in red with "Find in Traders" shortcut
+***
 
----
-
-## Trader / Market Screen
+### Trader / Market Screen
 
 Players buy, sell, and barter with faction vendors. Each faction has its own trader with reputation-gated inventory.
 
-### Layout
+#### Layout
 
 ```
 +------------------------------------------------------------------+
@@ -173,29 +171,27 @@ Players buy, sell, and barter with faction vendors. Each faction has its own tra
 +------------------------------------------------------------------+
 ```
 
-<!-- REF_IMAGE: Trader screen mockup — showing Viktor Koval portrait, inventory grid with locked items, sell panel, and filter bar -->
+#### Trader Tab Modes
 
-### Trader Tab Modes
-
-| Mode | Left Panel | Right Panel | Action |
-| :--- | :--------- | :---------- | :----- |
-| **Buy** | Trader inventory (items for sale) | Player wallet + purchase summary | Select items → "Purchase" button |
-| **Sell** | Player stash (sellable items) | Sell value calculation | Select items → "Sell" button |
+| Mode       | Left Panel                                  | Right Panel                         | Action                               |
+| ---------- | ------------------------------------------- | ----------------------------------- | ------------------------------------ |
+| **Buy**    | Trader inventory (items for sale)           | Player wallet + purchase summary    | Select items → "Purchase" button     |
+| **Sell**   | Player stash (sellable items)               | Sell value calculation              | Select items → "Sell" button         |
 | **Barter** | Trader barter offers (item-for-item trades) | Required items checklist from stash | Drag required items → "Trade" button |
 
-### Reputation Gating Visual
+#### Reputation Gating Visual
 
-- Available items: normal opacity, colored border matching rarity
-- Locked items (higher rep required): 30% opacity, lock icon overlay, tooltip shows "Requires Reputation Level X"
-- Newly unlocked items: "NEW" badge for 48 hours after unlocking
+* Available items: normal opacity, colored border matching rarity
+* Locked items (higher rep required): 30% opacity, lock icon overlay, tooltip shows "Requires Reputation Level X"
+* Newly unlocked items: "NEW" badge for 48 hours after unlocking
 
----
+***
 
-## Stash / Inventory Management
+### Stash / Inventory Management
 
 The primary item management screen, separate from the quick-access view in Loadout.
 
-### Layout
+#### Layout
 
 ```
 +------------------------------------------------------------------+
@@ -217,34 +213,34 @@ The primary item management screen, separate from the quick-access view in Loado
 +------------------------------------------------------------------+
 ```
 
-### Grid Mechanics
+#### Grid Mechanics
 
-| Mechanic | Description | Platform Input |
-| :------- | :---------- | :------------- |
-| Item placement | Items occupy grid cells based on size (1x1 to 2x4) | PC: drag-drop. Console: cursor + A. Mobile: tap-to-select then tap-to-place |
-| Rotation | Rotate items 90 degrees to optimize space | PC: R key while dragging. Console: Y while holding. Mobile: rotate button |
-| Stacking | Same ammo/consumables stack (max per type varies) | Automatic when placed on matching stack |
-| Quick transfer | Move item directly to equipped loadout slot | PC: Ctrl+Click. Console: hold A. Mobile: double-tap |
-| Search | Text filter highlights matching items, dims others | PC: Ctrl+F. Console: Y → virtual keyboard. Mobile: search bar |
-| Auto-Sort | Reorganize all items for optimal space usage | Single button press. Maintains category grouping |
-| Quick-Sell | Mark items for sale, batch sell to best-price trader | PC: middle-click to tag. Console: X to tag. Mobile: swipe-left |
+| Mechanic       | Description                                          | Platform Input                                                              |
+| -------------- | ---------------------------------------------------- | --------------------------------------------------------------------------- |
+| Item placement | Items occupy grid cells based on size (1x1 to 2x4)   | PC: drag-drop. Console: cursor + A. Mobile: tap-to-select then tap-to-place |
+| Rotation       | Rotate items 90 degrees to optimize space            | PC: R key while dragging. Console: Y while holding. Mobile: rotate button   |
+| Stacking       | Same ammo/consumables stack (max per type varies)    | Automatic when placed on matching stack                                     |
+| Quick transfer | Move item directly to equipped loadout slot          | PC: Ctrl+Click. Console: hold A. Mobile: double-tap                         |
+| Search         | Text filter highlights matching items, dims others   | PC: Ctrl+F. Console: Y → virtual keyboard. Mobile: search bar               |
+| Auto-Sort      | Reorganize all items for optimal space usage         | Single button press. Maintains category grouping                            |
+| Quick-Sell     | Mark items for sale, batch sell to best-price trader | PC: middle-click to tag. Console: X to tag. Mobile: swipe-left              |
 
-### Stash Upgrades
+#### Stash Upgrades
 
-| Level | Slots | Unlock Method |
-| :---: | :---: | :------------ |
-| 1 (Default) | 100 | Starting stash |
-| 2 | 150 | Safe House upgrade (50K credits + 10 materials) |
-| 3 | 200 | Safe House upgrade (200K credits + 25 materials) |
-| 4 (Maximum) | 300 | Safe House upgrade (500K credits + 50 materials) |
+|    Level    | Slots | Unlock Method                                    |
+| :---------: | :---: | ------------------------------------------------ |
+| 1 (Default) |  100  | Starting stash                                   |
+|      2      |  150  | Safe House upgrade (50K credits + 10 materials)  |
+|      3      |  200  | Safe House upgrade (200K credits + 25 materials) |
+| 4 (Maximum) |  300  | Safe House upgrade (500K credits + 50 materials) |
 
----
+***
 
-## Map Selection Screen
+### Map Selection Screen
 
 After pressing "Start Raid," players choose their deployment destination.
 
-### Layout
+#### Layout
 
 ```
 +------------------------------------------------------------------+
@@ -276,28 +272,26 @@ After pressing "Start Raid," players choose their deployment destination.
 +------------------------------------------------------------------+
 ```
 
-<!-- REF_IMAGE: Map Selection screen mockup — showing map list on left, preview image center-right, extraction points listed, time-of-day selector -->
+#### Map Card Information
 
-### Map Card Information
+| Field             | Source                                           | Purpose                          |
+| ----------------- | ------------------------------------------------ | -------------------------------- |
+| Map Name          | Static                                           | Identify the location            |
+| Difficulty        | Static per map                                   | Set expectations for new players |
+| Boss Count        | Dynamic (season-dependent)                       | Inform high-value target hunters |
+| Player Count      | Range (varies by server load)                    | Indicate expected PvP density    |
+| Extraction Points | Dynamic (randomized per session)                 | Pre-raid planning                |
+| Time of Day       | Player selection (affects lighting, AI behavior) | Tactical choice                  |
+| Lock Status       | Player level requirement                         | Progression gate                 |
+| Estimated Wait    | Server matchmaking queue                         | Manage expectations              |
 
-| Field | Source | Purpose |
-| :---- | :----- | :------ |
-| Map Name | Static | Identify the location |
-| Difficulty | Static per map | Set expectations for new players |
-| Boss Count | Dynamic (season-dependent) | Inform high-value target hunters |
-| Player Count | Range (varies by server load) | Indicate expected PvP density |
-| Extraction Points | Dynamic (randomized per session) | Pre-raid planning |
-| Time of Day | Player selection (affects lighting, AI behavior) | Tactical choice |
-| Lock Status | Player level requirement | Progression gate |
-| Estimated Wait | Server matchmaking queue | Manage expectations |
+***
 
----
-
-## Squad / Lobby Screen
+### Squad / Lobby Screen
 
 The waiting room before a raid. Focused on readiness communication and social interaction.
 
-### Layout
+#### Layout
 
 ```
 +------------------------------------------------------------------+
@@ -322,27 +316,25 @@ The waiting room before a raid. Focused on readiness communication and social in
 +------------------------------------------------------------------+
 ```
 
-<!-- REF_IMAGE: Squad Lobby mockup — showing 3 operator models side-by-side with readiness indicators, voice chat icons, and Deploy button -->
+#### Squad Interactions
 
-### Squad Interactions
+| Action        | Description                                                          | Input                                 |
+| ------------- | -------------------------------------------------------------------- | ------------------------------------- |
+| Invite Friend | Open friends list, select player to invite                           | Button or slash command               |
+| Match Fill    | Auto-fill empty slots with random matchmade players                  | Toggle option, only squad leader      |
+| Inspect Gear  | View teammate's equipped loadout (no item details, just silhouettes) | Click/A on teammate card              |
+| Ready Toggle  | Mark yourself as ready (green) or not ready (gray)                   | Button press                          |
+| Deploy        | Squad leader only. Requires all members READY. Starts matchmaking    | Hold for 1 second (prevents misclick) |
+| Voice Test    | Microphone icon shows voice activity indicator                       | Automatic (push-to-talk or open mic)  |
+| Kick Player   | Squad leader only. Opens confirmation dialog                         | Right-click / hold on player card     |
 
-| Action | Description | Input |
-| :----- | :---------- | :---- |
-| Invite Friend | Open friends list, select player to invite | Button or slash command |
-| Match Fill | Auto-fill empty slots with random matchmade players | Toggle option, only squad leader |
-| Inspect Gear | View teammate's equipped loadout (no item details, just silhouettes) | Click/A on teammate card |
-| Ready Toggle | Mark yourself as ready (green) or not ready (gray) | Button press |
-| Deploy | Squad leader only. Requires all members READY. Starts matchmaking | Hold for 1 second (prevents misclick) |
-| Voice Test | Microphone icon shows voice activity indicator | Automatic (push-to-talk or open mic) |
-| Kick Player | Squad leader only. Opens confirmation dialog | Right-click / hold on player card |
+***
 
----
-
-## After Action Report
+### After Action Report
 
 Post-raid summary screen. Must serve two purposes: emotional payoff (or processing) and data review.
 
-### Layout (Successful Extraction)
+#### Layout (Successful Extraction)
 
 ```
 +------------------------------------------------------------------+
@@ -373,7 +365,7 @@ Post-raid summary screen. Must serve two purposes: emotional payoff (or processi
 +------------------------------------------------------------------+
 ```
 
-### Layout (Death / Failed Extraction)
+#### Layout (Death / Failed Extraction)
 
 ```
 +------------------------------------------------------------------+
@@ -400,25 +392,23 @@ Post-raid summary screen. Must serve two purposes: emotional payoff (or processi
 +------------------------------------------------------------------+
 ```
 
-<!-- REF_IMAGE: After Action Report mockup — side by side comparison showing successful extraction (green theme) and KIA (red theme) layouts -->
+#### Element Details
 
-### Element Details
+| Element        | Successful Extraction           | Failed Extraction                                    |
+| -------------- | ------------------------------- | ---------------------------------------------------- |
+| Header color   | Signal Green accent             | Critical Red accent                                  |
+| Loot panel     | Items acquired with values      | Items lost with negative values                      |
+| XP display     | Full XP earned                  | 50% XP penalty applied                               |
+| Quest progress | Shows completed and in-progress | Shows which progress was saved vs. lost              |
+| Combat stats   | Full stats displayed            | Same stats displayed                                 |
+| Insurance      | Not shown (no loss)             | Shows estimated return time for insured items        |
+| Death Cam      | Not available                   | Replay of final 10 seconds from killer's perspective |
 
-| Element | Successful Extraction | Failed Extraction |
-| :------ | :-------------------- | :---------------- |
-| Header color | Signal Green accent | Critical Red accent |
-| Loot panel | Items acquired with values | Items lost with negative values |
-| XP display | Full XP earned | 50% XP penalty applied |
-| Quest progress | Shows completed and in-progress | Shows which progress was saved vs. lost |
-| Combat stats | Full stats displayed | Same stats displayed |
-| Insurance | Not shown (no loss) | Shows estimated return time for insured items |
-| Death Cam | Not available | Replay of final 10 seconds from killer's perspective |
+***
 
----
+### Battle Pass / Seasonal Screen
 
-## Battle Pass / Seasonal Screen
-
-### Layout
+#### Layout
 
 ```
 +------------------------------------------------------------------+
@@ -444,24 +434,22 @@ Post-raid summary screen. Must serve two purposes: emotional payoff (or processi
 +------------------------------------------------------------------+
 ```
 
-<!-- REF_IMAGE: Battle Pass screen mockup — horizontal tier track with free/premium lanes, current progress indicator, seasonal artwork banner -->
+#### Battle Pass Rules
 
-### Battle Pass Rules
+| Rule                  | Detail                                                                                 |
+| --------------------- | -------------------------------------------------------------------------------------- |
+| Free track            | All players earn tier progress. Cosmetics and minor consumables                        |
+| Premium track         | Paid upgrade. Exclusive skins, emotes, and bonus XP                                    |
+| XP sources            | Raids (time survived + extraction bonus), quest completion, daily/weekly               |
+| Tier skip             | Players can purchase 1 tier skip per day (credits, not premium currency)               |
+| Season end            | Unclaimed free rewards claimable for 2 weeks after season ends. Premium rewards locked |
+| No gameplay advantage | Battle pass NEVER contains weapons, armor, or gameplay-affecting items                 |
 
-| Rule | Detail |
-| :--- | :----- |
-| Free track | All players earn tier progress. Cosmetics and minor consumables |
-| Premium track | Paid upgrade. Exclusive skins, emotes, and bonus XP |
-| XP sources | Raids (time survived + extraction bonus), quest completion, daily/weekly |
-| Tier skip | Players can purchase 1 tier skip per day (credits, not premium currency) |
-| Season end | Unclaimed free rewards claimable for 2 weeks after season ends. Premium rewards locked |
-| No gameplay advantage | Battle pass NEVER contains weapons, armor, or gameplay-affecting items |
+***
 
----
+### Settings Menu
 
-## Settings Menu
-
-### Layout
+#### Layout
 
 ```
 +------------------------------------------------------------------+
@@ -490,53 +478,51 @@ Post-raid summary screen. Must serve two purposes: emotional payoff (or processi
 +------------------------------------------------------------------+
 ```
 
-> For the full list of settings options, descriptions, and platform-specific defaults, see [User Settings](../../GameDesign/UserSettings/).
+> For the full list of settings options, descriptions, and platform-specific defaults, see [User Settings](https://github.com/oaiba/ExtractionDocument/blob/main/content/GameDesign/UserSettings/README.md).
 
-### Settings Tab Overview
+#### Settings Tab Overview
 
-| Tab | Key Settings | Platform Differences |
-| :-- | :----------- | :------------------- |
-| Graphics | Resolution, quality presets, FPS limit, individual graphical options | PC: full control. Console: Performance/Quality toggle. Mobile: Low/Med/High preset |
-| Audio | Master, Music, SFX, Voice, Voice Chat volume. Spatial audio toggle | Same across platforms. Mobile adds speaker/headphone detection |
-| Controls | Key bindings (PC), button mapping (console), HUD layout (mobile) | Fully platform-specific. Cross-ref: each platform's control standards |
-| Gameplay | Language, subtitle size, minimap style, auto-run, crosshair | Same across platforms |
-| Accessibility | Colorblind mode, text scaling, motion reduction, subtitles, aim assist | Same across platforms |
+| Tab           | Key Settings                                                           | Platform Differences                                                               |
+| ------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
+| Graphics      | Resolution, quality presets, FPS limit, individual graphical options   | PC: full control. Console: Performance/Quality toggle. Mobile: Low/Med/High preset |
+| Audio         | Master, Music, SFX, Voice, Voice Chat volume. Spatial audio toggle     | Same across platforms. Mobile adds speaker/headphone detection                     |
+| Controls      | Key bindings (PC), button mapping (console), HUD layout (mobile)       | Fully platform-specific. Cross-ref: each platform's control standards              |
+| Gameplay      | Language, subtitle size, minimap style, auto-run, crosshair            | Same across platforms                                                              |
+| Accessibility | Colorblind mode, text scaling, motion reduction, subtitles, aim assist | Same across platforms                                                              |
 
----
+***
 
-## Pause Menu (In-Raid System Overlay)
+### Pause Menu (In-Raid System Overlay)
 
 **Context**: Accessed during gameplay by pressing `ESC` (PC) or `Start/Menu` (Console). The game **does not pause** in online raids.
 
 **Design Philosophy**: The menu acts as a translucent overlay. Players must maintain situational awareness — visuals remain visible through blur, and game audio continues unmuted.
 
-### Visual Style
+#### Visual Style
 
-- **Background**: Heavy frosted glass blur (Gaussian radius 15px). De-saturates the game world but keeps motion visible (enemy shadows, explosions)
-- **Typography**: Oxanium (headers), Inter (body). High contrast white-on-dark
-- **Layout**: Left column (actions), Right column (raid status), Bottom (squad info)
+* **Background**: Heavy frosted glass blur (Gaussian radius 15px). De-saturates the game world but keeps motion visible (enemy shadows, explosions)
+* **Typography**: Oxanium (headers), Inter (body). High contrast white-on-dark
+* **Layout**: Left column (actions), Right column (raid status), Bottom (squad info)
 
-<!-- REF_IMAGE: Pause Menu mockup — showing frosted glass overlay with resume/settings/abandon buttons on left, raid timer and extraction info on right -->
+#### Menu Structure
 
-### Menu Structure
+| Section      | Elements              | Functionality                                                               |
+| ------------ | --------------------- | --------------------------------------------------------------------------- |
+| Main Actions | **Resume**            | Closes menu immediately                                                     |
+|              | **Options**           | Opens Settings Menu (graphics, keybinds)                                    |
+|              | **Statistics**        | Current session stats (kills, damage, XP so far)                            |
+|              | **Abandon Raid**      | Critical Red button. Triggers "Confirm Disconnect" popup. Gear will be lost |
+| Raid Status  | **Raid Timer**        | Countdown (e.g., `25:43`). Color turns red at under 10 minutes              |
+|              | **Extraction Points** | List of available exits with status (Open, Conditional, Closed)             |
+|              | **Network Info**      | Ping (ms), Packet Loss (%), Raid Hash ID                                    |
+| Squad Info   | **Teammate Cards**    | Small widgets: Name, HP bar, Status (Alive / Dead / Extracting)             |
 
-| Section | Elements | Functionality |
-| :------ | :------- | :------------ |
-| Main Actions | **Resume** | Closes menu immediately |
-| | **Options** | Opens Settings Menu (graphics, keybinds) |
-| | **Statistics** | Current session stats (kills, damage, XP so far) |
-| | **Abandon Raid** | Critical Red button. Triggers "Confirm Disconnect" popup. Gear will be lost |
-| Raid Status | **Raid Timer** | Countdown (e.g., `25:43`). Color turns red at under 10 minutes |
-| | **Extraction Points** | List of available exits with status (Open, Conditional, Closed) |
-| | **Network Info** | Ping (ms), Packet Loss (%), Raid Hash ID |
-| Squad Info | **Teammate Cards** | Small widgets: Name, HP bar, Status (Alive / Dead / Extracting) |
+#### UX Safeguards
 
-### UX Safeguards
-
-| Safeguard | Description |
-| :-------- | :---------- |
-| Hold to Abandon | "Abandon Raid" requires a 0.5-second hold to prevent panic clicks |
-| Audio pass-through | Game audio is NOT muted. Footsteps and gunshots remain at 100% volume |
-| Cursor mode | Frees mouse cursor for UI interaction. Camera movement locked |
-| Input override | Pressing Tab (Inventory) or M (Map) while in this menu immediately switches to those views |
-| Auto-dismiss | If player takes damage while menu is open, menu closes automatically with a warning flash |
+| Safeguard          | Description                                                                                |
+| ------------------ | ------------------------------------------------------------------------------------------ |
+| Hold to Abandon    | "Abandon Raid" requires a 0.5-second hold to prevent panic clicks                          |
+| Audio pass-through | Game audio is NOT muted. Footsteps and gunshots remain at 100% volume                      |
+| Cursor mode        | Frees mouse cursor for UI interaction. Camera movement locked                              |
+| Input override     | Pressing Tab (Inventory) or M (Map) while in this menu immediately switches to those views |
+| Auto-dismiss       | If player takes damage while menu is open, menu closes automatically with a warning flash  |

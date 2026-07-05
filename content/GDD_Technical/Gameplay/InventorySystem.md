@@ -1,30 +1,32 @@
 ---
-title: "Inventory System - Technical Design Sutureument"
+title: Inventory System - Technical Design Sutureument
 type: docs
 ---
 
-## Related Sutureuments
+# Inventory System - Technical Design Sutureument
 
-| Sutureument             | Relationship           | Link                                                                 |
-| :------------------- | :--------------------- | :------------------------------------------------------------------- |
-| **Items Design**     | High-level item design | [GDD_HighLevel/Combat/Items.md](../../GDD_HighLevel/Combat/Items.md) |
-| **Weapon System**    | Weapon storage         | [WeaponSystem.md](./WeaponSystem.md)                                 |
-| **Character System** | Equipped items         | [CharacterSystem.md](./CharacterSystem.md)                           |
-| **UI System**        | Inventory UI           | [../Systems/UISystem.md](../Systems/UISystem.md)                     |
-| **Trading System**   | Item exchange          | [../Systems/TradingSystem.md](../Systems/TradingSystem.md)           |
+### Related Sutureuments
 
----
+| Sutureument          | Relationship           | Link                                                                                                                                |
+| -------------------- | ---------------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
+| **Items Design**     | High-level item design | [GDD\_HighLevel/Combat/Items.md](https://github.com/oaiba/ExtractionDocument/blob/main/content/GDD_HighLevel/Combat/Items.md)       |
+| **Weapon System**    | Weapon storage         | [WeaponSystem.md](WeaponSystem.md)                                                                                                  |
+| **Character System** | Equipped items         | [CharacterSystem.md](CharacterSystem.md)                                                                                            |
+| **UI System**        | Inventory UI           | [../Systems/UISystem.md](../Systems/UISystem.md)                                                                                    |
+| **Trading System**   | Item exchange          | [../Systems/TradingSystem.md](https://github.com/oaiba/ExtractionDocument/blob/main/content/GDD_Technical/Systems/TradingSystem.md) |
 
-## Overview
+***
 
-### Purpose
+### Overview
+
+#### Purpose
 
 The **Inventory System** manages all item storage, retrieval, and manipulation in a grid-based (Tetris-style) format similar to Escape from Tarkov.
 
-### Core Functions
+#### Core Functions
 
 | Function            | Description                                  |
-| :------------------ | :------------------------------------------- |
+| ------------------- | -------------------------------------------- |
 | **Grid Management** | 2D cell-based item placement                 |
 | **Item Stacking**   | Combine similar items into stacks            |
 | **Weight Tracking** | Calculate encumbrance and movement penalties |
@@ -32,7 +34,7 @@ The **Inventory System** manages all item storage, retrieval, and manipulation i
 | **Persistence**     | Save/load inventory to database              |
 | **Secure Storage**  | Protected containers surviving death         |
 
-### Design Goals
+#### Design Goals
 
 ```
 1. INTUITIVE - Drag-and-drop feels natural
@@ -42,11 +44,11 @@ The **Inventory System** manages all item storage, retrieval, and manipulation i
 5. PROTECTED - Secure container for valuable items
 ```
 
----
+***
 
-## System Architecture
+### System Architecture
 
-### Component Diagram
+#### Component Diagram
 
 ```
 ┌─────────────────────────────────────────────────────────────────────┐
@@ -70,10 +72,10 @@ The **Inventory System** manages all item storage, retrieval, and manipulation i
 └─────────────────────────────────────────────────────────────────────┘
 ```
 
-### Core Components
+#### Core Components
 
 | Component                | Responsibility             | Dependencies         |
-| :----------------------- | :------------------------- | :------------------- |
+| ------------------------ | -------------------------- | -------------------- |
 | **InventoryManager**     | Central item handling      | GridSystem, Database |
 | **GridSystem**           | Cell management, collision | None                 |
 | **ContainerManager**     | Container types            | InventoryManager     |
@@ -81,15 +83,16 @@ The **Inventory System** manages all item storage, retrieval, and manipulation i
 | **WeightSystem**         | Encumbrance calculation    | CharacterSystem      |
 | **LootContainerHandler** | World containers           | MapSystem            |
 
----
+***
 
-## Enums & Types
+### Enums & Types
 
-### EItemType
+#### EItemType
+
 Item category classification.
 
 | Code Name             | Display Name      | Stackable | Max Stack | Weight Range | Description                |
-| :-------------------- | :---------------- | :-------- | :-------- | :----------- | :------------------------- |
+| --------------------- | ----------------- | --------- | --------- | ------------ | -------------------------- |
 | `IT_None`             | None              | N/A       | N/A       | N/A          | Invalid/undefined item     |
 | `IT_Weapon`           | Weapon            | No        | 1         | 2-8 kg       | Firearms and melee weapons |
 | `IT_Attachment`       | Attachment        | No        | 1         | 0.1-0.5 kg   | Weapon modifications       |
@@ -103,74 +106,80 @@ Item category classification.
 | `IT_Quest`            | Quest             | No        | 1         | 0.1 kg       | Quest objectives           |
 | `IT_Currency`         | Currency          | Yes       | 999999    | 0 kg         | In-game currencies         |
 
----
+***
 
-### EItemRarity
+#### EItemRarity
+
 Item rarity tier.
 
 | Code Name      | Display Name | Color  | Drop Rate | Sell Mult | Description       |
-| :------------- | :----------- | :----- | :-------- | :-------- | :---------------- |
+| -------------- | ------------ | ------ | --------- | --------- | ----------------- |
 | `IR_Common`    | Common       | White  | 50%       | 1.0×      | Basic items       |
 | `IR_Uncommon`  | Uncommon     | Green  | 30%       | 1.5×      | Slightly improved |
 | `IR_Rare`      | Rare         | Blue   | 15%       | 3.0×      | Good quality      |
 | `IR_Epic`      | Epic         | Purple | 4%        | 6.0×      | High quality      |
 | `IR_Legendary` | Legendary    | Gold   | 1%        | 15.0×     | Best in slot      |
 
----
+***
 
-### EArmorType
+#### EArmorType
+
 Armor slot classification.
 
 | Code Name      | Display Name | Slot  | Protection Zone | Durability Range |
-| :------------- | :----------- | :---- | :-------------- | :--------------- |
+| -------------- | ------------ | ----- | --------------- | ---------------- |
 | `AT_Helmet`    | Helmet       | Head  | Head only       | 20-50            |
 | `AT_BodyArmor` | Body Armor   | Torso | Chest, Stomach  | 30-80            |
 | `AT_Backpack`  | Backpack     | Back  | None            | N/A              |
 
----
+***
 
-### EContainerType
+#### EContainerType
+
 Inventory container classification.
 
 | Code Name            | Display Name     | Grid Size  | Persistent | Safe on Death | Description        |
-| :------------------- | :--------------- | :--------- | :--------- | :------------ | :----------------- |
+| -------------------- | ---------------- | ---------- | ---------- | ------------- | ------------------ |
 | `CT_Inventory`       | Inventory        | Variable   | Per-raid   | No            | Main inventory bag |
 | `CT_SecureContainer` | Secure Container | 2×2 to 3×3 | Always     | Yes           | Safe from death    |
 | `CT_Stash`           | Stash            | 10×20+     | Always     | Yes           | Permanent storage  |
 | `CT_Loot`            | Loot             | Variable   | Per-raid   | No            | World container    |
 | `CT_Trader`          | Trader           | Variable   | Always     | N/A           | NPC shop inventory |
 
----
+***
 
-### EItemRotation
+#### EItemRotation
+
 Grid rotation state.
 
 | Code Name | Display Name | Degrees | Width/Height | Description         |
-| :-------- | :----------- | :------ | :----------- | :------------------ |
+| --------- | ------------ | ------- | ------------ | ------------------- |
 | `ROT_0`   | Normal       | 0°      | Original     | Default orientation |
 | `ROT_90`  | Rotated 90   | 90°     | Swapped      | 90° clockwise       |
 | `ROT_180` | Rotated 180  | 180°    | Original     | Upside down         |
 | `ROT_270` | Rotated 270  | 270°    | Swapped      | 270° clockwise      |
 
----
+***
 
-### EEncumbranceLevel
+#### EEncumbranceLevel
+
 Weight encumbrance tier.
 
 | Code Name       | Display Name | Weight Range | Speed Mult | Stamina Drain | Description         |
-| :-------------- | :----------- | :----------- | :--------- | :------------ | :------------------ |
+| --------------- | ------------ | ------------ | ---------- | ------------- | ------------------- |
 | `EL_Light`      | Light        | 0-15 kg      | 100%       | 1.0×          | Normal movement     |
 | `EL_Medium`     | Medium       | 15-25 kg     | 90%        | 1.2×          | Slightly encumbered |
 | `EL_Heavy`      | Heavy        | 25-35 kg     | 75%        | 1.5×          | Encumbered          |
 | `EL_Overweight` | Overweight   | 35+ kg       | 60%        | 2.0×          | Severely encumbered |
 
----
+***
 
-### ELootContainerType
+#### ELootContainerType
+
 World loot container classification.
 
 | Code Name         | Display Name | Search Time | Lock Type | Loot Quality | Description      |
-| :---------------- | :----------- | :---------- | :-------- | :----------- | :--------------- |
+| ----------------- | ------------ | ----------- | --------- | ------------ | ---------------- |
 | `LCT_WoodenCrate` | Wooden Crate | 2s          | None      | Common       | Basic supplies   |
 | `LCT_MetalLocker` | Metal Locker | 3s          | None      | Uncommon     | Military gear    |
 | `LCT_WeaponRack`  | Weapon Rack  | 4s          | None      | Rare         | Weapons only     |
@@ -178,60 +187,60 @@ World loot container classification.
 | `LCT_SupplyDrop`  | Supply Drop  | 3s          | None      | Epic+        | Airdrop loot     |
 | `LCT_DeadPlayer`  | Dead Player  | 1s          | None      | Variable     | Player inventory |
 
----
+***
 
-## Code Names
+### Code Names
 
-### Inventory Events
+#### Inventory Events
 
 | Code Name         | Trigger      | Parameters                      | Description                 |
-| :---------------- | :----------- | :------------------------------ | :-------------------------- |
+| ----------------- | ------------ | ------------------------------- | --------------------------- |
 | `INV_ITEM_ADD`    | Item added   | ItemID, ContainerType, Position | Item placed in inventory    |
 | `INV_ITEM_REMOVE` | Item removed | ItemID, ContainerType, Reason   | Item removed from inventory |
 | `INV_ITEM_MOVE`   | Item moved   | ItemID, FromPos, ToPos          | Item repositioned           |
 | `INV_ITEM_ROTATE` | Item rotated | ItemID, Rotation                | Item orientation changed    |
 | `INV_ITEM_USE`    | Item used    | ItemID, Effect                  | Consumable/medical used     |
 
-### Stack Events
+#### Stack Events
 
 | Code Name     | Trigger         | Parameters                 | Description              |
-| :------------ | :-------------- | :------------------------- | :----------------------- |
+| ------------- | --------------- | -------------------------- | ------------------------ |
 | `STACK_MERGE` | Stacks combined | ItemID, FromStack, ToStack | Items stacked together   |
 | `STACK_SPLIT` | Stack divided   | ItemID, Amount, NewStackID | Stack split into parts   |
 | `STACK_FULL`  | Stack maxed     | ItemID, Overflow           | Cannot add more to stack |
 
-### Container Events
+#### Container Events
 
 | Code Name     | Trigger            | Parameters                 | Description                |
-| :------------ | :----------------- | :------------------------- | :------------------------- |
+| ------------- | ------------------ | -------------------------- | -------------------------- |
 | `CONT_OPEN`   | Container opened   | ContainerID, ContainerType | Container UI opened        |
 | `CONT_CLOSE`  | Container closed   | ContainerID                | Container UI closed        |
 | `CONT_LOOT`   | Loot taken         | ContainerID, ItemID        | Item looted from container |
 | `CONT_LOCKED` | Lock encounter     | ContainerID, LockType      | Locked container found     |
 | `CONT_UNLOCK` | Container unlocked | ContainerID, KeyUsed       | Container opened with key  |
 
-### Weight Events
+#### Weight Events
 
 | Code Name           | Trigger              | Parameters               | Description              |
-| :------------------ | :------------------- | :----------------------- | :----------------------- |
+| ------------------- | -------------------- | ------------------------ | ------------------------ |
 | `WEIGHT_THRESHOLD`  | Weight level changed | OldLevel, NewLevel       | Encumbrance tier changed |
 | `WEIGHT_OVERWEIGHT` | Max weight exceeded  | CurrentWeight, MaxWeight | Cannot add more items    |
 | `WEIGHT_UPDATE`     | Weight recalculated  | TotalWeight              | Total weight changed     |
 
-### Stash Events
+#### Stash Events
 
 | Code Name      | Trigger        | Parameters          | Description                   |
-| :------------- | :------------- | :------------------ | :---------------------------- |
+| -------------- | -------------- | ------------------- | ----------------------------- |
 | `STASH_SAVE`   | Stash saved    | PlayerID, ItemCount | Stash persisted to database   |
 | `STASH_LOAD`   | Stash loaded   | PlayerID, ItemCount | Stash retrieved from database |
 | `STASH_EXPAND` | Stash upgraded | OldSize, NewSize    | Stash capacity increased      |
 | `STASH_FULL`   | Stash full     | AttemptedItem       | Cannot store more items       |
 
----
+***
 
-## Data Structures
+### Data Structures
 
-### GridPosition
+#### GridPosition
 
 **Purpose:** Represents a cell position in the inventory grid.
 
@@ -245,7 +254,7 @@ STRUCT GridPosition:
     END FUNCTION
 ```
 
-### GridSize
+#### GridSize
 
 **Purpose:** Defines dimensions of a grid or item.
 
@@ -264,7 +273,7 @@ STRUCT GridSize:
     END FUNCTION
 ```
 
-### ItemData
+#### ItemData
 
 **Purpose:** Static item definition (read from database/config).
 
@@ -296,7 +305,7 @@ STRUCT ItemData:
     PrefabPath: String              // 3D model
 ```
 
-### ItemInstance
+#### ItemInstance
 
 **Purpose:** Runtime instance of an item in the world/inventory.
 
@@ -342,7 +351,7 @@ CLASS ItemInstance:
     END FUNCTION
 ```
 
-### InventoryContainer
+#### InventoryContainer
 
 **Purpose:** Represents a container that holds items (inventory, stash, etc.)
 
@@ -407,15 +416,16 @@ CLASS InventoryContainer:
     END FUNCTION
 ```
 
----
+***
 
-## Core Classes
+### Core Classes
 
-### InventoryManager
+#### InventoryManager
 
 **Purpose:** Central manager for all inventory operations.
 
 **Pseudocode:**
+
 ```
 CLASS InventoryManager:
     
@@ -582,13 +592,14 @@ CLASS InventoryManager:
     END FUNCTION
 ```
 
----
+***
 
-### GridSystem
+#### GridSystem
 
 **Purpose:** Handles grid operations, collision detection, and visualization.
 
 **Pseudocode:**
+
 ```
 CLASS GridSystem:
     
@@ -676,13 +687,14 @@ CLASS GridSystem:
     END FUNCTION
 ```
 
----
+***
 
-### WeightSystem
+#### WeightSystem
 
 **Purpose:** Calculate encumbrance and apply movement penalties.
 
 **Pseudocode:**
+
 ```
 CLASS WeightSystem:
     
@@ -775,13 +787,14 @@ CLASS WeightSystem:
     END FUNCTION
 ```
 
----
+***
 
-### StackManager
+#### StackManager
 
 **Purpose:** Handle item stacking and splitting.
 
 **Pseudocode:**
+
 ```
 CLASS StackManager:
     
@@ -860,13 +873,14 @@ CLASS StackManager:
     END FUNCTION
 ```
 
----
+***
 
-### StashSystem
+#### StashSystem
 
 **Purpose:** Manage permanent player storage.
 
 **Pseudocode:**
+
 ```
 CLASS StashSystem:
     
@@ -966,19 +980,19 @@ CLASS StashSystem:
     END FUNCTION
 ```
 
----
+***
 
-## Secure Container Rules
+### Secure Container Rules
 
-### Behavior During Raid
+#### Behavior During Raid
 
 | State          | Can Insert | Can Extract    | Survives Death |
-| :------------- | :--------- | :------------- | :------------- |
+| -------------- | ---------- | -------------- | -------------- |
 | **In Raid**    | Yes        | No             | Yes            |
 | **In Hideout** | Yes        | Yes            | N/A            |
 | **Post-Death** | N/A        | Yes (in stash) | Yes            |
 
-### Secure Container Pseudocode
+#### Secure Container Pseudocode
 
 ```
 CLASS SecureContainer:
@@ -1023,11 +1037,11 @@ CLASS SecureContainer:
     END FUNCTION
 ```
 
----
+***
 
-## UI Integration
+### UI Integration
 
-### Drag & Drop Flow
+#### Drag & Drop Flow
 
 ```
 1. USER clicks item
@@ -1051,10 +1065,10 @@ CLASS SecureContainer:
    → Play error sound
 ```
 
-### Context Menu Actions
+#### Context Menu Actions
 
 | Action            | Condition                | Result                     |
-| :---------------- | :----------------------- | :------------------------- |
+| ----------------- | ------------------------ | -------------------------- |
 | **Use**           | Consumable/Medical       | Apply effect, reduce stack |
 | **Equip**         | Weapon/Armor             | Move to equipped slot      |
 | **Inspect**       | Any                      | Show detailed 3D view      |
@@ -1064,20 +1078,20 @@ CLASS SecureContainer:
 | **Discard**       | Any (not quest)          | Remove from game           |
 | **Favorite**      | Any                      | Toggle favorite flag       |
 
----
+***
 
-## Performance Considerations
+### Performance Considerations
 
-### Memory Budget
+#### Memory Budget
 
 | Asset Type       | Max Size  | Pooled      |
-| :--------------- | :-------- | :---------- |
+| ---------------- | --------- | ----------- |
 | Item Icons       | 50 KB     | Yes (Atlas) |
 | Item Prefabs     | 500 KB    | Yes         |
 | Concurrent Items | 500       | -           |
 | Grid Cells (Max) | 500 cells | -           |
 
-### Optimization Strategies
+#### Optimization Strategies
 
 ```
 1. ICON ATLAS
@@ -1098,36 +1112,39 @@ CLASS SecureContainer:
    - Use version numbers for states
 ```
 
----
+***
 
-## TODO: Implementation Tasks
+### TODO: Implementation Tasks
 
-### HIGH Priority 🔴
-- [ ] Implement InventoryContainer base class
-- [ ] Create GridSystem collision detection
-- [ ] Add item add/remove operations
-- [ ] Implement weight calculation
-- [ ] Create basic UI drag-and-drop
+#### HIGH Priority 🔴
 
-### MEDIUM Priority 🟡
-- [ ] Add item rotation (R key)
-- [ ] Implement stack merge/split
-- [ ] Create auto-sort algorithm
-- [ ] Add secure container rules
-- [ ] Implement stash save/load
+* [ ] Implement InventoryContainer base class
+* [ ] Create GridSystem collision detection
+* [ ] Add item add/remove operations
+* [ ] Implement weight calculation
+* [ ] Create basic UI drag-and-drop
 
-### LOW Priority 🟢
-- [ ] Add quick-slot bar
-- [ ] Create inventory search/filter
-- [ ] Implement loadout presets
-- [ ] Add item comparison tooltip
-- [ ] Create debug commands
+#### MEDIUM Priority 🟡
 
----
+* [ ] Add item rotation (R key)
+* [ ] Implement stack merge/split
+* [ ] Create auto-sort algorithm
+* [ ] Add secure container rules
+* [ ] Implement stash save/load
 
-## Data Persistence
+#### LOW Priority 🟢
 
-### Save Format (JSON)
+* [ ] Add quick-slot bar
+* [ ] Create inventory search/filter
+* [ ] Implement loadout presets
+* [ ] Add item comparison tooltip
+* [ ] Create debug commands
+
+***
+
+### Data Persistence
+
+#### Save Format (JSON)
 
 ```json
 {
@@ -1155,11 +1172,11 @@ CLASS SecureContainer:
 }
 ```
 
----
+***
 
-## System Relationships
+### System Relationships
 
-### Dependency Diagram
+#### Dependency Diagram
 
 ```
                     ┌────────────────────┐
@@ -1187,6 +1204,3 @@ CLASS SecureContainer:
 │ • Container open│  │ • Marketplace   │  │ • Save/Load     │
 └─────────────────┘  └─────────────────┘  └─────────────────┘
 ```
-
-
-

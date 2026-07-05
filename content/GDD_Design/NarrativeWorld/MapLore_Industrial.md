@@ -1,44 +1,46 @@
 ---
-title: "Map Lore: Industrial Decay (Sector 7)"
-linkTitle: "Industrial Decay"
+title: 'Map Lore: Industrial Decay (Sector 7)'
+linkTitle: Industrial Decay
 type: docs
 weight: 8
 ---
 
-## Map Identity Card
+# Map Lore: Industrial Decay (Sector 7)
 
-| Property | Value |
-| :------- | :---- |
-| **In-Game Name** | Industrial Decay |
-| **Lore Designation** | Sector 7, Neo-Asia Industrial Corridor |
-| **Theme** | Abandoned industrial megacomplex — the heart of NAIC manufacturing and the origin site of Project Prometheus |
-| **Size** | 1,600m × 1,600m |
-| **Player Capacity** | 12–16 players |
-| **Match Duration** | 15 minutes |
-| **Difficulty** | Highest — also the narrative center of the game |
-| **Dominant Faction** | Contested (Salvage Corps + Tech Syndicate; Reactor is ungoverned) |
-| **Season Availability** | Launch |
+### Map Identity Card
 
-> **Cross-References:** Faction control per zone → [Faction Territories](FactionTerritories.md); loot container tables and heatmap → [Loot Distribution](LootDistribution.md); POI choke points and extraction data → [MapLayouts](MapLayouts.md); backstory source → [World History & Backstory](Backstory.md).
+| Property                | Value                                                                                                        |
+| ----------------------- | ------------------------------------------------------------------------------------------------------------ |
+| **In-Game Name**        | Industrial Decay                                                                                             |
+| **Lore Designation**    | Sector 7, Neo-Asia Industrial Corridor                                                                       |
+| **Theme**               | Abandoned industrial megacomplex — the heart of NAIC manufacturing and the origin site of Project Prometheus |
+| **Size**                | 1,600m × 1,600m                                                                                              |
+| **Player Capacity**     | 12–16 players                                                                                                |
+| **Match Duration**      | 15 minutes                                                                                                   |
+| **Difficulty**          | Highest — also the narrative center of the game                                                              |
+| **Dominant Faction**    | Contested (Salvage Corps + Tech Syndicate; Reactor is ungoverned)                                            |
+| **Season Availability** | Launch                                                                                                       |
 
----
+> **Cross-References:** Faction control per zone → [Faction Territories](FactionTerritories.md); loot container tables and heatmap → [Loot Distribution](https://github.com/oaiba/ExtractionDocument/blob/main/content/GDD_Design/NarrativeWorld/LootDistribution.md); POI choke points and extraction data → [MapLayouts](https://github.com/oaiba/ExtractionDocument/blob/main/content/GDD_Design/NarrativeWorld/MapLayouts.md); backstory source → [World History & Backstory](https://github.com/oaiba/ExtractionDocument/blob/main/content/GDD_Design/NarrativeWorld/Backstory.md).
 
-## Pre-Collapse History
+***
 
-### Sector 7 at Its Peak (2025–2030)
+### Pre-Collapse History
+
+#### Sector 7 at Its Peak (2025–2030)
 
 Sector 7 was the manufacturing crown of the NAIC — Nexus Corporation's showcase of what a corporate-owned city could achieve. A single industrial complex spanning 5,000 workers at peak operation.
 
-| Facility | Purpose | Workers | Notes |
-| :------- | :------ | :------ | :---- |
-| **Reactor Tower** | Primary power generation for all of NAIC | 340 engineers, maintenance staff | Nexus claimed it was "the most efficient civilian reactor in East Asia" |
-| **Tech Labs Alpha/Beta/Gamma** | Advanced technology R&D — official cover: consumer electronics | 500+ researchers (many Level 4 clearance and above) | Hidden purpose: Project Prometheus |
-| **Warehouse District (W1–W6)** | Logistics hub — receiving, storage, distribution | 1,200+ warehouse workers | W2 had an unregistered sub-basement (Underground Network's first post-Collapse safe house) |
-| **Office Complex (Floors 1–5)** | Nexus Corp NAIC regional HQ | 800+ executives, administrators, security | CFO Thompson maintained office on Floor 5; helicopter pad on roof |
-| **Workshops** | Heavy vehicle maintenance, infrastructure repair | 600+ mechanics, engineers | Viktor Koval's territory — he supervised this facility before The Collapse |
-| **Worker Dormitories** (off-map) | Housing for 3,000 NAIC Sector 7 staff | All workers | Workers lived and worked within walking distance. No reason to leave. |
+| Facility                         | Purpose                                                         | Workers                                             | Notes                                                                                      |
+| -------------------------------- | --------------------------------------------------------------- | --------------------------------------------------- | ------------------------------------------------------------------------------------------ |
+| **Reactor Tower**                | Primary power generation for all of NAIC                        | 340 engineers, maintenance staff                    | Nexus claimed it was "the most efficient civilian reactor in East Asia"                    |
+| **Tech Labs Alpha/Beta/Gamma**   | Advanced technology R\&D — official cover: consumer electronics | 500+ researchers (many Level 4 clearance and above) | Hidden purpose: Project Prometheus                                                         |
+| **Warehouse District (W1–W6)**   | Logistics hub — receiving, storage, distribution                | 1,200+ warehouse workers                            | W2 had an unregistered sub-basement (Underground Network's first post-Collapse safe house) |
+| **Office Complex (Floors 1–5)**  | Nexus Corp NAIC regional HQ                                     | 800+ executives, administrators, security           | CFO Thompson maintained office on Floor 5; helicopter pad on roof                          |
+| **Workshops**                    | Heavy vehicle maintenance, infrastructure repair                | 600+ mechanics, engineers                           | Viktor Koval's territory — he supervised this facility before The Collapse                 |
+| **Worker Dormitories** (off-map) | Housing for 3,000 NAIC Sector 7 staff                           | All workers                                         | Workers lived and worked within walking distance. No reason to leave.                      |
 
-### The Hidden Truth: Project Prometheus
+#### The Hidden Truth: Project Prometheus
 
 While Sector 7 appeared to be an industrial powerhouse, Labs Alpha/Beta/Gamma housed Nexus Corp's most classified operation:
 
@@ -64,46 +66,46 @@ Lab Gamma (Separate surface building):
      └── Prototype exoskeleton storage (where military-grade Subjects were prepared)
 ```
 
-For full Project Prometheus history, see [World History/Backstory](Backstory.md#project-prometheus-2026-2031).
+For full Project Prometheus history, see [World History/Backstory](https://github.com/oaiba/ExtractionDocument/blob/main/content/GDD_Design/NarrativeWorld/Backstory.md#project-prometheus-2026-2031).
 
----
+***
 
-## The Collapse: What Happened in Sector 7
+### The Collapse: What Happened in Sector 7
 
-### Hour-by-Hour (January 15–April 1, 2031)
+#### Hour-by-Hour (January 15–April 1, 2031)
 
-| Timeline | Event | Location | Evidence In-Game |
-| :------- | :---- | :------- | :--------------- |
-| **Jan 15, 00:00** | Global Blackout begins — Coordinated cyberattack cuts power | All of NAIC | Emergency generator lights still flickering in Reactor basement |
-| **Jan 15, 03:47** | **Subject 7 breaks containment in Lab Alpha** | Lab Alpha basement | Clock stopped at 3:47 AM on Lab Alpha floor; the iconic image |
-| **Jan 15, 04:00** | Emergency containment protocols activated — all labs lockdown | Labs Alpha/Beta/Gamma | Sealed blast doors (some still closed; accessible via Keycard quest) |
-| **Jan 15, 04:30** | Subject 7 reaches Reactor Tower via maintenance tunnel | Underground tunnels | Bloodtrail in maintenance tunnel leading from Labs to Reactor basement |
-| **Jan 15, 06:00** | Nexus security forces engage Subject 7 — all 24 security officers KIA | Reactor Tower lobby | 24 skeleton locations on Floor 1, all facing toward the reactor entrance |
-| **Jan 16** | Reactor cooling system hacked; radiation leak spreads | Reactor Tower (basement and Floor 1) | Radiation warning signs freshly painted in red; Geiger counter audio cue |
-| **Jan 20** | Banking system crashes — workers cannot access wages. Morale collapse | Office Complex | Smashed ATM machines, scattered withdrawal receipts, improvised IOUs |
-| **Feb 1** | Crimson Flu first confirmed cases appear in NAIC | Worker Dormitories | Audio log from the first medic to diagnose it |
-| **Feb 14** | Quarantine fails; military seals Sector 7 perimeter | Forest Perimeter | Military barricades at forest edge still visible |
-| **Mar 1** | Sector 7 food supply critical; looting begins | Warehouses | Smashed crates, scattered ration packaging, improvised food storage attempts |
-| **Mar 15** | Military units desert; Sector 7 effectively ungoverned | Office Complex / Checkpoints | Abandoned military checkpoints with personal effects left behind |
-| **Apr 1** | Last survivor transmission logged from Reactor Tower, Floor 2 | Reactor Tower | Final audio log — transmitter still running on backup power |
+| Timeline          | Event                                                                 | Location                             | Evidence In-Game                                                             |
+| ----------------- | --------------------------------------------------------------------- | ------------------------------------ | ---------------------------------------------------------------------------- |
+| **Jan 15, 00:00** | Global Blackout begins — Coordinated cyberattack cuts power           | All of NAIC                          | Emergency generator lights still flickering in Reactor basement              |
+| **Jan 15, 03:47** | **Subject 7 breaks containment in Lab Alpha**                         | Lab Alpha basement                   | Clock stopped at 3:47 AM on Lab Alpha floor; the iconic image                |
+| **Jan 15, 04:00** | Emergency containment protocols activated — all labs lockdown         | Labs Alpha/Beta/Gamma                | Sealed blast doors (some still closed; accessible via Keycard quest)         |
+| **Jan 15, 04:30** | Subject 7 reaches Reactor Tower via maintenance tunnel                | Underground tunnels                  | Bloodtrail in maintenance tunnel leading from Labs to Reactor basement       |
+| **Jan 15, 06:00** | Nexus security forces engage Subject 7 — all 24 security officers KIA | Reactor Tower lobby                  | 24 skeleton locations on Floor 1, all facing toward the reactor entrance     |
+| **Jan 16**        | Reactor cooling system hacked; radiation leak spreads                 | Reactor Tower (basement and Floor 1) | Radiation warning signs freshly painted in red; Geiger counter audio cue     |
+| **Jan 20**        | Banking system crashes — workers cannot access wages. Morale collapse | Office Complex                       | Smashed ATM machines, scattered withdrawal receipts, improvised IOUs         |
+| **Feb 1**         | Crimson Flu first confirmed cases appear in NAIC                      | Worker Dormitories                   | Audio log from the first medic to diagnose it                                |
+| **Feb 14**        | Quarantine fails; military seals Sector 7 perimeter                   | Forest Perimeter                     | Military barricades at forest edge still visible                             |
+| **Mar 1**         | Sector 7 food supply critical; looting begins                         | Warehouses                           | Smashed crates, scattered ration packaging, improvised food storage attempts |
+| **Mar 15**        | Military units desert; Sector 7 effectively ungoverned                | Office Complex / Checkpoints         | Abandoned military checkpoints with personal effects left behind             |
+| **Apr 1**         | Last survivor transmission logged from Reactor Tower, Floor 2         | Reactor Tower                        | Final audio log — transmitter still running on backup power                  |
 
-### "The Last 14 Days" — A Worker's Account
+#### "The Last 14 Days" — A Worker's Account
 
 Found in pieces across multiple Warehouse locations (collectible document chain):
 
-> *Day 1: Something happened at the Labs last night. Nobody will say what. The power is out. Some of us have emergency supplies. Viktor says to stay calm.*
+> _Day 1: Something happened at the Labs last night. Nobody will say what. The power is out. Some of us have emergency supplies. Viktor says to stay calm._
 >
-> *Day 3: The Labs are sealed. Nexus security won't let anyone near them. We saw something — something that used to be a person — climbing the Reactor Tower. Three guards went after it. Only the sound of gunfire came back.*
+> _Day 3: The Labs are sealed. Nexus security won't let anyone near them. We saw something — something that used to be a person — climbing the Reactor Tower. Three guards went after it. Only the sound of gunfire came back._
 >
-> *Day 7: The Peacekeepers came. They said the perimeter is sealed for our "safety." They said help is coming. Mama Rosa is running a soup kitchen in W3. The children don't understand why we can't go home.*
+> _Day 7: The Peacekeepers came. They said the perimeter is sealed for our "safety." They said help is coming. Mama Rosa is running a soup kitchen in W3. The children don't understand why we can't go home._
 >
-> *Day 14: [Last entry, handwriting deteriorated] The radio says the same thing in every language. "Help is coming." It isn't coming. Viktor gave us each a rifle from W2. He says we protect each other. I believe him. I wish I believed him.*
+> _Day 14: \[Last entry, handwriting deteriorated] The radio says the same thing in every language. "Help is coming." It isn't coming. Viktor gave us each a rifle from W2. He says we protect each other. I believe him. I wish I believed him._
 
----
+***
 
-## Present Day (2036): What Players Find
+### Present Day (2036): What Players Find
 
-### Overall Atmosphere
+#### Overall Atmosphere
 
 Sector 7 has been abandoned for 5 years. Systems that shouldn't still be running are. Things are growing in places they shouldn't be.
 
@@ -143,9 +145,9 @@ FOREST PERIMETER (Edges)
   Mood:   DECEPTIVE RELIEF — looks safe, often isn't
 ```
 
----
+***
 
-## Zone Map & Layout
+### Zone Map & Layout
 
 ```
                         NORTH
@@ -170,17 +172,17 @@ ZONE LEGEND:
 🟢 = Forest Perimeter / Parking (D-Tier Edge Zones)
 ```
 
----
+***
 
-## POI Profiles
+### POI Profiles
 
-### 🔴 Reactor Tower — "The Meltdown Zone" 
+#### 🔴 Reactor Tower — "The Meltdown Zone"
 
-**Zone Type:** S-Tier Hot Zone
-**Tactical Overview:**
-- 4 floors + basement + rooftop access
-- 7 entry points: Main entrance, Emergency stairs (E), Service ladder (N), Elevator shaft (no power — ladder only), Roof skylight (rappel), Vent access (Lab tunnel), Basement tunnel (from Labs)
-- Boss spawn: "Reactor Guardian" (Subject 7) — Floor 3/4 rotating
+**Zone Type:** S-Tier Hot Zone **Tactical Overview:**
+
+* 4 floors + basement + rooftop access
+* 7 entry points: Main entrance, Emergency stairs (E), Service ladder (N), Elevator shaft (no power — ladder only), Roof skylight (rappel), Vent access (Lab tunnel), Basement tunnel (from Labs)
+* Boss spawn: "Reactor Guardian" (Subject 7) — Floor 3/4 rotating
 
 **Lore Background:**
 
@@ -188,13 +190,13 @@ Year 2029: The Reactor was operating normally. On Jan 15, 2031 at 03:47, Subject
 
 **Environmental Traces:**
 
-| Location | Trace | Implication |
-| :------- | :---- | :---------- |
-| Floor 1 lobby | 24 Nexus security armor suits, all torn | Subject 7 killed every guard who tried to stop him |
-| Floor 2 hallway | Handprints in dried blood at shoulder height — too high for a normal person | Subject 7 is not moving like a human |
-| Floor 3 Boss Room | Control panel partially functional — showing readings that should be impossible | The reactor is still being "managed" somehow |
-| Basement | Bloodtrail from tunnel entrance, ends at industrial cooler | Foreman Lee's team tried to escape via this route |
-| Rooftop | Empty Nexus executive briefcase, helicopter fuel gauge empty | Someone tried to escape by helicopter and left without taking the money |
+| Location          | Trace                                                                           | Implication                                                             |
+| ----------------- | ------------------------------------------------------------------------------- | ----------------------------------------------------------------------- |
+| Floor 1 lobby     | 24 Nexus security armor suits, all torn                                         | Subject 7 killed every guard who tried to stop him                      |
+| Floor 2 hallway   | Handprints in dried blood at shoulder height — too high for a normal person     | Subject 7 is not moving like a human                                    |
+| Floor 3 Boss Room | Control panel partially functional — showing readings that should be impossible | The reactor is still being "managed" somehow                            |
+| Basement          | Bloodtrail from tunnel entrance, ends at industrial cooler                      | Foreman Lee's team tried to escape via this route                       |
+| Rooftop           | Empty Nexus executive briefcase, helicopter fuel gauge empty                    | Someone tried to escape by helicopter and left without taking the money |
 
 **Audio Logs in this Location:**
 
@@ -247,40 +249,39 @@ Codex Entry: SEC7-002 "Day 47"
 
 **Loot Distribution (Reactor Tower):**
 
-| Floor | Containers | Loot Focus |
-| :---- | :--------- | :--------- |
-| Rooftop | 1× Military Locker | Optics, ammo — sniper perch setup |
-| Floor 3 (Boss Room) | 2× Epic Vault | Best weapons on the map; Boss drop |
-| Floor 2 | 4× Military Locker | Attachments, tactical gear |
-| Floor 1 | 1× Legendary Cache | High-tier item; radiation zone risk |
-| Basement | 2× Rare Safe | Medical supplies; escape route loot |
+| Floor               | Containers         | Loot Focus                          |
+| ------------------- | ------------------ | ----------------------------------- |
+| Rooftop             | 1× Military Locker | Optics, ammo — sniper perch setup   |
+| Floor 3 (Boss Room) | 2× Epic Vault      | Best weapons on the map; Boss drop  |
+| Floor 2             | 4× Military Locker | Attachments, tactical gear          |
+| Floor 1             | 1× Legendary Cache | High-tier item; radiation zone risk |
+| Basement            | 2× Rare Safe       | Medical supplies; escape route loot |
 
----
+***
 
-### 🔵 Tech Labs (Alpha / Beta / Gamma) — "Project Prometheus"
+#### 🔵 Tech Labs (Alpha / Beta / Gamma) — "Project Prometheus"
 
-**Zone Type:** A-Tier Hot Zone
-**Controlling Faction:** Tech Syndicate (Primary)
-**Tactical Overview:**
-- Lab Alpha: 3-floor surface building + underground connection to Beta
-- Lab Beta: Underground — 3 levels, requires keycard for Level 2+
-- Lab Gamma: Separate 2-floor surface building
-- Boss spawn: "The Scientist" (Subject 12 / Dr. Viktor Chen) — Lab Beta Level 3
+**Zone Type:** A-Tier Hot Zone **Controlling Faction:** Tech Syndicate (Primary) **Tactical Overview:**
+
+* Lab Alpha: 3-floor surface building + underground connection to Beta
+* Lab Beta: Underground — 3 levels, requires keycard for Level 2+
+* Lab Gamma: Separate 2-floor surface building
+* Boss spawn: "The Scientist" (Subject 12 / Dr. Viktor Chen) — Lab Beta Level 3
 
 **Lore Background:**
 
-The Tech Labs were the surface-level cover for Project Prometheus. Electronics R&D on the upper floors; human experimentation in the basements. Director Park took classified data and fled before The Collapse. Dr. Chen self-administered Prometheus serum and is now Subject 12 — occupying his own laboratory.
+The Tech Labs were the surface-level cover for Project Prometheus. Electronics R\&D on the upper floors; human experimentation in the basements. Director Park took classified data and fled before The Collapse. Dr. Chen self-administered Prometheus serum and is now Subject 12 — occupying his own laboratory.
 
 **Per-Building Environmental Traces:**
 
-| Building | Trace | Implication |
-| :------- | :---- | :---------- |
-| Lab Alpha | Cages broken from the inside (Floor 3 basement) | Test subjects escaped, not freed |
-| Lab Alpha | Wall carved: "SUBJECT 7 WAS HERE" in scratched letters, very deep | Subject 7 returned after escape — this was home |
-| Lab Beta | Research notes partially burned | Cover-up attempted but incomplete — pages survive |
-| Lab Beta | Dr. Chen's personal notes: "She knows. She doesn't care." | Refers to Director Park; she knew the dangers |
-| Lab Gamma | Bodies in hazmat suits near sealed lab | Last Nexus containment team — the seal failed |
-| Lab Gamma | Vaccine vials scattered — one empty tray, one full | A cure attempt was started; quest item hint |
+| Building  | Trace                                                             | Implication                                       |
+| --------- | ----------------------------------------------------------------- | ------------------------------------------------- |
+| Lab Alpha | Cages broken from the inside (Floor 3 basement)                   | Test subjects escaped, not freed                  |
+| Lab Alpha | Wall carved: "SUBJECT 7 WAS HERE" in scratched letters, very deep | Subject 7 returned after escape — this was home   |
+| Lab Beta  | Research notes partially burned                                   | Cover-up attempted but incomplete — pages survive |
+| Lab Beta  | Dr. Chen's personal notes: "She knows. She doesn't care."         | Refers to Director Park; she knew the dangers     |
+| Lab Gamma | Bodies in hazmat suits near sealed lab                            | Last Nexus containment team — the seal failed     |
+| Lab Gamma | Vaccine vials scattered — one empty tray, one full                | A cure attempt was started; quest item hint       |
 
 **Audio Logs in this Location:**
 
@@ -327,22 +328,22 @@ Codex: SEC7-LAB-002 "The Last Guard"
 
 **Loot Distribution (Tech Labs):**
 
-| Location | Containers | Loot Focus |
-| :------- | :--------- | :--------- |
-| Lab Alpha (Floors 1–3) | 3× Rare Safe | Quest items, data drives, research documents |
-| Lab Beta (Level 3 — keycard) | 2× Epic Vault | Prototype weapons, Dr. Chen's research data |
-| Lab Gamma | 4× Military Locker | Medical, chemical components, crafting materials |
+| Location                     | Containers         | Loot Focus                                       |
+| ---------------------------- | ------------------ | ------------------------------------------------ |
+| Lab Alpha (Floors 1–3)       | 3× Rare Safe       | Quest items, data drives, research documents     |
+| Lab Beta (Level 3 — keycard) | 2× Epic Vault      | Prototype weapons, Dr. Chen's research data      |
+| Lab Gamma                    | 4× Military Locker | Medical, chemical components, crafting materials |
 
----
+***
 
-### 🟠 Warehouse District — "The Smugglers' Haven"
+#### 🟠 Warehouse District — "The Smugglers' Haven"
 
-**Zone Type:** B-Tier Mid Zone  
-**Controlling Faction:** Salvage Corps (Primary)
-**Tactical Overview:**
-- 6 large warehouses (W1–W6), open floor plans
-- W2 has subterranean access (confirmed by audio log, quest-accessible)
-- Good cover density from stacked crates and machinery
+**Zone Type:** B-Tier Mid Zone\
+**Controlling Faction:** Salvage Corps (Primary) **Tactical Overview:**
+
+* 6 large warehouses (W1–W6), open floor plans
+* W2 has subterranean access (confirmed by audio log, quest-accessible)
+* Good cover density from stacked crates and machinery
 
 **Lore Background:**
 
@@ -350,14 +351,14 @@ Viktor Koval's domain. The Warehouse District was where the NAIC's logistics mov
 
 **Environmental Traces Per Warehouse:**
 
-| Warehouse | Notable Trace | Story |
-| :-------- | :------------ | :---- |
-| W1 | Vehicle on improvised repair stand — tires removed and stored | Someone was preparing a vehicle to leave; changed their mind |
-| W2 | Hidden floor hatch (discovered only via audio log clue) | Underground Network's original dead drop system |
-| W3 | Rows of organized medical supply boxes, handwritten labels | Mama Rosa's aid distribution point — organized, cared for |
-| W4 | Smashed electronics — deliberate destruction, not looting | Someone was destroying data or communication equipment |
-| W5 | Multiple sleeping bags, canned good stores, family photos | Long-term survivor camp; these people lived here for months |
-| W6 | Full hazmat equipment, warning signs, portable decontamination | Salvage team was attempting contamination response |
+| Warehouse | Notable Trace                                                  | Story                                                        |
+| --------- | -------------------------------------------------------------- | ------------------------------------------------------------ |
+| W1        | Vehicle on improvised repair stand — tires removed and stored  | Someone was preparing a vehicle to leave; changed their mind |
+| W2        | Hidden floor hatch (discovered only via audio log clue)        | Underground Network's original dead drop system              |
+| W3        | Rows of organized medical supply boxes, handwritten labels     | Mama Rosa's aid distribution point — organized, cared for    |
+| W4        | Smashed electronics — deliberate destruction, not looting      | Someone was destroying data or communication equipment       |
+| W5        | Multiple sleeping bags, canned good stores, family photos      | Long-term survivor camp; these people lived here for months  |
+| W6        | Full hazmat equipment, warning signs, portable decontamination | Salvage team was attempting contamination response           |
 
 **Audio Logs in this Location:**
 
@@ -378,17 +379,17 @@ Lore: Underground was based here (W2 dead drop confirmed). They left.
 Codex: SEC7-WAR-001 "The Network's Signal"
 ```
 
----
+***
 
-### 🔵 Office Complex — "Corporate Collapse"
+#### 🔵 Office Complex — "Corporate Collapse"
 
-**Zone Type:** A-Tier Mid Zone  
-**Controlling Faction:** Tech Syndicate (Secondary)
-**Tactical Overview:**
-- 5 floors of open-plan corporate spaces + rooftop helipad
-- Cubicle maze (excellent ambush spots)
-- Multiple stairwells = vertical CQC environment
-- Boss: "The Warden" (Subject 19 / Marcus Cole, former Nexus Chief of Security) — Floor 5
+**Zone Type:** A-Tier Mid Zone\
+**Controlling Faction:** Tech Syndicate (Secondary) **Tactical Overview:**
+
+* 5 floors of open-plan corporate spaces + rooftop helipad
+* Cubicle maze (excellent ambush spots)
+* Multiple stairwells = vertical CQC environment
+* Boss: "The Warden" (Subject 19 / Marcus Cole, former Nexus Chief of Security) — Floor 5
 
 **Lore Background:**
 
@@ -396,13 +397,13 @@ Nexus Corp's NAIC regional HQ. When The Collapse began, executives attempted mas
 
 **Environmental Traces Per Floor:**
 
-| Floor | Trace | Implication |
-| :---- | :---- | :---------- |
-| 5F (Roof) | Corporate helicopter — crashed, no fuel | Evacuation failed; someone burned the fuel to leave and abandoned their colleagues |
-| 4F (Executive) | Computers still on — screens showing data-wipe progress (stuck at 73%) | Cover-up was interrupted mid-process. Data partially accessible (quest item) |
-| 3F (Management) | Family photos, children's drawings, personal items | Workers fled so fast they left everything |
-| 2F (Admin) | Broken safes — not all were opened. One still has combination intact (Environmental puzzle) | The looting was rushed; not everything valuable was taken |
-| 1F (Lobby) | Barricades made of office furniture; bullet holes on north wall | Someone made a last stand in the lobby. Won enough time for something |
+| Floor           | Trace                                                                                       | Implication                                                                        |
+| --------------- | ------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
+| 5F (Roof)       | Corporate helicopter — crashed, no fuel                                                     | Evacuation failed; someone burned the fuel to leave and abandoned their colleagues |
+| 4F (Executive)  | Computers still on — screens showing data-wipe progress (stuck at 73%)                      | Cover-up was interrupted mid-process. Data partially accessible (quest item)       |
+| 3F (Management) | Family photos, children's drawings, personal items                                          | Workers fled so fast they left everything                                          |
+| 2F (Admin)      | Broken safes — not all were opened. One still has combination intact (Environmental puzzle) | The looting was rushed; not everything valuable was taken                          |
+| 1F (Lobby)      | Barricades made of office furniture; bullet holes on north wall                             | Someone made a last stand in the lobby. Won enough time for something              |
 
 **Audio Logs:**
 
@@ -429,54 +430,56 @@ Quest: Triggers "Thompson's Legacy" — access Floor 2 intact safe.
 Codex: SEC7-OFF-001 "The Abandoned Executive"
 ```
 
----
+***
 
-### 🟠 Workshops — "Viktor's Domain"
+#### 🟠 Workshops — "Viktor's Domain"
 
-**Zone Type:** B-Tier Mid Zone  
-**Controlling Faction:** Salvage Corps (Primary and Headquarters)
-**Tactical Overview:**
-- Industrial repair shops with heavy machinery (natural full-cover)
-- Best natural lighting on map (open warehouse doors)
-- Viktor Koval's field HQ; friendly Salvage NPCs patrol area
+**Zone Type:** B-Tier Mid Zone\
+**Controlling Faction:** Salvage Corps (Primary and Headquarters) **Tactical Overview:**
+
+* Industrial repair shops with heavy machinery (natural full-cover)
+* Best natural lighting on map (open warehouse doors)
+* Viktor Koval's field HQ; friendly Salvage NPCs patrol area
 
 **Lore Background:**
 
 Viktor Koval was plant manager of the Workshops before The Collapse. When everything fell apart, he led 200 surviving workers here because he knew the tools, the fuel, and the storage. Five years later, the Workshops are the only place in Sector 7 where organized, intentional work still happens. Machinery runs. People eat.
 
 **Environmental Traces:**
-- Organized workstations with current projects (tools mid-use, materials sorted)
-- Bulletin board: "WORK ASSIGNMENTS — WEEK 247" (handwritten rota)
-- Viktor Koval's office: a factory manager's position repurposed as a commander's war room
-- Recent meal remains — this is an active space, not abandoned
-- "NO NEXUS" spray-painted over every official signage
 
----
+* Organized workstations with current projects (tools mid-use, materials sorted)
+* Bulletin board: "WORK ASSIGNMENTS — WEEK 247" (handwritten rota)
+* Viktor Koval's office: a factory manager's position repurposed as a commander's war room
+* Recent meal remains — this is an active space, not abandoned
+* "NO NEXUS" spray-painted over every official signage
 
-### 🟢 Forest Perimeter — "The Deceptive Edge"
+***
 
-**Zone Type:** D-Tier Edge Zone  
-**Controlling Faction:** Unclaimed Neutral
-**Tactical Overview:**
-- Player spawn points at forest clearings
-- Natural cover (trees, rocks, low sightlines from within)
-- 4 extraction points distributed around perimeter
-- Military barricades from the original quarantine still standing
+#### 🟢 Forest Perimeter — "The Deceptive Edge"
+
+**Zone Type:** D-Tier Edge Zone\
+**Controlling Faction:** Unclaimed Neutral **Tactical Overview:**
+
+* Player spawn points at forest clearings
+* Natural cover (trees, rocks, low sightlines from within)
+* 4 extraction points distributed around perimeter
+* Military barricades from the original quarantine still standing
 
 **Lore Background:**
 
 When the NAIC quarantine was established in January 2031, the military installed a perimeter fence and barricades around Sector 7's forest edge. The soldiers who built this perimeter mostly deserted within 60 days. The barricades remain. The fence is now mostly overgrown. Nature didn't get the memo about the exclusion zone — wildlife has returned in force.
 
 **Environmental Traces:**
-- Military barricades with abandoned personal effects (photos, food wrappers, small mementos)
-- "Day 1 / Day 14 / Day 30 / Day 60" carved into a tree by a deserting soldier counting their days
-- Military ration boxes — dated 2031. Empty, but the organization they were stacked in still shows discipline
-- A crude grave marker: "PRIVATE CHEN — 19 YEARS OLD — DID NOT DESERVE THIS"
-- Wildflowers growing through cracked concrete barriers
 
----
+* Military barricades with abandoned personal effects (photos, food wrappers, small mementos)
+* "Day 1 / Day 14 / Day 30 / Day 60" carved into a tree by a deserting soldier counting their days
+* Military ration boxes — dated 2031. Empty, but the organization they were stacked in still shows discipline
+* A crude grave marker: "PRIVATE CHEN — 19 YEARS OLD — DID NOT DESERVE THIS"
+* Wildflowers growing through cracked concrete barriers
 
-## Loot Heatmap Reference
+***
+
+### Loot Heatmap Reference
 
 ```
 SECTOR 7 — LOOT DENSITY MAP
@@ -499,49 +502,49 @@ SECTOR 7 — LOOT DENSITY MAP
 🟣=S-Tier  🔴=A-Tier  🟠=B-Tier  🟡=C-Tier  🟢=D-Tier
 ```
 
-Full container tables per zone → [Loot Distribution](LootDistribution.md)
+Full container tables per zone → [Loot Distribution](https://github.com/oaiba/ExtractionDocument/blob/main/content/GDD_Design/NarrativeWorld/LootDistribution.md)
 
----
+***
 
-## Player Routes
+### Player Routes
 
-| Route | Path | Expected Value | Risk |
-| :---- | :--- | :------------- | :--- |
-| **Newbie** | Spawn → Warehouse W3/W5 → Workshop scavenge → Gate Extract | 5,000–10,000 cr | Low |
-| **Intermediate** | Spawn → Office Complex Intel → Warehouses → Helipad Extract | 15,000–30,000 cr | Medium (PvP likely) |
-| **Veteran** | Spawn rush → Tech Labs (keycard) → Reactor Tower (Boss) → Legendary Cache → Helipad | 50,000–100,000+ cr | Extreme |
-| **Quest Runner** | Targeted route to specific POI → immediate extract | Variable | Variable |
+| Route            | Path                                                                                | Expected Value     | Risk                |
+| ---------------- | ----------------------------------------------------------------------------------- | ------------------ | ------------------- |
+| **Newbie**       | Spawn → Warehouse W3/W5 → Workshop scavenge → Gate Extract                          | 5,000–10,000 cr    | Low                 |
+| **Intermediate** | Spawn → Office Complex Intel → Warehouses → Helipad Extract                         | 15,000–30,000 cr   | Medium (PvP likely) |
+| **Veteran**      | Spawn rush → Tech Labs (keycard) → Reactor Tower (Boss) → Legendary Cache → Helipad | 50,000–100,000+ cr | Extreme             |
+| **Quest Runner** | Targeted route to specific POI → immediate extract                                  | Variable           | Variable            |
 
----
+***
 
-## Quest Hooks (Season 1 Launch)
+### Quest Hooks (Season 1 Launch)
 
-| Quest | Faction | Location | Objective | Reward |
-| :---- | :------ | :------- | :-------- | :----- |
-| **"Emergency Route"** | Salvage Corps | Reactor Tower Basement | Find Foreman Lee's cassette | Basement tunnel unlocked; 500 Salvage rep |
-| **"Final Report"** | Tech Syndicate | Reactor Tower Floor 2 | Retrieve Prometheus Final Report data drive | 1,000 Tech Syndicate rep; unlocks Prometheus Codex chain |
-| **"Chen's Last Notes"** | Tech Syndicate | Lab Beta Level 3 | Find Dr. Chen's 4 research logs | +2,000 Tech Syndicate rep; confirms Subject 12 identity (partial) |
-| **"Thompson's Legacy"** | Underground | Office Complex Floor 2 | Open intact safe using code from CFO audio log | Safe contents + 800 Underground rep + hidden stash |
-| **"Viktor's First Stand"** | Salvage Corps | Workshops + Reactor | Deliver materials to Viktor's field cache; optional: investigate Reactor Floor 1 | Foreman's Vest unlock; 1,500 Salvage rep |
+| Quest                      | Faction        | Location               | Objective                                                                        | Reward                                                            |
+| -------------------------- | -------------- | ---------------------- | -------------------------------------------------------------------------------- | ----------------------------------------------------------------- |
+| **"Emergency Route"**      | Salvage Corps  | Reactor Tower Basement | Find Foreman Lee's cassette                                                      | Basement tunnel unlocked; 500 Salvage rep                         |
+| **"Final Report"**         | Tech Syndicate | Reactor Tower Floor 2  | Retrieve Prometheus Final Report data drive                                      | 1,000 Tech Syndicate rep; unlocks Prometheus Codex chain          |
+| **"Chen's Last Notes"**    | Tech Syndicate | Lab Beta Level 3       | Find Dr. Chen's 4 research logs                                                  | +2,000 Tech Syndicate rep; confirms Subject 12 identity (partial) |
+| **"Thompson's Legacy"**    | Underground    | Office Complex Floor 2 | Open intact safe using code from CFO audio log                                   | Safe contents + 800 Underground rep + hidden stash                |
+| **"Viktor's First Stand"** | Salvage Corps  | Workshops + Reactor    | Deliver materials to Viktor's field cache; optional: investigate Reactor Floor 1 | Foreman's Vest unlock; 1,500 Salvage rep                          |
 
----
+***
 
-## Season Narrative Plan
+### Season Narrative Plan
 
-| Season | New Lore Added to Sector 7 | Mechanism |
-| :----- | :------------------------- | :-------- |
-| **Launch (S1)** | Full audio log set (15 logs); Backstory context establishes the map; "Who was Subject 7?" mystery begins | Audio logs, environmental props |
-| **Season 2** | 5 additional logs added; "The Broker's Signal" quest chain includes W2 dead drop recovery; Dr. Chen's fate hinted | New quest chain, dead drop items |
-| **Season 3** | "Firebase Connection" — evidence linking Sector 7 to Firebase Delta Prometheus program found in Labs; Director Park questline culminates here | New Lab Beta room unlocked; new quest chain |
+| Season          | New Lore Added to Sector 7                                                                                                                    | Mechanism                                   |
+| --------------- | --------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------- |
+| **Launch (S1)** | Full audio log set (15 logs); Backstory context establishes the map; "Who was Subject 7?" mystery begins                                      | Audio logs, environmental props             |
+| **Season 2**    | 5 additional logs added; "The Broker's Signal" quest chain includes W2 dead drop recovery; Dr. Chen's fate hinted                             | New quest chain, dead drop items            |
+| **Season 3**    | "Firebase Connection" — evidence linking Sector 7 to Firebase Delta Prometheus program found in Labs; Director Park questline culminates here | New Lab Beta room unlocked; new quest chain |
 
----
+***
 
-## Cross-References
+### Cross-References
 
-- [Faction Territories](FactionTerritories.md) — Salvage vs. Tech Syndicate contested zones on this map.
-- [Loot Distribution](LootDistribution.md) — Full container tables, heatmap detail, and skill-based route loot values.
-- [MapLayouts](MapLayouts.md) — Choke point data (CH-1 to CH-6), extraction point specs (EX-1 to EX-5), hotspot heat ratings.
-- [World History & Backstory](Backstory.md) — Full Project Prometheus timeline, Subject classification table.
-- [Factions](Factions.md) — Viktor Koval profile (Salvage); Director Park profile (Tech Syndicate who holds Labs data).
-- [Quest Lines](QuestLines.md) — Full quest dependency map for Season 1 Sector 7 quest chains listed above.
-- [Lore Delivery Systems](Lore_Delivery.md) — Audio log production standards; Codex system; unreliable narrator design.
+* [Faction Territories](FactionTerritories.md) — Salvage vs. Tech Syndicate contested zones on this map.
+* [Loot Distribution](https://github.com/oaiba/ExtractionDocument/blob/main/content/GDD_Design/NarrativeWorld/LootDistribution.md) — Full container tables, heatmap detail, and skill-based route loot values.
+* [MapLayouts](https://github.com/oaiba/ExtractionDocument/blob/main/content/GDD_Design/NarrativeWorld/MapLayouts.md) — Choke point data (CH-1 to CH-6), extraction point specs (EX-1 to EX-5), hotspot heat ratings.
+* [World History & Backstory](https://github.com/oaiba/ExtractionDocument/blob/main/content/GDD_Design/NarrativeWorld/Backstory.md) — Full Project Prometheus timeline, Subject classification table.
+* [Factions](https://github.com/oaiba/ExtractionDocument/blob/main/content/GDD_Design/NarrativeWorld/Factions.md) — Viktor Koval profile (Salvage); Director Park profile (Tech Syndicate who holds Labs data).
+* [Quest Lines](https://github.com/oaiba/ExtractionDocument/blob/main/content/GDD_Design/NarrativeWorld/QuestLines.md) — Full quest dependency map for Season 1 Sector 7 quest chains listed above.
+* [Lore Delivery Systems](https://github.com/oaiba/ExtractionDocument/blob/main/content/GDD_Design/NarrativeWorld/Lore_Delivery.md) — Audio log production standards; Codex system; unreliable narrator design.

@@ -1,62 +1,64 @@
 ---
-title: "Recon"
-linkTitle: "Recon"
+title: Recon
+linkTitle: Recon
 type: docs
 weight: 3
 ---
 
-## Class Overview
+# Recon
+
+### Class Overview
 
 The **Recon** class operators excel at gathering intelligence and controlling information flow. They enable ambushes, prevent surprises, and dominate through knowledge.
 
-### Class Identity
+#### Class Identity
 
-| Attribute | Value | Notes |
-| :-------- | :---- | :---- |
-| **Role** | Intel & Stealth | Information is power |
-| **Difficulty** | High | Requires game sense and map knowledge |
-| **Team Dependency** | Medium | Intel helps team, can solo effectively |
-| **Skill Ceiling** | Very High | Map knowledge crucial |
+| Attribute           | Value           | Notes                                  |
+| ------------------- | --------------- | -------------------------------------- |
+| **Role**            | Intel & Stealth | Information is power                   |
+| **Difficulty**      | High            | Requires game sense and map knowledge  |
+| **Team Dependency** | Medium          | Intel helps team, can solo effectively |
+| **Skill Ceiling**   | Very High       | Map knowledge crucial                  |
 
-### Class Traits (All Recon Operators)
+#### Class Traits (All Recon Operators)
 
-| Trait | Effect | Gameplay Impact |
-| :---- | :----- | :-------------- |
-| **Sneaky Movement** | +15% Crouch Speed | Faster stealth movement |
-| **Silent Steps** | -30% Footstep Volume | Harder to hear coming |
-| **Fragile Frame** | -5% Maximum Health | Glass cannon |
+| Trait               | Effect               | Gameplay Impact         |
+| ------------------- | -------------------- | ----------------------- |
+| **Sneaky Movement** | +15% Crouch Speed    | Faster stealth movement |
+| **Silent Steps**    | -30% Footstep Volume | Harder to hear coming   |
+| **Fragile Frame**   | -5% Maximum Health   | Glass cannon            |
 
----
+***
 
-## Operators
+### Operators
 
-| Operator | Codename | Specialty | Unlock |
-| :------- | :------- | :-------- | :----- |
-| [Kaito Nakamura](./Sonar/) | SONAR | Area Reveal | Level 8, 5,000 Credits |
-| [Ananya Patel](./Mirage/) | MIRAGE | Trap Detection | Level 12, 7,500 Credits |
-| [Unit N-7 "Nero"](./Obsidian/) | OBSIDIAN | Visual Denial | Level 25, 15,000 Credits |
+| Operator                                                                                                                        | Codename | Specialty      | Unlock                   |
+| ------------------------------------------------------------------------------------------------------------------------------- | -------- | -------------- | ------------------------ |
+| [Kaito Nakamura](https://github.com/oaiba/ExtractionDocument/blob/main/content/GDD_Design/Characters/Recon/Sonar/README.md)     | SONAR    | Area Reveal    | Level 8, 5,000 Credits   |
+| [Ananya Patel](https://github.com/oaiba/ExtractionDocument/blob/main/content/GDD_Design/Characters/Recon/Mirage/README.md)      | MIRAGE   | Trap Detection | Level 12, 7,500 Credits  |
+| [Unit N-7 "Nero"](https://github.com/oaiba/ExtractionDocument/blob/main/content/GDD_Design/Characters/Recon/Obsidian/README.md) | OBSIDIAN | Visual Denial  | Level 25, 15,000 Credits |
 
-<!-- REF_IMAGE: Recon class operator trio — SONAR with UAV drone, MIRAGE with motion sensor, OBSIDIAN in smoke, stealthy cyberpunk aesthetic -->
+***
 
----
+### Playstyle Guide
 
-## Playstyle Guide
-
-### When to Pick Recon
+#### When to Pick Recon
 
 **Pick Recon when:**
-- Solo or small team
-- Map has lots of flank routes
-- You know the map well
-- Enemy team has ambush potential
+
+* Solo or small team
+* Map has lots of flank routes
+* You know the map well
+* Enemy team has ambush potential
 
 **Avoid Recon when:**
-- Open, simple maps
-- Your team needs healing
-- You are unfamiliar with routes
-- Enemy has heavy area denial
 
-### Information Priority
+* Open, simple maps
+* Your team needs healing
+* You are unfamiliar with routes
+* Enemy has heavy area denial
+
+#### Information Priority
 
 ```
 1. Enemy positions (before fight)
@@ -65,99 +67,97 @@ The **Recon** class operators excel at gathering intelligence and controlling in
 4. Flank watch
 ```
 
----
+***
 
-## Counter Strategies
+### Counter Strategies
 
-### How to Counter Recon Operators
+#### How to Counter Recon Operators
 
-| Operator | Counter Strategy |
-| :------- | :--------------- |
-| **SONAR** | Stay moving, do not get scanned in place |
-| **MIRAGE** | Do not trigger traps, check corners |
-| **OBSIDIAN** | Push through smoke, do not wait |
+| Operator     | Counter Strategy                         |
+| ------------ | ---------------------------------------- |
+| **SONAR**    | Stay moving, do not get scanned in place |
+| **MIRAGE**   | Do not trigger traps, check corners      |
+| **OBSIDIAN** | Push through smoke, do not wait          |
 
-### Best Counters to Recon
+#### Best Counters to Recon
 
-| Counter Pick | Why |
-| :----------- | :-- |
-| **MAMBA** | Burst damage kills before intel matters |
-| **TARTARUS** | CQB overwhelms fragile Recon operators |
-| **PULSE** | Nano Swarm blocks escape routes |
+| Counter Pick | Why                                     |
+| ------------ | --------------------------------------- |
+| **MAMBA**    | Burst damage kills before intel matters |
+| **TARTARUS** | CQB overwhelms fragile Recon operators  |
+| **PULSE**    | Nano Swarm blocks escape routes         |
 
----
+***
 
-## Synergies
+### Synergies
 
-### Best Recon Duos
+#### Best Recon Duos
 
-| Partner | Synergy | Notes |
-| :------ | :------ | :---- |
-| **SUTURE** | Intel + Sustain | Know threats, heal through encounters |
-| **GLITCH** | Scan + EMP | Full information control — scan reveals, EMP disables |
-| **MAMBA** | Intel + Damage | Scan position, burst down |
-| **GOLIATH** | Intel + Tank | Reveal flankers, GOLIATH anchors position |
+| Partner     | Synergy         | Notes                                                 |
+| ----------- | --------------- | ----------------------------------------------------- |
+| **SUTURE**  | Intel + Sustain | Know threats, heal through encounters                 |
+| **GLITCH**  | Scan + EMP      | Full information control — scan reveals, EMP disables |
+| **MAMBA**   | Intel + Damage  | Scan position, burst down                             |
+| **GOLIATH** | Intel + Tank    | Reveal flankers, GOLIATH anchors position             |
 
----
+***
 
-## Top-Down Visual Identity
+### Top-Down Visual Identity
 
 Recon operators have the **slimmest silhouette** in the roster. From the top-down camera, they are distinguished by compact tech gear and low-profile movement.
 
-| Feature | Design Rule | Visibility |
-| :------ | :---------- | :--------- |
-| **Shoulder Width** | Narrowest in roster — 0.7x standard | 50+ units |
-| **Headgear** | Tech goggles or slim hood (no bulky helmet) | 60+ units |
-| **Color Accent** | Cyan (#06B6D4) on goggle glow and tech strips | 60+ units |
-| **Back Profile** | Compact tech pack (drone, sensor kit) | 40+ units |
-| **Movement Anim** | Low crouch-walk, smooth transitions — stealthiest movement | 40+ units |
+| Feature            | Design Rule                                                | Visibility |
+| ------------------ | ---------------------------------------------------------- | ---------- |
+| **Shoulder Width** | Narrowest in roster — 0.7x standard                        | 50+ units  |
+| **Headgear**       | Tech goggles or slim hood (no bulky helmet)                | 60+ units  |
+| **Color Accent**   | Cyan (#06B6D4) on goggle glow and tech strips              | 60+ units  |
+| **Back Profile**   | Compact tech pack (drone, sensor kit)                      | 40+ units  |
+| **Movement Anim**  | Low crouch-walk, smooth transitions — stealthiest movement | 40+ units  |
 
-<!-- REF_IMAGE: Recon class top-down silhouette comparison — SONAR, MIRAGE, OBSIDIAN as seen from 60-degree camera angle at 50% zoom, showing slim profiles with tech gear visible -->
+#### Operator-Specific Top-Down Tells
 
-### Operator-Specific Top-Down Tells
-
-| Operator | Unique Visual From Above |
-| :------- | :----------------------- |
-| SONAR | Cyan scanning pulse rings expanding from operator during UAV scan |
-| MIRAGE | Small sensor device visible when placed on ground, blinking indicator |
+| Operator | Unique Visual From Above                                              |
+| -------- | --------------------------------------------------------------------- |
+| SONAR    | Cyan scanning pulse rings expanding from operator during UAV scan     |
+| MIRAGE   | Small sensor device visible when placed on ground, blinking indicator |
 | OBSIDIAN | Smoke cloud expanding from position, character model fades in opacity |
 
----
+***
 
-## Class Stamina Profile
+### Class Stamina Profile
 
-| Parameter | Recon Value | Comparison |
-| :-------- | :---------- | :--------- |
-| **Stamina Pool** | 110 (+10%) | Above average |
-| **Sprint Drain** | 9/second (-10%) | Efficient sprinting |
-| **Recovery Rate** | 9.6/second (+20%) | Fastest recovery |
-| **Net Sprint Duration** | 12.2 seconds | Best efficiency |
+| Parameter               | Recon Value       | Comparison          |
+| ----------------------- | ----------------- | ------------------- |
+| **Stamina Pool**        | 110 (+10%)        | Above average       |
+| **Sprint Drain**        | 9/second (-10%)   | Efficient sprinting |
+| **Recovery Rate**       | 9.6/second (+20%) | Fastest recovery    |
+| **Net Sprint Duration** | 12.2 seconds      | Best efficiency     |
 
 **Design Intent:** Recon operators reposition frequently. They sprint to new vantage points, recover quickly, and sprint again. Efficient stamina usage reflects their mobile playstyle.
 
----
+***
 
-## Status Effect Modifiers
+### Status Effect Modifiers
 
-| Effect | Recon Resistance | Notes |
-| :----- | :--------------- | :---- |
-| Stun | 15% | Partial stun resist — evasion-oriented |
-| Slow | 0% | Full slow duration — devastating for mobile class |
-| Burn | 0% | Full burn damage — fragile operators |
-| EMP | 0% | UAV and sensors fully destroyed by EMP |
+| Effect | Recon Resistance | Notes                                             |
+| ------ | ---------------- | ------------------------------------------------- |
+| Stun   | 15%              | Partial stun resist — evasion-oriented            |
+| Slow   | 0%               | Full slow duration — devastating for mobile class |
+| Burn   | 0%               | Full burn damage — fragile operators              |
+| EMP    | 0%               | UAV and sensors fully destroyed by EMP            |
 
 **Design Intent:** Recon operators have slight stun resistance to support their evasive playstyle, but are otherwise fully vulnerable. Slow effects are especially dangerous since mobility is their core defense.
 
----
+***
 
-## Map Suitability
+### Map Suitability
 
-| Map Archetype | Suitability | Recommended Operator | Why |
-| :------------ | :---------- | :------------------- | :-- |
-| **Dense Urban** | Highest | MIRAGE | Many corners and flank routes to trap |
-| **Multi-Floor** | High | SONAR | UAV scans through floors for vertical intel |
-| **Large Industrial** | High | OBSIDIAN | Smoke breaks long sightlines, enables repositioning |
-| **Tight Corridors** | Medium | SONAR | Scan range covers entire corridor |
-| **Open Fields** | Low | OBSIDIAN | Only smoke provides utility, limited cover |
+| Map Archetype        | Suitability | Recommended Operator | Why                                                 |
+| -------------------- | ----------- | -------------------- | --------------------------------------------------- |
+| **Dense Urban**      | Highest     | MIRAGE               | Many corners and flank routes to trap               |
+| **Multi-Floor**      | High        | SONAR                | UAV scans through floors for vertical intel         |
+| **Large Industrial** | High        | OBSIDIAN             | Smoke breaks long sightlines, enables repositioning |
+| **Tight Corridors**  | Medium      | SONAR                | Scan range covers entire corridor                   |
+| **Open Fields**      | Low         | OBSIDIAN             | Only smoke provides utility, limited cover          |
 
-See [World Design](../../World/) for detailed map layouts.
+See [World Design](https://github.com/oaiba/ExtractionDocument/blob/main/content/GDD_Design/World/README.md) for detailed map layouts.

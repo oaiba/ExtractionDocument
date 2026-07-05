@@ -1,66 +1,73 @@
 ---
-title: "Performance Optimization"
+title: Performance Optimization
 type: docs
 ---
 
-## Overview
+# Performance Optimization
+
+### Overview
 
 This document defines the technical implementation of performance optimization systems for mobile platforms including device profiling, rendering settings, memory management, and profiling tools.
 
 **Responsibilities:**
-- Device tier detection and auto-configuration
-- Rendering quality scaling
-- Memory budget management
-- Object pooling and tick optimization
-- Performance monitoring and profiling
 
----
+* Device tier detection and auto-configuration
+* Rendering quality scaling
+* Memory budget management
+* Object pooling and tick optimization
+* Performance monitoring and profiling
 
-## Enums & Types
+***
 
-### EDeviceTier
+### Enums & Types
+
+#### EDeviceTier
+
 Device performance classification.
 
 | Code Name      | Display Name | RAM Range | GPU Score | Target FPS | Resolution | Description      |
-| :------------- | :----------- | :-------- | :-------- | :--------- | :--------- | :--------------- |
+| -------------- | ------------ | --------- | --------- | ---------- | ---------- | ---------------- |
 | `EDT_LowEnd`   | Low End      | < 4 GB    | < 5000    | 30 FPS     | 720p       | Budget devices   |
 | `EDT_MidRange` | Mid Range    | 4-6 GB    | 5000-8000 | 45 FPS     | 900p       | Average devices  |
 | `EDT_HighEnd`  | High End     | > 6 GB    | > 8000    | 60 FPS     | 1080p+     | Premium devices  |
 | `EDT_Unknown`  | Unknown      | N/A       | N/A       | 30 FPS     | 720p       | Detection failed |
 
----
+***
 
-### EQualityLevel
+#### EQualityLevel
+
 Graphics quality preset.
 
 | Code Name    | Display Name | Shadows  | Textures | Effects  | Post-Process | Description         |
-| :----------- | :----------- | :------- | :------- | :------- | :----------- | :------------------ |
+| ------------ | ------------ | -------- | -------- | -------- | ------------ | ------------------- |
 | `EQL_Low`    | Low          | Off      | Low      | Minimal  | Off          | Maximum performance |
 | `EQL_Medium` | Medium       | Simple   | Medium   | Reduced  | Basic        | Balanced            |
 | `EQL_High`   | High         | Soft     | High     | Full     | Enhanced     | Best visuals        |
 | `EQL_Ultra`  | Ultra        | Full     | Ultra    | Full     | Maximum      | PC/High-end only    |
 | `EQL_Custom` | Custom       | Variable | Variable | Variable | Variable     | User-defined        |
 
----
+***
 
-### ELODLevel
+#### ELODLevel
+
 Level of Detail tier.
 
 | Code Name     | Display Name | Distance | Triangle % | Texture Res | Tick Rate   | Description    |
-| :------------ | :----------- | :------- | :--------- | :---------- | :---------- | :------------- |
+| ------------- | ------------ | -------- | ---------- | ----------- | ----------- | -------------- |
 | `ELOD_0`      | LOD 0        | 0-15m    | 100%       | Full        | Every frame | Maximum detail |
 | `ELOD_1`      | LOD 1        | 15-50m   | 50%        | 75%         | 30 Hz       | High detail    |
 | `ELOD_2`      | LOD 2        | 50-100m  | 25%        | 50%         | 10 Hz       | Medium detail  |
 | `ELOD_3`      | LOD 3        | 100-200m | 10%        | 25%         | 2 Hz        | Low detail     |
 | `ELOD_Culled` | Culled       | > 200m   | 0%         | None        | None        | Not rendered   |
 
----
+***
 
-### EPoolType
+#### EPoolType
+
 Object pool category.
 
 | Code Name        | Display Name | Initial Size | Max Size | Auto-Expand | Description         |
-| :--------------- | :----------- | :----------- | :------- | :---------- | :------------------ |
+| ---------------- | ------------ | ------------ | -------- | ----------- | ------------------- |
 | `EPT_Projectile` | Projectile   | 100          | 500      | Yes         | Bullets, rockets    |
 | `EPT_Effect`     | Effect       | 50           | 200      | Yes         | VFX particles       |
 | `EPT_Decal`      | Decal        | 100          | 300      | No          | Bullet holes, blood |
@@ -68,13 +75,14 @@ Object pool category.
 | `EPT_AI`         | AI           | 20           | 50       | No          | AI pawns            |
 | `EPT_Loot`       | Loot         | 50           | 200      | Yes         | Item pickups        |
 
----
+***
 
-### EMemoryCategory
+#### EMemoryCategory
+
 Memory budget category.
 
 | Code Name       | Display Name | Budget (MB) | Priority | Streamable | Description            |
-| :-------------- | :----------- | :---------- | :------- | :--------- | :--------------------- |
+| --------------- | ------------ | ----------- | -------- | ---------- | ---------------------- |
 | `EMC_Texture`   | Textures     | 800         | High     | Yes        | Texture data           |
 | `EMC_Mesh`      | Meshes       | 200         | High     | Yes        | Static/skeletal meshes |
 | `EMC_Audio`     | Audio        | 150         | Medium   | Yes        | Sound data             |
@@ -82,60 +90,63 @@ Memory budget category.
 | `EMC_Code`      | Code         | 300         | Critical | No         | Game code, shaders     |
 | `EMC_Runtime`   | Runtime      | 250         | Medium   | No         | Runtime allocations    |
 
----
+***
 
-### ETextureImportance
+#### ETextureImportance
+
 Texture streaming priority.
 
 | Code Name       | Display Name | LOD Bias | Stream  | Max Size | Description         |
-| :-------------- | :----------- | :------- | :------ | :------- | :------------------ |
+| --------------- | ------------ | -------- | ------- | -------- | ------------------- |
 | `ETI_Critical`  | Critical     | 0        | Never   | 2048     | Characters, weapons |
 | `ETI_Important` | Important    | 1        | Delayed | 1024     | Environment key     |
 | `ETI_Normal`    | Normal       | 2        | Always  | 512      | Props, details      |
 | `ETI_Optional`  | Optional     | 3        | Always  | 256      | Background elements |
 
----
+***
 
-### ETickPriority
+#### ETickPriority
+
 Actor tick rate classification.
 
 | Code Name        | Display Name | Interval | Use Case   | CPU Cost | Description       |
-| :--------------- | :----------- | :------- | :--------- | :------- | :---------------- |
+| ---------------- | ------------ | -------- | ---------- | -------- | ----------------- |
 | `ETP_EveryFrame` | Every Frame  | 0        | Player     | High     | Critical gameplay |
 | `ETP_High`       | High         | 0.016s   | Nearby AI  | Medium   | 60 Hz updates     |
 | `ETP_Medium`     | Medium       | 0.1s     | Mid-range  | Low      | 10 Hz updates     |
 | `ETP_Low`        | Low          | 0.5s     | Far actors | Very Low | 2 Hz updates      |
 | `ETP_Minimal`    | Minimal      | 1.0s     | Background | Minimal  | 1 Hz updates      |
 
----
+***
 
-### EProfilingMode
+#### EProfilingMode
+
 Performance profiling mode.
 
 | Code Name      | Display Name | Overhead | Detail         | Use Case   | Description     |
-| :------------- | :----------- | :------- | :------------- | :--------- | :-------------- |
+| -------------- | ------------ | -------- | -------------- | ---------- | --------------- |
 | `EPM_Off`      | Off          | None     | None           | Production | No profiling    |
 | `EPM_Basic`    | Basic        | < 1%     | FPS, Memory    | Dev        | Essential stats |
 | `EPM_Detailed` | Detailed     | 2-5%     | Full breakdown | Debug      | Comprehensive   |
 | `EPM_Capture`  | Capture      | 5-10%    | Frame capture  | Analysis   | Recording mode  |
 
----
+***
 
-## Code Names
+### Code Names
 
-### Performance Events
+#### Performance Events
 
 | Code Name               | Trigger            | Parameters                      | Description             |
-| :---------------------- | :----------------- | :------------------------------ | :---------------------- |
+| ----------------------- | ------------------ | ------------------------------- | ----------------------- |
 | `PERF_FPS_DROP`         | FPS below target   | CurrentFPS, TargetFPS, Duration | Performance degradation |
 | `PERF_FPS_RECOVER`      | FPS recovered      | CurrentFPS, TargetFPS           | Performance restored    |
 | `PERF_QUALITY_CHANGE`   | Quality adjusted   | OldLevel, NewLevel, Reason      | Auto-quality changed    |
 | `PERF_RESOLUTION_SCALE` | Resolution changed | OldScale, NewScale              | Dynamic resolution      |
 
-### Memory Events
+#### Memory Events
 
 | Code Name           | Trigger           | Parameters             | Description                |
-| :------------------ | :---------------- | :--------------------- | :------------------------- |
+| ------------------- | ----------------- | ---------------------- | -------------------------- |
 | `MEM_BUDGET_WARN`   | Near budget limit | Category, Used, Budget | Memory warning             |
 | `MEM_BUDGET_EXCEED` | Budget exceeded   | Category, Used, Budget | Over budget                |
 | `MEM_GC_START`      | GC triggered      | Reason                 | Garbage collection started |
@@ -143,36 +154,36 @@ Performance profiling mode.
 | `MEM_STREAM_IN`     | Asset loaded      | AssetPath, SizeMB      | Asset streamed in          |
 | `MEM_STREAM_OUT`    | Asset unloaded    | AssetPath, SizeMB      | Asset streamed out         |
 
-### Pool Events
+#### Pool Events
 
 | Code Name        | Trigger         | Parameters                 | Description             |
-| :--------------- | :-------------- | :------------------------- | :---------------------- |
+| ---------------- | --------------- | -------------------------- | ----------------------- |
 | `POOL_ACQUIRE`   | Object acquired | PoolType, ActiveCount      | Object taken from pool  |
 | `POOL_RELEASE`   | Object released | PoolType, ActiveCount      | Object returned to pool |
 | `POOL_EXPAND`    | Pool expanded   | PoolType, OldSize, NewSize | Pool grew               |
 | `POOL_EXHAUSTED` | Pool empty      | PoolType, RequestCount     | No objects available    |
 
-### LOD Events
+#### LOD Events
 
 | Code Name    | Trigger           | Parameters              | Description    |
-| :----------- | :---------------- | :---------------------- | :------------- |
+| ------------ | ----------------- | ----------------------- | -------------- |
 | `LOD_CHANGE` | LOD level changed | ActorID, OldLOD, NewLOD | LOD transition |
 | `LOD_CULL`   | Actor culled      | ActorID, Distance       | Actor hidden   |
 | `LOD_UNCULL` | Actor visible     | ActorID, Distance       | Actor shown    |
 
-### Device Events
+#### Device Events
 
 | Code Name           | Trigger         | Parameters            | Description        |
-| :------------------ | :-------------- | :-------------------- | :----------------- |
+| ------------------- | --------------- | --------------------- | ------------------ |
 | `DEV_TIER_DETECTED` | Tier determined | Tier, Score, RAM, GPU | Device classified  |
 | `DEV_THERMAL_WARN`  | Device heating  | Temperature, Throttle | Thermal throttling |
 | `DEV_BATTERY_LOW`   | Battery low     | Percent, PowerSaver   | Low battery mode   |
 
----
+***
 
-## Mobile Performance Targets
+### Mobile Performance Targets
 
-### Frame Rate Targets
+#### Frame Rate Targets
 
 | Device Tier | Target FPS | Minimum FPS | Resolution      |
 | ----------- | ---------- | ----------- | --------------- |
@@ -180,7 +191,7 @@ Performance profiling mode.
 | Mid-range   | 45 FPS     | 40 FPS      | 900p            |
 | Low-end     | 30 FPS     | 28 FPS      | 720p            |
 
-### Device Categorization
+#### Device Categorization
 
 ```cpp
 UENUM(BlueprintType)
@@ -238,13 +249,14 @@ private:
 };
 ```
 
----
+***
 
-## Rendering Optimization
+### Rendering Optimization
 
-### Level of Detail (LOD)
+#### Level of Detail (LOD)
 
 **LOD Configuration:**
+
 ```cpp
 struct FLODSettings
 {
@@ -290,11 +302,12 @@ void ConfigureStaticMeshLOD(UStaticMeshComponent* Mesh)
 }
 ```
 
----
+***
 
-### Occlusion Culling
+#### Occlusion Culling
 
 **Precomputed Visibility:**
+
 ```cpp
 // Enable precomputed visibility volumes
 // Place volumes in dense areas (buildings)
@@ -311,6 +324,7 @@ public:
 ```
 
 **Software Occlusion:**
+
 ```cpp
 // UE5 Software Occlusion for mobile
 void EnableSoftwareOcclusion()
@@ -322,11 +336,12 @@ void EnableSoftwareOcclusion()
 }
 ```
 
----
+***
 
-### Dynamic Resolution
+#### Dynamic Resolution
 
 **Adaptive Resolution Scaling:**
+
 ```cpp
 class UDynamicResolutionManager : public UGameInstanceSubsystem
 {
@@ -396,11 +411,12 @@ private:
 };
 ```
 
----
+***
 
-### Texture Optimization
+#### Texture Optimization
 
 **Texture Streaming:**
+
 ```cpp
 // Enable texture streaming
 // DefaultEngine.ini:
@@ -442,13 +458,14 @@ void ConfigureTexture(UTexture2D* Texture, ETextureImportance Importance)
 }
 ```
 
----
+***
 
-## CPU Optimization
+### CPU Optimization
 
-### Object Pooling
+#### Object Pooling
 
 **Generic Object Pool:**
+
 ```cpp
 template<typename T>
 class TObjectPool
@@ -533,11 +550,12 @@ ABulletActor* Bullet = BulletPool.Acquire(SpawnLocation, SpawnRotation);
 BulletPool.Release(Bullet);
 ```
 
----
+***
 
-### Tick Optimization
+#### Tick Optimization
 
 **Selective Ticking:**
+
 ```cpp
 // Disable tick when not needed
 void AExtractionCharacter::SetTickEnabled(bool bEnabled)
@@ -580,11 +598,11 @@ void UpdateTickInterval(AActor* Actor, APlayerController* Player)
 }
 ```
 
----
+***
 
-## Memory Optimization
+### Memory Optimization
 
-### Memory Budget Tracking
+#### Memory Budget Tracking
 
 ```cpp
 class FMemoryBudgetTracker
@@ -629,9 +647,9 @@ private:
 };
 ```
 
----
+***
 
-### Asset Streaming
+#### Asset Streaming
 
 ```cpp
 // Async asset loading
@@ -668,23 +686,24 @@ private:
 };
 ```
 
----
+***
 
-## Network Optimization
+### Network Optimization
 
-**See:** [Networking System](./02_NetworkingSystem.md) for detailed network optimization
+**See:** [Networking System](https://github.com/oaiba/ExtractionDocument/blob/main/content/GDD_Technical/Performance/02_NetworkingSystem.md) for detailed network optimization
 
 **Key Techniques:**
-- Relevancy culling
-- Update frequency adjustment
-- Delta compression
-- Bandwidth monitoring
 
----
+* Relevancy culling
+* Update frequency adjustment
+* Delta compression
+* Bandwidth monitoring
 
-## Mobile-Specific Optimizations
+***
 
-### Battery Optimization
+### Mobile-Specific Optimizations
+
+#### Battery Optimization
 
 ```cpp
 class UBatteryOptimizer : public UGameInstanceSubsystem
@@ -736,9 +755,9 @@ private:
 };
 ```
 
----
+***
 
-### Touch Input Optimization
+#### Touch Input Optimization
 
 ```cpp
 // Reduce input polling rate
@@ -755,13 +774,14 @@ void OptimizeTouchInput()
 }
 ```
 
----
+***
 
-## Profiling & Debugging
+### Profiling & Debugging
 
-### Built-in Profilers
+#### Built-in Profilers
 
 **Stat Commands:**
+
 ```cpp
 // In-game console commands:
 // stat fps - Show FPS
@@ -778,9 +798,9 @@ void EnableProfiling()
 }
 ```
 
----
+***
 
-### Custom Performance Metrics
+#### Custom Performance Metrics
 
 ```cpp
 class FPerformanceMetrics
@@ -823,11 +843,11 @@ private:
 };
 ```
 
----
+***
 
-## Quality Settings
+### Quality Settings
 
-### Auto-Detection
+#### Auto-Detection
 
 ```cpp
 UCLASS()
@@ -895,29 +915,29 @@ private:
 };
 ```
 
----
+***
 
-## TODO: Optimization Tasks
+### TODO: Optimization Tasks
 
-### HIGH Priority 🔴
-- [ ] Implement device tier detection
-- [ ] Setup LOD system for all meshes
-- [ ] Configure texture streaming
-- [ ] Implement object pooling (bullets, effects)
-- [ ] Performance profiling baseline
+#### HIGH Priority 🔴
 
-### MEDIUM Priority 🟡
-- [ ] Dynamic resolution scaling
-- [ ] Occlusion culling setup
-- [ ] Tick optimization
-- [ ] Memory budget tracking
-- [ ] Auto quality settings
+* [ ] Implement device tier detection
+* [ ] Setup LOD system for all meshes
+* [ ] Configure texture streaming
+* [ ] Implement object pooling (bullets, effects)
+* [ ] Performance profiling baseline
 
-### LOW Priority 🟢
-- [ ] Advanced profiling
-- [ ] Battery optimization
-- [ ] Network bandwidth optimization
-- [ ] Custom performance dashboard
+#### MEDIUM Priority 🟡
 
+* [ ] Dynamic resolution scaling
+* [ ] Occlusion culling setup
+* [ ] Tick optimization
+* [ ] Memory budget tracking
+* [ ] Auto quality settings
 
+#### LOW Priority 🟢
 
+* [ ] Advanced profiling
+* [ ] Battery optimization
+* [ ] Network bandwidth optimization
+* [ ] Custom performance dashboard

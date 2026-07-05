@@ -1,29 +1,31 @@
 ---
-title: "Weapon System - Technical Design Sutureument"
+title: Weapon System - Technical Design Sutureument
 type: docs
 ---
 
-## Related Sutureuments
+# Weapon System - Technical Design Sutureument
 
-| Sutureument             | Relationship             | Link                                                                     |
-| :------------------- | :----------------------- | :----------------------------------------------------------------------- |
-| **Weapons Design**   | High-level weapon design | [GDD_HighLevel/Combat/Weapons.md](../../GDD_HighLevel/Combat/Weapons.md) |
-| **Character System** | Weapon equipping         | [CharacterSystem.md](./CharacterSystem.md)                               |
-| **Inventory System** | Weapon storage           | [InventorySystem.md](./InventorySystem.md)                               |
-| **Audio System**     | Weapon sounds            | [../Systems/AudioSystem.md](../Systems/AudioSystem.md)                   |
+### Related Sutureuments
 
----
+| Sutureument          | Relationship             | Link                                                                                                                              |
+| -------------------- | ------------------------ | --------------------------------------------------------------------------------------------------------------------------------- |
+| **Weapons Design**   | High-level weapon design | [GDD\_HighLevel/Combat/Weapons.md](https://github.com/oaiba/ExtractionDocument/blob/main/content/GDD_HighLevel/Combat/Weapons.md) |
+| **Character System** | Weapon equipping         | [CharacterSystem.md](CharacterSystem.md)                                                                                          |
+| **Inventory System** | Weapon storage           | [InventorySystem.md](InventorySystem.md)                                                                                          |
+| **Audio System**     | Weapon sounds            | [../Systems/AudioSystem.md](../Systems/AudioSystem.md)                                                                            |
 
-## Overview
+***
 
-### Purpose
+### Overview
+
+#### Purpose
 
 The **Weapon System** handles all aspects of weapon behavior including firing, reloading, recoil, attachments, and damage calculation.
 
-### Core Functions
+#### Core Functions
 
 | Function               | Description                             |
-| :--------------------- | :-------------------------------------- |
+| ---------------------- | --------------------------------------- |
 | **Weapon Management**  | Spawning, pooling, registration         |
 | **Fire Control**       | Fire rate, fire modes, ammo consumption |
 | **Damage Calculation** | Base damage, modifiers, penetration     |
@@ -31,7 +33,7 @@ The **Weapon System** handles all aspects of weapon behavior including firing, r
 | **Attachment System**  | Slot-based modifications                |
 | **Ballistics**         | Hitscan, projectile, penetration        |
 
-### Design Goals
+#### Design Goals
 
 ```
 1. RESPONSIVE - Instant feedback on fire input
@@ -41,11 +43,11 @@ The **Weapon System** handles all aspects of weapon behavior including firing, r
 5. FAIR - Server-authoritative hit validation
 ```
 
----
+***
 
-## System Architecture
+### System Architecture
 
-### Component Diagram
+#### Component Diagram
 
 ```
 ┌─────────────────────────────────────────────────────────────────────┐
@@ -74,10 +76,10 @@ The **Weapon System** handles all aspects of weapon behavior including firing, r
 └─────────────────────────────────────────────────────────────────────┘
 ```
 
-### Core Components
+#### Core Components
 
 | Component            | Responsibility              | Dependencies     |
-| :------------------- | :-------------------------- | :--------------- |
+| -------------------- | --------------------------- | ---------------- |
 | **WeaponManager**    | Database, pooling, spawning | None             |
 | **WeaponController** | Fire control, ammo, reload  | CharacterSystem  |
 | **DamageSystem**     | Damage calc, hit detection  | HealthSystem     |
@@ -85,15 +87,16 @@ The **Weapon System** handles all aspects of weapon behavior including firing, r
 | **AttachmentSystem** | Slot management, modifiers  | None             |
 | **BallisticsSystem** | Projectile, penetration     | Physics          |
 
----
+***
 
-## Enums & Types
+### Enums & Types
 
-### EWeaponType
+#### EWeaponType
+
 Weapon category classification.
 
 | Code Name            | Display Name      | Slot      | Range  | Fire Style | Description                 |
-| :------------------- | :---------------- | :-------- | :----- | :--------- | :-------------------------- |
+| -------------------- | ----------------- | --------- | ------ | ---------- | --------------------------- |
 | `WT_None`            | None              | N/A       | N/A    | N/A        | Invalid/undefined weapon    |
 | `WT_AssaultRifle`    | Assault Rifle     | Primary   | Medium | Auto/Semi  | Versatile combat rifle      |
 | `WT_SubmachineGun`   | Submachine Gun    | Primary   | Close  | Auto       | High fire rate, close range |
@@ -103,38 +106,41 @@ Weapon category classification.
 | `WT_Pistol`          | Pistol            | Secondary | Close  | Semi       | Backup sidearm              |
 | `WT_Melee`           | Melee             | Melee     | Melee  | N/A        | Close quarters combat       |
 
----
+***
 
-### EWeaponRarity
+#### EWeaponRarity
+
 Weapon quality tier.
 
 | Code Name      | Display Name | Color  | Damage Mult | Attach Slots | Description      |
-| :------------- | :----------- | :----- | :---------- | :----------- | :--------------- |
+| -------------- | ------------ | ------ | ----------- | ------------ | ---------------- |
 | `WR_Common`    | Common       | White  | 1.0×        | 1            | Standard issue   |
 | `WR_Uncommon`  | Uncommon     | Green  | 1.1×        | 2            | Improved quality |
 | `WR_Rare`      | Rare         | Blue   | 1.2×        | 3            | Military grade   |
 | `WR_Epic`      | Epic         | Purple | 1.35×       | 4            | Elite weapon     |
 | `WR_Legendary` | Legendary    | Gold   | 1.5×        | 5            | Unique weapon    |
 
----
+***
 
-### EFireMode
+#### EFireMode
+
 Weapon firing mode.
 
 | Code Name       | Display Name | Rounds/Trigger | Fire Rate Mult | Recoil Mult |
-| :-------------- | :----------- | :------------- | :------------- | :---------- |
+| --------------- | ------------ | -------------- | -------------- | ----------- |
 | `FM_Single`     | Single       | 1              | 0.4×           | 0.8×        |
 | `FM_Burst`      | Burst        | 3              | 0.7×           | 1.0×        |
 | `FM_Auto`       | Auto         | Continuous     | 1.0×           | 1.0×        |
 | `FM_BoltAction` | Bolt Action  | 1              | 0.2×           | 1.5×        |
 
----
+***
 
-### EAttachmentSlot
+#### EAttachmentSlot
+
 Weapon attachment slot.
 
 | Code Name          | Display Name | Position   | Affects           | Max Per Weapon |
-| :----------------- | :----------- | :--------- | :---------------- | :------------- |
+| ------------------ | ------------ | ---------- | ----------------- | -------------- |
 | `SLOT_None`        | None         | N/A        | N/A               | 0              |
 | `SLOT_Optic`       | Optic        | Top rail   | Zoom, ADS speed   | 1              |
 | `SLOT_Barrel`      | Barrel       | Muzzle     | Noise, Range      | 1              |
@@ -142,26 +148,28 @@ Weapon attachment slot.
 | `SLOT_Magazine`    | Magazine     | Receiver   | Capacity, Reload  | 1              |
 | `SLOT_Underbarrel` | Underbarrel  | Lower rail | Recoil, Accuracy  | 1              |
 
----
+***
 
-### ERecoilPattern
+#### ERecoilPattern
+
 Weapon recoil behavior.
 
 | Code Name          | Display Name   | Vertical | Horizontal  | Predictability |
-| :----------------- | :------------- | :------- | :---------- | :------------- |
+| ------------------ | -------------- | -------- | ----------- | -------------- |
 | `RP_Vertical`      | Vertical       | High     | None        | High           |
 | `RP_VerticalLeft`  | Vertical Left  | High     | Left drift  | Medium         |
 | `RP_VerticalRight` | Vertical Right | High     | Right drift | Medium         |
 | `RP_Diagonal`      | Diagonal       | Medium   | Alternating | Medium         |
 | `RP_Random`        | Random         | Variable | Variable    | Low            |
 
----
+***
 
-### EAmmoType
+#### EAmmoType
+
 Ammunition caliber type.
 
 | Code Name      | Display Name | Base Damage  | Penetration | Stack Size | Description          |
-| :------------- | :----------- | :----------- | :---------- | :--------- | :------------------- |
+| -------------- | ------------ | ------------ | ----------- | ---------- | -------------------- |
 | `AMMO_9mm`     | 9mm          | 25           | Low         | 60         | Pistol, SMG rounds   |
 | `AMMO_556`     | 5.56×45mm    | 35           | Medium      | 30         | NATO rifle rounds    |
 | `AMMO_762`     | 7.62×39mm    | 45           | Medium-High | 30         | AK platform rounds   |
@@ -169,37 +177,39 @@ Ammunition caliber type.
 | `AMMO_762NATO` | 7.62×51mm    | 65           | High        | 20         | Marksman rounds      |
 | `AMMO_50cal`   | .50 BMG      | 120          | Very High   | 10         | Anti-material rounds |
 
----
+***
 
-### EProjectileType
+#### EProjectileType
+
 Ballistics simulation type.
 
 | Code Name         | Display Name | Speed       | Drop     | Use Case   | Description            |
-| :---------------- | :----------- | :---------- | :------- | :--------- | :--------------------- |
+| ----------------- | ------------ | ----------- | -------- | ---------- | ---------------------- |
 | `PROJ_Hitscan`    | Hitscan      | Instant     | None     | < 50m      | Instant hit detection  |
 | `PROJ_Projectile` | Projectile   | 400-900 m/s | Yes      | > 50m      | Physical bullet travel |
 | `PROJ_Hybrid`     | Hybrid       | Variable    | Variable | All ranges | Distance-based switch  |
 
----
+***
 
-### EMaterialPenetration
+#### EMaterialPenetration
+
 Material penetration tier.
 
 | Code Name       | Display Name | Penetration | Damage Loss | Description          |
-| :-------------- | :----------- | :---------- | :---------- | :------------------- |
+| --------------- | ------------ | ----------- | ----------- | -------------------- |
 | `MAT_Wood`      | Wood         | 100%        | 10%         | Thin wooden surfaces |
 | `MAT_ThinMetal` | Thin Metal   | 50%         | 30%         | Sheet metal, cars    |
 | `MAT_Concrete`  | Concrete     | 0%          | 100%        | Walls, thick cover   |
 | `MAT_Flesh`     | Flesh        | 100%        | 20%         | Body penetration     |
 
----
+***
 
-## Code Names
+### Code Names
 
-### Weapon Events
+#### Weapon Events
 
 | Code Name          | Trigger          | Parameters              | Description              |
-| :----------------- | :--------------- | :---------------------- | :----------------------- |
+| ------------------ | ---------------- | ----------------------- | ------------------------ |
 | `WPN_EQUIP`        | Weapon equipped  | WeaponID, Slot          | Weapon drawn/selected    |
 | `WPN_UNEQUIP`      | Weapon holstered | WeaponID                | Weapon put away          |
 | `WPN_FIRE`         | Weapon fired     | WeaponID, AmmoRemaining | Shot fired               |
@@ -207,38 +217,38 @@ Material penetration tier.
 | `WPN_RELOAD_END`   | Reload complete  | WeaponID, NewAmmo       | Reload finished          |
 | `WPN_EMPTY`        | Ammo depleted    | WeaponID                | Magazine empty           |
 
-### Combat Events
+#### Combat Events
 
 | Code Name         | Trigger          | Parameters                 | Description        |
-| :---------------- | :--------------- | :------------------------- | :----------------- |
+| ----------------- | ---------------- | -------------------------- | ------------------ |
 | `DMG_HIT`         | Damage dealt     | VictimID, Damage, Bodypart | Hit registered     |
 | `DMG_HEADSHOT`    | Headshot         | VictimID, Damage           | Critical head hit  |
 | `DMG_KILL`        | Kill confirmed   | VictimID, WeaponID         | Target eliminated  |
 | `DMG_ASSIST`      | Kill assist      | VictimID, DamageDealt      | Assisted in kill   |
 | `DMG_PENETRATION` | Wall penetration | Material, DamageReduction  | Shot through cover |
 
-### Attachment Events
+#### Attachment Events
 
 | Code Name          | Trigger            | Parameters                   | Description             |
-| :----------------- | :----------------- | :--------------------------- | :---------------------- |
+| ------------------ | ------------------ | ---------------------------- | ----------------------- |
 | `ATT_EQUIP`        | Attachment added   | WeaponID, AttachmentID, Slot | Attachment mounted      |
 | `ATT_REMOVE`       | Attachment removed | WeaponID, AttachmentID, Slot | Attachment detached     |
 | `ATT_INCOMPATIBLE` | Invalid attachment | WeaponID, AttachmentID       | Incompatible attachment |
 
-### Ammo Events
+#### Ammo Events
 
 | Code Name      | Trigger          | Parameters          | Description                |
-| :------------- | :--------------- | :------------------ | :------------------------- |
+| -------------- | ---------------- | ------------------- | -------------------------- |
 | `AMMO_PICKUP`  | Ammo collected   | AmmoType, Amount    | Ammo added to reserve      |
 | `AMMO_CONSUME` | Ammo used        | AmmoType, Amount    | Ammo consumed from reserve |
 | `AMMO_LOW`     | Low ammo warning | WeaponID, Remaining | Ammo below threshold       |
 | `AMMO_OUT`     | No ammo          | AmmoType            | Reserve empty              |
 
----
+***
 
-## Data Structures
+### Data Structures
 
-### WeaponData
+#### WeaponData
 
 **Purpose:** Static definition of a weapon type.
 
@@ -286,7 +296,7 @@ STRUCT WeaponData:
     FireSoundPath: String           // Firing sound
 ```
 
-### AttachmentData
+#### AttachmentData
 
 **Purpose:** Static definition of a weapon attachment.
 
@@ -327,7 +337,7 @@ STRUCT AttachmentData:
     IconPath: String
 ```
 
-### WeaponInstance
+#### WeaponInstance
 
 **Purpose:** Runtime instance of a weapon.
 
@@ -382,15 +392,16 @@ CLASS WeaponInstance:
     END FUNCTION
 ```
 
----
+***
 
-## Core Classes
+### Core Classes
 
-### WeaponManager
+#### WeaponManager
 
 **Purpose:** Central weapon database and object pooling.
 
 **Pseudocode:**
+
 ```
 CLASS WeaponManager:
     
@@ -489,13 +500,14 @@ CLASS WeaponManager:
     END FUNCTION
 ```
 
----
+***
 
-### WeaponController
+#### WeaponController
 
 **Purpose:** Handle weapon firing, reloading, and state management.
 
 **Pseudocode:**
+
 ```
 CLASS WeaponController:
     
@@ -697,13 +709,14 @@ CLASS WeaponController:
     END FUNCTION
 ```
 
----
+***
 
-### DamageSystem
+#### DamageSystem
 
 **Purpose:** Calculate and apply damage.
 
 **Pseudocode:**
+
 ```
 CLASS DamageSystem:
     
@@ -808,13 +821,14 @@ CLASS DamageSystem:
     END FUNCTION
 ```
 
----
+***
 
-### RecoilSystem
+#### RecoilSystem
 
 **Purpose:** Apply and manage weapon recoil.
 
 **Pseudocode:**
+
 ```
 CLASS RecoilSystem:
     
@@ -907,13 +921,14 @@ CLASS RecoilSystem:
     END FUNCTION
 ```
 
----
+***
 
-### BallisticsSystem
+#### BallisticsSystem
 
 **Purpose:** Handle projectile simulation and hit detection.
 
 **Pseudocode:**
+
 ```
 CLASS BallisticsSystem:
     
@@ -1068,13 +1083,14 @@ CLASS BallisticsSystem:
     END FUNCTION
 ```
 
----
+***
 
-### AttachmentSystem
+#### AttachmentSystem
 
 **Purpose:** Manage weapon attachments and stat modifiers.
 
 **Pseudocode:**
+
 ```
 CLASS AttachmentSystem:
     
@@ -1162,21 +1178,21 @@ CLASS AttachmentSystem:
     END FUNCTION
 ```
 
----
+***
 
-## Network Synchronization
+### Network Synchronization
 
-### Replicated Properties
+#### Replicated Properties
 
 | Property               | Replicate To | Update Rate | Notes             |
-| :--------------------- | :----------- | :---------- | :---------------- |
+| ---------------------- | ------------ | ----------- | ----------------- |
 | **Equipped Weapon ID** | All          | On change   | For animations    |
 | **Current Ammo**       | Owner only   | On change   | UI display        |
 | **Reserve Ammo**       | Owner only   | On change   | UI display        |
 | **Fire events**        | All          | Per shot    | For sound/visuals |
 | **Attachment list**    | All          | On change   | Bitmask optimized |
 
-### Hit Validation
+#### Hit Validation
 
 ```
 CLIENT-SIDE:
@@ -1192,59 +1208,62 @@ SERVER-SIDE:
 8. If invalid: Reject, rollback client
 ```
 
----
+***
 
-## Performance Considerations
+### Performance Considerations
 
-### Memory Budget
+#### Memory Budget
 
 | Asset             | Max Size    |
-| :---------------- | :---------- |
+| ----------------- | ----------- |
 | Weapon Prefabs    | 10 MB total |
 | Attachment Meshes | 2 MB total  |
 | Fire Sounds       | 5 MB total  |
 | Impact Sounds     | 3 MB total  |
 
-### Object Pool Sizes
+#### Object Pool Sizes
 
 | Object           | Pool Size |
-| :--------------- | :-------- |
+| ---------------- | --------- |
 | Weapon Instances | 50        |
 | Projectiles      | 200       |
 | Muzzle Flash VFX | 20        |
 | Bullet Casings   | 100       |
 | Impact Effects   | 50        |
 
----
+***
 
-## TODO: Implementation Tasks
+### TODO: Implementation Tasks
 
-### HIGH Priority 🔴
-- [ ] Implement WeaponController fire system
-- [ ] Create DamageSystem calculation
-- [ ] Add hitscan raycast
-- [ ] Implement reload system
-- [ ] Create attachment slot system
+#### HIGH Priority 🔴
 
-### MEDIUM Priority 🟡
-- [ ] Add recoil pattern system
-- [ ] Implement projectile simulation
-- [ ] Create material penetration
-- [ ] Add damage falloff
-- [ ] Implement weapon pooling
+* [ ] Implement WeaponController fire system
+* [ ] Create DamageSystem calculation
+* [ ] Add hitscan raycast
+* [ ] Implement reload system
+* [ ] Create attachment slot system
 
-### LOW Priority 🟢
-- [ ] Add gyro recoil control (mobile)
-- [ ] Create weapon inspection
-- [ ] Add firing sound variations
-- [ ] Implement weapon skins
-- [ ] Create firing range mode
+#### MEDIUM Priority 🟡
 
----
+* [ ] Add recoil pattern system
+* [ ] Implement projectile simulation
+* [ ] Create material penetration
+* [ ] Add damage falloff
+* [ ] Implement weapon pooling
 
-## System Relationships
+#### LOW Priority 🟢
 
-### Dependency Diagram
+* [ ] Add gyro recoil control (mobile)
+* [ ] Create weapon inspection
+* [ ] Add firing sound variations
+* [ ] Implement weapon skins
+* [ ] Create firing range mode
+
+***
+
+### System Relationships
+
+#### Dependency Diagram
 
 ```
                     ┌────────────────────┐
@@ -1273,6 +1292,3 @@ SERVER-SIDE:
 │ • Impact sounds │  │ • ADS zoom      │  │ • State sync    │
 └─────────────────┘  └─────────────────┘  └─────────────────┘
 ```
-
-
-

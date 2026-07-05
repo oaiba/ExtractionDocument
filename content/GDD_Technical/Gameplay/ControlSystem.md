@@ -1,31 +1,33 @@
 ---
-title: "Control System - Technical Design Sutureument"
+title: Control System - Technical Design Sutureument
 type: docs
 ---
 
-## Related Sutureuments
+# Control System - Technical Design Sutureument
 
-| Sutureument                 | Relationship            | Link                                                                               |
-| :----------------------- | :---------------------- | :--------------------------------------------------------------------------------- |
-| **Controls Design**      | High-level input design | [GDD_HighLevel/GameDesign/Controls.md](../../GDD_HighLevel/GameDesign/Controls.md) |
-| **Character System**     | Movement implementation | [CharacterSystem.md](./CharacterSystem.md)                                         |
-| **Weapon System**        | Combat input handling   | [WeaponSystem.md](./WeaponSystem.md)                                               |
-| **UI System**            | HUD input prompts       | [../Systems/UISystem.md](../Systems/UISystem.md)                                   |
-| **Accessibility System** | Input accessibility     | [../Systems/AccessibilitySystem.md](../Systems/AccessibilitySystem.md)             |
-| **Mobile Optimization**  | Touch performance       | [../Performance/Optimization.md](../Performance/Optimization.md)                   |
+### Related Sutureuments
 
----
+| Sutureument              | Relationship            | Link                                                                                                                                        |
+| ------------------------ | ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Controls Design**      | High-level input design | [GDD\_HighLevel/GameDesign/Controls.md](https://github.com/oaiba/ExtractionDocument/blob/main/content/GDD_HighLevel/GameDesign/Controls.md) |
+| **Character System**     | Movement implementation | [CharacterSystem.md](CharacterSystem.md)                                                                                                    |
+| **Weapon System**        | Combat input handling   | [WeaponSystem.md](WeaponSystem.md)                                                                                                          |
+| **UI System**            | HUD input prompts       | [../Systems/UISystem.md](../Systems/UISystem.md)                                                                                            |
+| **Accessibility System** | Input accessibility     | [../Systems/AccessibilitySystem.md](../Systems/AccessibilitySystem.md)                                                                      |
+| **Mobile Optimization**  | Touch performance       | [../Performance/Optimization.md](../Performance/Optimization.md)                                                                            |
 
-## Overview
+***
 
-### Purpose
+### Overview
+
+#### Purpose
 
 The **Control System** provides a unified input abstraction layer that translates hardware-specific inputs into gameplay actions across all platforms (Mobile, PC, Console).
 
-### Core Functions
+#### Core Functions
 
 | Function                | Description                                           |
-| :---------------------- | :---------------------------------------------------- |
+| ----------------------- | ----------------------------------------------------- |
 | **Input Abstraction**   | Convert raw hardware input into logical game actions  |
 | **Platform Adaptation** | Support Touch, Keyboard/Mouse, Gamepad seamlessly     |
 | **Movement Control**    | Handle twin-stick movement (move + aim independently) |
@@ -34,7 +36,7 @@ The **Control System** provides a unified input abstraction layer that translate
 | **Customization**       | Allow key remapping and layout customization          |
 | **Accessibility**       | Support one-handed mode, hold-to-toggle, etc.         |
 
-### Design Goals
+#### Design Goals
 
 ```
 1. RESPONSIVE - Input latency < 16ms (1 frame at 60 FPS)
@@ -44,11 +46,11 @@ The **Control System** provides a unified input abstraction layer that translate
 5. DYNAMIC - Seamless switching between input devices
 ```
 
----
+***
 
-## System Architecture
+### System Architecture
 
-### Component Diagram
+#### Component Diagram
 
 ```
 ┌─────────────────────────────────────────────────────────────────────┐
@@ -73,10 +75,10 @@ The **Control System** provides a unified input abstraction layer that translate
 └─────────────────────────────────────────────────────────────────────┘
 ```
 
-### Core Components
+#### Core Components
 
 | Component            | Responsibility          | Dependencies     |
-| :------------------- | :---------------------- | :--------------- |
+| -------------------- | ----------------------- | ---------------- |
 | **InputManager**     | Central input handling  | None (Singleton) |
 | **ActionMap**        | Binding definitions     | InputManager     |
 | **InputProcessor**   | Smoothing, deadzone     | ActionMap        |
@@ -84,15 +86,16 @@ The **Control System** provides a unified input abstraction layer that translate
 | **RemappingManager** | Key customization       | ActionMap        |
 | **TouchController**  | Mobile virtual controls | PlatformAdapter  |
 
----
+***
 
-## Enums & Types
+### Enums & Types
 
-### EInputAction
+#### EInputAction
+
 Input action command type.
 
 | Code Name          | Display Name   | Type            | PC Key | Console           | Mobile Touch               | Touch Zone    | Description           |
-| :----------------- | :------------- | :-------------- | :----- | :---------------- | :------------------------- | :------------ | :-------------------- |
+| ------------------ | -------------- | --------------- | ------ | ----------------- | -------------------------- | ------------- | --------------------- |
 | `IA_Move`          | Move           | Value (Vector2) | WASD   | Left Stick        | Virtual Joystick           | Left 30%      | Character movement    |
 | `IA_Look`          | Look           | Value (Vector2) | Mouse  | Right Stick       | Touch Drag                 | Right 50%     | Camera/aim direction  |
 | `IA_Fire`          | Fire           | Button          | LMB    | RT/R2             | Fire Button (Hold/Tap)     | Bottom-Right  | Shoot weapon          |
@@ -113,10 +116,10 @@ Input action command type.
 | `IA_SwapSidearm`   | Swap Sidearm   | Button          | 3      | Y/Triangle        | Sidearm Icon               | Weapon Bar    | Equip sidearm         |
 | `IA_QuickHeal`     | Quick Heal     | Button          | 4      | D-Pad Down (Hold) | Health Button (Hold)       | Bottom-Left   | Use healing item      |
 
-### Mobile Touch Control Types
+#### Mobile Touch Control Types
 
 | Control Type         | Gesture          | Activation     | Customizable            | Description                         |
-| :------------------- | :--------------- | :------------- | :---------------------- | :---------------------------------- |
+| -------------------- | ---------------- | -------------- | ----------------------- | ----------------------------------- |
 | **Virtual Joystick** | Touch + Drag     | On finger down | Position, Size, Opacity | Floating or fixed position          |
 | **Touch Drag**       | Swipe            | On finger move | Sensitivity, Invert     | Camera/aim control                  |
 | **Button (Tap)**     | Single tap       | On touch up    | Position, Size          | Single action trigger               |
@@ -127,7 +130,7 @@ Input action command type.
 | **Double-Tap**       | 2 quick taps     | On second tap  | Tap interval            | Alternative action trigger          |
 | **Hold+Drag**        | Hold then drag   | Direction aim  | Sensitivity             | Grenade trajectory preview          |
 
-### Mobile Touch Zone Layout
+#### Mobile Touch Zone Layout
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────┐
@@ -151,10 +154,10 @@ Input action command type.
 └─────────────────────────────────────────────────────────────────────────┘
 ```
 
-### Mobile Control Customization Options
+#### Mobile Control Customization Options
 
 | Setting                | Range                   | Default  | Description                   |
-| :--------------------- | :---------------------- | :------- | :---------------------------- |
+| ---------------------- | ----------------------- | -------- | ----------------------------- |
 | **Button Size**        | 50% - 150%              | 100%     | Scale all buttons             |
 | **Button Opacity**     | 20% - 100%              | 70%      | Transparency when not pressed |
 | **Joystick Size**      | 80% - 150%              | 100%     | Movement joystick size        |
@@ -171,24 +174,26 @@ Input action command type.
 | **Auto-Fire**          | Off / On                | Off      | Fire when aiming at enemy     |
 | **Left-Hand Mode**     | Off / On                | Off      | Mirror control layout         |
 
----
+***
 
-### EInputMethod
+#### EInputMethod
+
 Input device type detection.
 
-| Code Name      | Display Name | Platform      | Prompt Style | Aim Assist | Description       |
-| :------------- | :----------- | :------------ | :----------- | :--------- | :---------------- |
-| `EIM_Touch`    | Touch        | Mobile        | Touch icons  | Strong     | Touchscreen input |
-| `EIM_Keyboard` | Keyboard     | PC            | Key labels   | None       | Keyboard input    |
-| `EIM_Gamepad`  | Gamepad      | Console/PC    | Button icons | Medium     | Controller input  |
+| Code Name      | Display Name | Platform   | Prompt Style | Aim Assist | Description       |
+| -------------- | ------------ | ---------- | ------------ | ---------- | ----------------- |
+| `EIM_Touch`    | Touch        | Mobile     | Touch icons  | Strong     | Touchscreen input |
+| `EIM_Keyboard` | Keyboard     | PC         | Key labels   | None       | Keyboard input    |
+| `EIM_Gamepad`  | Gamepad      | Console/PC | Button icons | Medium     | Controller input  |
 
----
+***
 
-### EControlPreset
+#### EControlPreset
+
 Control layout preset.
 
 | Code Name           | Display Name  | Target  | Description                  |
-| :------------------ | :------------ | :------ | :--------------------------- |
+| ------------------- | ------------- | ------- | ---------------------------- |
 | `ECP_Default`       | Default       | All     | Standard layout              |
 | `ECP_Console`       | Console       | Console | Console-optimized            |
 | `ECP_Claw`          | Claw          | Mobile  | Claw grip layout             |
@@ -196,13 +201,14 @@ Control layout preset.
 | `ECP_Accessibility` | Accessibility | All     | Simplified for accessibility |
 | `ECP_Custom`        | Custom        | All     | User-defined mapping         |
 
----
+***
 
-### EMovementMode
+#### EMovementMode
+
 Advanced movement state.
 
 | Code Name    | Display Name    | Speed Mult | Stamina Cost | Can Fire | Description       |
-| :----------- | :-------------- | :--------- | :----------- | :------- | :---------------- |
+| ------------ | --------------- | ---------- | ------------ | -------- | ----------------- |
 | `EMM_Walk`   | Walk            | 1.0×       | 0/s          | Yes      | Normal walking    |
 | `EMM_Sprint` | Sprint          | 1.5×       | 10/s         | No       | Fast running      |
 | `EMM_Crouch` | Crouch          | 0.6×       | 0/s          | Yes      | Crouching         |
@@ -210,13 +216,14 @@ Advanced movement state.
 | `EMM_Vault`  | Vault           | 0.5×       | 5 (burst)    | No       | Climbing obstacle |
 | `EMM_ADS`    | Aim Down Sights | 0.5×       | 0/s          | Yes      | Aiming weapon     |
 
----
+***
 
-### ETouchZone
+#### ETouchZone
+
 Mobile touch screen zone.
 
 | Code Name           | Display Name   | Screen Area     | Function | Customizable |
-| :------------------ | :------------- | :-------------- | :------- | :----------- |
+| ------------------- | -------------- | --------------- | -------- | ------------ |
 | `ETZ_LeftStick`     | Left Stick     | Bottom-Left 30% | Movement | Yes          |
 | `ETZ_RightLook`     | Right Look     | Right 50%       | Aim/Look | Yes          |
 | `ETZ_FireButton`    | Fire Button    | Bottom-Right    | Shoot    | Yes          |
@@ -224,111 +231,116 @@ Mobile touch screen zone.
 | `ETZ_ActionButtons` | Action Buttons | Right-Bottom    | Actions  | Yes          |
 | `ETZ_AbilityButton` | Ability Button | Right-Top       | Ability  | Yes          |
 
----
+***
 
-### EAimAssistLevel
+#### EAimAssistLevel
+
 Aim assist strength setting.
 
 | Code Name     | Display Name   | Magnetism | Slowdown | Snap   | Target         |
-| :------------ | :------------- | :-------- | :------- | :----- | :------------- |
+| ------------- | -------------- | --------- | -------- | ------ | -------------- |
 | `EAAL_Off`    | Off            | 0%        | 0%       | Off    | PC/Pro         |
 | `EAAL_Low`    | Low            | 20%       | 15%      | Off    | Console        |
 | `EAAL_Medium` | Medium         | 40%       | 30%      | Off    | Console        |
 | `EAAL_High`   | High           | 60%       | 50%      | Weak   | Console/Mobile |
 | `EAAL_Touch`  | Touch (Mobile) | 80%       | 60%      | Strong | Mobile         |
 
----
+***
 
-### EControlReferenceFrame
+#### EControlReferenceFrame
+
 Defines how directional input is interpreted relative to the game world.
 
-| Code Name              | Display Name       | Up Input Means...         | Best For                  |
-| :--------------------- | :----------------- | :------------------------ | :------------------------ |
-| `ECRF_CameraRelative`  | Camera Relative    | Top of Screen             | Standard Top-Down/ISO     |
-| `ECRF_WorldRelative`   | World Relative     | Global North (Y+)         | Fixed Camera isometric    |
-| `ECRF_Character`       | Character Relative | Character Forward         | Tank Controls             |
+| Code Name             | Display Name       | Up Input Means... | Best For               |
+| --------------------- | ------------------ | ----------------- | ---------------------- |
+| `ECRF_CameraRelative` | Camera Relative    | Top of Screen     | Standard Top-Down/ISO  |
+| `ECRF_WorldRelative`  | World Relative     | Global North (Y+) | Fixed Camera isometric |
+| `ECRF_Character`      | Character Relative | Character Forward | Tank Controls          |
 
----
+***
 
-### EFacingBehavior
+#### EFacingBehavior
+
 Defines how the character body orients itself during movement.
 
-| Code Name              | Display Name   | Behavior                                      | Use Case                  |
-| :--------------------- | :------------- | :-------------------------------------------- | :------------------------ |
-| `EFB_FaceAim`          | Face Aim       | Body always faces reticle/aim direction       | Tactical Shooters, Strafing|
-| `EFB_FaceMovement`     | Face Movement  | Body rotates to face movement direction       | Adventure, Exploration    |
+| Code Name          | Display Name  | Behavior                                | Use Case                    |
+| ------------------ | ------------- | --------------------------------------- | --------------------------- |
+| `EFB_FaceAim`      | Face Aim      | Body always faces reticle/aim direction | Tactical Shooters, Strafing |
+| `EFB_FaceMovement` | Face Movement | Body rotates to face movement direction | Adventure, Exploration      |
 
----
+***
 
-### EAimConstraint
+#### EAimConstraint
+
 Limits the cursor or aim point behavior.
 
-| Code Name              | Display Name      | Behavior                                |
-| :--------------------- | :---------------- | :-------------------------------------- |
-| `EAC_None`             | Free Cursor       | Unbounded mouse/aim movement            |
-| `EAC_Clamped`          | Clamped Radius    | Cursor constrained within radius R      |
-| `EAC_ScreenEdge`       | Screen Edge       | Cursor constrained to screen bounds     |
+| Code Name        | Display Name   | Behavior                            |
+| ---------------- | -------------- | ----------------------------------- |
+| `EAC_None`       | Free Cursor    | Unbounded mouse/aim movement        |
+| `EAC_Clamped`    | Clamped Radius | Cursor constrained within radius R  |
+| `EAC_ScreenEdge` | Screen Edge    | Cursor constrained to screen bounds |
 
----
+***
 
-## Code Names
+### Code Names
 
-### Input Events
+#### Input Events
 
 | Code Name              | Trigger          | Parameters               | Description            |
-| :--------------------- | :--------------- | :----------------------- | :--------------------- |
+| ---------------------- | ---------------- | ------------------------ | ---------------------- |
 | `INPUT_ACTION`         | Action triggered | ActionID, Value          | Input action received  |
 | `INPUT_METHOD_CHANGED` | Device switched  | OldMethod, NewMethod     | Input device changed   |
 | `INPUT_REMAP`          | Key remapped     | ActionID, OldKey, NewKey | Control remapped       |
 | `INPUT_PRESET_APPLIED` | Preset selected  | PresetID                 | Control preset applied |
 
-### Movement Input Events
+#### Movement Input Events
 
 | Code Name            | Trigger         | Parameters       | Description          |
-| :------------------- | :-------------- | :--------------- | :------------------- |
+| -------------------- | --------------- | ---------------- | -------------------- |
 | `CTRL_MOVE_START`    | Movement begins | Direction        | Started moving       |
 | `CTRL_MOVE_STOP`     | Movement ends   | -                | Stopped moving       |
 | `CTRL_SPRINT_TOGGLE` | Sprint toggled  | IsActive         | Sprint state changed |
 | `CTRL_CROUCH_TOGGLE` | Crouch toggled  | IsActive         | Crouch state changed |
 | `CTRL_SLIDE_START`   | Slide triggered | Direction, Speed | Started sliding      |
 
-### Combat Input Events
+#### Combat Input Events
 
 | Code Name         | Trigger        | Parameters | Description      |
-| :---------------- | :------------- | :--------- | :--------------- |
+| ----------------- | -------------- | ---------- | ---------------- |
 | `CTRL_FIRE_START` | Fire pressed   | -          | Started firing   |
 | `CTRL_FIRE_STOP`  | Fire released  | -          | Stopped firing   |
 | `CTRL_AIM_START`  | ADS pressed    | -          | Entered aim mode |
 | `CTRL_AIM_STOP`   | ADS released   | -          | Exited aim mode  |
 | `CTRL_RELOAD`     | Reload pressed | -          | Reload triggered |
 
-### Touch Events (Mobile)
+#### Touch Events (Mobile)
 
 | Code Name             | Trigger           | Parameters           | Description            |
-| :-------------------- | :---------------- | :------------------- | :--------------------- |
+| --------------------- | ----------------- | -------------------- | ---------------------- |
 | `TOUCH_JOYSTICK_MOVE` | Joystick dragged  | Direction, Magnitude | Virtual joystick input |
 | `TOUCH_LOOK_DRAG`     | Look zone dragged | Delta                | Look area touch        |
 | `TOUCH_BUTTON_TAP`    | Button tapped     | ButtonID             | Button pressed         |
 | `TOUCH_GESTURE`       | Gesture detected  | GestureType          | Special gesture        |
 
-### HUD Events
+#### HUD Events
 
 | Code Name            | Trigger          | Parameters            | Description          |
-| :------------------- | :--------------- | :-------------------- | :------------------- |
+| -------------------- | ---------------- | --------------------- | -------------------- |
 | `HUD_PROMPT_SHOW`    | Prompt displayed | ActionID, PromptType  | Input prompt shown   |
 | `HUD_PROMPT_HIDE`    | Prompt hidden    | ActionID              | Input prompt removed |
 | `HUD_LAYOUT_CHANGED` | Layout modified  | LayoutID              | HUD layout changed   |
 | `HUD_BUTTON_MOVED`   | Button moved     | ButtonID, NewPosition | Touch button moved   |
 
----
+***
 
-## Core Classes
+### Core Classes
 
-### InputManager
+#### InputManager
 
 **Purpose:** Central singleton that coordinates all input processing.
 
 **Pseudocode:**
+
 ```
 CLASS InputManager:
     
@@ -400,18 +412,20 @@ CLASS InputManager:
 ```
 
 **Relationships:**
-- → **CharacterController**: Sends movement commands
-- → **WeaponSystem**: Sends combat commands (fire, reload, aim)
-- → **UISystem**: Notifies of input method changes for prompt updates
-- → **InteractionSystem**: Sends interact commands
 
----
+* → **CharacterController**: Sends movement commands
+* → **WeaponSystem**: Sends combat commands (fire, reload, aim)
+* → **UISystem**: Notifies of input method changes for prompt updates
+* → **InteractionSystem**: Sends interact commands
 
-### ActionMap
+***
+
+#### ActionMap
 
 **Purpose:** Defines mappings between hardware inputs and game actions.
 
 **Pseudocode:**
+
 ```
 CLASS ActionMap:
     
@@ -472,6 +486,7 @@ CLASS ActionMap:
 ```
 
 **Data Structure:**
+
 ```
 InputBinding:
     action: EInputAction          // What game action this triggers
@@ -482,13 +497,14 @@ InputBinding:
     isRemappable: Boolean         // Can user change this?
 ```
 
----
+***
 
-### InputProcessor
+#### InputProcessor
 
 **Purpose:** Process raw input through smoothing, deadzone, and sensitivity.
 
 **Pseudocode:**
+
 ```
 CLASS InputProcessor:
     
@@ -564,19 +580,20 @@ CLASS InputProcessor:
 **Platform-Specific Settings:**
 
 | Platform     | Deadzone Inner | Deadzone Outer | Smoothing | Notes                    |
-| :----------- | :------------- | :------------- | :-------- | :----------------------- |
+| ------------ | -------------- | -------------- | --------- | ------------------------ |
 | PC (Mouse)   | 0              | 1.0            | None      | Direct 1:1 mapping       |
 | PC (Gamepad) | 0.15           | 0.95           | 0.1       | Standard deadzone        |
 | Console      | 0.18           | 0.92           | 0.15      | Slightly larger deadzone |
 | Mobile       | 0.1            | 0.98           | 0.2       | More smoothing           |
 
----
+***
 
-### MovementController
+#### MovementController
 
 **Purpose:** Handle twin-stick movement and rotation independently.
 
 **Pseudocode:**
+
 ```
 CLASS MovementController:
     
@@ -719,20 +736,21 @@ CLASS MovementController:
 **Movement Modes:**
 
 | Mode   | Entry Condition                     | Exit Condition                      | Speed Mult      |
-| :----- | :---------------------------------- | :---------------------------------- | :-------------- |
+| ------ | ----------------------------------- | ----------------------------------- | --------------- |
 | Walk   | Default                             | Sprint/Crouch input                 | 1.0×            |
 | Sprint | Shift + Moving forward + HasStamina | ReleaseShift OR OutOfStamina OR ADS | 1.5×            |
 | Crouch | Press Crouch while not sprinting    | Press Crouch again                  | 0.6×            |
 | Slide  | Press Crouch while sprinting        | SlideTimer expires                  | 1.8× (decaying) |
 | ADS    | Hold ADS button                     | Release ADS                         | 0.5×            |
 
----
+***
 
-### TouchController
+#### TouchController
 
 **Purpose:** Handle mobile-specific virtual controls.
 
 **Pseudocode:**
+
 ```
 CLASS TouchController:
     
@@ -864,13 +882,14 @@ CLASS TouchController:
 └─────────────────────────────────────────────────────────────┘
 ```
 
----
+***
 
-### RemappingManager
+#### RemappingManager
 
 **Purpose:** Handle key remapping and control customization.
 
 **Pseudocode:**
+
 ```
 CLASS RemappingManager:
     
@@ -967,13 +986,14 @@ CLASS RemappingManager:
     END FUNCTION
 ```
 
----
+***
 
-### AimAssistController
+#### AimAssistController
 
 **Purpose:** Provide aim assistance for gamepad and touch input.
 
 **Pseudocode:**
+
 ```
 CLASS AimAssistController:
     
@@ -1047,13 +1067,14 @@ CLASS AimAssistController:
     END FUNCTION
 ```
 
----
+***
 
-### CameraController
+#### CameraController
 
 **Purpose:** Manages camera positioning, parallax effects, and dynamic FOV.
 
 **Pseudocode:**
+
 ```
 CLASS CameraController:
     
@@ -1102,14 +1123,14 @@ CLASS CameraController:
     END FUNCTION
 ```
 
----
+***
 
-## Platform-Specific Implementation
+### Platform-Specific Implementation
 
-### PC (Mouse & Keyboard)
+#### PC (Mouse & Keyboard)
 
 | Aspect               | Implementation                           |
-| :------------------- | :--------------------------------------- |
+| -------------------- | ---------------------------------------- |
 | **Movement**         | WASD keys, camera-relative               |
 | **Aiming**           | Mouse position projected to ground plane |
 | **Fire**             | Left Mouse Button (hold for auto)        |
@@ -1117,10 +1138,10 @@ CLASS CameraController:
 | **Aim Assist**       | Disabled by default                      |
 | **Key Remapping**    | Full remapping support                   |
 
-### Console (Gamepad)
+#### Console (Gamepad)
 
 | Aspect               | Implementation                 |
-| :------------------- | :----------------------------- |
+| -------------------- | ------------------------------ |
 | **Movement**         | Left Stick, camera-relative    |
 | **Aiming**           | Right Stick (twin-stick)       |
 | **Fire**             | Right Trigger (analog)         |
@@ -1128,10 +1149,10 @@ CLASS CameraController:
 | **Aim Assist**       | Medium by default              |
 | **Response Curve**   | Exponential for precision      |
 
-### Mobile (Touch)
+#### Mobile (Touch)
 
 | Aspect                | Implementation                      |
-| :-------------------- | :---------------------------------- |
+| --------------------- | ----------------------------------- |
 | **Movement**          | Floating virtual joystick (left)    |
 | **Aiming**            | Touch drag on right side            |
 | **Fire**              | Dedicated button + Auto-fire option |
@@ -1139,11 +1160,11 @@ CLASS CameraController:
 | **Aim Assist**        | Strong by default                   |
 | **HUD Customization** | Full button layout customization    |
 
----
+***
 
-## System Relationships
+### System Relationships
 
-### Dependency Diagram
+#### Dependency Diagram
 
 ```
                     ┌────────────────────┐
@@ -1172,10 +1193,10 @@ CLASS CameraController:
 └─────────────────┘  └─────────────────┘  └─────────────────┘
 ```
 
-### Integration Points
+#### Integration Points
 
 | Target System           | Interface                | Data                            |
-| :---------------------- | :----------------------- | :------------------------------ |
+| ----------------------- | ------------------------ | ------------------------------- |
 | **CharacterSystem**     | `HandleMovement()`       | Vector2 direction, MovementMode |
 | **WeaponSystem**        | `HandleCombatInput()`    | Fire, Aim, Reload states        |
 | **UISystem**            | `OnInputMethodChanged()` | Current input method            |
@@ -1183,20 +1204,20 @@ CLASS CameraController:
 | **InventorySystem**     | `HandleQuickSelect()`    | Slot selection                  |
 | **AccessibilitySystem** | `GetRemappedAction()`    | Custom bindings                 |
 
----
+***
 
-## Performance Considerations
+### Performance Considerations
 
-### Optimization Targets
+#### Optimization Targets
 
 | Metric             | Target | Current |
-| :----------------- | :----- | :------ |
+| ------------------ | ------ | ------- |
 | Input Latency      | < 16ms | TODO    |
 | Touch Processing   | < 2ms  | TODO    |
 | Active Touch Limit | 10     | 10      |
 | Memory Usage       | < 5 MB | TODO    |
 
-### Optimization Strategies
+#### Optimization Strategies
 
 ```
 1. INPUT POLLING
@@ -1215,45 +1236,47 @@ CLASS CameraController:
    • Cache binding lookups
 ```
 
----
+***
 
-## TODO: Implementation Tasks
+### TODO: Implementation Tasks
 
-### HIGH Priority 🔴
-- [ ] Implement InputManager core loop
-- [ ] Create ActionMap with all bindings
-- [ ] Implement MovementController twin-stick logic
-- [ ] Create TouchController for mobile
-- [ ] Implement aim assist system
+#### HIGH Priority 🔴
 
-### MEDIUM Priority 🟡
-- [ ] Add remapping UI and persistence
-- [ ] Implement control presets
-- [ ] Add sensitivity curves
-- [ ] Create gyroscope aiming option
-- [ ] Input method auto-detection
+* [ ] Implement InputManager core loop
+* [ ] Create ActionMap with all bindings
+* [ ] Implement MovementController twin-stick logic
+* [ ] Create TouchController for mobile
+* [ ] Implement aim assist system
 
-### LOW Priority 🟢
-- [ ] Advanced customization (per-action sensitivity)
-- [ ] Macro/combo support
-- [ ] Controller vibration feedback
-- [ ] Input replay for debugging
+#### MEDIUM Priority 🟡
 
----
+* [ ] Add remapping UI and persistence
+* [ ] Implement control presets
+* [ ] Add sensitivity curves
+* [ ] Create gyroscope aiming option
+* [ ] Input method auto-detection
 
-## References
+#### LOW Priority 🟢
 
-### External Sutureumentation
-- [Unity Input System](https://docs.unity3d.com/Packages/com.unity.inputsystem@1.0/manual/index.html) - If using Unity
-- [Unreal Enhanced Input](https://docs.unrealengine.com/5.0/en-US/enhanced-input-in-unreal-engine/) - If using Unreal
-- [Mobile Game Input Best Practices](https://developer.android.com/games/develop/gamepad) - Android guidelines
-- [Apple HIG - Game Controllers](https://developer.apple.com/design/human-interface-guidelines/game-controllers) - iOS guidelines
+* [ ] Advanced customization (per-action sensitivity)
+* [ ] Macro/combo support
+* [ ] Controller vibration feedback
+* [ ] Input replay for debugging
 
-### Industry Examples
-- **Call of Duty Mobile** - Touch control reference
-- **PUBG Mobile** - Virtual joystick implementation
-- **Fortnite** - Cross-platform input handling
-- **Apex Legends** - Aim assist tuning
+***
 
+### References
 
+#### External Sutureumentation
 
+* [Unity Input System](https://docs.unity3d.com/Packages/com.unity.inputsystem@1.0/manual/index.html) - If using Unity
+* [Unreal Enhanced Input](https://docs.unrealengine.com/5.0/en-US/enhanced-input-in-unreal-engine/) - If using Unreal
+* [Mobile Game Input Best Practices](https://developer.android.com/games/develop/gamepad) - Android guidelines
+* [Apple HIG - Game Controllers](https://developer.apple.com/design/human-interface-guidelines/game-controllers) - iOS guidelines
+
+#### Industry Examples
+
+* **Call of Duty Mobile** - Touch control reference
+* **PUBG Mobile** - Virtual joystick implementation
+* **Fortnite** - Cross-platform input handling
+* **Apex Legends** - Aim assist tuning

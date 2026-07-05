@@ -1,30 +1,32 @@
 ---
-title: "Character System - Technical Design Sutureument"
+title: Character System - Technical Design Sutureument
 type: docs
 ---
 
-## Related Sutureuments
+# Character System - Technical Design Sutureument
 
-| Sutureument              | Relationship                | Link                                                                                 |
-| :-------------------- | :-------------------------- | :----------------------------------------------------------------------------------- |
-| **Operators Design**  | High-level character design | [GDD_HighLevel/Characters/Operators.md](../../GDD_HighLevel/Characters/Operators.md) |
-| **Control System**    | Input handling              | [ControlSystem.md](./ControlSystem.md)                                               |
-| **Weapon System**     | Weapon integration          | [WeaponSystem.md](./WeaponSystem.md)                                                 |
-| **Inventory System**  | Equipment & weight          | [InventorySystem.md](./InventorySystem.md)                                           |
-| **Networking System** | Character sync              | [../Core/NetworkingSystem.md](../Core/NetworkingSystem.md)                           |
+### Related Sutureuments
 
----
+| Sutureument           | Relationship                | Link                                                                                                                                          |
+| --------------------- | --------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Operators Design**  | High-level character design | [GDD\_HighLevel/Characters/Operators.md](https://github.com/oaiba/ExtractionDocument/blob/main/content/GDD_HighLevel/Characters/Operators.md) |
+| **Control System**    | Input handling              | [ControlSystem.md](ControlSystem.md)                                                                                                          |
+| **Weapon System**     | Weapon integration          | [WeaponSystem.md](WeaponSystem.md)                                                                                                            |
+| **Inventory System**  | Equipment & weight          | [InventorySystem.md](InventorySystem.md)                                                                                                      |
+| **Networking System** | Character sync              | [../Core/NetworkingSystem.md](../Core/NetworkingSystem.md)                                                                                    |
 
-## Overview
+***
 
-### Purpose
+### Overview
+
+#### Purpose
 
 The **Character System** manages all aspects of player-controlled characters including health, movement, abilities, and interactions.
 
-### Core Functions
+#### Core Functions
 
 | Function               | Description                                  |
-| :--------------------- | :------------------------------------------- |
+| ---------------------- | -------------------------------------------- |
 | **Character Spawning** | Instantiate and initialize player characters |
 | **Health Management**  | Track HP, armor, damage, death               |
 | **Movement**           | Handle walk, sprint, crouch, rotation        |
@@ -32,7 +34,7 @@ The **Character System** manages all aspects of player-controlled characters inc
 | **Stamina System**     | Sprint resource management                   |
 | **Interactions**       | World object interaction (loot, doors, etc.) |
 
-### Design Goals
+#### Design Goals
 
 ```
 1. RESPONSIVE - Movement feels tight and immediate
@@ -42,11 +44,11 @@ The **Character System** manages all aspects of player-controlled characters inc
 5. EXTENSIBLE - Easy to add new operators/abilities
 ```
 
----
+***
 
-## System Architecture
+### System Architecture
 
-### Component Diagram
+#### Component Diagram
 
 ```
 ┌─────────────────────────────────────────────────────────────────────┐
@@ -75,10 +77,10 @@ The **Character System** manages all aspects of player-controlled characters inc
 └─────────────────────────────────────────────────────────────────────┘
 ```
 
-### Core Components
+#### Core Components
 
 | Component                | Responsibility                        | Dependencies      |
-| :----------------------- | :------------------------------------ | :---------------- |
+| ------------------------ | ------------------------------------- | ----------------- |
 | **CharacterManager**     | Spawning, pooling, operator selection | Database          |
 | **HealthComponent**      | HP, armor, damage, death              | None              |
 | **MovementComponent**    | Walk, sprint, crouch, rotation        | StaminaComponent  |
@@ -86,15 +88,16 @@ The **Character System** manages all aspects of player-controlled characters inc
 | **StaminaComponent**     | Sprint resource                       | MovementComponent |
 | **InteractionComponent** | World interactions                    | UI System         |
 
----
+***
 
-## Enums & Types
+### Enums & Types
 
-### EOperatorClass
+#### EOperatorClass
+
 Operator class/role classification.
 
 | Code Name       | Display Name | Playstyle    | Ability Type | Base HP | Speed Bonus | Description            |
-| :-------------- | :----------- | :----------- | :----------- | :------ | :---------- | :--------------------- |
+| --------------- | ------------ | ------------ | ------------ | ------- | ----------- | ---------------------- |
 | `OC_None`       | None         | N/A          | N/A          | 100     | 0%          | Unassigned operator    |
 | `OC_Assault`    | Assault      | Aggressive   | Damage Buff  | 100     | +5%         | Aggressive fragger     |
 | `OC_Support`    | Support      | Team-focused | Healing      | 100     | 0%          | Team medic             |
@@ -102,13 +105,14 @@ Operator class/role classification.
 | `OC_Tank`       | Tank         | Defensive    | Shield       | 120     | -5%         | Damage sponge          |
 | `OC_Specialist` | Specialist   | Tech         | Disable      | 100     | 0%          | Tech expert            |
 
----
+***
 
-### EMovementState
+#### EMovementState
+
 Character movement state machine.
 
 | Code Name      | Display Name | Speed Mult | Stamina Drain | Noise Level | Description        |
-| :------------- | :----------- | :--------- | :------------ | :---------- | :----------------- |
+| -------------- | ------------ | ---------- | ------------- | ----------- | ------------------ |
 | `MS_Idle`      | Idle         | 0×         | 0/s           | Silent      | Standing still     |
 | `MS_Walking`   | Walking      | 1×         | 0/s           | Low         | Normal movement    |
 | `MS_Sprinting` | Sprinting    | 1.5×       | 10/s          | High        | Fast movement      |
@@ -116,25 +120,27 @@ Character movement state machine.
 | `MS_Sliding`   | Sliding      | 1.8×       | 15 burst      | Medium      | Quick slide        |
 | `MS_Dead`      | Dead         | 0×         | 0/s           | None        | Character deceased |
 
----
+***
 
-### EAbilityState
+#### EAbilityState
+
 Operator ability state.
 
 | Code Name     | Display Name | Can Activate | UI Display | Description              |
-| :------------ | :----------- | :----------- | :--------- | :----------------------- |
+| ------------- | ------------ | ------------ | ---------- | ------------------------ |
 | `AS_Ready`    | Ready        | Yes          | Full icon  | Can be activated         |
 | `AS_Active`   | Active       | No           | Glowing    | Currently active         |
 | `AS_Cooldown` | Cooldown     | No           | Timer      | On cooldown              |
 | `AS_Disabled` | Disabled     | No           | Grayed out | Cannot use (EMP'd, etc.) |
 
----
+***
 
-### EInteractionType
+#### EInteractionType
+
 Interactable object type.
 
 | Code Name             | Display Name     | Hold Time | Range | Priority | Description        |
-| :-------------------- | :--------------- | :-------- | :---- | :------- | :----------------- |
+| --------------------- | ---------------- | --------- | ----- | -------- | ------------------ |
 | `INT_None`            | None             | N/A       | N/A   | 0        | No interaction     |
 | `INT_LootContainer`   | Loot Container   | 0.5s      | 2m    | 3        | Open loot box      |
 | `INT_Door`            | Door             | 0s        | 1.5m  | 2        | Open/close door    |
@@ -143,25 +149,27 @@ Interactable object type.
 | `INT_QuestItem`       | Quest Item       | 0.3s      | 2m    | 5        | Pick up quest item |
 | `INT_Vendor`          | Vendor           | 0s        | 3m    | 6        | Open shop UI       |
 
----
+***
 
-### ECharacterState
+#### ECharacterState
+
 Character life state.
 
 | Code Name       | Display Name | Can Move | Can Shoot    | Revivable | Description        |
-| :-------------- | :----------- | :------- | :----------- | :-------- | :----------------- |
+| --------------- | ------------ | -------- | ------------ | --------- | ------------------ |
 | `CS_Alive`      | Alive        | Yes      | Yes          | N/A       | Normal state       |
 | `CS_Downed`     | Downed       | No       | Sidearm only | Yes       | Can be revived     |
 | `CS_Dead`       | Dead         | No       | No           | No        | Fully deceased     |
 | `CS_Extracting` | Extracting   | Limited  | Yes          | N/A       | In extraction zone |
 
----
+***
 
-### EAnimationState
+#### EAnimationState
+
 Character animation state.
 
 | Code Name         | Display Name | Priority | Blend Time | Interruptible | Description        |
-| :---------------- | :----------- | :------- | :--------- | :------------ | :----------------- |
+| ----------------- | ------------ | -------- | ---------- | ------------- | ------------------ |
 | `ANIM_Idle`       | Idle         | 0        | 0.2s       | Yes           | Standing animation |
 | `ANIM_Walk`       | Walk         | 1        | 0.15s      | Yes           | Walking loop       |
 | `ANIM_Run`        | Run          | 2        | 0.15s      | Yes           | Running loop       |
@@ -171,60 +179,60 @@ Character animation state.
 | `ANIM_UseAbility` | Use Ability  | 6        | 0.1s       | No            | Ability activation |
 | `ANIM_Death`      | Death        | 10       | 0s         | No            | Death animation    |
 
----
+***
 
-## Code Names
+### Code Names
 
-### Operator Events
+#### Operator Events
 
 | Code Name     | Trigger           | Parameters                           | Description                   |
-| :------------ | :---------------- | :----------------------------------- | :---------------------------- |
+| ------------- | ----------------- | ------------------------------------ | ----------------------------- |
 | `CHAR_SPAWN`  | Character spawned | PlayerID, OperatorClass, SpawnPoint  | Character entered match       |
 | `CHAR_DEATH`  | Character died    | VictimID, KillerID, WeaponID, Damage | Character killed              |
 | `CHAR_DOWNED` | Character downed  | VictimID, AttackerID                 | Character downed (revivable)  |
 | `CHAR_REVIVE` | Character revived | VictimID, ReviverID                  | Character revived by teammate |
 
-### Movement Events
+#### Movement Events
 
 | Code Name               | Trigger       | Parameters             | Description               |
-| :---------------------- | :------------ | :--------------------- | :------------------------ |
+| ----------------------- | ------------- | ---------------------- | ------------------------- |
 | `MOVE_STATE_CHANGE`     | State changed | OldState, NewState     | Movement state transition |
 | `MOVE_SPRINT_START`     | Sprint begins | StaminaCurrent         | Started sprinting         |
 | `MOVE_SPRINT_END`       | Sprint ends   | StaminaCurrent, Reason | Stopped sprinting         |
 | `MOVE_STAMINA_DEPLETED` | Stamina empty | -                      | Stamina reached zero      |
 
-### Health Events
+#### Health Events
 
 | Code Name            | Trigger            | Parameters                 | Description            |
-| :------------------- | :----------------- | :------------------------- | :--------------------- |
+| -------------------- | ------------------ | -------------------------- | ---------------------- |
 | `HEALTH_DAMAGE`      | Damage received    | Amount, Source, DamageType | Health reduced         |
 | `HEALTH_HEAL`        | Health restored    | Amount, Source             | Health increased       |
 | `HEALTH_ARMOR_BREAK` | Armor destroyed    | -                          | Armor reached zero     |
 | `HEALTH_LOW`         | Low health warning | CurrentHP, Threshold       | Health below threshold |
 
-### Ability Events
+#### Ability Events
 
 | Code Name                | Trigger         | Parameters           | Description            |
-| :----------------------- | :-------------- | :------------------- | :--------------------- |
+| ------------------------ | --------------- | -------------------- | ---------------------- |
 | `ABILITY_ACTIVATE`       | Ability used    | AbilityID, TargetPos | Ability activated      |
 | `ABILITY_END`            | Ability ends    | AbilityID, Duration  | Ability effect ended   |
 | `ABILITY_COOLDOWN_START` | Cooldown begins | AbilityID, Duration  | Cooldown timer started |
 | `ABILITY_READY`          | Ability ready   | AbilityID            | Cooldown complete      |
 
-### Interaction Events
+#### Interaction Events
 
 | Code Name            | Trigger               | Parameters                | Description             |
-| :------------------- | :-------------------- | :------------------------ | :---------------------- |
+| -------------------- | --------------------- | ------------------------- | ----------------------- |
 | `INTERACT_START`     | Interaction begins    | TargetID, InteractionType | Started interacting     |
 | `INTERACT_COMPLETE`  | Interaction done      | TargetID, InteractionType | Interaction finished    |
 | `INTERACT_CANCEL`    | Interaction cancelled | TargetID, Reason          | Interaction interrupted |
 | `INTERACT_AVAILABLE` | Target found          | TargetID, InteractionType | Interactable in range   |
 
----
+***
 
-## Data Structures
+### Data Structures
 
-### CharacterStats
+#### CharacterStats
 
 **Purpose:** Runtime stats for a character instance.
 
@@ -252,7 +260,7 @@ STRUCT CharacterStats:
     StaminaRegenDelay: Float = 1.0  // Seconds before regen starts
 ```
 
-### OperatorData
+#### OperatorData
 
 **Purpose:** Static definition of an operator class.
 
@@ -279,7 +287,7 @@ STRUCT OperatorData:
     AbilityIconPath: String         // Ability icon
 ```
 
-### CharacterInstance
+#### CharacterInstance
 
 **Purpose:** Runtime instance of a player character.
 
@@ -312,15 +320,16 @@ CLASS CharacterInstance:
     LastSyncTime: Float             // Last network update time
 ```
 
----
+***
 
-## Core Classes
+### Core Classes
 
-### CharacterManager
+#### CharacterManager
 
 **Purpose:** Central manager for character spawning and operator data.
 
 **Pseudocode:**
+
 ```
 CLASS CharacterManager:
     
@@ -411,13 +420,14 @@ CLASS CharacterManager:
     END FUNCTION
 ```
 
----
+***
 
-### HealthSystem
+#### HealthSystem
 
 **Purpose:** Manage health, armor, damage, and death.
 
 **Pseudocode:**
+
 ```
 CLASS HealthSystem:
     
@@ -537,13 +547,14 @@ CLASS HealthSystem:
     END FUNCTION
 ```
 
----
+***
 
-### MovementSystem
+#### MovementSystem
 
 **Purpose:** Handle character movement, states, and speed modifiers.
 
 **Pseudocode:**
+
 ```
 CLASS MovementSystem:
     
@@ -680,13 +691,14 @@ CLASS MovementSystem:
     END FUNCTION
 ```
 
----
+***
 
-### StaminaSystem
+#### StaminaSystem
 
 **Purpose:** Manage stamina for sprinting.
 
 **Pseudocode:**
+
 ```
 CLASS StaminaSystem:
     
@@ -740,13 +752,14 @@ CLASS StaminaSystem:
     END FUNCTION
 ```
 
----
+***
 
-### AbilitySystem
+#### AbilitySystem
 
 **Purpose:** Manage operator abilities and cooldowns.
 
 **Pseudocode:**
+
 ```
 CLASS AbilitySystem:
     
@@ -874,13 +887,14 @@ CLASS AbilitySystem:
     END FUNCTION
 ```
 
----
+***
 
-### InteractionSystem
+#### InteractionSystem
 
 **Purpose:** Detect and execute world interactions.
 
 **Pseudocode:**
+
 ```
 CLASS InteractionSystem:
     
@@ -1029,21 +1043,21 @@ CLASS InteractionSystem:
     END FUNCTION
 ```
 
----
+***
 
-## Operator Abilities
+### Operator Abilities
 
-### Ability Summary Table
+#### Ability Summary Table
 
 | Operator       | Ability       | Code                           | Duration | Cooldown | Effect                                 |
-| :------------- | :------------ | :----------------------------- | :------- | :------- | :------------------------------------- |
+| -------------- | ------------- | ------------------------------ | -------- | -------- | -------------------------------------- |
 | **Assault**    | Combat Stim   | `ABILITY_ASSAULT_COMBATSTEM`   | 10s      | 90s      | +25% damage, +10% speed                |
 | **Support**    | Healing Drone | `ABILITY_SUPPORT_HEALINGDRONE` | 20s      | 120s     | 5 HP/sec in 10m radius                 |
 | **Recon**      | UAV Scan      | `ABILITY_RECON_UAVSCAN`        | 8s       | 100s     | Reveal enemies in 30m                  |
 | **Tank**       | Riot Shield   | `ABILITY_TANK_RIOTSHIELD`      | 15s      | 80s      | Block 100% frontal damage              |
 | **Specialist** | EMP Blast     | `ABILITY_SPEC_EMPBLAST`        | Instant  | 110s     | Disable abilities 10s, destroy gadgets |
 
-### Ability Implementation Template
+#### Ability Implementation Template
 
 ```
 CLASS OperatorAbility:
@@ -1075,14 +1089,14 @@ CLASS OperatorAbility:
     END FUNCTION
 ```
 
----
+***
 
-## Network Synchronization
+### Network Synchronization
 
-### Replicated Properties
+#### Replicated Properties
 
 | Property            | Replicate To | Update Rate | Notes               |
-| :------------------ | :----------- | :---------- | :------------------ |
+| ------------------- | ------------ | ----------- | ------------------- |
 | **Position**        | All          | 20Hz        | Interpolated        |
 | **Rotation**        | All          | 20Hz        | Interpolated        |
 | **Health**          | All          | On change   | Enemies see hp bars |
@@ -1092,7 +1106,7 @@ CLASS OperatorAbility:
 | **Stamina**         | Owner only   | 10Hz        | UI only             |
 | **AbilityCooldown** | Owner only   | On change   | UI only             |
 
-### Movement Prediction
+#### Movement Prediction
 
 ```
 CLIENT-SIDE PREDICTION FLOW:
@@ -1114,20 +1128,20 @@ CLIENT-SIDE PREDICTION FLOW:
       → Continue local prediction
 ```
 
----
+***
 
-## Performance Considerations
+### Performance Considerations
 
-### Memory Budget
+#### Memory Budget
 
 | Asset      | Max Size | Per Character | Max Characters |
-| :--------- | :------- | :------------ | :------------- |
+| ---------- | -------- | ------------- | -------------- |
 | Model      | 5 MB     | 5 MB          | 20             |
 | Textures   | 2 MB     | 2 MB          | 20             |
 | Animations | 3 MB     | 3 MB          | 20             |
 | **Total**  | 10 MB    | 10 MB         | **200 MB max** |
 
-### Optimization Strategies
+#### Optimization Strategies
 
 ```
 1. OBJECT POOLING
@@ -1143,36 +1157,39 @@ CLIENT-SIDE PREDICTION FLOW:
    - Reduce update frequency based on distance
 ```
 
----
+***
 
-## TODO: Implementation Tasks
+### TODO: Implementation Tasks
 
-### HIGH Priority 🔴
-- [ ] Implement CharacterManager spawn system
-- [ ] Create HealthSystem damage calculation
-- [ ] Add MovementSystem state machine
-- [ ] Implement basic ability cooldown
-- [ ] Create InteractionSystem detection
+#### HIGH Priority 🔴
 
-### MEDIUM Priority 🟡
-- [ ] Add all operator abilities
-- [ ] Implement downed/revive mechanic
-- [ ] Create animation state machine
-- [ ] Add network movement prediction
-- [ ] Implement stamina sprint system
+* [ ] Implement CharacterManager spawn system
+* [ ] Create HealthSystem damage calculation
+* [ ] Add MovementSystem state machine
+* [ ] Implement basic ability cooldown
+* [ ] Create InteractionSystem detection
 
-### LOW Priority 🟢
-- [ ] Add hit reaction animations
-- [ ] Create spectator mode
-- [ ] Implement kill replay
-- [ ] Add character leveling
-- [ ] Create emote system
+#### MEDIUM Priority 🟡
 
----
+* [ ] Add all operator abilities
+* [ ] Implement downed/revive mechanic
+* [ ] Create animation state machine
+* [ ] Add network movement prediction
+* [ ] Implement stamina sprint system
 
-## System Relationships
+#### LOW Priority 🟢
 
-### Dependency Diagram
+* [ ] Add hit reaction animations
+* [ ] Create spectator mode
+* [ ] Implement kill replay
+* [ ] Add character leveling
+* [ ] Create emote system
+
+***
+
+### System Relationships
+
+#### Dependency Diagram
 
 ```
                     ┌────────────────────┐
@@ -1201,6 +1218,3 @@ CLIENT-SIDE PREDICTION FLOW:
 │ • Interaction   │  │ • Hit sounds    │  │ • Hit validation│
 └─────────────────┘  └─────────────────┘  └─────────────────┘
 ```
-
-
-

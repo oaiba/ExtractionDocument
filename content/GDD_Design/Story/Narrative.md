@@ -4,7 +4,6 @@ type: docs
 weight: 1
 ---
 
-# Narrative Design Bible
 
 ### Narrative Philosophy
 

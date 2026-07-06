@@ -5,7 +5,6 @@ type: docs
 weight: 99
 ---
 
-# Update Log
 
 Historical changes for the GDD Design documentation hub.
 

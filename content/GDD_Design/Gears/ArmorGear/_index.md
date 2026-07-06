@@ -5,7 +5,6 @@ type: docs
 weight: 1
 ---
 
-# Armor Gear Documentation
 
 This section covers all armor worn by the Operator: body vests, helmets, face shields, headsets, and armored rigs. Armor uses a **Class 1–6** (GOST-style) system with zone-based protection, materials, durability, and repair.
 

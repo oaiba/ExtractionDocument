@@ -7,7 +7,6 @@ sidebar:
   open: false
 ---
 
-# Characters & Operators
 
 ### The Squad Hierarchy
 

@@ -3,7 +3,6 @@ title: Project Risks & Mitigation
 type: docs
 ---
 
-# Project Risks & Mitigation
 
 ###  Risk Management Philosophy
 

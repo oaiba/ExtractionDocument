@@ -4,7 +4,6 @@ type: docs
 weight: 2
 ---
 
-# World History & Backstory
 
 ### Canonical Timeline
 

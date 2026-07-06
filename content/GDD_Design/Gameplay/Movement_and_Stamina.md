@@ -4,7 +4,6 @@ type: docs
 weight: 2
 ---
 
-# Movement & Stamina System
 
 ### Overview
 

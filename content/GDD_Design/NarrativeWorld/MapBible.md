@@ -4,7 +4,6 @@ type: docs
 weight: 7
 ---
 
-# Map Design Bible
 
 ### Overview
 

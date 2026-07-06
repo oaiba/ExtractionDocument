@@ -4,7 +4,6 @@ type: docs
 weight: 16
 ---
 
-# Quest & Objective System
 
 ### Overview
 

@@ -5,7 +5,6 @@ type: docs
 weight: 4
 ---
 
-# Tank
 
 ### Class Overview
 

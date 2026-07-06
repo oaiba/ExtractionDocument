@@ -5,7 +5,6 @@ type: docs
 weight: 4
 ---
 
-# Combat, Weapons & Gear
 
 ###  The Art of Violence
 

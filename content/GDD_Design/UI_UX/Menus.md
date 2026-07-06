@@ -4,7 +4,6 @@ type: docs
 weight: 1
 ---
 
-# Menus & Screens
 
 ### Menu Design Philosophy
 

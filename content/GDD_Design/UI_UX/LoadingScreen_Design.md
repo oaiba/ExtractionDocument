@@ -4,7 +4,6 @@ type: docs
 weight: 5
 ---
 
-# Async Loading Screen Design
 
 ### Overview
 

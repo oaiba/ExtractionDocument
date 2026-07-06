@@ -3,7 +3,6 @@ title: Control System - Technical Design Sutureument
 type: docs
 ---
 
-# Control System - Technical Design Sutureument
 
 ### Related Sutureuments
 

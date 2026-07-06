@@ -5,7 +5,6 @@ type: docs
 weight: 1
 ---
 
-# Assault
 
 ### Class Overview
 

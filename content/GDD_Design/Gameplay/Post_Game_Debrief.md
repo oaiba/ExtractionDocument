@@ -4,7 +4,6 @@ type: docs
 weight: 21
 ---
 
-# Post-Game Debrief & Replay
 
 ### Overview
 

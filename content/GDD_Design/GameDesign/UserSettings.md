@@ -5,7 +5,6 @@ version: 2
 game_genre: Hero Extraction Shooter Multiplayer Crossplatform
 ---
 
-# User Settings & Configuration - Enhanced Edition
 
 [**↔ View Technical Spec: Settings System**](../../GDD_Technical/Systems/SettingsSystem.md)
 

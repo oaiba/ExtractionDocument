@@ -5,7 +5,6 @@ type: docs
 weight: 2
 ---
 
-# Storage Gear Documentation
 
 This section covers all storage that the Operator carries in-raid: tactical rigs, backpacks, secure containers, and (for meta-game) stash-only cases. The **rig is the only source for weapon reload**; backpack and secure container are grid-access only.
 

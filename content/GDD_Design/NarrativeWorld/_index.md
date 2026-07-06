@@ -7,7 +7,6 @@ sidebar:
   open: false
 ---
 
-# Narrative & World
 
 ### Story and World Are Inseparable
 

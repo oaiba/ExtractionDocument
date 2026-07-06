@@ -4,7 +4,6 @@ type: docs
 weight: 5
 ---
 
-# Lore Delivery Systems
 
 ### Lore Delivery Overview
 

@@ -3,7 +3,6 @@ title: Game Modes Design
 type: docs
 ---
 
-# Game Modes Design
 
 ###  Core Philosophy
 

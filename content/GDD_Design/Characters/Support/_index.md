@@ -5,7 +5,6 @@ type: docs
 weight: 2
 ---
 
-# Support
 
 ### Class Overview
 

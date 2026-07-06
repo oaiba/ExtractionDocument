@@ -5,7 +5,6 @@ type: docs
 weight: 3
 ---
 
-# Recon
 
 ### Class Overview
 

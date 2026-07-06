@@ -4,7 +4,6 @@ type: docs
 weight: 3
 ---
 
-# Gear Mechanics
 
 ### Overview
 

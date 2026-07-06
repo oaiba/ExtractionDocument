@@ -4,7 +4,6 @@ type: docs
 weight: 5
 ---
 
-# Hero Abilities (Operators)
 
 ### Overview
 

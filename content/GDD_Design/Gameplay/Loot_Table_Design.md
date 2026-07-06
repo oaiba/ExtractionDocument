@@ -4,7 +4,6 @@ type: docs
 weight: 17
 ---
 
-# Loot Table Design
 
 ### Overview
 

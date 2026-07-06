@@ -4,7 +4,6 @@ type: docs
 weight: 10
 ---
 
-# Gameplay Review Checklist & Benchmark
 
 ### Overview
 

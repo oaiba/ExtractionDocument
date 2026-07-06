@@ -4,7 +4,6 @@ type: docs
 weight: 6
 ---
 
-# Extraction Mechanics
 
 ### Overview
 

@@ -4,7 +4,6 @@ weight: 2
 type: docs
 ---
 
-# Containers & Storage
 
 ### Overview
 

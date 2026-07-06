@@ -3,7 +3,6 @@ title: Character System - Technical Design Sutureument
 type: docs
 ---
 
-# Character System - Technical Design Sutureument
 
 ### Related Sutureuments
 

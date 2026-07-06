@@ -5,7 +5,6 @@ type: docs
 weight: 5
 ---
 
-# Specialist
 
 ### Class Overview
 

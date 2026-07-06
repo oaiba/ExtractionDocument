@@ -5,7 +5,6 @@ type: docs
 weight: 10
 ---
 
-# Map Lore: Firebase Delta (Future — Season 3)
 
 > **Content Status:** Firebase Delta is a Season 3 map. This document covers the confirmed lore and design intent. Sections marked `[FUTURE CONTENT]` will be expanded in the Season 3 pre-production phase.
 

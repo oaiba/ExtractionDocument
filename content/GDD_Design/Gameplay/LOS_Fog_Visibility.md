@@ -4,7 +4,6 @@ type: docs
 weight: 7
 ---
 
-# LOS, Fog of War & Visibility (Shared Team Vision)
 
 ### Overview
 

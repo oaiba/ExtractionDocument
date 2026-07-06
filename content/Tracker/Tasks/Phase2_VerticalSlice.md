@@ -4,7 +4,6 @@ type: docs
 weight: 20
 ---
 
-# Phase 2: Vertical Slice
 
 #### Month 3 — May 2026:
 

@@ -4,7 +4,6 @@ type: docs
 weight: 26
 ---
 
-# Items & Gear Catalogue
 
 ### Overview
 

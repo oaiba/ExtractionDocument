@@ -4,7 +4,6 @@ type: docs
 weight: 12
 ---
 
-# AI & Enemy Behavior
 
 ### Overview
 

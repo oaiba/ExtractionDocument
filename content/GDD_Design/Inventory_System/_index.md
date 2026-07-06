@@ -7,7 +7,6 @@ version: 2.1
 last_updated: 2026-03-04T00:00:00.000Z
 ---
 
-# Inventory System — Core Mechanics
 
 > **Document Status**: Living Document - Updated Regularly\
 > **Target Platform**: PC (Primary), Console (Secondary)\

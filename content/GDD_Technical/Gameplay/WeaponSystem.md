@@ -3,7 +3,6 @@ title: Weapon System - Technical Design Sutureument
 type: docs
 ---
 
-# Weapon System - Technical Design Sutureument
 
 ### Related Sutureuments
 

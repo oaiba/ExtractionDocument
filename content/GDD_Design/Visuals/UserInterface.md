@@ -4,7 +4,6 @@ type: docs
 weight: 4
 ---
 
-# User Interface Visual Design
 
 ### UI Design Philosophy
 

@@ -4,7 +4,6 @@ type: docs
 weight: 17
 ---
 
-# Pre-Raid Loadout & Preparation Screen
 
 ### Overview
 

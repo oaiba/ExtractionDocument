@@ -3,7 +3,6 @@ title: MVP Scope - Minimum Viable Product
 type: docs
 ---
 
-# MVP Scope - Minimum Viable Product
 
 ###  Critical Milestones & Targets
 

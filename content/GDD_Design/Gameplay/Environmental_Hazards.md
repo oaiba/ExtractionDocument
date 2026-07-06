@@ -4,7 +4,6 @@ type: docs
 weight: 5
 ---
 
-# Environmental Hazards & Dynamic Events
 
 ### Overview
 

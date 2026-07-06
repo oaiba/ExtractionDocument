@@ -3,7 +3,6 @@ title: Items & Economy Systems
 type: docs
 ---
 
-# Items & Economy Systems
 
 ### Economy Philosophy
 

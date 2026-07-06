@@ -4,7 +4,6 @@ type: docs
 weight: 6
 ---
 
-# Faction Territories & Map Control
 
 ### Overview
 

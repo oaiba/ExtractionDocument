@@ -5,7 +5,6 @@ type: docs
 weight: 9
 ---
 
-# Map Lore: Urban Ruins (District 14)
 
 ### Map Identity Card
 

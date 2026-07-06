@@ -4,7 +4,6 @@ type: docs
 weight: 4
 ---
 
-# Looting & Inventory Interactions
 
 ### Overview
 

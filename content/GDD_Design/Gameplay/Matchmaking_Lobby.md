@@ -4,7 +4,6 @@ type: docs
 weight: 13
 ---
 
-# Matchmaking & Lobby System
 
 ### Overview
 

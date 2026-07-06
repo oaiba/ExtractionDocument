@@ -4,7 +4,6 @@ type: docs
 weight: 1
 ---
 
-# Core Gameplay Loop & Progression
 
 ### The Extraction Loop
 

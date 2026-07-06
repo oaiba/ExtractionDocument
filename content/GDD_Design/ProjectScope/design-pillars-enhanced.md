@@ -7,7 +7,6 @@ version: 2
 last_updated: 2026-02-11T00:00:00.000Z
 ---
 
-# Design Pillars & Core Philosophy - Enhanced Edition
 
 > **Living Document Status**: This document evolves with the game. All features must align with these pillars.\
 > **Authority Level**: Ultimate - These pillars override all other design decisions.\

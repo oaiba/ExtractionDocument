@@ -3,7 +3,6 @@ title: Performance Optimization
 type: docs
 ---
 
-# Performance Optimization
 
 ### Overview
 

@@ -5,7 +5,6 @@ type: docs
 weight: 8
 ---
 
-# Map Lore: Industrial Decay (Sector 7)
 
 ### Map Identity Card
 

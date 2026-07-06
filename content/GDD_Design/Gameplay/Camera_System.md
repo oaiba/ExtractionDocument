@@ -4,7 +4,6 @@ type: docs
 weight: 11
 ---
 
-# Camera System (Top-Down)
 
 ### Overview
 

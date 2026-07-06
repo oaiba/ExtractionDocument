@@ -5,7 +5,6 @@ type: docs
 weight: 1
 ---
 
-# AI & Enemy Design
 
 ###  System Overview
 

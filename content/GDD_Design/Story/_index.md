@@ -5,7 +5,6 @@ sidebar:
   open: false
 ---
 
-# Story & Narrative
 
 > \[!IMPORTANT] ** Directory Migration Notice:** The Story & World documentation has been merged into a unified [**NarrativeWorld/**](https://github.com/oaiba/ExtractionDocument/blob/main/content/GDD_Design/NarrativeWorld/README.md) section. All files below are preserved for reference, but the **canonical, up-to-date GDDs** are in `NarrativeWorld/`. New work should be done there.
 >

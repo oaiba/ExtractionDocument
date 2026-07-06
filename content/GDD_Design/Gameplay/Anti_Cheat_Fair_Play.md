@@ -4,7 +4,6 @@ type: docs
 weight: 20
 ---
 
-# Anti-Cheat & Fair Play
 
 ### Overview
 

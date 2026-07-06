@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 170" role="img" aria-labelledby="title desc">
+  <title id="title">EXTRACTION</title>
+  <desc id="desc">Decorative block banner spelling EXTRACTION.</desc>
+  <defs>
+    <style>
+      .bg { fill: #f8fbff; }
+      .border { fill: none; stroke: #bfd5ff; stroke-width: 1.5; }
+      .accent { fill: #3b82f6; }
+      .shadow { fill: none; stroke: #1b2a44; stroke-width: 2; opacity: .28; }
+      .block { fill: #16233d; }
+      @media (prefers-color-scheme: dark) {
+        .bg { fill: #111827; }
+        .border { stroke: #334155; }
+        .accent { fill: #60a5fa; }
+        .shadow { stroke: #93c5fd; opacity: .2; }
+        .block { fill: #e5e7eb; }
+      }
+    </style>
+    <g id="letter-e"><path d="M0 0H70V14H14V49H60V63H14V98H70V112H0Z"/></g>
+    <g id="letter-x"><path d="M0 0H18L35 38L52 0H70L45 56L70 112H52L35 74L18 112H0L25 56Z"/></g>
+    <g id="letter-t"><path d="M0 0H70V14H42V112H28V14H0Z"/></g>
+    <g id="letter-r"><path d="M0 0H50C62 0 70 8 70 20V46C70 57 62 64 51 64H48L72 112H55L33 64H14V112H0ZM14 14V50H48C53 50 56 47 56 42V22C56 17 53 14 48 14Z"/></g>
+    <g id="letter-a"><path d="M28 0H42L70 112H55L49 84H21L15 112H0ZM24 70H46L35 19Z"/></g>
+    <g id="letter-c"><path d="M14 0H70V14H20C16 14 14 16 14 20V92C14 96 16 98 20 98H70V112H14C5 112 0 107 0 98V14C0 5 5 0 14 0Z"/></g>
+    <g id="letter-i"><path d="M0 0H70V14H42V98H70V112H0V98H28V14H0Z"/></g>
+    <g id="letter-o"><path d="M14 0H56C65 0 70 5 70 14V98C70 107 65 112 56 112H14C5 112 0 107 0 98V14C0 5 5 0 14 0ZM20 14C16 14 14 16 14 20V92C14 96 16 98 20 98H50C54 98 56 96 56 92V20C56 16 54 14 50 14Z"/></g>
+    <g id="letter-n"><path d="M0 0H16L56 80V0H70V112H54L14 32V112H0Z"/></g>
+  </defs>
+  <rect class="bg" x="1" y="1" width="848" height="168" rx="8"/>
+  <rect class="border" x="1" y="1" width="848" height="168" rx="8"/>
+  <rect class="accent" x="1" y="1" width="4" height="168" rx="2"/>
+  <g transform="translate(37 33)">
+    <g class="shadow" transform="translate(4 4)">
+      <use href="#letter-e" x="0"/><use href="#letter-x" x="78"/><use href="#letter-t" x="156"/><use href="#letter-r" x="234"/><use href="#letter-a" x="312"/>
+      <use href="#letter-c" x="390"/><use href="#letter-t" x="468"/><use href="#letter-i" x="546"/><use href="#letter-o" x="624"/><use href="#letter-n" x="702"/>
+    </g>
+    <g class="block">
+      <use href="#letter-e" x="0"/><use href="#letter-x" x="78"/><use href="#letter-t" x="156"/><use href="#letter-r" x="234"/><use href="#letter-a" x="312"/>
+      <use href="#letter-c" x="390"/><use href="#letter-t" x="468"/><use href="#letter-i" x="546"/><use href="#letter-o" x="624"/><use href="#letter-n" x="702"/>
+    </g>
+  </g>
+</svg>

@@ -88,6 +88,16 @@ article table {
     width: 100%;
 }
 
+.extraction-ascii-banner {
+    display: block;
+    width: 100%;
+    max-width: 900px;
+    height: auto;
+    margin: 1.75rem 0 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 14px 32px rgba(15, 23, 42, 0.08);
+}
+
 /* Keep fenced code blocks aligned with the docs surface while making them stand out. */
 .hextra-code-block pre,
 .hextra-code-block .chroma {

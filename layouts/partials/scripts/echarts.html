@@ -1,0 +1,101 @@
+{{- $echartsJs := site.Params.echarts.js | default "https://cdn.jsdelivr.net/npm/echarts@5/dist/echarts.min.js" -}}
+{{- $isRemote := or (strings.HasPrefix $echartsJs "http://") (strings.HasPrefix $echartsJs "https://") -}}
+
+{{- if $isRemote -}}
+  <script defer src="{{ $echartsJs }}" crossorigin="anonymous"></script>
+{{- else -}}
+  {{- with resources.Get $echartsJs -}}
+    {{- $echartsAsset := . -}}
+    {{- if hugo.IsProduction -}}
+      {{- $echartsAsset = $echartsAsset | fingerprint -}}
+    {{- end -}}
+    <script defer src="{{ $echartsAsset.RelPermalink }}"{{ with $echartsAsset.Data.Integrity }} integrity="{{ . }}"{{ end }}></script>
+  {{- else -}}
+    {{- errorf "ECharts js asset not found at %q" $echartsJs -}}
+  {{- end -}}
+{{- end -}}
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const charts = new Map();
+    const containers = Array.from(document.querySelectorAll(".exdoc-echarts"));
+
+    if (!containers.length) return;
+
+    const parseOptions = (container) => {
+      const optionsId = container.dataset.echartsOptions;
+      const optionsEl = optionsId ? document.getElementById(optionsId) : null;
+      if (!optionsEl) {
+        throw new Error(`Missing ECharts options for #${container.id}`);
+      }
+      return JSON.parse(optionsEl.textContent);
+    };
+
+    const chartTheme = () => document.documentElement.classList.contains("dark") ? "dark" : null;
+
+    const applyThemeDefaults = (option) => {
+      const isDark = document.documentElement.classList.contains("dark");
+      const textColor = isDark ? "#e5e7eb" : "#1f2937";
+      const mutedColor = isDark ? "#94a3b8" : "#64748b";
+      const splitColor = isDark ? "#334155" : "#e2e8f0";
+      const axisDefaults = { axisLabel: { color: mutedColor }, splitLine: { lineStyle: { color: splitColor } } };
+      const mergeAxis = (axis) => {
+        if (!axis) return axis;
+        if (Array.isArray(axis)) return axis.map((entry) => Object.assign({}, axisDefaults, entry));
+        return Object.assign({}, axisDefaults, axis);
+      };
+
+      return {
+        backgroundColor: "transparent",
+        ...option,
+        textStyle: Object.assign({ color: textColor }, option.textStyle || {}),
+        tooltip: Object.assign({ trigger: "item" }, option.tooltip || {}),
+        legend: option.legend === false ? false : Object.assign({ textStyle: { color: mutedColor } }, option.legend || {}),
+        xAxis: mergeAxis(option.xAxis),
+        yAxis: mergeAxis(option.yAxis)
+      };
+    };
+
+    const renderCharts = () => {
+      containers.forEach((container) => {
+        const existing = charts.get(container);
+        if (existing) existing.dispose();
+
+        try {
+          container.classList.remove("exdoc-echarts-error");
+          container.textContent = "";
+          const option = parseOptions(container);
+          const chart = echarts.init(container, chartTheme());
+          chart.setOption(applyThemeDefaults(option));
+          charts.set(container, chart);
+        } catch (error) {
+          container.classList.add("exdoc-echarts-error");
+          container.textContent = error.message;
+        }
+      });
+    };
+
+    const resizeCharts = () => {
+      charts.forEach((chart) => chart.resize());
+    };
+
+    const resizeObserver = "ResizeObserver" in window ? new ResizeObserver(resizeCharts) : null;
+    containers.forEach((container) => resizeObserver ? resizeObserver.observe(container) : null);
+    window.addEventListener("resize", resizeCharts);
+
+    let themeTimeout;
+    new MutationObserver(() => {
+      clearTimeout(themeTimeout);
+      themeTimeout = setTimeout(renderCharts, 150);
+    }).observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["class"],
+    });
+
+    if (window.echarts) {
+      renderCharts();
+    } else {
+      window.addEventListener("load", renderCharts, { once: true });
+    }
+  });
+</script>

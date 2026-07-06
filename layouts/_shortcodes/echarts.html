@@ -1,0 +1,30 @@
+{{- /*
+Render an Apache ECharts chart from an inline JSON option.
+
+Usage:
+{{< echarts id="chart-id" height="420px" >}}
+{ "xAxis": {}, "yAxis": {}, "series": [] }
+{{< /echarts >}}
+*/ -}}
+
+{{- $id := .Get "id" | default (printf "echarts-%d" .Ordinal) -}}
+{{- $height := .Get "height" | default "420px" -}}
+{{- $caption := .Get "caption" | default "" -}}
+{{- .Page.Store.Set "hasECharts" true -}}
+
+<figure class="exdoc-chart-frame">
+  <div
+    id="{{ $id }}"
+    class="exdoc-echarts"
+    data-echarts-options="{{ $id }}-options"
+    style="height: {{ $height }};"
+    role="img"
+    aria-label="{{ with $caption }}{{ . }}{{ else }}ECharts visualization{{ end }}"
+  ></div>
+  <script id="{{ $id }}-options" type="application/json">
+{{ .InnerDeindent | safeHTML }}
+  </script>
+  {{- with $caption }}
+    <figcaption>{{ . | markdownify }}</figcaption>
+  {{- end }}
+</figure>

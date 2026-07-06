@@ -2,6 +2,9 @@
 title: GDD Agents
 type: docs
 weight: 99
+aliases:
+  - /gdd_agents.html
+  - /GDD_Agents.html
 ---
 
 # AI Agent Guidelines

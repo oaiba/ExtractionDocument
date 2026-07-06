@@ -1,6 +1,9 @@
 ---
 title: GDD Design
 type: docs
+aliases:
+  - /gdd_design.html
+  - /GDD_Design.html
 ---
 
 # GDD Design

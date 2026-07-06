@@ -42,13 +42,13 @@ This is the central repository and gateway for all documentation related to the 
 Access the specialized documentation portals based on your role and current task.
 
 {{< cards cols="2" >}}
-{{< card link="/GDD_Design.html" title="Design & Creative Hub" icon="sparkles" subtitle="Player experience, world-building, visual/audio aesthetics, and narrative." >}}
-{{< card link="/GDD_Technical.html" title="Technical & Engineering Hub" icon="terminal" subtitle="Implementation specs, systems architecture, networking, and performance." >}}
+{{< card link="/GDD_Design" title="Design & Creative Hub" icon="sparkles" subtitle="Player experience, world-building, visual/audio aesthetics, and narrative." >}}
+{{< card link="/GDD_Technical" title="Technical & Engineering Hub" icon="terminal" subtitle="Implementation specs, systems architecture, networking, and performance." >}}
 {{< /cards >}}
 
 {{< cards cols="2" >}}
 {{< card link="/Tracker/Tasks.html" title="Task Tracker" icon="clipboard-list" subtitle="Comprehensive project-wide task tracking and milestones." >}}
-{{< card link="/GDD_Agents.html" title="AI Agent Guidelines" icon="chip" subtitle="Rules, workflows, and skills for AI coding agents (Gemini, Copilot, Cursor)." >}}
+{{< card link="/GDD_Agents" title="AI Agent Guidelines" icon="chip" subtitle="Rules, workflows, and skills for AI coding agents (Gemini, Copilot, Cursor)." >}}
 {{< /cards >}}
 
 ***
@@ -57,14 +57,14 @@ Access the specialized documentation portals based on your role and current task
 
 #### For Design & Art Teams
 
-* **Single Source of Truth**: Always refer to the [Design Hub](/GDD_Design.html) before starting creative work
+* **Single Source of Truth**: Always refer to the [Design Hub](/GDD_Design) before starting creative work
 * **Visual Consistency**: Follow the [Style Guide](/GDD_Design/Visuals/StyleGuide.html) for cross-platform fidelity
 * **Core Loop**: Keep the [Core Gameplay](/GDD_Design/GameDesign/CoreGameplay.html) aligned with mechanic changes
 * **Asset Submission**: Use [Asset Guidelines](/GDD_Design/Visuals/AssetGuidelines.html) for UE5 specs
 
 #### For Technical & Dev Teams
 
-* **Implementation Specs**: All enums, codenames, and interfaces are in the [Technical Hub](/GDD_Technical.html)
+* **Implementation Specs**: All enums, codenames, and interfaces are in the [Technical Hub](/GDD_Technical)
 * **Performance First**: Adhere to [Performance Budgets](/GDD_Technical/Performance/Budgets.html)
 * **Task Management**: Follow the [Development Roadmap](/GDD_Technical/Core/DevelopmentRoadmap.html)
 * **Code Standards**: Maintain modularity per [Architecture](/GDD_Technical/Core/Architecture.html) docs

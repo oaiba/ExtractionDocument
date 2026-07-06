@@ -1,6 +1,9 @@
 ---
 title: "GDD Technical"
 type: docs
+aliases:
+  - /gdd_technical.html
+  - /GDD_Technical.html
 ---
 
 ## Purpose

@@ -3,7 +3,7 @@ title: "Tutorial Raid: \"Operation Zero\""
 type: docs
 ---
 
-## 🎓 Design Goal: "Teach to Survive"
+##  Design Goal: "Teach to Survive"
 
 The tutorial is **NOT** a shooting gallery. It is a **Safety Drill**.
 Most players quit Extraction Shooters because they loot, get lost, and die to a camper without knowing why.
@@ -20,7 +20,7 @@ Most players quit Extraction Shooters because they loot, get lost, and die to a 
 
 ---
 
-## 📋 Pre-Tutorial: Operator Selection Screen (Guided)
+##  Pre-Tutorial: Operator Selection Screen (Guided)
 
 Before Operation Zero begins, the player is guided through the **Operator Selection screen** for the first time.
 
@@ -36,7 +36,7 @@ Before Operation Zero begins, the player is guided through the **Operator Select
 
 ---
 
-## 🗺️ The Mission Script (Expanded)
+##  The Mission Script (Expanded)
 
 ### Phase 1: The Crash (Movement)
 - **Context:** You wake up near a crashed helicopter in a dense forest (safe start zone).
@@ -132,7 +132,7 @@ After extraction, a special first-run debrief plays:
 
 ---
 
-## 🎁 Reward: "Starter Kit"
+##  Reward: "Starter Kit"
 
 Completing the tutorial grants:
 
@@ -149,7 +149,7 @@ Completing the tutorial grants:
 
 ---
 
-## 🏠 Post-Tutorial: Safe House Onboarding
+##  Post-Tutorial: Safe House Onboarding
 
 After the tutorial debrief, the player is guided through the Safe House for the first time:
 
@@ -166,7 +166,7 @@ Each step is dismissible — players who know extraction games can skip the tour
 
 ---
 
-## 🧠 "Soft" Tutorials (Loading Screen Tips)
+##  "Soft" Tutorials (Loading Screen Tips)
 
 Don't rely just on the raid. Use the downtime:
 
@@ -182,7 +182,7 @@ Don't rely just on the raid. Use the downtime:
 
 ---
 
-## 🚫 Anti-Frustration Features
+##  Anti-Frustration Features
 
 | Feature | Detail |
 | :------ | :----- |
@@ -196,7 +196,7 @@ Don't rely just on the raid. Use the downtime:
 
 ---
 
-## 🔗 Cross-References
+##  Cross-References
 
 - [Core Gameplay Loop](../Gameplay/CoreLoop.md) — Full 5-phase loop overview that tutorial teaches in compressed form.
 - [Hero Abilities](../Gameplay/Hero_Abilities.md) — Operator classes, ability structures, cooldown rules.

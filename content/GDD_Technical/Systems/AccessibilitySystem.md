@@ -250,19 +250,19 @@ STRUCT AutoActionSettings:
 
 ## TODO: Implementation Tasks
 
-### HIGH Priority 🔴
+### HIGH Priority 
 - [ ] AccessibilityManager core
 - [ ] Colorblind post-process shader
 - [ ] Subtitle system basic implementation
 - [ ] Aim assist parameter integration
 
-### MEDIUM Priority 🟡
+### MEDIUM Priority 
 - [ ] Sound visualization system
 - [ ] UI scaling logic
 - [ ] Input toggle/hold system
 - [ ] Preset configuration
 
-### LOW Priority 🟢
+### LOW Priority 
 - [ ] Text-to-speech integration
 - [ ] Screen reader support
 - [ ] One-handed mode configuration

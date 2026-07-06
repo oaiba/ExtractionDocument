@@ -1235,7 +1235,7 @@ SERVER-SIDE:
 
 ### TODO: Implementation Tasks
 
-#### HIGH Priority 🔴
+#### HIGH Priority 
 
 * [ ] Implement WeaponController fire system
 * [ ] Create DamageSystem calculation
@@ -1243,7 +1243,7 @@ SERVER-SIDE:
 * [ ] Implement reload system
 * [ ] Create attachment slot system
 
-#### MEDIUM Priority 🟡
+#### MEDIUM Priority 
 
 * [ ] Add recoil pattern system
 * [ ] Implement projectile simulation
@@ -1251,7 +1251,7 @@ SERVER-SIDE:
 * [ ] Add damage falloff
 * [ ] Implement weapon pooling
 
-#### LOW Priority 🟢
+#### LOW Priority 
 
 * [ ] Add gyro recoil control (mobile)
 * [ ] Create weapon inspection

@@ -1116,7 +1116,7 @@ CLASS SecureContainer:
 
 ### TODO: Implementation Tasks
 
-#### HIGH Priority 🔴
+#### HIGH Priority 
 
 * [ ] Implement InventoryContainer base class
 * [ ] Create GridSystem collision detection
@@ -1124,7 +1124,7 @@ CLASS SecureContainer:
 * [ ] Implement weight calculation
 * [ ] Create basic UI drag-and-drop
 
-#### MEDIUM Priority 🟡
+#### MEDIUM Priority 
 
 * [ ] Add item rotation (R key)
 * [ ] Implement stack merge/split
@@ -1132,7 +1132,7 @@ CLASS SecureContainer:
 * [ ] Add secure container rules
 * [ ] Implement stash save/load
 
-#### LOW Priority 🟢
+#### LOW Priority 
 
 * [ ] Add quick-slot bar
 * [ ] Create inventory search/filter

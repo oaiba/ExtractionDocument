@@ -5,7 +5,7 @@ type: docs
 
 # Game Modes Design
 
-### 🎮 Core Philosophy
+###  Core Philosophy
 
 Our game modes are designed to cater to different player intensities and time commitments, all revolving around the core loop: **Deploy → Loot → Extract**.
 
@@ -17,7 +17,7 @@ Our game modes are designed to cater to different player intensities and time co
 
 ***
 
-### 🎲 1. The Raid (Core Experience)
+###  1. The Raid (Core Experience)
 
 The primary "Extraction Shooter" mode. This is the heart of the game.
 
@@ -37,7 +37,7 @@ The primary "Extraction Shooter" mode. This is the heart of the game.
 
 ***
 
-### 👻 2. Scavenger Run ("Scav Mode")
+###  2. Scavenger Run ("Scav Mode")
 
 A risk-free mode to recover from losses or learn maps.
 
@@ -55,7 +55,7 @@ A risk-free mode to recover from losses or learn maps.
 
 ***
 
-### ⚔️ 3. Ranked Operations (Competitive)
+###  3. Ranked Operations (Competitive)
 
 A high-stakes version of The Raid for veteran players.
 
@@ -69,7 +69,7 @@ A high-stakes version of The Raid for veteran players.
 
 ***
 
-### ⚡ 4. Blitz (Quick Play)
+###  4. Blitz (Quick Play)
 
 A faster, condensed experience for mobile play sessions.
 
@@ -80,7 +80,7 @@ A faster, condensed experience for mobile play sessions.
 
 ***
 
-### 🛡️ PvE / Co-op Modes
+###  PvE / Co-op Modes
 
 #### "Blackout" (Horde Mode)
 
@@ -95,7 +95,7 @@ A faster, condensed experience for mobile play sessions.
 
 ***
 
-### 🔄 Dynamic Events (Live Ops)
+###  Dynamic Events (Live Ops)
 
 Special limited-time modes that mutate the core rules.
 
@@ -107,7 +107,7 @@ Special limited-time modes that mutate the core rules.
 
 ***
 
-### 🎛️ Mode Selection Screen Design
+###  Mode Selection Screen Design
 
 The Mode Selection UI is embedded in the [Loadout Preparation Screen](LoadoutPreparation.md) — players select their mode as part of the pre-raid ritual, not as a separate lobby screen.
 
@@ -117,35 +117,35 @@ Each mode is represented as a **pill-style button** in the loadout prep screen. 
 
 | Card Element         | Description                                                                 |
 | -------------------- | --------------------------------------------------------------------------- |
-| **Mode Name & Icon** | Bold name + distinctive icon (⚔ Raid, ⚡ Blitz, 👻 Scav, ♦ Ranked, 🛡 Co-op) |
+| **Mode Name & Icon** | Bold name + distinctive icon ( Raid,  Blitz,  Scav,  Ranked,  Co-op) |
 | **Map thumbnail**    | Top-down miniature of the currently selected map                            |
 | **Duration range**   | e.g., "15–30 min" / "8 min"                                                 |
 | **Player count**     | e.g., "8–16 Players" / "3 Players max"                                      |
-| **Risk badge**       | ⚠ HIGH / ⚡ MEDIUM / ✅ ZERO / ♦ EXTREME / 🛡 MEDIUM                          |
+| **Risk badge**       |  HIGH /  MEDIUM /  ZERO /  EXTREME /  MEDIUM                          |
 | **Queue estimate**   | Live-updated estimated wait time from matchmaking                           |
 | **Special rules**    | Any mode-specific rule deviations (e.g., "No insurance in Ranked")          |
 
 #### Mode Pill Row
 
 ```
-[● THE RAID ⚔]  [ BLITZ ⚡]  [ SCAV RUN 👻]  [ RANKED ♦]  [ CO-OP 🛡]  [ FEATURED ★]
+[● THE RAID ]  [ BLITZ ]  [ SCAV RUN ]  [ RANKED ]  [ CO-OP ]  [ FEATURED ]
 ```
 
 * Only one mode active at a time (radio select)
 * Unavailable modes (level-locked) shown greyed with lock icon + unlock tooltip
-* "Featured ★" pill only visible during active LiveOps events
+* "Featured " pill only visible during active LiveOps events
 
 #### Mode Quick Reference Table
 
 | Mode                 | Type              | Duration  | Players         | Risk      | Insurance | Unlocked At           |
 | -------------------- | ----------------- | --------- | --------------- | --------- | --------- | --------------------- |
-| **The Raid**         | PvPvE             | 15–30 min | 8–16            | ⚠ High    | ✅ Yes     | Level 1               |
-| **Blitz**            | PvPvE             | 8 min     | 6–10            | ⚡ Medium  | ✅ Yes     | Level 1               |
-| **Scav Run**         | PvPvE (Scav)      | 10–20 min | joins live raid | ✅ Zero    | ❌ N/A     | Level 1               |
-| **Ranked Ops**       | PvPvE Competitive | 15–20 min | 8–12            | ♦ Extreme | ❌ **No**  | Level 15, 20+ matches |
-| **Blackout (Co-op)** | PvE               | 15 min    | 1–3             | 🛡 Medium | ✅ Yes     | Level 5               |
-| **Training Grounds** | PvE Only          | No limit  | Solo            | ✅ Zero    | ❌ N/A     | Level 1               |
-| **Featured ★**       | Varies            | Varies    | Varies          | Varies    | Varies    | Event active          |
+| **The Raid**         | PvPvE             | 15–30 min | 8–16            |  High    |  Yes     | Level 1               |
+| **Blitz**            | PvPvE             | 8 min     | 6–10            |  Medium  |  Yes     | Level 1               |
+| **Scav Run**         | PvPvE (Scav)      | 10–20 min | joins live raid |  Zero    |  N/A     | Level 1               |
+| **Ranked Ops**       | PvPvE Competitive | 15–20 min | 8–12            |  Extreme |  **No**  | Level 15, 20+ matches |
+| **Blackout (Co-op)** | PvE               | 15 min    | 1–3             |  Medium |  Yes     | Level 5               |
+| **Training Grounds** | PvE Only          | No limit  | Solo            |  Zero    |  N/A     | Level 1               |
+| **Featured **       | Varies            | Varies    | Varies          | Varies    | Varies    | Event active          |
 
 #### Queue Size Selector (within Mode Card)
 
@@ -162,7 +162,7 @@ Estimated wait: ~40 seconds
 
 ***
 
-### 📊 Cross-References
+###  Cross-References
 
 * [Loadout Preparation](LoadoutPreparation.md) — Mode selection UI embedded in prep screen; full wireframe and interaction design.
 * [Map Design](MapDesign.md) — Map zone rules and how weather/loot bias varies by map; affects mode card info shown.

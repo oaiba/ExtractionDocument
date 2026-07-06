@@ -40,19 +40,19 @@ type: docs
 
 | Game | Platform | Perspective | Monetization | Gear Loss | Mobile Native | Status (2025) |
 | :--- | :------- | :---------- | :----------- | :-------- | :------------ | :------------ |
-| **Escape from Tarkov** | PC | FPS | Buy-to-play | Yes (hardcore) | ❌ | Dominant PC reference |
-| **ARC Raiders** | PC/PS5/XSX | 3rd Person | $40 Buy-to-play | Yes (safe pocket) | ❌ | 9/10 IGN; TGA Best Multiplayer 2025 |
-| **Hunt: Showdown 2** | PC/Console | FPS | F2P+DLC | Yes (Hunter dies) | ❌ | Live, active player base |
-| **Hawked** | PC/Console | 3rd Person | F2P | Artifacts only | ❌ | Mixed reception; ongoing updates |
-| **The Cycle: Frontier** | PC | FPS | F2P | Yes | ❌ | Shut down 2023; lessons learned |
-| **PUBG Mobile** | Mobile | 3rd Person | F2P | No (Battle Royale) | ✅ | Market leader mobile BR |
-| **Our Game** | **Mobile-first** | **Top-Down** | **F2P** | **Yes** | **✅** | **Unoccupied niche** |
+| **Escape from Tarkov** | PC | FPS | Buy-to-play | Yes (hardcore) |  | Dominant PC reference |
+| **ARC Raiders** | PC/PS5/XSX | 3rd Person | $40 Buy-to-play | Yes (safe pocket) |  | 9/10 IGN; TGA Best Multiplayer 2025 |
+| **Hunt: Showdown 2** | PC/Console | FPS | F2P+DLC | Yes (Hunter dies) |  | Live, active player base |
+| **Hawked** | PC/Console | 3rd Person | F2P | Artifacts only |  | Mixed reception; ongoing updates |
+| **The Cycle: Frontier** | PC | FPS | F2P | Yes |  | Shut down 2023; lessons learned |
+| **PUBG Mobile** | Mobile | 3rd Person | F2P | No (Battle Royale) |  | Market leader mobile BR |
+| **Our Game** | **Mobile-first** | **Top-Down** | **F2P** | **Yes** | **** | **Unoccupied niche** |
 
 ### What We Learn From Each Competitor
 
 | Competitor | Lesson Applied to Our Design |
 | :--------- | :--------------------------- |
-| **Tarkov** | Deep economy ✅, insurance ✅, quest traders ✅ — BUT: reduce prep friction, add visual character identity (Tarkov has none) |
+| **Tarkov** | Deep economy , insurance , quest traders  — BUT: reduce prep friction, add visual character identity (Tarkov has none) |
 | **ARC Raiders** | Centralized hub (Speranza) → adopt as Safe House; skill tree branching → operator ability trees; avoid their high $40 entry price barrier |
 | **Hawked** | Guild system → our Clan System; colorful readability → critical for top-down; lesson: F2P with poor monetization balance = player anger |
 | **Hunt: Showdown** | Hunter identity = emotional attachment → hero operator system solves this; duo/trio squad → our default squad sizes |
@@ -263,29 +263,29 @@ Easy to replace       Painful to lose
 │    (Aethelgard Industrial Zone)     │
 ├─────────────────────────────────────┤
 │                                     │
-│  🟢 Safe Zone (Edge)               │
+│   Safe Zone (Edge)               │
 │  ├─ Loot: Common                    │
 │  ├─ AI: Light                       │
 │  ├─ Players: Rare                   │
-│  └─ Risk: ★☆☆☆☆                    │
+│  └─ Risk:                     │
 │                                     │
-│    🟡 Mid Zone                      │
+│     Mid Zone                      │
 │    ├─ Loot: Common-Rare             │
 │    ├─ AI: Medium                    │
 │    ├─ Players: Moderate             │
-│    └─ Risk: ★★★☆☆                  │
+│    └─ Risk:                   │
 │                                     │
-│      🔴 Hot Zone (Center)           │
+│       Hot Zone (Center)           │
 │      ├─ Loot: Rare-Legendary        │
 │      ├─ AI: Heavy + Boss            │
 │      ├─ Players: High               │
-│      └─ Risk: ★★★★★                │
+│      └─ Risk:                 │
 │                                     │
-│  💎 Supply Drop (Event)              │
+│   Supply Drop (Event)              │
 │  ├─ Loot: Epic-Legendary guaranteed  │
 │  ├─ Alert: Map-wide notification     │
 │  ├─ Players: ALL converge            │
-│  └─ Risk: ★★★★★★                  │
+│  └─ Risk:                   │
 └─────────────────────────────────────┘
 ```
 
@@ -380,7 +380,7 @@ Skilled:
 #### 3. Combat Tactics
 ```
 Spray and Pray:
-└─ ☠️ Dies often
+└─  Dies often
 
 Tactical Player:
 ├─ Uses cover effectively
@@ -509,20 +509,20 @@ Motivations:
 
 **Pain Points with Current Mobile Games:**
 ```
-❌ Too casual, no stakes
-❌ P2W mechanics ruin balance
-❌ Repetitive, no depth
-❌ No consequences for poor play
-❌ Progression feels hollow
+ Too casual, no stakes
+ P2W mechanics ruin balance
+ Repetitive, no depth
+ No consequences for poor play
+ Progression feels hollow
 ```
 
 **What Our Game Provides:**
 ```
-✅ High-stakes gameplay
-✅ Skill-based, fair
-✅ Deep tactical systems
-✅ Meaningful death penalty
-✅ Persistent economy
+ High-stakes gameplay
+ Skill-based, fair
+ Deep tactical systems
+ Meaningful death penalty
+ Persistent economy
 ```
 
 ---
@@ -813,18 +813,18 @@ Note: ALL obtainable free through play
 
 **What We DON'T Sell:**
 ```
-❌ Better weapons
-❌ Better armor
-❌ Stat boosts
-❌ Loot crates (RNG)
-❌ Exclusive power
+ Better weapons
+ Better armor
+ Stat boosts
+ Loot crates (RNG)
+ Exclusive power
 ```
 
 ---
 
 ---
 
-## 🌎 Marketing & Distribution Strategy
+##  Marketing & Distribution Strategy
 
 ### Target Markets
 *   **Primary:** Southeast Asia (SEA), Brazil, India (Strong Mobile Hardcore Shooter Demographic).
@@ -843,7 +843,7 @@ Note: ALL obtainable free through play
 
 ---
 
-## 📝 Document Ownership & Changelog
+##  Document Ownership & Changelog
 
 | Role            | Owner              | Approver           |
 | :-------------- | :----------------- | :----------------- |
@@ -967,12 +967,12 @@ Server Regions:
 
 **Mobile UX Requirements:**
 ```
-✓ Touch targets: 60x60px minimum
-✓ One-thumb playable (future)
-✓ Readable on 5" screens
-✓ Battery-efficient
-✓ Playable with gloves (accessibility)
-✓ Landscape orientation only
+ Touch targets: 60x60px minimum
+ One-thumb playable (future)
+ Readable on 5" screens
+ Battery-efficient
+ Playable with gloves (accessibility)
+ Landscape orientation only
 ```
 
 **Content Cadence:**

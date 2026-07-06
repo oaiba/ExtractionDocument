@@ -3,7 +3,7 @@ title: "Map Design: Neon Slums (The \"Undercity\")"
 type: docs
 ---
 
-## 🗺️ Map Overview
+##  Map Overview
 
 *   **Name:** District 09 (aka "Neon Slums")
 *   **Theme:** Cyberpunk-favela built on the ruins of a mega-city. Dense, vertical, and neon-lit.
@@ -16,7 +16,7 @@ type: docs
 
 ---
 
-## 📍 Tactical Layout
+##  Tactical Layout
 
 The map is a **"Favela" design**: Layers built on top of layers. rooftops are highways; streets are death traps.
 
@@ -64,7 +64,7 @@ The map is a **"Favela" design**: Layers built on top of layers. rooftops are hi
 
 ---
 
-## 🛠️ Operator Tactical Interactions
+##  Operator Tactical Interactions
 
 Navigating the vertical favela requires special tools:
 
@@ -79,22 +79,22 @@ Navigating the vertical favela requires special tools:
 
 ---
 
-## 💎 Loot Distribution & Heatmap (Verticality Focus)
+##  Loot Distribution & Heatmap (Verticality Focus)
 
 | Floor / Area           | Loot Tier  | Item Types                | Danger Level                    | Recommended Key  |
 | :--------------------- | :--------- | :------------------------ | :------------------------------ | :--------------- |
-| **Penthouse (Lvl 3)**  | **S-Tier** | Legendary Sniper Rifles   | 💀 **Extreme** (1 Entry point)   | King of the Hill |
-| **Arcade (Lvl 2)**     | **A-Tier** | Electronics, Energy Cells | 🔴 **High** (Loud Audio)         | Balanced Squads  |
-| **Apartments (Lvl 2)** | **B-Tier** | Domestic Items, Cash      | 🟠 **Medium** (Wallbangs)        | Campers / CQC    |
-| **Market (Lvl 1)**     | **C-Tier** | Food, Trash Loot          | 🔴 **High** (Visible from above) | Risky Transit    |
-| **Subway (Lvl 0)**     | **B-Tier** | Tools, Quest Items        | 🟠 **Medium** (Grenade traps)    | Flank Route      |
+| **Penthouse (Lvl 3)**  | **S-Tier** | Legendary Sniper Rifles   |  **Extreme** (1 Entry point)   | King of the Hill |
+| **Arcade (Lvl 2)**     | **A-Tier** | Electronics, Energy Cells |  **High** (Loud Audio)         | Balanced Squads  |
+| **Apartments (Lvl 2)** | **B-Tier** | Domestic Items, Cash      |  **Medium** (Wallbangs)        | Campers / CQC    |
+| **Market (Lvl 1)**     | **C-Tier** | Food, Trash Loot          |  **High** (Visible from above) | Risky Transit    |
+| **Subway (Lvl 0)**     | **B-Tier** | Tools, Quest Items        |  **Medium** (Grenade traps)    | Flank Route      |
 
 *   **Heatmap:** Most deaths occur at the **"Bridge of Sighs"** and the **Subway Entrance**.
 *   **The Trap:** The Market (Street Level) has low-tier loot but high danger from rooftop snipers. Avoid lingering here.
 
 ---
 
-## ⚔️ Choke Points & Flow
+##  Choke Points & Flow
 
 ### 1. "Bridge of Sighs" (Connecting Apt A & B)
 *   **Description:** A rickety wooden bridge connecting the 3rd floors of the two main buildings.
@@ -107,7 +107,7 @@ Navigating the vertical favela requires special tools:
 
 ---
 
-## 🚪 Extraction Points
+##  Extraction Points
 
 | Name               | Type            | Requirements          | Location            |
 | :----------------- | :-------------- | :-------------------- | :------------------ |
@@ -117,7 +117,7 @@ Navigating the vertical favela requires special tools:
 
 ---
 
-## 🎨 Environmental Design
+##  Environmental Design
 
 *   **Palette:** Neon Pink/Blue, Dirty Concrete, Rain-slicked Asphalt.
 *   **Lighting:** High contrast. Dark shadows vs blinding neon signs.

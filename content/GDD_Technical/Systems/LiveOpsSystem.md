@@ -282,18 +282,18 @@ STRUCT BattlePassTier:
 
 ## TODO: Implementation Tasks
 
-### HIGH Priority 🔴
+### HIGH Priority 
 - [ ] LiveOpsManager config fetching
 - [ ] EventManager scheduling logic
 - [ ] ChallengeManager progress tracking
 - [ ] BattlePassManager XP logic
 
-### MEDIUM Priority 🟡
+### MEDIUM Priority 
 - [ ] ShopManager rotation logic
 - [ ] Remote config integration
 - [ ] Event scheduling tools
 
-### LOW Priority 🟢
+### LOW Priority 
 - [ ] Community goal tracking
 - [ ] A/B testing framework support
 - [ ] Advanced notification scheduling

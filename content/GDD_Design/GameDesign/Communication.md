@@ -29,9 +29,9 @@ Communication is a **force multiplier** — a team that communicates wins fights
 
 | Channel | Who Hears | Default State | Activation |
 | :------ | :-------- | :------------ | :--------- |
-| **Squad Voice** | Your squad (2–3 players) | ✅ ON | Auto on squad join |
-| **Proximity Voice** | Any player within 15m (incl. enemies) | ✅ ON (optional) | Toggle in settings |
-| **Spectator Voice** | Dead squadmates listening | ✅ ON | Auto on death |
+| **Squad Voice** | Your squad (2–3 players) |  ON | Auto on squad join |
+| **Proximity Voice** | Any player within 15m (incl. enemies) |  ON (optional) | Toggle in settings |
+| **Spectator Voice** | Dead squadmates listening |  ON | Auto on death |
 | **All-chat (text only)** | All players in lobby | Pre-match only | None |
 
 ### Proximity Voice Design
@@ -58,15 +58,15 @@ Communication is a **force multiplier** — a team that communicates wins fights
 ┌──────────────────────────────────────────────────────────────────┐
 │  SQUAD VOICE BAR (bottom-right, mobile: above thumb zone)        │
 │                                                                   │
-│  [🎤 Kai_V  ▐▐▐░░]  [🎤 Dxt_R  ░░░░░]  [🎤 YOU  ▐░░░░]        │
+│  [ Kai_V  ▐▐▐░░]  [ Dxt_R  ░░░░░]  [ YOU  ▐░░░░]        │
 │  ─────────────────────────────────────────────────────────────── │
-│  [Mute Self]  [Push to Talk]  [🔊 Volume]  [Settings]           │
+│  [Mute Self]  [Push to Talk]  [ Volume]  [Settings]           │
 └──────────────────────────────────────────────────────────────────┘
 ```
 
 - Audio-level bars animated when player speaks
 - Tap any player name → mute that player instantly (no confirmation)
-- Voice icon on operator nameplate shows 🎤 when speaking in-world
+- Voice icon on operator nameplate shows  when speaking in-world
 
 ---
 
@@ -78,14 +78,14 @@ The ping system is a **first-class communication tool** — not a fallback. Even
 
 | Ping | Shortcut | Duration | Visual | Audio Cue |
 | :--- | :------- | :------- | :----- | :-------- |
-| **⚑ Attack Here** | Single tap world | 30s | Red arrow pointing down | "Enemy spotted!" / Squad: "Attack that!" |
-| **✋ Defend / Hold** | Hold + release | 30s | Yellow shield icon | "Hold position!" |
-| **📦 Loot Here** | Single tap on item/container | 45s | Blue box icon | "Loot here!" |
-| **👁 Enemy Spotted** | Single tap enemy | 20s | Orange exclamation | "Enemy spotted!" |
-| **🚁 Go Here** | Double tap world | 30s | Green arrow on ground | "Move to my marker" |
-| **⚕ Need Help** | Hold self + release | 45s | Flashing red cross | "I need help!" |
-| **✅ Acknowledged** | Tap any existing ping | — | Green check on ping | "Got it!" |
-| **❌ Negative** | Long-hold tap | — | Red X | "Negative" / "No" |
+| ** Attack Here** | Single tap world | 30s | Red arrow pointing down | "Enemy spotted!" / Squad: "Attack that!" |
+| ** Defend / Hold** | Hold + release | 30s | Yellow shield icon | "Hold position!" |
+| ** Loot Here** | Single tap on item/container | 45s | Blue box icon | "Loot here!" |
+| ** Enemy Spotted** | Single tap enemy | 20s | Orange exclamation | "Enemy spotted!" |
+| ** Go Here** | Double tap world | 30s | Green arrow on ground | "Move to my marker" |
+| ** Need Help** | Hold self + release | 45s | Flashing red cross | "I need help!" |
+| ** Acknowledged** | Tap any existing ping | — | Green check on ping | "Got it!" |
+| ** Negative** | Long-hold tap | — | Red X | "Negative" / "No" |
 
 ### Ping Context Intelligence
 
@@ -104,11 +104,11 @@ The system reads context to auto-select ping sub-type:
 Hold middle mouse (PC) or long-press world (Mobile) → 8-slot radial wheel:
 
 ```
-              [⚑ Attack]
-     [❌ Cancel]       [🚁 Move]
-[⚕ Help]                       [👁 Enemy]
-     [✅ OK]          [📦 Loot]
-              [✋ Defend]
+              [ Attack]
+     [ Cancel]       [ Move]
+[ Help]                       [ Enemy]
+     [ OK]          [ Loot]
+              [ Defend]
 ```
 
 ### Ping UI — In World vs. Minimap
@@ -148,12 +148,12 @@ For players who cannot or choose not to use voice — quick localized chat phras
 
 | Mode | Squad Voice | Proximity Voice | Ping | Quick Chat | Notes |
 | :--- | :---------- | :-------------- | :--- | :--------- | :---- |
-| **The Raid** | ✅ | ✅ (optional) | ✅ | ✅ | Full feature set |
-| **Blitz** | ✅ | ✅ (optional) | ✅ | ✅ | Faster pacing, pings expire 15s |
-| **Scav Run** | ❌ (solo mode) | ✅ (against PMCs) | ✅ (enemy pings only) | ✅ | No squad voice |
-| **Ranked Ops** | ✅ | ❌ (disabled) | ✅ | ✅ | Proximity voice disabled for competitive integrity |
-| **Blackout Co-op** | ✅ | ❌ (PvE) | ✅ | ✅ | No enemy players to hear |
-| **Training Grounds** | ❌ | ❌ | ✅ | ❌ | Solo practice only |
+| **The Raid** |  |  (optional) |  |  | Full feature set |
+| **Blitz** |  |  (optional) |  |  | Faster pacing, pings expire 15s |
+| **Scav Run** |  (solo mode) |  (against PMCs) |  (enemy pings only) |  | No squad voice |
+| **Ranked Ops** |  |  (disabled) |  |  | Proximity voice disabled for competitive integrity |
+| **Blackout Co-op** |  |  (PvE) |  |  | No enemy players to hear |
+| **Training Grounds** |  |  |  |  | Solo practice only |
 
 ---
 

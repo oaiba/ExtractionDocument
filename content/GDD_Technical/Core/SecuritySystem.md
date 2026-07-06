@@ -133,17 +133,17 @@ STRUCT ViolationRecord:
 
 ## TODO: Implementation Tasks
 
-### HIGH Priority 🔴
+### HIGH Priority 
 - [ ] Server-side validation logic
 - [ ] Client file hashing (CRC/MD5)
 - [ ] Network packet encryption
 
-### MEDIUM Priority 🟡
+### MEDIUM Priority 
 - [ ] Memory scan heuristics
 - [ ] Automated banning system
 - [ ] Reporting tool integration
 
-### LOW Priority 🟢
+### LOW Priority 
 - [ ] Hardware HWID banning
 - [ ] Third-party anti-cheat integration (EAC/BattlEye)
 

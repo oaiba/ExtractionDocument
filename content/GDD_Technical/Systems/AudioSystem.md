@@ -1443,21 +1443,21 @@ Master
 
 ## TODO: Implementation Tasks
 
-### HIGH Priority 🔴
+### HIGH Priority 
 - [ ] AudioManager core playback
 - [ ] WeaponSoundComponent
 - [ ] MusicManager with intensity
 - [ ] FootstepManager with surfaces
 - [ ] Category volume controls
 
-### MEDIUM Priority 🟡
+### MEDIUM Priority 
 - [ ] VoiceLineManager with queue
 - [ ] MixManager with presets
 - [ ] OcclusionManager
 - [ ] 3D spatial audio setup
 - [ ] SoundPoolManager
 
-### LOW Priority 🟢
+### LOW Priority 
 - [ ] HRTF implementation
 - [ ] Advanced reverb zones
 - [ ] Low health audio filter

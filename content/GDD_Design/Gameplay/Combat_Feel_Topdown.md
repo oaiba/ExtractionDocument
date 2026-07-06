@@ -83,7 +83,7 @@ In a standard FPS, recoil manifests as camera kick — the screen moves up. In t
 | Outcome | Marker Shape | Color | Duration |
 | :------ | :----------- | :---- | :------- |
 | Body hit | × (cross) | White | 0.2s |
-| Headshot | ★ (star) | Orange | 0.3s |
+| Headshot |  (star) | Orange | 0.3s |
 | Armored hit (pen failed) | ○ (circle) | Grey | 0.15s |
 | Kill | Large × | Red | 0.5s |
 | Friendly fire | × | Blue | 0.3s |
@@ -129,11 +129,11 @@ Enemy (E)           Cover Object
 
 | Object | Height Modeled | Blocks (Standing) | Blocks (Crouch) | Blocks (Prone) |
 | :----- | :------------- | :---------------- | :-------------- | :------------- |
-| Full wall (2m+) | Full | ✅ All | ✅ All | ✅ All |
-| Cargo crate (1.2m) | Medium | ✅ Torso/legs | ✅ Full | ✅ Full |
-| Low barricade (0.7m) | Low | ❌ Only feet | ✅ Torso down | ✅ Full |
-| Vehicle body (1.1m) | Medium | ✅ Torso/legs | ✅ Full | ✅ Full |
-| Sandbag (0.5m) | Very low | ❌ None | ❌ Head exposed | ✅ Full |
+| Full wall (2m+) | Full |  All |  All |  All |
+| Cargo crate (1.2m) | Medium |  Torso/legs |  Full |  Full |
+| Low barricade (0.7m) | Low |  Only feet |  Torso down |  Full |
+| Vehicle body (1.1m) | Medium |  Torso/legs |  Full |  Full |
+| Sandbag (0.5m) | Very low |  None |  Head exposed |  Full |
 
 ### Peek / Expose Mechanic
 

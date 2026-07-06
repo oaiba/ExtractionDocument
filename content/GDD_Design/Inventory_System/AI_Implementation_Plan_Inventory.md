@@ -630,10 +630,10 @@ Priority: ONGOING | Est: Continuous
 - **Agent 8 (Server)**: Setup server architecture, basic validation
 
 **Deliverables:**
-- ✅ Grid system with visual feedback
-- ✅ Item placement and rotation working
-- ✅ Basic server-side validation
-- ✅ Database schema implemented
+-  Grid system with visual feedback
+-  Item placement and rotation working
+-  Basic server-side validation
+-  Database schema implemented
 
 **Success Criteria:**
 - Can place items in grid without overlaps
@@ -651,10 +651,10 @@ Priority: ONGOING | Est: Continuous
 - **Agent 5 (Looting)**: Create in-raid UI, container search
 
 **Deliverables:**
-- ✅ Weight-based movement penalties
-- ✅ Armor zone protection working
-- ✅ In-raid looting interface functional
-- ✅ Container search with progressive reveal
+-  Weight-based movement penalties
+-  Armor zone protection working
+-  In-raid looting interface functional
+-  Container search with progressive reveal
 
 **Success Criteria:**
 - Movement slows proportionally with weight
@@ -672,10 +672,10 @@ Priority: ONGOING | Est: Continuous
 - **Agent 2 (Core Logic)**: Implement stacking and nesting
 
 **Deliverables:**
-- ✅ Gunsmith interface with live stats
-- ✅ Stash with container system
-- ✅ Auto-sort functionality
-- ✅ Nesting and stacking working
+-  Gunsmith interface with live stats
+-  Stash with container system
+-  Auto-sort functionality
+-  Nesting and stacking working
 
 **Success Criteria:**
 - Can mod weapons with visual feedback
@@ -693,10 +693,10 @@ Priority: ONGOING | Est: Continuous
 - **Agent 8 (Server)**: Anti-cheat hardening
 
 **Deliverables:**
-- ✅ Polished animations and sound effects
-- ✅ Accessibility features (colorblind, scaling)
-- ✅ Performance optimized (60 FPS with 1000+ items)
-- ✅ Anti-cheat validation robust
+-  Polished animations and sound effects
+-  Accessibility features (colorblind, scaling)
+-  Performance optimized (60 FPS with 1000+ items)
+-  Anti-cheat validation robust
 
 **Success Criteria:**
 - UI feels satisfying and responsive
@@ -713,10 +713,10 @@ Priority: ONGOING | Est: Continuous
 - **All Agents**: Bug fixing based on feedback
 
 **Deliverables:**
-- ✅ 50 playtester feedback compiled
-- ✅ All critical bugs resolved
-- ✅ Launch readiness report
-- ✅ Post-launch support plan
+-  50 playtester feedback compiled
+-  All critical bugs resolved
+-  Launch readiness report
+-  Post-launch support plan
 
 **Success Criteria:**
 - 90% player satisfaction in surveys
@@ -1012,22 +1012,22 @@ POST /api/player/calculate-weight
 ### Launch Criteria (Must-Pass)
 
 **Functional Completeness:**
-- ✅ All core features implemented (grid, weight, looting, gunsmith, stash)
-- ✅ Server validation 100% functional
-- ✅ No critical bugs (game-breaking or exploit)
-- ✅ Database migrations tested and reversible
+-  All core features implemented (grid, weight, looting, gunsmith, stash)
+-  Server validation 100% functional
+-  No critical bugs (game-breaking or exploit)
+-  Database migrations tested and reversible
 
 **Performance Targets:**
-- ✅ 60 FPS with 1000 items in stash
-- ✅ <50ms server validation latency (p95)
-- ✅ <2s inventory open time
-- ✅ <100ms UI response time (p99)
+-  60 FPS with 1000 items in stash
+-  <50ms server validation latency (p95)
+-  <2s inventory open time
+-  <100ms UI response time (p99)
 
 **Quality Benchmarks:**
-- ✅ 90% player satisfaction in surveys
-- ✅ <5% crash rate in playtesting
-- ✅ 90% unit test coverage
-- ✅ Zero security vulnerabilities (high/critical)
+-  90% player satisfaction in surveys
+-  <5% crash rate in playtesting
+-  90% unit test coverage
+-  Zero security vulnerabilities (high/critical)
 
 ### Post-Launch KPIs
 

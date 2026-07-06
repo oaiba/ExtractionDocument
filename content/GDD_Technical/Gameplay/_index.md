@@ -5,7 +5,7 @@ type: docs
 weight: 1
 ---
 
-## 🎮 Gameplay Systems
+##  Gameplay Systems
 
 Core mechanics defining the moment-to-moment experience: movement, combat, interaction, and progression.
 

@@ -3,7 +3,7 @@ title: "Audio Design & Soundscapes"
 type: docs
 ---
 
-## 🎧 Audio Design Philosophy
+##  Audio Design Philosophy
 
 In an Extraction Shooter, **Sound is Information**.
 
@@ -13,7 +13,7 @@ In an Extraction Shooter, **Sound is Information**.
 
 ---
 
-## 🔊 The Soundscape (By Zone)
+##  The Soundscape (By Zone)
 
 ### 1. Industrial Zone ("The Factory")
 *   **Key Mood:** Oppressive, Mechanic, Echoing.
@@ -35,7 +35,7 @@ In an Extraction Shooter, **Sound is Information**.
 
 ---
 
-## ⚔️ Weapon & Combat Audio
+##  Weapon & Combat Audio
 
 ### Weapon Signatures
 Every gun must be instantly identifiable by its "Crack" (Supersonic snap) and "Thump" (Muzzle blast).
@@ -55,7 +55,7 @@ Every gun must be instantly identifiable by its "Crack" (Supersonic snap) and "T
 
 ---
 
-## 👣 Movement & Foley
+##  Movement & Foley
 
 ### Footsteps (The Meta)
 Footsteps are the #1 way players track each other.
@@ -73,7 +73,7 @@ Footsteps are the #1 way players track each other.
 
 ---
 
-## 🎙️ Voice & Dialogue
+##  Voice & Dialogue
 
 ### Operator Barks (Automatic)
 Characters react to game states automatically (can be muted in "Tactical Mode").
@@ -89,7 +89,7 @@ Silent hand signals triggers specific localized whispers:
 
 ---
 
-## 💿 Technical Implementation
+##  Technical Implementation
 
 *   **Wwise / FMOD Integration:** For dynamic mixing.
 *   **Priority System:**

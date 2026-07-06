@@ -5,7 +5,7 @@ type: docs
 
 # MVP Scope - Minimum Viable Product
 
-### 📅 Critical Milestones & Targets
+###  Critical Milestones & Targets
 
 | Milestone                | Target Date | Key Deliverable                              | Dependency        |
 | ------------------------ | ----------- | -------------------------------------------- | ----------------- |
@@ -19,7 +19,7 @@ type: docs
 
 ***
 
-### 📆 MVP ↔ Quarterly Roadmap
+###  MVP ↔ Quarterly Roadmap
 
 Mapping milestones to quarters for stakeholder reporting and alignment with genre benchmarks (e.g. HAWKED, Tarkov). _See_ [_Scope Review & Planning_](https://github.com/oaiba/ExtractionDocument/blob/main/content/GDD_Design/ProjectScope/project-scope-review-and-planning.html) _for full planning._
 
@@ -32,7 +32,7 @@ Mapping milestones to quarters for stakeholder reporting and alignment with genr
 
 ***
 
-### 🔗 Technical Dependencies
+###  Technical Dependencies
 
 * **Server Architecture:** Dedicated servers (Agones/K8s) must be validated by **M2**.
 * **Asset Pipeline:** Mobile optimization workflow (LODs, imposter system) established by **M1**.
@@ -40,7 +40,7 @@ Mapping milestones to quarters for stakeholder reporting and alignment with genr
 
 ***
 
-### 🎯 Alpha Scope (Technical Test)
+###  Alpha Scope (Technical Test)
 
 **Objective:** Validate core gameplay loop, server stability, and "Game Feel".
 
@@ -82,7 +82,7 @@ Mapping milestones to quarters for stakeholder reporting and alignment with genr
 
 ***
 
-### 🚀 Beta Scope (Soft Launch)
+###  Beta Scope (Soft Launch)
 
 **Objective:** Validate economy balance, retention loops, and social systems.
 
@@ -100,7 +100,7 @@ Mapping milestones to quarters for stakeholder reporting and alignment with genr
 
 ***
 
-### 📦 Feature Comparison Matrix
+###  Feature Comparison Matrix
 
 | Feature Category | Prototype |    Alpha    |          Beta          |     Launch    |
 | ---------------- | :-------: | :---------: | :--------------------: | :-----------: |
@@ -109,13 +109,13 @@ Mapping milestones to quarters for stakeholder reporting and alignment with genr
 | **Weapons**      |     2     |      5      |           15+          |      30+      |
 | **AI Behaviors** |   Static  |    Patrol   |      Cover, Flank      | Bosses, Elite |
 | **Loot System**  |   Random  |    Tables   |         Dynamic        |  Event-based  |
-| **Questing**     |     ❌     |      ❌      |          Basic         |    Campaign   |
+| **Questing**     |          |            |          Basic         |    Campaign   |
 | **Progression**  |  Session  |     Wipe    |       Persistent       |    Seasons    |
-| **Monetization** |     ❌     |      ❌      |       Test Store       |   Full Store  |
+| **Monetization** |          |            |       Test Store       |   Full Store  |
 
 ***
 
-### 🛑 Cut Content (Backlog)
+###  Cut Content (Backlog)
 
 * **Vehicles:** Deferred to Year 2 (Requires physics overhaul).
 * **Clan System:** Deferred to Post-Launch.
@@ -124,7 +124,7 @@ Mapping milestones to quarters for stakeholder reporting and alignment with genr
 
 ***
 
-### 📝 Document Ownership & Changelog
+###  Document Ownership & Changelog
 
 | Role            | Owner              | Approver           |
 | --------------- | ------------------ | ------------------ |

@@ -31,7 +31,7 @@ The Player Profile is a **living trophy case** — the public-facing record of a
 
 ```
 ┌─────────────────────────────────────────────────────────────────────┐
-│  [← Back]                  MY PROFILE              [✏ Edit Banner]  │
+│  [← Back]                  MY PROFILE              [ Edit Banner]  │
 │                                                                      │
 │  ┌─────────────────────────────────────────────────────────────┐    │
 │  │           [CUSTOM BANNER — animated or static]              │    │
@@ -57,9 +57,9 @@ The Player Profile is a **living trophy case** — the public-facing record of a
 │  MOST USED WEAPON:   M4A1                   710 kills                │
 │                                                                      │
 │  RECENT BADGES ─────────────────────────────────────────────────── │
-│  [🏆 Season 7 Gold] [✅ 100 Extractions] [🗡 50 Solo Kills] [+12]   │
+│  [ Season 7 Gold] [ 100 Extractions] [ 50 Solo Kills] [+12]   │
 │                                                                      │
-│  EQUIPPED TITLE: "Vault Raider"      EQUIPPED CHARM: ☠ Skull        │
+│  EQUIPPED TITLE: "Vault Raider"      EQUIPPED CHARM:  Skull        │
 └─────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -204,7 +204,7 @@ Last **50 matches** shown in list form, with expandable detail per match.
 
 ```
 ┌──────────────────────────────────────────────────────────────────────┐
-│  [✅ EXTRACTED]  Aethelgard Industrial  •  The Raid  •  Trio        │
+│  [ EXTRACTED]  Aethelgard Industrial  •  The Raid  •  Trio        │
 │  Duration: 12:34 min    Kills: 3    Wealth: $18,200    RP: +42      │
 │  Feb 28, 2026  14:06   [Mamba — Assault]                             │
 │  Squad: Kai_V, Dxt_Raptor                          [▼ Details]       │

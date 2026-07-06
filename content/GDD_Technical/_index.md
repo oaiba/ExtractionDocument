@@ -15,16 +15,16 @@ This document focuses on **technical implementation, enums, codenames, and featu
 
 ---
 
-### 📐 Standards & Conventions
+###  Standards & Conventions
 Coding patterns, naming rules, and project organization
 
 - **[Coding & Asset Standards](./CodingStandards.md)** - C++ naming conventions (Epic standard), UE5 asset naming, content folder structure, module architecture, UPROPERTY/UFUNCTION guidelines, Gameplay Tags, Blueprint standards, source control conventions
 
 ---
 
-## 📚 Documentation Structure
+##  Documentation Structure
 
-### 🏗️ Core Systems
+###  Core Systems
 Foundation architecture and networking
 
 {{< cards cols="3" >}}
@@ -35,7 +35,7 @@ Foundation architecture and networking
 
 ---
 
-### 🎮 Gameplay Systems
+###  Gameplay Systems
 Character, combat, inventory, and UI mechanics
 
 {{< cards cols="3" >}}
@@ -49,7 +49,7 @@ Character, combat, inventory, and UI mechanics
 
 ---
 
-### 🤖 AI & World Systems
+###  AI & World Systems
 AI behavior, map, and narrative
 
 {{< cards cols="3" >}}
@@ -60,7 +60,7 @@ AI behavior, map, and narrative
 
 ---
 
-### 👥 Social & Competitive Systems
+###  Social & Competitive Systems
 Multiplayer, ranked, progression, and community
 
 {{< cards cols="3" >}}
@@ -72,7 +72,7 @@ Multiplayer, ranked, progression, and community
 
 ---
 
-### ♿ Platform & Accessibility
+###  Platform & Accessibility
 Localization, accessibility, persistence, and audio
 
 {{< cards cols="3" >}}
@@ -85,7 +85,7 @@ Localization, accessibility, persistence, and audio
 
 ---
 
-### ⚡ Performance & Optimization
+###  Performance & Optimization
 Mobile optimization and profiling
 
 {{< cards cols="3" >}}
@@ -94,7 +94,7 @@ Mobile optimization and profiling
 
 ---
 
-## 📖 How to Use This Document
+##  How to Use This Document
 
 {{< cards cols="3" >}}
   {{< card title="For Developers" icon="code" subtitle="Reference enum/codenames, check TODOs, follow architecture." >}}
@@ -104,7 +104,7 @@ Mobile optimization and profiling
 
 ---
 
-## 🎯 Technical Philosophy
+##  Technical Philosophy
 
 {{< cards cols="3" >}}
   {{< card title="Clean Architecture" icon="cube" subtitle="Separation of concerns, DI, interface-driven, testable." >}}
@@ -114,7 +114,7 @@ Mobile optimization and profiling
 
 ---
 
-## 🔧 Tech Stack
+##  Tech Stack
 
 ### Client (Unreal Engine 5)
 - **Engine:** Unreal Engine 5.4+
@@ -139,7 +139,7 @@ Mobile optimization and profiling
 
 ---
 
-## 📝 Naming Conventions
+##  Naming Conventions
 
 ### Enums
 ```cpp
@@ -170,7 +170,7 @@ ATT_OPTIC_REDDOT     // Attachment - Optic - RedDot
 
 ---
 
-## 🔗 Quick Navigation
+##  Quick Navigation
 
 **Start Here:**
 - New developer? → [Architecture](./Core/Architecture.md)
@@ -184,7 +184,7 @@ ATT_OPTIC_REDDOT     // Attachment - Optic - RedDot
 
 ---
 
-## 📅 Update Log
+##  Update Log
 
 | Date       | Section   | Changes                            | Updated By |
 | ---------- | --------- | ---------------------------------- | ---------- |

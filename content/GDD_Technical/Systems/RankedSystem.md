@@ -353,18 +353,18 @@ STRUCT LeaderboardEntry:
 
 ## TODO: Implementation Tasks
 
-### HIGH Priority 🔴
+### HIGH Priority 
 - [ ] RankedManager core logic
 - [ ] RP calculation algorithm
 - [ ] Rank progression and demotion logic
 - [ ] Queue restrictions implementation
 
-### MEDIUM Priority 🟡
+### MEDIUM Priority 
 - [ ] Season management (Reset logic)
 - [ ] Leaderboard backend integration
 - [ ] Champion rank decay logic
 
-### LOW Priority 🟢
+### LOW Priority 
 - [ ] Match history storage
 - [ ] Career statistics tracking
 - [ ] Pro league integration features

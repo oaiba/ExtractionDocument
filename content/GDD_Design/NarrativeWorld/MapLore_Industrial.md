@@ -166,17 +166,17 @@ FOREST PERIMETER (Edges)
                         SOUTH
 
 ZONE LEGEND:
-🔴 = Reactor Tower (S-Tier Hot Zone)
-🟠 = Tech Labs / Office Complex (A-Tier Hot Zones)
-🟡 = Warehouse District / Workshops (B-Tier Mid Zones)
-🟢 = Forest Perimeter / Parking (D-Tier Edge Zones)
+ = Reactor Tower (S-Tier Hot Zone)
+ = Tech Labs / Office Complex (A-Tier Hot Zones)
+ = Warehouse District / Workshops (B-Tier Mid Zones)
+ = Forest Perimeter / Parking (D-Tier Edge Zones)
 ```
 
 ***
 
 ### POI Profiles
 
-#### 🔴 Reactor Tower — "The Meltdown Zone"
+####  Reactor Tower — "The Meltdown Zone"
 
 **Zone Type:** S-Tier Hot Zone **Tactical Overview:**
 
@@ -259,7 +259,7 @@ Codex Entry: SEC7-002 "Day 47"
 
 ***
 
-#### 🔵 Tech Labs (Alpha / Beta / Gamma) — "Project Prometheus"
+####  Tech Labs (Alpha / Beta / Gamma) — "Project Prometheus"
 
 **Zone Type:** A-Tier Hot Zone **Controlling Faction:** Tech Syndicate (Primary) **Tactical Overview:**
 
@@ -336,7 +336,7 @@ Codex: SEC7-LAB-002 "The Last Guard"
 
 ***
 
-#### 🟠 Warehouse District — "The Smugglers' Haven"
+####  Warehouse District — "The Smugglers' Haven"
 
 **Zone Type:** B-Tier Mid Zone\
 **Controlling Faction:** Salvage Corps (Primary) **Tactical Overview:**
@@ -381,7 +381,7 @@ Codex: SEC7-WAR-001 "The Network's Signal"
 
 ***
 
-#### 🔵 Office Complex — "Corporate Collapse"
+####  Office Complex — "Corporate Collapse"
 
 **Zone Type:** A-Tier Mid Zone\
 **Controlling Faction:** Tech Syndicate (Secondary) **Tactical Overview:**
@@ -432,7 +432,7 @@ Codex: SEC7-OFF-001 "The Abandoned Executive"
 
 ***
 
-#### 🟠 Workshops — "Viktor's Domain"
+####  Workshops — "Viktor's Domain"
 
 **Zone Type:** B-Tier Mid Zone\
 **Controlling Faction:** Salvage Corps (Primary and Headquarters) **Tactical Overview:**
@@ -455,7 +455,7 @@ Viktor Koval was plant manager of the Workshops before The Collapse. When everyt
 
 ***
 
-#### 🟢 Forest Perimeter — "The Deceptive Edge"
+####  Forest Perimeter — "The Deceptive Edge"
 
 **Zone Type:** D-Tier Edge Zone\
 **Controlling Faction:** Unclaimed Neutral **Tactical Overview:**
@@ -487,19 +487,19 @@ SECTOR 7 — LOOT DENSITY MAP
      NORTH
        ↑
        │  ⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜
-       │  ⬜🟢🟢🟢🟡🟡🟡🟡🟢🟢⬜⬜
-       │  ⬜🟢🟡🟡[OFFICE]🟡🟡🟢⬜⬜
-       │  ⬜🟡🟡🟠🟠🟠🟠🟠🟡🟡🟢⬜
-       │  ⬜🟡[WARE]🟠🔴🔴🔴🔴🟠[LABS]🟡⬜
-       │  ⬜🟡🟠🟠🔴🟣🟣🟣🔴🟠🟠🟡⬜
-       │  ⬜🟡🟠🟠🔴[REACTOR]🔴🟠🟠🟡⬜
-       │  ⬜🟡🟠🟠🔴🟣🟣🟣🔴🟠🟠🟡⬜
-       │  ⬜🟡[WORK]🟠🔴🔴🔴🟠[STORE]🟡⬜
-       │  ⬜🟢🟡🟡🟠🟠🟠🟠🟡🟡🟢⬜
-       │  ⬜🟢🟢🟢🟢🟢🟢🟢🟢🟢⬜⬜
+       │  ⬜⬜⬜
+       │  ⬜[OFFICE]⬜⬜
+       │  ⬜⬜
+       │  ⬜[WARE][LABS]⬜
+       │  ⬜⬜
+       │  ⬜[REACTOR]⬜
+       │  ⬜⬜
+       │  ⬜[WORK][STORE]⬜
+       │  ⬜⬜
+       │  ⬜⬜⬜
        └──────────────────────────────→ EAST
 
-🟣=S-Tier  🔴=A-Tier  🟠=B-Tier  🟡=C-Tier  🟢=D-Tier
+=S-Tier  =A-Tier  =B-Tier  =C-Tier  =D-Tier
 ```
 
 Full container tables per zone → [Loot Distribution](https://github.com/oaiba/ExtractionDocument/blob/main/content/GDD_Design/NarrativeWorld/LootDistribution.md)

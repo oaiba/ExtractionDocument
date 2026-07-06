@@ -22,13 +22,13 @@ params:
 menu:
   main:
     - name: Agents
-      url: /GDD_Agents/
+      url: /GDD_Agents.html
       weight: 1
     - name: Design
-      url: /GDD_Design/
+      url: /GDD_Design.html
       weight: 2
     - name: Technical
-      url: /GDD_Technical/
+      url: /GDD_Technical.html
       weight: 3
     - name: Search
       weight: 10

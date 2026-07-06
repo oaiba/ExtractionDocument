@@ -5,7 +5,7 @@ type: docs
 weight: 1
 ---
 
-## ⚡ Performance & Optimization
+##  Performance & Optimization
 
 Guidelines, budgets, and strategies for maintaining high framerates and memory efficiency on mobile devices.
 

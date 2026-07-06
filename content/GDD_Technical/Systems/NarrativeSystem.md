@@ -45,7 +45,7 @@ Current state of a quest in the player's log.
 | `QS_Locked`          | Locked       | Grayed out   | None      | Prerequisites not met            |
 | `QS_Available`       | Available    | "!" icon     | Accept    | Can be accepted                  |
 | `QS_Active`          | Active       | Progress bar | Track     | Currently in progress            |
-| `QS_ReadyToComplete` | Ready        | "✓" icon     | Complete  | Objectives done, needs turn-in   |
+| `QS_ReadyToComplete` | Ready        | "" icon     | Complete  | Objectives done, needs turn-in   |
 | `QS_Completed`       | Completed    | Checkmark    | None      | Finished and rewarded            |
 | `QS_Failed`          | Failed       | "X" icon     | Retry     | Time expired or failed condition |
 | `QS_Abandoned`       | Abandoned    | None         | Re-accept | Player cancelled                 |
@@ -511,17 +511,17 @@ STRUCT CollectibleData:
 
 ## TODO: Implementation Tasks
 
-### HIGH Priority 🔴
+### HIGH Priority 
 - [ ] QuestManager logic (Accept, Progress, Complete)
 - [ ] FactionManager reputation logic
 - [ ] DialogueManager basic playback
 
-### MEDIUM Priority 🟡
+### MEDIUM Priority 
 - [ ] Voice line prioritization/queuing
 - [ ] CollectibleManager discovery logic
 - [ ] UI integration (Quest Log, HUD)
 
-### LOW Priority 🟢
+### LOW Priority 
 - [ ] Complex quest chains (Branching)
 - [ ] Dynamic environmental dialogue
 - [ ] Codex UI implementation

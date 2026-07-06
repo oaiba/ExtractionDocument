@@ -3,7 +3,7 @@ title: "Control System - Design & Experience"
 type: docs
 ---
 
-## 🎯 Design Philosophy
+##  Design Philosophy
 
 The control system is the bridge between the player's intent and the game's action. Our core philosophy for controls is **"Fluidity First."**
 
@@ -27,7 +27,7 @@ To ensure our controls deliver on the **High-Stakes Tension** pillar:
 
 ---
 
-## 📱 Cross-Platform Strategy
+##  Cross-Platform Strategy
 
 ### Mobile First (The "Feel")
 Mobile is our primary target for accessibility. The challenge is handling complex inputs without a controller.
@@ -42,7 +42,7 @@ For platforms with physical inputs, we adhere to industry standards to minimize 
 
 ---
 
-## 🎮 Controller Support (Cross-Platform)
+##  Controller Support (Cross-Platform)
 
 Both **PC** and **Mobile** platforms support external game controllers, providing a unified console-like experience across all devices.
 
@@ -58,17 +58,17 @@ Both **PC** and **Mobile** platforms support external game controllers, providin
 
 | Feature                     | PC                                         | Mobile                        |
 | :-------------------------- | :----------------------------------------- | :---------------------------- |
-| **Full Button Mapping**     | ✅ All buttons recognized                   | ✅ All buttons recognized      |
-| **Analog Stick Support**    | ✅ Full analog input                        | ✅ Full analog input           |
-| **Trigger Analog**          | ✅ Pressure-sensitive triggers              | ✅ Pressure-sensitive triggers |
-| **Vibration/Haptics**       | ✅ Standard rumble + HD Haptics (DualSense) | ⚠️ Device-dependent            |
-| **Gyro Aiming**             | ✅ DualSense/DualShock/Switch Pro           | ⚠️ Limited support             |
-| **Adaptive Triggers (PS5)** | ✅ Full support                             | ❌ Not supported               |
-| **Touchpad (DualSense)**    | ✅ As mouse/gesture input                   | ❌ Not supported               |
+| **Full Button Mapping**     |  All buttons recognized                   |  All buttons recognized      |
+| **Analog Stick Support**    |  Full analog input                        |  Full analog input           |
+| **Trigger Analog**          |  Pressure-sensitive triggers              |  Pressure-sensitive triggers |
+| **Vibration/Haptics**       |  Standard rumble + HD Haptics (DualSense) |  Device-dependent            |
+| **Gyro Aiming**             |  DualSense/DualShock/Switch Pro           |  Limited support             |
+| **Adaptive Triggers (PS5)** |  Full support                             |  Not supported               |
+| **Touchpad (DualSense)**    |  As mouse/gesture input                   |  Not supported               |
 
 ---
 
-## 🔄 Dynamic Input Switching
+##  Dynamic Input Switching
 
 The game **automatically detects** and **seamlessly switches** between input methods without requiring a restart or menu navigation.
 
@@ -115,7 +115,7 @@ The game **automatically detects** and **seamlessly switches** between input met
 
 ---
 
-## 🕹️ Controller Layout Options
+##  Controller Layout Options
 
 When a controller is connected on any platform, players can choose from standard layouts:
 
@@ -141,7 +141,7 @@ When a controller is connected on any platform, players can choose from standard
 | **Invert Y-Axis**          | Inverted look controls.                     | Off     |
 | **Swap Sticks**            | Swap left and right stick functions.        | Off     |
 
-## 🕹️ Core Mechanics UX
+##  Core Mechanics UX
 
 ### Movement & Traversal
 - **Weight vs. Agility**: Operators should have mass. Sprinting shouldn't be instant max speed; there's a short ramp-up. Stopping has a slight deceleration.
@@ -162,7 +162,7 @@ When a controller is connected on any platform, players can choose from standard
 
 ---
 
-## ♿ Accessibility & Customization
+##  Accessibility & Customization
 
 ### Remapping
 - **Full Remapping**: Every action can be rebound on PC/Console.
@@ -179,7 +179,7 @@ When a controller is connected on any platform, players can choose from standard
 
 ---
 
-## 📳 Haptics & Feedback
+##  Haptics & Feedback
 
 Haptics are crucial for immersion and gameplay information.
 
@@ -190,7 +190,7 @@ Haptics are crucial for immersion and gameplay information.
 
 ---
 
-## 🎮 Detailed Input Schemes
+##  Detailed Input Schemes
 
 ### Movement Input
 
@@ -230,7 +230,7 @@ Haptics are crucial for immersion and gameplay information.
 
 ---
 
-## ⚙️ Sensitivity & Tuning
+##  Sensitivity & Tuning
 
 ### Look/Aim Sensitivity
 Players must have fine-grained control over how their input translates to camera movement.
@@ -266,7 +266,7 @@ Inspired by competitive tactical shooters and top-down standards, these settings
 
 ---
 
-## 🖼️ Control Layout Presets
+##  Control Layout Presets
 
 ### Mobile Layout Options
 
@@ -373,7 +373,7 @@ PC players have diverse preferences based on their gaming background. We provide
 
 ---
 
-## 🧭 Camera & Perspective
+##  Camera & Perspective
 
 ### Top-Down Camera Behavior
 - **Fixed Angle**: Camera maintains a constant isometric-style angle above the player.
@@ -392,7 +392,7 @@ To address the lack of depth in a standard top-down view, we implement a **Paral
 
 ---
 
-## 🔄 Context-Sensitive Controls
+##  Context-Sensitive Controls
 
 ### Dynamic Button Visibility (Mobile)
 To reduce screen clutter, certain buttons only appear when relevant:
@@ -415,7 +415,7 @@ When multiple actions are possible, the game selects the most important one:
 
 ---
 
-## 🎓 Tutorial & Onboarding
+##  Tutorial & Onboarding
 
 ### First-Time User Experience (FTUE)
 
@@ -445,7 +445,7 @@ When multiple actions are possible, the game selects the most important one:
 
 ---
 
-## 🏆 Competitive Control Considerations
+##  Competitive Control Considerations
 
 ### Input Fairness
 - **Cross-Platform Matchmaking**: If enabled, aim assist for controller/touch players is balanced against raw mouse input.
@@ -464,7 +464,7 @@ When multiple actions are possible, the game selects the most important one:
 
 ---
 
-## 📊 Control Analytics & Telemetry
+##  Control Analytics & Telemetry
 
 Understanding how players use controls helps us iterate.
 
@@ -482,7 +482,7 @@ Understanding how players use controls helps us iterate.
 
 ---
 
-## 🔮 Future Control Enhancements
+##  Future Control Enhancements
 
 - **Gyro Aiming Support**: Fine-tune aiming on Mobile and Switch by tilting the device.
 - **Adaptive Trigger Support (PS5)**: Resistance on triggers when firing different weapon types.

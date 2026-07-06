@@ -153,11 +153,11 @@ The character loadout is the player's pre-raid equipment screen, featuring:
 
 | Material | Protection | Durability | Weight | Repair Cost | Notes |
 |:---------|:-----------|:-----------|:-------|:------------|:------|
-| **Ceramic** | ★★★★★ | ★★☆☆☆ | Medium | $ | Shatters quickly but cheap to replace |
-| **Steel** | ★★★★☆ | ★★★★★ | High | $$ | Heavy but lasts long, repairs well |
-| **Aramid/Kevlar** | ★★☆☆☆ | ★★★★☆ | Low | $ | Soft armor, flexible, low protection |
-| **UHMWPE** | ★★★★☆ | ★★★★☆ | Low | $$$ | Modern polymer, lightweight but expensive |
-| **Titanium** | ★★★★★ | ★★★★☆ | Medium | $$$$ | Premium, balanced stats, very costly |
+| **Ceramic** |  |  | Medium | $ | Shatters quickly but cheap to replace |
+| **Steel** |  |  | High | $$ | Heavy but lasts long, repairs well |
+| **Aramid/Kevlar** |  |  | Low | $ | Soft armor, flexible, low protection |
+| **UHMWPE** |  |  | Low | $$$ | Modern polymer, lightweight but expensive |
+| **Titanium** |  |  | Medium | $$$$ | Premium, balanced stats, very costly |
 
 **Blunt Damage System:**
 - Even penetration failures cause damage based on bullet energy
@@ -339,12 +339,12 @@ The character loadout is the player's pre-raid equipment screen, featuring:
 
 **Practical Examples:**
 
-✅ **Legal Nesting:**
+ **Legal Nesting:**
 - Berkut Backpack (5x5) inside Pilgrim Backpack (6x7)
 - MBSS Backpack (4x5) inside Berkut (5x5)
 - Scav Backpack (4x4) inside any larger bag
 
-❌ **Illegal Nesting (Blocked):**
+ **Illegal Nesting (Blocked):**
 - Beta Backpack inside another Beta Backpack
 - Same-ID container stacking (infinite space exploit)
 - Container larger than available grid cells

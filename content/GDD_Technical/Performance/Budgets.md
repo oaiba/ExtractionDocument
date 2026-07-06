@@ -3,7 +3,7 @@ title: "Performance Budgets & Technical Constraints"
 type: docs
 ---
 
-## 📈 Platform Targets
+##  Platform Targets
 
 Each platform has strict resource limits. Failure to meet these means the feature will be **cut or simplified**.
 
@@ -18,7 +18,7 @@ Each platform has strict resource limits. Failure to meet these means the featur
 
 ---
 
-## 🎨 Asset Guidelines
+##  Asset Guidelines
 
 ### Character Models (LODs Required)
 *   **LOD 0 (Cinematic):** 60k - 80k Tris
@@ -38,7 +38,7 @@ Each platform has strict resource limits. Failure to meet these means the featur
 
 ---
 
-## ⚡ Shader Complexity
+##  Shader Complexity
 
 ### PC / Console
 *   **Global Illumination:** Lumen (Software Ray Tracing) enabled.
@@ -54,7 +54,7 @@ Each platform has strict resource limits. Failure to meet these means the featur
 
 ---
 
-## 💾 Memory Management
+##  Memory Management
 
 ### Maximum Memory Footprint (RAM)
 *   **PC:** 16GB Recommended (Game uses ~4-6GB)
@@ -68,7 +68,7 @@ Each platform has strict resource limits. Failure to meet these means the featur
 
 ---
 
-## 🚨 Performance Audit Checklist
+##  Performance Audit Checklist
 
 Before checking in any asset or code, verify:
 

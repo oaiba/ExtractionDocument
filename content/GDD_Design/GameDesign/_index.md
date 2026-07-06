@@ -5,7 +5,7 @@ type: docs
 weight: 5
 ---
 
-## 🎮 The Mechanics of Survival
+##  The Mechanics of Survival
 
 This section defines the rules, systems, and loops that transform individual assets into a cohesive game. From the moment a player launches the game to the end of a climatic season, these systems govern their experience.
 

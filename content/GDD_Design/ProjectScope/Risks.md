@@ -5,7 +5,7 @@ type: docs
 
 # Project Risks & Mitigation
 
-### ⚠️ Risk Management Philosophy
+###  Risk Management Philosophy
 
 **Core Principle:** "Identify risks early, plan mitigation, monitor continuously"
 
@@ -18,7 +18,7 @@ This document identifies potential risks to the project across:
 
 ***
 
-### 🎮 Design Risks
+###  Design Risks
 
 #### Risk D1: Core Loop Not Fun Enough
 
@@ -138,7 +138,7 @@ This document identifies potential risks to the project across:
 
 ***
 
-### 💻 Technical Risks
+###  Technical Risks
 
 #### Risk T1: Performance on Low-End Devices
 
@@ -236,7 +236,7 @@ This document identifies potential risks to the project across:
 
 ***
 
-### 💰 Business Risks
+###  Business Risks
 
 #### Risk B1: Market Competition
 
@@ -360,7 +360,7 @@ This document identifies potential risks to the project across:
 
 ***
 
-### 👥 Operational Risks
+###  Operational Risks
 
 #### Risk O1: Key Personnel Loss
 
@@ -434,7 +434,7 @@ This document identifies potential risks to the project across:
 
 ***
 
-### 📊 Risk Tracking Matrix
+###  Risk Tracking Matrix
 
 | ID | Risk                   | Probability | Impact      | Priority | Owner             | Status         |
 | -- | ---------------------- | ----------- | ----------- | -------- | ----------------- | -------------- |
@@ -457,7 +457,7 @@ This document identifies potential risks to the project across:
 
 ***
 
-### 📅 Risk Review Schedule
+###  Risk Review Schedule
 
 | Frequency | Activity                                                                                                                                                                                                                                                                          |
 | --------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |

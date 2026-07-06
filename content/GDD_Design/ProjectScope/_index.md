@@ -5,7 +5,7 @@ type: docs
 weight: 7
 ---
 
-# 🏗️ Building Boundaries
+#  Building Boundaries
 
 Defining what the game **IS** is as important as defining what it is **NOT**. This section outlines the boundaries of our development to prevent feature creep and ensure a focused MVP.
 

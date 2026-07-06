@@ -3,7 +3,7 @@ title: "Live Operations & Events"
 type: docs
 ---
 
-## 🎯 Live Ops Philosophy
+##  Live Ops Philosophy
 
 **Core Principle:** "Always a reason to play"
 
@@ -16,7 +16,7 @@ Live Operations should:
 
 ---
 
-## 📅 Content Calendar Structure
+##  Content Calendar Structure
 
 ### Annual Overview
 
@@ -57,7 +57,7 @@ Each Season Contains:
 
 ---
 
-## 🎪 Event Types
+##  Event Types
 
 ### 1. Double XP/Credits Weekends
 
@@ -223,7 +223,7 @@ Final milestone: Permanent boss addition
 
 ---
 
-## 💰 Monetization Events
+##  Monetization Events
 
 ### Flash Sales
 
@@ -269,7 +269,7 @@ Features:
 
 ---
 
-## 📢 Communication Strategy
+##  Communication Strategy
 
 ### Announcement Channels
 
@@ -294,7 +294,7 @@ Launch day: In-game trailer, content live
 
 ---
 
-## 📊 Live Ops Metrics
+##  Live Ops Metrics
 
 ### Key Performance Indicators (KPIs)
 
@@ -325,7 +325,7 @@ Launch day: In-game trailer, content live
 
 ---
 
-## 🔄 Content Pipeline
+##  Content Pipeline
 
 ### Content Development Cycle
 
@@ -354,7 +354,7 @@ T+4 weeks: Post-mortem analysis
 
 ---
 
-## 🛡️ Player Protection
+##  Player Protection
 
 ### Anti-FOMO Measures
 
@@ -377,7 +377,7 @@ T+4 weeks: Post-mortem analysis
 
 ---
 
-## 📆 Season 1 Event Calendar (Example)
+##  Season 1 Event Calendar (Example)
 
 ### Month 1 (Launch)
 | Week | Event              | Type                     |
@@ -401,7 +401,7 @@ T+4 weeks: Post-mortem analysis
 
 ---
 
-## 🛠️ Incident Response
+##  Incident Response
 
 ### Live Issues Protocol
 
@@ -439,7 +439,7 @@ Thank you for your patience.
 
 ---
 
-## 👥 Community Management
+##  Community Management
 
 ### Feedback Channels
 

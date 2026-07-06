@@ -5,7 +5,7 @@ type: docs
 weight: 8
 ---
 
-## 🤝 Beyond the Gun
+##  Beyond the Gun
 
 Extraction shooters thrive on player interaction. It's not just about PvP — it's about **forming temporary alliances, betraying trust, negotiating under fire, and building lasting squads**. The social layer transforms isolated raids into shared stories.
 
@@ -15,11 +15,11 @@ Extraction shooters thrive on player interaction. It's not just about PvP — it
 
 ### Key Systems
 
-- **🎙️ Communication** — Proximity VOIP with spatial audio, tactical ping system, text chat
-- **⚖️ Karma & Trust** — Behavior-driven reputation that affects gameplay, matchmaking, and AI
-- **🤝 Dynamic Encounters** — Co-op extractions, temporary alliances, and meaningful betrayal consequences
-- **😀 Non-Verbal Communication** — Tactical gestures and social emotes for silent coordination
-- **🔎 LFG** — Built-in Looking-for-Group board so players never need external apps
+- ** Communication** — Proximity VOIP with spatial audio, tactical ping system, text chat
+- ** Karma & Trust** — Behavior-driven reputation that affects gameplay, matchmaking, and AI
+- ** Dynamic Encounters** — Co-op extractions, temporary alliances, and meaningful betrayal consequences
+- ** Non-Verbal Communication** — Tactical gestures and social emotes for silent coordination
+- ** LFG** — Built-in Looking-for-Group board so players never need external apps
 
 ### Squad Mechanics
 - **VoIP:** Proximity voice chat (enemies can hear you — tactical risk/reward)

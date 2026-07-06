@@ -5,7 +5,7 @@ type: docs
 weight: 2
 ---
 
-## 🔊 Sonic Vision
+##  Sonic Vision
 
 In an extraction shooter, audio is **survival**. Sound design must communicate information first, and immersion second. Every footstep, reload, and distant gunshot tells a story about the threat level in the immediate area.
 
@@ -20,7 +20,7 @@ Our audio pillars focus on **clarity**, **positional accuracy**, and **tactical 
 
 ---
 
-## 🎧 Key Audio Features
+##  Key Audio Features
 
 ### 1. Occulsion & Propagation
 Sound must behave realistically.

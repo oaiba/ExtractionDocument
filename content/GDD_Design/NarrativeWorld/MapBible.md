@@ -339,10 +339,10 @@ Loot must make logical sense in its physical context. Players who **read the env
 
 | Light Color  | Meaning                                            | Player Reaction                                                          |
 | ------------ | -------------------------------------------------- | ------------------------------------------------------------------------ |
-| 🔴 Red       | Danger, emergency, "Do Not Enter"                  | Curiosity — players investigate; risk implied                            |
-| 🟢 Green     | Safety, medical, "Exit"                            | Relief — players use green-lit paths to feel safer                       |
-| ⚡ Flickering | Instability, recent damage, something still active | Tension — flickering vent light implies something moved through recently |
-| 💙 Cold Blue | Technology, data, Nexus Corp presence              | Unease — clinical and inhuman; Tech Syndicate aesthetic                  |
+|  Red       | Danger, emergency, "Do Not Enter"                  | Curiosity — players investigate; risk implied                            |
+|  Green     | Safety, medical, "Exit"                            | Relief — players use green-lit paths to feel safer                       |
+|  Flickering | Instability, recent damage, something still active | Tension — flickering vent light implies something moved through recently |
+|  Cold Blue | Technology, data, Nexus Corp presence              | Unease — clinical and inhuman; Tech Syndicate aesthetic                  |
 
 #### Bloodstain Storytelling Rules
 

@@ -3,7 +3,7 @@ title: "Coding Standards & Guidelines"
 type: docs
 ---
 
-## 🏗️ Naming Conventions (Unreal Engine Standard)
+##  Naming Conventions (Unreal Engine Standard)
 
 We strictly follow the [Unreal Engine Coding Standard](https://docs.unrealengine.com/5.0/en-US/epic-cplusplus-coding-standard-for-unreal-engine/). Consistency is mandatory.
 
@@ -34,7 +34,7 @@ We strictly follow the [Unreal Engine Coding Standard](https://docs.unrealengine
 
 ---
 
-## 🛡️ Code Architecture
+##  Code Architecture
 
 ### "Composition over Inheritance"
 *   Avoid deep inheritance hierarchies. Use **Components** to add functionality.
@@ -51,7 +51,7 @@ We strictly follow the [Unreal Engine Coding Standard](https://docs.unrealengine
 
 ---
 
-## 📝 Best Practices
+##  Best Practices
 
 1.  **minimize `Tick()` Usage:**
     *   Do not put logic in `Tick()` unless absolutely necessary.
@@ -64,7 +64,7 @@ We strictly follow the [Unreal Engine Coding Standard](https://docs.unrealengine
 
 ---
 
-## 🚫 Common Pitfalls (Anti-Patterns)
+##  Common Pitfalls (Anti-Patterns)
 
 *   **Hardcoding Paths:** Never use `ConstructorHelpers::FClassFinder` inside usage functions. Load assets via `UPROPERTY(EditDefaultsOnly)` in Blueprints.
 *   **god Classes:** If a class has more that 2000 lines, it's doing too much. Break it down.

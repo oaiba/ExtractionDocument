@@ -37,10 +37,10 @@ Each layer should have its own distinct UI zone. Players should never feel lost 
 
 **Anti-patterns from Tarkov we explicitly avoid:**
 
-* ❌ Drag gear from stash in one window, then navigate to a separate insurance tab
-* ❌ Squad lobby on a separate screen from loadout
-* ❌ Map selection only accessible at queue confirmation
-* ❌ No visual representation of current loadout value at risk
+*  Drag gear from stash in one window, then navigate to a separate insurance tab
+*  Squad lobby on a separate screen from loadout
+*  Map selection only accessible at queue confirmation
+*  No visual representation of current loadout value at risk
 
 ***
 
@@ -51,7 +51,7 @@ The loadout preparation screen is a **single unified screen** — no navigation 
 ```
 ┌────────────────────────────────────────────────────────────────────────────────┐
 │                      OPERATION PREP — AETHELGARD INDUSTRIAL                   │
-│   [ ← Back to Home ]                           [ ⚙️ Settings ] [ 💬 Chat ]    │
+│   [ ← Back to Home ]                           [  Settings ] [  Chat ]    │
 ├───────────────────┬───────────────────────────┬───────────────────────────────┤
 │   LEFT COLUMN     │      CENTER COLUMN         │       RIGHT COLUMN            │
 │   (Operator &     │   (Stash Quick Access)     │   (Mission & Squad)           │
@@ -60,38 +60,38 @@ The loadout preparation screen is a **single unified screen** — no navigation 
 │  [3D OPERATOR]    │  │  FILTER: [All▼][Wpn▼]  ││  │   MAP SELECTION           ││
 │  wearing full     │  │  [Sort: Value/Slot▼]   ││  │   ┌───────────────────┐   ││
 │  equipped loadout │  ├────────────────────────┤│  │   │ Aethelgard Ind.   │   ││
-│                   │  │ [🟡 M4A1      3.5kg] 📦││  │   │ ☁ Overcast  Risk:★★│   ││
-│  ┌─────────────┐  │  │ [🟢 AKM       3.8kg] 🛡 ││  │   │ Loot Bias: Weapons │   ││
-│  │ PRIMARY    ▼│  │  │ [🔵 HK416     3.2kg] 🛡 ││  │   └───────────────────┘   ││
+│                   │  │ [ M4A1      3.5kg] ││  │   │  Overcast  Risk:│   ││
+│  ┌─────────────┐  │  │ [ AKM       3.8kg]  ││  │   │ Loot Bias: Weapons │   ││
+│  │ PRIMARY    ▼│  │  │ [ HK416     3.2kg]  ││  │   └───────────────────┘   ││
 │  │ [M4A1 ___] │  │  │ ───────────────────────││  │   [◀] [1/2] [▶]           ││
-│  └─────────────┘  │  │ [Plate Carrier 4kg] 📦 ││  │                           ││
-│  ┌─────────────┐  │  │ [IFAK ×2      0.3kg]📦 ││  │   MODE:                   ││
+│  └─────────────┘  │  │ [Plate Carrier 4kg]  ││  │                           ││
+│  ┌─────────────┐  │  │ [IFAK ×2      0.3kg] ││  │   MODE:                   ││
 │  │ SECONDARY  ▼│  │  │ [Splint ×1    0.1kg]   ││  │   ● The Raid              ││
 │  │ [Glock 17] │  │  │ ───────────────────────││  │   ○ Blitz                 ││
 │  └─────────────┘  │  │ [Water Bottle  0.4kg]  ││  │   ○ Scav Run              ││
 │  ┌─────────────┐  │  │ [Energy Bar   0.1kg]   ││  │   ○ Ranked Ops            ││
 │  │ ARMOR      ▼│  │  │ ───────────────────────││  │   ○ Co-op (Blackout)      ││
-│  │ [Plate Car.]│  │  │  ⚖ WEIGHT: 12.4 / 25kg ││  │                           ││
+│  │ [Plate Car.]│  │  │   WEIGHT: 12.4 / 25kg ││  │                           ││
 │  └─────────────┘  │  │  [████████░░░░░░]  Tier 1 ││  ├───────────────────────────┤│
 │  ┌─────────────┐  │  │  DRAG TO EQUIP:         ││  │   SQUAD                   ││
 │  │ HELMET     ▼│  │  │  Slots: [Primary]       ││  │   ┌─── Slot 1: YOU ──────┐││
-│  │ [M/65 Helm.]│  │  │         [Secondary]     ││  │   │ [Mamba]  12.4kg  🛡✅ │││
+│  │ [M/65 Helm.]│  │  │         [Secondary]     ││  │   │ [Mamba]  12.4kg   │││
 │  └─────────────┘  │  │         [Armor]         ││  │   └──────────────────────┘││
 │                   │  │         [Helmet]        ││  │   ┌─── Slot 2: Kai_V ────┐││
-│  ┌─────────────┐  │  │         [Backpack]      ││  │   │ [Hawk]   8.1kg   🛡✅ │││
+│  ┌─────────────┐  │  │         [Backpack]      ││  │   │ [Hawk]   8.1kg    │││
 │  │ BACKPACK   ▼│  │  │         [Pocket ×5]     ││  │   └──────────────────────┘││
 │  │ [Std. Pack] │  │  └────────────────────────┘│  │   ┌─── Slot 3: [+ Invite]─┐││
 │  └─────────────┘  │                             │  │   └──────────────────────┘││
 │                   │  ┌────────────────────────┐ │  ├───────────────────────────┤│
-│  📊 LOADOUT       │  │  QUICK STASH SEARCH     │ │  │   ACTIVE QUESTS (2)       ││
-│  Value: $24,500   │  │  [🔍 Search items...]   │ │  │   ☑ Retrieve Circuit Bd.  ││
-│  Weight: 12.4 kg  │  └────────────────────────┘ │  │   ☐ Kill 5 Scavengers     ││
+│   LOADOUT       │  │  QUICK STASH SEARCH     │ │  │   ACTIVE QUESTS (2)       ││
+│  Value: $24,500   │  │  [ Search items...]   │ │  │    Retrieve Circuit Bd.  ││
+│  Weight: 12.4 kg  │  └────────────────────────┘ │  │    Kill 5 Scavengers     ││
 │  Tier: 1 (Light)  │                             │  │   → [Show Relevant Gear]   ││
 │                   │                             │  └───────────────────────────┘│
 ├───────────────────┴───────────────────────────┴───────────────────────────────┤
 │ LOADOUT PRESETS: [Budget▼] [Standard▼] [Full Kit▼] [+ Save Current] [Import]  │
 │ INSURANCE: [Insure All Equipped — Viktor $2,250] [Per-Item] [Review Queue]     │
-│                                      ⚠ Missing: Backpack (empty slot)          │
+│                                       Missing: Backpack (empty slot)          │
 │                          ┌─────────────────────────────┐                       │
 │                          │  ◉  DEPLOY TO RAID          │                       │
 │                          └─────────────────────────────┘                       │
@@ -132,11 +132,11 @@ On mobile, the loadout prep screen uses a **4-tab layout** with a persistent bot
 │  BACKPACK   [Standard Pack ─── ▼]   │
 │  POCKET ×5  [IFAK] [Splint] [+] …   │
 │                                     │
-│  ⚖ Weight: [████████░░] 12.4/25 kg  │
+│   Weight: [████████░░] 12.4/25 kg  │
 │  Tier 1 (Light) — Full sprint       │
 │                                     │
 ├─────────────────────────────────────┤
-│  [🔒 Insure All: $2,250]            │
+│  [ Insure All: $2,250]            │
 │  ┌─────────────────────────────────┐│
 │  │  ◉  DEPLOY                      ││  ← Always visible, thumb zone
 │  └─────────────────────────────────┘│
@@ -187,13 +187,13 @@ The left column (PC) or top section (Mobile) renders the **operator in real-time
 
 ```
 ┌────────────────────────────────────┐
-│  📊 LOADOUT AT RISK                │
+│   LOADOUT AT RISK                │
 │  Total Value:     $24,500          │
-│  Insured Value:   $18,000   🛡      │
-│  Uninsured Value: $6,500    ⚠      │
+│  Insured Value:   $18,000         │
+│  Uninsured Value: $6,500          │
 │  Net Loss if KIA: ~$6,500          │
 │                                    │
-│  ⚖ Weight:   12.4 kg              │
+│   Weight:   12.4 kg              │
 │  → TIER 1 (Light) — Full sprint   │
 │  → Capacity remaining: 12.6 kg    │
 └────────────────────────────────────┘
@@ -238,14 +238,14 @@ Players can save named loadout configurations for rapid re-gearing after a death
 
 ```
 ┌────────────────────────────────────────────┐
-│  ⚠ PRESET "FULL KIT" — ITEMS MISSING      │
+│   PRESET "FULL KIT" — ITEMS MISSING      │
 │  ──────────────────────────────────────── │
-│  ✅ HK416 ............... Found in stash   │
-│  ✅ Plate Carrier ........ Found in stash   │
-│  ❌ ACOG Scope ........... NOT in stash    │
+│   HK416 ............... Found in stash   │
+│   Plate Carrier ........ Found in stash   │
+│   ACOG Scope ........... NOT in stash    │
 │     → Nearest replacement: Red Dot Sight   │
 │     → Buy from Viktor: $3,500             │
-│  ❌ Class 4 Plate ....... NOT in stash     │
+│   Class 4 Plate ....... NOT in stash     │
 │     → Nearest replacement: Class 3 Plate   │
 │                                            │
 │  [ Use Replacements ]  [ Buy Missing ]     │
@@ -256,9 +256,9 @@ Players can save named loadout configurations for rapid re-gearing after a death
 **Preset icons and metadata displayed on button:**
 
 * Operator name + class icon
-* Total weight tier (color coded: 🟢 Light / 🟡 Moderate / 🔴 Heavy)
+* Total weight tier (color coded:  Light /  Moderate /  Heavy)
 * Estimated value
-* Insurance status of preset (🛡 if all items insured in queue)
+* Insurance status of preset ( if all items insured in queue)
 * "Last used: 3 raids ago"
 
 ***
@@ -275,7 +275,7 @@ The center panel shows a **filtered, prioritized view** of the player's full sta
 | **Sorting**             | By: Weight / Value / Value-per-slot / Recently Used      |
 | **Smart highlight**     | Items needed by active quests glow with quest-icon badge |
 | **Weight preview**      | Hovering any item shows: "Adding this: +1.2 kg → Tier 2" |
-| **Condition indicator** | 🟢 100% / 🟡 50-99% / 🔴 <50% durability                 |
+| **Condition indicator** |  100% /  50-99% /  <50% durability                 |
 | **Quick search**        | Type item name, filters instantly                        |
 | **Recently used**       | Top 10 items from last 3 raids shown first               |
 
@@ -300,7 +300,7 @@ The center panel shows a **filtered, prioritized view** of the player's full sta
 Always visible at the bottom of center column:
 
 ```
-⚖ Current: 12.4 kg / 25 kg max
+ Current: 12.4 kg / 25 kg max
 [████████░░░░░░░░░░░░] Tier 1 — Light
                     ↑              ↑
                   15kg           25kg
@@ -318,7 +318,7 @@ Insurance is integrated directly into the bottom rail — no separate screen req
 #### Insurance Design Principles
 
 * **Default: OFF** — Insurance is opt-in. First-time players get a tutorial prompt on their second raid.
-* **Visual:** Insured items display a small **🛡 shield icon** in the gear slot. Uninsured items show no icon.
+* **Visual:** Insured items display a small ** shield icon** in the gear slot. Uninsured items show no icon.
 * **Scope:** Individual items OR gear slot batch-insure OR full loadout insure.
 * **Items that CANNOT be insured:** Secure container, quest items (FIR), ammo, consumables (food/medical/water), keys.
 
@@ -339,7 +339,7 @@ Insurance is integrated directly into the bottom rail — no separate screen req
 │                                                                     │
 │  Insurer: [Viktor ▼]  Cost: $3,675 (15% of equipped value $24,500) │
 │                                                                     │
-│  [🛡 Insure ALL Equipped — $3,675]   [Per-Item]   [Review Queue]   │
+│  [ Insure ALL Equipped — $3,675]   [Per-Item]   [Review Queue]   │
 │                                                                     │
 │  Current Queue: M4A1 (insured) · Plate Carrier (insured)           │
 │  → Returning in ~4h (Viktor)                                        │
@@ -350,10 +350,10 @@ Insurance is integrated directly into the bottom rail — no separate screen req
 
 | Slot      | Item          | Value       | Insure? | Cost       |
 | --------- | ------------- | ----------- | ------- | ---------- |
-| Primary   | M4A1 (modded) | $12,000     | 🛡 ON   | $1,800     |
-| Armor     | Plate Carrier | $8,000      | 🛡 ON   | $1,200     |
+| Primary   | M4A1 (modded) | $12,000     |  ON   | $1,800     |
+| Armor     | Plate Carrier | $8,000      |  ON   | $1,200     |
 | Helmet    | M/65 Helmet   | $2,500      | ⬜ OFF   | —          |
-| Backpack  | Standard Pack | $2,000      | 🛡 ON   | $300       |
+| Backpack  | Standard Pack | $2,000      |  ON   | $300       |
 | **Total** | —             | **$24,500** | —       | **$3,300** |
 
 **Insurance Queue Preview:**
@@ -375,8 +375,8 @@ Each available map is rendered as a **card** with:
 | ------------------ | ------------------------------------------------------- |
 | **Map thumbnail**  | Top-down aerial screenshot of map                       |
 | **Map name**       | Bold — e.g., "Aethelgard Industrial Zone"               |
-| **Weather badge**  | ☁ Overcast / ☀ Clear / 🌧 Rain / 🌫 Fog / ❄ Snow        |
-| **Risk indicator** | ★★★☆☆ (based on average player count and loot density)  |
+| **Weather badge**  |  Overcast /  Clear /  Rain /  Fog /  Snow        |
+| **Risk indicator** |  (based on average player count and loot density)  |
 | **Loot bias**      | e.g., "Weapons-heavy" / "Medical-heavy" / "Balanced"    |
 | **Player count**   | "8–16 players"                                          |
 | **Featured badge** | Orange "FEATURED" ribbon if selected for daily rotation |
@@ -388,7 +388,7 @@ Each available map is rendered as a **card** with:
 Below the map card, a row of mode pills:
 
 ```
-[● The Raid ]  [ Blitz ]  [ Scav Run ]  [ Ranked ♦ ]  [ Co-op ]
+[● The Raid ]  [ Blitz ]  [ Scav Run ]  [ Ranked  ]  [ Co-op ]
 ```
 
 **Selected mode** shows:
@@ -419,12 +419,12 @@ Each squad slot displays:
 ```
 ┌────────────────────────────────────────────────────────┐
 │  Slot 1: YOU (Leader)                                   │
-│  [Mamba — Assault]   Wt: 12.4 kg 🟢 Light   🛡 Insured │
+│  [Mamba — Assault]   Wt: 12.4 kg  Light    Insured │
 │  ● READY                                                │
 └────────────────────────────────────────────────────────┘
 ┌────────────────────────────────────────────────────────┐
 │  Slot 2: Kai_Virtanen                                   │
-│  [Hawk — Scout]      Wt: 8.1 kg  🟢 Light   🛡 Insured │
+│  [Hawk — Scout]      Wt: 8.1 kg   Light    Insured │
 │  ● READY                                                │
 └────────────────────────────────────────────────────────┘
 ┌────────────────────────────────────────────────────────┐
@@ -438,10 +438,10 @@ Each squad slot displays:
 | Field                   | Purpose                                                   |
 | ----------------------- | --------------------------------------------------------- |
 | **Operator + class**    | Team synergy visibility at a glance                       |
-| **Weight tier (color)** | 🟢 Light / 🟡 Moderate / 🔴 Heavy — mobility coordination |
-| **Insurance status**    | 🛡 Insured / ⚠ Uninsured — communicates risk tolerance    |
+| **Weight tier (color)** |  Light /  Moderate /  Heavy — mobility coordination |
+| **Insurance status**    |  Insured /  Uninsured — communicates risk tolerance    |
 | **Ready / Not Ready**   | Prevents accidental early deploy                          |
-| **\[✉ Invite]** button  | Sends invite directly to friend in friend list            |
+| **\[ Invite]** button  | Sends invite directly to friend in friend list            |
 
 #### Squad Leader Controls
 
@@ -473,11 +473,11 @@ When a member is not ready:
 | Feature                          | Detail                                                                                                                                              |
 | -------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **"Same as Last Raid" shortcut** | One-click to re-equip the exact loadout from previous raid (if items still in stash). Shown prominently after a death.                              |
-| **Missing gear warning**         | If a gear slot is empty, yellow ⚠ badge on that slot + warning in bottom rail: "⚠ No armor equipped"                                                |
-| **Low balance warning**          | If credit balance < loadout value + insurance cost, orange banner: "⚠ Low funds — you may not afford this loadout"                                  |
+| **Missing gear warning**         | If a gear slot is empty, yellow  badge on that slot + warning in bottom rail: " No armor equipped"                                                |
+| **Low balance warning**          | If credit balance < loadout value + insurance cost, orange banner: " Low funds — you may not afford this loadout"                                  |
 | **Weight tier alert**            | If loadout crosses into Tier 3 (Heavy), popup: "You will be unable to sprint. Consider removing low-value items."                                   |
 | **Quest item reminder**          | If a quest requires a specific item to be brought into raid, yellow quest badge appears on relevant stash slot. "Required for: Viktor Quest 3"      |
-| **Quick repair**                 | If a weapon or armor is at <50% durability, red ⚠ on that slot + "Repair at Safe House Workbench — $500" tooltip                                    |
+| **Quick repair**                 | If a weapon or armor is at <50% durability, red  on that slot + "Repair at Safe House Workbench — $500" tooltip                                    |
 | **Insure All shortcut**          | Single-click bottom rail button insures all currently equipped insurable items with selected insurer                                                |
 | **Deploy confirmation**          | If uninsured value > $10,000, a confirmation dialog appears: "You have $12,000 in uninsured gear. Deploy anyway?" — prevents accidental costly runs |
 | **Auto-calculate insurance**     | Insurance total updates in real-time as items are swapped                                                                                           |
@@ -504,14 +504,14 @@ After pressing DEPLOY, the matchmaking waiting screen plays:
 │   │     Extraction points marked with green helicopter      │  │
 │   └─────────────────────────────────────────────────────────┘  │
 │                                                                 │
-│   WEATHER TODAY: ☁ Overcast — Reduced visibility +10m          │
+│   WEATHER TODAY:  Overcast — Reduced visibility +10m          │
 │   LOOT NOTES: Medical supplies +20% spawn (Industrial event)   │
 │                                                                 │
 │   PLAYERS FOUND: [●●●●●●●●●●●●●●○○] 14/16                    │
 │   QUEUE TIME: 0:32                     Est. start: ~0:15       │
 │                                                                 │
 │   ─────────────────────────────────────────────────────────−   │
-│   💡 TIP: "AI Scavs patrol in groups. Shoot one, alert all."  │
+│    TIP: "AI Scavs patrol in groups. Shoot one, alert all."  │
 │             [ ◀ Previous  |  Next ▶ ]                          │
 │                                                                 │
 │   SQUAD:  ● Kai_Virtanen [Ready]   ● Dxt_Raptor [Ready]       │

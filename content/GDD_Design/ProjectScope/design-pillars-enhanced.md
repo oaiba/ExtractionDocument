@@ -15,7 +15,7 @@ last_updated: 2026-02-11T00:00:00.000Z
 
 ***
 
-### 📊 Document Structure
+###  Document Structure
 
 ```
 1. Genre Foundation (What defines extraction shooters)
@@ -28,7 +28,7 @@ last_updated: 2026-02-11T00:00:00.000Z
 
 ***
 
-### 🏛️ Genre Pillars (Extraction Shooter DNA)
+###  Genre Pillars (Extraction Shooter DNA)
 
 These six foundational pillars define the extraction shooter genre based on industry analysis of Tarkov, Hunt: Showdown, Arena Breakout, ARC Raiders, and Dark and Darker. **Every extraction shooter must have these** - they are non-negotiable genre requirements.
 
@@ -45,18 +45,18 @@ These six foundational pillars define the extraction shooter genre based on indu
 
 **What works across all successful extraction shooters:**
 
-* ✅ Asymmetric risk (you can lose more than you gain)
-* ✅ Knowledge-based advantage (map knowledge >> gear)
-* ✅ Sound as primary information (not visuals)
-* ✅ Looting as vulnerable state (tradeoff)
-* ✅ Extract camping as valid tactic (controversial but accepted)
+*  Asymmetric risk (you can lose more than you gain)
+*  Knowledge-based advantage (map knowledge >> gear)
+*  Sound as primary information (not visuals)
+*  Looting as vulnerable state (tradeoff)
+*  Extract camping as valid tactic (controversial but accepted)
 
 **What divides the genre:**
 
-* ⚠️ PvP intensity (Hunt: high, ARC Raiders: medium, Helldivers: low)
-* ⚠️ Realism level (Tarkov: hardcore, Arena Breakout: arcade)
-* ⚠️ Solo viability (Vigor: solo-friendly, Dark and Darker: squad-focused)
-* ⚠️ Session length (DMZ: 15min, Tarkov: 45min)
+*  PvP intensity (Hunt: high, ARC Raiders: medium, Helldivers: low)
+*  Realism level (Tarkov: hardcore, Arena Breakout: arcade)
+*  Solo viability (Vigor: solo-friendly, Dark and Darker: squad-focused)
+*  Session length (DMZ: 15min, Tarkov: 45min)
 
 **Our positioning:**
 
@@ -68,13 +68,13 @@ These six foundational pillars define the extraction shooter genre based on indu
 
 ***
 
-### 🗿 The Five Core Pillars (Our Identity)
+###  The Five Core Pillars (Our Identity)
 
 Every design decision, mechanic, and line of code must serve **at least one** of these five core pillars. If a feature doesn't support any pillar, it must be cut or reworked. These pillars are **immutable** - they define what makes our game unique.
 
 ***
 
-#### 1️⃣ High-Stakes Tension (Risk of Loss & Reward)
+#### 1 High-Stakes Tension (Risk of Loss & Reward)
 
 **Mantra:** _"Fear of Loss drives the Thrill of Gain."_
 
@@ -93,13 +93,13 @@ The game is defined by what you stand to lose. Progression is not linear; it is 
 
 **Design Guidelines:**
 
-* ✅ Every action should have a consequence
-* ✅ Safety is an illusion (even in "safe" zones)
-* ✅ Loot value must be visible to create temptation
-* ✅ Time investment increases emotional stakes
-* ❌ No bullet sponges (breaks immersion)
-* ❌ No "secure loot all" button (removes vulnerability)
-* ❌ No arcade movement (breaks tactical feel)
+*  Every action should have a consequence
+*  Safety is an illusion (even in "safe" zones)
+*  Loot value must be visible to create temptation
+*  Time investment increases emotional stakes
+*  No bullet sponges (breaks immersion)
+*  No "secure loot all" button (removes vulnerability)
+*  No arcade movement (breaks tactical feel)
 
 **Player Testimonial Goal:**\
 &#xNAN;_"My heart was pounding when I extracted with a full bag of loot. I've never been this stressed in a mobile game."_ - Target Player Review
@@ -113,7 +113,7 @@ The game is defined by what you stand to lose. Progression is not linear; it is 
 
 ***
 
-#### 2️⃣ Tactical Fluidity (Survival & Tactical Depth)
+#### 2 Tactical Fluidity (Survival & Tactical Depth)
 
 **Mantra:** _"Control the Operator, not the Interface."_
 
@@ -132,10 +132,10 @@ Complexity should come from the situation, not the inputs. While the game simula
 
 **Action Chaining Examples:**
 
-* ✅ Reload while sprinting (reduced speed, animation blends)
-* ✅ Slide into cover while healing (slower heal, vulnerable)
-* ✅ Quick-peek corners while ADSing (weapon sway penalty)
-* ✅ Swap weapons while vaulting (equip delay, animation priority)
+*  Reload while sprinting (reduced speed, animation blends)
+*  Slide into cover while healing (slower heal, vulnerable)
+*  Quick-peek corners while ADSing (weapon sway penalty)
+*  Swap weapons while vaulting (equip delay, animation priority)
 
 **Mobile-Specific Optimizations:**
 
@@ -147,13 +147,13 @@ Complexity should come from the situation, not the inputs. While the game simula
 
 **Design Guidelines:**
 
-* ✅ Every control should feel responsive (<100ms input lag)
-* ✅ Complexity from systems interaction, not button count
-* ✅ Simulation fidelity where it matters (ballistics, audio)
-* ✅ Simplify where it doesn't (auto-reload in cover)
-* ❌ No animation locks for critical actions (healing, weapon swap)
-* ❌ No artificial input delay (feels laggy on mobile)
-* ❌ No mandatory button combos (accessibility concern)
+*  Every control should feel responsive (<100ms input lag)
+*  Complexity from systems interaction, not button count
+*  Simulation fidelity where it matters (ballistics, audio)
+*  Simplify where it doesn't (auto-reload in cover)
+*  No animation locks for critical actions (healing, weapon swap)
+*  No artificial input delay (feels laggy on mobile)
+*  No mandatory button combos (accessibility concern)
 
 **Player Testimonial Goal:**\
 &#xNAN;_"Controls feel buttery smooth. I can focus on tactics, not fighting the UI."_ - Target Player Review
@@ -167,7 +167,7 @@ Complexity should come from the situation, not the inputs. While the game simula
 
 ***
 
-#### 3️⃣ Environmental Narratives (The Living World)
+#### 3 Environmental Narratives (The Living World)
 
 **Mantra:** _"Aethelgard is the First Enemy."_
 
@@ -220,13 +220,13 @@ Aethelgard (our world) is a character, not a backdrop. History is told through t
 
 **Design Guidelines:**
 
-* ✅ Every prop has a reason to exist (no random clutter)
-* ✅ Loot placement tells a story (who was here? why?)
-* ✅ Environmental hazards are telegraphed visually
-* ✅ Sound design matches materials (metal, concrete, wood)
-* ❌ No symmetrical "esports" arenas (breaks immersion)
-* ❌ No nonsense loot (high-tech in primitive contexts)
-* ❌ No floating quest markers (use environment instead)
+*  Every prop has a reason to exist (no random clutter)
+*  Loot placement tells a story (who was here? why?)
+*  Environmental hazards are telegraphed visually
+*  Sound design matches materials (metal, concrete, wood)
+*  No symmetrical "esports" arenas (breaks immersion)
+*  No nonsense loot (high-tech in primitive contexts)
+*  No floating quest markers (use environment instead)
 
 **Player Testimonial Goal:**\
 &#xNAN;_"I spent 10 minutes just exploring, finding hidden stories. This world feels REAL."_ - Target Player Review
@@ -240,7 +240,7 @@ Aethelgard (our world) is a character, not a backdrop. History is told through t
 
 ***
 
-#### 4️⃣ Task-Driven Agency (Meaningful Choices)
+#### 4 Task-Driven Agency (Meaningful Choices)
 
 **Mantra:** _"Choose your Wager, Define your Goal."_
 
@@ -305,13 +305,13 @@ Players should never be "just wandering." Every action is driven by a quest, a r
 
 **Design Guidelines:**
 
-* ✅ Every quest must have a meaningful choice
-* ✅ Objectives should encourage map exploration
-* ✅ Failure is okay (no mandatory success)
-* ✅ Rewards scale with difficulty and risk
-* ❌ No mandatory linear paths (player freedom)
-* ❌ No fetch quests without context (boring)
-* ❌ No "collect 50 items" grinds (respect time)
+*  Every quest must have a meaningful choice
+*  Objectives should encourage map exploration
+*  Failure is okay (no mandatory success)
+*  Rewards scale with difficulty and risk
+*  No mandatory linear paths (player freedom)
+*  No fetch quests without context (boring)
+*  No "collect 50 items" grinds (respect time)
 
 **Player Testimonial Goal:**\
 &#xNAN;_"Every raid feels different. I'm always working toward something, but I choose HOW."_ - Target Player Review
@@ -325,7 +325,7 @@ Players should never be "just wandering." Every action is driven by a quest, a r
 
 ***
 
-#### 5️⃣ Persistent Progression (Account & World Growth)
+#### 5 Persistent Progression (Account & World Growth)
 
 **Mantra:** _"Lose the Raid, Build the War."_
 
@@ -432,13 +432,13 @@ While individual raids carry the risk of loss, the **account's power and influen
 
 **Design Guidelines:**
 
-* ✅ Always reward time invested (even failed raids)
-* ✅ Permanent unlocks feel meaningful
-* ✅ Short-term loss (gear) balanced by long-term gain (XP)
-* ✅ Multiple progression paths (choose focus)
-* ❌ No total account wipes (outside seasonal opt-in)
-* ❌ No pay-to-skip progression (monetization boundary)
-* ❌ No mandatory daily login rewards (respects player time)
+*  Always reward time invested (even failed raids)
+*  Permanent unlocks feel meaningful
+*  Short-term loss (gear) balanced by long-term gain (XP)
+*  Multiple progression paths (choose focus)
+*  No total account wipes (outside seasonal opt-in)
+*  No pay-to-skip progression (monetization boundary)
+*  No mandatory daily login rewards (respects player time)
 
 **Player Testimonial Goal:**\
 &#xNAN;_"I lost my best gear today, but I unlocked Level 2 Safe House and got closer to Honored with the Militia. Still feels like progress."_ - Target Player Review
@@ -453,7 +453,7 @@ While individual raids carry the risk of loss, the **account's power and influen
 
 ***
 
-### ⚖️ Pillar Conflict Resolution Framework
+###  Pillar Conflict Resolution Framework
 
 When core pillars contradict each other, use this **hierarchy** to decide:
 
@@ -551,7 +551,7 @@ When core pillars contradict each other, use this **hierarchy** to decide:
 
 ***
 
-### 🎯 Player Experience Goals (Emotional Targets)
+###  Player Experience Goals (Emotional Targets)
 
 #### Target Emotions Per Raid Phase
 
@@ -589,7 +589,7 @@ Low Tension ←―――――――――――→ High Tension
 
 ***
 
-### 🔄 The Core Loops (Macro & Micro)
+###  The Core Loops (Macro & Micro)
 
 #### Macro Loop (Long-Term Growth)
 
@@ -726,17 +726,17 @@ STRATEGIC PLANNING (10s+):
 
 **Design Guidelines for Micro Loop:**
 
-* ✅ Information should be actionable (sound = direction)
-* ✅ Decisions should have clear consequences (fight = risk)
-* ✅ Actions should feel responsive (instant input)
-* ✅ Adaptation should be rewarded (learning AI behavior)
-* ❌ No information overload (too many UI elements)
-* ❌ No forced waiting (animation locks during combat)
-* ❌ No unclear threats (enemy visibility must be fair)
+*  Information should be actionable (sound = direction)
+*  Decisions should have clear consequences (fight = risk)
+*  Actions should feel responsive (instant input)
+*  Adaptation should be rewarded (learning AI behavior)
+*  No information overload (too many UI elements)
+*  No forced waiting (animation locks during combat)
+*  No unclear threats (enemy visibility must be fair)
 
 ***
 
-### 🎮 Game Feel Goals (Sensory Experience)
+###  Game Feel Goals (Sensory Experience)
 
 #### "Crunchy" Combat (Weighty Impact)
 
@@ -837,17 +837,17 @@ Weight Modifiers:
 
 **Design Guidelines:**
 
-* ✅ Movement should feel responsive but not floaty
-* ✅ Weight should be palpable without being frustrating
-* ✅ Momentum adds skill expression (slide-jumps, etc.)
-* ✅ Camera effects enhance immersion without nausea
-* ❌ No artificial "slow walk" animations (player controls speed)
-* ❌ No exaggerated head bob (motion sickness concern)
-* ❌ No permanent movement penalties (temporary stamina okay)
+*  Movement should feel responsive but not floaty
+*  Weight should be palpable without being frustrating
+*  Momentum adds skill expression (slide-jumps, etc.)
+*  Camera effects enhance immersion without nausea
+*  No artificial "slow walk" animations (player controls speed)
+*  No exaggerated head bob (motion sickness concern)
+*  No permanent movement penalties (temporary stamina okay)
 
 ***
 
-### ✅ Quality Assurance Checklist (Feature Gate)
+###  Quality Assurance Checklist (Feature Gate)
 
 Use this checklist for **every new feature request**. If a feature fails 3+ checks, it should be reconsidered or reworked.
 
@@ -885,23 +885,23 @@ Use this checklist for **every new feature request**. If a feature fails 3+ chec
 
 **Pass All 15 Checks:**
 
-* ✅ Greenlight - Add to roadmap
+*  Greenlight - Add to roadmap
 
 **Pass 12-14 Checks:**
 
-* 🟡 Conditional - Rework failing areas, re-evaluate
+*  Conditional - Rework failing areas, re-evaluate
 
 **Pass 9-11 Checks:**
 
-* ⚠️ Reconsider - Likely not worth the effort
+*  Reconsider - Likely not worth the effort
 
 **Pass <9 Checks:**
 
-* ❌ Reject - Does not align with core vision
+*  Reject - Does not align with core vision
 
 ***
 
-### 📈 Metrics & Success Criteria
+###  Metrics & Success Criteria
 
 #### Pillar-Specific KPIs
 
@@ -965,7 +965,7 @@ Use this checklist for **every new feature request**. If a feature fails 3+ chec
 
 ***
 
-### 📝 Document Ownership & Maintenance
+###  Document Ownership & Maintenance
 
 #### Ownership
 
@@ -1021,14 +1021,14 @@ Use this checklist for **every new feature request**. If a feature fails 3+ chec
 
 **When to Change Pillars:**
 
-* ❌ NEVER: Based on one bad playtest
-* ❌ RARELY: Due to market trends (we lead, not follow)
-* ✅ SOMETIMES: When persistent data shows fundamental flaw
-* ✅ DEFINITELY: If core vision shifts (rare, existential)
+*  NEVER: Based on one bad playtest
+*  RARELY: Due to market trends (we lead, not follow)
+*  SOMETIMES: When persistent data shows fundamental flaw
+*  DEFINITELY: If core vision shifts (rare, existential)
 
 ***
 
-### 🔗 Related Documents
+###  Related Documents
 
 **Core GDD Suite:**
 
@@ -1049,7 +1049,7 @@ Use this checklist for **every new feature request**. If a feature fails 3+ chec
 
 ***
 
-### 📚 Changelog
+###  Changelog
 
 | Version  | Date       | Author                 | Changes                                                                                                                                                                                                                                                   |
 | -------- | ---------- | ---------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |

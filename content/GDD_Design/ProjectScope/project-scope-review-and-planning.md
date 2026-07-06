@@ -31,12 +31,12 @@ last_updated: 2026-02-12
 
 | Document | Mục đích | Độ đầy đủ | Ghi chú |
 |:---------|:---------|:----------|:--------|
-| **_index.md** | Hub Scope & Vision | ✅ | Đã có link Competitive Analysis, Scope Review & Planning. |
-| **design-pillars-enhanced.md** | 5 Pillars + Genre Pillars | ✅ 100% | Chuẩn extraction shooter; có thể bổ sung “top-down / hero” positioning. |
-| **MVP.md** | Milestones M1–M6, Alpha/Beta scope | 🟡 ~85% | Có bảng so sánh feature; chưa map rõ theo quý (Q1–Q4) như HAWKED/Tarkov. |
-| **NonGoals.md** | Explicit exclusions | ✅ ~95% | Rõ BR/MMO/Esport/Vehicles/Base/P2W/Loot box; ổn. |
-| **Risks.md** | Design, Tech, Business, Ops | ✅ ~90% | D4 cross-platform, B3 economy đã có; nên gắn owner + review cadence. |
-| **competitive-analysis-extraction-shooters.md** | Inventory + market | ✅ 100% | Tốt cho scope quyết định (Tetris, weight, F2P, cross-platform). |
+| **_index.md** | Hub Scope & Vision |  | Đã có link Competitive Analysis, Scope Review & Planning. |
+| **design-pillars-enhanced.md** | 5 Pillars + Genre Pillars |  100% | Chuẩn extraction shooter; có thể bổ sung “top-down / hero” positioning. |
+| **MVP.md** | Milestones M1–M6, Alpha/Beta scope |  ~85% | Có bảng so sánh feature; chưa map rõ theo quý (Q1–Q4) như HAWKED/Tarkov. |
+| **NonGoals.md** | Explicit exclusions |  ~95% | Rõ BR/MMO/Esport/Vehicles/Base/P2W/Loot box; ổn. |
+| **Risks.md** | Design, Tech, Business, Ops |  ~90% | D4 cross-platform, B3 economy đã có; nên gắn owner + review cadence. |
+| **competitive-analysis-extraction-shooters.md** | Inventory + market |  100% | Tốt cho scope quyết định (Tetris, weight, F2P, cross-platform). |
 | *(GDD gap roadmap)* | — | — | Character/Combat/Map/Economy/Monetization/Technical/Art/Narrative/Social chưa có doc riêng. |
 
 ### 2.2 Điểm mạnh
@@ -103,7 +103,7 @@ last_updated: 2026-02-12
 | Hero/Operator | Characters | Customization | **6 classes** | — | Light classes | **Operators** | **Operators (3→5→8+)** |
 | Looter depth | Treasure + puzzles | Infinite mods | Professions | Deep inventory | Tetris medium | Medium | **Tetris + weight + containers** |
 | Roadmap cadence | Q1–Q4 | — | — | Patches + Arena | Weekly updates | Seasons | **M1–M6 + nên thêm Q1–Q4** |
-| Cross-platform | ✅ Q1 | — | — | PC | ✅ | ✅ | **Crossplatform (scope)** |
+| Cross-platform |  Q1 | — | — | PC |  |  | **Crossplatform (scope)** |
 | Monetization | F2P, BP | — | — | B2P | F2P fair | F2P + BP | **F2P, no P2W** |
 
 ---
@@ -112,11 +112,11 @@ last_updated: 2026-02-12
 
 Để scope nhất quán với mô tả “multiplayer hero shooter looter extraction top-down”:
 
-- **Multiplayer:** 15–20 players/raid; squad 2–3 (Beta); server-authoritative. ✅ Đã có trong MVP/Risks.
-- **Hero shooter:** Operators với class (Assault, Scout, Support, Tank, Specialist), passive/active abilities, progression per operator. ✅ Có trong MVP; đã ghi rõ trong _index và design-pillars.
-- **Looter:** Grid inventory, weight, containers, secure container, loot tables theo zone. ✅ Có trong Inventory/Gear và Competitive Analysis.
-- **Extraction:** Spawn → loot/combat → extract; mất đồ khi chết; insurance. ✅ Có trong Pillars + MVP.
-- **Top-down:** Camera và control scheme top-down (khác Tarkov/Arena FPS). ⚠️ Nên nêu rõ trong Project Scope / MVP (view, control, map design cho top-down).
+- **Multiplayer:** 15–20 players/raid; squad 2–3 (Beta); server-authoritative.  Đã có trong MVP/Risks.
+- **Hero shooter:** Operators với class (Assault, Scout, Support, Tank, Specialist), passive/active abilities, progression per operator.  Có trong MVP; đã ghi rõ trong _index và design-pillars.
+- **Looter:** Grid inventory, weight, containers, secure container, loot tables theo zone.  Có trong Inventory/Gear và Competitive Analysis.
+- **Extraction:** Spawn → loot/combat → extract; mất đồ khi chết; insurance.  Có trong Pillars + MVP.
+- **Top-down:** Camera và control scheme top-down (khác Tarkov/Arena FPS).  Nên nêu rõ trong Project Scope / MVP (view, control, map design cho top-down).
 
 **Đề xuất:** Thêm một đoạn ngắn vào **Project Scope (_index hoặc MVP)** khẳng định: “Multiplayer hero shooter looter extraction, top-down perspective, cross-platform, session 15–20 phút, F2P fair.”
 

@@ -116,7 +116,7 @@ For UI mockups within documentation, use ASCII art:
 
 ```
 ┌──────────────────────────────────────────┐
-│  SCREEN TITLE                    [✕]     │
+│  SCREEN TITLE                    []     │
 ├──────────────────────────────────────────┤
 │                                          │
 │  Content area                            │

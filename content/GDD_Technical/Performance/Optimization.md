@@ -919,7 +919,7 @@ private:
 
 ### TODO: Optimization Tasks
 
-#### HIGH Priority 🔴
+#### HIGH Priority 
 
 * [ ] Implement device tier detection
 * [ ] Setup LOD system for all meshes
@@ -927,7 +927,7 @@ private:
 * [ ] Implement object pooling (bullets, effects)
 * [ ] Performance profiling baseline
 
-#### MEDIUM Priority 🟡
+#### MEDIUM Priority 
 
 * [ ] Dynamic resolution scaling
 * [ ] Occlusion culling setup
@@ -935,7 +935,7 @@ private:
 * [ ] Memory budget tracking
 * [ ] Auto quality settings
 
-#### LOW Priority 🟢
+#### LOW Priority 
 
 * [ ] Advanced profiling
 * [ ] Battery optimization

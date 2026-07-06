@@ -359,18 +359,18 @@ STRUCT FeatureUnlockRequirement:
 
 ## TODO: Implementation Tasks
 
-### HIGH Priority 🔴
+### HIGH Priority 
 - [ ] TutorialManager state machine
 - [ ] Onboarding UI overlay
 - [ ] HintManager queue system
 - [ ] Tutorial step data definitions
 
-### MEDIUM Priority 🟡
+### MEDIUM Priority 
 - [ ] Tooltip system
 - [ ] Visual highlighting for UI
 - [ ] Trigger system for hints
 
-### LOW Priority 🟢
+### LOW Priority 
 - [ ] Feature unlock notifications
 - [ ] Tutorial skip logic
 - [ ] Replay tutorial functionality

@@ -3,7 +3,7 @@ title: "Map Design: Industrial Zone (The \"Factory\")"
 type: docs
 ---
 
-## 🗺️ Map Overview
+##  Map Overview
 
 *   **Name:** Sector 7 Industrial Complex (aka "The Factory")
 *   **Theme:** Abandoned Soviet-era processing plant repurposed for anomalous research.
@@ -17,7 +17,7 @@ Once the primary refining facility for local crystalline resources. When the "Ou
 
 ---
 
-## 📍 Tactical Layout
+##  Tactical Layout
 
 The map is a **"Bowl" design**: High ground on the perimeter (Forest/Hills), low ground in the center (Factory Complex), promoting inward movement.
 
@@ -66,7 +66,7 @@ The map is a **"Bowl" design**: High ground on the perimeter (Forest/Hills), low
 
 ---
 
-## 🛠️ Operator Tactical Interactions
+##  Operator Tactical Interactions
 
 Each class can exploit the map's industrial nature differently:
 
@@ -81,22 +81,22 @@ Each class can exploit the map's industrial nature differently:
 
 ---
 
-## 💎 Loot Distribution & Heatmap
+##  Loot Distribution & Heatmap
 
 | Area / POI                | Loot Tier            | Item Types                     | Danger Level                   | Recommended For            |
 | :------------------------ | :------------------- | :----------------------------- | :----------------------------- | :------------------------- |
-| **The Lab (Underground)** | **S-Tier (Highest)** | Keycards, Boss Gear, Injectors | 💀 **Extreme** (Boss + Players) | Squads / Geared Solos      |
-| **Assembly Hall**         | **A-Tier (High)**    | Weapon Parts, Industrial Tech  | 🔴 **High** (Sniper Sightlines) | PvP Seekers                |
-| **Offices**               | **B-Tier (Mid)**     | Intel Items, Meds, Cash        | 🟠 **Medium** (CQC Ambush)      | Solos / Scavengers         |
-| **Train Yard**            | **C-Tier (Low)**     | Ammo, Basic Components         | 🟢 **Low** (Perimeter Spawn)    | Fresh Spawns / Snipe setup |
-| **Storage Units**         | **C-Tier (Low)**     | Food, Construction Materials   | 🟢 **Low** (Good Cover)         | "Rat" Runs                 |
+| **The Lab (Underground)** | **S-Tier (Highest)** | Keycards, Boss Gear, Injectors |  **Extreme** (Boss + Players) | Squads / Geared Solos      |
+| **Assembly Hall**         | **A-Tier (High)**    | Weapon Parts, Industrial Tech  |  **High** (Sniper Sightlines) | PvP Seekers                |
+| **Offices**               | **B-Tier (Mid)**     | Intel Items, Meds, Cash        |  **Medium** (CQC Ambush)      | Solos / Scavengers         |
+| **Train Yard**            | **C-Tier (Low)**     | Ammo, Basic Components         |  **Low** (Perimeter Spawn)    | Fresh Spawns / Snipe setup |
+| **Storage Units**         | **C-Tier (Low)**     | Food, Construction Materials   |  **Low** (Good Cover)         | "Rat" Runs                 |
 
 *   **Hotspot:** The Lab entrance (Assembly Hall) attracts 70% of players eventually.
 *   **Safe Route:** Skirting the perimeter from Storage → Train Yard → Gate 03 avoids most conflict but yields poor loot.
 
 ---
 
-## ⚔️ Choke Points & Flow
+##  Choke Points & Flow
 
 Extraction shooters live and die by their Choke Points - areas where players are *forced* to interact.
 
@@ -117,7 +117,7 @@ Extraction shooters live and die by their Choke Points - areas where players are
 
 ---
 
-## 🚪 Extraction Points
+##  Extraction Points
 
 | Name              | Type            | Requirements                     | Location                     |
 | :---------------- | :-------------- | :------------------------------- | :--------------------------- |
@@ -128,7 +128,7 @@ Extraction shooters live and die by their Choke Points - areas where players are
 
 ---
 
-## 🎨 Environmental Design & Atmosphere
+##  Environmental Design & Atmosphere
 
 ### Visual Identity
 *   **Palette:** Rust Orange, Concrete Grey, Toxic Green (Chemicals).
@@ -146,7 +146,7 @@ Extraction shooters live and die by their Choke Points - areas where players are
 
 ---
 
-## 🗓️ Evolution Plan (Live Ops)
+##  Evolution Plan (Live Ops)
 
 *   **Phase 1 (Launch):** Ground floor & 1st floor only. Lab sealed.
 *   **Phase 2:** The "Lab" opens. New Boss added.

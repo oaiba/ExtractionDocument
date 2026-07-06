@@ -5,7 +5,7 @@ type: docs
 weight: 1
 ---
 
-## 🛡️ Security & Anti-Cheat
+##  Security & Anti-Cheat
 
 Strategies for protecting the game economy and competitive integrity.
 

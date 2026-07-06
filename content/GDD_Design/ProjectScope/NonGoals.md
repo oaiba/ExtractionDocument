@@ -3,7 +3,7 @@ title: "Non-Goals & Explicit Exclusions"
 type: docs
 ---
 
-## 🚫 Purpose of This Document
+##  Purpose of This Document
 
 **Why define what we WON'T do?**
 
@@ -17,7 +17,7 @@ This document explicitly states features, systems, and approaches that are **int
 
 ---
 
-## ❌ Gameplay Non-Goals
+##  Gameplay Non-Goals
 
 ### We Are NOT Building a Battle Royale
 
@@ -35,19 +35,19 @@ This document explicitly states features, systems, and approaches that are **int
 - Technical complexity not justified
 - Our extraction loop is the differentiator
 
-**Decision status:** ✅ Final - Will not change
+**Decision status:**  Final - Will not change
 
 ---
 
 ### We Are NOT Building an MMORPG
 
 **Excluded features:**
-- ❌ Persistent open world (instance-based instead)
-- ❌ Massive player counts in same space
-- ❌ World bosses requiring 50+ players
-- ❌ Player housing/persistent bases
-- ❌ Deep crafting with gathering professions
-- ❌ Story-driven questing as primary content
+-  Persistent open world (instance-based instead)
+-  Massive player counts in same space
+-  World bosses requiring 50+ players
+-  Player housing/persistent bases
+-  Deep crafting with gathering professions
+-  Story-driven questing as primary content
 
 **Why not:**
 - Scope explosion
@@ -55,18 +55,18 @@ This document explicitly states features, systems, and approaches that are **int
 - Session time mismatch (10-15 min vs hours)
 - Different audience expectations
 
-**Decision status:** ✅ Final
+**Decision status:**  Final
 
 ---
 
 ### We Are NOT Building an Esport (Initially)
 
 **Excluded at launch:**
-- ❌ Spectator mode (add post-launch)
-- ❌ Tournament infrastructure
-- ❌ Official competitive leagues
-- ❌ LAN event support
-- ❌ Detailed replay system
+-  Spectator mode (add post-launch)
+-  Tournament infrastructure
+-  Official competitive leagues
+-  LAN event support
+-  Detailed replay system
 
 **Why not:**
 - Launch focus is on core game
@@ -74,18 +74,18 @@ This document explicitly states features, systems, and approaches that are **int
 - Must prove game success first
 - Community must grow organically
 
-**Decision status:** 🟡 Deferred to Year 2+
+**Decision status:**  Deferred to Year 2+
 
 ---
 
 ### We Are NOT Targeting Ultra-Realism
 
 **Excluded approaches:**
-- ❌ Simulation-level weapon ballistics
-- ❌ Complex medical system (EFT-style surgery)
-- ❌ Realistic magazine management
-- ❌ Permanent character injury
-- ❌ Hunger/thirst survival mechanics
+-  Simulation-level weapon ballistics
+-  Complex medical system (EFT-style surgery)
+-  Realistic magazine management
+-  Permanent character injury
+-  Hunger/thirst survival mechanics
 
 **Why not:**
 - Mobile audience preference for accessibility
@@ -93,16 +93,16 @@ This document explicitly states features, systems, and approaches that are **int
 - Steep learning curve hurts retention
 - We want "tactical" not "tedious"
 
-**Decision status:** ✅ Final
+**Decision status:**  Final
 
 ---
 
 ### We Are NOT Adding Vehicles (Initially)
 
 **Excluded:**
-- ❌ Drivable vehicles
-- ❌ Vehicle combat
-- ❌ Vehicle customization
+-  Drivable vehicles
+-  Vehicle combat
+-  Vehicle customization
 
 **Why not:**
 - Map size doesn't require vehicles
@@ -110,16 +110,16 @@ This document explicitly states features, systems, and approaches that are **int
 - Balance implications with extraction
 - Dev time better spent elsewhere
 
-**Decision status:** 🟡 Consider for large desert map (Season 4+)
+**Decision status:**  Consider for large desert map (Season 4+)
 
 ---
 
 ### We Are NOT Building Base Building
 
 **Excluded:**
-- ❌ Player-constructed structures
-- ❌ Fortification mechanics
-- ❌ Clan bases/hideouts
+-  Player-constructed structures
+-  Fortification mechanics
+-  Clan bases/hideouts
 
 **Why not:**
 - Significantly increases scope
@@ -127,21 +127,21 @@ This document explicitly states features, systems, and approaches that are **int
 - Doesn't fit extraction loop
 - Fortnite already owns this space
 
-**Decision status:** ✅ Final
+**Decision status:**  Final
 
 ---
 
-## ❌ Monetization Non-Goals
+##  Monetization Non-Goals
 
 ### We Will NOT Sell Gameplay Advantage
 
 **Explicitly NOT for sale:**
-- ❌ Weapons with better stats
-- ❌ Armor with better protection
-- ❌ Operator stat boosts
-- ❌ Reduced matchmaking times for money
-- ❌ Better loot chance for payers
-- ❌ Extra protected slots for money (only credits)
+-  Weapons with better stats
+-  Armor with better protection
+-  Operator stat boosts
+-  Reduced matchmaking times for money
+-  Better loot chance for payers
+-  Extra protected slots for money (only credits)
 
 **Why not:**
 - Destroys competitive integrity
@@ -149,21 +149,21 @@ This document explicitly states features, systems, and approaches that are **int
 - Long-term player value > short-term revenue
 - This is a non-negotiable pillar
 
-**Decision status:** ✅ Final - Red line
+**Decision status:**  Final - Red line
 
 ---
 
 ### We Will NOT Have Loot Boxes (Randomized Purchases)
 
 **Excluded:**
-- ❌ Blind random item boxes for real money
-- ❌ Gacha-style character pulls
-- ❌ Mystery bundles
+-  Blind random item boxes for real money
+-  Gacha-style character pulls
+-  Mystery bundles
 
 **What we DO have:**
-- ✅ Battle Pass (known rewards)
-- ✅ Direct purchase cosmetics
-- ✅ Occasional free random rewards (gameplay only)
+-  Battle Pass (known rewards)
+-  Direct purchase cosmetics
+-  Occasional free random rewards (gameplay only)
 
 **Why not:**
 - Legal issues in multiple regions
@@ -171,35 +171,35 @@ This document explicitly states features, systems, and approaches that are **int
 - Negative player perception
 - Transparent model builds trust
 
-**Decision status:** ✅ Final
+**Decision status:**  Final
 
 ---
 
 ### We Will NOT Have Energy Systems
 
 **Excluded:**
-- ❌ Limited plays per day
-- ❌ Lives that regenerate over time
-- ❌ Pay-to-play-more mechanics
+-  Limited plays per day
+-  Lives that regenerate over time
+-  Pay-to-play-more mechanics
 
 **Why not:**
 - Players should play as much as they want
 - Energy systems are frustrating
 - Revenue comes from engagement, not gating
 
-**Decision status:** ✅ Final
+**Decision status:**  Final
 
 ---
 
 ### We Will NOT Have Forced Ads
 
 **Excluded:**
-- ❌ Interstitial ads between matches
-- ❌ Ads required for core gameplay
-- ❌ Banner ads in gameplay
+-  Interstitial ads between matches
+-  Ads required for core gameplay
+-  Banner ads in gameplay
 
 **What we MIGHT have:**
-- ⚠️ Optional rewarded ads (watch for small bonus)
+-  Optional rewarded ads (watch for small bonus)
 - Only in specific contexts (post-match, daily reward)
 
 **Why not:**
@@ -207,11 +207,11 @@ This document explicitly states features, systems, and approaches that are **int
 - Ads destroy immersion
 - Whales won't tolerate ads
 
-**Decision status:** ✅ Final
+**Decision status:**  Final
 
 ---
 
-## ❌ Technical Non-Goals
+##  Technical Non-Goals
 
 ### We Are NOT Supporting Ancient Devices
 
@@ -220,10 +220,10 @@ This document explicitly states features, systems, and approaches that are **int
 - iOS: iPhone 8 / iPad 6th gen or newer, iOS 14+
 
 **NOT supported:**
-- ❌ Devices below 3GB RAM
-- ❌ Android 7.x or below
-- ❌ iPhone 7 or older
-- ❌ Devices without OpenGL ES 3.0
+-  Devices below 3GB RAM
+-  Android 7.x or below
+-  iPhone 7 or older
+-  Devices without OpenGL ES 3.0
 
 **Why not:**
 - Performance compromises hurt everyone
@@ -231,16 +231,16 @@ This document explicitly states features, systems, and approaches that are **int
 - Security concerns with old OS
 - Future-proofing the codebase
 
-**Decision status:** ✅ Final
+**Decision status:**  Final
 
 ---
 
 ### We Are NOT Building Offline Mode
 
 **Excluded:**
-- ❌ Single-player offline play
-- ❌ Play without internet
-- ❌ Local multiplayer
+-  Single-player offline play
+-  Play without internet
+-  Local multiplayer
 
 **Why not:**
 - Anti-cheat requires server authority
@@ -248,40 +248,40 @@ This document explicitly states features, systems, and approaches that are **int
 - Core experience is multiplayer
 - Data sync complexity not worth it
 
-**Decision status:** ✅ Final
+**Decision status:**  Final
 
 ---
 
 ### We Are NOT Native on All Platforms Initially
 
 **Launch platforms:**
-- ✅ Android (Google Play)
-- ✅ iOS (App Store)
+-  Android (Google Play)
+-  iOS (App Store)
 - ⏳ PC (Epic/Steam) - Post-launch
 
 **NOT at launch:**
-- ❌ Console (PlayStation, Xbox, Switch)
-- ❌ Web version
-- ❌ Mac native
+-  Console (PlayStation, Xbox, Switch)
+-  Web version
+-  Mac native
 
 **Why not:**
 - Focus resources on core platforms
 - Console certification is expensive/slow
 - Mobile-first means mobile quality first
 
-**Decision status:** 🟡 Console considered for Year 2
+**Decision status:**  Console considered for Year 2
 
 ---
 
-## ❌ Content Non-Goals
+##  Content Non-Goals
 
 ### We Are NOT Pursuing Licensing/IP Crossovers
 
 **Excluded:**
-- ❌ Movie/TV character skins
-- ❌ Other game character crossovers
-- ❌ Celebrity athlete partnerships
-- ❌ Brand collaborations (energy drinks, etc.)
+-  Movie/TV character skins
+-  Other game character crossovers
+-  Celebrity athlete partnerships
+-  Brand collaborations (energy drinks, etc.)
 
 **Why not:**
 - Expensive licensing fees
@@ -289,17 +289,17 @@ This document explicitly states features, systems, and approaches that are **int
 - Dependency on external partners
 - Want to build our own IP value
 
-**Decision status:** 🟡 Reconsider after Year 1 success
+**Decision status:**  Reconsider after Year 1 success
 
 ---
 
 ### We Are NOT Creating Player-Generated Content
 
 **Excluded:**
-- ❌ Custom maps
-- ❌ Mod support
-- ❌ User-created skins
-- ❌ Workshop/marketplace
+-  Custom maps
+-  Mod support
+-  User-created skins
+-  Workshop/marketplace
 
 **Why not:**
 - QA nightmare on mobile
@@ -307,21 +307,21 @@ This document explicitly states features, systems, and approaches that are **int
 - Technical complexity
 - Security vulnerabilities
 
-**Decision status:** ✅ Final for mobile
+**Decision status:**  Final for mobile
 
 ---
 
 ### We Are NOT Doing Extensive Voice Acting
 
 **Excluded:**
-- ❌ Full narrative voice acting
-- ❌ Voiced quest dialogues
-- ❌ NPC conversations
+-  Full narrative voice acting
+-  Voiced quest dialogues
+-  NPC conversations
 
 **What we DO have:**
-- ✅ Operator combat callouts
-- ✅ Tutorial narration
-- ✅ Announcer voice
+-  Operator combat callouts
+-  Tutorial narration
+-  Announcer voice
 
 **Why not:**
 - Budget constraints
@@ -329,19 +329,19 @@ This document explicitly states features, systems, and approaches that are **int
 - Download size concerns
 - Text is more flexible
 
-**Decision status:** ✅ Final for launch
+**Decision status:**  Final for launch
 
 ---
 
-## ❌ Social/Community Non-Goals
+##  Social/Community Non-Goals
 
 ### We Are NOT Building Social Media
 
 **Excluded:**
-- ❌ In-game feed/timeline
-- ❌ Public profiles with posts
-- ❌ Following/followers system
-- ❌ Content sharing within game
+-  In-game feed/timeline
+-  Public profiles with posts
+-  Following/followers system
+-  Content sharing within game
 
 **Why not:**
 - Moderation nightmare
@@ -349,16 +349,16 @@ This document explicitly states features, systems, and approaches that are **int
 - Distracts from gameplay
 - Use existing platforms instead
 
-**Decision status:** ✅ Final
+**Decision status:**  Final
 
 ---
 
 ### We Are NOT Allowing Real-Money Trading
 
 **Excluded:**
-- ❌ Player-to-player item sales for cash
-- ❌ Official marketplace for real money
-- ❌ NFTs or blockchain items
+-  Player-to-player item sales for cash
+-  Official marketplace for real money
+-  NFTs or blockchain items
 
 **Why not:**
 - Legal complexity (gambling, securities)
@@ -366,11 +366,11 @@ This document explicitly states features, systems, and approaches that are **int
 - Exploit incentive for hackers
 - Damages economy design
 
-**Decision status:** ✅ Final - Red line
+**Decision status:**  Final - Red line
 
 ---
 
-## 📋 Non-Goal Review Process
+##  Non-Goal Review Process
 
 ### Adding to Non-Goals
 
@@ -394,7 +394,7 @@ Non-goals can be reconsidered when:
 
 ---
 
-## ⚖️ Trade-Off Principles
+##  Trade-Off Principles
 
 When facing choices, we prioritize:
 
@@ -408,28 +408,28 @@ When facing choices, we prioritize:
 
 ---
 
-## 🗂️ Summary Table
+##  Summary Table
 
 | Non-Goal               | Category     | Status     |
 | :--------------------- | :----------- | :--------- |
-| Battle Royale mode     | Gameplay     | ✅ Final    |
-| MMO features           | Gameplay     | ✅ Final    |
-| Esport infrastructure  | Gameplay     | 🟡 Deferred |
-| Ultra-realism          | Gameplay     | ✅ Final    |
-| Vehicles               | Gameplay     | 🟡 Deferred |
-| Base building          | Gameplay     | ✅ Final    |
-| Pay-to-win             | Monetization | ✅ Red Line |
-| Loot boxes             | Monetization | ✅ Final    |
-| Energy systems         | Monetization | ✅ Final    |
-| Forced ads             | Monetization | ✅ Final    |
-| Ancient device support | Technical    | ✅ Final    |
-| Offline mode           | Technical    | ✅ Final    |
-| Console launch         | Technical    | 🟡 Deferred |
-| IP crossovers          | Content      | 🟡 Deferred |
-| User-generated content | Content      | ✅ Final    |
-| Extensive voice acting | Content      | ✅ Final    |
-| Social media features  | Social       | ✅ Final    |
-| Real-money trading     | Social       | ✅ Red Line |
+| Battle Royale mode     | Gameplay     |  Final    |
+| MMO features           | Gameplay     |  Final    |
+| Esport infrastructure  | Gameplay     |  Deferred |
+| Ultra-realism          | Gameplay     |  Final    |
+| Vehicles               | Gameplay     |  Deferred |
+| Base building          | Gameplay     |  Final    |
+| Pay-to-win             | Monetization |  Red Line |
+| Loot boxes             | Monetization |  Final    |
+| Energy systems         | Monetization |  Final    |
+| Forced ads             | Monetization |  Final    |
+| Ancient device support | Technical    |  Final    |
+| Offline mode           | Technical    |  Final    |
+| Console launch         | Technical    |  Deferred |
+| IP crossovers          | Content      |  Deferred |
+| User-generated content | Content      |  Final    |
+| Extensive voice acting | Content      |  Final    |
+| Social media features  | Social       |  Final    |
+| Real-money trading     | Social       |  Red Line |
 
 
 

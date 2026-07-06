@@ -7,7 +7,7 @@ weight: 1
 
 # AI & Enemy Design
 
-### 🧠 System Overview
+###  System Overview
 
 The AI in **Extraction Shooter** is designed not just as cannon fodder, but as a core pillar of the extraction gameplay loop. AI enemies serve as **pacing mechanisms**, **loot guardians**, and **sound traps** that drive player-to-player interaction.
 
@@ -23,7 +23,7 @@ The system is built on two main components:
 
 ***
 
-### 🎯 Design Pillars
+###  Design Pillars
 
 #### 1. Challenge without Cheating
 
@@ -48,7 +48,7 @@ Players should be able to learn AI patterns to master PvE encounters, but mistak
 
 ***
 
-### 🦠 Ecology Snapshot
+###  Ecology Snapshot
 
 The world is populated by distinct factions with their own goals and relationships.
 
@@ -63,7 +63,7 @@ The world is populated by distinct factions with their own goals and relationshi
 
 ***
 
-### 🤖 AI Archetypes
+###  AI Archetypes
 
 Different enemies require different tactical approaches.
 

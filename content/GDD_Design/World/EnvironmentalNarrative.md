@@ -3,7 +3,7 @@ title: "Environmental Narrative - Storytelling Through Environment"
 type: docs
 ---
 
-## 🎭 Environmental Storytelling Philosophy
+##  Environmental Storytelling Philosophy
 
 **Principle:** The world tells the story itself - no need for lengthy cutscenes.
 
@@ -15,7 +15,7 @@ type: docs
 
 ---
 
-## 🏭 Industrial Decay - Regional Stories
+##  Industrial Decay - Regional Stories
 
 ### Reactor Tower - "The Meltdown"
 
@@ -107,7 +107,7 @@ Regional headquarters of Nexus Corp. When everything fell apart, executives trie
 
 ---
 
-## 🩸 Bloodstain Storytelling Guide
+##  Bloodstain Storytelling Guide
 
 ### Bloodstain Types & Meanings
 
@@ -135,7 +135,7 @@ Regional headquarters of Nexus Corp. When everything fell apart, executives trie
 
 ---
 
-## 🎨 Atmospheric Design Per Zone
+##  Atmospheric Design Per Zone
 
 ### Industrial Decay Atmosphere Palette
 
@@ -149,7 +149,7 @@ Regional headquarters of Nexus Corp. When everything fell apart, executives trie
 
 ---
 
-## 📜 Graffiti & Environmental Text
+##  Graffiti & Environmental Text
 
 ### Graffiti Categories
 
@@ -160,10 +160,10 @@ Regional headquarters of Nexus Corp. When everything fell apart, executives trie
 - "THE BROKER KNOWS"
 
 **Faction Tags:**
-- ⚙️ Salvage Corps gear symbol
-- 👁️ Tech Syndicate eye pattern
-- 🤝 Underground Network hands
-- 🛡️ Peacekeepers shield
+-  Salvage Corps gear symbol
+-  Tech Syndicate eye pattern
+-  Underground Network hands
+-  Peacekeepers shield
 
 **Warning Signs:**
 - "RADIATION - DO NOT ENTER"
@@ -173,7 +173,7 @@ Regional headquarters of Nexus Corp. When everything fell apart, executives trie
 
 ---
 
-## 🔊 Audio Log Distribution
+##  Audio Log Distribution
 
 ### Per Map Allocation
 
@@ -206,7 +206,7 @@ Quest Connection: [If applicable]
 
 ---
 
-## 🎯 Environmental Puzzle Hints
+##  Environmental Puzzle Hints
 
 ### Hidden Loot Clues
 

@@ -46,33 +46,33 @@ No faction permanently owns any zone. Territory is a **seasonal state** that ref
 │     [Forest Edge Zone — Unclaimed, Neutral]         │
 │                                                     │
 │  [WAREHOUSES]     [REACTOR TOWER]     [TECH LABS]   │
-│  🟠 Salvage       🔴 Contested!       🔵 Tech Syn   │
+│   Salvage        Contested!        Tech Syn   │
 │  Corps Primary    (No faction holds   Syndicate     │
 │                   the center)         Primary        │
 │                                                     │
 │  [OFFICES]        [WORKSHOPS]         [Storage]     │
-│  🔵 Tech Syn      🟠 Salvage          ⚪ Contested   │
+│   Tech Syn       Salvage           Contested   │
 │  Secondary        Corps Secondary                   │
 │                                                     │
 │     [Forest Edge Zone — Unclaimed, Neutral]         │
 │                     SOUTH                           │
 └─────────────────────────────────────────────────────┘
 
-🟠 = Salvage Corps   🔵 = Tech Syndicate
-🔴 = Actively Contested (high PvP)   ⚪ = Disputed
+ = Salvage Corps    = Tech Syndicate
+ = Actively Contested (high PvP)    = Disputed
 ```
 
 #### Industrial Decay — Zone Control Table
 
 | Zone                               | Controlling Faction                | AI Spawns                                | Vendor                                  | Notes                                                        |
 | ---------------------------------- | ---------------------------------- | ---------------------------------------- | --------------------------------------- | ------------------------------------------------------------ |
-| **Reactor Tower**                  | ❌ Contested — None                 | Prometheus Enhanced Subjects (AI Bosses) | None                                    | No faction controls the center — AI Bosses are the deterrent |
-| **Tech Labs (Alpha, Beta, Gamma)** | 🔵 Tech Syndicate (Primary)        | Tech Syndicate field operatives          | Signal Scanner, Data Drives, Keycards   | Syndicate guards the Prometheus data here                    |
-| **Warehouse District**             | 🟠 Salvage Corps (Primary)         | Salvage work crews                       | Industrial parts, repair tools, weapons | Salvage established first claim post-Collapse                |
-| **Office Complex**                 | 🔵 Tech Syndicate (Secondary)      | Tech Syndicate data agents               | Electronic components, intel items      | Corporate network nodes still active here                    |
-| **Workshops**                      | 🟠 Salvage Corps (Secondary)       | Salvage mechanics                        | Crafting materials, basic weapons       | Salvage maintains the only working machinery                 |
-| **Storage Area**                   | ⚪ Disputed (Underground / Salvage) | Rotating patrols                         | None — underground dead drops only      | Underground runs smuggling routes through here               |
-| **Forest Perimeter**               | ⚪ Unclaimed — Neutral              | Random wandering scavs, wildlife         | None                                    | No faction worth fighting for at the edges                   |
+| **Reactor Tower**                  |  Contested — None                 | Prometheus Enhanced Subjects (AI Bosses) | None                                    | No faction controls the center — AI Bosses are the deterrent |
+| **Tech Labs (Alpha, Beta, Gamma)** |  Tech Syndicate (Primary)        | Tech Syndicate field operatives          | Signal Scanner, Data Drives, Keycards   | Syndicate guards the Prometheus data here                    |
+| **Warehouse District**             |  Salvage Corps (Primary)         | Salvage work crews                       | Industrial parts, repair tools, weapons | Salvage established first claim post-Collapse                |
+| **Office Complex**                 |  Tech Syndicate (Secondary)      | Tech Syndicate data agents               | Electronic components, intel items      | Corporate network nodes still active here                    |
+| **Workshops**                      |  Salvage Corps (Secondary)       | Salvage mechanics                        | Crafting materials, basic weapons       | Salvage maintains the only working machinery                 |
+| **Storage Area**                   |  Disputed (Underground / Salvage) | Rotating patrols                         | None — underground dead drops only      | Underground runs smuggling routes through here               |
+| **Forest Perimeter**               |  Unclaimed — Neutral              | Random wandering scavs, wildlife         | None                                    | No faction worth fighting for at the edges                   |
 
 #### Sector 7 Territorial Conflict Points
 
@@ -90,34 +90,34 @@ No faction permanently owns any zone. Territory is a **seasonal state** that ref
 ┌─────────────────────────────────────────────────────┐
 │                     NORTH                           │
 │  [Subway NORTH]  [MALL]      [Subway SOUTH]         │
-│  🟣 Underground  🔴 Contested 🟣 Underground         │
+│   Underground   Contested  Underground         │
 │                                                     │
 │  [PARK]          [CENTRAL    [HOTEL]                │
-│  🛡️ Peacekeepers  PLAZA]      🛡️ Peacekeepers        │
-│  Patrol Zone     🔴 Contested Medical Post          │
+│   Peacekeepers  PLAZA]       Peacekeepers        │
+│  Patrol Zone      Contested Medical Post          │
 │                                                     │
 │  [Apartments]    [Streets]   [Streets]              │
-│  ⚪ Civilian      🟣/🛡️       🟣/🛡️                  │
+│   Civilian      /       /                  │
 │  Communities     Mixed       Mixed                  │
 │                                                     │
 │     [Extraction Perimeter — Open/Neutral]           │
 │                     SOUTH                           │
 └─────────────────────────────────────────────────────┘
 
-🟣 = Underground Network   🛡️ = Peacekeepers
-🔴 = Hotly Contested   ⚪ = Civilian communities (neither faction)
+ = Underground Network    = Peacekeepers
+ = Hotly Contested    = Civilian communities (neither faction)
 ```
 
 #### Urban Ruins — Zone Control Table
 
 | Zone                    | Controlling Faction              | AI Spawns                                                    | Vendor                                        | Notes                                                                         |
 | ----------------------- | -------------------------------- | ------------------------------------------------------------ | --------------------------------------------- | ----------------------------------------------------------------------------- |
-| **Shopping Mall**       | ❌ Contested                      | Hostile scavengers + occasional faction NPCs                 | None (too dangerous)                          | Highest value loot draws all factions. PvP hotspot                            |
-| **Central Plaza**       | ❌ Contested                      | Supply drop event draws all factions                         | None                                          | Control shifts by match — whoever holds it mid-match controls the supply drop |
-| **Subway System**       | 🟣 Underground Network (Primary) | Underground runners, Rat King's lieutenants                  | Black market items, forged IDs, smuggled gear | Underground controls the tunnels — fastest travel routes in the map           |
-| **Hotel**               | 🛡️ Peacekeepers (Primary)       | Peacekeeper patrol units, Dr. Wells' medics                  | Medical supplies, armor, Commander's radio    | Peacekeepers use the hotel as their District 14 command post                  |
-| **City Park**           | 🛡️ Peacekeepers (Secondary)     | Peacekeeper patrol                                           | None                                          | Open patrol routes; extraction zone proximity                                 |
-| **Apartment Buildings** | ⚪ Civilian Communities           | Friendly civilian NPCs (non-hostile), occasional lone scavs  | None — barter only from civilians             | Autonomous survivor communities. Neither faction controls them                |
+| **Shopping Mall**       |  Contested                      | Hostile scavengers + occasional faction NPCs                 | None (too dangerous)                          | Highest value loot draws all factions. PvP hotspot                            |
+| **Central Plaza**       |  Contested                      | Supply drop event draws all factions                         | None                                          | Control shifts by match — whoever holds it mid-match controls the supply drop |
+| **Subway System**       |  Underground Network (Primary) | Underground runners, Rat King's lieutenants                  | Black market items, forged IDs, smuggled gear | Underground controls the tunnels — fastest travel routes in the map           |
+| **Hotel**               |  Peacekeepers (Primary)       | Peacekeeper patrol units, Dr. Wells' medics                  | Medical supplies, armor, Commander's radio    | Peacekeepers use the hotel as their District 14 command post                  |
+| **City Park**           |  Peacekeepers (Secondary)     | Peacekeeper patrol                                           | None                                          | Open patrol routes; extraction zone proximity                                 |
+| **Apartment Buildings** |  Civilian Communities           | Friendly civilian NPCs (non-hostile), occasional lone scavs  | None — barter only from civilians             | Autonomous survivor communities. Neither faction controls them                |
 | **Streets**             | Mixed — shifts by time           | Faction patrols (early match = PK, late match = Underground) | None                                          | Early game: Peacekeeper sweeps. Late game: Underground emerges from tunnels   |
 
 #### District 14 Territorial Conflict Points

@@ -7,11 +7,11 @@ weight: 12
 
 # World & Level Design
 
-> \[!IMPORTANT] **📋 Directory Migration Notice:** The Story & World documentation has been merged into a unified [**NarrativeWorld/**](https://github.com/oaiba/ExtractionDocument/blob/main/content/GDD_Design/NarrativeWorld/README.md) section. The map design and environmental narrative files below are preserved for reference, but the **canonical, up-to-date GDDs** are in `NarrativeWorld/`. New work should be done there.
+> \[!IMPORTANT] ** Directory Migration Notice:** The Story & World documentation has been merged into a unified [**NarrativeWorld/**](https://github.com/oaiba/ExtractionDocument/blob/main/content/GDD_Design/NarrativeWorld/README.md) section. The map design and environmental narrative files below are preserved for reference, but the **canonical, up-to-date GDDs** are in `NarrativeWorld/`. New work should be done there.
 >
 > **New canonical documents:** [Map Design Bible](https://github.com/oaiba/ExtractionDocument/blob/main/content/GDD_Design/NarrativeWorld/MapBible/README.md) (merges `MapDesign.md` + `EnvironmentalNarrative_Guidelines.md`), [Industrial Decay Map Lore](https://github.com/oaiba/ExtractionDocument/blob/main/content/GDD_Design/NarrativeWorld/MapLore_Industrial/README.md), [Urban Ruins Map Lore](https://github.com/oaiba/ExtractionDocument/blob/main/content/GDD_Design/NarrativeWorld/MapLore_Urban/README.md), [Faction Territories](https://github.com/oaiba/ExtractionDocument/blob/main/content/GDD_Design/NarrativeWorld/FactionTerritories/README.md).
 
-### 🌍 The Map is the Main Character
+###  The Map is the Main Character
 
 In an extraction shooter, map knowledge is the highest skill ceiling. Our levels are designed with specific **choke points**, **sniping lanes**, and **flank routes** to force player interaction.
 

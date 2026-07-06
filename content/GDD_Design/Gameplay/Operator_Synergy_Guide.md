@@ -27,16 +27,16 @@ This document defines how the 10 operators interact with each other — both wit
 
 | Operator | Class | Primary Role | Synergy Strength | Solo Strength |
 | :------- | :---- | :----------- | :--------------: | :-----------: |
-| Mamba | Assault | Entry fragger | ★★★☆☆ | ★★★☆☆ |
-| Hawk | Scout | Intel & Recon | ★★★★★ | ★★★★☆ |
-| Glitch | Specialist | Tech & Intel | ★★★★☆ | ★★★☆☆ |
-| Bastion | Tank | Anchor & Protection | ★★★★☆ | ★★☆☆☆ |
-| Ghost | Support | Revive & Sustain | ★★★★★ | ★★☆☆☆ |
-| Phaedra | Sniper | Long-range Denial | ★★★☆☆ | ★★★★★ |
-| Fuse | Specialist-B | Zone Denial | ★★★★☆ | ★★★★☆ |
-| Ironclad | Tank-B | Aggression & Push | ★★★★☆ | ★★★☆☆ |
-| Obsidian | Scout-B | Stealth & Flanking | ★★★☆☆ | ★★★★★ |
-| Ghost (Support-B) | Support | Field Medic (fast revive) | ★★★★★ | ★★☆☆☆ |
+| Mamba | Assault | Entry fragger |  |  |
+| Hawk | Scout | Intel & Recon |  |  |
+| Glitch | Specialist | Tech & Intel |  |  |
+| Bastion | Tank | Anchor & Protection |  |  |
+| Ghost | Support | Revive & Sustain |  |  |
+| Phaedra | Sniper | Long-range Denial |  |  |
+| Fuse | Specialist-B | Zone Denial |  |  |
+| Ironclad | Tank-B | Aggression & Push |  |  |
+| Obsidian | Scout-B | Stealth & Flanking |  |  |
+| Ghost (Support-B) | Support | Field Medic (fast revive) |  |  |
 
 > Note: "Ghost" appears twice because the "Ghost" name refers to Operator 7. Operator 10 is "Obsidian." These are distinct characters.
 

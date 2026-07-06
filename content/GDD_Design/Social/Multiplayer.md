@@ -3,7 +3,7 @@ title: "Social & Multiplayer Systems"
 type: docs
 ---
 
-## 🎯 Social Design Philosophy
+##  Social Design Philosophy
 
 **Core Principle:** *"Alone is viable, together is powerful"*
 
@@ -24,11 +24,11 @@ The social layer is the connective tissue that transforms a session-based extrac
 
 > *Reference: Escape from Tarkov, Hunt: Showdown, DMZ, Dark and Darker, ARC Raiders*
 
-<!-- 📸 IMAGE PLACEHOLDER: Infographic showing the Social Design Pillars and how they connect to each game system -->
+<!--  IMAGE PLACEHOLDER: Infographic showing the Social Design Pillars and how they connect to each game system -->
 
 ---
 
-## 👥 Squad System
+##  Squad System
 
 ### Squad Types & Lobby Configuration
 
@@ -40,7 +40,7 @@ The social layer is the connective tissue that transforms a session-based extrac
 
 > **Design Note (Hunt: Showdown Reference):** Mixed lobbies (solos vs. squads) create tension and emergent stories. Dedicated solo-only modes fracture the player base — instead, we use MMR adjustments and underdog bonuses to make solos competitive against teams (see [Matchmaking Details](#-matchmaking-details)).
 
-<!-- 📸 IMAGE PLACEHOLDER: Screenshot reference of Hunt: Showdown's squad size selection screen -->
+<!--  IMAGE PLACEHOLDER: Screenshot reference of Hunt: Showdown's squad size selection screen -->
 
 ### Squad Formation
 
@@ -57,13 +57,13 @@ The social layer is the connective tissue that transforms a session-based extrac
 │  └───────┘  └───────┘  └───────┘  └───────┘       │
 │                                                   │
 │  Gear Value: ████████░░ [285,000₽]                │
-│  Squad Karma: ★★★★☆ (Good Standing)            │
+│  Squad Karma:  (Good Standing)            │
 │                                                   │
 │  [INVITE]  [FIND SQUAD]  [LFG POST]  [DEPLOY]     │
 └───────────────────────────────────────────────────┘
 ```
 
-<!-- 📸 IMAGE PLACEHOLDER: UI mockup of the Squad Lobby screen with gear value indicator and karma display -->
+<!--  IMAGE PLACEHOLDER: UI mockup of the Squad Lobby screen with gear value indicator and karma display -->
 
 **Invite Methods:**
 1. **Friend List** — Invite from online friends
@@ -79,18 +79,18 @@ Players can assign themselves roles for coordination — these are optional qual
 
 | Role          | Icon | Description                       | Gameplay Benefit                           |
 | :------------ | :--- | :-------------------------------- | :----------------------------------------- |
-| **Leader**    | 👑   | Shot-caller, extraction decisions | Ping priority on map, waypoints for squad  |
-| **Point**     | ⚔️   | First into combat                 | Sees enemy outlines 0.5s earlier           |
-| **Support**   | ❤️   | Healing priority                  | Healing items 10% more effective on others |
-| **Overwatch** | 👁️   | Rear guard, intel                 | Wider minimap range                        |
+| **Leader**    |    | Shot-caller, extraction decisions | Ping priority on map, waypoints for squad  |
+| **Point**     |    | First into combat                 | Sees enemy outlines 0.5s earlier           |
+| **Support**   |    | Healing priority                  | Healing items 10% more effective on others |
+| **Overwatch** |    | Rear guard, intel                 | Wider minimap range                        |
 
 > **Design Note:** Roles display as small icons next to the player name in the HUD and squad panel. They help with quick visual communication during combat.
 
-<!-- 📸 IMAGE PLACEHOLDER: HUD mockup showing squad member frames with role icons, health bars, and status indicators -->
+<!--  IMAGE PLACEHOLDER: HUD mockup showing squad member frames with role icons, health bars, and status indicators -->
 
 ---
 
-## 🎙️ Communication System
+##  Communication System
 
 ### Voice Chat (VOIP)
 
@@ -115,7 +115,7 @@ Proximity voice chat uses **3D spatial audio**:
 
 > *Reference: Tarkov's VOIP system allows negotiations, cease-fires, and betrayals via proximity chat. Many iconic extraction shooter moments are born from VOIP interactions.*
 
-<!-- 📸 IMAGE PLACEHOLDER: Diagram showing proximity voice range (15m full clarity, 15-30m fade zone) with spatial audio direction indicators -->
+<!--  IMAGE PLACEHOLDER: Diagram showing proximity voice range (15m full clarity, 15-30m fade zone) with spatial audio direction indicators -->
 
 #### Tactical Voice Usage
 
@@ -175,7 +175,7 @@ Context-aware ping based on what you're looking at:
 | Danger zone    | "Danger"            | "Watch out!"         | Orange |
 | Teammate       | "Follow them"       | "On them"            | Cyan   |
 
-<!-- 📸 IMAGE PLACEHOLDER: In-game screenshot showing different colored ping markers on the HUD and minimap -->
+<!--  IMAGE PLACEHOLDER: In-game screenshot showing different colored ping markers on the HUD and minimap -->
 
 #### Ping Wheel (Hold)
 
@@ -204,7 +204,7 @@ Context-aware ping based on what you're looking at:
 
 ---
 
-## ⚖️ Karma & Trust System
+##  Karma & Trust System
 
 > *Inspired by Escape from Tarkov's Scav Karma and PMC Karma systems. The karma system transforms player morality from an abstract concept into a tangible game mechanic with real consequences.*
 
@@ -212,7 +212,7 @@ Context-aware ping based on what you're looking at:
 
 The Karma system creates a **reputation economy** where player behavior has lasting consequences. It answers a core extraction shooter question: *"Should I shoot first, or try to cooperate?"*
 
-<!-- 📸 IMAGE PLACEHOLDER: Conceptual art showing two players in a standoff — one with a "Trusted" aura, one with a "Hostile" marker -->
+<!--  IMAGE PLACEHOLDER: Conceptual art showing two players in a standoff — one with a "Trusted" aura, one with a "Hostile" marker -->
 
 ### Karma Score
 
@@ -220,11 +220,11 @@ The Karma system creates a **reputation economy** where player behavior has last
 
 | Range        | Tier               | Visual Indicator                     |
 | :----------- | :------------------ | :----------------------------------- |
-| 800–1000     | 🟢 **Trusted**      | Green glow on player card            |
-| 600–799      | 🔵 **Honorable**    | Blue border on player card           |
-| 400–599      | ⚪ **Neutral**       | Default appearance                   |
-| 200–399      | 🟠 **Suspicious**   | Orange warning on player card        |
-| 0–199        | 🔴 **Hostile**      | Red skull icon, hostile AI behavior  |
+| 800–1000     |  **Trusted**      | Green glow on player card            |
+| 600–799      |  **Honorable**    | Blue border on player card           |
+| 400–599      |  **Neutral**       | Default appearance                   |
+| 200–399      |  **Suspicious**   | Orange warning on player card        |
+| 0–199        |  **Hostile**      | Red skull icon, hostile AI behavior  |
 
 > **Design Note:** The exact score is hidden. Players only see their tier through visual indicators on their profile and in-game.
 
@@ -253,17 +253,17 @@ The Karma system creates a **reputation economy** where player behavior has last
 | Camp extraction point (detected) | -10         | Stationary in extract zone for 3+ min without extracting |
 | Confirmed grief report          | -20          | Manual review required                          |
 
-<!-- 📸 IMAGE PLACEHOLDER: UI mockup showing Karma change notification ("+15 Co-op Extract Bonus" or "-20 Unprovoked Kill") -->
+<!--  IMAGE PLACEHOLDER: UI mockup showing Karma change notification ("+15 Co-op Extract Bonus" or "-20 Unprovoked Kill") -->
 
 ### Karma Consequences
 
 | Tier            | Effects                                                                                                   |
 | :-------------- | :-------------------------------------------------------------------------------------------------------- |
-| 🟢 **Trusted**   | Reduced Scav/AI aggression, better vendor prices (-5%), access to exclusive co-op extract points, priority LFG |
-| 🔵 **Honorable** | Standard vendor prices, normal AI behavior, "Honorable" badge                                             |
-| ⚪ **Neutral**    | Default experience                                                                                        |
-| 🟠 **Suspicious** | AI patrols are more alert near you, vendors charge 10% more, LFG queue disadvantage                       |
-| 🔴 **Hostile**   | AI bosses actively hunt you, vendors refuse rare items, matchmade with other Hostile players, bounty on head |
+|  **Trusted**   | Reduced Scav/AI aggression, better vendor prices (-5%), access to exclusive co-op extract points, priority LFG |
+|  **Honorable** | Standard vendor prices, normal AI behavior, "Honorable" badge                                             |
+|  **Neutral**    | Default experience                                                                                        |
+|  **Suspicious** | AI patrols are more alert near you, vendors charge 10% more, LFG queue disadvantage                       |
+|  **Hostile**   | AI bosses actively hunt you, vendors refuse rare items, matchmade with other Hostile players, bounty on head |
 
 > *Reference: Tarkov's PMC Karma system introduced a boss (Partisan) who specifically hunts low-karma players. We adapt this concept — at Hostile tier, special AI "Bounty Hunters" spawn and track the player.*
 
@@ -274,11 +274,11 @@ The Karma system creates a **reputation economy** where player behavior has last
 - **Community Service**: Helping new players (mentorship program) grants karma bonuses.
 - **Season Reset**: Partial reset at season boundaries (pulled toward 500 by 30%).
 
-<!-- 📸 IMAGE PLACEHOLDER: Flowchart showing Karma tier progression, actions that move players up/down, and the consequences at each tier -->
+<!--  IMAGE PLACEHOLDER: Flowchart showing Karma tier progression, actions that move players up/down, and the consequences at each tier -->
 
 ---
 
-## 🤝 In-Raid Dynamic Interactions
+##  In-Raid Dynamic Interactions
 
 > *The most memorable moments in extraction shooters happen through unscripted player encounters. These systems facilitate (but never force) cooperation and betrayal.*
 
@@ -305,7 +305,7 @@ Specific extraction points require **two or more unrelated players** to activate
 
 > *Reference: Tarkov's Scav/PMC co-op extracts are among the most tense and rewarding moments in the game. The trust required creates powerful emergent narratives.*
 
-<!-- 📸 IMAGE PLACEHOLDER: Screenshot reference of Tarkov's co-op extraction point (e.g., Scav Camp on Interchange) -->
+<!--  IMAGE PLACEHOLDER: Screenshot reference of Tarkov's co-op extraction point (e.g., Scav Camp on Interchange) -->
 
 ### Temporary Alliances
 
@@ -332,11 +332,11 @@ Betrayal is a feature, not a bug. It creates the tension that defines the genre.
 | Kill during Co-op Extract | Proximity + extract zone detection | -30 Karma, banned from co-op extracts 24h |
 | Teamkill in Squad     | Friendly fire tracking              | -25 Karma, auto-kick from squad           |
 
-<!-- 📸 IMAGE PLACEHOLDER: Storyboard showing a dynamic interaction sequence: two strangers meet, negotiate via VOIP, exchange items, and either cooperate or betray -->
+<!--  IMAGE PLACEHOLDER: Storyboard showing a dynamic interaction sequence: two strangers meet, negotiate via VOIP, exchange items, and either cooperate or betray -->
 
 ---
 
-## 😀 Emote & Gesture System
+##  Emote & Gesture System
 
 > *Non-verbal communication is critical when proximity VOIP might reveal your position to unintended listeners. Emotes provide a silent alternative.*
 
@@ -371,13 +371,13 @@ These are **longer animations** that may lower your weapon (vulnerable state):
 ### Emote Wheel
 
 ```
-             [STOP ✋]
+             [STOP ]
                 │
-  [CEASEFIRE] ──┼── [WAVE 👋]
+  [CEASEFIRE] ──┼── [WAVE ]
                 │
-   [ENEMY 👆] ──┼── [FOLLOW 🫱]
+   [ENEMY ] ──┼── [FOLLOW ]
                 │
-            [THUMBS UP 👍]
+            [THUMBS UP ]
 ```
 
 **Access:** Hold `T` (default) → Select with mouse → Release to execute.
@@ -388,13 +388,13 @@ These are **longer animations** that may lower your weapon (vulnerable state):
 - **Earn emotes** through: Battle Pass, Clan achievements, Commendation milestones, Store
 - **Faction-specific emotes** unlock at high faction reputation (e.g., military salute for BEAR faction equivalent)
 
-<!-- 📸 IMAGE PLACEHOLDER: UI mockup of the Emote Wheel with tactical gestures on the left and social emotes on the right -->
+<!--  IMAGE PLACEHOLDER: UI mockup of the Emote Wheel with tactical gestures on the left and social emotes on the right -->
 
-<!-- 📸 IMAGE PLACEHOLDER: In-game screenshot showing a player performing the "Ceasefire" emote with hands raised -->
+<!--  IMAGE PLACEHOLDER: In-game screenshot showing a player performing the "Ceasefire" emote with hands raised -->
 
 ---
 
-## 🔎 LFG (Looking for Group) System
+##  LFG (Looking for Group) System
 
 > *External LFG (Discord, Reddit) fragments the community and excludes players who don't use third-party tools. A built-in LFG system keeps matchmaking social and accessible.*
 
@@ -404,22 +404,22 @@ These are **longer animations** that may lower your weapon (vulnerable state):
 
 ```
 ┌──────────────────────────────────────────────────────────────┐
-│  🔎 LOOKING FOR GROUP                        [CREATE POST]   │
+│   LOOKING FOR GROUP                        [CREATE POST]   │
 ├──────────────────────────────────────────────────────────────┤
 │  Filter: [Map ▼] [Squad Size ▼] [Language ▼] [Playstyle ▼]   │
 ├──────────────────────────────────────────────────────────────┤
 │  ┌────────────────────────────────────────────────────────┐  │
-│  │ 🟢 "NightWolf_42" [★★★★☆ Karma]       Duo → Need 1  │  │
+│  │  "NightWolf_42" [ Karma]       Duo → Need 1  │  │
 │  │    Map: Factory | Playstyle: Aggressive | Mic: Yes     │  │
 │  │    Note: "Looking for confident player, quick raid"    │  │
 │  │    [JOIN REQUEST]                           2 min ago  │  │
 │  ├────────────────────────────────────────────────────────┤  │
-│  │ 🟢 "MedkitMary" [★★★★★ Karma]         Squad → Need 2 │ │
+│  │  "MedkitMary" [ Karma]         Squad → Need 2 │ │
 │  │    Map: Any | Playstyle: Loot Run | Mic: Preferred     │  │
 │  │    Note: "Chill loot run, helping new players"         │  │
 │  │    [JOIN REQUEST]                           5 min ago  │  │
 │  ├────────────────────────────────────────────────────────┤  │
-│  │ 🟡 "HatchetRunner" [★★★☆☆ Karma]      Duo → Need 1  │  │
+│  │  "HatchetRunner" [ Karma]      Duo → Need 1  │  │
 │  │    Map: Customs | Playstyle: Quest | Mic: Optional     │  │
 │  │    Note: "Need help with Quest: Find Documents"        │  │
 │  │    [JOIN REQUEST]                          12 min ago  │  │
@@ -429,7 +429,7 @@ These are **longer animations** that may lower your weapon (vulnerable state):
 └──────────────────────────────────────────────────────────────┘
 ```
 
-<!-- 📸 IMAGE PLACEHOLDER: UI mockup of the LFG Board with filter controls and player listings -->
+<!--  IMAGE PLACEHOLDER: UI mockup of the LFG Board with filter controls and player listings -->
 
 ### LFG Post Fields
 
@@ -453,7 +453,7 @@ These are **longer animations** that may lower your weapon (vulnerable state):
 
 ---
 
-## 🏰 Clan System
+##  Clan System
 
 ### Clan Overview
 
@@ -483,7 +483,7 @@ A **Clan** is a persistent community of players who play regularly together, ear
 - **Clan Colors**: Primary & Secondary (displayed on clan tag and banner)
 - **Clan Motto**: Short tagline (50 characters max)
 
-<!-- 📸 IMAGE PLACEHOLDER: UI mockup of the Clan Creation screen with emblem editor, color picker, and preview -->
+<!--  IMAGE PLACEHOLDER: UI mockup of the Clan Creation screen with emblem editor, color picker, and preview -->
 
 ### Clan Hierarchy
 
@@ -522,7 +522,7 @@ A shared storage for items and credits that creates a sense of collective invest
 - Shared weapons/gear (for equipping lower-level members)
 - Clan-earned rewards (trophies, seasonal rewards)
 
-<!-- 📸 IMAGE PLACEHOLDER: UI mockup of the Clan Bank inventory screen with deposit/withdraw buttons and audit log -->
+<!--  IMAGE PLACEHOLDER: UI mockup of the Clan Bank inventory screen with deposit/withdraw buttons and audit log -->
 
 #### 2. Clan Challenges
 
@@ -555,7 +555,7 @@ Weekly objectives that all clan members contribute toward collectively:
 | Top 100  | Rare Clan Banner + 50,000 Credits         |
 | Top 1000 | Uncommon Banner + 10,000 Credits          |
 
-<!-- 📸 IMAGE PLACEHOLDER: UI mockup of the Clan Leaderboard screen showing top clans with emblems and stats -->
+<!--  IMAGE PLACEHOLDER: UI mockup of the Clan Leaderboard screen showing top clans with emblems and stats -->
 
 #### 4. Clan Communication
 
@@ -584,11 +584,11 @@ Weekly objectives that all clan members contribute toward collectively:
 | **Training**            | Veterans help Recruits              | Loyalty points + karma bonus      |
 | **Clan Wars**           | Compete against rival clan          | Winner gets exclusive banner      |
 
-<!-- 📸 IMAGE PLACEHOLDER: UI mockup of the Clan Events calendar with scheduled Raid Nights and active challenges -->
+<!--  IMAGE PLACEHOLDER: UI mockup of the Clan Events calendar with scheduled Raid Nights and active challenges -->
 
 ---
 
-## 👫 Friends System
+##  Friends System
 
 ### Friend List
 
@@ -607,11 +607,11 @@ Weekly objectives that all clan members contribute toward collectively:
 | Category         | Icon | Description                        |
 | :--------------- | :--- | :--------------------------------- |
 | **Favourites**   | ⭐   | Pinned to top, quick invite        |
-| **Clan**         | 🏰   | Auto-categorized clan members      |
-| **Recent**       | 🕐   | Last 24 hours played together      |
-| **All**          | 👥   | Full friend list                   |
+| **Clan**         |    | Auto-categorized clan members      |
+| **Recent**       |    | Last 24 hours played together      |
+| **All**          |    | Full friend list                   |
 | **Pending**      | ⏳   | Sent/Received friend requests      |
-| **Blocked**      | 🚫   | Cannot contact you                 |
+| **Blocked**      |    | Cannot contact you                 |
 
 ### Friend Interactions
 
@@ -630,19 +630,19 @@ Weekly objectives that all clan members contribute toward collectively:
 
 | Status             | Icon | Description                    | Joinable? |
 | :----------------- | :--- | :----------------------------- | :-------- |
-| **Online**         | 🟢   | In menus, available            | Yes       |
-| **In Lobby**       | 🟡   | In pre-match lobby             | If open   |
-| **In Match**       | 🔴   | Currently in a raid            | No        |
-| **In Safe House**  | 🏠   | In Safe House (social hub)     | Visit     |
-| **Away**           | 🟠   | Idle 10+ minutes               | Yes       |
-| **Do Not Disturb** | ⛔   | Blocks all invites/messages    | No        |
-| **Invisible**      | ⚫   | Appears offline to all         | No        |
+| **Online**         |    | In menus, available            | Yes       |
+| **In Lobby**       |    | In pre-match lobby             | If open   |
+| **In Match**       |    | Currently in a raid            | No        |
+| **In Safe House**  |    | In Safe House (social hub)     | Visit     |
+| **Away**           |    | Idle 10+ minutes               | Yes       |
+| **Do Not Disturb** |    | Blocks all invites/messages    | No        |
+| **Invisible**      |    | Appears offline to all         | No        |
 
-<!-- 📸 IMAGE PLACEHOLDER: UI mockup of the Friends List panel showing different status indicators, categories, and right-click context menu -->
+<!--  IMAGE PLACEHOLDER: UI mockup of the Friends List panel showing different status indicators, categories, and right-click context menu -->
 
 ---
 
-## 🏠 Safe House (Social Hub)
+##  Safe House (Social Hub)
 
 > *Inspired by Tarkov's Hideout and ARC Raiders' Social Hub. A persistent safe space where players interact between raids.*
 
@@ -670,7 +670,7 @@ The **Safe House** is a personal instanced space that serves as the player's hom
 - Voice chat active during visits (private channel)
 - Drop items on the ground to trade with visitors
 
-<!-- 📸 IMAGE PLACEHOLDER: Concept art of the Safe House interior showing different functional areas (stash, workbench, trophy wall, intel board) -->
+<!--  IMAGE PLACEHOLDER: Concept art of the Safe House interior showing different functional areas (stash, workbench, trophy wall, intel board) -->
 
 ### Trading Post (In-Safe House)
 
@@ -682,7 +682,7 @@ The **Safe House** is a personal instanced space that serves as the player's hom
 
 ---
 
-## 🎯 Matchmaking Details
+##  Matchmaking Details
 
 > *Matchmaking is where social design and game balance intersect. The system must feel fair for solos, duos, and full squads while keeping queue times short.*
 
@@ -702,12 +702,12 @@ The **Safe House** is a personal instanced space that serves as the player's hom
 **Star Rating Display:**
 | Stars   | MMR Range   | Percentile      |
 | :------ | :---------- | :---------------|
-| ★☆☆☆☆☆ | 0–500       | Bottom 15%      |
-| ★★☆☆☆☆ | 501–1000    | 15–30%          |
-| ★★★☆☆☆ | 1001–1500   | 30–55%          |
-| ★★★★☆☆ | 1501–2000   | 55–80%          |
-| ★★★★★☆ | 2001–2500   | 80–95%          |
-| ★★★★★★ | 2501+       | Top 5%          |
+|  | 0–500       | Bottom 15%      |
+|  | 501–1000    | 15–30%          |
+|  | 1001–1500   | 30–55%          |
+|  | 1501–2000   | 55–80%          |
+|  | 2001–2500   | 80–95%          |
+|  | 2501+       | Top 5%          |
 
 > *Reference: Hunt: Showdown uses a similar 1-6 star rating with a modified ELO system. Players want to see a general indicator without knowing exact numbers.*
 
@@ -729,7 +729,7 @@ When a **solo player** successfully extracts from a lobby with squads:
 
 > *Reference: Hunt: Showdown awards an "Underdog Bonus" to solo players who extract with a bounty while outnumbered.*
 
-<!-- 📸 IMAGE PLACEHOLDER: Diagram showing matchmaking flow: Player enters queue → MMR calculation → Squad size adjustment → Lobby filling → Match start -->
+<!--  IMAGE PLACEHOLDER: Diagram showing matchmaking flow: Player enters queue → MMR calculation → Squad size adjustment → Lobby filling → Match start -->
 
 ### Lobby Composition
 
@@ -749,7 +749,7 @@ When a **solo player** successfully extracts from a lobby with squads:
 
 ---
 
-## 🎁 Social Rewards
+##  Social Rewards
 
 ### Play Together Bonuses
 
@@ -788,11 +788,11 @@ When a **solo player** successfully extracts from a lobby with squads:
 
 **Referral Limit:** 50 successful referrals per account (anti-exploit)
 
-<!-- 📸 IMAGE PLACEHOLDER: UI mockup of the Referral Program screen showing referral code, progress tracker, and reward milestones -->
+<!--  IMAGE PLACEHOLDER: UI mockup of the Referral Program screen showing referral code, progress tracker, and reward milestones -->
 
 ---
 
-## 📋 Post-Match Social Flow
+##  Post-Match Social Flow
 
 > *The 30 seconds after a match ends are a critical social window. Done right, this flow converts strangers into friends and one-time squads into clans.*
 
@@ -805,7 +805,7 @@ When a **solo player** successfully extracts from a lobby with squads:
 │  AFTER ACTION REPORT                         Match #284712  │
 ├──────────────────────────────────────────────────────────────┤
 │                                                              │
-│  RESULT: ✅ EXTRACTED          Duration: 18:42               │
+│  RESULT:  EXTRACTED          Duration: 18:42               │
 │  Map: Factory                  Extraction: Gate 3            │
 │                                                              │
 │  ┌─── PERFORMANCE ───────────────────────────────────────┐   │
@@ -817,7 +817,7 @@ When a **solo player** successfully extracts from a lobby with squads:
 │  └───────────────────────────────────────────────────────┘   │
 │                                                              │
 │  ┌─── SQUAD PERFORMANCE ─────────────────────────────────┐   │
-│  │  You ★★★★☆    P2 ★★★☆☆      P3 ★★★★★☆               │   │
+│  │  You     P2       P3                │   │
 │  │  K:3 D:0       K:1 D:0       K:5 D:1                 │   │
 │  │  Loot: 142K    Loot: 98K     Loot: 215K              │   │
 │  └───────────────────────────────────────────────────────┘   │
@@ -826,7 +826,7 @@ When a **solo player** successfully extracts from a lobby with squads:
 └──────────────────────────────────────────────────────────────┘
 ```
 
-<!-- 📸 IMAGE PLACEHOLDER: UI mockup of the After Action Report screen with squad performance comparison and action buttons -->
+<!--  IMAGE PLACEHOLDER: UI mockup of the After Action Report screen with squad performance comparison and action buttons -->
 
 ### Post-Match Commendation
 
@@ -834,11 +834,11 @@ After each match, players can commend teammates (1 commendation per match):
 
 | Category           | Icon | Description                          |
 | :----------------- | :--- | :----------------------------------- |
-| **Good Teammate**  | 🤝   | Communicated well, played objectives |
-| **Skilled Player** | 🎯   | Impressive gameplay performance      |
-| **Friendly**       | 😊   | Positive attitude, helped team       |
-| **Leader**         | 👑   | Made good calls, coordinated squad   |
-| **Clutch**         | 🔥   | Pulled off a critical play           |
+| **Good Teammate**  |    | Communicated well, played objectives |
+| **Skilled Player** |    | Impressive gameplay performance      |
+| **Friendly**       |    | Positive attitude, helped team       |
+| **Leader**         |    | Made good calls, coordinated squad   |
+| **Clutch**         |    | Pulled off a critical play           |
 
 **Commendation Rewards:**
 | Milestone            | Reward                             |
@@ -865,25 +865,25 @@ When eliminated during a squad match:
 - Cannot see enemy health bars or outlines
 - Spectator delay: 5 seconds (prevents real-time callouts)
 
-<!-- 📸 IMAGE PLACEHOLDER: UI mockup of the Spectator View showing teammate POV with limited HUD elements and ping capability -->
+<!--  IMAGE PLACEHOLDER: UI mockup of the Spectator View showing teammate POV with limited HUD elements and ping capability -->
 
 ---
 
-## 🔇 Anti-Toxicity Systems
+##  Anti-Toxicity Systems
 
 ### Report System
 
 **Report Categories:**
 | Category             | Severity       | Automated Action                     |
 | :------------------- | :------------- | :----------------------------------- |
-| Cheating / Hacking   | 🔴 Critical    | Immediate shadow-flag, priority review |
-| Abusive Voice / Text | 🟠 High        | Auto-mute + queue for review          |
-| Griefing / Teamkilling | 🟠 High      | Behavior score impact + karma loss    |
-| Intentional Disconnecting | 🟡 Medium | Matchmaking penalty escalation       |
-| Inappropriate Name   | 🟡 Medium      | Forced name change                    |
-| AFK / Abandonment    | 🟡 Medium      | Matchmaking cooldown                  |
-| Exploit / Bug Abuse  | 🟠 High        | Flag for investigation                |
-| Other                | 🟢 Low         | Manual review                         |
+| Cheating / Hacking   |  Critical    | Immediate shadow-flag, priority review |
+| Abusive Voice / Text |  High        | Auto-mute + queue for review          |
+| Griefing / Teamkilling |  High      | Behavior score impact + karma loss    |
+| Intentional Disconnecting |  Medium | Matchmaking penalty escalation       |
+| Inappropriate Name   |  Medium      | Forced name change                    |
+| AFK / Abandonment    |  Medium      | Matchmaking cooldown                  |
+| Exploit / Bug Abuse  |  High        | Flag for investigation                |
+| Other                |  Low         | Manual review                         |
 
 **Report Process:**
 1. Select player from scoreboard, kill feed, or post-match screen
@@ -926,11 +926,11 @@ When eliminated during a squad match:
 - Good behavior streak: 10 matches without incident → +10 bonus
 - Commendation received: +5 per commendation
 
-<!-- 📸 IMAGE PLACEHOLDER: Diagram showing the Behavior Score system feedback loop: good behavior → higher score → better matches → more fun → continued good behavior -->
+<!--  IMAGE PLACEHOLDER: Diagram showing the Behavior Score system feedback loop: good behavior → higher score → better matches → more fun → continued good behavior -->
 
 ---
 
-## 📱 Mobile Social Features
+##  Mobile Social Features
 
 ### Quick Social Access
 
@@ -958,13 +958,13 @@ When eliminated during a squad match:
 - Generate shareable profile cards (stats, badges, karma tier)
 - Share replay clips (15s / 30s auto-captured highlights)
 
-<!-- 📸 IMAGE PLACEHOLDER: Mobile UI mockup showing the social quick-access button, push-to-talk placement, and share card examples -->
+<!--  IMAGE PLACEHOLDER: Mobile UI mockup showing the social quick-access button, push-to-talk placement, and share card examples -->
 
 ---
 
-## 🔄 Cross-Platform Ecosystem (Powered by EOS)
+##  Cross-Platform Ecosystem (Powered by EOS)
 
-### 🌐 Epic Online Services (EOS) Integration
+###  Epic Online Services (EOS) Integration
 
 We utilize **Epic Online Services** to provide a seamless multiplayer experience across all devices.
 
@@ -976,7 +976,7 @@ We utilize **Epic Online Services** to provide a seamless multiplayer experience
 | **Cross-Platform Voice** | High-quality Opus voice chat between mobile and PC without Discord. |
 | **Cloud Save**          | Safe House progress, settings, and stash sync across devices.          |
 
-### 🎮 Unified Lobbies & Parties
+###  Unified Lobbies & Parties
 
 **The "Smart Lobby" System:**
 - **Persistent Parties** — Your squad stays together after the match ends. No re-invite needed.
@@ -984,7 +984,7 @@ We utilize **Epic Online Services** to provide a seamless multiplayer experience
 - **Cross-Platform Invites** — Send game invites directly via EOS Overlay or in-game Social Panel, regardless of platform.
 - **Party Transfer** — All party members follow the leader between modes (lobby → Safe House → raid).
 
-### ⚔️ Cross-Play Settings
+###  Cross-Play Settings
 
 | Option                  | Description                                             | Default |
 | :---------------------- | :------------------------------------------------------ | :------ |
@@ -995,17 +995,17 @@ We utilize **Epic Online Services** to provide a seamless multiplayer experience
 **Platform Icons:**
 | Platform      | Icon | Notes                    |
 | :------------ | :--- | :----------------------- |
-| PC (Steam)    | 🖥️   | KB+M or Controller       |
-| PlayStation   | 🎮   | Controller               |
-| Xbox          | 🟢   | Controller               |
-| Mobile (iOS)  | 📱   | Touch or Controller      |
-| Mobile (Android) | 📱 | Touch or Controller      |
+| PC (Steam)    |    | KB+M or Controller       |
+| PlayStation   |    | Controller               |
+| Xbox          |    | Controller               |
+| Mobile (iOS)  |    | Touch or Controller      |
+| Mobile (Android) |  | Touch or Controller      |
 
-<!-- 📸 IMAGE PLACEHOLDER: Diagram showing cross-platform party formation with icons for each platform connecting through EOS -->
+<!--  IMAGE PLACEHOLDER: Diagram showing cross-platform party formation with icons for each platform connecting through EOS -->
 
 ---
 
-## 📊 Social Analytics (Backend)
+##  Social Analytics (Backend)
 
 ### Metrics to Track
 
@@ -1048,57 +1048,57 @@ We utilize **Epic Online Services** to provide a seamless multiplayer experience
 
 ---
 
-## 🚀 Social Features Roadmap
+##  Social Features Roadmap
 
 ### Phase 1: Launch (v1.0)
 
 | Feature              | Status | Priority |
 | :------------------- | :----- | :------- |
-| Squad system (1-4)   | ✅     | P0       |
-| Voice chat (squad + proximity) | ✅ | P0   |
-| Ping system          | ✅     | P0       |
-| Friends list         | ✅     | P0       |
-| Basic reporting      | ✅     | P0       |
-| Text chat            | ✅     | P1       |
-| Behavior score       | ✅     | P1       |
-| Basic emotes (5)     | ✅     | P1       |
+| Squad system (1-4)   |      | P0       |
+| Voice chat (squad + proximity) |  | P0   |
+| Ping system          |      | P0       |
+| Friends list         |      | P0       |
+| Basic reporting      |      | P0       |
+| Text chat            |      | P1       |
+| Behavior score       |      | P1       |
+| Basic emotes (5)     |      | P1       |
 
 ### Phase 2: Community Foundation (v1.1 — Month 2)
 
 | Feature                 | Status | Priority |
 | :---------------------- | :----- | :------- |
-| Clan system (basic)     | 🔲     | P1       |
-| Clan chat               | 🔲     | P1       |
-| LFG Board               | 🔲     | P1       |
-| Referral program        | 🔲     | P2       |
-| Commendation system     | 🔲     | P1       |
-| Karma system (basic)    | 🔲     | P1       |
+| Clan system (basic)     |      | P1       |
+| Clan chat               |      | P1       |
+| LFG Board               |      | P1       |
+| Referral program        |      | P2       |
+| Commendation system     |      | P1       |
+| Karma system (basic)    |      | P1       |
 
 ### Phase 3: Social Depth (v1.2 — Month 3)
 
 | Feature                   | Status | Priority |
 | :------------------------ | :----- | :------- |
-| Clan challenges           | 🔲     | P2       |
-| Clan leaderboards         | 🔲     | P2       |
-| Co-op extraction points   | 🔲     | P1       |
-| Expanded emote system     | 🔲     | P2       |
-| Social Hub / Safe House   | 🔲     | P2       |
-| After Action Report (AAR) | 🔲     | P1       |
+| Clan challenges           |      | P2       |
+| Clan leaderboards         |      | P2       |
+| Co-op extraction points   |      | P1       |
+| Expanded emote system     |      | P2       |
+| Social Hub / Safe House   |      | P2       |
+| After Action Report (AAR) |      | P1       |
 
 ### Phase 4: Competitive Social (v1.3 — Season 2)
 
 | Feature                   | Status | Priority |
 | :------------------------ | :----- | :------- |
-| Clan wars events          | 🔲     | P3       |
-| Mentorship program        | 🔲     | P3       |
-| Community tournaments     | 🔲     | P3       |
-| In-Safe House trading     | 🔲     | P2       |
-| Advanced karma (bounties) | 🔲     | P2       |
-| Spectator mode (enhanced) | 🔲     | P3       |
+| Clan wars events          |      | P3       |
+| Mentorship program        |      | P3       |
+| Community tournaments     |      | P3       |
+| In-Safe House trading     |      | P2       |
+| Advanced karma (bounties) |      | P2       |
+| Spectator mode (enhanced) |      | P3       |
 
 ---
 
-## 📚 Reference Games & Inspirations
+##  Reference Games & Inspirations
 
 | Game                   | Key Social Feature to Study               | What We Adopt                          |
 | :--------------------- | :---------------------------------------- | :------------------------------------- |
@@ -1112,4 +1112,4 @@ We utilize **Epic Online Services** to provide a seamless multiplayer experience
 
 > **Note:** This is a *design reference* table, not a feature copy list. Each system is adapted to fit our game's identity and design pillars.
 
-<!-- 📸 IMAGE PLACEHOLDER: Comparison grid showing screenshots from each reference game's social feature (Tarkov Karma UI, Hunt MMR stars, DMZ LFG, Dark and Darker emotes) -->
+<!--  IMAGE PLACEHOLDER: Comparison grid showing screenshots from each reference game's social feature (Tarkov Karma UI, Hunt MMR stars, DMZ LFG, Dark and Darker emotes) -->

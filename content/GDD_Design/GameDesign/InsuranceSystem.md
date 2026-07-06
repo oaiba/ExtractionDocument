@@ -29,17 +29,17 @@ The Insurance System is one of the defining mechanics of the extraction genre �
 
 ### What Insurance Does NOT Do
 
-- ❌ Guarantee return — if another player loots your insured item, it is **gone**
-- ❌ Cover non-insurable items (secure container, quest items, consumables, ammo)
-- ❌ Return items lost to the contamination zone (match timer expired)
-- ❌ Cover items that go MIA (Missing In Action — disconnected mid-raid)
+-  Guarantee return — if another player loots your insured item, it is **gone**
+-  Cover non-insurable items (secure container, quest items, consumables, ammo)
+-  Return items lost to the contamination zone (match timer expired)
+-  Cover items that go MIA (Missing In Action — disconnected mid-raid)
 
 ### The "Insurance Fraud" Design Space
 
 Players can intentionally **hide their gear** in obscure locations before dying or extracting — planning to let their insurance "return" the item while they extract with different high-value loot. This is:
-- ✅ **Intentional design** — a form of advanced strategic play
-- ✅ Fun emergent behavior we support
-- ⚠ Countered by other players learning to check common hiding spots
+-  **Intentional design** — a form of advanced strategic play
+-  Fun emergent behavior we support
+-  Countered by other players learning to check common hiding spots
 
 ---
 
@@ -84,7 +84,7 @@ Two traders offer insurance services, each with distinct tradeoffs:
 | Factor | Viktor | Ada |
 | :----- | :----- | :-- |
 | Cost | 15% | 8% |
-| Speed | ★★★★★ (12–16h) | ★★☆☆☆ (36–48h) |
+| Speed |  (12–16h) |  (36–48h) |
 | Hold period | 4 days | 2 days |
 | Unlock requirement | None | Syndicate Friendly |
 | Durability on return | Normal | +10% bonus |
@@ -96,7 +96,7 @@ Two traders offer insurance services, each with distinct tradeoffs:
 
 ## 3. What Can and Cannot Be Insured
 
-### ✅ Insurable Items
+###  Insurable Items
 
 | Category | Examples |
 | :------- | :------- |
@@ -110,7 +110,7 @@ Two traders offer insurance services, each with distinct tradeoffs:
 | Melee weapons | Knives, hatchets |
 | High-value containers | Weapon cases, item cases |
 
-### ❌ Non-Insurable Items
+###  Non-Insurable Items
 
 | Category | Reason |
 | :------- | :----- |
@@ -132,11 +132,11 @@ Insurance status must be **visually obvious at all times** — in stash, in load
 
 | Status | Visual |
 | :----- | :----- |
-| Insured (Viktor) | 🛡 Blue shield icon — top-left corner of item tile |
-| Insured (Ada) | 🛡 Grey shield icon — top-left corner of item tile |
+| Insured (Viktor) |  Blue shield icon — top-left corner of item tile |
+| Insured (Ada) |  Grey shield icon — top-left corner of item tile |
 | Not insured | No icon |
-| Insurance pending (in queue) | 🕐 Clock icon overlay — item is currently being "processed" |
-| Insurance returned (inbox) | 📬 Animated notification badge on Safe House mail button |
+| Insurance pending (in queue) |  Clock icon overlay — item is currently being "processed" |
+| Insurance returned (inbox) |  Animated notification badge on Safe House mail button |
 
 ### Color Coding in Loadout Gear Slots
 
@@ -144,19 +144,19 @@ Insurance status must be **visually obvious at all times** — in stash, in load
 ┌──────────────────────────────────────────────────────┐
 │  PRIMARY WEAPON                                      │
 │  ┌──────────────────────────────────────────────┐   │
-│  │ 🛡 M4A1 (HK416 barrel, ACOG, comp)           │   │  ← Blue border = insured
+│  │  M4A1 (HK416 barrel, ACOG, comp)           │   │  ← Blue border = insured
 │  │    Value: $14,200    Weight: 3.6 kg           │   │
 │  └──────────────────────────────────────────────┘   │
 │                                                      │
 │  ARMOR                                               │
 │  ┌──────────────────────────────────────────────┐   │
-│  │ ⚠ Plate Carrier [Class 4]                    │   │  ← Yellow border = uninsured high-value
+│  │  Plate Carrier [Class 4]                    │   │  ← Yellow border = uninsured high-value
 │  │    Value: $9,800     Weight: 6.1 kg           │   │
 │  └──────────────────────────────────────────────┘   │
 └──────────────────────────────────────────────────────┘
 ```
 
-**Auto-warning:** If an equipped item's value exceeds $5,000 and it is not insured, a subtle ⚠ amber icon appears on the gear slot as a nudge (not a blocker).
+**Auto-warning:** If an equipped item's value exceeds $5,000 and it is not insured, a subtle  amber icon appears on the gear slot as a nudge (not a blocker).
 
 ---
 
@@ -219,13 +219,13 @@ Player visits Safe House Mail Station → Claims items to stash
 
 ```
 ┌────────────────────────────────────────────────────────────┐
-│  📬  INSURANCE INBOX                                        │
+│    INSURANCE INBOX                                        │
 │  ─────────────────────────────────────────────────────────  │
 │  [Viktor] — Returned 3 items (hold until: 3 days 14h left) │
 │  ┌─────────────────────────────────────────────────────┐   │
-│  │ ✅ M4A1 (ACOG, comp)         — RETURNED             │   │
-│  │ ✅ Plate Carrier [Class 4]   — RETURNED             │   │
-│  │ ❌ HK416 barrel              — LOOTED (lost)        │   │
+│  │  M4A1 (ACOG, comp)         — RETURNED             │   │
+│  │  Plate Carrier [Class 4]   — RETURNED             │   │
+│  │  HK416 barrel              — LOOTED (lost)        │   │
 │  └─────────────────────────────────────────────────────┘   │
 │  [ Claim All to Stash ]                                     │
 │  ─────────────────────────────────────────────────────────  │

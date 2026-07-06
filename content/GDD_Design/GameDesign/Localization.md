@@ -3,7 +3,7 @@ title: "Localization Strategy"
 type: docs
 ---
 
-## 🌍 Localization Philosophy
+##  Localization Philosophy
 
 **Core Principle:** "Speak the player's language, respect their culture"
 
@@ -15,7 +15,7 @@ Localization is NOT just translation. It includes:
 
 ---
 
-## 🗣️ Supported Languages
+##  Supported Languages
 
 ### Launch Languages (Tier 1)
 
@@ -55,7 +55,7 @@ Localization is NOT just translation. It includes:
 
 ---
 
-## 📝 Text Localization
+##  Text Localization
 
 ### Text Categories
 
@@ -71,20 +71,20 @@ Localization is NOT just translation. It includes:
 
 **DO:**
 ```
-✓ Use placeholder tokens: "You earned {0} credits"
-✓ Provide context notes: [Button label, max 10 chars]
-✓ Include plural forms: "{0} item" / "{0} items"
-✓ Handle gender where needed: "He/She extracted"
-✓ Keep strings modular: Avoid concatenation
+ Use placeholder tokens: "You earned {0} credits"
+ Provide context notes: [Button label, max 10 chars]
+ Include plural forms: "{0} item" / "{0} items"
+ Handle gender where needed: "He/She extracted"
+ Keep strings modular: Avoid concatenation
 ```
 
 **DON'T:**
 ```
-✗ Hardcode numbers: "Kill 5 enemies" → "Kill {0} enemies"
-✗ Embed formatting: "KILL enemies" → Mark as [UPPERCASE]
-✗ Use idioms blindly: "Piece of cake" → "Easy task"
-✗ Assume left-to-right: Support RTL layouts
-✗ Ignore text expansion: German is ~30% longer than English
+ Hardcode numbers: "Kill 5 enemies" → "Kill {0} enemies"
+ Embed formatting: "KILL enemies" → Mark as [UPPERCASE]
+ Use idioms blindly: "Piece of cake" → "Easy task"
+ Assume left-to-right: Support RTL layouts
+ Ignore text expansion: German is ~30% longer than English
 ```
 
 ### Text Expansion Guidelines
@@ -127,7 +127,7 @@ Localization is NOT just translation. It includes:
 
 ---
 
-## 🎙️ Voice Localization
+##  Voice Localization
 
 ### Voice Strategy
 
@@ -154,7 +154,7 @@ Localization is NOT just translation. It includes:
 
 ---
 
-## 🎨 Visual Localization
+##  Visual Localization
 
 ### UI Adaptations
 
@@ -192,7 +192,7 @@ Localization is NOT just translation. It includes:
 
 ---
 
-## 🌐 Cultural Adaptation
+##  Cultural Adaptation
 
 ### Content Review Categories
 
@@ -231,7 +231,7 @@ Localization is NOT just translation. It includes:
 
 ---
 
-## 💰 Regional Pricing
+##  Regional Pricing
 
 ### Price Tier System
 
@@ -257,7 +257,7 @@ Localization is NOT just translation. It includes:
 
 ---
 
-## 📋 Localization Process
+##  Localization Process
 
 ### Workflow
 
@@ -308,7 +308,7 @@ Localization is NOT just translation. It includes:
 
 ---
 
-## 🔧 Technical Implementation
+##  Technical Implementation
 
 ### Localization System
 
@@ -351,7 +351,7 @@ English fallback (en-US)
 
 ---
 
-## 📊 Localization Metrics
+##  Localization Metrics
 
 ### Per-Language KPIs
 

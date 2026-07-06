@@ -3,14 +3,14 @@ title: "AI Sensory System & Perception"
 type: docs
 ---
 
-## 👂 The "Fair" AI Principle
+##  The "Fair" AI Principle
 
 AI must play by the same rules as the player. **No Omniscience.**
 If a player is obscured by smoke, the AI cannot see them. If a player walks slowly (Sneak), the AI cannot hear them.
 
 ---
 
-## 👁️ Visual Perception (Sight)
+##  Visual Perception (Sight)
 
 ### Components
 We use `UAIPerceptionComponent` with a customized **Sight Config**.
@@ -39,7 +39,7 @@ Every tick, the AI calculates a `VisibilityScore` (0.0 to 1.0) for the target.
 
 ---
 
-## 👂 Auditory Perception (Hearing)
+##  Auditory Perception (Hearing)
 
 ### Components
 We use `UAISense_Hearing`.
@@ -67,7 +67,7 @@ AI remembers the location where the sound was *generated*, not where the player 
 
 ---
 
-## 🧠 Memory & Investigation
+##  Memory & Investigation
 
 ### Short-Term Memory (0-10s)
 *   AI tracks the `LastKnownPosition` (LKP).
@@ -84,7 +84,7 @@ AI remembers the location where the sound was *generated*, not where the player 
 
 ---
 
-## 🗣️ Communication (The "Hive Mind")
+##  Communication (The "Hive Mind")
 
 AI agents share information within a squad radius (20m).
 
@@ -96,7 +96,7 @@ AI agents share information within a squad radius (20m).
 
 ---
 
-## ⚙️ Optimization (Budget)
+##  Optimization (Budget)
 
 | LOD Level | Distance | Perception Update Rate |
 | :--- | :--- | :--- |

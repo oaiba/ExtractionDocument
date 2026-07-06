@@ -3,11 +3,11 @@ title: "Replication Strategy & Bandwidth Optimization"
 type: docs
 ---
 
-## 🏗️ The Problem: High Density
+##  The Problem: High Density
 Extraction Shooters have a unique networking challenge: **Huge Maps + High AI Count + High Loot Count.**
 Standard Unreal `NetCullDistance` is not enough.
 
-## 📡 Replication Graph
+##  Replication Graph
 
 We implement a custom `UReplicationGraph` to manage the immense number of replicated actors.
 
@@ -36,7 +36,7 @@ We implement a custom `UReplicationGraph` to manage the immense number of replic
 
 ---
 
-## 📦 Loot Replication (The "Thousands of Items" Problem)
+##  Loot Replication (The "Thousands of Items" Problem)
 
 ### Structural Items (Containers)
 *   Use `NetDormancy` heavily.
@@ -52,7 +52,7 @@ We implement a custom `UReplicationGraph` to manage the immense number of replic
 
 ---
 
-## 🔫 Weapon Replication
+##  Weapon Replication
 
 ### 1. Firing (Client-Side Prediction)
 *   **Client:** plays muzzle flash & audio *immediately* (Zero latency feel).
@@ -70,7 +70,7 @@ We implement a custom `UReplicationGraph` to manage the immense number of replic
 
 ---
 
-## 📉 Bandwidth Budget
+##  Bandwidth Budget
 
 **Target:** < 40KB/s per client.
 

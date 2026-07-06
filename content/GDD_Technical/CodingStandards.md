@@ -4,7 +4,7 @@ type: docs
 weight: 1
 ---
 
-## 📋 Overview
+##  Overview
 
 This document defines the **mandatory standards** for all C++ code, Blueprints, assets, and project structure in our Unreal Engine 5 project. Following these standards ensures:
 
@@ -21,7 +21,7 @@ This document defines the **mandatory standards** for all C++ code, Blueprints, 
 
 ---
 
-## 🏗️ Project Architecture
+##  Project Architecture
 
 ### Module & Plugin Strategy
 
@@ -50,7 +50,7 @@ ExtractionGame/
 └── Build/                        ← Build scripts & CI configs
 ```
 
-<!-- 📸 IMAGE PLACEHOLDER: Architecture diagram showing module dependencies and plugin boundaries -->
+<!--  IMAGE PLACEHOLDER: Architecture diagram showing module dependencies and plugin boundaries -->
 
 ### Module Dependency Rules
 
@@ -103,7 +103,7 @@ public class ExtractionGameplay : ModuleRules
 
 ---
 
-## 📛 C++ Naming Conventions
+##  C++ Naming Conventions
 
 ### Type Prefixes (Epic Standard — Mandatory)
 
@@ -118,7 +118,7 @@ public class ExtractionGameplay : ModuleRules
 | `T` | Templates | `TArray`, `TMap`, `TSubclassOf` |
 | `b` | Boolean variables | `bIsAlive`, `bCanFire`, `bHasExtracted` |
 
-> **⚠️ Critical:** The Unreal Header Tool (UHT) **requires** correct prefixes. Incorrect prefixes cause compilation failures.
+> ** Critical:** The Unreal Header Tool (UHT) **requires** correct prefixes. Incorrect prefixes cause compilation failures.
 
 ### Variable Naming
 
@@ -135,14 +135,14 @@ public class ExtractionGameplay : ModuleRules
 ### Function Naming
 
 ```cpp
-// ✅ Good — verbs that describe effect or return value
+//  Good — verbs that describe effect or return value
 void EquipWeapon(AWeaponBase* NewWeapon);
 float CalculateDamage(const FDamageEvent& DamageEvent) const;
 bool CanExtract() const;
 AExtractionPoint* FindNearestExtractionPoint() const;
 void OnHealthChanged(float OldValue, float NewValue);
 
-// ❌ Bad
+//  Bad
 void Weapon(AWeaponBase* W);          // No verb, unclear
 float Damage(const FDamageEvent& DE);  // Abbreviated, unclear
 bool Extract();                        // Ambiguous: check or do?
@@ -151,7 +151,7 @@ bool Extract();                        // Ambiguous: check or do?
 ### Enum Naming
 
 ```cpp
-// ✅ Good — E prefix, PascalCase values
+//  Good — E prefix, PascalCase values
 UENUM(BlueprintType)
 enum class EWeaponType : uint8
 {
@@ -163,7 +163,7 @@ enum class EWeaponType : uint8
     MeleeWeapon,
 };
 
-// ✅ Good — Use enum class (strongly-typed), never old-style enums
+//  Good — Use enum class (strongly-typed), never old-style enums
 UENUM(BlueprintType)
 enum class EItemRarity : uint8
 {
@@ -187,7 +187,7 @@ DECLARE_DELEGATE_RetVal_OneParam(bool, FCanInteractSignature, AActor*);
 ### Macro Naming
 
 ```cpp
-// ✅ Good — UE_ prefix, SCREAMING_SNAKE_CASE
+//  Good — UE_ prefix, SCREAMING_SNAKE_CASE
 #define UE_EXTRACTION_LOG(Category, Verbosity, Format, ...) \
     UE_LOG(LogExtraction, Verbosity, TEXT(Format), ##__VA_ARGS__)
 
@@ -200,7 +200,7 @@ DECLARE_LOG_CATEGORY_EXTERN(LogExtractionAI, Log, All);
 
 ---
 
-## 📁 C++ File Organization
+##  C++ File Organization
 
 ### Header File Layout
 
@@ -425,14 +425,14 @@ Organize `#include` statements in this exact order, separated by blank lines:
 
 ---
 
-## 🔧 UPROPERTY & UFUNCTION Guidelines
+##  UPROPERTY & UFUNCTION Guidelines
 
 ### UPROPERTY Categories
 
 Organize with consistent, hierarchical categories:
 
 ```cpp
-// ✅ Good — Hierarchical categories
+//  Good — Hierarchical categories
 UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Weapon|Stats")
 float BaseDamage = 25.f;
 
@@ -445,7 +445,7 @@ int32 MaxAmmo = 30;
 UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Weapon|Recoil")
 float RecoilStrength = 1.5f;
 
-// ❌ Bad — Inconsistent or flat categories
+//  Bad — Inconsistent or flat categories
 UPROPERTY(EditDefaultsOnly, Category = "Damage")
 float BaseDamage;
 
@@ -480,7 +480,7 @@ float FireRate;
 
 ---
 
-## 📂 Content Folder Structure (UE5 Assets)
+##  Content Folder Structure (UE5 Assets)
 
 ### Project-Level Structure
 
@@ -562,7 +562,7 @@ Content/
     └── UtilityBlueprints/
 ```
 
-<!-- 📸 IMAGE PLACEHOLDER: Content Browser screenshot showing the top-level folder structure with proper organization -->
+<!--  IMAGE PLACEHOLDER: Content Browser screenshot showing the top-level folder structure with proper organization -->
 
 ### Folder Naming Rules
 
@@ -576,7 +576,7 @@ Content/
 
 ---
 
-## 📛 Asset Naming Conventions
+##  Asset Naming Conventions
 
 ### Base Pattern
 
@@ -672,7 +672,7 @@ Content/
 
 ---
 
-## 🎨 Blueprint Naming & Standards
+##  Blueprint Naming & Standards
 
 ### Blueprint Naming
 
@@ -710,7 +710,7 @@ Category: "UI|HUD"
 
 ---
 
-## 💬 Code Comments
+##  Code Comments
 
 ### Comment Style (JavaDoc-compatible)
 
@@ -762,7 +762,7 @@ class EXTRACTIONGAMEPLAY_API UInventoryComponent : public UActorComponent
 
 ---
 
-## 🏷️ Gameplay Tags Convention
+##  Gameplay Tags Convention
 
 Gameplay Tags follow a hierarchical namespace:
 
@@ -800,7 +800,7 @@ Input.Action.Interact
 
 ---
 
-## 🔀 Source Control Conventions
+##  Source Control Conventions
 
 ### Branch Naming
 
@@ -851,7 +851,7 @@ Thumbs.db
 
 ---
 
-## ⚡ Performance & Optimization Rules
+##  Performance & Optimization Rules
 
 ### Memory Rules
 
@@ -874,7 +874,7 @@ Thumbs.db
 
 ---
 
-## 📚 Reference Links
+##  Reference Links
 
 | Resource | URL |
 |:---------|:----|

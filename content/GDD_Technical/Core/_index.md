@@ -5,7 +5,7 @@ type: docs
 weight: 1
 ---
 
-## 🏗️ Core Architecture & Foundation
+##  Core Architecture & Foundation
 
 The backbone of the project, defining the technical structure, networking model, and development roadmap.
 

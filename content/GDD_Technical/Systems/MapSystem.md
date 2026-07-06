@@ -1536,21 +1536,21 @@ CONST ZONE_STREAMING_CONFIGS = {
 
 ## TODO: Implementation Tasks
 
-### HIGH Priority 🔴
+### HIGH Priority 
 - [ ] MapManager core
 - [ ] ExtractionZone with network replication
 - [ ] ContainerManager, Container
 - [ ] Basic zone system
 - [ ] Match phase progression
 
-### MEDIUM Priority 🟡
+### MEDIUM Priority 
 - [ ] SupplyDropManager with flight path
 - [ ] ContaminationManager with shrinking
 - [ ] SpawnManager with validation
 - [ ] Level streaming setup
 - [ ] HazardManager basics
 
-### LOW Priority 🟢
+### LOW Priority 
 - [ ] WeatherManager
 - [ ] Dynamic fire spreading
 - [ ] Environmental storytelling objects

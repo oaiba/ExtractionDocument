@@ -22,9 +22,9 @@ The Clan System provides a **persistent social organization layer** above squads
 - **Long-term investment** — Clan upgrades over weeks/months → strong retention anchor
 
 **Anti-patterns we avoid:**
-- ❌ Clan-gated content (non-clan players must feel complete without a clan)
-- ❌ Pay-to-win clan upgrades (all clan upgrades cosmetic or convenience, never power)
-- ❌ Mandatory clan activity (auto-kick never triggers without clear warning)
+-  Clan-gated content (non-clan players must feel complete without a clan)
+-  Pay-to-win clan upgrades (all clan upgrades cosmetic or convenience, never power)
+-  Mandatory clan activity (auto-kick never triggers without clear warning)
 
 ---
 

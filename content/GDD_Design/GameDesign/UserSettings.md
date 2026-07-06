@@ -9,13 +9,13 @@ game_genre: Hero Extraction Shooter Multiplayer Crossplatform
 
 [**↔ View Technical Spec: Settings System**](../../GDD_Technical/Systems/SettingsSystem.md)
 
-### ⚙️ Design Philosophy
+###  Design Philosophy
 
 **"Power to the Player, Simplicity for the Casual."**
 
 Settings should offer granular control for competitive players while providing simple, intelligent presets for casual users. All settings must be **saved to the cloud** and synced across devices with **conflict resolution** for crossplatform play.
 
-#### 🎯 Core Principles
+####  Core Principles
 
 * **Competitive Integrity:** Performance and clarity settings prioritized
 * **Accessibility First:** Comprehensive options for all players
@@ -23,14 +23,14 @@ Settings should offer granular control for competitive players while providing s
 * **Extraction Focus:** UI/UX optimized for high-stakes decision-making
 * **Cross-Platform Parity:** Fair experience across PC, Console, Mobile
 
-#### 📐 Enhanced UI Wireframe
+####  Enhanced UI Wireframe
 
 ```
 ┌──────────────────────────────────────────────────────────────────────────────┐
 │  SETTINGS                                                  [PRESET: CUSTOM]  │
 │                                                                      [ X ]   │
 ├──────────────────────────────────────────────────────────────────────────────┤
-│  [🎮 CONTROLS]  [🖥️ GRAPHICS]  [🔊 AUDIO]  [📡 GAMEPLAY]  [🦸 HERO]  [💾 ACC] │
+│  [ CONTROLS]  [ GRAPHICS]  [ AUDIO]  [ GAMEPLAY]  [ HERO]  [ ACC] │
 ├──────────────────────────────────────────────────────────────────────────────┤
 │                                                                              │
 │   ┌─ MOUSE SENSITIVITY ──────────────────────────────────────────────────┐  │
@@ -47,16 +47,16 @@ Settings should offer granular control for competitive players while providing s
 │   VIBRATION ──────────────────────────────────────────── [ ON  ] [     ● ]  │
 │   VIBRATION INTENSITY ──────────────────────────────────── [ 75% ] [||||·  ] │
 │                                                                              │
-│   [ 🎯 ADVANCED AIM SETTINGS ]          [ ⌨️ EDIT KEYBINDINGS ]             │
+│   [  ADVANCED AIM SETTINGS ]          [ ⌨ EDIT KEYBINDINGS ]             │
 │                                                                              │
 ├──────────────────────────────────────────────────────────────────────────────┤
-│  [ ↺ RESET TO DEFAULT ]  [ 📋 IMPORT ]  [ CANCEL ]  [ APPLY ]  [ SAVE ]     │
+│  [ ↺ RESET TO DEFAULT ]  [  IMPORT ]  [ CANCEL ]  [ APPLY ]  [ SAVE ]     │
 └──────────────────────────────────────────────────────────────────────────────┘
 ```
 
 ***
 
-### 🎮 1. CONTROL SETTINGS (Input)
+###  1. CONTROL SETTINGS (Input)
 
 _Settings organized by competitive importance and usage frequency._
 
@@ -220,7 +220,7 @@ _Settings organized by competitive importance and usage frequency._
 
 ***
 
-### 🖥️ 2. GRAPHICS & VISUAL SETTINGS (Video)
+###  2. GRAPHICS & VISUAL SETTINGS (Video)
 
 _Settings organized by performance impact and competitive advantage._
 
@@ -372,7 +372,7 @@ _Settings organized by performance impact and competitive advantage._
 
 ***
 
-### 🔊 3. AUDIO SETTINGS (Sound)
+###  3. AUDIO SETTINGS (Sound)
 
 _Settings optimized for competitive audio positioning and immersion._
 
@@ -461,7 +461,7 @@ _Settings optimized for competitive audio positioning and immersion._
 
 ***
 
-### 📡 4. GAMEPLAY & INTERFACE (HUD)
+###  4. GAMEPLAY & INTERFACE (HUD)
 
 _Settings for combat feedback, UI visibility, and gameplay assistance._
 
@@ -664,7 +664,7 @@ _Settings for combat feedback, UI visibility, and gameplay assistance._
 
 ***
 
-### 🦸 5. HERO & CHARACTER SETTINGS
+###  5. HERO & CHARACTER SETTINGS
 
 _Settings unique to hero-based gameplay mechanics._
 
@@ -707,7 +707,7 @@ _Settings unique to hero-based gameplay mechanics._
 
 ***
 
-### 💾 6. ACCOUNT & SYSTEM SETTINGS
+###  6. ACCOUNT & SYSTEM SETTINGS
 
 _Account management, privacy, social, and platform settings._
 
@@ -849,7 +849,7 @@ _Account management, privacy, social, and platform settings._
 
 ***
 
-### 🎯 7. ADVANCED & DEVELOPER SETTINGS
+###  7. ADVANCED & DEVELOPER SETTINGS
 
 _Settings for power users, content creators, and testing._
 
@@ -897,7 +897,7 @@ _Settings for power users, content creators, and testing._
 
 ***
 
-### 📋 SETTING PRESETS & PROFILES
+###  SETTING PRESETS & PROFILES
 
 #### **Competitive Preset**
 
@@ -939,7 +939,7 @@ Optimized for content creation:
 
 ***
 
-### 🔧 IMPLEMENTATION NOTES
+###  IMPLEMENTATION NOTES
 
 #### **Cloud Sync & Conflict Resolution**
 
@@ -998,41 +998,41 @@ Settings system should detect hardware and recommend preset:
 
 ***
 
-### 📊 COMPARISON: EXTRACTION SHOOTER STANDARDS
+###  COMPARISON: EXTRACTION SHOOTER STANDARDS
 
 #### **Settings from Escape from Tarkov**
 
-* ✅ Per-scope sensitivity
-* ✅ Head bobbing control
-* ✅ Sound occlusion
-* ✅ Compression/dynamic range
-* ✅ Network diagnostics
+*  Per-scope sensitivity
+*  Head bobbing control
+*  Sound occlusion
+*  Compression/dynamic range
+*  Network diagnostics
 
 #### **Settings from Hunt: Showdown**
 
-* ✅ Audio occlusion quality
-* ✅ Separate boss audio
-* ✅ Spatial audio (Binaural)
-* ✅ Dark sight FOV
+*  Audio occlusion quality
+*  Separate boss audio
+*  Spatial audio (Binaural)
+*  Dark sight FOV
 
 #### **Settings from The Cycle: Frontier**
 
-* ✅ Ping system customization
-* ✅ Storm intensity
-* ✅ Loot rarity filters
-* ✅ Extraction timer display
+*  Ping system customization
+*  Storm intensity
+*  Loot rarity filters
+*  Extraction timer display
 
 #### **Settings from Apex Legends (Hero Shooter)**
 
-* ✅ Per-legend settings
-* ✅ Ability hints
-* ✅ Ping wheel customization
-* ✅ Colorblind mode with strength
-* ✅ Damage number styles
+*  Per-legend settings
+*  Ability hints
+*  Ping wheel customization
+*  Colorblind mode with strength
+*  Damage number styles
 
 ***
 
-### 🔗 RELATED DOCUMENTATION
+###  RELATED DOCUMENTATION
 
 * [Technical Implementation: Settings System](../../GDD_Technical/Systems/SettingsSystem.md)
 * [UI/UX Design Guide](https://github.com/oaiba/ExtractionDocument/blob/main/content/GDD_UI/UIDesignPhilosophy.md)

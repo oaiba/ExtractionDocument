@@ -238,20 +238,20 @@ This document defines the **monetization strategy, currency design, pricing stru
 ### Psychological Fairness
 
 **Practices we AVOID:**
-- ❌ Hidden odds (all chances disclosed)
-- ❌ FOMO manipulation (items can return)
-- ❌ Artificial scarcity (no fake limited editions)
-- ❌ Pay-to-win mechanics
-- ❌ Aggressive pop-up ads
-- ❌ Dark patterns in UI
+-  Hidden odds (all chances disclosed)
+-  FOMO manipulation (items can return)
+-  Artificial scarcity (no fake limited editions)
+-  Pay-to-win mechanics
+-  Aggressive pop-up ads
+-  Dark patterns in UI
 
 **Practices we EMBRACE:**
-- ✅ Clear value communication
-- ✅ Refund window (24 hours, unused items)
-- ✅ Purchase confirmation prompts
-- ✅ Spending history accessible
-- ✅ Parental controls available
-- ✅ Regional pricing
+-  Clear value communication
+-  Refund window (24 hours, unused items)
+-  Purchase confirmation prompts
+-  Spending history accessible
+-  Parental controls available
+-  Regional pricing
 
 ---
 
@@ -382,12 +382,12 @@ This document defines the **monetization strategy, currency design, pricing stru
 
 | Condition                    | Refund Available                             |
 | :--------------------------- | :------------------------------------------- |
-| Unused item, within 24 hours | ✅ Full refund (Tokens returned)              |
-| Unused item, 24-72 hours     | ✅ 75% refund                                 |
-| Used item                    | ❌ No refund                                  |
-| Technical error              | ✅ Case-by-case review                        |
-| Accidental purchase          | ✅ First 3 times per account                  |
-| Real currency                | ❌ Per platform policy (App Store/Play Store) |
+| Unused item, within 24 hours |  Full refund (Tokens returned)              |
+| Unused item, 24-72 hours     |  75% refund                                 |
+| Used item                    |  No refund                                  |
+| Technical error              |  Case-by-case review                        |
+| Accidental purchase          |  First 3 times per account                  |
+| Real currency                |  Per platform policy (App Store/Play Store) |
 
 ---
 
@@ -490,23 +490,23 @@ This document defines the **monetization strategy, currency design, pricing stru
 ## Implementation Timeline
 
 ### Launch (v1.0)
-- ✅ Soft currency (Credits)
-- ✅ Premium currency (Tokens)
-- ✅ Battle Pass (Free + Premium)
-- ✅ Direct purchase store
-- ✅ Basic anti-fraud
+-  Soft currency (Credits)
+-  Premium currency (Tokens)
+-  Battle Pass (Free + Premium)
+-  Direct purchase store
+-  Basic anti-fraud
 
 ### Post-Launch (v1.1-1.3)
-- 📋 Marketplace (player trading)
-- 📋 Enhanced fraud detection
-- 📋 Spending controls
-- 📋 Regional pricing optimization
+-  Marketplace (player trading)
+-  Enhanced fraud detection
+-  Spending controls
+-  Regional pricing optimization
 
 ### Future Updates
-- 📋 Gifting system
-- 📋 Season bundles
-- 📋 Crew/Clan cosmetics
-- 📋 Tournament prizes
+-  Gifting system
+-  Season bundles
+-  Crew/Clan cosmetics
+-  Tournament prizes
 
 ---
 

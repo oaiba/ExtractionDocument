@@ -3,7 +3,7 @@ title: "Soundscape - Environmental Audio Design"
 type: docs
 ---
 
-## 🎧 Audio Design Philosophy
+##  Audio Design Philosophy
 
 ### Core Principles
 
@@ -17,7 +17,7 @@ type: docs
 
 ---
 
-## 🌍 Ambient Soundscape By Zone
+##  Ambient Soundscape By Zone
 
 ### Industrial Decay - "The Factory"
 
@@ -177,7 +177,7 @@ Chemical Gas Zone:
 
 ---
 
-## 🎵 Dynamic Audio States
+##  Dynamic Audio States
 
 ### Tension System
 
@@ -213,7 +213,7 @@ Last 60s    │ Extraction urgency (low freq pulse)
 
 ---
 
-## 🔊 Occlusion & Propagation
+##  Occlusion & Propagation
 
 ### Sound Occlusion Rules
 
@@ -255,7 +255,7 @@ Ventilation: Sound channels (connects rooms)
 
 ---
 
-## 🎚️ Audio Mix Priorities
+##  Audio Mix Priorities
 
 ### Priority Hierarchy
 
@@ -300,7 +300,7 @@ Allocation:
 
 ---
 
-## 📻 Special Audio Events
+##  Special Audio Events
 
 ### Map Events
 
@@ -344,7 +344,7 @@ Truck:
 
 ---
 
-## 🔧 Technical Specifications
+##  Technical Specifications
 
 ### Audio Format Standards
 

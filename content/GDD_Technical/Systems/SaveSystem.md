@@ -43,12 +43,12 @@ Cloud synchronization state.
 
 | Code Name        | Display Name | Icon | Sync Action | Description             |
 | :--------------- | :----------- | :--- | :---------- | :---------------------- |
-| `SS_Synced`      | Synced       | ✓    | None        | Local matches cloud     |
+| `SS_Synced`      | Synced       |     | None        | Local matches cloud     |
 | `SS_Pending`     | Pending      | ↑    | Upload      | Local changes to upload |
 | `SS_Downloading` | Downloading  | ↓    | Download    | Receiving cloud data    |
 | `SS_Uploading`   | Uploading    | ↑    | Upload      | Sending to cloud        |
-| `SS_Conflict`    | Conflict     | ⚠    | Resolve     | Local and cloud differ  |
-| `SS_Error`       | Error        | ✗    | Retry       | Sync failed             |
+| `SS_Conflict`    | Conflict     |     | Resolve     | Local and cloud differ  |
+| `SS_Error`       | Error        |     | Retry       | Sync failed             |
 | `SS_Offline`     | Offline      | −    | Queue       | No connection           |
 
 ---
@@ -1531,21 +1531,21 @@ STRUCT AutoSaveConfig:
 
 ## TODO: Implementation Tasks
 
-### HIGH Priority 🔴
+### HIGH Priority 
 - [ ] SaveManager core
 - [ ] LocalStorageManager
 - [ ] Player profile save/load
 - [ ] Inventory save/load
 - [ ] Settings save/load
 
-### MEDIUM Priority 🟡
+### MEDIUM Priority 
 - [ ] CloudProvider implementation
 - [ ] SyncManager
 - [ ] DataValidator
 - [ ] EncryptionManager
 - [ ] Conflict resolution UI
 
-### LOW Priority 🟢
+### LOW Priority 
 - [ ] MigrationManager
 - [ ] BackupManager
 - [ ] MatchStateManager

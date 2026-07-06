@@ -269,13 +269,13 @@ Passives such as **Light Step** (Hawk) and **Tech Savvy** (Glitch) affect visibi
 
 |             | Mamba | Hawk                                  | Cross                     | Bastion                      | Glitch                       |
 | ----------- | ----- | ------------------------------------- | ------------------------- | ---------------------------- | ---------------------------- |
-| **Mamba**   | —     | ★★★ (flash + push on scanned enemies) | ★★ (heals after aggro)    | ★★ (breach while tank holds) | ★★★ (EMP then push)          |
-| **Hawk**    | ★★★   | —                                     | ★★ (intel for safe heals) | ★★ (scout for anchor)        | ★★★ (double intel dominance) |
-| **Cross**   | ★★    | ★★                                    | —                         | ★★★ (heal the tank)          | ★★ (general utility)         |
-| **Bastion** | ★★    | ★★                                    | ★★★                       | —                            | ★★ (cover + jammer)          |
-| **Glitch**  | ★★★   | ★★★                                   | ★★                        | ★★                           | —                            |
+| **Mamba**   | —     |  (flash + push on scanned enemies) |  (heals after aggro)    |  (breach while tank holds) |  (EMP then push)          |
+| **Hawk**    |    | —                                     |  (intel for safe heals) |  (scout for anchor)        |  (double intel dominance) |
+| **Cross**   |     |                                     | —                         |  (heal the tank)          |  (general utility)         |
+| **Bastion** |     |                                     |                        | —                            |  (cover + jammer)          |
+| **Glitch**  |    |                                    |                         |                            | —                            |
 
-★ = Low synergy | ★★ = Moderate synergy | ★★★ = High synergy
+ = Low synergy |  = Moderate synergy |  = High synergy
 
 ***
 

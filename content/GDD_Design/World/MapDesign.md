@@ -611,7 +611,7 @@ For each new map:
 
 ---
 
-## 📝 Document Ownership & Changelog
+##  Document Ownership & Changelog
 
 | Role            | Owner                   | Approver           |
 | :-------------- | :---------------------- | :----------------- |

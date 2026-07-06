@@ -3,7 +3,7 @@ title: "Tactical Audio - Combat Sound Design"
 type: docs
 ---
 
-## 👣 Footstep Audio System
+##  Footstep Audio System
 
 ### Philosophy
 
@@ -140,7 +140,7 @@ Benefits:
 
 ---
 
-## 🔫 Weapon Audio
+##  Weapon Audio
 
 ### Gunfire Characteristics
 
@@ -252,7 +252,7 @@ Player Advantage: Harder to pinpoint direction
 
 ---
 
-## 🔄 Reload Audio
+##  Reload Audio
 
 ### Reload Sound Design
 
@@ -318,7 +318,7 @@ Sniper (Bolt Action):
 
 ---
 
-## 💥 Combat Audio Feedback
+##  Combat Audio Feedback
 
 ### Bullet Impact Sounds
 
@@ -373,7 +373,7 @@ Far Miss (5-10m):
 
 ---
 
-## 💊 Ability & Item Audio
+##  Ability & Item Audio
 
 ### Ability Sound Design
 
@@ -442,7 +442,7 @@ Smoke Grenade:
 
 ---
 
-## 📍 Directional Audio System
+##  Directional Audio System
 
 ### 3D Audio Implementation
 
@@ -489,7 +489,7 @@ Below (1+ floors):
 
 ---
 
-## 🎮 Player Feedback Audio
+##  Player Feedback Audio
 
 ### Damage Indicators
 
@@ -528,7 +528,7 @@ Overweight:
 
 ---
 
-## 🔊 Audio Settings Options
+##  Audio Settings Options
 
 ### Player Customization
 

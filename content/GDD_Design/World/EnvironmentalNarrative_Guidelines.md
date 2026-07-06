@@ -3,7 +3,7 @@ title: "Environmental Narrative Guidelines: \"Show, Don't Tell\""
 type: docs
 ---
 
-## 🏛️ The Silent Storyteller
+##  The Silent Storyteller
 
 The **Neo-Asia Industrial Corridor (NAIC)** is dead — five years after The Collapse. There are no functioning governments, no emergency services, no safe zones. The *environment* must be the primary method of delivering lore — every rusted beam and bloodstained wall tells a story the player discovers, never a story they are told.
 
@@ -12,7 +12,7 @@ Every location should look like something *happened* there right before the play
 
 ---
 
-## 🔍 Narrative Layers
+##  Narrative Layers
 
 ### Layer 1: The Panic (Immediate Past)
 *Shows the moment society collapsed.*
@@ -43,7 +43,7 @@ Every location should look like something *happened* there right before the play
 
 ---
 
-## 🖼️ "Micro-Stories" (Vignettes)
+##  "Micro-Stories" (Vignettes)
 
 Create small, self-contained scenes (dioramas) within the larger level.
 
@@ -64,7 +64,7 @@ Create small, self-contained scenes (dioramas) within the larger level.
 
 ---
 
-## 📦 Loot Logic (Diegetic Placement)
+##  Loot Logic (Diegetic Placement)
 
 Loot must make sense in its context. This rewards players who *read* the environment.
 
@@ -78,7 +78,7 @@ Loot must make sense in its context. This rewards players who *read* the environ
 
 ---
 
-## 🔦 Lighting as Narrative
+##  Lighting as Narrative
 
 Use lighting to highlight these stories, but also to set the emotional tone.
 *   **Red Light:** Danger, emergency, "Do Not Enter". (Naturally attracts players due to curiosity).
@@ -87,7 +87,7 @@ Use lighting to highlight these stories, but also to set the emotional tone.
 
 ---
 
-## 🚫 Narrative Anti-Patterns
+##  Narrative Anti-Patterns
 
 1.  **Written Notes everywhere:** Avoid "My Dearest Diary..." pages scattered in illogical places. Use environmental clues first.
 2.  **Blood without a Body:** If there is a massive blood trail, it must lead *somewhere* (a body, a drag mark, a monster den). It cannot just end at a wall.

@@ -5,7 +5,7 @@ type: docs
 
 **[↔ View Design GDD: User Settings](../../GDD_Design/GameDesign/UserSettings.md)**
 
-## ⚙️ Overview
+##  Overview
 
 The **Settings System** acts as the bridge between the Player UI preferences and the Core Engine implementations. It manages the lifecycle of settings from user input to persistent storage and engine application.
 
@@ -17,7 +17,7 @@ The **Settings System** acts as the bridge between the Player UI preferences and
 
 ---
 
-## 🏗️ Architecture
+##  Architecture
 
 ### Class & Data Structure
 The system is built on top of Unreal's `UGameUserSettings` but extended via a custom `UAdvancedSettingsSubsystem`.
@@ -46,9 +46,9 @@ struct FUserSettingsData {
 
 ---
 
-## 🔧 Core Implementation
+##  Core Implementation
 
-### 🎮 Control Implementation
+###  Control Implementation
 | Technical Key | Engine Variable / Property | Implementation Detail |
 | :--- | :--- | :--- |
 | `LookSens` | `PlayerController->InputYawScale` | Multiplied by FrameDelta for consistent turn rate. |
@@ -56,7 +56,7 @@ struct FUserSettingsData {
 | `Deadzone` | `UInputSettings::Deadzone` | Min threshold applied before processing raw analog data. |
 | `InputRef` | `EInputReferenceFrame` | Custom logic in `MovementController` to rotate input vector. |
 
-### 🖥️ Graphics & Scalability
+###  Graphics & Scalability
 *Uses Unreal Engine Scalability Groups (`sg.*`).*
 
 | Setting | console Variable (CVar) | Type | Range |
@@ -67,7 +67,7 @@ struct FUserSettingsData {
 | **View Dist.** | `sg.ViewDistanceQuality` | Int | 0 (Low) to 3 (Epic) |
 | **Shadows** | `sg.ShadowQuality` | Int | 0 to 3 |
 
-### 🔊 Audio Mixer & Submixes
+###  Audio Mixer & Submixes
 Settings are applied to a `USoundControlBus` or directly to `USoundClass`.
 
 | Mixer Channel | Sound Class Asset | Submix Effect |
@@ -79,7 +79,7 @@ Settings are applied to a `USoundControlBus` or directly to `USoundClass`.
 
 ---
 
-## 💾 Persistence & Synchronization
+##  Persistence & Synchronization
 
 ### Local Storage
 - **PC**: `%LOCALAPPDATA%/[ProjectName]/Saved/Config/Windows/GameUserSettings.ini`
@@ -93,7 +93,7 @@ Settings are applied to a `USoundControlBus` or directly to `USoundClass`.
 
 ---
 
-## 📝 Coding Standards & SDKs
+##  Coding Standards & SDKs
 
 ### SDK Requirements
 - **NVIDIA Reflex SDK**: For low-latency mode implementation.
@@ -110,7 +110,7 @@ Settings are applied to a `USoundControlBus` or directly to `USoundClass`.
 
 ---
 
-## 📅 TODO List (Technical)
+##  TODO List (Technical)
 
 - [ ] (P0) Implement `UAdvancedSettingsSubsystem` skeleton.
 - [ ] (P1) Map UI Sliders to `USoundControlBusMix`.

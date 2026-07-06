@@ -19,9 +19,9 @@ This document focuses on **game design, art direction, and player experience**. 
 
 ***
 
-### 📚 Documentation Structure
+###  Documentation Structure
 
-#### 🎮 Game Design
+####  Game Design
 
 Core game design, mechanics, progression, and monetization systems
 
@@ -39,7 +39,7 @@ Core game design, mechanics, progression, and monetization systems
 
 ***
 
-#### 📖 Story & Narrative
+####  Story & Narrative
 
 World lore, factions, and character backstories
 
@@ -47,7 +47,7 @@ World lore, factions, and character backstories
 
 ***
 
-#### 👥 Social & Multiplayer
+####  Social & Multiplayer
 
 Squad systems, clans, karma, communication, and community features
 
@@ -55,7 +55,7 @@ Squad systems, clans, karma, communication, and community features
 
 ***
 
-#### ⚔️ Combat Systems
+####  Combat Systems
 
 Weapon design, items, and combat mechanics
 
@@ -64,7 +64,7 @@ Weapon design, items, and combat mechanics
 
 ***
 
-#### 👤 Characters
+####  Characters
 
 Character design and abilities
 
@@ -72,7 +72,7 @@ Character design and abilities
 
 ***
 
-#### 🤖 AI & Enemies
+####  AI & Enemies
 
 Enemy design, behavior systems, and difficulty
 
@@ -80,7 +80,7 @@ Enemy design, behavior systems, and difficulty
 
 ***
 
-#### 🗺️ World Design
+####  World Design
 
 Maps, environments, and level design
 
@@ -88,7 +88,7 @@ Maps, environments, and level design
 
 ***
 
-#### 🎨 Visual Design
+####  Visual Design
 
 Art direction and user interface
 
@@ -97,7 +97,7 @@ Art direction and user interface
 
 ***
 
-#### 🔊 Audio Design
+####  Audio Design
 
 Sound and music
 
@@ -105,7 +105,7 @@ Sound and music
 
 ***
 
-#### 📋 Project Scope
+####  Project Scope
 
 Risks, boundaries, and project management
 
@@ -114,7 +114,7 @@ Risks, boundaries, and project management
 
 ***
 
-### 📖 How to Use This Document
+###  How to Use This Document
 
 **For Game Designers:**
 
@@ -148,7 +148,7 @@ Risks, boundaries, and project management
 
 ***
 
-### 🎯 Design Philosophy
+###  Design Philosophy
 
 **Player-First Design:**
 
@@ -170,7 +170,7 @@ Risks, boundaries, and project management
 
 ***
 
-### 📝 Glossary
+###  Glossary
 
 **Core Terms:**
 
@@ -185,7 +185,7 @@ Risks, boundaries, and project management
 
 ***
 
-### 📅 Update Log
+###  Update Log
 
 | Date       | Section      | Changes                                                     | Updated By |
 | ---------- | ------------ | ----------------------------------------------------------- | ---------- |
@@ -206,7 +206,7 @@ Risks, boundaries, and project management
 
 ***
 
-### 🔗 Quick Navigation
+###  Quick Navigation
 
 **Start Here:**
 

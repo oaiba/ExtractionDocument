@@ -3,7 +3,7 @@ title: "Faction Behaviors & Ecology"
 type: docs
 ---
 
-## 🏛️ The Faction Ecosystem
+##  The Faction Ecosystem
 
 Aethelgard is not just Player vs. AI. It is a living world where factions have their own goals, territories, and relationships.
 
@@ -19,7 +19,7 @@ Aethelgard is not just Player vs. AI. It is a living world where factions have t
 
 ---
 
-## 🦠 1. Scavengers ( The "Rats" )
+##  1. Scavengers ( The "Rats" )
 
 **Archetype:** Desperate survivors, poorly equipped, chaotic.
 **Goal:** Scavenge food/meds, survive, protect their trash piles.
@@ -35,7 +35,7 @@ Aethelgard is not just Player vs. AI. It is a living world where factions have t
 
 ---
 
-## 🦾 2. The Syndicate ( The "Elites" )
+##  2. The Syndicate ( The "Elites" )
 
 **Archetype:** High-tech mercenaries, disciplined, lethal.
 **Goal:** Secure high-value assets, guard key locations (Labs, Server Rooms).
@@ -51,7 +51,7 @@ Aethelgard is not just Player vs. AI. It is a living world where factions have t
 
 ---
 
-## 🇺🇳 3. UN Peacekeepers ( The "Law" )
+##  3. UN Peacekeepers ( The "Law" )
 
 **Archetype:** Heavily armored, defensive, strictly Rules of Engagement (ROE).
 **Goal:** Maintain order at Checkpoints and Extraction Zones.
@@ -66,7 +66,7 @@ Aethelgard is not just Player vs. AI. It is a living world where factions have t
 
 ---
 
-## 🐺 4. Wildlife / Mutants ( The "Environment" )
+##  4. Wildlife / Mutants ( The "Environment" )
 
 **Archetype:** Instinctive predators.
 **Goal:** Defense of territory, hunger.
@@ -80,7 +80,7 @@ Aethelgard is not just Player vs. AI. It is a living world where factions have t
 
 ---
 
-## 🎭 Dynamic Events (The "Living World")
+##  Dynamic Events (The "Living World")
 
 1.  **Faction War:**
     *   *Trigger:* A Scav patrol meets a Syndicate team.

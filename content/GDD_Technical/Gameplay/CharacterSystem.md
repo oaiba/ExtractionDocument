@@ -1161,7 +1161,7 @@ CLIENT-SIDE PREDICTION FLOW:
 
 ### TODO: Implementation Tasks
 
-#### HIGH Priority 🔴
+#### HIGH Priority 
 
 * [ ] Implement CharacterManager spawn system
 * [ ] Create HealthSystem damage calculation
@@ -1169,7 +1169,7 @@ CLIENT-SIDE PREDICTION FLOW:
 * [ ] Implement basic ability cooldown
 * [ ] Create InteractionSystem detection
 
-#### MEDIUM Priority 🟡
+#### MEDIUM Priority 
 
 * [ ] Add all operator abilities
 * [ ] Implement downed/revive mechanic
@@ -1177,7 +1177,7 @@ CLIENT-SIDE PREDICTION FLOW:
 * [ ] Add network movement prediction
 * [ ] Implement stamina sprint system
 
-#### LOW Priority 🟢
+#### LOW Priority 
 
 * [ ] Add hit reaction animations
 * [ ] Create spectator mode

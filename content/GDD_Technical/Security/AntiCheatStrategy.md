@@ -3,7 +3,7 @@ title: "Security & Anti-Cheat Strategy"
 type: docs
 ---
 
-## 🛡️ The Concept of Trust
+##  The Concept of Trust
 **"Never Trust the Client."**
 The core principle is simple: The Client sends *intent*, not *results*.
 
@@ -21,7 +21,7 @@ Everything critical happens on the Server.
 
 ---
 
-## 🚫 Common Exploits & Mitigation
+##  Common Exploits & Mitigation
 
 ### 1. Speed Hacks (Teleport)
 *   **Detect:** Compare `LastKnownLocation` + `MaxAllowedDistance`.
@@ -47,7 +47,7 @@ Everything critical happens on the Server.
 
 ---
 
-## 👮‍♂️ Report System (Community Policing)
+## ‍ Report System (Community Policing)
 
 ### In-Game Reporting
 *   **Categories:** Aimbot, Wallhack, Speedhack, Toxic Voice.

@@ -145,12 +145,12 @@ COMPLETED ←──────────────────────�
 
 | Objective type    | Progress kept on death? | Notes                                                     |
 | ----------------- | ----------------------- | --------------------------------------------------------- |
-| Kill count        | ✅ Yes                   | Kills accumulate across multiple raids                    |
-| Item collection   | ❌ No (FIR items lost)   | Item must be physically extracted; losing it loses credit |
-| Mark / scan       | ✅ Yes                   | Interaction registers on server immediately               |
-| Survive duration  | ✅ Partial               | Time survived in this raid counts; resets next raid       |
-| Reach location    | ✅ Yes                   | "Visited" flag set server-side on arrival                 |
-| Extract from zone | ❌ No                    | Must complete extraction                                  |
+| Kill count        |  Yes                   | Kills accumulate across multiple raids                    |
+| Item collection   |  No (FIR items lost)   | Item must be physically extracted; losing it loses credit |
+| Mark / scan       |  Yes                   | Interaction registers on server immediately               |
+| Survive duration  |  Partial               | Time survived in this raid counts; resets next raid       |
+| Reach location    |  Yes                   | "Visited" flag set server-side on arrival                 |
+| Extract from zone |  No                    | Must complete extraction                                  |
 
 ***
 

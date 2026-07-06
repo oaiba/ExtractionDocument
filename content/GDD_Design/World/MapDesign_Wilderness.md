@@ -3,7 +3,7 @@ title: "Map Design: The Mire (Wilderness Zone)"
 type: docs
 ---
 
-## 🗺️ Map Overview
+##  Map Overview
 
 *   **Name:** The Exclusion Mire (aka "The Swamp")
 *   **Theme:** Flooded forest reclaiming a failed biological test site. Foggy, treacherous terrain.
@@ -16,7 +16,7 @@ type: docs
 
 ---
 
-## 📍 Tactical Layout
+##  Tactical Layout
 
 The map is a **"Archipelago" design**: Small islands of dry land connected by shallow water (slows movement) or deep channels (requires swimming/boat).
 
@@ -62,7 +62,7 @@ The map is a **"Archipelago" design**: Small islands of dry land connected by sh
 
 ---
 
-## 🛠️ Operator Tactical Interactions
+##  Operator Tactical Interactions
 
 Surviving nature requires specific skills:
 
@@ -77,22 +77,22 @@ Surviving nature requires specific skills:
 
 ---
 
-## 💎 Loot Distribution & Heatmap
+##  Loot Distribution & Heatmap
 
 | Area / POI         | Loot Tier  | Item Types                                | Complexity / Risk                     | Best Equipment         |
 | :----------------- | :--------- | :---------------------------------------- | :------------------------------------ | :--------------------- |
-| **Bio-Dome Alpha** | **S-Tier** | Injectors, Stimpacks, Crafting Blueprints | 💀 **Max** (Gas/Radiation)             | Hazmat Suit / Gas Mask |
-| **Watchtower**     | **A-Tier** | Marksman Rifles, High-Zoom Scopes         | 🔴 **High** (Exposed)                  | Camouflage / Smoke     |
-| **Sunken Village** | **B-Tier** | Food, Tools, Scrap Metal                  | 🟠 **Medium** (Movement penalty)       | Light Armor            |
-| **Fishing Huts**   | **C-Tier** | Basic Meds, Keys                          | 🟢 **Safe** (Perimeter)                | Any                    |
-| **Swamp Channels** | **Trash**  | Driftwood (Crafting)                      | 🔴 **High** (Slow movement + No cover) | Avoid if possible      |
+| **Bio-Dome Alpha** | **S-Tier** | Injectors, Stimpacks, Crafting Blueprints |  **Max** (Gas/Radiation)             | Hazmat Suit / Gas Mask |
+| **Watchtower**     | **A-Tier** | Marksman Rifles, High-Zoom Scopes         |  **High** (Exposed)                  | Camouflage / Smoke     |
+| **Sunken Village** | **B-Tier** | Food, Tools, Scrap Metal                  |  **Medium** (Movement penalty)       | Light Armor            |
+| **Fishing Huts**   | **C-Tier** | Basic Meds, Keys                          |  **Safe** (Perimeter)                | Any                    |
+| **Swamp Channels** | **Trash**  | Driftwood (Crafting)                      |  **High** (Slow movement + No cover) | Avoid if possible      |
 
 *   **Heatmap:** High player density around **"The Causeway"** bridge.
 *   **Tactical Warning:** Looting in deep water (Swamp Channels) is suicidal as water movement slows you by 40% and makes splashing noises.
 
 ---
 
-## ⚔️ Choke Points & Flow
+##  Choke Points & Flow
 
 ### 1. "The Causeway" (Bridge to Bio-Dome)
 *   **Description:** A long, straight concrete bridge. No cover except broken cars.
@@ -106,7 +106,7 @@ Surviving nature requires specific skills:
 
 ---
 
-## 🚪 Extraction Points
+##  Extraction Points
 
 | Name                | Type            | Requirements                 | Location        |
 | :------------------ | :-------------- | :--------------------------- | :-------------- |
@@ -116,7 +116,7 @@ Surviving nature requires specific skills:
 
 ---
 
-## 🎨 Environmental Design
+##  Environmental Design
 
 *   **Palette:** Mud Brown, Sickly Green, Fog Grey.
 *   **Auditory Illusion:** Sounds carry differently in fog. Gunshots sound closer than they are.

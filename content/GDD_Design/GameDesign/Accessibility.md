@@ -3,7 +3,7 @@ title: "Accessibility Design"
 type: docs
 ---
 
-## ♿ Accessibility Philosophy
+##  Accessibility Philosophy
 
 **Core Principle:** "Everyone should be able to play"
 
@@ -15,7 +15,7 @@ Accessibility is NOT optional. It's fundamental game design that:
 
 ---
 
-## 👁️ Visual Accessibility
+##  Visual Accessibility
 
 ### Colorblind Support
 
@@ -43,8 +43,8 @@ Accessibility is NOT optional. It's fundamental game design that:
 | Common    | Gray   | ○      | Solid      | "Common"    |
 | Uncommon  | Green  | ◇      | Striped    | "Uncommon"  |
 | Rare      | Blue   | △      | Dotted     | "Rare"      |
-| Epic      | Purple | ☆      | Crosshatch | "Epic"      |
-| Legendary | Gold   | ★      | Animated   | "Legendary" |
+| Epic      | Purple |       | Crosshatch | "Epic"      |
+| Legendary | Gold   |       | Animated   | "Legendary" |
 
 ### Text Readability
 
@@ -99,7 +99,7 @@ Accessibility is NOT optional. It's fundamental game design that:
 
 ---
 
-## 👂 Auditory Accessibility
+##  Auditory Accessibility
 
 ### Visual Sound Indicators
 
@@ -159,7 +159,7 @@ When enabled, shows on-screen indicators for:
 
 ---
 
-## 🎮 Motor Accessibility
+##  Motor Accessibility
 
 ### Control Remapping
 
@@ -235,7 +235,7 @@ When enabled, shows on-screen indicators for:
 
 ---
 
-## 🧠 Cognitive Accessibility
+##  Cognitive Accessibility
 
 ### Simplified Modes
 
@@ -297,7 +297,7 @@ When enabled, shows on-screen indicators for:
 
 ---
 
-## 📱 Platform-Specific Accessibility
+##  Platform-Specific Accessibility
 
 ### Mobile
 
@@ -330,7 +330,7 @@ When enabled, shows on-screen indicators for:
 
 ---
 
-## 📊 Accessibility Presets
+##  Accessibility Presets
 
 ### Quick Setup Profiles
 
@@ -351,7 +351,7 @@ When enabled, shows on-screen indicators for:
 
 ---
 
-## 📋 Accessibility Testing
+##  Accessibility Testing
 
 ### Testing Requirements
 
@@ -383,7 +383,7 @@ For every new feature, ask:
 
 ---
 
-## 🏆 Accessibility Certifications
+##  Accessibility Certifications
 
 ### Target Standards
 
@@ -397,15 +397,15 @@ For every new feature, ask:
 
 ---
 
-## 📅 Accessibility Roadmap
+##  Accessibility Roadmap
 
 ### Launch
-- ✅ Colorblind modes (3 types)
-- ✅ Subtitle customization
-- ✅ Full control remapping
-- ✅ Aim assist levels
-- ✅ Basic sound visualization
-- ✅ Text scaling
+-  Colorblind modes (3 types)
+-  Subtitle customization
+-  Full control remapping
+-  Aim assist levels
+-  Basic sound visualization
+-  Text scaling
 
 ### Post-Launch (Month 2-3)
 - Text-to-speech (menus)

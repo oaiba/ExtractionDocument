@@ -5,7 +5,7 @@ type: docs
 weight: 1
 ---
 
-## 🌐 Networking & Replication
+##  Networking & Replication
 
 Technical implementation of multiplayer systems, synchronization, and latency management.
 

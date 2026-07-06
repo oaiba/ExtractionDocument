@@ -3,7 +3,7 @@ title: "AI & Enemy Behavior Design"
 type: docs
 ---
 
-## 🎯 AI Design Philosophy
+##  AI Design Philosophy
 
 **Core Principle:** AI should enhance the extraction experience, not replace PvP
 
@@ -21,7 +21,7 @@ AI enemies serve as:
 
 ---
 
-## 🧟 Enemy Types
+##  Enemy Types
 
 ### Tier 1: Fodder (Common)
 
@@ -40,7 +40,7 @@ Behavior: Patrol → Alert → Engage → Flee (when low HP)
 
 **Spawn Locations:** Edge zones, mid zones
 **Loot Drop:** Common items, ammo, medical supplies
-**Threat Level:** ★☆☆☆☆
+**Threat Level:** 
 
 **Behavior Details:**
 - Patrols in small area (10m radius)
@@ -63,7 +63,7 @@ Behavior: Patrol → Alert → Take Cover → Engage
 
 **Spawn Locations:** Mid zones, near loot containers
 **Loot Drop:** Uncommon items, sometimes rare
-**Threat Level:** ★★☆☆☆
+**Threat Level:** 
 
 **Behavior Details:**
 - Searches containers (can be ambushed)
@@ -90,7 +90,7 @@ Behavior: Patrol (formations) → Alert Team → Suppress → Flank
 
 **Spawn Locations:** Hot zones, POI entrances
 **Loot Drop:** Rare items, military gear
-**Threat Level:** ★★★☆☆
+**Threat Level:** 
 
 **Behavior Details:**
 - Patrols in pairs
@@ -114,7 +114,7 @@ Behavior: Overwatch → Aim (laser warning) → Fire → Reposition
 
 **Spawn Locations:** Elevated positions, guard towers
 **Loot Drop:** Rare weapons, optics
-**Threat Level:** ★★★☆☆
+**Threat Level:** 
 
 **Behavior Details:**
 - Does NOT patrol (stationary overwatch)
@@ -142,7 +142,7 @@ Behavior: Advance → Suppress → Pursue relentlessly
 
 **Spawn Locations:** Hot zone centers, vaults
 **Loot Drop:** Epic items, LMG, heavy armor
-**Threat Level:** ★★★★☆
+**Threat Level:** 
 
 **Behavior Details:**
 - Announced by heavy footsteps (audio warning)
@@ -166,7 +166,7 @@ Behavior: Stealth approach → Flank → Engage → Smoke retreat
 
 **Spawn Locations:** Random spawn, event reinforcements
 **Loot Drop:** Epic items, tactical equipment
-**Threat Level:** ★★★★☆
+**Threat Level:** 
 
 **Behavior Details:**
 - Can approach silently (no footsteps until 10m)
@@ -201,7 +201,7 @@ Location: Central hot zone (Reactor Core)
 | 4     | 25-0%        | Desperation | All attacks + calls reinforcements         |
 
 **Loot Drop:** Legendary weapon/armor guaranteed, rare crafting materials
-**Threat Level:** ★★★★★
+**Threat Level:** 
 
 **Design Notes:**
 - Announced 30 seconds before appearing (alarm sounds)
@@ -230,11 +230,11 @@ Location: Corporate Tower (top floor)
 - Final phase: Overcharges remaining drones (explode on death)
 
 **Loot Drop:** Legendary tech items, electronic components
-**Threat Level:** ★★★★★
+**Threat Level:** 
 
 ---
 
-## 🧠 AI Behavior Systems
+##  AI Behavior Systems
 
 ### Detection System
 
@@ -331,7 +331,7 @@ Ability Use: 40m radius (varies)
 
 ---
 
-## ⚔️ Combat Behavior
+##  Combat Behavior
 
 ### Engagement Rules
 
@@ -385,7 +385,7 @@ Ability Use: 40m radius (varies)
 
 ---
 
-## 📊 Difficulty Scaling
+##  Difficulty Scaling
 
 ### Dynamic Difficulty
 
@@ -414,7 +414,7 @@ Ability Use: 40m radius (varies)
 
 ---
 
-## 🎭 AI Personality Variants
+##  AI Personality Variants
 
 Each AI type has personality variants affecting behavior:
 
@@ -443,7 +443,7 @@ Each AI type has personality variants affecting behavior:
 
 ---
 
-## 🔊 AI Audio Design
+##  AI Audio Design
 
 ### Detection Audio
 | State           | Sound                   |
@@ -468,7 +468,7 @@ Each AI type has personality variants affecting behavior:
 
 ---
 
-## 🧪 AI Balancing Guidelines
+##  AI Balancing Guidelines
 
 ### Kill Time (TTK) Targets
 
@@ -498,7 +498,7 @@ Each AI type has personality variants affecting behavior:
 
 ---
 
-## 📅 AI Content Roadmap
+##  AI Content Roadmap
 
 ### Launch
 - All Tier 1-3 AI types

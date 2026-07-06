@@ -989,7 +989,7 @@ CLASS AIPoolManager:
 
 ## TODO: Implementation Tasks
 
-### HIGH Priority 🔴
+### HIGH Priority 
 - [ ] AIManager - Main AI system manager
 - [ ] AICharacter - Base AI character class
 - [ ] AIPerceptionComponent - Vision/hearing
@@ -997,7 +997,7 @@ CLASS AIPoolManager:
 - [ ] Scavenger, Looter, Guard implementations
 - [ ] Pathfinding integration (NavMesh)
 
-### MEDIUM Priority 🟡
+### MEDIUM Priority 
 - [ ] Cover system integration
 - [ ] Flanking logic
 - [ ] Suppression mechanics
@@ -1005,7 +1005,7 @@ CLASS AIPoolManager:
 - [ ] AI spawning system
 - [ ] Object pooling
 
-### LOW Priority 🟢
+### LOW Priority 
 - [ ] Boss behavior trees (multi-phase)
 - [ ] The Warden implementation
 - [ ] The Director implementation

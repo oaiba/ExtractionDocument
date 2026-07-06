@@ -342,7 +342,7 @@ For detailed functional specifications, see [HUD Design](https://github.com/oaib
 
 ```
 ┌─────────────────────────────────────────┐
-│            ★ EXTRACTED ★                │  Title: gold text,
+│             EXTRACTED                 │  Title: gold text,
 │                                         │  neon glow
 │   ┌───────────────────────────────┐     │
 │   │    Operator Victory Pose      │     │  3D Model with

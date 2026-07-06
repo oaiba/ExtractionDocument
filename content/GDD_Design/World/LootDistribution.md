@@ -3,7 +3,7 @@ title: "Loot Distribution"
 type: docs
 ---
 
-## 📊 Overall Heat Map
+##  Overall Heat Map
 
 ### Industrial Decay - Loot Heat Map
 
@@ -11,45 +11,45 @@ type: docs
      NORTH
        ↑
        │   ⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜
-       │   ⬜⬜🟢🟢🟢🟡🟡🟡🟡🟢🟢🟢⬜⬜⬜⬜  ← Edge (Low Loot)
-       │   ⬜🟢🟢🟡🟡[OFFICE]🟡🟡🟢🟢⬜⬜⬜⬜
-       │   ⬜🟢🟡🟡🟠🟠🟠🟠🟠🟡🟡🟢⬜⬜⬜⬜  ← Mid (Moderate)
-       │   ⬜🟡[WARE]🟠🔴🔴🔴🔴🟠[LABS]🟡⬜⬜
-       │   ⬜🟡🟠🟠🔴🟣🟣🟣🔴🟠🟠🟡⬜⬜⬜⬜  ← Hot (High)
-       │   ⬜🟡🟠🟠🔴[REACTOR]🔴🟠🟠🟡⬜⬜⬜⬜  ← Extreme
-       │   ⬜🟡🟠🟠🔴🟣🟣🟣🔴🟠🟠🟡⬜⬜⬜⬜
-       │   ⬜🟡[WORK]🟠🔴🔴🔴🔴🟠[WATER]🟡⬜
-       │   ⬜🟢🟡🟡🟠🟠🟠🟠🟠🟡🟡🟢⬜⬜⬜⬜
-       │   ⬜🟢🟢🟡🟡🟡🟡🟡🟡🟡🟢🟢⬜⬜⬜⬜
-       │   ⬜⬜🟢🟢🟢🟢🟢🟢🟢🟢🟢⬜⬜⬜⬜⬜
+       │   ⬜⬜⬜⬜⬜⬜  ← Edge (Low Loot)
+       │   ⬜[OFFICE]⬜⬜⬜⬜
+       │   ⬜⬜⬜⬜⬜  ← Mid (Moderate)
+       │   ⬜[WARE][LABS]⬜⬜
+       │   ⬜⬜⬜⬜⬜  ← Hot (High)
+       │   ⬜[REACTOR]⬜⬜⬜⬜  ← Extreme
+       │   ⬜⬜⬜⬜⬜
+       │   ⬜[WORK][WATER]⬜
+       │   ⬜⬜⬜⬜⬜
+       │   ⬜⬜⬜⬜⬜
+       │   ⬜⬜⬜⬜⬜⬜⬜
        └──────────────────────────────────→
      SOUTH                              EAST
 
 Legend:
-🟣 = S-Tier (Legendary/Epic guaranteed)
-🔴 = A-Tier (Rare/Epic chance)
-🟠 = B-Tier (Uncommon/Rare)
-🟡 = C-Tier (Common/Uncommon)
-🟢 = D-Tier (Common only)
+ = S-Tier (Legendary/Epic guaranteed)
+ = A-Tier (Rare/Epic chance)
+ = B-Tier (Uncommon/Rare)
+ = C-Tier (Common/Uncommon)
+ = D-Tier (Common only)
 ⬜ = Out of bounds
 ```
 
 ---
 
-## 🎯 Zone-Based Distribution
+##  Zone-Based Distribution
 
 
 
 | Zone Type | Loot Tier | Spawn Rate | Risk Level |
 |:----------|:----------|:-----------|:-----------|
-| **Edge Zone** | D-C Tier | 15% | 🟢 Low |
-| **Mid Zone** | C-B Tier | 35% | 🟡 Medium |
-| **Hot Zone** | B-A Tier | 35% | 🟠 High |
-| **Core Zone** | A-S Tier | 15% | 🔴 Extreme |
+| **Edge Zone** | D-C Tier | 15% |  Low |
+| **Mid Zone** | C-B Tier | 35% |  Medium |
+| **Hot Zone** | B-A Tier | 35% |  High |
+| **Core Zone** | A-S Tier | 15% |  Extreme |
 
 ---
 
-## 💎 Rarity Distribution
+##  Rarity Distribution
 
 ### Overall Map Distribution
 
@@ -65,15 +65,15 @@ Legend:
 
 | Container | Symbol | Locations | Contents |
 |:----------|:------:|:----------|:---------|
-| Basic Crate | 📦 | Everywhere | Common items, ammo |
-| Military Locker | 🗄️ | Mid, Hot | Uncommon weapons |
-| Rare Safe | 🔐 | Hot zones | Rare gear (lockpick) |
-| Epic Vault | 🏦 | Core only | Epic items (keycard) |
+| Basic Crate |  | Everywhere | Common items, ammo |
+| Military Locker |  | Mid, Hot | Uncommon weapons |
+| Rare Safe |  | Hot zones | Rare gear (lockpick) |
+| Epic Vault |  | Core only | Epic items (keycard) |
 | Legendary Cache | ⭐ | Random | Legendary guaranteed |
 
 ---
 
-## 🗺️ POI Loot Tables
+##  POI Loot Tables
 
 ### Reactor Tower (S-Tier Location)
 
@@ -106,9 +106,9 @@ Legend:
 
 ---
 
-## 👤 Player Skill-Based Routes
+##  Player Skill-Based Routes
 
-### 🟢 Newbie Route (Low Risk)
+###  Newbie Route (Low Risk)
 
 ```
 Start → Edge Zone → Safe POIs → Early Extract
@@ -124,7 +124,7 @@ Time: 5-8 minutes
 Risk: Low (avoid center)
 ```
 
-### 🟡 Intermediate Route (Balanced)
+###  Intermediate Route (Balanced)
 
 ```
 Start → Mid Zone → Moderate POIs → Mid Extract
@@ -140,7 +140,7 @@ Time: 10-12 minutes
 Risk: Medium (PvP possible)
 ```
 
-### 🔴 Veteran Route (High Risk/Reward)
+###  Veteran Route (High Risk/Reward)
 
 ```
 Start → Hot Zone → Boss → Premium Extract
@@ -159,7 +159,7 @@ Risk: Extreme (guaranteed PvP)
 
 ---
 
-## 📈 Loot Spawn Timing
+##  Loot Spawn Timing
 
 ### Dynamic Loot Events
 
@@ -172,7 +172,7 @@ Risk: Extreme (guaranteed PvP)
 
 ---
 
-## 🎲 Loot Table Examples
+##  Loot Table Examples
 
 ### Military Locker
 
@@ -194,7 +194,7 @@ Risk: Extreme (guaranteed PvP)
 
 ---
 
-## 📊 Balance Metrics
+##  Balance Metrics
 
 ### Target Distribution KPIs
 

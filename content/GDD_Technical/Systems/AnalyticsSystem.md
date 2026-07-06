@@ -173,17 +173,17 @@ STRUCT TelemetryConfig:
 
 ## TODO: Implementation Tasks
 
-### HIGH Priority 🔴
+### HIGH Priority 
 - [ ] AnalyticsManager buffer logic
 - [ ] Network client integration
 - [ ] Core event definitions (Match, Kill, Economy)
 
-### MEDIUM Priority 🟡
+### MEDIUM Priority 
 - [ ] Performance monitoring hooks
 - [ ] Economy transaction wrapper
 - [ ] Data serialization (JSON/Protobuf)
 
-### LOW Priority 🟢
+### LOW Priority 
 - [ ] Heatmap data collection (Position tracking)
 - [ ] Crash reporting integration
 - [ ] Real-time dashboard support

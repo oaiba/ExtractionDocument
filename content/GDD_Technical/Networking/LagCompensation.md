@@ -3,7 +3,7 @@ title: "Lag Compensation & Netcode Logic"
 type: docs
 ---
 
-## 🏃 The Problem: "Peeker's Advantage"
+##  The Problem: "Peeker's Advantage"
 In shooters, the client is always ahead of the server. When Player A peeks a corner, they see Player B *before* the server knows Player A has moved. This creates unfair kills.
 
 ### 1. Server-Side Rewind (The Solution)
@@ -26,7 +26,7 @@ When a player fires a hitscan weapon:
 
 ---
 
-## 🛡️ Hit Registration & Validation
+##  Hit Registration & Validation
 
 ### 1. Headshot Detection
 *   **Problem:** Clients can fake headshots easily.
@@ -42,7 +42,7 @@ When a player fires a hitscan weapon:
 
 ---
 
-## 🕰️ Time Management (Clock Sync)
+##  Time Management (Clock Sync)
 
 ### Server Time vs. Client Time
 *   **GameTime:** Synced at login. Client maintains local `ServerTimeOffset`.

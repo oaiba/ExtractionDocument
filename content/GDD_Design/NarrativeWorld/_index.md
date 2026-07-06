@@ -19,7 +19,7 @@ This section contains all narrative and world design documentation for the game.
 
 ***
 
-### 📖 Narrative Documents
+###  Narrative Documents
 
 {{< cards cols="2" >}}
 {{< card link="Narrative" title="Narrative Design Bible" icon="pencil" subtitle="Tone guide, thematic pillars, storytelling hierarchy, dialogue guidelines, and pacing." >}}
@@ -38,7 +38,7 @@ This section contains all narrative and world design documentation for the game.
 
 ***
 
-### 🗺️ World & Map Documents
+###  World & Map Documents
 
 {{< cards cols="2" >}}
 {{< card link="MapBible" title="Map Design Bible" icon="globe-alt" subtitle="Map philosophy, zone types, design principles, environmental storytelling, cover, verticality." >}}
@@ -51,7 +51,7 @@ This section contains all narrative and world design documentation for the game.
 
 ***
 
-### 🏭 Per-Map Lore Documents
+###  Per-Map Lore Documents
 
 Each map has a unified lore + layout document tying together history, atmosphere, audio logs, POI stories, and tactical data.
 

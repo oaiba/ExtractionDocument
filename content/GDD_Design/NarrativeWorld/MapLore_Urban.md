@@ -149,11 +149,11 @@ CITY PARK (Peacekeeper patrols)
     [STATION]                    [STATION S]
 
 ZONE LEGEND:
-🔴 = Central Plaza / Mall (Contested Hot Zones)
-🟣 = Subway System (Underground Network territory)
-🛡️ = Hotel Grand / Park (Peacekeeper territory)
-⚪ = Apartment Blocks A–E (Civilian Communities — neutral)
-🟢 = Street Level connecting zones (Mid-Zone transit)
+ = Central Plaza / Mall (Contested Hot Zones)
+ = Subway System (Underground Network territory)
+ = Hotel Grand / Park (Peacekeeper territory)
+ = Apartment Blocks A–E (Civilian Communities — neutral)
+ = Street Level connecting zones (Mid-Zone transit)
 
 EXTRACTION POINTS:
 EX-A: Park North (Helicopter — Peacekeeper-controlled)
@@ -166,7 +166,7 @@ EX-D: Hotel Rooftop (Flare gun required — high risk, great view)
 
 ### POI Profiles
 
-#### 🔴 Shopping Mall — "The Survival Market"
+####  Shopping Mall — "The Survival Market"
 
 **Zone Type:** A-Tier Hot Zone\
 **Tactical Overview:**
@@ -198,7 +198,7 @@ The Mall became District 14's first major crisis point during Week 1 — it was 
 
 ***
 
-#### 🔴 Central Plaza — "The Open Wound"
+####  Central Plaza — "The Open Wound"
 
 **Zone Type:** S-Tier Contested Zone\
 **Tactical Overview:**
@@ -221,7 +221,7 @@ The Plaza was District 14's beating heart — celebrations, protests, weddings, 
 
 ***
 
-#### 🟣 Subway System — "The Underground's Kingdom"
+####  Subway System — "The Underground's Kingdom"
 
 **Zone Type:** B-Tier Mid Zone — Underground Network (Primary)\
 **Three Subway Stations with Tunnel Network Connecting Them:**
@@ -261,7 +261,7 @@ Quest Connection: Triggers "The Network's Terms" questline
 
 ***
 
-#### 🛡️ Hotel Grand — "The Peacekeeper Outpost"
+####  Hotel Grand — "The Peacekeeper Outpost"
 
 **Zone Type:** B-Tier Mid Zone — Peacekeepers (Primary)\
 **Tactical Overview:**
@@ -287,7 +287,7 @@ Commander Vance chose the Hotel Grand for the Peacekeeper outpost because it was
 
 ***
 
-#### ⚪ Apartment Blocks A–E — "Where People Still Live"
+####  Apartment Blocks A–E — "Where People Still Live"
 
 **Zone Type:** C-Tier Mid Zone — Civilian Communities (Neutral)\
 **Unique Property:** Live NPCs — non-hostile civilian characters

@@ -3,7 +3,7 @@ title: "Navigation & Map System Design"
 type: docs
 ---
 
-## 🧭 System Overview
+##  System Overview
 
 The **Navigation & Map System** is the player's primary tool for situational awareness in the Extraction zone. Unlike traditional shooters where red dots reveal enemies, Extraction Shooters rely on **Intel-based Navigation**. The system prioritizes sound, line-of-sight, and tactical markings over "god-mode" radar.
 
@@ -15,7 +15,7 @@ The **Navigation & Map System** is the player's primary tool for situational awa
 
 ---
 
-## 🧭 HUD Compass Ring
+##  HUD Compass Ring
 
 Instead of a First-Person Shooter (FPS) style horizontal "Compass Tape", the compass is **integrated directly into the Minimap border**.
 
@@ -33,7 +33,7 @@ The compass is a **Ring** surrounding the square/circular Minimap at the top-rig
 
 ---
 
-## 🗺️ Minimap (HUD Radar)
+##  Minimap (HUD Radar)
 
 ### Core Mechanics
 The Minimap is a constant HUD element located at the **Top-Right** (default).
@@ -53,17 +53,17 @@ The Minimap is a constant HUD element located at the **Top-Right** (default).
 
 | Indicator          | Icon            | Color           | Behavior                                                                    |
 | :----------------- | :-------------- | :-------------- | :-------------------------------------------------------------------------- |
-| **Player**         | Arrow           | 🟡 Yellow        | Fixed Up (Player-Up) or Rotates (North-Up).                                 |
-| **Teammate**       | Circle + Number | 🔵 Blue          | Shows directional arrow if off-map on the Compass Ring.                     |
-| **Enemy (Visual)** | Solid Dot       | 🔴 Red           | Only appears if scanned by UAV/Ability or team LOS (Line of Sight).         |
-| **Enemy (Audio)**  | Pulsing Wave    | 🔴 Red / ⚪ White | Shows *direction* of sound (footsteps/shots). See [Sound Visualization](#). |
-| **Gunfire**        | Bullet Icon     | 🔴 Red           | Fades after 2s. Size indicates caliber/threat.                              |
-| **Extraction**     | Door/Heli       | 🟢 Green         | Always visible if active.                                                   |
-| **Loot**           | Diamond         | ⚪ White         | Only special high-tier loot marked by teammates.                            |
+| **Player**         | Arrow           |  Yellow        | Fixed Up (Player-Up) or Rotates (North-Up).                                 |
+| **Teammate**       | Circle + Number |  Blue          | Shows directional arrow if off-map on the Compass Ring.                     |
+| **Enemy (Visual)** | Solid Dot       |  Red           | Only appears if scanned by UAV/Ability or team LOS (Line of Sight).         |
+| **Enemy (Audio)**  | Pulsing Wave    |  Red /  White | Shows *direction* of sound (footsteps/shots). See [Sound Visualization](#). |
+| **Gunfire**        | Bullet Icon     |  Red           | Fades after 2s. Size indicates caliber/threat.                              |
+| **Extraction**     | Door/Heli       |  Green         | Always visible if active.                                                   |
+| **Loot**           | Diamond         |  White         | Only special high-tier loot marked by teammates.                            |
 
 ---
 
-## 📍 Tactical Map (BigMap)
+##  Tactical Map (BigMap)
 
 ### Access & Layout
 Accessed by **tapping the Minimap**. Overlays the screen (80% opacity) or slides in.
@@ -92,7 +92,7 @@ A slide-out panel on the Tactical Map showing:
 
 ---
 
-## 🎯 3D World Markers (AR Pointers)
+##  3D World Markers (AR Pointers)
 
 Markers that exist in the 3D game world to guide players without looking at the map.
 
@@ -111,7 +111,7 @@ Markers that exist in the 3D game world to guide players without looking at the 
 
 ---
 
-## 📢 Ping System (Smart Comms)
+##  Ping System (Smart Comms)
 
 A robust "Apex-style" ping system is critical for non-verbal communication.
 
@@ -128,12 +128,12 @@ Pressing the **Ping Button** performs different actions based on what the crossh
 
 ### 2. Ping Wheel (Hold & Drag)
 Holding the Ping Button opens a radial menu for specific commands:
-*   ⬆️ **Attack / Push** ("Attacking!")
-*   ⬇️ **Defend / Hold** ("Hold this position.")
-*   ⬅️ **Watching** ("Watching this angle.")
-*   ➡️ **Looting** ("I'm looting.")
-*   ↗️ **Enemy Missing** ("Enemy gone?")
-*   ↖️ **Group Up** ("Regroup here!")
+*   ⬆ **Attack / Push** ("Attacking!")
+*   ⬇ **Defend / Hold** ("Hold this position.")
+*   ⬅ **Watching** ("Watching this angle.")
+*    **Looting** ("I'm looting.")
+*   ↗ **Enemy Missing** ("Enemy gone?")
+*   ↖ **Group Up** ("Regroup here!")
 
 ### 3. Danger Ping (Double Tap)
 Double-tapping the ping button *immediately* places a high-priority **RED DANGER** marker at the crosshair location with a distinct alert sound ("Enemy contact!").
@@ -144,7 +144,7 @@ Double-tapping the ping button *immediately* places a high-priority **RED DANGER
 
 ---
 
-## 🏢 Multi-Floor Building Navigation (Top-Down Specific)
+##  Multi-Floor Building Navigation (Top-Down Specific)
 
 Top-down perspective requires unique handling of vertical space. When indoors, the camera cuts away the roof to reveal the layout per [Camera System](../Gameplay/Camera_System.md). Multi-story buildings need additional map affordances.
 
@@ -178,7 +178,7 @@ Being on Floor 2 above a floor-1 firefight:
 
 ---
 
-## 🔊 Sound Visualization System
+##  Sound Visualization System
 
 Extraction shooters use audio as primary information. For players with sound disabilities, and for mobile players in public spaces, the minimap visualizes sound sources:
 
@@ -199,7 +199,7 @@ Extraction shooters use audio as primary information. For players with sound dis
 
 ---
 
-## 📍 Extraction Zone Discovery System
+##  Extraction Zone Discovery System
 
 Extraction zones are not all visible at raid start. This creates exploration incentive and prevents immediate camping.
 
@@ -221,15 +221,15 @@ Extraction zones are not all visible at raid start. This creates exploration inc
 
 | Icon | Type | Notes |
 | :--- | :--- | :---- |
-| 🟢 Door | Standard | Walk-in, hold timer |
-| 🚁 Helicopter | Vehicle | Must be activated; leaves when full |
-| 🟡 🔒 | Conditional (paid/item) | Lock icon with cost shown on hover |
-| 🔵 Dual | Cooperative | Two players required per [Extraction Mechanics](../Gameplay/Extraction_Mechanics.md) |
-| 🔴 Emergency | Expensive | Always available; flare cost shown |
+|  Door | Standard | Walk-in, hold timer |
+|  Helicopter | Vehicle | Must be activated; leaves when full |
+|   | Conditional (paid/item) | Lock icon with cost shown on hover |
+|  Dual | Cooperative | Two players required per [Extraction Mechanics](../Gameplay/Extraction_Mechanics.md) |
+|  Emergency | Expensive | Always available; flare cost shown |
 
 ---
 
-## 🖥️ Top-Down Specific Design Notes
+##  Top-Down Specific Design Notes
 
 ### Why This Map System Differs from FPS Maps
 
@@ -253,7 +253,7 @@ Because the in-game camera IS a top-down view, the minimap is essentially a zoom
 
 ---
 
-## 🔗 Cross-References
+##  Cross-References
 
 - [Camera System](../Gameplay/Camera_System.md) — Camera altitude per floor, indoor building handling, and compass offset.
 - [LOS, Fog & Visibility](../Gameplay/LOS_Fog_Visibility.md) — Fog of War rules; when enemies appear on minimap; ability LOS reveals.

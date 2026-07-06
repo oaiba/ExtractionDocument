@@ -3,7 +3,7 @@ title: "Voice Lines - Character Dialogue"
 type: docs
 ---
 
-## 🎙️ Voice Design Philosophy
+##  Voice Design Philosophy
 
 ### Core Principles
 
@@ -15,7 +15,7 @@ type: docs
 
 ---
 
-## 👤 Operator Voice Profiles
+##  Operator Voice Profiles
 
 ### ASSAULT - "Ghost" (Marcus Chen)
 
@@ -313,7 +313,7 @@ Age Sound: Mid-20s
 
 ---
 
-## 🎭 Faction NPC Voice Lines
+##  Faction NPC Voice Lines
 
 ### Salvage Corps - Viktor Koval (Foreman)
 
@@ -411,7 +411,7 @@ Character: Soldier trying to rebuild
 
 ---
 
-## 📋 Voice Line Categories
+##  Voice Line Categories
 
 ### Automatic Callouts (AI-Triggered)
 
@@ -451,7 +451,7 @@ Communication Wheel:
 
 ---
 
-## 🔊 Voice Technical Specs
+##  Voice Technical Specs
 
 ### Recording Requirements
 

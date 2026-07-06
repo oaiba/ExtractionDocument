@@ -3,7 +3,7 @@ title: "Ranked Mode & Competitive Systems"
 type: docs
 ---
 
-## 🏆 Competitive Philosophy
+##  Competitive Philosophy
 
 **Core Principle:** "Earn your rank through consistent performance"
 
@@ -21,19 +21,19 @@ Ranked mode is designed to:
 
 ---
 
-## 🎖️ Ranking System
+##  Ranking System
 
 ### Rank Tiers
 
 | Tier         | Divisions    | Icon | Player Distribution |
 | :----------- | :----------- | :--- | :------------------ |
-| **Bronze**   | I, II, III   | 🥉    | ~30%                |
-| **Silver**   | I, II, III   | 🥈    | ~30%                |
-| **Gold**     | I, II, III   | 🥇    | ~20%                |
-| **Platinum** | I, II, III   | 💎    | ~12%                |
-| **Diamond**  | I, II, III   | 💠    | ~5%                 |
-| **Master**   | No divisions | 🏆    | ~2%                 |
-| **Champion** | Top 500      | 👑    | ~1%                 |
+| **Bronze**   | I, II, III   |     | ~30%                |
+| **Silver**   | I, II, III   |     | ~30%                |
+| **Gold**     | I, II, III   |     | ~20%                |
+| **Platinum** | I, II, III   |     | ~12%                |
+| **Diamond**  | I, II, III   |     | ~5%                 |
+| **Master**   | No divisions |     | ~2%                 |
+| **Champion** | Top 500      |     | ~1%                 |
 
 ### Rank Points (RP) System
 
@@ -98,7 +98,7 @@ Base RP:
 
 ---
 
-## 🎮 Ranked Queue
+##  Ranked Queue
 
 ### Queue Requirements
 
@@ -148,7 +148,7 @@ Base RP:
 
 ---
 
-## 📈 Season Structure
+##  Season Structure
 
 ### Season Duration
 
@@ -199,7 +199,7 @@ Previous season rank affects placement matches
 
 ---
 
-## 🏅 Leaderboards
+##  Leaderboards
 
 ### Leaderboard Types
 
@@ -228,7 +228,7 @@ Previous season rank affects placement matches
 
 ---
 
-## ⚖️ Competitive Integrity
+##  Competitive Integrity
 
 ### Anti-Cheat Measures
 
@@ -261,7 +261,7 @@ Previous season rank affects placement matches
 
 ---
 
-## 🎯 Ranked-Specific Rules
+##  Ranked-Specific Rules
 
 ### Gameplay Differences
 
@@ -292,7 +292,7 @@ Previous season rank affects placement matches
 
 ---
 
-## 📊 Statistics & Analytics
+##  Statistics & Analytics
 
 ### Player Stats Tracked
 
@@ -336,7 +336,7 @@ Previous season rank affects placement matches
 
 ---
 
-## 🤝 Squad Ranked Features
+##  Squad Ranked Features
 
 ### Team RP
 
@@ -362,7 +362,7 @@ Playing 10+ ranked games with same squad members:
 
 ---
 
-## 🏟️ Competitive Events
+##  Competitive Events
 
 ### Weekly Tournaments
 
@@ -390,14 +390,14 @@ Playing 10+ ranked games with same squad members:
 
 ---
 
-## 📅 Ranked Roadmap
+##  Ranked Roadmap
 
 ### Launch (Season 1)
-- ✅ Core RP system
-- ✅ Bronze → Champion tiers
-- ✅ Solo/Squad queue
-- ✅ Season rewards
-- ✅ Basic leaderboards
+-  Core RP system
+-  Bronze → Champion tiers
+-  Solo/Squad queue
+-  Season rewards
+-  Basic leaderboards
 
 ### Season 2
 - Ranked challenges (bonus RP)

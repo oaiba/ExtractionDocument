@@ -3,7 +3,7 @@ title: "Map Layouts - Detailed Map Configurations"
 type: docs
 ---
 
-## 📍 Points of Interest (POI)
+##  Points of Interest (POI)
 
 ### POI Tiers
 
@@ -29,26 +29,26 @@ type: docs
 
 ---
 
-## 🔥 Hotspots - High Activity Zones
+##  Hotspots - High Activity Zones
 
 ### Hotspot 1: Reactor Core
-**Heat:** 🔴🔴🔴🔴🔴 | Combat rate: 85% | Deaths/match: 8-12
+**Heat:**  | Combat rate: 85% | Deaths/match: 8-12
 
 **Entry Points (7):** Main entrance, Emergency stairs, Service ladder, Elevator, Roof access, Vent, Basement tunnel
 
 ### Hotspot 2: The Bridge
-**Heat:** 🔴🔴🔴🔴⚪ | Combat rate: 70% | Deaths/match: 4-6
+**Heat:**  | Combat rate: 70% | Deaths/match: 4-6
 
 **tactical Overview:** Crossing point between Warehouse and Office. Vulnerable to sniper fire from Office windows.
 
 ### Hotspot 3: Tech Labs Lobby
-**Heat:** 🔴🔴🔴⚪⚪ | Combat rate: 55% | Deaths/match: 3-5
+**Heat:**  | Combat rate: 55% | Deaths/match: 3-5
 
 **Tactical Overview:** Single main entrance with a 3-floor atrium providing multiple vertical sightlines.
 
 ---
 
-## 🚧 Choke Points
+##  Choke Points
 
 ### Critical Chokes
 
@@ -68,35 +68,35 @@ type: docs
 
 ---
 
-## 🚁 Extraction Points
+##  Extraction Points
 
 ### EX-1: Helipad (North)
 - **Type:** Signal (Flare Gun required)
-- **Capacity:** 4 | **Wait:** 90s | **Risk:** 🔴 High
+- **Capacity:** 4 | **Wait:** 90s | **Risk:**  High
 - Visible map-wide, high PvP target
 
 ### EX-2: Gate 03 (East)
 - **Type:** Always Open
-- **Capacity:** 6 | **Wait:** 15s | **Risk:** 🟡 Medium
+- **Capacity:** 6 | **Wait:** 15s | **Risk:**  Medium
 - Most used extraction
 
 ### EX-3: Convoy (South)
 - **Type:** Paid (3000 Credits)
-- **Capacity:** 8 | **Wait:** 30s | **Risk:** 🟡 Medium
+- **Capacity:** 8 | **Wait:** 30s | **Risk:**  Medium
 
 ### EX-4: Sewer (Central)
 - **Type:** Conditional (No Backpack)
-- **Capacity:** 2 | **Wait:** 45s | **Risk:** 🟢 Low
+- **Capacity:** 2 | **Wait:** 45s | **Risk:**  Low
 - Emergency escape, hidden location
 
 ### EX-5: Boat (West)
 - **Type:** Timer (<3:00 remaining)
-- **Capacity:** 3 | **Wait:** 20s | **Risk:** 🔴 High
+- **Capacity:** 3 | **Wait:** 20s | **Risk:**  High
 - Late-game emergency option
 
 ---
 
-## 📊 Traffic Flow
+##  Traffic Flow
 
 **Early Game (0-5m):** Spawn → Rush to nearest POI → Move towards Mid zones
 **Mid Game (5-10m):** Contesting hot zones, fighting for Supply drops, Peak PvP encounters

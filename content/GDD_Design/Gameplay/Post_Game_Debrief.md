@@ -74,7 +74,7 @@ Items extracted this raid, with economy context:
 | Qty        | Stack count                                                |
 | Condition  | % durability for gear items                                |
 | Est. Value | Server's current flea market average (or trader buy price) |
-| FIR status | ✅ (FIR) or ❌ (not FIR)                                     |
+| FIR status |  (FIR) or  (not FIR)                                     |
 
 **Total estimated value:** Sum of all extracted loot displayed at bottom of list.\
 **Sort options:** By value (desc), by name, by category.

@@ -5,7 +5,7 @@ type: docs
 
 ## Current Status
 
-**Project Phase:** 🔴 **Pre-Development**  
+**Project Phase:**  **Pre-Development**  
 **Current Sprint:** Sprint 0 - Project Setup  
 **Team Size:** TBD  
 **Start Date:** TBD  
@@ -33,12 +33,12 @@ Task completion status.
 
 | Code Name        | Display Name | Icon | Progress | Blocker | Description               |
 | :--------------- | :----------- | :--- | :------- | :------ | :------------------------ |
-| `ETS_NotStarted` | Not Started  | 🔴    | 0%       | None    | Task not yet begun        |
-| `ETS_InProgress` | In Progress  | 🟡    | 1-99%    | None    | Currently being worked on |
-| `ETS_Blocked`    | Blocked      | 🚫    | Variable | Active  | Waiting on dependency     |
-| `ETS_Review`     | In Review    | 🔵    | 95%      | None    | Pending approval/testing  |
-| `ETS_Done`       | Done         | ✅    | 100%     | None    | Task completed            |
-| `ETS_Deferred`   | Deferred     | ⏸️    | Variable | N/A     | Postponed to later phase  |
+| `ETS_NotStarted` | Not Started  |     | 0%       | None    | Task not yet begun        |
+| `ETS_InProgress` | In Progress  |     | 1-99%    | None    | Currently being worked on |
+| `ETS_Blocked`    | Blocked      |     | Variable | Active  | Waiting on dependency     |
+| `ETS_Review`     | In Review    |     | 95%      | None    | Pending approval/testing  |
+| `ETS_Done`       | Done         |     | 100%     | None    | Task completed            |
+| `ETS_Deferred`   | Deferred     | ⏸    | Variable | N/A     | Postponed to later phase  |
 
 ---
 
@@ -47,10 +47,10 @@ Task priority classification.
 
 | Code Name      | Display Name | Icon | Response Time | Escalation | Description             |
 | :------------- | :----------- | :--- | :------------ | :--------- | :---------------------- |
-| `ETP_Critical` | Critical     | 🔴    | Immediate     | Auto       | Blocker for release     |
-| `ETP_High`     | High         | 🟠    | < 24h         | Daily      | Core feature dependency |
-| `ETP_Medium`   | Medium       | 🟡    | < 1 week      | Weekly     | Standard priority       |
-| `ETP_Low`      | Low          | 🟢    | Sprint end    | Sprint     | Nice-to-have features   |
+| `ETP_Critical` | Critical     |     | Immediate     | Auto       | Blocker for release     |
+| `ETP_High`     | High         |     | < 24h         | Daily      | Core feature dependency |
+| `ETP_Medium`   | Medium       |     | < 1 week      | Weekly     | Standard priority       |
+| `ETP_Low`      | Low          |     | Sprint end    | Sprint     | Nice-to-have features   |
 
 ---
 
@@ -140,12 +140,12 @@ Sprint completion status.
 
 ## Phase 1: Core Development
 **Duration:** Months 1-4  
-**Status:** 🔴 Not Started (0%)
+**Status:**  Not Started (0%)
 
 ### Month 1-2: Foundation
 
 #### Week 1-2: Project Setup
-**Status:** 🔴 TODO
+**Status:**  TODO
 
 **Tasks:**
 - [ ] Create UE5 project (mobile template)
@@ -161,7 +161,7 @@ Sprint completion status.
 ---
 
 #### Week 3-4: Core Character System
-**Status:** 🔴 TODO
+**Status:**  TODO
 
 **Tasks:**
 - [ ] Implement `AExtractionCharacter` base class
@@ -188,7 +188,7 @@ Sprint completion status.
 ---
 
 #### Week 5-6: Basic Combat
-**Status:** 🔴 TODO
+**Status:**  TODO
 
 **Tasks:**
 - [ ] Implement `AExtractionWeapon` base class
@@ -219,7 +219,7 @@ Sprint completion status.
 ---
 
 #### Week 7-8: Network Foundation
-**Status:** 🔴 TODO
+**Status:**  TODO
 
 **Tasks:**
 - [ ] Setup dedicated server architecture
@@ -252,7 +252,7 @@ Sprint completion status.
 ### Month 3-4: Core Systems
 
 #### Week 9-10: Inventory System
-**Status:** 🔴 TODO
+**Status:**  TODO
 
 **Tasks:**
 - [ ] Implement `UInventoryComponent`
@@ -278,7 +278,7 @@ Sprint completion status.
 ---
 
 #### Week 11-12: Loot System
-**Status:** 🔴 TODO
+**Status:**  TODO
 
 **Tasks:**
 - [ ] Create `ALootContainer` actor
@@ -303,7 +303,7 @@ Sprint completion status.
 ---
 
 #### Week 13-14: AI System
-**Status:** 🔴 TODO
+**Status:**  TODO
 
 **Tasks:**
 - [ ] Implement `AExtractionAICharacter`
@@ -328,7 +328,7 @@ Sprint completion status.
 ---
 
 #### Week 15-16: Extraction & Match Flow
-**Status:** 🔴 TODO
+**Status:**  TODO
 
 **Tasks:**
 - [ ] Implement `AExtractionZone`
@@ -353,18 +353,18 @@ Sprint completion status.
 **Dependencies:** All core systems  
 **Blockers:** None
 
-**Milestone:** ✅ **Playable Prototype Complete**
+**Milestone:**  **Playable Prototype Complete**
 
 ---
 
 ## Phase 2: Content Creation
 **Duration:** Months 5-7  
-**Status:** 🔴 Not Started (0%)
+**Status:**  Not Started (0%)
 
 ### Month 5-6: Operators & Weapons
 
 #### Week 17-20: Operator Implementation
-**Status:** 🔴 TODO
+**Status:**  TODO
 
 **Tasks:**
 - [ ] Implement 5 operator classes
@@ -392,7 +392,7 @@ Sprint completion status.
 ---
 
 #### Week 21-24: Weapon Expansion
-**Status:** 🔴 TODO
+**Status:**  TODO
 
 **Tasks:**
 - [ ] Implement 15+ weapons across categories
@@ -423,7 +423,7 @@ Sprint completion status.
 ### Month 7: Maps & UI
 
 #### Week 25-28: Map Development
-**Status:** 🔴 TODO
+**Status:**  TODO
 
 **Tasks:**
 - [ ] Map 1: "Industrial Zone"
@@ -449,7 +449,7 @@ Sprint completion status.
 ---
 
 #### Week 29-30: UI/UX Implementation
-**Status:** 🔴 TODO
+**Status:**  TODO
 
 **Tasks:**
 - [ ] Main menu
@@ -476,7 +476,7 @@ Sprint completion status.
 ---
 
 #### Week 31-32: Matchmaking System
-**Status:** 🔴 TODO
+**Status:**  TODO
 
 **Tasks:**
 - [ ] Implement matchmaking backend
@@ -495,13 +495,13 @@ Sprint completion status.
 **Dependencies:** Network system  
 **Blockers:** Backend services
 
-**Milestone:** ✅ **Alpha Build Complete**
+**Milestone:**  **Alpha Build Complete**
 
 ---
 
 ## Phase 3: Testing & Refinement
 **Duration:** Months 8-10  
-**Status:** 🔴 Not Started (0%)
+**Status:**  Not Started (0%)
 
 ### Month 8: Closed Alpha
 
@@ -547,13 +547,13 @@ Sprint completion status.
 - [ ] Marketing materials
 - [ ] Launch preparation
 
-**Milestone:** ✅ **Release Candidate**
+**Milestone:**  **Release Candidate**
 
 ---
 
 ## Phase 4: Launch & Live Service
 **Duration:** Month 11+  
-**Status:** 🔴 Not Started
+**Status:**  Not Started
 
 ### Month 11: Soft Launch
 - Limited region release
@@ -579,16 +579,16 @@ Sprint completion status.
 
 ### Sprint Backlog
 
-#### In Progress 🟡
+#### In Progress 
 *No tasks in progress*
 
-#### To Do 🔴
+#### To Do 
 - [ ] Finalize team structure
 - [ ] Setup development machines
 - [ ] Create project repository
 - [ ] Write setup documentation
 
-#### Done ✅
+#### Done 
 - [x] GDD documentation created
 - [x] High-level design complete
 - [x] Technical architecture planned
@@ -597,7 +597,7 @@ Sprint completion status.
 
 ## Blocker Tracking
 
-### Active Blockers 🚫
+### Active Blockers 
 *No active blockers*
 
 ### Resolved Blockers

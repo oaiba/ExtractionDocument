@@ -3,7 +3,7 @@ title: "Build Pipeline & Release Engineering"
 type: docs
 ---
 
-## 🏗️ Version Control Strategy
+##  Version Control Strategy
 
 ### Branching Model (Gitflow modified)
 *   **`main` (Production):** The "Gold" standard. Stable, playable, deployable. Locked.
@@ -20,7 +20,7 @@ type: docs
 
 ---
 
-## 🤖 CI/CD Automation (Jenkins / GitHub Actions)
+##  CI/CD Automation (Jenkins / GitHub Actions)
 
 ### Continuous Integration (CI)
 Run on every Push to `feature/*`:
@@ -37,7 +37,7 @@ Run Nightly (03:00 AM) on `development`:
 
 ---
 
-## 📋 Quality Assurance (QA) Process
+##  Quality Assurance (QA) Process
 
 ### "Smoke Test" (Daily)
 *   *Before testing any new feature, verify basic game health:*
@@ -58,7 +58,7 @@ Run Nightly (03:00 AM) on `development`:
 
 ---
 
-## 🚀 Release Process
+##  Release Process
 
 1.  **Code Freeze:** No new commits to `development` 48 hours before build.
 2.  **Versioning:** Update `ProjectSettings` -> `Version`.

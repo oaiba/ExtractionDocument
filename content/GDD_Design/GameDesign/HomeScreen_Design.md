@@ -173,7 +173,7 @@ Each operator must have the following voice lines recorded for Home Screen use:
 │              │                              │  │  + 2 more...            │  │
 │              │                              │  └────────────────────────┘  │
 ├──────────────┴──────────────────────────────┴──────────────────────────────┤
-│  [Home]  [Armory]  [Stash]  [Safe House]  [Traders]  [Ranked]  [Shop]  [⚙️]   │
+│  [Home]  [Armory]  [Stash]  [Safe House]  [Traders]  [Ranked]  [Shop]  []   │
 └─────────────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -181,14 +181,14 @@ Each operator must have the following voice lines recorded for Home Screen use:
 
 | Tab | Icon | Shortcut (PC) | Content |
 | :-- | :--- | :------------ | :------ |
-| **Home** | 🏠 House | `H` | Returns to operator showcase + deploy panel |
-| **Armory** | 🔫 Gun | `A` | Weapon loadout, attachment editor, operator skin |
-| **Stash** | 📦 Box | `S` | Full stash grid, item management, insurance queue |
-| **Safe House** | 🏚️ Shelter | `D` | Safe House modules, crafting queue, upgrade tree. See [Safe House Design](Safe_House_Design.md). |
-| **Traders** | 🏪 Shop | `T` | 5 trader screens, quest turn-in, barter |
-| **Ranked** | 🏆 Trophy | `R` | Season rank, leaderboard, ranked queue |
-| **Shop** | 💎 Diamond | `P` | Cosmetics store, battle pass |
-| **Settings** | ⚙️ Gear | `Esc / ,` | Audio, graphics, controls, accessibility |
+| **Home** |  House | `H` | Returns to operator showcase + deploy panel |
+| **Armory** |  Gun | `A` | Weapon loadout, attachment editor, operator skin |
+| **Stash** |  Box | `S` | Full stash grid, item management, insurance queue |
+| **Safe House** |  Shelter | `D` | Safe House modules, crafting queue, upgrade tree. See [Safe House Design](Safe_House_Design.md). |
+| **Traders** |  Shop | `T` | 5 trader screens, quest turn-in, barter |
+| **Ranked** |  Trophy | `R` | Season rank, leaderboard, ranked queue |
+| **Shop** |  Diamond | `P` | Cosmetics store, battle pass |
+| **Settings** |  Gear | `Esc / ,` | Audio, graphics, controls, accessibility |
 
 ---
 
@@ -220,7 +220,7 @@ Each operator must have the following voice lines recorded for Home Screen use:
 │  [Raid ▼]  [Blitz] [Scav]      │  ← Mode quick-select pills
 │                                 │
 ├─────────────────────────────────┤
-│ 🏠   🔫   📦   🏚️   🏪   💎   │  ← Bottom nav (6 tabs)
+│                   │  ← Bottom nav (6 tabs)
 └─────────────────────────────────┘
 ```
 
@@ -240,12 +240,12 @@ Each operator must have the following voice lines recorded for Home Screen use:
 
 | Tab | Icon | Content |
 | :-- | :--- | :------ |
-| **Home** | 🏠 | Operator showcase + deploy |
-| **Armory** | 🔫 | Loadout + weapon + operator cosmetics |
-| **Stash** | 📦 | Stash + Safe House combined |
-| **Missions** | 📋 | Quests + traders + objectives |
-| **Social** | 👥 | Friends + squad + recent players |
-| **Shop** | 💎 | Store + battle pass |
+| **Home** |  | Operator showcase + deploy |
+| **Armory** |  | Loadout + weapon + operator cosmetics |
+| **Stash** |  | Stash + Safe House combined |
+| **Missions** |  | Quests + traders + objectives |
+| **Social** |  | Friends + squad + recent players |
+| **Shop** |  | Store + battle pass |
 
 > **Note on mobile vs PC:** Safe House and Traders are merged under "Missions" tab on mobile to stay within 6-tab limit (the thumb-reachable zone). Both are listed as sub-tabs within.
 
@@ -263,12 +263,12 @@ Located in the center panel below the operator name display.
 │                                                     │
 │  [● THE RAID ]  [ BLITZ ]  [ SCAV RUN ]            │
 │                                                     │
-│  [ RANKED ♦ ]  [ CO-OP ]  [ FEATURED ★ ]          │
+│  [ RANKED  ]  [ CO-OP ]  [ FEATURED  ]          │
 │                                                     │
 │  SELECTED: THE RAID                                 │
 │  ┌─────────────────────────────────────────────────┐│
-│  │ 📍 Aethelgard Industrial  👤 Solo  ⏱ 15-30min  ││
-│  │ ⚠ RISK: High — Gear fear active                 ││
+│  │  Aethelgard Industrial   Solo  ⏱ 15-30min  ││
+│  │  RISK: High — Gear fear active                 ││
 │  └─────────────────────────────────────────────────┘│
 │                                                     │
 │  Queue:  ○ Solo  ○ Duo  ● Trio    Est. ~45s         │
@@ -283,12 +283,12 @@ Each mode has a preview card that appears when selected:
 
 | Mode | Map Preview | Player Count | Duration | Risk Badge |
 | :--- | :---------- | :----------- | :------- | :--------- |
-| **The Raid** | Featured map thumbnail | 8–16 players | 15–30 min | ⚠ HIGH |
-| **Blitz** | Small-map thumbnail | 6–10 players | 8 min | ⚡ MEDIUM |
-| **Scav Run** | Same as current Raid map | 8–16 players | 10–20 min | ✅ ZERO |
-| **Ranked Ops** | Featured ranked map | 8–12 players | 20–30 min | ♦ EXTREME |
-| **Co-op (Blackout)** | Horde map | 1–3 players | 15 min | 🛡 MEDIUM |
-| **Featured ★** | Event-specific | Varies | Varies | Varies |
+| **The Raid** | Featured map thumbnail | 8–16 players | 15–30 min |  HIGH |
+| **Blitz** | Small-map thumbnail | 6–10 players | 8 min |  MEDIUM |
+| **Scav Run** | Same as current Raid map | 8–16 players | 10–20 min |  ZERO |
+| **Ranked Ops** | Featured ranked map | 8–12 players | 20–30 min |  EXTREME |
+| **Co-op (Blackout)** | Horde map | 1–3 players | 15 min |  MEDIUM |
+| **Featured ** | Event-specific | Varies | Varies | Varies |
 
 ### Queue Size Selector
 
@@ -355,7 +355,7 @@ Estimated queue time is displayed dynamically next to the selector, updated ever
 ### Navigation Rules
 
 - **Back navigation:** All screens have a `←` back button + `Esc` on PC. Always returns to previous screen, never resets to Home.
-- **Home shortcut:** `H` key (PC) or tap 🏠 tab always returns to Home Screen from anywhere.
+- **Home shortcut:** `H` key (PC) or tap  tab always returns to Home Screen from anywhere.
 - **Deep link:** Clicking the progression widget takes player directly to Progression screen. Clicking a specific quest in Home screen news takes player directly to that trader's quest board.
 - **Breadcrumb trail:** Top of every non-Home screen shows: `Home > Armory > Weapon` — each crumb is clickable.
 - **No dead ends:** Every screen has a clear path back or forward. No screens without exit.
@@ -405,14 +405,14 @@ Located at the top of the Right Sidebar (PC) or as a pull-down panel (Mobile).
 
 ```
 ┌────────────────────────────────────────────┐
-│  ◈  MAMBA           Mastery ★★★★☆          │
+│  ◈  MAMBA           Mastery           │
 │                                            │
 │  ▌ACCOUNT Lv.34    ████████████░░░  74%   │
 │  ▌SEASON  S3       ████████░░░░░░░  44/100│
 │  ▌PASS    Premium  ████████████░░░  60/100│
 │                                            │
-│  📋 Daily: 2/3 quests done  [Go →]         │
-│  ⚔ Last Raid: EXTRACTED  +1,240 XP        │
+│   Daily: 2/3 quests done  [Go →]         │
+│   Last Raid: EXTRACTED  +1,240 XP        │
 └────────────────────────────────────────────┘
 ```
 
@@ -462,7 +462,7 @@ Located at the top of the Right Sidebar (PC) or as a pull-down panel (Mobile).
 | **Friends** | Full friend list, sorted by: Online first; then Last Active |
 | **LFG (Looking For Group)** | Players who flagged themselves as LFG — filterable by operator class, level range, mode |
 | **Recent Players** | Players met in the last 5 raids — tap to view profile, send friend request, or report |
-| **Blocked List** | Access via ⚙️ icon in social panel |
+| **Blocked List** | Access via  icon in social panel |
 
 ### Party Management
 
@@ -489,7 +489,7 @@ The operator showcase viewport includes a quick-access cosmetics panel, expandin
 │  ─────────────────────────────────────────────────────────  │
 │  Skin:    [Tactical Black ▼]   [Shadow Ops ▼]  [◀ ▶]       │
 │  Emote:   [Lock & Load ▼]                      [◀ ▶]       │
-│  Badge:   [Iron Extraction ★]                  [◀ ▶]       │
+│  Badge:   [Iron Extraction ]                  [◀ ▶]       │
 │  Title:   ["The Last Extract"]                 [◀ ▶]       │
 │  ─────────────────────────────────────────────────────────  │
 │  OPERATOR SWITCH:  [Hawk] [Glitch] [Bastion] [Ghost] [+...]  │
@@ -510,7 +510,7 @@ The operator showcase viewport includes a quick-access cosmetics panel, expandin
 
 ### Mobile Quick Cosmetics
 
-On mobile, the cosmetics tray is accessed by a small "🎨 Customize" button floating at the top of the operator viewport. Opens a bottom sheet half-screen with the same options.
+On mobile, the cosmetics tray is accessed by a small " Customize" button floating at the top of the operator viewport. Opens a bottom sheet half-screen with the same options.
 
 ---
 

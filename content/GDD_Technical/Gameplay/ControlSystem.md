@@ -1240,7 +1240,7 @@ CLASS CameraController:
 
 ### TODO: Implementation Tasks
 
-#### HIGH Priority 🔴
+#### HIGH Priority 
 
 * [ ] Implement InputManager core loop
 * [ ] Create ActionMap with all bindings
@@ -1248,7 +1248,7 @@ CLASS CameraController:
 * [ ] Create TouchController for mobile
 * [ ] Implement aim assist system
 
-#### MEDIUM Priority 🟡
+#### MEDIUM Priority 
 
 * [ ] Add remapping UI and persistence
 * [ ] Implement control presets
@@ -1256,7 +1256,7 @@ CLASS CameraController:
 * [ ] Create gyroscope aiming option
 * [ ] Input method auto-detection
 
-#### LOW Priority 🟢
+#### LOW Priority 
 
 * [ ] Advanced customization (per-action sensitivity)
 * [ ] Macro/combo support

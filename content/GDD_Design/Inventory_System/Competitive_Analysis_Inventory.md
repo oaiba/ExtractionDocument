@@ -34,23 +34,23 @@ The extraction shooter genre is **rapidly growing** in 2024-2026:
 ### Common Patterns Across Genre
 
 **Universally Adopted:**
-- ✅ Grid-based spatial inventory (Tetris-style)
-- ✅ Weight affects movement speed
-- ✅ Lose gear on death (with exceptions)
-- ✅ In-raid looting with container searching
-- ✅ Modular weapon customization
+-  Grid-based spatial inventory (Tetris-style)
+-  Weight affects movement speed
+-  Lose gear on death (with exceptions)
+-  In-raid looting with container searching
+-  Modular weapon customization
 
 **Debated Mechanics:**
-- ⚠️ Secure containers (some games have, some don't)
-- ⚠️ Insurance systems (varies by game)
-- ⚠️ Auto-sort functionality (controversial)
-- ⚠️ Container nesting depth limits
+-  Secure containers (some games have, some don't)
+-  Insurance systems (varies by game)
+-  Auto-sort functionality (controversial)
+-  Container nesting depth limits
 
 **Emerging Trends:**
-- 📈 Simplified UIs for accessibility (Arena Breakout, Delta Force)
-- 📈 Mobile platform support (Arena Breakout leads)
-- 📈 F2P monetization shifting from P2P
-- 📈 Cross-platform play becoming standard
+-  Simplified UIs for accessibility (Arena Breakout, Delta Force)
+-  Mobile platform support (Arena Breakout leads)
+-  F2P monetization shifting from P2P
+-  Cross-platform play becoming standard
 
 ---
 
@@ -65,7 +65,7 @@ The extraction shooter genre is **rapidly growing** in 2024-2026:
 
 ### Inventory System Deep Dive
 
-#### Strengths ✅
+#### Strengths 
 
 **1. Grid Complexity (Gold Standard)**
 - Most sophisticated spatial puzzle in genre
@@ -99,7 +99,7 @@ The extraction shooter genre is **rapidly growing** in 2024-2026:
 - Blunt damage even on penetration failure
 - **Why it works**: Tactical depth, skill expression
 
-#### Weaknesses ❌
+#### Weaknesses 
 
 **1. Overwhelming New Player Experience**
 - Too many systems introduced at once
@@ -162,7 +162,7 @@ The extraction shooter genre is **rapidly growing** in 2024-2026:
 
 ### Inventory System Deep Dive
 
-#### Strengths ✅
+#### Strengths 
 
 **1. Accessibility Focus**
 - **Simplified Grid**: Less intimidating than Tarkov
@@ -188,7 +188,7 @@ The extraction shooter genre is **rapidly growing** in 2024-2026:
 - Transparent roadmap
 - **Why it works**: Builds player trust and retention
 
-#### Weaknesses ❌
+#### Weaknesses 
 
 **1. Depth Sacrifice**
 - Simpler armor system (3 classes instead of 6)
@@ -244,7 +244,7 @@ The extraction shooter genre is **rapidly growing** in 2024-2026:
 
 ### Inventory System Deep Dive
 
-#### Strengths ✅
+#### Strengths 
 
 **1. Cross-Platform Parity**
 - Unified UI across all platforms
@@ -270,7 +270,7 @@ The extraction shooter genre is **rapidly growing** in 2024-2026:
 - No inventory lag
 - **Why it works**: Professional presentation
 
-#### Weaknesses ❌
+#### Weaknesses 
 
 **1. Simplified Depth**
 - Only 3 armor classes (casual-friendly)
@@ -325,7 +325,7 @@ The extraction shooter genre is **rapidly growing** in 2024-2026:
 
 ### Inventory System Deep Dive
 
-#### Strengths ✅
+#### Strengths 
 
 **1. Unique Trait System**
 - Inventory slots unlock via traits (perks)
@@ -351,7 +351,7 @@ The extraction shooter genre is **rapidly growing** in 2024-2026:
 - No immersion-breaking modern gear
 - **Why it works**: Strong artistic identity
 
-#### Weaknesses ❌
+#### Weaknesses 
 
 **1. Limited Customization**
 - Cannot customize loadout layout
@@ -406,7 +406,7 @@ The extraction shooter genre is **rapidly growing** in 2024-2026:
 
 ### Inventory System Deep Dive
 
-#### Strengths ✅
+#### Strengths 
 
 **1. Realism Focus**
 - Most realistic medical system in genre
@@ -426,7 +426,7 @@ The extraction shooter genre is **rapidly growing** in 2024-2026:
 - Territory control affects storage
 - **Why it works**: MMO-like metagame
 
-#### Weaknesses ❌
+#### Weaknesses 
 
 **1. Buggy Implementation**
 - Frequent inventory duplication bugs
@@ -480,7 +480,7 @@ The extraction shooter genre is **rapidly growing** in 2024-2026:
 
 ### Inventory System Deep Dive
 
-#### Strengths ✅
+#### Strengths 
 
 **1. Space Theme Innovation**
 - Zero-gravity looting mechanics
@@ -500,7 +500,7 @@ The extraction shooter genre is **rapidly growing** in 2024-2026:
 - Blueprint collection metagame
 - **Why it works**: Additional progression layer
 
-#### Weaknesses ❌
+#### Weaknesses 
 
 **1. Small Player Base**
 - Matchmaking struggles
@@ -561,20 +561,20 @@ Showdown  Force     Breakout                Warfare
 
 | Feature | Tarkov | Arena Breakout | Delta Force | Hunt 1896 | Gray Zone | Marauders |
 |:--------|:------:|:--------------:|:-----------:|:---------:|:---------:|:---------:|
-| **Tetris Grid** | ✅ | ✅ | ✅ | ❌ | ✅ | ✅ |
-| **Item Rotation** | ✅ | ✅ | ✅ | ❌ | ✅ | ✅ |
-| **Folding Weapons** | ✅ | ❌ | ❌ | ❌ | ✅ | ❌ |
-| **Container Nesting** | ✅ | ✅ | ✅ | ❌ | ✅ | ✅ |
+| **Tetris Grid** |  |  |  |  |  |  |
+| **Item Rotation** |  |  |  |  |  |  |
+| **Folding Weapons** |  |  |  |  |  |  |
+| **Container Nesting** |  |  |  |  |  |  |
 | **Weight System** | Complex | Medium | Simple | Simple | Complex | Medium |
 | **Armor Zones** | 7 zones | 3 zones | 3 zones | 2 zones | 5 zones | 2 zones |
-| **Secure Container** | ✅ (2×2-3×4) | ✅ (2×2) | ✅ (1×2) | ❌ | ✅ (2×2) | ✅ (2×3) |
-| **Insurance** | ✅ | ✅ | ❌ | ❌ | ✅ | ❌ |
-| **Auto-Sort** | Basic | Smart | Basic | N/A | ❌ | Basic |
+| **Secure Container** |  (2×2-3×4) |  (2×2) |  (1×2) |  |  (2×2) |  (2×3) |
+| **Insurance** |  |  |  |  |  |  |
+| **Auto-Sort** | Basic | Smart | Basic | N/A |  | Basic |
 | **Weapon Modding** | 100+ parts | 50+ parts | 30+ parts | 10+ parts | 60+ parts | 40+ parts |
 | **Stash Size** | 280-680 | 200-400 | 150-300 | N/A | 400-600 | 100-300 |
-| **Cross-Platform** | ❌ | ✅ | ✅ | ✅ (Console) | ❌ | ❌ |
-| **F2P** | ❌ | ✅ | ✅ | ❌ | ❌ | ❌ |
-| **Mobile Support** | ❌ | ✅ | ✅ | ❌ | ❌ | ❌ |
+| **Cross-Platform** |  |  |  |  (Console) |  |  |
+| **F2P** |  |  |  |  |  |  |
+| **Mobile Support** |  |  |  |  |  |  |
 
 ### Player Retention Funnel
 
@@ -595,12 +595,12 @@ Marauders:   100% → 75%  → 50%    → 25%      → 10%
 
 | Game | Model | Price | Fair? | Revenue/Player (Est.) |
 |:-----|:------|:------|:------|:----------------------|
-| **Tarkov** | Buy-to-play | $45-$110 | ⚠️ P2W concerns | $60 |
-| **Arena** | F2P + Battle Pass | $0 (+$10/season) | ✅ Fair | $15 |
-| **Delta** | F2P + Battle Pass | $0 (+$10/season) | ⚠️ Grind-heavy | $20 |
-| **Hunt** | Buy-to-play + DLC | $40 (+$5-$15) | ✅ Fair | $50 |
-| **Gray Zone** | Buy-to-play | $30 | ✅ Fair | $30 |
-| **Marauders** | Buy-to-play | $30 | ✅ Fair | $30 |
+| **Tarkov** | Buy-to-play | $45-$110 |  P2W concerns | $60 |
+| **Arena** | F2P + Battle Pass | $0 (+$10/season) |  Fair | $15 |
+| **Delta** | F2P + Battle Pass | $0 (+$10/season) |  Grind-heavy | $20 |
+| **Hunt** | Buy-to-play + DLC | $40 (+$5-$15) |  Fair | $50 |
+| **Gray Zone** | Buy-to-play | $30 |  Fair | $30 |
+| **Marauders** | Buy-to-play | $30 |  Fair | $30 |
 
 **Trend**: F2P becoming standard, but must be fair
 
@@ -696,32 +696,32 @@ Marauders:   100% → 75%  → 50%    → 25%      → 10%
 ### Anti-Patterns to Avoid
 
 **1. Tarkov's Overwhelming Complexity (New Player Experience)**
-- ❌ Don't: Throw all systems at players at once
-- ✅ Do: Gradual tutorial, progressive unlocking
+-  Don't: Throw all systems at players at once
+-  Do: Gradual tutorial, progressive unlocking
 
 **2. Tarkov's Pay-to-Win Concerns**
-- ❌ Don't: Sell stash size or secure container advantages
-- ✅ Do: Make all gameplay advantages earnable
+-  Don't: Sell stash size or secure container advantages
+-  Do: Make all gameplay advantages earnable
 
 **3. Arena Breakout's Depth Sacrifice**
-- ❌ Don't: Dumb down for casual audience only
-- ✅ Do: Difficulty modes (Casual/Standard/Hardcore)
+-  Don't: Dumb down for casual audience only
+-  Do: Difficulty modes (Casual/Standard/Hardcore)
 
 **4. Delta Force's Aggressive Monetization**
-- ❌ Don't: Battle Pass FOMO, pay-for-convenience
-- ✅ Do: Fair F2P, no P2W, respect player time
+-  Don't: Battle Pass FOMO, pay-for-convenience
+-  Do: Fair F2P, no P2W, respect player time
 
 **5. Gray Zone's Buggy Launch**
-- ❌ Don't: Launch with game-breaking inventory bugs
-- ✅ Do: Extensive testing, staged rollout
+-  Don't: Launch with game-breaking inventory bugs
+-  Do: Extensive testing, staged rollout
 
 **6. Marauders' Niche Overspecialization**
-- ❌ Don't: Overly unique theme that alienates genre fans
-- ✅ Do: Balance innovation with familiarity
+-  Don't: Overly unique theme that alienates genre fans
+-  Do: Balance innovation with familiarity
 
 **7. Hunt's Fixed Slot Rigidity**
-- ❌ Don't: Remove player customization entirely
-- ✅ Do: Offer preset loadouts as optional quickstart
+-  Don't: Remove player customization entirely
+-  Do: Offer preset loadouts as optional quickstart
 
 ---
 
@@ -843,17 +843,17 @@ Marauders:   100% → 75%  → 50%    → 25%      → 10%
 ## Conclusion: Competitive Edge Strategy
 
 **Our Advantages:**
-1. ✅ **Learn from 8 years of Tarkov mistakes** (don't repeat bugs)
-2. ✅ **Modern F2P model** (fair, sustainable)
-3. ✅ **Accessibility without dumbing down** (difficulty modes)
-4. ✅ **Cross-platform from launch** (largest audience)
-5. ✅ **AI-assisted features** (future-proof, innovative)
+1.  **Learn from 8 years of Tarkov mistakes** (don't repeat bugs)
+2.  **Modern F2P model** (fair, sustainable)
+3.  **Accessibility without dumbing down** (difficulty modes)
+4.  **Cross-platform from launch** (largest audience)
+5.  **AI-assisted features** (future-proof, innovative)
 
 **Our Challenges:**
-1. ⚠️ **Competing with established giants** (Tarkov's loyalty)
-2. ⚠️ **Avoiding "Tarkov clone" label** (need differentiation)
-3. ⚠️ **Balancing depth vs accessibility** (don't alienate either)
-4. ⚠️ **Anti-cheat on F2P** (major technical hurdle)
+1.  **Competing with established giants** (Tarkov's loyalty)
+2.  **Avoiding "Tarkov clone" label** (need differentiation)
+3.  **Balancing depth vs accessibility** (don't alienate either)
+4.  **Anti-cheat on F2P** (major technical hurdle)
 
 **Success Metrics (Year 1):**
 - 500k+ DAU (Daily Active Users)

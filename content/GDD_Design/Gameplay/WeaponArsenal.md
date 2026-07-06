@@ -368,8 +368,8 @@ Base Damage → Armor Absorption → Health Damage
 
 | Type | Materials | Penetrable | Destructible |
 | :--- | :-------- | :--------: | :----------: |
-| **Soft Cover** | Wood crates, thin walls | ✅ Yes | ✅ Yes |
-| **Hard Cover** | Concrete, vehicles, metal | ❌ No | ❌ No |
+| **Soft Cover** | Wood crates, thin walls |  Yes |  Yes |
+| **Hard Cover** | Concrete, vehicles, metal |  No |  No |
 
 **Cover Mechanics:**
 - Auto-crouch near cover (optional — settings toggle)
@@ -430,14 +430,14 @@ See [Items & Gear](ItemsAndGear.md) for full item tables with stack sizes, weigh
 
 | Source | In-Raid | Out-of-Raid |
 | :----- | :-----: | :----------: |
-| Loot containers | ✅ | — |
-| Kill enemy players | ✅ | — |
-| Supply drop events | ✅ | — |
-| AI enemy drops | ✅ | — |
-| Purchase from Stash/Traders | — | ✅ |
-| Quest rewards | — | ✅ |
-| Battle Pass rewards | — | ✅ |
-| Safe House crafting | — | ✅ |
+| Loot containers |  | — |
+| Kill enemy players |  | — |
+| Supply drop events |  | — |
+| AI enemy drops |  | — |
+| Purchase from Stash/Traders | — |  |
+| Quest rewards | — |  |
+| Battle Pass rewards | — |  |
+| Safe House crafting | — |  |
 
 ---
 

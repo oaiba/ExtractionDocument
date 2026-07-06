@@ -59,15 +59,15 @@ The Downstate & Revive system determines what happens when a player's HP reaches
 
 | Capability | Available | Detail |
 | :--------- | :-------: | :----- |
-| **Move (crawl)** | ✅ | 15% speed; visible crawl animation |
-| **Fire sidearm (pistol)** | ✅ | Primary weapon unavailable; pistol auto-equipped if carried |
-| **Fire primary weapon** | ❌ | Cannot use two-handed weapons while prone |
-| **Use medical items (self)** | ✅ Limited | Can use Bandage or Painkiller from pockets only (not backpack) |
-| **Apply tourniquet (slow bleedout)** | ✅ | Slows bleed from −2/3s to −0.5/5s for 30s |
-| **Voice comms / ping** | ✅ | Normal team communication |
-| **See squad positions** | ✅ | Minimap remains active |
-| **Access inventory** | ❌ | Grid inventory locked while downed |
-| **Activate active ability** | ❌ | No ability use while downed |
+| **Move (crawl)** |  | 15% speed; visible crawl animation |
+| **Fire sidearm (pistol)** |  | Primary weapon unavailable; pistol auto-equipped if carried |
+| **Fire primary weapon** |  | Cannot use two-handed weapons while prone |
+| **Use medical items (self)** |  Limited | Can use Bandage or Painkiller from pockets only (not backpack) |
+| **Apply tourniquet (slow bleedout)** |  | Slows bleed from −2/3s to −0.5/5s for 30s |
+| **Voice comms / ping** |  | Normal team communication |
+| **See squad positions** |  | Minimap remains active |
+| **Access inventory** |  | Grid inventory locked while downed |
+| **Activate active ability** |  | No ability use while downed |
 
 ### Enemy Interaction with Downed Player
 

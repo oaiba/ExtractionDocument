@@ -79,7 +79,7 @@
       * [Player Profile & Career Stats](content/GDD_Design/GameDesign/PlayerProfile.md)
       * [Progression & Monetization](content/GDD_Design/GameDesign/Progression.md)
       * [Ranked Mode & Competitive Systems](content/GDD_Design/GameDesign/RankedMode.md)
-      * [Safe House Design](content/GDD_Design/GameDesign/Safe_House_Design.md)
+      * [Safe House Design](content/GDD_Design/GameDesign/Safe_House_Design.md "Safe House")
       * [Tutorial Raid: "Operation Zero"](content/GDD_Design/GameDesign/TutorialRaid.md)
       * [User Settings & Configuration - Enhanced Edition](content/GDD_Design/GameDesign/UserSettings.md)
       * [UserSettings\_Tags](content/GDD_Design/GameDesign/UserSettings_Tags.md)

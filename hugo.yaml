@@ -11,6 +11,8 @@ markup:
 uglyURLs: true
 
 params:
+  theme:
+    displayToggle: false
   search:
     enable: true
     type: flexsearch
@@ -30,6 +32,10 @@ menu:
     - name: Technical
       pageRef: /GDD_Technical
       weight: 3
+    - name: Theme
+      weight: 9
+      params:
+        type: theme-toggle
     - name: Search
       weight: 10
       params:

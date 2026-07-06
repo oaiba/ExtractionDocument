@@ -285,6 +285,62 @@ ADAPTIVE CHANGES:
 
 ---
 
+### 5. Social Flow (Party, LFG, Clan)
+
+#### System Diagram
+
+```
+Home / Social Button
+        |
+        v
++------------------+     +------------------+     +------------------+
+| Friends / Recent | --> | Party Panel      | --> | Squad Lobby      |
+| invite, message  |     | ready, privacy   |     | deploy blockers  |
++------------------+     +------------------+     +------------------+
+        |
+        v
++------------------+     +------------------+
+| LFG Board        | --> | Clan Hub         |
+| join/create post |     | roster, chat     |
++------------------+     +------------------+
+```
+
+### 6. Progression / LiveOps Flow
+
+#### System Diagram
+
+```
+Home event card -> Event Hub -> Track Objective -> Raid -> AAR
+       |              |              |             |
+       v              v              v             v
+ Battle Pass     Reward Inbox    Quest Board    Claim / Redeploy
+       |
+       v
+ Ranked Overview -> Leaderboard -> Season Summary
+```
+
+### 7. Settings / System Error Flow
+
+#### State Diagram
+
+```
+Settings Open -> Change Option -> Apply
+      |              |            |
+      v              v            v
+ Platform Lock   Unsaved      Success Toast
+      |              |
+      v              v
+ Reason + Help   Revert / Confirm
+
+System Error -> Retry available? -> Retry -> Success
+      |              |
+      |              no
+      v              v
+ Support Path    Exit / Update / Offline
+```
+
+---
+
 ## State Machine Examples
 
 ### Button States (Universal Across Platforms)

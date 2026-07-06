@@ -61,6 +61,23 @@ The detailed element catalog lives in [HUD Design](HUD_Design.md). This page def
 
 ## Tactical Map
 
+#### Layout (PC/Console)
+
+```
++------------------------------------------------------------------+
+| TACTICAL MAP                                      [Close: M/ESC] |
+|------------------------------------------------------------------|
+| LEGEND     |                  MAP AREA                 | DETAILS |
+| You        | +--------------------------------------+  | Extract |
+| Squad      | |        Sector 7 known terrain        |  | Open    |
+| Quest      | |   P1 -> route ping                   |  | 30 sec  |
+| Extract    | |        [Quest Zone]       [Exit]     |  | Risk Med|
+| Danger     | +--------------------------------------+  |         |
+|------------------------------------------------------------------|
+| [Set Ping] [Track Quest] [Filter Markers] Audio remains live     |
++------------------------------------------------------------------+
+```
+
 | Spec | Requirement |
 | :--- | :--- |
 | Goal | Help players plan movement without giving unfair enemy information |
@@ -85,6 +102,24 @@ The detailed element catalog lives in [HUD Design](HUD_Design.md). This page def
 
 ## Looting Overlay
 
+#### Layout (PC/Console)
+
+```
++------------------------------------------------------------------+
+| blurred live gameplay - threats and audio still visible     [X]  |
+|------------------------------------------------------------------|
+| CONTAINER: Dead PMC              | YOUR BACKPACK                 |
+| +-----------------------------+  | +----------------------------+|
+| | AK-74M Rifle        [Take]  |  | | Medkit       Ammo         | |
+| | IFAK Medkit         [Take]  |  | | Empty slot   Quest key    | |
+| | Lab Key             [Take]  |  | +---------------------------+ |
+| | Credits 15,000      [Take]  |  | Weight: 32 / 40kg             |
+| +-----------------------------+  | Move speed: -25%              |
+|------------------------------------------------------------------|
+| [Hold Take All] [Compare] [Close]       Warning: exposed         |
++------------------------------------------------------------------+
+```
+
 | Spec | Requirement |
 | :--- | :--- |
 | Goal | Let players choose loot quickly while understanding exposure and weight |
@@ -108,6 +143,22 @@ The detailed element catalog lives in [HUD Design](HUD_Design.md). This page def
 
 ## Inventory Overlay
 
+#### Layout (PC/Console)
+
+```
++------------------------------------------------------------------+
+| IN-RAID INVENTORY                                  Audio live [X]|
+|------------------------------------------------------------------|
+| EQUIPPED             | BACKPACK GRID              | QUICK SLOTS  |
+| Primary AK-74M       | +--+--+--+--+--+--+        | 1 Bandage    |
+| Armor Lv3            | |Med|Ammo |Key|  |        | 2 Painkiller  |
+| Rig 12 slots         | +--+--+--+--+--+--+        | 3 Grenade    |
+| Secure 4 slots       | Weight 34 / 40kg           | 4 Empty      |
+|------------------------------------------------------------------|
+| [Use] [Move Secure] [Drop] [Split]  Combat nearby: [!]           |
++------------------------------------------------------------------+
+```
+
 | Spec | Requirement |
 | :--- | :--- |
 | Goal | Support survival item use and limited item management without turning raid into stash management |
@@ -130,6 +181,23 @@ The detailed element catalog lives in [HUD Design](HUD_Design.md). This page def
 
 ## Pause Overlay
 
+#### Layout (PC/Console)
+
+```
++------------------------------------------------------------------+
+| frosted live raid view - game does not pause                     |
+|------------------------------------------------------------------|
+| PAUSE MENU             | RAID STATUS              | SQUAD        |
+| > Resume              | Timer 25:43              | Kai 85 HP     |
+|   Settings            | Extracts: Crossroads OK  | P2 42 HP [!]  |
+|   Statistics          | Ping 38ms Loss 0%        | P3 Dead       |
+|   Report Issue        | Raid ID: S7-284712       |               |
+|   Abandon Raid [!]    |                          |               |
+|------------------------------------------------------------------|
+| Taking damage auto-dismisses overlay. Audio remains unmuted.     |
++------------------------------------------------------------------+
+```
+
 | Spec | Requirement |
 | :--- | :--- |
 | Goal | Allow settings and exit decisions while preserving online raid danger |
@@ -151,6 +219,21 @@ The detailed element catalog lives in [HUD Design](HUD_Design.md). This page def
 
 ## Spectator View
 
+#### Layout (PC/Console)
+
+```
++------------------------------------------------------------------+
+| SPECTATING: Player2                         Delay 5s      [AAR]  |
+|------------------------------------------------------------------|
+|                                                                  |
+|                  [TEAMMATE CAMERA VIEW ONLY]                     |
+|                                                                  |
+|------------------------------------------------------------------|
+| Teammates: [Player2] [Player3]      Pings limited: 1 / 10s       |
+| [Cycle Teammate] [Ping] [Mute] [Report]                          |
++------------------------------------------------------------------+
+```
+
 | Spec | Requirement |
 | :--- | :--- |
 | Goal | Keep eliminated squad players engaged without enabling unfair ghosting |
@@ -162,6 +245,23 @@ The detailed element catalog lives in [HUD Design](HUD_Design.md). This page def
 ---
 
 ## Reconnect Overlay
+
+#### Layout (PC/Console)
+
+```
++------------------------------------------------------------------+
+|                         RECONNECTING TO RAID                     |
+|------------------------------------------------------------------|
+| Last raid: Sector 7 / Night                                      |
+| Attempt: 2 / 5                         Timeout: 00:38            |
+| [==================--------------]                               |
+| Re-establishing session and player state...                      |
+|                                                                  |
+| Cancel may mark the raid MIA and gear may be lost.               |
+|------------------------------------------------------------------|
+| [Cancel]                                      [Retry Now]        |
++------------------------------------------------------------------+
+```
 
 | State | Behavior |
 | :--- | :--- |

@@ -43,6 +43,20 @@ Primary references:
 
 Boot and splash screens should stay minimal. Loading taxonomy lives in [Loading Screen Design](LoadingScreen_Design.md); this section owns the system-facing states.
 
+#### Layout (PC/Console)
+
+```
++------------------------------------------------------------------+
+|                                                                  |
+|                         EXTRACTION PROTOCOL                      |
+|                                                                  |
+|                    [========== 45% ==========]                   |
+|                    Preparing shaders and profile...              |
+|                                                                  |
+| Version 1.0.4                                      Status: OK    |
++------------------------------------------------------------------+
+```
+
 | State | Requirement |
 | :--- | :--- |
 | First boot | Show logo, progress, and what is being prepared if longer than expected |
@@ -55,6 +69,24 @@ Boot and splash screens should stay minimal. Loading taxonomy lives in [Loading 
 ---
 
 ## Login And Account Link
+
+#### Layout (PC/Console)
+
+```
++------------------------------------------------------------------+
+| ACCOUNT SIGN IN                                                  |
+|------------------------------------------------------------------|
+| Sign in to sync stash, progress, purchases, and settings.        |
+|                                                                  |
+| [Sign in with Platform]                                          |
+| [Link Existing Account]                                          |
+| [Continue Offline]                                               |
+|                                                                  |
+| Conflict / error area: none                                      |
+|------------------------------------------------------------------|
+| Privacy Policy | Terms | Support ID                              |
++------------------------------------------------------------------+
+```
 
 | Spec | Requirement |
 | :--- | :--- |
@@ -78,6 +110,41 @@ Boot and splash screens should stay minimal. Loading taxonomy lives in [Loading 
 
 ## First-Time Setup
 
+#### Layout (PC/Console)
+
+```
++------------------------------------------------------------------+
+| PRIVACY AND TERMS                                                |
+|------------------------------------------------------------------|
+| Please review required terms before online play.                 |
+|                                                                  |
+| [ ] I accept Terms of Service                                    |
+| [ ] I accept Privacy Policy                                      |
+| [ ] I understand voice/chat moderation rules                     |
+|                                                                  |
+| Region: SEA                 Age gate: Passed                     |
+|------------------------------------------------------------------|
+| [Back] [Open Terms] [Open Privacy]              [Continue]       |
++------------------------------------------------------------------+
+```
+
+#### Layout (PC/Console)
+
+```
++--------------------------------------------------------------------+
+| FIRST-TIME SETUP                                      Step 2 / 5   |
+|--------------------------------------------------------------------|
+| Steps: Language -> Accessibility -> Controls -> Privacy -> Tutorial|
+|                                                                    |
+| Accessibility Starter                                              |
+| [x] Larger text       [x] Subtitles                                |
+| [ ] Reduce motion     [ ] Colorblind mode v                        |
+| [ ] Hold alternatives                                              |
+|--------------------------------------------------------------------|
+| [Back]                                      [Continue]             |
++--------------------------------------------------------------------+
+```
+
 | Step | Requirement |
 | :--- | :--- |
 | Language | Text/audio/subtitle choices and region defaults |
@@ -88,9 +155,57 @@ Boot and splash screens should stay minimal. Loading taxonomy lives in [Loading 
 
 First-time setup must be short. Advanced settings should be reachable but not forced before first play.
 
+#### Layout (PC/Console)
+
+```
++-------------------------------------------------------------------+
+| TUTORIAL RAID                                                     |
+|-------------------------------------------------------------------|
+| Operation Zero teaches movement, looting, healing, and extraction.|
+| Recommended before entering live raids.                           |
+|                                                                   |
+| Rewards: Starter medkit, 5,000 credits, basic ammo                |
+| Status: Not completed                                             |
+|                                                                   |
+| [Start Tutorial] [Skip for Now] [Accessibility Settings]          |
++-------------------------------------------------------------------+
+```
+
 ---
 
 ## Shop And Wallet
+
+#### Layout (PC/Console)
+
+```
++------------------------------------------------------------------+
+| SHOP                                           Balance: 1,000 HC |
+|------------------------------------------------------------------|
+| OFFERS                              | PREVIEW / DETAILS          |
+| [Owned] Urban Jacket                | [3D cosmetic preview]      |
+| [Sale] Ghost Operator Skin          | Cosmetic only              |
+| Weapon Charm Pack                   | Bundle: 4 items            |
+| Banner Set                          | Price: 900 HC              |
+|------------------------------------------------------------------|
+| [Preview] [Wishlist]                         [Purchase]          |
++------------------------------------------------------------------+
+```
+
+#### Layout (PC/Console)
+
+```
++------------------------------------------------------------------+
+| WALLET / TRANSACTION HISTORY                                     |
+|------------------------------------------------------------------|
+| Balance: 1,000 HC          Credits: 425,000                      |
+|                                                                  |
+| DATE        ITEM                         STATUS                  |
+| 07-06       Ghost Operator Skin          Complete                |
+| 07-04       1,000 HC Top Up              Complete                |
+|------------------------------------------------------------------|
+| [Buy Currency] [Redeem Code] [Support]                           |
++------------------------------------------------------------------+
+```
 
 | Spec | Requirement |
 | :--- | :--- |
@@ -116,6 +231,24 @@ First-time setup must be short. Advanced settings should be reachable but not fo
 ## Settings
 
 Settings categories follow [User Settings](../GameDesign/UserSettings.md) and the detailed [Settings Matrix](../GameDesign/UserSettings_Matrix.md).
+
+#### Layout (PC/Console)
+
+```
++------------------------------------------------------------------+
+| SETTINGS                                      Search [________]  |
+|------------------------------------------------------------------|
+| CATEGORIES          | SETTINGS DETAIL                            |
+| Controls            | Preset: Competitive v                      |
+| Graphics            | Resolution 1920x1080 v                     |
+| Audio               | V-Sync [On | Off]                          |
+| Gameplay & HUD      | FPS Limit [-----144-----]                  |
+| Accessibility       | Texture Quality High v                     |
+| Privacy             | Ranked locked settings show reason         |
+|------------------------------------------------------------------|
+| [Reset Category] [Revert]                         [Apply]        |
++------------------------------------------------------------------+
+```
 
 | Category | UI Requirements |
 | :--- | :--- |
@@ -143,6 +276,22 @@ Settings categories follow [User Settings](../GameDesign/UserSettings.md) and th
 
 ## Account, Privacy, And Safety
 
+#### Layout (PC/Console)
+
+```
++------------------------------------------------------------------+
+| ACCOUNT / PRIVACY                                                |
+|------------------------------------------------------------------|
+| ACCOUNT                         | PRIVACY / SAFETY               |
+| Player ID: EP-284712            | Profile: Friends v             |
+| Linked: Steam, EOS              | Invites: Friends Only v        |
+| Region: SEA                     | Cross-play: On                 |
+|                                 | Streamer Mode: Off             |
+|------------------------------------------------------------------|
+| [Link Provider] [Unlink Account] [Block List] [Save]             |
++------------------------------------------------------------------+
+```
+
 | Screen | Requirement |
 | :--- | :--- |
 | Account | Linked providers, player ID, region, support IDs |
@@ -157,6 +306,24 @@ Privacy changes should apply immediately when possible and show restart/session 
 
 ## Diagnostics And Support
 
+#### Layout (PC/Console)
+
+```
++------------------------------------------------------------------+
+| DIAGNOSTICS / SUPPORT                                            |
+|------------------------------------------------------------------|
+| Network: SEA-02  Ping 38ms  Loss 0%                              |
+| Performance: 86 FPS  Frame 11.6ms  Preset High                   |
+| Account: EP-284712                                               |
+|                                                                  |
+| Bug category: [UI / Menu v]                                      |
+| Notes: [____________________________________________]            |
+| Attach: [x] Screenshot [x] Logs                                  |
+|------------------------------------------------------------------|
+| [Copy Support ID] [Submit Report] [Open Support]                 |
++------------------------------------------------------------------+
+```
+
 | Function | Requirement |
 | :--- | :--- |
 | Network info | Ping, packet loss, region, server ID when safe |
@@ -170,6 +337,24 @@ Diagnostics should avoid exposing sensitive tokens, IPs, or private account info
 ---
 
 ## System Dialogs
+
+#### Layout (PC/Console)
+
+```
++------------------------------------------------------------------+
+| dimmed parent screen                                             |
+|                                                                  |
+|              +--------------------------------------+            |
+|              | VERSION MISMATCH                     |            |
+|              |--------------------------------------|            |
+|              | Current: 1.0.3                       |            |
+|              | Required: 1.0.4                      |            |
+|              | Update is required to play online.   |            |
+|              |                                      |            |
+|              | [Exit]                  [Update]     |            |
+|              +--------------------------------------+            |
++------------------------------------------------------------------+
+```
 
 | Dialog | Required Content |
 | :--- | :--- |

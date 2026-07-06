@@ -25,6 +25,23 @@ The notification system operates on one rule: **information arrives in proportio
 - If the queue exceeds 5 pending notifications, lowest priority items are dropped
 - Duplicate notifications within 2 seconds are merged (e.g., "Picked up 5.45 ammo x3" instead of three separate toasts)
 
+#### State Diagram
+
+```
+Incoming Event
+     |
+     v
+Priority 1? ---- yes ----> Clear visible stack -> Show critical
+     |
+     no
+     v
+Duplicate? ---- yes ----> Merge count / refresh timer
+     |
+     no
+     v
+Queue by priority -> Show if visible slots < 3 -> Drop low priority if queue > 5
+```
+
 ---
 
 ## Kill Feed
@@ -40,6 +57,21 @@ The notification system operates on one rule: **information arrives in proportio
 | Entry duration | 5 seconds, then fade out over 500ms |
 | Font | Inter Regular, 14px |
 | Scroll | Newest entries push older ones up |
+
+#### Layout (PC/Console)
+
+```
++------------------------------------------------------------------+
+| HP / Armor                         Extract 22:15       Minimap   |
+| Toast 1: Quest updated                                Kill Feed  |
+| Toast 2: Rare item found                              Kai > PMC  |
+| Toast 3: Faction rep +0.05                            P2 > AI    |
+|                                                                  |
+|                         Gameplay area                            |
+|                                                                  |
+| Damage arcs appear on screen edge. Critical alerts replace stack.|
++------------------------------------------------------------------+
+```
 
 ### Entry Format
 
@@ -162,6 +194,17 @@ Status effects appear as small icons below the health bar, stacking horizontally
 
 ---
 
+#### Layout (PC/Console)
+
+```
++-------------------------------+
+| HP 85 / 100   Armor 42        |
+| [Bleed 0:32] [Pain 1:10]      |
+| [Fracture]   [Dehydration]    |
++-------------------------------+
+Order: highest severity first. More than 4 active -> show +N indicator.
+```
+
 ## Toast Messages
 
 ### Position and Layout
@@ -241,6 +284,22 @@ Appear when the player is near an interactable object:
 ### Threat Proximity System
 
 Visual and audio cues that communicate danger without directly revealing enemy positions:
+
+#### Layout (PC/Console)
+
+```
++------------------------------------------------------------------+
+|                         red compass pip                          |
+|                               v                                  |
+| HP 85                                             Minimap        |
+|                                                                  |
+|        left edge damage arc        [PLAYER]      grenade !       |
+|                                                                  |
+|             suppression blur and desaturation at edges           |
+|                                                                  |
+| Ammo 30/120                                      Squad status    |
++------------------------------------------------------------------+
+```
 
 | Threat Level | Trigger | Visual | Audio |
 | :----------- | :------ | :----- | :---- |

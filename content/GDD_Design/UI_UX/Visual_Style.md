@@ -309,6 +309,48 @@ Props and environment must NOT have visual noise that confuses character outline
 
 ## UI Mockup Standards
 
+#### Layout (PC/Console)
+
+```
++------------------------------------------------------------------+
+| 12-col composition grid                                          |
+|------------------------------------------------------------------|
+| NAV  | MAIN CONTENT AREA                         | CONTEXT PANEL |
+| 2col | 7col: cards, lists, preview, workbench     | 3col detail  |
+|      |                                             | CTA / state |
+|------------------------------------------------------------------|
+| Footer: hints, warnings, controller focus help                   |
++------------------------------------------------------------------+
+```
+
+#### Layout (Mobile Portrait)
+
+```
++-----------------------------+
+| Safe top / status           |
+|-----------------------------|
+| Title + primary action      |
+|-----------------------------|
+| 4-col content grid          |
+| cards / rows / preview      |
+|                             |
+| Sticky CTA / warning        |
+| Bottom nav / safe bottom    |
++-----------------------------+
+```
+
+#### System Diagram
+
+```
+Color roles -> Component states -> Screen composition -> QA checks
+     |               |                    |              |
+     v               v                    v              v
+ Friendly       Normal/Focus        Rail/Main/CTA    Contrast
+ Hostile        Hover/Pressed       Overlay/Modal    Scale
+ Warning        Locked/Error        Toast/System     Safe zone
+ Objective      Success             Mobile bottom    Motion
+```
+
 ### Design Tool Requirements
 
 *   **Primary Tool:** Figma (collaborative, cloud-based)
@@ -317,6 +359,18 @@ Props and environment must NOT have visual noise that confuses character outline
 *   **Version Control:** Figma version history + Abstract (for large files)
 
 ### Artboard Sizes (Figma Templates)
+
+#### System Diagram
+
+```
++----------------------+  +----------------------+  +--------------+
+| Desktop 1920 x 1080  |  | Console TV 1920x1080 |  | Mobile 9:16  |
+| full density         |  | 5% safe zone         |  | safe areas   |
++----------------------+  +----------------------+  +--------------+
+          |                         |                       |
+          v                         v                       v
+   shared components        larger focus rings       thumb-first CTA
+```
 
 | Platform             | Resolution                 | Artboard Name     | Safe Area Margins               |
 | :------------------- | :------------------------- | :---------------- | :------------------------------ |

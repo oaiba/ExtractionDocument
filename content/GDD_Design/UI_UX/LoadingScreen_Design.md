@@ -246,6 +246,48 @@ flowchart TB
 * **Background:** Dark, minimal
 * **Cancel:** Returns to main menu (gear lost per [Extraction Mechanics](../Gameplay/Extraction_Mechanics.md))
 
+#### 4.8 L7\_MapTransition
+
+```
++------------------------------------------------------------------+
+|  [ZONE ART - FULL BLEED BACKGROUND]                              |
+|                                                                  |
+|  ENTERING: SUBSTATION ACCESS                                     |
+|  Threat: Medium  |  Squad: 3/4  |  Extracts: Unknown             |
+|                                                                  |
+|  +------------------------------------------------------------+  |
+|  | "Route changes are not safe zones. Reload before you move."|  |
+|  | - Salvage Corps route manual                               |  |
+|  +------------------------------------------------------------+  |
+|                                                                  |
+|  [============== 68% ==============]  Streaming next zone...     |
++------------------------------------------------------------------+
+```
+
+* **Background:** Zone-specific transition art, never unexplored spoiler space.
+* **Widgets:** Progress, squad readiness, and optional zone intro.
+
+#### Layout (Mobile Portrait)
+
+```
++-----------------------------+
+|                             |
+|       [MAP / ZONE ART]      |
+|                             |
+|  SECTOR 7 - NIGHT RAID      |
+|  Difficulty: Hard           |
+|-----------------------------|
+| "Heavy bags make noise."    |
+| - Field manual              |
+|-----------------------------|
+| [========= 72% =========]   |
+| Deploying...                |
++-----------------------------+
+```
+
+* Mobile loading keeps one tip, one progress indicator, and one context label visible.
+* Video backgrounds should downgrade to still art on low battery or low-end devices.
+
 ***
 
 ### 5. Async Loading Technical Requirements

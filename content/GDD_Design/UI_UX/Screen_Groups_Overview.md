@@ -21,6 +21,27 @@ Every screen group must answer four questions:
 
 ## Screen Group Taxonomy
 
+#### System Diagram
+
+```
++----------------+     +----------------+     +----------------+
+| BOOT / AUTH    | --> | OUT OF RAID    | --> | PRE RAID       |
+| login, setup   |     | home, stash    |     | mode, map      |
+| tutorial gate  |     | traders, quest |     | squad, deploy  |
++----------------+     +----------------+     +----------------+
+                                                        |
+                                                        v
++----------------+     +----------------+     +----------------+
+| SYSTEM / LIVE  | <-- | POST RAID      | <-- | IN RAID        |
+| shop, settings |     | AAR, replay    |     | HUD, map       |
+| events, social |     | loot, redeploy |     | loot, pause    |
++----------------+     +----------------+     +----------------+
+```
+
+- Primary loop runs clockwise from account entry to raid recovery.
+- Social, LiveOps, commerce, and settings can deep link into the loop but should not bury Deploy.
+- Every group owns screen states, input mapping, and accessibility behavior for its surfaces.
+
 | Phase | Screen Group | Primary Job | Key Pages |
 | :--- | :--- | :--- | :--- |
 | Boot and account | Onboarding / Auth | Get the player safely into a valid account and tutorial state | [Commerce, Settings & System Screens](Commerce_Settings_System_Screens.md), [Loading Screen Design](LoadingScreen_Design.md) |
@@ -37,6 +58,26 @@ Every screen group must answer four questions:
 ## Screen Spec Template
 
 Use this template for every new screen spec. Keep it short enough to update but complete enough for implementation.
+
+#### Spec Template Layout
+
+```
++------------------------------------------------------------------+
+| SCREEN NAME                                      [Primary CTA]   |
+| Entry: Home / Deep Link / Event                 Exit: Back / X   |
+|------------------------------------------------------------------|
+| Goal: One sentence                                               |
+| Intent: What the player came here to do                          |
+|                                                                  |
+| +----------------------+  +------------------------------------+ |
+| | Main Content         |  | Context / Detail Panel             | |
+| | selected item/state  |  | rules, cost, risk, requirement     | |
+| +----------------------+  +------------------------------------+ |
+|                                                                  |
+| States: Default | Loading | Empty | Locked | Error | Success     |
+| Input: Mouse/KB | Controller | Touch | Accessibility notes       |
++------------------------------------------------------------------+
+```
 
 | Section | Required Content |
 | :--- | :--- |
@@ -56,6 +97,25 @@ Use this template for every new screen spec. Keep it short enough to update but 
 ---
 
 ## Global Navigation Model
+
+#### Screen Ownership Map
+
+```
++--------------------+       +-----------------------+
+| SCREEN GROUP DOC   | ----> | GAME DESIGN DOC       |
+| layout, states     |       | rules, economy, flow  |
++--------------------+       +-----------------------+
+          |                              |
+          v                              v
++--------------------+       +-----------------------+
+| TECHNICAL SYSTEM   | <---- | UX FLOWS / STANDARDS  |
+| code names, events |       | journey, input, QA    |
++--------------------+       +-----------------------+
+```
+
+- Screen group pages own the player-facing layout contract.
+- Game design pages own gameplay rules and economy outcomes.
+- Technical pages own code names, events, data contracts, and implementation constraints.
 
 | Surface | Navigation Rule |
 | :--- | :--- |

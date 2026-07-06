@@ -38,6 +38,42 @@ Primary references:
 
 ## Social Panel
 
+#### Layout (PC/Console)
+
+```
++------------------------------------------------------------------+
+| current screen dimmed behind side panel                          |
+|--------------------------------------+---------------------------|
+|                                      | SOCIAL PANEL              |
+|                                      | Online Friends: 3         |
+|                                      | Invites: 1 pending        |
+|                                      |---------------------------|
+|                                      | [Accept Invite: P2]       |
+|                                      | Kai        In Menu [Inv]  |
+|                                      | SutureFan  In Raid [View] |
+|                                      | Recent: Dxt_Raptor [Add]  |
+|                                      |---------------------------|
+|                                      | [Friends] [Party] [LFG]   |
++------------------------------------------------------------------+
+```
+
+#### Layout (Mobile Portrait)
+
+```
++-----------------------------+
+| SOCIAL                 [X]  |
+|-----------------------------|
+| Invite from Player2         |
+| [Accept] [Decline]          |
+|-----------------------------|
+| Friends Online              |
+| Kai          [Invite]       |
+| SutureFan    In Raid        |
+|-----------------------------|
+| Party  LFG  Clan  Settings  |
++-----------------------------+
+```
+
 | Spec | Requirement |
 | :--- | :--- |
 | Goal | Provide quick social actions without leaving the current screen unnecessarily |
@@ -59,6 +95,22 @@ Primary references:
 ---
 
 ## Friends List
+
+#### Layout (PC/Console)
+
+```
++------------------------------------------------------------------+
+| FRIENDS                                           Search [____]  |
+|------------------------------------------------------------------|
+| NAME          STATUS       PLATFORM     PARTY        ACTION      |
+| Kai           In Menu      PC           Joinable     [Invite]    |
+| Mira          In Raid      Mobile       Locked       [Message]   |
+| Dxt_Raptor    Offline      Console      -            [Profile]   |
+| Blocked       Hidden       -            -            [Unblock]   |
+|------------------------------------------------------------------|
+| [Add Friend] [Recent Players] [Invite Code] [Privacy Settings]   |
++------------------------------------------------------------------+
+```
 
 | State | Behavior |
 | :--- | :--- |
@@ -84,6 +136,23 @@ Primary references:
 
 The party panel overlaps with [Pre-Raid Screens](Pre_Raid_Screens.md), but this screen owns persistent social party management outside the deploy flow.
 
+#### Layout (PC/Console)
+
+```
++------------------------------------------------------------------+
+| PARTY                                      Privacy: Friends Only |
+|------------------------------------------------------------------|
+| +----------------+ +----------------+ +----------------+         |
+| | You Leader     | | Player2        | | Empty Slot     |         |
+| | Ready          | | Editing kit    | | [Invite]       |         |
+| | Voice OK       | | Voice OK       | | [Share Code]   |         |
+| +----------------+ +----------------+ +----------------+         |
+| Mission: Sector 7 / Squad / Night                                |
+|------------------------------------------------------------------|
+| [Transfer Leader] [Invite] [Leave Party] [Ready]                 |
++------------------------------------------------------------------+
+```
+
 | Role | Available Controls |
 | :--- | :--- |
 | Leader | Invite, kick, transfer leader, set privacy, queue, cancel queue |
@@ -104,6 +173,17 @@ The party panel overlaps with [Pre-Raid Screens](Pre_Raid_Screens.md), but this 
 
 ## Invite Flow
 
+#### State Diagram
+
+```
+Select Target -> Preview Party -> Send Invite -> Pending
+      |                |              |
+      v                v              v
+ Recent Player   Incompatible     Accepted -> Party Panel
+ Friend          Full Party       Declined -> Toast
+ Share Code      Privacy Blocked  Expired  -> Retry
+```
+
 | Step | Requirement |
 | :--- | :--- |
 | Select target | Friend, recent player, clan member, share code, platform overlay |
@@ -116,6 +196,22 @@ Mobile invite flow must support share code and QR/deep link if platform policy a
 ---
 
 ## LFG Board
+
+#### Layout (PC/Console)
+
+```
++--------------------------------------------------------------------+
+| LFG BOARD                         Region SEA  Mic Required [x]     |
+|--------------------------------------------------------------------|
+| FILTERS        | POSTS                                     | INFO  |
+| Mode: Any      | [S7 Quest Run] 2/4  Mic Yes  Risk Med     | Goal  |
+| Map: Sector 7  | [Budget Recovery] 1/3  Chill  Risk Low    | Tags  |
+| Role: Any      | [Ranked Push] 3/4  Lv15+  Risk High       | Host  |
+| Language: EN   |                                           | [Join]|
+|--------------------------------------------------------------------|
+| [Create Post] [Widen Filters] [Safety Rules]                       |
++--------------------------------------------------------------------+
+```
 
 | Spec | Requirement |
 | :--- | :--- |
@@ -138,6 +234,22 @@ Mobile invite flow must support share code and QR/deep link if platform policy a
 
 ## Clan Hub
 
+#### Layout (PC/Console)
+
+```
++-------------------------------------------------------------------+
+| CLAN HUB: Salvage Saints                         Level 8          |
+|-------------------------------------------------------------------|
+| OVERVIEW              | ROSTER / CHAT                 | CHALLENGE |
+| Members 18/30         | Kai        Online             | Extract 5 |
+| Weekly XP 42,000      | Mira       In Raid            | Progress  |
+| Message: Night runs   | Dxt        Offline            | 3 / 5     |
+|                       | Clan chat [____________]      | [Track]   |
+|-------------------------------------------------------------------|
+| [Invite] [Applications] [Manage Roles] [Leave Clan]               |
++-------------------------------------------------------------------+
+```
+
 | Screen | Purpose |
 | :--- | :--- |
 | Clan Overview | Identity, level, message, active challenge |
@@ -152,6 +264,22 @@ Players without a clan should see Join Clan, Create Clan, and Browse recommendat
 ---
 
 ## Chat And Voice
+
+#### Layout (PC/Console)
+
+```
++------------------------------------------------------------------+
+| CHAT / VOICE                                      Channel: Squad |
+|------------------------------------------------------------------|
+| [Voice] Kai speaking...    Mic OK    Proximity OFF               |
+|------------------------------------------------------------------|
+| Kai: ready?                                                      |
+| You: fixing ammo                                                 |
+| System: Player2 joined party                                     |
+|------------------------------------------------------------------|
+| Message [____________________________________] [Send] [Mute All] |
++------------------------------------------------------------------+
+```
 
 | Surface | Rule |
 | :--- | :--- |
@@ -173,6 +301,25 @@ Players without a clan should see Join Clan, Create Clan, and Browse recommendat
 ---
 
 ## Report And Block
+
+#### Layout (PC/Console)
+
+```
++------------------------------------------------------------------+
+| REPORT PLAYER: PlayerName                                        |
+|------------------------------------------------------------------|
+| Category                                                         |
+| ( ) Cheating / Hacking                                           |
+| ( ) Abusive Voice / Text                                         |
+| ( ) Griefing / Teamkilling                                       |
+| ( ) Exploit / Bug Abuse                                          |
+|                                                                  |
+| Evidence: [x] Attach last 60s clip                               |
+| Notes: [____________________________________________]            |
+|------------------------------------------------------------------|
+| [Cancel] [Block Player]                         [Submit Report]  |
++------------------------------------------------------------------+
+```
 
 | Action | UI Standard |
 | :--- | :--- |

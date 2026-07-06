@@ -39,6 +39,44 @@ Primary references:
 
 The AAR is the most important post-raid screen. It should be calm, readable, and fast to exit.
 
+#### Layout (PC/Console)
+
+```
++------------------------------------------------------------------+
+|                         EXTRACTION SUCCESSFUL                    |
+| Sector 7 - Industrial Decay                  Duration 18:42      |
+|------------------------------------------------------------------|
+| LOOT ACQUIRED                    | XP BREAKDOWN                  |
+| AK-74M (FIR)          45,000     | Kills        +450             |
+| Armor Lv4             38,000     | Looting      +320             |
+| Quest Data            QUEST      | Quest        +500             |
+| Total Value           93,800     | Extraction   +200             |
+|----------------------------------+-------------------------------|
+| Quest: Supply Run completed | Combat: 5 kills, 34% accuracy  |
+|------------------------------------------------------------------|
+| [Continue to Stash] [Deploy Again] [View Replay] [Main Menu]     |
++------------------------------------------------------------------+
+```
+
+#### Layout (PC/Console)
+
+```
++------------------------------------------------------------------+
+|                              KIA                                 |
+| Sector 7 - Industrial Decay                  Survived 12:08      |
+|------------------------------------------------------------------|
+| Cause: Headshot by PlayerName - SVD                              |
+| LOST ITEMS                       | KEPT / SECURE                 |
+| AK-74M              -45,000      | Quest Key              SAFE   |
+| Armor Lv4           -38,000      | Gold Chain             SAFE   |
+| Backpack            -12,000      |                               |
+|----------------------------------+-------------------------------|
+| Insurance return ETA: 22h | Tip: Carry fast bleed treatment      |
+|------------------------------------------------------------------|
+| [Continue] [Death Replay] [Report Player] [Rebuild Preset]       |
++------------------------------------------------------------------+
+```
+
 | Section | Requirement |
 | :--- | :--- |
 | Outcome banner | Result, map, survival time, cause |
@@ -63,6 +101,24 @@ The AAR is the most important post-raid screen. It should be calm, readable, and
 
 ## Death Replay
 
+#### Layout (PC/Console)
+
+```
++------------------------------------------------------------------+
+| DEATH REPLAY                                      [Skip] [Save]  |
+|------------------------------------------------------------------|
+|                                                                  |
+|                  [SERVER REPLAY VIEW 10s + 3s]                   |
+|                                                                  |
+|------------------------------------------------------------------|
+| -10s     -7s      -4s       -1s       DEATH       +2s reveal     |
+| |--------|--------|---------|---------|X----------|              |
+| Hit arm     Suppressed        Headshot by SVD                    |
+|------------------------------------------------------------------|
+| [Report Player] [Watch Again] [Continue to AAR]                  |
++------------------------------------------------------------------+
+```
+
 | Spec | Requirement |
 | :--- | :--- |
 | Goal | Help the player understand why they died without exposing unfair live intel |
@@ -85,6 +141,25 @@ The AAR is the most important post-raid screen. It should be calm, readable, and
 
 ## Loot Transfer
 
+#### Layout (PC/Console)
+
+```
++------------------------------------------------------------------+
+|                         LOOT TRANSFER COMPLETE                   |
+|------------------------------------------------------------------|
+| Extracted items are already in stash.                            |
+|                                                                  |
+| NEW IN STASH                    | ACTIONS                        |
+| AK-74M                 45,000   | [Open Stash]                   |
+| Armor Lv4              38,000   | [Turn In Quest Item]           |
+| Prometheus Data        QUEST    | [Sell Junk]                    |
+|                                                                  |
+| Stash Capacity: 178 / 200       Insurance scheduled: 2 items     |
+|------------------------------------------------------------------|
+| [Continue]                                      [Deploy Again]   |
++------------------------------------------------------------------+
+```
+
 | State | Behavior |
 | :--- | :--- |
 | Normal transfer | Items already moved to stash; show NEW tags |
@@ -99,6 +174,25 @@ Loot transfer must never make the player wonder whether items were saved. The fi
 
 ## Quest Progress
 
+#### Layout (PC/Console)
+
+```
++------------------------------------------------------------------+
+| QUEST PROGRESS                                                   |
+|------------------------------------------------------------------|
+| Supply Run                         COMPLETED                     |
+| [x] Find rations 3/3                                             |
+| [x] Extract alive                                                |
+| [ ] Turn in to Salvage trader                                    |
+|                                                                  |
+| Lab Rat                            ITEM LOST                     |
+| [x] Find document                                                |
+| [!] Deliver item - item lost on death                            |
+|------------------------------------------------------------------|
+| [Track Next] [Turn In Available] [Find Replacement]              |
++------------------------------------------------------------------+
+```
+
 | Result | UI Behavior |
 | :--- | :--- |
 | Completed | Show reward preview and Turn In if required |
@@ -110,6 +204,22 @@ Loot transfer must never make the player wonder whether items were saved. The fi
 ---
 
 ## Squad Summary And Social Actions
+
+#### Layout (PC/Console)
+
+```
++------------------------------------------------------------------+
+|                         SQUAD SUMMARY                            |
+|------------------------------------------------------------------|
+| Player      Outcome     Kills     Loot       XP       Actions    |
+| You         Extracted   5         93K        1700     -          |
+| Player2     Extracted   1         44K        950      [Commend]  |
+| Player3     KIA         3         0          600      [Add]      |
+|------------------------------------------------------------------|
+| Commend category: [Good Teammate v]     [Submit Commendation]    |
+| Report: select player -> category -> evidence -> submit          |
++------------------------------------------------------------------+
+```
 
 | Action | Requirement |
 | :--- | :--- |
@@ -132,6 +242,22 @@ Loot transfer must never make the player wonder whether items were saved. The fi
 ---
 
 ## Redeploy Flow
+
+#### State Diagram
+
+```
+AAR Continue
+     |
+     v
+Valid same kit? ---- yes ----> [Deploy Again]
+     |
+     no
+     v
+[Rebuild Preset] -> [Fix Loadout] -> [Squad Ready] -> [Queue]
+     |
+     v
+[Return to Stash]
+```
 
 | State | Behavior |
 | :--- | :--- |

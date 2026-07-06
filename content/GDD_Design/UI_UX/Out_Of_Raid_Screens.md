@@ -38,6 +38,47 @@ Primary references:
 
 ## Home / Safe House Hub
 
+#### Layout (PC/Console)
+
+```
++------------------------------------------------------------------+
+| Lv.12 Salvage 3     EXTRACTION PROTOCOL      Credits 425K  [N]   |
+|------------------------------------------------------------------|
+| NAV       |                  OPERATOR SHOWCASE       | DEPLOY    |
+| Home      |              [3D OPERATOR MODEL]         | Mode Solo |
+| Loadout   |              kit visible, rotate         | Map S7    |
+| Stash     |                                           | Value125K|
+| Traders   |         Last raid: EXTRACTED +1,700 XP   | [DEPLOY]  |
+| SafeHouse |                                           | blockers |
+| Quests    | +-------------+ +-------------+           | Squad 1/4|
+| Profile   | | Loadout     | | Stash Full? |           | Queue 45s|
+| Settings  | +-------------+ +-------------+           |          |
+|------------------------------------------------------------------|
+| Battle Pass 12/50 | Daily 1/3 | Event active | Friends 3         |
++------------------------------------------------------------------+
+```
+
+#### Layout (Mobile Portrait)
+
+```
++-----------------------------+
+| Lv.12       425K       [N]  |
+|-----------------------------|
+|      [OPERATOR MODEL]       |
+|      AK-74M / Armor Lv3     |
+|-----------------------------|
+| Deploy: Solo / Sector 7     |
+| Value 125K  Insured 4/6     |
+| [ DEPLOY ]                  |
+|-----------------------------|
+| Last raid: Extracted        |
+| Daily 1/3   Event active    |
+| Battle Pass 12/50           |
+|-----------------------------|
+| Home Loadout Stash Social   |
++-----------------------------+
+```
+
 | Spec | Requirement |
 | :--- | :--- |
 | User intent | Understand what changed since last session and decide whether to deploy, recover, or manage inventory |
@@ -61,6 +102,23 @@ Primary references:
 ---
 
 ## Operator Select
+
+#### Layout (PC/Console)
+
+```
++------------------------------------------------------------------+
+| < Back                     OPERATOR SELECT              [Select] |
+|------------------------------------------------------------------|
+| ROSTER              | OPERATOR PREVIEW        | ROLE / ABILITY   |
+| [Assault] Mamba     | [3D OPERATOR MODEL]     | Role: Assault    |
+| [Assault] Ignition  | Weapon pose + skin      | Ability: Breach  |
+| [Recon] Sonar       |                         | Cooldown: Ready  |
+| [Support] Suture    |                         | Unlocks: 8/12    |
+| [Locked] Bastion    |                         |                  |
+|---------------------+-------------------------+------------------|
+| Filters: Role v  Owned v    [Favorite] [Preview Skin] [SELECT]   |
++------------------------------------------------------------------+
+```
 
 | Spec | Requirement |
 | :--- | :--- |
@@ -86,6 +144,24 @@ Primary references:
 
 The detailed preparation rules live in [Loadout Preparation](../GameDesign/LoadoutPreparation.md). This UI group owns the screen state contract and platform layout.
 
+#### Layout (PC/Console)
+
+```
++------------------------------------------------------------------+
+| < Back                  LOADOUT WORKBENCH             Presets v  |
+|------------------------------------------------------------------|
+| OPERATOR / GEAR   | STASH GRID / FILTERS              | MISSION  |
+| [Operator Model]  | Search [________] Filter v Sort v  | Mode    |
+| Primary [AK-74M]  | +--+--+--+--+--+--+--+--+--+--+   | Solo     |
+| Armor   [Lv3]     | |  |Rifle |Med|Ammo|Key|  |  |   | Map S7    |
+| Rig     [12 sl]   | +--+--+--+--+--+--+--+--+--+--+   | Quest    |
+| Pack    [24 sl]   | Selected: 5.45 BP x60              | Squad   |
+| Secure  [4 sl]    | Compare: +Pen -Cost                | Ready 1 |
+|------------------------------------------------------------------|
+| Value 125K | Weight 24/40kg | Insured 4/6 | [READY TO MAP] |     |
++------------------------------------------------------------------+
+```
+
 | Region | PC / Console | Mobile |
 | :--- | :--- | :--- |
 | Identity | Operator and gear slots left | Operator tab |
@@ -107,6 +183,23 @@ The detailed preparation rules live in [Loadout Preparation](../GameDesign/Loado
 ---
 
 ## Stash
+
+#### Layout (PC/Console)
+
+```
++---------------------------------------------------------------------+
+| < Back                         STASH        Search [________]       |
+|---------------------------------------------------------------------|
+| FILTERS            | GRID 12 x N                             | INFO |
+| Weapons            | +--+--+--+--+--+--+--+--+--+--+--+--+   | AK   |
+| Armor              | |Rifle    |Med|  |Ammo |Key|  |  |  |   | 85%  |
+| Meds               | |         |   |  |     |   |  |  |  |   | 45K  |
+| Quest              | +--+--+--+--+--+--+--+--+--+--+--+--+   | FIR  |
+| Junk               | Capacity 145 / 200      Value 2.45M     |      |
+|---------------------------------------------------------------------|
+| [Auto Sort] [Sell Junk] [Move to Loadout] [Discard] [Upgrade]       |
++---------------------------------------------------------------------+
+```
 
 | Spec | Requirement |
 | :--- | :--- |
@@ -130,6 +223,23 @@ The detailed preparation rules live in [Loadout Preparation](../GameDesign/Loado
 
 ## Traders / Market
 
+#### Layout (PC/Console)
+
+```
++---------------------------------------------------------------------+
+| < Back                         TRADERS          Salvage | Tech v    |
+|---------------------------------------------------------------------|
+| TRADER             | INVENTORY / OFFERS          | YOUR OFFER       |
+| Viktor Koval       | [Buy] [Sell] [Barter]       | Wallet 425K      |
+| Rep Level 3        | AK-74M          45,000      | Selected 2 items |
+| "Fair trades."     | 5.45 BP x60        800      | Total 46,600     |
+|                    | Medkit           2,500      |                  |
+|                    | [LOCKED Lv4] Armor          | [PURCHASE]       |
+|---------------------------------------------------------------------|
+| Filters: All Weapons Ammo Gear Meds Barter | Sort: Price v          |
++---------------------------------------------------------------------+
+```
+
 | Mode | Primary Content | CTA | Failure States |
 | :--- | :--- | :--- | :--- |
 | Buy | Trader inventory and player wallet | Purchase | insufficient funds, rep locked, stash full |
@@ -142,6 +252,25 @@ Every purchase or sale involving premium currency, high-value gear, or quest-cri
 ---
 
 ## Safe House Modules
+
+#### Layout (PC/Console)
+
+```
++------------------------------------------------------------------+
+| < Back                         SAFE HOUSE                        |
+|------------------------------------------------------------------|
+| MODULE MAP                         | MODULE DETAIL               |
+| +----------+   +----------+        | Stash Room Lv2              |
+| | Lounge   |---| Stash    |        | Benefit: +50 slots          |
+| +----------+   +----------+        | Cost: 50K + 10 materials    |
+|      |              |              | Status: Upgrade available   |
+| +----------+   +----------+        |                             |
+| | Radio    |---| Workbench|        | [Upgrade] [Track Materials] |
+| +----------+   +----------+        |                             |
+|------------------------------------------------------------------|
+| Active timers: Med Craft 12m | Insurance return 22h              |
++------------------------------------------------------------------+
+```
 
 | Screen | Purpose | Required States |
 | :--- | :--- | :--- |
@@ -161,6 +290,24 @@ Every purchase or sale involving premium currency, high-value gear, or quest-cri
 ---
 
 ## Quest Board
+
+#### Layout (PC/Console)
+
+```
++------------------------------------------------------------------+
+| < Back                         QUEST BOARD          Faction v    |
+|------------------------------------------------------------------|
+| QUEST LIST          | QUEST DETAIL                     | REWARDS |
+| [Tracked] Supply    | Supply Run                       | XP 500  |
+| [Ready] Lab Rat     | Objectives:                      | Rep .05 |
+| [New] Signal Lost   | [x] Find rations 3/3             | 12,000  |
+| [Locked] Black Box  | [ ] Deliver to Salvage trader    | Medkit  |
+|                     | Location: Sector 7               |         |
+|                     | Risk: Requires extraction        | [TURN]  |
+|------------------------------------------------------------------|
+| [Track] [Show on Map] [Find Item in Stash] [Abandon]             |
++------------------------------------------------------------------+
+```
 
 | Spec | Requirement |
 | :--- | :--- |
@@ -183,6 +330,23 @@ Every purchase or sale involving premium currency, high-value gear, or quest-cri
 ---
 
 ## Player Profile
+
+#### Layout (PC/Console)
+
+```
++--------------------------------------------------------------------+
+| < Back                         PLAYER PROFILE        Privacy v     |
+|--------------------------------------------------------------------|
+| IDENTITY             | CAREER STATS                    | COSMETICS |
+| [Banner / Avatar]    | Extractions: 42%                | Title v   |
+| Name: Kai            | Raids: 128                      | Frame v   |
+| Level: 12            | PMC Kills: 84                   | Badge v   |
+| Karma: Honorable     | Favorite: Sonar                 | Emote v   |
+| Platform: PC         | Season Rank: Silver II          |           |
+|--------------------------------------------------------------------|
+| Achievements | Match History | Commendations | Report Safety       |
++--------------------------------------------------------------------+
+```
 
 | Screen Area | Content |
 | :--- | :--- |

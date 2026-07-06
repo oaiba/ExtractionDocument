@@ -25,6 +25,31 @@ Global UX standards define the reusable interaction rules that every UI screen m
 
 ## Navigation And Focus
 
+#### System Diagram
+
+```
++---------------------------------------------------------------+
+| BASE SCREEN                                                   |
+| Home / Stash / Map / Settings                                 |
+|                                                               |
+|   +-------------------------------------------------------+   |
+|   | OVERLAY                                               |   |
+|   | Inventory, tactical map, social panel, pause          |   |
+|   |                                                       |   |
+|   |     +---------------------------------------------+   |   |
+|   |     | MODAL                                       |   |   |
+|   |     | Confirm, error, conflict, destructive action|   |   |
+|   |     +---------------------------------------------+   |   |
+|   +-------------------------------------------------------+   |
+|                                                               |
+| Toasts / system alerts live above all non-blocking layers     |
++---------------------------------------------------------------+
+```
+
+- Back closes the deepest visible layer first.
+- Modal decisions block input behind them; toasts do not.
+- Focus must return to the control that opened the overlay or modal.
+
 | Topic | Standard |
 | :--- | :--- |
 | Back navigation | `ESC`, `B/Circle`, and mobile system back close the top modal, then overlay, then screen |
@@ -47,6 +72,45 @@ Global UX standards define the reusable interaction rules that every UI screen m
 ---
 
 ## Responsive Layout Rules
+
+#### Layout (PC/Console)
+
+```
++-------------------------------------------------------------------+
+| TOP BAR: profile, currency, notifications, search                 |
+|-------------------------------------------------------------------|
+| NAV RAIL | MAIN CONTENT AREA                           | CONTEXT  |
+|          | selected screen, list, grid, preview        | PANEL    |
+| Home     |                                             | details  |
+| Loadout  | +------------------+ +------------------+   | risk     |
+| Stash    | | Card / Row       | | Card / Row       |   | status   |
+| Social   | +------------------+ +------------------+   | CTA      |
+| Settings |                                             |          |
+|-------------------------------------------------------------------|
+| FOOTER: hints, back, focus state, destructive warning if needed   |
++-------------------------------------------------------------------+
+```
+
+#### Layout (Mobile Portrait)
+
+```
++-----------------------------+
+| Top: profile / currency     |
+|-----------------------------|
+| Screen title        [Action]|
+|-----------------------------|
+| Main content list / cards   |
+|                             |
+| +-------------------------+ |
+| | selected item or state  | |
+| +-------------------------+ |
+|                             |
+| Sticky summary / warning    |
+| [ Primary CTA ]             |
+|-----------------------------|
+| Home Loadout Stash Social   |
++-----------------------------+
+```
 
 | Platform | Layout Standard |
 | :--- | :--- |
@@ -71,6 +135,25 @@ Global UX standards define the reusable interaction rules that every UI screen m
 
 ## Modal And Dialog Standards
 
+#### Layout (PC/Console)
+
+```
++------------------------------------------------------------------+
+| dimmed parent screen                                             |
+|                                                                  |
+|             +--------------------------------------+             |
+|             | CONFIRM DISCARD ITEM                 |             |
+|             |--------------------------------------|             |
+|             | AK-74M will be removed from stash.   |             |
+|             | Value: 45,000 credits                |             |
+|             | Quest item: No    Insured: Yes       |             |
+|             |                                      |             |
+|             | [Cancel]              [Hold Discard] |             |
+|             +--------------------------------------+             |
+|                                                                  |
++------------------------------------------------------------------+
+```
+
 | Dialog Type | Use Case | CTA Rule |
 | :--- | :--- | :--- |
 | Info | Acknowledgement-only system message | One button: OK / Continue |
@@ -84,6 +167,29 @@ Modal copy must be specific. Use "Discard AK-74M? This removes it from your stas
 ---
 
 ## Standard Screen States
+
+#### State Diagram
+
+```
+      +---------+
+      | Loading |
+      +----+----+
+           |
+           v
++----------+----------+
+| Default Content     |
++----+-----------+----+
+     |           |
+     v           v
++---------+  +---------+     +---------+
+| Empty   |  | Locked  | --> | Fix CTA |
++---------+  +---------+     +---------+
+     |
+     v
++---------+     +---------+
+| Error   | --> | Retry   |
++---------+     +---------+
+```
 
 | State | Requirement |
 | :--- | :--- |

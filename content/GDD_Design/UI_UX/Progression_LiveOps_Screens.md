@@ -37,6 +37,24 @@ Primary references:
 
 ## Battle Pass
 
+#### Layout (PC/Console)
+
+```
++------------------------------------------------------------------+
+| SEASON 1: SHADOWS OF PROMETHEUS              Time left 47 days   |
+|------------------------------------------------------------------|
+| Current Tier 12 / 50     XP 2,400 / 5,000                        |
+| [10] [11] [12 YOU] [13] [14] [15] [16] ... [50 LEGEND]           |
+|------------------------------------------------------------------|
+| SELECTED TIER 12                  | PREVIEW / CLAIM              |
+| Free: Title "Zone Runner"         | [Cosmetic Preview]           |
+| Premium: Operator Skin "Ghost"    | Owned pass: No               |
+|                                   | [Claim Free] [Upgrade Pass]  |
+|------------------------------------------------------------------|
+| [Filter Claimable] [View All Rewards] [Season Rules]             |
++------------------------------------------------------------------+
+```
+
 | Spec | Requirement |
 | :--- | :--- |
 | Goal | Make seasonal progression and claimable rewards readable without implying pay-to-win |
@@ -58,6 +76,23 @@ Primary references:
 ---
 
 ## Event Hub
+
+#### Layout (PC/Console)
+
+```
++------------------------------------------------------------------+
+| EVENT HUB: BLACKOUT WEEK                         Ends in 3d 12h  |
+|------------------------------------------------------------------|
+| EVENT BANNER / ART                                               |
+|------------------------------------------------------------------|
+| OBJECTIVES                         | REWARD LADDER               |
+| [ ] Extract from Sector 7 at night | 1: Banner                   |
+| [x] Loot 3 power cells             | 2: 5,000 credits [CLAIM]    |
+| [ ] Survive without flashlight     | 3: Skin                     |
+|------------------------------------------------------------------|
+| Modifier: Reduced lights, more AI patrols   [Track Event] [Play] |
++------------------------------------------------------------------+
+```
 
 | Spec | Requirement |
 | :--- | :--- |
@@ -81,6 +116,22 @@ Primary references:
 
 ## Daily And Weekly Tasks
 
+#### Layout (PC/Console)
+
+```
++------------------------------------------------------------------+
+| DAILY / WEEKLY TASKS                         Reset in 08:14:22   |
+|------------------------------------------------------------------|
+| DAILY                              | WEEKLY                      |
+| [x] Extract once       [Claim]     | [ ] Kill 20 AI      12/20   |
+| [ ] Heal 300 HP        180/300     | [ ] Turn in tools    1/5    |
+| [ ] Loot meds          2/5         | [x] Squad revive     Claim  |
+|------------------------------------------------------------------|
+| Selected: Heal 300 HP   Reward: 1,000 XP + Medkit                |
+| [Track] [Reroll 2,000] [Show Suggested Map]                      |
++------------------------------------------------------------------+
+```
+
 | Field | Requirement |
 | :--- | :--- |
 | Objective | Clear action, location, and progress |
@@ -95,6 +146,21 @@ Expired tasks must not silently disappear if a reward was claimable; move claima
 
 ## Reward Inbox
 
+#### Layout (PC/Console)
+
+```
++-------------------------------------------------------------------+
+| REWARD INBOX                                      Expiring first  |
+|-------------------------------------------------------------------|
+| SOURCE              REWARD                EXPIRES       ACTION    |
+| Event Blackout      5,000 credits         3d            [Claim]   |
+| Compensation        Medkit x3             12d           [Claim]   |
+| Battle Pass         Banner                Never         [Claim]   |
+|-------------------------------------------------------------------|
+| Stash: 178 / 200       [Claim All] [Open Stash] [Inbox Rules]     |
++-------------------------------------------------------------------+
+```
+
 | State | Behavior |
 | :--- | :--- |
 | Empty | Explain where rewards appear and offer event/quest links |
@@ -106,6 +172,24 @@ Expired tasks must not silently disappear if a reward was claimable; move claima
 ---
 
 ## Ranked Overview
+
+#### Layout (PC/Console)
+
+```
++------------------------------------------------------------------+
+| RANKED OVERVIEW                                  Season ends 21d |
+|------------------------------------------------------------------|
+| Rank: Silver II       Points: 1,420 / 1,600       Protection ON  |
+| [========================----------------]                       |
+|------------------------------------------------------------------|
+| RULES / LOCKS                    | PARTY ELIGIBILITY             |
+| FOV locked in ranked             | You: OK                       |
+| Input matchmaking: Controller    | Player2: Rank gap [!]         |
+| Friendly fire penalty active     |                               |
+|------------------------------------------------------------------|
+| [View Rewards] [Leaderboard]              [Queue Ranked Locked]  |
++------------------------------------------------------------------+
+```
 
 | Spec | Requirement |
 | :--- | :--- |
@@ -129,6 +213,22 @@ Expired tasks must not silently disappear if a reward was claimable; move claima
 
 ## Leaderboards
 
+#### Layout (PC/Console)
+
+```
++-------------------------------------------------------------------+
+| LEADERBOARDS                       Season 1  Region SEA Friends v |
+|-------------------------------------------------------------------|
+| Rank   Player           Rating      Extract %     Platform        |
+| 01     GhostLine        2,840       61%           PC              |
+| 02     Mira             2,790       58%           Mobile          |
+| 03     Kai              2,610       54%           PC              |
+|-------------------------------------------------------------------|
+| Your Rank: 124   Reward threshold: Top 500                        |
+| [View Profile] [Filter] [Privacy Settings]                        |
++-------------------------------------------------------------------+
+```
+
 | Spec | Requirement |
 | :--- | :--- |
 | Layout | Rank list, filters, player row, friend/clan tabs, reward thresholds |
@@ -141,6 +241,40 @@ Leaderboards must avoid implying exact hidden MMR if the ranked design does not 
 ---
 
 ## Patch Notes And News
+
+#### Layout (PC/Console)
+
+```
++------------------------------------------------------------------+
+| SEASON SUMMARY: SEASON 1                                         |
+|------------------------------------------------------------------|
+| Status: Active                         Ends in 21 days           |
+| Rank reward eligibility: Silver II achieved                      |
+| Battle Pass: Tier 12 / 50                                        |
+| Unclaimed rewards: 3                                             |
+| Reset policy: rank soft reset, cosmetics retained                |
+|------------------------------------------------------------------|
+| [View Rewards] [Claim Inbox] [Season Rules]                      |
++------------------------------------------------------------------+
+```
+
+#### Layout (PC/Console)
+
+```
++------------------------------------------------------------------+
+| NEWS / PATCH NOTES                                               |
+|------------------------------------------------------------------|
+| FEATURED: Blackout Week is live                                  |
+| [Play Event] [Read Details]                                      |
+|------------------------------------------------------------------|
+| Patch 1.0.4                                                      |
+| - Map extraction timer tuning                                    |
+| - Fixed stash sorting edge cases                                 |
+| - New accessibility subtitle option                              |
+|------------------------------------------------------------------|
+| [Dismiss] [Known Issues] [Open Event Hub]                        |
++------------------------------------------------------------------+
+```
 
 | Rule | Requirement |
 | :--- | :--- |

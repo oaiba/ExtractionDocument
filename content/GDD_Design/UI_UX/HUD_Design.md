@@ -169,6 +169,21 @@ Mobile-specific:
 
 <!-- REF_IMAGE: Minimap specification diagram — showing icon legend, zoom level comparison, and terrain rendering style -->
 
+#### Layout (PC/Console)
+
+```
++----------------------+
+|        MINIMAP       |
+|      N               |
+|   W  ^Player     E   |
+|      |               |
+|  o Squad     ! Quest |
+|  H Extract   x Closed|
+|      S               |
++----------------------+
+Legend: o squad | ! objective | H open extract | x closed extract
+```
+
 ### Compass
 
 | Property | Specification |
@@ -190,6 +205,19 @@ Mobile-specific:
 | Color states | White (normal), Yellow (under 10 minutes), Red (under 5 minutes), Flashing red (under 2 minutes) |
 | Audio cues | Subtle tick sound starts at 5 minutes. Urgent alarm at 2 minutes |
 | Overtime | If timer hits 0:00, "EMERGENCY EXTRACT" flashes. 60-second grace period begins |
+
+#### Layout (PC/Console)
+
+```
++------------------------------------------------------------------+
+|                         EXTRACTING: 00:23                        |
+|                    [==========--------]                          |
+|                                                                  |
+|               Stay in zone. Taking fire resets timer.            |
+|                                                                  |
+| Health 85/100                                      Squad P2 42HP |
++------------------------------------------------------------------+
+```
 
 ### Squad Panel
 
@@ -279,6 +307,25 @@ HUD elements are not all visible at all times. The system uses game state to det
 | Left/Right Handed | Mirror HUD layout for left-handed players |
 | Preset Layouts | 3 saveable custom layouts |
 | Reset | One button to restore default mobile layout |
+
+#### Layout (Mobile Portrait)
+
+```
++-----------------------------+
+| HUD LAYOUT EDITOR      Save |
+|-----------------------------|
+| HP [drag]     Timer [drag]  |
+|                             |
+|      [GAMEPLAY AREA]        |
+|                             |
+| Joy [drag]       Fire [drag]|
+| Crouch          Reload      |
+|-----------------------------|
+| Size [---100---]            |
+| Opacity [--70---]           |
+| [Reset] [Cancel] [Apply]    |
++-----------------------------+
+```
 
 <!-- REF_IMAGE: Mobile HUD Layout Editor — showing drag handles on all touch controls with size/opacity adjustment panel -->
 

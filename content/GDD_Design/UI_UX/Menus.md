@@ -14,6 +14,25 @@ For the canonical screen inventory, start with [Screen Groups Overview](Screen_G
 
 ## New Screen Group Pages
 
+#### System Diagram
+
+```
+Legacy Menus.md
+      |
+      v
++----------------------+-----------------------------+
+| Old Section          | New Owner                   |
++----------------------+-----------------------------+
+| Main Menu / Home     | Out-of-Raid Screens         |
+| Loadout / Stash      | Out-of-Raid Screens         |
+| Map / Squad / Queue  | Pre-Raid Screens            |
+| Pause / Looting      | In-Raid Screens             |
+| AAR / Death Replay   | Post-Raid Screens           |
+| Battle Pass / Events | Progression & LiveOps       |
+| Settings / Shop      | Commerce, Settings, System  |
++----------------------+-----------------------------+
+```
+
 | Group | Covers |
 | :--- | :--- |
 | [Screen Groups Overview](Screen_Groups_Overview.md) | Full taxonomy, spec template, navigation model, coverage checklist |

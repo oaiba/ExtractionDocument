@@ -35,6 +35,25 @@ Primary references:
 
 ## Mode Select
 
+#### Layout (PC/Console)
+
+```
++------------------------------------------------------------------+
+| < Back                         MODE SELECT                       |
+|------------------------------------------------------------------|
+| +----------------+ +----------------+ +----------------+         |
+| | SOLO           | | DUO            | | SQUAD          |         |
+| | Mixed lobbies  | | 2 players      | | 3-4 players    |         |
+| | Low comms risk | | Team bonus     | | High reward    |         |
+| | [SELECTED]     | | [SELECT]       | | [SELECT]       |         |
+| +----------------+ +----------------+ +----------------+         |
+| +----------------+ +----------------+                            |
+| | RANKED         | | EVENT RAID     | Rules, losses, rewards     |
+| | Locked Lv15    | | Modifier active| shown for selected card    |
+| +----------------+ +----------------+                            |
++------------------------------------------------------------------+
+```
+
 | Spec | Requirement |
 | :--- | :--- |
 | User intent | Pick the ruleset that matches desired risk, squad size, and reward |
@@ -57,6 +76,24 @@ Primary references:
 ---
 
 ## Map Select
+
+#### Layout (PC/Console)
+
+```
++------------------------------------------------------------------+
+| < Back                         MAP SELECT              [Ready]   |
+|------------------------------------------------------------------|
+| MAP LIST            | MAP PREVIEW / INTEL              | DETAILS |
+| [Selected] Sector 7 | +------------------------------+ | Hard    |
+| District 14         | | Industrial map art           | | 8-12    |
+| Firebase Delta      | | Extract markers + landmarks  | | Boss 1  |
+| [Locked] The Mire   | +------------------------------+ | Night v |
+|                     | Extracts: Crossroads, Boat       | Quest 2 |
+|                     | Queue estimate: 45s              | Squad 1 |
+|------------------------------------------------------------------|
+| [Show Quests] [Compare Risk] [Change Time] [READY]               |
++------------------------------------------------------------------+
+```
 
 | Spec | Requirement |
 | :--- | :--- |
@@ -84,6 +121,24 @@ Primary references:
 
 Deploy confirmation is the final trust checkpoint. It should be quick for valid kits and explicit for risky kits.
 
+#### Layout (PC/Console)
+
+```
++------------------------------------------------------------------+
+|                         DEPLOY CONFIRMATION                      |
+|------------------------------------------------------------------|
+| Mission: Solo / Sector 7 / Night       Queue estimate: 45s       |
+| Squad: You READY                       Fill: Off                 |
+|------------------------------------------------------------------|
+| Gear value: 125,000        Weight: 24 / 40kg        Ammo: OK     |
+| Insurance: 4 insured / 2 uninsured eligible                      |
+| Quests: Supply Run, Lab Rat                                      |
+| Warnings: [!] High uninsured value                               |
+|------------------------------------------------------------------|
+| [Back to Loadout]        [Insure All]        [HOLD TO DEPLOY]    |
++------------------------------------------------------------------+
+```
+
 | Field | Requirement |
 | :--- | :--- |
 | Selected mode and map | Always visible |
@@ -109,6 +164,25 @@ Deploy confirmation is the final trust checkpoint. It should be quick for valid 
 ---
 
 ## Squad Lobby
+
+#### Layout (PC/Console)
+
+```
++------------------------------------------------------------------+
+| < Back                         SQUAD LOBBY       [Invite] [Leave]|
+|------------------------------------------------------------------|
+| +----------------+ +----------------+ +----------------+         |
+| | You Leader     | | Player2        | | Empty Slot     |         |
+| | READY          | | NOT READY      | | [Invite]       |         |
+| | Value 125K     | | Missing meds   | | [Match Fill]   |         |
+| | Voice OK       | | Voice muted    | |                |         |
+| +----------------+ +----------------+ +----------------+         |
+| Mission: Sector 7 / Night / Squad                                |
+| Chat [__________________________] [Send]  Voice: Squad ON        |
+|------------------------------------------------------------------|
+| [Change Map] [Change Loadout]        [DEPLOY LOCKED: P2 blocker] |
++------------------------------------------------------------------+
+```
 
 | Spec | Requirement |
 | :--- | :--- |
@@ -142,6 +216,52 @@ Deploy confirmation is the final trust checkpoint. It should be quick for valid 
 ---
 
 ## Matchmaking
+
+#### Layout (PC/Console)
+
+```
++------------------------------------------------------------------+
+|                         MATCHMAKING                              |
+|------------------------------------------------------------------|
+| Sector 7 / Solo / Night                                          |
+| Searching... 00:42                         Region: SEA  Ping 38  |
+| [======================----------]                               |
+|                                                                  |
+| Squad: Kai READY                                                 |
+| Estimated wait: 45s       Search range: Normal                   |
+| Tip: Heavy bags make heavy noise.                                |
+|------------------------------------------------------------------|
+| [Cancel Queue]                         Status: can cancel         |
++------------------------------------------------------------------+
+```
+
+#### State Diagram
+
+```
+Searching -> Expanding Search -> Match Found -> L4 Loading -> In Raid
+     |              |                |
+     v              v                v
+ Cancelled      Server Error     Player Declined
+```
+
+#### Layout (PC/Console)
+
+```
++------------------------------------------------------------------+
+|                           MATCH FOUND                            |
+|------------------------------------------------------------------|
+| Sector 7 / Night / Squad                                         |
+| Accept countdown: 00:12                                          |
+|                                                                  |
+| You        [ACCEPTED]                                            |
+| Player2    [PENDING]                                             |
+| Player3    [ACCEPTED]                                            |
+|                                                                  |
+| Loadout locked. Cancelling now returns to Squad Lobby.           |
+|------------------------------------------------------------------|
+| [Decline]                                      [Accept]          |
++------------------------------------------------------------------+
+```
 
 | Spec | Requirement |
 | :--- | :--- |

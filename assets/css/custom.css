@@ -87,3 +87,43 @@ article {
 article table {
     width: 100%;
 }
+
+/* Keep fenced code blocks aligned with the light documentation surface. */
+.hextra-code-block pre,
+.hextra-code-block .chroma {
+    background: #f8fafc !important;
+    color: #111827 !important;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.5rem !important;
+}
+
+.hextra-code-block pre:not(.lntable pre) {
+    border-radius: 0.5rem !important;
+}
+
+.hextra-code-block .hextra-code-filename {
+    background: #f8fafc !important;
+    color: #374151 !important;
+    border: 1px solid #e5e7eb;
+    border-bottom: 0;
+    border-radius: 0.5rem 0.5rem 0 0 !important;
+}
+
+.hextra-code-block .hextra-code-filename + pre,
+.hextra-code-block .hextra-code-filename + div pre {
+    border-top-left-radius: 0 !important;
+    border-top-right-radius: 0 !important;
+}
+
+.dark .hextra-code-block pre,
+.dark .hextra-code-block .chroma {
+    background: #111827 !important;
+    color: #e5e7eb !important;
+    border-color: #374151;
+}
+
+.dark .hextra-code-block .hextra-code-filename {
+    background: #111827 !important;
+    color: #e5e7eb !important;
+    border-color: #374151;
+}

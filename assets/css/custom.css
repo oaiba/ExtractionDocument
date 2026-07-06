@@ -63,23 +63,16 @@ article {
     /* Let content fill the widened container */
 }
 
-/* Widen Left Sidebar (Navigation Tree) */
-.hextra-sidebar-container {
-    width: 22rem !important;
-    /* Increased from 16rem default */
-}
-
-/* Widen Right Sidebar (Table of Contents) */
+/* Place the page table of contents in the left column on docs pages. */
 .hextra-toc {
+    order: 0 !important;
     width: 20rem !important;
-    /* Increased from 16rem default */
 }
 
 /* Ensure article takes remaining space */
 article {
     width: 100% !important;
     max-width: 100% !important;
-    padding-right: 1rem;
 }
 
 @media (min-width: 1800px) {
@@ -89,11 +82,6 @@ article {
         max-width: 95% !important;
         width: 95% !important;
     }
-}
-
-/* Allow TOC to be wider if needed */
-.xl\:block {
-    display: block !important;
 }
 
 article table {

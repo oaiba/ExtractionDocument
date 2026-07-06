@@ -19,19 +19,13 @@ Economy owns currencies, value flow, monetization ethics, marketplace health, an
 
 ## Currency Flow
 
-```mermaid
-flowchart LR
-  A["Raid loot"] --> B["Extracted stash"]
-  B --> C["Sell to traders"]
-  C --> D["Credits"]
-  D --> E["Buy gear"]
-  D --> F["Insurance"]
-  D --> G["Safe House upgrades"]
-  E --> H["Raid risk"]
-  H --> A
-  I["Premium purchase"] --> J["Tokens"]
-  J --> K["Cosmetics and battle pass"]
-```
+| Source | Becomes | Main Sinks | Design Role |
+| :--- | :--- | :--- | :--- |
+| Raid loot | Extracted stash items | Sell, equip, craft, trade | Converts risk into value |
+| Sold loot | Credits | Gear, insurance, repairs, Safe House upgrades | Main soft-currency loop |
+| Premium purchase | Tokens | Cosmetics, battle pass, fair convenience | Revenue without combat power |
+| Faction quests | Reputation | Trader access and quest unlocks | Long-term specialization |
+| Events | Event currency | Event cosmetics and limited rewards | Seasonal engagement |
 
 ## Currency Types
 

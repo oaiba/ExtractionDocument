@@ -7,20 +7,6 @@ type: docs
 
 User Settings defines how players configure controls, video, audio, gameplay, accessibility, privacy, and diagnostics. This page is the UX and policy hub. The full option list lives in [Settings Matrix](usersettings_matrix.html), and technical tags live in [Settings Tags](usersettings_tags.html).
 
-## Settings Category Hierarchy
-
-```mermaid
-flowchart TD
-  A["Settings"] --> B["Controls"]
-  A --> C["Graphics"]
-  A --> D["Audio"]
-  A --> E["Gameplay & HUD"]
-  A --> F["Accessibility"]
-  A --> G["Social & Privacy"]
-  A --> H["Language & Region"]
-  A --> I["Performance & Diagnostics"]
-```
-
 ## Design Principles
 
 | Principle | Rule |
@@ -57,17 +43,15 @@ flowchart TD
 
 ## Cloud Sync And Conflict Flow
 
-```mermaid
-flowchart TD
-  A["Player signs in"] --> B{"Cloud settings exist?"}
-  B -->|"No"| C["Use local settings"]
-  B -->|"Yes"| D{"Local settings changed recently?"}
-  D -->|"No"| E["Apply cloud settings"]
-  D -->|"Yes"| F["Show conflict prompt"]
-  F --> G["Use local"]
-  F --> H["Use cloud"]
-  F --> I["Merge safe categories"]
-```
+| Step | Condition | Result |
+| :--- | :--- | :--- |
+| 1 | Player signs in | Game checks for cloud settings |
+| 2A | No cloud settings exist | Use local settings |
+| 2B | Cloud settings exist and local settings are unchanged | Apply cloud settings |
+| 2C | Cloud and local settings both changed recently | Show conflict prompt |
+| 3A | Player chooses local | Keep device settings and optionally upload |
+| 3B | Player chooses cloud | Apply synced settings |
+| 3C | Player chooses merge | Merge safe categories and ask for device-specific choices |
 
 ## Competitive Integrity Locks
 

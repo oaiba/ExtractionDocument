@@ -20,20 +20,17 @@ Insurance softens gear loss without removing risk. It lets players pay before a 
 
 ## Insurance Lifecycle
 
-```mermaid
-flowchart TD
-  A["Player prepares loadout"] --> B["Select eligible items"]
-  B --> C["Choose insurer"]
-  C --> D["Pay insurance cost"]
-  D --> E["Deploy"]
-  E --> F{"Raid outcome"}
-  F -->|"Extracted"| G["Insurance expires cleanly"]
-  F -->|"Died"| H{"Item looted by another player?"}
-  H -->|"Yes"| I["Item lost"]
-  H -->|"No"| J["Return timer starts"]
-  J --> K["Inbox claim available"]
-  K --> L["Player claims item"]
-```
+| Step | Event | Result |
+| :--- | :--- | :--- |
+| 1 | Player prepares loadout | Eligible items are shown |
+| 2 | Player selects items and insurer | Cost and return time are previewed |
+| 3 | Player pays insurance cost | Items are marked insured for the raid |
+| 4 | Player deploys | Insurance waits for raid resolution |
+| 5A | Player extracts with insured item | Insurance expires cleanly |
+| 5B | Player dies and item is looted | Item is lost |
+| 5C | Player dies and item is recoverable | Return timer starts |
+| 6 | Timer completes | Item appears in Safe House inbox |
+| 7 | Player claims item | Item returns to stash if space is available |
 
 ## Insurer Options
 

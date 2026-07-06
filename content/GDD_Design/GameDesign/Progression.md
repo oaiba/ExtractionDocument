@@ -9,18 +9,13 @@ Progression owns the systems that make players return: account levels, operator 
 
 ## Progression Layers
 
-```mermaid
-flowchart TD
-  A["Raid actions"] --> B["XP and loot"]
-  B --> C["Account level"]
-  B --> D["Operator mastery"]
-  B --> E["Faction reputation"]
-  B --> F["Quest progress"]
-  C --> G["System unlocks"]
-  D --> H["Operator identity rewards"]
-  E --> I["Trader and quest access"]
-  F --> J["Directed goals"]
-```
+| Source | Progression Track | Unlocks / Result |
+| :--- | :--- | :--- |
+| Raid actions | Account level | Systems, rewards, and broad player growth |
+| Operator usage | Operator mastery | Identity rewards and role commitment |
+| Faction quests | Faction reputation | Trader access and faction-specific tasks |
+| Daily / weekly goals | Quest progress | Directed goals and regular return hooks |
+| Seasonal challenges | Battle pass | Seasonal cosmetics and event rewards |
 
 ## Account Levels
 

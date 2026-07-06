@@ -20,22 +20,15 @@ Core Gameplay owns the complete raid loop: preparation, deployment, looting, com
 
 ## Raid Loop
 
-```mermaid
-flowchart LR
-  A["Prepare loadout"] --> B["Deploy to zone"]
-  B --> C["Scout and choose route"]
-  C --> D["Loot, fight, or avoid"]
-  D --> E{"Extract now?"}
-  E -->|"Yes"| F["Reach extraction"]
-  F --> G{"Extraction succeeds?"}
-  G -->|"Yes"| H["Bank loot and XP"]
-  G -->|"No"| I["Lose raid inventory"]
-  E -->|"No"| D
-  I --> J["Review death and rebuild"]
-  H --> K["Upgrade stash, gear, reputation"]
-  K --> A
-  J --> A
-```
+| Step | Action | Result |
+| :--- | :--- | :--- |
+| 1 | Prepare loadout | Player commits gear, operator, objective, map, and risk level |
+| 2 | Deploy to zone | Squad enters the raid with assigned extraction options |
+| 3 | Scout and choose route | Player reads map, audio, squad pings, and nearby loot |
+| 4 | Loot, fight, or avoid | Player chooses value, safety, or pressure |
+| 5 | Decide whether to extract | Safe choice banks current value; risky choice seeks more value |
+| 6 | Resolve extraction | Successful extraction banks loot and XP; failure causes raid inventory loss |
+| 7 | Rebuild or upgrade | Player repairs, sells, upgrades, re-equips, and queues again |
 
 ## Pre-Match Phase
 
@@ -52,21 +45,13 @@ The pre-match phase is a deliberate ritual. The player should understand the ris
 
 ## In-Match Phase
 
-```mermaid
-flowchart TD
-  A["0-3 min: Spawn and orientation"] --> B["3-7 min: Edge loot and route choice"]
-  B --> C["7-11 min: Collisions and hotspot pressure"]
-  C --> D["11-14 min: Extraction contest"]
-  D --> E["15 min: Match end pressure"]
-```
-
-| Phase | Design Intent | Pressure |
-| :--- | :--- | :--- |
-| Spawn and orientation | Let squads read map, objective, extraction options | Low |
-| Edge loot and route choice | Offer safe value and early decisions | Rising |
-| Hotspot pressure | Create player collision around value | High |
-| Extraction contest | Force commitment and route discipline | Very high |
-| Match end | Prevent endless looting and camping | Extreme |
+| Time Window | Phase | Design Intent | Pressure |
+| :--- | :--- | :--- | :--- |
+| 0-3 min | Spawn and orientation | Let squads read map, objective, extraction options | Low |
+| 3-7 min | Edge loot and route choice | Offer safe value and early decisions | Rising |
+| 7-11 min | Hotspot pressure | Create player collision around value | High |
+| 11-14 min | Extraction contest | Force commitment and route discipline | Very high |
+| 15 min | Match end | Prevent endless looting and camping | Extreme |
 
 ## Combat And Looting Rules
 
@@ -81,18 +66,12 @@ flowchart TD
 
 ## Greed Loop
 
-```mermaid
-flowchart TD
-  A["Player has valuable loot"] --> B{"Safe extraction nearby?"}
-  B -->|"Yes"| C["Extract and bank value"]
-  B -->|"No or ignored"| D["See one more opportunity"]
-  D --> E["Take extra risk"]
-  E --> F{"Outcome"}
-  F -->|"Survive"| G["Bigger reward and stronger memory"]
-  F -->|"Die"| H["Loss, lesson, rebuild"]
-  G --> B
-  H --> I["Post-match recap"]
-```
+| Current State | Player Temptation | Safe Choice | Risk Choice | Outcome |
+| :--- | :--- | :--- | :--- | :--- |
+| Player has valuable loot | Extract now or push deeper | Leave and bank value | Continue toward more loot | Safe value vs. increased pressure |
+| Extraction is nearby | "One more container" | Commit to extraction | Delay extraction | Relief vs. possible regret |
+| Rare opportunity appears | Fight, loot, or avoid | Avoid and preserve kit | Contest value | Memorable win or meaningful loss |
+| Player dies | Blame or learn | Review death recap | Rebuild without learning | Better next decision or repeated mistake |
 
 ## Death, Extraction, And Recovery
 
@@ -104,16 +83,12 @@ flowchart TD
 
 ## Post-Match Flow
 
-```mermaid
-flowchart LR
-  A["Match ends"] --> B{"Extracted?"}
-  B -->|"Yes"| C["Loot summary"]
-  B -->|"No"| D["Death recap"]
-  C --> E["XP and quest updates"]
-  D --> E
-  E --> F["Stash changes"]
-  F --> G["Suggested next action"]
-```
+| Step | Extracted Run | Failed Run |
+| :--- | :--- | :--- |
+| 1 | Show loot summary | Show death recap |
+| 2 | Apply XP and quest updates | Apply XP, quest, and lesson feedback |
+| 3 | Move extracted loot to stash | Mark lost, protected, and insured items |
+| 4 | Suggest sell, upgrade, or redeploy | Suggest rebuild, claim insurance later, or recovery mode |
 
 ## Advanced Mechanics
 

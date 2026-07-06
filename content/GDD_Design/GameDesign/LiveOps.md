@@ -18,15 +18,14 @@ Live Ops keeps the game fresh after launch through seasons, events, featured mod
 
 ## Season Flow
 
-```mermaid
-flowchart LR
-  A["Pre-season reveal"] --> B["Season launch"]
-  B --> C["Week 1 onboarding quests"]
-  C --> D["Mid-season event"]
-  D --> E["Balance patch"]
-  E --> F["Final event push"]
-  F --> G["Season recap and reset"]
-```
+| Phase | Timing | Purpose |
+| :--- | :--- | :--- |
+| Pre-season reveal | Before launch | Tease theme, rewards, and major rule changes |
+| Season launch | Week 1 | Introduce battle pass, ranked reset, and onboarding quests |
+| Mid-season event | Middle weeks | Add a major event beat and renewed goals |
+| Balance patch | After live data review | Adjust meta, economy, and event friction |
+| Final event push | Last weeks | Increase urgency and completion focus |
+| Season recap and reset | End of season | Award rewards, summarize progress, prepare next season |
 
 ## Event Types
 
@@ -50,16 +49,13 @@ flowchart LR
 
 ## Faction Wars
 
-```mermaid
-flowchart TD
-  A["Player chooses event faction"] --> B["Complete faction objectives"]
-  B --> C["Earn personal score"]
-  B --> D["Earn clan contribution"]
-  C --> E["Personal reward track"]
-  D --> F["Clan leaderboard"]
-  E --> G["Faction war outcome"]
-  F --> G
-```
+| Contribution | Feeds Into | Reward / Outcome |
+| :--- | :--- | :--- |
+| Player chooses event faction | Faction alignment | Determines event identity and reward track |
+| Player completes faction objectives | Personal score | Unlocks personal event rewards |
+| Clan members complete objectives | Clan contribution | Moves clan leaderboard position |
+| Total faction activity | Faction war outcome | Determines winning faction presentation |
+| Event ends | Recap and reward grant | Delivers personal, clan, and faction rewards |
 
 ## Live Ops Guardrails
 

@@ -11,19 +11,15 @@ The Safe House is the player's persistent out-of-raid base. It gives context to 
 
 ## Module Dependency
 
-```mermaid
-flowchart TD
-  A["Safe House"] --> B["Stash Room"]
-  A --> C["Workbench"]
-  A --> D["Medical Station"]
-  A --> E["Generator"]
-  A --> F["Trading Post"]
-  A --> G["Radio"]
-  E --> C
-  E --> D
-  B --> C
-  G --> F
-```
+| Parent / Requirement | Module | Purpose |
+| :--- | :--- | :--- |
+| Safe House | Stash Room | Storage, sorting, and inventory expansion |
+| Safe House | Generator | Powers advanced modules |
+| Generator | Workbench | Crafting, repair, and modification support |
+| Generator | Medical Station | Recovery and medical crafting support |
+| Safe House | Radio | Faction contact and world updates |
+| Radio | Trading Post | Trader access and insurance inbox context |
+| Stash Room | Workbench | Supplies materials for crafting and upgrades |
 
 ## Functional Areas
 

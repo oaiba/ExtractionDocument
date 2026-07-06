@@ -9,15 +9,15 @@ Game modes define why players enter the extraction loop and what rules shape eac
 
 ## Mode Selection Flow
 
-```mermaid
-flowchart LR
-  A["Home Screen"] --> B["Loadout Preparation"]
-  B --> C["Choose Mode"]
-  C --> D["Choose Map or Event"]
-  D --> E["Choose Squad Size"]
-  E --> F["Confirm Risk"]
-  F --> G["Matchmaking"]
-```
+| Step | Screen / Action | Result |
+| :--- | :--- | :--- |
+| 1 | Home Screen | Player chooses to deploy |
+| 2 | Loadout Preparation | Player reviews gear and squad state |
+| 3 | Choose Mode | Player selects Raid, Scav, Blitz, Ranked, Co-op, or Featured |
+| 4 | Choose Map or Event | Player commits to zone rules and event modifiers |
+| 5 | Choose Squad Size | Player confirms Solo, Duo, Trio, or fill |
+| 6 | Confirm Risk | UI summarizes gear loss, insurance, and rewards |
+| 7 | Matchmaking | Queue begins with selected rules |
 
 ## Mode Catalogue
 

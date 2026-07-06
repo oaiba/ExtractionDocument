@@ -20,21 +20,17 @@ The Home Screen is the player's out-of-raid command center. It should show ident
 
 ## Operator Showcase States
 
-```mermaid
-stateDiagram-v2
-  [*] --> Idle
-  Idle --> Inspect: "Player rotates or taps"
-  Idle --> Ready: "Loadout valid"
-  Ready --> Matchmaking: "Deploy pressed"
-  Matchmaking --> MatchFound: "Server match ready"
-  Matchmaking --> Idle: "Queue cancelled"
-  MatchFound --> Deploying
-  Deploying --> [*]
-  Idle --> ReturnVictory: "Post-extraction"
-  Idle --> ReturnDefeat: "Post-death"
-  ReturnVictory --> Idle
-  ReturnDefeat --> Idle
-```
+| State | Trigger | Next State |
+| :--- | :--- | :--- |
+| Idle | Player rotates or taps operator | Inspect |
+| Idle | Loadout becomes valid | Ready |
+| Ready | Deploy pressed | Matchmaking |
+| Matchmaking | Server match ready | Match Found |
+| Matchmaking | Queue cancelled | Idle |
+| Match Found | Player accepts or timer completes | Deploying |
+| Idle | Player returns after successful extraction | Return Victory |
+| Idle | Player returns after death | Return Defeat |
+| Return Victory / Return Defeat | Summary animation ends | Idle |
 
 ## PC / Console Layout
 
@@ -58,18 +54,17 @@ stateDiagram-v2
 
 ## Navigation Flow
 
-```mermaid
-flowchart TD
-  A["Home"] --> B["Loadout"]
-  B --> C["Mode and map"]
-  C --> D["Squad readiness"]
-  D --> E["Matchmaking"]
-  A --> F["Stash"]
-  A --> G["Safe House"]
-  A --> H["Traders"]
-  A --> I["Profile"]
-  A --> J["Settings"]
-```
+| Destination | Entry Point | Purpose |
+| :--- | :--- | :--- |
+| Loadout | Deploy panel or bottom nav | Prepare gear, mode, map, and squad |
+| Mode and map | Loadout flow | Select raid rules and destination |
+| Squad readiness | Loadout flow | Confirm party state before queue |
+| Matchmaking | Deploy confirmation | Find match using selected rules |
+| Stash | Navigation rail or bottom nav | Manage inventory |
+| Safe House | Navigation rail or bottom nav | Upgrade modules and claim returns |
+| Traders | Navigation rail | Buy, sell, and turn in tasks |
+| Profile | Top bar | Review identity and stats |
+| Settings | Top bar or navigation | Configure game options |
 
 ## Deploy Panel Requirements
 

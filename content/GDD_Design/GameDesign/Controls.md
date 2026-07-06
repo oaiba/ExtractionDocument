@@ -20,16 +20,14 @@ Controls define how the tactical fantasy feels in the player's hands. The game i
 
 ## Input Switching
 
-```mermaid
-stateDiagram-v2
-  [*] --> Touch
-  Touch --> Controller: "Controller input detected"
-  Touch --> KeyboardMouse: "Keyboard or mouse input detected"
-  Controller --> Touch: "Touch input detected"
-  KeyboardMouse --> Touch: "Touch input detected"
-  KeyboardMouse --> Controller: "Controller input detected"
-  Controller --> KeyboardMouse: "Keyboard or mouse input detected"
-```
+| Current Input | Trigger | New Input | UI Update |
+| :--- | :--- | :--- | :--- |
+| Touch | Controller input detected | Controller | Button prompts switch to controller glyphs |
+| Touch | Keyboard or mouse input detected | Keyboard/Mouse | Prompts switch to keyboard and mouse labels |
+| Controller | Touch input detected | Touch | Mobile touch controls become primary |
+| Controller | Keyboard or mouse input detected | Keyboard/Mouse | Prompts switch to keyboard and mouse labels |
+| Keyboard/Mouse | Touch input detected | Touch | Mobile touch controls become primary |
+| Keyboard/Mouse | Controller input detected | Controller | Button prompts switch to controller glyphs |
 
 Input hints, button prompts, and tutorial callouts must update within one second of the active input changing.
 

@@ -10,16 +10,13 @@ Communication supports squad tactics without requiring voice chat. Pings, quick 
 
 ## Signal Flow
 
-```mermaid
-flowchart LR
-  A["Player input"] --> B{"Signal type"}
-  B -->|"Ping"| C["World marker"]
-  B -->|"Quick chat"| D["Text and VO callout"]
-  B -->|"Voice"| E["Voice channel"]
-  C --> F["Compass and minimap"]
-  D --> F
-  E --> G["Squad audio"]
-```
+| Player Input | Signal Type | Output | Display / Delivery |
+| :--- | :--- | :--- | :--- |
+| Tap or quick press | Context ping | World marker | Compass and minimap |
+| Hold input | Ping wheel | Chosen intent marker | World, compass, minimap, squad feed |
+| Quick chat command | Text callout | Localized phrase and optional VO | Squad feed and subtitles |
+| Voice input | Voice channel | Live voice | Party, squad, proximity, or clan channel |
+| Mute/report action | Safety signal | Moderation action | Player-level communication controls |
 
 ## Communication Pillars
 

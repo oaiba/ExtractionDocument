@@ -10,15 +10,14 @@ Clans create long-term social identity, shared goals, and group competition with
 
 ## Clan Lifecycle
 
-```mermaid
-flowchart TD
-  A["Create clan"] --> B["Recruit members"]
-  B --> C["Complete clan missions"]
-  C --> D["Earn clan XP"]
-  D --> E["Unlock milestones"]
-  E --> F["Compete in Faction Wars"]
-  F --> C
-```
+| Step | Action | Result |
+| :--- | :--- | :--- |
+| 1 | Create clan | Name, tag, leader, and initial member cap are set |
+| 2 | Recruit members | Clan gains active contributors |
+| 3 | Complete clan missions | Members generate clan XP and event contribution |
+| 4 | Earn milestones | Clan unlocks cosmetics, caps, and social identity rewards |
+| 5 | Compete in Faction Wars | Clan contribution affects leaderboard and seasonal rewards |
+| 6 | Continue mission cycle | Clan has recurring reasons to play together |
 
 ## Creation Rules
 

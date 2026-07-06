@@ -45,15 +45,15 @@ Localization ensures the game can ship clearly across target markets without bre
 
 ## Localization Pipeline
 
-```mermaid
-flowchart LR
-  A["String authoring"] --> B["Glossary check"]
-  B --> C["Localization export"]
-  C --> D["Translation"]
-  D --> E["LQA pass"]
-  E --> F["UI overflow fix"]
-  F --> G["Release candidate"]
-```
+| Step | Stage | Output |
+| :--- | :--- | :--- |
+| 1 | String authoring | Source text with placeholders and context |
+| 2 | Glossary check | Approved terminology |
+| 3 | Localization export | Translation package |
+| 4 | Translation | Localized strings |
+| 5 | LQA pass | Language and context issues |
+| 6 | UI overflow fix | Layout-safe text |
+| 7 | Release candidate | Approved localized build content |
 
 ## Cross-References
 

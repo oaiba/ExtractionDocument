@@ -9,14 +9,14 @@ Ranked Mode adds competitive stakes to extraction without turning the game into 
 
 ## Rank Ladder
 
-```mermaid
-flowchart TD
-  A["Bronze"] --> B["Silver"]
-  B --> C["Gold"]
-  C --> D["Platinum"]
-  D --> E["Diamond"]
-  E --> F["Champion"]
-```
+| Order | Rank | Meaning |
+| :--- | :--- | :--- |
+| 1 | Bronze | Entry ranked tier |
+| 2 | Silver | Basic consistency |
+| 3 | Gold | Solid extraction discipline |
+| 4 | Platinum | Strong tactical and economy skill |
+| 5 | Diamond | High-level competitive play |
+| 6 | Champion | Top seasonal prestige |
 
 ## RP Inputs
 

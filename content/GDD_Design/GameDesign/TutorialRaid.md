@@ -20,27 +20,15 @@ Operation Zero is the first guided raid. It teaches extraction fundamentals thro
 
 ## Mission Flow
 
-```mermaid
-flowchart TD
-  A["Operator selection"] --> B["Crash site movement"]
-  B --> C["Scavenger camp combat"]
-  C --> D["Bunker looting"]
-  D --> E["Map and ping lesson"]
-  E --> F["Timed extraction"]
-  F --> G["Custom debrief"]
-  G --> H["Safe House onboarding"]
-```
-
-## Phase Table
-
-| Phase | Teaches | Failure Policy |
-| :--- | :--- | :--- |
-| Operator Selection | Class identity and ability preview | Cannot fail |
-| Crash Site | Movement, camera, objective marker | Soft reset |
-| Scavenger Camp | Combat, cover, ability use | Retry checkpoint |
-| Bunker | Looting, inventory, item value | Guided prompts |
-| Map & Pings | Minimap, waypoint, squad signal | Repeat prompt |
-| Extraction | Timer, danger, reward | Retry checkpoint |
+| Step | Phase | Teaches | Failure Policy | Unlocks |
+| :--- | :--- | :--- | :--- | :--- |
+| 1 | Operator Selection | Class identity and ability preview | Cannot fail | Crash Site |
+| 2 | Crash Site | Movement, camera, objective marker | Soft reset | Scavenger Camp |
+| 3 | Scavenger Camp | Combat, cover, ability use | Retry checkpoint | Bunker |
+| 4 | Bunker | Looting, inventory, item value | Guided prompts | Map and Pings |
+| 5 | Map and Pings | Minimap, waypoint, squad signal | Repeat prompt | Timed Extraction |
+| 6 | Timed Extraction | Timer, danger, reward | Retry checkpoint | Custom Debrief |
+| 7 | Custom Debrief | Rewards, stash, and next step | Cannot fail | Safe House Onboarding |
 
 ## Starter Kit
 

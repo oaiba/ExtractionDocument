@@ -19,17 +19,13 @@ Navigation systems help players understand where they are, where danger may be, 
 
 ## Navigation Signal Flow
 
-```mermaid
-flowchart LR
-  A["Player observes world"] --> B["HUD compass"]
-  A --> C["Minimap"]
-  B --> D["Decision"]
-  C --> D
-  E["Squad ping"] --> B
-  E --> C
-  F["Objective update"] --> C
-  F --> G["Tactical map"]
-```
+| Signal Source | HUD Compass | Minimap | Tactical Map | Player Decision |
+| :--- | :--- | :--- | :--- | :--- |
+| World observation | Directional context | Nearby route context | Full context on open | Choose route or cover |
+| Squad ping | Direction and distance | Marker and label | Shared marker | Coordinate action |
+| Objective update | Optional direction | Objective marker | Objective details | Prioritize goal |
+| Extraction update | Direction if known | Extraction marker | Extraction details | Commit to exit route |
+| Gunfire or danger | Directional pulse | Optional threat hint | Not exact by default | Avoid, flank, or engage |
 
 ## Compass Rules
 

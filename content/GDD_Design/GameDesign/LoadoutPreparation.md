@@ -19,15 +19,15 @@ Loadout Preparation is the ritual before risk. It must help players understand w
 
 ## Loadout Flow
 
-```mermaid
-flowchart LR
-  A["Choose operator"] --> B["Equip weapons and armor"]
-  B --> C["Pack meds, tools, and backpack"]
-  C --> D["Select mode and map"]
-  D --> E["Review insurance"]
-  E --> F["Squad ready check"]
-  F --> G["Deploy"]
-```
+| Step | Action | Result |
+| :--- | :--- | :--- |
+| 1 | Choose operator | Ability, role, and character identity are set |
+| 2 | Equip weapons and armor | Combat readiness and gear value update |
+| 3 | Pack meds, tools, and backpack | Survival tools and carry capacity update |
+| 4 | Select mode and map | Rules, extracts, and risk profile are set |
+| 5 | Review insurance | Eligible items are protected or intentionally left uninsured |
+| 6 | Squad ready check | Party voice, fill, and ready status are confirmed |
+| 7 | Deploy | Matchmaking starts |
 
 ## PC / Console Layout
 

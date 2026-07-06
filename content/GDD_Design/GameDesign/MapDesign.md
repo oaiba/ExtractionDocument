@@ -29,20 +29,12 @@ Map Design defines how extraction zones are built for top-down tactical play. Ma
 
 ## Raid Movement Logic
 
-```mermaid
-flowchart TD
-  A["Spawn on edge"] --> B["Read objective and extracts"]
-  B --> C{"Choose route"}
-  C -->|"Safe value"| D["Edge loot"]
-  C -->|"Balanced route"| E["Mid zone"]
-  C -->|"High risk"| F["Hot zone"]
-  D --> G["Rotate to extraction"]
-  E --> G
-  F --> G
-  G --> H{"Extract or re-enter map?"}
-  H -->|"Extract"| I["Bank loot"]
-  H -->|"Re-enter"| C
-```
+| Decision Point | Safe Route | Balanced Route | High-Risk Route |
+| :--- | :--- | :--- | :--- |
+| Spawn on edge | Read nearby extraction and edge loot | Move toward mid-zone objective | Rush hotspot or event zone |
+| First loot choice | Common value, low contact | Mixed loot, moderate contact | Rare loot, high contact |
+| Rotation | Early extraction path | Mid-map flank to extraction | Contest center then rotate late |
+| Final choice | Extract and bank loot | Extract or re-enter based on squad state | Push final value or risk timeout |
 
 ## Extraction Placement Rules
 

@@ -1,6 +1,9 @@
 ---
 title: Render Lab
 weight: 90
+aliases:
+  - /RenderLab.html
+  - /renderlab.html
 ---
 
 # Render Lab

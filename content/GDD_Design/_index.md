@@ -10,8 +10,6 @@ aliases:
   - /GDD_Design/index.html
 ---
 
-# GDD Design
-
 This hub owns the creative and player-facing design of Extraction: game loops, player experience, art direction, audio, worldbuilding, characters, UI/UX, and design scope. Technical implementation, architecture, code standards, and engine details belong in [Technical GDD](/GDD_Technical.html).
 
 Use this page as the entry point for design intent and navigation. Deep specifications live in the linked section pages.

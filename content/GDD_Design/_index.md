@@ -4,244 +4,89 @@ type: docs
 aliases:
   - /gdd_design.html
   - /GDD_Design.html
+  - /gdd_design/
+  - /gdd_design/index.html
+  - /GDD_Design/
+  - /GDD_Design/index.html
 ---
 
 # GDD Design
 
-### Purpose
-
-This document focuses on **game design, art direction, and player experience**. This is the primary reference for:
-
-* Game Designers designing mechanics and balance
-* Artists creating visual assets
-* Level Designers building maps
-* Sound Designers creating audio experience
-* UI/UX Designers designing interfaces
-
-**Does not include:** Implementation details, code, technical specifications (see [Technical GDD](https://github.com/oaiba/ExtractionDocument/blob/main/GDD_Technical/README.md))
-
-***
-
-###  Documentation Structure
-
-####  Game Design
-
-Core game design, mechanics, progression, and monetization systems
-
-* [**Overview**](GameDesign/Overview.md) - Game concept, pillars, target audience, competitive analysis
-* [**Core Gameplay**](GameDesign/CoreGameplay.md) - Gameplay loop, phases, player psychology, session flow
-* [**Controls & UX**](GameDesign/Controls.md) - Design philosophy, cross-platform strategy, accessibility
-* [**Progression**](GameDesign/Progression.md) - Player progression, XP, quests, battle pass
-* [**Economy**](GameDesign/Economy.md) - Monetization, currencies, pricing, marketplace, anti-fraud
-* [**Ranked Mode**](GameDesign/RankedMode.md) - Ranking system, matchmaking, competitive integrity, season rewards
-* [**Live Ops**](GameDesign/LiveOps.md) - Events, content calendar, monetization events, community management
-* [**Accessibility**](GameDesign/Accessibility.md) - Visual, auditory, motor, cognitive accessibility features
-* [**Localization**](GameDesign/Localization.md) - Supported languages, text guidelines, cultural adaptation
-* [**Safe House**](GameDesign/Safe_House_Design.md) - Operator base, Stash Room, Trophy Vault, Workbench, crafting, meta-game hub
-* [**Stash**](Stash_Design.md) - Permanent storage for extracted items, grid system, containers, progression
-
-***
-
-####  Story & Narrative
-
-World lore, factions, and character backstories
-
-* [**Narrative**](Story/Narrative.md) - World lore, The Collapse, factions, operator backstories, environmental storytelling
-
-***
-
-####  Social & Multiplayer
-
-Squad systems, clans, karma, communication, and community features
-
-* [**Multiplayer**](Social/Multiplayer.md) - Squad system, VOIP (spatial proximity chat), ping system, karma & trust, emotes & gestures, LFG, clans, friends, matchmaking (MMR/SBMM), social hub (Safe House), dynamic in-raid interactions, anti-toxicity, post-match flow, cross-platform (EOS)
-
-***
-
-####  Combat Systems
-
-Weapon design, items, and combat mechanics
-
-* [**Weapons**](Combat/Weapons.md) - Weapon categories, modifications, combat mechanics, balance
-* [**Items & Economy**](Combat/Items.md) - Item systems, loot, inventory, trading marketplace
-
-***
-
-####  Characters
-
-Character design and abilities
-
-* [**Operators**](https://github.com/oaiba/ExtractionDocument/blob/main/content/GDD_Design/Characters/Operators.md) - Operator classes, abilities, progression, synergies, cosmetics
-
-***
-
-####  AI & Enemies
-
-Enemy design, behavior systems, and difficulty
-
-* [**Enemy Behavior**](AI/EnemyBehavior.md) - Enemy types, behavior systems, boss design, AI balancing
-
-***
-
-####  World Design
-
-Maps, environments, and level design
-
-* [**Map Design**](World/MapDesign.md) - Map structure, zones, loot distribution, environmental storytelling
-
-***
-
-####  Visual Design
-
-Art direction and user interface
-
-* [**Art Direction**](Visuals/ArtDirection.md) - Visual style, color palette, character/environment art, VFX, animation
-* [**User Interface**](Visuals/UserInterface.md) - UI/UX design, screen layouts, controls, accessibility
-
-***
-
-####  Audio Design
-
-Sound and music
-
-* [**Sound Design**](Audio/SoundDesign.md) - Audio vision, combat audio, environmental audio, music, voice lines
-
-***
-
-####  Project Scope
-
-Risks, boundaries, and project management
-
-* [**Risks**](ProjectScope/Risks.md) - Design, technical, business, and operational risks with mitigation
-* [**Non-Goals**](ProjectScope/NonGoals.md) - Explicit exclusions and what we intentionally won't build
-
-***
-
-###  How to Use This Document
-
-**For Game Designers:**
-
-* Read entirely to understand game vision
-* Reference when designing new mechanics
-* Update when there are balance changes
-
-**For Artists:**
-
-* Focus on Visuals section (Art Direction, UI)
-* Reference Characters and World for context
-* Follow guidelines when creating assets
-
-**For Level Designers:**
-
-* Deep dive into World → Map Design
-* Understand Core Gameplay Loop to design flow
-* Coordinate with Artists on visual style
-
-**For Sound Designers:**
-
-* Follow Audio → Sound Design guidelines
-* Reference Core Gameplay to understand audio cues
-* Coordinate with Game Designers on feedback
-
-**For UI/UX Designers:**
-
-* Follow Visuals → User Interface guidelines
-* Understand User Flow and player journey
-* Coordinate with Developers on technical constraints
-
-***
-
-###  Design Philosophy
-
-**Player-First Design:**
-
-* Every design decision must benefit player experience
-* Fair and balanced gameplay
-* Respect player's time and effort
-
-**Mobile-Optimized:**
-
-* Controls must be intuitive and responsive
-* Matches designed for short sessions (10-15 minutes)
-* Performance across multiple devices
-
-**Depth Through Simplicity:**
-
-* Easy to learn, hard to master
-* Clear mechanics with deep strategy
-* Progressive complexity
-
-***
-
-###  Glossary
-
-**Core Terms:**
-
-* **Extraction:** Process of leaving map with loot
-* **Hot Zone:** High-risk, high-reward areas
-* **Operator:** Playable character class
-* **Stash:** Permanent storage for extracted items
-* **MMR:** Matchmaking Rating
-* **POI:** Point of Interest
-* **TTK:** Time to Kill
-* **DPS:** Damage Per Second
-
-***
-
-###  Update Log
-
-| Date       | Section      | Changes                                                     | Updated By |
-| ---------- | ------------ | ----------------------------------------------------------- | ---------- |
-| 2026-02-07 | GameDesign   | Added Accessibility.md (visual, auditory, motor, cognitive) | Team       |
-| 2026-02-07 | GameDesign   | Added Localization.md (languages, cultural adaptation)      | Team       |
-| 2026-02-07 | ProjectScope | Added Risks.md (design, tech, business risks)               | Team       |
-| 2026-02-07 | ProjectScope | Added NonGoals.md (explicit exclusions)                     | Team       |
-| 2026-02-07 | AI           | Added EnemyBehavior.md (enemy types, behavior, bosses)      | Team       |
-| 2026-02-07 | GameDesign   | Added RankedMode.md (ranking, matchmaking, competitive)     | Team       |
-| 2026-02-07 | GameDesign   | Added LiveOps.md (events, content calendar, monetization)   | Team       |
-| 2026-02-07 | Story        | Added Narrative.md (lore, factions, backstories)            | Team       |
-| 2026-02-07 | GameDesign   | Added Economy.md (monetization, currencies, anti-fraud)     | Team       |
-| 2026-02-07 | Social       | Added Multiplayer.md (squads, clans, communication)         | Team       |
-| 2026-02-07 | Controls     | Expanded with controller support, keyboard options          | Team       |
-| 2026-02-06 | Structure    | Reorganized to folder-based system                          | Team       |
-| 2026-02-06 | Combat       | Added Weapons & Items documents                             | Team       |
-| 2026-02-06 | All          | Initial documentation                                       | Team       |
-
-***
-
-###  Quick Navigation
-
-**Start Here:**
-
-* New to project? → [Overview](GameDesign/Overview.md)
-* Understanding gameplay? → [Core Gameplay](GameDesign/CoreGameplay.md)
-* Designing characters? → [Operators](https://github.com/oaiba/ExtractionDocument/blob/main/content/GDD_Design/Characters/Operators.md)
-
-**World & Story:**
-
-* World lore & factions → [Narrative](Story/Narrative.md)
-* Multiplayer & social → [Multiplayer](Social/Multiplayer.md)
-* AI & enemies → [Enemy Behavior](AI/EnemyBehavior.md)
-
-**Competitive:**
-
-* Ranked system → [Ranked Mode](GameDesign/RankedMode.md)
-* Events & live ops → [Live Ops](GameDesign/LiveOps.md)
-
-**Economy & Monetization:**
-
-* Currencies & pricing → [Economy](GameDesign/Economy.md)
-* Items & marketplace → [Items](Combat/Items.md)
-* Stash & storage → [Stash Design](Stash_Design.md)
-* Safe House & crafting → [Safe House Design](GameDesign/Safe_House_Design.md)
-
-**Platform & Accessibility:**
-
-* Accessibility features → [Accessibility](GameDesign/Accessibility.md)
-* Localization strategy → [Localization](GameDesign/Localization.md)
-
-**Project Management:**
-
-* Project risks → [Risks](ProjectScope/Risks.md)
-
-**Deep Dives:**
+This hub owns the creative and player-facing design of Extraction: game loops, player experience, art direction, audio, worldbuilding, characters, UI/UX, and design scope. Technical implementation, architecture, code standards, and engine details belong in [Technical GDD](/GDD_Technical.html).
+
+Use this page as the entry point for design intent and navigation. Deep specifications live in the linked section pages.
+
+## Start Here
+
+{{< cards cols="3" >}}
+{{< card link="/GDD_Design/GameDesign/Overview.html" title="Design Overview" icon="light-bulb" subtitle="Game concept, pillars, target audience, market positioning, and competitive context." >}}
+{{< card link="/GDD_Design/GameDesign/CoreGameplay.html" title="Core Gameplay" icon="refresh" subtitle="Primary gameplay loop, raid phases, player psychology, and session flow." >}}
+{{< card link="/GDD_Design/ProjectScope/MVP.html" title="MVP Scope" icon="flag" subtitle="Current feature boundaries, launch requirements, and scope guardrails." >}}
+{{< /cards >}}
+
+## Design Domains
+
+{{< cards cols="3" >}}
+{{< card link="/GDD_Design/GameDesign" title="Game Design" icon="sparkles" subtitle="High-level systems, progression, economy, ranked, live ops, controls, and onboarding." >}}
+{{< card link="/GDD_Design/Gameplay" title="Gameplay Mechanics" icon="puzzle" subtitle="Moment-to-moment interaction rules: movement, looting, extraction, combat feel, visibility, and hazards." >}}
+{{< card link="/GDD_Design/Characters" title="Characters" icon="user-group" subtitle="Operator classes, role identities, abilities, synergies, progression, and cosmetics." >}}
+{{< /cards >}}
+
+{{< cards cols="3" >}}
+{{< card link="/GDD_Design/Combat" title="Combat & Items" icon="adjustments" subtitle="Combat philosophy, weapons, items, inventory touchpoints, and canonical gameplay cross-references." >}}
+{{< card link="/GDD_Design/Gears" title="Gear Systems" icon="briefcase" subtitle="Armor, storage, gear tiers, progression, balance, handling, and visual identity." >}}
+{{< card link="/GDD_Design/Inventory_System" title="Inventory Systems" icon="cube" subtitle="Containers, looting rules, medical survival, gunsmith, and inventory design references." >}}
+{{< /cards >}}
+
+{{< cards cols="3" >}}
+{{< card link="/GDD_Design/World" title="World Design" icon="map" subtitle="Map structure, loot distribution, environmental narrative, layouts, and named zone design." >}}
+{{< card link="/GDD_Design/Story" title="Story & Narrative" icon="book-open" subtitle="World lore, factions, backstory, quest lines, and narrative delivery." >}}
+{{< card link="/GDD_Design/NarrativeWorld" title="Narrative World" icon="globe-alt" subtitle="Faction territories, map bible, location lore, and environmental storytelling anchors." >}}
+{{< /cards >}}
+
+{{< cards cols="3" >}}
+{{< card link="/GDD_Design/Visuals" title="Visual Design" icon="photograph" subtitle="Art direction, style guide, asset guidelines, interface visuals, VFX, and animation language." >}}
+{{< card link="/GDD_Design/UI_UX" title="UI/UX" icon="template" subtitle="HUD, menus, loading screens, notifications, UX flows, and visual style for player-facing screens." >}}
+{{< card link="/GDD_Design/Audio" title="Audio Design" icon="music-note" subtitle="Sound design, tactical audio, soundscape, voice lines, and combat feedback cues." >}}
+{{< /cards >}}
+
+{{< cards cols="3" >}}
+{{< card link="/GDD_Design/Social" title="Social & Multiplayer" icon="users" subtitle="Squads, matchmaking, communication, karma, clans, social hub, and post-match flow." >}}
+{{< card link="/GDD_Design/AI" title="AI & Enemies" icon="chip" subtitle="Enemy behavior, faction ecology, boss design, difficulty, and AI balancing." >}}
+{{< card link="/GDD_Design/ProjectScope" title="Project Scope" icon="scale" subtitle="Design pillars, MVP, non-goals, risks, competitive analysis, and planning boundaries." >}}
+{{< /cards >}}
+
+## Who Uses This
+
+| Role | Primary Use | Start With |
+| --- | --- | --- |
+| Game Designer | Define mechanics, balance, progression, and player-facing systems. | [Overview](/GDD_Design/GameDesign/Overview.html), [Core Gameplay](/GDD_Design/GameDesign/CoreGameplay.html) |
+| Artist | Align assets with visual style, character identity, environments, and UI tone. | [Visual Design](/GDD_Design/Visuals.html), [Characters](/GDD_Design/Characters.html), [World Design](/GDD_Design/World.html) |
+| Level Designer | Build maps around extraction flow, loot pressure, routes, and encounter pacing. | [World Design](/GDD_Design/World.html), [Core Gameplay](/GDD_Design/GameDesign/CoreGameplay.html) |
+| Audio Designer | Match audio cues to tactical needs, ambience, feedback, and narrative tone. | [Audio Design](/GDD_Design/Audio.html), [Core Gameplay](/GDD_Design/GameDesign/CoreGameplay.html) |
+| UI/UX Designer | Shape player flows, controls, menus, HUD, accessibility, and feedback systems. | [UI/UX](/GDD_Design/UI_UX.html), [Controls](/GDD_Design/GameDesign/Controls.html) |
+
+## Design Principles
+
+{{< cards cols="3" >}}
+{{< card title="Player-First" icon="heart" subtitle="Every design decision should improve clarity, fairness, agency, or emotional payoff for the player." >}}
+{{< card title="Mobile-Optimized" icon="device-mobile" subtitle="Sessions, controls, readability, performance, and interaction density must work on mobile first." >}}
+{{< card title="Depth Through Simplicity" icon="beaker" subtitle="Rules should be easy to understand, then reveal mastery through timing, positioning, risk, and tradeoffs." >}}
+{{< /cards >}}
+
+## Core Terms
+
+| Term | Meaning |
+| --- | --- |
+| Extraction | Leaving the map with loot, progress, and survival value intact. |
+| Hot Zone | High-risk, high-reward area that concentrates loot, enemies, and player conflict. |
+| Operator | Playable character class with a role identity and ability kit. |
+| Stash | Persistent storage for extracted items and long-term progression. |
+| MMR | Matchmaking rating used to tune competitive quality and fairness. |
+| POI | Point of interest such as a landmark, loot site, objective, or encounter area. |
+| TTK | Time to kill, a key combat pacing and balance measure. |
+| DPS | Damage per second, used to compare sustained damage output. |
+
+## Maintenance
+
+Use [Project Scope](/GDD_Design/ProjectScope.html) for current boundaries, MVP decisions, risks, and non-goals. Historical documentation changes are tracked in [Update Log](/GDD_Design/UpdateLog.html).

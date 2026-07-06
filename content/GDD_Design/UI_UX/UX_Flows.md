@@ -1,6 +1,7 @@
 ---
 title: "UX Flows & Wireframes"
 type: docs
+weight: 22
 ---
 
 ## Player Journey Map

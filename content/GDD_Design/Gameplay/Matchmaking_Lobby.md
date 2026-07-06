@@ -112,7 +112,7 @@ MAIN STASH SCREEN
      - 10-second countdown before deployment (can cancel in this window)
     |
  [6] LOADING SCREEN (L4_LobbyToMatch)
-     - Loading type: L4_LobbyToMatch per [Loading Screen Design](../../UI_UX/LoadingScreen_Design.md)
+     - Loading type: L4_LobbyToMatch per [Loading Screen Design](../UI_UX/LoadingScreen_Design.md)
      - Map-specific loading screen art (full-bleed background)
      - Tactical tips, fun facts, lore (rotate every 8s; manual paging)
      - Map intro text (e.g., "Sector 7 — Industrial Decay")
@@ -271,7 +271,7 @@ Same information, adapted for portrait 1080×2400 screen:
 
 ### Cross-References
 
-* [Loading Screen Design](https://github.com/oaiba/ExtractionDocument/blob/main/content/UI_UX/LoadingScreen_Design.md) — L4\_LobbyToMatch taxonomy, content types, layout.
+* [Loading Screen Design](../UI_UX/LoadingScreen_Design.md) — L4\_LobbyToMatch taxonomy, content types, layout.
 * [Core Gameplay Loop](CoreLoop.md) — Preparation phase; loadout philosophy.
 * [Extraction Mechanics](Extraction_Mechanics.md) — Disconnection MIA rule; reconnect behavior.
 * [Hero Abilities](Hero_Abilities.md) — Operator selection; ability stacking rule for same-class duplicates.

@@ -101,12 +101,21 @@ Following WCAG 2.1 Level AA compliance:
 ## Section Contents
 
 {{< cards >}}
-  {{< card link="Menus" title="Menus & Screens" icon="view-grid" subtitle="All menu screens: Main Menu, Loadout, Trader, Stash, Map Selection, Squad, After Action Report, Pause" >}}
+  {{< card link="Screen_Groups_Overview" title="Screen Groups Overview" icon="view-grid" subtitle="Canonical screen taxonomy by player lifecycle, spec template, navigation model, and coverage checklist" >}}
+  {{< card link="Global_UX_Standards" title="Global UX Standards" icon="adjustments" subtitle="Navigation, focus, responsive layout, modal, state, accessibility, and analytics standards" >}}
+  {{< card link="Out_Of_Raid_Screens" title="Out-of-Raid Screens" icon="home" subtitle="Home, operator, loadout, stash, traders, safe house, quests, and profile surfaces" >}}
+  {{< card link="Pre_Raid_Screens" title="Pre-Raid Screens" icon="play" subtitle="Mode select, map select, deploy confirmation, squad lobby, matchmaking, and match found" >}}
+  {{< card link="In_Raid_Screens" title="In-Raid Screens" icon="eye" subtitle="HUD, tactical map, looting, inventory overlay, pause, spectator, and reconnect states" >}}
+  {{< card link="Post_Raid_Screens" title="Post-Raid Screens" icon="chart-bar" subtitle="AAR, death replay, loot transfer, quest progress, report/commend, and redeploy flows" >}}
+  {{< card link="Social_Screens" title="Social Screens" icon="user-group" subtitle="Friends, party, invites, LFG, clans, chat, voice, block, and report screens" >}}
+  {{< card link="Progression_LiveOps_Screens" title="Progression & LiveOps Screens" icon="sparkles" subtitle="Battle pass, events, daily and weekly tasks, ranked, leaderboards, rewards, and news" >}}
+  {{< card link="Commerce_Settings_System_Screens" title="Commerce, Settings & System Screens" icon="cog" subtitle="Auth, setup, shop, wallet, settings, privacy, diagnostics, and system dialogs" >}}
   {{< card link="LoadingScreen_Design" title="Async Loading Screen Design" icon="clock" subtitle="Loading type taxonomy L1-L8, content types, layouts, async loading flow" >}}
   {{< card link="HUD_Design" title="In-Raid HUD Design" icon="eye" subtitle="HUD element catalog, contextual visibility, minimap, compass, and customization options" >}}
   {{< card link="UX_Flows" title="UX Flows & Wireframes" icon="cursor-click" subtitle="Player journey map, cross-platform wireframes, state machines, navigation patterns" >}}
   {{< card link="Notification_Systems" title="Notification & Feedback Systems" icon="bell" subtitle="Kill feed, damage feedback, status effects, toast messages, danger communication" >}}
   {{< card link="Visual_Style" title="Visual Style & Art Guidelines" icon="color-swatch" subtitle="Color palettes, typography, iconography, lighting, VFX, and platform adaptations" >}}
+  {{< card link="Menus" title="Menus & Screens (Legacy)" icon="document-text" subtitle="Compatibility page mapping old menu sections to the new lifecycle screen groups" >}}
 {{< /cards >}}
 
 ---

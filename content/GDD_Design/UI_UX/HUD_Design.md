@@ -1,7 +1,7 @@
 ---
 title: "In-Raid HUD Design"
 type: docs
-weight: 2
+weight: 20
 ---
 
 ## HUD Philosophy

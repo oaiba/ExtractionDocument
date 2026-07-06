@@ -1,0 +1,78 @@
+---
+title: "Screen Groups Overview"
+type: docs
+weight: 1
+---
+
+## Purpose
+
+This page is the canonical screen inventory for the UI/UX design package. It groups screens by player lifecycle instead of widget type so designers, game designers, and engineers can reason about complete player journeys.
+
+Every screen group must answer four questions:
+
+| Question | Requirement |
+| :--- | :--- |
+| What is the player trying to do? | State the player intent before layout details |
+| What information is required? | Expose risk, cost, progress, or failure reason at the moment it matters |
+| What is the next action? | Make the primary CTA obvious and keep exits predictable |
+| What can go wrong? | Define loading, empty, locked, invalid, offline, and error states |
+
+---
+
+## Screen Group Taxonomy
+
+| Phase | Screen Group | Primary Job | Key Pages |
+| :--- | :--- | :--- | :--- |
+| Boot and account | Onboarding / Auth | Get the player safely into a valid account and tutorial state | [Commerce, Settings & System Screens](Commerce_Settings_System_Screens.md), [Loading Screen Design](LoadingScreen_Design.md) |
+| Out of raid | Home, profile, stash, traders, safe house, quests | Prepare, recover, progress, and manage risk | [Out-of-Raid Screens](Out_Of_Raid_Screens.md) |
+| Pre-raid | Mode, map, squad, deploy, matchmaking | Confirm rules, risk, party readiness, and queue state | [Pre-Raid Screens](Pre_Raid_Screens.md) |
+| In raid | HUD, map, looting, overlays, pause, spectator | Keep survival-critical information clear during pressure | [In-Raid Screens](In_Raid_Screens.md), [HUD Design](HUD_Design.md) |
+| Post-raid | AAR, death replay, loot transfer, report, redeploy | Explain outcome and route the player into the next loop | [Post-Raid Screens](Post_Raid_Screens.md) |
+| Social | Friends, party, clan, LFG, communication, moderation | Help players coordinate while limiting abuse | [Social Screens](Social_Screens.md) |
+| Progression and LiveOps | Battle pass, events, ranked, rewards, inbox | Surface long-term goals without burying raid flow | [Progression & LiveOps Screens](Progression_LiveOps_Screens.md) |
+| Commerce, settings, system | Shop, wallet, settings, diagnostics, dialogs | Handle configuration, account, platform, and system states | [Commerce, Settings & System Screens](Commerce_Settings_System_Screens.md) |
+
+---
+
+## Screen Spec Template
+
+Use this template for every new screen spec. Keep it short enough to update but complete enough for implementation.
+
+| Section | Required Content |
+| :--- | :--- |
+| Goal | One-sentence screen purpose |
+| User intent | Why the player opened it and what success means |
+| Entry points | Buttons, deep links, events, and system transitions that open the screen |
+| Exit points | Back behavior, primary CTA, cancel, timeout, and destructive exits |
+| Layout | PC/console landscape and mobile portrait rules |
+| Primary CTA | Main action, disabled conditions, and confirmation requirements |
+| Secondary actions | Useful alternatives that do not compete with the primary CTA |
+| States | Default, loading, empty, invalid, locked, offline, error, success |
+| Input mapping | Mouse/keyboard, controller, touch, and focus order |
+| Accessibility | Text scale, contrast, screen reader label, hold alternative, color-independent meaning |
+| Analytics | Events and funnel metrics that prove the screen is working |
+| Acceptance | Checklist for design review and implementation QA |
+
+---
+
+## Global Navigation Model
+
+| Surface | Navigation Rule |
+| :--- | :--- |
+| Home hub | Global navigation rail on PC/console; bottom navigation on mobile |
+| Preparation flow | Linear enough for new players, jumpable for experts |
+| In-raid overlays | Never fully pause online raid state; preserve audio and threat awareness |
+| Modal dialogs | One decision per modal; destructive actions require hold or second confirmation |
+| Back behavior | `ESC` / `B` / system back always closes the deepest layer first |
+| Deep links | Event, quest, reward, and trader cards must open the exact destination screen |
+
+---
+
+## Coverage Checklist
+
+- [ ] Every player lifecycle phase has a screen group.
+- [ ] Every group includes PC/console and mobile behavior.
+- [ ] Every group defines blocked, empty, locked, loading, offline, and error states.
+- [ ] Every major game system has a UI owner or cross-reference.
+- [ ] No single document owns unrelated screens that should live in separate groups.
+- [ ] Technical terms match [UI System](../../GDD_Technical/Systems/UISystem.md) where code-facing names are needed.

@@ -1,6 +1,7 @@
 ---
 title: "Visual Style & Art Guidelines"
 type: docs
+weight: 24
 ---
 
 ## Visual Identity

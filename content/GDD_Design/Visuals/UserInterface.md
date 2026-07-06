@@ -256,7 +256,7 @@ The UI visual design supports the **Cyberpunk Neo-Industrial** art direction. In
 
 #### Core HUD Layout
 
-For detailed functional specifications, see [HUD Design](https://github.com/oaiba/ExtractionDocument/blob/main/content/UI_UX/HUD_Design/README.md).
+For detailed functional specifications, see [HUD Design](../UI_UX/HUD_Design.md).
 
 ```
 ┌─────────────────────────────────────────┐
@@ -416,7 +416,7 @@ For detailed functional specifications, see [HUD Design](https://github.com/oaib
 
 ### Settings UI Overview
 
-For detailed settings specifications, see [User Settings documentation](https://github.com/oaiba/ExtractionDocument/blob/main/content/UserSettings/README.md).
+For detailed settings specifications, see [User Settings documentation](../GameDesign/UserSettings.md).
 
 #### Settings Panel Layout
 

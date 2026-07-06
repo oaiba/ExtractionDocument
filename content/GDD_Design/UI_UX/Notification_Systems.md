@@ -1,7 +1,7 @@
 ---
 title: "Notification & Feedback Systems"
 type: docs
-weight: 5
+weight: 23
 ---
 
 ## Notification Design Philosophy

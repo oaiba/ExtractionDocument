@@ -7,7 +7,13 @@ type: docs
 
 Progression owns the systems that make players return: account levels, operator mastery, faction reputation, quests, battle pass advancement, achievements, and long-term goals.
 
+Progression should make every session feel like it moved the player forward, even when the raid was lost. Extraction creates spikes of reward, but account growth, operator learning, quests, reputation, and seasonal goals keep the player from feeling that one death erased the evening.
+
+The system should avoid mandatory chores. Daily and weekly goals are guidance, not homework. The best progression path is the one that gives the player a reason to try a different route, operator, weapon class, or squad role while still respecting the extraction fantasy.
+
 ## Progression Layers
+
+Progression layers should be readable from the Home Screen and post-match recap. A player should know which track advanced, why it advanced, and what the next meaningful unlock is. Hidden progress is useful for achievements, but core growth should be explicit.
 
 | Source | Progression Track | Unlocks / Result |
 | :--- | :--- | :--- |
@@ -18,6 +24,8 @@ Progression owns the systems that make players return: account levels, operator 
 | Seasonal challenges | Battle pass | Seasonal cosmetics and event rewards |
 
 ## Account Levels
+
+Account levels represent broad familiarity with the game. They can unlock systems and rewards, but they should not create a permanent combat stat gap. A level 50 player can have more options and knowledge; they should not simply have more health, damage, or hidden power.
 
 | Area | Direction |
 | :--- | :--- |
@@ -38,7 +46,11 @@ Progression owns the systems that make players return: account levels, operator 
 
 Operator mastery should reward commitment without creating mandatory stat grind.
 
+Mastery is an identity track. It should encourage players to learn an operator's rhythm, voice, abilities, and preferred squad role. Rewards should make the operator feel more personal in the lobby and profile, while keeping combat balance controlled by match rules and equipment.
+
 ## Quest System
+
+Quests are the designer's way of teaching the map without a tutorial pop-up. A good quest asks the player to visit a place, use a system, take a risk, or notice a piece of the world. It should avoid asking for repetitive grind that ignores extraction decisions.
 
 | Quest Type | Reset | Purpose |
 | :--- | :--- | :--- |
@@ -51,6 +63,8 @@ Operator mastery should reward commitment without creating mandatory stat grind.
 
 ## Battle Pass
 
+The battle pass is a seasonal checklist, not the core progression spine. It should reward regular play across modes and provide catch-up paths for late-season players. Premium rewards should be desirable, but free-track rewards must prove that the season is not locked behind spending.
+
 | Component | Direction |
 | :--- | :--- |
 | Tracks | Free and premium |
@@ -60,6 +74,8 @@ Operator mastery should reward commitment without creating mandatory stat grind.
 | Integrity | No paid combat advantage |
 
 ## Retention Loops
+
+Retention should come from confidence and aspiration, not fear of missing out alone. The player should return because they have a plan: finish a trader chain, master an operator, recover from a failed raid, push ranked, or unlock a cosmetic that reflects how they play.
 
 | Timeframe | Player Goal | System Support |
 | :--- | :--- | :--- |
@@ -77,6 +93,21 @@ Operator mastery should reward commitment without creating mandatory stat grind.
 | Player has no goal | Daily/weekly/faction quest surfacing |
 | Progress feels paywalled | Earnable paths for convenience and cosmetics |
 | Meta becomes stale | Live Ops events, balance patches, rotating objectives |
+
+## Progression Examples
+
+A day-one player completes Operation Zero, extracts once, and unlocks a starter faction task. The goal is to convert tutorial confidence into a short real objective without overwhelming them with all systems at once.
+
+A week-one player starts favoring one operator. Operator mastery rewards should recognize that identity through cosmetics, voice, profile treatment, and tips, while avoiding stat bonuses that make switching roles feel bad.
+
+A seasonal player returns for an event. Battle pass, faction objectives, and live quests should point toward the same seasonal activity so progress feels coordinated rather than scattered across unrelated checklists.
+
+## Tuning Notes
+
+- XP should reward extraction and objective completion more reliably than raw kill volume.
+- Catch-up should reduce late-season pressure without invalidating early participation.
+- Quest chains should vary route, item, and behavior requirements to avoid grind fatigue.
+- Prestige should be cosmetic-first until long-term balance is proven.
 
 ## Cross-References
 

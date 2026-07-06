@@ -8,6 +8,10 @@ weight: 16
 
 The Home Screen is the player's out-of-raid command center. It should show identity, current goals, squad readiness, live events, and the fastest route back into a raid.
 
+The screen should feel like a tactical staging area, not a marketing billboard. The operator, current kit, active goals, and deploy path are the primary story. Store, events, news, and social hooks can be present, but they must not compete with the player's next raid decision.
+
+A strong Home Screen answers four questions in under five seconds: who am I playing, what can I do next, what has changed since last session, and how do I deploy?
+
 ## Key Decisions
 
 | Area | Direction |
@@ -19,6 +23,8 @@ The Home Screen is the player's out-of-raid command center. It should show ident
 | PC/console layout | Operator center, navigation rail, contextual panels |
 
 ## Operator Showcase States
+
+The operator showcase gives the player a visible identity between raids. It should react to state changes without wasting time: ready posture when the loadout is valid, restrained celebration after extraction, and grounded recovery after death. The tone is tactical confidence, not cartoon celebration.
 
 | State | Trigger | Next State |
 | :--- | :--- | :--- |
@@ -34,6 +40,8 @@ The Home Screen is the player's out-of-raid command center. It should show ident
 
 ## PC / Console Layout
 
+PC and console layouts can show more simultaneous information, but they should still preserve one dominant action. The right panel should lead toward deploy, while the rail and supporting widgets remain stable. Avoid moving navigation between sessions because muscle memory matters for repeated raid prep.
+
 | Region | Content | Purpose |
 | :--- | :--- | :--- |
 | Center | Operator showcase, stance, selected skin, weapon preview | Identity and readiness |
@@ -44,6 +52,8 @@ The Home Screen is the player's out-of-raid command center. It should show ident
 
 ## Mobile Layout
 
+Mobile layout should be thumb-first and interruption-tolerant. Players may check the game during short breaks, so the main flow should support quick claim, quick review, quick deploy, and quick exit without hiding important risk warnings.
+
 | Region | Content | Purpose |
 | :--- | :--- | :--- |
 | Top | Currency, profile, notifications | Account state |
@@ -53,6 +63,8 @@ The Home Screen is the player's out-of-raid command center. It should show ident
 | Bottom nav | Home, Loadout, Stash, Social, Shop, Settings | Thumb reachable navigation |
 
 ## Navigation Flow
+
+Navigation should support both deliberate preparation and fast return. A player who wants to tune gear can drill into stash and loadout. A player who just wants another run should move from Home to matchmaking with only the necessary risk confirmations.
 
 | Destination | Entry Point | Purpose |
 | :--- | :--- | :--- |
@@ -67,6 +79,8 @@ The Home Screen is the player's out-of-raid command center. It should show ident
 | Settings | Top bar or navigation | Configure game options |
 
 ## Deploy Panel Requirements
+
+The deploy panel is the final trust checkpoint. It should highlight invalid states, summarize risk, and explain mode modifiers before the queue begins. It should not surprise the player after matchmaking has started.
 
 | Field | Requirement |
 | :--- | :--- |
@@ -97,6 +111,21 @@ The Home Screen is the player's out-of-raid command center. It should show ident
 | Match found | Short confirmation sting |
 | Post-extraction | Brief relief cue |
 | Post-death | Somber recovery cue |
+
+## Home Screen Examples
+
+A returning player after a successful extraction should see a short loot summary, current progression gains, and a clear path to redeploy. The screen should celebrate success briefly, then return control quickly.
+
+A player after death should see recovery actions: rebuild from preset, check insurance, open stash, or run Scavenger. The tone should be calm and practical rather than punitive.
+
+A first-session player should see Tutorial Raid as the primary action until the basics are complete. Store, ranked, and complex live events should stay secondary until the player has context.
+
+## Layout Failure Cases
+
+- If the store dominates the first screen, the game feels transactional instead of tactical.
+- If deploy is hidden behind too many panels, session momentum drops.
+- If last-raid state is invisible, success and failure feel disconnected from the lobby.
+- If mobile bottom navigation exceeds comfortable thumb reach, common actions need regrouping.
 
 ## Cross-References
 

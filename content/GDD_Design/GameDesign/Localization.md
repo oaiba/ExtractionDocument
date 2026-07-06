@@ -7,7 +7,13 @@ type: docs
 
 Localization ensures the game can ship clearly across target markets without breaking UI layout, tutorial clarity, monetization transparency, or cultural expectations.
 
+Localization is a design requirement because extraction games rely on quick comprehension. A mistranslated extraction warning, insurance rule, monetization label, or tutorial prompt can create real frustration. The language pipeline must preserve meaning, timing, and UI fit.
+
+The game should use controlled terminology from the start. Terms such as extract, stash, insured, operator, faction, raid, and safe house need stable translations so players can learn systems across menus, tutorials, and patch notes.
+
 ## Language Tiers
+
+Language tiers should reflect business priority, community demand, support capacity, and UI readiness. A language should not be added at launch if the team cannot support patch notes, purchase text, tutorial text, and critical service messages at an acceptable quality.
 
 | Tier | Languages | Target |
 | :--- | :--- | :--- |
@@ -16,6 +22,8 @@ Localization ensures the game can ship clearly across target markets without bre
 | Tier 3 | Additional regional languages | Post-launch based on demand |
 
 ## Text Rules
+
+Text rules reduce future layout bugs. Short English labels often expand dramatically in other languages, so buttons, cards, HUD markers, and mobile navigation need flexible layouts and tested truncation behavior.
 
 | Rule | Requirement |
 | :--- | :--- |
@@ -27,6 +35,8 @@ Localization ensures the game can ship clearly across target markets without bre
 
 ## Voice Strategy
 
+Voice localization should prioritize comprehension-critical content first. Tutorial VO, warnings, and system callouts matter more than flavor barks. Operator personality can still be preserved through subtitles when full dubbing is not practical.
+
 | Content | Localization Direction |
 | :--- | :--- |
 | Critical tutorial VO | Localize for Tier 1 where budget allows |
@@ -35,6 +45,8 @@ Localization ensures the game can ship clearly across target markets without bre
 | Seasonal narrative | Localize text first, dub by market priority |
 
 ## Cultural Review
+
+Cultural review should happen before final art lock. Symbols, gestures, faction names, monetization presentation, and event themes can require changes that are expensive if discovered after UI, VO, or trailer production.
 
 | Area | Review Need |
 | :--- | :--- |
@@ -54,6 +66,21 @@ Localization ensures the game can ship clearly across target markets without bre
 | 5 | LQA pass | Language and context issues |
 | 6 | UI overflow fix | Layout-safe text |
 | 7 | Release candidate | Approved localized build content |
+
+## Localization Examples
+
+An extraction warning must remain short, urgent, and unambiguous in every supported language. If the translated string becomes too long for the HUD, the UI should support a shorter approved variant rather than shrinking text until it becomes unreadable.
+
+An insurance rule needs exact terminology across loadout, recap, inbox, and support articles. If one screen says "recovered" and another says "returned" with different meanings, players will misunderstand loss outcomes.
+
+A seasonal event name can be creative, but objective instructions should stay plain. Flavor text may use style; mission-critical text should prioritize clarity.
+
+## Localization Failure Cases
+
+- If translated buttons truncate on mobile, the layout needs flexible width or alternate strings.
+- If glossary terms drift between pages, tutorial and support burden increases.
+- If monetization copy is unclear, regional compliance and player trust are at risk.
+- If voice is not localized, subtitles must carry timing, speaker identity, and tone.
 
 ## Cross-References
 

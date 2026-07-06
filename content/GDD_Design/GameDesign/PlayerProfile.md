@@ -8,7 +8,13 @@ weight: 22
 
 The Player Profile communicates identity, mastery, history, and social trust. It should help players celebrate progress while giving privacy controls for public information.
 
+The profile should answer two different needs. For the owner, it is a career dashboard and memory book. For other players, it is a social trust surface: who is this person, what do they play, are they active, and can I invite them safely?
+
+Profile design must avoid shaming players with raw stats alone. Extraction games involve learning, risk, and streaks of failure. The profile should celebrate milestones, favorite roles, memorable runs, and improvement as much as rank or K/D.
+
 ## Profile Tabs
+
+Tabs should separate identity from analysis. The Overview tab gives a quick read, while Stats and Match History support deeper review. Social actions should be present but not so aggressive that profile browsing becomes spammy.
 
 | Tab | Content | Purpose |
 | :--- | :--- | :--- |
@@ -22,6 +28,8 @@ The Player Profile communicates identity, mastery, history, and social trust. It
 
 ## Public And Private Views
 
+Privacy defaults should protect sensitive behavior such as match history, online status, and recent teammates. Public identity can still be expressive through banners, titles, badges, and chosen showcase stats.
+
 | Field | Own Profile | Public Profile | Privacy Option |
 | :--- | :--- | :--- | :--- |
 | Display name | Full | Full | No |
@@ -32,6 +40,8 @@ The Player Profile communicates identity, mastery, history, and social trust. It
 | Online status | Full | Configurable | Yes |
 
 ## Career Metrics
+
+Career metrics should teach what the game values. Extraction rate, loot value, operator mastery, and streaks communicate survival and decision quality. K/D can be shown, but it should not dominate the profile.
 
 | Metric | Why It Matters |
 | :--- | :--- |
@@ -44,6 +54,8 @@ The Player Profile communicates identity, mastery, history, and social trust. It
 
 ## Match History Row
 
+Match history is a learning tool. Each row should help the player remember what happened and decide what to do next: change route, adjust loadout, retry a quest, or review a death.
+
 | Field | Example |
 | :--- | :--- |
 | Outcome | Extracted / Killed / Timeout |
@@ -52,6 +64,21 @@ The Player Profile communicates identity, mastery, history, and social trust. It
 | Squad | Solo / Duo / Trio |
 | Loot value | Credits estimate |
 | Key event | Boss kill, quest complete, rare item extracted |
+
+## Profile Examples
+
+A player who extracts often but avoids combat should be able to show survival skill through extraction rate, streaks, loot value, and favorite roles. The profile should not reduce all identity to K/D.
+
+A ranked player should have a clear seasonal badge and history, but privacy options should let them hide match history details if they do not want every route or teammate visible.
+
+A clan recruiter should quickly see activity, preferred modes, operator mastery, and social status without needing access to private match records.
+
+## Profile Failure Cases
+
+- If public stats encourage harassment, default visibility should be reduced.
+- If the profile hides all progress behind tabs, players lose pride moments.
+- If match history has no learning detail, it becomes a trophy list instead of a review tool.
+- If social actions are too aggressive, profile browsing can become spam.
 
 ## Social Actions
 

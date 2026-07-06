@@ -7,7 +7,13 @@ type: docs
 
 User Settings defines how players configure controls, video, audio, gameplay, accessibility, privacy, and diagnostics. This page is the UX and policy hub. The full option list lives in [Settings Matrix](usersettings_matrix.html), and technical tags live in [Settings Tags](usersettings_tags.html).
 
+Settings should feel powerful without feeling hostile. Competitive players need precision, creators need privacy tools, mobile players need battery and touch controls, and accessibility users need support before play begins. The page should group choices by player intent rather than expose every technical variable at the same level.
+
+The settings experience should also protect ranked fairness. When a setting is locked, limited, or platform-specific, the UI should say why in plain language. A disabled control without explanation creates distrust.
+
 ## Design Principles
+
+These principles guide both screen layout and data ownership. A category can contain many options in the matrix, but the player-facing settings screen should prioritize common decisions, safe previews, search, presets, and clear reset behavior.
 
 | Principle | Rule |
 | :--- | :--- |
@@ -19,6 +25,8 @@ User Settings defines how players configure controls, video, audio, gameplay, ac
 | Cloud-friendly | Sync settings when useful, keep device-specific overrides local |
 
 ## Category Summary
+
+Categories should stay stable across platforms even when individual options differ. A mobile player and PC player should both know where "Controls" or "Accessibility" lives, even if the available controls inside that category are platform-specific.
 
 | Category | Owns | Detail |
 | :--- | :--- | :--- |
@@ -33,6 +41,8 @@ User Settings defines how players configure controls, video, audio, gameplay, ac
 
 ## Presets
 
+Presets are starting points, not hidden bundles. Applying a preset should show what changed and allow the player to undo or customize. This is especially important for Accessibility Starter, Battery Saver, and Streamer presets where trust matters.
+
 | Preset | Target Player | Changes |
 | :--- | :--- | :--- |
 | Competitive | Ranked and serious play | Lower visual noise, stronger performance display, minimal motion |
@@ -42,6 +52,8 @@ User Settings defines how players configure controls, video, audio, gameplay, ac
 | Streamer | Content creators | Privacy protection, hide names, reduce notification leakage |
 
 ## Cloud Sync And Conflict Flow
+
+Cloud sync should preserve comfort without breaking device-specific tuning. Sensitivity, keybinds, and HUD layout may need separate platform profiles, while language, subtitle preference, privacy, and accessibility defaults can sync more broadly.
 
 | Step | Condition | Result |
 | :--- | :--- | :--- |
@@ -55,6 +67,8 @@ User Settings defines how players configure controls, video, audio, gameplay, ac
 
 ## Competitive Integrity Locks
 
+Competitive locks should be rare, explainable, and mode-aware. A player should understand whether a lock exists because of fairness, anti-cheat, visibility parity, or platform limitation. Accessibility settings should be reviewed separately before being restricted.
+
 | Setting Type | Ranked Rule |
 | :--- | :--- |
 | Visual clarity assists | Allowed if accessibility-safe and non-exploitative |
@@ -63,6 +77,21 @@ User Settings defines how players configure controls, video, audio, gameplay, ac
 | Debug overlays | Disabled |
 | Input remap | Allowed |
 | Aim assist | Platform and mode tuned |
+
+## Settings Examples
+
+A mobile player on low battery applies Battery Saver. The settings screen should show reduced FPS target, lower VFX intensity, and any gameplay visibility tradeoffs before saving.
+
+A competitive PC player applies Competitive. The preset should reduce visual noise and enable useful diagnostics, but it must not hide effects that other players rely on for fairness.
+
+A streamer applies Streamer mode. The preset should hide names, invite codes, and sensitive notifications while keeping squad and match-critical information available.
+
+## Settings Failure Cases
+
+- If presets silently change too many options, players lose trust.
+- If platform-specific settings sync incorrectly, mobile HUD layout may break PC comfort or vice versa.
+- If ranked locks appear without explanation, players assume bugs or unfairness.
+- If accessibility settings are buried, some players may churn before the first raid.
 
 ## Cross-References
 

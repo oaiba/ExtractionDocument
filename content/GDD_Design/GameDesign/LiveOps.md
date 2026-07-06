@@ -7,7 +7,13 @@ type: docs
 
 Live Ops keeps the game fresh after launch through seasons, events, featured modes, balance updates, battle pass content, faction wars, and community beats.
 
+Live Ops should make the world feel active without making the base game feel incomplete. A returning player should see new reasons to play, but a new player should still understand the core raid loop without studying a calendar. Seasonal content is a layer on top of extraction, not a replacement for it.
+
+The healthiest live schedule alternates intensity. Quiet weeks support routine play and economy stability. Event weeks create spikes of attention. Patch weeks restore trust by showing that balance, readability, and player feedback are being acted on.
+
 ## Cadence
+
+Cadence should be predictable enough for players to plan around and flexible enough for designers to react to live data. The game should not depend on constant novelty to remain fun; live content should refresh goals, routes, rewards, and social conversation.
 
 | Cadence | Content | Purpose |
 | :--- | :--- | :--- |
@@ -17,6 +23,8 @@ Live Ops keeps the game fresh after launch through seasons, events, featured mod
 | Yearly | Major map, feature, or expansion | Reposition and re-engage |
 
 ## Season Flow
+
+Each season needs a readable arc: announcement, launch, mastery, disruption, final push, and recap. Players should know what is new, what is temporary, what they can still complete, and what happens when the season ends.
 
 | Phase | Timing | Purpose |
 | :--- | :--- | :--- |
@@ -28,6 +36,8 @@ Live Ops keeps the game fresh after launch through seasons, events, featured mod
 | Season recap and reset | End of season | Award rewards, summarize progress, prepare next season |
 
 ## Event Types
+
+Events should change player behavior in a targeted way. A boss hunt pulls squads into a hotspot. A faction war changes objective priority. A double XP weekend changes progression pacing. If an event does not create a different decision inside the raid, it is probably just a reward multiplier.
 
 | Event | Duration | Gameplay Impact | Reward Type |
 | :--- | :--- | :--- | :--- |
@@ -49,6 +59,8 @@ Live Ops keeps the game fresh after launch through seasons, events, featured mod
 
 ## Faction Wars
 
+Faction wars are community stories. They should let solo players contribute meaningfully while giving clans a reason to coordinate. The winning faction can change presentation, banners, or world state, but should not grant permanent combat superiority.
+
 | Contribution | Feeds Into | Reward / Outcome |
 | :--- | :--- | :--- |
 | Player chooses event faction | Faction alignment | Determines event identity and reward track |
@@ -59,6 +71,8 @@ Live Ops keeps the game fresh after launch through seasons, events, featured mod
 
 ## Live Ops Guardrails
 
+Guardrails protect trust. Players are more willing to engage with temporary content when they believe the event will not invalidate their work, break ranked fairness, or flood the economy with rewards that make normal raids feel pointless.
+
 | Guardrail | Rule |
 | :--- | :--- |
 | No event-only power | Event rewards cannot create permanent combat advantage |
@@ -66,6 +80,21 @@ Live Ops keeps the game fresh after launch through seasons, events, featured mod
 | Maintain economy health | Event rewards must respect item supply and currency sinks |
 | Protect ranked integrity | Ranked rule changes must be announced and measurable |
 | Keep content readable | Event modifiers must not break mobile clarity |
+
+## Event Design Examples
+
+A Night Ops event should change route reading, audio value, and extraction tension, not simply darken the screen. The event needs stronger silhouettes, clear accessibility fallbacks, and rewards that fit the theme.
+
+A Faction War should give solo players personal progress while letting clans contribute to a larger public result. The result can change banners, recap presentation, and world flavor without granting permanent combat advantages.
+
+A Boss Hunt should create a hotspot with readable danger. Players should know why squads are converging, what the boss rewards are, and how extraction becomes harder after the objective is completed.
+
+## Live Ops Failure Cases
+
+- If weekly goals require unhealthy hours, reduce objective counts or add alternate paths.
+- If event currency floods the economy, add capped sinks or conversion rules.
+- If modifiers confuse new players, restrict them to opt-in modes or improve rule cards.
+- If ranked changes mid-season, communicate timing, reason, and expected impact.
 
 ## Cross-References
 

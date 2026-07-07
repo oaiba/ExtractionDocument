@@ -28,7 +28,15 @@
       if (!optionsEl) {
         throw new Error(`Missing ECharts options for #${container.id}`);
       }
-      return JSON.parse(optionsEl.textContent);
+      const rawOptions = optionsEl.content ? optionsEl.content.textContent : optionsEl.textContent;
+      let option = JSON.parse(rawOptions);
+      if (typeof option === "string") {
+        option = JSON.parse(option);
+      }
+      if (!option || typeof option !== "object" || Array.isArray(option)) {
+        throw new Error(`Invalid ECharts option for #${container.id}`);
+      }
+      return option;
     };
 
     const chartTheme = () => document.documentElement.classList.contains("dark") ? "dark" : null;

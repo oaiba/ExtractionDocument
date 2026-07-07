@@ -21,9 +21,9 @@ Usage:
     role="img"
     aria-label="{{ with $caption }}{{ . }}{{ else }}ECharts visualization{{ end }}"
   ></div>
-  <script id="{{ $id }}-options" type="application/json">
-{{ .InnerDeindent | safeHTML }}
-  </script>
+  <template id="{{ $id }}-options" data-echarts-options-json>
+{{ .InnerDeindent | htmlEscape | safeHTML }}
+  </template>
   {{- with $caption }}
     <figcaption>{{ . | markdownify }}</figcaption>
   {{- end }}

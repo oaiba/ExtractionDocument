@@ -18,7 +18,7 @@ Global UX standards define the reusable interaction rules that every UI screen m
 | Risk is visible | Gear loss, currency spend, ranked impact, privacy, and destructive actions must be explained before commit |
 | One primary action | Each screen has one visually dominant CTA and no competing fake-primary buttons |
 | Recoverable mistakes | Non-destructive changes support undo, cancel, or reset |
-| Platform parity | Information is equivalent across PC, console, and mobile even when layout differs |
+| Platform parity | Information is equivalent across PC, console, and supported landscape mobile/tablet layouts even when layout differs |
 | Pressure-aware UI | In-raid overlays stay readable, dismissible, and audio-transparent |
 
 ---
@@ -52,7 +52,7 @@ Global UX standards define the reusable interaction rules that every UI screen m
 
 | Topic | Standard |
 | :--- | :--- |
-| Back navigation | `ESC`, `B/Circle`, and mobile system back close the top modal, then overlay, then screen |
+| Back navigation | `ESC`, `B/Circle`, and landscape mobile system back close the top modal, then overlay, then screen |
 | Focus order | Controller and keyboard focus moves left-to-right, top-to-bottom unless the layout has a stronger task order |
 | Focus memory | Returning to a screen restores the last selected tab/item when safe |
 | Deep links | Deep links open the target state, not just the parent screen |
@@ -91,25 +91,22 @@ Global UX standards define the reusable interaction rules that every UI screen m
 +-------------------------------------------------------------------+
 ```
 
-#### Layout (Mobile Portrait)
+#### Layout (Mobile Landscape)
 
 ```
-+-----------------------------+
-| Top: profile / currency     |
-|-----------------------------|
-| Screen title        [Action]|
-|-----------------------------|
-| Main content list / cards   |
-|                             |
-| +-------------------------+ |
-| | selected item or state  | |
-| +-------------------------+ |
-|                             |
-| Sticky summary / warning    |
-| [ Primary CTA ]             |
-|-----------------------------|
-| Home Loadout Stash Social   |
-+-----------------------------+
++-----------------------------------------------------------------------+
+| TOP HUD: profile, currency, notifications, connection, search         |
+|-----------------------------------------------------------------------|
+| NAV / ACTIONS | MAIN CONTENT AREA                         | CONTEXT  |
+|               | selected list, grid, map, preview         | PANEL    |
+| Home          |                                           | details  |
+| Loadout       | +------------------+ +------------------+ | risk     |
+| Stash         | | Card / Row       | | Card / Row       | | status   |
+| Social        | +------------------+ +------------------+ | CTA      |
+| Settings      |                                           |          |
+|-----------------------------------------------------------------------|
+| BOTTOM SAFE AREA: hints, back, primary action, warnings, thumb zones   |
++-----------------------------------------------------------------------+
 ```
 
 | Platform | Layout Standard |
@@ -117,9 +114,9 @@ Global UX standards define the reusable interaction rules that every UI screen m
 | PC 16:9 | Dense but scannable; preserve stable navigation rail and avoid oversized marketing layouts |
 | PC ultrawide | Keep primary content in a centered 1920px-safe region; use side space for context panels only |
 | Console | Maintain 5% safe zone, large focus states, and no precision-only interactions |
-| Mobile portrait | Thumb-first vertical flow, persistent bottom action where commitment is likely |
-| Mobile landscape | Prioritize gameplay visibility and avoid covering both thumb zones |
-| Tablet | Use split panels when readable; do not simply scale phone layouts |
+| Mobile landscape only | Prioritize gameplay visibility, preserve both thumb zones, and use side panels for navigation/actions and context |
+| Mobile portrait unsupported | Block interaction, redirect to rotate-device guidance, or show an unsupported-orientation message |
+| Tablet landscape only | Prefer split panels when readable; portrait is unsupported and must not receive a separate layout standard |
 
 ### Minimum Targets
 
@@ -127,9 +124,9 @@ Global UX standards define the reusable interaction rules that every UI screen m
 | :--- | :--- |
 | Touch target | 44x44 px absolute minimum; 60x60 px preferred for combat-relevant actions |
 | Controller focus target | 64 px height for primary list rows |
-| Body text | 16 px desktop/console, 18 px mobile where space allows |
+| Body text | 16 px desktop/console, 18 px supported landscape mobile/tablet where space allows |
 | Critical numbers | Use tabular or monospace digits where values update rapidly |
-| Safe margins | 16 px PC, 5% console overscan, platform safe area on mobile |
+| Safe margins | 16 px PC, 5% console overscan, platform safe area on supported landscape mobile/tablet |
 
 ---
 
@@ -235,6 +232,7 @@ Modal copy must be specific. Use "Discard AK-74M? This removes it from your stas
 ## Acceptance Checklist
 
 - [ ] Back behavior is defined for keyboard, controller, and mobile.
+- [ ] Portrait orientation is blocked, redirected to rotate-device guidance, or shows an unsupported-orientation message.
 - [ ] Primary CTA is obvious and has disabled/error behavior.
 - [ ] Every destructive action has a confirmation standard.
 - [ ] Empty, locked, offline, loading, and error states are specified.

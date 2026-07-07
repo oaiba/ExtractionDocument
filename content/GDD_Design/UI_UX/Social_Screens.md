@@ -18,6 +18,17 @@ Primary references:
 | Privacy/settings | [User Settings](../GameDesign/UserSettings.md) |
 | Social technical system | [Social System](../../GDD_Technical/Systems/SocialSystem.md) |
 
+## Quick Navigation
+
+| Destination | Use |
+| :--- | :--- |
+| [UI/UX Index](_index.md) | Full UI/UX documentation hub |
+| [Screen Groups Overview](Screen_Groups_Overview.md) | Lifecycle taxonomy and designer-ready spec template |
+| [Global UX Standards](Global_UX_Standards.md) | Shared navigation, focus, state, modal, and accessibility rules |
+| [Pre-Raid Screens](Pre_Raid_Screens.md) | Squad lobby, readiness, matchmaking, and party blockers |
+| [Post-Raid Screens](Post_Raid_Screens.md) | Squad summary, commend, report, and add-friend routes |
+| [Commerce, Settings & System Screens](Commerce_Settings_System_Screens.md) | Privacy, streamer mode, account, and safety settings |
+
 ---
 
 ## Screen Inventory

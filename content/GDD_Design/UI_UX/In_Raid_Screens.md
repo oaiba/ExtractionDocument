@@ -19,6 +19,17 @@ Primary references:
 | Extraction | [Extraction Mechanics](../Gameplay/Extraction_Mechanics.md) |
 | Downstate | [Downstate & Revive System](../Gameplay/Downstate_Revive.md) |
 
+## Quick Navigation
+
+| Destination | Use |
+| :--- | :--- |
+| [UI/UX Index](_index.md) | Full UI/UX documentation hub |
+| [Screen Groups Overview](Screen_Groups_Overview.md) | Lifecycle taxonomy and designer-ready spec template |
+| [Global UX Standards](Global_UX_Standards.md) | Shared navigation, focus, state, modal, and accessibility rules |
+| [HUD Design](HUD_Design.md) | HUD element placement, visibility, and performance rules |
+| [Notification Systems](Notification_Systems.md) | Combat feedback, toasts, danger communication |
+| [Post-Raid Screens](Post_Raid_Screens.md) | AAR, replay, loot transfer, redeploy after raid |
+
 ---
 
 ## Screen Inventory

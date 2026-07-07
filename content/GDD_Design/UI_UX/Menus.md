@@ -12,6 +12,17 @@ For the canonical screen inventory, start with [Screen Groups Overview](Screen_G
 
 The lifecycle screen group pages now contain designer-ready detail specs: expanded ASCII wireframes, layout anatomy, visual hierarchy, component requirements, state behavior, platform input, designer notes, and acceptance checklists. Use this page only to resolve old links.
 
+## Quick Navigation
+
+| Destination | Use |
+| :--- | :--- |
+| [UI/UX Index](_index.md) | Full UI/UX documentation hub |
+| [Screen Groups Overview](Screen_Groups_Overview.md) | Canonical taxonomy and migration target |
+| [Global UX Standards](Global_UX_Standards.md) | Shared navigation, focus, state, modal, and accessibility rules |
+| [Out-of-Raid Screens](Out_Of_Raid_Screens.md) | Main menu, home, loadout, stash, traders |
+| [Pre-Raid Screens](Pre_Raid_Screens.md) | Map, squad, deploy, queue |
+| [In-Raid Screens](In_Raid_Screens.md) | Pause, looting, inventory overlay, reconnect |
+
 ---
 
 ## New Screen Group Pages

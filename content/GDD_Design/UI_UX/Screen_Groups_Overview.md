@@ -8,6 +8,17 @@ weight: 1
 
 This page is the canonical screen inventory for the UI/UX design package. It groups screens by player lifecycle instead of widget type so designers, game designers, and engineers can reason about complete player journeys.
 
+## Quick Navigation
+
+| Destination | Use |
+| :--- | :--- |
+| [UI/UX Index](_index.md) | Full UI/UX documentation hub |
+| [Global UX Standards](Global_UX_Standards.md) | Shared navigation, focus, state, modal, and accessibility rules |
+| [Out-of-Raid Screens](Out_Of_Raid_Screens.md) | Home, loadout, stash, traders, safe house, quests, profile |
+| [Pre-Raid Screens](Pre_Raid_Screens.md) | Mode, map, deploy confirmation, squad lobby, matchmaking |
+| [In-Raid Screens](In_Raid_Screens.md) | HUD, tactical map, looting, inventory overlay, pause, spectator |
+| [Post-Raid Screens](Post_Raid_Screens.md) | AAR, death replay, loot transfer, quest progress, redeploy |
+
 Every screen group must answer four questions:
 
 | Question | Requirement |

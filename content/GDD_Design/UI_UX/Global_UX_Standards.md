@@ -8,6 +8,16 @@ weight: 2
 
 Global UX standards define the reusable interaction rules that every UI screen must follow. Screen-specific documents can override these rules only when they explain why the exception improves raid speed, clarity, accessibility, or platform fit.
 
+## Quick Navigation
+
+| Destination | Use |
+| :--- | :--- |
+| [UI/UX Index](_index.md) | Full UI/UX documentation hub |
+| [Screen Groups Overview](Screen_Groups_Overview.md) | Lifecycle taxonomy and designer-ready spec template |
+| [Visual Style](Visual_Style.md) | Visual, typography, iconography, and mockup rules |
+| [UX Flows](UX_Flows.md) | Journey-level navigation and handoff mapping |
+| [Menus & Screens Legacy](Menus.md) | Compatibility mapping for old screen links |
+
 ---
 
 ## Interaction Principles

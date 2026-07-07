@@ -68,27 +68,27 @@ The player wants to understand what changed since the last session, confirm whet
 ### Expanded ASCII Wireframe
 
 ```
-+--------------------------------------------------------------------------------+
-| GLOBAL HEADER                                                                  |
-| Lv.12  Salvage Rep 3     EXTRACTION PROTOCOL       Credits 425K  Inbox 2  [N] |
-|--------------------------------------------------------------------------------|
-| NAV RAIL    | PRIMARY HERO / OPERATOR SHOWCASE                 | DEPLOY PANEL  |
-| > Home      | +----------------------------------------------+ | Mode: Solo    |
++---------------------------------------------------------------------------------+
+| GLOBAL HEADER                                                                   |
+| Lv.12  Salvage Rep 3     EXTRACTION PROTOCOL       Credits 425K  Inbox 2  [N]   |
+|---------------------------------------------------------------------------------|
+| NAV RAIL    | PRIMARY HERO / OPERATOR SHOWCASE               -  | DEPLOY PANEL  |
+| > Home      | +-----------------------------------------------+ | Mode: Solo    |
 |   Loadout   | | 3D OPERATOR MODEL / SAFE HOUSE BACKDROP       | | Map: Sector 7 |
 |   Stash     | | - current armor and weapon visible            | | Time: Day     |
 |   Traders   | | - rotate / inspect affordance                 | | Squad: 1/4    |
 |   SafeHouse | | - injury, insurance, and cosmetic badges      | | Queue: 45s    |
-|   Quests    | +----------------------------------------------+ |--------------|
-|   Profile   | LAST RAID SNAPSHOT                               | Gear 125K     |
-|   Settings  | EXTRACTED  +1,700 XP  Loot 7 items  Rep +0.05    | Weight 24/40  |
-|             | [View AAR] [Move Loot] [Redeploy Route]          | Insured 4/6   |
-|-------------+--------------------------------------------------|--------------|
-| CONTEXT CARDS                                                               |
-| [Loadout OK] [Stash 92% Full] [Insurance Return 22h] [Daily 1/3] [Event 2d] |
-|--------------------------------------------------------------------------------|
-| ACTION / STATUS BAR                                                           |
+|   Quests    | +-----------------------------------------------+ |---------------|
+|   Profile   | LAST RAID SNAPSHOT                              | Gear 125K       |
+|   Settings  | EXTRACTED  +1,700 XP  Loot 7 items  Rep +0.05   | Weight 24/40    | 
+|             | [View AAR] [Move Loot] [Redeploy Route]         | Insured 4/6     |
+|-------------+-------------------------------------------------|-----------------|
+| CONTEXT CARDS                                                                   |
+| [Loadout OK] [Stash 92% Full] [Insurance Return 22h] [Daily 1/3] [Event 2d]     |
+|---------------------------------------------------------------------------------|
+| ACTION / STATUS BAR                                                             |
 | Friends 3 online | Party open | Battle Pass 12/50        [CONTINUE PREP/DEPLOY] |
-+--------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------+
 ```
 
 ### Layout Anatomy
@@ -182,24 +182,24 @@ The player wants to choose an operator based on role, ability identity, readines
 ### Expanded ASCII Wireframe
 
 ```
-+--------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------+
 | < Back                         OPERATOR SELECT                         [Select] |
-|--------------------------------------------------------------------------------|
-| FILTERS / ROSTER        | OPERATOR PREVIEW                    | ROLE / ABILITY |
+|---------------------------------------------------------------------------------|
+| FILTERS / ROSTER        | OPERATOR PREVIEW                     | ROLE / ABILITY |
 | Search [__________]     | +----------------------------------+ | Assault        |
 | Role: All v             | | 3D OPERATOR MODEL                | | Breach Charge  |
 | Owned: Owned v          | | - selected skin                  | | Cooldown Ready |
 | Sort: Recommended v     | | - weapon pose                    | | Range 8m       |
 |-------------------------| | - injury/cooldown badge          | | Noise High     |
-| [REC] Mamba       READY | +----------------------------------+ |--------------|
-| Ignition          READY | COSMETIC STRIP                      | Strengths      |
-| Sonar             READY | [Default] [Urban] [Prestige] [Lock] | Room clear     |
-| Suture            HURT  |                                    | Weakness       |
-| Bastion           LOCK  | SQUAD FIT                           | Long cooldown  |
-|-------------------------| Current squad: Assault / Recon / -- |--------------|
+| [REC] Mamba       READY | +----------------------------------+ |----------------|
+| Ignition          READY | COSMETIC STRIP                       | Strengths      |
+| Sonar             READY | [Default] [Urban] [Prestige] [Lock]  | Room clear     |
+| Suture            HURT  |                                      | Weakness       |
+| Bastion           LOCK  | SQUAD FIT                            | Long cooldown  |
+|-------------------------| Current squad: Assault / Recon / --  |----------------|
 | ACTION BAR              | Recommendation: Support would help   | Unlock 8/12    |
-| [Compare] [Favorite] [Preview Skin]                         [SELECT OPERATOR] |
-+--------------------------------------------------------------------------------+
+| [Compare] [Favorite] [Preview Skin]                         [SELECT OPERATOR]   |
++---------------------------------------------------------------------------------+
 ```
 
 ### Layout Anatomy
@@ -292,23 +292,23 @@ The player wants to build a valid raid kit, understand risk, resolve blockers, a
 
 ```
 +--------------------------------------------------------------------------------+
-| < Back                      LOADOUT WORKBENCH                         Presets v |
+| < Back                      LOADOUT WORKBENCH                         Presets v|
 |--------------------------------------------------------------------------------|
-| OPERATOR / GEAR      | STASH + COMPATIBLE ITEMS               | MISSION / RISK  |
-| +------------------+ | Search [_________] Filter v Sort v     | Mode: Solo      |
-| | Operator Model   | | Category: Weapons Ammo Meds Keys       | Map: Sector 7   |
-| +------------------+ |----------------------------------------| Squad: 1/4      |
-| Primary  [AK-74M]   | GRID 12 x N                             | Quests: 2       |
-| Sidearm  [Empty]    | +--+--+--+--+--+--+--+--+--+--+--+--+  |----------------|
-| Armor    [Lv3 85%]  | |Rifle    |Med|Ammo|Ammo|Key|  |  |  | | Gear 125K      |
-| Helmet   [Empty]    | |         |   |    |    |   |  |  |  | | Weight 24/40kg |
-| Rig      [12 slots] | +--+--+--+--+--+--+--+--+--+--+--+--+  | Insured 4/6     |
-| Pack     [24 slots] | Selected: 5.45 BP x60                   | Ammo: OK        |
-| Secure   [4 slots]  | Compare: +Pen -Cost  Fits: AK-74M       | Warning: 1      |
-|---------------------+----------------------------------------+----------------|
-| WARNING LANE: [!] Sidearm empty optional | [!] 2 items uninsured [Insure All]      |
+| OPERATOR / GEAR      | STASH + COMPATIBLE ITEMS               | MISSION / RISK |
+| +------------------+ | Search [_________] Filter v Sort v     | Mode: Solo     |
+| | Operator Model   | | Category: Weapons Ammo Meds Keys       | Map: Sector 7  |
+| +------------------+ |----------------------------------------| Squad: 1/4     |
+| Primary  [AK-74M]   | GRID 12 x N                             | Quests: 2      |
+| Sidearm  [Empty]    | +--+--+--+--+--+--+--+--+---+--+--+--+  |----------------|
+| Armor    [Lv3 85%]  | |Rifle    |Med|Ammo|Ammo|Key|  |  |  |  | Gear 125K      |
+| Helmet   [Empty]    | |         |   |    |    |   |  |  |  |  | Weight 24/40kg |
+| Rig      [12 slots] | +--+--+--+--+--+--+--+--+---+--+--+--+  | Insured 4/6    |
+| Pack     [24 slots] | Selected: 5.45 BP x60                   | Ammo: OK       |
+| Secure   [4 slots]  | Compare: +Pen -Cost  Fits: AK-74M       | Warning: 1     |
+|---------------------+-----------------------------------------+----------------|
+| WARNING LANE: [!] Sidearm empty optional | [!] 2 items uninsured [Insure All]  |
 |--------------------------------------------------------------------------------|
-| ACTION BAR: Value 125K | Weight 24/40kg | Capacity 31/40 | [FIX] [READY TO MAP] |
+| ACTION BAR: Value 125K | Weight 24/40kg | Capacity 31/40 | [FIX] [READY TO MAP]|
 +--------------------------------------------------------------------------------+
 ```
 
@@ -401,21 +401,21 @@ The player wants to store, sort, search, move, sell, and inspect items quickly w
 
 ```
 +--------------------------------------------------------------------------------+
-| < Back                              STASH                    Search [_________] |
+| < Back                              STASH                    Search [_________]|
 |--------------------------------------------------------------------------------|
 | FILTER RAIL       | GRID 12 x N                                      | INFO    |
-| All               | +--+--+--+--+--+--+--+--+--+--+--+--+           | AK-74M  |
-| Weapons           | |Rifle    |Med|Ammo|Ammo|Key |Junk|  |  |       | Rifle   |
-| Armor             | |         |   |x60 |x30 |FIR |    |  |  |       | 85% Dur |
-| Ammo              | +--+--+--+--+--+--+--+--+--+--+--+--+           | 45,000  |
+| All               | +--+--+--+--+--+--+--+--+----+----+--+--+        | AK-74M  |
+| Weapons           | |Rifle    |Med|Ammo|Ammo|Key |Junk|  |  |        | Rifle   |
+| Armor             | |         |   |x60 |x30 |FIR |    |  |  |        | 85% Dur |
+| Ammo              | +--+--+--+--+--+--+--+--+--+--+--+--+            | 45,000  |
 | Meds              | |Armor |Helmet|       Empty Cells                | 4x2     |
-| Quest             | +--+--+--+--+--+--+--+--+--+--+--+--+           | FIR: No |
+| Quest             | +--+--+--+--+--+--+--+--+--+--+--+--+            | FIR: No |
 | Junk              | Capacity 145 / 200  Value 2.45M  Locked 12       | Locked  |
 |-------------------+--------------------------------------------------|---------|
 | QUICK TOOLS: [Auto Sort] [Sell Junk] [Find Quest Items] [Upgrade Stash]        |
-| WARNING LANE: [!] Stash 92% full. Sell junk, use containers, or upgrade.        |
+| WARNING LANE: [!] Stash 92% full. Sell junk, use containers, or upgrade.       |
 |--------------------------------------------------------------------------------|
-| ACTION BAR: Selected 1 item | [Move to Loadout] [Sell] [Inspect] [Discard]      |
+| ACTION BAR: Selected 1 item | [Move to Loadout] [Sell] [Inspect] [Discard]     |
 +--------------------------------------------------------------------------------+
 ```
 
@@ -507,24 +507,24 @@ The player wants to buy, sell, barter, and turn in items while understanding pri
 ### Expanded ASCII Wireframe
 
 ```
-+--------------------------------------------------------------------------------+
-| < Back                              TRADERS             Wallet 425K  Rep 3     |
-|--------------------------------------------------------------------------------|
-| TRADER LIST        | OFFERS / INVENTORY                         | YOUR OFFER    |
-| > Viktor Koval     | Mode Tabs: [Buy] [Sell] [Barter] [Turn-in] | Wallet 425K   |
-|   Dr. Sera         | Search [________] Filter: Ammo v Sort Price | Stash 145/200 |
-|   Scrap Union      |--------------------------------------------|--------------|
-|--------------------| AK-74M Rifle        45,000   In stock 3    | Selected: 2   |
-| TRADER PROFILE     | 5.45 BP x60            800   Rep Lv3       | AK-74M        |
-| Rep Level 3        | Medkit               2,500   In stock 12   | Medkit        |
-| Next: 12,000 spend | [LOCKED Lv4] Armor   85,000   Need Rep 4  |--------------|
-| Quote: Fair trades |--------------------------------------------| Total 47,500  |
-| Daily reset 03:14  | DETAILS: selected offer stats, limits,     | Stash after   |
-|                    | compatibility, required barter items       | 147/200       |
-|--------------------------------------------------------------------------------|
-| WARNING LANE: [!] Purchase would exceed stash capacity by 2 cells.              |
-| ACTION BAR: [Inspect] [Compare] [Clear]                         [PURCHASE]     |
-+--------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------+
+| < Back                              TRADERS             Wallet 425K  Rep 3       |
+|----------------------------------------------------------------------------------|
+| TRADER LIST        | OFFERS / INVENTORY                         | YOUR OFFER     |
+| > Viktor Koval     | Mode Tabs: [Buy] [Sell] [Barter] [Turn-in] | Wallet 425K    |
+|   Dr. Sera         | Search [________] Filter: Ammo v Sort Price| Stash 145/200  |
+|   Scrap Union      |--------------------------------------------|----------------|
+|--------------------| AK-74M Rifle        45,000   In stock 3    | Selected: 2    |
+| TRADER PROFILE     | 5.45 BP x60            800   Rep Lv3       | AK-74M         |
+| Rep Level 3        | Medkit               2,500   In stock 12   | Medkit         |
+| Next: 12,000 spend | [LOCKED Lv4] Armor   85,000   Need Rep 4   |----------------|
+| Quote: Fair trades |--------------------------------------------| Total 47,500   |
+| Daily reset 03:14  | DETAILS: selected offer stats, limits,     | Stash after    |
+|                    | compatibility, required barter items       | 147/200        |
+|----------------------------------------------------------------------------------|
+| WARNING LANE: [!] Purchase would exceed stash capacity by 2 cells.               |
+| ACTION BAR: [Inspect] [Compare] [Clear]                         [PURCHASE]       |
++----------------------------------------------------------------------------------+
 ```
 
 ### Layout Anatomy
@@ -616,24 +616,24 @@ The player wants to understand base progression, upgrade benefits, crafting/repa
 
 ```
 +--------------------------------------------------------------------------------+
-| < Back                              SAFE HOUSE                    Timers 3      |
+| < Back                              SAFE HOUSE                    Timers 3     |
 |--------------------------------------------------------------------------------|
 | MODULE MAP / ROOMS                                      | MODULE DETAIL        |
 | +----------+     +----------+     +----------+          | Stash Room Lv2       |
 | | Lounge   |-----| Stash    |-----| Workbench|          | Status: Upgradeable  |
-| | Passive  |     | Lv2 *    |     | Crafting |          |---------------------|
+| | Passive  |     | Lv2 *    |     | Crafting |          |----------------------|
 | +----------+     +----------+     +----------+          | Benefit Next Lv3:    |
 |      |                 |                |               | +50 stash slots      |
 | +----------+     +----------+     +----------+          | Unlock: Item Case    |
-| | Radio    |-----| Med Bay  |-----| Generator|          |---------------------|
-| | Locked   |     | Craft 12m|     | Fuel 65% |          | Cost: 50K credits   |
+| | Radio    |-----| Med Bay  |-----| Generator|          |----------------------|
+| | Locked   |     | Craft 12m|     | Fuel 65% |          | Cost: 50K credits    |
 | +----------+     +----------+     +----------+          | 10 Metal Parts 7/10  |
 |---------------------------------------------------------| 2 Wires 2/2          |
 | QUEUE / INBOX                                           | Prereq: Generator OK |
-| Med Craft 12m | Ammo Craft Ready | Insurance Return 22h |---------------------|
-| WARNING LANE: [!] Missing 3 Metal Parts. [Track Materials]                   |
+| Med Craft 12m | Ammo Craft Ready | Insurance Return 22h |----------------------|
+| WARNING LANE: [!] Missing 3 Metal Parts. [Track Materials]                     |
 |--------------------------------------------------------------------------------|
-| ACTION BAR: [View Benefits] [Track Materials] [Confirm Spend]       [UPGRADE] |
+| ACTION BAR: [View Benefits] [Track Materials] [Confirm Spend]       [UPGRADE]  |
 +--------------------------------------------------------------------------------+
 ```
 
@@ -724,24 +724,24 @@ The player wants to choose useful objectives, understand where to go, know what 
 ### Expanded ASCII Wireframe
 
 ```
-+--------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------+
 | < Back                              QUEST BOARD                   Faction v     |
-|--------------------------------------------------------------------------------|
+|---------------------------------------------------------------------------------|
 | QUEST LIST              | QUEST DETAIL                            | REWARDS     |
 | Filters: Active v       | Supply Run                              | XP 500      |
 | Search [________]       | Faction: Salvage  Status: Tracked       | Rep +0.05   |
 |-------------------------|-----------------------------------------| 12,000 Cr   |
 | [TRACKED] Supply Run    | OBJECTIVES                              | Medkit x1   |
 | [READY]   Lab Rat       | [x] Find rations 3/3                    |-------------|
-| [NEW]     Signal Lost   | [ ] Extract from Sector 7              | TURN-IN     |
-| [LOCKED]  Black Box     | [ ] Deliver to Salvage trader          | Required:   |
+| [NEW]     Signal Lost   | [ ] Extract from Sector 7               | TURN-IN     |
+| [LOCKED]  Black Box     | [ ] Deliver to Salvage trader           | Required:   |
 | [FAILED]  Old Debt      |-----------------------------------------| Rations FIR |
 |-------------------------| LOCATION / RISK                         | Owned: 3/3  |
 | QUEST CHAIN             | Sector 7 / Warehouse / Requires extract | [TURN IN]   |
 | 1 Supply Run > 2 Lab    | Failure loses carried quest item        |             |
-|--------------------------------------------------------------------------------|
-| ACTION BAR: [Track] [Show on Map] [Find Item in Stash] [Abandon]               |
-+--------------------------------------------------------------------------------+
+|---------------------------------------------------------------------------------|
+| ACTION BAR: [Track] [Show on Map] [Find Item in Stash] [Abandon]                |
++---------------------------------------------------------------------------------+
 ```
 
 ### Layout Anatomy
@@ -832,23 +832,23 @@ The player wants to review identity, stats, achievements, cosmetics, titles, and
 
 ```
 +--------------------------------------------------------------------------------+
-| < Back                            PLAYER PROFILE                  Privacy v     |
+| < Back                            PLAYER PROFILE                  Privacy v    |
 |--------------------------------------------------------------------------------|
-| IDENTITY CARD           | CAREER STATS                         | COSMETICS      |
-| +--------------------+  | Season: Current v                    | Title v        |
-| | Banner / Avatar    |  | Extractions: 42%                    | Frame v        |
-| | Name: Kai          |  | Raids: 128                          | Badge v        |
-| | Level: 12          |  | PMC Kills: 84                       | Emote v        |
-| | Karma: Honorable   |  | Survival Time: 31m avg              | Operator Skin  |
-| | Platform: PC       |  | Favorite Operator: Sonar            |----------------|
-| +--------------------+  | Rank: Silver II                      | SELECTED ITEM  |
-| Privacy: Friends       |---------------------------------------| Urban Frame    |
-| Streamer: Off          | ACHIEVEMENTS / HISTORY / SAFETY      | Owned          |
-|------------------------| [Achievements] [Match History]       | [EQUIP FRAME]  |
-| COMMENDATIONS          | [Commendations] [Report Safety]      |                |
-| Helpful 24  Leader 12  | Recent: Extracted / Sector 7 / 18m   |                |
+| IDENTITY CARD           | CAREER STATS                         | COSMETICS     |
+| +--------------------+  | Season: Current v                    | Title v       |
+| | Banner / Avatar    |  | Extractions: 42%                     | Frame v       |
+| | Name: Kai          |  | Raids: 128                           | Badge v       |
+| | Level: 12          |  | PMC Kills: 84                        | Emote v       |
+| | Karma: Honorable   |  | Survival Time: 31m avg               | Operator Skin |
+| | Platform: PC       |  | Favorite Operator: Sonar             |---------------|
+| +--------------------+  | Rank: Silver II                      | SELECTED ITEM |
+| Privacy: Friends       |---------------------------------------| Urban Frame   |
+| Streamer: Off          | ACHIEVEMENTS / HISTORY / SAFETY       | Owned         |
+|------------------------| [Achievements] [Match History]        | [EQUIP FRAME] |
+| COMMENDATIONS          | [Commendations] [Report Safety]       |               |
+| Helpful 24  Leader 12  | Recent: Extracted / Sector 7 / 18m    |               |
 |--------------------------------------------------------------------------------|
-| ACTION BAR: [Edit Banner] [Equip Title] [Privacy Settings] [Copy Invite Code]   |
+| ACTION BAR: [Edit Banner] [Equip Title] [Privacy Settings] [Copy Invite Code]  |
 +--------------------------------------------------------------------------------+
 ```
 

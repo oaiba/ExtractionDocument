@@ -66,12 +66,12 @@ This game uses primarily **non-diegetic HUD** for clarity in top-down perspectiv
 ## HUD Layout — PC / Console (Landscape)
 
 ```
-+------------------------------------------------------------------+
++--------------------------------------------------------------------+
 |                                                                    |
-|  [HP: 85/100]  [ARMOR: 42]        EXTRACT: 22:15      [MINIMAP] |
-|  [STAMINA: ---|||||||||-- ]                              N        |
-|  [Bleed] [Fracture]                                   W   E      |
-|                                                          S        |
+|  [HP: 85/100]  [ARMOR: 42]        EXTRACT: 22:15      [MINIMAP]    |
+|  [STAMINA: ---|||||||||-- ]                              N         |
+|  [Bleed] [Fracture]                                   W     E      |
+|                                                          S         |
 |                                                                    |
 |                                                                    |
 |                                                                    |
@@ -81,13 +81,13 @@ This game uses primarily **non-diegetic HUD** for clarity in top-down perspectiv
 |                                                                    |
 |                          [Hold F: Loot Body]                       |
 |                                                                    |
-|  [PRIMARY]                                         [SQUAD]        |
-|  AK-74M                                           P1: 85HP [OK]  |
-|  [30 / 120] 7.62x39                               P2: 42HP [!]  |
-|  [FIRE MODE: Auto]                                P3: DEAD  [X]  |
-|  [GRENADE x2]                                                     |
+|  [PRIMARY]                                         [SQUAD]         |
+|  AK-74M                                           P1: 85HP [OK]    |
+|  [30 / 120] 7.62x39                               P2: 42HP [!]     |
+|  [FIRE MODE: Auto]                                P3: DEAD  [X]    |
+|  [GRENADE x2]                                                      |
 |                                                                    |
-+------------------------------------------------------------------+
++----------------------------------------------------------------==--+
 ```
 
 <!-- REF_IMAGE: HUD layout annotated diagram — showing element positions with callout labels and safe zone boundaries for PC/Console -->
@@ -339,7 +339,7 @@ Read lethal state, navigation, objective, and interaction information without br
 +--------------------------------------------------------------------------------+
 | Squad / Health                  Compass / Objective                    Timer   |
 |                                                                                |
-|                         clear combat and operator read area                     |
+|                         clear combat and operator read area                    |
 |                                                                                |
 | Prompt / Status Effects                         Ammo / Ability / Weight / Map  |
 +--------------------------------------------------------------------------------+

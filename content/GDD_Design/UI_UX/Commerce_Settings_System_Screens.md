@@ -393,11 +393,11 @@ Start the application, understand long waits, and know whether online play is av
 
 ```
 +--------------------------------------------------------------------------------+
-|                                EXTRACTION PROTOCOL                              |
+|                                EXTRACTION PROTOCOL                             |
 |--------------------------------------------------------------------------------|
-| Progress: 45%  Preparing shaders and profile                                    |
-| Version 1.0.4 | Status OK | Region service online                               |
-| [Offline Options]                                              [Continue]       |
+| Progress: 45%  Preparing shaders and profile                                   |
+| Version 1.0.4 | Status OK | Region service online                              |
+| [Offline Options]                                              [Continue]      |
 +--------------------------------------------------------------------------------+
 ```
 
@@ -461,12 +461,12 @@ Enter the correct account, resolve sync/linking conflicts, and understand requir
 
 ```
 +--------------------------------------------------------------------------------+
-| ACCOUNT SIGN IN / LINK                                                          |
+| ACCOUNT SIGN IN / LINK                                                         |
 |--------------------------------------------------------------------------------|
-| Sign in to sync stash, progress, purchases, and settings.                       |
-| [Sign in with Platform] [Link Existing Account] [Continue Offline]              |
-| Conflict area: account names, timestamps, progression summary, consequence      |
-| Legal: [Terms] [Privacy] Required consent [Accept]                              |
+| Sign in to sync stash, progress, purchases, and settings.                      |
+| [Sign in with Platform] [Link Existing Account] [Continue Offline]             |
+| Conflict area: account names, timestamps, progression summary, consequence     |
+| Legal: [Terms] [Privacy] Required consent [Accept]                             |
 +--------------------------------------------------------------------------------+
 ```
 
@@ -534,9 +534,9 @@ Choose language, accessibility, controls, privacy, and tutorial path before ente
 | FIRST-TIME SETUP                                      Step 2/5                 |
 |--------------------------------------------------------------------------------|
 | Language | Accessibility Preset | Controls | Privacy | Tutorial                |
-| Selected: Larger Text + Subtitles + Hold Alternatives                           |
-| Recommendation: Start Tutorial before first raid                                |
-| [Back] [Preview Settings] [Continue]                                            |
+| Selected: Larger Text + Subtitles + Hold Alternatives                          |
+| Recommendation: Start Tutorial before first raid                               |
+| [Back] [Preview Settings] [Continue]                                           |
 +--------------------------------------------------------------------------------+
 ```
 
@@ -602,10 +602,10 @@ Browse cosmetic offers, preview items, understand price/currency, avoid accident
 +--------------------------------------------------------------------------------+
 | SHOP / WALLET                               Balance 1,200 Coins  [History]     |
 |--------------------------------------------------------------------------------|
-| Offers: Featured | Skins | Bundles | Owned                                      |
+| Offers: Featured | Skins | Bundles | Owned                                     |
 | [Cosmetic Skin] Price 800 | Owned/Unavailable/Discount labels                  |
-| Detail: preview, contents, no gameplay power, refund/platform note              |
-| [Preview] [Purchase]                                                            |
+| Detail: preview, contents, no gameplay power, refund/platform note             |
+| [Preview] [Purchase]                                                           |
 +--------------------------------------------------------------------------------+
 ```
 
@@ -673,9 +673,9 @@ Find a setting, understand its effect, apply/revert safely, and know when platfo
 | SETTINGS                                      Search [________] Unsaved *      |
 |--------------------------------------------------------------------------------|
 | Categories: Controls | Graphics | Audio | Gameplay | Accessibility | Account   |
-| Setting row: Aim Sensitivity 42 [slider]     Help: affects camera aim speed     |
-| Lock/warning lane: Ranked queue locks input preset                              |
-| [Reset] [Revert] [Apply]                                                        |
+| Setting row: Aim Sensitivity 42 [slider]     Help: affects camera aim speed    |
+| Lock/warning lane: Ranked queue locks input preset                             |
+| [Reset] [Revert] [Apply]                                                       |
 +--------------------------------------------------------------------------------+
 ```
 
@@ -740,11 +740,11 @@ Manage identity, cross-play, streamer mode, data/privacy, account links, and saf
 
 ```
 +--------------------------------------------------------------------------------+
-| ACCOUNT / PRIVACY / SAFETY                                                      |
+| ACCOUNT / PRIVACY / SAFETY                                                     |
 |--------------------------------------------------------------------------------|
 | Profile visibility: Friends v | Streamer Mode: Off | Crossplay: On             |
-| Linked accounts: Platform OK | Unlink [Danger]                                  |
-| Data: Export | Delete Request | Support ID                                      |
+| Linked accounts: Platform OK | Unlink [Danger]                                 |
+| Data: Export | Delete Request | Support ID                                     |
 +--------------------------------------------------------------------------------+
 ```
 
@@ -808,11 +808,11 @@ See performance/network status, copy support information, submit logs, and under
 
 ```
 +--------------------------------------------------------------------------------+
-| DIAGNOSTICS / SUPPORT                                                           |
+| DIAGNOSTICS / SUPPORT                                                          |
 |--------------------------------------------------------------------------------|
 | FPS 58 | Ping 62ms | Packet Loss 1% | Region Best Ping | Support ID ABC123     |
 | Logs: Available | Screenshot: Attached | Network Test [Run]                    |
-| [Copy Support ID] [Submit Report] [Open Known Issues]                           |
+| [Copy Support ID] [Submit Report] [Open Known Issues]                          |
 +--------------------------------------------------------------------------------+
 ```
 
@@ -876,11 +876,11 @@ Recover from errors, maintenance, version mismatch, network issues, save conflic
 
 ```
 +--------------------------------------------------------------------------------+
-| SYSTEM DIALOG: VERSION MISMATCH                                                 |
+| SYSTEM DIALOG: VERSION MISMATCH                                                |
 |--------------------------------------------------------------------------------|
-| Current: 1.0.3 | Required: 1.0.4                                                |
-| Update is required to play online. Offline settings remain available.           |
-| [Exit] [Offline Settings] [Update]                                              |
+| Current: 1.0.3 | Required: 1.0.4                                               |
+| Update is required to play online. Offline settings remain available.          |
+| [Exit] [Offline Settings] [Update]                                             |
 +--------------------------------------------------------------------------------+
 ```
 

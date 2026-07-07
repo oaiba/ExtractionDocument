@@ -344,8 +344,8 @@ Open a compact social command center for friends, party, recent players, notific
 | Tabs: Friends | Party | Recent | Clan | LFG                                    |
 | Friends Online 3 | Invites 2 | Voice OK | Privacy: Friends                     |
 |--------------------------------------------------------------------------------|
-| Rows: avatar, name, status, platform, compatibility, quick action               |
-| Detail: selected player/profile/party state                                     |
+| Rows: avatar, name, status, platform, compatibility, quick action              |
+| Detail: selected player/profile/party state                                    |
 +--------------------------------------------------------------------------------+
 ```
 
@@ -483,7 +483,7 @@ Manage party membership, readiness, voice, leader controls, and matchmaking bloc
 | You READY Voice OK | Player2 NOT READY Missing meds | Empty Slot [Invite]      |
 | Mission: Sector 7 / Squad / Night | Fill Off | Crossplay On                    |
 |--------------------------------------------------------------------------------|
-| [Ready] [Change Mission] [Voice Settings] [Leave Party]                         |
+| [Ready] [Change Mission] [Voice Settings] [Leave Party]                        |
 +--------------------------------------------------------------------------------+
 ```
 
@@ -547,11 +547,11 @@ Send, receive, accept, decline, or recover invites with clear context and privac
 
 ```
 +--------------------------------------------------------------------------------+
-| INVITE RECEIVED                                                                 |
-| Kai invites you to Squad / Sector 7 / Night                                     |
-| Compatibility: OK | Voice: Squad | Expires 00:25                                |
+| INVITE RECEIVED                                                                |
+| Kai invites you to Squad / Sector 7 / Night                                    |
+| Compatibility: OK | Voice: Squad | Expires 00:25                               |
 |--------------------------------------------------------------------------------|
-| [Decline] [View Party] [Accept]                                                 |
+| [Decline] [View Party] [Accept]                                                |
 +--------------------------------------------------------------------------------+
 ```
 
@@ -612,13 +612,13 @@ Find or post a group with matching mode, map, region, voice, role, and experienc
 #### Expanded ASCII Wireframe
 
 ```
-+--------------------------------------------------------------------------------+
-| LFG BOARD                                      [Create Post] Filter: Sector 7  |
-|--------------------------------------------------------------------------------|
++---------------------------------------------------------------------------------+
+| LFG BOARD                                      [Create Post] Filter: Sector 7   |
+|---------------------------------------------------------------------------------|
 | Host      Mode/Map        Need        Voice      Requirements       [Join]      |
 | Kai       Squad Sector 7  Support     Required   Lv10+ Chill        [Request]   |
 | Mira      Ranked          Recon       Optional   Silver+            [Locked]    |
-+--------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------+
 ```
 
 #### Layout Anatomy
@@ -747,8 +747,8 @@ Communicate with party/squad safely, identify voice device state, and mute/repor
 +--------------------------------------------------------------------------------+
 | CHAT / VOICE                      Channel: Party v  Voice: ON Device: Headset  |
 |--------------------------------------------------------------------------------|
-| Messages with sender, time, moderation state                                    |
-| [Type message________________________] [Send] [Mute] [Settings]                 |
+| Messages with sender, time, moderation state                                   |
+| [Type message________________________] [Send] [Mute] [Settings]                |
 +--------------------------------------------------------------------------------+
 ```
 
@@ -811,11 +811,11 @@ Take a safety action with enough context, clear consequence, and no exposure of 
 
 ```
 +--------------------------------------------------------------------------------+
-| REPORT / BLOCK PLAYER                                                           |
+| REPORT / BLOCK PLAYER                                                          |
 |--------------------------------------------------------------------------------|
-| Player: Kai | Context: Last Match / Chat / Voice                                |
+| Player: Kai | Context: Last Match / Chat / Voice                               |
 | Reasons: Harassment | Cheating | Exploit | Griefing | Other                    |
-| Evidence: [x] Attach clip/log | Notes [____________________]                    |
+| Evidence: [x] Attach clip/log | Notes [____________________]                   |
 |--------------------------------------------------------------------------------|
 | [Cancel] [Block Player]                                      [Submit Report]   |
 +--------------------------------------------------------------------------------+

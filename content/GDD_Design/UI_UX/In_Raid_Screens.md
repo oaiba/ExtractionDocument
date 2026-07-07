@@ -309,15 +309,15 @@ Read survival-critical information while moving, fighting, looting, and extracti
 #### Expanded ASCII Wireframe
 
 ```
-+--------------------------------------------------------------------------------+
-| Squad / Health                         Compass                         Timer   |
-|                                                                                |
-|                                                                                |
-|                         GAMEPLAY SPACE / TOP-DOWN RAID                         |
-|                                                                                |
-| Prompt: Hold F Search                                      Minimap / Extracts  |
++---------------------------------------------------------------------------------+
+| Squad / Health                         Compass                         Timer    |
+|                                                                                 |
+|                                                                                 |
+|                         GAMEPLAY SPACE / TOP-DOWN RAID                          |
+|                                                                                 |
+| Prompt: Hold F Search                                      Minimap / Extracts   |
 | Status effects                                  Ammo / Weapon / Weight / Ability|
-+--------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------+
 ```
 
 #### Layout Anatomy
@@ -384,7 +384,7 @@ Orient, plan route, inspect extracts, view squad pings, and check quest landmark
 +--------------------------------------------------------------------------------+
 | TACTICAL MAP                                             [Pins] [Close]        |
 |--------------------------------------------------------------------------------|
-| MAP CANVAS: fog, landmarks, extracts, pings, quest zones                        |
+| MAP CANVAS: fog, landmarks, extracts, pings, quest zones                       |
 |                                                                                |
 |                                                                                |
 |--------------------------------------------------------------------------------|
@@ -458,11 +458,11 @@ Search, compare, and transfer loot fast while understanding noise, exposure, wei
 +--------------------------------------------------------------------------------+
 | LOOTING: Weapon Crate                                 Exposure: HIGH [Close]   |
 |--------------------------------------------------------------------------------|
-| CONTAINER ITEMS                  | PLAYER QUICK INVENTORY                       |
-| [Rifle 4x2] [Ammo x60] [Key FIR] | Rig slots | Backpack grid | Secure slot      |
+| CONTAINER ITEMS                  | PLAYER QUICK INVENTORY                      |
+| [Rifle 4x2] [Ammo x60] [Key FIR] | Rig slots | Backpack grid | Secure slot     |
 |--------------------------------------------------------------------------------|
-| SELECTED: Keycard | Value 45K | Quest: Lab Rat | Weight +0.1kg                  |
-| [Take] [Quick Move] [Inspect] [Leave]                                           |
+| SELECTED: Keycard | Value 45K | Quest: Lab Rat | Weight +0.1kg                 |
+| [Take] [Quick Move] [Inspect] [Leave]                                          |
 +--------------------------------------------------------------------------------+
 ```
 
@@ -527,15 +527,15 @@ Rearrange gear mid-raid under pressure without mistaking safe stash behavior for
 #### Expanded ASCII Wireframe
 
 ```
-+--------------------------------------------------------------------------------+
-| INVENTORY OVERLAY                              Raid continues | [Close]        |
-|--------------------------------------------------------------------------------|
++---------------------------------------------------------------------------------+
+| INVENTORY OVERLAY                              Raid continues | [Close]         |
+|---------------------------------------------------------------------------------|
 | EQUIPPED GEAR             | BACKPACK / RIG GRID                 | ITEM DETAIL   |
 | Weapon / Armor / Rig      | item footprints and valid targets   | Stats, value  |
 | Weight 33/40kg            |                                     | Drop warning  |
-|--------------------------------------------------------------------------------|
-| [Use] [Move] [Split] [Drop] [Discard Confirm]                                  |
-+--------------------------------------------------------------------------------+
+|---------------------------------------------------------------------------------|
+| [Use] [Move] [Split] [Drop] [Discard Confirm]                                   |
++---------------------------------------------------------------------------------+
 ```
 
 #### Layout Anatomy
@@ -600,13 +600,13 @@ Access settings, squad/social, abandon, report, or reconnect options while under
 
 ```
 +--------------------------------------------------------------------------------+
-| PAUSE OVERLAY                                      Online raid continues        |
+| PAUSE OVERLAY                                      Online raid continues       |
 |--------------------------------------------------------------------------------|
 | [Resume] [Settings] [Controls] [Report] [Support]                              |
 |                                                                                |
-| Danger notice: audio remains live; character remains vulnerable                 |
+| Danger notice: audio remains live; character remains vulnerable                |
 |--------------------------------------------------------------------------------|
-| [Abandon Raid]                                                     [Resume]     |
+| [Abandon Raid]                                                     [Resume]    |
 +--------------------------------------------------------------------------------+
 ```
 
@@ -673,7 +673,7 @@ Watch eligible teammates, understand remaining squad state, and avoid unfair gho
 +--------------------------------------------------------------------------------+
 | SPECTATING: Player2                              Squad 2 alive | [Report]      |
 |--------------------------------------------------------------------------------|
-| gameplay view from allowed teammate perspective                                 |
+| gameplay view from allowed teammate perspective                                |
 |--------------------------------------------------------------------------------|
 | [Prev] [Next] Camera: Follow / Free Ally Only | Extract Timer 12:30 | [Leave]  |
 +--------------------------------------------------------------------------------+
@@ -740,13 +740,13 @@ Understand reconnection progress, attempts, timeout, and the consequence of canc
 
 ```
 +--------------------------------------------------------------------------------+
-| RECONNECTING TO RAID                                                            |
+| RECONNECTING TO RAID                                                           |
 |--------------------------------------------------------------------------------|
 | Last raid: Sector 7 / Night       Attempt 2/5        Timeout 00:38             |
-| [==================--------------] Re-establishing session and player state     |
-| Warning: cancel may mark the raid MIA and gear may be lost.                     |
+| [==================--------------] Re-establishing session and player state    |
+| Warning: cancel may mark the raid MIA and gear may be lost.                    |
 |--------------------------------------------------------------------------------|
-| [Cancel]                                                        [Retry Now]     |
+| [Cancel]                                                        [Retry Now]    |
 +--------------------------------------------------------------------------------+
 ```
 

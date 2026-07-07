@@ -90,10 +90,10 @@ graph TD
 |                                                            |
 | +----------------+ +----------------+ +----------------+   |
 | | [LOADOUT]      | | [TRADERS]      | | [HIDEOUT]      |   |
-| |  Customize    | |  Buy/Sell    | |  Upgrades  |   |
+| |  Customize     | |  Buy/Sell      | |  Upgrades      |   |
 | +----------------+ +----------------+ +----------------+   |
 |                                                            |
-| [Battle Pass Tier 12/50]      [Friends Online: 3]  []    |
+| [Battle Pass Tier 12/50]      [Friends Online: 3]  []      |
 +------------------------------------------------------------+
 ```
 
@@ -113,21 +113,20 @@ graph TD
 #### **Desktop (Mouse + Keyboard)**
 
 ```
-+------------------------------------------------------------+
-| < BACK          STASH (12x40 Grid)          [Sort ▼] [] |
-| -------------------------------------------------------- |
-| [GRID VIEW - DRAG & DROP]                                | [EQUIPPED LOADOUT]         |
-| [][][  ][][  ][  ]                                    | +------------------------+ |
-| [  ][Rifle    ][  ][  ]                                  |                            | PRIMARY: AK-74M   |                       |
-| [  ][         ][][  ]                                   |                            | DMG: 45  RPM: 650 |                       |
-| [  ][  ][Vest      ][  ]                                 | +------------------------+ |
-| [  ][  ][         ][  ]                                  | [HELMET]  [ARMOR Lv3]      |
-|                                                          | [RIG 12sl] [BACKPACK 24L]  |
-| FILTERS:                                                 | [SECURE 4sl] (Protected)   |
-| [ Weapons                                                | Meds                       | Ammo ]            | Weight: 24.5kg / 40kg |
-|                                                          | Speed: -15%                |
-| [SELL ALL JUNK] [AUTO SORT]                              |                            |
-+------------------------------------------------------------+
++--------------------------------------------------------------------+
+| < BACK        STASH (12x40 Grid)                   [Sort] []       |
+| ------------------------------------------------------------------ |
+| [GRID VIEW - DRAG & DROP]               | [EQUIPPED LOADOUT]       |
+| +-----------------------------------+   | +----------------------+ |
+| | [] [] [Rifle    ] [] []           |   | | PRIMARY: AK-74M      | |
+| | [] [] [         ] [] []           |   | | DMG 45  RPM 650      | |
+| | [] [Vest      ] [] [] []          |   | +----------------------+ |
+| | [] [          ] [] [] []          |   | [HELMET] [ARMOR Lv3]     |
+| | [] [] [] [] [] [] []              |   | [RIG 12] [PACK 24L]      |
+| +-----------------------------------+   | [SECURE 4] Protected     |
+| FILTERS: [Weapons] [Meds] [Ammo]        | Weight: 24.5 / 40kg      |
+| [SELL ALL JUNK] [AUTO SORT]             | Speed: -15%              |
++--------------------------------------------------------------------+
 ```
 
 <!-- REF_IMAGE: Inventory Management mockup — showing PC drag-and-drop grid view, Console cursor mode, and Mobile list view -->
@@ -135,40 +134,39 @@ graph TD
 #### **Console (Controller)**
 
 ```
-+------------------------------------------------------------+
-| STASH                         [LB/RB Tabs] [Y=Sort]       |
-| --------------------------------------------------------- |
-| GRID CURSOR MODE               [EQUIPPED LOADOUT]         |
-| +--[Selected Item]--+          +------------------------+ |
-|                                                           | AK-74M Rifle        |                            | PRIMARY: [Empty Slot] |  |
-|                                                           | Durability: 85%     | +------------------------+ |
-|                                                           | Value: ₽45,000      | [HELMET]  [ARMOR]          |
-| +-------------------+          [RIG]      [BACKPACK]      |
-|                                                           |
-| [A] Equip  [X] Drop  [B] Back  [Y] Quick-Sell             |
-|                                                           |
-| Navigation: D-Pad (Grid)                                  | Left Stick (Scroll) |
-+------------------------------------------------------------+
++--------------------------------------------------------------------+
+| STASH                         [LB/RB Tabs]            [Y=Sort]     |
+| ------------------------------------------------------------------ |
+| GRID CURSOR MODE                        | [EQUIPPED LOADOUT]       |
+| +--[Selected Item]----------------+     | +----------------------+ |
+| | AK-74M Rifle                    |     | | PRIMARY: Empty      |  |
+| | Durability: 85%                 |     | | HELMET  ARMOR       |  |
+| | Value: RUB 45,000               |     | | RIG     BACKPACK    |  |
+| +---------------------------------+     | +----------------------+ |
+|                                                                    |
+| [A] Equip     [X] Drop     [B] Back     [Y] Quick-Sell             |
+| Navigation: D-Pad grid                 Left Stick scroll           |
++--------------------------------------------------------------------+
 ```
 
 #### **Mobile (Touch)**
 
 ```
-+---------------------------+
-| STASH      [Sort][Filter] |
-| ------------------------- |
-| [SWIPE SCROLL LIST VIEW]  |
-| +---------------------+   |
-|                           |  AK-74M   [Equip] |  |
-|                           |  Medkit   [Use]   |  |
-|                           |  Battery  [Drop]  |  |
-| +---------------------+   |
-|                           |
-| [EQUIPPED]  [Weight Bar]  |
-| [Rifle][Helmet][Armor]    |
-|                           |
-| [TAP TO EQUIP]            |
-+---------------------------+
++------------------------------------+
+| STASH             [Sort] [Filter]  |
+| ---------------------------------- |
+| [SWIPE SCROLL LIST VIEW]           |
+| +------------------------------+   |
+| | AK-74M                Equip |    |
+| | Medkit                  Use |    |
+| | Battery                Drop |    |
+| +------------------------------+   |
+|                                    |
+| [EQUIPPED]      [Weight Bar]       |
+| [Rifle] [Helmet] [Armor]           |
+|                                    |
+| [TAP TO EQUIP]                     |
++------------------------------------+
 ```
 
 **Platform Interactions:**
@@ -186,18 +184,18 @@ graph TD
 
 ```
 +------------------------------------------------------------+
-| [HEALTH]  [STAMINA]          EXTRACT: 15:32    [MINIMAP]  |
-| [ 100] [ 85%]                               [ NE ]  |
+| [HEALTH]  [STAMINA]          EXTRACT: 15:32    [MINIMAP]   |
+| [ 100] [ 85%]                               [ NE ]         |
 |                                                            |
 |                                                            |
 |                    [GAMEPLAY AREA]                         |
 |               (Minimal HUD Interference)                   |
 |                                                            |
 |                                                            |
-| [PRIMARY ]                               [SQUAD]         |
-| [AK-74 | 30/120]                           [ Player1 ] |
-| [GRENADE x2]                               [ Player2 ] |
-|                                            [ Player3 ] |
+| [PRIMARY ]                                         [SQUAD] |
+| [AK-74 | 30/120]                               [ Player1 ] |
+| [GRENADE x2]                                   [ Player2 ] |
+|                                                [ Player3 ] |
 +------------------------------------------------------------+
 
 PROXIMITY INDICATORS (Dynamic):
@@ -210,14 +208,14 @@ PROXIMITY INDICATORS (Dynamic):
 
 ```
 +---------------------------+
-| 100 85% [⏱15:32][] |
+| 100 85% [⏱15:32][]        |
 |                           |
 |                           |
 |   [GAMEPLAY]              |
 |                           |
 |                           |
 |                           |
-| [] [FIRE] [RELOAD][JUMP]|
+| [] [FIRE] [RELOAD][JUMP]  |
 | [JOYSTICK] AK 30/120      |
 +---------------------------+
 
@@ -237,17 +235,17 @@ ADAPTIVE CHANGES:
 
 ```
 +------------------------------------------------------------+
-| (75% BLURRED GAME BACKGROUND - DANGER VISIBLE)    [X]     |
+| (75% BLURRED GAME BACKGROUND - DANGER VISIBLE)    [X]      |
 |                                                            |
 | CONTAINER: Dead PMC              YOUR BACKPACK             |
 | +----------------------+      +------------------------+   |
-| |  M4A1      [TAKE]  |  >>  |  AK-74               |   |
-| |  IFAK      [TAKE]  |      |  Medkit              |   |
-| |  Key308    [TAKE]  |      | [____Empty Slot____]   |   |
-| |  ₽15,000   [TAKE]  |      | [____Empty Slot____]   |   |
+| |  M4A1      [TAKE]    |  >>  |  AK-74                 |   |
+| |  IFAK      [TAKE]    |      |  Medkit                |   |
+| |  Key308    [TAKE]    |      | [____Empty Slot____]   |   |
+| |  $15,000   [TAKE]    |      | [____Empty Slot____]   |   |
 | +----------------------+      +------------------------+   |
 |                                                            |
-| [TAKE ALL] (Hold F - 2 sec)    Weight: 32kg / 40kg        |
+| [TAKE ALL] (Hold F - 2 sec)    Weight: 32kg / 40kg         |
 |                                Movement: -25% Speed        |
 +------------------------------------------------------------+
 ```
@@ -259,12 +257,12 @@ ADAPTIVE CHANGES:
 | LOOTING CONTAINER                                 [B] CLOSE|
 |                                                            |
 | D-PAD TO SELECT:                                           |
-| >  M4A1 Rifle                            [A] Take        |
-|    IFAK Medkit                           [A] Take        |
-|    Marked Room Key                       [A] Take        |
-|    Rubles (₽15,000)                      [A] Take        |
+| >  M4A1 Rifle                            [A] Take          |
+|    IFAK Medkit                           [A] Take          |
+|    Marked Room Key                       [A] Take          |
+|    Rubles (₽15,000)                      [A] Take          |
 |                                                            |
-| [Y] LOOT ALL (Hold 2 sec)         Backpack: 32/40 kg      |
+| [Y] LOOT ALL (Hold 2 sec)         Backpack: 32/40 kg       |
 +------------------------------------------------------------+
 ```
 
@@ -473,4 +471,3 @@ Use this page to understand journey order and transition intent. Use the linked 
 - [ ] Any flow that risks gear, currency, account access, privacy, or player safety includes confirmation/consequence copy.
 - [ ] Mobile flow variants preserve primary CTA reachability and do not rely on desktop hover.
 - [ ] Flow diagrams do not contradict screen-level CTAs or disabled-state rules.
-

@@ -353,9 +353,9 @@ Receive the right signal at the right urgency without losing combat readability.
 +--------------------------------------------------------------------------------+
 | Kill feed / squad alerts                                      Raid warnings    |
 |                                                                                |
-|                          combat read area, mostly clear                         |
+|                          combat read area, mostly clear                        |
 |                                                                                |
-| Toast queue / item pickup                         Damage / ammo / status alerts |
+| Toast queue / item pickup                        Damage / ammo / status alerts |
 +--------------------------------------------------------------------------------+
 ```
 

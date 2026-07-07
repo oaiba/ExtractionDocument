@@ -393,8 +393,8 @@ Color roles -> Component states -> Screen composition -> QA checks
 
 ```
 +----------------------+  +----------------------+  +----------------------+
-| Desktop 1920 x 1080  |  | Console TV 1920x1080 |  | Ultrawide 2560x1080 |
-| full density         |  | 5% safe zone         |  | centered content    |
+| Desktop 1920 x 1080  |  | Console TV 1920x1080 |  | Ultrawide 2560x1080  |
+| full density         |  | 5% safe zone         |  | centered content     |
 +----------------------+  +----------------------+  +----------------------+
           |                         |                         |
           v                         v                         v

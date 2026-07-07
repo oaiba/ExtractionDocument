@@ -313,11 +313,11 @@ Check seasonal progress, understand free/premium rewards, claim earned items, an
 +--------------------------------------------------------------------------------+
 | BATTLE PASS Season 1                         Level 12/50 XP 340/1000 [Upgrade] |
 |--------------------------------------------------------------------------------|
-| REWARD TRACK: 10  11  >12<  13  14  15                                          |
-| Free:    [Claimed] [Ammo] [Title] [Locked] [Credits]                            |
-| Premium: [Skin]    [Boost] [Frame] [Locked] [Case]                              |
+| REWARD TRACK: 10  11  >12<  13  14  15                                         |
+| Free:    [Claimed] [Ammo] [Title] [Locked] [Credits]                           |
+| Premium: [Skin]    [Boost] [Frame] [Locked] [Case]                             |
 |--------------------------------------------------------------------------------|
-| SELECTED REWARD: Title | Free | Earned | [Claim] | Source: Daily/raid XP        |
+| SELECTED REWARD: Title | Free | Earned | [Claim] | Source: Daily/raid XP       |
 +--------------------------------------------------------------------------------+
 ```
 
@@ -385,8 +385,8 @@ Understand active event rules, objectives, rewards, expiry, and the exact playab
 +--------------------------------------------------------------------------------+
 | EVENT HUB: Blackout Week                              Ends in 2d 14h [Play]    |
 |--------------------------------------------------------------------------------|
-| HERO / EVENT ART | Rules: Night raids, limited visibility, bonus tech loot      |
-| Objectives: 2/5  | Rewards: Skin, credits, event token                          |
+| HERO / EVENT ART | Rules: Night raids, limited visibility, bonus tech loot     |
+| Objectives: 2/5  | Rewards: Skin, credits, event token                         |
 | Map: Sector 7    | Warnings: insurance normal, extracts modified               |
 +--------------------------------------------------------------------------------+
 ```
@@ -519,10 +519,10 @@ Claim pending rewards safely while understanding expiry, source, capacity, and d
 +--------------------------------------------------------------------------------+
 | REWARD INBOX                                      Stash 190/200 [Claim All]    |
 |--------------------------------------------------------------------------------|
-| Source          Reward            Expires       State                           |
-| Battle Pass     Frame             Never         Claim                           |
-| Insurance       AK-74M            22h           Stash needs 4x2                 |
-| Event           Token x5          2d            Claim                           |
+| Source          Reward            Expires       State                          |
+| Battle Pass     Frame             Never         Claim                          |
+| Insurance       AK-74M            22h           Stash needs 4x2                |
+| Event           Token x5          2d            Claim                          |
 +--------------------------------------------------------------------------------+
 ```
 
@@ -585,10 +585,10 @@ Understand rank, progress, rules, restrictions, rewards, and consequences before
 
 ```
 +--------------------------------------------------------------------------------+
-| RANKED OVERVIEW                         Silver II  340/500 RP [Queue Ranked]  |
+| RANKED OVERVIEW                         Silver II  340/500 RP [Queue Ranked]   |
 |--------------------------------------------------------------------------------|
-| Rank card | Placement/Promotion | Rules: squad restrictions, loss, MMR          |
-| Requirements: Lv15, verified account, no penalty cooldown                       |
+| Rank card | Placement/Promotion | Rules: squad restrictions, loss, MMR         |
+| Requirements: Lv15, verified account, no penalty cooldown                      |
 +--------------------------------------------------------------------------------+
 ```
 
@@ -650,11 +650,11 @@ Compare rank safely by season, region, friends, and platform while respecting pr
 #### Expanded ASCII Wireframe
 
 ```
-+--------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------+
 | LEADERBOARDS                         Season v Region v Friends v              |
-|--------------------------------------------------------------------------------|
-| Rank | Player | Tier | Extract Rate | Raids | Privacy-safe profile action       |
-+--------------------------------------------------------------------------------+
+|-------------------------------------------------------------------------------|
+| Rank | Player | Tier | Extract Rate | Raids | Privacy-safe profile action     |
++-------------------------------------------------------------------------------+
 ```
 
 #### Layout Anatomy
@@ -718,8 +718,8 @@ See the one most important update, learn what changed, dismiss noncritical news,
 | NEWS / PATCH NOTES                                                [Dismiss]    |
 |--------------------------------------------------------------------------------|
 | FEATURED: Blackout Week is live                  [Play Event] [Read Details]   |
-| Patch 1.0.4: extraction timer tuning, stash sorting fixes, subtitles option     |
-| [Known Issues] [Open Event Hub]                                                 |
+| Patch 1.0.4: extraction timer tuning, stash sorting fixes, subtitles option    |
+| [Known Issues] [Open Event Hub]                                                |
 +--------------------------------------------------------------------------------+
 ```
 

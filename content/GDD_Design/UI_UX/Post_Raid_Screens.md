@@ -310,9 +310,9 @@ Understand raid result, rewards, losses, performance, and the next best action.
 | OUTCOME CARD        | XP / STATS                         | NEXT ACTIONS        |
 | Extracted           | XP +1,700 | Kills 4 | Loot 7       | [Move Loot]         |
 | Sector 7 / 31m      | Survival 31m | Damage 620          | [Turn In Quest]     |
-| Insurance safe      | Quest progress: Supply Run +3/3   | [Deploy Again]      |
+| Insurance safe      | Quest progress: Supply Run +3/3   | [Deploy Again]       |
 |--------------------------------------------------------------------------------|
-| Tabs: Summary | Loot | XP | Stats | Replay | Squad                              |
+| Tabs: Summary | Loot | XP | Stats | Replay | Squad                             |
 +--------------------------------------------------------------------------------+
 ```
 
@@ -380,10 +380,10 @@ Understand how they died, learn the counterplay, and optionally report suspiciou
 +--------------------------------------------------------------------------------+
 | DEATH REPLAY                                  [Report] [Skip]                  |
 |--------------------------------------------------------------------------------|
-| Replay viewport: final 12s from player-legal perspective                        |
-| Timeline: -12s ---- impact ---- death                                           |
+| Replay viewport: final 12s from player-legal perspective                       |
+| Timeline: -12s ---- impact ---- death                                          |
 |--------------------------------------------------------------------------------|
-| KILL CARD: Attacker, weapon, distance, hit location, visible rules              |
+| KILL CARD: Attacker, weapon, distance, hit location, visible rules             |
 | [Watch Again] [View Damage] [Report Suspicious] [Continue]                     |
 +--------------------------------------------------------------------------------+
 ```
@@ -450,8 +450,8 @@ Move extracted loot into stash, resolve overflow, and understand what is safe, q
 +--------------------------------------------------------------------------------+
 | LOOT TRANSFER                              Stash 182/200            [Continue] |
 |--------------------------------------------------------------------------------|
-| EXTRACTED LOOT                      | STASH GRID / TARGET                       |
-| [Rifle 4x2] [Key FIR] [Meds]        | valid cells, containers, overflow lane    |
+| EXTRACTED LOOT                      | STASH GRID / TARGET                      |
+| [Rifle 4x2] [Key FIR] [Meds]        | valid cells, containers, overflow lane   |
 |--------------------------------------------------------------------------------|
 | SELECTED: Keycard | Quest: Lab Rat | Value 45K | FIR Yes                       |
 | WARNING: Stash will be full after transfer. [Sell Junk] [Open Stash]           |
@@ -520,13 +520,13 @@ See which objectives advanced, completed, failed, or need turn-in before the nex
 
 ```
 +--------------------------------------------------------------------------------+
-| QUEST PROGRESS                                                                  |
+| QUEST PROGRESS                                                                 |
 |--------------------------------------------------------------------------------|
 | Supply Run      READY TO TURN IN     Find rations 3/3 | Extracted Yes          |
 | Lab Rat         IN PROGRESS          Samples 1/3      | Location Sector 7      |
-| Old Debt        FAILED               Died before extract                         |
+| Old Debt        FAILED               Died before extract                       |
 |--------------------------------------------------------------------------------|
-| [Turn In Ready] [Track Next] [View Quest Board]                                 |
+| [Turn In Ready] [Track Next] [View Quest Board]                                |
 +--------------------------------------------------------------------------------+
 ```
 
@@ -589,14 +589,14 @@ Review squad outcomes, commend/report players, add friends, and continue with th
 
 ```
 +--------------------------------------------------------------------------------+
-| SQUAD SUMMARY                                                                   |
+| SQUAD SUMMARY                                                                  |
 |--------------------------------------------------------------------------------|
-| Player        Result      Role       Damage     Actions                         |
-| You           Extracted   Recon      620        --                              |
-| Player2       KIA         Support    210        [Commend] [Add Friend]          |
-| Player3       Extracted   Assault    840        [Commend] [Report]              |
+| Player        Result      Role       Damage     Actions                        |
+| You           Extracted   Recon      620        --                             |
+| Player2       KIA         Support    210        [Commend] [Add Friend]         |
+| Player3       Extracted   Assault    840        [Commend] [Report]             |
 |--------------------------------------------------------------------------------|
-| [Stay With Squad] [Leave Party] [Invite Again]                                  |
+| [Stay With Squad] [Leave Party] [Invite Again]                                 |
 +--------------------------------------------------------------------------------+
 ```
 
@@ -658,12 +658,12 @@ Return to the next raid quickly if valid, or understand exactly what must be fix
 
 ```
 +--------------------------------------------------------------------------------+
-| REDEPLOY CHECK                                                                  |
+| REDEPLOY CHECK                                                                 |
 |--------------------------------------------------------------------------------|
-| Same kit: INVALID | Missing armor | Stash has replacement | Squad 2/3 ready     |
-| Suggested route: Rebuild preset -> Fix Loadout -> Squad Ready -> Queue          |
+| Same kit: INVALID | Missing armor | Stash has replacement | Squad 2/3 ready    |
+| Suggested route: Rebuild preset -> Fix Loadout -> Squad Ready -> Queue         |
 |--------------------------------------------------------------------------------|
-| [Return to Stash] [Rebuild Preset] [Fix Loadout] [Deploy Again Locked]          |
+| [Return to Stash] [Rebuild Preset] [Fix Loadout] [Deploy Again Locked]         |
 +--------------------------------------------------------------------------------+
 ```
 

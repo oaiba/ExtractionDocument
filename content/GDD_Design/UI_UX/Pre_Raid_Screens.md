@@ -241,7 +241,7 @@ Deploy confirmation is the final trust checkpoint. It should be quick for valid 
 | Estimated wait: 45s       Search range: Normal                   |
 | Tip: Heavy bags make heavy noise.                                |
 |------------------------------------------------------------------|
-| [Cancel Queue]                         Status: can cancel         |
+| [Cancel Queue]                         Status: can cancel        |
 +------------------------------------------------------------------+
 ```
 
@@ -321,9 +321,9 @@ Choose the ruleset that matches desired risk, squad size, reward, and time commi
 
 ```
 +--------------------------------------------------------------------------------+
-| < Back                              MODE SELECT                  Rules [i]      |
+| < Back                              MODE SELECT                  Rules [i]     |
 |--------------------------------------------------------------------------------|
-| MODE CARDS                                                                      |
+| MODE CARDS                                                                     |
 | +----------------+ +----------------+ +----------------+ +----------------+    |
 | | SOLO           | | DUO            | | SQUAD          | | RANKED         |    |
 | | 1 player       | | 2 players      | | 3-4 players    | | Lv15 required  |    |
@@ -332,7 +332,7 @@ Choose the ruleset that matches desired risk, squad size, reward, and time commi
 | +----------------+ +----------------+ +----------------+ +----------------+    |
 |--------------------------------------------------------------------------------|
 | DETAIL: Solo | Risk Low | PvP Medium | Insurance Allowed | Queue 45s           |
-| Rules: no revive, no shared quest progress, normal extraction rules             |
+| Rules: no revive, no shared quest progress, normal extraction rules            |
 |--------------------------------------------------------------------------------|
 | [Compare Rewards] [View Rules]                                      [SELECT]   |
 +--------------------------------------------------------------------------------+
@@ -401,16 +401,16 @@ Pick a destination while understanding difficulty, extracts, player density, que
 
 ```
 +--------------------------------------------------------------------------------+
-| < Back                               MAP SELECT                       [Ready]   |
+| < Back                               MAP SELECT                       [Ready]  |
 |--------------------------------------------------------------------------------|
 | MAP LIST            | MAP PREVIEW / INTEL                       | DETAILS      |
 | > Sector 7          | +---------------------------------------+ | Difficulty H |
-|   District 14       | | map art, extracts, landmarks          | | Players 8-12|
+|   District 14       | | map art, extracts, landmarks          | | Players 8-12 |
 |   Firebase Delta    | | selected quest zone highlights        | | Boss: 1      |
 |   The Mire LOCKED   | | danger zones and extracts             | | Time: Night v|
 |---------------------| +---------------------------------------+ | Extracts 3   |
-| Region Best Ping    | Extracts: Crossroads, Boat, Elevator     | Quests: 2     |
-| Quest Relevant Only | Queue estimate: 45s                      | [SELECT MAP]  |
+| Region Best Ping    | Extracts: Crossroads, Boat, Elevator      | Quests: 2    |
+| Quest Relevant Only | Queue estimate: 45s                       | [SELECT MAP] |
 +--------------------------------------------------------------------------------+
 ```
 
@@ -475,14 +475,14 @@ Make one final informed commitment after seeing mode, map, squad, loadout blocke
 
 ```
 +--------------------------------------------------------------------------------+
-|                                DEPLOY CONFIRMATION                              |
+|                                DEPLOY CONFIRMATION                             |
 |--------------------------------------------------------------------------------|
 | MISSION: Solo / Sector 7 / Night            Queue estimate: 45s                |
 | SQUAD: You READY                            Fill: Off                          |
 |--------------------------------------------------------------------------------|
 | Gear value 125,000 | Weight 24/40kg | Ammo OK | Insurance 4/6 insured          |
-| Quests: Supply Run, Lab Rat                                                     |
-| WARNING: [!] 2 eligible items uninsured. [Insure All] [Review Items]            |
+| Quests: Supply Run, Lab Rat                                                    |
+| WARNING: [!] 2 eligible items uninsured. [Insure All] [Review Items]           |
 |--------------------------------------------------------------------------------|
 | [Back to Loadout]                    [Insure All]             [HOLD TO DEPLOY] |
 +--------------------------------------------------------------------------------+
@@ -561,7 +561,7 @@ Coordinate readiness, identify teammate blockers, manage invites, and let the le
 | | Voice OK       | | Voice muted    | |                | |                |    |
 | +----------------+ +----------------+ +----------------+ +----------------+    |
 | Mission: Sector 7 / Night / Squad        Chat [______________________] [Send]  |
-| WARNING: Deploy locked because Player2 has a blocker.                           |
+| WARNING: Deploy locked because Player2 has a blocker.                          |
 |--------------------------------------------------------------------------------|
 | [Change Map] [Change Loadout] [Voice Settings]              [DEPLOY LOCKED]    |
 +--------------------------------------------------------------------------------+
@@ -630,17 +630,17 @@ Understand queue progress, cancel rules, match found countdown, and reconnect/de
 
 ```
 +--------------------------------------------------------------------------------+
-|                                MATCHMAKING                                      |
+|                                MATCHMAKING                                     |
 |--------------------------------------------------------------------------------|
-| Searching Sector 7 / Solo / Night                                               |
+| Searching Sector 7 / Solo / Night                                              |
 | [====================        ] 45s elapsed     Estimate 70s                    |
-| Server region: Best Ping  Squad: 1/1  Loadout locked                            |
-| Status: Finding compatible raid                                                 |
+| Server region: Best Ping  Squad: 1/1  Loadout locked                           |
+| Status: Finding compatible raid                                                |
 |--------------------------------------------------------------------------------|
-| MATCH FOUND: Accept within 15s                                                  |
-| You: Accepted | Player2: Waiting | Player3: Declined                            |
+| MATCH FOUND: Accept within 15s                                                 |
+| You: Accepted | Player2: Waiting | Player3: Declined                           |
 |--------------------------------------------------------------------------------|
-| [Cancel Queue]                                             [ACCEPT / DEPLOYING] |
+| [Cancel Queue]                                            [ACCEPT / DEPLOYING] |
 +--------------------------------------------------------------------------------+
 ```
 

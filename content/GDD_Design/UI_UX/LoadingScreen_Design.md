@@ -150,7 +150,7 @@ flowchart TB
 ```
 +------------------------------------------------------------------+
 |                                                                  |
-|              [PUBLISHER / DEV STUDIO LOGO]                        |
+|              [PUBLISHER / DEV STUDIO LOGO]                       |
 |                                                                  |
 |                    Press any key to skip                         |
 |                                                                  |
@@ -188,13 +188,13 @@ flowchart TB
 +------------------------------------------------------------------+
 |  [MAP ART - FULL BLEED BACKGROUND]                               |
 |                                                                  |
-|  SECTOR 7 — INDUSTRIAL DECAY                                      |
-|  Difficulty: Hard  |  Players: 16  |  Night                       |
+|  SECTOR 7 — INDUSTRIAL DECAY                                     |
+|  Difficulty: Hard  |  Players: 16  |  Night                      |
 |                                                                  |
 |  +------------------------------------------------------------+  |
 |  | "AI Scavs patrol in groups. Shoot one, alert all."         |  |
-|  | — Underground survival guide                                |  |
-|  | [ ◀ Previous  |  Next ▶ ]                                   |  |
+|  | — Underground survival guide                               |  |
+|  | [ ◀ Previous  |  Next ▶ ]                                  |  |
 |  +------------------------------------------------------------+  |
 |                                                                  |
 |  SQUAD: ● Kai_Virtanen [Ready]  ● Dxt_Raptor [Ready]             |
@@ -230,12 +230,12 @@ flowchart TB
 |  [DARK GRADIENT BACKGROUND]                                      |
 |                                                                  |
 |  "Every Contractor starts as a stranger. Every stranger is a     |
-|   threat until proven otherwise."                                 |
-|  — Peacekeeper orientation manual                               |
+|   threat until proven otherwise."                                |
+|  — Peacekeeper orientation manual                                |
 |                                                                  |
 |  [ ◀ Previous  |  Next ▶ ]                                       |
 |                                                                  |
-|  [============== 60% ==============]  Returning to Safe House...     |
+|  [============== 60% ==============]  Returning to Safe House... |
 +------------------------------------------------------------------+
 ```
 
@@ -342,11 +342,11 @@ Loading screens must tell the truth about wait, preserve trust, and route recove
 
 ```
 +--------------------------------------------------------------------------------+
-| LOADING TYPE / DESTINATION                                                      |
+| LOADING TYPE / DESTINATION                                                     |
 |--------------------------------------------------------------------------------|
-| Primary visual: logo, map art, operator, or gameplay-safe backdrop              |
-| Progress: bar/spinner + current operation + optional percentage                 |
-| Context: tip, selected mission, reconnect consequence, or error detail          |
+| Primary visual: logo, map art, operator, or gameplay-safe backdrop             |
+| Progress: bar/spinner + current operation + optional percentage                |
+| Context: tip, selected mission, reconnect consequence, or error detail         |
 |--------------------------------------------------------------------------------|
 | Version/status/support | [Retry/Cancel/Continue when allowed]                  |
 +--------------------------------------------------------------------------------+

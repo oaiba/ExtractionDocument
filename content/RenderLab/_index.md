@@ -22,6 +22,44 @@ flowchart LR
   D --> E[Responsive Docs Page]
 ```
 
+### Box Tree / Static Hierarchy
+
+```mermaid
+flowchart TB
+  root["root"]
+
+  leftNode["node"]
+  rightNode["node"]
+  leftLeafA["leaf"]
+  leftNodeB["node"]
+  leftNodeC["node"]
+  leftLeafB["leaf"]
+  leftLeafC["leaf"]
+  rightNodeB["node"]
+  rightNodeC["node"]
+  rightLeafA["leaf"]
+  rightLeafB["leaf"]
+  rightLeafC["leaf"]
+
+  root --- leftNode
+  root --- rightNode
+
+  leftNode --- leftLeafA
+  leftNode --- leftNodeB
+  leftNodeB --- leftNodeC
+  leftNodeB --- leftLeafB
+  leftNodeC --- leftLeafC
+
+  rightNode --- rightNodeB
+  rightNode --- rightNodeC
+  rightNodeB --- rightLeafA
+  rightNodeC --- rightLeafB
+  rightNodeC --- rightLeafC
+
+  classDef box fill:#fff,stroke:#111,color:#111;
+  class root,leftNode,rightNode,leftLeafA,leftNodeB,leftNodeC,leftLeafB,leftLeafC,rightNodeB,rightNodeC,rightLeafA,rightLeafB,rightLeafC box;
+```
+
 ### Sequence
 
 ```mermaid
@@ -98,6 +136,95 @@ quadrantChart
 ```
 
 ## Apache ECharts
+
+### Box Tree / Interactive Hierarchy
+
+{{< echarts id="render-lab-box-tree" height="460px" caption="Interactive ECharts version of the screenshot-style hierarchy; nodes can be expanded/collapsed while preserving a top-down tree layout." >}}
+{
+  "tooltip": {
+    "trigger": "item",
+    "triggerOn": "mousemove"
+  },
+  "series": [
+    {
+      "type": "tree",
+      "orient": "TB",
+      "top": "8%",
+      "left": "5%",
+      "bottom": "8%",
+      "right": "5%",
+      "symbol": "rect",
+      "symbolSize": [58, 28],
+      "edgeShape": "polyline",
+      "edgeForkPosition": "50%",
+      "initialTreeDepth": -1,
+      "expandAndCollapse": true,
+      "animationDuration": 450,
+      "animationDurationUpdate": 450,
+      "label": {
+        "position": "inside",
+        "verticalAlign": "middle",
+        "align": "center",
+        "color": "#111111",
+        "fontSize": 14
+      },
+      "itemStyle": {
+        "color": "#ffffff",
+        "borderColor": "#111111",
+        "borderWidth": 1
+      },
+      "lineStyle": {
+        "color": "#111111",
+        "width": 1,
+        "curveness": 0
+      },
+      "data": [
+        {
+          "name": "root",
+          "children": [
+            {
+              "name": "node",
+              "children": [
+                { "name": "leaf" },
+                {
+                  "name": "node",
+                  "children": [
+                    {
+                      "name": "node",
+                      "children": [
+                        { "name": "leaf" }
+                      ]
+                    },
+                    { "name": "leaf" }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "node",
+              "children": [
+                {
+                  "name": "node",
+                  "children": [
+                    { "name": "leaf" }
+                  ]
+                },
+                {
+                  "name": "node",
+                  "children": [
+                    { "name": "leaf" },
+                    { "name": "leaf" }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+{{< /echarts >}}
 
 ### Bar Chart With Vietnamese Labels
 

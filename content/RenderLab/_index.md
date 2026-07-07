@@ -137,7 +137,7 @@ quadrantChart
 
 ## Apache ECharts
 
-### Box Tree / Interactive Hierarchy
+### Box Tree / Basic Interactive Hierarchy
 
 {{< echarts id="render-lab-box-tree" height="460px" caption="Interactive ECharts version of the screenshot-style hierarchy; nodes can be expanded/collapsed while preserving a top-down tree layout." >}}
 {
@@ -216,6 +216,582 @@ quadrantChart
                     { "name": "leaf" }
                   ]
                 }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+{{< /echarts >}}
+
+### Box Tree Stress Cases
+
+#### Wide Organization Tree
+
+{{< echarts id="render-lab-box-tree-wide" height="520px" minWidth="1600px" caption="Wide tree with many sibling branches to validate horizontal scroll, pan and zoom." >}}
+{
+  "tooltip": {
+    "trigger": "item",
+    "triggerOn": "mousemove"
+  },
+  "series": [
+    {
+      "type": "tree",
+      "orient": "TB",
+      "top": "8%",
+      "left": "3%",
+      "right": "3%",
+      "bottom": "12%",
+      "symbol": "rect",
+      "symbolSize": [110, 32],
+      "edgeShape": "polyline",
+      "edgeForkPosition": "45%",
+      "initialTreeDepth": -1,
+      "expandAndCollapse": true,
+      "label": {
+        "position": "inside",
+        "verticalAlign": "middle",
+        "align": "center",
+        "fontSize": 12,
+        "color": "#111111"
+      },
+      "itemStyle": {
+        "color": "#ffffff",
+        "borderColor": "#111111",
+        "borderWidth": 1
+      },
+      "lineStyle": {
+        "color": "#111111",
+        "width": 1,
+        "curveness": 0
+      },
+      "data": [
+        {
+          "name": "Game Studio",
+          "children": [
+            {
+              "name": "Design",
+              "children": [
+                { "name": "Core Loop" },
+                { "name": "Economy" },
+                { "name": "Progression" },
+                { "name": "Combat" }
+              ]
+            },
+            {
+              "name": "Engineering",
+              "children": [
+                { "name": "Gameplay" },
+                { "name": "Backend" },
+                { "name": "Tools" },
+                { "name": "Build" }
+              ]
+            },
+            {
+              "name": "Art",
+              "children": [
+                { "name": "Characters" },
+                { "name": "Weapons" },
+                { "name": "VFX" },
+                { "name": "UI" }
+              ]
+            },
+            {
+              "name": "Production",
+              "children": [
+                { "name": "Roadmap" },
+                { "name": "QA" },
+                { "name": "Milestones" },
+                { "name": "Risk" }
+              ]
+            },
+            {
+              "name": "LiveOps",
+              "children": [
+                { "name": "Events" },
+                { "name": "Telemetry" },
+                { "name": "Store" },
+                { "name": "Support" }
+              ]
+            },
+            {
+              "name": "Narrative",
+              "children": [
+                { "name": "Factions" },
+                { "name": "Quests" },
+                { "name": "Lore" },
+                { "name": "Barks" }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+{{< /echarts >}}
+
+#### Deep Dependency Tree
+
+{{< echarts id="render-lab-box-tree-deep" height="520px" canvasHeight="760px" caption="Deep tree with many nested levels to validate vertical scroll and tree zoom/pan." >}}
+{
+  "tooltip": {
+    "trigger": "item",
+    "triggerOn": "mousemove"
+  },
+  "series": [
+    {
+      "type": "tree",
+      "orient": "LR",
+      "top": "5%",
+      "left": "8%",
+      "right": "18%",
+      "bottom": "5%",
+      "symbol": "rect",
+      "symbolSize": [96, 28],
+      "edgeShape": "polyline",
+      "initialTreeDepth": -1,
+      "expandAndCollapse": true,
+      "label": {
+        "position": "inside",
+        "verticalAlign": "middle",
+        "align": "center",
+        "fontSize": 12,
+        "color": "#111111"
+      },
+      "itemStyle": {
+        "color": "#ffffff",
+        "borderColor": "#111111"
+      },
+      "lineStyle": {
+        "color": "#111111",
+        "width": 1
+      },
+      "data": [
+        {
+          "name": "Launcher",
+          "children": [
+            {
+              "name": "Auth",
+              "children": [
+                {
+                  "name": "Profile",
+                  "children": [
+                    {
+                      "name": "Inventory",
+                      "children": [
+                        {
+                          "name": "Loadout",
+                          "children": [
+                            {
+                              "name": "Matchmaking",
+                              "children": [
+                                {
+                                  "name": "Session",
+                                  "children": [
+                                    {
+                                      "name": "Raid",
+                                      "children": [
+                                        { "name": "Extraction" },
+                                        { "name": "Debrief" }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Settings",
+              "children": [
+                { "name": "Controls" },
+                { "name": "Graphics" },
+                { "name": "Audio" },
+                { "name": "Accessibility" }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+{{< /echarts >}}
+
+#### Collapsed Large Tree
+
+{{< echarts id="render-lab-box-tree-collapsed" height="540px" minWidth="1400px" caption="Large tree starts collapsed at depth 2 to validate expand/collapse behavior under heavier data." >}}
+{
+  "tooltip": {
+    "trigger": "item",
+    "triggerOn": "mousemove"
+  },
+  "series": [
+    {
+      "type": "tree",
+      "orient": "TB",
+      "top": "8%",
+      "left": "4%",
+      "right": "4%",
+      "bottom": "14%",
+      "symbol": "rect",
+      "symbolSize": [110, 30],
+      "edgeShape": "polyline",
+      "initialTreeDepth": 2,
+      "expandAndCollapse": true,
+      "label": {
+        "position": "inside",
+        "verticalAlign": "middle",
+        "align": "center",
+        "fontSize": 12,
+        "color": "#111111"
+      },
+      "itemStyle": {
+        "color": "#ffffff",
+        "borderColor": "#111111"
+      },
+      "lineStyle": {
+        "color": "#111111",
+        "width": 1
+      },
+      "data": [
+        {
+          "name": "Extraction Document",
+          "children": [
+            {
+              "name": "GDD Design",
+              "children": [
+                {
+                  "name": "Gameplay",
+                  "children": [
+                    { "name": "Core Loop" },
+                    { "name": "Looting" },
+                    { "name": "Combat Feel" }
+                  ]
+                },
+                {
+                  "name": "UI UX",
+                  "children": [
+                    { "name": "HUD" },
+                    { "name": "Menus" },
+                    { "name": "Flows" }
+                  ]
+                },
+                {
+                  "name": "World",
+                  "children": [
+                    { "name": "Maps" },
+                    { "name": "Loot Zones" },
+                    { "name": "Narrative" }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "GDD Technical",
+              "children": [
+                {
+                  "name": "Systems",
+                  "children": [
+                    { "name": "Save" },
+                    { "name": "Settings" },
+                    { "name": "Analytics" }
+                  ]
+                },
+                {
+                  "name": "Networking",
+                  "children": [
+                    { "name": "Replication" },
+                    { "name": "Lag Compensation" },
+                    { "name": "Match State" }
+                  ]
+                },
+                {
+                  "name": "Performance",
+                  "children": [
+                    { "name": "Budgets" },
+                    { "name": "Optimization" },
+                    { "name": "Profiling" }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "GDD Agents",
+              "children": [
+                {
+                  "name": "Rules",
+                  "children": [
+                    { "name": "Docs" },
+                    { "name": "Codegen" },
+                    { "name": "Review" }
+                  ]
+                },
+                {
+                  "name": "Workflows",
+                  "children": [
+                    { "name": "Feature" },
+                    { "name": "Bugfix" },
+                    { "name": "Knowledge" }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+{{< /echarts >}}
+
+#### Long Label Tree
+
+{{< echarts id="render-lab-box-tree-long-labels" height="560px" minWidth="1500px" caption="Long Vietnamese and technical labels test readability, clipping and scroll behavior." >}}
+{
+  "tooltip": {
+    "trigger": "item",
+    "triggerOn": "mousemove"
+  },
+  "series": [
+    {
+      "type": "tree",
+      "orient": "LR",
+      "top": "8%",
+      "left": "4%",
+      "right": "24%",
+      "bottom": "8%",
+      "symbol": "rect",
+      "symbolSize": [220, 36],
+      "edgeShape": "polyline",
+      "initialTreeDepth": -1,
+      "expandAndCollapse": true,
+      "label": {
+        "position": "inside",
+        "verticalAlign": "middle",
+        "align": "center",
+        "fontSize": 11,
+        "color": "#111111",
+        "overflow": "truncate",
+        "width": 200
+      },
+      "leaves": {
+        "label": {
+          "position": "right",
+          "align": "left",
+          "verticalAlign": "middle",
+          "overflow": "break",
+          "width": 220
+        }
+      },
+      "itemStyle": {
+        "color": "#ffffff",
+        "borderColor": "#111111"
+      },
+      "lineStyle": {
+        "color": "#111111",
+        "width": 1
+      },
+      "data": [
+        {
+          "name": "Quy trình kiểm thử tài liệu Render Lab",
+          "children": [
+            {
+              "name": "Mermaid diagrams cần giữ khả năng đọc trong Markdown",
+              "children": [
+                { "name": "Flowchart có nhãn dài và ký tự tiếng Việt" },
+                { "name": "Sequence diagram với nhiều participant" }
+              ]
+            },
+            {
+              "name": "Apache ECharts interactive hierarchy",
+              "children": [
+                { "name": "Zoom pan scroll hai chiều trong viewport" },
+                { "name": "Toolbox restore save image và theme toggle" }
+              ]
+            },
+            {
+              "name": "Compatibility requirements for GitHub Pages deployment",
+              "children": [
+                { "name": "Không phụ thuộc dữ liệu external JSON" },
+                { "name": "Không phá shortcode syntax hiện tại" }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+{{< /echarts >}}
+
+#### Category Styled Tree
+
+{{< echarts id="render-lab-box-tree-styled" height="540px" minWidth="1280px" caption="Styled category tree validates per-node colors, emphasis and mixed semantic roles." >}}
+{
+  "tooltip": {
+    "trigger": "item",
+    "triggerOn": "mousemove"
+  },
+  "series": [
+    {
+      "type": "tree",
+      "orient": "TB",
+      "top": "8%",
+      "left": "5%",
+      "right": "5%",
+      "bottom": "12%",
+      "symbol": "rect",
+      "symbolSize": [132, 34],
+      "edgeShape": "polyline",
+      "initialTreeDepth": -1,
+      "expandAndCollapse": true,
+      "label": {
+        "position": "inside",
+        "verticalAlign": "middle",
+        "align": "center",
+        "fontSize": 12,
+        "color": "#111827"
+      },
+      "emphasis": {
+        "focus": "descendant"
+      },
+      "lineStyle": {
+        "color": "#475569",
+        "width": 1
+      },
+      "data": [
+        {
+          "name": "Root",
+          "itemStyle": { "color": "#fee2e2", "borderColor": "#991b1b", "borderWidth": 2 },
+          "children": [
+            {
+              "name": "Module",
+              "itemStyle": { "color": "#dbeafe", "borderColor": "#1d4ed8", "borderWidth": 2 },
+              "children": [
+                {
+                  "name": "Task",
+                  "itemStyle": { "color": "#dcfce7", "borderColor": "#15803d" },
+                  "children": [
+                    { "name": "Leaf", "itemStyle": { "color": "#f8fafc", "borderColor": "#334155" } },
+                    { "name": "Leaf", "itemStyle": { "color": "#f8fafc", "borderColor": "#334155" } }
+                  ]
+                },
+                {
+                  "name": "Task",
+                  "itemStyle": { "color": "#dcfce7", "borderColor": "#15803d" },
+                  "children": [
+                    { "name": "Leaf", "itemStyle": { "color": "#f8fafc", "borderColor": "#334155" } }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Module",
+              "itemStyle": { "color": "#dbeafe", "borderColor": "#1d4ed8", "borderWidth": 2 },
+              "children": [
+                {
+                  "name": "Task",
+                  "itemStyle": { "color": "#dcfce7", "borderColor": "#15803d" },
+                  "children": [
+                    { "name": "Leaf", "itemStyle": { "color": "#f8fafc", "borderColor": "#334155" } },
+                    { "name": "Warning", "itemStyle": { "color": "#fef3c7", "borderColor": "#b45309" } }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Module",
+              "itemStyle": { "color": "#dbeafe", "borderColor": "#1d4ed8", "borderWidth": 2 },
+              "children": [
+                { "name": "Leaf", "itemStyle": { "color": "#f8fafc", "borderColor": "#334155" } },
+                { "name": "Blocked", "itemStyle": { "color": "#fecaca", "borderColor": "#b91c1c" } }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+{{< /echarts >}}
+
+#### Mindmap Radial Tree
+
+{{< echarts id="render-lab-box-tree-radial" height="640px" minWidth="1200px" canvasHeight="640px" caption="Radial tree validates alternate mindmap-like hierarchy layout with pan and zoom." >}}
+{
+  "tooltip": {
+    "trigger": "item",
+    "triggerOn": "mousemove"
+  },
+  "series": [
+    {
+      "type": "tree",
+      "layout": "radial",
+      "top": "4%",
+      "left": "4%",
+      "right": "4%",
+      "bottom": "4%",
+      "symbolSize": 12,
+      "initialTreeDepth": -1,
+      "expandAndCollapse": true,
+      "label": {
+        "position": "right",
+        "verticalAlign": "middle",
+        "align": "left",
+        "fontSize": 12
+      },
+      "lineStyle": {
+        "color": "#64748b",
+        "width": 1,
+        "curveness": 0.15
+      },
+      "data": [
+        {
+          "name": "Render Lab",
+          "children": [
+            {
+              "name": "Markdown",
+              "children": [
+                { "name": "Tables" },
+                { "name": "Code" },
+                { "name": "Shortcodes" }
+              ]
+            },
+            {
+              "name": "Mermaid",
+              "children": [
+                { "name": "Flow" },
+                { "name": "Sequence" },
+                { "name": "Class" },
+                { "name": "Gantt" }
+              ]
+            },
+            {
+              "name": "ECharts",
+              "children": [
+                { "name": "Bar" },
+                { "name": "Line" },
+                { "name": "Tree" },
+                { "name": "Graph" },
+                { "name": "Pie" }
+              ]
+            },
+            {
+              "name": "Theme",
+              "children": [
+                { "name": "Light" },
+                { "name": "Dark" },
+                { "name": "Responsive" }
               ]
             }
           ]

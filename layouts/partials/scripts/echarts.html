@@ -41,6 +41,65 @@
 
     const chartTheme = () => document.documentElement.classList.contains("dark") ? "dark" : null;
 
+    const asArray = (value) => {
+      if (!value) return [];
+      return Array.isArray(value) ? value : [value];
+    };
+
+    const mergeDataZoom = (option) => {
+      const hasXAxis = Boolean(option.xAxis);
+      const hasYAxis = Boolean(option.yAxis);
+      if (!hasXAxis && !hasYAxis) return option.dataZoom;
+
+      const dataZoom = asArray(option.dataZoom).slice();
+      const hasZoom = (type, axisKey) => dataZoom.some((zoom) => zoom.type === type && axisKey in zoom);
+
+      if (hasXAxis && !hasZoom("inside", "xAxisIndex")) {
+        dataZoom.push({ type: "inside", xAxisIndex: 0, filterMode: "none" });
+      }
+      if (hasYAxis && !hasZoom("inside", "yAxisIndex")) {
+        dataZoom.push({ type: "inside", yAxisIndex: 0, filterMode: "none" });
+      }
+      if (hasXAxis && !hasZoom("slider", "xAxisIndex")) {
+        dataZoom.push({ type: "slider", xAxisIndex: 0, filterMode: "none", bottom: 8, height: 18 });
+      }
+      if (hasYAxis && !hasZoom("slider", "yAxisIndex")) {
+        dataZoom.push({ type: "slider", yAxisIndex: 0, filterMode: "none", right: 8, width: 18 });
+      }
+
+      return dataZoom;
+    };
+
+    const mergeSeriesRoam = (series) => {
+      return asArray(series).map((entry) => {
+        if (!entry || typeof entry !== "object") return entry;
+        if ((entry.type === "tree" || entry.type === "graph") && entry.roam === undefined) {
+          return Object.assign({}, entry, { roam: true });
+        }
+        return entry;
+      });
+    };
+
+    const mergeToolbox = (option) => {
+      if (option.toolbox === false) return false;
+      const existing = option.toolbox || {};
+      const existingFeature = existing.feature || {};
+      const featureDefaults = {
+        restore: {},
+        saveAsImage: {}
+      };
+
+      if (option.xAxis || option.yAxis) {
+        featureDefaults.dataZoom = { yAxisIndex: option.yAxis ? 0 : "none" };
+      }
+
+      return Object.assign({}, existing, {
+        right: existing.right || 16,
+        top: existing.top || 12,
+        feature: Object.assign(featureDefaults, existingFeature)
+      });
+    };
+
     const applyThemeDefaults = (option) => {
       const isDark = document.documentElement.classList.contains("dark");
       const textColor = isDark ? "#e5e7eb" : "#1f2937";
@@ -60,7 +119,10 @@
         tooltip: Object.assign({ trigger: "item" }, option.tooltip || {}),
         legend: option.legend === false ? false : Object.assign({ textStyle: { color: mutedColor } }, option.legend || {}),
         xAxis: mergeAxis(option.xAxis),
-        yAxis: mergeAxis(option.yAxis)
+        yAxis: mergeAxis(option.yAxis),
+        dataZoom: mergeDataZoom(option),
+        toolbox: mergeToolbox(option),
+        series: mergeSeriesRoam(option.series)
       };
     };
 

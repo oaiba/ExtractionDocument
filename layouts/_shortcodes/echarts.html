@@ -9,18 +9,23 @@ Usage:
 
 {{- $id := .Get "id" | default (printf "echarts-%d" .Ordinal) -}}
 {{- $height := .Get "height" | default "420px" -}}
+{{- $canvasWidth := .Get "canvasWidth" | default "100%" -}}
+{{- $minWidth := .Get "minWidth" | default "960px" -}}
+{{- $canvasHeight := .Get "canvasHeight" | default $height -}}
 {{- $caption := .Get "caption" | default "" -}}
 {{- .Page.Store.Set "hasECharts" true -}}
 
 <figure class="exdoc-chart-frame">
-  <div
-    id="{{ $id }}"
-    class="exdoc-echarts"
-    data-echarts-options="{{ $id }}-options"
-    style="height: {{ $height }};"
-    role="img"
-    aria-label="{{ with $caption }}{{ . }}{{ else }}ECharts visualization{{ end }}"
-  ></div>
+  <div class="exdoc-chart-viewport" tabindex="0" aria-label="Scrollable chart viewport">
+    <div
+      id="{{ $id }}"
+      class="exdoc-echarts"
+      data-echarts-options="{{ $id }}-options"
+      style="width: {{ $canvasWidth }}; min-width: {{ $minWidth }}; height: {{ $canvasHeight }};"
+      role="img"
+      aria-label="{{ with $caption }}{{ . }}{{ else }}ECharts visualization{{ end }}"
+    ></div>
+  </div>
   <template id="{{ $id }}-options" data-echarts-options-json>
 {{ .InnerDeindent | htmlEscape | safeHTML }}
   </template>

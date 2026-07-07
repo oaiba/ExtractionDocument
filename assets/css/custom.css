@@ -244,13 +244,28 @@ article table {
     text-align: center;
 }
 
-.exdoc-echarts {
+.exdoc-chart-viewport {
     width: 100%;
-    min-height: 280px;
+    max-height: min(72vh, 640px);
+    overflow: auto;
     border: 1px solid #dbe3ef;
     border-radius: 0.5rem;
     background: #ffffff;
     box-shadow: 0 12px 28px rgba(15, 23, 42, 0.07);
+}
+
+.exdoc-chart-viewport:focus-visible {
+    outline: 2px solid #2563eb;
+    outline-offset: 2px;
+}
+
+.exdoc-echarts {
+    width: 100%;
+    min-height: 280px;
+    border: 0;
+    border-radius: 0;
+    background: #ffffff;
+    box-shadow: none;
 }
 
 .exdoc-echarts-error {
@@ -290,11 +305,15 @@ article table {
     color: #94a3b8;
 }
 
-.dark .exdoc-echarts,
+.dark .exdoc-chart-viewport,
 .dark .content .mermaid {
     border-color: #334155;
     background: #0f172a;
     box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
+}
+
+.dark .exdoc-echarts {
+    background: #0f172a;
 }
 
 .dark .exdoc-echarts-error {

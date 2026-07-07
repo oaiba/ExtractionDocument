@@ -1,0 +1,16 @@
+{{- /*
+Render a Mermaid diagram that should scale to the full content width.
+
+Usage:
+{{< mermaid-full >}}
+flowchart TB
+  A --> B
+{{< /mermaid-full >}}
+*/ -}}
+
+<div role="img" aria-label="{{ (T "mermaidDiagram") | default "Diagram" }}">
+  <pre class="mermaid exdoc-mermaid-fill hx:mt-6">
+{{ .Inner | htmlEscape | safeHTML }}
+  </pre>
+</div>
+{{- .Page.Store.Set "hasMermaid" true -}}

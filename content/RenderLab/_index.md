@@ -24,7 +24,7 @@ flowchart LR
 
 ### Box Tree / Static Hierarchy
 
-```mermaid
+{{< mermaid-full >}}
 flowchart TB
   root["root"]
 
@@ -58,7 +58,7 @@ flowchart TB
 
   classDef box fill:#fff,stroke:#111,color:#111;
   class root,leftNode,rightNode,leftLeafA,leftNodeB,leftNodeC,leftLeafB,leftLeafC,rightNodeB,rightNodeC,rightLeafA,rightLeafB,rightLeafC box;
-```
+{{< /mermaid-full >}}
 
 ### Sequence
 

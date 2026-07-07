@@ -265,28 +265,8 @@ flowchart TB
 ```
 
 * **Background:** Zone-specific transition art, never unexplored spoiler space.
-* **Widgets:** Progress, squad readiness, and optional zone intro.
-
-#### Layout (Mobile Portrait)
-
-```
-+-----------------------------+
-|                             |
-|       [MAP / ZONE ART]      |
-|                             |
-|  SECTOR 7 - NIGHT RAID      |
-|  Difficulty: Hard           |
-|-----------------------------|
-| "Heavy bags make noise."    |
-| - Field manual              |
-|-----------------------------|
-| [========= 72% =========]   |
-| Deploying...                |
-+-----------------------------+
-```
-
-* Mobile loading keeps one tip, one progress indicator, and one context label visible.
-* Video backgrounds should downgrade to still art on low battery or low-end devices.
+* **Widgets:** Progress, squad readiness, optional zone intro, one tip, and one context label using the PC/Console landscape composition.
+* **Fallback:** Video backgrounds should downgrade to still art on low battery or low-end devices.
 
 ***
 

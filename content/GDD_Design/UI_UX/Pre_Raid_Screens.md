@@ -98,8 +98,7 @@ Primary references:
 | Spec | Requirement |
 | :--- | :--- |
 | Goal | Make destination choice readable: difficulty, extracts, player count, time of day, quest relevance |
-| PC/console layout | Map list left, preview/map art center, extracts and squad context right |
-| Mobile layout | Card stack with expandable details; sticky selected-map summary |
+| Layout | PC/Console landscape standard: map list left, preview/map art center, extracts and squad context right |
 | Primary CTA | Select Map / Ready |
 | Secondary actions | Preview extracts, show quests, change time of day, compare difficulty |
 
@@ -293,7 +292,7 @@ Searching -> Expanding Search -> Match Found -> L4 Loading -> In Raid
 | Hold deploy | Hold mouse / key | Hold A / Cross | Hold CTA with accessible tap alternative |
 | Invite | Click Invite | Y / Triangle | Tap Invite |
 | Open chat | Enter | Focus chat / virtual keyboard | Chat button |
-| Cancel queue | ESC / click | B / Circle | Cancel button / system back with confirm |
+| Cancel queue | ESC / click | B / Circle | Cancel button with confirm |
 
 ---
 

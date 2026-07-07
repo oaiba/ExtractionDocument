@@ -18,7 +18,7 @@ Global UX standards define the reusable interaction rules that every UI screen m
 | Risk is visible | Gear loss, currency spend, ranked impact, privacy, and destructive actions must be explained before commit |
 | One primary action | Each screen has one visually dominant CTA and no competing fake-primary buttons |
 | Recoverable mistakes | Non-destructive changes support undo, cancel, or reset |
-| Platform parity | Information is equivalent across PC, console, and supported landscape mobile/tablet layouts even when layout differs |
+| Platform parity | Information is equivalent across PC and console using the shared landscape layout standard |
 | Pressure-aware UI | In-raid overlays stay readable, dismissible, and audio-transparent |
 
 ---
@@ -52,7 +52,7 @@ Global UX standards define the reusable interaction rules that every UI screen m
 
 | Topic | Standard |
 | :--- | :--- |
-| Back navigation | `ESC`, `B/Circle`, and landscape mobile system back close the top modal, then overlay, then screen |
+| Back navigation | `ESC` and `B/Circle` close the top modal, then overlay, then screen |
 | Focus order | Controller and keyboard focus moves left-to-right, top-to-bottom unless the layout has a stronger task order |
 | Focus memory | Returning to a screen restores the last selected tab/item when safe |
 | Deep links | Deep links open the target state, not just the parent screen |
@@ -61,13 +61,13 @@ Global UX standards define the reusable interaction rules that every UI screen m
 
 ### Standard Focus States
 
-| State | PC | Console | Mobile |
-| :--- | :--- | :--- | :--- |
-| Hover | Border or surface lift | Not applicable | Not applicable |
-| Focused | Visible outline if keyboard active | Persistent high-contrast outline | Press ripple or selected chip |
-| Pressed | 90-95% scale for 100ms | Haptic pulse plus scale | Haptic pulse plus ripple |
-| Disabled | Reduced opacity plus reason tooltip/sheet | Reduced opacity plus reason on focus | Reduced opacity plus reason on tap |
-| Loading | Inline spinner and blocked repeat input | Spinner and focus retained | Spinner and touch disabled for that control |
+| State | PC | Console |
+| :--- | :--- | :--- |
+| Hover | Border or surface lift | Not applicable |
+| Focused | Visible outline if keyboard active | Persistent high-contrast outline |
+| Pressed | 90-95% scale for 100ms | Haptic pulse plus scale |
+| Disabled | Reduced opacity plus reason tooltip/sheet | Reduced opacity plus reason on focus |
+| Loading | Inline spinner and blocked repeat input | Spinner and focus retained |
 
 ---
 
@@ -91,42 +91,23 @@ Global UX standards define the reusable interaction rules that every UI screen m
 +-------------------------------------------------------------------+
 ```
 
-#### Layout (Mobile Landscape)
-
-```
-+-----------------------------------------------------------------------+
-| TOP HUD: profile, currency, notifications, connection, search         |
-|-----------------------------------------------------------------------|
-| NAV / ACTIONS | MAIN CONTENT AREA                         | CONTEXT  |
-|               | selected list, grid, map, preview         | PANEL    |
-| Home          |                                           | details  |
-| Loadout       | +------------------+ +------------------+ | risk     |
-| Stash         | | Card / Row       | | Card / Row       | | status   |
-| Social        | +------------------+ +------------------+ | CTA      |
-| Settings      |                                           |          |
-|-----------------------------------------------------------------------|
-| BOTTOM SAFE AREA: hints, back, primary action, warnings, thumb zones   |
-+-----------------------------------------------------------------------+
-```
-
 | Platform | Layout Standard |
 | :--- | :--- |
 | PC 16:9 | Dense but scannable; preserve stable navigation rail and avoid oversized marketing layouts |
 | PC ultrawide | Keep primary content in a centered 1920px-safe region; use side space for context panels only |
 | Console | Maintain 5% safe zone, large focus states, and no precision-only interactions |
-| Mobile landscape only | Prioritize gameplay visibility, preserve both thumb zones, and use side panels for navigation/actions and context |
-| Mobile portrait unsupported | Block interaction, redirect to rotate-device guidance, or show an unsupported-orientation message |
-| Tablet landscape only | Prefer split panels when readable; portrait is unsupported and must not receive a separate layout standard |
+
+Mobile-specific and portrait-only layouts are out of scope for this standard. If encountered, block interaction, redirect to supported PC/Console landscape guidance, or show an unsupported-orientation message.
 
 ### Minimum Targets
 
 | Element | Minimum |
 | :--- | :--- |
-| Touch target | 44x44 px absolute minimum; 60x60 px preferred for combat-relevant actions |
+| Interactive target | 44x44 px absolute minimum; 60x60 px preferred for combat-relevant actions |
 | Controller focus target | 64 px height for primary list rows |
-| Body text | 16 px desktop/console, 18 px supported landscape mobile/tablet where space allows |
+| Body text | 16 px desktop/console; larger sizes are allowed for readability |
 | Critical numbers | Use tabular or monospace digits where values update rapidly |
-| Safe margins | 16 px PC, 5% console overscan, platform safe area on supported landscape mobile/tablet |
+| Safe margins | 16 px PC, 5% console overscan |
 
 ---
 
@@ -211,7 +192,7 @@ Modal copy must be specific. Use "Discard AK-74M? This removes it from your stas
 | Motion | Respect reduce-motion; replace long animation with fade or instant state change |
 | Timing | Hold-to-confirm and timed prompts need adjustable duration where feasible |
 | Screen reader | All buttons, tabs, list items, and alerts need descriptive labels |
-| Input assist | Provide tap alternatives to hold actions where motor accessibility requires it |
+| Input assist | Provide alternate button paths to hold actions where motor accessibility requires it |
 
 ---
 
@@ -231,8 +212,8 @@ Modal copy must be specific. Use "Discard AK-74M? This removes it from your stas
 
 ## Acceptance Checklist
 
-- [ ] Back behavior is defined for keyboard, controller, and mobile.
-- [ ] Portrait orientation is blocked, redirected to rotate-device guidance, or shows an unsupported-orientation message.
+- [ ] Back behavior is defined for keyboard and controller.
+- [ ] Portrait/mobile-specific layouts are blocked, redirected to PC/Console landscape guidance, or show an unsupported-orientation message.
 - [ ] Primary CTA is obvious and has disabled/error behavior.
 - [ ] Every destructive action has a confirmation standard.
 - [ ] Empty, locked, offline, loading, and error states are specified.

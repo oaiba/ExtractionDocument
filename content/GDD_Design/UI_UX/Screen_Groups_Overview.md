@@ -85,7 +85,7 @@ Use this template for every new screen spec. Keep it short enough to update but 
 | User intent | Why the player opened it and what success means |
 | Entry points | Buttons, deep links, events, and system transitions that open the screen |
 | Exit points | Back behavior, primary CTA, cancel, timeout, and destructive exits |
-| Layout | PC/console landscape and mobile portrait rules |
+| Layout | PC/Console landscape standard |
 | Primary CTA | Main action, disabled conditions, and confirmation requirements |
 | Secondary actions | Useful alternatives that do not compete with the primary CTA |
 | States | Default, loading, empty, invalid, locked, offline, error, success |
@@ -119,11 +119,11 @@ Use this template for every new screen spec. Keep it short enough to update but 
 
 | Surface | Navigation Rule |
 | :--- | :--- |
-| Home hub | Global navigation rail on PC/console; bottom navigation on mobile |
+| Home hub | Global navigation rail using the PC/Console landscape standard |
 | Preparation flow | Linear enough for new players, jumpable for experts |
 | In-raid overlays | Never fully pause online raid state; preserve audio and threat awareness |
 | Modal dialogs | One decision per modal; destructive actions require hold or second confirmation |
-| Back behavior | `ESC` / `B` / system back always closes the deepest layer first |
+| Back behavior | `ESC` / `B` always closes the deepest layer first |
 | Deep links | Event, quest, reward, and trader cards must open the exact destination screen |
 
 ---
@@ -131,7 +131,7 @@ Use this template for every new screen spec. Keep it short enough to update but 
 ## Coverage Checklist
 
 - [ ] Every player lifecycle phase has a screen group.
-- [ ] Every group includes PC/console and mobile behavior.
+- [ ] Every group follows the PC/Console landscape standard.
 - [ ] Every group defines blocked, empty, locked, loading, offline, and error states.
 - [ ] Every major game system has a UI owner or cross-reference.
 - [ ] No single document owns unrelated screens that should live in separate groups.

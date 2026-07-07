@@ -252,7 +252,7 @@ Settings categories follow [User Settings](../GameDesign/UserSettings.md) and th
 
 | Category | UI Requirements |
 | :--- | :--- |
-| Controls | Remap, sensitivity, aim assist, gyro, mobile HUD layout |
+| Controls | Remap, sensitivity, aim assist, gyro, and PC/Console HUD layout |
 | Graphics | Presets, resolution/performance, preview and revert timer for risky changes |
 | Audio | Volumes, output, voice, subtitles, dynamic range |
 | Gameplay & HUD | Reticle, minimap, prompts, damage feedback, HUD scale |

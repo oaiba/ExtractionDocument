@@ -57,28 +57,11 @@ Primary references:
 +------------------------------------------------------------------+
 ```
 
-#### Layout (Mobile Portrait)
-
-```
-+-----------------------------+
-| SOCIAL                 [X]  |
-|-----------------------------|
-| Invite from Player2         |
-| [Accept] [Decline]          |
-|-----------------------------|
-| Friends Online              |
-| Kai          [Invite]       |
-| SutureFan    In Raid        |
-|-----------------------------|
-| Party  LFG  Clan  Settings  |
-+-----------------------------+
-```
-
 | Spec | Requirement |
 | :--- | :--- |
 | Goal | Provide quick social actions without leaving the current screen unnecessarily |
-| Entry points | Top bar, Home bottom nav, squad lobby, post-match, mobile floating social button |
-| Layout | Compact overlay on PC; full-height panel on console/mobile |
+| Entry points | Top bar, global navigation rail, squad lobby, and post-match |
+| Layout | PC/Console landscape standard: compact side overlay with controller-friendly focus states |
 | Primary CTA | Contextual: Invite, Join, Accept |
 | Secondary actions | Friends, recent players, clan, LFG, privacy settings |
 | Offline state | Show cached friends if available and explain unavailable actions |

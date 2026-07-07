@@ -19,8 +19,7 @@ A strong Home Screen answers four questions in under five seconds: who am I play
 | Primary emotion | Readiness and tension before deployment |
 | Main focus | Operator showcase plus Deploy path |
 | Secondary focus | Progress, events, squad, stash reminders |
-| Mobile layout | One clear vertical flow with bottom navigation |
-| PC/console layout | Operator center, navigation rail, contextual panels |
+| Layout standard | PC/Console landscape: operator center, navigation rail, contextual panels |
 
 ## Operator Showcase States
 
@@ -50,30 +49,18 @@ PC and console layouts can show more simultaneous information, but they should s
 | Top bar | Currency, notifications, profile, season timer | Account state |
 | Bottom strip | Last raid, active quests, event reminder | Contextual next actions |
 
-## Mobile Layout
-
-Mobile layout should be thumb-first and interruption-tolerant. Players may check the game during short breaks, so the main flow should support quick claim, quick review, quick deploy, and quick exit without hiding important risk warnings.
-
-| Region | Content | Purpose |
-| :--- | :--- | :--- |
-| Top | Currency, profile, notifications | Account state |
-| Main | Operator showcase and selected loadout summary | Identity and readiness |
-| Middle | Deploy card, current mode, squad size | Fast path to play |
-| Feed | Event banner, daily goals, last raid | Return hooks |
-| Bottom nav | Home, Loadout, Stash, Social, Shop, Settings | Thumb reachable navigation |
-
 ## Navigation Flow
 
 Navigation should support both deliberate preparation and fast return. A player who wants to tune gear can drill into stash and loadout. A player who just wants another run should move from Home to matchmaking with only the necessary risk confirmations.
 
 | Destination | Entry Point | Purpose |
 | :--- | :--- | :--- |
-| Loadout | Deploy panel or bottom nav | Prepare gear, mode, map, and squad |
+| Loadout | Deploy panel or navigation rail | Prepare gear, mode, map, and squad |
 | Mode and map | Loadout flow | Select raid rules and destination |
 | Squad readiness | Loadout flow | Confirm party state before queue |
 | Matchmaking | Deploy confirmation | Find match using selected rules |
-| Stash | Navigation rail or bottom nav | Manage inventory |
-| Safe House | Navigation rail or bottom nav | Upgrade modules and claim returns |
+| Stash | Navigation rail | Manage inventory |
+| Safe House | Navigation rail | Upgrade modules and claim returns |
 | Traders | Navigation rail | Buy, sell, and turn in tasks |
 | Profile | Top bar | Review identity and stats |
 | Settings | Top bar or navigation | Configure game options |
@@ -125,7 +112,7 @@ A first-session player should see Tutorial Raid as the primary action until the 
 - If the store dominates the first screen, the game feels transactional instead of tactical.
 - If deploy is hidden behind too many panels, session momentum drops.
 - If last-raid state is invisible, success and failure feel disconnected from the lobby.
-- If mobile bottom navigation exceeds comfortable thumb reach, common actions need regrouping.
+- If the navigation rail or context panels bury common actions, regroup them into the PC/Console landscape standard.
 
 ## Cross-References
 

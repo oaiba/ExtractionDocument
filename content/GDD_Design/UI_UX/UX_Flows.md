@@ -84,29 +84,7 @@ graph TD
 +------------------------------------------------------------+
 ```
 
-#### **Mobile Layout (9:16 Portrait)**
-
-```
-+---------------------------+
-|  LVL 12    ₽425K    $10   |
-|                           |
-| [3D OPERATOR - CENTERED]  |
-|                           |
-|    [ ▶ START RAID ]       |
-|    [Solo|Duo|Squad ▼]     |
-|                           |
-| [━━━━━━━━━━━━] 12/50      | (Battle Pass)
-|                           |
-| +-----+  +-----+  +-----+ |
-| |LOAD |  |TRADE|  |HIDE | |
-| |OUT  |  |RS   |  |OUT  | |
-| +-----+  +-----+  +-----+ |
-|                           |
-| [ 3 Friends] [ Settings]|
-+---------------------------+
-```
-
-<!-- REF_IMAGE: Main Menu high-fidelity mockup — showing both PC and Mobile layouts side-by-side with the Neo-Industrial visual style -->
+<!-- REF_IMAGE: Main Menu high-fidelity mockup — showing the PC/Console landscape layout with the Neo-Industrial visual style -->
 
 **Key Differences:**
 *   **Mobile:** Vertical stacking, simplified labels, larger touch targets

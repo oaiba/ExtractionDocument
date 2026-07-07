@@ -244,15 +244,6 @@ New accounts (0 raids) are routed differently:
 | **Deploy button**    | Bottom center      | Large, prominent. Requires all squad ready.                       |
 | **Cancel queue**     | Bottom right       | Small; available at any point before deployment countdown         |
 
-#### Mobile Layout
-
-Same information, adapted for portrait 1080×2400 screen:
-
-* Map selection: full-width carousel swipe
-* Loadout summary: collapsible bottom sheet
-* Deploy: bottom full-width sticky button (thumb-reachable)
-* Squad: avatar row above deploy button
-
 ***
 
 ### Summary of Key Decisions

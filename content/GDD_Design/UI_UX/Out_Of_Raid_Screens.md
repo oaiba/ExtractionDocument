@@ -58,34 +58,12 @@ Primary references:
 +------------------------------------------------------------------+
 ```
 
-#### Layout (Mobile Portrait)
-
-```
-+-----------------------------+
-| Lv.12       425K       [N]  |
-|-----------------------------|
-|      [OPERATOR MODEL]       |
-|      AK-74M / Armor Lv3     |
-|-----------------------------|
-| Deploy: Solo / Sector 7     |
-| Value 125K  Insured 4/6     |
-| [ DEPLOY ]                  |
-|-----------------------------|
-| Last raid: Extracted        |
-| Daily 1/3   Event active    |
-| Battle Pass 12/50           |
-|-----------------------------|
-| Home Loadout Stash Social   |
-+-----------------------------+
-```
-
 | Spec | Requirement |
 | :--- | :--- |
 | User intent | Understand what changed since last session and decide whether to deploy, recover, or manage inventory |
 | Entry points | Post-login loading, AAR continue, app resume, party leader navigation |
 | Exit points | Deploy, Loadout, Stash, Safe House, Traders, Profile, Settings |
-| PC/console layout | Operator showcase center, navigation rail left, deploy/status panel right, contextual strip bottom |
-| Mobile layout | Top account bar, operator/loadout summary, deploy card, event/feed stack, bottom nav |
+| Layout | PC/Console landscape standard: operator showcase center, navigation rail left, deploy/status panel right, contextual strip bottom |
 | Primary CTA | Deploy if loadout is valid; Continue Preparation if blockers exist |
 | Destructive actions | None on hub; destructive actions must deep link to their owning screen |
 

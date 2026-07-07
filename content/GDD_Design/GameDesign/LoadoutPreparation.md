@@ -17,8 +17,7 @@ The screen is also a communication surface for the squad. It should show who is 
 | :--- | :--- |
 | Primary job | Make risk legible before deploy |
 | Core surfaces | Operator, gear, stash, insurance, mode, map, squad |
-| PC layout | Multi-column workbench |
-| Mobile layout | Tabbed flow with persistent summary |
+| Layout standard | PC/Console multi-column workbench |
 | Deploy gate | Block only critical invalid states |
 
 ## Loadout Flow
@@ -45,18 +44,6 @@ The PC/console layout can operate like a workbench: inspect the kit, manipulate 
 | Center column | Stash grid, filters, item details | Equip and manage items |
 | Right column | Mode, map, quests, squad, deploy button | Commit to raid |
 | Footer | Loadout value, risk warnings, preset controls | Keep risk visible |
-
-## Mobile Layout
-
-Mobile uses tabs because a full stash workbench cannot remain readable on small screens. The persistent summary is critical: even while editing a weapon or moving items, the player should still see total value, weight, and deploy readiness.
-
-| Tab | Content | Persistent Element |
-| :--- | :--- | :--- |
-| Operator | Character, ability, armor slots | Loadout value |
-| Gear | Weapons, ammo, meds, backpack | Weight and warning |
-| Stash | Inventory grid and filters | Quick equip actions |
-| Mission | Mode, map, quests | Deploy readiness |
-| Squad | Party, voice, ready state | Deploy button |
 
 ## Loadout Summary
 

@@ -323,22 +323,6 @@ Props and environment must NOT have visual noise that confuses character outline
 +------------------------------------------------------------------+
 ```
 
-#### Layout (Mobile Portrait)
-
-```
-+-----------------------------+
-| Safe top / status           |
-|-----------------------------|
-| Title + primary action      |
-|-----------------------------|
-| 4-col content grid          |
-| cards / rows / preview      |
-|                             |
-| Sticky CTA / warning        |
-| Bottom nav / safe bottom    |
-+-----------------------------+
-```
-
 #### System Diagram
 
 ```
@@ -348,7 +332,7 @@ Color roles -> Component states -> Screen composition -> QA checks
  Friendly       Normal/Focus        Rail/Main/CTA    Contrast
  Hostile        Hover/Pressed       Overlay/Modal    Scale
  Warning        Locked/Error        Toast/System     Safe zone
- Objective      Success             Mobile bottom    Motion
+ Objective      Success             Footer/Hints     Motion
 ```
 
 ### Design Tool Requirements
@@ -363,13 +347,13 @@ Color roles -> Component states -> Screen composition -> QA checks
 #### System Diagram
 
 ```
-+----------------------+  +----------------------+  +--------------+
-| Desktop 1920 x 1080  |  | Console TV 1920x1080 |  | Mobile 9:16  |
-| full density         |  | 5% safe zone         |  | safe areas   |
-+----------------------+  +----------------------+  +--------------+
-          |                         |                       |
-          v                         v                       v
-   shared components        larger focus rings       thumb-first CTA
++----------------------+  +----------------------+  +----------------------+
+| Desktop 1920 x 1080  |  | Console TV 1920x1080 |  | Ultrawide 2560x1080 |
+| full density         |  | 5% safe zone         |  | centered content    |
++----------------------+  +----------------------+  +----------------------+
+          |                         |                         |
+          v                         v                         v
+   shared components        larger focus rings        side context panels
 ```
 
 | Platform             | Resolution                 | Artboard Name     | Safe Area Margins               |
@@ -377,9 +361,6 @@ Color roles -> Component states -> Screen composition -> QA checks
 | **PC 16:9**          | 1920x1080                  | Desktop_Standard  | None (full bleed)               |
 | **PC Ultrawide**     | 2560x1080                  | Desktop_Ultrawide | Center 1920px content           |
 | **Console**          | 1920x1080                  | Console_TV        | 5% edge margin (TV overscan)    |
-| **Mobile Portrait**  | 1170x2532 (iPhone 14 Pro)  | Mobile_Portrait   | iOS Safe Area (44pt top/bottom) |
-| **Mobile Landscape** | 2532x1170                  | Mobile_Landscape  | 20pt sides                      |
-| **Tablet**           | 2048x2732 (iPad Pro 12.9") | Tablet_Portrait   | 20pt all sides                  |
 
 ---
 

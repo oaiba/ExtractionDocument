@@ -297,37 +297,16 @@ HUD elements are not all visible at all times. The system uses game state to det
 | Compass | Show / Hide | Show |
 | FPS Counter | Show / Hide | Hide |
 
-### Mobile-Specific Customization
+### HUD Layout Customization
 
 | Feature | Description |
 | :------ | :---------- |
-| HUD Layout Editor | Drag-and-drop any touch control to custom position |
-| Button Size | Per-button size adjustment (Small / Medium / Large) |
-| Button Opacity | Per-button opacity slider (30% - 100%) |
-| Left/Right Handed | Mirror HUD layout for left-handed players |
-| Preset Layouts | 3 saveable custom layouts |
-| Reset | One button to restore default mobile layout |
-
-#### Layout (Mobile Portrait)
-
-```
-+-----------------------------+
-| HUD LAYOUT EDITOR      Save |
-|-----------------------------|
-| HP [drag]     Timer [drag]  |
-|                             |
-|      [GAMEPLAY AREA]        |
-|                             |
-| Joy [drag]       Fire [drag]|
-| Crouch          Reload      |
-|-----------------------------|
-| Size [---100---]            |
-| Opacity [--70---]           |
-| [Reset] [Cancel] [Apply]    |
-+-----------------------------+
-```
-
-<!-- REF_IMAGE: Mobile HUD Layout Editor — showing drag handles on all touch controls with size/opacity adjustment panel -->
+| HUD Scale | Global HUD scale adjustment within PC/Console safe-zone limits |
+| Element Visibility | Toggle optional elements such as compass, kill feed, damage numbers, and FPS counter |
+| Minimap Preset | Small / Medium / Large presets using the PC/Console minimap anchor |
+| Opacity | Global HUD opacity slider for non-critical overlays |
+| Preset Layouts | Standard / Minimal / Tactical presets; all use the PC/Console landscape layout |
+| Reset | One button to restore the default PC/Console HUD layout |
 
 ---
 

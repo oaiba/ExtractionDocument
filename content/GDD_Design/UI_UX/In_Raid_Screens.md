@@ -83,8 +83,7 @@ The detailed element catalog lives in [HUD Design](HUD_Design.md). This page def
 | Goal | Help players plan movement without giving unfair enemy information |
 | Entry points | `M`, controller map button, minimap click/tap, quest deep link |
 | Exit points | Back, close map, ping commit, damage auto-close if configured |
-| PC/console layout | Full-screen or large overlay with map, legend, extracts, objectives, squad |
-| Mobile layout | Full-screen map with bottom sheet for legend/objectives |
+| Layout | PC/Console landscape standard: full-screen or large overlay with map, legend, extracts, objectives, squad |
 | Primary CTA | Set Ping / Track Objective |
 | Secondary actions | Filter markers, zoom, recenter, inspect extract |
 
@@ -162,7 +161,7 @@ The detailed element catalog lives in [HUD Design](HUD_Design.md). This page def
 | Spec | Requirement |
 | :--- | :--- |
 | Goal | Support survival item use and limited item management without turning raid into stash management |
-| Entry points | Inventory key/button, mobile gesture, loot context |
+| Entry points | Inventory key/button, loot context |
 | Layout | Equipment, backpack, secure container, quick slots, weight |
 | Primary CTA | Use / Equip / Move based on selected item |
 | Restrictions | Some stash-only actions are disabled in raid with explanation |
@@ -174,7 +173,7 @@ The detailed element catalog lives in [HUD Design](HUD_Design.md). This page def
 | Use medical item | Show duration, movement constraints, cancel rule |
 | Move to secure container | Confirm if replacing protected item |
 | Drop item | Confirm for insured, quest, rare, or high-value items |
-| Split stack | Available only when screen space permits; mobile uses stepper sheet |
+| Split stack | Available only when screen space permits; otherwise keep the action disabled with an explanation |
 | Repair/mod weapon | Disabled unless specific field action is supported |
 
 ---
@@ -280,7 +279,7 @@ The detailed element catalog lives in [HUD Design](HUD_Design.md). This page def
 | Open map | M / minimap click | Map/View button | Tap minimap |
 | Open inventory | Tab / I | Menu combo or D-pad shortcut | Swipe/top button |
 | Loot | F / click | A / Cross | Tap / hold |
-| Close overlay | ESC | B / Circle | Close button / system back |
+| Close overlay | ESC | B / Circle | Close button |
 | Ping | Middle mouse / ping key | D-pad / bumper | Ping button / long press map |
 | Pause | ESC | Start/Menu | Pause button |
 

@@ -89,7 +89,7 @@ A streamer applies Streamer mode. The preset should hide names, invite codes, an
 ## Settings Failure Cases
 
 - If presets silently change too many options, players lose trust.
-- If platform-specific settings sync incorrectly, mobile HUD layout may break PC comfort or vice versa.
+- If platform-specific settings sync incorrectly, HUD scale or focus settings may break PC/Console comfort.
 - If ranked locks appear without explanation, players assume bugs or unfairness.
 - If accessibility settings are buried, some players may churn before the first raid.
 

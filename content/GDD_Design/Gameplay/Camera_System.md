@@ -35,7 +35,7 @@ The camera fulfills three simultaneous roles:
 | **Default altitude**          | 18–22 m above ground                                                      | Player model visible at \~20% screen height; enough context around them.          |
 | **Default FOV (world-space)** | 24×18 m visible area (at 1080p)                                           | Roughly 1.5 player-character widths of buffer on each side.                       |
 | **Camera tilt**               | 90° (true overhead), optional 10–15° isometric lean                       | 90° is fairest for hitbox alignment; mild tilt adds depth cue without distorting. |
-| **Aspect ratio**              | 16:9 (primary); 18:9 and 21:9 supported with wider horizontal view        | Ultrawide should not meaningfully extend LOS beyond portrait specs.               |
+| **Aspect ratio**              | 16:9 (primary); 18:9 and 21:9 supported with wider horizontal view        | Ultrawide should not meaningfully extend LOS beyond the 16:9 baseline.            |
 | **Frame rate**                | Camera follows character at render rate (uncapped); physics sync to 60 hz | Smooth camera at high FPS without simulation advantage.                           |
 
 #### Dynamic Altitude States

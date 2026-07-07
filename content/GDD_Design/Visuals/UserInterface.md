@@ -276,7 +276,7 @@ For detailed functional specifications, see [HUD Design](../UI_UX/HUD_Design.md)
 │                          └──────────┘   │
 │                                         │
 │ [Move]              30/30  [R]  [Fire]  │  Bottom: Controls
-│ [Crouch]       [Reload] [Swap] [Inv]    │  (Mobile layout)
+│ [Crouch]       [Reload] [Swap] [Inv]    │  (PC/Console layout)
 └─────────────────────────────────────────┘
 ```
 

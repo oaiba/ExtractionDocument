@@ -285,6 +285,514 @@ The detailed element catalog lives in [HUD Design](HUD_Design.md). This page def
 
 ---
 
+## Designer-Ready Screen Specs
+
+In-raid specs must preserve threat awareness. Every overlay below must keep audio readable, close immediately, and avoid hiding survival-critical state unless the design explicitly accepts that risk.
+
+### HUD Reference
+
+#### Player Intent
+
+Read survival-critical information while moving, fighting, looting, and extracting without opening a blocking menu.
+
+#### Expanded ASCII Wireframe
+
+```
++--------------------------------------------------------------------------------+
+| Squad / Health                         Compass                         Timer   |
+|                                                                                |
+|                                                                                |
+|                         GAMEPLAY SPACE / TOP-DOWN RAID                         |
+|                                                                                |
+| Prompt: Hold F Search                                      Minimap / Extracts  |
+| Status effects                                  Ammo / Weapon / Weight / Ability|
++--------------------------------------------------------------------------------+
+```
+
+#### Layout Anatomy
+
+| Region | Requirement |
+| :--- | :--- |
+| Top band | squad, compass, raid timer only |
+| Center | kept mostly clear for combat readability |
+| Bottom band | prompts, status effects, ammo, ability, weight |
+| Corners | reserve for persistent but non-blocking HUD clusters |
+
+#### Visual Hierarchy
+
+| Priority | Element | Requirement |
+| :--- | :--- | :--- |
+| 1 | Lethal status | health, armor break, bleed, extraction timer |
+| 2 | Action readiness | ammo, ability, interaction prompt |
+| 3 | Navigation | compass, minimap, extraction hint |
+
+#### Component Requirements
+
+| Component | Requirement |
+| :--- | :--- |
+| HUD cluster | Stable position and no layout jump when values change |
+| Warning state | Text or symbol plus color; never color alone |
+| Prompt | Names input, action, hold/tap requirement, and risk if noisy |
+
+#### States & Edge Cases
+
+| State | Behavior |
+| :--- | :--- |
+| Combat | Reduce noncritical hints; keep health/ammo visible |
+| Low health | Promote medical/status indicators |
+| Extract active | Timer and extraction state become top priority |
+| HUD disabled/custom | Critical warnings still appear |
+
+#### Input / Focus / Touch
+
+| Action | PC | Console | Mobile |
+| :--- | :--- | :--- | :--- |
+| Use prompt | F / hold | A / Cross | Tap/hold prompt |
+| Ping | Middle mouse | D-pad / bumper | Long press |
+| Open map | M | View button | Tap minimap |
+
+#### Designer Notes
+
+- HUD is not a decorative frame; keep the playfield dominant.
+- Any hidden HUD option must preserve death-prevention alerts.
+
+#### Acceptance Checklist
+
+- [ ] Critical state remains readable during combat.
+- [ ] HUD clusters do not cover the operator or immediate threat zone.
+
+### Tactical Map
+
+#### Player Intent
+
+Orient, plan route, inspect extracts, view squad pings, and check quest landmarks without gaining unfair enemy tracking.
+
+#### Expanded ASCII Wireframe
+
+```
++--------------------------------------------------------------------------------+
+| TACTICAL MAP                                             [Pins] [Close]        |
+|--------------------------------------------------------------------------------|
+| MAP CANVAS: fog, landmarks, extracts, pings, quest zones                        |
+|                                                                                |
+|                                                                                |
+|--------------------------------------------------------------------------------|
+| LEGEND / FILTERS                 | DETAIL: Extract Crossroads                  |
+| [Extracts] [Quests] [Pings]      | Rule: open 10m after flare                  |
+| Exposure: Raid continues         | Distance 210m | Risk: exposed road          |
++--------------------------------------------------------------------------------+
+```
+
+#### Layout Anatomy
+
+| Region | Requirement |
+| :--- | :--- |
+| Map canvas | largest area; shows terrain, extracts, pings, quest zones |
+| Filters/legend | text labels for all symbols |
+| Detail panel | selected marker rule, distance, risk, availability |
+| Exposure notice | persistent reminder that raid continues |
+
+#### Visual Hierarchy
+
+| Priority | Element | Requirement |
+| :--- | :--- | :--- |
+| 1 | Player/squad position and extracts | Always visible |
+| 2 | Selected marker detail | Must explain rule and risk |
+| 3 | Filters | Secondary and compact |
+
+#### Component Requirements
+
+| Component | Requirement |
+| :--- | :--- |
+| Extract marker | name, availability, rule, distance |
+| Ping marker | owner, age, type, decay |
+| Quest marker | objective, status, requirement |
+
+#### States & Edge Cases
+
+| State | Behavior |
+| :--- | :--- |
+| No map intel | Show partial map and explain missing intel |
+| Enemy nearby | Do not reveal enemy unless system rules allow |
+| Jammed/EMP | Show degraded map reason |
+| Online raid | Never hard-pauses gameplay |
+
+#### Input / Focus / Touch
+
+| Action | PC | Console | Mobile |
+| :--- | :--- | :--- | :--- |
+| Pan/zoom | Drag/wheel | Sticks/triggers | Pinch/drag |
+| Place ping | Right-click | A / Cross | Long press |
+| Close | M/Esc | B / Circle | Close button |
+
+#### Designer Notes
+
+- Map should feel like an exposed tactical tool, not a safe menu.
+- All icons need legend labels.
+
+#### Acceptance Checklist
+
+- [ ] Extract rules are readable.
+- [ ] Raid exposure is visible while map is open.
+
+### Looting Overlay
+
+#### Player Intent
+
+Search, compare, and transfer loot fast while understanding noise, exposure, weight, and inventory capacity.
+
+#### Expanded ASCII Wireframe
+
+```
++--------------------------------------------------------------------------------+
+| LOOTING: Weapon Crate                                 Exposure: HIGH [Close]   |
+|--------------------------------------------------------------------------------|
+| CONTAINER ITEMS                  | PLAYER QUICK INVENTORY                       |
+| [Rifle 4x2] [Ammo x60] [Key FIR] | Rig slots | Backpack grid | Secure slot      |
+|--------------------------------------------------------------------------------|
+| SELECTED: Keycard | Value 45K | Quest: Lab Rat | Weight +0.1kg                  |
+| [Take] [Quick Move] [Inspect] [Leave]                                           |
++--------------------------------------------------------------------------------+
+```
+
+#### Layout Anatomy
+
+| Region | Requirement |
+| :--- | :--- |
+| Container list/grid | item identity, size, rarity/value, FIR/quest state |
+| Player inventory | target capacity and valid placement |
+| Exposure header | noise/search state and vulnerability warning |
+| Selected detail | value, weight, quest/FIR, actions |
+
+#### Visual Hierarchy
+
+| Priority | Element | Requirement |
+| :--- | :--- | :--- |
+| 1 | Exposure and close action | Always visible |
+| 2 | Item value/quest state | Visible before transfer |
+| 3 | Capacity/weight | Persistent during movement |
+
+#### Component Requirements
+
+| Component | Requirement |
+| :--- | :--- |
+| Loot tile | name, footprint, stack, FIR/quest/value badges |
+| Transfer preview | valid/invalid target and resulting weight |
+| Search progress | truthful timer and noise state |
+
+#### States & Edge Cases
+
+| State | Behavior |
+| :--- | :--- |
+| Searching | Progress, noise, cancel available |
+| Container empty | Show empty result and close path |
+| Inventory full | Block transfer, show needed cells |
+| Under fire | Overlay may auto-minimize or warning intensifies |
+
+#### Input / Focus / Touch
+
+| Action | PC | Console | Mobile |
+| :--- | :--- | :--- | :--- |
+| Take item | Click/drag | A / Cross | Tap |
+| Quick move | Ctrl-click | X / Square | Double tap |
+| Close | Esc | B / Circle | Close |
+
+#### Designer Notes
+
+- Do not hide the risk of standing still.
+- Quest/FIR labels must be text-readable.
+
+#### Acceptance Checklist
+
+- [ ] Exposure, weight, and capacity are visible while looting.
+- [ ] Empty/full/under-fire states are specified.
+
+### Inventory Overlay
+
+#### Player Intent
+
+Rearrange gear mid-raid under pressure without mistaking safe stash behavior for exposed raid behavior.
+
+#### Expanded ASCII Wireframe
+
+```
++--------------------------------------------------------------------------------+
+| INVENTORY OVERLAY                              Raid continues | [Close]        |
+|--------------------------------------------------------------------------------|
+| EQUIPPED GEAR             | BACKPACK / RIG GRID                 | ITEM DETAIL   |
+| Weapon / Armor / Rig      | item footprints and valid targets   | Stats, value  |
+| Weight 33/40kg            |                                     | Drop warning  |
+|--------------------------------------------------------------------------------|
+| [Use] [Move] [Split] [Drop] [Discard Confirm]                                  |
++--------------------------------------------------------------------------------+
+```
+
+#### Layout Anatomy
+
+| Region | Requirement |
+| :--- | :--- |
+| Equipped gear | slots, durability, ammo, status |
+| Inventory grid | rig/backpack/secure capacity |
+| Detail panel | selected item effect, value, risk |
+| Action bar | use, move, split, drop, close |
+
+#### Visual Hierarchy
+
+| Priority | Element | Requirement |
+| :--- | :--- | :--- |
+| 1 | Raid continues warning | Persistent |
+| 2 | Weight and movement penalty | Always visible |
+| 3 | Drop/destructive actions | Separated and confirmed |
+
+#### Component Requirements
+
+| Component | Requirement |
+| :--- | :--- |
+| Item tile | footprint, stack, FIR/quest/protected state |
+| Drop action | consequence copy and confirm for protected/high-value items |
+| Secure container | visually distinct restrictions |
+
+#### States & Edge Cases
+
+| State | Behavior |
+| :--- | :--- |
+| Overweight | Show movement penalty and remove options |
+| Item locked | Disable invalid move/drop with reason |
+| Healing/use in progress | Show timer and vulnerability |
+| Combat detected | Warning, but player retains control |
+
+#### Input / Focus / Touch
+
+| Action | PC | Console | Mobile |
+| :--- | :--- | :--- | :--- |
+| Move item | Drag/drop | Grid cursor | Tap item then target |
+| Use item | Hotkey/click | A / Cross | Tap action |
+| Drop | Context menu | Hold button | Long press + confirm |
+
+#### Designer Notes
+
+- Mid-raid inventory needs faster exits and stronger risk copy than stash.
+- Do not reuse stash destructive affordances without raid-specific warning.
+
+#### Acceptance Checklist
+
+- [ ] Raid exposure, weight, and destructive drop warnings are clear.
+- [ ] Controller and touch can move items without precision-only input.
+
+### Pause Overlay
+
+#### Player Intent
+
+Access settings, squad/social, abandon, report, or reconnect options while understanding that online raid state is not paused.
+
+#### Expanded ASCII Wireframe
+
+```
++--------------------------------------------------------------------------------+
+| PAUSE OVERLAY                                      Online raid continues        |
+|--------------------------------------------------------------------------------|
+| [Resume] [Settings] [Controls] [Report] [Support]                              |
+|                                                                                |
+| Danger notice: audio remains live; character remains vulnerable                 |
+|--------------------------------------------------------------------------------|
+| [Abandon Raid]                                                     [Resume]     |
++--------------------------------------------------------------------------------+
+```
+
+#### Layout Anatomy
+
+| Region | Requirement |
+| :--- | :--- |
+| Action list | resume first, settings/support secondary |
+| Danger notice | non-paused state and vulnerability |
+| Abandon | separated destructive action |
+
+#### Visual Hierarchy
+
+| Priority | Element | Requirement |
+| :--- | :--- | :--- |
+| 1 | Resume | Default focus |
+| 2 | Online continues notice | Near header |
+| 3 | Abandon | Low and separated |
+
+#### Component Requirements
+
+| Component | Requirement |
+| :--- | :--- |
+| Resume CTA | immediate close |
+| Abandon CTA | hold/confirm with gear consequence |
+| Settings shortcut | opens safe subset without hiding danger notice |
+
+#### States & Edge Cases
+
+| State | Behavior |
+| :--- | :--- |
+| Offline/local | May pause if mode allows |
+| Online | Does not pause; audio continues |
+| Downed/dead | Action set changes to spectate/report |
+| Abandon confirm | Names MIA/gear consequence |
+
+#### Input / Focus / Touch
+
+| Action | PC | Console | Mobile |
+| :--- | :--- | :--- | :--- |
+| Resume | Esc / click | Start/B | Resume button |
+| Navigate | Mouse/arrows | D-pad | Tap |
+| Abandon | Hold confirm | Hold confirm | Hold CTA |
+
+#### Designer Notes
+
+- Default focus must never land on Abandon.
+- Keep background readable enough to preserve threat context.
+
+#### Acceptance Checklist
+
+- [ ] Online non-pause consequence is explicit.
+- [ ] Abandon requires confirmation.
+
+### Spectator View
+
+#### Player Intent
+
+Watch eligible teammates, understand remaining squad state, and avoid unfair ghosting after death.
+
+#### Expanded ASCII Wireframe
+
+```
++--------------------------------------------------------------------------------+
+| SPECTATING: Player2                              Squad 2 alive | [Report]      |
+|--------------------------------------------------------------------------------|
+| gameplay view from allowed teammate perspective                                 |
+|--------------------------------------------------------------------------------|
+| [Prev] [Next] Camera: Follow / Free Ally Only | Extract Timer 12:30 | [Leave]  |
++--------------------------------------------------------------------------------+
+```
+
+#### Layout Anatomy
+
+| Region | Requirement |
+| :--- | :--- |
+| Header | spectated player, squad alive, report |
+| View | allowed teammate/camera only |
+| Controls | previous/next, camera mode, leave |
+
+#### Visual Hierarchy
+
+| Priority | Element | Requirement |
+| :--- | :--- | :--- |
+| 1 | Spectated identity | Always visible |
+| 2 | Anti-ghosting limits | Communicated when camera is restricted |
+| 3 | Leave/report actions | Available but secondary |
+
+#### Component Requirements
+
+| Component | Requirement |
+| :--- | :--- |
+| Player switcher | only eligible teammates |
+| Camera mode | labels restrictions |
+| Report action | keeps match context |
+
+#### States & Edge Cases
+
+| State | Behavior |
+| :--- | :--- |
+| Teammates alive | Spectate allowed allies |
+| All eliminated | Route to post-raid |
+| Enemy spectate blocked | Show restriction reason |
+| Reconnect teammate | Shows temporary unavailable state |
+
+#### Input / Focus / Touch
+
+| Action | PC | Console | Mobile |
+| :--- | :--- | :--- | :--- |
+| Switch target | Q/E | Bumpers | Swipe/tap |
+| Change camera | C | Y / Triangle | Camera button |
+| Leave | Click | Menu | Leave button |
+
+#### Designer Notes
+
+- Spectator UI must not reveal enemy information unavailable to the squad.
+- Keep report reachable without making it primary.
+
+#### Acceptance Checklist
+
+- [ ] Anti-ghosting camera restrictions are explicit.
+- [ ] All-eliminated state routes cleanly to post-raid.
+
+### Reconnect Overlay
+
+#### Player Intent
+
+Understand reconnection progress, attempts, timeout, and the consequence of canceling while gear and raid status are at risk.
+
+#### Expanded ASCII Wireframe
+
+```
++--------------------------------------------------------------------------------+
+| RECONNECTING TO RAID                                                            |
+|--------------------------------------------------------------------------------|
+| Last raid: Sector 7 / Night       Attempt 2/5        Timeout 00:38             |
+| [==================--------------] Re-establishing session and player state     |
+| Warning: cancel may mark the raid MIA and gear may be lost.                     |
+|--------------------------------------------------------------------------------|
+| [Cancel]                                                        [Retry Now]     |
++--------------------------------------------------------------------------------+
+```
+
+#### Layout Anatomy
+
+| Region | Requirement |
+| :--- | :--- |
+| Session summary | map, mode/time, last known state |
+| Progress | attempt count, timeout, current operation |
+| Consequence warning | MIA/gear risk |
+| Actions | cancel with confirm, retry if allowed |
+
+#### Visual Hierarchy
+
+| Priority | Element | Requirement |
+| :--- | :--- | :--- |
+| 1 | Timeout and attempt | Always visible |
+| 2 | Gear consequence | Above cancel |
+| 3 | Retry status | Secondary |
+
+#### Component Requirements
+
+| Component | Requirement |
+| :--- | :--- |
+| Progress bar | names real operation |
+| Cancel | confirm with consequence |
+| Error code | shown on failure for support |
+
+#### States & Edge Cases
+
+| State | Behavior |
+| :--- | :--- |
+| Reconnecting | Spinner/progress, attempt count, timeout |
+| Reconnected | Fade back and restore HUD |
+| Timeout | Explain MIA/gear result and route home |
+| Version mismatch | Require update; retry disabled |
+| Cancel | Confirm abandon consequence |
+
+#### Input / Focus / Touch
+
+| Action | PC | Console | Mobile |
+| :--- | :--- | :--- | :--- |
+| Retry | Click | A / Cross | Retry button |
+| Cancel | Click + confirm | B / Circle + confirm | Cancel + confirm |
+
+#### Designer Notes
+
+- Do not make cancel look safe.
+- Timeout should be concrete, not vague.
+
+#### Acceptance Checklist
+
+- [ ] Attempts, timeout, and gear consequence are visible.
+- [ ] Version mismatch and timeout have clear next steps.
+
+---
+
 ## Analytics
 
 | Metric | Use |

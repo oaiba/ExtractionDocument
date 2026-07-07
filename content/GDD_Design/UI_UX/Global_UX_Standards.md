@@ -182,6 +182,29 @@ Modal copy must be specific. Use "Discard AK-74M? This removes it from your stas
 
 ---
 
+## Designer-Ready Screen Rules
+
+These rules apply to every screen, overlay, modal, HUD element, notification, and loading state in the UI/UX package.
+
+| Area | Standard |
+| :--- | :--- |
+| Layout anatomy | Name the header, primary content, detail/context panel, warning lane, and action bar where they exist |
+| CTA priority | One primary action per state; secondary actions must not visually compete with it |
+| Disabled reasons | Disabled CTAs must name the first blocker and provide a route when available |
+| Warning lanes | Warnings appear near the action they affect and do not shift primary CTA placement |
+| Focus order | Define keyboard/controller focus from primary task to secondary actions to utility controls |
+| Touch fallback | Mobile/touch layouts need reachable primary CTA, generous targets, and alternatives to precision drag |
+| State language | Use readable labels such as Ready, Locked, Offline, Expired, Full, Blocked, and Pending |
+| Destructive actions | Sell, discard, abandon, unlink, delete, spend, overwrite, kick, block, and report require consequence copy |
+| Icon usage | Icons support scan speed but never carry meaning alone |
+| ASCII translation | ASCII wireframes define information architecture, not final art direction |
+
+### Standard Designer-Ready Section Set
+
+Every screen group detail should include: `Player Intent`, `Expanded ASCII Wireframe`, `Layout Anatomy`, `Visual Hierarchy`, `Component Requirements`, `States & Edge Cases`, `Input / Focus / Touch`, `Designer Notes`, and `Acceptance Checklist`.
+
+---
+
 ## Accessibility Baseline
 
 | Area | Standard |

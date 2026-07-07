@@ -437,3 +437,27 @@ System Error -> Retry available? -> Retry -> Success
 *   **Hold-to-Confirm Timeout:** Adjustable 0.5-3 seconds
 *   **Aim Assist Slider:** 0%-100% magnetism strength
 
+---
+
+## Designer Handoff Mapping
+
+Use this page to understand journey order and transition intent. Use the linked screen group pages for layout, component, state, and input detail.
+
+| Flow | Canonical Detail Page | Designer Check |
+| :--- | :--- | :--- |
+| Boot to Home | [Commerce, Settings & System Screens](Commerce_Settings_System_Screens.md), [Loading Screen Design](LoadingScreen_Design.md) | loading/account errors and setup states are explicit |
+| Home to Queue | [Out-of-Raid Screens](Out_Of_Raid_Screens.md), [Pre-Raid Screens](Pre_Raid_Screens.md) | deploy blockers and risk confirmation are preserved |
+| Queue to Raid | [Pre-Raid Screens](Pre_Raid_Screens.md), [Loading Screen Design](LoadingScreen_Design.md) | match found, cancel lock, and L4 loading states align |
+| In-Raid Action | [HUD Design](HUD_Design.md), [In-Raid Screens](In_Raid_Screens.md), [Notification Systems](Notification_Systems.md) | overlays preserve combat readability and audio awareness |
+| Raid to Results | [Post-Raid Screens](Post_Raid_Screens.md), [Loading Screen Design](LoadingScreen_Design.md) | outcome, loot, replay, and redeploy validation are clear |
+| Social Coordination | [Social Screens](Social_Screens.md) | invite, voice, privacy, and safety states are respected |
+| LiveOps Progression | [Progression & LiveOps Screens](Progression_LiveOps_Screens.md) | rewards, expiry, premium/free, and claim blockers are visible |
+| Settings Recovery | [Commerce, Settings & System Screens](Commerce_Settings_System_Screens.md), [Global UX Standards](Global_UX_Standards.md) | apply/revert, locks, errors, and support routes are explicit |
+
+### Flow QA Checklist
+
+- [ ] Each journey transition has a clear source screen, destination screen, and failure state.
+- [ ] Any flow that risks gear, currency, account access, privacy, or player safety includes confirmation/consequence copy.
+- [ ] Mobile flow variants preserve primary CTA reachability and do not rely on desktop hover.
+- [ ] Flow diagrams do not contradict screen-level CTAs or disabled-state rules.
+

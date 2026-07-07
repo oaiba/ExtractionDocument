@@ -324,6 +324,101 @@ Visual and audio cues that communicate danger without directly revealing enemy p
 
 ---
 
+## Designer-Ready Notification Family Specs
+
+Notifications must prioritize survival. Combat-critical alerts can interrupt; informational or reward messages queue, fade, or wait until pressure drops.
+
+### Notification Placement Map
+
+#### Player Intent
+
+Receive the right signal at the right urgency without losing combat readability.
+
+#### Expanded ASCII Wireframe
+
+```
++--------------------------------------------------------------------------------+
+| Kill feed / squad alerts                                      Raid warnings    |
+|                                                                                |
+|                          combat read area, mostly clear                         |
+|                                                                                |
+| Toast queue / item pickup                         Damage / ammo / status alerts |
++--------------------------------------------------------------------------------+
+```
+
+#### Layout Anatomy
+
+| Region | Requirement |
+| :--- | :--- |
+| Top left | kill feed and squad/system alerts |
+| Top right | raid timer, extraction, server warnings |
+| Center edge | incoming damage, grenade, suppression, low health |
+| Bottom left | toast queue and pickups |
+| Bottom right | ammo, reload, status effect reminders |
+
+#### Visual Hierarchy
+
+| Priority | Notification | Requirement |
+| :--- | :--- | :--- |
+| 1 | lethal threats | grenade, low health, downed, extraction critical |
+| 2 | combat feedback | hit marker, kill confirm, suppression, damage direction |
+| 3 | objective/economy | quest complete, XP, pickup, reward |
+| 4 | social/system | invite, chat, news, noncritical tips |
+
+#### Component Requirements
+
+| Component | Requirement |
+| :--- | :--- |
+| Notification shell | icon, short label, optional detail, timer/progress if relevant |
+| Queue item | priority, max visible count, expiry/fade behavior |
+| Interrupt alert | allowed only for lethal or irreversible events |
+
+#### States & Edge Cases
+
+| State | Behavior |
+| :--- | :--- |
+| Combat pressure | suppress noncritical toasts |
+| Queue overflow | collapse low-priority messages into count |
+| Muted/reduced effects | preserve text or haptic fallback |
+| Colorblind mode | icons/text replace hue-only coding |
+
+#### Input / Focus / Touch
+
+| Action | PC | Console | Mobile |
+| :--- | :--- | :--- | :--- |
+| Expand toast | Hover/click | Focus notification | Tap |
+| Dismiss noncritical | Click X | X / Square | Swipe |
+| Open related screen | Click toast | A / Cross | Tap toast |
+
+#### Designer Notes
+
+- If a notification does not affect the next 3 seconds of survival, it should not occupy the combat center.
+- Toast copy must be short enough to read while moving.
+
+#### Acceptance Checklist
+
+- [ ] Each family has a placement, queue rule, interrupt rule, and accessible fallback.
+
+### Family Requirements
+
+| Family | Trigger | Placement | Queue / Interrupt Rule | Accessibility / Sync |
+| :--- | :--- | :--- | :--- | :--- |
+| Kill Feed | player/squad kill events | top-left stack | queue max 4; never center interrupt | icon + text; paired kill audio optional |
+| Damage Feedback | incoming/outgoing damage | reticle/edge/status cluster | incoming lethal interrupts; outgoing hit markers stay compact | direction, haptic, and audio support |
+| Status Effects | bleed, fracture, poison, buff/debuff | bottom/status cluster | persistent until cleared; escalates if lethal | text labels and icon shapes |
+| Toast Messages | rewards, unlocks, pickup, social info | bottom-left queue | defer during combat unless reward is time-sensitive | readable text, no color-only rarity |
+| Contextual Prompts | interactable object or blocked action | near object/bottom prompt | replaces previous prompt; blocked prompt names reason | input icon plus action verb |
+| Danger Communication | grenade, boss, extraction, suppression | edge/center-edge | may interrupt based on lethality | audio/haptic pair required |
+
+### Notification QA Checklist
+
+- [ ] Noncritical notifications defer during combat pressure.
+- [ ] Lethal warnings can interrupt but do not fully blind the playfield.
+- [ ] Every color-coded state also has text or icon shape.
+- [ ] Audio, visual, and haptic feedback match the same event priority.
+
+---
+
 ## Audio-Visual Sync Reference
 
 Every notification type has paired audio-visual feedback:

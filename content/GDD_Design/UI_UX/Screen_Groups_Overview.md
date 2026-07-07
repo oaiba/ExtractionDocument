@@ -57,7 +57,7 @@ Every screen group must answer four questions:
 
 ## Screen Spec Template
 
-Use this template for every new screen spec. Keep it short enough to update but complete enough for implementation.
+Use this template for every new screen spec. Keep it short enough to update, but complete enough for designer layout, UX review, and implementation planning. [Out-of-Raid Screens](Out_Of_Raid_Screens.md) is the baseline example for the full designer-ready format.
 
 #### Spec Template Layout
 
@@ -81,18 +81,26 @@ Use this template for every new screen spec. Keep it short enough to update but 
 
 | Section | Required Content |
 | :--- | :--- |
-| Goal | One-sentence screen purpose |
-| User intent | Why the player opened it and what success means |
-| Entry points | Buttons, deep links, events, and system transitions that open the screen |
-| Exit points | Back behavior, primary CTA, cancel, timeout, and destructive exits |
-| Layout | PC/Console landscape standard |
-| Primary CTA | Main action, disabled conditions, and confirmation requirements |
-| Secondary actions | Useful alternatives that do not compete with the primary CTA |
-| States | Default, loading, empty, invalid, locked, offline, error, success |
-| Input mapping | Mouse/keyboard, controller, touch, and focus order |
-| Accessibility | Text scale, contrast, screen reader label, hold alternative, color-independent meaning |
-| Analytics | Events and funnel metrics that prove the screen is working |
-| Acceptance | Checklist for design review and implementation QA |
+| Player Intent | Why the player opened it, what success means, and what risk/cost must be understood |
+| Expanded ASCII Wireframe | PC/console landscape layout with header, primary area, detail panel, warning lane, and action bar |
+| Layout Anatomy | Named regions and exact content each region must hold |
+| Visual Hierarchy | Priority order for what must read first, second, and third |
+| Component Requirements | Low-level requirements for rows, cards, panels, CTAs, warnings, badges, and dialogs |
+| States & Edge Cases | Default, loading, empty, invalid, blocked, locked, offline, error, success, and destructive confirmation states |
+| Input / Focus / Touch | Mouse/keyboard, controller, mobile touch, focus order, and hold/tap alternatives |
+| Designer Notes | Short actionable constraints about density, copy, responsiveness, and non-color state meaning |
+| Acceptance Checklist | Review checklist for layout handoff and implementation QA |
+
+### Designer-Ready Handoff Rules
+
+| Rule | Requirement |
+| :--- | :--- |
+| Summary is not enough | Critical requirements must live inside the owning screen section, not only in inventory tables |
+| Disabled means explained | Every disabled CTA must name the first blocker and provide a route when possible |
+| Color is never alone | State, rarity, danger, lock, and success meaning must have text or icon-shape support |
+| Action bars stay stable | Primary CTAs should not jump when warning text appears |
+| Mobile is not an afterthought | Every screen needs a touch layout note and a sticky or reachable primary CTA |
+| Destructive actions confirm | Sell, discard, abandon, unlink, delete, spend, and report/block flows state consequence before commit |
 
 ---
 

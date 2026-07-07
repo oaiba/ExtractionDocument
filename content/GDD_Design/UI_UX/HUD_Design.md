@@ -310,6 +310,104 @@ HUD elements are not all visible at all times. The system uses game state to det
 
 ---
 
+## Designer-Ready HUD Element Specs
+
+These specs translate the HUD catalog into layout-ready components. Each element must preserve the central combat read area and must not move when values change.
+
+### Global HUD Placement
+
+#### Player Intent
+
+Read lethal state, navigation, objective, and interaction information without breaking top-down combat focus.
+
+#### Expanded ASCII Wireframe
+
+```
++--------------------------------------------------------------------------------+
+| Squad / Health                  Compass / Objective                    Timer   |
+|                                                                                |
+|                         clear combat and operator read area                     |
+|                                                                                |
+| Prompt / Status Effects                         Ammo / Ability / Weight / Map  |
++--------------------------------------------------------------------------------+
+```
+
+#### Layout Anatomy
+
+| Region | Requirement |
+| :--- | :--- |
+| Top left | squad, health, armor, critical injury |
+| Top center | compass and objective pulse |
+| Top right | extraction timer and raid warnings |
+| Bottom left | prompts and status effects |
+| Bottom right | ammo, weapon, ability, weight, minimap |
+
+#### Visual Hierarchy
+
+| Priority | Element | Requirement |
+| :--- | :--- | :--- |
+| 1 | Death-prevention info | health, bleed, ammo empty, extraction timer |
+| 2 | Immediate action | prompt, reload, ability ready |
+| 3 | Navigation/context | compass, minimap, objective |
+
+#### Component Requirements
+
+| Component | Requirement |
+| :--- | :--- |
+| HUD cluster | fixed anchor, safe-zone aware, stable width |
+| Warning state | text/icon plus color; no color-only meaning |
+| Optional element | can be hidden only if critical override still appears |
+
+#### States & Edge Cases
+
+| State | Behavior |
+| :--- | :--- |
+| Combat | suppress noncritical toasts and tips |
+| Low health | health/status cluster promoted |
+| Extraction active | timer becomes top-right priority |
+| Minimal HUD | critical alerts still break through |
+
+#### Input / Focus / Touch
+
+| Action | PC | Console | Mobile |
+| :--- | :--- | :--- | :--- |
+| Inspect map | M / click minimap | View button | Tap minimap |
+| Use prompt | F / hold | A / Cross | Tap/hold |
+| Ping | Middle mouse | D-pad/bumper | Long press |
+
+#### Designer Notes
+
+- Reserve the center for target, cover, projectiles, and operator silhouette.
+- Never let changing numbers resize the ammo or timer cluster.
+
+#### Acceptance Checklist
+
+- [ ] Critical clusters are safe-zone aware on PC, console, and mobile.
+- [ ] Minimal/custom HUD still shows lethal warnings.
+
+### Element-Level Requirements
+
+| Element | Anatomy | Visibility Rule | Failure / Edge State | Platform Behavior |
+| :--- | :--- | :--- | :--- | :--- |
+| Health and Armor | body HP, armor durability, injury icons | always visible in combat and damage states | broken armor, bleed, fracture, downed | mobile uses compact stacked bars |
+| Stamina | current stamina, exhaustion marker | fades when full and safe | exhausted, overweight, sprint locked | mobile keeps near movement controls |
+| Ammo and Weapon | magazine, reserve, fire mode, weapon name | always visible during weapon-ready state | empty, jammed, wrong ammo, reload blocked | console adds button hint for reload |
+| Minimap | player, extracts, squad pings, noise-safe markers | optional but extraction warning overrides | jammed, no intel, map disabled | mobile can expand from corner |
+| Compass | heading, pings, objective tick | visible while moving/aiming | jammed or objective hidden | mobile uses shortened ticks |
+| Extraction Timer | raid time, extraction countdown, overtime | always visible under 5 minutes or extracting | timer critical, extract blocked | enlarged warning on mobile |
+| Squad Panel | teammate HP, role, distance, downed state | visible in squad modes | disconnected, downed, dead, muted | collapsible on mobile |
+| Interaction Prompt | input, action verb, hold/tap, risk/noise | appears only when actionable | blocked, locked, noisy, inventory full | touch prompt must be tappable |
+| Weight Indicator | current/max, penalty tier | visible when looting or overweight | overweight, movement penalty, cannot sprint | pinned near inventory on mobile |
+
+### HUD QA Checklist
+
+- [ ] Every HUD element has a stable anchor and does not shift when values change.
+- [ ] Every warning has a text/icon fallback beyond color.
+- [ ] Combat, looting, extraction, downed, jammed, and mobile condensed states are represented.
+- [ ] Optional HUD customization cannot hide death-prevention alerts.
+
+---
+
 ## Performance Budget
 
 ### HUD Rendering Rules

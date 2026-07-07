@@ -323,7 +323,94 @@ LoadingManager (Singleton)
 
 ***
 
-### 8. Cross-References
+### 8. Designer-Ready Loading Type Specs
+
+Loading screens must tell the truth about wait, preserve trust, and route recoverable errors clearly. Progress can be determinate or indeterminate, but it must name the current operation when the wait is long.
+
+#### Global Loading Anatomy
+
+```
++--------------------------------------------------------------------------------+
+| LOADING TYPE / DESTINATION                                                      |
+|--------------------------------------------------------------------------------|
+| Primary visual: logo, map art, operator, or gameplay-safe backdrop              |
+| Progress: bar/spinner + current operation + optional percentage                 |
+| Context: tip, selected mission, reconnect consequence, or error detail          |
+|--------------------------------------------------------------------------------|
+| Version/status/support | [Retry/Cancel/Continue when allowed]                  |
++--------------------------------------------------------------------------------+
+```
+
+| Region | Requirement |
+| :--- | :--- |
+| Primary visual | Relevant to destination; never hides error or progress |
+| Progress area | truthful operation label, determinate only when real |
+| Context area | tip, map, operator, mission, or consequence copy |
+| Status/action footer | version, service state, retry/cancel/support if needed |
+
+#### Loading Type Requirements
+
+| Type | Player Intent | Layout Requirement | Progress / Timeout | Error State |
+| :--- | :--- | :--- | :--- | :--- |
+| L1 Boot | Know app is starting and not frozen | logo, version, service status | operation label after 3s | update/maintenance/offline path |
+| L2 Splash | Pass brand/legal gate quickly | logo/video, skip hint after allowed time | minimum display timer only | missing media falls back to static logo |
+| L3 PostLogin | Enter home with profile/state sync | operator or safe house preview, account sync label | account/profile/cache phases | auth/sync conflict route |
+| L4 LobbyToMatch | Understand matchmaking-to-raid transition | mission summary, squad state, map art | server allocation, asset load, spawn prep | server error returns to squad/matchmaking |
+| L5 IngameToResult | Understand raid result is being finalized | subdued background, "saving results" copy | result save, inventory reconcile | pending result safe state |
+| L6 ResultToMain | Return to home after rewards/stash | reward/save summary | profile/stash refresh | partial sync warning |
+| L7 MapTransition | Move between map states when supported | destination and rule summary | streaming/activation phases | transition fail returns to safe state |
+| L8 Reconnect | Recover active raid | last raid summary, attempt count, timeout | attempt count and exact timeout | MIA/gear consequence, retry/support |
+
+#### Visual Hierarchy
+
+| Priority | Element | Requirement |
+| :--- | :--- | :--- |
+| 1 | Blocking error or required action | Overrides tip/art |
+| 2 | Current operation and timeout | Visible for long waits |
+| 3 | Destination context | Map/mode/operator/result summary |
+| 4 | Tips/lore | Secondary and skippable where allowed |
+
+#### Component Requirements
+
+| Component | Requirement |
+| :--- | :--- |
+| Progress indicator | never fake completion; can be indeterminate with phase label |
+| Tip carousel | pauses for errors and respects readable duration |
+| Cancel/retry | visible only when safe or with consequence confirmation |
+| Support code | copyable for failure states |
+
+#### States & Edge Cases
+
+| State | Behavior |
+| :--- | :--- |
+| Long wait | show operation label and optional tip rotation |
+| Timeout | name failed phase and next action |
+| Offline | show available local route if supported |
+| Version mismatch | required update path; no retry until fixed |
+| Reconnect cancel | confirm MIA/gear consequence |
+
+#### Platform Behavior
+
+| Platform | Requirement |
+| :--- | :--- |
+| PC | bar + operation label + optional percentage when real |
+| Console | larger text and controller-safe skip/retry focus |
+| Mobile | reduced animation, battery-aware video, sticky retry/cancel actions |
+
+#### Designer Notes
+
+- Loading art can carry mood, but operation/status copy carries trust.
+- Reconnect and save-result loading must never look cancellable without consequence.
+
+#### Acceptance Checklist
+
+- [ ] Every loading type shows destination/context, progress behavior, timeout/error handling, and platform notes.
+- [ ] Determinate percentages are used only when backed by real loading phases.
+- [ ] Error states include retry, cancel, offline, update, or support paths as appropriate.
+
+***
+
+### 9. Cross-References
 
 * [Matchmaking & Lobby](../Gameplay/Matchmaking_Lobby.md) — L4 loading in deploy flow
 * [Lore Delivery](https://github.com/oaiba/ExtractionDocument/blob/main/content/Story/Lore_Delivery.md) — Loading screen tip format and attribution

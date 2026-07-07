@@ -280,6 +280,433 @@ Valid same kit? ---- yes ----> [Deploy Again]
 
 ---
 
+## Designer-Ready Screen Specs
+
+Post-raid screens must explain outcome, preserve player trust, and route quickly back to stash, recovery, squad, or redeploy. Summary tables above are navigation; the specs below own layout and state detail.
+
+### After Action Report
+
+#### Player Intent
+
+Understand raid result, rewards, losses, performance, and the next best action.
+
+#### Expanded ASCII Wireframe
+
+```
++--------------------------------------------------------------------------------+
+| AFTER ACTION REPORT                         Result: EXTRACTED       [Continue] |
+|--------------------------------------------------------------------------------|
+| OUTCOME CARD        | XP / STATS                         | NEXT ACTIONS        |
+| Extracted           | XP +1,700 | Kills 4 | Loot 7       | [Move Loot]         |
+| Sector 7 / 31m      | Survival 31m | Damage 620          | [Turn In Quest]     |
+| Insurance safe      | Quest progress: Supply Run +3/3   | [Deploy Again]      |
+|--------------------------------------------------------------------------------|
+| Tabs: Summary | Loot | XP | Stats | Replay | Squad                              |
++--------------------------------------------------------------------------------+
+```
+
+#### Layout Anatomy
+
+| Region | Requirement |
+| :--- | :--- |
+| Outcome card | result, map, duration, survival/death reason, insurance/loss summary |
+| Stat panel | XP, kills, damage, survival, quest deltas |
+| Next actions | move loot, turn in quest, rebuild, deploy again |
+| Tabs | deeper detail without hiding primary outcome |
+
+#### Visual Hierarchy
+
+| Priority | Element | Requirement |
+| :--- | :--- | :--- |
+| 1 | Outcome and next action | Visible immediately |
+| 2 | Gains/losses | Plain totals with deltas |
+| 3 | Detailed stats | Secondary tabs |
+
+#### Component Requirements
+
+| Component | Requirement |
+| :--- | :--- |
+| Result badge | extracted, KIA, MIA, disconnected, run-through with text |
+| XP breakdown | source rows and total |
+| Next action card | one primary route based on result |
+
+#### States & Edge Cases
+
+| State | Behavior |
+| :--- | :--- |
+| Extraction | Move Loot and Deploy Again promoted |
+| Death | Rebuild and Death Replay promoted |
+| MIA/disconnect | Explain gear consequence |
+| Data delayed | Show pending stats and safe next route |
+
+#### Input / Focus / Touch
+
+| Action | PC | Console | Mobile |
+| :--- | :--- | :--- | :--- |
+| Switch tab | Click | Bumpers | Tab row |
+| Continue | Enter/click | A / Cross | Sticky CTA |
+| View detail | Click row | Focus row | Tap card |
+
+#### Designer Notes
+
+- The first screen should answer: what happened, what changed, what now.
+- Do not force players through every tab before continuing.
+
+#### Acceptance Checklist
+
+- [ ] Result, gains, losses, and next action are visible above the fold.
+- [ ] Delayed stat state does not block safe continuation.
+
+### Death Replay
+
+#### Player Intent
+
+Understand how they died, learn the counterplay, and optionally report suspicious behavior.
+
+#### Expanded ASCII Wireframe
+
+```
++--------------------------------------------------------------------------------+
+| DEATH REPLAY                                  [Report] [Skip]                  |
+|--------------------------------------------------------------------------------|
+| Replay viewport: final 12s from player-legal perspective                        |
+| Timeline: -12s ---- impact ---- death                                           |
+|--------------------------------------------------------------------------------|
+| KILL CARD: Attacker, weapon, distance, hit location, visible rules              |
+| [Watch Again] [View Damage] [Report Suspicious] [Continue]                     |
++--------------------------------------------------------------------------------+
+```
+
+#### Layout Anatomy
+
+| Region | Requirement |
+| :--- | :--- |
+| Replay viewport | legal camera, playback controls, timeline |
+| Kill card | attacker, weapon, distance, hit location, damage |
+| Actions | watch again, report, continue |
+
+#### Visual Hierarchy
+
+| Priority | Element | Requirement |
+| :--- | :--- | :--- |
+| 1 | Cause of death | Kill card readable without playback |
+| 2 | Replay controls | Obvious but not dominant |
+| 3 | Report | Accessible and contextual |
+
+#### Component Requirements
+
+| Component | Requirement |
+| :--- | :--- |
+| Timeline | impact markers and scrub controls |
+| Visibility note | explains perspective limits |
+| Report CTA | carries replay context |
+
+#### States & Edge Cases
+
+| State | Behavior |
+| :--- | :--- |
+| Replay available | Autoplay muted or per settings |
+| Replay unavailable | Explain reason: privacy, server, corrupted, spectate limit |
+| Suspected team kill | Promote report/appeal if supported |
+
+#### Input / Focus / Touch
+
+| Action | PC | Console | Mobile |
+| :--- | :--- | :--- | :--- |
+| Play/pause | Space/click | A / Cross | Tap |
+| Scrub | Drag | Triggers | Drag timeline |
+| Report | Click | Focus CTA | Tap CTA |
+
+#### Designer Notes
+
+- Replay is educational first; avoid sensational presentation.
+- Never show enemy intel beyond allowed replay rules.
+
+#### Acceptance Checklist
+
+- [ ] Kill cause is readable even if replay cannot play.
+- [ ] Unavailable replay states explain why.
+
+### Loot Transfer
+
+#### Player Intent
+
+Move extracted loot into stash, resolve overflow, and understand what is safe, quest-critical, or valuable.
+
+#### Expanded ASCII Wireframe
+
+```
++--------------------------------------------------------------------------------+
+| LOOT TRANSFER                              Stash 182/200            [Continue] |
+|--------------------------------------------------------------------------------|
+| EXTRACTED LOOT                      | STASH GRID / TARGET                       |
+| [Rifle 4x2] [Key FIR] [Meds]        | valid cells, containers, overflow lane    |
+|--------------------------------------------------------------------------------|
+| SELECTED: Keycard | Quest: Lab Rat | Value 45K | FIR Yes                       |
+| WARNING: Stash will be full after transfer. [Sell Junk] [Open Stash]           |
++--------------------------------------------------------------------------------+
+```
+
+#### Layout Anatomy
+
+| Region | Requirement |
+| :--- | :--- |
+| Extracted loot | all carried-out items and statuses |
+| Stash target | capacity, valid placement, containers |
+| Detail panel | selected item value/FIR/quest |
+| Warning lane | overflow and destructive warnings |
+
+#### Visual Hierarchy
+
+| Priority | Element | Requirement |
+| :--- | :--- | :--- |
+| 1 | Unresolved loot | Must be clear before leaving |
+| 2 | Stash capacity | Persistent |
+| 3 | Quest/FIR value | Text labels |
+
+#### Component Requirements
+
+| Component | Requirement |
+| :--- | :--- |
+| Loot tile | footprint, value, FIR, quest/protected badge |
+| Overflow lane | temporary state and required resolution |
+| Continue CTA | disabled if unresolved loot requires action |
+
+#### States & Edge Cases
+
+| State | Behavior |
+| :--- | :--- |
+| Stash has room | Auto-place suggestion available |
+| Stash full | Block continue or require discard/sell based on rules |
+| Item protected | Warn before discard/sell |
+| Server pending | Preserve loot and show pending state |
+
+#### Input / Focus / Touch
+
+| Action | PC | Console | Mobile |
+| :--- | :--- | :--- | :--- |
+| Move item | Drag/drop | Grid cursor | Tap item then target |
+| Auto place | Click | Y / Triangle | Auto button |
+| Continue | Click | A / Cross | Sticky CTA |
+
+#### Designer Notes
+
+- Treat extracted loot as emotionally important; avoid casual loss copy.
+- Overflow must feel solvable, not punitive.
+
+#### Acceptance Checklist
+
+- [ ] Stash-full and overflow states are explicit.
+- [ ] Quest/FIR items are clearly labeled.
+
+### Quest Progress
+
+#### Player Intent
+
+See which objectives advanced, completed, failed, or need turn-in before the next raid.
+
+#### Expanded ASCII Wireframe
+
+```
++--------------------------------------------------------------------------------+
+| QUEST PROGRESS                                                                  |
+|--------------------------------------------------------------------------------|
+| Supply Run      READY TO TURN IN     Find rations 3/3 | Extracted Yes          |
+| Lab Rat         IN PROGRESS          Samples 1/3      | Location Sector 7      |
+| Old Debt        FAILED               Died before extract                         |
+|--------------------------------------------------------------------------------|
+| [Turn In Ready] [Track Next] [View Quest Board]                                 |
++--------------------------------------------------------------------------------+
+```
+
+#### Layout Anatomy
+
+| Region | Requirement |
+| :--- | :--- |
+| Quest rows | title, status, objective delta, failure reason |
+| Reward/turn-in area | ready rewards and required items |
+| Actions | turn in, track next, quest board |
+
+#### Visual Hierarchy
+
+| Priority | Element | Requirement |
+| :--- | :--- | :--- |
+| 1 | Ready/failed states | Clear labels |
+| 2 | Objective deltas | Show before/after counts |
+| 3 | Rewards | Visible for completed quests |
+
+#### Component Requirements
+
+| Component | Requirement |
+| :--- | :--- |
+| Quest row | status label, progress delta, location, extraction/FIR rule |
+| Failure reason | plain explanation and retry availability |
+| Turn-in CTA | checks inventory capacity |
+
+#### States & Edge Cases
+
+| State | Behavior |
+| :--- | :--- |
+| Completed | Promote turn-in |
+| Failed | Show reason and retry |
+| Partial | Suggest track next |
+| Reward stash full | Block turn-in and route to stash |
+
+#### Input / Focus / Touch
+
+| Action | PC | Console | Mobile |
+| :--- | :--- | :--- | :--- |
+| Select quest | Click row | D-pad | Tap row |
+| Turn in | Click CTA | A / Cross | Sticky CTA |
+
+#### Designer Notes
+
+- Quest progress should explain extraction-dependent failures gently and directly.
+- Do not use checkmarks alone for completion.
+
+#### Acceptance Checklist
+
+- [ ] Completed, failed, partial, and blocked reward states are covered.
+
+### Squad Summary And Social Actions
+
+#### Player Intent
+
+Review squad outcomes, commend/report players, add friends, and continue with the party.
+
+#### Expanded ASCII Wireframe
+
+```
++--------------------------------------------------------------------------------+
+| SQUAD SUMMARY                                                                   |
+|--------------------------------------------------------------------------------|
+| Player        Result      Role       Damage     Actions                         |
+| You           Extracted   Recon      620        --                              |
+| Player2       KIA         Support    210        [Commend] [Add Friend]          |
+| Player3       Extracted   Assault    840        [Commend] [Report]              |
+|--------------------------------------------------------------------------------|
+| [Stay With Squad] [Leave Party] [Invite Again]                                  |
++--------------------------------------------------------------------------------+
+```
+
+#### Layout Anatomy
+
+| Region | Requirement |
+| :--- | :--- |
+| Player rows | identity, outcome, role, core stat |
+| Social actions | commend, add friend, report, mute/block |
+| Party actions | stay, leave, invite |
+
+#### Visual Hierarchy
+
+| Priority | Element | Requirement |
+| :--- | :--- | :--- |
+| 1 | Party continuation | Clear stay/leave actions |
+| 2 | Outcome per member | Text labels |
+| 3 | Safety actions | Accessible but not accusatory |
+
+#### Component Requirements
+
+| Component | Requirement |
+| :--- | :--- |
+| Player row | privacy-safe name, platform, role, result |
+| Report action | opens reason picker with match context |
+| Commend | one-tap with undo if supported |
+
+#### States & Edge Cases
+
+| State | Behavior |
+| :--- | :--- |
+| Player left | Show left status and allowed actions |
+| Blocked player | Hide invite/add friend |
+| Report submitted | Show confirmation and support ID |
+
+#### Input / Focus / Touch
+
+| Action | PC | Console | Mobile |
+| :--- | :--- | :--- | :--- |
+| Focus row | Click | D-pad | Tap |
+| Social action | Click | A / Cross | Tap |
+
+#### Designer Notes
+
+- Safety actions should be calm and clear.
+- Do not reveal private stats beyond allowed summary.
+
+#### Acceptance Checklist
+
+- [ ] Commend/report/add friend states are visible and privacy-safe.
+
+### Redeploy Flow
+
+#### Player Intent
+
+Return to the next raid quickly if valid, or understand exactly what must be fixed first.
+
+#### Expanded ASCII Wireframe
+
+```
++--------------------------------------------------------------------------------+
+| REDEPLOY CHECK                                                                  |
+|--------------------------------------------------------------------------------|
+| Same kit: INVALID | Missing armor | Stash has replacement | Squad 2/3 ready     |
+| Suggested route: Rebuild preset -> Fix Loadout -> Squad Ready -> Queue          |
+|--------------------------------------------------------------------------------|
+| [Return to Stash] [Rebuild Preset] [Fix Loadout] [Deploy Again Locked]          |
++--------------------------------------------------------------------------------+
+```
+
+#### Layout Anatomy
+
+| Region | Requirement |
+| :--- | :--- |
+| Validation summary | kit, stash, squad, quest, inventory |
+| Suggested route | step sequence to redeploy |
+| CTA row | deploy if valid, otherwise fix path |
+
+#### Visual Hierarchy
+
+| Priority | Element | Requirement |
+| :--- | :--- | :--- |
+| 1 | Valid/invalid redeploy status | Direct label |
+| 2 | First blocker | Names exact fix |
+| 3 | Deploy Again | Only active when validation passes |
+
+#### Component Requirements
+
+| Component | Requirement |
+| :--- | :--- |
+| Validation chip | pass/warn/block with text |
+| Preset rebuild | shows cost and missing gear |
+| Deploy CTA | repeats pre-raid validation rules |
+
+#### States & Edge Cases
+
+| State | Behavior |
+| :--- | :--- |
+| Valid same kit | Deploy Again primary |
+| Missing lost gear | Offer preset/budget/stash routes |
+| Squad not ready | Route to Squad Lobby |
+| Inventory full | Suggest stash management |
+
+#### Input / Focus / Touch
+
+| Action | PC | Console | Mobile |
+| :--- | :--- | :--- | :--- |
+| Fix blocker | Click chip | Focus chip | Tap chip |
+| Deploy again | Hold CTA | Hold A / Cross | Hold sticky CTA |
+
+#### Designer Notes
+
+- Redeploy must be fast, but never bypass loadout validation.
+
+#### Acceptance Checklist
+
+- [ ] Deploy Again never activates with critical blockers.
+- [ ] First blocker and fix route are obvious.
+
+---
+
 ## Analytics
 
 | Metric | Use |

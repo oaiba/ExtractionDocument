@@ -286,6 +286,482 @@ Leaderboards must avoid implying exact hidden MMR if the ranked design does not 
 
 ---
 
+## Designer-Ready Screen Specs
+
+Progression and LiveOps screens should create long-term motivation without burying the path back to raid. Rewards, expiry, premium/free status, and claim blockers must always be explicit.
+
+### Battle Pass
+
+#### Player Intent
+
+Check seasonal progress, understand free/premium rewards, claim earned items, and see the fastest route to progress.
+
+#### Expanded ASCII Wireframe
+
+```
++--------------------------------------------------------------------------------+
+| BATTLE PASS Season 1                         Level 12/50 XP 340/1000 [Upgrade] |
+|--------------------------------------------------------------------------------|
+| REWARD TRACK: 10  11  >12<  13  14  15                                          |
+| Free:    [Claimed] [Ammo] [Title] [Locked] [Credits]                            |
+| Premium: [Skin]    [Boost] [Frame] [Locked] [Case]                              |
+|--------------------------------------------------------------------------------|
+| SELECTED REWARD: Title | Free | Earned | [Claim] | Source: Daily/raid XP        |
++--------------------------------------------------------------------------------+
+```
+
+#### Layout Anatomy
+
+| Region | Requirement |
+| :--- | :--- |
+| Season header | season name, time remaining, level, XP, premium state |
+| Reward track | free and premium lanes with earned/locked/claimed states |
+| Detail panel | selected reward, source, claim state, preview |
+| CTA area | claim, upgrade, view tasks |
+
+#### Visual Hierarchy
+
+| Priority | Element | Requirement |
+| :--- | :--- | :--- |
+| 1 | Claimable reward | Strong label and CTA |
+| 2 | Free vs premium | Text labels, not only color |
+| 3 | Next level progress | Always visible |
+
+#### Component Requirements
+
+| Component | Requirement |
+| :--- | :--- |
+| Reward tile | level, free/premium, type, claimed/earned/locked |
+| Upgrade prompt | cosmetic/value framing; never implies power advantage |
+| Claim CTA | checks inventory/stash capacity where relevant |
+
+#### States & Edge Cases
+
+| State | Behavior |
+| :--- | :--- |
+| Claimable | Promote Claim |
+| Locked | Show required level and XP |
+| Premium locked | Show premium requirement without hiding free rewards |
+| Season ending | Show exact remaining time |
+| Stash full | Block item claim and route to Reward Inbox/Stash |
+
+#### Input / Focus / Touch
+
+| Action | PC | Console | Mobile |
+| :--- | :--- | :--- | :--- |
+| Browse track | Wheel/drag | Bumpers/D-pad | Horizontal swipe |
+| Claim | Click | A / Cross | Tap CTA |
+| Preview | Hover/click | Focus tile | Tap tile |
+
+#### Designer Notes
+
+- Free rewards must never look like secondary leftovers.
+- Avoid urgency language unless the expiry is real and visible.
+
+#### Acceptance Checklist
+
+- [ ] Free, premium, claimable, locked, claimed, and stash-full states are clear.
+
+### Event Hub
+
+#### Player Intent
+
+Understand active event rules, objectives, rewards, expiry, and the exact playable route.
+
+#### Expanded ASCII Wireframe
+
+```
++--------------------------------------------------------------------------------+
+| EVENT HUB: Blackout Week                              Ends in 2d 14h [Play]    |
+|--------------------------------------------------------------------------------|
+| HERO / EVENT ART | Rules: Night raids, limited visibility, bonus tech loot      |
+| Objectives: 2/5  | Rewards: Skin, credits, event token                          |
+| Map: Sector 7    | Warnings: insurance normal, extracts modified               |
++--------------------------------------------------------------------------------+
+```
+
+#### Layout Anatomy
+
+| Region | Requirement |
+| :--- | :--- |
+| Event header | name, expiry, primary Play CTA |
+| Rule panel | modifiers, restrictions, risk changes |
+| Objective list | progress, rewards, tracked state |
+| Route panel | mode/map/deep link |
+
+#### Visual Hierarchy
+
+| Priority | Element | Requirement |
+| :--- | :--- | :--- |
+| 1 | Event rule changes | Before Play CTA |
+| 2 | Expiry | Exact time remaining |
+| 3 | Rewards/objectives | Clear but secondary to rules |
+
+#### Component Requirements
+
+| Component | Requirement |
+| :--- | :--- |
+| Event card | modifier, expiry, affected maps/modes |
+| Objective row | count, condition, reward, track action |
+| Play CTA | deep links to exact mode/map with rules applied |
+
+#### States & Edge Cases
+
+| State | Behavior |
+| :--- | :--- |
+| Active | Play and track available |
+| Expiring soon | Time label promoted |
+| Completed | Claim rewards and show replayable status |
+| Locked | Show requirement |
+| Ended | Move to archive/claim grace if supported |
+
+#### Input / Focus / Touch
+
+| Action | PC | Console | Mobile |
+| :--- | :--- | :--- | :--- |
+| Track objective | Click | A / Cross | Tap |
+| Play event | Click CTA | A / Cross | Sticky CTA |
+
+#### Designer Notes
+
+- Event hub must explain rule changes before pushing players to queue.
+
+#### Acceptance Checklist
+
+- [ ] Event modifiers, expiry, objectives, rewards, and route are visible.
+
+### Daily And Weekly Tasks
+
+#### Player Intent
+
+Pick achievable tasks, track progress, claim rewards, and understand reset windows.
+
+#### Expanded ASCII Wireframe
+
+```
++--------------------------------------------------------------------------------+
+| DAILY / WEEKLY TASKS                              Reset 03:14                  |
+|--------------------------------------------------------------------------------|
+| Daily: Loot 5 meds  3/5  Reward 500 XP [Track]                                 |
+| Daily: Extract S7   Done Reward Credits [Claim]                                |
+| Weekly: Win 5 raids 2/5 Reward Case [Track]                                    |
++--------------------------------------------------------------------------------+
+```
+
+#### Layout Anatomy
+
+| Region | Requirement |
+| :--- | :--- |
+| Reset header | daily/weekly timers |
+| Task rows | objective, progress, reward, track/claim |
+| Detail | map/mode hints and eligibility |
+
+#### Visual Hierarchy
+
+| Priority | Element | Requirement |
+| :--- | :--- | :--- |
+| 1 | Claimable tasks | Promoted |
+| 2 | Reset timer | Always visible |
+| 3 | Progress count | Numeric and readable |
+
+#### Component Requirements
+
+| Component | Requirement |
+| :--- | :--- |
+| Task row | title, progress, reset, reward, route |
+| Claim CTA | checks reward capacity |
+| Track action | pins objective to relevant screens |
+
+#### States & Edge Cases
+
+| State | Behavior |
+| :--- | :--- |
+| In progress | Track available |
+| Complete | Claim promoted |
+| Expired | Move to expired/removed with explanation |
+| Reward blocked | route to inbox/stash |
+
+#### Input / Focus / Touch
+
+| Action | PC | Console | Mobile |
+| :--- | :--- | :--- | :--- |
+| Track/claim | Click | A / Cross | Tap |
+| Filter | Click tabs | Bumpers | Tabs |
+
+#### Designer Notes
+
+- Tasks should feel actionable, not like a checklist wall.
+
+#### Acceptance Checklist
+
+- [ ] Reset, progress, claim, expired, and blocked reward states are covered.
+
+### Reward Inbox
+
+#### Player Intent
+
+Claim pending rewards safely while understanding expiry, source, capacity, and duplicate/overflow rules.
+
+#### Expanded ASCII Wireframe
+
+```
++--------------------------------------------------------------------------------+
+| REWARD INBOX                                      Stash 190/200 [Claim All]    |
+|--------------------------------------------------------------------------------|
+| Source          Reward            Expires       State                           |
+| Battle Pass     Frame             Never         Claim                           |
+| Insurance       AK-74M            22h           Stash needs 4x2                 |
+| Event           Token x5          2d            Claim                           |
++--------------------------------------------------------------------------------+
+```
+
+#### Layout Anatomy
+
+| Region | Requirement |
+| :--- | :--- |
+| Inbox list | source, reward, expiry, state |
+| Detail | selected reward contents and destination |
+| Capacity summary | stash/wallet limits |
+| Actions | claim, claim all, route to stash |
+
+#### Visual Hierarchy
+
+| Priority | Element | Requirement |
+| :--- | :--- | :--- |
+| 1 | Expiring rewards | Promoted |
+| 2 | Claim blockers | Exact reason |
+| 3 | Source | Traceable for trust |
+
+#### Component Requirements
+
+| Component | Requirement |
+| :--- | :--- |
+| Reward row | source, item, expiry, destination, state |
+| Claim all | excludes blocked rewards and explains leftovers |
+| Capacity warning | needed cells or currency cap |
+
+#### States & Edge Cases
+
+| State | Behavior |
+| :--- | :--- |
+| Claimable | Claim active |
+| Expiring soon | expiry label promoted |
+| Stash full | block item claim and route to stash |
+| Already claimed | remove or show history |
+
+#### Input / Focus / Touch
+
+| Action | PC | Console | Mobile |
+| :--- | :--- | :--- | :--- |
+| Claim row | Click | A / Cross | Tap |
+| Claim all | Click | Y / Triangle | Button |
+
+#### Designer Notes
+
+- Claim destination must be clear before the click.
+
+#### Acceptance Checklist
+
+- [ ] Expiry, source, capacity, claim all, and blocked claim states are covered.
+
+### Ranked Overview
+
+#### Player Intent
+
+Understand rank, progress, rules, restrictions, rewards, and consequences before queueing ranked.
+
+#### Expanded ASCII Wireframe
+
+```
++--------------------------------------------------------------------------------+
+| RANKED OVERVIEW                         Silver II  340/500 RP [Queue Ranked]  |
+|--------------------------------------------------------------------------------|
+| Rank card | Placement/Promotion | Rules: squad restrictions, loss, MMR          |
+| Requirements: Lv15, verified account, no penalty cooldown                       |
++--------------------------------------------------------------------------------+
+```
+
+#### Layout Anatomy
+
+| Region | Requirement |
+| :--- | :--- |
+| Rank card | current tier, RP, promotion/demotion |
+| Rules | party restrictions, gear rules, penalties |
+| Rewards | season rewards and milestones |
+| Queue CTA | enabled only when requirements pass |
+
+#### Visual Hierarchy
+
+| Priority | Element | Requirement |
+| :--- | :--- | :--- |
+| 1 | Queue eligibility | Clear pass/block |
+| 2 | Rank progress | Numeric and visual |
+| 3 | Consequences | Visible before queue |
+
+#### Component Requirements
+
+| Component | Requirement |
+| :--- | :--- |
+| Requirement row | pass/fail label and fix route |
+| RP bar | current, next, demotion threshold |
+| Queue CTA | names first blocker when disabled |
+
+#### States & Edge Cases
+
+| State | Behavior |
+| :--- | :--- |
+| Eligible | Queue CTA active |
+| Level locked | show level requirement |
+| Penalty cooldown | show exact timer |
+| Party mismatch | show member blocker |
+
+#### Input / Focus / Touch
+
+| Action | PC | Console | Mobile |
+| :--- | :--- | :--- | :--- |
+| Queue | Click | A / Cross | Sticky CTA |
+| Inspect rules | Click | Focus | Tap |
+
+#### Designer Notes
+
+- Ranked screens must state consequences before queue.
+
+#### Acceptance Checklist
+
+- [ ] Eligibility, cooldown, party mismatch, and rank progress states are covered.
+
+### Leaderboards
+
+#### Player Intent
+
+Compare rank safely by season, region, friends, and platform while respecting privacy.
+
+#### Expanded ASCII Wireframe
+
+```
++--------------------------------------------------------------------------------+
+| LEADERBOARDS                         Season v Region v Friends v              |
+|--------------------------------------------------------------------------------|
+| Rank | Player | Tier | Extract Rate | Raids | Privacy-safe profile action       |
++--------------------------------------------------------------------------------+
+```
+
+#### Layout Anatomy
+
+| Region | Requirement |
+| :--- | :--- |
+| Filters | season, region, friends/global, platform |
+| Rows | rank, player, tier, key stat, profile |
+| Self row | sticky/current player highlight |
+
+#### Visual Hierarchy
+
+| Priority | Element | Requirement |
+| :--- | :--- | :--- |
+| 1 | Player's own position | Easy to find |
+| 2 | Rank/tier | First columns |
+| 3 | Privacy state | Hidden names respected |
+
+#### Component Requirements
+
+| Component | Requirement |
+| :--- | :--- |
+| Leaderboard row | rank, alias, tier, stats, privacy-safe action |
+| Filter | clear current scope |
+| Empty state | no data explanation |
+
+#### States & Edge Cases
+
+| State | Behavior |
+| :--- | :--- |
+| Private/streamer | anonymize names |
+| No ranking | explain placement requirement |
+| Loading page | skeleton rows |
+| Filter empty | broaden filters action |
+
+#### Input / Focus / Touch
+
+| Action | PC | Console | Mobile |
+| :--- | :--- | :--- | :--- |
+| Filter | Click | Bumpers/focus | Filter sheet |
+| Open profile | Click row | A / Cross | Tap row |
+
+#### Designer Notes
+
+- Do not reveal hidden identity through profile links or invite codes.
+
+#### Acceptance Checklist
+
+- [ ] Privacy, empty, loading, and no-ranking states are covered.
+
+### Patch Notes And News
+
+#### Player Intent
+
+See the one most important update, learn what changed, dismiss noncritical news, and deep link to relevant content.
+
+#### Expanded ASCII Wireframe
+
+```
++--------------------------------------------------------------------------------+
+| NEWS / PATCH NOTES                                                [Dismiss]    |
+|--------------------------------------------------------------------------------|
+| FEATURED: Blackout Week is live                  [Play Event] [Read Details]   |
+| Patch 1.0.4: extraction timer tuning, stash sorting fixes, subtitles option     |
+| [Known Issues] [Open Event Hub]                                                 |
++--------------------------------------------------------------------------------+
+```
+
+#### Layout Anatomy
+
+| Region | Requirement |
+| :--- | :--- |
+| Featured item | one primary update |
+| Patch summary | short bullets first |
+| Actions | dismiss, read, deep link |
+
+#### Visual Hierarchy
+
+| Priority | Element | Requirement |
+| :--- | :--- | :--- |
+| 1 | Required/featured update | One primary item |
+| 2 | Dismiss and deep link | Clear |
+| 3 | Detailed notes | Secondary |
+
+#### Component Requirements
+
+| Component | Requirement |
+| :--- | :--- |
+| News card | title, category, date, primary action |
+| Patch row | version, summary, known issues |
+| Dismiss | persists until content changes |
+
+#### States & Edge Cases
+
+| State | Behavior |
+| :--- | :--- |
+| Mandatory update | system modal, not dismissible |
+| Dismissed | stays hidden until changed |
+| Offline | cached notes or unavailable message |
+| Deep link unavailable | disable with reason |
+
+#### Input / Focus / Touch
+
+| Action | PC | Console | Mobile |
+| :--- | :--- | :--- | :--- |
+| Dismiss | Click | X / Square | Swipe/button |
+| Open | Click | A / Cross | Tap |
+
+#### Designer Notes
+
+- News must not compete with Deploy as the main Home action.
+
+#### Acceptance Checklist
+
+- [ ] Featured, dismissed, mandatory, offline, and deep-link unavailable states are covered.
+
+---
+
 ## Analytics
 
 | Metric | Use |

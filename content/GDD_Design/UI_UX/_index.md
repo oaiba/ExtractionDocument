@@ -100,6 +100,8 @@ Following WCAG 2.1 Level AA compliance:
 
 ## Section Contents
 
+The lifecycle screen group pages are the canonical designer-ready specs. They contain the expanded ASCII wireframes, layout anatomy, visual hierarchy, component requirements, state behavior, input/focus/touch rules, designer notes, and acceptance checklists. Support pages such as HUD, notifications, loading, flows, visual style, and global standards define reusable rules that those screen specs reference.
+
 {{< cards >}}
   {{< card link="Screen_Groups_Overview" title="Screen Groups Overview" icon="view-grid" subtitle="Canonical screen taxonomy by player lifecycle, spec template, navigation model, and coverage checklist" >}}
   {{< card link="Global_UX_Standards" title="Global UX Standards" icon="adjustments" subtitle="Navigation, focus, responsive layout, modal, state, accessibility, and analytics standards" >}}

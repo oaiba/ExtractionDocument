@@ -296,6 +296,399 @@ Searching -> Expanding Search -> Match Found -> L4 Loading -> In Raid
 
 ---
 
+## Designer-Ready Screen Specs
+
+The sections below are the canonical low-level handoff for pre-raid layout work. Summary tables above remain useful for navigation, but interaction, state, and visual requirements should be taken from these screen-level specs.
+
+### Mode Select
+
+#### Player Intent
+
+Choose the ruleset that matches desired risk, squad size, reward, and time commitment before any gear is put at risk.
+
+#### Expanded ASCII Wireframe
+
+```
++--------------------------------------------------------------------------------+
+| < Back                              MODE SELECT                  Rules [i]      |
+|--------------------------------------------------------------------------------|
+| MODE CARDS                                                                      |
+| +----------------+ +----------------+ +----------------+ +----------------+    |
+| | SOLO           | | DUO            | | SQUAD          | | RANKED         |    |
+| | 1 player       | | 2 players      | | 3-4 players    | | Lv15 required  |    |
+| | Loss: Normal   | | Shared extracts| | High reward    | | Rank impact    |    |
+| | [SELECTED]     | | [SELECT]       | | [SELECT]       | | LOCKED         |    |
+| +----------------+ +----------------+ +----------------+ +----------------+    |
+|--------------------------------------------------------------------------------|
+| DETAIL: Solo | Risk Low | PvP Medium | Insurance Allowed | Queue 45s           |
+| Rules: no revive, no shared quest progress, normal extraction rules             |
+|--------------------------------------------------------------------------------|
+| [Compare Rewards] [View Rules]                                      [SELECT]   |
++--------------------------------------------------------------------------------+
+```
+
+#### Layout Anatomy
+
+| Region | Requirement |
+| :--- | :--- |
+| Mode cards | Show squad size, loss rule, reward/risk summary, queue pool, selected/locked state |
+| Detail panel | Explain selected mode rule changes before CTA |
+| Action bar | Keep Select Mode stable; compare and rules are secondary |
+
+#### Visual Hierarchy
+
+| Priority | Element | Requirement |
+| :--- | :--- | :--- |
+| 1 | Selected mode | Clear by border, label, and detail panel title |
+| 2 | Rule/loss differences | Text labels required; never color-only badges |
+| 3 | Locked/restricted modes | Show exact requirement and route to unlock |
+
+#### Component Requirements
+
+| Component | Requirement |
+| :--- | :--- |
+| Mode card | mode name, party size, risk, loss rule, reward modifier, queue estimate |
+| Ranked card | rank impact, party restrictions, locked settings, unlock requirement |
+| Event card | modifier, expiry, special extraction/loss changes |
+
+#### States & Edge Cases
+
+| State | Behavior |
+| :--- | :--- |
+| Available | Select CTA active and detail panel populated |
+| Locked | CTA disabled; requirement and unlock path visible |
+| Event active | Badge includes time remaining and rule modifier |
+| Disabled | Explain maintenance, region, or server pool issue |
+
+#### Input / Focus / Touch
+
+| Action | PC | Console | Mobile |
+| :--- | :--- | :--- | :--- |
+| Browse modes | Click card / arrows | D-pad grid | Horizontal card swipe |
+| View rules | Click info | Focus + Y / Triangle | Tap info chip |
+| Select | Click CTA / Enter | A / Cross | Sticky CTA |
+
+#### Designer Notes
+
+- Cards must be comparable at a glance; keep fields aligned.
+- Do not hide loss rules in tooltips.
+- Locked cards stay visible so players understand progression.
+
+#### Acceptance Checklist
+
+- [ ] Every mode shows squad size, loss rule, risk/reward, and queue expectation.
+- [ ] Locked and disabled modes explain the exact reason.
+- [ ] Selected state is visible without relying on color.
+
+### Map Select
+
+#### Player Intent
+
+Pick a destination while understanding difficulty, extracts, player density, quest relevance, time of day, and queue impact.
+
+#### Expanded ASCII Wireframe
+
+```
++--------------------------------------------------------------------------------+
+| < Back                               MAP SELECT                       [Ready]   |
+|--------------------------------------------------------------------------------|
+| MAP LIST            | MAP PREVIEW / INTEL                       | DETAILS      |
+| > Sector 7          | +---------------------------------------+ | Difficulty H |
+|   District 14       | | map art, extracts, landmarks          | | Players 8-12|
+|   Firebase Delta    | | selected quest zone highlights        | | Boss: 1      |
+|   The Mire LOCKED   | | danger zones and extracts             | | Time: Night v|
+|---------------------| +---------------------------------------+ | Extracts 3   |
+| Region Best Ping    | Extracts: Crossroads, Boat, Elevator     | Quests: 2     |
+| Quest Relevant Only | Queue estimate: 45s                      | [SELECT MAP]  |
++--------------------------------------------------------------------------------+
+```
+
+#### Layout Anatomy
+
+| Region | Requirement |
+| :--- | :--- |
+| Map list | Shows selected, locked, quest-relevant, event-modified, and unavailable maps |
+| Preview | Uses map art/intel with extract markers, quest highlights, and risk zones |
+| Details panel | Fixed summary: difficulty, player count, boss, time, extracts, quests, queue |
+
+#### Visual Hierarchy
+
+| Priority | Element | Requirement |
+| :--- | :--- | :--- |
+| 1 | Selected map and Select/Ready CTA | Always visible |
+| 2 | Extraction and risk rules | Must appear before commit |
+| 3 | Quest relevance | Highlight useful maps without hiding others |
+
+#### Component Requirements
+
+| Component | Requirement |
+| :--- | :--- |
+| Map row | name, difficulty, availability, quest badge, event badge |
+| Extract marker | name, rule type, availability, special requirements |
+| Time selector | communicates visibility, AI, and queue differences |
+
+#### States & Edge Cases
+
+| State | Behavior |
+| :--- | :--- |
+| Locked map | Show unlock source and preview permission |
+| Unavailable region | Disable CTA and explain server/latency reason |
+| High risk | Warn but allow selection unless mode blocks it |
+| Quest mismatch | Show no relevant quests and a route to Quest Board |
+
+#### Input / Focus / Touch
+
+| Action | PC | Console | Mobile |
+| :--- | :--- | :--- | :--- |
+| Browse maps | Click list / arrows | D-pad list | Swipe list |
+| Inspect extract | Hover/click marker | Focus marker | Tap marker |
+| Change time | Dropdown | Focus selector | Bottom sheet |
+
+#### Designer Notes
+
+- Extract names and rules must be text-readable; marker icons are not enough.
+- Keep map preview inspectable without becoming a tactical map replacement.
+
+#### Acceptance Checklist
+
+- [ ] Difficulty, extracts, player count, time of day, quests, and queue estimate are visible.
+- [ ] Locked/unavailable maps provide a clear reason.
+
+### Deploy Confirmation
+
+#### Player Intent
+
+Make one final informed commitment after seeing mode, map, squad, loadout blockers, gear value, insurance, quests, and queue estimate.
+
+#### Expanded ASCII Wireframe
+
+```
++--------------------------------------------------------------------------------+
+|                                DEPLOY CONFIRMATION                              |
+|--------------------------------------------------------------------------------|
+| MISSION: Solo / Sector 7 / Night            Queue estimate: 45s                |
+| SQUAD: You READY                            Fill: Off                          |
+|--------------------------------------------------------------------------------|
+| Gear value 125,000 | Weight 24/40kg | Ammo OK | Insurance 4/6 insured          |
+| Quests: Supply Run, Lab Rat                                                     |
+| WARNING: [!] 2 eligible items uninsured. [Insure All] [Review Items]            |
+|--------------------------------------------------------------------------------|
+| [Back to Loadout]                    [Insure All]             [HOLD TO DEPLOY] |
++--------------------------------------------------------------------------------+
+```
+
+#### Layout Anatomy
+
+| Region | Requirement |
+| :--- | :--- |
+| Mission summary | mode, map, time, queue, squad/fill |
+| Loadout risk | gear value, weight, ammo, insurance, quests |
+| Warning lane | blockers and warnings with direct fixes |
+| CTA row | back, fix/insure, hold-to-deploy |
+
+#### Visual Hierarchy
+
+| Priority | Element | Requirement |
+| :--- | :--- | :--- |
+| 1 | Hold to Deploy | Only primary when no blockers exist |
+| 2 | Blocking warning | Must sit directly above CTA row |
+| 3 | Gear value and insurance | Always visible for risk trust |
+
+#### Component Requirements
+
+| Component | Requirement |
+| :--- | :--- |
+| Hold CTA | Requires hold or equivalent accessible confirmation |
+| Warning chip | Severity, item count, direct route |
+| Quest summary | Top 1-3 relevant quests with extraction/FIR warning if needed |
+
+#### States & Edge Cases
+
+| State | Behavior |
+| :--- | :--- |
+| Valid kit | Single hold-to-deploy action |
+| Missing weapon | Block and focus weapon slot |
+| Missing ammo | Warn or block per tuning with ammo filter action |
+| Overweight | Block and route to loadout removal |
+| High value | Require explicit risk acknowledgement |
+| Ranked | Show rank impact and locked settings |
+
+#### Input / Focus / Touch
+
+| Action | PC | Console | Mobile |
+| :--- | :--- | :--- | :--- |
+| Deploy | Hold click / keyboard hold | Hold A / Cross | Hold sticky CTA |
+| Fix blocker | Click warning | Focus warning + A | Tap warning |
+| Back | Esc / click | B / Circle | Back button |
+
+#### Designer Notes
+
+- This screen is a trust checkpoint, not a dashboard.
+- Disabled deploy must name the exact first blocker.
+
+#### Acceptance Checklist
+
+- [ ] Deploy never hides gear value, insurance, mode, map, and squad status.
+- [ ] Every blocker has a direct fix action.
+
+### Squad Lobby
+
+#### Player Intent
+
+Coordinate readiness, identify teammate blockers, manage invites, and let the leader deploy only when the party is valid.
+
+#### Expanded ASCII Wireframe
+
+```
++--------------------------------------------------------------------------------+
+| < Back                              SQUAD LOBBY              [Invite] [Leave]  |
+|--------------------------------------------------------------------------------|
+| +----------------+ +----------------+ +----------------+ +----------------+    |
+| | You Leader     | | Player2        | | Empty Slot     | | Match Fill Off |    |
+| | READY          | | NOT READY      | | [Invite]       | | Toggle         |    |
+| | Sonar / Recon  | | Missing meds   | |                | |                |    |
+| | Voice OK       | | Voice muted    | |                | |                |    |
+| +----------------+ +----------------+ +----------------+ +----------------+    |
+| Mission: Sector 7 / Night / Squad        Chat [______________________] [Send]  |
+| WARNING: Deploy locked because Player2 has a blocker.                           |
+|--------------------------------------------------------------------------------|
+| [Change Map] [Change Loadout] [Voice Settings]              [DEPLOY LOCKED]    |
++--------------------------------------------------------------------------------+
+```
+
+#### Layout Anatomy
+
+| Region | Requirement |
+| :--- | :--- |
+| Player cards | identity, role, ready, blocker, voice, platform |
+| Mission strip | selected map/mode/time and leader controls |
+| Communication | chat and voice status without burying readiness |
+| Action bar | invite, change map/loadout, deploy/ready |
+
+#### Visual Hierarchy
+
+| Priority | Element | Requirement |
+| :--- | :--- | :--- |
+| 1 | Ready/blocker state | Clear per member |
+| 2 | Leader deploy lock reason | Directly tied to CTA |
+| 3 | Voice/chat | Secondary but visible |
+
+#### Component Requirements
+
+| Component | Requirement |
+| :--- | :--- |
+| Member card | player name, platform, operator, role, readiness, blocker reason |
+| Empty slot | invite, match fill, close slot if supported |
+| Leader controls | visible but disabled for non-leaders with reason |
+| Voice state | muted/disconnected/push-to-talk labels |
+
+#### States & Edge Cases
+
+| State | Behavior |
+| :--- | :--- |
+| Member not ready | Show reason if system knows it |
+| Party mismatch | Explain platform, level, ranked, or region restriction |
+| Leader only action | Disabled for members with text reason |
+| Invite pending | Slot shows recipient and timeout/cancel |
+
+#### Input / Focus / Touch
+
+| Action | PC | Console | Mobile |
+| :--- | :--- | :--- | :--- |
+| Focus member | Click card | D-pad cards | Tap card |
+| Invite | Click Invite | Focus empty slot | Invite sheet |
+| Ready | Click CTA | A / Cross | Sticky CTA |
+
+#### Designer Notes
+
+- Squad readiness should read as operational status cards, not social profile cards.
+- Do not expose exact teammate inventory; use blocker summaries.
+
+#### Acceptance Checklist
+
+- [ ] Leader and member views both show correct disabled states.
+- [ ] Member blockers explain deploy lock.
+
+### Matchmaking / Match Found
+
+#### Player Intent
+
+Understand queue progress, cancel rules, match found countdown, and reconnect/decline outcomes without ambiguity.
+
+#### Expanded ASCII Wireframe
+
+```
++--------------------------------------------------------------------------------+
+|                                MATCHMAKING                                      |
+|--------------------------------------------------------------------------------|
+| Searching Sector 7 / Solo / Night                                               |
+| [====================        ] 45s elapsed     Estimate 70s                    |
+| Server region: Best Ping  Squad: 1/1  Loadout locked                            |
+| Status: Finding compatible raid                                                 |
+|--------------------------------------------------------------------------------|
+| MATCH FOUND: Accept within 15s                                                  |
+| You: Accepted | Player2: Waiting | Player3: Declined                            |
+|--------------------------------------------------------------------------------|
+| [Cancel Queue]                                             [ACCEPT / DEPLOYING] |
++--------------------------------------------------------------------------------+
+```
+
+#### Layout Anatomy
+
+| Region | Requirement |
+| :--- | :--- |
+| Queue status | selected mission, elapsed, estimate, region, party state |
+| Progress message | truthful current phase, not fake precision |
+| Match found panel | countdown, accept states, failure outcome |
+| Action bar | cancel before lock; accept when found |
+
+#### Visual Hierarchy
+
+| Priority | Element | Requirement |
+| :--- | :--- | :--- |
+| 1 | Current queue/match state | Large status text |
+| 2 | Countdown/cancel consequence | Always visible |
+| 3 | Party accept status | Visible during match found |
+
+#### Component Requirements
+
+| Component | Requirement |
+| :--- | :--- |
+| Progress indicator | Can be indeterminate; must name current phase |
+| Cancel CTA | Disabled after deployment lock with reason |
+| Accept panel | Per-player accept status and timeout |
+
+#### States & Edge Cases
+
+| State | Behavior |
+| :--- | :--- |
+| Searching | Show elapsed, estimate, and cancel |
+| Timeout | Explain no match and offer retry/change region |
+| Server error | Show retry and support code |
+| Match found | Show accept countdown and party statuses |
+| Player declined | Explain return path and whether queue restarts |
+| Reconnecting | Show preserved slot and timeout |
+
+#### Input / Focus / Touch
+
+| Action | PC | Console | Mobile |
+| :--- | :--- | :--- | :--- |
+| Cancel | Click / Esc confirm | B / Circle confirm | Cancel button |
+| Accept | Click / Enter | A / Cross | Large CTA |
+| View details | Click mission | Focus mission | Tap mission |
+
+#### Designer Notes
+
+- Avoid fake progress percentages; use phase labels and elapsed time.
+- Cancel copy must state if gear is still safe.
+
+#### Acceptance Checklist
+
+- [ ] Searching, timeout, error, match found, declined, and reconnecting states are covered.
+- [ ] Player always knows whether cancel is safe.
+
+---
+
 ## Analytics
 
 | Metric | Use |

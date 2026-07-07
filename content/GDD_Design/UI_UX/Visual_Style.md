@@ -309,6 +309,38 @@ Props and environment must NOT have visual noise that confuses character outline
 
 ## UI Mockup Standards
 
+### Designer-Ready Spec Translation
+
+ASCII wireframes in the screen group pages define hierarchy, region ownership, state placement, and required information. They are not final artboards. Designers should translate them into polished layouts while preserving the same information priority.
+
+| Source Spec Element | Visual Design Requirement |
+| :--- | :--- |
+| Header | stable account/screen context; no decorative treatment that hides status |
+| Primary content | largest readable area; carries the screen's main player task |
+| Detail panel | fixed or predictable width; selected item/state details do not resize the page |
+| Warning lane | close to the CTA it affects; clear severity label and direct fix route |
+| Action bar | stable CTA placement across default, warning, blocked, and success states |
+| State badge | text label plus icon/shape; color only is not acceptable |
+| ASCII grid/row | use consistent spacing, alignment, and target size in final layout |
+
+### Density And Readability Rules
+
+| Area | Requirement |
+| :--- | :--- |
+| Operational screens | dense but scannable; prioritize labels, aligned values, and stable panels |
+| Combat/in-raid overlays | minimal center obstruction; critical state only |
+| Commerce/account screens | plain, high-trust copy; price/consequence near CTA |
+| Social screens | privacy-safe identity display; compatibility blockers visible |
+| Mobile | avoid shrinking desktop tables; use tabs, sheets, sticky CTAs, and larger touch rows |
+
+### Mockup Acceptance
+
+- [ ] Every state shown in a screen spec has at least one visual treatment in mockups.
+- [ ] Disabled and locked CTAs include readable reason text.
+- [ ] Long labels fit without overlap at target language length and 200% text scale.
+- [ ] Icons and colors are backed by labels, shape, position, or pattern.
+- [ ] Primary CTA placement is stable between default, warning, and blocked states.
+
 #### Layout (PC/Console)
 
 ```

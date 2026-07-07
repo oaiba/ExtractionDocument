@@ -10,6 +10,8 @@ This page is kept as a compatibility entry for older links. The UI/UX documentat
 
 For the canonical screen inventory, start with [Screen Groups Overview](Screen_Groups_Overview.md).
 
+The lifecycle screen group pages now contain designer-ready detail specs: expanded ASCII wireframes, layout anatomy, visual hierarchy, component requirements, state behavior, platform input, designer notes, and acceptance checklists. Use this page only to resolve old links.
+
 ---
 
 ## New Screen Group Pages
@@ -67,3 +69,5 @@ Legacy Menus.md
 ## Migration Rule
 
 New UI screen specs should not be added to this page. Add them to the owning screen group and link back to the relevant game design or technical system page.
+
+When migrating old menu content, preserve intent and state requirements, but rewrite layout detail using the designer-ready section set defined in [Screen Groups Overview](Screen_Groups_Overview.md).

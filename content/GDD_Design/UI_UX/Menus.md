@@ -42,7 +42,8 @@ Legacy Menus.md
 | Pause / Looting      | In-Raid Screens             |
 | AAR / Death Replay   | Post-Raid Screens           |
 | Battle Pass / Events | Progression & LiveOps       |
-| Settings / Shop      | Commerce, Settings, System  |
+| Shop                 | Commerce Screens            |
+| Settings             | Settings & System Screens   |
 +----------------------+-----------------------------+
 ```
 
@@ -56,7 +57,8 @@ Legacy Menus.md
 | [Post-Raid Screens](Post_Raid_Screens.md) | AAR, death replay, loot transfer, quest progress, report/commend, redeploy |
 | [Social Screens](Social_Screens.md) | Friends, party, invites, LFG, clans, chat, voice, block/report |
 | [Progression & LiveOps Screens](Progression_LiveOps_Screens.md) | Battle pass, events, daily/weekly tasks, ranked, leaderboards, reward inbox |
-| [Commerce, Settings & System Screens](Commerce_Settings_System_Screens.md) | Auth, first-time setup, shop, wallet, settings, privacy, diagnostics, system dialogs |
+| [Commerce Screens](Commerce_Screens.md) | Shop, offers, bundles, item preview, currency top-up, purchase confirmation, receipts, redeem |
+| [Settings & System Screens](Commerce_Settings_System_Screens.md) | Auth, first-time setup, settings, privacy, diagnostics, system dialogs |
 
 ---
 
@@ -72,7 +74,7 @@ Legacy Menus.md
 | Squad / Lobby Screen | [Pre-Raid Screens](Pre_Raid_Screens.md), [Social Screens](Social_Screens.md) |
 | After Action Report | [Post-Raid Screens](Post_Raid_Screens.md), [Post-Game Debrief & Replay](../Gameplay/Post_Game_Debrief.md) |
 | Battle Pass / Seasonal Screen | [Progression & LiveOps Screens](Progression_LiveOps_Screens.md) |
-| Settings Menu | [Commerce, Settings & System Screens](Commerce_Settings_System_Screens.md), [User Settings](../GameDesign/UserSettings.md) |
+| Settings Menu | [Settings & System Screens](Commerce_Settings_System_Screens.md), [User Settings](../GameDesign/UserSettings.md) |
 | Pause Menu | [In-Raid Screens](In_Raid_Screens.md) |
 
 ---

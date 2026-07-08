@@ -55,14 +55,15 @@ Every screen group must answer four questions:
 
 | Phase | Screen Group | Primary Job | Key Pages |
 | :--- | :--- | :--- | :--- |
-| Boot and account | Onboarding / Auth | Get the player safely into a valid account and tutorial state | [Commerce, Settings & System Screens](Commerce_Settings_System_Screens.md), [Loading Screen Design](LoadingScreen_Design.md) |
+| Boot and account | Onboarding / Auth | Get the player safely into a valid account and tutorial state | [Settings & System Screens](Commerce_Settings_System_Screens.md), [Loading Screen Design](LoadingScreen_Design.md) |
 | Out of raid | Home, profile, stash, traders, safe house, quests | Prepare, recover, progress, and manage risk | [Out-of-Raid Screens](Out_Of_Raid_Screens.md) |
 | Pre-raid | Mode, map, squad, deploy, matchmaking | Confirm rules, risk, party readiness, and queue state | [Pre-Raid Screens](Pre_Raid_Screens.md) |
 | In raid | HUD, map, looting, overlays, pause, spectator | Keep survival-critical information clear during pressure | [In-Raid Screens](In_Raid_Screens.md), [HUD Design](HUD_Design.md) |
 | Post-raid | AAR, death replay, loot transfer, report, redeploy | Explain outcome and route the player into the next loop | [Post-Raid Screens](Post_Raid_Screens.md) |
 | Social | Friends, party, clan, LFG, communication, moderation | Help players coordinate while limiting abuse | [Social Screens](Social_Screens.md) |
 | Progression and LiveOps | Battle pass, events, ranked, rewards, inbox | Surface long-term goals without burying raid flow | [Progression & LiveOps Screens](Progression_LiveOps_Screens.md) |
-| Commerce, settings, system | Shop, wallet, settings, diagnostics, dialogs | Handle configuration, account, platform, and system states | [Commerce, Settings & System Screens](Commerce_Settings_System_Screens.md) |
+| Commerce | Shop, offers, bundles, item preview, currency top-up, confirmation, receipts, redeem | Handle cosmetic purchase browsing and checkout trust states | [Commerce Screens](Commerce_Screens.md) |
+| Settings and system | Settings, account, privacy, diagnostics, dialogs | Handle configuration, account, platform, and system states | [Settings & System Screens](Commerce_Settings_System_Screens.md) |
 
 ---
 

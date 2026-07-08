@@ -342,7 +342,8 @@ ASCII wireframes in the screen group pages define hierarchy, region ownership, s
 | :--- | :--- |
 | Operational screens | dense but scannable; prioritize labels, aligned values, and stable panels |
 | Combat/in-raid overlays | minimal center obstruction; critical state only |
-| Commerce/account screens | plain, high-trust copy; price/consequence near CTA |
+| Commerce screens | plain, high-trust copy; price, contents, balance impact, and confirmation near CTA |
+| Settings/system screens | consequence, recovery, and account safety copy near CTA |
 | Social screens | privacy-safe identity display; compatibility blockers visible |
 | Mobile | avoid shrinking desktop tables; use tabs, sheets, sticky CTAs, and larger touch rows |
 

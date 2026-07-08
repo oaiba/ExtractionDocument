@@ -1,12 +1,12 @@
 ---
-title: "Commerce, Settings & System Screens"
+title: "Settings & System Screens"
 type: docs
-weight: 9
+weight: 10
 ---
 
 ## Purpose
 
-Commerce, settings, and system screens handle the sensitive parts of the experience: account access, platform services, purchases, configuration, privacy, diagnostics, errors, and recovery. These screens must be plain, trustworthy, and explicit.
+Settings and system screens handle the sensitive parts of the experience: account access, platform services, configuration, privacy, diagnostics, errors, and recovery. These screens must be plain, trustworthy, and explicit.
 
 Primary references:
 
@@ -15,8 +15,8 @@ Primary references:
 | User settings | [User Settings & Configuration](../GameDesign/UserSettings.md) |
 | Settings matrix | [Settings Matrix](../GameDesign/UserSettings_Matrix.md) |
 | Accessibility | [Accessibility Design](../GameDesign/Accessibility.md) |
-| Economy | [Economy & Monetization Design](../GameDesign/Economy.md) |
 | Loading screens | [Async Loading Screen Design](LoadingScreen_Design.md) |
+| Commerce | [Commerce Screens](Commerce_Screens.md) |
 | Settings technical system | [Settings System](../../GDD_Technical/Systems/SettingsSystem.md) |
 
 ## Quick Navigation
@@ -26,8 +26,9 @@ Primary references:
 | [UI/UX Index](_index.md) | Full UI/UX documentation hub |
 | [Screen Groups Overview](Screen_Groups_Overview.md) | Lifecycle taxonomy and designer-ready spec template |
 | [Global UX Standards](Global_UX_Standards.md) | Shared navigation, focus, state, modal, and accessibility rules |
+| [Commerce Screens](Commerce_Screens.md) | Shop, offers, currency top-up, purchase confirmation, receipts, and entitlement claim |
 | [Loading Screen Design](LoadingScreen_Design.md) | Boot, splash, lobby, result, and reconnect loading rules |
-| [Progression & LiveOps Screens](Progression_LiveOps_Screens.md) | Battle pass, rewards, ranked, news, shop-adjacent flows |
+| [Progression & LiveOps Screens](Progression_LiveOps_Screens.md) | Battle pass, rewards, ranked, news, and LiveOps goals |
 | [Social Screens](Social_Screens.md) | Privacy, safety, report/block, and communication settings |
 
 ---
@@ -41,8 +42,6 @@ Primary references:
 | EULA / Privacy | Collect required consent | Accept | declined, updated policy, region-specific |
 | First-Time Setup | Choose language, accessibility, controls, privacy | Continue | incomplete, recommended preset |
 | Tutorial Gate | Route new players into basics | Start Tutorial | skipped, required, returning player |
-| Shop | Browse cosmetic/non-power offers | Purchase / Preview | unavailable, owned, discounted, platform restricted |
-| Wallet / Currency | Explain balances and transactions | Buy / View History | pending, failed, refunded |
 | Settings | Configure controls, graphics, audio, gameplay, accessibility | Apply | unsaved changes, platform lock, ranked lock |
 | Account / Privacy | Manage identity, cross-play, streamer mode, data | Save | unlink warning, privacy conflict |
 | Diagnostics | Show FPS, network, logs, support info | Copy / Submit | offline, report sent, permission denied |
@@ -182,63 +181,6 @@ First-time setup must be short. Advanced settings should be reachable but not fo
 +-------------------------------------------------------------------+
 ```
 
----
-
-## Shop And Wallet
-
-#### Layout (PC/Console)
-
-```
-+------------------------------------------------------------------+
-| SHOP                                           Balance: 1,000 HC |
-|------------------------------------------------------------------|
-| OFFERS                              | PREVIEW / DETAILS          |
-| [Owned] Urban Jacket                | [3D cosmetic preview]      |
-| [Sale] Ghost Operator Skin          | Cosmetic only              |
-| Weapon Charm Pack                   | Bundle: 4 items            |
-| Banner Set                          | Price: 900 HC              |
-|------------------------------------------------------------------|
-| [Preview] [Wishlist]                         [Purchase]          |
-+------------------------------------------------------------------+
-```
-
-#### Layout (PC/Console)
-
-```
-+------------------------------------------------------------------+
-| WALLET / TRANSACTION HISTORY                                     |
-|------------------------------------------------------------------|
-| Balance: 1,000 HC          Credits: 425,000                      |
-|                                                                  |
-| DATE        ITEM                         STATUS                  |
-| 07-06       Ghost Operator Skin          Complete                |
-| 07-04       1,000 HC Top Up              Complete                |
-|------------------------------------------------------------------|
-| [Buy Currency] [Redeem Code] [Support]                           |
-+------------------------------------------------------------------+
-```
-
-| Spec | Requirement |
-| :--- | :--- |
-| Goal | Let players preview and purchase cosmetic/value-safe items with trust |
-| Layout | Offer grid, selected preview, ownership, currency, legal/platform info |
-| Primary CTA | Purchase or Equip if owned |
-| Secondary actions | Preview, wishlist/favorite, gift if supported, view bundle contents |
-| Monetization rule | No gameplay advantage hidden in premium offers |
-
-### Purchase States
-
-| State | Behavior |
-| :--- | :--- |
-| Owned | CTA becomes Equip/View |
-| Insufficient currency | Show top-up path and exact missing amount |
-| Platform restricted | Explain platform policy or region lock |
-| Pending transaction | Disable repeat purchase and show spinner/status |
-| Failed transaction | Show reason, retry, and support link |
-| Refund/chargeback issue | Plain account state and support path |
-
----
-
 ## Settings
 
 Settings categories follow [User Settings](../GameDesign/UserSettings.md) and the detailed [Settings Matrix](../GameDesign/UserSettings_Matrix.md).
@@ -377,13 +319,13 @@ Diagnostics should avoid exposing sensitive tokens, IPs, or private account info
 | Server full/queue | Queue position or retry timing |
 | Save conflict | Source, timestamp, impact, choices |
 | Data corruption | What is recoverable and support path |
-| Transaction error | Provider, status, receipt/support path |
+| Entitlement/service conflict | Account provider, sync status, support path; purchase receipts live in [Commerce Screens](Commerce_Screens.md) |
 
 ---
 
 ## Designer-Ready Screen Specs
 
-Commerce, settings, and system surfaces must be plain, trustworthy, and explicit. Every disabled state must explain why, and every account, privacy, purchase, unlink, or abandon action must state its consequence before commit.
+Settings and system surfaces must be plain, trustworthy, and explicit. Every disabled state must explain why, and every account, privacy, unlink, or abandon action must state its consequence before commit.
 
 ### Boot / Splash / Loading
 
@@ -591,76 +533,6 @@ Choose language, accessibility, controls, privacy, and tutorial path before ente
 #### Acceptance Checklist
 
 - [ ] Language, accessibility, control, privacy, and tutorial states are covered.
-
-### Shop / Wallet
-
-#### Player Intent
-
-Browse cosmetic offers, preview items, understand price/currency, avoid accidental purchases, and recover from provider errors.
-
-#### Expanded ASCII Wireframe
-
-```
-+--------------------------------------------------------------------------------+
-| SHOP / WALLET                               Balance 1,200 Coins  [History]     |
-|--------------------------------------------------------------------------------|
-| Offers: Featured | Skins | Bundles | Owned                                     |
-| [Cosmetic Skin] Price 800 | Owned/Unavailable/Discount labels                  |
-| Detail: preview, contents, no gameplay power, refund/platform note             |
-| [Preview] [Purchase]                                                           |
-+--------------------------------------------------------------------------------+
-```
-
-#### Layout Anatomy
-
-| Region | Requirement |
-| :--- | :--- |
-| Wallet header | balances, history, platform/provider |
-| Offer grid | item, price, ownership, availability |
-| Detail panel | preview, contents, restrictions |
-| Purchase CTA | confirmation and receipt path |
-
-#### Visual Hierarchy
-
-| Priority | Element | Requirement |
-| :--- | :--- | :--- |
-| 1 | Price and currency | Always near purchase CTA |
-| 2 | Cosmetic/no-power note | Visible in item detail |
-| 3 | Ownership/unavailable state | Text label |
-
-#### Component Requirements
-
-| Component | Requirement |
-| :--- | :--- |
-| Offer tile | name, type, price, owned/discount/unavailable |
-| Purchase modal | item, price, currency, provider, final confirmation |
-| Wallet history | transactions, pending, failed, refunded |
-
-#### States & Edge Cases
-
-| State | Behavior |
-| :--- | :--- |
-| Owned | purchase disabled; equip/preview if relevant |
-| Insufficient currency | route to wallet purchase |
-| Platform restricted | explain provider/region |
-| Pending transaction | prevent duplicate purchase |
-| Failed/refunded | receipt/support path |
-
-#### Input / Focus / Touch
-
-| Action | PC | Console | Mobile |
-| :--- | :--- | :--- | :--- |
-| Browse offers | Click/scroll | D-pad grid | Swipe/grid |
-| Preview | Click | A / Cross | Tap |
-| Purchase | Click + confirm | Hold/confirm | Confirm sheet |
-
-#### Designer Notes
-
-- Purchase flows should be boring, explicit, and hard to misread.
-
-#### Acceptance Checklist
-
-- [ ] Owned, unavailable, insufficient, pending, failed, and refunded states are covered.
 
 ### Settings
 
@@ -877,7 +749,7 @@ See performance/network status, copy support information, submit logs, and under
 
 #### Player Intent
 
-Recover from errors, maintenance, version mismatch, network issues, save conflicts, or transaction problems with clear choices.
+Recover from errors, maintenance, version mismatch, network issues, save conflicts, or entitlement/service conflicts with clear choices.
 
 #### Expanded ASCII Wireframe
 
@@ -912,7 +784,7 @@ Recover from errors, maintenance, version mismatch, network issues, save conflic
 
 | Component | Requirement |
 | :--- | :--- |
-| Dialog title | names network/update/maintenance/conflict/transaction |
+| Dialog title | names network/update/maintenance/conflict/entitlement problem |
 | CTA set | one primary, one safe cancel/exit, support if needed |
 | Error code | copyable for support |
 
@@ -924,7 +796,7 @@ Recover from errors, maintenance, version mismatch, network issues, save conflic
 | Version mismatch | current/required version and update |
 | Maintenance | expected end/status link |
 | Save conflict | source, timestamp, impact, choices |
-| Transaction error | provider, status, receipt/support path |
+| Entitlement/service conflict | provider, sync status, support path; route purchase receipts to Commerce Screens |
 
 #### Input / Focus / Touch
 
@@ -940,7 +812,7 @@ Recover from errors, maintenance, version mismatch, network issues, save conflic
 
 #### Acceptance Checklist
 
-- [ ] Network, version, maintenance, save conflict, data corruption, and transaction dialogs have recovery paths.
+- [ ] Network, version, maintenance, save conflict, data corruption, and entitlement/service dialogs have recovery paths.
 
 ---
 
@@ -952,7 +824,6 @@ Recover from errors, maintenance, version mismatch, network issues, save conflic
 | Account conflict choices | Tune sync messaging |
 | Settings search terms | Improve category naming |
 | Preset apply/revert rate | Validate preset trust |
-| Purchase failure and cancellation | Improve shop clarity |
 | Error retry success | Improve system recovery |
 | Accessibility preset adoption | Measure discoverability |
 
@@ -960,9 +831,8 @@ Recover from errors, maintenance, version mismatch, network issues, save conflic
 
 ## Acceptance Checklist
 
-- [ ] Account and purchase screens state consequences plainly.
+- [ ] Account, privacy, unlink, and abandon screens state consequences plainly.
 - [ ] First-time setup offers accessibility before gameplay.
 - [ ] Settings support apply, revert, platform locks, and ranked locks.
 - [ ] System errors include retry/cancel/support paths.
-- [ ] Shop distinguishes owned, premium, cosmetic, and unavailable items.
 - [ ] Privacy and streamer mode protect names, invite codes, and account IDs.

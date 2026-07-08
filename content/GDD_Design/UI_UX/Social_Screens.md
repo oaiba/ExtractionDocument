@@ -27,7 +27,7 @@ Primary references:
 | [Global UX Standards](Global_UX_Standards.md) | Shared navigation, focus, state, modal, and accessibility rules |
 | [Pre-Raid Screens](Pre_Raid_Screens.md) | Squad lobby, readiness, matchmaking, and party blockers |
 | [Post-Raid Screens](Post_Raid_Screens.md) | Squad summary, commend, report, and add-friend routes |
-| [Commerce, Settings & System Screens](Commerce_Settings_System_Screens.md) | Privacy, streamer mode, account, and safety settings |
+| [Settings & System Screens](Commerce_Settings_System_Screens.md) | Privacy, streamer mode, account, and safety settings |
 
 ---
 

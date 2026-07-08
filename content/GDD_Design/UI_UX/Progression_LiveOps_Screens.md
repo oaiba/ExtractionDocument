@@ -27,7 +27,8 @@ Primary references:
 | [Global UX Standards](Global_UX_Standards.md) | Shared navigation, focus, state, modal, and accessibility rules |
 | [Out-of-Raid Screens](Out_Of_Raid_Screens.md) | Quest board, profile, home hub, and reward routes |
 | [Pre-Raid Screens](Pre_Raid_Screens.md) | Event/ranked queue commitment and restrictions |
-| [Commerce, Settings & System Screens](Commerce_Settings_System_Screens.md) | Shop, wallet, purchase, privacy, and system dialogs |
+| [Commerce Screens](Commerce_Screens.md) | Battle pass upgrade, event store purchase routes, currency top-up, confirmation, and receipts |
+| [Settings & System Screens](Commerce_Settings_System_Screens.md) | Privacy, account, and system dialogs |
 
 ---
 
@@ -72,7 +73,7 @@ Primary references:
 | Layout | Tier track, selected reward detail, current XP, time remaining, free/premium distinction |
 | Primary CTA | Claim Reward; Upgrade Pass only when a premium reward is selected or page context supports it |
 | Secondary actions | View all rewards, inspect cosmetic, filter claimable, preview season |
-| Monetization rule | Premium purchase must clearly state cosmetic/non-power nature |
+| Monetization rule | Reward/progress context lives here; premium upgrade purchase and confirmation live in [Commerce Screens](Commerce_Screens.md) |
 
 ### Battle Pass States
 

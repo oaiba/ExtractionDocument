@@ -69,20 +69,22 @@ The player wants to understand what changed since the last session, confirm whet
 
 ```
 +---------------------------------------------------------------------------------+
-| GLOBAL HEADER                                                                   |
-| Lv.12  Salvage Rep 3     EXTRACTION PROTOCOL       Credits 425K  Inbox 2  [N]   |
+| GLOBAL HEADER: Lv.12 Salvage Rep 3     EXTRACTION PROTOCOL   Credits 425K [N]  |
 |---------------------------------------------------------------------------------|
-| NAV RAIL    | PRIMARY HERO / OPERATOR SHOWCASE               -  | DEPLOY PANEL  |
-| > Home      | +-----------------------------------------------+ | Mode: Solo    |
-|   Loadout   | | 3D OPERATOR MODEL / SAFE HOUSE BACKDROP       | | Map: Sector 7 |
-|   Stash     | | - current armor and weapon visible            | | Time: Day     |
-|   Traders   | | - rotate / inspect affordance                 | | Squad: 1/4    |
-|   SafeHouse | | - injury, insurance, and cosmetic badges      | | Queue: 45s    |
-|   Quests    | +-----------------------------------------------+ |---------------|
-|   Profile   | LAST RAID SNAPSHOT                              | Gear 125K       |
-|   Settings  | EXTRACTED  +1,700 XP  Loot 7 items  Rep +0.05   | Weight 24/40    | 
-|             | [View AAR] [Move Loot] [Redeploy Route]         | Insured 4/6     |
-|-------------+-------------------------------------------------|-----------------|
+| PRIMARY NAV: Home | Loadout | Stash | Traders | SafeHouse | Quests | Profile   |
+|              Settings                                                           |
+|---------------------------------------------------------------------------------|
+| PRIMARY HERO / OPERATOR SHOWCASE                              | DEPLOY PANEL    |
+| +------------------------------------------------------------+ | Mode: Solo      |
+| | 3D OPERATOR MODEL / SAFE HOUSE BACKDROP                    | | Map: Sector 7   |
+| | - current armor and weapon visible                         | | Time: Day       |
+| | - rotate / inspect affordance                              | | Squad: 1/4      |
+| | - injury, insurance, and cosmetic badges                   | | Queue: 45s      |
+| +------------------------------------------------------------+ |-----------------|
+| LAST RAID SNAPSHOT                                             | Gear 125K       |
+| EXTRACTED  +1,700 XP  Loot 7 items  Rep +0.05                  | Weight 24/40    |
+| [View AAR] [Move Loot] [Redeploy Route]                        | Insured 4/6     |
+|----------------------------------------------------------------+-----------------|
 | CONTEXT CARDS                                                                   |
 | [Loadout OK] [Stash 92% Full] [Insurance Return 22h] [Daily 1/3] [Event 2d]     |
 |---------------------------------------------------------------------------------|
@@ -96,7 +98,7 @@ The player wants to understand what changed since the last session, confirm whet
 | Region | Purpose | Required Content |
 | :--- | :--- | :--- |
 | Global header | Persistent account and economy status | level, faction rep, credits, notifications, network state |
-| Nav rail | Stable out-of-raid destination map | current selection, unread badges, disabled reasons |
+| Horizontal global nav | Primary out-of-raid destination map | Home, Loadout, Stash, Traders, Safe House, Quests, Profile, Settings, current selection, unread badges, disabled reasons |
 | Operator showcase | Identity, loadout readability, emotional anchor | operator model, current weapon, armor silhouette, rotate/inspect hint |
 | Last raid snapshot | Explain changed state after returning | extraction/death label, XP, loot count, rep delta, AAR action |
 | Deploy panel | Readiness and risk before commitment | mode, map, squad, queue estimate, gear value, weight, insurance |
@@ -141,13 +143,13 @@ The player wants to understand what changed since the last session, confirm whet
 
 | Action | PC | Console | Mobile |
 | :--- | :--- | :--- | :--- |
-| Navigate hub | Mouse click / number shortcuts | D-pad rail / shoulder tabs | Bottom nav or rail drawer |
+| Navigate hub | Click horizontal global nav / number shortcuts | Shoulder tabs or horizontal focus | Bottom nav or drawer |
 | Rotate operator | Drag hero | Right stick | Swipe hero |
 | Open blocker fix | Click blocker | Focus blocker + A / Cross | Tap blocker row |
 | Deploy | Click CTA / Enter when focused | A / Cross on CTA | Sticky bottom CTA |
 | Open context card | Click card | Focus card | Tap card |
 
-Focus order: nav rail, deploy panel CTA, blocker list, last raid actions, context cards, header utilities.
+Focus order: global header, horizontal global nav, deploy panel CTA, blocker list, last raid actions, context cards, header utilities.
 
 ### Designer Notes
 

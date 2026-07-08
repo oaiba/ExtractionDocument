@@ -87,15 +87,17 @@ Global UX standards define the reusable interaction rules that every UI screen m
 
 ```
 +-------------------------------------------------------------------+
-| TOP BAR: profile, currency, notifications, search                 |
+| GLOBAL HEADER: profile, currency, notifications, search           |
 |-------------------------------------------------------------------|
-| NAV RAIL | MAIN CONTENT AREA                           | CONTEXT  |
-|          | selected screen, list, grid, preview        | PANEL    |
-| Home     |                                             | details  |
-| Loadout  | +------------------+ +------------------+   | risk     |
-| Stash    | | Card / Row       | | Card / Row       |   | status   |
-| Social   | +------------------+ +------------------+   | CTA      |
-| Settings |                                             |          |
+| PRIMARY NAV: Home | Loadout | Stash | Traders | SafeHouse | Quests |
+|              Profile | Settings                                   |
+|-------------------------------------------------------------------|
+| SECONDARY | MAIN CONTENT AREA                         | CONTEXT  |
+| RAIL      | selected screen, list, grid, preview      | PANEL    |
+| filters   |                                           | details  |
+| category  | +------------------+ +------------------+ | risk     |
+| list      | | Card / Row       | | Card / Row       | | status   |
+| local nav | +------------------+ +------------------+ | CTA      |
 |-------------------------------------------------------------------|
 | FOOTER: hints, back, focus state, destructive warning if needed   |
 +-------------------------------------------------------------------+
@@ -103,11 +105,21 @@ Global UX standards define the reusable interaction rules that every UI screen m
 
 | Platform | Layout Standard |
 | :--- | :--- |
-| PC 16:9 | Dense but scannable; preserve stable navigation rail and avoid oversized marketing layouts |
+| PC 16:9 | Dense but scannable; preserve a stable horizontal global nav and avoid oversized marketing layouts |
 | PC ultrawide | Keep primary content in a centered 1920px-safe region; use side space for context panels only |
 | Console | Maintain 5% safe zone, large focus states, and no precision-only interactions |
 
 Mobile-specific and portrait-only layouts are out of scope for this standard. If encountered, block interaction, redirect to supported PC/Console landscape guidance, or show an unsupported-orientation message.
+
+### Navigation Roles
+
+| Role | Standard |
+| :--- | :--- |
+| Primary navigation | Horizontal global nav in the top header area; used for Home, Loadout, Stash, Traders, Safe House, Quests, Profile, Settings |
+| Secondary rail | Vertical left rail only for local categories, filters, sub-sections, or scoped lists inside the current primary destination |
+| Local rail examples | Stash filters, operator roster filters, trader list, quest list, settings categories, social/LFG lists |
+| Context panel | Right-side detail/risk/status panel that changes with the selected item, screen state, or workflow |
+| Action/status bar | Bottom or pinned action strip for hints, destructive warnings, and primary/secondary CTAs |
 
 ### Minimum Targets
 

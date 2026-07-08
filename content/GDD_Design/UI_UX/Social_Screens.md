@@ -71,8 +71,8 @@ Primary references:
 | Spec | Requirement |
 | :--- | :--- |
 | Goal | Provide quick social actions without leaving the current screen unnecessarily |
-| Entry points | Top bar, global navigation rail, squad lobby, and post-match |
-| Layout | PC/Console landscape standard: compact side overlay with controller-friendly focus states |
+| Entry points | Top bar / horizontal global nav, squad lobby, and post-match |
+| Layout | PC/Console landscape standard: compact side overlay panel with controller-friendly focus states |
 | Primary CTA | Contextual: Invite, Join, Accept |
 | Secondary actions | Friends, recent players, clan, LFG, privacy settings |
 | Offline state | Show cached friends if available and explain unavailable actions |

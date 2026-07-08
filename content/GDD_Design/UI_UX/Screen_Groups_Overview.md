@@ -138,12 +138,13 @@ Use this template for every new screen spec. Keep it short enough to update, but
 
 | Surface | Navigation Rule |
 | :--- | :--- |
-| Home hub | Global navigation rail using the PC/Console landscape standard |
+| Home hub | Horizontal global navigation bar using the PC/Console landscape standard |
 | Preparation flow | Linear enough for new players, jumpable for experts |
 | In-raid overlays | Never fully pause online raid state; preserve audio and threat awareness |
 | Modal dialogs | One decision per modal; destructive actions require hold or second confirmation |
 | Back behavior | `ESC` / `B` always closes the deepest layer first |
 | Deep links | Event, quest, reward, and trader cards must open the exact destination screen |
+| Vertical rails | Secondary/local navigation only: stash filters, roster filters, trader list, quest list, settings categories, social/LFG lists |
 
 ---
 
@@ -151,6 +152,7 @@ Use this template for every new screen spec. Keep it short enough to update, but
 
 - [ ] Every player lifecycle phase has a screen group.
 - [ ] Every group follows the PC/Console landscape standard.
+- [ ] Primary navigation uses the horizontal global nav; vertical rails are secondary/local only.
 - [ ] Every group defines blocked, empty, locked, loading, offline, and error states.
 - [ ] Every major game system has a UI owner or cross-reference.
 - [ ] No single document owns unrelated screens that should live in separate groups.

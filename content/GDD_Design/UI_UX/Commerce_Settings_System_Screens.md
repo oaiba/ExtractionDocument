@@ -249,13 +249,16 @@ Settings categories follow [User Settings](../GameDesign/UserSettings.md) and th
 +------------------------------------------------------------------+
 | SETTINGS                                      Search [________]  |
 |------------------------------------------------------------------|
-| CATEGORIES          | SETTINGS DETAIL                            |
-| Controls            | Preset: Competitive v                      |
-| Graphics            | Resolution 1920x1080 v                     |
-| Audio               | V-Sync [On | Off]                          |
-| Gameplay & HUD      | FPS Limit [-----144-----]                  |
-| Accessibility       | Texture Quality High v                     |
-| Privacy             | Ranked locked settings show reason         |
+| Controls | Graphics | Audio | Gameplay & HUD | Accessibility     |
+| Privacy | Language | Diagnostics                                 |
+|------------------------------------------------------------------|
+| SETTINGS DETAIL                                | HELP / PREVIEW  |
+| Preset: Competitive v                          | affects input   |
+| Resolution 1920x1080 v                         | preview/revert  |
+| V-Sync [On | Off]                              | platform note   |
+| FPS Limit [-----144-----]                      | ranked lock why |
+| Texture Quality High v                         |                 |
+| Ranked locked settings show reason             |                 |
 |------------------------------------------------------------------|
 | [Reset Category] [Revert]                         [Apply]        |
 +------------------------------------------------------------------+
@@ -672,10 +675,16 @@ Find a setting, understand its effect, apply/revert safely, and know when platfo
 +--------------------------------------------------------------------------------+
 | SETTINGS                                      Search [________] Unsaved *      |
 |--------------------------------------------------------------------------------|
-| Categories: Controls | Graphics | Audio | Gameplay | Accessibility | Account   |
-| Setting row: Aim Sensitivity 42 [slider]     Help: affects camera aim speed    |
-| Lock/warning lane: Ranked queue locks input preset                             |
-| [Reset] [Revert] [Apply]                                                       |
+| Controls | Graphics | Audio | Gameplay & HUD | Accessibility | Account         |
+| Privacy | Language | Diagnostics                                               |
+|--------------------------------------------------------------------------------|
+| SETTING LIST / SELECTED TAB                         | HELP / PREVIEW PANEL     |
+| Aim Sensitivity 42 [slider]                         | affects camera aim speed |
+| Controller Layout: Tactical v                       | device-specific note     |
+| Hold-to-confirm 1.5s [stepper]                      | accessibility impact     |
+| Ranked lock: input preset cannot change             | fairness reason          |
+|--------------------------------------------------------------------------------|
+| ACTION BAR: [Reset Category] [Revert]                         [Apply Changes]  |
 +--------------------------------------------------------------------------------+
 ```
 
@@ -683,7 +692,8 @@ Find a setting, understand its effect, apply/revert safely, and know when platfo
 
 | Region | Requirement |
 | :--- | :--- |
-| Search/category | fast find and grouping |
+| Search | fast find across all settings and categories |
+| Settings top tabs | horizontal category navigation inside Settings: Controls, Graphics, Audio, Gameplay/HUD, Accessibility, Account, Privacy, Language, Diagnostics |
 | Setting list | label, control, current value, lock state |
 | Help panel | selected setting explanation |
 | Apply bar | unsaved, revert, apply, reset |

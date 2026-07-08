@@ -76,16 +76,16 @@ See what is new, understand current balance and platform status, and choose a sh
 +------------------------------------------------------------------------------------------------+
 | SHOP                               Balance 1,250 C   Platform OK   Offers refresh: 18h 22m     |
 |------------------------------------------------------------------------------------------------|
-| Home | Featured | Bundles | Event | Battle Pass | Currency | Redeem                           |
+| Home | Featured | Bundles | Event | Battle Pass | Currency | Redeem                            |
 |------------------------------------------------------------------------------------------------|
-| HERO OFFER: Season Operator Pack                         | DAILY SNAPSHOT                    |
-| [Large cosmetic preview]                                 | Featured 12 offers                |
-| 2,400 C  was 3,200 C  25% off                            | 3 owned / 9 new                   |
-| [Preview] [View Bundle]                                  | Platform checkout available      |
+| HERO OFFER: Season Operator Pack                         | DAILY SNAPSHOT                      |
+| [Large cosmetic preview]                                 | Featured 12 offers                  |
+| 2,400 C  was 3,200 C  25% off                            | 3 owned / 9 new                     |
+| [Preview] [View Bundle]                                  | Platform checkout available         |
 |------------------------------------------------------------------------------------------------|
-| FEATURED ROW: [Card] [Card] [Card] [Card]                 | SYSTEM MESSAGE / TRUST COPY       |
-| WEEKLY BUNDLES: [Card] [Card] [Card]                      | Cosmetics only. No gameplay power.|
-| EVENT OFFERS: [Card] [Card] [Card]                        | [Purchase Help]                   |
+| FEATURED ROW: [Card] [Card] [Card] [Card]                | SYSTEM MESSAGE / TRUST COPY         |
+| WEEKLY BUNDLES: [Card] [Card] [Card]                     | Cosmetics only. No gameplay power.  |
+| EVENT OFFERS: [Card] [Card] [Card]                       | [Purchase Help]                     |
 +------------------------------------------------------------------------------------------------+
 ```
 
@@ -152,15 +152,15 @@ Scan many timed offers quickly and decide which item or bundle deserves inspecti
 +------------------------------------------------------------------------------------------------+
 | FEATURED OFFERS                    Balance 1,250 C                     Daily refresh 18h 22m   |
 |------------------------------------------------------------------------------------------------|
-| Home | Featured | Bundles | Event | Battle Pass | Currency | Redeem                           |
+| Home | Featured | Bundles | Event | Battle Pass | Currency | Redeem                            |
 |------------------------------------------------------------------------------------------------|
-| FILTERS: All | Operators | Weapons | Emotes | Charms | Owned Hidden [x]                     |
+| FILTERS: All | Operators | Weapons | Emotes | Charms | Owned Hidden [x]                        |
 |------------------------------------------------------------------------------------------------|
-| TODAY'S BEST:  [Card: New] [Card: 25% off] [Card: Owned] [Card: Ends Soon]                    |
-| DAILY OFFERS:  [Card] [Card] [Card] [Card] [Card] [Card]                                      |
+| TODAY'S BEST:  [Card: New] [Card: 25% off] [Card: Owned] [Card: Ends Soon]                     |
+| DAILY OFFERS:  [Card] [Card] [Card] [Card] [Card] [Card]                                       |
 | WEEKLY OFFERS: [Card] [Card] [Card] [Card]                                                     |
 |------------------------------------------------------------------------------------------------|
-| SELECTED OFFER SUMMARY: name, type, price, ownership, timer, [Preview] [Inspect]              |
+| SELECTED OFFER SUMMARY: name, type, price, ownership, timer, [Preview] [Inspect]               |
 +------------------------------------------------------------------------------------------------+
 ```
 
@@ -223,15 +223,15 @@ Understand what the bundle includes, what they already own, and whether the adju
 +------------------------------------------------------------------------------------------------+
 | < Back   BUNDLE DETAIL: Night Raid Pack                         Balance 1,250 C                |
 |------------------------------------------------------------------------------------------------|
-| [Large bundle preview / carousel]                  | CONTENTS                                |
-|                                                     | [Operator Skin] New                     |
-| Price 1,800 C  was 2,600 C                         | [Weapon Skin] Owned                    |
-| Owned item adjustment: -400 C                      | [Charm] New                            |
-| Cosmetics only. No gameplay power.                 | [Banner] New                           |
+| [Large bundle preview / carousel]                  | CONTENTS                                  |
+|                                                     | [Operator Skin] New                      |
+| Price 1,800 C  was 2,600 C                         | [Weapon Skin] Owned                       |
+| Owned item adjustment: -400 C                      | [Charm] New                               |
+| Cosmetics only. No gameplay power.                 | [Banner] New                              |
 |------------------------------------------------------------------------------------------------|
 | DETAILS: rarity, availability, event relation, compatibility, refund/platform note             |
 |------------------------------------------------------------------------------------------------|
-| [Preview All] [Inspect Items]                                      [Purchase Bundle 1,800 C]  |
+| [Preview All] [Inspect Items]                                      [Purchase Bundle 1,800 C]   |
 +------------------------------------------------------------------------------------------------+
 ```
 
@@ -295,15 +295,15 @@ Inspect a cosmetic from all useful angles before buying or equipping.
 +------------------------------------------------------------------------------------------------+
 | < Back   ITEM DETAIL: Wraith Runner Jacket                     Balance 1,250 C                 |
 |------------------------------------------------------------------------------------------------|
-| [3D PREVIEW / ROTATE / ZOOM]                         | ITEM INFO                            |
-|                                                      | Type: Operator Skin                  |
-|                                                      | Rarity: Epic                         |
-|                                                      | Compatible: Operator class A/B       |
-|                                                      | Variants: Default | Masked | Hooded  |
+| [3D PREVIEW / ROTATE / ZOOM]                         | ITEM INFO                               |
+|                                                      | Type: Operator Skin                     |
+|                                                      | Rarity: Epic                            |
+|                                                      | Compatible: Operator class A/B          |
+|                                                      | Variants: Default | Masked | Hooded     |
 |------------------------------------------------------------------------------------------------|
-| PREVIEW CONTROLS: Rotate L/R | Zoom | Lighting | Compare Owned                                |
+| PREVIEW CONTROLS: Rotate L/R | Zoom | Lighting | Compare Owned                                 |
 |------------------------------------------------------------------------------------------------|
-| Price 1,200 C   Cosmetics only. No gameplay power.                         [Buy] [Wishlist]  |
+| Price 1,200 C   Cosmetics only. No gameplay power.                         [Buy] [Wishlist]    |
 +------------------------------------------------------------------------------------------------+
 ```
 
@@ -367,15 +367,15 @@ Understand limited-time event offers, collection completion, and what reward unl
 +------------------------------------------------------------------------------------------------+
 | EVENT STORE: Blackout Collection                      Ends in 6d 04h   Owned 8 / 24            |
 |------------------------------------------------------------------------------------------------|
-| Home | Featured | Bundles | Event | Battle Pass | Currency | Redeem                           |
+| Home | Featured | Bundles | Event | Battle Pass | Currency | Redeem                            |
 |------------------------------------------------------------------------------------------------|
-| COLLECTION REWARD: Phantom Blade Skin                | PROGRESS LADDER                       |
-| [Reward preview]                                     | 8/24 owned                            |
-| Unlocks after collecting all event items             | Milestones: 6, 12, 18, 24             |
+| COLLECTION REWARD: Phantom Blade Skin                | PROGRESS LADDER                         |
+| [Reward preview]                                     | 8/24 owned                              |
+| Unlocks after collecting all event items             | Milestones: 6, 12, 18, 24               |
 |------------------------------------------------------------------------------------------------|
-| EVENT ITEMS: [Owned] [New] [New] [Discount] [New] [Locked] [New] [New]                        |
+| EVENT ITEMS: [Owned] [New] [New] [Discount] [New] [Locked] [New] [New]                         |
 |------------------------------------------------------------------------------------------------|
-| [Preview Reward] [View Event Challenges]                         [Buy Selected Item]          |
+| [Preview Reward] [View Event Challenges]                         [Buy Selected Item]           |
 +------------------------------------------------------------------------------------------------+
 ```
 
@@ -437,15 +437,15 @@ Compare free and premium value, understand tier skip options, and upgrade intent
 
 ```
 +------------------------------------------------------------------------------------------------+
-| BATTLE PASS UPGRADE                         Season ends in 24d      Balance 1,250 C           |
+| BATTLE PASS UPGRADE                         Season ends in 24d      Balance 1,250 C            |
 |------------------------------------------------------------------------------------------------|
-| PASS SUMMARY: Level 32 / 100        Free claimed 18        Premium pending 12                 |
+| PASS SUMMARY: Level 32 / 100        Free claimed 18        Premium pending 12                  |
 |------------------------------------------------------------------------------------------------|
-| OPTION A: Premium Pass 950 C        | OPTION B: Premium Bundle 2,400 C + 20 tier skips        |
-| Includes premium track unlocks      | Includes premium track, skips, exclusive cosmetic       |
-| [Compare Rewards] [Upgrade 950 C]   | [Compare Bundle] [Upgrade Bundle]                       |
+| OPTION A: Premium Pass 950 C        | OPTION B: Premium Bundle 2,400 C + 20 tier skips         |
+| Includes premium track unlocks      | Includes premium track, skips, exclusive cosmetic        |
+| [Compare Rewards] [Upgrade 950 C]   | [Compare Bundle] [Upgrade Bundle]                        |
 |------------------------------------------------------------------------------------------------|
-| REWARD PREVIEW: Premium rewards you would unlock immediately after upgrade                    |
+| REWARD PREVIEW: Premium rewards you would unlock immediately after upgrade                     |
 +------------------------------------------------------------------------------------------------+
 ```
 
@@ -507,15 +507,15 @@ Choose a premium currency pack and understand platform checkout before leaving t
 
 ```
 +------------------------------------------------------------------------------------------------+
-| CURRENCY TOP-UP                                      Current Balance 1,250 C                  |
+| CURRENCY TOP-UP                                      Current Balance 1,250 C                   |
 |------------------------------------------------------------------------------------------------|
-| PACKS: [500 C] [1,000 C + bonus] [2,800 C best value] [5,000 C]                              |
+| PACKS: [500 C] [1,000 C + bonus] [2,800 C best value] [5,000 C]                                |
 |------------------------------------------------------------------------------------------------|
-| SELECTED PACK: 2,800 C + 200 bonus                  | PLATFORM CHECKOUT                     |
-| Price: platform localized price                      | Provider: Steam / PSN / Xbox / Epic   |
-| Bonus: 200 C                                         | Taxes/fees handled by platform        |
+| SELECTED PACK: 2,800 C + 200 bonus                  | PLATFORM CHECKOUT                        |
+| Price: platform localized price                      | Provider: Steam / PSN / Xbox / Epic     |
+| Bonus: 200 C                                         | Taxes/fees handled by platform          |
 |------------------------------------------------------------------------------------------------|
-| [Back to Offer] [Change Pack]                                      [Continue to Checkout]     |
+| [Back to Offer] [Change Pack]                                      [Continue to Checkout]      |
 +------------------------------------------------------------------------------------------------+
 ```
 
@@ -577,12 +577,12 @@ Make a final informed decision with exact contents, price, balance impact, and r
 
 ```
 +------------------------------------------------------------------------------------------------+
-| CONFIRM PURCHASE                                                                              |
+| CONFIRM PURCHASE                                                                               |
 |------------------------------------------------------------------------------------------------|
 | ITEM: Night Raid Pack                              Price: 1,800 C                              |
-| Contents: 4 cosmetics                             Balance after: 250 C                        |
-| Owned adjustment: -400 C                          Refund/platform note: See platform policy   |
-| Cosmetics only. No gameplay power.                                                               |
+| Contents: 4 cosmetics                             Balance after: 250 C                         |
+| Owned adjustment: -400 C                          Refund/platform note: See platform policy    |
+| Cosmetics only. No gameplay power.                                                             |
 |------------------------------------------------------------------------------------------------|
 | [Cancel]                                                [Hold / Confirm Purchase 1,800 C]      |
 +------------------------------------------------------------------------------------------------+
@@ -653,7 +653,7 @@ Know whether the purchase succeeded, what was received, and what to do next.
 | Balance: 250 C                                                                                 |
 | Receipt ID: EP-2048-9921                                                                       |
 |------------------------------------------------------------------------------------------------|
-| [Equip Now] [View Items] [Back to Shop] [Purchase Help]                                       |
+| [Equip Now] [View Items] [Back to Shop] [Purchase Help]                                        |
 +------------------------------------------------------------------------------------------------+
 ```
 
@@ -717,7 +717,7 @@ Enter a code or claim a platform entitlement and resolve duplicate/expired/regio
 +------------------------------------------------------------------------------------------------+
 | REDEEM / CLAIM                                                                                 |
 |------------------------------------------------------------------------------------------------|
-| Enter Code: [____-____-____-____]                                      [Redeem]               |
+| Enter Code: [____-____-____-____]                                      [Redeem]                |
 |------------------------------------------------------------------------------------------------|
 | AVAILABLE CLAIMS                                                                               |
 | Founder Pack - Ready to claim                     [Claim]                                      |

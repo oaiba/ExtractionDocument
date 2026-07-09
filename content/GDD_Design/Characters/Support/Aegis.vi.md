@@ -3,208 +3,208 @@ title: "AEGIS - Sister Maria Santos"
 type: docs
 ---
 
-## Operator Profile
+## Hồ Sơ Operator
 
-> *"Faith is the shield. nhưng sometimes, you need an actual shield."*
+> *"Đức tin là tấm khiên. Nhưng đôi khi, ta cần một tấm khiên thật."*
 
-### Basic Information
+### Thông Tin Cơ Bản
 
-| Attribute       | giá trị                     |
+| Thuộc Tính       | Giá Trị                     |
 | :-------------- | :------------------------ |
-| **Real Name**   | Sister Maria Elena Santos |
+| **Tên Thật**   | Sister Maria Elena Santos |
 | **Codename**    | AEGIS                     |
 | **Class**       | Support                   |
-| **Nationality** | Filipino                  |
-| **Age**         | 35                        |
-| **Height**      | 165 cm (5'5")             |
-| **Weight**      | 58 kg (128 lbs)           |
+| **Quốc Tịch** | Filipino                  |
+| **Tuổi**         | 35                        |
+| **Chiều Cao**      | 165 cm (5'5")             |
+| **Cân Nặng**      | 58 kg (128 lbs)           |
 
 <!-- REF_IMAGE: AEGIS operator portrait — tactical nun habit, serene expression, golden energy shield projector active -->
 
-### Background
+### Lý Lịch
 
-Maria Santos was a nun và nurse at a missionary hospital in Manila trước a terrorist attack changed everything. khi armed men stormed the hospital, Maria picked up a fallen soldier's vũ khí và held them off for three hours until reinforcements arrived, saving 47 patients và staff.
+Maria Santos từng là nữ tu kiêm y tá tại một bệnh viện truyền giáo ở Manila trước khi một vụ tấn công khủng bố thay đổi mọi thứ. Khi nhóm vũ trang tràn vào bệnh viện, Maria nhặt vũ khí của một binh sĩ đã ngã xuống và cầm chân chúng suốt ba giờ cho đến khi viện binh tới, cứu được 47 bệnh nhân và nhân viên.
 
-The Vatican quietly approached her afterward, offering training với Swiss Guard specialists. Now she operates as a "guardian angel" - protecting those who cannot protect themselves in the world's most dangerous places. The Exclusion Zone is simply her newest mission field.
+Sau đó Vatican âm thầm tiếp cận cô, đề nghị huấn luyện cùng các specialist của Swiss Guard. Giờ cô hoạt động như một "thiên thần hộ mệnh", bảo vệ những người không thể tự bảo vệ mình ở các nơi nguy hiểm nhất thế giới. Exclusion Zone chỉ là vùng nhiệm vụ mới nhất của cô.
 
-### Personality Traits
+### Tính Cách
 
-- **Serene** - Unshakeable calm, even in combat
-- **Protective** - Will die for her team mà không hesitation
-- **Spiritual** - Sees combat as protection, not violence
-- **Humble** - Never takes credit for saves
+- **Serene** - Bình tĩnh không lay chuyển, kể cả trong combat
+- **Protective** - Sẵn sàng chết vì team mà không do dự
+- **Spiritual** - Xem combat là bảo vệ, không phải bạo lực
+- **Humble** - Không bao giờ nhận công về những mạng đã cứu
 
 ---
 
-## Combat Statistics
+## Thông Số Combat
 
-### Base Stats
+### Chỉ Số Cơ Bản
 
-| Stat                      | giá trị   | Class Modifier | Final     |
+| Stat                      | Giá Trị   | Bộ Điều Chỉnh Class | Cuối Cùng     |
 | :------------------------ | :------ | :------------- | :-------- |
-| **máu**                | 100 HP  | -              | 100 HP    |
-| **giáp**                 | 40      | -              | 40        |
-| **Sprint Speed**          | 5.5 m/s | -5%            | 5.225 m/s |
-| **Walk Speed**            | 3.5 m/s | -5%            | 3.325 m/s |
-| **Healing Effectiveness** | 100%    | +20%           | 120%      |
+| **Máu**                | 100 HP  | -              | 100 HP    |
+| **Giáp**                 | 40      | -              | 40        |
+| **Tốc Độ Sprint**          | 5.5 m/s | -5%            | 5.225 m/s |
+| **Tốc Độ Đi Bộ**            | 3.5 m/s | -5%            | 3.325 m/s |
+| **Hiệu Quả Hồi Máu** | 100%    | +20%           | 120%      |
 
-### Shield Modifiers
+### Bộ Điều Chỉnh Khiên
 
-| Property            | giá trị                       |
+| Thuộc Tính            | Giá Trị                       |
 | :------------------ | :-------------------------- |
-| Guardian Shield HP  | 200                         |
-| Shield Regeneration | 20 HP/second (khi not hit) |
-| Shield Radius       | 5 meters                    |
+| Guardian Khiên HP  | 200                         |
+| Khiên Regeneration | 20 HP/second (khi không bị trúng đòn) |
+| Khiên Radius       | 5 meters                    |
 
-### Expanded Combat Statistics
+### Thông Số Combat Mở Rộng
 
-| Parameter | giá trị | ghi chú |
+| Tham Số | Giá Trị | Ghi Chú |
 | :-------- | :---- | :---- |
-| **Stamina Pool** | 100 | Standard (Support class) |
-| **Sprint Drain** | 10/second | Standard |
-| **Recovery Rate** | 8/second | Standard |
-| **Net Sprint Duration** | 10.0 seconds | Average |
-| **Footstep Volume** | 85% | Quiet — nun's habit of moving silently |
-| **Ability Audio Radius** | 30 meters | Shield dome hum + angelic choir is distinctive |
+| **Quỹ Stamina** | 100 | Standard (Support class) |
+| **Hao Stamina Khi Sprint** | 10/second | Standard |
+| **Tốc Độ Hồi** | 8/second | Standard |
+| **Thời Lượng Sprint Thực** | 10.0 seconds | Trung bình |
+| **Âm Lượng Bước Chân** | 85% | Quiet — nun's habit of moving silently |
+| **Bán Kính Audio Ability** | 30 meters | Khiên dome hum + angelic choir rất dễ nhận biết |
 
-### Status Effect Resistances
+### Kháng Hiệu Ứng Trạng Thái
 
-| Effect | Resistance | ghi chú |
+| Hiệu Ứng | Kháng | Ghi Chú |
 | :----- | :--------- | :---- |
-| Stun | 0% | Full duration |
-| Slow | 10% | Slight resist (Support class) |
+| Stun | 0% | Đủ thời lượng |
+| Slow | 10% | Kháng nhẹ (Support class) |
 | Burn | 0% | Full DoT |
-| EMP | 0% | Guardian Shield destroyed instantly by EMP |
+| EMP | 0% | Guardian Khiên bị phá hủy ngay lập tức bởi EMP |
 
-### Top-Down Visual Spec
+### Spec Hình Ảnh Top-Down
 
-| Property | giá trị |
+| Thuộc Tính | Giá Trị |
 | :------- | :---- |
 | **Hitbox Capsule** | 34 cm radius, 164 cm height |
-| **Head Sphere** | 13 cm radius |
+| **Vùng Đầu** | 13 cm radius |
 | **Collision Profile** | Standard |
-| **Silhouette From Above** | Slim build, shield generator on back, white cross on shoulders |
-| **Class Accent Zones** | White/Green (#22C55E) on armband và backpack cross |
-| **Shield VFX (Top-Down)** | Blue-white hemispherical dome hiển thị rõ from above, 5m radius circle on ground |
-| **Shield Audio Radius** | 30m — angelic choir hum is a strong audio tell |
+| **Silhouette Nhìn Từ Trên Xuống** | Slim build, máy phát khiên trên lưng, dấu thập trắng trên vai |
+| **Vùng Accent Theo Class** | White/Green (#22C55E) trên băng tay và dấu thập ở backpack |
+| **Khiên VFX (Top-Down)** | Blue-white hemispherical dome nhìn rõ từ trên xuống, 5m radius vòng tròn trên mặt đất |
+| **Khiên Audio Radius** | 30m — angelic choir hum là một tín hiệu audio |
 
-<!-- REF_IMAGE: AEGIS top-down view — showing operator với Guardian Shield deployed, blue-white dome hiển thị rõ from above as 5m radius circle -->
+<!-- REF_IMAGE: AEGIS top-down view — showing operator with Guardian Shield deployed, blue-white dome visible from above as 5m radius circle -->
 
-### Guardian Shield Stat Block
+### Guardian Khiên Stat Block
 
-| Property | giá trị | ghi chú |
+| Thuộc Tính | Giá Trị | Ghi Chú |
 | :------- | :---- | :---- |
-| **Shield HP** | 200 | Absorbs damage until depleted |
-| **Shield Radius** | 5 meters | Dome — hiển thị rõ as circle from above |
-| **Duration** | 10 seconds | hoặc until HP depleted |
-| **Regen Rate** | 20 HP/sec | Only khi not taking damage for 2s |
-| **Projectile Blocking** | One-way | Allies shoot out, địch cannot shoot in |
-| **người chơi Walk-thông qua** | Yes | địch can physically enter dome |
-| **Fire Pass-thông qua** | No | IGNITION fire blocked by shield wall |
-| **Nano Swarm Pass-thông qua** | Yes | PULSE swarm passes thông qua shield |
-| **EMP Vulnerability** | Destroyed instantly | primary counterplay |
+| **Khiên HP** | 200 | Absorbs damage until depleted |
+| **Khiên Radius** | 5 meters | Dome — visible as circle from above |
+| **Duration** | 10 seconds | Or until HP depleted |
+| **Regen Rate** | 20 HP/sec | Only when not taking damage for 2s |
+| **Projectile Blocking** | One-way | Đồng minh shoot out, enemies cannot shoot in |
+| **Player Walk-Through** | Yes | Địch can physically enter dome |
+| **Lửa Pass-Through** | No | IGNITION fire blocked by shield wall |
+| **Nano Swarm Pass-Through** | Yes | PULSE swarm passes through shield |
+| **EMP Vulnerability** | Destroyed instantly | Primary counterplay |
 
-### Difficulty Rating
+### Độ Khó
 
-**Difficulty: 3/5** — Shield placement timing is critical. Deploying too early wastes duration; too late và team takes damage. Positioning within dome matters.
+**Độ Khó: 3/5** — Khiên placement timing is critical. Deploying too early wastes duration; too late and team takes damage. Positioning within dome matters.
 
 
-## Abilities
+## Ability
 
 ### Active Ability: Guardian Shield
 
 > *"Project a protective dome that absorbs incoming damage."*
 
-| Property      | giá trị      |
+| Thuộc Tính      | Giá Trị      |
 | :------------ | :--------- |
 | **Cooldown**  | 90 seconds |
 | **Duration**  | 10 seconds |
 | **Charges**   | 1          |
-| **Shield HP** | 200        |
+| **Khiên HP** | 200        |
 
-#### Effects
+#### Hiệu Ứng
 
-| Effect               | giá trị     | ghi chú                                 |
+| Hiệu Ứng               | Giá Trị     | Ghi Chú                                 |
 | :------------------- | :-------- | :------------------------------------ |
-| Shield Radius        | 5 meters  | Dome covers allies inside             |
-| Shield HP            | 200       | Absorbs incoming damage               |
-| Regen Rate           | 20 HP/sec | Only khi not taking hits             |
-| Allies Can Shoot Out | Yes       | One-way protection                    |
-| địch Can Enter    | Yes       | Walk thông qua, nhưng can't shoot thông qua |
+| Khiên Radius        | 5 meters  | Dome covers allies inside             |
+| Khiên HP            | 200       | Absorbs incoming damage               |
+| Regen Rate           | 20 HP/sec | Only when not taking hits             |
+| Đồng minh Can Shoot Out | Yes       | One-way protection                    |
+| Địch Can Enter    | Yes       | Walk through, but can't shoot through |
 
-#### Shield Interaction Rules
+#### Rule Tương Tác Khiên
 
-| Interaction | kết quả |
+| Interaction | Result |
 | :---------- | :----- |
-| **Shield + EMP (GLITCH)** | Shield destroyed instantly — primary counter |
-| **Shield + Fire (IGNITION)** | Fire does NOT pass thông qua shield wall |
-| **Shield + Nano Swarm (PULSE)** | Swarm passes thông qua shield — does not block |
-| **Shield + TARTARUS Melee** | TARTARUS can push thông qua shield |
-| **Shield + UAV Scan (SONAR)** | Scan does NOT reveal operators inside shield |
-| **Shield + Smoke (OBSIDIAN)** | Smoke passes thông qua shield dome |
-| **Shield + BASTION Shield** | Both shields stack (dome + flat shield) |
+| **Khiên + EMP (GLITCH)** | Khiên bị phá hủy ngay lập tức — primary counter |
+| **Khiên + Lửa (IGNITION)** | Lửa does NOT pass through shield wall |
+| **Khiên + Nano Swarm (PULSE)** | Swarm passes through shield — does not block |
+| **Khiên + TARTARUS Melee** | TARTARUS can push through shield |
+| **Khiên + UAV Scan (SONAR)** | Scan does NOT reveal operators inside shield |
+| **Khiên + Smoke (OBSIDIAN)** | Smoke passes through shield dome |
+| **Khiên + BASTION Khiên** | Both shields stack (dome + flat shield) |
 
-#### Top-Down Shield VFX
+#### VFX Khiên Top-Down
 
-| trạng thái | VFX From Above |
+| State | VFX From Above |
 | :---- | :------------- |
-| Shield deploy | Blue-white flash, dome expands outward from AEGIS |
-| Shield active | Translucent blue-white dome, 5m radius circle on ground, faint glow |
-| Shield taking damage | Shield sparks at impact point, slight flicker |
-| Shield low HP (<50) | Shield cracks hiển thị rõ, rapid flickering |
-| Shield break | Shatter effect burst outward, AEGIS staggers |
+| Khiên deploy | Blue-white flash, dome expands outward from AEGIS |
+| Khiên active | Translucent blue-white dome, 5m radius vòng tròn trên mặt đất, faint glow |
+| Khiên taking damage | Khiên sparks at impact point, slight flicker |
+| Khiên low HP (<50) | Khiên cracks visible, rapid flickering |
+| Khiên break | Shatter effect burst outward, AEGIS staggers |
 
 
-**Self:**
+**Bản thân:**
 - Golden dome effect around team
 - Aegisic humming audio
-- Shield cracks as it takes damage
+- Khiên cracks as it takes damage
 
-**địch Perspective:**
+**Địch Perspective:**
 - Obvious golden barrier
 - Shots blocked (hit markers on shield)
-- Shield flickers khi low
+- Khiên flickers when low
 
-#### Tactical Uses
+#### Cách Dùng Tactical
 
-| cách dùng Case              | Strategy                          |
+| Use Case              | Strategy                          |
 | :-------------------- | :-------------------------------- |
 | **Extraction Hold**   | Dome over extraction point        |
 | **Revive Protection** | Dome while reviving ally          |
-| **Advance Shield**    | Walk forward, team shoots thông qua |
-| **Emergency Cover**   | No natural cover? tạo it       |
+| **Advance Khiên**    | Walk forward, team shoots through |
+| **Emergency Cover**   | No natural cover? Create it       |
 
-#### chính Difference from SUTURE
+#### Key Difference from SUTURE
 
 | SUTURE                      | AEGIS                        |
 | :----------------------- | :--------------------------- |
-| Heals damage sau taken | Prevents damage entirely     |
-| Passive, fire-và-forget | Active, requires positioning |
+| Heals damage after taken | Prevents damage entirely     |
+| Passive, fire-and-forget | Active, requires positioning |
 | Better for sustained     | Better for burst protection  |
-| Drone can be destroyed   | Shield has HP                |
+| Drone can be destroyed   | Khiên has HP                |
 
-#### upgrade Slots
+#### Slot Upgrade
 
 **Slot 1 (Level 5):**
-| Option               | Effect                           |
+| Option               | Hiệu Ứng                           |
 | :------------------- | :------------------------------- |
-| **Reinforced Faith** | Shield HP +50 (250 total)        |
+| **Reinforced Faith** | Khiên HP +50 (250 total)        |
 | **Quick Prayer**     | Cooldown -20 seconds (70s total) |
 | **Extended Grace**   | Duration +5 seconds (15s total)  |
 
 **Slot 2 (Level 20):**
-| Option               | Effect                                    |
+| Option               | Hiệu Ứng                                    |
 | :------------------- | :---------------------------------------- |
-| **Healing Light**    | Allies in dome heal 3 HP/sec              |
-| **Blinding Barrier** | địch entering dome are briefly blinded |
-| **Mobile Sanctuary** | Shield slowly moves với AEGIS (1 m/s)    |
+| **Hồi máu Light**    | Đồng minh in dome heal 3 HP/sec              |
+| **Blinding Barrier** | Địch entering dome are briefly blinded |
+| **Mobile Sanctuary** | Khiên slowly moves with AEGIS (1 m/s)    |
 
 **Slot 3 (Level 35):**
-| Option              | Effect                                              |
+| Option              | Hiệu Ứng                                              |
 | :------------------ | :-------------------------------------------------- |
-| **Martyr Protocol** | khi shield breaks, AEGIS gains 50 temp HP          |
+| **Martyr Protocol** | When shield breaks, AEGIS gains 50 temp HP          |
 | **Resurrection**    | Downed allies in dome auto-revive (once per deploy) |
-| **Divine Wrath**    | Shield breaking deals 30 damage to nearby địch   |
+| **Divine Wrath**    | Khiên breaking deals 30 damage to nearby enemies   |
 
 ---
 
@@ -212,11 +212,11 @@ The Vatican quietly approached her afterward, offering training với Swiss Guar
 
 > *"Never abandon those in need."*
 
-| Condition                | Effect                          |
+| Điều Kiện                | Hiệu Ứng                          |
 | :----------------------- | :------------------------------ |
-| Ally below 30% HP nearby | +10% movement speed toward them |
+| Đồng minh below 30% HP nearby | +10% movement speed toward them |
 | Reviving allies          | Take 20% less damage            |
-| Ally dies within 10m     | Cooldown reduced by 10 seconds  |
+| Đồng minh dies within 10m     | Cooldown reduced by 10 seconds  |
 
 **Design Intent:** AEGIS should always be moving toward danger to save allies.
 
@@ -224,65 +224,65 @@ The Vatican quietly approached her afterward, offering training với Swiss Guar
 
 ## Loadout
 
-### Default Loadout
+### Loadout Mặc Định
 
-| Slot          | Item                | ghi chú                 |
+| Slot          | Item                | Ghi Chú                 |
 | :------------ | :------------------ | :-------------------- |
-| **primary**   | P90 SMG             | High mag, suppressive |
-| **secondary** | G17 Pistol          | Standard sidearm      |
+| **Primary**   | P90 SMG             | Cao mag, suppressive |
+| **Secondary** | G17 Pistol          | Standard sidearm      |
 | **Tactical**  | Medkit ×2, Smoke ×1 | Heal + escape         |
-| **giáp**     | Light Vest          | 30 giáp points       |
+| **Giáp**     | Light Vest          | 30 armor points       |
 
-### Recommended Loadouts
+### Loadout Khuyến Nghị
 
 **Defensive Aegis:**
 | Slot      | Item     | Why                     |
 | :-------- | :------- | :---------------------- |
-| primary   | MP5      | Reliable, accurate      |
-| secondary | G17      | Standard                |
+| Primary   | MP5      | Reliable, accurate      |
+| Secondary | G17      | Standard                |
 | Tactical  | Smoke ×2 | Extra cover for revives |
 
 **Aggressive Aegis:**
 | Slot      | Item         | Why             |
 | :-------- | :----------- | :-------------- |
-| primary   | Vector       | High fire rate  |
-| secondary | Deagle       | Finishing power |
+| Primary   | Vector       | Cao fire rate  |
+| Secondary | Deagle       | Finishing power |
 | Tactical  | Flashbang ×2 | Entry support   |
 
 ---
 
-## Playstyle Guide
+## Hướng Dẫn Playstyle
 
-### Role in Team
+### Vai Trò Trong Team
 
-**primary Role:** Damage Prevention
-- Shield trong khi critical moments
-- Protect trong khi revives
+**Primary Role:** Damage Prevention
+- Khiên during critical moments
+- Protect during revives
 - Cover extraction
 
-**secondary Role:** Emergency Response
+**Secondary Role:** Emergency Response
 - Rush to downed allies
-- tạo safe zones
+- Create safe zones
 - Enable risky plays
 
-### Shield Management
+### Quản Lý Khiên
 
-**khi to Deploy:**
-- trước expected engagement
-- trong khi revive attempts
+**When to Deploy:**
+- Before expected engagement
+- During revive attempts
 - Extraction countdown
 - Team retreating
 
-**khi NOT to Deploy:**
+**When NOT to Deploy:**
 - Team scattered
 - Solo fight (waste of cooldown)
-- địch can easily flank around
+- Địch can easily flank around
 
-### Positioning
+### Vị Trí
 
 **Ideal Position:**
 - Center of team
-- với rõ view of allies
+- With clear view of allies
 - Near cover (in case shield breaks)
 
 **Bad Position:**
@@ -292,79 +292,79 @@ The Vatican quietly approached her afterward, offering training với Swiss Guar
 
 ---
 
-## Matchups
+## Kèo Đấu
 
-### Favorable Matchups
+### Kèo Có Lợi
 
 | Opponent  | Why Favorable               | Tactic               |
 | :-------- | :-------------------------- | :------------------- |
-| **MAMBA** | Shield absorbs stim damage  | Tank his burst       |
-| **IGNITION** | Fire can't penetrate shield | Protect from fire    |
-| **TARTARUS** | He can't reach you in dome  | Shield và burst him |
+| **MAMBA** | Khiên absorbs stim damage  | Tank his burst       |
+| **IGNITION** | Lửa can't penetrate shield | Protect from fire    |
+| **TARTARUS** | He can't reach you in dome  | Khiên and burst him |
 
-### Even Matchups
+### Kèo Cân Bằng
 
-| Opponent    | ghi chú                     | chính to Winning     |
+| Opponent    | Ghi Chú                     | Key to Winning     |
 | :---------- | :------------------------ | :----------------- |
 | **SUTURE**     | Different support styles  | Team comp decides  |
-| **BASTION** | Shield vs Shield          | Positioning battle |
-| **SONAR** | Intel useless nếu shielded | Timing matters     |
+| **BASTION** | Khiên vs Khiên          | Positioning battle |
+| **SONAR** | Intel useless if shielded | Timing matters     |
 
-### Unfavorable Matchups
+### Kèo Bất Lợi
 
 | Opponent    | Why Difficult                 | Counter Strategy         |
 | :---------- | :---------------------------- | :----------------------- |
 | **GLITCH**  | EMP destroys shield instantly | Stay out of EMP range    |
-| **MIRAGE** | Traps inside dome still work  | rõ area trước dome   |
+| **MIRAGE** | Traps inside dome still work  | Clear area before dome   |
 | **PULSE**    | Swarm ignores shield          | Exit dome to fight swarm |
 
 ---
 
-## Voice Lines
+## Câu Thoại
 
 ### Combat
 
 | Trigger            | Line                                 |
 | :----------------- | :----------------------------------- |
-| Ability Activation | "Shield of faith, protect us!"       |
-| Shield Takes Hit   | "They cannot break our spirit!"      |
-| Shield Breaks      | "Shield down! Find cover!"           |
+| Ability Activation | "Khiên of faith, protect us!"       |
+| Khiên Takes Hit   | "They cannot break our spirit!"      |
+| Khiên Breaks      | "Khiên down! Find cover!"           |
 | Kill               | "Forgive me."                        |
 | Reviving           | "Rise, child. Your work isn't done." |
-| Low máu         | "I need assistance!"                 |
+| Thấp Máu         | "I need assistance!"                 |
 
-### Callouts
+### Callout
 
 | Trigger       | Line                    |
 | :------------ | :---------------------- |
-| địch Spotted | "Hostiles ahead."       |
-| Ally Downed   | "I'm coming! Hold on!"  |
+| Địch Spotted | "Hostiles ahead."       |
+| Đồng minh Downed   | "I'm coming! Hold on!"  |
 | Reloading     | "Reloading, cover me."  |
 | Smoke Out     | "Concealment deployed." |
 
-### Personality
+### Tính Cách
 
 | Trigger            | Line                                       |
 | :----------------- | :----------------------------------------- |
 | Match Start        | "May we all return safely."                |
 | Extraction Called  | "Salvation approaches. Stay vigilant."     |
-| Extraction success | "We made it. Thank the Lord."              |
-| Squad Wipe         | "They were in my care, và they are safe." |
+| Extraction Success | "We made it. Thank the Lord."              |
+| Squad Wipe         | "They were in my care, and they are safe." |
 
 ---
 
-## Cosmetics
+## Cosmetic
 
-### Default Appearance
+### Ngoại Hình Mặc Định
 
-- **Outfit:** Modified nun's habit (tactical), white và blue
-- **Headgear:** Modern wimple với tactical headset
+- **Outfit:** Modified nun's habit (tactical), white and blue
+- **Headgear:** Modern wimple with tactical headset
 - **Gloves:** White medical gloves
 - **Face:** Serene expression, prayer beads around neck
 
-### Unlockable Skins
+### Skin Có Thể Mở Khóa
 
-| Skin             | Rarity    | Unlock         |
+| Skin             | Rarity    | Mở Khóa         |
 | :--------------- | :-------- | :------------- |
 | **Sister Mercy** | Common    | Level 10       |
 | **Field Nurse**  | Uncommon  | 1,000 Credits  |
@@ -372,64 +372,64 @@ The Vatican quietly approached her afterward, offering training với Swiss Guar
 | **Seraphim**     | Epic      | Battle Pass S1 |
 | **Archangel**    | Legendary | Season 3 Event |
 
-### Signature Items
+### Vật Phẩm Signature
 
-| Item              | Description                  |
+| Item              | Mô Tả                  |
 | :---------------- | :--------------------------- |
 | **Rosary**        | Wrapped around left wrist    |
-| **Cross Pendant** | hiển thị rõ on uniform           |
+| **Cross Pendant** | Visible on uniform           |
 | **Scripture**     | Small Bible in breast pocket |
 
 ---
 
-## Lore Connections
+## Liên Kết Lore
 
-### Relationships
+### Mối Quan Hệ
 
-| nhân vật    | Relationship                           |
+| Character    | Relationship                           |
 | :----------- | :------------------------------------- |
 | **SUTURE**      | Deep mutual respect, different methods |
 | **MAMBA**    | Saved his soul, he protects her        |
 | **GOLIATH** | Orthodox vs Catholic debates           |
 | **SONAR**  | She finds her methods troubling        |
 
-### Story Hooks
+### Hook Câu Chuyện
 
 - Receives coded messages from Vatican contacts
 - Investigating rumors of artifacts in the Zone
-- Wrestling với whether she's saving hoặc enabling violence
+- Wrestling with whether she's saving or enabling violence
 
 ---
 
-## Design ghi chú (For Developers)
+## Ghi Chú Thiết Kế (Cho Developer)
 
-### Balance Considerations
+### Cân Nhắc Balance
 
-- Shield is powerful nhưng stationary
+- Khiên is powerful but stationary
 - EMP hard-counters it completely
-- địch can walk thông qua (not full protection)
+- Địch can walk through (not full protection)
 - Long cooldown prevents spam
 
-### Animation yêu cầu
+### Yêu Cầu Animation
 
-- Shield deployment: Prayer gesture + dome expansion
-- Shield active: Golden particles, angelic audio
-- Shield break: Shatter effect + AEGIS staggers
+- Khiên deployment: Prayer gesture + dome expansion
+- Khiên active: Golden particles, angelic audio
+- Khiên break: Shatter effect + AEGIS staggers
 - Idle: Occasionally makes sign of the cross
 
 ### Ghi Chú Kỹ Thuật
 
-| hệ thống           | ghi chú                                   |
+| System           | Ghi Chú                                   |
 | :--------------- | :-------------------------------------- |
-| Shield Collision | Blocks projectiles, not người chơi         |
+| Khiên Collision | Blocks projectiles, not players         |
 | Visual           | Particle-based dome, GPU intensive      |
 | Audio            | Ambient choir humming, impacts distinct |
-| Networking       | Shield HP synced, visual client-side    |
+| Networking       | Khiên HP synced, visual client-side    |
 
-### Top-Down cụ thể ghi chú
+### Ghi Chú Riêng Cho Top-Down
 
-- Shield dome from above reads as a 5m radius circle với translucent blue-white fill
-- Shield phải được hiển thị rõ at minimum zoom — critical gameplay information
-- khi shield is active, allies inside should have a subtle blue tint from above (friendly indicator)
-- Shield break shatter VFX should communicate urgency — team now exposed
-- One-way projectile blocking is the cốt lõi cơ chế — visual differentiation between inside và outside is essential
+- Khiên dome from above reads as a 5m radius circle with translucent blue-white fill
+- Khiên must be visible at minimum zoom — critical gameplay information
+- When shield is active, allies inside should have a subtle blue tint from above (friendly indicator)
+- Khiên break shatter VFX should communicate urgency — team now exposed
+- One-way projectile blocking is the core mechanic — visual differentiation between inside and outside is essential

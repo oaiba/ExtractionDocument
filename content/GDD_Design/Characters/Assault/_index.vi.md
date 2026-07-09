@@ -7,171 +7,171 @@ weight: 1
 
 ### Tổng Quan Class
 
-Operator class **Assault** được thiết kế cho người chơi thích gameplay chủ động, aggressive, high-risk/high-reward. Họ mạnh ở việc mở giao tranh, gây damage, và loại bỏ threat nhanh.
+Operator class **Assault** dành cho người chơi thích gameplay hổ báo, chủ động và risk/reward cao. They excel at leading charges, dealing damage, and eliminating threats quickly.
 
-#### Class Identity
+#### Bản Sắc Class
 
-| Attribute | Value | Notes |
+| Thuộc Tính           | Giá Trị               | Ghi Chú                        |
 | ------------------- | ------------------- | ---------------------------- |
-| **Role** | Frontline Aggressor | Người đầu tiên vào combat |
-| **Difficulty** | Medium | Tốt để học aggression |
-| **Team Dependency** | Low | Solo hiệu quả |
-| **Skill Ceiling** | High | Thưởng cho mechanical skill |
+| **Role**            | Frontline Aggressor | First into combat            |
+| **Độ Khó**      | Trung bình              | Good for learning aggression |
+| **Phụ Thuộc Team** | Thấp                 | Can solo effectively         |
+| **Trần Kỹ Năng**   | Cao                | Rewards mechanical skill     |
 
-#### Class Traits (All Assault Operators)
+#### Trait Class (Tất Cả Operator Assault)
 
-| Trait | Effect | Gameplay Impact |
+| Trait             | Hiệu Ứng             | Tác Động Gameplay                   |
 | ----------------- | ------------------ | --------------------------------- |
-| **Sprint Boost** | +10% Sprint Speed | Rotate nhanh hơn, đuổi bắt tốt hơn |
-| **Damage Boost** | +5% Weapon Damage | TTK nhanh hơn một chút |
-| **Armor Penalty** | -10% Maximum Armor | Phạt positioning kém |
+| **Sprint Boost**  | +10% Tốc Độ Sprint  | Faster rotations, chase potential |
+| **Damage Boost**  | +5% Vũ khí Damage  | Slightly faster TTK               |
+| **Giáp Penalty** | -10% Maximum Giáp | Punishes poor positioning         |
 
 ***
 
-### Operators
+### Operator
 
-| Operator | Codename | Specialty | Unlock |
+| Operator                                                                                                                        | Codename | Chuyên Môn            | Mở Khóa                   |
 | ------------------------------------------------------------------------------------------------------------------------------- | -------- | -------------------- | ------------------------ |
-| [Thuy Nguyen](https://github.com/oaiba/ExtractionDocument/blob/main/content/GDD_Design/Characters/Assault/Mamba/README.md) | MAMBA | Damage Amplification | Free Starter |
-| [Ji-yoon Kwon](https://github.com/oaiba/ExtractionDocument/blob/main/content/GDD_Design/Characters/Assault/Ignition/README.md) | IGNITION | Area Denial | Level 5, 5,000 Credits |
-| [Carlos Mendes](https://github.com/oaiba/ExtractionDocument/blob/main/content/GDD_Design/Characters/Assault/Tartarus/README.md) | TARTARUS | Close Combat | Level 22, 12,000 Credits |
+| [Thuy Nguyen](https://github.com/oaiba/ExtractionDocument/blob/main/content/GDD_Design/Characters/Assault/Mamba/README.md)      | MAMBA    | Damage Amplification | Free Starter             |
+| [Ji-yoon Kwon](https://github.com/oaiba/ExtractionDocument/blob/main/content/GDD_Design/Characters/Assault/Ignition/README.md)  | IGNITION | Area Denial          | Level 5, 5,000 Credits   |
+| [Carlos Mendes](https://github.com/oaiba/ExtractionDocument/blob/main/content/GDD_Design/Characters/Assault/Tartarus/README.md) | TARTARUS | Close Combat         | Level 22, 12,000 Credits |
 
 ***
 
-### Playstyle Guide
+### Hướng Dẫn Playstyle
 
-#### Khi Nào Chọn Assault
+#### Khi Nên Chọn Assault
 
 **Chọn Assault khi:**
 
-* Bạn có mechanical aim mạnh
-* Team cần damage dealer
-* Map có sightline mở
-* Team địch mềm (không có Tank)
+* You have strong mechanical aim
+* Your team needs a damage dealer
+* The map has open sightlines
+* Địch team is squishy (no Tank)
 
 **Tránh Assault khi:**
 
-* Team địch có nhiều Tank
-* Map tập trung CQC (ưu tiên Recon)
-* Team thiếu healing
-* Bạn mới chơi game
+* Địch team has multiple Tanks
+* Map is CQC-focused (favor Recon)
+* Your team lacks healing
+* You are new to the game
 
-#### Combat Tactics
+#### Tactic Combat
 
 **Entry Fragging:**
 
-1. Chờ intel từ Recon
-2. Pre-aim các góc phổ biến
-3. Dùng ability trước engagement
-4. Push chủ động
-5. Call out vị trí địch
+1. Wait for intel from Recon
+2. Pre-aim common angles
+3. Use ability before engagement
+4. Push with aggression
+5. Call out enemy positions
 
 **Trading:**
 
-* Luôn push cùng teammate
-* Nếu người đầu tiên chết, trade kill
-* Không ego peek khi không có backup
+* Always push with a teammate
+* If first player dies, trade the kill
+* Do not ego peek without backup
 
 **Ability Timing:**
 
-* Giữ ability cho fight quan trọng
-* Không phí ability cho cleanup kill
-* Coordinate với team push
+* Save ability for key fights
+* Do not waste on cleanup kills
+* Coordinate with team pushes
 
 ***
 
-### Counter Strategies
+### Chiến Lược Counter
 
-#### Cách Counter Assault Operators
+#### Cách Counter Operator Assault
 
-| Operator | Counter Strategy |
+| Operator     | Counter Strategy                        |
 | ------------ | --------------------------------------- |
-| **MAMBA** | Chờ Combat Stim hết (10s), rồi engage |
-| **IGNITION** | Tránh fire zone, dùng long-range |
-| **TARTARUS** | Kite ở range, không để áp sát |
+| **MAMBA**    | Wait out Combat Stim (10s), then engage |
+| **IGNITION** | Avoid fire zones, use long-range        |
+| **TARTARUS** | Kite at range, do not let close         |
 
-#### Best Counters to Assault
+#### Counter Tốt Nhất Với Assault
 
-| Counter Pick | Why |
+| Counter Pick | Why                               |
 | ------------ | --------------------------------- |
-| **BASTION** | Shield chặn toàn bộ frontal damage |
-| **GLITCH** | EMP hủy tất cả Assault ability |
-| **SONAR** | Intel ngăn ambush |
+| **BASTION**  | Khiên blocks all frontal damage  |
+| **GLITCH**   | EMP cancels all Assault abilities |
+| **SONAR**    | Intel prevents ambush             |
 
 ***
 
-### Synergies
+### Synergy
 
-#### Best Assault Duos
+#### Duo Assault Tốt Nhất
 
-| Partner | Synergy | Notes |
+| Partner     | Synergy         | Ghi Chú                       |
 | ----------- | --------------- | --------------------------- |
-| **SUTURE** | Healing sustain | Push mạnh hơn, heal sau đó |
-| **SONAR** | Intel + Damage | Biết nên push đâu |
-| **BASTION** | Shield + Damage | Tank dẫn trước, Assault theo sau |
+| **SUTURE**  | Hồi máu sustain | Push harder, heal after     |
+| **SONAR**   | Intel + Damage  | Know where to push          |
+| **BASTION** | Khiên + Damage | Tank leads, Assault follows |
 
 #### Triple Assault Cheese
 
-> \[!WARNING] **Không khuyến nghị** nhưng có thể hiệu quả: MAMBA + IGNITION + TARTARUS. Damage áp đảo, không có sustain. Thắng nhanh hoặc thua nhanh.
+> \[!WARNING] **Not Recommended** but can work: MAMBA + IGNITION + TARTARUS. Overwhelming damage, no sustain. Win fast or lose fast.
 
 ***
 
-### Top-Down Visual Identity
+### Nhận Diện Hình Ảnh Top-Down
 
-Assault operators dùng **silhouette medium-athletic** với dây đạn chéo ngực nổi bật. Từ camera top-down, các đặc điểm phân biệt chính là:
+Assault operators share a **medium-athletic silhouette** with prominent cross-chest ammo belts. From the top-down camera, the key distinguishing features are:
 
-| Feature | Design Rule | Visibility |
+| Feature            | Design Rule                                                                      | Visibility |
 | ------------------ | -------------------------------------------------------------------------------- | ---------- |
-| **Shoulder Width** | Medium (giữa Recon và Tank) | 60+ units |
-| **Headgear** | Medium tactical helmet với visor glow | 60+ units |
-| **Color Accent** | Orange (#F97316) trên shoulder patch và ammo belt | 80+ units |
-| **Weapon Profile** | Primary weapon vươn rõ về phía trước model, barrel nhìn thấy được | 50+ units |
-| **Movement Anim** | Sprint nhanh, nghiêng về trước; phân biệt với Tank trudge và Recon crouch | 40+ units |
+| **Shoulder Width** | Trung bình (between Recon and Tank)                                                  | 60+ units  |
+| **Headgear**       | Trung bình tactical helmet with visor glow                                           | 60+ units  |
+| **Color Accent**   | Orange (#F97316) trên patch vai and ammo belt                               | 80+ units  |
+| **Vũ khí Profile** | Primary weapon extends forward from model, visible barrel                        | 50+ units  |
+| **Movement Anim**  | Fast, forward-leaning sprint — distinguishable from Tank trudge and Recon crouch | 40+ units  |
 
-#### Operator-Specific Top-Down Tells
+#### Dấu Hiệu Top-Down Riêng Của Operator
 
-| Operator | Unique Visual From Above |
+| Operator | Unique Visual From Above                                   |
 | -------- | ---------------------------------------------------------- |
-| MAMBA | Glow cam trên tay/cánh tay khi stim active |
-| IGNITION | Fire trail phía sau nhân vật trong Incendiary Rush |
-| TARTARUS | Body glow đỏ nhịp pulse trong Berserker Rage, stance lớn hơn |
+| MAMBA    | Orange glow on hands/arms when stim is active              |
+| IGNITION | Lửa trail visible behind character during Incendiary Rush |
+| TARTARUS | Red pulsing body glow during Berserker Rage, larger stance |
 
 ***
 
-### Class Stamina Profile
+### Hồ Sơ Stamina Theo Class
 
-| Parameter | Assault Value | Comparison |
+| Tham Số               | Assault Giá Trị     | Comparison                   |
 | ----------------------- | ----------------- | ---------------------------- |
-| **Stamina Pool** | 120 (+20%) | Sprint duration dài nhất |
-| **Sprint Drain** | 10/second | Standard |
-| **Recovery Rate** | 8.8/second (+10%) | Recovery nhanh giữa các push |
-| **Net Sprint Duration** | 12.0 seconds | Best in class |
+| **Quỹ Stamina**        | 120 (+20%)        | Longest sprint duration      |
+| **Hao Stamina Khi Sprint**        | 10/second         | Standard                     |
+| **Tốc Độ Hồi**       | 8.8/second (+10%) | Fast recovery between pushes |
+| **Thời Lượng Sprint Thực** | 12.0 seconds      | Best in class                |
 
-**Design Intent:** Assault operators có thể sprint tới engagement distance và vẫn còn stamina để reposition trong combat.
+**Design Intent:** Assault operators can sprint to engagement distance and have stamina remaining for repositioning during combat.
 
 ***
 
-### Status Effect Modifiers
+### Bộ Điều Chỉnh Hiệu Ứng Trạng Thái
 
-| Effect | Assault Resistance | Notes |
+| Hiệu Ứng | Assault Kháng | Ghi Chú                                        |
 | ------ | ------------------ | -------------------------------------------- |
-| Stun | 0% | Full stun duration; phạt reckless entry |
-| Slow | 0% | Full slow duration; cực nguy hiểm nếu bị bắt |
-| Burn | 0% | Full burn damage; tránh friendly fire |
-| EMP | 0% | Stim và Rage bị EMP hủy |
+| Stun   | 0%                 | Full stun duration — punishes reckless entry |
+| Slow   | 0%                 | Full slow duration — devastating if caught   |
+| Burn   | 0%                 | Full burn damage — avoid friendly fire       |
+| EMP    | 0%                 | Stim and Rage cancelled bởi EMP               |
 
-**Design Intent:** Assault không có resistance. Sức mạnh của họ là raw damage output, không phải damage mitigation. Bị CC ability bắt trúng là punishment nặng cho positioning kém.
+**Design Intent:** Assault has zero resistances. Their strength is raw damage output, not damage mitigation. Being caught by CC abilities is a hard punishment for bad positioning.
 
 ***
 
-### Map Suitability
+### Độ Phù Hợp Theo Map
 
-| Map Archetype | Suitability | Recommended Operator | Why |
+| Map Archetype        | Suitability | Recommended Operator | Why                                             |
 | -------------------- | ----------- | -------------------- | ----------------------------------------------- |
-| **Open Fields** | High | MAMBA | Sightline dài ưu tiên accuracy được stim boost |
-| **Tight Corridors** | High | TARTARUS | Berserker Rage mạnh trong close quarters |
-| **Multi-Floor** | Medium | IGNITION | Fire chặn vertical access route |
-| **Large Industrial** | Medium | MAMBA or IGNITION | Tùy engagement distance |
-| **Dense Urban** | Low | Any | Quá nhiều flank route, khó kiểm soát space |
+| **Open Fields**      | Cao        | MAMBA                | Long sightlines favor stim-boosted accuracy     |
+| **Tight Corridors**  | Cao        | TARTARUS             | Berserker Rage excels in close quarters         |
+| **Multi-Floor**      | Trung bình      | IGNITION             | Lửa denies vertical access routes              |
+| **Large Industrial** | Trung bình      | MAMBA or IGNITION    | Depends on engagement distance                  |
+| **Dense Urban**      | Thấp         | Any                  | Too many flanking routes, hard to control space |
 
-Xem [World Design](https://github.com/oaiba/ExtractionDocument/blob/main/content/GDD_Design/World/README.md) để biết layout map chi tiết.
+See [World Design](https://github.com/oaiba/ExtractionDocument/blob/main/content/GDD_Design/World/README.md) for detailed map layouts.

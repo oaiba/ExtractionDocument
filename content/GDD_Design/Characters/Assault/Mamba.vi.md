@@ -3,131 +3,131 @@ title: "MAMBA - Thuy Nguyen"
 type: docs
 ---
 
-## Operator Profile
+## Hồ Sơ Operator
 
-> *"First in, last standing."*
+> *"Vào đầu tiên, trụ lại cuối cùng."*
 
-### Basic Information
+### Thông Tin Cơ Bản
 
-| Attribute       | giá trị                       |
+| Thuộc Tính       | Giá Trị                       |
 | :-------------- | :-------------------------- |
-| **Real Name**   | Thuy Nguyen                 |
+| **Tên Thật**   | Thuy Nguyen                 |
 | **Codename**    | MAMBA                       |
 | **Class**       | Assault                     |
-| **Nationality** | Vietnamese                  |
-| **Age**         | 26                          |
-| **Height**      | 168 cm (5'6")               |
-| **Weight**      | 60 kg (132 lbs)             |
+| **Quốc Tịch** | Vietnamese                  |
+| **Tuổi**         | 26                          |
+| **Chiều Cao**      | 168 cm (5'6")               |
+| **Cân Nặng**      | 60 kg (132 lbs)             |
 
 <!-- REF_IMAGE: MAMBA operator portrait — athletic build, tactical cap, green eyes, holding combat knife, aggressive stance -->
 
-### Background
+### Lý Lịch
 
-Thuy Nguyen served in the Dac Cong (Vietnamese Special Forces) trước transitioning to underground mercenary work. Known for her calculated aggression và lethal, fast-striking tactics, she earned the callsign "Mamba" for striking mà không cảnh báo và leaving no survivors.
+Thuy Nguyen từng phục vụ trong Đặc Công Việt Nam trước khi chuyển sang hoạt động lính đánh thuê ngầm. Nổi tiếng với sự hổ báo có tính toán và chiến thuật ra đòn nhanh, chí mạng, cô nhận callsign "Mamba" vì luôn tấn công không báo trước và không để lại người sống sót.
 
-sau a classified operation went sideways, she was left for dead by her handlers. Surviving against all odds, she now operates as a freelance contractor in the Exclusion Zone, using her skills to extract valuable assets và occasionally settle old scores.
+Sau một chiến dịch mật đổ vỡ, cô bị chính handler bỏ mặc cho chết. Sống sót gần như không tưởng, cô hiện là contractor tự do trong Exclusion Zone, dùng kỹ năng của mình để extract tài sản giá trị và đôi khi thanh toán những món nợ cũ.
 
-### Personality Traits
+### Tính Cách
 
-- **Confident** - Never doubts his abilities
-- **Direct** - Says what he means, no BS
-- **Protective** - Watches out for teammates
-- **Vengeful** - Never forgets betrayal
+- **Confident** - Không bao giờ nghi ngờ khả năng của mình
+- **Direct** - Nói thẳng điều mình nghĩ, không vòng vo
+- **Protective** - Luôn để mắt bảo vệ đồng đội
+- **Vengeful** - Không bao giờ quên sự phản bội
 
 ---
 
-## Combat Statistics
+## Thông Số Combat
 
-### Base Stats
+### Chỉ Số Cơ Bản
 
-| Stat             | giá trị   | Class Modifier | Final    |
+| Stat             | Giá Trị   | Bộ Điều Chỉnh Class | Cuối Cùng    |
 | :--------------- | :------ | :------------- | :------- |
-| **máu**       | 100 HP  | -              | 100 HP   |
-| **giáp**        | 50      | -10%           | 45       |
-| **Sprint Speed** | 5.5 m/s | +10%           | 6.05 m/s |
-| **Walk Speed**   | 3.5 m/s | -              | 3.5 m/s  |
-| **Crouch Speed** | 2.0 m/s | -              | 2.0 m/s  |
+| **Máu**       | 100 HP  | -              | 100 HP   |
+| **Giáp**        | 50      | -10%           | 45       |
+| **Tốc Độ Sprint** | 5.5 m/s | +10%           | 6.05 m/s |
+| **Tốc Độ Đi Bộ**   | 3.5 m/s | -              | 3.5 m/s  |
+| **Tốc Độ Crouch** | 2.0 m/s | -              | 2.0 m/s  |
 
-### Damage Modifiers
+### Bộ Điều Chỉnh Damage
 
-| Condition           | Modifier    |
+| Điều Kiện           | Bộ Điều Chỉnh    |
 | :------------------ | :---------- |
-| Base vũ khí Damage  | +5% (Class) |
+| Damage Vũ Khí Cơ Bản  | +5% (Class) |
 | Combat Stim Active  | +25%        |
 | Combat Stim + Class | +30% total  |
 | Headshot Multiplier | 2.0x        |
 
-### Expanded Combat Statistics
+### Thông Số Combat Mở Rộng
 
-| Parameter | giá trị | ghi chú |
+| Tham Số | Giá Trị | Ghi Chú |
 | :-------- | :---- | :---- |
-| **Stamina Pool** | 120 | +20% (Assault class) |
-| **Sprint Drain** | 10/second | Standard |
-| **Recovery Rate** | 8.8/second | +10% (Assault class) |
-| **Net Sprint Duration** | 12.0 seconds | Longest sprint tier |
-| **Footstep Volume** | 100% | Standard — no stealth bonus |
-| **Ability Audio Radius** | 25 meters | Stim inject hiss audible to nearby địch |
+| **Quỹ Stamina** | 120 | +20% (Assault class) |
+| **Hao Stamina Khi Sprint** | 10/second | Standard |
+| **Tốc Độ Hồi** | 8.8/second | +10% (Assault class) |
+| **Thời Lượng Sprint Thực** | 12.0 seconds | Longest sprint tier |
+| **Âm Lượng Bước Chân** | 100% | Standard — no stealth bonus |
+| **Bán Kính Audio Ability** | 25 meters | Stim inject hiss audible to nearby enemies |
 
-### Status Effect Resistances
+### Kháng Hiệu Ứng Trạng Thái
 
-| Effect | Resistance | ghi chú |
+| Hiệu Ứng | Kháng | Ghi Chú |
 | :----- | :--------- | :---- |
-| Stun | 0% | Full duration |
-| Slow | 0% | Full duration — devastating trong khi stim |
+| Stun | 0% | Đủ thời lượng |
+| Slow | 0% | Đủ thời lượng — devastating during stim |
 | Burn | 0% | Full DoT |
-| EMP | 0% | Stim cancelled immediately by EMP |
+| EMP | 0% | Stim bị hủy ngay lập tức bởi EMP |
 
-### Top-Down Visual Spec
+### Spec Hình Ảnh Top-Down
 
-| Property | giá trị |
+| Thuộc Tính | Giá Trị |
 | :------- | :---- |
 | **Hitbox Capsule** | 40 cm radius, 180 cm height |
-| **Head Sphere** | 14 cm radius |
+| **Vùng Đầu** | 14 cm radius |
 | **Collision Profile** | Standard |
-| **Silhouette From Above** | Medium athletic build, cross-chest đạn belt hiển thị rõ, medium helmet |
-| **Class Accent Zones** | Orange (#F97316) on shoulder patches và đạn belt |
-| **Stim Active VFX (Top-Down)** | Orange body glow, subtle particle trail khi moving |
-| **Stim Audio Radius** | 25m — địch within range hear injection hiss |
+| **Silhouette Nhìn Từ Trên Xuống** | Trung bình athletic build, cross-chest ammo belt visible, medium helmet |
+| **Vùng Accent Theo Class** | Orange (#F97316) trên patch vai and ammo belt |
+| **Stim Active VFX (Top-Down)** | Orange body glow, subtle particle trail when moving |
+| **Stim Audio Radius** | 25m — enemies within range hear injection hiss |
 
-<!-- REF_IMAGE: MAMBA top-down view — showing operator silhouette from 60-degree camera với orange accent zones highlighted, stim active vs inactive comparison -->
+<!-- REF_IMAGE: MAMBA top-down view — showing operator silhouette from 60-degree camera with orange accent zones highlighted, stim active vs inactive comparison -->
 
-### Difficulty Rating
+### Độ Khó
 
-**Difficulty: 2/5** — Straightforward kit. Press stim, shoot better. Low cơ chế complexity, rewards good aim timing.
+**Độ Khó: 2/5** — Straightforward kit. Press stim, shoot better. Thấp mechanical complexity, rewards good aim timing.
 
 
-## Abilities
+## Ability
 
 ### Active Ability: Combat Stim
 
 > *"Inject experimental combat stimulant for temporary enhanced performance."*
 
-| Property     | giá trị      |
+| Thuộc Tính     | Giá Trị      |
 | :----------- | :--------- |
 | **Cooldown** | 90 seconds |
 | **Duration** | 10 seconds |
 | **Charges**  | 1          |
 
-#### Effects
+#### Hiệu Ứng
 
-| Effect         | giá trị | ghi chú                    |
+| Hiệu Ứng         | Giá Trị | Ghi Chú                    |
 | :------------- | :---- | :----------------------- |
-| Damage Boost   | +25%  | Stacks với class bonus  |
+| Damage Boost   | +25%  | Stacks with class bonus  |
 | Movement Speed | +10%  | All movement types       |
 | Reload Speed   | +15%  | Faster reload animations |
 
-#### Ability Interactions
+#### Tương Tác Ability
 
-| Interaction | kết quả |
+| Interaction | Result |
 | :---------- | :----- |
-| **Stim + EMP** | Stim cancelled immediately, remaining duration lost |
+| **Stim + EMP** | Stim bị hủy ngay lập tức, remaining duration lost |
 | **Stim + Burn** | Stim does NOT cleanse burn — damage stacks |
 | **Stim + Slow** | Stim movement boost partially counters slow (net +0% to -5% depending on slow source) |
 | **Stim + Mark** | Stim does not remove mark status |
 
-#### Top-Down VFX Description
+#### Mô Tả VFX Top-Down
 
-| trạng thái | VFX From Above |
+| State | VFX From Above |
 | :---- | :------------- |
 | Stim inject | Brief orange flash on operator model (0.5s) |
 | Stim active | Persistent orange glow on body, subtle particle trail on ground behind movement |
@@ -135,40 +135,40 @@ sau a classified operation went sideways, she was left for dead by her handlers.
 | Stim expired | Glow fades, brief gray exhale particle |
 
 
-#### Visual & Audio Cues
+#### Tín Hiệu Hình Ảnh & Audio
 
-**Self:**
-- màn hình edge orange vignette
+**Bản thân:**
+- Screen edge orange vignette
 - Heartbeat audio intensifies
 - Hands shake slightly (cosmetic)
 
-**địch Perspective:**
+**Địch Perspective:**
 - Operator glows orange
 - Distinct injection sound (audio cue)
-- Faster movement hiển thị rõ
+- Faster movement visible
 
-#### upgrade Slots
+#### Slot Upgrade
 
 **Slot 1 (Level 5):**
-| Option              | Effect                           |
+| Option              | Hiệu Ứng                           |
 | :------------------ | :------------------------------- |
 | **Extended Rush**   | Duration +5 seconds (15s total)  |
 | **Quick Reload**    | Cooldown -20 seconds (70s total) |
 | **Adrenaline Heal** | Heal 10 HP on activation         |
 
 **Slot 2 (Level 20):**
-| Option              | Effect                              |
+| Option              | Hiệu Ứng                              |
 | :------------------ | :---------------------------------- |
 | **Overdrive**       | Damage boost +30% (instead of +25%) |
-| **Iron Skin**       | +20% damage resistance trong khi stim  |
+| **Iron Skin**       | +20% damage resistance during stim  |
 | **Lightning Hands** | +50% reload speed (instead of +15%) |
 
 **Slot 3 (Level 35):**
-| Option          | Effect                                                   |
+| Option          | Hiệu Ứng                                                   |
 | :-------------- | :------------------------------------------------------- |
 | **Rally Cry**   | Nearby allies get +10% damage                            |
-| **Second Wind** | nếu killed trong khi stim, survive với 1 HP (once per life) |
-| **Unstoppable** | Immune to stun/slow trong khi stim                          |
+| **Second Wind** | If killed during stim, survive with 1 HP (once per life) |
+| **Unstoppable** | Immune to stun/slow during stim                          |
 
 ---
 
@@ -176,60 +176,60 @@ sau a classified operation went sideways, she was left for dead by her handlers.
 
 > *"Near-death experiences fuel his combat performance."*
 
-| Condition        | Effect                           |
+| Điều Kiện        | Hiệu Ứng                           |
 | :--------------- | :------------------------------- |
-| máu below 30% | +15% reload speed                |
-| máu below 20% | +20% reload speed, +5% movement  |
-| máu below 10% | +25% reload speed, +10% movement |
+| Máu below 30% | +15% reload speed                |
+| Máu below 20% | +20% reload speed, +5% movement  |
+| Máu below 10% | +25% reload speed, +10% movement |
 
-**Design Intent:** Rewards aggressive play và tạo clutch moments.
+**Design Intent:** Rewards aggressive play and creates clutch moments.
 
 ---
 
 ## Loadout
 
-### Default Loadout
+### Loadout Mặc Định
 
-| Slot          | Item               | ghi chú                       |
+| Slot          | Item               | Ghi Chú                       |
 | :------------ | :----------------- | :-------------------------- |
-| **primary**   | M4A1 Assault Rifle | Mid-tier AR, balanced stats |
-| **secondary** | G17 Pistol         | Standard sidearm            |
+| **Primary**   | M4A1 Assault Rifle | Mid-tier AR, balanced stats |
+| **Secondary** | G17 Pistol         | Standard sidearm            |
 | **Tactical**  | Frag Grenade ×2    | Area damage                 |
-| **giáp**     | Medium Vest        | 50 giáp points             |
+| **Giáp**     | Trung bình Vest        | 50 armor points             |
 
-### Recommended Loadouts
+### Loadout Khuyến Nghị
 
 **Aggressive Entry:**
 | Slot      | Item         | Why                  |
 | :-------- | :----------- | :------------------- |
-| primary   | AK-47        | High damage per shot |
-| secondary | Deagle       | Backup punch         |
+| Primary   | AK-47        | Cao damage per shot |
+| Secondary | Deagle       | Backup punch         |
 | Tactical  | Flashbang ×2 | Entry assistance     |
 
 **Sustained Combat:**
 | Slot      | Item              | Why                       |
 | :-------- | :---------------- | :------------------------ |
-| primary   | M4A1              | Controllable, fast reload |
-| secondary | SMG (MP7)         | CQB backup                |
+| Primary   | M4A1              | Controllable, fast reload |
+| Secondary | SMG (MP7)         | CQB backup                |
 | Tactical  | Smoke ×1, Frag ×1 | Versatility               |
 
 ---
 
-## Playstyle Guide
+## Hướng Dẫn Playstyle
 
-### Role in Team
+### Vai Trò Trong Team
 
-**primary Role:** Entry Fragger
+**Primary Role:** Entry Fragger
 - Be first into contested areas
 - Trade kills aggressively
-- tạo space for team
+- Create space for team
 
-**secondary Role:** Cleanup
-- Finish wounded địch
+**Secondary Role:** Cleanup
+- Finish wounded enemies
 - Chase down runners
 - Secure kills
 
-### Combat Loop
+### Vòng Lặp Combat
 
 ```
 1. Wait for intel (Recon scan)
@@ -241,49 +241,49 @@ sau a classified operation went sideways, she was left for dead by her handlers.
 7. Wait for cooldown, repeat
 ```
 
-### Positioning
+### Vị Trí
 
 **Good Positions:**
 - Near entry points
-- với rõ sightlines
+- With clear sightlines
 - Close to Support for healing
 
 **Bad Positions:**
-- Isolated mà không backup
+- Isolated without backup
 - Long rotations from team
 - Exposed flanks
 
 ---
 
-## Matchups
+## Kèo Đấu
 
-### Favorable Matchups
+### Kèo Có Lợi
 
 | Opponent    | Why Favorable                | Tactic                        |
 | :---------- | :--------------------------- | :---------------------------- |
-| **SUTURE**     | Cannot outheal your damage   | Rush trước drone deploys     |
+| **SUTURE**     | Cannot outheal your damage   | Rush before drone deploys     |
 | **SONAR** | Fragile, no combat advantage | Win aim duel                  |
-| **PULSE**    | Low combat power             | Aggressive push thông qua swarm |
+| **PULSE**    | Thấp combat power             | Aggressive push through swarm |
 
-### Even Matchups
+### Kèo Cân Bằng
 
-| Opponent    | ghi chú                      | chính to Winning                    |
+| Opponent    | Ghi Chú                      | Key to Winning                    |
 | :---------- | :------------------------- | :-------------------------------- |
-| **IGNITION**   | Similar role, fire vs stim | Avoid fire zones, cách dùng range       |
+| **IGNITION**   | Similar role, fire vs stim | Avoid fire zones, use range       |
 | **MIRAGE** | Traps are annoying         | Check corners, don't rush blindly |
-| **AEGIS**   | Shield is strong           | Wait for shield to drop           |
+| **AEGIS**   | Khiên is strong           | Wait for shield to drop           |
 
-### Unfavorable Matchups
+### Kèo Bất Lợi
 
 | Opponent    | Why Difficult            | Counter Strategy              |
 | :---------- | :----------------------- | :---------------------------- |
-| **BASTION** | Shield blocks all damage | Flank hoặc wait for shield down |
+| **BASTION** | Khiên blocks all damage | Flank or wait for shield down |
 | **GLITCH**  | EMP cancels your stim    | Bait EMP, then engage         |
-| **TARTARUS**   | Out-damages you in CQB   | Keep range, cách dùng cover         |
+| **TARTARUS**   | Out-damages you in CQB   | Keep range, use cover         |
 
 ---
 
-## Voice Lines
+## Câu Thoại
 
 ### Combat
 
@@ -292,42 +292,42 @@ sau a classified operation went sideways, she was left for dead by her handlers.
 | Ability Activation | "Stim active! Let's go!"                         |
 | Kill               | "Hostile down!"                                  |
 | Kill (Headshot)    | "Clean shot."                                    |
-| Downed địch       | "They're already dead, they just don't know it." |
-| Low máu         | "Taking hits, need backup!"                      |
-| Reviving           | "Stay với me, soldier!"                         |
+| Downed Địch       | "They're already dead, they just don't know it." |
+| Thấp Máu         | "Taking hits, need backup!"                      |
+| Reviving           | "Stay with me, soldier!"                         |
 
-### Callouts
+### Callout
 
 | Trigger          | Line                           |
 | :--------------- | :----------------------------- |
-| địch Spotted    | "Contact! Eyes on hostile!"    |
-| Multiple địch | "Multiple contacts, heads up!" |
+| Địch Spotted    | "Contact! Eyes on hostile!"    |
+| Multiple Địch | "Multiple contacts, heads up!" |
 | Reloading        | "Mag out!"                     |
 | Grenade          | "Frag out!"                    |
 
-### Personality
+### Tính Cách
 
 | Trigger            | Line                                             |
 | :----------------- | :----------------------------------------------- |
 | Match Start        | "Let's get this done. Stay sharp."               |
 | Extraction Called  | "Bird's coming. Hold the line."                  |
-| Extraction success | "Mission complete. Another day, another dollar." |
+| Extraction Success | "Mission complete. Another day, another dollar." |
 | Squad Wipe         | "This is what we trained for."                   |
 
 ---
 
-## Cosmetics
+## Cosmetic
 
-### Default Appearance
+### Ngoại Hình Mặc Định
 
 - **Outfit:** OD Green tactical vest, black pants
 - **Headgear:** Black baseball cap
 - **Gloves:** Black fingerless tactical gloves
 - **Face:** Clean-shaven, slight scar on left cheek
 
-### Unlockable Skins
+### Skin Có Thể Mở Khóa
 
-| Skin             | Rarity    | Unlock         |
+| Skin             | Rarity    | Mở Khóa         |
 | :--------------- | :-------- | :------------- |
 | **Desert Storm** | Common    | Level 10       |
 | **Urban Gray**   | Uncommon  | 1,000 Credits  |
@@ -335,9 +335,9 @@ sau a classified operation went sideways, she was left for dead by her handlers.
 | **Black Ops**    | Epic      | Battle Pass S1 |
 | **Phoenix**      | Legendary | Season 1 Event |
 
-### Signature Items
+### Vật Phẩm Signature
 
-| Item           | Description                   |
+| Item           | Mô Tả                   |
 | :------------- | :---------------------------- |
 | **Dog Tags**   | Dangling from vest (cosmetic) |
 | **Ranger Tab** | Shoulder patch                |
@@ -345,18 +345,18 @@ sau a classified operation went sideways, she was left for dead by her handlers.
 
 ---
 
-## Lore Connections
+## Liên Kết Lore
 
-### Relationships
+### Mối Quan Hệ
 
-| nhân vật   | Relationship                    |
+| Character   | Relationship                    |
 | :---------- | :------------------------------ |
 | **SUTURE**     | Served together, mutual respect |
 | **BASTION** | Rival, different philosophies   |
 | **GLITCH**  | Distrusts - "Too many secrets"  |
 | **SONAR** | Professional admiration         |
 
-### Story Hooks
+### Hook Câu Chuyện
 
 - Looking for the handler who betrayed him
 - Has intel on Corporation black sites
@@ -364,34 +364,34 @@ sau a classified operation went sideways, she was left for dead by her handlers.
 
 ---
 
-## Design ghi chú (For Developers)
+## Ghi Chú Thiết Kế (Cho Developer)
 
-### Balance Considerations
+### Cân Nhắc Balance
 
-- Combat Stim is strong nhưng predictable (audio cue)
-- Low giáp punishes poor timing
+- Combat Stim is strong but predictable (audio cue)
+- Thấp armor punishes poor timing
 - Cooldown prevents ability spam
 - Passive encourages aggressive play
 
-### Animation yêu cầu
+### Yêu Cầu Animation
 
 - Stim injection animation (1 second)
-- Orange glow VFX trong khi stim
+- Orange glow VFX during stim
 - Heartbeat audio loop
 - Death animation: Falls forward (aggressive stance)
 
-### Audio yêu cầu
+### Yêu Cầu Audio
 
-| Sound       | ghi chú                        |
+| Sound       | Ghi Chú                        |
 | :---------- | :--------------------------- |
 | Stim inject | Sharp hiss + heartbeat start |
 | Stim active | Persistent heartbeat loop    |
 | Stim end    | Heartbeat slowdown + exhale  |
 | Footsteps   | Heavy, military boots        |
 
-### Top-Down cụ thể ghi chú
+### Ghi Chú Riêng Cho Top-Down
 
-- Stim orange glow must remain hiển thị rõ at minimum zoom (furthest camera distance)
-- Stim audio cue phải được directional — địch nên được able to locate MAMBA by sound
-- Particle trail trong khi stim nên được subtle enough not to obscure ground loot nhưng hiển thị rõ enough for địch awareness
-- khi viewed from top-down, stim injection animation should show arm movement clearly (not hidden by body)
+- Stim orange glow must remain visible at minimum zoom (khoảng cách camera xa nhất)
+- Stim audio cue must be directional — enemies should be able to locate MAMBA by sound
+- Particle trail during stim should be subtle enough not to obscure ground loot but visible enough for enemy awareness
+- When viewed from top-down, stim injection animation should show arm movement clearly (not hidden by body)

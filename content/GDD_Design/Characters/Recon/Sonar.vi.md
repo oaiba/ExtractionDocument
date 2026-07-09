@@ -3,169 +3,169 @@ title: "SONAR - Sarah Kim"
 type: docs
 ---
 
-## Operator Profile
+## Hồ Sơ Operator
 
-> *"Knowledge is the deadliest vũ khí. They're already dead — they just don't know it yet."*
+> *"Knowledge is the deadliest weapon. They're already dead — they just don't know it yet."*
 
-### Basic Information
+### Thông Tin Cơ Bản
 
-| Attribute | giá trị |
+| Thuộc Tính | Giá Trị |
 | :-------- | :---- |
-| **Real Name** | Sarah Ji-Young Kim |
+| **Tên Thật** | Sarah Ji-Young Kim |
 | **Codename** | SONAR |
 | **Class** | Recon |
-| **Nationality** | Korean-American |
-| **Age** | 29 |
-| **Height** | 168 cm (5'6") |
-| **Weight** | 57 kg (126 lbs) |
+| **Quốc Tịch** | Korean-American |
+| **Tuổi** | 29 |
+| **Chiều Cao** | 168 cm (5'6") |
+| **Cân Nặng** | 57 kg (126 lbs) |
 
-<!-- REF_IMAGE: SONAR operator portrait — lean build, tactical headset với holographic HUD overlay, dark clothing với subtle cyan data-stream accents -->
+<!-- REF_IMAGE: SONAR operator portrait — lean build, tactical headset with holographic HUD overlay, dark clothing with subtle cyan data-stream accents -->
 
-### Background
+### Lý Lịch
 
-Sarah Kim was one of the CIA's most effective intelligence analysts trước transitioning to field work. Her ability to predict địch movements và process information under pressure made her invaluable for deep cover operations in North Korea và China.
+Sarah Kim từng là một trong những analyst tình báo hiệu quả nhất của CIA trước khi chuyển sang field work. Khả năng dự đoán di chuyển của địch và xử lý thông tin dưới áp lực khiến cô cực kỳ giá trị trong các chiến dịch deep cover ở Triều Tiên và Trung Quốc.
 
-sau a mole compromised her network, Sarah watched helplessly as her assets were eliminated one by one. She went dark, cutting all ties với the Agency. Now she operates independently, using her skills to stay three steps ahead of everyone — allies và địch alike.
+Sau khi một nội gián làm lộ mạng lưới, Sarah bất lực nhìn từng asset của mình bị loại bỏ. Cô biến mất, cắt mọi liên hệ với Agency. Giờ cô hoạt động độc lập, dùng kỹ năng của mình để đi trước tất cả ba bước, dù là đồng minh hay kẻ địch.
 
-### Personality Traits
+### Tính Cách
 
-- **Analytical** — Everything is data to process
-- **Paranoid** — Trusts no one completely
-- **Efficient** — No wasted movements hoặc words
-- **Haunted** — Carries guilt for lost assets
+- **Analytical** — Mọi thứ đều là dữ liệu cần xử lý
+- **Paranoid** — Không hoàn toàn tin bất kỳ ai
+- **Efficient** — Không lãng phí động tác hay lời nói
+- **Haunted** — Mang mặc cảm vì những asset đã mất
 
 ---
 
-## Combat Statistics
+## Thông Số Combat
 
-### Base Stats
+### Chỉ Số Cơ Bản
 
-| Stat | giá trị | Class Modifier | Final |
+| Stat | Giá Trị | Bộ Điều Chỉnh Class | Cuối Cùng |
 | :--- | :---- | :------------- | :---- |
-| **máu** | 100 HP | -5% | 95 HP |
-| **giáp** | 30 | - | 30 |
-| **Sprint Speed** | 5.5 m/s | - | 5.5 m/s |
-| **Crouch Speed** | 2.0 m/s | +15% | 2.3 m/s |
-| **Footstep Volume** | 100% | -30% | 70% |
+| **Máu** | 100 HP | -5% | 95 HP |
+| **Giáp** | 30 | - | 30 |
+| **Tốc Độ Sprint** | 5.5 m/s | - | 5.5 m/s |
+| **Tốc Độ Crouch** | 2.0 m/s | +15% | 2.3 m/s |
+| **Âm Lượng Bước Chân** | 100% | -30% | 70% |
 
-### Damage Modifiers
+### Bộ Điều Chỉnh Damage
 
-| Condition | Modifier |
+| Điều Kiện | Bộ Điều Chỉnh |
 | :-------- | :------- |
-| Base vũ khí Damage | +0% (no class bonus) |
+| Damage Vũ Khí Cơ Bản | +0% (no class bonus) |
 | First Shot from Stealth | +10% (Ghost Protocol passive) |
 | Headshot Multiplier | 2.0x |
 
-### Expanded Combat Statistics
+### Thông Số Combat Mở Rộng
 
-| Parameter | giá trị | ghi chú |
+| Tham Số | Giá Trị | Ghi Chú |
 | :-------- | :---- | :---- |
-| **Stamina Pool** | 110 | +10% (Recon class) |
-| **Sprint Drain** | 9/second | -10% (Recon class) |
-| **Recovery Rate** | 9.6/second | +20% (Recon class) |
-| **Net Sprint Duration** | 12.2 seconds | Best efficiency |
-| **Footstep Volume** | 70% | -30% (Recon class trait) |
-| **Ability Audio Radius** | 20 meters | UAV drone buzz audible to nearby địch |
+| **Quỹ Stamina** | 110 | +10% (Recon class) |
+| **Hao Stamina Khi Sprint** | 9/second | -10% (Recon class) |
+| **Tốc Độ Hồi** | 9.6/second | +20% (Recon class) |
+| **Thời Lượng Sprint Thực** | 12.2 seconds | Best efficiency |
+| **Âm Lượng Bước Chân** | 70% | -30% (Recon class trait) |
+| **Bán Kính Audio Ability** | 20 meters | UAV drone buzz audible to nearby enemies |
 
-### Status Effect Resistances
+### Kháng Hiệu Ứng Trạng Thái
 
-| Effect | Resistance | ghi chú |
+| Hiệu Ứng | Kháng | Ghi Chú |
 | :----- | :--------- | :---- |
 | Stun | 15% | Partial resist (Recon class) |
-| Slow | 0% | Full duration |
+| Slow | 0% | Đủ thời lượng |
 | Burn | 0% | Full DoT |
-| EMP | 0% | UAV destroyed instantly by EMP |
+| EMP | 0% | UAV bị phá hủy ngay lập tức bởi EMP |
 
-### Top-Down Visual Spec
+### Spec Hình Ảnh Top-Down
 
-| Property | giá trị |
+| Thuộc Tính | Giá Trị |
 | :------- | :---- |
 | **Hitbox Capsule** | 34 cm radius, 170 cm height |
-| **Head Sphere** | 13 cm radius |
+| **Vùng Đầu** | 13 cm radius |
 | **Collision Profile** | Slim (-10% from mesh) |
-| **Silhouette From Above** | Slim build, tech goggle glow hiển thị rõ from above, compact UAV pack on back |
-| **Class Accent Zones** | Cyan (#06B6D4) on goggle glow và tech strips on giáp |
-| **Scan VFX (Top-Down)** | Cyan pulse rings expanding from operator, địch outlines appear |
+| **Silhouette Nhìn Từ Trên Xuống** | Slim build, tech goggle glow nhìn rõ từ trên xuống, compact UAV pack on back |
+| **Vùng Accent Theo Class** | Cyan (#06B6D4) on goggle glow and tech strips trên giáp |
+| **Scan VFX (Top-Down)** | Cyan pulse rings expanding from operator, enemy outlines appear |
 | **UAV Audio Radius** | 20m — drone buzz is moderate volume |
 
-<!-- REF_IMAGE: SONAR top-down view — showing operator với UAV scan active, cyan pulse rings expanding outward, địch silhouettes highlighted thông qua walls -->
+<!-- REF_IMAGE: SONAR top-down view — showing operator with UAV scan active, cyan pulse rings expanding outward, enemy silhouettes highlighted through walls -->
 
 ### UAV Stat Block
 
-| Property | giá trị | ghi chú |
+| Thuộc Tính | Giá Trị | Ghi Chú |
 | :------- | :---- | :---- |
 | **Scan Radius** | 30 meters | From SONAR position |
 | **Duration** | 8 seconds | Continuous scan |
-| **địch Reveal** | Real-thời gian outlines | Cyan silhouettes thông qua geometry |
-| **Team Sharing** | Yes | All allies see scanned địch |
+| **Địch Reveal** | Real-time outlines | Cyan silhouettes through geometry |
+| **Team Sharing** | Yes | All allies see scanned enemies |
 | **UAV Altitude** | 15 meters above | Cannot be shot by ground fire |
-| **EMP Vulnerability** | Destroyed instantly (falls) | primary counter |
-| **Smoke Interaction** | Blocks scan LOS | Cannot scan thông qua OBSIDIAN smoke |
-| **Deployable Detection** | Yes | Reveals địch deployables (sensors, drones, shields) |
+| **EMP Vulnerability** | Destroyed instantly (falls) | Primary counter |
+| **Smoke Interaction** | Blocks scan LOS | Cannot scan through OBSIDIAN smoke |
+| **Deployable Detection** | Yes | Reveals enemy deployables (sensors, drones, shields) |
 
-### Difficulty Rating
+### Độ Khó
 
-**Difficulty: 2/5** — Simple activation: press ability, Xem địch. Low cơ chế demand, nhưng high strategic giá trị in knowing khi to scan.
+**Độ Khó: 2/5** — Simple activation: press ability, see enemies. Thấp mechanical demand, but high strategic value in knowing when to scan.
 
 
-## Abilities
+## Ability
 
 ### Active Ability: UAV Scan
 
-> *"Deploy a drone to reveal all địch in the area."*
+> *"Deploy a drone to reveal all enemies in the area."*
 
-| Property | giá trị |
+| Thuộc Tính | Giá Trị |
 | :------- | :---- |
 | **Cooldown** | 100 seconds |
 | **Duration** | 8 seconds |
 | **Charges** | 1 |
 
-#### Effects
+#### Hiệu Ứng
 
-| Effect | giá trị | ghi chú |
+| Hiệu Ứng | Giá Trị | Ghi Chú |
 | :----- | :---- | :---- |
 | Scan Radius | 30 meters | Centered on SONAR |
-| địch Reveal | Real-thời gian | địch hiển thị rõ thông qua walls |
-| Team Sharing | Yes | All allies see marked địch |
+| Địch Reveal | Real-time | Địch visible through walls |
+| Team Sharing | Yes | All allies see marked enemies |
 | Update Rate | Continuous | Not just snapshot |
 
 #### UAV Interaction Rules
 
-| Interaction | kết quả |
+| Interaction | Result |
 | :---------- | :----- |
-| **UAV + EMP (GLITCH)** | UAV destroyed instantly, falls from sky |
-| **UAV + Fire (IGNITION)** | Not affected — UAV is airborne |
+| **UAV + EMP (GLITCH)** | UAV bị phá hủy ngay lập tức, falls from sky |
+| **UAV + Lửa (IGNITION)** | Not affected — UAV is airborne |
 | **UAV + Nano Swarm (PULSE)** | Not affected — swarm only targets ground |
-| **UAV + Smoke (OBSIDIAN)** | Scan blocked thông qua smoke — LOS required |
-| **UAV + AEGIS Shield** | UAV cannot reveal operators inside shield dome |
-| **UAV + BASTION Shield** | Does not reveal shielded operator |
+| **UAV + Smoke (OBSIDIAN)** | Scan blocked through smoke — LOS required |
+| **UAV + AEGIS Khiên** | UAV cannot reveal operators inside shield dome |
+| **UAV + BASTION Khiên** | Does not reveal shielded operator |
 
 #### Top-Down Scan VFX
 
-| trạng thái | VFX From Above |
+| State | VFX From Above |
 | :---- | :------------- |
 | UAV deploy | Drone rises from operator's back, ascends to scan height |
 | Scan active | Cyan pulse rings expanding from operator position (30m radius) |
-| địch detected | Red outline appears on địch model, hiển thị rõ thông qua walls |
+| Địch detected | Red outline appears on enemy model, visible through walls |
 | Scan ending | Pulse rings fade, drone descends |
 | UAV EMP'd | Flash burst, drone falls to ground as debris |
 
 
-**Self:**
+**Bản thân:**
 - Radar pulse animation on HUD
-- địch silhouettes thông qua walls (cyan outlines)
+- Địch silhouettes through walls (cyan outlines)
 - Sonar ping audio loop
 
-**địch Perspective:**
+**Địch Perspective:**
 - Faint scanner noise (audio cue at 15m range)
-- "DETECTED" indicator on HUD khi scanned
-- Cannot see the drone hoặc scan radius
+- "DETECTED" indicator on HUD when scanned
+- Cannot see the drone or scan radius
 
-#### upgrade Slots
+#### Slot Upgrade
 
 **Slot 1 (Level 5):**
 
-| Option | Effect |
+| Option | Hiệu Ứng |
 | :----- | :----- |
 | **Extended Scan** | Duration +4 seconds (12s total) |
 | **Quick Sweep** | Cooldown -20 seconds (80s total) |
@@ -173,19 +173,19 @@ sau a mole compromised her network, Sarah watched helplessly as her assets were 
 
 **Slot 2 (Level 20):**
 
-| Option | Effect |
+| Option | Hiệu Ứng |
 | :----- | :----- |
-| **Threat Assessment** | Shows địch máu bars trong khi scan |
-| **Silent Scan** | địch do not know they are scanned |
-| **Tracking Dart** | One địch stays marked for 30 seconds sau scan ends |
+| **Threat Assessment** | Shows enemy health bars during scan |
+| **Silent Scan** | Địch do not know they are scanned |
+| **Tracking Dart** | One enemy stays marked for 30 seconds after scan ends |
 
 **Slot 3 (Level 35):**
 
-| Option | Effect |
+| Option | Hiệu Ứng |
 | :----- | :----- |
-| **Predictive Analysis** | Shows địch movement direction arrows |
-| **vũ khí Intel** | Shows địch vũ khí types on HUD |
-| **Counter-Intel** | Marks địch who scanned you back |
+| **Predictive Analysis** | Shows enemy movement direction arrows |
+| **Vũ khí Intel** | Shows enemy weapon types on HUD |
+| **Counter-Intel** | Marks enemies who scanned you back |
 
 ---
 
@@ -193,62 +193,62 @@ sau a mole compromised her network, Sarah watched helplessly as her assets were 
 
 > *"Leave no trace. Remain unseen."*
 
-| Condition | Effect |
+| Điều Kiện | Hiệu Ứng |
 | :-------- | :----- |
-| Crouch walking | -30% footstep volume (stacks với class trait) |
-| In cover for 3 seconds | Reduced địch visibility (harder to spot) |
-| Not firing for 5 seconds | Do not appear on địch minimaps |
+| Crouch walking | -30% footstep volume (stacks with class trait) |
+| In cover for 3 seconds | Reduced enemy visibility (harder to spot) |
+| Not firing for 5 seconds | Do not appear on enemy minimaps |
 
-**Design Intent:** Rewards patient, information-first gameplay. SONAR should always know more than her địch.
+**Design Intent:** Rewards patient, information-first gameplay. SONAR should always know more than her enemies.
 
 ---
 
 ## Loadout
 
-### Default Loadout
+### Loadout Mặc Định
 
-| Slot | Item | ghi chú |
+| Slot | Item | Ghi Chú |
 | :--- | :--- | :---- |
-| **primary** | VSS Vintorez (Silenced) | Quiet kills, integrated suppressor |
-| **secondary** | Silenced Pistol | Backup stealth |
-| **Tactical** | Sensor Mines x2 | Early cảnh báo traps |
-| **giáp** | Light Vest | 30 giáp points |
+| **Primary** | VSS Vintorez (Silenced) | Quiet kills, integrated suppressor |
+| **Secondary** | Silenced Pistol | Backup stealth |
+| **Tactical** | Sensor Mines x2 | Early warning traps |
+| **Giáp** | Light Vest | 30 armor points |
 
-### Recommended Loadouts
+### Loadout Khuyến Nghị
 
 **Long-Range Intel:**
 
 | Slot | Item | Why |
 | :--- | :--- | :-- |
-| primary | SVD Marksman Rifle | Engage from scan range |
-| secondary | Silenced Pistol | Emergency backup |
+| Primary | SVD Marksman Rifle | Engage from scan range |
+| Secondary | Silenced Pistol | Emergency backup |
 | Tactical | Sensor Mines x2 | Watch your back |
 
 **Aggressive Scout:**
 
 | Slot | Item | Why |
 | :--- | :--- | :-- |
-| primary | MP5 (Suppressed) | CQB capability với stealth |
-| secondary | Smoke Grenade x1 | Escape tool |
-| Tactical | Flashbang x2 | Entry sau scan reveals positions |
+| Primary | MP5 (Suppressed) | CQB capability with stealth |
+| Secondary | Smoke Grenade x1 | Escape tool |
+| Tactical | Flashbang x2 | Entry after scan reveals positions |
 
 ---
 
-## Playstyle Guide
+## Hướng Dẫn Playstyle
 
-### Role in Team
+### Vai Trò Trong Team
 
-**primary Role:** Information Provider
-- Scan trước every engagement
-- Call out địch positions, máu, và vũ khí
+**Primary Role:** Information Provider
+- Scan before every engagement
+- Call out enemy positions, health, and weapons
 - Enable team to take favorable fights
 
-**secondary Role:** Flanker
-- cách dùng Ghost Protocol to move undetected
-- Attack from unexpected angles sau scan
-- Punish địch focused on your teammates
+**Secondary Role:** Flanker
+- Use Ghost Protocol to move undetected
+- Attack from unexpected angles after scan
+- Punish enemies focused on your teammates
 
-### Combat Loop
+### Vòng Lặp Combat
 
 ```
 1. Move to elevated/safe position
@@ -260,96 +260,96 @@ sau a mole compromised her network, Sarah watched helplessly as her assets were 
 7. Wait for cooldown, repeat
 ```
 
-### Positioning
+### Vị Trí
 
 **Good Positions:**
-- Elevated ground với sightlines
+- Elevated ground with sightlines
 - Behind team, feeding intel
 - Near extraction zone for final scan
 
 **Bad Positions:**
 - Point of engagement (too fragile)
-- Isolated mà không escape route
+- Isolated without escape route
 - Ground level in open terrain
 
 ---
 
-## Matchups
+## Kèo Đấu
 
-### Favorable Matchups
+### Kèo Có Lợi
 
 | Opponent | Why Favorable | Tactic |
 | :------- | :------------ | :----- |
 | **GOLIATH** | Scan reveals position, then flank behind shield | Scan, mark, let team focus fire |
-| **PULSE** | Low combat stats, Nano Swarm easy to avoid với intel | Maintain distance, call out swarm |
-| **SUTURE** | Fragile khi caught alone, drone position revealed | Snipe drone first, then SUTURE |
+| **PULSE** | Thấp combat stats, Nano Swarm easy to avoid with intel | Maintain distance, call out swarm |
+| **SUTURE** | Fragile when caught alone, drone position revealed | Snipe drone first, then SUTURE |
 
-### Even Matchups
+### Kèo Cân Bằng
 
-| Opponent | ghi chú | chính to Winning |
+| Opponent | Ghi Chú | Key to Winning |
 | :------- | :---- | :------------- |
 | **MIRAGE** | Both intel operators, sensor vs. scan | Scan detects sensors, destroy them |
-| **IGNITION** | Fire zones limit movement options | Avoid fire, cách dùng range advantage |
-| **AEGIS** | Shield blocks nhưng scan reveals timing | Wait for shield down, then burst |
+| **IGNITION** | Lửa zones limit movement options | Avoid fire, use range advantage |
+| **AEGIS** | Khiên blocks but scan reveals timing | Wait for shield down, then burst |
 
-### Unfavorable Matchups
+### Kèo Bất Lợi
 
 | Opponent | Why Difficult | Counter Strategy |
 | :------- | :------------ | :--------------- |
-| **MAMBA** | Combat Stim out-damages you in any duel | Avoid direct combat, cách dùng intel to evade |
-| **OBSIDIAN** | Smoke breaks sightlines, ruins scan giá trị | Push thông qua hoặc wait out smoke duration |
+| **MAMBA** | Combat Stim out-damages you in any duel | Avoid direct combat, use intel to evade |
+| **OBSIDIAN** | Smoke breaks sightlines, ruins scan value | Push through or wait out smoke duration |
 | **TARTARUS** | CQB monster, you are fragile | Never let TARTARUS close the gap |
 
 ---
 
-## Voice Lines
+## Câu Thoại
 
 ### Combat
 
 | Trigger | Line |
 | :------ | :--- |
 | Ability Activation | "Scanning. Eyes on." |
-| địch Located | "Contact. [Direction]. [Distance]." |
-| Multiple địch | "Multiple hostiles. Marking all." |
+| Địch Located | "Contact. [Direction]. [Distance]." |
+| Multiple Địch | "Multiple hostiles. Marking all." |
 | Kill | "Target eliminated." |
 | Kill (Headshot) | "Precision." |
-| Low máu | "I'm hit. Need cover." |
-| Reviving | "Stay với me. Intel first, then we move." |
+| Thấp Máu | "I'm hit. Need cover." |
+| Reviving | "Stay with me. Intel first, then we move." |
 
-### Callouts
+### Callout
 
 | Trigger | Line |
 | :------ | :--- |
-| địch Spotted | "Eyes on hostile, [Direction]." |
+| Địch Spotted | "Eyes on hostile, [Direction]." |
 | Reloading | "Reloading. Cover me." |
 | Grenade | "Grenade! Move!" |
 | Scan Expired | "Scan dark. Blind for 90 seconds." |
 
-### Personality
+### Tính Cách
 
 | Trigger | Line |
 | :------ | :--- |
 | Match Start | "Stay quiet. Stay alive." |
-| Extraction Called | "Chopper inbound. Final scan." |
-| Extraction success | "Objective complete. Moving out." |
+| Extraction Called | "Chopper inbound. Cuối Cùng scan." |
+| Extraction Success | "Objective complete. Moving out." |
 | Squad Wipe | "They never knew we were here." |
 
 ---
 
-## Cosmetics
+## Cosmetic
 
-### Default Appearance
+### Ngoại Hình Mặc Định
 
-- **Outfit:** Black tactical jacket với dark blue accents, lightweight plate carrier
-- **Headgear:** Tactical headset với translucent holographic monocle (HUD overlay)
-- **Gloves:** Gray thin operator gloves (touch-màn hình compatible)
+- **Outfit:** Black tactical jacket with dark blue accents, lightweight plate carrier
+- **Headgear:** Tactical headset with translucent holographic monocle (HUD overlay)
+- **Gloves:** Gray thin operator gloves (touch-screen compatible)
 - **Face:** Short black hair, focused expression, data-stream tattoo behind left ear
 
-<!-- REF_IMAGE: SONAR default skin — top-down view showing silhouette với UAV drone in hand, dark outfit với cyan tech accents -->
+<!-- REF_IMAGE: SONAR default skin — top-down view showing silhouette with UAV drone in hand, dark outfit with cyan tech accents -->
 
-### Unlockable Skins
+### Skin Có Thể Mở Khóa
 
-| Skin | Rarity | Unlock |
+| Skin | Rarity | Mở Khóa |
 | :--- | :----- | :----- |
 | **Urban Shadow** | Common | Level 10 |
 | **Winter Intel** | Uncommon | 1,000 Credits |
@@ -357,28 +357,28 @@ sau a mole compromised her network, Sarah watched helplessly as her assets were 
 | **Black Site** | Epic | Battle Pass S1 |
 | **Digital Obsidian** | Legendary | Season 1 Event |
 
-### Signature Items
+### Vật Phẩm Signature
 
-| Item | Description |
+| Item | Mô Tả |
 | :--- | :---------- |
 | **Holographic Monocle** | Flip-down data display over right eye |
 | **USB Dog Tag** | Encrypted data drive on chain |
-| **Ghost Patch** | Shoulder patch — skull với circuit board pattern |
+| **Ghost Patch** | Shoulder patch — skull with circuit board pattern |
 
 ---
 
-## Lore Connections
+## Liên Kết Lore
 
-### Relationships
+### Mối Quan Hệ
 
-| nhân vật | Relationship |
+| Character | Relationship |
 | :-------- | :----------- |
 | **MAMBA** | Professional respect, different methods — he leads from the front, she leads from the shadows |
 | **GLITCH** | Uneasy allies, both have secrets — share intelligence cautiously |
-| **MIRAGE** | Former adversaries trong khi Cold War-era proxy ops, now grudging respect |
+| **MIRAGE** | Former adversaries during Cold War-era proxy ops, now grudging respect |
 | **SUTURE** | Trusts him most — he saved one of her assets years ago |
 
-### Story Hooks
+### Hook Câu Chuyện
 
 - Hunting the mole who burned her network (major personal quest chain)
 - Has intercepted Corporation communications about "Project Lazarus"
@@ -387,38 +387,38 @@ sau a mole compromised her network, Sarah watched helplessly as her assets were 
 
 ---
 
-## Design ghi chú (For Developers)
+## Ghi Chú Thiết Kế (Cho Developer)
 
-### Balance Considerations
+### Cân Nhắc Balance
 
-- UAV Scan is powerful nhưng has a 100s cooldown — longest in the game
-- 95 HP makes her the second-most fragile operator (tied với all Recon)
-- Ghost Protocol rewards patience nhưng does not make her invisible
+- UAV Scan is powerful but has a 100s cooldown — longest in the game
+- 95 HP makes her the second-most fragile operator (tied with all Recon)
+- Ghost Protocol rewards patience but does not make her invisible
 - Scan radius (30m) is intentionally shorter than engagement range to force positioning choices
 - Silent Scan upgrade (Slot 2) is the strongest option — monitor pick rate
 
-### Animation yêu cầu
+### Yêu Cầu Animation
 
 - UAV deployment animation (0.8 seconds — pull drone from back, throw upward)
 - Scanning pulse VFX (expanding cyan ring from operator position)
-- địch outline shader (cyan silhouette thông qua geometry, 30m range)
+- Địch outline shader (cyan silhouette through geometry, 30m range)
 - Ghost Protocol crouch walk (quieter, lower stance than standard crouch)
 - Death animation: falls backward (defensive stance)
 
-### Audio yêu cầu
+### Yêu Cầu Audio
 
-| Sound | ghi chú |
+| Sound | Ghi Chú |
 | :---- | :---- |
-| UAV deploy | cơ chế whir + ascending drone buzz |
+| UAV deploy | Mechanical whir + ascending drone buzz |
 | Scanning active | Persistent sonar ping loop (subtle) |
 | Scan end | Drone recall sound + descending buzz |
-| địch detected ping | Sharp, directional chime |
+| Địch detected ping | Sharp, directional chime |
 | Footsteps | Light, tactical boots — quieter than all classes |
 
-### Top-Down cụ thể ghi chú
+### Ghi Chú Riêng Cho Top-Down
 
-- Scan pulse rings phải được hiển thị rõ at minimum zoom — clearly shows scan radius to teammates
-- địch outlines nên được hiển thị rõ thông qua geometry from top-down camera (red silhouettes)
-- UAV drone model above the battlefield nên được hiển thị rõ as a small cyan dot from max zoom
-- Ghost Protocol first-shot bonus is not visually indicated to địch — incentivizes stealth play
-- Scan does NOT show địch máu bars — only position outlines
+- Scan pulse rings must be visible at minimum zoom — clearly shows scan radius to teammates
+- Địch outlines should be visible through geometry from top-down camera (red silhouettes)
+- UAV drone model above the battlefield should be visible as a small cyan dot from max zoom
+- Ghost Protocol first-shot bonus is not visually indicated to enemies — incentivizes stealth play
+- Scan does NOT show enemy health bars — only position outlines

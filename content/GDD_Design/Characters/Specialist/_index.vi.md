@@ -7,178 +7,178 @@ weight: 5
 
 ### Tổng Quan Class
 
-Operator class **Specialist** mang utility và disruption vào chiến trường. Họ mạnh ở việc counter ability của địch và kiểm soát flow combat bằng tool dựa trên công nghệ. Trong extraction shooter, information denial và area control có thể đáng giá hơn raw damage.
+The **Specialist** class operators bring utility and disruption to the battlefield. They excel at countering enemy abilities and controlling the flow of combat through tech-based tools. In an extraction shooter, information denial and area control can be worth more than raw damage.
 
-#### Class Identity
+#### Bản Sắc Class
 
-| Attribute | Value | Notes |
+| Thuộc Tính           | Giá Trị                | Ghi Chú                                            |
 | ------------------- | -------------------- | ------------------------------------------------ |
-| **Role** | Utility / Disruption | Control specialists |
-| **Difficulty** | Very High | Cần timing, game sense, và hiểu enemy |
-| **Team Dependency** | Medium | Enable team, solo được nếu có game knowledge |
-| **Skill Ceiling** | Very High | Mastery dựa trên knowledge, không phụ thuộc aim |
+| **Role**            | Utility / Disruption | Control specialists                              |
+| **Độ Khó**      | Rất cao            | Requires timing, game sense, and enemy knowledge |
+| **Phụ Thuộc Team** | Trung bình               | Enables team, can solo with game knowledge       |
+| **Trần Kỹ Năng**   | Rất cao            | Knowledge-based mastery, not aim-dependent       |
 
-#### Class Traits (All Specialist Operators)
+#### Trait Class (Tất Cả Operator Specialist)
 
-| Trait | Effect | Gameplay Impact |
+| Trait                  | Hiệu Ứng                        | Tác Động Gameplay                                 |
 | ---------------------- | ----------------------------- | ----------------------------------------------- |
-| **Expanded Inventory** | +2 Inventory Slots | Thêm loot capacity mỗi raid |
-| **Tech Savvy** | +20% Gadget Interaction Speed | Hack, mở cửa, dùng terminal nhanh hơn |
-| **Distracted** | -10% Weapon Accuracy | Combat penalty; bù bằng ability timing |
+| **Expanded Inventory** | +2 Inventory Slots            | More loot capacity per raid                     |
+| **Tech Savvy**         | +20% Gadget Interaction Speed | Faster hacking, door opening, terminal use      |
+| **Distracted**         | -10% Độ Chính Xác Vũ Khí          | Combat penalty — compensate with ability timing |
 
 ***
 
-### Operators
+### Operator
 
-| Operator | Codename | Specialty | Unlock |
+| Operator                                                                                                                       | Codename | Chuyên Môn      | Mở Khóa                   |
 | ------------------------------------------------------------------------------------------------------------------------------ | -------- | -------------- | ------------------------ |
-| [Maya Torres](https://github.com/oaiba/ExtractionDocument/blob/main/content/GDD_Design/Characters/Specialist/Glitch/README.md) | GLITCH | Ability Denial | Level 15, 10,000 Credits |
-| [D-84 "Ohm"](https://github.com/oaiba/ExtractionDocument/blob/main/content/GDD_Design/Characters/Specialist/Pulse/README.md) | PULSE | Area Control | Level 28, 15,000 Credits |
+| [Maya Torres](https://github.com/oaiba/ExtractionDocument/blob/main/content/GDD_Design/Characters/Specialist/Glitch/README.md) | GLITCH   | Ability Denial | Level 15, 10,000 Credits |
+| [D-84 "Ohm"](https://github.com/oaiba/ExtractionDocument/blob/main/content/GDD_Design/Characters/Specialist/Pulse/README.md)   | PULSE    | Area Control   | Level 28, 15,000 Credits |
 
 ***
 
-### Playstyle Guide
+### Hướng Dẫn Playstyle
 
-#### Khi Nào Chọn Specialist
+#### Khi Nên Chọn Specialist
 
 **Chọn Specialist khi:**
 
-* Team địch dựa nhiều vào ability (Support healer, Tank shield)
-* Map có cửa, terminal, hoặc environmental trap hack được
-* Bạn muốn tối đa hóa loot extraction (+2 slot rất lớn cho economy)
-* Team cần counter một enemy composition cụ thể
+* Địch team relies heavily on abilities (Support healers, Tank shields)
+* Map has hackable doors, terminals, or environmental traps
+* You want maximum loot extraction (+2 slots is huge for economy)
+* Your team needs a counter to a specific enemy composition
 
 **Tránh Specialist khi:**
 
-* Bạn thích direct combat (accuracy penalty đau với player phụ thuộc aim)
-* Map mở và ít interactive object
-* Team địch chơi pure Assault (không có nhiều thứ để counter)
-* Team cần healing hoặc damage trực tiếp
+* You prefer direct combat (accuracy penalty hurts aim-dependent players)
+* Map is open with few interactive objects
+* Địch team is running pure Assault (nothing to counter)
+* Your team needs direct healing or damage
 
-#### Gadget Usage Tactics
+#### Tactic Dùng Gadget
 
 **Priority Order:**
 
 ```
-1. Hack equipment địch (phá trap, disable turret)
-2. Dùng ability để counter enemy push (EMP / Nano Swarm)
-3. Tương tác environmental object (terminal, locked door)
-4. Loot hiệu quả (extra inventory slot cho item giá trị cao)
+1. Hack enemy equipment (destroy traps, disable turrets)
+2. Use ability to counter enemy push (EMP / Nano Swarm)
+3. Interact with environmental objects (terminals, locked doors)
+4. Loot efficiently (extra inventory slots for high-value items)
 ```
 
 **Positioning:**
 
-* Giữ mid-range; quá xa ability dễ miss, quá gần accuracy penalty khiến bạn chết
-* Dùng corner và cover để deploy ability an toàn
-* Đứng gần interactive object (terminal, locked room) để access nhanh nhất
-* Không bao giờ làm entry fragger; để Assault dẫn đầu, bạn theo sau với denial
+* Stay mid-range — too far and abilities miss, too close and accuracy penalty kills you
+* Use corners and cover to deploy abilities safely
+* Position near interactive objects (terminals, locked rooms) for fastest access
+* Never be the entry fragger — let Assault lead, follow with denial
 
-#### Combat Tactics
+#### Tactic Combat
 
 **The Counter-Play:**
 
-1. Nhận diện enemy ability đang được dùng (shield, heal, scan)
-2. Chờ timing tối ưu (ability đang ở giữa duration)
-3. Deploy counter (EMP hoặc Swarm)
-4. Call out enemy bị disable để team push
-5. Fall back về cover trong khi ability recharge
+1. Identify enemy abilities in use (shields, heals, scans)
+2. Wait for optimal timing (ability midway through duration)
+3. Deploy counter (EMP or Swarm)
+4. Call out disabled enemies for team to push
+5. Fall back to cover while ability recharges
 
 **The Loot Run:**
 
-1. Dùng extra inventory để mang item giá trị cao mà người khác không chứa được
-2. Hack locked container để lấy exclusive loot
-3. Speed-interact với terminal để reveal hidden stash
-4. Ưu tiên extraction; số loot của bạn là điểm số của bạn
+1. Use extra inventory to carry high-value items others cannot fit
+2. Hack locked containers for exclusive loot
+3. Speed-interact with terminals to reveal hidden stashes
+4. Prioritize extraction — your loot count is your score
 
 ***
 
-### Counter Strategies
+### Chiến Lược Counter
 
-#### Cách Counter Specialist Operators
+#### Cách Counter Operator Specialist
 
-| Operator | Counter Strategy |
+| Operator   | Counter Strategy                                                                              |
 | ---------- | --------------------------------------------------------------------------------------------- |
-| **GLITCH** | Bait EMP trước khi dùng ability, rush trong cửa sổ cooldown 90s |
-| **PULSE** | Luôn di chuyển, đừng cluster; swarm target enemy tụ nhóm. Push xuyên qua hoặc vòng quanh swarm zone |
+| **GLITCH** | Bait EMP before using abilities, rush during 90s cooldown window                              |
+| **PULSE**  | Stay mobile, don't cluster — swarm targets grouped enemies. Push through or around swarm zone |
 
-#### Best Counters to Specialist
+#### Counter Tốt Nhất Với Specialist
 
-| Counter Pick | Why |
+| Counter Pick | Why                                                            |
 | ------------ | -------------------------------------------------------------- |
-| **MAMBA** | Raw damage áp đảo combat power thấp trước khi ability có giá trị |
-| **TARTARUS** | CQB giết Specialist trước khi gadget deploy |
-| **OBSIDIAN** | Smoke chặn line of sight cho EMP targeting |
+| **MAMBA**    | Raw damage overwhelms low combat power before abilities matter |
+| **TARTARUS** | CQB kills Specialist before gadgets deploy                     |
+| **OBSIDIAN** | Smoke blocks line of sight for EMP targeting                   |
 
 ***
 
-### Synergies
+### Synergy
 
-#### Best Specialist Duos
+#### Duo Specialist Tốt Nhất
 
-| Partner | Synergy | Notes |
+| Partner     | Synergy           | Ghi Chú                                                           |
 | ----------- | ----------------- | --------------------------------------------------------------- |
-| **SONAR** | Intel + Denial | Scan reveal, GLITCH disable; full information control |
-| **GOLIATH** | Tank + Disruption | GOLIATH hấp thụ, GLITCH strip buff của địch |
-| **MIRAGE** | Traps + Swarm | MIRAGE sensor detect, PULSE swarm phạt approach |
-| **SUTURE** | Sustain + Utility | SUTURE giữ Specialist sống đủ lâu để gadget có giá trị |
+| **SONAR**   | Intel + Denial    | Scan reveals, GLITCH disables — full information control        |
+| **GOLIATH** | Tank + Disruption | GOLIATH absorbs, GLITCH strips enemy buffs                      |
+| **MIRAGE**  | Traps + Swarm     | MIRAGE sensors detect, PULSE swarm punishes approach            |
+| **SUTURE**  | Sustain + Utility | SUTURE keeps Specialist alive long enough for gadgets to matter |
 
 ***
 
-### Top-Down Visual Identity
+### Nhận Diện Hình Ảnh Top-Down
 
-Specialist operators có **standard silhouette** với tool pocket và utility belt nhìn thấy rõ. Từ camera top-down, họ được nhận diện bằng marking amber utility và compact gadget profile.
+Specialist operators have a **standard silhouette** with visible tool pockets and utility belts. From the top-down camera, they are identified by amber utility markings and compact gadget profiles.
 
-| Feature | Design Rule | Visibility |
+| Feature            | Design Rule                                              | Visibility |
 | ------------------ | -------------------------------------------------------- | ---------- |
-| **Shoulder Width** | Standard; utility vest hơi rộng hơn Recon | 60+ units |
-| **Headgear** | Work goggle đẩy lên hoặc side-mounted hacking visor | 60+ units |
-| **Color Accent** | Amber (#F59E0B) utility marking và caution tape strip | 60+ units |
-| **Back Profile** | Tool pack với cable và gadget holster nhìn thấy rõ | 60+ units |
-| **Movement Anim** | Nhịp di chuyển standard, thỉnh thoảng có idle animation kiểm tra gadget | 50+ units |
+| **Shoulder Width** | Standard — utility vest slightly wider than Recon        | 60+ units  |
+| **Headgear**       | Work goggles pushed up or side-mounted hacking visor     | 60+ units  |
+| **Color Accent**   | Amber (#F59E0B) utility markings and caution tape strips | 60+ units  |
+| **Back Profile**   | Tool pack with visible cables and gadget holsters        | 60+ units  |
+| **Movement Anim**  | Standard pace, occasional gadget-checking idle animation | 50+ units  |
 
-#### Operator-Specific Top-Down Tells
+#### Dấu Hiệu Top-Down Riêng Của Operator
 
-| Operator | Unique Visual From Above |
+| Operator | Unique Visual From Above                                               |
 | -------- | ---------------------------------------------------------------------- |
-| GLITCH | Blue EMP pulse ring mở rộng rất nhanh từ vị trí operator |
-| PULSE | Nano cloud bạc/xanh xoáy, nhìn như area-denial zone trên mặt đất |
+| GLITCH   | Blue EMP pulse ring expanding rapidly from operator position           |
+| PULSE    | Swirling silver/green nano cloud visible as area-denial zone on ground |
 
 ***
 
-### Class Stamina Profile
+### Hồ Sơ Stamina Theo Class
 
-| Parameter | Specialist Value | Comparison |
+| Tham Số               | Specialist Giá Trị | Comparison |
 | ----------------------- | ---------------- | ---------- |
-| **Stamina Pool** | 100 (Standard) | Average |
-| **Sprint Drain** | 10/second | Standard |
-| **Recovery Rate** | 8/second | Standard |
-| **Net Sprint Duration** | 10.0 seconds | Average |
+| **Quỹ Stamina**        | 100 (Standard)   | Trung bình    |
+| **Hao Stamina Khi Sprint**        | 10/second        | Standard   |
+| **Tốc Độ Hồi**       | 8/second         | Standard   |
+| **Thời Lượng Sprint Thực** | 10.0 seconds     | Trung bình    |
 
-**Design Intent:** Specialist có stamina standard. Sức mạnh của họ đến từ gadget timing và knowledge, không phải movement. Trait +20% gadget interaction speed là lợi thế mobility riêng (hack cửa nhanh hơn, access terminal nhanh hơn).
+**Design Intent:** Specialist stamina is standard. Their strength comes from gadget timing and knowledge, not from movement. The +20% gadget interaction speed class trait is their unique mobility advantage (faster door hacking, terminal access).
 
 ***
 
-### Status Effect Modifiers
+### Bộ Điều Chỉnh Hiệu Ứng Trạng Thái
 
-| Effect | Specialist Resistance | Notes |
+| Hiệu Ứng | Specialist Kháng | Ghi Chú                                                   |
 | ------ | --------------------- | ------------------------------------------------------- |
-| Stun | 0% | Full stun duration |
-| Slow | 0% | Full slow duration |
-| Burn | 0% | Full burn damage |
-| EMP | 50% | Half EMP duration; họ tạo ra công nghệ, nên họ chống lại nó |
+| Stun   | 0%                    | Full stun duration                                      |
+| Slow   | 0%                    | Full slow duration                                      |
+| Burn   | 0%                    | Full burn damage                                        |
+| EMP    | 50%                   | Half EMP duration — they build the tech, they resist it |
 
-**Design Intent:** Specialist operators là tech expert. Họ thiết kế EMP technology, nên có built-in shielding. Điều này tạo counter dynamic quan trọng: EMP của GLITCH kém hiệu quả hơn trước GLITCH hoặc PULSE địch so với các class khác.
+**Design Intent:** Specialist operators are the tech experts. They designed EMP technology, so they have built-in shielding. This creates an important counter dynamic: GLITCH's EMP is less effective against enemy GLITCH or PULSE than against other classes.
 
 ***
 
-### Map Suitability
+### Độ Phù Hợp Theo Map
 
-| Map Archetype | Suitability | Recommended Operator | Why |
+| Map Archetype        | Suitability | Recommended Operator | Why                                                           |
 | -------------------- | ----------- | -------------------- | ------------------------------------------------------------- |
-| **Dense Urban** | Highest | GLITCH | Nhiều cửa và terminal hack được, nhiều deployable để EMP |
-| **Multi-Floor** | High | PULSE | Nano Swarm chặn stairwell và vertical access |
-| **Large Industrial** | High | GLITCH | Hackable container và terminal rải khắp map |
-| **Tight Corridors** | Medium | PULSE | Swarm bao phủ chiều rộng corridor để area denial |
-| **Open Fields** | Low | Neither | Ít gadget để tương tác, EMP range hạn chế utility |
+| **Dense Urban**      | Highest     | GLITCH               | Many hackable doors and terminals, lots of deployables to EMP |
+| **Multi-Floor**      | Cao        | PULSE                | Nano Swarm blocks stairwells and vertical access              |
+| **Large Industrial** | Cao        | GLITCH               | Hackable containers and terminals throughout                  |
+| **Tight Corridors**  | Trung bình      | PULSE                | Swarm covers corridor width for area denial                   |
+| **Open Fields**      | Thấp         | Neither              | Few gadgets to interact with, EMP range limits utility        |
 
-Xem [World Design](https://github.com/oaiba/ExtractionDocument/blob/main/content/GDD_Design/World/README.md) để biết layout map chi tiết.
+See [World Design](https://github.com/oaiba/ExtractionDocument/blob/main/content/GDD_Design/World/README.md) for detailed map layouts.

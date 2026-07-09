@@ -3,158 +3,158 @@ title: "TARTARUS - Carlos Mendes"
 type: docs
 ---
 
-## Operator Profile
+## Hồ Sơ Operator
 
-> *"Hesitation is death. I choose violence."*
+> *"Do dự là chết. Tôi chọn bạo lực."*
 
-### Basic Information
+### Thông Tin Cơ Bản
 
-| Attribute       | giá trị                     |
+| Thuộc Tính       | Giá Trị                     |
 | :-------------- | :------------------------ |
-| **Real Name**   | Carlos Mendes             |
+| **Tên Thật**   | Carlos Mendes             |
 | **Codename**    | TARTARUS                  |
 | **Class**       | Assault                   |
-| **Nationality** | Brazilian                 |
-| **Age**         | 38                        |
-| **Height**      | 191 cm (6'3")             |
-| **Weight**      | 98 kg (216 lbs)           |
+| **Quốc Tịch** | Brazilian                 |
+| **Tuổi**         | 38                        |
+| **Chiều Cao**      | 191 cm (6'3")             |
+| **Cân Nặng**      | 98 kg (216 lbs)           |
 
-<!-- REF_IMAGE: TARTARUS operator portrait — massive scar on face, thick spetsnaz giáp, heavy shotgun, berserker rage hiển thị rõ in eyes -->
+<!-- REF_IMAGE: TARTARUS operator portrait — massive scar on face, thick spetsnaz armor, heavy shotgun, berserker rage visible in eyes -->
 
-### Background
+### Lý Lịch
 
-Carlos Mendes was a legendary figure in Brazil's BOPE trước a failed operation left him the sole survivor of his unit. Blamed for the disaster by corrupt superiors, he was dishonorably discharged và erased from official records.
+Carlos Mendes từng là huyền thoại của BOPE Brazil trước khi một chiến dịch thất bại khiến anh trở thành người sống sót duy nhất của đơn vị. Bị cấp trên tham nhũng đổ lỗi cho thảm họa, anh bị tước danh dự và xóa khỏi hồ sơ chính thức.
 
-For years, Carlos wandered as a mercenary, his reputation growing as a one-man wrecking crew. He doesn't seek teammates - he seeks targets. The Exclusion Zone is just another battlefield, và Carlos has never lost a fight he started.
+Trong nhiều năm, Carlos lang bạt như một lính đánh thuê, danh tiếng lớn dần như một đội phá hủy chỉ có một người. Anh không tìm đồng đội, anh tìm mục tiêu. Exclusion Zone chỉ là một chiến trường khác, và Carlos chưa từng thua một trận đánh do chính anh khơi mào.
 
-### Personality Traits
+### Tính Cách
 
-- **Brutal** - No mercy, no hesitation
-- **Solitary** - Prefers working alone
-- **Haunted** - Lost his whole squad, carries survivor's guilt
-- **Respectful** - Honors worthy opponents
+- **Brutal** - Không khoan nhượng, không do dự
+- **Solitary** - Thích hành động một mình
+- **Haunted** - Mất toàn bộ squad và mang mặc cảm của người sống sót
+- **Respectful** - Tôn trọng đối thủ xứng đáng
 
 ---
 
-## Combat Statistics
+## Thông Số Combat
 
-### Base Stats
+### Chỉ Số Cơ Bản
 
-| Stat             | giá trị   | Class Modifier | Final    |
+| Stat             | Giá Trị   | Bộ Điều Chỉnh Class | Cuối Cùng    |
 | :--------------- | :------ | :------------- | :------- |
-| **máu**       | 100 HP  | -              | 100 HP   |
-| **giáp**        | 50      | -10%           | 45       |
-| **Sprint Speed** | 5.5 m/s | +10%           | 6.05 m/s |
-| **Walk Speed**   | 3.5 m/s | -              | 3.5 m/s  |
-| **Crouch Speed** | 2.0 m/s | -              | 2.0 m/s  |
+| **Máu**       | 100 HP  | -              | 100 HP   |
+| **Giáp**        | 50      | -10%           | 45       |
+| **Tốc Độ Sprint** | 5.5 m/s | +10%           | 6.05 m/s |
+| **Tốc Độ Đi Bộ**   | 3.5 m/s | -              | 3.5 m/s  |
+| **Tốc Độ Crouch** | 2.0 m/s | -              | 2.0 m/s  |
 
-### Damage Modifiers
+### Bộ Điều Chỉnh Damage
 
-| Condition                | Modifier                |
+| Điều Kiện                | Bộ Điều Chỉnh                |
 | :----------------------- | :---------------------- |
-| Base vũ khí Damage       | +5% (Class)             |
-| Berserker Active         | +35% melee, +15% vũ khí |
+| Damage Vũ Khí Cơ Bản       | +5% (Class)             |
+| Berserker Active         | +35% melee, +15% weapon |
 | Berserker + Kill         | Refreshes duration      |
 | Melee Damage (Base)      | 50                      |
 | Melee Damage (Berserker) | 67                      |
 
-### Expanded Combat Statistics
+### Thông Số Combat Mở Rộng
 
-| Parameter | giá trị | ghi chú |
+| Tham Số | Giá Trị | Ghi Chú |
 | :-------- | :---- | :---- |
-| **Stamina Pool** | 120 | +20% (Assault class) |
-| **Sprint Drain** | 10/second | Standard |
-| **Recovery Rate** | 8.8/second | +10% (Assault class) |
-| **Net Sprint Duration** | 12.0 seconds | Longest sprint tier |
-| **Footstep Volume** | 110% | Slightly louder — heavy build |
-| **Ability Audio Radius** | 50 meters | Rage roar is the loudest activation in the game |
-| **Melee Lunge Range** | 3.5 meters | Extended melee lunge trong khi Berserker Rage |
+| **Quỹ Stamina** | 120 | +20% (Assault class) |
+| **Hao Stamina Khi Sprint** | 10/second | Standard |
+| **Tốc Độ Hồi** | 8.8/second | +10% (Assault class) |
+| **Thời Lượng Sprint Thực** | 12.0 seconds | Longest sprint tier |
+| **Âm Lượng Bước Chân** | 110% | Slightly louder — heavy build |
+| **Bán Kính Audio Ability** | 50 meters | Rage roar is the loudest activation in the game |
+| **Melee Lunge Range** | 3.5 meters | Extended melee lunge during Berserker Rage |
 
-### Status Effect Resistances
+### Kháng Hiệu Ứng Trạng Thái
 
-| Effect | Resistance | ghi chú |
+| Hiệu Ứng | Kháng | Ghi Chú |
 | :----- | :--------- | :---- |
-| Stun | 0% | Full duration — critical vulnerability |
-| Slow | 0% | Full duration — devastating trong khi Rage |
+| Stun | 0% | Đủ thời lượng — critical vulnerability |
+| Slow | 0% | Đủ thời lượng — devastating during Rage |
 | Burn | 0% | Full DoT |
-| EMP | 0% | Rage cancelled immediately by EMP |
+| EMP | 0% | Rage bị hủy ngay lập tức bởi EMP |
 
-### Top-Down Visual Spec
+### Spec Hình Ảnh Top-Down
 
-| Property | giá trị |
+| Thuộc Tính | Giá Trị |
 | :------- | :---- |
 | **Hitbox Capsule** | 44 cm radius, 190 cm height |
-| **Head Sphere** | 15 cm radius |
+| **Vùng Đầu** | 15 cm radius |
 | **Collision Profile** | Standard (largest among Assault) |
-| **Silhouette From Above** | Broad-shouldered, aggressive stance, largest Assault operator |
-| **Class Accent Zones** | Orange (#F97316) + Red (#DC2626) trong khi Rage |
+| **Silhouette Nhìn Từ Trên Xuống** | Broad-shouldered, aggressive stance, largest Assault operator |
+| **Vùng Accent Theo Class** | Orange (#F97316) + Red (#DC2626) during Rage |
 | **Rage Active VFX (Top-Down)** | Red pulsing glow on body, wider aggressive stance, ground crack effects on melee |
-| **Melee VFX (Top-Down)** | Red arc slash hiển thị rõ on ground plane, 3.5m range |
+| **Melee VFX (Top-Down)** | Red arc slash visible on ground plane, 3.5m range |
 | **Rage Audio Radius** | 50m — loudest ability activation in roster |
 
-<!-- REF_IMAGE: TARTARUS top-down view — showing operator in normal vs Berserker Rage stance from above, red glow và melee range arc hiển thị rõ -->
+<!-- REF_IMAGE: TARTARUS top-down view — showing operator in normal vs Berserker Rage stance from above, red glow and melee range arc visible -->
 
-### Difficulty Rating
+### Độ Khó
 
-**Difficulty: 4/5** — High risk/reward. Must close distance mà không dying, manage kill chain timer, và accept +10% incoming damage. Requires aggressive confidence.
+**Độ Khó: 4/5** — Cao risk/reward. Must close distance without dying, manage kill chain timer, and accept +10% incoming damage. Requires aggressive confidence.
 
 
-## Abilities
+## Ability
 
 ### Active Ability: Berserker Rage
 
-> *"Enter a frenzy trạng thái. Each kill extends the rage."*
+> *"Enter a frenzy state. Each kill extends the rage."*
 
-| Property         | giá trị               |
+| Thuộc Tính         | Giá Trị               |
 | :--------------- | :------------------ |
 | **Cooldown**     | 100 seconds         |
 | **Duration**     | 8 seconds (base)    |
 | **Extension**    | +3 seconds per kill |
 | **Max Duration** | 20 seconds          |
 
-#### Effects
+#### Hiệu Ứng
 
-| Effect         | giá trị  | ghi chú                 |
+| Hiệu Ứng         | Giá Trị  | Ghi Chú                 |
 | :------------- | :----- | :-------------------- |
 | Melee Damage   | +35%   | Makes melee viable    |
-| vũ khí Damage  | +15%   | Less than MAMBA stim  |
+| Vũ khí Damage  | +15%   | Less than MAMBA stim  |
 | Movement Speed | +15%   | All movement types    |
 | Damage Taken   | +10%   | Trade-off             |
 | Kill Extension | +3 sec | Encourages aggression |
 
-#### Ability Interactions
+#### Tương Tác Ability
 
-| Interaction | kết quả |
+| Interaction | Result |
 | :---------- | :----- |
-| **Rage + EMP** | Rage cancelled immediately, kill chain timer lost |
+| **Rage + EMP** | Rage bị hủy ngay lập tức, kill chain timer lost |
 | **Rage + Stun** | Full stun duration — wastes precious Rage seconds |
-| **Rage + AEGIS Shield** | TARTARUS melee CAN push thông qua Guardian Shield |
-| **Rage + BASTION Shield** | Melee bash staggers shield (1s), does not break thông qua |
-| **Rage + Burn** | Burn damage stacks với +10% incoming damage modifier |
-| **Rage + Kill (SONAR scanned target)** | Kill still extends duration even nếu target was scanned |
+| **Rage + AEGIS Khiên** | TARTARUS melee CAN push through Guardian Khiên |
+| **Rage + BASTION Khiên** | Melee bash staggers shield (1s), does not break through |
+| **Rage + Burn** | Burn damage stacks with +10% incoming damage modifier |
+| **Rage + Kill (SONAR scanned target)** | Kill still extends duration even if target was scanned |
 
-#### Top-Down Rage VFX
+#### VFX Cuồng Nộ Top-Down
 
-| trạng thái | VFX From Above |
+| State | VFX From Above |
 | :---- | :------------- |
 | Rage activation | Red flash burst from operator, ground cracks radiate outward (1m) |
 | Rage active | Persistent red body glow, widened stance animation |
 | Melee swing | Red arc slash on ground (3.5m forward cone) |
-| Kill chain (kill trong khi rage) | Brief bright flash + timer refresh indicator |
+| Kill chain (kill during rage) | Brief bright flash + timer refresh indicator |
 | Rage ending | Glow dims, operator visibly exhales (hunched posture) |
 
 
-**Self:**
-- màn hình pulses red
+**Bản thân:**
+- Screen pulses red
 - Heavy breathing audio
-- Blood splatter on màn hình edges
+- Blood splatter on screen edges
 
-**địch Perspective:**
+**Địch Perspective:**
 - Red glow around Tartarus
 - Audible roar on activation
 - Movements appear more aggressive
 
-#### Kill Chain cơ chế
+#### Cơ Chế Chuỗi Hạ Gục
 
 The unique aspect of Berserker Rage is the **kill extension**:
 
@@ -166,30 +166,30 @@ Kill 3: 14 + 3 = 17 seconds remaining
 Kill 4+: Capped at 20 seconds
 ```
 
-**Design Intent:** High risk, potentially infinite uptime nếu you're skilled enough.
+**Design Intent:** Cao risk, potentially infinite uptime if you're skilled enough.
 
-#### upgrade Slots
+#### Slot Upgrade
 
 **Slot 1 (Level 5):**
-| Option           | Effect                                       |
+| Option           | Hiệu Ứng                                       |
 | :--------------- | :------------------------------------------- |
 | **Blood Frenzy** | Kill extension +2 seconds (5 total per kill) |
 | **Quick Rage**   | Cooldown -20 seconds (80s total)             |
 | **Iron Will**    | Damage taken penalty removed                 |
 
 **Slot 2 (Level 20):**
-| Option                | Effect                                        |
+| Option                | Hiệu Ứng                                        |
 | :-------------------- | :-------------------------------------------- |
 | **Executioner**       | Melee kills heal 20 HP                        |
 | **Unstoppable Force** | Immune to knockback/stun                      |
-| **Terror**            | Nearby địch hear heartbeat (psychological) |
+| **Terror**            | Nearby enemies hear heartbeat (psychological) |
 
 **Slot 3 (Level 35):**
-| Option         | Effect                                            |
+| Option         | Hiệu Ứng                                            |
 | :------------- | :------------------------------------------------ |
-| **Last Stand** | nếu killed trong khi rage, explode for 50 area damage |
+| **Last Stand** | If killed during rage, explode for 50 area damage |
 | **Rampage**    | Each kill also reduces cooldown by 5 seconds      |
-| **Predator**   | Damaged địch are marked for 5 seconds          |
+| **Predator**   | Damaged enemies are marked for 5 seconds          |
 
 ---
 
@@ -197,64 +197,64 @@ Kill 4+: Capped at 20 seconds
 
 > *"The closer to death, the stronger he becomes."*
 
-| máu Threshold | Effect                            |
+| Máu Threshold | Hiệu Ứng                            |
 | :--------------- | :-------------------------------- |
-| Below 50%        | +10% vũ khí damage                |
-| Below 30%        | +15% vũ khí damage, +5% movement  |
-| Below 15%        | +20% vũ khí damage, +10% movement |
+| Below 50%        | +10% weapon damage                |
+| Below 30%        | +15% weapon damage, +5% movement  |
+| Below 15%        | +20% weapon damage, +10% movement |
 
-**Synergy với Berserker:** Combined với rage mode at low máu = devastating damage output.
+**Synergy with Berserker:** Combined with rage mode at low health = devastating damage output.
 
-**Design Intent:** Makes TARTARUS terrifying khi cornered. Never assume a low-máu TARTARUS is easy.
+**Design Intent:** Makes TARTARUS terrifying when cornered. Never assume a low-health TARTARUS is easy.
 
 ---
 
 ## Loadout
 
-### Default Loadout
+### Loadout Mặc Định
 
-| Slot          | Item            | ghi chú               |
+| Slot          | Item            | Ghi Chú               |
 | :------------ | :-------------- | :------------------ |
-| **primary**   | SPAS-12 Shotgun | CQB dominance       |
-| **secondary** | Desert Eagle    | High damage backup  |
+| **Primary**   | SPAS-12 Shotgun | CQB dominance       |
+| **Secondary** | Desert Eagle    | Cao damage backup  |
 | **Tactical**  | Flashbang ×2    | Entry tool          |
-| **giáp**     | Medium Vest     | 50 giáp points     |
+| **Giáp**     | Trung bình Vest     | 50 armor points     |
 | **Melee**     | Combat Knife    | Enhanced by passive |
 
-### Recommended Loadouts
+### Loadout Khuyến Nghị
 
 **Full Berserker:**
 | Slot      | Item               | Why                |
 | :-------- | :----------------- | :----------------- |
-| primary   | AA-12 Auto Shotgun | Spray và pray     |
-| secondary | Revolver           | One-shot potential |
+| Primary   | AA-12 Auto Shotgun | Spray and pray     |
+| Secondary | Revolver           | One-shot potential |
 | Tactical  | Stun Grenade ×2    | Close the gap      |
 | Melee     | Machete            | Higher base damage |
 
 **Controlled Aggression:**
 | Slot      | Item                   | Why                     |
 | :-------- | :--------------------- | :---------------------- |
-| primary   | UMP-45 SMG             | More range than shotgun |
-| secondary | G17                    | Reliable backup         |
+| Primary   | UMP-45 SMG             | More range than shotgun |
+| Secondary | G17                    | Reliable backup         |
 | Tactical  | Flashbang ×1, Smoke ×1 | Entry + escape          |
 
 ---
 
-## Playstyle Guide
+## Hướng Dẫn Playstyle
 
-### Role in Team
+### Vai Trò Trong Team
 
-**primary Role:** CQB Specialist
+**Primary Role:** CQB Specialist
 - Dominates close quarters
 - Clears rooms aggressively
-- Terrifies địch in tight spaces
+- Terrifies enemies in tight spaces
 
-**secondary Role:** Finisher
-- Chase down wounded địch
+**Secondary Role:** Finisher
+- Chase down wounded enemies
 - Capitalize on team damage
 - Execute distracted targets
 
-### Combat Loop
+### Vòng Lặp Combat
 
 ```
 1. Get close (use cover, flanks, smoke)
@@ -266,56 +266,56 @@ Kill 4+: Capped at 20 seconds
 7. If no kills in 8 seconds, retreat
 ```
 
-### Close Quarters Dominance
+### Áp Đảo Cự Ly Gần
 
 **Best Engagement Range:** 0-10 meters
 
 | Range  | Tactic                              |
 | :----- | :---------------------------------- |
-| 0-3m   | Melee hoặc shotgun                    |
-| 3-10m  | Shotgun hoặc SMG                      |
-| 10-20m | SMG only, don't engage nếu avoidable |
+| 0-3m   | Melee or shotgun                    |
+| 3-10m  | Shotgun or SMG                      |
+| 10-20m | SMG only, don't engage if avoidable |
 | 20m+   | Disengage, reposition               |
 
-### khi NOT to Pick TARTARUS
+### Khi KHÔNG Nên Chọn TARTARUS
 
 - Long-range maps (open areas)
-- địch team has multiple Tanks
+- Địch team has multiple Tanks
 - Your team has no healer
 - You're not confident in CQB
 
 ---
 
-## Matchups
+## Kèo Đấu
 
-### Favorable Matchups
+### Kèo Có Lợi
 
 | Opponent    | Why Favorable           | Tactic                    |
 | :---------- | :---------------------- | :------------------------ |
-| **SUTURE**     | Fragile up close        | Rush trước drone deploys |
+| **SUTURE**     | Fragile up close        | Rush before drone deploys |
 | **SONAR** | No combat advantage     | Close distance fast       |
-| **GLITCH**  | Low combat stats        | Overwhelm với aggression |
-| **AEGIS**   | Can't escape your speed | Push thông qua shield       |
+| **GLITCH**  | Thấp combat stats        | Overwhelm with aggression |
+| **AEGIS**   | Can't escape your speed | Push through shield       |
 
-### Even Matchups
+### Kèo Cân Bằng
 
-| Opponent    | ghi chú                         | chính to Winning           |
+| Opponent    | Ghi Chú                         | Key to Winning           |
 | :---------- | :---------------------------- | :----------------------- |
 | **MAMBA**   | Both aggressive, comes to aim | Land first shot          |
-| **IGNITION**   | Fire vs Rage                  | Avoid fire while closing |
-| **MIRAGE** | Traps slow you down           | rõ traps, then push   |
+| **IGNITION**   | Lửa vs Rage                  | Avoid fire while closing |
+| **MIRAGE** | Traps slow you down           | Clear traps, then push   |
 
-### Unfavorable Matchups
+### Kèo Bất Lợi
 
 | Opponent     | Why Difficult                 | Counter Strategy        |
 | :----------- | :---------------------------- | :---------------------- |
-| **BASTION**  | Shield completely blocks you  | Flank only, never front |
-| **GOLIATH** | Team giáp absorbs your burst | Focus teammates first   |
+| **BASTION**  | Khiên completely blocks you  | Flank only, never front |
+| **GOLIATH** | Team armor absorbs your burst | Focus teammates first   |
 | **PULSE**     | Nano swarm slows you          | Wait for swarm to end   |
 
 ---
 
-## Voice Lines
+## Câu Thoại
 
 ### Combat
 
@@ -326,42 +326,42 @@ Kill 4+: Capped at 20 seconds
 | Kill                     | "Pathetic."                |
 | Kill (Melee)             | "Too slow."                |
 | Kill Chain (3+)          | "Who's next?!"             |
-| Low máu               | "You think this stops me?" |
+| Thấp Máu               | "You think this stops me?" |
 | Reviving                 | "Get up. We're not done."  |
 
-### Callouts
+### Callout
 
 | Trigger       | Line                |
 | :------------ | :------------------ |
-| địch Spotted | "Contact."          |
+| Địch Spotted | "Contact."          |
 | Pushing       | "Moving in."        |
-| Taking Fire   | "They are nothing." |
+| Taking Lửa   | "They are nothing." |
 | Reloading     | "Reloading."        |
 | Grenade       | "Grenade."          |
 
-### Personality
+### Tính Cách
 
 | Trigger            | Line                           |
 | :----------------- | :----------------------------- |
 | Match Start        | "Let's finish this quickly."   |
 | Extraction Called  | "Cover me. We leave now."      |
-| Extraction success | "Another day survived."        |
+| Extraction Success | "Another day survived."        |
 | Squad Wipe         | "That was almost challenging." |
 
 ---
 
-## Cosmetics
+## Cosmetic
 
-### Default Appearance
+### Ngoại Hình Mặc Định
 
 - **Outfit:** Dark gray tactical sweater, black vest
 - **Headgear:** Black balaclava
 - **Gloves:** Worn leather combat gloves
 - **Face:** Heavy scarring, cold blue eyes
 
-### Unlockable Skins
+### Skin Có Thể Mở Khóa
 
-| Skin            | Rarity    | Unlock               |
+| Skin            | Rarity    | Mở Khóa               |
 | :-------------- | :-------- | :------------------- |
 | **Winter Wolf** | Common    | Level 10             |
 | **Blood Red**   | Uncommon  | 1,000 Credits        |
@@ -369,9 +369,9 @@ Kill 4+: Capped at 20 seconds
 | **Executioner** | Epic      | Battle Pass S2       |
 | **Reaper**      | Legendary | Ranked Season Reward |
 
-### Signature Items
+### Vật Phẩm Signature
 
-| Item                | Description                           |
+| Item                | Mô Tả                           |
 | :------------------ | :------------------------------------ |
 | **Dog Tags**        | Collection from fallen squad (hidden) |
 | **Scar Pattern**    | Distinctive slash marks on face       |
@@ -379,18 +379,18 @@ Kill 4+: Capped at 20 seconds
 
 ---
 
-## Lore Connections
+## Liên Kết Lore
 
-### Relationships
+### Mối Quan Hệ
 
-| nhân vật    | Relationship                         |
+| Character    | Relationship                         |
 | :----------- | :----------------------------------- |
 | **MAMBA**    | Mutual respect between soldiers      |
 | **GOLIATH** | Former comrade from Russian military |
 | **BASTION**  | Considers him a worthy opponent      |
 | **IGNITION**    | Kindred spirit in chaos              |
 
-### Story Hooks
+### Hook Câu Chuyện
 
 - Seeking the general who ordered his squad's sacrifice
 - Has bounty on his head from Russian intelligence
@@ -398,35 +398,35 @@ Kill 4+: Capped at 20 seconds
 
 ---
 
-## Design ghi chú (For Developers)
+## Ghi Chú Thiết Kế (Cho Developer)
 
-### Balance Considerations
+### Cân Nhắc Balance
 
 - Extremely high risk, high reward
 - Damage taken penalty balances damage output
-- Kill chain cơ chế rewards skill
+- Kill chain mechanic rewards skill
 - CQB focus limits map versatility
 
-### Animation yêu cầu
+### Yêu Cầu Animation
 
 - Rage activation: Shoulder roll + crack neck
-- Movement trong khi rage: More aggressive posture
+- Movement during rage: More aggressive posture
 - Melee attacks: Heavy, brutal swings
 - Death: Falls to knees first, then forward
 
 ### Ghi Chú Kỹ Thuật
 
-| hệ thống          | ghi chú                                  |
+| System          | Ghi Chú                                  |
 | :-------------- | :------------------------------------- |
 | Kill Extension  | Server calculates, syncs to client     |
-| Duration Timer  | hiển thị rõ to người chơi, hidden from địch |
-| Damage Modifier | Applies trước giáp calculation       |
-| Sounds          | Rage growl synced to all người chơi       |
+| Duration Timer  | Visible to player, hidden from enemies |
+| Damage Bộ Điều Chỉnh | Applies before armor calculation       |
+| Sounds          | Rage growl synced to all players       |
 
-### Top-Down cụ thể ghi chú
+### Ghi Chú Riêng Cho Top-Down
 
-- Rage red glow phải được hiển thị rõ at minimum zoom — brightest self-buff VFX in the game
-- Melee lunge animation from top-down should show rõ forward movement (3.5m)
-- Melee arc VFX on ground plane giúp teammates và địch judge range
-- Kill chain timer is intentionally hidden from địch to prevent them timing disengagements
-- +10% incoming damage trong khi Rage means TARTARUS drops faster — encourage burst hoặc kiting counterplay
+- Rage red glow must be visible at minimum zoom — brightest self-buff VFX in the game
+- Melee lunge animation from top-down should show clear forward movement (3.5m)
+- Melee arc VFX on ground plane helps teammates and enemies judge range
+- Kill chain timer is intentionally hidden from enemies to prevent them timing disengagements
+- +10% incoming damage during Rage means TARTARUS drops faster — encourage burst or kiting counterplay

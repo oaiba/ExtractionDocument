@@ -3,246 +3,246 @@ title: "IGNITION - Ji-yoon Kwon"
 type: docs
 ---
 
-## Operator Profile
+## Hồ Sơ Operator
 
-> *"They can run, nhưng they can't hide from the flames."*
+> *"Họ có thể chạy, nhưng không thể trốn khỏi ngọn lửa."*
 
-### Basic Information
+### Thông Tin Cơ Bản
 
-| Attribute       | giá trị             |
+| Thuộc Tính       | Giá Trị             |
 | :-------------- | :---------------- |
-| **Real Name**   | Ji-yoon Kwon      |
+| **Tên Thật**   | Ji-yoon Kwon      |
 | **Codename**    | IGNITION          |
 | **Class**       | Assault           |
-| **Nationality** | South Korean      |
-| **Age**         | 28                |
-| **Height**      | 170 cm (5'7")     |
-| **Weight**      | 62 kg (137 lbs)   |
+| **Quốc Tịch** | South Korean      |
+| **Tuổi**         | 28                |
+| **Chiều Cao**      | 170 cm (5'7")     |
+| **Cân Nặng**      | 62 kg (137 lbs)   |
 
-<!-- REF_IMAGE: IGNITION operator portrait — firefighter gear modified for combat, red bandana, intense eyes, holding Molotov hoặc flamethrower nozzle -->
+<!-- REF_IMAGE: IGNITION operator portrait — firefighter gear modified for combat, red bandana, intense eyes, holding Molotov or flamethrower nozzle -->
 
-### Background
+### Lý Lịch
 
-Ji-yoon Kwon grew up in Seoul, where she developed a reputation as a volatile pyrotechnics engineer of exceptional skill. Her ability to mold fire và work under extreme conditions caught the attention of military recruiters.
+Ji-yoon Kwon lớn lên ở Seoul, nơi cô gây dựng danh tiếng là một kỹ sư hỏa thuật thất thường nhưng cực kỳ tài năng. Khả năng điều khiển lửa và làm việc trong điều kiện khắc nghiệt của cô nhanh chóng thu hút sự chú ý của các nhà tuyển mộ quân sự.
 
-sau serving as a combat engineer specializing in incendiary vũ khí, Ji-yoon became disillusioned với the chain of command. She went AWOL và now operates in the Exclusion Zone, using her pyrotechnic expertise to rõ rooms và deny địch positions với chaotic glee.
+Sau thời gian phục vụ như một combat engineer chuyên về vũ khí gây cháy, Ji-yoon mất niềm tin vào hệ thống chỉ huy. Cô đào ngũ và hiện hoạt động trong Exclusion Zone, dùng chuyên môn hỏa thuật để dọn phòng, khóa vị trí địch và tạo hỗn loạn có chủ đích.
 
-### Personality Traits
+### Tính Cách
 
-- **Intense** - Everything she does, she does với passion
-- **Reckless** - Sometimes crosses lines others won't
-- **Fiercely Independent** - Never follows orders blindly again
-- **Protective** - Burns anyone who threatens her team
+- **Intense** - Làm gì cũng đầy lửa và tận lực
+- **Reckless** - Đôi khi vượt qua ranh giới mà người khác không dám vượt
+- **Fiercely Independent** - Không bao giờ mù quáng tuân lệnh nữa
+- **Protective** - Thiêu cháy bất kỳ ai đe dọa team của mình
 
 ---
 
-## Combat Statistics
+## Thông Số Combat
 
-### Base Stats
+### Chỉ Số Cơ Bản
 
-| Stat             | giá trị   | Class Modifier | Final    |
+| Stat             | Giá Trị   | Bộ Điều Chỉnh Class | Cuối Cùng    |
 | :--------------- | :------ | :------------- | :------- |
-| **máu**       | 100 HP  | -              | 100 HP   |
-| **giáp**        | 50      | -10%           | 45       |
-| **Sprint Speed** | 5.5 m/s | +10%           | 6.05 m/s |
-| **Walk Speed**   | 3.5 m/s | -              | 3.5 m/s  |
-| **Crouch Speed** | 2.0 m/s | -              | 2.0 m/s  |
+| **Máu**       | 100 HP  | -              | 100 HP   |
+| **Giáp**        | 50      | -10%           | 45       |
+| **Tốc Độ Sprint** | 5.5 m/s | +10%           | 6.05 m/s |
+| **Tốc Độ Đi Bộ**   | 3.5 m/s | -              | 3.5 m/s  |
+| **Tốc Độ Crouch** | 2.0 m/s | -              | 2.0 m/s  |
 
-### Damage Modifiers
+### Bộ Điều Chỉnh Damage
 
-| Condition              | Modifier                       |
+| Điều Kiện              | Bộ Điều Chỉnh                       |
 | :--------------------- | :----------------------------- |
-| Base vũ khí Damage     | +5% (Class)                    |
-| Fire Damage (Ability)  | 15 DPS for 5 seconds           |
-| Fire + Direct Hit      | 75 total (nếu standing in fire) |
-| Fire Resistance (Self) | Immune to own fire             |
+| Damage Vũ Khí Cơ Bản     | +5% (Class)                    |
+| Damage Lửa (Ability)  | 15 DPS for 5 seconds           |
+| Lửa + Trúng Trực Tiếp      | 75 total (nếu đứng trong lửa) |
+| Kháng Lửa (Bản thân) | Miễn nhiễm với lửa của chính mình             |
 
-### Expanded Combat Statistics
+### Thông Số Combat Mở Rộng
 
-| Parameter | giá trị | ghi chú |
+| Tham Số | Giá Trị | Ghi Chú |
 | :-------- | :---- | :---- |
-| **Stamina Pool** | 120 | +20% (Assault class) |
-| **Sprint Drain** | 10/second | Standard |
-| **Recovery Rate** | 8.8/second | +10% (Assault class) |
-| **Net Sprint Duration** | 12.0 seconds | Longest sprint tier |
-| **Footstep Volume** | 100% | Standard |
-| **Ability Audio Radius** | 40 meters | Fire crackle is loud và directional |
+| **Quỹ Stamina** | 120 | +20% (Assault class) |
+| **Hao Stamina Khi Sprint** | 10/second | Standard |
+| **Tốc Độ Hồi** | 8.8/second | +10% (Assault class) |
+| **Thời Lượng Sprint Thực** | 12.0 seconds | Longest sprint tier |
+| **Âm Lượng Bước Chân** | 100% | Standard |
+| **Bán Kính Audio Ability** | 40 meters | Lửa crackle lớn và có hướng |
 
-### Status Effect Resistances
+### Kháng Hiệu Ứng Trạng Thái
 
-| Effect | Resistance | ghi chú |
+| Hiệu Ứng | Kháng | Ghi Chú |
 | :----- | :--------- | :---- |
-| Stun | 0% | Full duration |
-| Slow | 0% | Full duration |
-| Burn | 100% (self only) | Immune to own fire, full damage from địch fire |
-| EMP | 0% | Incendiary Rush cancelled immediately by EMP |
+| Stun | 0% | Đủ thời lượng |
+| Slow | 0% | Đủ thời lượng |
+| Burn | 100% (self only) | Miễn nhiễm với lửa của chính mình, nhận đủ damage từ lửa của địch |
+| EMP | 0% | Incendiary Rush bị hủy ngay lập tức bởi EMP |
 
-### Top-Down Visual Spec
+### Spec Hình Ảnh Top-Down
 
-| Property | giá trị |
+| Thuộc Tính | Giá Trị |
 | :------- | :---- |
 | **Hitbox Capsule** | 36 cm radius, 168 cm height |
-| **Head Sphere** | 13 cm radius |
+| **Vùng Đầu** | 13 cm radius |
 | **Collision Profile** | Standard |
-| **Silhouette From Above** | Compact athletic build, lighter gear, hiển thị rõ grenade belt |
-| **Class Accent Zones** | Orange (#F97316) on shoulder patches, flame decals on giáp |
-| **Fire Trail VFX (Top-Down)** | Bright orange line on ground, 2m wide, flickering flame particles |
-| **Fire Audio Radius** | 40m — crackling fire audible from distance |
+| **Silhouette Nhìn Từ Trên Xuống** | Compact athletic build, lighter gear, dây grenade nhìn rõ |
+| **Vùng Accent Theo Class** | Orange (#F97316) trên patch vai, flame decals trên giáp |
+| **Lửa Trail VFX (Top-Down)** | Bright orange line on ground, 2m wide, flickering flame particles |
+| **Lửa Audio Radius** | 40m — crackling fire nghe được từ xa |
 
-<!-- REF_IMAGE: IGNITION top-down view — showing fire trail behind operator as seen from above trong khi Incendiary Rush, 2m trail width hiển thị rõ -->
+<!-- REF_IMAGE: IGNITION top-down view — showing fire trail behind operator as seen from above during Incendiary Rush, 2m trail width visible -->
 
-### Difficulty Rating
+### Độ Khó
 
-**Difficulty: 3/5** — Requires spatial awareness for fire placement. Trail creation trong khi sprint demands good map knowledge to tạo effective area denial.
+**Độ Khó: 3/5** — Requires spatial awareness for fire placement. Trail creation during sprint demands good map knowledge to create effective area denial.
 
 
-## Abilities
+## Ability
 
 ### Active Ability: Incendiary Rush
 
-> *"Deploy a trail of fire behind you while sprinting, tạo area denial."*
+> *"Deploy a trail of fire behind you while sprinting, creating area denial."*
 
-| Property          | giá trị                      |
+| Thuộc Tính          | Giá Trị                      |
 | :---------------- | :------------------------- |
 | **Cooldown**      | 75 seconds                 |
 | **Duration**      | 6 seconds (trail creation) |
-| **Fire Duration** | 8 seconds (fire persists)  |
+| **Lửa Duration** | 8 seconds (fire persists)  |
 | **Charges**       | 1                          |
 
-#### Effects
+#### Hiệu Ứng
 
-| Effect           | giá trị           | ghi chú                      |
+| Hiệu Ứng           | Giá Trị           | Ghi Chú                      |
 | :--------------- | :-------------- | :------------------------- |
-| Fire Trail Width | 2 meters        | tạo wall behind you    |
-| Fire Damage      | 15 HP/second    | Standing in fire           |
+| Lửa Trail Width | 2 meters        | Creates wall behind you    |
+| Damage Lửa      | 15 HP/second    | Standing in fire           |
 | Sprint Bonus     | +20%            | While ability active       |
 | Trail Length     | Up to 30 meters | Depends on sprint distance |
 
-#### Fire Interaction Rules
+#### Rule Tương Tác Lửa
 
-| Interaction | kết quả |
+| Interaction | Result |
 | :---------- | :----- |
-| **Fire + MIRAGE Sensors** | Sensors destroyed by fire contact |
-| **Fire + PULSE Nano Swarm** | Both damage effects stack on địch caught in overlap zone |
-| **Fire + AEGIS Shield** | Fire does NOT pass thông qua Guardian Shield |
-| **Fire + BASTION Shield** | Fire does NOT pass thông qua Riot Shield |
-| **Fire + Smoke (OBSIDIAN)** | Fire burns thông qua smoke — smoke does not extinguish |
-| **Fire + EMP (GLITCH)** | EMP cancels Incendiary Rush immediately, existing fire persists |
+| **Lửa + MIRAGE Sensors** | Sensors destroyed by fire contact |
+| **Lửa + PULSE Nano Swarm** | Both damage effects stack on enemies caught in overlap zone |
+| **Lửa + AEGIS Khiên** | Lửa does NOT pass through Guardian Khiên |
+| **Lửa + BASTION Khiên** | Lửa does NOT pass through Riot Khiên |
+| **Lửa + Smoke (OBSIDIAN)** | Lửa burns through smoke — smoke does not extinguish |
+| **Lửa + EMP (GLITCH)** | EMP cancels Incendiary Rush immediately, existing fire persists |
 
-#### Top-Down Fire Trail VFX
+#### VFX Vệt Lửa Top-Down
 
-| trạng thái | VFX From Above |
+| State | VFX From Above |
 | :---- | :------------- |
 | Trail creation | Bright orange line on ground behind sprinting operator |
-| Fire active | Flickering flame particles, 2m wide, orange-yellow glow on ground |
-| Fire fading (last 2s) | Flames shrink, glow dims, smoke wisps rise |
-| Fire expired | Dark scorch mark on ground (fades sau 5s) |
+| Lửa active | Flickering flame particles, 2m wide, orange-yellow glow on ground |
+| Lửa fading (last 2s) | Flames shrink, glow dims, smoke wisps rise |
+| Lửa expired | Dark scorch mark on ground (fades after 5s) |
 
-#### Visual & Audio Cues
+#### Tín Hiệu Hình Ảnh & Audio
 
-**Self:**
+**Bản thân:**
 - Feet leave fire footprints
-- màn hình edges glow orange
-- Fire crackling audio
+- Screen edges glow orange
+- Lửa crackling audio
 
-**địch Perspective:**
-- hiển thị rõ fire trail
+**Địch Perspective:**
+- Visible fire trail
 - Smoke particles rising
 - Distinct ignition sound
 
-#### Tactical Uses
+#### Cách Dùng Tactical
 
-| cách dùng Case             | Strategy                                 |
+| Use Case             | Strategy                                 |
 | :------------------- | :--------------------------------------- |
 | **Entry Denial**     | Run across doorway to block entrance     |
-| **Escape Route**     | tạo fire between you và pursuers     |
+| **Escape Route**     | Create fire between you and pursuers     |
 | **Flank Prevention** | Seal off one angle while pushing another |
 | **Zone Control**     | Cut off extraction point access          |
-| **Chase Prevention** | Injured? Run và leave fire              |
+| **Chase Prevention** | Injured? Run and leave fire              |
 
-#### upgrade Slots
+#### Slot Upgrade
 
 **Slot 1 (Level 5):**
-| Option             | Effect                               |
+| Option             | Hiệu Ứng                               |
 | :----------------- | :----------------------------------- |
-| **Scorched Earth** | Fire duration +4 seconds (12s total) |
+| **Scorched Earth** | Lửa duration +4 seconds (12s total) |
 | **Rapid Ignition** | Cooldown -15 seconds (60s total)     |
-| **Thermal Surge**  | Fire damage +5 DPS (20 total)        |
+| **Thermal Surge**  | Lửa damage +5 DPS (20 total)        |
 
 **Slot 2 (Level 20):**
-| Option            | Effect                                     |
+| Option            | Hiệu Ứng                                     |
 | :---------------- | :----------------------------------------- |
-| **Inferno Width** | Fire trail width +1 meter (3m total)       |
-| **Smoke màn hình**  | Fire tạo vision-blocking smoke         |
-| **Napalm Stick**  | Fire applies slow effect (-30% move speed) |
+| **Inferno Width** | Lửa trail width +1 meter (3m total)       |
+| **Smoke Screen**  | Lửa creates vision-blocking smoke         |
+| **Napalm Stick**  | Lửa applies slow effect (-30% move speed) |
 
 **Slot 3 (Level 35):**
-| Option               | Effect                                   |
+| Option               | Hiệu Ứng                                   |
 | :------------------- | :--------------------------------------- |
-| **Phoenix Protocol** | Walking thông qua own fire heals 5 HP/sec  |
-| **Wildfire**         | Fire spreads 1m outward over duration    |
-| **Flashpoint**       | địch exiting fire are briefly blinded |
+| **Phoenix Protocol** | Walking through own fire heals 5 HP/sec  |
+| **Wildfire**         | Lửa spreads 1m outward over duration    |
+| **Flashpoint**       | Địch exiting fire are briefly blinded |
 
 ---
 
 ### Passive Ability: Pyromaniac
 
-> *"Fire damage dealt to địch restores máu."*
+> *"Lửa damage dealt to enemies restores health."*
 
-| Condition                        | Effect                         |
+| Điều Kiện                        | Hiệu Ứng                         |
 | :------------------------------- | :----------------------------- |
-| địch takes fire damage from you | Heal 2 HP per second they burn |
-| Multiple địch burning         | Heal for each địch            |
+| Địch takes fire damage from you | Heal 2 HP per second they burn |
+| Multiple enemies burning         | Heal for each enemy            |
 | Maximum heal per ability         | 30 HP                          |
 
-**Design Intent:** Rewards aggressive area denial và tạo chaos.
+**Design Intent:** Rewards aggressive area denial and creating chaos.
 
 ---
 
 ## Loadout
 
-### Default Loadout
+### Loadout Mặc Định
 
-| Slot          | Item            | ghi chú                   |
+| Slot          | Item            | Ghi Chú                   |
 | :------------ | :-------------- | :---------------------- |
-| **primary**   | PP-19 Bizon SMG | High mag, medium damage |
-| **secondary** | G17 Pistol      | Standard sidearm        |
+| **Primary**   | PP-19 Bizon SMG | Cao mag, medium damage |
+| **Secondary** | G17 Pistol      | Standard sidearm        |
 | **Tactical**  | Molotov ×2      | Extra fire damage       |
-| **giáp**     | Medium Vest     | 50 giáp points         |
+| **Giáp**     | Trung bình Vest     | 50 armor points         |
 
-### Recommended Loadouts
+### Loadout Khuyến Nghị
 
 **Full Pyro:**
 | Slot      | Item       | Why                          |
 | :-------- | :--------- | :--------------------------- |
-| primary   | MP5K       | Fast fire rate for finishing |
-| secondary | Flare Gun  | Extra fire (meme nhưng fun)    |
+| Primary   | MP5K       | Fast fire rate for finishing |
+| Secondary | Flare Gun  | Extra fire (meme but fun)    |
 | Tactical  | Molotov ×2 | Maximum fire coverage        |
 
 **Balanced Ignition:**
 | Slot      | Item                 | Why                  |
 | :-------- | :------------------- | :------------------- |
-| primary   | AK-74u               | Good damage at range |
-| secondary | G17                  | Reliable backup      |
-| Tactical  | Molotov ×1, Smoke ×1 | Fire + escape        |
+| Primary   | AK-74u               | Good damage at range |
+| Secondary | G17                  | Reliable backup      |
+| Tactical  | Molotov ×1, Smoke ×1 | Lửa + escape        |
 
 ---
 
-## Playstyle Guide
+## Hướng Dẫn Playstyle
 
-### Role in Team
+### Vai Trò Trong Team
 
-**primary Role:** Area Denial
-- Block chokepoints với fire
-- Control địch movement
-- tạo chaos in fights
+**Primary Role:** Area Denial
+- Block chokepoints with fire
+- Control enemy movement
+- Create chaos in fights
 
-**secondary Role:** Entry Fragger
-- Push thông qua your own fire (immune)
-- Surprise địch expecting you to avoid fire
+**Secondary Role:** Entry Fragger
+- Push through your own fire (immune)
+- Surprise enemies expecting you to avoid fire
 - Flank while fire distracts
 
-### Combat Loop
+### Vòng Lặp Combat
 
 ```
 1. Identify key chokepoint
@@ -254,50 +254,50 @@ sau serving as a combat engineer specializing in incendiary vũ khí, Ji-yoon be
 7. Reposition for cooldown, repeat
 ```
 
-### Fire Placement Tips
+### Mẹo Đặt Lửa
 
-**Good Fire Placement:**
-- Doorways và windows
+**Good Lửa Placement:**
+- Doorways and windows
 - Extraction point approaches
 - Behind you while retreating
-- Between địch và teammate
+- Between enemy and teammate
 
-**Bad Fire Placement:**
+**Bad Lửa Placement:**
 - Your team's planned route
 - Near friendly healing zones
 - In open areas (easy to avoid)
 
 ---
 
-## Matchups
+## Kèo Đấu
 
-### Favorable Matchups
+### Kèo Có Lợi
 
 | Opponent     | Why Favorable                 | Tactic                     |
 | :----------- | :---------------------------- | :------------------------- |
 | **GOLIATH** | Slow, can't escape fire       | Trap in fire zones         |
-| **BASTION**  | Shield doesn't stop fire      | Circle around, tạo fire |
-| **AEGIS**    | Shield can't heal fire damage | Burn thông qua shield giá trị  |
+| **BASTION**  | Khiên doesn't stop fire      | Circle around, create fire |
+| **AEGIS**    | Khiên can't heal fire damage | Burn through shield value  |
 
-### Even Matchups
+### Kèo Cân Bằng
 
-| Opponent    | ghi chú                             | chính to Winning            |
+| Opponent    | Ghi Chú                             | Key to Winning            |
 | :---------- | :-------------------------------- | :------------------------ |
-| **MAMBA**   | Stim vs Fire, different strengths | Avoid direct gunfight     |
-| **SUTURE**     | Can heal thông qua fire             | Kill drone first          |
-| **SONAR** | Intel vs area denial              | Fire blocks common routes |
+| **MAMBA**   | Stim vs Lửa, different strengths | Avoid direct gunfight     |
+| **SUTURE**     | Can heal through fire             | Kill drone first          |
+| **SONAR** | Intel vs area denial              | Lửa blocks common routes |
 
-### Unfavorable Matchups
+### Kèo Bất Lợi
 
 | Opponent    | Why Difficult                 | Counter Strategy                     |
 | :---------- | :---------------------------- | :----------------------------------- |
-| **MIRAGE** | Traps counter your aggression | rõ traps carefully                |
+| **MIRAGE** | Traps counter your aggression | Clear traps carefully                |
 | **PULSE**    | Nano swarm can zone you back  | Trade zones, don't engage in swarm   |
-| **OBSIDIAN**  | Smoke negates fire visibility | cách dùng fire for area denial, not vision |
+| **OBSIDIAN**  | Smoke negates fire visibility | Use fire for area denial, not vision |
 
 ---
 
-## Voice Lines
+## Câu Thoại
 
 ### Combat
 
@@ -306,44 +306,44 @@ sau serving as a combat engineer specializing in incendiary vũ khí, Ji-yoon be
 | Ability Activation       | "Light 'em up!"                        |
 | Ability Activation (Alt) | "Burn, baby, burn!"                    |
 | Kill                     | "Toasted."                             |
-| Kill (Fire)              | "How's the heat?"                      |
-| Kill (Fire, Alt)         | "Should've stayed out of the kitchen." |
-| Low máu               | "Running hot over here!"               |
+| Kill (Lửa)              | "How's the heat?"                      |
+| Kill (Lửa, Alt)         | "Should've stayed out of the kitchen." |
+| Thấp Máu               | "Running hot over here!"               |
 | Reviving                 | "Don't fade on me!"                    |
 
-### Callouts
+### Callout
 
 | Trigger          | Line                                    |
 | :--------------- | :-------------------------------------- |
-| địch Spotted    | "Got eyes on a target!"                 |
-| Fire Placed      | "Area's hot!"                           |
-| Multiple địch | "Got a crowd - perfect for a barbecue!" |
+| Địch Spotted    | "Got eyes on a target!"                 |
+| Lửa Placed      | "Area's hot!"                           |
+| Multiple Địch | "Got a crowd - perfect for a barbecue!" |
 | Reloading        | "Swapping!"                             |
-| Molotov Throw    | "Fire in the hole!"                     |
+| Molotov Throw    | "Lửa in the hole!"                     |
 
-### Personality
+### Tính Cách
 
 | Trigger            | Line                                       |
 | :----------------- | :----------------------------------------- |
-| Match Start        | "thời gian to turn up the heat."                |
+| Match Start        | "Time to turn up the heat."                |
 | Extraction Called  | "Almost done. Let's not get burned now."   |
-| Extraction success | "Another successful job. thời gian for drinks." |
+| Extraction Success | "Another successful job. Time for drinks." |
 | Squad Wipe         | "Nobody escapes the flames."               |
 
 ---
 
-## Cosmetics
+## Cosmetic
 
-### Default Appearance
+### Ngoại Hình Mặc Định
 
 - **Outfit:** Dark red tactical jacket, black cargo pants
 - **Headgear:** Red bandana covering lower face
 - **Gloves:** Heat-resistant black gloves
 - **Face:** Light scarring from old burns, intense eyes
 
-### Unlockable Skins
+### Skin Có Thể Mở Khóa
 
-| Skin            | Rarity    | Unlock         |
+| Skin            | Rarity    | Mở Khóa         |
 | :-------------- | :-------- | :------------- |
 | **Wildfire**    | Common    | Level 10       |
 | **Ash Gray**    | Uncommon  | 1,000 Credits  |
@@ -351,64 +351,64 @@ sau serving as a combat engineer specializing in incendiary vũ khí, Ji-yoon be
 | **Firefighter** | Epic      | Battle Pass S1 |
 | **Hellfire**    | Legendary | Season 2 Event |
 
-### Signature Items
+### Vật Phẩm Signature
 
-| Item            | Description                             |
+| Item            | Mô Tả                             |
 | :-------------- | :-------------------------------------- |
-| **Lighter**     | Zippo always in hand trong khi idle        |
+| **Lighter**     | Zippo always in hand during idle        |
 | **Burn Scars**  | Arms have healed burn marks             |
-| **Fire Tattoo** | Phoenix on back (hiển thị rõ on some skins) |
+| **Lửa Tattoo** | Phoenix on back (visible on some skins) |
 
 ---
 
-## Lore Connections
+## Liên Kết Lore
 
-### Relationships
+### Mối Quan Hệ
 
-| nhân vật  | Relationship                              |
+| Character  | Relationship                              |
 | :--------- | :---------------------------------------- |
 | **MAMBA**  | Friendly rivalry, respects his directness |
 | **SUTURE**    | Treated her burns, she owes him           |
-| **OBSIDIAN** | Dislikes smoke interfering với fire      |
+| **OBSIDIAN** | Dislikes smoke interfering with fire      |
 | **TARTARUS**  | Kindred spirits, both reckless            |
 
-### Story Hooks
+### Hook Câu Chuyện
 
 - Looking for the officer who ordered the village burning
 - Has contacts in the cartel underworld
-- Hides guilt behind bravado và flames
+- Hides guilt behind bravado and flames
 
 ---
 
-## Design ghi chú (For Developers)
+## Ghi Chú Thiết Kế (Cho Developer)
 
-### Balance Considerations
+### Cân Nhắc Balance
 
-- Fire is powerful nhưng telegraphed
-- Immune to own fire = unique gameplay
+- Lửa is powerful but telegraphed
+- Miễn nhiễm với lửa của chính mình = unique gameplay
 - Cooldown prevents constant fire spam
-- Fire damage over thời gian allows counterplay
+- Lửa damage over time allows counterplay
 
-### Animation yêu cầu
+### Yêu Cầu Animation
 
-- Fire trail VFX (procedural along sprint path)
+- Lửa trail VFX (procedural along sprint path)
 - Foot ignition particles while sprinting
 - Molotov throw animation
 - Death animation: Covers face (protecting from flames)
 
 ### Ghi Chú Kỹ Thuật
 
-| hệ thống      | ghi chú                                                |
+| System      | Ghi Chú                                                |
 | :---------- | :--------------------------------------------------- |
-| Fire Trail  | Spawns every 0.5m along sprint path                  |
+| Lửa Trail  | Spawns every 0.5m along sprint path                  |
 | Performance | Max 3 active fire zones at once                      |
-| Collision   | Fire is non-physical, just damage zone               |
-| Networking  | Fire positions synced, damage calculated server-side |
+| Collision   | Lửa is non-physical, just damage zone               |
+| Networking  | Lửa positions synced, damage calculated server-side |
 
-### Top-Down cụ thể ghi chú
+### Ghi Chú Riêng Cho Top-Down
 
-- Fire trail phải được clearly hiển thị rõ at minimum zoom — bright orange on ground plane
-- Fire trail width (2m) should read as a meaningful barrier from above, not a thin line
-- Scorch marks sau fire expires provide temporary intel on where IGNITION has been
-- Fire particle effects không được obscure loot items on ground within fire zone
+- Lửa trail must be clearly visible at minimum zoom — bright orange on ground plane
+- Lửa trail width (2m) should read as a meaningful barrier from above, not a thin line
+- Scorch marks after fire expires provide temporary intel on where IGNITION has been
+- Lửa particle effects must not obscure loot items on ground within fire zone
 - Sprint path prediction: server calculates fire spawn points every 0.5m along the actual path taken

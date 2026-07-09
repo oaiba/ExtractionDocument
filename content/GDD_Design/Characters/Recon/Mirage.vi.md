@@ -3,165 +3,165 @@ title: "MIRAGE - Ananya Patel"
 type: docs
 ---
 
-## Operator Profile
+## Hồ Sơ Operator
 
-> *"You think you're the hunter? You're already in my trap."*
+> *"Anh nghĩ mình là thợ săn? Anh đã ở trong bẫy của tôi rồi."*
 
-### Basic Information
+### Thông Tin Cơ Bản
 
-| Attribute | giá trị |
+| Thuộc Tính | Giá Trị |
 | :-------- | :---- |
-| **Real Name** | Ananya Patel |
+| **Tên Thật** | Ananya Patel |
 | **Codename** | MIRAGE |
 | **Class** | Recon |
-| **Nationality** | Indian |
-| **Age** | 44 |
-| **Height** | 175 cm (5'9") |
-| **Weight** | 72 kg (159 lbs) |
+| **Quốc Tịch** | Indian |
+| **Tuổi** | 44 |
+| **Chiều Cao** | 175 cm (5'9") |
+| **Cân Nặng** | 72 kg (159 lbs) |
 
-<!-- REF_IMAGE: MIRAGE operator portrait — stocky build, tactical vest với sensor nodes, cold expression, cyberpunk utility belt với motion sensors -->
+<!-- REF_IMAGE: MIRAGE operator portrait — stocky build, tactical vest with sensor nodes, cold expression, cyberpunk utility belt with motion sensors -->
 
-### Background
+### Lý Lịch
 
-Viktor Volkov spent 20 years in FSB counter-intelligence, specializing in catching foreign spies on Russian soil. His elaborate trap networks và patient hunting style earned him the nickname "The Spider" among those who feared him.
+Viktor Volkov có 20 năm trong phản gián FSB, chuyên săn gián điệp nước ngoài trên đất Nga. Mạng lưới bẫy tinh vi và phong cách săn mồi kiên nhẫn khiến những kẻ sợ hắn gọi hắn là "The Spider".
 
-sau growing disillusioned với the corruption eating Russia from within, Viktor disappeared — along với several classified files. Now he uses his expertise in the Exclusion Zone, setting traps for those foolish enough to wander into his web.
+Sau khi mất niềm tin vào sự mục ruỗng đang ăn mòn nước Nga từ bên trong, Viktor biến mất cùng một số hồ sơ mật. Giờ hắn dùng chuyên môn của mình trong Exclusion Zone, đặt bẫy những kẻ đủ dại để bước vào mạng nhện của hắn.
 
-### Personality Traits
+### Tính Cách
 
-- **Patient** — Can wait hours for the perfect moment
-- **Methodical** — Everything follows a plan
-- **Cynical** — Believes everyone is corrupt
-- **Protective** — Treats teammates like assets to preserve
+- **Patient** — Có thể chờ hàng giờ cho khoảnh khắc hoàn hảo
+- **Methodical** — Mọi thứ đều theo kế hoạch
+- **Cynical** — Tin rằng ai cũng có thể bị tha hóa
+- **Protective** — Xem đồng đội như asset cần được bảo toàn
 
 ---
 
-## Combat Statistics
+## Thông Số Combat
 
-### Base Stats
+### Chỉ Số Cơ Bản
 
-| Stat | giá trị | Class Modifier | Final |
+| Stat | Giá Trị | Bộ Điều Chỉnh Class | Cuối Cùng |
 | :--- | :---- | :------------- | :---- |
-| **máu** | 100 HP | -5% | 95 HP |
-| **giáp** | 30 | - | 30 |
-| **Sprint Speed** | 5.5 m/s | - | 5.5 m/s |
-| **Crouch Speed** | 2.0 m/s | +15% | 2.3 m/s |
-| **Footstep Volume** | 100% | -30% | 70% |
+| **Máu** | 100 HP | -5% | 95 HP |
+| **Giáp** | 30 | - | 30 |
+| **Tốc Độ Sprint** | 5.5 m/s | - | 5.5 m/s |
+| **Tốc Độ Crouch** | 2.0 m/s | +15% | 2.3 m/s |
+| **Âm Lượng Bước Chân** | 100% | -30% | 70% |
 
-### Damage Modifiers
+### Bộ Điều Chỉnh Damage
 
-| Condition | Modifier |
+| Điều Kiện | Bộ Điều Chỉnh |
 | :-------- | :------- |
-| Base vũ khí Damage | +0% (no class bonus) |
+| Damage Vũ Khí Cơ Bản | +0% (no class bonus) |
 | Trap-assisted kill | +15 bonus damage from Shock Trap (upgrade) |
 | Headshot Multiplier | 2.0x |
 
-### Expanded Combat Statistics
+### Thông Số Combat Mở Rộng
 
-| Parameter | giá trị | ghi chú |
+| Tham Số | Giá Trị | Ghi Chú |
 | :-------- | :---- | :---- |
-| **Stamina Pool** | 110 | +10% (Recon class) |
-| **Sprint Drain** | 9/second | -10% (Recon class) |
-| **Recovery Rate** | 9.6/second | +20% (Recon class) |
-| **Net Sprint Duration** | 12.2 seconds | Best efficiency |
-| **Footstep Volume** | 70% | -30% (Recon class trait) |
-| **Ability Audio Radius** | 5 meters | Sensors are nearly silent khi deployed |
+| **Quỹ Stamina** | 110 | +10% (Recon class) |
+| **Hao Stamina Khi Sprint** | 9/second | -10% (Recon class) |
+| **Tốc Độ Hồi** | 9.6/second | +20% (Recon class) |
+| **Thời Lượng Sprint Thực** | 12.2 seconds | Best efficiency |
+| **Âm Lượng Bước Chân** | 70% | -30% (Recon class trait) |
+| **Bán Kính Audio Ability** | 5 meters | Sensors are nearly silent when deployed |
 
-### Status Effect Resistances
+### Kháng Hiệu Ứng Trạng Thái
 
-| Effect | Resistance | ghi chú |
+| Hiệu Ứng | Kháng | Ghi Chú |
 | :----- | :--------- | :---- |
 | Stun | 15% | Partial resist (Recon class) |
-| Slow | 0% | Full duration |
+| Slow | 0% | Đủ thời lượng |
 | Burn | 0% | Full DoT — sensors destroyed by fire |
-| EMP | 0% | All sensors destroyed instantly by EMP |
+| EMP | 0% | All sensors bị phá hủy ngay lập tức bởi EMP |
 
-### Top-Down Visual Spec
+### Spec Hình Ảnh Top-Down
 
-| Property | giá trị |
+| Thuộc Tính | Giá Trị |
 | :------- | :---- |
 | **Hitbox Capsule** | 40 cm radius, 182 cm height |
-| **Head Sphere** | 14 cm radius |
+| **Vùng Đầu** | 14 cm radius |
 | **Collision Profile** | Slim (-10% from mesh) |
-| **Silhouette From Above** | Medium-slim build, tech harness hiển thị rõ, sensor pouches on belt |
-| **Class Accent Zones** | Cyan (#06B6D4) on goggle glow và harness strips |
-| **Sensor VFX (Top-Down)** | Small blinking devices on ground, 8m detection radius shown as faint circle khi ally walks near |
-| **Sensor Audio** | Nearly silent — <5m detection range for địch |
+| **Silhouette Nhìn Từ Trên Xuống** | Trung bình-slim build, tech harness visible, sensor pouches on belt |
+| **Vùng Accent Theo Class** | Cyan (#06B6D4) on goggle glow and harness strips |
+| **Sensor VFX (Top-Down)** | Small blinking devices on ground, 8m detection radius shown as faint circle when ally walks near |
+| **Sensor Audio** | Nearly silent — <5m detection range for enemies |
 
-<!-- REF_IMAGE: MIRAGE top-down view — showing operator với 3 motion sensors deployed, detection radius circles hiển thị rõ from above -->
+<!-- REF_IMAGE: MIRAGE top-down view — showing operator with 3 motion sensors deployed, detection radius circles visible from above -->
 
 ### Motion Sensor Stat Block
 
-| Property | giá trị | ghi chú |
+| Thuộc Tính | Giá Trị | Ghi Chú |
 | :------- | :---- | :---- |
 | **Sensors Per Activation** | 3 | Deploy individually |
 | **Detection Range** | 8 meters each | Overlapping for full coverage |
 | **Sensor HP** | 20 | One-shot destroyable |
-| **Duration** | Permanent | Until destroyed hoặc match end |
-| **Mark Duration** | 4 seconds | sau detection |
-| **EMP Vulnerability** | Destroyed instantly | primary counter |
-| **Fire Vulnerability** | Destroyed on contact | secondary counter |
+| **Duration** | Permanent | Until destroyed or match end |
+| **Mark Duration** | 4 seconds | After detection |
+| **EMP Vulnerability** | Destroyed instantly | Primary counter |
+| **Lửa Vulnerability** | Destroyed on contact | Secondary counter |
 | **Visibility** | Subtle blinking light | Camo Sensors upgrade removes this |
 
-### Difficulty Rating
+### Độ Khó
 
-**Difficulty: 4/5** — Sensor placement và coverage optimization require deep map knowledge. Trap Sense passive demands awareness of địch Recon setups.
+**Độ Khó: 4/5** — Sensor placement and coverage optimization require deep map knowledge. Trap Sense passive demands awareness of enemy Recon setups.
 
 
-## Abilities
+## Ability
 
 ### Active Ability: Motion Sensor Network
 
-> *"Deploy interconnected sensors that detect và mark địch."*
+> *"Deploy interconnected sensors that detect and mark enemies."*
 
-| Property | giá trị |
+| Thuộc Tính | Giá Trị |
 | :------- | :---- |
 | **Cooldown** | 60 seconds |
-| **Duration** | Until destroyed hoặc match end |
+| **Duration** | Until destroyed or match end |
 | **Charges** | 3 sensors per activation |
 
-#### Effects
+#### Hiệu Ứng
 
-| Effect | giá trị | ghi chú |
+| Hiệu Ứng | Giá Trị | Ghi Chú |
 | :----- | :---- | :---- |
 | Detection Range | 8 meters per sensor | Overlapping coverage best |
-| Sensor HP | 20 | Destroyable by gunfire hoặc EMP |
+| Sensor HP | 20 | Destroyable by gunfire or EMP |
 | Alert Type | Audio + Visual ping | Directional indicator on HUD |
-| Mark Duration | 4 seconds sau detection | địch hiển thị rõ thông qua walls |
+| Mark Duration | 4 seconds after detection | Địch visible through walls |
 
 #### Sensor Interaction Rules
 
-| Interaction | kết quả |
+| Interaction | Result |
 | :---------- | :----- |
-| **Sensor + EMP (GLITCH)** | All sensors in EMP radius destroyed instantly |
-| **Sensor + Fire (IGNITION)** | Sensors destroyed by fire contact |
+| **Sensor + EMP (GLITCH)** | All sensors in EMP radius bị phá hủy ngay lập tức |
+| **Sensor + Lửa (IGNITION)** | Sensors destroyed by fire contact |
 | **Sensor + Nano Swarm (PULSE)** | Sensors not affected by swarm |
 | **Sensor + UAV Scan (SONAR)** | N/A — both are intel abilities |
-| **Sensor + Smoke (OBSIDIAN)** | Sensors still detect thông qua smoke |
+| **Sensor + Smoke (OBSIDIAN)** | Sensors still detect through smoke |
 | **Sensor + TARTARUS Rage** | Sensors detect raging TARTARUS (louder footsteps trigger faster) |
 
 #### Top-Down Sensor VFX
 
-| trạng thái | VFX From Above |
+| State | VFX From Above |
 | :---- | :------------- |
 | Sensor deploy | Brief cyan flash on landing point |
-| Sensor active | Small blinking device on ground (friendly: green glow, địch: not hiển thị rõ unless detected) |
+| Sensor active | Small blinking device on ground (friendly: green glow, enemy: not visible unless detected) |
 | Sensor triggered | Red pulse expanding from sensor (8m radius flash), alarm chime |
 | Sensor destroyed | Brief electrical spark + pop |
 
 
 | Location | Effectiveness |
 | :------- | :------------ |
-| Doorways | High — Catches entries |
-| Corners | High — Catches flanks |
-| Behind cover | Medium — Late cảnh báo |
-| Open areas | Low — Easy to spot/avoid |
+| Doorways | Cao — Catches entries |
+| Corners | Cao — Catches flanks |
+| Behind cover | Trung bình — Late warning |
+| Open areas | Thấp — Easy to spot/avoid |
 
-#### upgrade Slots
+#### Slot Upgrade
 
 **Slot 1 (Level 5):**
 
-| Option | Effect |
+| Option | Hiệu Ứng |
 | :----- | :----- |
 | **Extra Sensors** | 5 sensors per activation |
 | **Hardened** | Sensor HP +15 (35 total) |
@@ -169,17 +169,17 @@ sau growing disillusioned với the corruption eating Russia from within, Viktor
 
 **Slot 2 (Level 20):**
 
-| Option | Effect |
+| Option | Hiệu Ứng |
 | :----- | :----- |
-| **Slow Field** | Detected địch slowed 15% for 2 seconds |
-| **Silent Alarm** | địch do not know they triggered sensor |
-| **Networked** | nếu one sees địch, all mark them |
+| **Slow Field** | Detected enemies slowed 15% for 2 seconds |
+| **Silent Alarm** | Địch do not know they triggered sensor |
+| **Networked** | If one sees enemy, all mark them |
 
 **Slot 3 (Level 35):**
 
-| Option | Effect |
+| Option | Hiệu Ứng |
 | :----- | :----- |
-| **Shock Trap** | Detected địch take 15 damage |
+| **Shock Trap** | Detected enemies take 15 damage |
 | **Camo Sensors** | Sensors are nearly invisible |
 | **Recall** | Can pick up sensors to redeploy |
 
@@ -187,64 +187,64 @@ sau growing disillusioned với the corruption eating Russia from within, Viktor
 
 ### Passive Ability: Trap Sense
 
-> *"trải nghiệm makes you recognize danger."*
+> *"Experience makes you recognize danger."*
 
-| Condition | Effect |
+| Điều Kiện | Hiệu Ứng |
 | :-------- | :----- |
-| Near địch trap/sensor | HUD cảnh báo (10m range) |
-| Crouch detecting | Can see trap outline thông qua walls |
-| Destroy địch trap | Gain 5-second địch position reveal |
+| Near enemy trap/sensor | HUD warning (10m range) |
+| Crouch detecting | Can see trap outline through walls |
+| Destroy enemy trap | Gain 5-second enemy position reveal |
 
-**Design Intent:** MIRAGE is the anti-trap specialist. While SONAR provides active intel thông qua scanning, MIRAGE provides persistent, passive territorial control. He is the defensive Recon.
+**Design Intent:** MIRAGE is the anti-trap specialist. While SONAR provides active intel through scanning, MIRAGE provides persistent, passive territorial control. He is the defensive Recon.
 
 ---
 
 ## Loadout
 
-### Default Loadout
+### Loadout Mặc Định
 
-| Slot | Item | ghi chú |
+| Slot | Item | Ghi Chú |
 | :--- | :--- | :---- |
-| **primary** | AK-74u (Suppressed) | Russian reliability |
-| **secondary** | Makarov Pistol | Soviet classic |
+| **Primary** | AK-74u (Suppressed) | Russian reliability |
+| **Secondary** | Makarov Pistol | Soviet classic |
 | **Tactical** | Motion Sensors x3, Claymore x1 | Layered traps |
-| **giáp** | Light Vest | 30 giáp points |
+| **Giáp** | Light Vest | 30 armor points |
 
-### Recommended Loadouts
+### Loadout Khuyến Nghị
 
 **The Spider's Web (Defensive):**
 
 | Slot | Item | Why |
 | :--- | :--- | :-- |
-| primary | Saiga-12 Shotgun | Close range punishment for trapped địch |
-| secondary | Makarov Pistol | Backup |
+| Primary | Saiga-12 Shotgun | Close range punishment for trapped enemies |
+| Secondary | Makarov Pistol | Backup |
 | Tactical | Motion Sensors x3, Trip Mine x1 | Maximum area denial |
 
 **Active Hunter (Aggressive):**
 
 | Slot | Item | Why |
 | :--- | :--- | :-- |
-| primary | AS Val (Suppressed) | Accurate, suppressed, mid-range |
-| secondary | Stun Grenades x2 | Disable sau sensor trigger |
-| Tactical | Motion Sensors x3 | Early cảnh báo while pushing |
+| Primary | AS Val (Suppressed) | Accurate, suppressed, mid-range |
+| Secondary | Stun Grenades x2 | Disable after sensor trigger |
+| Tactical | Motion Sensors x3 | Early warning while pushing |
 
 ---
 
-## Playstyle Guide
+## Hướng Dẫn Playstyle
 
-### Role in Team
+### Vai Trò Trong Team
 
-**primary Role:** Area Denial / Early cảnh báo
+**Primary Role:** Area Denial / Early Warning
 - Set sensor perimeters around objectives
 - Alert team to incoming flanks
-- Control chokepoints với trap + vũ khí combos
+- Control chokepoints with trap + weapon combos
 
-**secondary Role:** Counter-Intel
-- Detect và destroy địch traps
+**Secondary Role:** Counter-Intel
+- Detect and destroy enemy traps
 - Deny SONAR scans by detecting sensors
-- rõ buildings ahead of team push
+- Clear buildings ahead of team push
 
-### Combat Loop
+### Vòng Lặp Combat
 
 ```
 1. Arrive at objective / extraction zone
@@ -256,49 +256,49 @@ sau growing disillusioned với the corruption eating Russia from within, Viktor
 7. Repeat trap cycle
 ```
 
-### Positioning
+### Vị Trí
 
 **Good Positions:**
 - Behind his own sensor network
-- In rooms với single entry points
+- In rooms with single entry points
 - Near extraction zones (sensor perimeter)
 
 **Bad Positions:**
-- On the move mà không deployed sensors
+- On the move without deployed sensors
 - Open ground (sensors become useless)
 - Same building as another Recon (redundant)
 
 ---
 
-## Matchups
+## Kèo Đấu
 
-### Favorable Matchups
+### Kèo Có Lợi
 
 | Opponent | Why Favorable | Tactic |
 | :------- | :------------ | :----- |
-| **IGNITION** | Incendiary Rush is loud và predictable — sensors detect approach easily | Trap doorways, pre-aim fire paths |
-| **TARTARUS** | Berserker Rush is linear — sensors give cảnh báo for easy kiting | Place sensors at CQB approach, backpedal và shoot |
-| **GOLIATH** | Slow rotations, easy to track với sensor network | Surround với sensors, never let him close |
+| **IGNITION** | Incendiary Rush is loud and predictable — sensors detect approach easily | Trap doorways, pre-aim fire paths |
+| **TARTARUS** | Berserker Rush is linear — sensors give warning for easy kiting | Place sensors at CQB approach, backpedal and shoot |
+| **GOLIATH** | Slow rotations, easy to track with sensor network | Surround with sensors, never let him close |
 
-### Even Matchups
+### Kèo Cân Bằng
 
-| Opponent | ghi chú | chính to Winning |
+| Opponent | Ghi Chú | Key to Winning |
 | :------- | :---- | :------------- |
-| **SONAR** | Both intel operators — scan vs. traps | Pre-place sensors trước scan, maintain awareness |
-| **AEGIS** | Guardian Shield protects pushes thông qua traps | Stack sensors to overwhelm shield timing |
+| **SONAR** | Both intel operators — scan vs. traps | Pre-place sensors before scan, maintain awareness |
+| **AEGIS** | Guardian Khiên protects pushes through traps | Stack sensors to overwhelm shield timing |
 | **MAMBA** | Combat Stim rushes can outrun sensor alerts | Layer sensors deeper, not just at entry |
 
-### Unfavorable Matchups
+### Kèo Bất Lợi
 
 | Opponent | Why Difficult | Counter Strategy |
 | :------- | :------------ | :--------------- |
 | **GLITCH** | EMP destroys all deployed sensors instantly | Space sensors apart, keep reserves |
-| **OBSIDIAN** | Smoke blocks sensor engagement giá trị | Push thông qua smoke to trigger sensors manually |
-| **SUTURE** | Healing drone sustains thông qua trap damage | Focus fire SUTURE directly, ignore drone |
+| **OBSIDIAN** | Smoke blocks sensor engagement value | Push through smoke to trigger sensors manually |
+| **SUTURE** | Hồi máu drone sustains through trap damage | Focus fire SUTURE directly, ignore drone |
 
 ---
 
-## Voice Lines
+## Câu Thoại
 
 ### Combat
 
@@ -309,42 +309,42 @@ sau growing disillusioned với the corruption eating Russia from within, Viktor
 | Multiple Triggers | "Multiple contacts on sensors." |
 | Kill | "Predictable." |
 | Kill (Trap Assisted) | "Caught in my web." |
-| Low máu | "Falling back. Sensors still active." |
+| Thấp Máu | "Falling back. Sensors still active." |
 | Reviving | "On your feet, comrade." |
 
-### Callouts
+### Callout
 
 | Trigger | Line |
 | :------ | :--- |
-| địch Trap Detected | "địch trap. [Direction]." |
+| Địch Trap Detected | "Địch trap. [Direction]." |
 | Sensor Destroyed | "Sensor down. Blind spot at [Direction]." |
 | Reloading | "Reloading. Watch the sensors." |
 
-### Personality
+### Tính Cách
 
 | Trigger | Line |
 | :------ | :--- |
 | Match Start | "Patience. The prey will come to us." |
 | Extraction Called | "Pull the web tight. They will try to stop us." |
-| Extraction success | "Another successful hunt." |
+| Extraction Success | "Another successful hunt." |
 | Squad Wipe | "The spider always wins." |
 
 ---
 
-## Cosmetics
+## Cosmetic
 
-### Default Appearance
+### Ngoại Hình Mặc Định
 
-- **Outfit:** Olive drab tactical vest over black base layer, utility harness với sensor modules
+- **Outfit:** Olive drab tactical vest over black base layer, utility harness with sensor modules
 - **Headgear:** Black beret (Russian military style), tactical earpiece
 - **Gloves:** Dark leather field gloves
 - **Face:** Short graying beard, scar across bridge of nose, calculating eyes
 
-<!-- REF_IMAGE: MIRAGE default skin — top-down view showing stocky silhouette với sensor equipment hiển thị rõ on belt, muted military color sơ đồ -->
+<!-- REF_IMAGE: MIRAGE default skin — top-down view showing stocky silhouette with sensor equipment visible on belt, muted military color scheme -->
 
-### Unlockable Skins
+### Skin Có Thể Mở Khóa
 
-| Skin | Rarity | Unlock |
+| Skin | Rarity | Mở Khóa |
 | :--- | :----- | :----- |
 | **Snow Web** | Common | Level 10 |
 | **Night Watch** | Uncommon | 1,000 Credits |
@@ -352,28 +352,28 @@ sau growing disillusioned với the corruption eating Russia from within, Viktor
 | **FSB Classified** | Epic | Battle Pass S1 |
 | **The Weaver** | Legendary | Season 1 Event |
 
-### Signature Items
+### Vật Phẩm Signature
 
-| Item | Description |
+| Item | Mô Tả |
 | :--- | :---------- |
 | **Spider Brooch** | Small metal spider pin on collar |
 | **Sensor Bandolier** | Belt of sensor modules across chest |
-| **Old Dog Tags** | FSB unit tags, scratched và worn |
+| **Old Dog Tags** | FSB unit tags, scratched and worn |
 
 ---
 
-## Lore Connections
+## Liên Kết Lore
 
-### Relationships
+### Mối Quan Hệ
 
-| nhân vật | Relationship |
+| Character | Relationship |
 | :-------- | :----------- |
-| **SONAR** | Former adversaries trong khi Cold War-era proxy ops — uneasy respect born from mutual competence |
-| **TARTARUS** | Both Russian, nhưng different ideology — MIRAGE despises TARTARUS's recklessness |
+| **SONAR** | Former adversaries during Cold War-era proxy ops — uneasy respect born from mutual competence |
+| **TARTARUS** | Both Russian, but different ideology — MIRAGE despises TARTARUS's recklessness |
 | **GOLIATH** | Old military connection — served in same regional command, share tactical language |
-| **OBSIDIAN** | Hunted her once trong khi a covert operation in Japan — failed, respects her evasion |
+| **OBSIDIAN** | Hunted her once during a covert operation in Japan — failed, respects her evasion |
 
-### Story Hooks
+### Hook Câu Chuyện
 
 - Stole classified FSB files detailing Corporation connections to Russian government
 - Maintains a network of informants across the Exclusion Zone (quest givers)
@@ -382,39 +382,39 @@ sau growing disillusioned với the corruption eating Russia from within, Viktor
 
 ---
 
-## Design ghi chú (For Developers)
+## Ghi Chú Thiết Kế (Cho Developer)
 
-### Balance Considerations
+### Cân Nhắc Balance
 
-- Sensors are persistent nhưng fragile (20 HP) — a single shot destroys them
-- 3 sensors per activation với 60s cooldown gives steady nhưng not overwhelming coverage
+- Sensors are persistent but fragile (20 HP) — a single shot destroys them
+- 3 sensors per activation with 60s cooldown gives steady but not overwhelming coverage
 - Trap Sense passive is strong against mirror matchups — monitor Recon vs Recon win rates
-- Shock Trap upgrade (15 damage) is the highest-impact Slot 3 option — consider 12 damage nếu overperforming
+- Shock Trap upgrade (15 damage) is the highest-impact Slot 3 option — consider 12 damage if overperforming
 - Camo Sensors upgrade should still show a faint shimmer — truly invisible sensors are not fun to play against
 
-### Animation yêu cầu
+### Yêu Cầu Animation
 
 - Sensor throw animation (0.5 seconds — quick underhand toss)
 - Sensor deployment VFX (small pulse on landing, then ambient glow)
 - Sensor trigger VFX (red pulse expanding from triggered sensor)
-- Trap detection HUD (pulsing orange marker for địch traps)
+- Trap detection HUD (pulsing orange marker for enemy traps)
 - Death animation: collapses methodically (controlled, not dramatic)
 
-### Audio yêu cầu
+### Yêu Cầu Audio
 
-| Sound | ghi chú |
+| Sound | Ghi Chú |
 | :---- | :---- |
 | Sensor deploy | Soft thud on surface + electronic chirp |
 | Sensor active | Minimal ambient hum (nearly silent) |
 | Sensor triggered | Sharp alarm chime (team-wide) |
 | Sensor destroyed | Electric crackle + pop |
 | Footsteps | Standard Recon — quiet tactical boots |
-| Trap Sense alert | Low cảnh báo buzz khi near địch trap |
+| Trap Sense alert | Thấp warning buzz when near enemy trap |
 
-### Top-Down cụ thể ghi chú
+### Ghi Chú Riêng Cho Top-Down
 
-- Sensors on the ground nên được hiển thị rõ to the owning team as small green dots from minimum zoom
-- địch sensors should only appear nếu within detection range of friendly teams hoặc revealed by Trap Sense
-- Sensor trigger red pulse phải được hiển thị rõ at minimum zoom — critical audio/visual alert
-- Sensor placement animation nên được quick (0.5s) và not interrupt movement flow
-- Camo Sensors upgrade visual shimmer nên được subtle nhưng discoverable by attentive người chơi at max zoom
+- Sensors on the ground should be visible to the owning team as small green dots from minimum zoom
+- Địch sensors should only appear if within detection range of friendly teams or revealed by Trap Sense
+- Sensor trigger red pulse must be visible at minimum zoom — critical audio/visual alert
+- Sensor placement animation should be quick (0.5s) and not interrupt movement flow
+- Camo Sensors upgrade visual shimmer should be subtle but discoverable by attentive players at max zoom

@@ -1,6 +1,6 @@
 ---
-title: "Nhân Vật"
+title: "Characters"
 type: docs
 ---
 
-# Nhân Vật
+# Characters

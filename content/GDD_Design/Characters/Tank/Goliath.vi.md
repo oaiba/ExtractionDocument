@@ -3,144 +3,144 @@ title: "GOLIATH - Wei Chen"
 type: docs
 ---
 
-## Operator Profile
+## Hồ Sơ Operator
 
-> *"Together we are unbreakable. Divided, we are nothing."*
+> *"Ở cạnh nhau, chúng ta không thể bị bẻ gãy. Chia rẽ ra, chúng ta chẳng là gì."*
 
-### Basic Information
+### Thông Tin Cơ Bản
 
-| Attribute | giá trị |
+| Thuộc Tính | Giá Trị |
 | :-------- | :---- |
-| **Real Name** | Wei Chen |
+| **Tên Thật** | Wei Chen |
 | **Codename** | GOLIATH |
 | **Class** | Tank |
-| **Nationality** | Chinese |
-| **Age** | 48 |
-| **Height** | 188 cm (6'2") |
-| **Weight** | 105 kg (231 lbs) |
+| **Quốc Tịch** | Chinese |
+| **Tuổi** | 48 |
+| **Chiều Cao** | 188 cm (6'2") |
+| **Cân Nặng** | 105 kg (231 lbs) |
 
-<!-- REF_IMAGE: GOLIATH operator portrait — broad-shouldered, heavy LMG, worn body giáp với team insignia patches, cyberpunk power cells on belt -->
+<!-- REF_IMAGE: GOLIATH operator portrait — broad-shouldered, heavy LMG, worn body armor with team insignia patches, cyberpunk power cells on belt -->
 
-### Background
+### Lý Lịch
 
-Wei Chen commanded Russia's elite VDV (Airborne Troops) for 15 years, known for his unbreakable defensive tactics và unwavering loyalty to his men. His philosophy: a unit that protects each other can survive anything.
+Wei Chen chỉ huy lực lượng VDV tinh nhuệ của Nga trong 15 năm, nổi tiếng với chiến thuật phòng thủ không thể bẻ gãy và lòng trung thành tuyệt đối với binh sĩ. Triết lý của ông: một đơn vị biết bảo vệ lẫn nhau có thể sống sót trước mọi thứ.
 
-sau refusing orders that would have sacrificed his men for political optics, Dmitri was quietly discharged. Now he brings his protective leadership to the Exclusion Zone, where his team-focused abilities keep squads alive against impossible odds.
+Sau khi từ chối mệnh lệnh có thể hy sinh binh sĩ của mình vì hình ảnh chính trị, Dmitri bị cho giải ngũ trong im lặng. Giờ ông mang phong cách lãnh đạo bảo hộ vào Exclusion Zone, nơi ability xoay quanh team của ông giữ squad sống sót trước những tình huống tưởng như không thể.
 
-### Personality Traits
+### Tính Cách
 
-- **Paternal** — Treats team like family
-- **Tactical** — Always thinking of the unit
-- **Orthodox** — Deep religious faith
-- **Unbreakable** — Will never abandon comrades
+- **Paternal** — Xem team như gia đình
+- **Tactical** — Luôn nghĩ cho đơn vị
+- **Orthodox** — Đức tin tôn giáo sâu sắc
+- **Unbreakable** — Không bao giờ bỏ rơi đồng đội
 
 ---
 
-## Combat Statistics
+## Thông Số Combat
 
-### Base Stats
+### Chỉ Số Cơ Bản
 
-| Stat | giá trị | Class Modifier | Final |
+| Stat | Giá Trị | Bộ Điều Chỉnh Class | Cuối Cùng |
 | :--- | :---- | :------------- | :---- |
-| **máu** | 100 HP | - | 100 HP |
-| **giáp** | 75 | +25% cap | 75 (max 125) |
-| **Sprint Speed** | 5.5 m/s | -15% | 4.675 m/s |
-| **Walk Speed** | 3.5 m/s | - | 3.5 m/s |
-| **Crouch Speed** | 2.0 m/s | - | 2.0 m/s |
+| **Máu** | 100 HP | - | 100 HP |
+| **Giáp** | 75 | +25% cap | 75 (max 125) |
+| **Tốc Độ Sprint** | 5.5 m/s | -15% | 4.675 m/s |
+| **Tốc Độ Đi Bộ** | 3.5 m/s | - | 3.5 m/s |
+| **Tốc Độ Crouch** | 2.0 m/s | - | 2.0 m/s |
 
-### Damage Modifiers
+### Bộ Điều Chỉnh Damage
 
-| Condition | Modifier |
+| Điều Kiện | Bộ Điều Chỉnh |
 | :-------- | :------- |
-| Base vũ khí Damage | +0% (no class bonus) |
-| Ally within 5m (Brotherhood) | +5% damage resistance (both) |
-| giáp Overcharge active (self) | +15% damage resistance |
+| Damage Vũ Khí Cơ Bản | +0% (no class bonus) |
+| Đồng minh within 5m (Brotherhood) | +5% damage resistance (both) |
+| Giáp Overcharge active (self) | +15% damage resistance |
 | Headshot Multiplier | 2.0x |
 
-### Expanded Combat Statistics
+### Thông Số Combat Mở Rộng
 
-| Parameter | giá trị | ghi chú |
+| Tham Số | Giá Trị | Ghi Chú |
 | :-------- | :---- | :---- |
-| **Stamina Pool** | 80 | -20% (Tank class) |
-| **Sprint Drain** | 12/second | +20% (Tank class) |
-| **Recovery Rate** | 7.2/second | -10% (Tank class) |
-| **Net Sprint Duration** | 6.7 seconds | Shortest in roster |
-| **Footstep Volume** | 115% | Very loud — armored boots |
-| **Ability Audio Radius** | 30 meters | Overcharge power-up hum is distinctive |
+| **Quỹ Stamina** | 80 | -20% (Tank class) |
+| **Hao Stamina Khi Sprint** | 12/second | +20% (Tank class) |
+| **Tốc Độ Hồi** | 7.2/second | -10% (Tank class) |
+| **Thời Lượng Sprint Thực** | 6.7 seconds | Shortest in roster |
+| **Âm Lượng Bước Chân** | 115% | Very loud — armored boots |
+| **Bán Kính Audio Ability** | 30 meters | Overcharge power-up hum rất dễ nhận biết |
 
-### Status Effect Resistances
+### Kháng Hiệu Ứng Trạng Thái
 
-| Effect | Resistance | ghi chú |
+| Hiệu Ứng | Kháng | Ghi Chú |
 | :----- | :--------- | :---- |
 | Stun | 25% | Tank class resist |
-| Slow | 25% + immunity trong khi Overcharge | Tank resist + ability grants full immunity |
-| Burn | 10% | Minor fire resist from giáp |
-| EMP | 0% | Overcharge bonus giáp stripped instantly |
+| Slow | 25% + immunity during Overcharge | Tank resist + ability grants full immunity |
+| Burn | 10% | Minor fire resist from armor |
+| EMP | 0% | Overcharge bonus armor stripped instantly |
 
-### Top-Down Visual Spec
+### Spec Hình Ảnh Top-Down
 
-| Property | giá trị |
+| Thuộc Tính | Giá Trị |
 | :------- | :---- |
 | **Hitbox Capsule** | 46 cm radius, 186 cm height |
-| **Head Sphere** | 15 cm radius |
+| **Vùng Đầu** | 15 cm radius |
 | **Collision Profile** | Heavy (+5% from mesh) |
-| **Silhouette From Above** | Wide build, heavy giáp pack hiển thị rõ, LMG barrel extends forward |
-| **Class Accent Zones** | Steel Blue (#3B82F6) on shoulder plates và giáp pack |
-| **Overcharge VFX (Top-Down)** | Blue energy glow on giáp plates, 8m radius pulse circle on ground for ally buff range |
+| **Silhouette Nhìn Từ Trên Xuống** | Wide build, heavy armor pack visible, LMG barrel extends forward |
+| **Vùng Accent Theo Class** | Steel Blue (#3B82F6) on shoulder plates and armor pack |
+| **Overcharge VFX (Top-Down)** | Blue energy glow trên giáp plates, 8m radius pulse vòng tròn trên mặt đất for ally buff range |
 | **Overcharge Audio** | 30m — deep power-up hum |
 
-<!-- REF_IMAGE: GOLIATH top-down view — showing operator với giáp Overcharge active, blue glow on giáp plates, 8m buff radius circle hiển thị rõ from above -->
+<!-- REF_IMAGE: GOLIATH top-down view — showing operator with Armor Overcharge active, blue glow on armor plates, 8m buff radius circle visible from above -->
 
-### Difficulty Rating
+### Độ Khó
 
-**Difficulty: 3/5** — Must manage Brotherhood positioning (5m ally proximity) và Overcharge timing. Simple cơ chế nhưng requires team coordination.
+**Độ Khó: 3/5** — Must manage Brotherhood positioning (5m ally proximity) and Overcharge timing. Simple mechanics but requires team coordination.
 
 
-## Abilities
+## Ability
 
-### Active Ability: giáp Overcharge
+### Active Ability: Armor Overcharge
 
-> *"Overcharge your giáp hệ thống, tạo a protective field for nearby allies."*
+> *"Overcharge your armor systems, creating a protective field for nearby allies."*
 
-| Property | giá trị |
+| Thuộc Tính | Giá Trị |
 | :------- | :---- |
 | **Cooldown** | 100 seconds |
 | **Duration** | 12 seconds |
 | **Range** | 8 meters |
 
-#### Effects
+#### Hiệu Ứng
 
-| Effect | giá trị | ghi chú |
+| Hiệu Ứng | Giá Trị | Ghi Chú |
 | :----- | :---- | :---- |
-| Self giáp Boost | +50 temporary giáp | On top of hiện tại giáp |
-| Ally giáp Boost | +25 temporary giáp | All allies within range |
-| Damage Resistance | +15% (self only) | trong khi ability |
-| Slow Immunity | Yes | Cannot be slowed trong khi overcharge |
+| Bản thân Giáp Boost | +50 temporary armor | On top of current armor |
+| Đồng minh Giáp Boost | +25 temporary armor | All allies within range |
+| Damage Kháng | +15% (self only) | During ability |
+| Slow Immunity | Yes | Cannot be slowed during overcharge |
 
-#### Overcharge Interaction Rules
+#### Rule Tương Tác Overcharge
 
-| Interaction | kết quả |
+| Interaction | Result |
 | :---------- | :----- |
-| **Overcharge + EMP (GLITCH)** | Bonus giáp stripped instantly, ability cancelled |
-| **Overcharge + Fire (IGNITION)** | Overcharge does not protect against fire DoT — extra giáp absorbs it |
+| **Overcharge + EMP (GLITCH)** | Bonus armor stripped instantly, ability cancelled |
+| **Overcharge + Lửa (IGNITION)** | Overcharge does not protect against fire DoT — extra armor absorbs it |
 | **Overcharge + TARTARUS Rage** | Both buffs active simultaneously — neither cancels the other |
-| **Overcharge + AEGIS Shield** | Stack — overcharge giáp + shield HP for maximum defense |
-| **Overcharge + UAV Scan (SONAR)** | Overcharge does not interact với scans |
+| **Overcharge + AEGIS Khiên** | Stack — overcharge armor + shield HP for maximum defense |
+| **Overcharge + UAV Scan (SONAR)** | Overcharge does not interact with scans |
 
-#### Top-Down Overcharge VFX
+#### VFX Overcharge Top-Down
 
-| trạng thái | VFX From Above |
+| State | VFX From Above |
 | :---- | :------------- |
 | Overcharge activation | Blue energy burst from GOLIATH, pulse wave expands to 8m |
-| Overcharge active | Blue glow on giáp plates, faint 8m radius circle on ground |
-| Ally receiving buff | Blue giáp particle stream from GOLIATH to ally |
+| Overcharge active | Blue glow trên giáp plates, faint 8m radius vòng tròn trên mặt đất |
+| Đồng minh receiving buff | Blue armor particle stream from GOLIATH to ally |
 | Overcharge ending | Glow dims, energy dissipates |
-| Overcharge EMP'd | Blue static burst, giáp plates go dark |
+| Overcharge EMP'd | Blue static burst, armor plates go dark |
 
 
 **Slot 1 (Level 5):**
 
-| Option | Effect |
+| Option | Hiệu Ứng |
 | :----- | :----- |
 | **Extended Field** | Duration +4 seconds (16s total) |
 | **Rapid Response** | Cooldown -25 seconds (75s total) |
@@ -148,19 +148,19 @@ sau refusing orders that would have sacrificed his men for political optics, Dmi
 
 **Slot 2 (Level 20):**
 
-| Option | Effect |
+| Option | Hiệu Ứng |
 | :----- | :----- |
-| **shared Resistance** | Allies also get +10% damage resistance |
-| **giáp Regen** | Allies regenerate 5 giáp/sec in range |
+| **Shared Kháng** | Đồng minh also get +10% damage resistance |
+| **Giáp Regen** | Đồng minh regenerate 5 armor/sec in range |
 | **Fortified** | Duration extends 2 seconds per kill |
 
 **Slot 3 (Level 35):**
 
-| Option | Effect |
+| Option | Hiệu Ứng |
 | :----- | :----- |
-| **Last Stand** | nếu downed trong khi ability, allies keep buff for remaining duration |
-| **Iron Curtain** | Allies within range take 30% less headshot damage |
-| **Reactive giáp** | 20% chance to completely negate a hit |
+| **Last Stand** | If downed during ability, allies keep buff for remaining duration |
+| **Iron Curtain** | Đồng minh within range take 30% less headshot damage |
+| **Reactive Giáp** | 20% chance to completely negate a hit |
 
 ---
 
@@ -168,62 +168,62 @@ sau refusing orders that would have sacrificed his men for political optics, Dmi
 
 > *"No man left behind."*
 
-| Condition | Effect |
+| Điều Kiện | Hiệu Ứng |
 | :-------- | :----- |
-| Ally within 5 meters | Both gain +5% damage resistance |
-| Ally downed within 10 meters | +20% movement speed toward them |
-| Reviving | Take 25% less damage trong khi revive |
+| Đồng minh within 5 meters | Both gain +5% damage resistance |
+| Đồng minh downed within 10 meters | +20% movement speed toward them |
+| Reviving | Take 25% less damage during revive |
 
-**Design Intent:** GOLIATH is the team Tank. While BASTION blocks damage for one direction, GOLIATH buffs the entire team. His power scales với team proximity — solo GOLIATH is weak, nhưng a GOLIATH team is nearly unkillable.
+**Design Intent:** GOLIATH is the team Tank. While BASTION blocks damage for one direction, GOLIATH buffs the entire team. His power scales with team proximity — solo GOLIATH is weak, but a GOLIATH team is nearly unkillable.
 
 ---
 
 ## Loadout
 
-### Default Loadout
+### Loadout Mặc Định
 
-| Slot | Item | ghi chú |
+| Slot | Item | Ghi Chú |
 | :--- | :--- | :---- |
-| **primary** | PKM LMG | Suppressive fire, large magazine |
-| **secondary** | Makarov Pistol | Russian standard sidearm |
-| **Tactical** | giáp Plates x2 | Team durability |
-| **giáp** | Heavy Vest | 75 giáp points |
+| **Primary** | PKM LMG | Suppressive fire, large magazine |
+| **Secondary** | Makarov Pistol | Russian standard sidearm |
+| **Tactical** | Giáp Plates x2 | Team durability |
+| **Giáp** | Heavy Vest | 75 armor points |
 
-### Recommended Loadouts
+### Loadout Khuyến Nghị
 
 **Suppressive Wall (Defensive):**
 
 | Slot | Item | Why |
 | :--- | :--- | :-- |
-| primary | M249 SAW | Maximum suppression, 150-round belt |
-| secondary | Makarov Pistol | Backup |
-| Tactical | giáp Plates x3 | Maximum team giáp distribution |
+| Primary | M249 SAW | Maximum suppression, 150-round belt |
+| Secondary | Makarov Pistol | Backup |
+| Tactical | Giáp Plates x3 | Maximum team armor distribution |
 
 **Mobile Goliath (Aggressive):**
 
 | Slot | Item | Why |
 | :--- | :--- | :-- |
-| primary | AK-47 | Reliable damage, controllable |
-| secondary | Stun Grenades x2 | Entry support |
-| Tactical | giáp Plates x1, Medkit x1 | Self-sustain + team armoring |
+| Primary | AK-47 | Reliable damage, controllable |
+| Secondary | Stun Grenades x2 | Entry support |
+| Tactical | Giáp Plates x1, Medkit x1 | Bản thân-sustain + team armoring |
 
 ---
 
-## Playstyle Guide
+## Hướng Dẫn Playstyle
 
-### Role in Team
+### Vai Trò Trong Team
 
-**primary Role:** Team Protector
+**Primary Role:** Team Protector
 - Stay near teammates to share Brotherhood passive
-- Activate giáp Overcharge trước team engagements
+- Activate Giáp Overcharge before team engagements
 - Absorb damage for fragile teammates
 
-**secondary Role:** Revive Specialist
+**Secondary Role:** Revive Specialist
 - Brotherhood gives +20% sprint speed toward downed allies
-- 25% damage resistance trong khi revive makes pickups safer
+- 25% damage resistance during revive makes pickups safer
 - GOLIATH + SUTURE revive combo is the strongest in the game
 
-### Combat Loop
+### Vòng Lặp Combat
 
 ```
 1. Position near team (within 5m for Brotherhood)
@@ -236,98 +236,98 @@ sau refusing orders that would have sacrificed his men for political optics, Dmi
 8. Redistribute armor plates to damaged teammates
 ```
 
-### Positioning
+### Vị Trí
 
 **Good Positions:**
 - Center of team formation (Brotherhood range)
-- Near chokepoints với team around
+- Near chokepoints with team around
 - Behind BASTION (stack both Tank passives)
-- At extraction zone với full team
+- At extraction zone with full team
 
 **Bad Positions:**
 - Solo (all abilities require teammates)
-- Point position (too slow to retreat, draws focus mà không shield)
+- Point position (too slow to retreat, draws focus without shield)
 - Far from teammates (Brotherhood wasted)
 - On the move between objectives (slow rotations)
 
 ---
 
-## Matchups
+## Kèo Đấu
 
-### Favorable Matchups
+### Kèo Có Lợi
 
 | Opponent | Why Favorable | Tactic |
 | :------- | :------------ | :----- |
-| **IGNITION** | Overcharge giáp absorbs incendiary damage, team stays alive | Overcharge, push thông qua fire zone as a group |
-| **MIRAGE** | Sensors reveal position nhưng overcharge negates trap damage | Accept detection, push với giáp advantage |
-| **AEGIS** | Guardian Shield is short duration — Overcharge outlasts it | Wait for shield to drop, then push với armored team |
+| **IGNITION** | Overcharge armor absorbs incendiary damage, team stays alive | Overcharge, push through fire zone as a group |
+| **MIRAGE** | Sensors reveal position but overcharge negates trap damage | Accept detection, push with armor advantage |
+| **AEGIS** | Guardian Khiên is short duration — Overcharge outlasts it | Wait for shield to drop, then push with armored team |
 
-### Even Matchups
+### Kèo Cân Bằng
 
-| Opponent | ghi chú | chính to Winning |
+| Opponent | Ghi Chú | Key to Winning |
 | :------- | :---- | :------------- |
 | **BASTION** | Fellow Tank — neither kills the other fast | Whoever has better team support wins the attrition |
-| **SUTURE** | Healing vs giáp — both extend team fights | Focus fire single targets to overwhelm healing |
-| **OBSIDIAN** | Smoke disrupts formation nhưng giáp persists | Maintain team proximity in smoke, Brotherhood still active |
+| **SUTURE** | Hồi máu vs Giáp — both extend team fights | Focus fire single targets to overwhelm healing |
+| **OBSIDIAN** | Smoke disrupts formation but armor persists | Maintain team proximity in smoke, Brotherhood still active |
 
-### Unfavorable Matchups
+### Kèo Bất Lợi
 
 | Opponent | Why Difficult | Counter Strategy |
 | :------- | :------------ | :--------------- |
-| **SONAR** | Scan reveals entire team position, enabling flanks that split formation | Push as group trước scan intel can be acted on |
-| **PULSE** | Nano Swarm damages thông qua giáp, DoT bypasses flat resistance | Move team out of swarm — do not try to tank it |
-| **GLITCH** | EMP does not destroy Overcharge nhưng strips temporary giáp from allies | Activate Overcharge sau EMP, not trước |
+| **SONAR** | Scan reveals entire team position, enabling flanks that split formation | Push as group before scan intel can be acted on |
+| **PULSE** | Nano Swarm damages through armor, DoT bypasses flat resistance | Move team out of swarm — do not try to tank it |
+| **GLITCH** | EMP does not destroy Overcharge but strips temporary armor from allies | Activate Overcharge AFTER EMP, not before |
 
 ---
 
-## Voice Lines
+## Câu Thoại
 
 ### Combat
 
 | Trigger | Line |
 | :------ | :--- |
-| Ability Activation | "giáp engaged! Stay close, brothers!" |
-| Ally Takes Damage | "They're hitting my people!" |
+| Ability Activation | "Giáp engaged! Stay close, brothers!" |
+| Đồng minh Takes Damage | "They're hitting my people!" |
 | Kill | "For the squad." |
-| Kill (While Protecting Ally) | "Nobody touches them." |
-| Ally Downed | "Man down! I'm coming!" |
+| Kill (While Protecting Đồng minh) | "Nobody touches them." |
+| Đồng minh Downed | "Man down! I'm coming!" |
 | Reviving | "I won't leave you. Get up!" |
-| Low máu | "giáp failing... hold the line..." |
+| Thấp Máu | "Giáp failing... hold the line..." |
 
-### Callouts
+### Callout
 
 | Trigger | Line |
 | :------ | :--- |
-| địch Spotted | "Contact, [Direction]. Form up." |
-| Overcharge Ready | "giáp ready. Say khi." |
+| Địch Spotted | "Contact, [Direction]. Form up." |
+| Overcharge Ready | "Giáp ready. Say when." |
 | Overcharge Expired | "Overcharge down. Stay in cover." |
 | Reloading | "Reloading. Cover each other." |
 
-### Personality
+### Tính Cách
 
 | Trigger | Line |
 | :------ | :--- |
 | Match Start | "We move as one. No one dies alone." |
 | Extraction Called | "Stay together. We leave as a unit." |
-| Extraction success | "Family survives. Always." |
+| Extraction Success | "Family survives. Always." |
 | Squad Wipe | "They chose the wrong unit to fight." |
 
 ---
 
-## Cosmetics
+## Cosmetic
 
-### Default Appearance
+### Ngoại Hình Mặc Định
 
 - **Outfit:** Worn heavy plate carrier over dark olive fatigues, VDV insignia on shoulder
 - **Headgear:** Russian military beanie (ushanka liner), tactical earpiece
 - **Gloves:** Heavy leather field gloves
-- **Face:** Thick salt-và-pepper beard, deep-set eyes với crow's feet, small orthodox cross tattoo on neck
+- **Face:** Thick salt-and-pepper beard, deep-set eyes with crow's feet, small orthodox cross tattoo on neck
 
-<!-- REF_IMAGE: GOLIATH default skin — top-down view showing broad silhouette, LMG hiển thị rõ, heavy vest với giáp plates, team-focused posture -->
+<!-- REF_IMAGE: GOLIATH default skin — top-down view showing broad silhouette, LMG visible, heavy vest with armor plates, team-focused posture -->
 
-### Unlockable Skins
+### Skin Có Thể Mở Khóa
 
-| Skin | Rarity | Unlock |
+| Skin | Rarity | Mở Khóa |
 | :--- | :----- | :----- |
 | **Steel Curtain** | Common | Level 10 |
 | **Arctic Patrol** | Uncommon | 1,000 Credits |
@@ -335,70 +335,70 @@ sau refusing orders that would have sacrificed his men for political optics, Dmi
 | **VDV Commander** | Epic | Battle Pass S1 |
 | **The Colonel** | Legendary | Season 1 Event |
 
-### Signature Items
+### Vật Phẩm Signature
 
-| Item | Description |
+| Item | Mô Tả |
 | :--- | :---------- |
-| **Orthodox Cross** | Small steel cross on chain, hiển thị rõ at collar |
+| **Orthodox Cross** | Small steel cross on chain, visible at collar |
 | **Unit Photo** | Faded photo of VDV squad tucked in vest pocket |
 | **Command Badge** | Colonel rank insignia on right breast |
 
 ---
 
-## Lore Connections
+## Liên Kết Lore
 
-### Relationships
+### Mối Quan Hệ
 
-| nhân vật | Relationship |
+| Character | Relationship |
 | :-------- | :----------- |
 | **TARTARUS** | Fellow Russian — GOLIATH worries about TARTARUS's self-destructive tendencies, tries to mentor him |
 | **MIRAGE** | Old military contacts from overlapping operations — share tactical intelligence |
 | **AEGIS** | Debates faith — both deeply religious, different traditions, mutual respect |
 | **BASTION** | Mentorship — BASTION teaches shield work, GOLIATH teaches squad leadership |
 
-### Story Hooks
+### Hook Câu Chuyện
 
-- Searching for a way to formally rõ his discharged soldiers' records
-- Maintains contact với former VDV unit members scattered as mercenaries
+- Searching for a way to formally clear his discharged soldiers' records
+- Maintains contact with former VDV unit members scattered as mercenaries
 - Receives coded messages from someone inside Russian military intelligence
 - Personal quest chain involves protecting a safehouse full of displaced civilians in the Zone
 
 ---
 
-## Design ghi chú (For Developers)
+## Ghi Chú Thiết Kế (Cho Developer)
 
-### Balance Considerations
+### Cân Nhắc Balance
 
-- giáp Overcharge is team-dependent — solo activation is wasteful
-- +25 temporary giáp for allies is strong nhưng requires 5m proximity — positioning is the skill expression
-- Brotherhood passive không được stack với multiple GOLIATH operators — cap at one instance
-- Reactive giáp upgrade (20% negate chance) không nên apply to headshots
-- Last Stand upgrade is emotionally powerful nhưng mechanically niche — buff remaining duration gives team 4-6 seconds post-down
-- GOLIATH + SUTURE combo is intentionally the strongest duo in the game — counter với GLITCH EMP
+- Giáp Overcharge is team-dependent — solo activation is wasteful
+- +25 temporary armor for allies is strong but requires 5m proximity — positioning is the skill expression
+- Brotherhood passive must NOT stack with multiple GOLIATH operators — cap at one instance
+- Reactive Giáp upgrade (20% negate chance) should not apply to headshots
+- Last Stand upgrade is emotionally powerful but mechanically niche — buff remaining duration gives team 4-6 seconds post-down
+- GOLIATH + SUTURE combo is intentionally the strongest duo in the game — counter with GLITCH EMP
 
-### Animation yêu cầu
+### Yêu Cầu Animation
 
-- Overcharge activation (0.6 seconds — fist clench, giáp plates glow orange)
-- Overcharge VFX (expanding orange pulse from GOLIATH, team giáp plates glow)
-- Brotherhood proximity indicator (subtle UI pulse khi allies are in range)
+- Overcharge activation (0.6 seconds — fist clench, armor plates glow orange)
+- Overcharge VFX (expanding orange pulse from GOLIATH, team armor plates glow)
+- Brotherhood proximity indicator (subtle UI pulse when allies are in range)
 - Revive animation (faster/more stable than standard due to damage resistance)
 - Death animation: falls slowly, reaches toward nearest ally (dramatic, team-focused)
 
-### Audio yêu cầu
+### Yêu Cầu Audio
 
-| Sound | ghi chú |
+| Sound | Ghi Chú |
 | :---- | :---- |
-| Overcharge activate | Deep power-up hum + giáp plate rattle |
-| Overcharge active | Low ambient energy pulse (team hears it as reassuring) |
+| Overcharge activate | Deep power-up hum + armor plate rattle |
+| Overcharge active | Thấp ambient energy pulse (team hears it as reassuring) |
 | Overcharge end | Power-down descending tone |
-| Brotherhood proximity | Subtle heartbeat sync (both người chơi hear it) |
-| Footsteps | Heavy, authoritative — military boots, giáp clink |
+| Brotherhood proximity | Subtle heartbeat sync (both players hear it) |
+| Footsteps | Heavy, authoritative — military boots, armor clink |
 | LMG fire | Deep, sustained — signature sound in combat |
 
-### Top-Down cụ thể ghi chú
+### Ghi Chú Riêng Cho Top-Down
 
-- Overcharge 8m radius circle phải được hiển thị rõ to teammates at minimum zoom — shows buff zone
-- Blue giáp glow nên được clearly distinct from AEGIS shield's blue-white — cách dùng deeper steel blue
-- Brotherhood passive proximity (5m) should show a subtle connecting line between GOLIATH và nearby ally
-- LMG barrel extending forward from the model makes GOLIATH identifiable by vũ khí type from above
-- Overcharge giáp stripping by EMP should have dramatic VFX — communicate vulnerability to both teams
+- Overcharge 8m radius circle must be visible to teammates at minimum zoom — shows buff zone
+- Blue armor glow should be clearly distinct from AEGIS shield's blue-white — use deeper steel blue
+- Brotherhood passive proximity (5m) should show a subtle connecting line between GOLIATH and nearby ally
+- LMG barrel extending forward from the model makes GOLIATH identifiable by weapon type from above
+- Overcharge armor stripping bởi EMP should have dramatic VFX — communicate vulnerability to both teams

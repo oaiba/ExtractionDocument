@@ -7,162 +7,162 @@ weight: 2
 
 ### Tổng Quan Class
 
-Operator class **Support** là xương sống của mọi team, giữ đồng đội sống sót và cho phép engagement kéo dài. Họ hy sinh combat power cá nhân để đổi lấy team utility.
+Operator class **Support** là xương sống của team, giữ đồng đội sống sót và cho phép giao tranh kéo dài. They sacrifice personal combat power for team utility.
 
-#### Class Identity
+#### Bản Sắc Class
 
-| Attribute | Value | Notes |
+| Thuộc Tính           | Giá Trị                 | Ghi Chú                |
 | ------------------- | --------------------- | -------------------- |
-| **Role** | Team Healer / Sustain | Giữ team sống |
-| **Difficulty** | Low | Thân thiện beginner |
-| **Team Dependency** | High | Tốt nhất khi có teammate |
-| **Skill Ceiling** | Medium | Positioning + timing |
+| **Role**            | Team Healer / Sustain | Keep team alive      |
+| **Độ Khó**      | Thấp                   | Thân thiện với người mới    |
+| **Phụ Thuộc Team** | Cao                  | Best with teammates  |
+| **Trần Kỹ Năng**   | Trung bình                | Positioning + timing |
 
-#### Class Traits (All Support Operators)
+#### Trait Class (Tất Cả Operator Support)
 
-| Trait | Effect | Gameplay Impact |
+| Trait                 | Hiệu Ứng                          | Tác Động Gameplay               |
 | --------------------- | ------------------------------- | ----------------------------- |
-| **Medical Expertise** | +20% Healing Item Effectiveness | Medkit heal 60 thay vì 50 |
-| **Quick Revive** | +15% Revive Speed | Dựng teammate nhanh hơn |
-| **Slow Movement** | -5% Movement Speed | Penalty positioning nhẹ |
+| **Medical Expertise** | +20% Hồi máu Item Effectiveness | Medkits heal 60 instead of 50 |
+| **Quick Revive**      | +15% Revive Speed               | Faster teammate pickup        |
+| **Slow Movement**     | -5% Movement Speed              | Slight positioning penalty    |
 
 ***
 
-### Operators
+### Operator
 
-| Operator | Codename | Specialty | Unlock |
+| Operator                                                                                                                         | Codename | Chuyên Môn         | Mở Khóa                   |
 | -------------------------------------------------------------------------------------------------------------------------------- | -------- | ----------------- | ------------------------ |
-| [Tariq Al-Sayed](https://github.com/oaiba/ExtractionDocument/blob/main/content/GDD_Design/Characters/Support/Suture/README.md) | SUTURE | Area Healing | Free Starter |
-| [Victoria Sterling](https://github.com/oaiba/ExtractionDocument/blob/main/content/GDD_Design/Characters/Support/Aegis/README.md) | AEGIS | Damage Prevention | Level 18, 10,000 Credits |
+| [Tariq Al-Sayed](https://github.com/oaiba/ExtractionDocument/blob/main/content/GDD_Design/Characters/Support/Suture/README.md)   | SUTURE   | Area Hồi máu      | Free Starter             |
+| [Victoria Sterling](https://github.com/oaiba/ExtractionDocument/blob/main/content/GDD_Design/Characters/Support/Aegis/README.md) | AEGIS    | Damage Prevention | Level 18, 10,000 Credits |
 
 ***
 
-### Playstyle Guide
+### Hướng Dẫn Playstyle
 
-#### Khi Nào Chọn Support
+#### Khi Nên Chọn Support
 
 **Chọn Support khi:**
 
-* Team có người chơi aggressive
-* Map yêu cầu giữ vị trí
-* Dự kiến engagement kéo dài
-* Bạn muốn enable teammate
+* Your team has aggressive players
+* Map requires holding positions
+* Extended engagements expected
+* You want to enable teammates
 
 **Tránh Support khi:**
 
-* Chơi solo
-* Team đã có Support
-* Map quá mở (không có cover)
-* Địch có burst damage nặng
+* Playing solo
+* Team already has a Support
+* Map is wide open (no cover)
+* Địch has heavy burst damage
 
-#### Positioning Guidelines
+#### Guideline Vị Trí
 
-**Quy Tắc Vàng:** Đứng phía sau damage dealer của bạn.
+**Golden Rule:** Stay behind your damage dealers.
 
-| Position | Priority |
+| Position    | Priority                    |
 | ----------- | --------------------------- |
-| Behind Tank | Cao nhất; được bảo vệ |
-| Mid-team | Tốt; chạm tới mọi người |
-| Flank | Nguy hiểm; chỉ dùng để ambush |
-| Front | Không bao giờ; bạn sẽ chết đầu tiên |
+| Behind Tank | Highest — Protected         |
+| Mid-team    | Good — Can reach everyone   |
+| Flank       | Dangerous — Only for ambush |
+| Front       | Never — You will die first  |
 
-#### Healing Priority
+#### Ưu Tiên Hồi Máu
 
 ```
-1. Teammate low HP đang trong combat
-2. Bản thân (nếu thấp)
-3. Pre-healing trước khi push
-4. Topping off đồng đội gần full HP (low priority)
+1. Low HP teammate in combat
+2. Yourself (if low)
+3. Pre-healing before push
+4. Topping off full HP allies (low priority)
 ```
 
 ***
 
-### Counter Strategies
+### Chiến Lược Counter
 
-#### Cách Counter Support Operators
+#### Cách Counter Operator Support
 
-| Operator | Counter Strategy |
+| Operator   | Counter Strategy                     |
 | ---------- | ------------------------------------ |
-| **SUTURE** | Giết drone trước, rồi focus SUTURE |
-| **AEGIS** | Chờ shield hết duration, rồi burst |
+| **SUTURE** | Kill drone first, then focus SUTURE  |
+| **AEGIS**  | Wait for shield duration, then burst |
 
-#### Best Counters to Support
+#### Counter Tốt Nhất Với Support
 
-| Counter Pick | Why |
+| Counter Pick | Why                              |
 | ------------ | -------------------------------- |
-| **MAMBA** | Burst damage vượt healing |
-| **TARTARUS** | CQB giết trước khi healing có giá trị |
-| **GLITCH** | EMP disable support ability |
+| **MAMBA**    | Burst damage exceeds healing     |
+| **TARTARUS** | CQB kills before healing matters |
+| **GLITCH**   | EMP disables support abilities   |
 
 ***
 
-### Synergies
+### Synergy
 
-#### Best Support Duos
+#### Duo Support Tốt Nhất
 
-| Partner | Synergy | Notes |
+| Partner     | Synergy           | Ghi Chú                           |
 | ----------- | ----------------- | ------------------------------- |
-| **MAMBA** | Assault + Sustain | Push mạnh hơn, heal sau đó |
-| **BASTION** | Tank + Healer | Defensive combo kinh điển |
-| **SONAR** | Intel + Safety | Biết khi nào heal, khi nào hide |
+| **MAMBA**   | Assault + Sustain | Push harder, heal after         |
+| **BASTION** | Tank + Healer     | Classic defensive combo         |
+| **SONAR**   | Intel + Safety    | Know when to heal, when to hide |
 
 ***
 
-### Top-Down Visual Identity
+### Nhận Diện Hình Ảnh Top-Down
 
-Support operators có **medium silhouette** với medical/utility pack trên lưng là identifier chính từ phía trên.
+Support operators have a **medium silhouette** with medical/utility pack on their back as the primary identifier from above.
 
-| Feature | Design Rule | Visibility |
+| Feature            | Design Rule                                             | Visibility |
 | ------------------ | ------------------------------------------------------- | ---------- |
-| **Shoulder Width** | Standard; giữa Recon và Assault | 60+ units |
-| **Headgear** | Medical cap hoặc visor có cross marking | 60+ units |
-| **Color Accent** | White/Green (#22C55E) trên cross armband và backpack | 80+ units |
-| **Back Profile** | Medical pack lớn (SUTURE) hoặc shield generator (AEGIS) | 80+ units |
-| **Movement Anim** | Nhịp di chuyển standard, posture hơi cẩn trọng | 50+ units |
+| **Shoulder Width** | Standard — between Recon and Assault                    | 60+ units  |
+| **Headgear**       | Medical cap or visor with cross markings                | 60+ units  |
+| **Color Accent**   | White/Green (#22C55E) on cross armband and backpack     | 80+ units  |
+| **Back Profile**   | Large medical pack (SUTURE) or shield generator (AEGIS) | 80+ units  |
+| **Movement Anim**  | Standard pace, slightly cautious posture                | 50+ units  |
 
-#### Operator-Specific Top-Down Tells
+#### Dấu Hiệu Top-Down Riêng Của Operator
 
-| Operator | Unique Visual From Above |
+| Operator | Unique Visual From Above                                            |
 | -------- | ------------------------------------------------------------------- |
-| SUTURE | Vòng xanh pulse quanh Healing Drone khi deployed |
-| AEGIS | Dome shield xanh-trắng bán cầu nhìn rõ từ trên khi active |
+| SUTURE   | Green pulsing circle around Hồi máu Drone when deployed             |
+| AEGIS    | Blue-white hemispherical shield dome nhìn rõ từ trên xuống when active |
 
 ***
 
-### Class Stamina Profile
+### Hồ Sơ Stamina Theo Class
 
-| Parameter | Support Value | Comparison |
+| Tham Số               | Support Giá Trị  | Comparison |
 | ----------------------- | -------------- | ---------- |
-| **Stamina Pool** | 100 (Standard) | Average |
-| **Sprint Drain** | 10/second | Standard |
-| **Recovery Rate** | 8/second | Standard |
-| **Net Sprint Duration** | 10.0 seconds | Average |
+| **Quỹ Stamina**        | 100 (Standard) | Trung bình    |
+| **Hao Stamina Khi Sprint**        | 10/second      | Standard   |
+| **Tốc Độ Hồi**       | 8/second       | Standard   |
+| **Thời Lượng Sprint Thực** | 10.0 seconds   | Trung bình    |
 
-**Design Intent:** Support có stamina standard. Họ không cần sprint để engage (như Assault) hoặc reposition (như Recon). Trait -5% movement speed mới là giới hạn thật, không phải stamina.
+**Design Intent:** Support has standard stamina. They do not need to sprint to engage (like Assault) or reposition (like Recon). Their -5% movement speed class trait is the real limitation, not stamina.
 
 ***
 
-### Status Effect Modifiers
+### Bộ Điều Chỉnh Hiệu Ứng Trạng Thái
 
-| Effect | Support Resistance | Notes |
+| Hiệu Ứng | Support Kháng | Ghi Chú                                              |
 | ------ | ------------------ | -------------------------------------------------- |
-| Stun | 0% | Full stun duration |
-| Slow | 10% | Slight slow resist để tới được đồng đội downed |
-| Burn | 0% | Full burn damage |
-| EMP | 0% | Healing Drone và Guardian Shield bị EMP phá |
+| Stun   | 0%                 | Full stun duration                                 |
+| Slow   | 10%                | Slight slow resist for reaching downed allies      |
+| Burn   | 0%                 | Full burn damage                                   |
+| EMP    | 0%                 | Hồi máu Drone and Guardian Khiên destroyed bởi EMP |
 
-**Design Intent:** Support gần như không có resistance. Giá trị của họ đến từ sustain teammate, không phải personal survivability. Slow resist nhẹ đảm bảo họ vẫn có thể tới được đồng đội bị thương trong combat.
+**Design Intent:** Support has minimal resistances. Their value comes from sustaining teammates, not from personal survivability. The slight slow resist ensures they can still reach wounded allies during combat.
 
 ***
 
-### Map Suitability
+### Độ Phù Hợp Theo Map
 
-| Map Archetype | Suitability | Recommended Operator | Why |
+| Map Archetype        | Suitability | Recommended Operator | Why                                                       |
 | -------------------- | ----------- | -------------------- | --------------------------------------------------------- |
-| **Extraction Zones** | Highest | AEGIS | Guardian Shield bảo vệ team trong extraction countdown |
-| **Tight Corridors** | High | SUTURE | Healing Drone radius bao phủ chiều rộng corridor |
-| **Multi-Floor** | Medium | SUTURE | Drone heal xuyên floor nếu đặt đúng level |
-| **Open Fields** | Low | AEGIS | Shield cung cấp cover trên địa hình mở |
-| **Dense Urban** | Medium | Either | Nhiều engagement point cần mobile healing |
+| **Extraction Zones** | Highest     | AEGIS                | Guardian Khiên protects team during extraction countdown |
+| **Tight Corridors**  | Cao        | SUTURE               | Hồi máu Drone radius covers corridor width                |
+| **Multi-Floor**      | Trung bình      | SUTURE               | Drone heals through floors if placed on correct level     |
+| **Open Fields**      | Thấp         | AEGIS                | Khiên provides cover in open terrain                     |
+| **Dense Urban**      | Trung bình      | Either               | Multiple engagement points require mobile healing         |
 
-Xem [World Design](https://github.com/oaiba/ExtractionDocument/blob/main/content/GDD_Design/World/README.md) để biết layout map chi tiết.
+See [World Design](https://github.com/oaiba/ExtractionDocument/blob/main/content/GDD_Design/World/README.md) for detailed map layouts.

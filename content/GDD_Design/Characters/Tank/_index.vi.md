@@ -7,175 +7,175 @@ weight: 4
 
 ### Tổng Quan Class
 
-Operator class **Tank** hấp thụ damage và bảo vệ teammate. Họ mạnh ở việc giữ vị trí và dẫn đầu push nhờ survivability vượt trội. Trong extraction shooter nơi mỗi viên đạn đều quan trọng, Tank mua thời gian; và thời gian nghĩa là loot.
+Operator class **Tank** hứng damage và bảo vệ đồng đội. They excel at holding positions and leading pushes with their superior survivability. In an extraction shooter where every bullet matters, a Tank buys time — and time means loot.
 
-#### Class Identity
+#### Bản Sắc Class
 
-| Attribute | Value | Notes |
+| Thuộc Tính           | Giá Trị         | Ghi Chú                                              |
 | ------------------- | ------------- | -------------------------------------------------- |
-| **Role** | Damage Sponge | Hấp thụ và bảo vệ |
-| **Difficulty** | Medium | Mechanic thân thiện beginner, positioning quan trọng |
-| **Team Dependency** | Medium | Tốt hơn khi có team, vẫn anchor solo extraction được |
-| **Skill Ceiling** | Medium | Mastery nằm ở positioning và cooldown management |
+| **Role**            | Damage Sponge | Absorb and protect                                 |
+| **Độ Khó**      | Trung bình        | Thân thiện với người mới mechanics, positioning matters   |
+| **Phụ Thuộc Team** | Trung bình        | Better with team, can anchor solo extractions      |
+| **Trần Kỹ Năng**   | Trung bình        | Positioning and cooldown management define mastery |
 
-#### Class Traits (All Tank Operators)
+#### Trait Class (Tất Cả Operator Tank)
 
-| Trait | Effect | Gameplay Impact |
+| Trait                | Hiệu Ứng                | Tác Động Gameplay                     |
 | -------------------- | --------------------- | ----------------------------------- |
-| **Reinforced Armor** | +25% Maximum Armor | 125 armor cap (so với 100 standard) |
-| **Damage Reduction** | +10% Armor Absorption | Nhận ít damage hơn qua armor |
-| **Heavy Frame** | -15% Sprint Speed | Rotate chậm, commit vào vị trí |
+| **Reinforced Giáp** | +25% Maximum Giáp    | 125 armor cap (vs 100 standard)     |
+| **Damage Reduction** | +10% Giáp Absorption | Take less damage through armor      |
+| **Heavy Frame**      | -15% Tốc Độ Sprint     | Slow rotations, commit to positions |
 
 ***
 
-### Operators
+### Operator
 
-| Operator | Codename | Specialty | Unlock |
+| Operator                                                                                                                     | Codename | Chuyên Môn          | Mở Khóa                   |
 | ---------------------------------------------------------------------------------------------------------------------------- | -------- | ------------------ | ------------------------ |
-| [Mikhail Ivanov](https://github.com/oaiba/ExtractionDocument/blob/main/content/GDD_Design/Characters/Tank/Bastion/README.md) | BASTION | Frontal Protection | Level 10, 7,500 Credits |
-| [Wei Chen](https://github.com/oaiba/ExtractionDocument/blob/main/content/GDD_Design/Characters/Tank/Goliath/README.md) | GOLIATH | Team Defense | Level 20, 12,000 Credits |
+| [Mikhail Ivanov](https://github.com/oaiba/ExtractionDocument/blob/main/content/GDD_Design/Characters/Tank/Bastion/README.md) | BASTION  | Frontal Protection | Level 10, 7,500 Credits  |
+| [Wei Chen](https://github.com/oaiba/ExtractionDocument/blob/main/content/GDD_Design/Characters/Tank/Goliath/README.md)       | GOLIATH  | Team Defense       | Level 20, 12,000 Credits |
 
 ***
 
-### Playstyle Guide
+### Hướng Dẫn Playstyle
 
-#### Khi Nào Chọn Tank
+#### Khi Nên Chọn Tank
 
 **Chọn Tank khi:**
 
-* Team cần point leader cho push
-* Map có chokepoint hẹp để giữ
-* Team địch có Assault operators aggressive
-* Bạn cần anchor một extraction zone
+* Your team needs a point leader for pushes
+* Map has narrow chokepoints to hold
+* Địch team has aggressive Assault operators
+* You need to anchor an extraction zone
 
 **Tránh Tank khi:**
 
-* Map yêu cầu rotate nhanh giữa objective
-* Team địch có nhiều flanker (OBSIDIAN, MIRAGE)
-* Team đã có Tank
-* Bạn chơi solo và cần di chuyển phủ map nhanh
+* Map requires fast rotations between objectives
+* Địch team has multiple flankers (OBSIDIAN, MIRAGE)
+* Your team already has a Tank
+* You are playing solo and need to cover ground quickly
 
-#### Positioning Guidelines
+#### Guideline Vị Trí
 
-**Quy Tắc Vàng:** Kiểm soát space. Bạn quyết định fight diễn ra ở đâu.
+**Golden Rule:** Control space. You decide where fights happen.
 
-| Position | Priority | Why |
+| Position                      | Priority  | Why                                        |
 | ----------------------------- | --------- | ------------------------------------------ |
-| Chokepoint | Highest | Ép địch đi qua kill zone của bạn |
-| Extraction Zone | High | Anchor exit, bảo vệ teammate đang loot |
-| Behind cover, facing approach | Good | Giảm exposure từ flank |
-| Open ground | Dangerous | Tank vẫn chết vì focus fire ngoài open |
+| Chokepoint                    | Highest   | Force enemies through your kill zone       |
+| Extraction Zone               | Cao      | Anchor the exit, protect looting teammates |
+| Behind cover, facing approach | Good      | Reduce flanking exposure                   |
+| Open ground                   | Dangerous | Even Tanks die to focus fire in the open   |
 
-#### Combat Tactics
+#### Tactic Combat
 
 **The Push:**
 
 1. Communicate intent ("Pushing left, follow me")
-2. Deploy defensive ability (Shield hoặc Armor Overcharge)
-3. Tiến lên bằng walk speed; không sprint
-4. Hút enemy fire trong khi teammate engage từ hai bên
-5. Giữ vị trí khi tới cover
-6. Chờ cooldown trước khi push tiếp
+2. Deploy defensive ability (Khiên or Giáp Overcharge)
+3. Move forward at walk speed — do not sprint
+4. Draw enemy fire while teammates engage from sides
+5. Hold position once you reach cover
+6. Wait for cooldowns before pushing again
 
 **The Hold:**
 
-1. Đứng tại extraction zone hoặc objective
-2. Deploy ability khi địch xuất hiện
-3. Call out vị trí địch
-4. Để DPS teammate xử lý kill
-5. Chỉ retreat nếu ability đang cooldown VÀ health critical
+1. Position at extraction zone or objective
+2. Deploy ability when enemy appears
+3. Call out enemy positions
+4. Let DPS teammates handle kills
+5. Only retreat if ability is on cooldown AND health is critical
 
-**Critical Mistake to Avoid:** Tank thường overcommit. Nhiệm vụ của bạn là hấp thụ damage, không phải đuổi kill. Nếu ability hết và địch vẫn fight, **fall back** và chờ cooldown. Tank chết không giúp được ai.
+**Critical Mistake to Avoid:** Tanks often overcommit. Your job is to absorb damage, not chase kills. If your ability ends and enemies are still fighting, **fall back** and wait for cooldown. A dead Tank helps nobody.
 
 ***
 
-### Counter Strategies
+### Chiến Lược Counter
 
-#### Cách Counter Tank Operators
+#### Cách Counter Operator Tank
 
-| Operator | Counter Strategy |
+| Operator    | Counter Strategy                                                                     |
 | ----------- | ------------------------------------------------------------------------------------ |
-| **BASTION** | Flank sau shield, dùng grenade quanh góc, chờ shield hết duration (15s) |
-| **GOLIATH** | Focus fire trước khi armor overcharge hoàn tất, dùng EMP để strip bonus armor |
+| **BASTION** | Flank behind the shield, use grenades around corners, wait out shield duration (15s) |
+| **GOLIATH** | Focus fire before armor overcharge completes, use EMP to strip bonus armor           |
 
-#### Best Counters to Tank
+#### Counter Tốt Nhất Với Tank
 
-| Counter Pick | Why |
+| Counter Pick | Why                                                  |
 | ------------ | ---------------------------------------------------- |
-| **OBSIDIAN** | Smoke flank quanh shield, tấn công từ blind angle |
-| **GLITCH** | EMP disable Shield và strip Overcharge armor |
-| **SONAR** | Intel reveal vị trí Tank để setup flank |
+| **OBSIDIAN** | Smoke flanks around shield, attacks from blind angle |
+| **GLITCH**   | EMP disables Khiên and strips Overcharge armor      |
+| **SONAR**    | Intel reveals Tank position for flanking setup       |
 
 ***
 
-### Synergies
+### Synergy
 
-#### Best Tank Duos
+#### Duo Tank Tốt Nhất
 
-| Partner | Synergy | Notes |
+| Partner      | Synergy            | Ghi Chú                                                        |
 | ------------ | ------------------ | ------------------------------------------------------------ |
-| **SUTURE** | Tank + Healer | Sustain qua mọi fight, classic combo |
-| **TARTARUS** | Shield + CQB | BASTION dẫn đầu, TARTARUS flank sau chaos của shield |
-| **IGNITION** | Tank + Area Denial | Giữ chokepoint, đốt route flank |
-| **AEGIS** | Double Defense | Guardian Shield + Riot Shield = extraction gần bất khả xâm phạm |
+| **SUTURE**   | Tank + Healer      | Sustain through any fight, classic combo                     |
+| **TARTARUS** | Khiên + CQB       | BASTION leads, TARTARUS flanks behind shield chaos           |
+| **IGNITION** | Tank + Area Denial | Hold chokepoint, set fire to flanking routes                 |
+| **AEGIS**    | Double Defense     | Guardian Khiên + Riot Khiên = near-invulnerable extraction |
 
 ***
 
-### Top-Down Visual Identity
+### Nhận Diện Hình Ảnh Top-Down
 
-Tank operators có **silhouette rộng nhất** trong roster. Từ camera top-down, họ được nhận ra ngay bằng shoulder plate rộng và profile armor nặng.
+Tank operators have the **widest silhouette** in the roster. From the top-down camera, they are immediately recognizable by their broad shoulder plates and heavy armor profile.
 
-| Feature | Design Rule | Visibility |
+| Feature            | Design Rule                                                 | Visibility |
 | ------------------ | ----------------------------------------------------------- | ---------- |
-| **Shoulder Width** | Rộng nhất roster; 1.5x standard | 100+ units |
-| **Headgear** | Heavy riot visor hoặc full-face helmet | 80+ units |
-| **Color Accent** | Steel Blue (#3B82F6) trên shoulder plate và viền visor | 100+ units |
-| **Back Profile** | Shield (BASTION) hoặc armor pack (GOLIATH) nhìn rõ từ trên | 80+ units |
-| **Movement Anim** | Bước nặng, chậm, deliberate; footfall nặng nhất roster | 60+ units |
+| **Shoulder Width** | Widest in roster — 1.5x standard                            | 100+ units |
+| **Headgear**       | Heavy riot visor or full-face helmet                        | 80+ units  |
+| **Color Accent**   | Steel Blue (#3B82F6) on shoulder plates and visor edge      | 100+ units |
+| **Back Profile**   | Khiên (BASTION) or armor pack (GOLIATH) nhìn rõ từ trên xuống | 80+ units  |
+| **Movement Anim**  | Slow, deliberate trudge — heaviest footfalls in roster      | 60+ units  |
 
-#### Operator-Specific Top-Down Tells
+#### Dấu Hiệu Top-Down Riêng Của Operator
 
-| Operator | Unique Visual From Above |
+| Operator | Unique Visual From Above                                                        |
 | -------- | ------------------------------------------------------------------------------- |
-| BASTION | Riot shield nhìn thấy trên lưng khi stowed; indicator arc 120 độ khi deployed |
-| GOLIATH | Armor plate glow khi Overcharge active, blue energy pulse effect |
+| BASTION  | Riot shield visible on back when stowed; 120-degree arc indicator when deployed |
+| GOLIATH  | Glowing armor plates when Overcharge is active, blue energy pulse effect        |
 
 ***
 
-### Class Stamina Profile
+### Hồ Sơ Stamina Theo Class
 
-| Parameter | Tank Value | Comparison |
+| Tham Số               | Tank Giá Trị        | Comparison             |
 | ----------------------- | ----------------- | ---------------------- |
-| **Stamina Pool** | 80 (-20%) | Sprint duration thấp nhất |
-| **Sprint Drain** | 12/second (+20%) | Drain nhanh |
-| **Recovery Rate** | 7.2/second (-10%) | Recovery chậm |
-| **Net Sprint Duration** | 6.7 seconds | Ngắn nhất roster |
+| **Quỹ Stamina**        | 80 (-20%)         | Lowest sprint duration |
+| **Hao Stamina Khi Sprint**        | 12/second (+20%)  | Drains fast            |
+| **Tốc Độ Hồi**       | 7.2/second (-10%) | Slow recovery          |
+| **Thời Lượng Sprint Thực** | 6.7 seconds       | Shortest in roster     |
 
-**Design Intent:** Tank commit vào vị trí. Sprint tới cover là burst ngắn, không phải sustained run. Điều này buộc quyết định positioning có chủ đích và ngăn Tank rotate quá mức.
+**Design Intent:** Tanks commit to positions. Sprinting to cover is a short burst, not a sustained run. This forces deliberate positioning decisions and prevents Tanks from excessively rotating.
 
 ***
 
-### Status Effect Modifiers
+### Bộ Điều Chỉnh Hiệu Ứng Trạng Thái
 
-| Effect | Tank Resistance | Notes |
+| Hiệu Ứng | Tank Kháng | Ghi Chú                                                         |
 | ------ | --------------- | ------------------------------------------------------------- |
-| Stun | 25% | Giảm stun duration; khó lock down hơn |
-| Slow | 25% | Partial slow resist; vốn đã chậm, slow thêm rất nặng |
-| Burn | 10% | Fire resistance nhẹ từ heavy armor |
-| EMP | 0% | Shield và Overcharge bị EMP disable hoàn toàn |
+| Stun   | 25%             | Reduced stun duration — harder to lock down                   |
+| Slow   | 25%             | Partial slow resist — already slow, further slow is punishing |
+| Burn   | 10%             | Minor fire resistance from heavy armor                        |
+| EMP    | 0%              | Khiên and Overcharge fully disabled bởi EMP                   |
 
-**Design Intent:** Tank chống lại physical CC (stun, slow) nhưng vulnerable hoàn toàn trước tech disruption (EMP). Đây là dynamic counterplay cốt lõi giữa Tank và Specialist.
+**Design Intent:** Tanks resist physical CC effects (stun, slow) but are fully vulnerable to tech disruption (EMP). This creates the core Tank vs Specialist counterplay dynamic.
 
 ***
 
-### Map Suitability
+### Độ Phù Hợp Theo Map
 
-| Map Archetype | Suitability | Recommended Operator | Why |
+| Map Archetype        | Suitability | Recommended Operator | Why                                              |
 | -------------------- | ----------- | -------------------- | ------------------------------------------------ |
-| **Tight Corridors** | Highest | BASTION | Shield che toàn bộ chiều rộng corridor |
-| **Extraction Zones** | High | GOLIATH | Armor Overcharge bảo vệ team trong extraction |
-| **Multi-Floor** | Medium | BASTION | Shield bảo vệ trước threat một hướng |
-| **Open Fields** | Low | Neither | Dễ bị flank quanh shield, không có lợi thế cover |
-| **Dense Urban** | Low | Neither | Quá nhiều angle cần bảo vệ |
+| **Tight Corridors**  | Highest     | BASTION              | Khiên covers entire corridor width              |
+| **Extraction Zones** | Cao        | GOLIATH              | Giáp Overcharge protects team during extraction |
+| **Multi-Floor**      | Trung bình      | BASTION              | Khiên protects against single-direction threats |
+| **Open Fields**      | Thấp         | Neither              | Easy to flank around shield, no cover advantage  |
+| **Dense Urban**      | Thấp         | Neither              | Too many angles to protect against               |
 
-Xem [World Design](https://github.com/oaiba/ExtractionDocument/blob/main/content/GDD_Design/World/README.md) để biết layout map chi tiết.
+See [World Design](https://github.com/oaiba/ExtractionDocument/blob/main/content/GDD_Design/World/README.md) for detailed map layouts.

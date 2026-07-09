@@ -3,185 +3,185 @@ title: "GLITCH - Maya Torres"
 type: docs
 ---
 
-## Operator Profile
+## Hồ Sơ Operator
 
-> *"Your gadgets, your abilities, your plans—all worthless. I just hit the off switch."*
+> *"Gadget, ability, kế hoạch của anh đều vô nghĩa. Tôi chỉ cần tắt công tắc."*
 
-### Basic Information
+### Thông Tin Cơ Bản
 
-| Attribute       | giá trị                     |
+| Thuộc Tính       | Giá Trị                     |
 | :-------------- | :------------------------ |
-| **Real Name**   | Maya Torres |
+| **Tên Thật**   | Maya Torres |
 | **Codename**    | GLITCH                    |
 | **Class**       | Specialist                |
-| **Nationality** | American |
-| **Age**         | 27                        |
-| **Height**      | 175 cm (5'9")             |
-| **Weight**      | 68 kg (150 lbs)           |
+| **Quốc Tịch** | American |
+| **Tuổi**         | 27                        |
+| **Chiều Cao**      | 175 cm (5'9")             |
+| **Cân Nặng**      | 68 kg (150 lbs)           |
 
-### Background
+### Lý Lịch
 
-Maya Torres was a prodigy at MIT trước dropping out to join the NSA's elite cyber warfare division. His ability to find exploits in any hệ thống made him invaluable—until he discovered the agency was using his tools for mass surveillance on American citizens.
+Maya Torres từng là thần đồng tại MIT trước khi bỏ học để gia nhập đơn vị cyber warfare tinh nhuệ của NSA. Khả năng tìm exploit trong mọi hệ thống khiến cô trở nên vô giá, cho đến khi cô phát hiện cơ quan này dùng công cụ của mình để giám sát hàng loạt công dân Mỹ.
 
-He leaked what he could và went underground, using his skills to level the playing field for those mà không technological advantages. In the Exclusion Zone, where tech can mean the difference between life và death, GLITCH makes sure no one has an unfair edge.
+Cô rò rỉ những gì có thể rồi biến mất, dùng kỹ năng của mình để cân bằng sân chơi cho những người không có lợi thế công nghệ. Trong Exclusion Zone, nơi công nghệ có thể quyết định sống chết, GLITCH đảm bảo không ai có lợi thế bất công.
 
-### Personality Traits
+### Tính Cách
 
-- **Anti-authority** - Distrusts all institutions
-- **Clever** - Always three moves ahead
-- **Sardonic** - Uses humor as deflection
-- **Ethical** - Has lines he won't cross
+- **Anti-authority** - Không tin các tổ chức quyền lực
+- **Clever** - Luôn đi trước ba nước
+- **Sardonic** - Dùng hài hước để né tránh cảm xúc
+- **Ethical** - Có những ranh giới không bao giờ vượt qua
 
 ---
 
-## Combat Statistics
+## Thông Số Combat
 
-### Base Stats
+### Chỉ Số Cơ Bản
 
-| Stat                | giá trị   | Class Modifier | Final   |
+| Stat                | Giá Trị   | Bộ Điều Chỉnh Class | Cuối Cùng   |
 | :------------------ | :------ | :------------- | :------ |
-| **máu**          | 100 HP  | -              | 100 HP  |
-| **giáp**           | 50      | -              | 50      |
-| **Sprint Speed**    | 5.5 m/s | -              | 5.5 m/s |
-| **Walk Speed**      | 3.5 m/s | -              | 3.5 m/s |
-| **vũ khí Accuracy** | 100%    | -10%           | 90%     |
+| **Máu**          | 100 HP  | -              | 100 HP  |
+| **Giáp**           | 50      | -              | 50      |
+| **Tốc Độ Sprint**    | 5.5 m/s | -              | 5.5 m/s |
+| **Tốc Độ Đi Bộ**      | 3.5 m/s | -              | 3.5 m/s |
+| **Độ Chính Xác Vũ Khí** | 100%    | -10%           | 90%     |
 
-### Expanded Combat Statistics
+### Thông Số Combat Mở Rộng
 
-| Parameter | giá trị | ghi chú |
+| Tham Số | Giá Trị | Ghi Chú |
 | :-------- | :---- | :---- |
-| **Stamina Pool** | 100 | Standard (Specialist class) |
-| **Sprint Drain** | 10/second | Standard |
-| **Recovery Rate** | 8/second | Standard |
-| **Net Sprint Duration** | 10.0 seconds | Average |
-| **Footstep Volume** | 95% | Slightly quieter than average — sneakers |
-| **Ability Audio Radius** | 40 meters | EMP pulse is very loud — major audio tell |
+| **Quỹ Stamina** | 100 | Standard (Specialist class) |
+| **Hao Stamina Khi Sprint** | 10/second | Standard |
+| **Tốc Độ Hồi** | 8/second | Standard |
+| **Thời Lượng Sprint Thực** | 10.0 seconds | Trung bình |
+| **Âm Lượng Bước Chân** | 95% | Slightly quieter than average — sneakers |
+| **Bán Kính Audio Ability** | 40 meters | EMP pulse is very loud — tín hiệu audio lớn |
 
-### Status Effect Resistances
+### Kháng Hiệu Ứng Trạng Thái
 
-| Effect | Resistance | ghi chú |
+| Hiệu Ứng | Kháng | Ghi Chú |
 | :----- | :--------- | :---- |
-| Stun | 0% | Full duration |
-| Slow | 0% | Full duration |
+| Stun | 0% | Đủ thời lượng |
+| Slow | 0% | Đủ thời lượng |
 | Burn | 0% | Full DoT |
-| EMP | 100% | Immune to địch GLITCH EMP |
+| EMP | 100% | Immune to enemy GLITCH EMP |
 
-### Top-Down Visual Spec
+### Spec Hình Ảnh Top-Down
 
-| Property | giá trị |
+| Thuộc Tính | Giá Trị |
 | :------- | :---- |
 | **Hitbox Capsule** | 38 cm radius, 175 cm height |
-| **Head Sphere** | 14 cm radius |
+| **Vùng Đầu** | 14 cm radius |
 | **Collision Profile** | Standard |
-| **Silhouette From Above** | Medium build, antenna array on backpack, arm-mounted hacking interface hiển thị rõ |
-| **Class Accent Zones** | Yellow (#EAB308) on tech strips và backpack antenna |
+| **Silhouette Nhìn Từ Trên Xuống** | Trung bình build, antenna array on backpack, arm-mounted hacking interface visible |
+| **Vùng Accent Theo Class** | Yellow (#EAB308) on tech strips and backpack antenna |
 | **EMP VFX (Top-Down)** | Blue-white expanding ring from operator (15m radius), static distortion on affected units |
 | **EMP Audio Radius** | 40m — loud pulse crack audible at extreme range |
 
-<!-- REF_IMAGE: GLITCH top-down view — showing operator với EMP blast active, blue-white expanding ring hiển thị rõ from above, static effects on địch in radius -->
+<!-- REF_IMAGE: GLITCH top-down view — showing operator with EMP blast active, blue-white expanding ring visible from above, static effects on enemies in radius -->
 
-### Difficulty Rating
+### Độ Khó
 
-**Difficulty: 4/5** — EMP timing is everything. Using it too early wastes it; too late và shields/drones already did their job. Reading địch tech usage is critical.
+**Độ Khó: 4/5** — EMP timing is everything. Using it too early wastes it; too late and shields/drones already did their job. Reading enemy tech usage is critical.
 
 
-## Abilities
+## Ability
 
 ### Active Ability: EMP Blast
 
 > *"Release an electromagnetic pulse that disables all technology in the area."*
 
-| Property     | giá trị                         |
+| Thuộc Tính     | Giá Trị                         |
 | :----------- | :---------------------------- |
 | **Cooldown** | 110 seconds                   |
 | **Duration** | Instant (effects last 10 sec) |
 | **Charges**  | 1                             |
 
-#### Effects
+#### Hiệu Ứng
 
-| Effect             | Target                 | Duration   |
+| Hiệu Ứng             | Target                 | Duration   |
 | :----------------- | :--------------------- | :--------- |
-| Ability Disable    | địch operators        | 10 seconds |
+| Ability Disable    | Địch operators        | 10 seconds |
 | Gadget Destruction | All gadgets in range   | Permanent  |
-| HUD Disruption     | địch                | 5 seconds  |
-| Shield Destruction | AEGIS, BASTION shields | Instant    |
+| HUD Disruption     | Địch                | 5 seconds  |
+| Khiên Destruction | AEGIS, BASTION shields | Instant    |
 
-#### EMP Interaction matrix
+#### Ma Trận Tương Tác EMP
 
-| Target | Effect | Duration |
+| Target | Hiệu Ứng | Duration |
 | :----- | :----- | :------- |
-| **AEGIS Guardian Shield** | Destroyed instantly | Permanent (until redeployed) |
-| **BASTION Riot Shield** | disabled (not destroyed) | 5 seconds |
-| **SUTURE Healing Drone** | Destroyed instantly | Permanent |
+| **AEGIS Guardian Khiên** | Destroyed instantly | Permanent (until redeployed) |
+| **BASTION Riot Khiên** | Disabled (not destroyed) | 5 seconds |
+| **SUTURE Hồi máu Drone** | Destroyed instantly | Permanent |
 | **SONAR UAV** | Destroyed, falls from sky | Permanent |
 | **MIRAGE Sensors** | All in radius destroyed | Permanent |
 | **PULSE Nano Swarm** | Dispersed instantly | Permanent |
 | **MAMBA Combat Stim** | Cancelled | Immediate |
 | **TARTARUS Berserker Rage** | Cancelled | Immediate |
-| **OBSIDIAN Smoke màn hình** | Not affected | N/A — smoke is chemical, not tech |
-| **GOLIATH Overcharge** | Bonus giáp stripped | Immediate |
-| **địch HUD** | Static distortion | 5 seconds |
+| **OBSIDIAN Smoke Screen** | Not affected | N/A — smoke is chemical, not tech |
+| **GOLIATH Overcharge** | Bonus armor stripped | Immediate |
+| **Địch HUD** | Static distortion | 5 seconds |
 
-#### Top-Down EMP VFX
+#### VFX EMP Top-Down
 
-| trạng thái | VFX From Above |
+| State | VFX From Above |
 | :---- | :------------- |
 | EMP charging | Blue-white glow building on GLITCH's arm device |
 | EMP blast | Blue-white ring expanding outward from operator (15m radius) |
-| EMP on địch | Blue static sparks on affected operator, HUD disruption VFX |
+| EMP on enemy | Blue static sparks on affected operator, HUD disruption VFX |
 | Gadget destroyed | Blue flash + debris scatter from gadget position |
-| Shield broken | Dramatic shatter VFX on AEGIS dome / BASTION arc flicker |
+| Khiên broken | Dramatic shatter VFX on AEGIS dome / BASTION arc flicker |
 
 
-| Property       | giá trị                  |
+| Thuộc Tính       | Giá Trị                  |
 | :------------- | :--------------------- |
 | Radius         | 15 meters              |
 | Vertical Range | Full height            |
 | Line of Sight  | Not required           |
-| Friendly Fire  | No (allies unaffected) |
+| Friendly Lửa  | No (allies unaffected) |
 
-#### What Gets disabled
+#### What Gets Disabled
 
 | Category | Affected |
 | :------- | :------- |
-| **Destroys** | AEGIS Shield, Healing Drone, Motion Sensors, Turrets |
+| **Destroys** | AEGIS Khiên, Hồi máu Drone, Motion Sensors, Turrets |
 | **Disables** | Combat Stim, Berserker, UAV Scan, Smoke Emitters |
-| **Immune** | Passive abilities, vũ khí, giáp |
+| **Immune** | Passive abilities, Vũ khí, Giáp |
 
-#### upgrade Slots
+#### Slot Upgrade
 
 **Slot 1 (Level 5):**
-| Option              | Effect                                  |
+| Option              | Hiệu Ứng                                  |
 | :------------------ | :-------------------------------------- |
 | **Longer Blackout** | Disable duration +5 seconds (15s total) |
 | **Quick Hack**      | Cooldown -25 seconds (85s total)        |
 | **Wide Signal**     | Radius +5 meters (20m total)            |
 
 **Slot 2 (Level 20):**
-| Option              | Effect                                  |
+| Option              | Hiệu Ứng                                  |
 | :------------------ | :-------------------------------------- |
-| **hệ thống Shock**    | disabled địch take 10 damage         |
-| **Sensor Overload** | disabled địch are also slowed 20%    |
+| **System Shock**    | Disabled enemies take 10 damage         |
+| **Sensor Overload** | Disabled enemies are also slowed 20%    |
 | **Cascade Failure** | Destroyed gadgets explode for 15 damage |
 
 **Slot 3 (Level 35):**
-| Option             | Effect                                           |
+| Option             | Hiệu Ứng                                           |
 | :----------------- | :----------------------------------------------- |
-| **Total Blackout** | Also disables địch minimap for 20 seconds       |
-| **Power Drain**    | Killing a disabled địch reduces cooldown by 20s |
+| **Total Blackout** | Also disables enemy minimap for 20 seconds       |
+| **Power Drain**    | Killing a disabled enemy reduces cooldown by 20s |
 | **Counter-Tech**   | Immune to being EMP'd/disabled yourself          |
 
 ---
 
 ### Passive Ability: Hacker's Toolkit
 
-> *"Every hệ thống has a backdoor. I just know where to look."*
+> *"Every system has a backdoor. I just know where to look."*
 
-| Condition             | Effect                                    |
+| Điều Kiện             | Hiệu Ứng                                    |
 | :-------------------- | :---------------------------------------- |
-| Interacting với tech | +20% speed                                |
-| Near địch gadget     | See outline thông qua walls (5m)            |
-| Destroying gadget     | Reveal người chơi who placed it for 3 seconds |
+| Interacting with tech | +20% speed                                |
+| Near enemy gadget     | See outline through walls (5m)            |
+| Destroying gadget     | Reveal player who placed it for 3 seconds |
 
 **Interactions Affected:**
 - Hacking terminals
@@ -193,126 +193,126 @@ He leaked what he could và went underground, using his skills to level the play
 
 ## Loadout
 
-### Default Loadout
+### Loadout Mặc Định
 
-| Slot          | Item                      | ghi chú            |
+| Slot          | Item                      | Ghi Chú            |
 | :------------ | :------------------------ | :--------------- |
-| **primary**   | MAC-10 SMG                | Compact, fast    |
-| **secondary** | G17 Pistol                | Standard         |
+| **Primary**   | MAC-10 SMG                | Compact, fast    |
+| **Secondary** | G17 Pistol                | Standard         |
 | **Tactical**  | EMP Grenades ×2, Lockpick | Extra disruption |
-| **giáp**     | Medium Vest               | 50 giáp         |
+| **Giáp**     | Trung bình Vest               | 50 armor         |
 
-### Recommended Loadouts
+### Loadout Khuyến Nghị
 
 **Hard Counter:**
 | Slot      | Item        | Why                |
 | :-------- | :---------- | :----------------- |
-| primary   | UMP-45      | Stable, accurate   |
-| secondary | G17         | -                  |
+| Primary   | UMP-45      | Stable, accurate   |
+| Secondary | G17         | -                  |
 | Tactical  | EMP Nade ×3 | Maximum disruption |
 
 **Loot Focused:**
 | Slot      | Item                | Why             |
 | :-------- | :------------------ | :-------------- |
-| primary   | VSS                 | Quiet looting   |
-| secondary | Silenced Pistol     | Stay quiet      |
+| Primary   | VSS                 | Quiet looting   |
+| Secondary | Silenced Pistol     | Stay quiet      |
 | Tactical  | Lockpick ×2, EMP ×1 | Access + safety |
 
 ---
 
-## Playstyle Guide
+## Hướng Dẫn Playstyle
 
-### Role in Team
+### Vai Trò Trong Team
 
-**primary Role:** Counter-Tech
-- Disable địch abilities trước fight
+**Primary Role:** Counter-Tech
+- Disable enemy abilities before fight
 - Destroy defensive gadgets
 - Enable team pushes
 
-**secondary Role:** Objective Specialist
+**Secondary Role:** Objective Specialist
 - Fast hacking/interaction
 - First to locked areas
 - Intel gathering
 
-### EMP Timing
+### Thời Điểm Dùng EMP
 
 **Perfect Timing:**
-- Right trước team push
-- khi địch activates ability (cancel it)
+- Right before team push
+- When enemy activates ability (cancel it)
 - Against defensive setup
 
 **Bad Timing:**
-- khi no địch tech nearby
+- When no enemy tech nearby
 - While solo (wasted potential)
-- On cooldown trước chính fight
+- On cooldown before key fight
 
 ---
 
-## Matchups
+## Kèo Đấu
 
-### Favorable Matchups
+### Kèo Có Lợi
 
 | Opponent    | Why Favorable              | Tactic               |
 | :---------- | :------------------------- | :------------------- |
-| **AEGIS**   | Shield destroyed instantly | EMP > Push           |
+| **AEGIS**   | Khiên bị phá hủy ngay lập tức | EMP > Push           |
 | **SUTURE**     | Drone destroyed            | Kill drone first     |
-| **BASTION** | Shield disabled            | EMP ends his defense |
-| **MIRAGE** | Sensors destroyed          | rõ his traps      |
+| **BASTION** | Khiên disabled            | EMP ends his defense |
+| **MIRAGE** | Sensors destroyed          | Clear his traps      |
 
-### Even Matchups
+### Kèo Cân Bằng
 
-| Opponent     | ghi chú                   | chính to Winning    |
+| Opponent     | Ghi Chú                   | Key to Winning    |
 | :----------- | :---------------------- | :---------------- |
 | **SONAR**  | Both tech-focused       | Timing war        |
 | **PULSE**     | Both disable            | Who EMPs first    |
-| **GOLIATH** | giáp buff not disabled | Focus fire anyway |
+| **GOLIATH** | Giáp buff not disabled | Focus fire anyway |
 
-### Unfavorable Matchups
+### Kèo Bất Lợi
 
 | Opponent  | Why Difficult                           | Counter Strategy |
 | :-------- | :-------------------------------------- | :--------------- |
-| **MAMBA** | sau EMP, he still out-guns you        | Team support     |
-| **TARTARUS** | Berserker can activate trước/sau EMP | Keep range       |
-| **IGNITION** | Fire isn't tech                         | Avoid fire zones |
+| **MAMBA** | After EMP, he still out-guns you        | Team support     |
+| **TARTARUS** | Berserker can activate before/after EMP | Keep range       |
+| **IGNITION** | Lửa isn't tech                         | Avoid fire zones |
 
 ---
 
-## Voice Lines
+## Câu Thoại
 
 ### Combat
 
 | Trigger               | Line                            |
 | :-------------------- | :------------------------------ |
-| Ability Activation    | "EMP out! hệ thống down!"        |
+| Ability Activation    | "EMP out! Systems down!"        |
 | Gadget Destroyed      | "Nice toy. Had a nice toy."     |
-| Kill (disabled địch) | "Should've gone analog."        |
+| Kill (Disabled Địch) | "Should've gone analog."        |
 | Hacking               | "I'm in."                       |
-| Reviving              | "Stay với me, got work to do." |
+| Reviving              | "Stay with me, got work to do." |
 
-### Personality
+### Tính Cách
 
 | Trigger            | Line                                |
 | :----------------- | :---------------------------------- |
 | Match Start        | "Let's see what toys they brought." |
-| Extraction success | "Data secured. We're out."          |
+| Extraction Success | "Data secured. We're out."          |
 | Detecting Gadget   | "I see you... hackable."            |
 
 ---
 
-## Cosmetics
+## Cosmetic
 
-### Default Appearance
+### Ngoại Hình Mặc Định
 
 - **Outfit:** Black hoodie under lightweight tactical vest, multiple USB drives on belt
-- **Headgear:** Black beanie với tech goggles pushed up on forehead
-- **Gloves:** Fingerless gloves (hacker aesthetic, touch-màn hình compatible)
-- **Face:** Youthful, slight stubble, always watching màn hình
+- **Headgear:** Black beanie with tech goggles pushed up on forehead
+- **Gloves:** Fingerless gloves (hacker aesthetic, touch-screen compatible)
+- **Face:** Youthful, slight stubble, always watching screens
 
-<!-- REF_IMAGE: GLITCH default skin — top-down view showing lean silhouette, hoodie under vest, tech goggles on forehead, utility belt với EMP device -->
+<!-- REF_IMAGE: GLITCH default skin — top-down view showing lean silhouette, hoodie under vest, tech goggles on forehead, utility belt with EMP device -->
 
-### Unlockable Skins
+### Skin Có Thể Mở Khóa
 
-| Skin | Rarity | Unlock |
+| Skin | Rarity | Mở Khóa |
 | :--- | :----- | :----- |
 | **White Hat** | Common | Level 10 |
 | **Darknet** | Uncommon | 1,000 Credits |
@@ -320,28 +320,28 @@ He leaked what he could và went underground, using his skills to level the play
 | **Mainframe** | Epic | Battle Pass S2 |
 | **Ghost in the Shell** | Legendary | Crossover Event |
 
-### Signature Items
+### Vật Phẩm Signature
 
-| Item | Description |
+| Item | Mô Tả |
 | :--- | :---------- |
 | **USB Bandolier** | Row of encrypted USB drives on chest harness |
 | **Binary Tattoo** | Circuit-pattern tattoo on left forearm |
-| **Laptop Stickers** | Hacker collective logos on laptop (hiển thị rõ in lobby) |
+| **Laptop Stickers** | Hacker collective logos on laptop (visible in lobby) |
 
 ---
 
-## Lore Connections
+## Liên Kết Lore
 
-### Relationships
+### Mối Quan Hệ
 
-| nhân vật | Relationship |
+| Character | Relationship |
 | :-------- | :----------- |
 | **SONAR** | Complicated — she hunted leakers like him at the CIA, now forced allies |
 | **PULSE** | Fellow outcasts, share tech knowledge — closest friend in the roster |
 | **AEGIS** | She represents the institutions he hates — philosophical tension |
 | **MAMBA** | MAMBA distrusts him — "Too many secrets." GLITCH finds the suspicion amusing |
 
-### Story Hooks
+### Hook Câu Chuyện
 
 - Leaked NSA surveillance tools are now being used by Corporation — feels responsible
 - Maintains a dark web presence under the alias "Z3R0_DAY"
@@ -350,39 +350,39 @@ He leaked what he could và went underground, using his skills to level the play
 
 ---
 
-## Design ghi chú (For Developers)
+## Ghi Chú Thiết Kế (Cho Developer)
 
-### Balance Considerations
+### Cân Nhắc Balance
 
 - EMP Blast is the strongest counter-ability in the game — 110s cooldown is justified
-- EMP không nên cancel passive abilities hoặc deactivate vũ khí — only active abilities và deployables
-- Shield Destruction is instant và permanent — AEGIS và BASTION Người chơi nên hear a distinct "shield broken" audio cue
-- -10% vũ khí accuracy class trait ensures GLITCH loses straight gunfights — his power is in disruption timing
+- EMP should NOT cancel passive abilities or deactivate weapons — only active abilities and deployables
+- Khiên Destruction is instant and permanent — AEGIS and BASTION players should hear a distinct "shield broken" audio cue
+- -10% weapon accuracy class trait ensures GLITCH loses straight gunfights — his power is in disruption timing
 - Cascade Failure upgrade (Slot 2) explosive damage should have a minimum range to prevent self-harm from nearby gadget destruction
 
-### Animation yêu cầu
+### Yêu Cầu Animation
 
 - EMP activation (0.8 seconds — pull device from vest, slam button)
 - EMP pulse VFX (expanding blue-white ring from operator)
 - Hacking animation (fast typing gesture on arm-mounted interface)
-- Gadget detection HUD (blue outline thông qua walls at 5m)
+- Gadget detection HUD (blue outline through walls at 5m)
 - Death animation: collapses backward, device sparks (tech failure)
 
-### Audio yêu cầu
+### Yêu Cầu Audio
 
-| Sound | ghi chú |
+| Sound | Ghi Chú |
 | :---- | :---- |
 | EMP activate | Rising electronic whine + sharp pulse crack |
-| EMP effect (địch perspective) | Static burst + HUD distortion noise |
+| EMP effect (enemy perspective) | Static burst + HUD distortion noise |
 | Hacking interaction | Rapid keyboard clicks + data transfer chirps |
 | Gadget detected | Soft electronic ping (only GLITCH hears) |
 | Footsteps | Standard weight — sneakers on concrete |
 
-### Top-Down cụ thể ghi chú
+### Ghi Chú Riêng Cho Top-Down
 
-- EMP expanding ring phải được hiển thị rõ at minimum zoom — largest VFX radius in the game (15m)
-- Static distortion on affected địch nên được hiển thị rõ from top-down (blue sparking particles)
+- EMP expanding ring must be visible at minimum zoom — largest VFX radius in the game (15m)
+- Static distortion on affected enemies should be visible from top-down (blue sparking particles)
 - Gadget destruction VFX must clearly communicate which gadgets were destroyed
-- GLITCH is immune to địch EMP — this is a critical balance point in mirror matchups
-- -10% vũ khí accuracy penalty means GLITCH should lose aim duels — his power is in EMP timing
-- Tech Scavenge passive (hack địch gadgets) should show a rõ interaction prompt from above
+- GLITCH is immune to enemy EMP — this is a critical balance point in mirror matchups
+- -10% weapon accuracy penalty means GLITCH should lose aim duels — his power is in EMP timing
+- Tech Scavenge passive (hack enemy gadgets) should show a clear interaction prompt from above

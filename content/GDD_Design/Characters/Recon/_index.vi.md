@@ -7,155 +7,155 @@ weight: 3
 
 ### Tổng Quan Class
 
-Operator class **Recon** mạnh ở thu thập intelligence và kiểm soát luồng thông tin. Họ mở đường cho ambush, ngăn bất ngờ, và thống trị bằng kiến thức.
+Operator class **Recon** mạnh về thu thập intel và kiểm soát luồng thông tin. They enable ambushes, prevent surprises, and dominate through knowledge.
 
-#### Class Identity
+#### Bản Sắc Class
 
-| Attribute | Value | Notes |
+| Thuộc Tính           | Giá Trị           | Ghi Chú                                  |
 | ------------------- | --------------- | -------------------------------------- |
-| **Role** | Intel & Stealth | Information is power |
-| **Difficulty** | High | Cần game sense và map knowledge |
-| **Team Dependency** | Medium | Intel giúp team, vẫn solo hiệu quả |
-| **Skill Ceiling** | Very High | Map knowledge cực kỳ quan trọng |
+| **Role**            | Intel & Stealth | Information is power                   |
+| **Độ Khó**      | Cao            | Requires game sense and map knowledge  |
+| **Phụ Thuộc Team** | Trung bình          | Intel helps team, can solo effectively |
+| **Trần Kỹ Năng**   | Rất cao       | Map knowledge crucial                  |
 
-#### Class Traits (All Recon Operators)
+#### Trait Class (Tất Cả Operator Recon)
 
-| Trait | Effect | Gameplay Impact |
+| Trait               | Hiệu Ứng               | Tác Động Gameplay         |
 | ------------------- | -------------------- | ----------------------- |
-| **Sneaky Movement** | +15% Crouch Speed | Stealth movement nhanh hơn |
-| **Silent Steps** | -30% Footstep Volume | Khó nghe thấy khi tiếp cận |
-| **Fragile Frame** | -5% Maximum Health | Glass cannon |
+| **Sneaky Movement** | +15% Tốc Độ Crouch    | Faster stealth movement |
+| **Silent Steps**    | -30% Âm Lượng Bước Chân | Harder to hear coming   |
+| **Fragile Frame**   | -5% Maximum Máu   | Glass cannon            |
 
 ***
 
-### Operators
+### Operator
 
-| Operator | Codename | Specialty | Unlock |
+| Operator                                                                                                                        | Codename | Chuyên Môn      | Mở Khóa                   |
 | ------------------------------------------------------------------------------------------------------------------------------- | -------- | -------------- | ------------------------ |
-| [Kaito Nakamura](https://github.com/oaiba/ExtractionDocument/blob/main/content/GDD_Design/Characters/Recon/Sonar/README.md) | SONAR | Area Reveal | Level 8, 5,000 Credits |
-| [Ananya Patel](https://github.com/oaiba/ExtractionDocument/blob/main/content/GDD_Design/Characters/Recon/Mirage/README.md) | MIRAGE | Trap Detection | Level 12, 7,500 Credits |
-| [Unit N-7 "Nero"](https://github.com/oaiba/ExtractionDocument/blob/main/content/GDD_Design/Characters/Recon/Obsidian/README.md) | OBSIDIAN | Visual Denial | Level 25, 15,000 Credits |
+| [Kaito Nakamura](https://github.com/oaiba/ExtractionDocument/blob/main/content/GDD_Design/Characters/Recon/Sonar/README.md)     | SONAR    | Area Reveal    | Level 8, 5,000 Credits   |
+| [Ananya Patel](https://github.com/oaiba/ExtractionDocument/blob/main/content/GDD_Design/Characters/Recon/Mirage/README.md)      | MIRAGE   | Trap Detection | Level 12, 7,500 Credits  |
+| [Unit N-7 "Nero"](https://github.com/oaiba/ExtractionDocument/blob/main/content/GDD_Design/Characters/Recon/Obsidian/README.md) | OBSIDIAN | Visual Denial  | Level 25, 15,000 Credits |
 
 ***
 
-### Playstyle Guide
+### Hướng Dẫn Playstyle
 
-#### Khi Nào Chọn Recon
+#### Khi Nên Chọn Recon
 
 **Chọn Recon khi:**
 
-* Solo hoặc team nhỏ
-* Map có nhiều flank route
-* Bạn biết map rõ
-* Team địch có khả năng ambush
+* Solo or small team
+* Map has lots of flank routes
+* You know the map well
+* Địch team has ambush potential
 
 **Tránh Recon khi:**
 
-* Map mở và đơn giản
-* Team cần healing
-* Bạn chưa quen route
-* Địch có area denial nặng
+* Open, simple maps
+* Your team needs healing
+* You are unfamiliar with routes
+* Địch has heavy area denial
 
-#### Information Priority
+#### Ưu Tiên Thông Tin
 
 ```
-1. Vị trí địch (trước fight)
-2. Độ an toàn của extraction zone
-3. Khu loot đã clear hay chưa
-4. Canh flank
+1. Enemy positions (before fight)
+2. Extraction zone safety
+3. Loot area clearance
+4. Flank watch
 ```
 
 ***
 
-### Counter Strategies
+### Chiến Lược Counter
 
-#### Cách Counter Recon Operators
+#### Cách Counter Operator Recon
 
-| Operator | Counter Strategy |
+| Operator     | Counter Strategy                         |
 | ------------ | ---------------------------------------- |
-| **SONAR** | Luôn di chuyển, đừng đứng yên để bị scan |
-| **MIRAGE** | Không trigger trap, kiểm tra góc |
-| **OBSIDIAN** | Push xuyên smoke, đừng chờ |
+| **SONAR**    | Stay moving, do not get scanned in place |
+| **MIRAGE**   | Do not trigger traps, check corners      |
+| **OBSIDIAN** | Push through smoke, do not wait          |
 
-#### Best Counters to Recon
+#### Counter Tốt Nhất Với Recon
 
-| Counter Pick | Why |
+| Counter Pick | Why                                     |
 | ------------ | --------------------------------------- |
-| **MAMBA** | Burst damage giết trước khi intel có giá trị |
-| **TARTARUS** | CQB áp đảo Recon operators mỏng |
-| **PULSE** | Nano Swarm chặn escape route |
+| **MAMBA**    | Burst damage kills before intel matters |
+| **TARTARUS** | CQB overwhelms fragile Recon operators  |
+| **PULSE**    | Nano Swarm blocks escape routes         |
 
 ***
 
-### Synergies
+### Synergy
 
-#### Best Recon Duos
+#### Duo Recon Tốt Nhất
 
-| Partner | Synergy | Notes |
+| Partner     | Synergy         | Ghi Chú                                                 |
 | ----------- | --------------- | ----------------------------------------------------- |
-| **SUTURE** | Intel + Sustain | Biết threat, heal xuyên encounter |
-| **GLITCH** | Scan + EMP | Full information control; scan reveal, EMP disable |
-| **MAMBA** | Intel + Damage | Scan position, burst down |
-| **GOLIATH** | Intel + Tank | Reveal flanker, GOLIATH giữ vị trí |
+| **SUTURE**  | Intel + Sustain | Know threats, heal through encounters                 |
+| **GLITCH**  | Scan + EMP      | Full information control — scan reveals, EMP disables |
+| **MAMBA**   | Intel + Damage  | Scan position, burst down                             |
+| **GOLIATH** | Intel + Tank    | Reveal flankers, GOLIATH anchors position             |
 
 ***
 
-### Top-Down Visual Identity
+### Nhận Diện Hình Ảnh Top-Down
 
-Recon operators có **silhouette mảnh nhất** trong roster. Từ camera top-down, họ được phân biệt bằng compact tech gear và movement low-profile.
+Recon operators have the **slimmest silhouette** in the roster. From the top-down camera, they are distinguished by compact tech gear and low-profile movement.
 
-| Feature | Design Rule | Visibility |
+| Feature            | Design Rule                                                | Visibility |
 | ------------------ | ---------------------------------------------------------- | ---------- |
-| **Shoulder Width** | Hẹp nhất roster; 0.7x standard | 50+ units |
-| **Headgear** | Tech goggle hoặc slim hood (không bulky helmet) | 60+ units |
-| **Color Accent** | Cyan (#06B6D4) trên goggle glow và tech strip | 60+ units |
-| **Back Profile** | Compact tech pack (drone, sensor kit) | 40+ units |
-| **Movement Anim** | Low crouch-walk, transition mượt; movement stealth nhất | 40+ units |
+| **Shoulder Width** | Narrowest in roster — 0.7x standard                        | 50+ units  |
+| **Headgear**       | Tech goggles or slim hood (no bulky helmet)                | 60+ units  |
+| **Color Accent**   | Cyan (#06B6D4) on goggle glow and tech strips              | 60+ units  |
+| **Back Profile**   | Compact tech pack (drone, sensor kit)                      | 40+ units  |
+| **Movement Anim**  | Thấp crouch-walk, smooth transitions — stealthiest movement | 40+ units  |
 
-#### Operator-Specific Top-Down Tells
+#### Dấu Hiệu Top-Down Riêng Của Operator
 
-| Operator | Unique Visual From Above |
+| Operator | Unique Visual From Above                                              |
 | -------- | --------------------------------------------------------------------- |
-| SONAR | Vòng pulse scan màu cyan mở rộng từ operator trong UAV scan |
-| MIRAGE | Sensor device nhỏ nhìn thấy trên mặt đất, indicator nhấp nháy |
-| OBSIDIAN | Smoke cloud mở rộng từ vị trí, character model giảm opacity |
+| SONAR    | Cyan scanning pulse rings expanding from operator during UAV scan     |
+| MIRAGE   | Small sensor device visible when placed on ground, blinking indicator |
+| OBSIDIAN | Smoke cloud expanding from position, character model fades in opacity |
 
 ***
 
-### Class Stamina Profile
+### Hồ Sơ Stamina Theo Class
 
-| Parameter | Recon Value | Comparison |
+| Tham Số               | Recon Giá Trị       | Comparison          |
 | ----------------------- | ----------------- | ------------------- |
-| **Stamina Pool** | 110 (+10%) | Trên trung bình |
-| **Sprint Drain** | 9/second (-10%) | Sprint hiệu quả |
-| **Recovery Rate** | 9.6/second (+20%) | Recovery nhanh nhất |
-| **Net Sprint Duration** | 12.2 seconds | Best efficiency |
+| **Quỹ Stamina**        | 110 (+10%)        | Above average       |
+| **Hao Stamina Khi Sprint**        | 9/second (-10%)   | Efficient sprinting |
+| **Tốc Độ Hồi**       | 9.6/second (+20%) | Fastest recovery    |
+| **Thời Lượng Sprint Thực** | 12.2 seconds      | Best efficiency     |
 
-**Design Intent:** Recon operators reposition thường xuyên. Họ sprint tới vantage point mới, recover nhanh, rồi sprint tiếp. Stamina usage hiệu quả phản ánh playstyle cơ động.
+**Design Intent:** Recon operators reposition frequently. They sprint to new vantage points, recover quickly, and sprint again. Efficient stamina usage reflects their mobile playstyle.
 
 ***
 
-### Status Effect Modifiers
+### Bộ Điều Chỉnh Hiệu Ứng Trạng Thái
 
-| Effect | Recon Resistance | Notes |
+| Hiệu Ứng | Recon Kháng | Ghi Chú                                             |
 | ------ | ---------------- | ------------------------------------------------- |
-| Stun | 15% | Partial stun resist; hướng về evasion |
-| Slow | 0% | Full slow duration; cực nguy hiểm cho class cơ động |
-| Burn | 0% | Full burn damage; operator mỏng |
-| EMP | 0% | UAV và sensor bị EMP phá hoàn toàn |
+| Stun   | 15%              | Partial stun resist — evasion-oriented            |
+| Slow   | 0%               | Full slow duration — devastating for mobile class |
+| Burn   | 0%               | Full burn damage — fragile operators              |
+| EMP    | 0%               | UAV and sensors fully destroyed bởi EMP            |
 
-**Design Intent:** Recon operators có stun resistance nhẹ để hỗ trợ playstyle né tránh, nhưng ngoài ra vẫn hoàn toàn vulnerable. Slow effect đặc biệt nguy hiểm vì mobility là core defense của họ.
+**Design Intent:** Recon operators have slight stun resistance to support their evasive playstyle, but are otherwise fully vulnerable. Slow effects are especially dangerous since mobility is their core defense.
 
 ***
 
-### Map Suitability
+### Độ Phù Hợp Theo Map
 
-| Map Archetype | Suitability | Recommended Operator | Why |
+| Map Archetype        | Suitability | Recommended Operator | Why                                                 |
 | -------------------- | ----------- | -------------------- | --------------------------------------------------- |
-| **Dense Urban** | Highest | MIRAGE | Nhiều góc và flank route để đặt trap |
-| **Multi-Floor** | High | SONAR | UAV scan xuyên floor cho vertical intel |
-| **Large Industrial** | High | OBSIDIAN | Smoke cắt sightline dài, giúp reposition |
-| **Tight Corridors** | Medium | SONAR | Scan range bao phủ toàn corridor |
-| **Open Fields** | Low | OBSIDIAN | Chỉ smoke có utility, cover hạn chế |
+| **Dense Urban**      | Highest     | MIRAGE               | Many corners and flank routes to trap               |
+| **Multi-Floor**      | Cao        | SONAR                | UAV scans through floors for vertical intel         |
+| **Large Industrial** | Cao        | OBSIDIAN             | Smoke breaks long sightlines, enables repositioning |
+| **Tight Corridors**  | Trung bình      | SONAR                | Scan range covers entire corridor                   |
+| **Open Fields**      | Thấp         | OBSIDIAN             | Only smoke provides utility, limited cover          |
 
-Xem [World Design](https://github.com/oaiba/ExtractionDocument/blob/main/content/GDD_Design/World/README.md) để biết layout map chi tiết.
+See [World Design](https://github.com/oaiba/ExtractionDocument/blob/main/content/GDD_Design/World/README.md) for detailed map layouts.

@@ -3,184 +3,184 @@ title: "PULSE - D-84 \"Ohm\""
 type: docs
 ---
 
-## Operator Profile
+## Hồ Sơ Operator
 
-> *"My nanobots see everything. Feel everything. Control everything."*
+> *"Nanobot của tôi thấy mọi thứ. Cảm nhận mọi thứ. Kiểm soát mọi thứ."*
 
-### Basic Information
+### Thông Tin Cơ Bản
 
-| Attribute       | giá trị               |
+| Thuộc Tính       | Giá Trị               |
 | :-------------- | :------------------ |
-| **Real Name**   | D-84 "Ohm" |
+| **Tên Thật**   | D-84 "Ohm" |
 | **Codename**    | PULSE |
 | **Class**       | Specialist          |
-| **Nationality** | German |
-| **Age**         | 31                  |
-| **Height**      | 173 cm (5'8")       |
-| **Weight**      | 65 kg (143 lbs)     |
+| **Quốc Tịch** | German |
+| **Tuổi**         | 31                  |
+| **Chiều Cao**      | 173 cm (5'8")       |
+| **Cân Nặng**      | 65 kg (143 lbs)     |
 
-### Background
+### Lý Lịch
 
-D-84 "Ohm" was a leading nanotechnology researcher at Cambridge University, pioneering medical applications for nanobots. Her breakthrough in programmable nano-swarms could have revolutionized medicine—until a pharmaceutical conglomerate stole her research và weaponized it.
+D-84 "Ohm" từng là nhà nghiên cứu nanotechnology hàng đầu tại Cambridge University, tiên phong ứng dụng nanobot trong y học. Đột phá của cô về nano-swarm lập trình được lẽ ra có thể cách mạng hóa y học, cho đến khi một tập đoàn dược phẩm đánh cắp nghiên cứu và vũ khí hóa nó.
 
-khi attempts to expose them thông qua legal channels failed, Maya took matters into her own hands. She recreated her technology from memory và now uses it in the Exclusion Zone, proving that her creations can save lives—và end those who abuse power.
+Khi mọi nỗ lực vạch trần chúng qua kênh pháp lý thất bại, Maya tự mình hành động. Cô tái tạo công nghệ từ trí nhớ và giờ dùng nó trong Exclusion Zone, chứng minh rằng tạo vật của cô có thể cứu mạng người và kết liễu những kẻ lạm dụng quyền lực.
 
-### Personality Traits
+### Tính Cách
 
-- **Brilliant** - Genius-level intellect
-- **Driven** - Obsessed với proving her worth
-- **Compassionate** - Uses tech to giúp, not just hurt
-- **Vindictive** - Never forgets a wrong
+- **Brilliant** - Trí tuệ cấp thiên tài
+- **Driven** - Ám ảnh với việc chứng minh giá trị bản thân
+- **Compassionate** - Dùng công nghệ để giúp người khác, không chỉ để gây hại
+- **Vindictive** - Không bao giờ quên điều sai trái đã chịu
 
 ---
 
-## Combat Statistics
+## Thông Số Combat
 
-### Base Stats
+### Chỉ Số Cơ Bản
 
-| Stat                | giá trị   | Class Modifier | Final   |
+| Stat                | Giá Trị   | Bộ Điều Chỉnh Class | Cuối Cùng   |
 | :------------------ | :------ | :------------- | :------ |
-| **máu**          | 100 HP  | -              | 100 HP  |
-| **giáp**           | 50      | -              | 50      |
-| **Sprint Speed**    | 5.5 m/s | -              | 5.5 m/s |
-| **Walk Speed**      | 3.5 m/s | -              | 3.5 m/s |
-| **vũ khí Accuracy** | 100%    | -10%           | 90%     |
+| **Máu**          | 100 HP  | -              | 100 HP  |
+| **Giáp**           | 50      | -              | 50      |
+| **Tốc Độ Sprint**    | 5.5 m/s | -              | 5.5 m/s |
+| **Tốc Độ Đi Bộ**      | 3.5 m/s | -              | 3.5 m/s |
+| **Độ Chính Xác Vũ Khí** | 100%    | -10%           | 90%     |
 
-### Expanded Combat Statistics
+### Thông Số Combat Mở Rộng
 
-| Parameter | giá trị | ghi chú |
+| Tham Số | Giá Trị | Ghi Chú |
 | :-------- | :---- | :---- |
-| **Stamina Pool** | 100 | Standard (Specialist class) |
-| **Sprint Drain** | 10/second | Standard |
-| **Recovery Rate** | 8/second | Standard |
-| **Net Sprint Duration** | 10.0 seconds | Average |
-| **Footstep Volume** | 95% | Standard — tactical sneakers |
-| **Ability Audio Radius** | 25 meters | Swarm buzzing is moderate volume |
+| **Quỹ Stamina** | 100 | Standard (Specialist class) |
+| **Hao Stamina Khi Sprint** | 10/second | Standard |
+| **Tốc Độ Hồi** | 8/second | Standard |
+| **Thời Lượng Sprint Thực** | 10.0 seconds | Trung bình |
+| **Âm Lượng Bước Chân** | 95% | Standard — tactical sneakers |
+| **Bán Kính Audio Ability** | 25 meters | Swarm buzzing is moderate volume |
 
-### Status Effect Resistances
+### Kháng Hiệu Ứng Trạng Thái
 
-| Effect | Resistance | ghi chú |
+| Hiệu Ứng | Kháng | Ghi Chú |
 | :----- | :--------- | :---- |
-| Stun | 0% | Full duration |
-| Slow | 0% | Full duration |
+| Stun | 0% | Đủ thời lượng |
+| Slow | 0% | Đủ thời lượng |
 | Burn | 0% | Full DoT |
-| EMP | 0% | Nano Swarm destroyed by EMP |
+| EMP | 0% | Nano Swarm destroyed bởi EMP |
 
-### Top-Down Visual Spec
+### Spec Hình Ảnh Top-Down
 
-| Property | giá trị |
+| Thuộc Tính | Giá Trị |
 | :------- | :---- |
 | **Hitbox Capsule** | 36 cm radius, 168 cm height |
-| **Head Sphere** | 13 cm radius |
+| **Vùng Đầu** | 13 cm radius |
 | **Collision Profile** | Standard |
-| **Silhouette From Above** | Slim build, nano-canister harness on chest, tech goggles |
-| **Class Accent Zones** | Yellow (#EAB308) on harness strips và goggle glow |
+| **Silhouette Nhìn Từ Trên Xuống** | Slim build, nano-canister harness on chest, tech goggles |
+| **Vùng Accent Theo Class** | Yellow (#EAB308) on harness strips and goggle glow |
 | **Swarm VFX (Top-Down)** | Silver particle cloud on ground (6m radius), shimmering/pulsing |
 | **Swarm Audio Radius** | 25m — persistent insect-like buzzing |
 
-<!-- REF_IMAGE: PULSE top-down view — showing operator với Nano Swarm deployed, silver particle cloud hiển thị rõ from above as 6m radius shimmer -->
+<!-- REF_IMAGE: PULSE top-down view — showing operator with Nano Swarm deployed, silver particle cloud visible from above as 6m radius shimmer -->
 
 ### Nano Swarm Stat Block
 
-| Property | giá trị | ghi chú |
+| Thuộc Tính | Giá Trị | Ghi Chú |
 | :------- | :---- | :---- |
 | **Swarm Radius** | 6 meters | Stationary (can be redirected) |
-| **Swarm Height** | 3 meters | Covers ground to upper floor |
-| **địch Damage** | 8 HP/second | Tick every 0.5s |
-| **Ally Healing** | 4 HP/second | Half of damage rate |
-| **địch Slow** | -20% movement | While in swarm |
+| **Swarm Chiều Cao** | 3 meters | Covers ground to upper floor |
+| **Địch Damage** | 8 HP/second | Tick every 0.5s |
+| **Đồng minh Hồi máu** | 4 HP/second | Half of damage rate |
+| **Địch Slow** | -20% movement | While in swarm |
 | **Duration** | 12 seconds | Full lifetime |
-| **EMP Vulnerability** | Dispersed instantly | primary counter |
-| **Fire Interaction** | Not affected | Fire does not destroy nanobots |
+| **EMP Vulnerability** | Dispersed instantly | Primary counter |
+| **Lửa Interaction** | Not affected | Lửa does not destroy nanobots |
 
-### Difficulty Rating
+### Độ Khó
 
-**Difficulty: 4/5** — Swarm placement và redirection require spatial awareness. Dual-mục đích (damage + heal) means constant quyết định-making about positioning.
+**Độ Khó: 4/5** — Swarm placement and redirection require spatial awareness. Dual-purpose (damage + heal) means constant decision-making about positioning.
 
 
-## Abilities
+## Ability
 
 ### Active Ability: Nano Swarm
 
-> *"Deploy a cloud of nanobots that damages địch và heals allies in the area."*
+> *"Deploy a cloud of nanobots that damages enemies and heals allies in the area."*
 
-| Property     | giá trị      |
+| Thuộc Tính     | Giá Trị      |
 | :----------- | :--------- |
 | **Cooldown** | 90 seconds |
 | **Duration** | 12 seconds |
 | **Charges**  | 1          |
 
-#### Effects
+#### Hiệu Ứng
 
-| Effect  | Target           | giá trị              |
+| Hiệu Ứng  | Target           | Giá Trị              |
 | :------ | :--------------- | :----------------- |
-| Damage  | địch in swarm | 8 HP/second        |
-| Healing | Allies in swarm  | 4 HP/second        |
-| Slow    | địch          | -20% movement      |
-| Vision  | địch          | Reduced visibility |
+| Damage  | Địch in swarm | 8 HP/second        |
+| Hồi máu | Đồng minh in swarm  | 4 HP/second        |
+| Slow    | Địch          | -20% movement      |
+| Vision  | Địch          | Reduced visibility |
 
-#### Swarm Interaction Rules
+#### Rule Tương Tác Swarm
 
-| Interaction | kết quả |
+| Interaction | Result |
 | :---------- | :----- |
 | **Swarm + EMP (GLITCH)** | Swarm dispersed instantly — primary counter |
-| **Swarm + Fire (IGNITION)** | Both effects stack on địch in overlap zone |
-| **Swarm + Smoke (OBSIDIAN)** | Swarm operates thông qua smoke normally |
-| **Swarm + AEGIS Shield** | Swarm passes thông qua Guardian Shield |
-| **Swarm + BASTION Shield** | Swarm ignores Riot Shield — passes thông qua |
+| **Swarm + Lửa (IGNITION)** | Both effects stack on enemies in overlap zone |
+| **Swarm + Smoke (OBSIDIAN)** | Swarm operates through smoke normally |
+| **Swarm + AEGIS Khiên** | Swarm passes through Guardian Khiên |
+| **Swarm + BASTION Khiên** | Swarm ignores Riot Khiên — passes through |
 | **Swarm + MIRAGE Sensors** | Swarm does not affect sensors |
 | **Swarm + SUTURE Drone** | Swarm heal + drone heal stack on allies |
 
-#### Top-Down Swarm VFX
+#### VFX Swarm Top-Down
 
-| trạng thái | VFX From Above |
+| State | VFX From Above |
 | :---- | :------------- |
 | Swarm deploy | Canister crack, silver particles expand to 6m radius |
 | Swarm active | Shimmering silver cloud on ground, semi-transparent |
-| địch in swarm | Red damage particles trail toward địch |
-| Ally in swarm | Green healing particles trail toward ally |
+| Địch in swarm | Red damage particles trail toward enemy |
+| Đồng minh in swarm | Green healing particles trail toward ally |
 | Swarm redirected | Cloud moves toward new target position |
 | Swarm ending | Particles settle downward, shimmer fades |
-| Swarm EMP'd | Brief blue flash, all particles scatter và vanish |
+| Swarm EMP'd | Brief blue flash, all particles scatter and vanish |
 
 
-| Property   | giá trị                          |
+| Thuộc Tính   | Giá Trị                          |
 | :--------- | :----------------------------- |
 | Radius     | 6 meters                       |
-| Height     | 3 meters                       |
+| Chiều Cao     | 3 meters                       |
 | Mobility   | Stationary (can be redirected) |
 | Visibility | Cloud of silver particles      |
 
-#### Tactical Uses
+#### Cách Dùng Tactical
 
-| cách dùng Case             | Strategy                          |
+| Use Case             | Strategy                          |
 | :------------------- | :-------------------------------- |
 | **Area Denial**      | Block chokepoint                  |
-| **Combat Support**   | Heal team while damaging địch  |
+| **Combat Support**   | Heal team while damaging enemies  |
 | **Extraction Hold**  | Place over extraction zone        |
 | **Chase Prevention** | Swarm behind you while retreating |
 
-#### upgrade Slots
+#### Slot Upgrade
 
 **Slot 1 (Level 5):**
-| Option                | Effect                           |
+| Option                | Hiệu Ứng                           |
 | :-------------------- | :------------------------------- |
 | **Extended Swarm**    | Duration +6 seconds (18s total)  |
 | **Quick Replication** | Cooldown -20 seconds (70s total) |
 | **Dense Cloud**       | Damage +3 HP/sec (11 total)      |
 
 **Slot 2 (Level 20):**
-| Option               | Effect                            |
+| Option               | Hiệu Ứng                            |
 | :------------------- | :-------------------------------- |
-| **Medical Protocol** | Healing +3 HP/sec (7 total)       |
-| **Corrosive Bots**   | địch in swarm take +10% damage |
+| **Medical Protocol** | Hồi máu +3 HP/sec (7 total)       |
+| **Corrosive Bots**   | Địch in swarm take +10% damage |
 | **Mobile Swarm**     | Swarm slowly follows PULSE (1 m/s) |
 
 **Slot 3 (Level 35):**
-| Option                | Effect                           |
+| Option                | Hiệu Ứng                           |
 | :-------------------- | :------------------------------- |
 | **Symbiosis**         | PULSE heals double in own swarm   |
-| **giáp Dissolution** | Swarm reduces địch giáp by 20% |
+| **Giáp Dissolution** | Swarm reduces enemy armor by 20% |
 | **Dual Deployment**   | 2 smaller swarms instead of 1    |
 
 ---
@@ -189,138 +189,138 @@ khi attempts to expose them thông qua legal channels failed, Maya took matters 
 
 > *"The nanobots in her blood work constantly."*
 
-| Condition               | Effect                            |
+| Điều Kiện               | Hiệu Ứng                            |
 | :---------------------- | :-------------------------------- |
 | Out of combat 5 seconds | Regenerate 2 HP/second            |
 | In own swarm            | +10% movement speed               |
-| Damaged by địch swarm  | Take 50% less damage (resistance) |
+| Damaged by enemy swarm  | Take 50% less damage (resistance) |
 
-**Design Intent:** Self-sustaining operator who excels in attrition warfare.
+**Design Intent:** Bản thân-sustaining operator who excels in attrition warfare.
 
 ---
 
 ## Loadout
 
-### Default Loadout
+### Loadout Mặc Định
 
-| Slot          | Item                        | ghi chú                         |
+| Slot          | Item                        | Ghi Chú                         |
 | :------------ | :-------------------------- | :---------------------------- |
-| **primary**   | P90                         | High capacity                 |
-| **secondary** | G17 Pistol                  | Standard                      |
+| **Primary**   | P90                         | Cao capacity                 |
+| **Secondary** | G17 Pistol                  | Standard                      |
 | **Tactical**  | Nano Grenades ×2, Medkit ×1 | Extra swarms + backup healing |
-| **giáp**     | Medium Vest                 | 50 giáp                      |
+| **Giáp**     | Trung bình Vest                 | 50 armor                      |
 
-### Recommended Loadouts
+### Loadout Khuyến Nghị
 
 **Full Nano:**
 | Slot      | Item            | Why               |
 | :-------- | :-------------- | :---------------- |
-| primary   | MP7             | Compact, accurate |
-| secondary | Machine Pistol  | CQB backup        |
+| Primary   | MP7             | Compact, accurate |
+| Secondary | Machine Pistol  | CQB backup        |
 | Tactical  | Nano Grenade ×3 | Maximum coverage  |
 
 **Survival Focus:**
 | Slot      | Item               | Why                      |
 | :-------- | :----------------- | :----------------------- |
-| primary   | Vector             | Fast TTK                 |
-| secondary | G17                | Reliable                 |
+| Primary   | Vector             | Fast TTK                 |
+| Secondary | G17                | Reliable                 |
 | Tactical  | Medkit ×2, Nano ×1 | Passive + active healing |
 
 ---
 
-## Playstyle Guide
+## Hướng Dẫn Playstyle
 
-### Role in Team
+### Vai Trò Trong Team
 
-**primary Role:** Area Control
-- Place swarms at chính locations
-- Zone địch away from objectives
+**Primary Role:** Area Control
+- Place swarms at key locations
+- Zone enemies away from objectives
 - Provide ambient healing
 
-**secondary Role:** Hybrid Support
-- Not a full healer, nhưng supplements SUTURE/AEGIS
-- Self-sustaining flanker
+**Secondary Role:** Hybrid Support
+- Not a full healer, but supplements SUTURE/AEGIS
+- Bản thân-sustaining flanker
 - Extended presence in combat
 
-### Swarm Placement
+### Đặt Swarm
 
 **Good Placement:**
 - Chokepoints
 - Objectives (extraction, loot)
 - Behind cover for healing
-- Entry points to slow địch
+- Entry points to slow enemies
 
 **Bad Placement:**
 - Wide open areas (easy to avoid)
 - Where team won't benefit
-- trước địch arrive (waste duration)
+- Before enemies arrive (waste duration)
 
 ---
 
-## Matchups
+## Kèo Đấu
 
-### Favorable Matchups
+### Kèo Có Lợi
 
 | Opponent    | Why Favorable                | Tactic                 |
 | :---------- | :--------------------------- | :--------------------- |
 | **MAMBA**   | Swarm slows his rush         | Fight in swarm         |
 | **TARTARUS**   | Slows his CQB approach       | Keep distance in swarm |
-| **BASTION** | Swarm damages thông qua shield | Surround với nano     |
+| **BASTION** | Swarm damages through shield | Surround with nano     |
 
-### Even Matchups
+### Kèo Cân Bằng
 
-| Opponent     | ghi chú               | chính to Winning             |
+| Opponent     | Ghi Chú               | Key to Winning             |
 | :----------- | :------------------ | :------------------------- |
 | **SUTURE**      | Both sustain        | Your damage vs his healing |
-| **GOLIATH** | giáp vs nano       | Focus single target        |
+| **GOLIATH** | Giáp vs nano       | Focus single target        |
 | **MIRAGE**  | Control specialists | Map control battle         |
 
-### Unfavorable Matchups
+### Kèo Bất Lợi
 
 | Opponent    | Why Difficult         | Counter Strategy   |
 | :---------- | :-------------------- | :----------------- |
-| **GLITCH**  | EMP destroys swarm    | Deploy sau EMP   |
-| **IGNITION**   | Fire damages you back | Avoid fire zones   |
+| **GLITCH**  | EMP destroys swarm    | Deploy after EMP   |
+| **IGNITION**   | Lửa damages you back | Avoid fire zones   |
 | **SONAR** | Can see you in swarm  | Move unpredictably |
 
 ---
 
-## Voice Lines
+## Câu Thoại
 
 ### Combat
 
 | Trigger                 | Line                                |
 | :---------------------- | :---------------------------------- |
 | Ability Activation      | "Swarm deployed. They're learning." |
-| địch in Swarm          | "They're feeling it now."           |
-| Ally in Swarm (Healing) | "Let the nanobots work."            |
+| Địch in Swarm          | "They're feeling it now."           |
+| Đồng minh in Swarm (Hồi máu) | "Let the nanobots work."            |
 | Kill                    | "Science wins."                     |
 | Reviving                | "The bots will stabilize you."      |
 
-### Personality
+### Tính Cách
 
 | Trigger            | Line                               |
 | :----------------- | :--------------------------------- |
 | Match Start        | "Nanobots online. Let's begin."    |
-| Extraction success | "Research successful. Extracting." |
-| Low máu         | "Bots are working on it."          |
+| Extraction Success | "Research successful. Extracting." |
+| Thấp Máu         | "Bots are working on it."          |
 
 ---
 
-## Cosmetics
+## Cosmetic
 
-### Default Appearance
+### Ngoại Hình Mặc Định
 
 - **Outfit:** White lab coat over lightweight tactical vest, nanobot canisters on belt
-- **Headgear:** High-tech visor / AR glasses với data readouts
+- **Headgear:** Cao-tech visor / AR glasses with data readouts
 - **Gloves:** White latex gloves (medical/scientific aesthetic)
-- **tính năng:** Short natural hair, confident stance, silver nano-trace patterns on forearms
+- **Features:** Short natural hair, confident stance, silver nano-trace patterns on forearms
 
-<!-- REF_IMAGE: PULSE default skin — top-down view showing lab coat over vest silhouette, AR glasses, nano canisters hiển thị rõ on belt, silver-particle aura effect -->
+<!-- REF_IMAGE: PULSE default skin — top-down view showing lab coat over vest silhouette, AR glasses, nano canisters visible on belt, silver-particle aura effect -->
 
-### Unlockable Skins
+### Skin Có Thể Mở Khóa
 
-| Skin | Rarity | Unlock |
+| Skin | Rarity | Mở Khóa |
 | :--- | :----- | :----- |
 | **Lab Technician** | Common | Level 10 |
 | **Biohazard** | Uncommon | 1,000 Credits |
@@ -328,81 +328,81 @@ khi attempts to expose them thông qua legal channels failed, Maya took matters 
 | **Synthwave** | Epic | Battle Pass S2 |
 | **Singularity** | Legendary | Season 4 Event |
 
-### Signature Items
+### Vật Phẩm Signature
 
-| Item | Description |
+| Item | Mô Tả |
 | :--- | :---------- |
 | **Nano Canisters** | Glowing silver canisters on belt harness |
 | **Cambridge Pin** | University crest pin on lab coat lapel |
-| **Silver Trace** | Faint silver nano-patterns hiển thị rõ on forearms (the bots in her blood) |
+| **Silver Trace** | Faint silver nano-patterns visible on forearms (the bots in her blood) |
 
 ---
 
-## Lore Connections
+## Liên Kết Lore
 
-### Relationships
+### Mối Quan Hệ
 
-| nhân vật | Relationship |
+| Character | Relationship |
 | :-------- | :----------- |
 | **GLITCH** | Fellow outcasts, share tech knowledge — closest friend/collaborator |
 | **SUTURE** | Medical debate partners — SUTURE uses traditional medicine, PULSE uses nanotech. Mutual professional respect |
 | **AEGIS** | Faith vs Science discussions — AEGIS prays, PULSE programs. Surprisingly good friends |
 | **MAMBA** | MAMBA finds her nanobots unsettling — "Keep those things away from me" |
 
-### Story Hooks
+### Hook Câu Chuyện
 
 - Hunting the executives who stole her research at the pharmaceutical conglomerate
 - Developing new nanobot applications in the field (quest chain: test prototypes for rewards)
 - Secretly working on a cure for SUTURE's chronic condition using nano-medicine
-- Discovered that Corporation is mass-producing her stolen nano-swarm tech for military cách dùng
+- Discovered that Corporation is mass-producing her stolen nano-swarm tech for military use
 
 ---
 
-## Design ghi chú (For Developers)
+## Ghi Chú Thiết Kế (Cho Developer)
 
-### Balance Considerations
+### Cân Nhắc Balance
 
-- Swarm is the only dual-mục đích ability (damage + heal) — monitor effective healing per match
-- Stationary deployment is the primary weakness — địch can simply walk away
+- Swarm is the only dual-purpose ability (damage + heal) — monitor effective healing per match
+- Stationary deployment is the primary weakness — enemies can simply walk away
 - Mobile Swarm upgrade (Slot 2) should cap at 1 m/s movement — too fast makes it oppressive
 - Dual Deployment (Slot 3) splits radius — 2x 4m swarms instead of 1x 6m, total area is less
-- EMP hard-counters Nano Swarm — this is intentional và không nên be changed
-- Self-healing passive (2 HP/sec out of combat) prevents chip-damage attrition — 5 second delay is critical
+- EMP hard-counters Nano Swarm — this is intentional and should NOT be changed
+- Bản thân-healing passive (2 HP/sec out of combat) prevents chip-damage attrition — 5 second delay is critical
 - Symbiosis upgrade (double heal in own swarm) makes PULSE nearly unkillable in swarm — she must sacrifice other Slot 3 options
 
 ### Ghi Chú Kỹ Thuật
 
-| hệ thống | ghi chú |
+| System | Ghi Chú |
 | :----- | :---- |
-| Swarm Particles | GPU particle hệ thống, limit 5000 particles per swarm |
+| Swarm Particles | GPU particle system, limit 5000 particles per swarm |
 | Damage Tick | Every 0.5 seconds (8 x 2 = 16 ticks per 12s duration) |
-| Ally/địch Detection | Server-side detection, client-side visual feedback |
-| Dual Swarm | Each swarm is independent particle hệ thống |
+| Đồng minh/Địch Detection | Server-side detection, client-side visual feedback |
+| Dual Swarm | Each swarm is independent particle system |
 
-### Animation yêu cầu
+### Yêu Cầu Animation
 
 - Swarm deploy animation (0.7 seconds — throw canister, nanobots emerge)
 - Swarm active VFX (silver particle cloud, shimmering, semi-transparent)
-- Healing VFX (green particle trails toward allies in swarm)
-- Damage VFX (red particle trails targeting địch in swarm)
+- Hồi máu VFX (green particle trails toward allies in swarm)
+- Damage VFX (red particle trails targeting enemies in swarm)
 - Death animation: nanobots visibly scatter from body (dramatic tech failure)
 
-### Audio yêu cầu
+### Yêu Cầu Audio
 
-| Sound | ghi chú |
+| Sound | Ghi Chú |
 | :---- | :---- |
 | Swarm deploy | Canister crack + rising electronic buzz |
 | Swarm active | Persistent insect-like buzzing (louder near center) |
 | Swarm healing | Soft harmonic hum overlay (ally feedback) |
-| Swarm damage | Aggressive buzz + crackling (địch perspective) |
+| Swarm damage | Aggressive buzz + crackling (enemy perspective) |
 | Swarm end | Descending buzz, particles settle |
 | Footsteps | Standard weight — tactical sneakers |
 
-### Top-Down cụ thể ghi chú
+### Ghi Chú Riêng Cho Top-Down
 
-- Swarm silver cloud phải được hiển thị rõ at minimum zoom — area denial information for both teams
-- Red (địch damage) và green (ally heal) particle streams provide instant team understanding from above
-- Swarm cloud nên được clearly distinct from OBSIDIAN smoke: silver/shimmering vs gray/opaque
-- Dual Deployment upgrade splits into 2x 4m swarms — each nên được independently hiển thị rõ
-- Swarm redirection animation should show cloud flowing toward new position (1-2 second travel thời gian)
-- -10% vũ khí accuracy (Specialist class) means PULSE should avoid straight gunfights
+- Swarm silver cloud must be visible at minimum zoom — area denial information for both teams
+- Red (enemy damage) and green (ally heal) particle streams provide instant team understanding from above
+- Swarm cloud should be clearly distinct from OBSIDIAN smoke: silver/shimmering vs gray/opaque
+- Dual Deployment upgrade splits into 2x 4m swarms — each should be independently visible
+- Swarm redirection animation should show cloud flowing toward new position (1-2 second travel time)
+- -10% weapon accuracy (Specialist class) means PULSE should avoid straight gunfights

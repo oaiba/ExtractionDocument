@@ -39,15 +39,15 @@ menu:
   main:
     - identifier: agents
       name: Agents
-      url: /ExtractionDocument/GDD_Agents.html
+      pageRef: /GDD_Agents
       weight: 1
     - identifier: design
       name: Design
-      url: /ExtractionDocument/GDD_Design.html
+      pageRef: /GDD_Design
       weight: 2
     - identifier: technical
       name: Technical
-      url: /ExtractionDocument/GDD_Technical.html
+      pageRef: /GDD_Technical
       weight: 3
     - identifier: language
       name: Language

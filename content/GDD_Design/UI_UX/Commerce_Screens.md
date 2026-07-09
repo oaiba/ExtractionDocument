@@ -66,11 +66,11 @@ Commerce does not define a standalone Wallet screen. Currency balance appears on
 
 ### Shop Home
 
-#### Player Intent
+**Player Intent**
 
 See what is new, understand current balance and platform status, and choose a shop section without losing context.
 
-#### Expanded ASCII Wireframe
+**Expanded ASCII Wireframe**
 
 ```
 +------------------------------------------------------------------------------------------------+
@@ -89,7 +89,7 @@ See what is new, understand current balance and platform status, and choose a sh
 +------------------------------------------------------------------------------------------------+
 ```
 
-#### Layout Anatomy
+**Layout Anatomy**
 
 | Region | Requirement |
 | :--- | :--- |
@@ -99,7 +99,7 @@ See what is new, understand current balance and platform status, and choose a sh
 | Offer rows | scannable sections with cards grouped by rotation or theme |
 | Trust panel | non-power copy, purchase help, service warning if needed |
 
-#### Visual Hierarchy
+**Visual Hierarchy**
 
 | Priority | Element | Requirement |
 | :--- | :--- | :--- |
@@ -108,7 +108,7 @@ See what is new, understand current balance and platform status, and choose a sh
 | 3 | Offer rows | cards show name, type, price, owned/discount/timer |
 | 4 | Trust copy | visible but quieter than purchase CTAs |
 
-#### Component Requirements
+**Component Requirements**
 
 | Component | Data / Behavior |
 | :--- | :--- |
@@ -117,7 +117,7 @@ See what is new, understand current balance and platform status, and choose a sh
 | Platform status | OK, offline, checkout unavailable, region restricted |
 | Refresh timer | daily/weekly/event timer with expired fallback |
 
-#### States & Edge Cases
+**States & Edge Cases**
 
 | State | Behavior |
 | :--- | :--- |
@@ -126,15 +126,15 @@ See what is new, understand current balance and platform status, and choose a sh
 | Offline | browse cached owned items only; purchase CTAs disabled with reason |
 | Platform restricted | disable purchase and show platform/account requirement |
 
-#### Input / Focus / Touch
+**Input / Focus / Touch**
 
 PC focus starts on hero CTA, then tabs, card rows, trust links. Console shoulder buttons move tabs; D-pad moves cards by row. Touch uses horizontal tab scroll and card carousel snapping.
 
-#### Designer Notes
+**Designer Notes**
 
 The page must feel like a store, not a wallet. Balance is a utility chip; offers and previews carry the surface.
 
-#### Acceptance Checklist
+**Acceptance Checklist**
 
 - [ ] Hero offer has price, discount, timer, ownership, and preview CTA.
 - [ ] Every purchase-disabled state has a readable reason.
@@ -142,11 +142,11 @@ The page must feel like a store, not a wallet. Balance is a utility chip; offers
 
 ### Featured Offers / Rotating Store
 
-#### Player Intent
+**Player Intent**
 
 Scan many timed offers quickly and decide which item or bundle deserves inspection.
 
-#### Expanded ASCII Wireframe
+**Expanded ASCII Wireframe**
 
 ```
 +------------------------------------------------------------------------------------------------+
@@ -164,7 +164,7 @@ Scan many timed offers quickly and decide which item or bundle deserves inspecti
 +------------------------------------------------------------------------------------------------+
 ```
 
-#### Layout Anatomy
+**Layout Anatomy**
 
 | Region | Requirement |
 | :--- | :--- |
@@ -172,7 +172,7 @@ Scan many timed offers quickly and decide which item or bundle deserves inspecti
 | Offer grid | dense card grid grouped by rotation |
 | Selected summary | stable footer with selected card price and CTAs |
 
-#### Visual Hierarchy
+**Visual Hierarchy**
 
 | Priority | Element | Requirement |
 | :--- | :--- | :--- |
@@ -180,7 +180,7 @@ Scan many timed offers quickly and decide which item or bundle deserves inspecti
 | 2 | Price/timer badges | readable on every card |
 | 3 | Filters | compact and persistent above grid |
 
-#### Component Requirements
+**Component Requirements**
 
 | Component | Data / Behavior |
 | :--- | :--- |
@@ -188,7 +188,7 @@ Scan many timed offers quickly and decide which item or bundle deserves inspecti
 | Discount display | show discounted and original price together |
 | Timer | daily/weekly exact time, warning under final hour |
 
-#### States & Edge Cases
+**States & Edge Cases**
 
 | State | Behavior |
 | :--- | :--- |
@@ -197,15 +197,15 @@ Scan many timed offers quickly and decide which item or bundle deserves inspecti
 | Filter empty | show clear filter CTA and refresh time |
 | Price update | selected summary refreshes and asks player to reconfirm if checkout was open |
 
-#### Input / Focus / Touch
+**Input / Focus / Touch**
 
 Grid navigation wraps by row on console. Filters are shoulder-tab reachable. Touch cards need a first tap for select and second tap/CTA for inspect.
 
-#### Designer Notes
+**Designer Notes**
 
 Do not hide important price information in hover-only UI. Console and touch must see the same offer facts.
 
-#### Acceptance Checklist
+**Acceptance Checklist**
 
 - [ ] All timed offers show exact timer and expired fallback.
 - [ ] Owned/discount/platform states have readable labels.
@@ -213,11 +213,11 @@ Do not hide important price information in hover-only UI. Console and touch must
 
 ### Bundle Detail
 
-#### Player Intent
+**Player Intent**
 
 Understand what the bundle includes, what they already own, and whether the adjusted price is fair.
 
-#### Expanded ASCII Wireframe
+**Expanded ASCII Wireframe**
 
 ```
 +------------------------------------------------------------------------------------------------+
@@ -235,7 +235,7 @@ Understand what the bundle includes, what they already own, and whether the adju
 +------------------------------------------------------------------------------------------------+
 ```
 
-#### Layout Anatomy
+**Layout Anatomy**
 
 | Region | Requirement |
 | :--- | :--- |
@@ -244,7 +244,7 @@ Understand what the bundle includes, what they already own, and whether the adju
 | Price block | final price, original price, discount, owned adjustment |
 | Action bar | preview, inspect, purchase |
 
-#### Visual Hierarchy
+**Visual Hierarchy**
 
 | Priority | Element | Requirement |
 | :--- | :--- | :--- |
@@ -252,7 +252,7 @@ Understand what the bundle includes, what they already own, and whether the adju
 | 2 | Contents list | owned and new status visible per item |
 | 3 | Non-power copy | near price block |
 
-#### Component Requirements
+**Component Requirements**
 
 | Component | Data / Behavior |
 | :--- | :--- |
@@ -260,7 +260,7 @@ Understand what the bundle includes, what they already own, and whether the adju
 | Adjustment row | owned item credit or "no adjustment" reason |
 | Purchase CTA | disabled with reason for insufficient balance or restriction |
 
-#### States & Edge Cases
+**States & Edge Cases**
 
 | State | Behavior |
 | :--- | :--- |
@@ -269,15 +269,15 @@ Understand what the bundle includes, what they already own, and whether the adju
 | Insufficient balance | show shortfall and route to Currency Top-Up |
 | Region/platform lock | show exact unavailable reason and support route |
 
-#### Input / Focus / Touch
+**Input / Focus / Touch**
 
 Focus order: back, preview carousel, contents list, price block, action bar. Console triggers cycle items; touch swipes carousel and taps content rows.
 
-#### Designer Notes
+**Designer Notes**
 
 Owned adjustment must be impossible to miss; this is a trust-building screen.
 
-#### Acceptance Checklist
+**Acceptance Checklist**
 
 - [ ] Final price and original price are both visible when discounted.
 - [ ] Owned items are labeled in the contents list.
@@ -285,11 +285,11 @@ Owned adjustment must be impossible to miss; this is a trust-building screen.
 
 ### Item Detail / 3D Preview
 
-#### Player Intent
+**Player Intent**
 
 Inspect a cosmetic from all useful angles before buying or equipping.
 
-#### Expanded ASCII Wireframe
+**Expanded ASCII Wireframe**
 
 ```
 +------------------------------------------------------------------------------------------------+
@@ -307,7 +307,7 @@ Inspect a cosmetic from all useful angles before buying or equipping.
 +------------------------------------------------------------------------------------------------+
 ```
 
-#### Layout Anatomy
+**Layout Anatomy**
 
 | Region | Requirement |
 | :--- | :--- |
@@ -316,7 +316,7 @@ Inspect a cosmetic from all useful angles before buying or equipping.
 | Preview controls | rotate, zoom, lighting, compare if available |
 | Purchase bar | price, non-power copy, buy/wishlist/equip |
 
-#### Visual Hierarchy
+**Visual Hierarchy**
 
 | Priority | Element | Requirement |
 | :--- | :--- | :--- |
@@ -324,7 +324,7 @@ Inspect a cosmetic from all useful angles before buying or equipping.
 | 2 | Price/action | persistent and near consequence copy |
 | 3 | Compatibility | visible before purchase |
 
-#### Component Requirements
+**Component Requirements**
 
 | Component | Data / Behavior |
 | :--- | :--- |
@@ -332,7 +332,7 @@ Inspect a cosmetic from all useful angles before buying or equipping.
 | Variant selector | labels and preview thumbnails |
 | Compatibility row | supported operator/weapon, locked requirements if any |
 
-#### States & Edge Cases
+**States & Edge Cases**
 
 | State | Behavior |
 | :--- | :--- |
@@ -341,15 +341,15 @@ Inspect a cosmetic from all useful angles before buying or equipping.
 | Owned | CTA changes to Equip / View In Locker |
 | Incompatible | purchase allowed only if cosmetic is account-owned; copy explains use limitation |
 
-#### Input / Focus / Touch
+**Input / Focus / Touch**
 
 Mouse drag rotates preview; wheel zooms. Console right stick rotates and triggers zoom. Touch drag rotates and pinch zooms with reset button.
 
-#### Designer Notes
+**Designer Notes**
 
 Preview controls must feel optional; the purchase facts must remain readable without interacting.
 
-#### Acceptance Checklist
+**Acceptance Checklist**
 
 - [ ] Compatibility and variants are visible before purchase.
 - [ ] Preview failure has a fallback that does not block purchase facts.
@@ -357,11 +357,11 @@ Preview controls must feel optional; the purchase facts must remain readable wit
 
 ### Event / Collection Store
 
-#### Player Intent
+**Player Intent**
 
 Understand limited-time event offers, collection completion, and what reward unlocks at completion.
 
-#### Expanded ASCII Wireframe
+**Expanded ASCII Wireframe**
 
 ```
 +------------------------------------------------------------------------------------------------+
@@ -379,7 +379,7 @@ Understand limited-time event offers, collection completion, and what reward unl
 +------------------------------------------------------------------------------------------------+
 ```
 
-#### Layout Anatomy
+**Layout Anatomy**
 
 | Region | Requirement |
 | :--- | :--- |
@@ -388,7 +388,7 @@ Understand limited-time event offers, collection completion, and what reward unl
 | Progress ladder | milestones and completion clarity |
 | Event grid | event item cards with owned/new/locked states |
 
-#### Visual Hierarchy
+**Visual Hierarchy**
 
 | Priority | Element | Requirement |
 | :--- | :--- | :--- |
@@ -396,7 +396,7 @@ Understand limited-time event offers, collection completion, and what reward unl
 | 2 | Collection reward | visually clear but not misleading |
 | 3 | Event item grid | shows cost and ownership per item |
 
-#### Component Requirements
+**Component Requirements**
 
 | Component | Data / Behavior |
 | :--- | :--- |
@@ -404,7 +404,7 @@ Understand limited-time event offers, collection completion, and what reward unl
 | Event item card | item type, price, owned, event-only label |
 | Event challenge link | route to LiveOps event progress, not purchase duplicate |
 
-#### States & Edge Cases
+**States & Edge Cases**
 
 | State | Behavior |
 | :--- | :--- |
@@ -413,15 +413,15 @@ Understand limited-time event offers, collection completion, and what reward unl
 | Reward already claimed | show View Owned / Equip |
 | Late purchase risk | final-hour warning in text near CTA |
 
-#### Input / Focus / Touch
+**Input / Focus / Touch**
 
 Focus starts at reward preview then grid. Console shoulder tabs switch shop sections; D-pad grid navigation does not skip locked cards.
 
-#### Designer Notes
+**Designer Notes**
 
 The page must not imply random rewards unless the economy actually supports them. If deterministic, say exactly what is bought.
 
-#### Acceptance Checklist
+**Acceptance Checklist**
 
 - [ ] Event timer, owned count, and reward requirement are visible.
 - [ ] Ended event disables purchase with a clear reason.
@@ -429,11 +429,11 @@ The page must not imply random rewards unless the economy actually supports them
 
 ### Battle Pass Upgrade
 
-#### Player Intent
+**Player Intent**
 
 Compare free and premium value, understand tier skip options, and upgrade intentionally.
 
-#### Expanded ASCII Wireframe
+**Expanded ASCII Wireframe**
 
 ```
 +------------------------------------------------------------------------------------------------+
@@ -449,7 +449,7 @@ Compare free and premium value, understand tier skip options, and upgrade intent
 +------------------------------------------------------------------------------------------------+
 ```
 
-#### Layout Anatomy
+**Layout Anatomy**
 
 | Region | Requirement |
 | :--- | :--- |
@@ -458,7 +458,7 @@ Compare free and premium value, understand tier skip options, and upgrade intent
 | Immediate rewards | items unlocked immediately after purchase |
 | Route links | battle pass progress remains in Progression/LiveOps |
 
-#### Visual Hierarchy
+**Visual Hierarchy**
 
 | Priority | Element | Requirement |
 | :--- | :--- | :--- |
@@ -466,7 +466,7 @@ Compare free and premium value, understand tier skip options, and upgrade intent
 | 2 | Immediate unlocks | prevents uncertainty after purchase |
 | 3 | Season timer | near title and CTA |
 
-#### Component Requirements
+**Component Requirements**
 
 | Component | Data / Behavior |
 | :--- | :--- |
@@ -474,7 +474,7 @@ Compare free and premium value, understand tier skip options, and upgrade intent
 | Reward preview | immediate unlocks, future rewards, claimed state |
 | Season timer | days/hours; final day warning |
 
-#### States & Edge Cases
+**States & Edge Cases**
 
 | State | Behavior |
 | :--- | :--- |
@@ -483,15 +483,15 @@ Compare free and premium value, understand tier skip options, and upgrade intent
 | Insufficient balance | route to Currency Top-Up with needed shortfall |
 | Pass unavailable | disabled with season/platform reason |
 
-#### Input / Focus / Touch
+**Input / Focus / Touch**
 
 Option cards are first focus targets. Console left/right compares options; touch stacks option cards vertically on narrow layouts.
 
-#### Designer Notes
+**Designer Notes**
 
 Do not duplicate the full Battle Pass page here. This surface owns purchase clarity only.
 
-#### Acceptance Checklist
+**Acceptance Checklist**
 
 - [ ] Premium vs bundle value is directly comparable.
 - [ ] Immediate unlocks after upgrade are listed.
@@ -499,11 +499,11 @@ Do not duplicate the full Battle Pass page here. This surface owns purchase clar
 
 ### Currency Top-Up
 
-#### Player Intent
+**Player Intent**
 
 Choose a premium currency pack and understand platform checkout before leaving the game UI.
 
-#### Expanded ASCII Wireframe
+**Expanded ASCII Wireframe**
 
 ```
 +------------------------------------------------------------------------------------------------+
@@ -519,7 +519,7 @@ Choose a premium currency pack and understand platform checkout before leaving t
 +------------------------------------------------------------------------------------------------+
 ```
 
-#### Layout Anatomy
+**Layout Anatomy**
 
 | Region | Requirement |
 | :--- | :--- |
@@ -528,7 +528,7 @@ Choose a premium currency pack and understand platform checkout before leaving t
 | Checkout panel | platform/provider, localized price, handoff copy |
 | Action bar | back to offer, change pack, continue |
 
-#### Visual Hierarchy
+**Visual Hierarchy**
 
 | Priority | Element | Requirement |
 | :--- | :--- | :--- |
@@ -536,7 +536,7 @@ Choose a premium currency pack and understand platform checkout before leaving t
 | 2 | Pack amounts | easy comparison without dark patterns |
 | 3 | Current balance | visible but secondary |
 
-#### Component Requirements
+**Component Requirements**
 
 | Component | Data / Behavior |
 | :--- | :--- |
@@ -544,7 +544,7 @@ Choose a premium currency pack and understand platform checkout before leaving t
 | Platform panel | provider, account status, checkout availability |
 | Return context | name of offer that required top-up if entered from purchase |
 
-#### States & Edge Cases
+**States & Edge Cases**
 
 | State | Behavior |
 | :--- | :--- |
@@ -553,15 +553,15 @@ Choose a premium currency pack and understand platform checkout before leaving t
 | Age/region restricted | block purchase with account/platform requirement |
 | Bonus promotion ended | refresh pack data and require reselection |
 
-#### Input / Focus / Touch
+**Input / Focus / Touch**
 
 Pack cards are a horizontal row on PC/console and a two-column grid on mobile. Confirm focus starts on selected pack, then checkout CTA.
 
-#### Designer Notes
+**Designer Notes**
 
 This is not a Wallet. Do not add history, ledger, or balance management here.
 
-#### Acceptance Checklist
+**Acceptance Checklist**
 
 - [ ] No standalone wallet/history UI exists.
 - [ ] Platform provider and localized price are visible before checkout.
@@ -569,11 +569,11 @@ This is not a Wallet. Do not add history, ledger, or balance management here.
 
 ### Purchase Confirmation
 
-#### Player Intent
+**Player Intent**
 
 Make a final informed decision with exact contents, price, balance impact, and refund/platform note.
 
-#### Expanded ASCII Wireframe
+**Expanded ASCII Wireframe**
 
 ```
 +------------------------------------------------------------------------------------------------+
@@ -588,7 +588,7 @@ Make a final informed decision with exact contents, price, balance impact, and r
 +------------------------------------------------------------------------------------------------+
 ```
 
-#### Layout Anatomy
+**Layout Anatomy**
 
 | Region | Requirement |
 | :--- | :--- |
@@ -597,7 +597,7 @@ Make a final informed decision with exact contents, price, balance impact, and r
 | Policy note | platform/refund note and non-power copy |
 | Confirmation bar | cancel and confirm; hold when required |
 
-#### Visual Hierarchy
+**Visual Hierarchy**
 
 | Priority | Element | Requirement |
 | :--- | :--- | :--- |
@@ -605,7 +605,7 @@ Make a final informed decision with exact contents, price, balance impact, and r
 | 2 | Contents | exact count and item list access |
 | 3 | Balance after | visible before committing |
 
-#### Component Requirements
+**Component Requirements**
 
 | Component | Data / Behavior |
 | :--- | :--- |
@@ -613,7 +613,7 @@ Make a final informed decision with exact contents, price, balance impact, and r
 | Hold progress | shows duration and cancel state |
 | Policy link | opens non-blocking detail panel if possible |
 
-#### States & Edge Cases
+**States & Edge Cases**
 
 | State | Behavior |
 | :--- | :--- |
@@ -622,15 +622,15 @@ Make a final informed decision with exact contents, price, balance impact, and r
 | Service timeout | no charge assumed; show retry/status copy |
 | Duplicate ownership | block purchase and show owned state |
 
-#### Input / Focus / Touch
+**Input / Focus / Touch**
 
 Default focus is Cancel for high-cost or real-money confirmation; otherwise focus starts on confirmation only after summary is read. Touch uses hold button for expensive purchases.
 
-#### Designer Notes
+**Designer Notes**
 
 The confirmation modal is the trust anchor. No marketing copy should compete with final price and contents.
 
-#### Acceptance Checklist
+**Acceptance Checklist**
 
 - [ ] Final price, balance after, and contents are visible together.
 - [ ] Price change requires re-confirmation.
@@ -638,11 +638,11 @@ The confirmation modal is the trust anchor. No marketing copy should compete wit
 
 ### Purchase Result / Receipt
 
-#### Player Intent
+**Player Intent**
 
 Know whether the purchase succeeded, what was received, and what to do next.
 
-#### Expanded ASCII Wireframe
+**Expanded ASCII Wireframe**
 
 ```
 +------------------------------------------------------------------------------------------------+
@@ -657,7 +657,7 @@ Know whether the purchase succeeded, what was received, and what to do next.
 +------------------------------------------------------------------------------------------------+
 ```
 
-#### Layout Anatomy
+**Layout Anatomy**
 
 | Region | Requirement |
 | :--- | :--- |
@@ -666,7 +666,7 @@ Know whether the purchase succeeded, what was received, and what to do next.
 | Receipt details | transaction/reference id when available |
 | Next actions | equip/view/back/help/retry depending on state |
 
-#### Visual Hierarchy
+**Visual Hierarchy**
 
 | Priority | Element | Requirement |
 | :--- | :--- | :--- |
@@ -674,7 +674,7 @@ Know whether the purchase succeeded, what was received, and what to do next.
 | 2 | Granted items | names readable without scrolling for small purchases |
 | 3 | Support route | visible for pending/failed/refunded |
 
-#### Component Requirements
+**Component Requirements**
 
 | Component | Data / Behavior |
 | :--- | :--- |
@@ -682,7 +682,7 @@ Know whether the purchase succeeded, what was received, and what to do next.
 | Item list | item name, type, ownership destination |
 | Help link | support article/report route with receipt id copied if possible |
 
-#### States & Edge Cases
+**States & Edge Cases**
 
 | State | Behavior |
 | :--- | :--- |
@@ -691,15 +691,15 @@ Know whether the purchase succeeded, what was received, and what to do next.
 | Failed | show retry only if safe and no charge captured |
 | Refunded | explain entitlement removal or balance restoration |
 
-#### Input / Focus / Touch
+**Input / Focus / Touch**
 
 Success focuses Equip/View. Pending focuses Refresh Status. Failed focuses safe Retry or Help depending on provider response.
 
-#### Designer Notes
+**Designer Notes**
 
 Never leave players guessing whether money or currency moved. Result copy must be plain.
 
-#### Acceptance Checklist
+**Acceptance Checklist**
 
 - [ ] Pending state warns against duplicate purchase.
 - [ ] Receipt/support path is visible.
@@ -707,11 +707,11 @@ Never leave players guessing whether money or currency moved. Result copy must b
 
 ### Redeem Code / Entitlement Claim
 
-#### Player Intent
+**Player Intent**
 
 Enter a code or claim a platform entitlement and resolve duplicate/expired/region errors.
 
-#### Expanded ASCII Wireframe
+**Expanded ASCII Wireframe**
 
 ```
 +------------------------------------------------------------------------------------------------+
@@ -727,7 +727,7 @@ Enter a code or claim a platform entitlement and resolve duplicate/expired/regio
 +------------------------------------------------------------------------------------------------+
 ```
 
-#### Layout Anatomy
+**Layout Anatomy**
 
 | Region | Requirement |
 | :--- | :--- |
@@ -736,7 +736,7 @@ Enter a code or claim a platform entitlement and resolve duplicate/expired/regio
 | Status lane | success/error/loading copy |
 | Help link | support for invalid or missing entitlement |
 
-#### Visual Hierarchy
+**Visual Hierarchy**
 
 | Priority | Element | Requirement |
 | :--- | :--- | :--- |
@@ -744,7 +744,7 @@ Enter a code or claim a platform entitlement and resolve duplicate/expired/regio
 | 2 | Status/error | inline and persistent after submit |
 | 3 | Claim list | distinguishes ready, claimed, expired |
 
-#### Component Requirements
+**Component Requirements**
 
 | Component | Data / Behavior |
 | :--- | :--- |
@@ -752,7 +752,7 @@ Enter a code or claim a platform entitlement and resolve duplicate/expired/regio
 | Claim card | entitlement name, source platform, status, contents |
 | Error lane | duplicate, expired, region locked, service unavailable |
 
-#### States & Edge Cases
+**States & Edge Cases**
 
 | State | Behavior |
 | :--- | :--- |
@@ -761,15 +761,15 @@ Enter a code or claim a platform entitlement and resolve duplicate/expired/regio
 | Expired | show expiration copy and support if applicable |
 | Region locked | explain region/account mismatch |
 
-#### Input / Focus / Touch
+**Input / Focus / Touch**
 
 Keyboard paste should fill all code segments. Console input uses platform text entry. Touch uses large segmented fields and paste shortcut.
 
-#### Designer Notes
+**Designer Notes**
 
 Do not bury error details in a toast. Claim failures are support-sensitive.
 
-#### Acceptance Checklist
+**Acceptance Checklist**
 
 - [ ] Duplicate, expired, and region-locked states have distinct copy.
 - [ ] Successful claim lists granted items.

@@ -331,11 +331,11 @@ Social UI must make coordination fast while protecting privacy and safety. Every
 
 ### Social Panel
 
-#### Player Intent
+**Player Intent**
 
 Open a compact social command center for friends, party, recent players, notifications, and safety shortcuts without leaving the current lifecycle screen.
 
-#### Expanded ASCII Wireframe
+**Expanded ASCII Wireframe**
 
 ```
 +--------------------------------------------------------------------------------+
@@ -349,7 +349,7 @@ Open a compact social command center for friends, party, recent players, notific
 +--------------------------------------------------------------------------------+
 ```
 
-#### Layout Anatomy
+**Layout Anatomy**
 
 | Region | Requirement |
 | :--- | :--- |
@@ -358,7 +358,7 @@ Open a compact social command center for friends, party, recent players, notific
 | Detail panel | selected player actions and blockers |
 | Safety row | mute, block, report, privacy settings |
 
-#### Visual Hierarchy
+**Visual Hierarchy**
 
 | Priority | Element | Requirement |
 | :--- | :--- | :--- |
@@ -366,7 +366,7 @@ Open a compact social command center for friends, party, recent players, notific
 | 2 | Compatibility blockers | Visible before action |
 | 3 | Safety actions | Available but separated |
 
-#### Component Requirements
+**Component Requirements**
 
 | Component | Requirement |
 | :--- | :--- |
@@ -374,7 +374,7 @@ Open a compact social command center for friends, party, recent players, notific
 | Badge | text label plus icon for muted, blocked, crossplay, invite pending |
 | Detail actions | invite, join, message, profile, mute, block, report |
 
-#### States & Edge Cases
+**States & Edge Cases**
 
 | State | Behavior |
 | :--- | :--- |
@@ -383,7 +383,7 @@ Open a compact social command center for friends, party, recent players, notific
 | Blocked user | Hide invite/message and show unblock path |
 | Offline/social service down | Disable online actions with reason |
 
-#### Input / Focus / Touch
+**Input / Focus / Touch**
 
 | Action | PC | Console | Mobile |
 | :--- | :--- | :--- | :--- |
@@ -391,22 +391,22 @@ Open a compact social command center for friends, party, recent players, notific
 | Select row | Click | D-pad | Tap |
 | Quick action | Click CTA | A / Cross | Tap action |
 
-#### Designer Notes
+**Designer Notes**
 
 - Social panel is utility, not a profile gallery.
 - Do not leak exact map/party status under privacy or streamer mode.
 
-#### Acceptance Checklist
+**Acceptance Checklist**
 
 - [ ] Empty, offline, privacy-hidden, blocked, and invite-pending states are covered.
 
 ### Friends List
 
-#### Player Intent
+**Player Intent**
 
 Find friends, understand availability, and invite/join/message with clear compatibility and privacy rules.
 
-#### Expanded ASCII Wireframe
+**Expanded ASCII Wireframe**
 
 ```
 +--------------------------------------------------------------------------------+
@@ -418,7 +418,7 @@ Find friends, understand availability, and invite/join/message with clear compat
 +--------------------------------------------------------------------------------+
 ```
 
-#### Layout Anatomy
+**Layout Anatomy**
 
 | Region | Requirement |
 | :--- | :--- |
@@ -426,7 +426,7 @@ Find friends, understand availability, and invite/join/message with clear compat
 | Friend rows | identity, status, privacy-safe activity, platform, action |
 | Detail | profile, mutual party, block/mute state |
 
-#### Visual Hierarchy
+**Visual Hierarchy**
 
 | Priority | Element | Requirement |
 | :--- | :--- | :--- |
@@ -434,7 +434,7 @@ Find friends, understand availability, and invite/join/message with clear compat
 | 2 | Friend identity | Privacy-safe |
 | 3 | Secondary actions | Message/profile after invite |
 
-#### Component Requirements
+**Component Requirements**
 
 | Component | Requirement |
 | :--- | :--- |
@@ -442,7 +442,7 @@ Find friends, understand availability, and invite/join/message with clear compat
 | Compatibility chip | crossplay, region, mode/ranked restriction |
 | Invite CTA | disabled with reason if blocked |
 
-#### States & Edge Cases
+**States & Edge Cases**
 
 | State | Behavior |
 | :--- | :--- |
@@ -451,7 +451,7 @@ Find friends, understand availability, and invite/join/message with clear compat
 | Crossplay blocked | Explain platform setting route |
 | Request pending | Show cancel/resent state |
 
-#### Input / Focus / Touch
+**Input / Focus / Touch**
 
 | Action | PC | Console | Mobile |
 | :--- | :--- | :--- | :--- |
@@ -459,22 +459,22 @@ Find friends, understand availability, and invite/join/message with clear compat
 | Invite | Click | A / Cross | Tap |
 | Open profile | Right-click/profile | Focus action | Tap row |
 
-#### Designer Notes
+**Designer Notes**
 
 - Online status is sensitive; obey privacy defaults.
 - Invite must never be the only visible action.
 
-#### Acceptance Checklist
+**Acceptance Checklist**
 
 - [ ] Invite disabled states name the blocker.
 
 ### Party Panel
 
-#### Player Intent
+**Player Intent**
 
 Manage party membership, readiness, voice, leader controls, and matchmaking blockers.
 
-#### Expanded ASCII Wireframe
+**Expanded ASCII Wireframe**
 
 ```
 +--------------------------------------------------------------------------------+
@@ -487,7 +487,7 @@ Manage party membership, readiness, voice, leader controls, and matchmaking bloc
 +--------------------------------------------------------------------------------+
 ```
 
-#### Layout Anatomy
+**Layout Anatomy**
 
 | Region | Requirement |
 | :--- | :--- |
@@ -495,7 +495,7 @@ Manage party membership, readiness, voice, leader controls, and matchmaking bloc
 | Mission strip | selected mode/map/time and restrictions |
 | Controls | ready, invite, leader actions, leave |
 
-#### Visual Hierarchy
+**Visual Hierarchy**
 
 | Priority | Element | Requirement |
 | :--- | :--- | :--- |
@@ -503,7 +503,7 @@ Manage party membership, readiness, voice, leader controls, and matchmaking bloc
 | 2 | Leader/member permissions | Clear disabled reasons |
 | 3 | Voice status | Visible per member |
 
-#### Component Requirements
+**Component Requirements**
 
 | Component | Requirement |
 | :--- | :--- |
@@ -511,7 +511,7 @@ Manage party membership, readiness, voice, leader controls, and matchmaking bloc
 | Kick/leave | confirmation with party consequence |
 | Ready CTA | disabled only with exact reason |
 
-#### States & Edge Cases
+**States & Edge Cases**
 
 | State | Behavior |
 | :--- | :--- |
@@ -520,7 +520,7 @@ Manage party membership, readiness, voice, leader controls, and matchmaking bloc
 | Ranked mismatch | show level/rank restriction |
 | Leader migrated | update controls and announce |
 
-#### Input / Focus / Touch
+**Input / Focus / Touch**
 
 | Action | PC | Console | Mobile |
 | :--- | :--- | :--- | :--- |
@@ -528,22 +528,22 @@ Manage party membership, readiness, voice, leader controls, and matchmaking bloc
 | Invite | Click | Y / Triangle | Invite button |
 | Leave | Click + confirm | Hold B / Circle | Confirm sheet |
 
-#### Designer Notes
+**Designer Notes**
 
 - Party panel should mirror deploy blockers from pre-raid.
 - Do not expose exact gear details unless player permits inspection.
 
-#### Acceptance Checklist
+**Acceptance Checklist**
 
 - [ ] Ready, leader, disconnected, empty slot, and ranked mismatch states are covered.
 
 ### Invite Flow
 
-#### Player Intent
+**Player Intent**
 
 Send, receive, accept, decline, or recover invites with clear context and privacy-safe sender information.
 
-#### Expanded ASCII Wireframe
+**Expanded ASCII Wireframe**
 
 ```
 +--------------------------------------------------------------------------------+
@@ -555,7 +555,7 @@ Send, receive, accept, decline, or recover invites with clear context and privac
 +--------------------------------------------------------------------------------+
 ```
 
-#### Layout Anatomy
+**Layout Anatomy**
 
 | Region | Requirement |
 | :--- | :--- |
@@ -563,7 +563,7 @@ Send, receive, accept, decline, or recover invites with clear context and privac
 | Compatibility | crossplay, ranked, region, party size |
 | Actions | accept, decline, view party |
 
-#### Visual Hierarchy
+**Visual Hierarchy**
 
 | Priority | Element | Requirement |
 | :--- | :--- | :--- |
@@ -571,7 +571,7 @@ Send, receive, accept, decline, or recover invites with clear context and privac
 | 2 | Accept deadline | Visible timer |
 | 3 | Compatibility blockers | Before accept |
 
-#### Component Requirements
+**Component Requirements**
 
 | Component | Requirement |
 | :--- | :--- |
@@ -579,7 +579,7 @@ Send, receive, accept, decline, or recover invites with clear context and privac
 | Accept CTA | disabled with reason if incompatible |
 | Decline | does not punish or expose reason |
 
-#### States & Edge Cases
+**States & Edge Cases**
 
 | State | Behavior |
 | :--- | :--- |
@@ -588,28 +588,28 @@ Send, receive, accept, decline, or recover invites with clear context and privac
 | Privacy blocked | hide unavailable context |
 | Already in queue | explain leaving current flow |
 
-#### Input / Focus / Touch
+**Input / Focus / Touch**
 
 | Action | PC | Console | Mobile |
 | :--- | :--- | :--- | :--- |
 | Accept | Click/Enter | A / Cross | Tap |
 | Decline | Esc/click | B / Circle | Swipe/decline |
 
-#### Designer Notes
+**Designer Notes**
 
 - Invite context should be useful but never leak hidden activity.
 
-#### Acceptance Checklist
+**Acceptance Checklist**
 
 - [ ] Expired, incompatible, party-full, and already-queued states are covered.
 
 ### LFG Board
 
-#### Player Intent
+**Player Intent**
 
 Find or post a group with matching mode, map, region, voice, role, and experience expectations.
 
-#### Expanded ASCII Wireframe
+**Expanded ASCII Wireframe**
 
 ```
 +---------------------------------------------------------------------------------+
@@ -621,7 +621,7 @@ Find or post a group with matching mode, map, region, voice, role, and experienc
 +---------------------------------------------------------------------------------+
 ```
 
-#### Layout Anatomy
+**Layout Anatomy**
 
 | Region | Requirement |
 | :--- | :--- |
@@ -629,7 +629,7 @@ Find or post a group with matching mode, map, region, voice, role, and experienc
 | Post rows | host, mission, needed roles, requirements, join state |
 | Create post | expectations and privacy settings |
 
-#### Visual Hierarchy
+**Visual Hierarchy**
 
 | Priority | Element | Requirement |
 | :--- | :--- | :--- |
@@ -637,7 +637,7 @@ Find or post a group with matching mode, map, region, voice, role, and experienc
 | 2 | Requirements | visible before request |
 | 3 | Voice/language | prominent for coordination |
 
-#### Component Requirements
+**Component Requirements**
 
 | Component | Requirement |
 | :--- | :--- |
@@ -645,7 +645,7 @@ Find or post a group with matching mode, map, region, voice, role, and experienc
 | Requirement chip | level/rank/region/platform reason |
 | Create form | validates required fields before posting |
 
-#### States & Edge Cases
+**States & Edge Cases**
 
 | State | Behavior |
 | :--- | :--- |
@@ -654,7 +654,7 @@ Find or post a group with matching mode, map, region, voice, role, and experienc
 | Requirement mismatch | show unmet condition |
 | Abuse/spam | report post action |
 
-#### Input / Focus / Touch
+**Input / Focus / Touch**
 
 | Action | PC | Console | Mobile |
 | :--- | :--- | :--- | :--- |
@@ -662,21 +662,21 @@ Find or post a group with matching mode, map, region, voice, role, and experienc
 | Join/request | Click | A / Cross | Tap |
 | Create | Button | Y / Triangle | FAB/button |
 
-#### Designer Notes
+**Designer Notes**
 
 - LFG should reduce ambiguity, not become a chat room.
 
-#### Acceptance Checklist
+**Acceptance Checklist**
 
 - [ ] No-post, full, locked, and mismatch states are covered.
 
 ### Clan Hub
 
-#### Player Intent
+**Player Intent**
 
 Understand clan identity, members, roles, activity, invites, and contribution/reward state.
 
-#### Expanded ASCII Wireframe
+**Expanded ASCII Wireframe**
 
 ```
 +--------------------------------------------------------------------------------+
@@ -687,7 +687,7 @@ Understand clan identity, members, roles, activity, invites, and contribution/re
 +--------------------------------------------------------------------------------+
 ```
 
-#### Layout Anatomy
+**Layout Anatomy**
 
 | Region | Requirement |
 | :--- | :--- |
@@ -695,7 +695,7 @@ Understand clan identity, members, roles, activity, invites, and contribution/re
 | Tabs | activity, members, requests, tasks, rewards |
 | Detail panel | selected member/task/request |
 
-#### Visual Hierarchy
+**Visual Hierarchy**
 
 | Priority | Element | Requirement |
 | :--- | :--- | :--- |
@@ -703,7 +703,7 @@ Understand clan identity, members, roles, activity, invites, and contribution/re
 | 2 | Member/request actions | Permission-gated |
 | 3 | Rewards | Visible but not shop-like |
 
-#### Component Requirements
+**Component Requirements**
 
 | Component | Requirement |
 | :--- | :--- |
@@ -711,7 +711,7 @@ Understand clan identity, members, roles, activity, invites, and contribution/re
 | Request row | applicant summary and accept/deny permission |
 | Clan task | progress, contributors, reward, expiry |
 
-#### States & Edge Cases
+**States & Edge Cases**
 
 | State | Behavior |
 | :--- | :--- |
@@ -720,28 +720,28 @@ Understand clan identity, members, roles, activity, invites, and contribution/re
 | Full clan | block invites with capacity reason |
 | Pending request | show status and cancel |
 
-#### Input / Focus / Touch
+**Input / Focus / Touch**
 
 | Action | PC | Console | Mobile |
 | :--- | :--- | :--- | :--- |
 | Switch tab | Click | Bumpers | Tab row |
 | Manage row | Click | A / Cross | Tap row |
 
-#### Designer Notes
+**Designer Notes**
 
 - Role permissions must be explicit before destructive clan actions.
 
-#### Acceptance Checklist
+**Acceptance Checklist**
 
 - [ ] No-clan, permission, full, and pending-request states are covered.
 
 ### Chat And Voice
 
-#### Player Intent
+**Player Intent**
 
 Communicate with party/squad safely, identify voice device state, and mute/report quickly when needed.
 
-#### Expanded ASCII Wireframe
+**Expanded ASCII Wireframe**
 
 ```
 +--------------------------------------------------------------------------------+
@@ -752,7 +752,7 @@ Communicate with party/squad safely, identify voice device state, and mute/repor
 +--------------------------------------------------------------------------------+
 ```
 
-#### Layout Anatomy
+**Layout Anatomy**
 
 | Region | Requirement |
 | :--- | :--- |
@@ -760,7 +760,7 @@ Communicate with party/squad safely, identify voice device state, and mute/repor
 | Message list | sender, time, content, moderation state |
 | Composer | input, send, mute/settings |
 
-#### Visual Hierarchy
+**Visual Hierarchy**
 
 | Priority | Element | Requirement |
 | :--- | :--- | :--- |
@@ -768,7 +768,7 @@ Communicate with party/squad safely, identify voice device state, and mute/repor
 | 2 | Recent messages | readable without covering gameplay in overlays |
 | 3 | Safety actions | quick mute/report |
 
-#### Component Requirements
+**Component Requirements**
 
 | Component | Requirement |
 | :--- | :--- |
@@ -776,7 +776,7 @@ Communicate with party/squad safely, identify voice device state, and mute/repor
 | Voice meter | speaking, muted, disconnected labels |
 | Error banner | permission/device/network reason and settings route |
 
-#### States & Edge Cases
+**States & Edge Cases**
 
 | State | Behavior |
 | :--- | :--- |
@@ -785,7 +785,7 @@ Communicate with party/squad safely, identify voice device state, and mute/repor
 | Muted player | show muted state and undo |
 | Moderated message | hide content with reason |
 
-#### Input / Focus / Touch
+**Input / Focus / Touch**
 
 | Action | PC | Console | Mobile |
 | :--- | :--- | :--- | :--- |
@@ -793,21 +793,21 @@ Communicate with party/squad safely, identify voice device state, and mute/repor
 | Mute | Click icon | Focus player | Tap/hold |
 | Push-to-talk | Key | Mapped button | Hold mic |
 
-#### Designer Notes
+**Designer Notes**
 
 - Voice errors need exact, non-technical fix copy.
 
-#### Acceptance Checklist
+**Acceptance Checklist**
 
 - [ ] Permission, device, muted, and moderated states are covered.
 
 ### Report And Block
 
-#### Player Intent
+**Player Intent**
 
 Take a safety action with enough context, clear consequence, and no exposure of enforcement outcome.
 
-#### Expanded ASCII Wireframe
+**Expanded ASCII Wireframe**
 
 ```
 +--------------------------------------------------------------------------------+
@@ -821,7 +821,7 @@ Take a safety action with enough context, clear consequence, and no exposure of 
 +--------------------------------------------------------------------------------+
 ```
 
-#### Layout Anatomy
+**Layout Anatomy**
 
 | Region | Requirement |
 | :--- | :--- |
@@ -830,7 +830,7 @@ Take a safety action with enough context, clear consequence, and no exposure of 
 | Evidence | clip/log/message attachment state |
 | Actions | cancel, block, submit |
 
-#### Visual Hierarchy
+**Visual Hierarchy**
 
 | Priority | Element | Requirement |
 | :--- | :--- | :--- |
@@ -838,7 +838,7 @@ Take a safety action with enough context, clear consequence, and no exposure of 
 | 2 | Block consequence | Clear and separate |
 | 3 | Feedback | Confirmation without punishment details |
 
-#### Component Requirements
+**Component Requirements**
 
 | Component | Requirement |
 | :--- | :--- |
@@ -846,7 +846,7 @@ Take a safety action with enough context, clear consequence, and no exposure of 
 | Block CTA | explains friend/party/chat impact |
 | Submit CTA | disabled until required fields valid |
 
-#### States & Edge Cases
+**States & Edge Cases**
 
 | State | Behavior |
 | :--- | :--- |
@@ -855,7 +855,7 @@ Take a safety action with enough context, clear consequence, and no exposure of 
 | Already blocked | show unblock/manage route |
 | Offline | queue report if supported or explain retry |
 
-#### Input / Focus / Touch
+**Input / Focus / Touch**
 
 | Action | PC | Console | Mobile |
 | :--- | :--- | :--- | :--- |
@@ -863,12 +863,12 @@ Take a safety action with enough context, clear consequence, and no exposure of 
 | Submit | Click | Focus CTA | Sticky CTA |
 | Block | Click + confirm | Hold CTA | Confirm sheet |
 
-#### Designer Notes
+**Designer Notes**
 
 - Keep tone calm and procedural.
 - Never expose punishment or investigation details.
 
-#### Acceptance Checklist
+**Acceptance Checklist**
 
 - [ ] Report, block, evidence unavailable, submitted, and already-blocked states are covered.
 

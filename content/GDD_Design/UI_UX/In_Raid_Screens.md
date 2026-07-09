@@ -302,11 +302,11 @@ In-raid specs must preserve threat awareness. Every overlay below must keep audi
 
 ### HUD Reference
 
-#### Player Intent
+**Player Intent**
 
 Read survival-critical information while moving, fighting, looting, and extracting without opening a blocking menu.
 
-#### Expanded ASCII Wireframe
+**Expanded ASCII Wireframe**
 
 ```
 +---------------------------------------------------------------------------------+
@@ -320,7 +320,7 @@ Read survival-critical information while moving, fighting, looting, and extracti
 +---------------------------------------------------------------------------------+
 ```
 
-#### Layout Anatomy
+**Layout Anatomy**
 
 | Region | Requirement |
 | :--- | :--- |
@@ -329,7 +329,7 @@ Read survival-critical information while moving, fighting, looting, and extracti
 | Bottom band | prompts, status effects, ammo, ability, weight |
 | Corners | reserve for persistent but non-blocking HUD clusters |
 
-#### Visual Hierarchy
+**Visual Hierarchy**
 
 | Priority | Element | Requirement |
 | :--- | :--- | :--- |
@@ -337,7 +337,7 @@ Read survival-critical information while moving, fighting, looting, and extracti
 | 2 | Action readiness | ammo, ability, interaction prompt |
 | 3 | Navigation | compass, minimap, extraction hint |
 
-#### Component Requirements
+**Component Requirements**
 
 | Component | Requirement |
 | :--- | :--- |
@@ -345,7 +345,7 @@ Read survival-critical information while moving, fighting, looting, and extracti
 | Warning state | Text or symbol plus color; never color alone |
 | Prompt | Names input, action, hold/tap requirement, and risk if noisy |
 
-#### States & Edge Cases
+**States & Edge Cases**
 
 | State | Behavior |
 | :--- | :--- |
@@ -354,7 +354,7 @@ Read survival-critical information while moving, fighting, looting, and extracti
 | Extract active | Timer and extraction state become top priority |
 | HUD disabled/custom | Critical warnings still appear |
 
-#### Input / Focus / Touch
+**Input / Focus / Touch**
 
 | Action | PC | Console | Mobile |
 | :--- | :--- | :--- | :--- |
@@ -362,23 +362,23 @@ Read survival-critical information while moving, fighting, looting, and extracti
 | Ping | Middle mouse | D-pad / bumper | Long press |
 | Open map | M | View button | Tap minimap |
 
-#### Designer Notes
+**Designer Notes**
 
 - HUD is not a decorative frame; keep the playfield dominant.
 - Any hidden HUD option must preserve death-prevention alerts.
 
-#### Acceptance Checklist
+**Acceptance Checklist**
 
 - [ ] Critical state remains readable during combat.
 - [ ] HUD clusters do not cover the operator or immediate threat zone.
 
 ### Tactical Map
 
-#### Player Intent
+**Player Intent**
 
 Orient, plan route, inspect extracts, view squad pings, and check quest landmarks without gaining unfair enemy tracking.
 
-#### Expanded ASCII Wireframe
+**Expanded ASCII Wireframe**
 
 ```
 +--------------------------------------------------------------------------------+
@@ -394,7 +394,7 @@ Orient, plan route, inspect extracts, view squad pings, and check quest landmark
 +--------------------------------------------------------------------------------+
 ```
 
-#### Layout Anatomy
+**Layout Anatomy**
 
 | Region | Requirement |
 | :--- | :--- |
@@ -403,7 +403,7 @@ Orient, plan route, inspect extracts, view squad pings, and check quest landmark
 | Detail panel | selected marker rule, distance, risk, availability |
 | Exposure notice | persistent reminder that raid continues |
 
-#### Visual Hierarchy
+**Visual Hierarchy**
 
 | Priority | Element | Requirement |
 | :--- | :--- | :--- |
@@ -411,7 +411,7 @@ Orient, plan route, inspect extracts, view squad pings, and check quest landmark
 | 2 | Selected marker detail | Must explain rule and risk |
 | 3 | Filters | Secondary and compact |
 
-#### Component Requirements
+**Component Requirements**
 
 | Component | Requirement |
 | :--- | :--- |
@@ -419,7 +419,7 @@ Orient, plan route, inspect extracts, view squad pings, and check quest landmark
 | Ping marker | owner, age, type, decay |
 | Quest marker | objective, status, requirement |
 
-#### States & Edge Cases
+**States & Edge Cases**
 
 | State | Behavior |
 | :--- | :--- |
@@ -428,7 +428,7 @@ Orient, plan route, inspect extracts, view squad pings, and check quest landmark
 | Jammed/EMP | Show degraded map reason |
 | Online raid | Never hard-pauses gameplay |
 
-#### Input / Focus / Touch
+**Input / Focus / Touch**
 
 | Action | PC | Console | Mobile |
 | :--- | :--- | :--- | :--- |
@@ -436,23 +436,23 @@ Orient, plan route, inspect extracts, view squad pings, and check quest landmark
 | Place ping | Right-click | A / Cross | Long press |
 | Close | M/Esc | B / Circle | Close button |
 
-#### Designer Notes
+**Designer Notes**
 
 - Map should feel like an exposed tactical tool, not a safe menu.
 - All icons need legend labels.
 
-#### Acceptance Checklist
+**Acceptance Checklist**
 
 - [ ] Extract rules are readable.
 - [ ] Raid exposure is visible while map is open.
 
 ### Looting Overlay
 
-#### Player Intent
+**Player Intent**
 
 Search, compare, and transfer loot fast while understanding noise, exposure, weight, and inventory capacity.
 
-#### Expanded ASCII Wireframe
+**Expanded ASCII Wireframe**
 
 ```
 +--------------------------------------------------------------------------------+
@@ -466,7 +466,7 @@ Search, compare, and transfer loot fast while understanding noise, exposure, wei
 +--------------------------------------------------------------------------------+
 ```
 
-#### Layout Anatomy
+**Layout Anatomy**
 
 | Region | Requirement |
 | :--- | :--- |
@@ -475,7 +475,7 @@ Search, compare, and transfer loot fast while understanding noise, exposure, wei
 | Exposure header | noise/search state and vulnerability warning |
 | Selected detail | value, weight, quest/FIR, actions |
 
-#### Visual Hierarchy
+**Visual Hierarchy**
 
 | Priority | Element | Requirement |
 | :--- | :--- | :--- |
@@ -483,7 +483,7 @@ Search, compare, and transfer loot fast while understanding noise, exposure, wei
 | 2 | Item value/quest state | Visible before transfer |
 | 3 | Capacity/weight | Persistent during movement |
 
-#### Component Requirements
+**Component Requirements**
 
 | Component | Requirement |
 | :--- | :--- |
@@ -491,7 +491,7 @@ Search, compare, and transfer loot fast while understanding noise, exposure, wei
 | Transfer preview | valid/invalid target and resulting weight |
 | Search progress | truthful timer and noise state |
 
-#### States & Edge Cases
+**States & Edge Cases**
 
 | State | Behavior |
 | :--- | :--- |
@@ -500,7 +500,7 @@ Search, compare, and transfer loot fast while understanding noise, exposure, wei
 | Inventory full | Block transfer, show needed cells |
 | Under fire | Overlay may auto-minimize or warning intensifies |
 
-#### Input / Focus / Touch
+**Input / Focus / Touch**
 
 | Action | PC | Console | Mobile |
 | :--- | :--- | :--- | :--- |
@@ -508,23 +508,23 @@ Search, compare, and transfer loot fast while understanding noise, exposure, wei
 | Quick move | Ctrl-click | X / Square | Double tap |
 | Close | Esc | B / Circle | Close |
 
-#### Designer Notes
+**Designer Notes**
 
 - Do not hide the risk of standing still.
 - Quest/FIR labels must be text-readable.
 
-#### Acceptance Checklist
+**Acceptance Checklist**
 
 - [ ] Exposure, weight, and capacity are visible while looting.
 - [ ] Empty/full/under-fire states are specified.
 
 ### Inventory Overlay
 
-#### Player Intent
+**Player Intent**
 
 Rearrange gear mid-raid under pressure without mistaking safe stash behavior for exposed raid behavior.
 
-#### Expanded ASCII Wireframe
+**Expanded ASCII Wireframe**
 
 ```
 +---------------------------------------------------------------------------------+
@@ -538,7 +538,7 @@ Rearrange gear mid-raid under pressure without mistaking safe stash behavior for
 +---------------------------------------------------------------------------------+
 ```
 
-#### Layout Anatomy
+**Layout Anatomy**
 
 | Region | Requirement |
 | :--- | :--- |
@@ -547,7 +547,7 @@ Rearrange gear mid-raid under pressure without mistaking safe stash behavior for
 | Detail panel | selected item effect, value, risk |
 | Action bar | use, move, split, drop, close |
 
-#### Visual Hierarchy
+**Visual Hierarchy**
 
 | Priority | Element | Requirement |
 | :--- | :--- | :--- |
@@ -555,7 +555,7 @@ Rearrange gear mid-raid under pressure without mistaking safe stash behavior for
 | 2 | Weight and movement penalty | Always visible |
 | 3 | Drop/destructive actions | Separated and confirmed |
 
-#### Component Requirements
+**Component Requirements**
 
 | Component | Requirement |
 | :--- | :--- |
@@ -563,7 +563,7 @@ Rearrange gear mid-raid under pressure without mistaking safe stash behavior for
 | Drop action | consequence copy and confirm for protected/high-value items |
 | Secure container | visually distinct restrictions |
 
-#### States & Edge Cases
+**States & Edge Cases**
 
 | State | Behavior |
 | :--- | :--- |
@@ -572,7 +572,7 @@ Rearrange gear mid-raid under pressure without mistaking safe stash behavior for
 | Healing/use in progress | Show timer and vulnerability |
 | Combat detected | Warning, but player retains control |
 
-#### Input / Focus / Touch
+**Input / Focus / Touch**
 
 | Action | PC | Console | Mobile |
 | :--- | :--- | :--- | :--- |
@@ -580,23 +580,23 @@ Rearrange gear mid-raid under pressure without mistaking safe stash behavior for
 | Use item | Hotkey/click | A / Cross | Tap action |
 | Drop | Context menu | Hold button | Long press + confirm |
 
-#### Designer Notes
+**Designer Notes**
 
 - Mid-raid inventory needs faster exits and stronger risk copy than stash.
 - Do not reuse stash destructive affordances without raid-specific warning.
 
-#### Acceptance Checklist
+**Acceptance Checklist**
 
 - [ ] Raid exposure, weight, and destructive drop warnings are clear.
 - [ ] Controller and touch can move items without precision-only input.
 
 ### Pause Overlay
 
-#### Player Intent
+**Player Intent**
 
 Access settings, squad/social, abandon, report, or reconnect options while understanding that online raid state is not paused.
 
-#### Expanded ASCII Wireframe
+**Expanded ASCII Wireframe**
 
 ```
 +--------------------------------------------------------------------------------+
@@ -610,7 +610,7 @@ Access settings, squad/social, abandon, report, or reconnect options while under
 +--------------------------------------------------------------------------------+
 ```
 
-#### Layout Anatomy
+**Layout Anatomy**
 
 | Region | Requirement |
 | :--- | :--- |
@@ -618,7 +618,7 @@ Access settings, squad/social, abandon, report, or reconnect options while under
 | Danger notice | non-paused state and vulnerability |
 | Abandon | separated destructive action |
 
-#### Visual Hierarchy
+**Visual Hierarchy**
 
 | Priority | Element | Requirement |
 | :--- | :--- | :--- |
@@ -626,7 +626,7 @@ Access settings, squad/social, abandon, report, or reconnect options while under
 | 2 | Online continues notice | Near header |
 | 3 | Abandon | Low and separated |
 
-#### Component Requirements
+**Component Requirements**
 
 | Component | Requirement |
 | :--- | :--- |
@@ -634,7 +634,7 @@ Access settings, squad/social, abandon, report, or reconnect options while under
 | Abandon CTA | hold/confirm with gear consequence |
 | Settings shortcut | opens safe subset without hiding danger notice |
 
-#### States & Edge Cases
+**States & Edge Cases**
 
 | State | Behavior |
 | :--- | :--- |
@@ -643,7 +643,7 @@ Access settings, squad/social, abandon, report, or reconnect options while under
 | Downed/dead | Action set changes to spectate/report |
 | Abandon confirm | Names MIA/gear consequence |
 
-#### Input / Focus / Touch
+**Input / Focus / Touch**
 
 | Action | PC | Console | Mobile |
 | :--- | :--- | :--- | :--- |
@@ -651,23 +651,23 @@ Access settings, squad/social, abandon, report, or reconnect options while under
 | Navigate | Mouse/arrows | D-pad | Tap |
 | Abandon | Hold confirm | Hold confirm | Hold CTA |
 
-#### Designer Notes
+**Designer Notes**
 
 - Default focus must never land on Abandon.
 - Keep background readable enough to preserve threat context.
 
-#### Acceptance Checklist
+**Acceptance Checklist**
 
 - [ ] Online non-pause consequence is explicit.
 - [ ] Abandon requires confirmation.
 
 ### Spectator View
 
-#### Player Intent
+**Player Intent**
 
 Watch eligible teammates, understand remaining squad state, and avoid unfair ghosting after death.
 
-#### Expanded ASCII Wireframe
+**Expanded ASCII Wireframe**
 
 ```
 +--------------------------------------------------------------------------------+
@@ -679,7 +679,7 @@ Watch eligible teammates, understand remaining squad state, and avoid unfair gho
 +--------------------------------------------------------------------------------+
 ```
 
-#### Layout Anatomy
+**Layout Anatomy**
 
 | Region | Requirement |
 | :--- | :--- |
@@ -687,7 +687,7 @@ Watch eligible teammates, understand remaining squad state, and avoid unfair gho
 | View | allowed teammate/camera only |
 | Controls | previous/next, camera mode, leave |
 
-#### Visual Hierarchy
+**Visual Hierarchy**
 
 | Priority | Element | Requirement |
 | :--- | :--- | :--- |
@@ -695,7 +695,7 @@ Watch eligible teammates, understand remaining squad state, and avoid unfair gho
 | 2 | Anti-ghosting limits | Communicated when camera is restricted |
 | 3 | Leave/report actions | Available but secondary |
 
-#### Component Requirements
+**Component Requirements**
 
 | Component | Requirement |
 | :--- | :--- |
@@ -703,7 +703,7 @@ Watch eligible teammates, understand remaining squad state, and avoid unfair gho
 | Camera mode | labels restrictions |
 | Report action | keeps match context |
 
-#### States & Edge Cases
+**States & Edge Cases**
 
 | State | Behavior |
 | :--- | :--- |
@@ -712,7 +712,7 @@ Watch eligible teammates, understand remaining squad state, and avoid unfair gho
 | Enemy spectate blocked | Show restriction reason |
 | Reconnect teammate | Shows temporary unavailable state |
 
-#### Input / Focus / Touch
+**Input / Focus / Touch**
 
 | Action | PC | Console | Mobile |
 | :--- | :--- | :--- | :--- |
@@ -720,23 +720,23 @@ Watch eligible teammates, understand remaining squad state, and avoid unfair gho
 | Change camera | C | Y / Triangle | Camera button |
 | Leave | Click | Menu | Leave button |
 
-#### Designer Notes
+**Designer Notes**
 
 - Spectator UI must not reveal enemy information unavailable to the squad.
 - Keep report reachable without making it primary.
 
-#### Acceptance Checklist
+**Acceptance Checklist**
 
 - [ ] Anti-ghosting camera restrictions are explicit.
 - [ ] All-eliminated state routes cleanly to post-raid.
 
 ### Reconnect Overlay
 
-#### Player Intent
+**Player Intent**
 
 Understand reconnection progress, attempts, timeout, and the consequence of canceling while gear and raid status are at risk.
 
-#### Expanded ASCII Wireframe
+**Expanded ASCII Wireframe**
 
 ```
 +--------------------------------------------------------------------------------+
@@ -750,7 +750,7 @@ Understand reconnection progress, attempts, timeout, and the consequence of canc
 +--------------------------------------------------------------------------------+
 ```
 
-#### Layout Anatomy
+**Layout Anatomy**
 
 | Region | Requirement |
 | :--- | :--- |
@@ -759,7 +759,7 @@ Understand reconnection progress, attempts, timeout, and the consequence of canc
 | Consequence warning | MIA/gear risk |
 | Actions | cancel with confirm, retry if allowed |
 
-#### Visual Hierarchy
+**Visual Hierarchy**
 
 | Priority | Element | Requirement |
 | :--- | :--- | :--- |
@@ -767,7 +767,7 @@ Understand reconnection progress, attempts, timeout, and the consequence of canc
 | 2 | Gear consequence | Above cancel |
 | 3 | Retry status | Secondary |
 
-#### Component Requirements
+**Component Requirements**
 
 | Component | Requirement |
 | :--- | :--- |
@@ -775,7 +775,7 @@ Understand reconnection progress, attempts, timeout, and the consequence of canc
 | Cancel | confirm with consequence |
 | Error code | shown on failure for support |
 
-#### States & Edge Cases
+**States & Edge Cases**
 
 | State | Behavior |
 | :--- | :--- |
@@ -785,19 +785,19 @@ Understand reconnection progress, attempts, timeout, and the consequence of canc
 | Version mismatch | Require update; retry disabled |
 | Cancel | Confirm abandon consequence |
 
-#### Input / Focus / Touch
+**Input / Focus / Touch**
 
 | Action | PC | Console | Mobile |
 | :--- | :--- | :--- | :--- |
 | Retry | Click | A / Cross | Retry button |
 | Cancel | Click + confirm | B / Circle + confirm | Cancel + confirm |
 
-#### Designer Notes
+**Designer Notes**
 
 - Do not make cancel look safe.
 - Timeout should be concrete, not vague.
 
-#### Acceptance Checklist
+**Acceptance Checklist**
 
 - [ ] Attempts, timeout, and gear consequence are visible.
 - [ ] Version mismatch and timeout have clear next steps.

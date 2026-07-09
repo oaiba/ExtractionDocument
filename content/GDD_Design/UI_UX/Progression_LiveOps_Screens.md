@@ -304,11 +304,11 @@ Progression and LiveOps screens should create long-term motivation without buryi
 
 ### Battle Pass
 
-#### Player Intent
+**Player Intent**
 
 Check seasonal progress, understand free/premium rewards, claim earned items, and see the fastest route to progress.
 
-#### Expanded ASCII Wireframe
+**Expanded ASCII Wireframe**
 
 ```
 +--------------------------------------------------------------------------------+
@@ -322,7 +322,7 @@ Check seasonal progress, understand free/premium rewards, claim earned items, an
 +--------------------------------------------------------------------------------+
 ```
 
-#### Layout Anatomy
+**Layout Anatomy**
 
 | Region | Requirement |
 | :--- | :--- |
@@ -331,7 +331,7 @@ Check seasonal progress, understand free/premium rewards, claim earned items, an
 | Detail panel | selected reward, source, claim state, preview |
 | CTA area | claim, upgrade, view tasks |
 
-#### Visual Hierarchy
+**Visual Hierarchy**
 
 | Priority | Element | Requirement |
 | :--- | :--- | :--- |
@@ -339,7 +339,7 @@ Check seasonal progress, understand free/premium rewards, claim earned items, an
 | 2 | Free vs premium | Text labels, not only color |
 | 3 | Next level progress | Always visible |
 
-#### Component Requirements
+**Component Requirements**
 
 | Component | Requirement |
 | :--- | :--- |
@@ -347,7 +347,7 @@ Check seasonal progress, understand free/premium rewards, claim earned items, an
 | Upgrade prompt | cosmetic/value framing; never implies power advantage |
 | Claim CTA | checks inventory/stash capacity where relevant |
 
-#### States & Edge Cases
+**States & Edge Cases**
 
 | State | Behavior |
 | :--- | :--- |
@@ -357,7 +357,7 @@ Check seasonal progress, understand free/premium rewards, claim earned items, an
 | Season ending | Show exact remaining time |
 | Stash full | Block item claim and route to Reward Inbox/Stash |
 
-#### Input / Focus / Touch
+**Input / Focus / Touch**
 
 | Action | PC | Console | Mobile |
 | :--- | :--- | :--- | :--- |
@@ -365,22 +365,22 @@ Check seasonal progress, understand free/premium rewards, claim earned items, an
 | Claim | Click | A / Cross | Tap CTA |
 | Preview | Hover/click | Focus tile | Tap tile |
 
-#### Designer Notes
+**Designer Notes**
 
 - Free rewards must never look like secondary leftovers.
 - Avoid urgency language unless the expiry is real and visible.
 
-#### Acceptance Checklist
+**Acceptance Checklist**
 
 - [ ] Free, premium, claimable, locked, claimed, and stash-full states are clear.
 
 ### Event Hub
 
-#### Player Intent
+**Player Intent**
 
 Understand active event rules, objectives, rewards, expiry, and the exact playable route.
 
-#### Expanded ASCII Wireframe
+**Expanded ASCII Wireframe**
 
 ```
 +--------------------------------------------------------------------------------+
@@ -392,7 +392,7 @@ Understand active event rules, objectives, rewards, expiry, and the exact playab
 +--------------------------------------------------------------------------------+
 ```
 
-#### Layout Anatomy
+**Layout Anatomy**
 
 | Region | Requirement |
 | :--- | :--- |
@@ -401,7 +401,7 @@ Understand active event rules, objectives, rewards, expiry, and the exact playab
 | Objective list | progress, rewards, tracked state |
 | Route panel | mode/map/deep link |
 
-#### Visual Hierarchy
+**Visual Hierarchy**
 
 | Priority | Element | Requirement |
 | :--- | :--- | :--- |
@@ -409,7 +409,7 @@ Understand active event rules, objectives, rewards, expiry, and the exact playab
 | 2 | Expiry | Exact time remaining |
 | 3 | Rewards/objectives | Clear but secondary to rules |
 
-#### Component Requirements
+**Component Requirements**
 
 | Component | Requirement |
 | :--- | :--- |
@@ -417,7 +417,7 @@ Understand active event rules, objectives, rewards, expiry, and the exact playab
 | Objective row | count, condition, reward, track action |
 | Play CTA | deep links to exact mode/map with rules applied |
 
-#### States & Edge Cases
+**States & Edge Cases**
 
 | State | Behavior |
 | :--- | :--- |
@@ -427,28 +427,28 @@ Understand active event rules, objectives, rewards, expiry, and the exact playab
 | Locked | Show requirement |
 | Ended | Move to archive/claim grace if supported |
 
-#### Input / Focus / Touch
+**Input / Focus / Touch**
 
 | Action | PC | Console | Mobile |
 | :--- | :--- | :--- | :--- |
 | Track objective | Click | A / Cross | Tap |
 | Play event | Click CTA | A / Cross | Sticky CTA |
 
-#### Designer Notes
+**Designer Notes**
 
 - Event hub must explain rule changes before pushing players to queue.
 
-#### Acceptance Checklist
+**Acceptance Checklist**
 
 - [ ] Event modifiers, expiry, objectives, rewards, and route are visible.
 
 ### Daily And Weekly Tasks
 
-#### Player Intent
+**Player Intent**
 
 Pick achievable tasks, track progress, claim rewards, and understand reset windows.
 
-#### Expanded ASCII Wireframe
+**Expanded ASCII Wireframe**
 
 ```
 +--------------------------------------------------------------------------------+
@@ -460,7 +460,7 @@ Pick achievable tasks, track progress, claim rewards, and understand reset windo
 +--------------------------------------------------------------------------------+
 ```
 
-#### Layout Anatomy
+**Layout Anatomy**
 
 | Region | Requirement |
 | :--- | :--- |
@@ -468,7 +468,7 @@ Pick achievable tasks, track progress, claim rewards, and understand reset windo
 | Task rows | objective, progress, reward, track/claim |
 | Detail | map/mode hints and eligibility |
 
-#### Visual Hierarchy
+**Visual Hierarchy**
 
 | Priority | Element | Requirement |
 | :--- | :--- | :--- |
@@ -476,7 +476,7 @@ Pick achievable tasks, track progress, claim rewards, and understand reset windo
 | 2 | Reset timer | Always visible |
 | 3 | Progress count | Numeric and readable |
 
-#### Component Requirements
+**Component Requirements**
 
 | Component | Requirement |
 | :--- | :--- |
@@ -484,7 +484,7 @@ Pick achievable tasks, track progress, claim rewards, and understand reset windo
 | Claim CTA | checks reward capacity |
 | Track action | pins objective to relevant screens |
 
-#### States & Edge Cases
+**States & Edge Cases**
 
 | State | Behavior |
 | :--- | :--- |
@@ -493,28 +493,28 @@ Pick achievable tasks, track progress, claim rewards, and understand reset windo
 | Expired | Move to expired/removed with explanation |
 | Reward blocked | route to inbox/stash |
 
-#### Input / Focus / Touch
+**Input / Focus / Touch**
 
 | Action | PC | Console | Mobile |
 | :--- | :--- | :--- | :--- |
 | Track/claim | Click | A / Cross | Tap |
 | Filter | Click tabs | Bumpers | Tabs |
 
-#### Designer Notes
+**Designer Notes**
 
 - Tasks should feel actionable, not like a checklist wall.
 
-#### Acceptance Checklist
+**Acceptance Checklist**
 
 - [ ] Reset, progress, claim, expired, and blocked reward states are covered.
 
 ### Reward Inbox
 
-#### Player Intent
+**Player Intent**
 
 Claim pending rewards safely while understanding expiry, source, capacity, and duplicate/overflow rules.
 
-#### Expanded ASCII Wireframe
+**Expanded ASCII Wireframe**
 
 ```
 +--------------------------------------------------------------------------------+
@@ -527,7 +527,7 @@ Claim pending rewards safely while understanding expiry, source, capacity, and d
 +--------------------------------------------------------------------------------+
 ```
 
-#### Layout Anatomy
+**Layout Anatomy**
 
 | Region | Requirement |
 | :--- | :--- |
@@ -536,7 +536,7 @@ Claim pending rewards safely while understanding expiry, source, capacity, and d
 | Capacity summary | stash/wallet limits |
 | Actions | claim, claim all, route to stash |
 
-#### Visual Hierarchy
+**Visual Hierarchy**
 
 | Priority | Element | Requirement |
 | :--- | :--- | :--- |
@@ -544,7 +544,7 @@ Claim pending rewards safely while understanding expiry, source, capacity, and d
 | 2 | Claim blockers | Exact reason |
 | 3 | Source | Traceable for trust |
 
-#### Component Requirements
+**Component Requirements**
 
 | Component | Requirement |
 | :--- | :--- |
@@ -552,7 +552,7 @@ Claim pending rewards safely while understanding expiry, source, capacity, and d
 | Claim all | excludes blocked rewards and explains leftovers |
 | Capacity warning | needed cells or currency cap |
 
-#### States & Edge Cases
+**States & Edge Cases**
 
 | State | Behavior |
 | :--- | :--- |
@@ -561,28 +561,28 @@ Claim pending rewards safely while understanding expiry, source, capacity, and d
 | Stash full | block item claim and route to stash |
 | Already claimed | remove or show history |
 
-#### Input / Focus / Touch
+**Input / Focus / Touch**
 
 | Action | PC | Console | Mobile |
 | :--- | :--- | :--- | :--- |
 | Claim row | Click | A / Cross | Tap |
 | Claim all | Click | Y / Triangle | Button |
 
-#### Designer Notes
+**Designer Notes**
 
 - Claim destination must be clear before the click.
 
-#### Acceptance Checklist
+**Acceptance Checklist**
 
 - [ ] Expiry, source, capacity, claim all, and blocked claim states are covered.
 
 ### Ranked Overview
 
-#### Player Intent
+**Player Intent**
 
 Understand rank, progress, rules, restrictions, rewards, and consequences before queueing ranked.
 
-#### Expanded ASCII Wireframe
+**Expanded ASCII Wireframe**
 
 ```
 +--------------------------------------------------------------------------------+
@@ -593,7 +593,7 @@ Understand rank, progress, rules, restrictions, rewards, and consequences before
 +--------------------------------------------------------------------------------+
 ```
 
-#### Layout Anatomy
+**Layout Anatomy**
 
 | Region | Requirement |
 | :--- | :--- |
@@ -602,7 +602,7 @@ Understand rank, progress, rules, restrictions, rewards, and consequences before
 | Rewards | season rewards and milestones |
 | Queue CTA | enabled only when requirements pass |
 
-#### Visual Hierarchy
+**Visual Hierarchy**
 
 | Priority | Element | Requirement |
 | :--- | :--- | :--- |
@@ -610,7 +610,7 @@ Understand rank, progress, rules, restrictions, rewards, and consequences before
 | 2 | Rank progress | Numeric and visual |
 | 3 | Consequences | Visible before queue |
 
-#### Component Requirements
+**Component Requirements**
 
 | Component | Requirement |
 | :--- | :--- |
@@ -618,7 +618,7 @@ Understand rank, progress, rules, restrictions, rewards, and consequences before
 | RP bar | current, next, demotion threshold |
 | Queue CTA | names first blocker when disabled |
 
-#### States & Edge Cases
+**States & Edge Cases**
 
 | State | Behavior |
 | :--- | :--- |
@@ -627,28 +627,28 @@ Understand rank, progress, rules, restrictions, rewards, and consequences before
 | Penalty cooldown | show exact timer |
 | Party mismatch | show member blocker |
 
-#### Input / Focus / Touch
+**Input / Focus / Touch**
 
 | Action | PC | Console | Mobile |
 | :--- | :--- | :--- | :--- |
 | Queue | Click | A / Cross | Sticky CTA |
 | Inspect rules | Click | Focus | Tap |
 
-#### Designer Notes
+**Designer Notes**
 
 - Ranked screens must state consequences before queue.
 
-#### Acceptance Checklist
+**Acceptance Checklist**
 
 - [ ] Eligibility, cooldown, party mismatch, and rank progress states are covered.
 
 ### Leaderboards
 
-#### Player Intent
+**Player Intent**
 
 Compare rank safely by season, region, friends, and platform while respecting privacy.
 
-#### Expanded ASCII Wireframe
+**Expanded ASCII Wireframe**
 
 ```
 +-------------------------------------------------------------------------------+
@@ -658,7 +658,7 @@ Compare rank safely by season, region, friends, and platform while respecting pr
 +-------------------------------------------------------------------------------+
 ```
 
-#### Layout Anatomy
+**Layout Anatomy**
 
 | Region | Requirement |
 | :--- | :--- |
@@ -666,7 +666,7 @@ Compare rank safely by season, region, friends, and platform while respecting pr
 | Rows | rank, player, tier, key stat, profile |
 | Self row | sticky/current player highlight |
 
-#### Visual Hierarchy
+**Visual Hierarchy**
 
 | Priority | Element | Requirement |
 | :--- | :--- | :--- |
@@ -674,7 +674,7 @@ Compare rank safely by season, region, friends, and platform while respecting pr
 | 2 | Rank/tier | First columns |
 | 3 | Privacy state | Hidden names respected |
 
-#### Component Requirements
+**Component Requirements**
 
 | Component | Requirement |
 | :--- | :--- |
@@ -682,7 +682,7 @@ Compare rank safely by season, region, friends, and platform while respecting pr
 | Filter | clear current scope |
 | Empty state | no data explanation |
 
-#### States & Edge Cases
+**States & Edge Cases**
 
 | State | Behavior |
 | :--- | :--- |
@@ -691,28 +691,28 @@ Compare rank safely by season, region, friends, and platform while respecting pr
 | Loading page | skeleton rows |
 | Filter empty | broaden filters action |
 
-#### Input / Focus / Touch
+**Input / Focus / Touch**
 
 | Action | PC | Console | Mobile |
 | :--- | :--- | :--- | :--- |
 | Filter | Click | Bumpers/focus | Filter sheet |
 | Open profile | Click row | A / Cross | Tap row |
 
-#### Designer Notes
+**Designer Notes**
 
 - Do not reveal hidden identity through profile links or invite codes.
 
-#### Acceptance Checklist
+**Acceptance Checklist**
 
 - [ ] Privacy, empty, loading, and no-ranking states are covered.
 
 ### Patch Notes And News
 
-#### Player Intent
+**Player Intent**
 
 See the one most important update, learn what changed, dismiss noncritical news, and deep link to relevant content.
 
-#### Expanded ASCII Wireframe
+**Expanded ASCII Wireframe**
 
 ```
 +--------------------------------------------------------------------------------+
@@ -724,7 +724,7 @@ See the one most important update, learn what changed, dismiss noncritical news,
 +--------------------------------------------------------------------------------+
 ```
 
-#### Layout Anatomy
+**Layout Anatomy**
 
 | Region | Requirement |
 | :--- | :--- |
@@ -732,7 +732,7 @@ See the one most important update, learn what changed, dismiss noncritical news,
 | Patch summary | short bullets first |
 | Actions | dismiss, read, deep link |
 
-#### Visual Hierarchy
+**Visual Hierarchy**
 
 | Priority | Element | Requirement |
 | :--- | :--- | :--- |
@@ -740,7 +740,7 @@ See the one most important update, learn what changed, dismiss noncritical news,
 | 2 | Dismiss and deep link | Clear |
 | 3 | Detailed notes | Secondary |
 
-#### Component Requirements
+**Component Requirements**
 
 | Component | Requirement |
 | :--- | :--- |
@@ -748,7 +748,7 @@ See the one most important update, learn what changed, dismiss noncritical news,
 | Patch row | version, summary, known issues |
 | Dismiss | persists until content changes |
 
-#### States & Edge Cases
+**States & Edge Cases**
 
 | State | Behavior |
 | :--- | :--- |
@@ -757,18 +757,18 @@ See the one most important update, learn what changed, dismiss noncritical news,
 | Offline | cached notes or unavailable message |
 | Deep link unavailable | disable with reason |
 
-#### Input / Focus / Touch
+**Input / Focus / Touch**
 
 | Action | PC | Console | Mobile |
 | :--- | :--- | :--- | :--- |
 | Dismiss | Click | X / Square | Swipe/button |
 | Open | Click | A / Cross | Tap |
 
-#### Designer Notes
+**Designer Notes**
 
 - News must not compete with Deploy as the main Home action.
 
-#### Acceptance Checklist
+**Acceptance Checklist**
 
 - [ ] Featured, dismissed, mandatory, offline, and deep-link unavailable states are covered.
 

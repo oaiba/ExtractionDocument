@@ -313,11 +313,11 @@ The sections below are the canonical low-level handoff for pre-raid layout work.
 
 ### Mode Select
 
-#### Player Intent
+**Player Intent**
 
 Choose the ruleset that matches desired risk, squad size, reward, and time commitment before any gear is put at risk.
 
-#### Expanded ASCII Wireframe
+**Expanded ASCII Wireframe**
 
 ```
 +--------------------------------------------------------------------------------+
@@ -338,7 +338,7 @@ Choose the ruleset that matches desired risk, squad size, reward, and time commi
 +--------------------------------------------------------------------------------+
 ```
 
-#### Layout Anatomy
+**Layout Anatomy**
 
 | Region | Requirement |
 | :--- | :--- |
@@ -346,7 +346,7 @@ Choose the ruleset that matches desired risk, squad size, reward, and time commi
 | Detail panel | Explain selected mode rule changes before CTA |
 | Action bar | Keep Select Mode stable; compare and rules are secondary |
 
-#### Visual Hierarchy
+**Visual Hierarchy**
 
 | Priority | Element | Requirement |
 | :--- | :--- | :--- |
@@ -354,7 +354,7 @@ Choose the ruleset that matches desired risk, squad size, reward, and time commi
 | 2 | Rule/loss differences | Text labels required; never color-only badges |
 | 3 | Locked/restricted modes | Show exact requirement and route to unlock |
 
-#### Component Requirements
+**Component Requirements**
 
 | Component | Requirement |
 | :--- | :--- |
@@ -362,7 +362,7 @@ Choose the ruleset that matches desired risk, squad size, reward, and time commi
 | Ranked card | rank impact, party restrictions, locked settings, unlock requirement |
 | Event card | modifier, expiry, special extraction/loss changes |
 
-#### States & Edge Cases
+**States & Edge Cases**
 
 | State | Behavior |
 | :--- | :--- |
@@ -371,7 +371,7 @@ Choose the ruleset that matches desired risk, squad size, reward, and time commi
 | Event active | Badge includes time remaining and rule modifier |
 | Disabled | Explain maintenance, region, or server pool issue |
 
-#### Input / Focus / Touch
+**Input / Focus / Touch**
 
 | Action | PC | Console | Mobile |
 | :--- | :--- | :--- | :--- |
@@ -379,13 +379,13 @@ Choose the ruleset that matches desired risk, squad size, reward, and time commi
 | View rules | Click info | Focus + Y / Triangle | Tap info chip |
 | Select | Click CTA / Enter | A / Cross | Sticky CTA |
 
-#### Designer Notes
+**Designer Notes**
 
 - Cards must be comparable at a glance; keep fields aligned.
 - Do not hide loss rules in tooltips.
 - Locked cards stay visible so players understand progression.
 
-#### Acceptance Checklist
+**Acceptance Checklist**
 
 - [ ] Every mode shows squad size, loss rule, risk/reward, and queue expectation.
 - [ ] Locked and disabled modes explain the exact reason.
@@ -393,11 +393,11 @@ Choose the ruleset that matches desired risk, squad size, reward, and time commi
 
 ### Map Select
 
-#### Player Intent
+**Player Intent**
 
 Pick a destination while understanding difficulty, extracts, player density, quest relevance, time of day, and queue impact.
 
-#### Expanded ASCII Wireframe
+**Expanded ASCII Wireframe**
 
 ```
 +--------------------------------------------------------------------------------+
@@ -414,7 +414,7 @@ Pick a destination while understanding difficulty, extracts, player density, que
 +--------------------------------------------------------------------------------+
 ```
 
-#### Layout Anatomy
+**Layout Anatomy**
 
 | Region | Requirement |
 | :--- | :--- |
@@ -422,7 +422,7 @@ Pick a destination while understanding difficulty, extracts, player density, que
 | Preview | Uses map art/intel with extract markers, quest highlights, and risk zones |
 | Details panel | Fixed summary: difficulty, player count, boss, time, extracts, quests, queue |
 
-#### Visual Hierarchy
+**Visual Hierarchy**
 
 | Priority | Element | Requirement |
 | :--- | :--- | :--- |
@@ -430,7 +430,7 @@ Pick a destination while understanding difficulty, extracts, player density, que
 | 2 | Extraction and risk rules | Must appear before commit |
 | 3 | Quest relevance | Highlight useful maps without hiding others |
 
-#### Component Requirements
+**Component Requirements**
 
 | Component | Requirement |
 | :--- | :--- |
@@ -438,7 +438,7 @@ Pick a destination while understanding difficulty, extracts, player density, que
 | Extract marker | name, rule type, availability, special requirements |
 | Time selector | communicates visibility, AI, and queue differences |
 
-#### States & Edge Cases
+**States & Edge Cases**
 
 | State | Behavior |
 | :--- | :--- |
@@ -447,7 +447,7 @@ Pick a destination while understanding difficulty, extracts, player density, que
 | High risk | Warn but allow selection unless mode blocks it |
 | Quest mismatch | Show no relevant quests and a route to Quest Board |
 
-#### Input / Focus / Touch
+**Input / Focus / Touch**
 
 | Action | PC | Console | Mobile |
 | :--- | :--- | :--- | :--- |
@@ -455,23 +455,23 @@ Pick a destination while understanding difficulty, extracts, player density, que
 | Inspect extract | Hover/click marker | Focus marker | Tap marker |
 | Change time | Dropdown | Focus selector | Bottom sheet |
 
-#### Designer Notes
+**Designer Notes**
 
 - Extract names and rules must be text-readable; marker icons are not enough.
 - Keep map preview inspectable without becoming a tactical map replacement.
 
-#### Acceptance Checklist
+**Acceptance Checklist**
 
 - [ ] Difficulty, extracts, player count, time of day, quests, and queue estimate are visible.
 - [ ] Locked/unavailable maps provide a clear reason.
 
 ### Deploy Confirmation
 
-#### Player Intent
+**Player Intent**
 
 Make one final informed commitment after seeing mode, map, squad, loadout blockers, gear value, insurance, quests, and queue estimate.
 
-#### Expanded ASCII Wireframe
+**Expanded ASCII Wireframe**
 
 ```
 +--------------------------------------------------------------------------------+
@@ -488,7 +488,7 @@ Make one final informed commitment after seeing mode, map, squad, loadout blocke
 +--------------------------------------------------------------------------------+
 ```
 
-#### Layout Anatomy
+**Layout Anatomy**
 
 | Region | Requirement |
 | :--- | :--- |
@@ -497,7 +497,7 @@ Make one final informed commitment after seeing mode, map, squad, loadout blocke
 | Warning lane | blockers and warnings with direct fixes |
 | CTA row | back, fix/insure, hold-to-deploy |
 
-#### Visual Hierarchy
+**Visual Hierarchy**
 
 | Priority | Element | Requirement |
 | :--- | :--- | :--- |
@@ -505,7 +505,7 @@ Make one final informed commitment after seeing mode, map, squad, loadout blocke
 | 2 | Blocking warning | Must sit directly above CTA row |
 | 3 | Gear value and insurance | Always visible for risk trust |
 
-#### Component Requirements
+**Component Requirements**
 
 | Component | Requirement |
 | :--- | :--- |
@@ -513,7 +513,7 @@ Make one final informed commitment after seeing mode, map, squad, loadout blocke
 | Warning chip | Severity, item count, direct route |
 | Quest summary | Top 1-3 relevant quests with extraction/FIR warning if needed |
 
-#### States & Edge Cases
+**States & Edge Cases**
 
 | State | Behavior |
 | :--- | :--- |
@@ -524,7 +524,7 @@ Make one final informed commitment after seeing mode, map, squad, loadout blocke
 | High value | Require explicit risk acknowledgement |
 | Ranked | Show rank impact and locked settings |
 
-#### Input / Focus / Touch
+**Input / Focus / Touch**
 
 | Action | PC | Console | Mobile |
 | :--- | :--- | :--- | :--- |
@@ -532,23 +532,23 @@ Make one final informed commitment after seeing mode, map, squad, loadout blocke
 | Fix blocker | Click warning | Focus warning + A | Tap warning |
 | Back | Esc / click | B / Circle | Back button |
 
-#### Designer Notes
+**Designer Notes**
 
 - This screen is a trust checkpoint, not a dashboard.
 - Disabled deploy must name the exact first blocker.
 
-#### Acceptance Checklist
+**Acceptance Checklist**
 
 - [ ] Deploy never hides gear value, insurance, mode, map, and squad status.
 - [ ] Every blocker has a direct fix action.
 
 ### Squad Lobby
 
-#### Player Intent
+**Player Intent**
 
 Coordinate readiness, identify teammate blockers, manage invites, and let the leader deploy only when the party is valid.
 
-#### Expanded ASCII Wireframe
+**Expanded ASCII Wireframe**
 
 ```
 +--------------------------------------------------------------------------------+
@@ -567,7 +567,7 @@ Coordinate readiness, identify teammate blockers, manage invites, and let the le
 +--------------------------------------------------------------------------------+
 ```
 
-#### Layout Anatomy
+**Layout Anatomy**
 
 | Region | Requirement |
 | :--- | :--- |
@@ -576,7 +576,7 @@ Coordinate readiness, identify teammate blockers, manage invites, and let the le
 | Communication | chat and voice status without burying readiness |
 | Action bar | invite, change map/loadout, deploy/ready |
 
-#### Visual Hierarchy
+**Visual Hierarchy**
 
 | Priority | Element | Requirement |
 | :--- | :--- | :--- |
@@ -584,7 +584,7 @@ Coordinate readiness, identify teammate blockers, manage invites, and let the le
 | 2 | Leader deploy lock reason | Directly tied to CTA |
 | 3 | Voice/chat | Secondary but visible |
 
-#### Component Requirements
+**Component Requirements**
 
 | Component | Requirement |
 | :--- | :--- |
@@ -593,7 +593,7 @@ Coordinate readiness, identify teammate blockers, manage invites, and let the le
 | Leader controls | visible but disabled for non-leaders with reason |
 | Voice state | muted/disconnected/push-to-talk labels |
 
-#### States & Edge Cases
+**States & Edge Cases**
 
 | State | Behavior |
 | :--- | :--- |
@@ -602,7 +602,7 @@ Coordinate readiness, identify teammate blockers, manage invites, and let the le
 | Leader only action | Disabled for members with text reason |
 | Invite pending | Slot shows recipient and timeout/cancel |
 
-#### Input / Focus / Touch
+**Input / Focus / Touch**
 
 | Action | PC | Console | Mobile |
 | :--- | :--- | :--- | :--- |
@@ -610,23 +610,23 @@ Coordinate readiness, identify teammate blockers, manage invites, and let the le
 | Invite | Click Invite | Focus empty slot | Invite sheet |
 | Ready | Click CTA | A / Cross | Sticky CTA |
 
-#### Designer Notes
+**Designer Notes**
 
 - Squad readiness should read as operational status cards, not social profile cards.
 - Do not expose exact teammate inventory; use blocker summaries.
 
-#### Acceptance Checklist
+**Acceptance Checklist**
 
 - [ ] Leader and member views both show correct disabled states.
 - [ ] Member blockers explain deploy lock.
 
 ### Matchmaking / Match Found
 
-#### Player Intent
+**Player Intent**
 
 Understand queue progress, cancel rules, match found countdown, and reconnect/decline outcomes without ambiguity.
 
-#### Expanded ASCII Wireframe
+**Expanded ASCII Wireframe**
 
 ```
 +--------------------------------------------------------------------------------+
@@ -644,7 +644,7 @@ Understand queue progress, cancel rules, match found countdown, and reconnect/de
 +--------------------------------------------------------------------------------+
 ```
 
-#### Layout Anatomy
+**Layout Anatomy**
 
 | Region | Requirement |
 | :--- | :--- |
@@ -653,7 +653,7 @@ Understand queue progress, cancel rules, match found countdown, and reconnect/de
 | Match found panel | countdown, accept states, failure outcome |
 | Action bar | cancel before lock; accept when found |
 
-#### Visual Hierarchy
+**Visual Hierarchy**
 
 | Priority | Element | Requirement |
 | :--- | :--- | :--- |
@@ -661,7 +661,7 @@ Understand queue progress, cancel rules, match found countdown, and reconnect/de
 | 2 | Countdown/cancel consequence | Always visible |
 | 3 | Party accept status | Visible during match found |
 
-#### Component Requirements
+**Component Requirements**
 
 | Component | Requirement |
 | :--- | :--- |
@@ -669,7 +669,7 @@ Understand queue progress, cancel rules, match found countdown, and reconnect/de
 | Cancel CTA | Disabled after deployment lock with reason |
 | Accept panel | Per-player accept status and timeout |
 
-#### States & Edge Cases
+**States & Edge Cases**
 
 | State | Behavior |
 | :--- | :--- |
@@ -680,7 +680,7 @@ Understand queue progress, cancel rules, match found countdown, and reconnect/de
 | Player declined | Explain return path and whether queue restarts |
 | Reconnecting | Show preserved slot and timeout |
 
-#### Input / Focus / Touch
+**Input / Focus / Touch**
 
 | Action | PC | Console | Mobile |
 | :--- | :--- | :--- | :--- |
@@ -688,12 +688,12 @@ Understand queue progress, cancel rules, match found countdown, and reconnect/de
 | Accept | Click / Enter | A / Cross | Large CTA |
 | View details | Click mission | Focus mission | Tap mission |
 
-#### Designer Notes
+**Designer Notes**
 
 - Avoid fake progress percentages; use phase labels and elapsed time.
 - Cancel copy must state if gear is still safe.
 
-#### Acceptance Checklist
+**Acceptance Checklist**
 
 - [ ] Searching, timeout, error, match found, declined, and reconnecting states are covered.
 - [ ] Player always knows whether cancel is safe.

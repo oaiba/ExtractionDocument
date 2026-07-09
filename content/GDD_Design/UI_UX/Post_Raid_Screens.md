@@ -297,11 +297,11 @@ Post-raid screens must explain outcome, preserve player trust, and route quickly
 
 ### After Action Report
 
-#### Player Intent
+**Player Intent**
 
 Understand raid result, rewards, losses, performance, and the next best action.
 
-#### Expanded ASCII Wireframe
+**Expanded ASCII Wireframe**
 
 ```
 +--------------------------------------------------------------------------------+
@@ -316,7 +316,7 @@ Understand raid result, rewards, losses, performance, and the next best action.
 +--------------------------------------------------------------------------------+
 ```
 
-#### Layout Anatomy
+**Layout Anatomy**
 
 | Region | Requirement |
 | :--- | :--- |
@@ -325,7 +325,7 @@ Understand raid result, rewards, losses, performance, and the next best action.
 | Next actions | move loot, turn in quest, rebuild, deploy again |
 | Tabs | deeper detail without hiding primary outcome |
 
-#### Visual Hierarchy
+**Visual Hierarchy**
 
 | Priority | Element | Requirement |
 | :--- | :--- | :--- |
@@ -333,7 +333,7 @@ Understand raid result, rewards, losses, performance, and the next best action.
 | 2 | Gains/losses | Plain totals with deltas |
 | 3 | Detailed stats | Secondary tabs |
 
-#### Component Requirements
+**Component Requirements**
 
 | Component | Requirement |
 | :--- | :--- |
@@ -341,7 +341,7 @@ Understand raid result, rewards, losses, performance, and the next best action.
 | XP breakdown | source rows and total |
 | Next action card | one primary route based on result |
 
-#### States & Edge Cases
+**States & Edge Cases**
 
 | State | Behavior |
 | :--- | :--- |
@@ -350,7 +350,7 @@ Understand raid result, rewards, losses, performance, and the next best action.
 | MIA/disconnect | Explain gear consequence |
 | Data delayed | Show pending stats and safe next route |
 
-#### Input / Focus / Touch
+**Input / Focus / Touch**
 
 | Action | PC | Console | Mobile |
 | :--- | :--- | :--- | :--- |
@@ -358,23 +358,23 @@ Understand raid result, rewards, losses, performance, and the next best action.
 | Continue | Enter/click | A / Cross | Sticky CTA |
 | View detail | Click row | Focus row | Tap card |
 
-#### Designer Notes
+**Designer Notes**
 
 - The first screen should answer: what happened, what changed, what now.
 - Do not force players through every tab before continuing.
 
-#### Acceptance Checklist
+**Acceptance Checklist**
 
 - [ ] Result, gains, losses, and next action are visible above the fold.
 - [ ] Delayed stat state does not block safe continuation.
 
 ### Death Replay
 
-#### Player Intent
+**Player Intent**
 
 Understand how they died, learn the counterplay, and optionally report suspicious behavior.
 
-#### Expanded ASCII Wireframe
+**Expanded ASCII Wireframe**
 
 ```
 +--------------------------------------------------------------------------------+
@@ -388,7 +388,7 @@ Understand how they died, learn the counterplay, and optionally report suspiciou
 +--------------------------------------------------------------------------------+
 ```
 
-#### Layout Anatomy
+**Layout Anatomy**
 
 | Region | Requirement |
 | :--- | :--- |
@@ -396,7 +396,7 @@ Understand how they died, learn the counterplay, and optionally report suspiciou
 | Kill card | attacker, weapon, distance, hit location, damage |
 | Actions | watch again, report, continue |
 
-#### Visual Hierarchy
+**Visual Hierarchy**
 
 | Priority | Element | Requirement |
 | :--- | :--- | :--- |
@@ -404,7 +404,7 @@ Understand how they died, learn the counterplay, and optionally report suspiciou
 | 2 | Replay controls | Obvious but not dominant |
 | 3 | Report | Accessible and contextual |
 
-#### Component Requirements
+**Component Requirements**
 
 | Component | Requirement |
 | :--- | :--- |
@@ -412,7 +412,7 @@ Understand how they died, learn the counterplay, and optionally report suspiciou
 | Visibility note | explains perspective limits |
 | Report CTA | carries replay context |
 
-#### States & Edge Cases
+**States & Edge Cases**
 
 | State | Behavior |
 | :--- | :--- |
@@ -420,7 +420,7 @@ Understand how they died, learn the counterplay, and optionally report suspiciou
 | Replay unavailable | Explain reason: privacy, server, corrupted, spectate limit |
 | Suspected team kill | Promote report/appeal if supported |
 
-#### Input / Focus / Touch
+**Input / Focus / Touch**
 
 | Action | PC | Console | Mobile |
 | :--- | :--- | :--- | :--- |
@@ -428,23 +428,23 @@ Understand how they died, learn the counterplay, and optionally report suspiciou
 | Scrub | Drag | Triggers | Drag timeline |
 | Report | Click | Focus CTA | Tap CTA |
 
-#### Designer Notes
+**Designer Notes**
 
 - Replay is educational first; avoid sensational presentation.
 - Never show enemy intel beyond allowed replay rules.
 
-#### Acceptance Checklist
+**Acceptance Checklist**
 
 - [ ] Kill cause is readable even if replay cannot play.
 - [ ] Unavailable replay states explain why.
 
 ### Loot Transfer
 
-#### Player Intent
+**Player Intent**
 
 Move extracted loot into stash, resolve overflow, and understand what is safe, quest-critical, or valuable.
 
-#### Expanded ASCII Wireframe
+**Expanded ASCII Wireframe**
 
 ```
 +--------------------------------------------------------------------------------+
@@ -458,7 +458,7 @@ Move extracted loot into stash, resolve overflow, and understand what is safe, q
 +--------------------------------------------------------------------------------+
 ```
 
-#### Layout Anatomy
+**Layout Anatomy**
 
 | Region | Requirement |
 | :--- | :--- |
@@ -467,7 +467,7 @@ Move extracted loot into stash, resolve overflow, and understand what is safe, q
 | Detail panel | selected item value/FIR/quest |
 | Warning lane | overflow and destructive warnings |
 
-#### Visual Hierarchy
+**Visual Hierarchy**
 
 | Priority | Element | Requirement |
 | :--- | :--- | :--- |
@@ -475,7 +475,7 @@ Move extracted loot into stash, resolve overflow, and understand what is safe, q
 | 2 | Stash capacity | Persistent |
 | 3 | Quest/FIR value | Text labels |
 
-#### Component Requirements
+**Component Requirements**
 
 | Component | Requirement |
 | :--- | :--- |
@@ -483,7 +483,7 @@ Move extracted loot into stash, resolve overflow, and understand what is safe, q
 | Overflow lane | temporary state and required resolution |
 | Continue CTA | disabled if unresolved loot requires action |
 
-#### States & Edge Cases
+**States & Edge Cases**
 
 | State | Behavior |
 | :--- | :--- |
@@ -492,7 +492,7 @@ Move extracted loot into stash, resolve overflow, and understand what is safe, q
 | Item protected | Warn before discard/sell |
 | Server pending | Preserve loot and show pending state |
 
-#### Input / Focus / Touch
+**Input / Focus / Touch**
 
 | Action | PC | Console | Mobile |
 | :--- | :--- | :--- | :--- |
@@ -500,23 +500,23 @@ Move extracted loot into stash, resolve overflow, and understand what is safe, q
 | Auto place | Click | Y / Triangle | Auto button |
 | Continue | Click | A / Cross | Sticky CTA |
 
-#### Designer Notes
+**Designer Notes**
 
 - Treat extracted loot as emotionally important; avoid casual loss copy.
 - Overflow must feel solvable, not punitive.
 
-#### Acceptance Checklist
+**Acceptance Checklist**
 
 - [ ] Stash-full and overflow states are explicit.
 - [ ] Quest/FIR items are clearly labeled.
 
 ### Quest Progress
 
-#### Player Intent
+**Player Intent**
 
 See which objectives advanced, completed, failed, or need turn-in before the next raid.
 
-#### Expanded ASCII Wireframe
+**Expanded ASCII Wireframe**
 
 ```
 +--------------------------------------------------------------------------------+
@@ -530,7 +530,7 @@ See which objectives advanced, completed, failed, or need turn-in before the nex
 +--------------------------------------------------------------------------------+
 ```
 
-#### Layout Anatomy
+**Layout Anatomy**
 
 | Region | Requirement |
 | :--- | :--- |
@@ -538,7 +538,7 @@ See which objectives advanced, completed, failed, or need turn-in before the nex
 | Reward/turn-in area | ready rewards and required items |
 | Actions | turn in, track next, quest board |
 
-#### Visual Hierarchy
+**Visual Hierarchy**
 
 | Priority | Element | Requirement |
 | :--- | :--- | :--- |
@@ -546,7 +546,7 @@ See which objectives advanced, completed, failed, or need turn-in before the nex
 | 2 | Objective deltas | Show before/after counts |
 | 3 | Rewards | Visible for completed quests |
 
-#### Component Requirements
+**Component Requirements**
 
 | Component | Requirement |
 | :--- | :--- |
@@ -554,7 +554,7 @@ See which objectives advanced, completed, failed, or need turn-in before the nex
 | Failure reason | plain explanation and retry availability |
 | Turn-in CTA | checks inventory capacity |
 
-#### States & Edge Cases
+**States & Edge Cases**
 
 | State | Behavior |
 | :--- | :--- |
@@ -563,29 +563,29 @@ See which objectives advanced, completed, failed, or need turn-in before the nex
 | Partial | Suggest track next |
 | Reward stash full | Block turn-in and route to stash |
 
-#### Input / Focus / Touch
+**Input / Focus / Touch**
 
 | Action | PC | Console | Mobile |
 | :--- | :--- | :--- | :--- |
 | Select quest | Click row | D-pad | Tap row |
 | Turn in | Click CTA | A / Cross | Sticky CTA |
 
-#### Designer Notes
+**Designer Notes**
 
 - Quest progress should explain extraction-dependent failures gently and directly.
 - Do not use checkmarks alone for completion.
 
-#### Acceptance Checklist
+**Acceptance Checklist**
 
 - [ ] Completed, failed, partial, and blocked reward states are covered.
 
 ### Squad Summary And Social Actions
 
-#### Player Intent
+**Player Intent**
 
 Review squad outcomes, commend/report players, add friends, and continue with the party.
 
-#### Expanded ASCII Wireframe
+**Expanded ASCII Wireframe**
 
 ```
 +--------------------------------------------------------------------------------+
@@ -600,7 +600,7 @@ Review squad outcomes, commend/report players, add friends, and continue with th
 +--------------------------------------------------------------------------------+
 ```
 
-#### Layout Anatomy
+**Layout Anatomy**
 
 | Region | Requirement |
 | :--- | :--- |
@@ -608,7 +608,7 @@ Review squad outcomes, commend/report players, add friends, and continue with th
 | Social actions | commend, add friend, report, mute/block |
 | Party actions | stay, leave, invite |
 
-#### Visual Hierarchy
+**Visual Hierarchy**
 
 | Priority | Element | Requirement |
 | :--- | :--- | :--- |
@@ -616,7 +616,7 @@ Review squad outcomes, commend/report players, add friends, and continue with th
 | 2 | Outcome per member | Text labels |
 | 3 | Safety actions | Accessible but not accusatory |
 
-#### Component Requirements
+**Component Requirements**
 
 | Component | Requirement |
 | :--- | :--- |
@@ -624,7 +624,7 @@ Review squad outcomes, commend/report players, add friends, and continue with th
 | Report action | opens reason picker with match context |
 | Commend | one-tap with undo if supported |
 
-#### States & Edge Cases
+**States & Edge Cases**
 
 | State | Behavior |
 | :--- | :--- |
@@ -632,29 +632,29 @@ Review squad outcomes, commend/report players, add friends, and continue with th
 | Blocked player | Hide invite/add friend |
 | Report submitted | Show confirmation and support ID |
 
-#### Input / Focus / Touch
+**Input / Focus / Touch**
 
 | Action | PC | Console | Mobile |
 | :--- | :--- | :--- | :--- |
 | Focus row | Click | D-pad | Tap |
 | Social action | Click | A / Cross | Tap |
 
-#### Designer Notes
+**Designer Notes**
 
 - Safety actions should be calm and clear.
 - Do not reveal private stats beyond allowed summary.
 
-#### Acceptance Checklist
+**Acceptance Checklist**
 
 - [ ] Commend/report/add friend states are visible and privacy-safe.
 
 ### Redeploy Flow
 
-#### Player Intent
+**Player Intent**
 
 Return to the next raid quickly if valid, or understand exactly what must be fixed first.
 
-#### Expanded ASCII Wireframe
+**Expanded ASCII Wireframe**
 
 ```
 +--------------------------------------------------------------------------------+
@@ -667,7 +667,7 @@ Return to the next raid quickly if valid, or understand exactly what must be fix
 +--------------------------------------------------------------------------------+
 ```
 
-#### Layout Anatomy
+**Layout Anatomy**
 
 | Region | Requirement |
 | :--- | :--- |
@@ -675,7 +675,7 @@ Return to the next raid quickly if valid, or understand exactly what must be fix
 | Suggested route | step sequence to redeploy |
 | CTA row | deploy if valid, otherwise fix path |
 
-#### Visual Hierarchy
+**Visual Hierarchy**
 
 | Priority | Element | Requirement |
 | :--- | :--- | :--- |
@@ -683,7 +683,7 @@ Return to the next raid quickly if valid, or understand exactly what must be fix
 | 2 | First blocker | Names exact fix |
 | 3 | Deploy Again | Only active when validation passes |
 
-#### Component Requirements
+**Component Requirements**
 
 | Component | Requirement |
 | :--- | :--- |
@@ -691,7 +691,7 @@ Return to the next raid quickly if valid, or understand exactly what must be fix
 | Preset rebuild | shows cost and missing gear |
 | Deploy CTA | repeats pre-raid validation rules |
 
-#### States & Edge Cases
+**States & Edge Cases**
 
 | State | Behavior |
 | :--- | :--- |
@@ -700,18 +700,18 @@ Return to the next raid quickly if valid, or understand exactly what must be fix
 | Squad not ready | Route to Squad Lobby |
 | Inventory full | Suggest stash management |
 
-#### Input / Focus / Touch
+**Input / Focus / Touch**
 
 | Action | PC | Console | Mobile |
 | :--- | :--- | :--- | :--- |
 | Fix blocker | Click chip | Focus chip | Tap chip |
 | Deploy again | Hold CTA | Hold A / Cross | Hold sticky CTA |
 
-#### Designer Notes
+**Designer Notes**
 
 - Redeploy must be fast, but never bypass loadout validation.
 
-#### Acceptance Checklist
+**Acceptance Checklist**
 
 - [ ] Deploy Again never activates with critical blockers.
 - [ ] First blocker and fix route are obvious.

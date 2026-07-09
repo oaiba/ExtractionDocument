@@ -53,7 +53,7 @@ This table is a navigation summary. Detailed visual, state, input, and acceptanc
 
 ## Home / Safe House Hub
 
-### Player Intent
+**Player Intent**
 
 The player wants to understand what changed since the last session, confirm whether the current kit is raid-ready, and choose the fastest safe next action: deploy, recover, manage inventory, or inspect progression.
 
@@ -65,7 +65,7 @@ The player wants to understand what changed since the last session, confirm whet
 | Secondary actions | Inspect operator, open last raid recap, claim returns, check squad, open event, manage stash |
 | Destructive actions | None on hub; destructive actions must deep link to their owning screen and confirm there |
 
-### Expanded ASCII Wireframe
+**Expanded ASCII Wireframe**
 
 ```
 +---------------------------------------------------------------------------------+
@@ -93,7 +93,7 @@ The player wants to understand what changed since the last session, confirm whet
 +---------------------------------------------------------------------------------+
 ```
 
-### Layout Anatomy
+**Layout Anatomy**
 
 | Region | Purpose | Required Content |
 | :--- | :--- | :--- |
@@ -105,7 +105,7 @@ The player wants to understand what changed since the last session, confirm whet
 | Context cards | Next-best actions from system state | blockers, claims, full stash, event, quest progress |
 | Status bar | Persistent social/progression context | friends, party, battle pass, deploy/continue CTA |
 
-### Visual Hierarchy
+**Visual Hierarchy**
 
 | Priority | Element | Designer Requirement |
 | :--- | :--- | :--- |
@@ -115,7 +115,7 @@ The player wants to understand what changed since the last session, confirm whet
 | 4 | Context cards | Limit to 4-5 cards to avoid turning hub into a dashboard wall |
 | 5 | LiveOps and social | Present but secondary; never visually compete with deploy path |
 
-### Component Requirements
+**Component Requirements**
 
 | Component | Requirement |
 | :--- | :--- |
@@ -126,7 +126,7 @@ The player wants to understand what changed since the last session, confirm whet
 | Event strip | Shows event name, time remaining, and whether it changes raid rules |
 | Notification badges | Must pair icon/color with text or count; no color-only state meaning |
 
-### States & Edge Cases
+**States & Edge Cases**
 
 | State | UI Behavior |
 | :--- | :--- |
@@ -139,7 +139,7 @@ The player wants to understand what changed since the last session, confirm whet
 | Offline | Allow settings and local profile view; disable deploy, traders, social with reason |
 | Loading | Skeleton header, nav, operator area, and deploy panel separately so layout does not shift |
 
-### Input / Focus / Touch
+**Input / Focus / Touch**
 
 | Action | PC | Console | Mobile |
 | :--- | :--- | :--- | :--- |
@@ -151,14 +151,14 @@ The player wants to understand what changed since the last session, confirm whet
 
 Focus order: global header, horizontal global nav, deploy panel CTA, blocker list, last raid actions, context cards, header utilities.
 
-### Designer Notes
+**Designer Notes**
 
 - Keep the deploy panel visually stable; warnings expand inside it, not below it.
 - The player should understand "Can I raid now?" before reading any secondary card.
 - Use text labels for state badges such as Offline, Full, Ready, Locked, and Expired.
 - Do not place shop, event, or battle pass promotions above deploy readiness.
 
-### Acceptance Checklist
+**Acceptance Checklist**
 
 - [ ] Hub shows the next best action in under 5 seconds.
 - [ ] Invalid loadout, full stash, and offline states each show exact disabled reasons.
@@ -169,7 +169,7 @@ Focus order: global header, horizontal global nav, deploy panel CTA, blocker lis
 
 ## Operator Select
 
-### Player Intent
+**Player Intent**
 
 The player wants to choose an operator based on role, ability identity, readiness, unlock status, squad fit, and cosmetics without losing the path back to raid preparation.
 
@@ -181,7 +181,7 @@ The player wants to choose an operator based on role, ability identity, readines
 | Secondary actions | Favorite, compare role, preview skin, view mastery, inspect ability details |
 | Accessibility | Ability descriptions must be text-readable and not icon-only |
 
-### Expanded ASCII Wireframe
+**Expanded ASCII Wireframe**
 
 ```
 +---------------------------------------------------------------------------------+
@@ -204,7 +204,7 @@ The player wants to choose an operator based on role, ability identity, readines
 +---------------------------------------------------------------------------------+
 ```
 
-### Layout Anatomy
+**Layout Anatomy**
 
 | Region | Purpose | Required Content |
 | :--- | :--- | :--- |
@@ -215,7 +215,7 @@ The player wants to choose an operator based on role, ability identity, readines
 | Squad fit | Help team composition | current squad roles, recommendation, duplicate role warning |
 | Action bar | Keep selection path stable | compare, favorite, preview skin, select |
 
-### Visual Hierarchy
+**Visual Hierarchy**
 
 | Priority | Element | Designer Requirement |
 | :--- | :--- | :--- |
@@ -224,7 +224,7 @@ The player wants to choose an operator based on role, ability identity, readines
 | 3 | Locked/injured state | Show requirement or recovery route next to disabled CTA |
 | 4 | Cosmetics | Secondary to gameplay selection unless entered from cosmetic preview |
 
-### Component Requirements
+**Component Requirements**
 
 | Component | Requirement |
 | :--- | :--- |
@@ -234,7 +234,7 @@ The player wants to choose an operator based on role, ability identity, readines
 | Injured/cooldown operator | Shows remaining time or required recovery action and whether selection is blocked |
 | Cosmetic strip | Locked cosmetics show requirement; selection preview does not equip until confirmed |
 
-### States & Edge Cases
+**States & Edge Cases**
 
 | State | UI Behavior |
 | :--- | :--- |
@@ -246,7 +246,7 @@ The player wants to choose an operator based on role, ability identity, readines
 | No results | Empty roster state offers Clear Filters |
 | Loading | Roster skeleton and preview placeholder keep panel sizes fixed |
 
-### Input / Focus / Touch
+**Input / Focus / Touch**
 
 | Action | PC | Console | Mobile |
 | :--- | :--- | :--- | :--- |
@@ -258,14 +258,14 @@ The player wants to choose an operator based on role, ability identity, readines
 
 Focus order: roster, selected preview, ability panel, squad fit, action bar.
 
-### Designer Notes
+**Designer Notes**
 
 - Do not hide readiness behind color alone; every blocked row needs a readable label.
 - Roster row height should stay stable when badges change.
 - The ability panel should be readable without opening a modal.
 - Cosmetic preview must never make the player think the operator has been selected unless the CTA confirms it.
 
-### Acceptance Checklist
+**Acceptance Checklist**
 
 - [ ] Locked, injured, recommended, and selected operators are visually distinct with text labels.
 - [ ] Ability identity, cooldown, range, and limitation are visible on the detail panel.
@@ -278,7 +278,7 @@ Focus order: roster, selected preview, ability panel, squad fit, action bar.
 
 The detailed preparation rules live in [Loadout Preparation](../GameDesign/LoadoutPreparation.md). This UI group owns the screen state contract and platform layout.
 
-### Player Intent
+**Player Intent**
 
 The player wants to build a valid raid kit, understand risk, resolve blockers, and move toward mission selection without accidentally deploying with missing ammo, excessive weight, or uninsured value.
 
@@ -290,7 +290,7 @@ The player wants to build a valid raid kit, understand risk, resolve blockers, a
 | Secondary actions | Equip, move, inspect, compare, insure, preset apply/save, filter compatible items |
 | Destructive actions | Discard, sell, overwrite preset, remove insured item require confirmation |
 
-### Expanded ASCII Wireframe
+**Expanded ASCII Wireframe**
 
 ```
 +--------------------------------------------------------------------------------+
@@ -314,7 +314,7 @@ The player wants to build a valid raid kit, understand risk, resolve blockers, a
 +--------------------------------------------------------------------------------+
 ```
 
-### Layout Anatomy
+**Layout Anatomy**
 
 | Region | Purpose | Required Content |
 | :--- | :--- | :--- |
@@ -324,7 +324,7 @@ The player wants to build a valid raid kit, understand risk, resolve blockers, a
 | Warning lane | Make blockers actionable | severity icon, blocker text, direct fix action |
 | Action bar | Persistent readiness contract | value, weight, capacity, fix/ready CTA |
 
-### Visual Hierarchy
+**Visual Hierarchy**
 
 | Priority | Element | Designer Requirement |
 | :--- | :--- | :--- |
@@ -333,7 +333,7 @@ The player wants to build a valid raid kit, understand risk, resolve blockers, a
 | 3 | Stash compatibility | Compatible items highlighted without hiding incompatible inventory |
 | 4 | Risk footer | Persistent value, weight, capacity, insurance; no layout jump |
 
-### Component Requirements
+**Component Requirements**
 
 | Component | Requirement |
 | :--- | :--- |
@@ -344,7 +344,7 @@ The player wants to build a valid raid kit, understand risk, resolve blockers, a
 | Preset control | Shows Save, Apply, Rename, Delete; overwrite/delete require confirmation |
 | Ready CTA | Active only when required rules pass; disabled label names first blocker |
 
-### States & Edge Cases
+**States & Edge Cases**
 
 | State | Behavior |
 | :--- | :--- |
@@ -357,7 +357,7 @@ The player wants to build a valid raid kit, understand risk, resolve blockers, a
 | Stash full during move | Reject move, show capacity, offer stash upgrade/sell junk |
 | Empty stash | Explain source paths: traders, starter kit, raid, quest rewards |
 
-### Input / Focus / Touch
+**Input / Focus / Touch**
 
 | Action | PC | Console | Mobile |
 | :--- | :--- | :--- | :--- |
@@ -369,14 +369,14 @@ The player wants to build a valid raid kit, understand risk, resolve blockers, a
 
 Mobile layout uses tabs: Operator, Stash, Mission. The risk summary and Ready CTA remain pinned above the bottom safe area.
 
-### Designer Notes
+**Designer Notes**
 
 - Treat the footer as the player's contract: it should always tell value, weight, insurance, and readiness.
 - Incompatible items may be dimmed, but should remain discoverable and inspectable.
 - Grid cell size must be stable; badges cannot resize item tiles.
 - Every blocked Ready state must provide one direct fix path.
 
-### Acceptance Checklist
+**Acceptance Checklist**
 
 - [ ] Missing weapon, missing ammo, overweight, uninsured value, and quest item missing states are represented.
 - [ ] Stash grid supports item movement without precision-only interactions.
@@ -387,7 +387,7 @@ Mobile layout uses tabs: Operator, Stash, Mission. The risk summary and Ready CT
 
 ## Stash
 
-### Player Intent
+**Player Intent**
 
 The player wants to store, sort, search, move, sell, and inspect items quickly while understanding capacity pressure, item value, item purpose, and whether an item is safe to discard or sell.
 
@@ -399,7 +399,7 @@ The player wants to store, sort, search, move, sell, and inspect items quickly w
 | Secondary actions | Auto-sort, filter, search, favorite, tag junk, split stack, rotate, lock item |
 | Destructive actions | Discard and sell protected/quest/high-value items require confirmation |
 
-### Expanded ASCII Wireframe
+**Expanded ASCII Wireframe**
 
 ```
 +--------------------------------------------------------------------------------+
@@ -421,7 +421,7 @@ The player wants to store, sort, search, move, sell, and inspect items quickly w
 +--------------------------------------------------------------------------------+
 ```
 
-### Layout Anatomy
+**Layout Anatomy**
 
 | Region | Purpose | Required Content |
 | :--- | :--- | :--- |
@@ -432,7 +432,7 @@ The player wants to store, sort, search, move, sell, and inspect items quickly w
 | Warning lane | Surface capacity and invalid moves | full stash, protected item warning, filter no results |
 | Action bar | Contextual item actions | move, equip, sell, use, inspect, discard |
 
-### Visual Hierarchy
+**Visual Hierarchy**
 
 | Priority | Element | Designer Requirement |
 | :--- | :--- | :--- |
@@ -441,7 +441,7 @@ The player wants to store, sort, search, move, sell, and inspect items quickly w
 | 3 | Protected/FIR/quest state | Badges must include readable labels or accessible text |
 | 4 | Bulk tools | Useful but secondary; avoid overwhelming normal move flow |
 
-### Component Requirements
+**Component Requirements**
 
 | Component | Requirement |
 | :--- | :--- |
@@ -452,7 +452,7 @@ The player wants to store, sort, search, move, sell, and inspect items quickly w
 | Search | Searches item name, category, ammo caliber, quest tag, and trader relevance |
 | Full stash warning | Offers specific actions: sell junk, use container, upgrade, filter large items |
 
-### States & Edge Cases
+**States & Edge Cases**
 
 | State | Behavior |
 | :--- | :--- |
@@ -464,7 +464,7 @@ The player wants to store, sort, search, move, sell, and inspect items quickly w
 | Incoming loot overflow | Show temporary holding lane and required resolution before exit |
 | Loading | Grid skeleton preserves cell dimensions and filter rail width |
 
-### Input / Focus / Touch
+**Input / Focus / Touch**
 
 | Action | PC | Console | Mobile |
 | :--- | :--- | :--- | :--- |
@@ -476,14 +476,14 @@ The player wants to store, sort, search, move, sell, and inspect items quickly w
 
 Focus order: search, filter rail, grid, info panel actions, quick tools, action bar.
 
-### Designer Notes
+**Designer Notes**
 
 - Capacity and selected item detail must remain visible while scrolling large stashes.
 - Item badges should not shrink item names below readable size.
 - The discard action should be visually separated from common positive actions.
 - Dense grid is acceptable, but interaction targets must remain generous on touch.
 
-### Acceptance Checklist
+**Acceptance Checklist**
 
 - [ ] Empty, full, filter-empty, locked item, and quest item states are designed.
 - [ ] Item info panel shows value, footprint, FIR/protected state, and allowed actions.
@@ -494,7 +494,7 @@ Focus order: search, filter rail, grid, info panel actions, quick tools, action 
 
 ## Traders / Market
 
-### Player Intent
+**Player Intent**
 
 The player wants to buy, sell, barter, and turn in items while understanding price, reputation locks, stash capacity, missing barter parts, and whether a transaction is risky or irreversible.
 
@@ -506,7 +506,7 @@ The player wants to buy, sell, barter, and turn in items while understanding pri
 | Secondary actions | Filter, sort, inspect, compare, pin missing item, switch trader |
 | Destructive actions | Selling premium, high-value, protected, or quest-critical items requires confirmation |
 
-### Expanded ASCII Wireframe
+**Expanded ASCII Wireframe**
 
 ```
 +----------------------------------------------------------------------------------+
@@ -529,7 +529,7 @@ The player wants to buy, sell, barter, and turn in items while understanding pri
 +----------------------------------------------------------------------------------+
 ```
 
-### Layout Anatomy
+**Layout Anatomy**
 
 | Region | Purpose | Required Content |
 | :--- | :--- | :--- |
@@ -540,7 +540,7 @@ The player wants to buy, sell, barter, and turn in items while understanding pri
 | Your offer | Confirm transaction summary | wallet, selected items, total, stash after transaction |
 | Warning lane | Prevent failed or regretted transaction | stash full, insufficient funds, protected item, missing barter |
 
-### Visual Hierarchy
+**Visual Hierarchy**
 
 | Priority | Element | Designer Requirement |
 | :--- | :--- | :--- |
@@ -549,7 +549,7 @@ The player wants to buy, sell, barter, and turn in items while understanding pri
 | 3 | Rep lock and stock | Locked rows remain visible with exact requirement |
 | 4 | Trader identity | Flavor supports worldbuilding but does not obscure commerce data |
 
-### Component Requirements
+**Component Requirements**
 
 | Component | Requirement |
 | :--- | :--- |
@@ -560,7 +560,7 @@ The player wants to buy, sell, barter, and turn in items while understanding pri
 | Sell warning | Flags protected, quest, insured, equipped, or high-value items before sale |
 | Confirmation dialog | Required for premium currency, high-value gear, quest-critical items, and irreversible trades |
 
-### States & Edge Cases
+**States & Edge Cases**
 
 | State | UI Behavior |
 | :--- | :--- |
@@ -572,7 +572,7 @@ The player wants to buy, sell, barter, and turn in items while understanding pri
 | Sale confirmation | Modal names item, value, protected/quest status, and final action |
 | Offline | Disable transaction modes; allow browsing cached trader profiles if supported |
 
-### Input / Focus / Touch
+**Input / Focus / Touch**
 
 | Action | PC | Console | Mobile |
 | :--- | :--- | :--- | :--- |
@@ -584,14 +584,14 @@ The player wants to buy, sell, barter, and turn in items while understanding pri
 
 Focus order: trader list, mode tabs, offer list, detail strip, your offer panel, CTA.
 
-### Designer Notes
+**Designer Notes**
 
 - Buy, Sell, Barter, and Turn-in need distinct text labels, not only tab color.
 - The player's total cost and stash capacity result must be visible before purchase.
 - Confirmation copy should name the item and consequence, not use generic "Are you sure?" text.
 - Locked offers should teach progression instead of disappearing.
 
-### Acceptance Checklist
+**Acceptance Checklist**
 
 - [ ] Buy, sell, barter, and turn-in modes are visually and behaviorally distinct.
 - [ ] Insufficient funds, rep lock, stash full, missing barter, and sale confirmation states are specified.
@@ -602,7 +602,7 @@ Focus order: trader list, mode tabs, offer list, detail strip, your offer panel,
 
 ## Safe House Modules
 
-### Player Intent
+**Player Intent**
 
 The player wants to understand base progression, upgrade benefits, crafting/repair timers, insurance returns, and material blockers without losing track of what can be claimed or improved now.
 
@@ -614,7 +614,7 @@ The player wants to understand base progression, upgrade benefits, crafting/repa
 | Secondary actions | View prerequisites, pin materials, inspect queue, cancel/collect craft if supported |
 | Destructive actions | Spend materials/currency, cancel craft, discard return require confirmation where applicable |
 
-### Expanded ASCII Wireframe
+**Expanded ASCII Wireframe**
 
 ```
 +--------------------------------------------------------------------------------+
@@ -639,7 +639,7 @@ The player wants to understand base progression, upgrade benefits, crafting/repa
 +--------------------------------------------------------------------------------+
 ```
 
-### Layout Anatomy
+**Layout Anatomy**
 
 | Region | Purpose | Required Content |
 | :--- | :--- | :--- |
@@ -649,7 +649,7 @@ The player wants to understand base progression, upgrade benefits, crafting/repa
 | Warning lane | Explain blockers | missing materials, stash full on claim, queue full, prerequisite locked |
 | Action bar | Commit or track next action | view benefits, track materials, confirm spend, upgrade/claim |
 
-### Visual Hierarchy
+**Visual Hierarchy**
 
 | Priority | Element | Designer Requirement |
 | :--- | :--- | :--- |
@@ -658,7 +658,7 @@ The player wants to understand base progression, upgrade benefits, crafting/repa
 | 3 | Missing materials/prerequisites | Show owned/required counts and direct tracking route |
 | 4 | Long-term map | Keep readable but secondary to selected module detail |
 
-### Component Requirements
+**Component Requirements**
 
 | Component | Requirement |
 | :--- | :--- |
@@ -669,7 +669,7 @@ The player wants to understand base progression, upgrade benefits, crafting/repa
 | Insurance inbox | Shows returned item count, expiry risk, stash capacity result, and Claim CTA |
 | Confirmation | Spending currency/materials names cost and resulting benefit before final commit |
 
-### States & Edge Cases
+**States & Edge Cases**
 
 | State | UI Behavior |
 | :--- | :--- |
@@ -681,7 +681,7 @@ The player wants to understand base progression, upgrade benefits, crafting/repa
 | Timer complete | Ready badge on map and queue; Claim CTA promoted |
 | Stash full on claim | Claim blocked; show required space and route to stash |
 
-### Input / Focus / Touch
+**Input / Focus / Touch**
 
 | Action | PC | Console | Mobile |
 | :--- | :--- | :--- | :--- |
@@ -693,14 +693,14 @@ The player wants to understand base progression, upgrade benefits, crafting/repa
 
 Mobile layout uses tabs: Modules, Detail, Queue. Claim-ready timers should appear as a persistent top summary.
 
-### Designer Notes
+**Designer Notes**
 
 - Always show benefit before cost to make upgrade value clear.
 - Module map can be stylized, but text labels must remain readable.
 - Timers need absolute state labels: In Progress, Ready, Expiring Soon, Locked.
 - Claim actions must explain where items go and what blocks them.
 
-### Acceptance Checklist
+**Acceptance Checklist**
 
 - [ ] Upgrade benefits are visible before cost commitment.
 - [ ] Locked modules show the next prerequisite and reachable step.
@@ -711,7 +711,7 @@ Mobile layout uses tabs: Modules, Detail, Queue. Claim-ready timers should appea
 
 ## Quest Board
 
-### Player Intent
+**Player Intent**
 
 The player wants to choose useful objectives, understand where to go, know what item or extraction requirement matters, track objectives into raid, and turn in rewards without confusion.
 
@@ -723,7 +723,7 @@ The player wants to choose useful objectives, understand where to go, know what 
 | Secondary actions | Pin objective, show on map, find required item, view faction, abandon if supported |
 | Destructive actions | Abandon quest requires confirmation and failure consequence text |
 
-### Expanded ASCII Wireframe
+**Expanded ASCII Wireframe**
 
 ```
 +---------------------------------------------------------------------------------+
@@ -746,7 +746,7 @@ The player wants to choose useful objectives, understand where to go, know what 
 +---------------------------------------------------------------------------------+
 ```
 
-### Layout Anatomy
+**Layout Anatomy**
 
 | Region | Purpose | Required Content |
 | :--- | :--- | :--- |
@@ -756,7 +756,7 @@ The player wants to choose useful objectives, understand where to go, know what 
 | Quest chain | Show progression context | prior/next quest, unlock status, faction path |
 | Action bar | Route to next action | track, map, stash item search, abandon |
 
-### Visual Hierarchy
+**Visual Hierarchy**
 
 | Priority | Element | Designer Requirement |
 | :--- | :--- | :--- |
@@ -765,7 +765,7 @@ The player wants to choose useful objectives, understand where to go, know what 
 | 3 | Rewards | Always visible for selected quest; secondary to requirements |
 | 4 | Chain/faction context | Helpful but not required for immediate completion |
 
-### Component Requirements
+**Component Requirements**
 
 | Component | Requirement |
 | :--- | :--- |
@@ -776,7 +776,7 @@ The player wants to choose useful objectives, understand where to go, know what 
 | Turn-in panel | Shows required items, owned count, FIR validity, and wrong-item reason |
 | Abandon action | Visually separated and confirmed with consequence text |
 
-### States & Edge Cases
+**States & Edge Cases**
 
 | State | UI Behavior |
 | :--- | :--- |
@@ -788,7 +788,7 @@ The player wants to choose useful objectives, understand where to go, know what 
 | Locked | Show prerequisite quest, level, faction, map, or trader requirement |
 | Reward inventory full | Turn In blocked; show required stash space and stash route |
 
-### Input / Focus / Touch
+**Input / Focus / Touch**
 
 | Action | PC | Console | Mobile |
 | :--- | :--- | :--- | :--- |
@@ -800,14 +800,14 @@ The player wants to choose useful objectives, understand where to go, know what 
 
 Mobile layout uses tabs: Active, Available, Completed, Rewards. Detail and reward panels stack below the selected quest.
 
-### Designer Notes
+**Designer Notes**
 
 - Status labels should be words: New, Tracked, Ready, Locked, Failed.
 - Quest risk copy should be short and direct, especially for extraction-required objectives.
 - The player should not need to infer FIR validity from icon color.
 - Turn-in should never accept a wrong item silently; show exact reason.
 
-### Acceptance Checklist
+**Acceptance Checklist**
 
 - [ ] Available, tracked, ready, missing item, failed, and locked states are designed.
 - [ ] FIR, extraction, delivery, location, and reward requirements are explicit.
@@ -818,7 +818,7 @@ Mobile layout uses tabs: Active, Available, Completed, Rewards. Detail and rewar
 
 ## Player Profile
 
-### Player Intent
+**Player Intent**
 
 The player wants to review identity, stats, achievements, cosmetics, titles, and privacy settings, and to understand what other players can see.
 
@@ -830,7 +830,7 @@ The player wants to review identity, stats, achievements, cosmetics, titles, and
 | Secondary actions | Compare seasons, inspect achievements, view commendations, report safety |
 | Privacy | Respect streamer mode by hiding names, IDs, invite codes, and sensitive social status |
 
-### Expanded ASCII Wireframe
+**Expanded ASCII Wireframe**
 
 ```
 +--------------------------------------------------------------------------------+
@@ -854,7 +854,7 @@ The player wants to review identity, stats, achievements, cosmetics, titles, and
 +--------------------------------------------------------------------------------+
 ```
 
-### Layout Anatomy
+**Layout Anatomy**
 
 | Region | Purpose | Required Content |
 | :--- | :--- | :--- |
@@ -865,7 +865,7 @@ The player wants to review identity, stats, achievements, cosmetics, titles, and
 | Privacy controls | Explain visibility | public/friends/private, streamer mode, hidden fields |
 | Action bar | Common profile actions | edit banner, equip, privacy settings, copy invite code |
 
-### Visual Hierarchy
+**Visual Hierarchy**
 
 | Priority | Element | Designer Requirement |
 | :--- | :--- | :--- |
@@ -874,7 +874,7 @@ The player wants to review identity, stats, achievements, cosmetics, titles, and
 | 3 | Equipped cosmetics | Show current equipped state before available alternatives |
 | 4 | Safety/reporting | Available but not visually dominant on own profile |
 
-### Component Requirements
+**Component Requirements**
 
 | Component | Requirement |
 | :--- | :--- |
@@ -885,7 +885,7 @@ The player wants to review identity, stats, achievements, cosmetics, titles, and
 | Match history row | Shows map, outcome, duration, squad size, and privacy-safe participant display |
 | Privacy dropdown | Explains exactly which fields are public, friends-only, or hidden |
 
-### States & Edge Cases
+**States & Edge Cases**
 
 | State | UI Behavior |
 | :--- | :--- |
@@ -897,7 +897,7 @@ The player wants to review identity, stats, achievements, cosmetics, titles, and
 | No achievements | Empty state explains achievement sources and recommends one active goal |
 | Locked cosmetic | Shows requirement and preview availability |
 
-### Input / Focus / Touch
+**Input / Focus / Touch**
 
 | Action | PC | Console | Mobile |
 | :--- | :--- | :--- | :--- |
@@ -909,14 +909,14 @@ The player wants to review identity, stats, achievements, cosmetics, titles, and
 
 Focus order: identity card, privacy control, stat tabs, cosmetic selector, selected cosmetic CTA, action bar.
 
-### Designer Notes
+**Designer Notes**
 
 - Profile can be expressive, but private/streamer states must be unmistakable.
 - Do not expose IDs, invite codes, party status, or match history when privacy hides them.
 - Locked cosmetics should motivate without looking like a required purchase path.
 - Keep safety/report controls discoverable and plain.
 
-### Acceptance Checklist
+**Acceptance Checklist**
 
 - [ ] Own, friend, private, streamer mode, seasonal reset, no achievement, and locked cosmetic states are specified.
 - [ ] Privacy controls state exactly what information is visible.

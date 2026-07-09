@@ -329,11 +329,11 @@ Settings and system surfaces must be plain, trustworthy, and explicit. Every dis
 
 ### Boot / Splash / Loading
 
-#### Player Intent
+**Player Intent**
 
 Start the application, understand long waits, and know whether online play is available.
 
-#### Expanded ASCII Wireframe
+**Expanded ASCII Wireframe**
 
 ```
 +--------------------------------------------------------------------------------+
@@ -345,7 +345,7 @@ Start the application, understand long waits, and know whether online play is av
 +--------------------------------------------------------------------------------+
 ```
 
-#### Layout Anatomy
+**Layout Anatomy**
 
 | Region | Requirement |
 | :--- | :--- |
@@ -353,7 +353,7 @@ Start the application, understand long waits, and know whether online play is av
 | Progress area | real operation name and truthful progress/indeterminate state |
 | Status footer | version, service, offline availability |
 
-#### Visual Hierarchy
+**Visual Hierarchy**
 
 | Priority | Element | Requirement |
 | :--- | :--- | :--- |
@@ -361,7 +361,7 @@ Start the application, understand long waits, and know whether online play is av
 | 2 | Error/update state | Must override normal loading |
 | 3 | Version/status | Footer-level |
 
-#### Component Requirements
+**Component Requirements**
 
 | Component | Requirement |
 | :--- | :--- |
@@ -369,7 +369,7 @@ Start the application, understand long waits, and know whether online play is av
 | Update prompt | current/required version and platform action |
 | Offline option | only shown if supported and names limits |
 
-#### States & Edge Cases
+**States & Edge Cases**
 
 | State | Behavior |
 | :--- | :--- |
@@ -379,7 +379,7 @@ Start the application, understand long waits, and know whether online play is av
 | Maintenance | show known end time/status link |
 | Offline start | list available local screens |
 
-#### Input / Focus / Touch
+**Input / Focus / Touch**
 
 | Action | PC | Console | Mobile |
 | :--- | :--- | :--- | :--- |
@@ -387,21 +387,21 @@ Start the application, understand long waits, and know whether online play is av
 | Retry | Click | A / Cross | Tap |
 | Offline | Click option | Focus option | Tap option |
 
-#### Designer Notes
+**Designer Notes**
 
 - Loading copy should be operational, not lore-only, when wait is long.
 
-#### Acceptance Checklist
+**Acceptance Checklist**
 
 - [ ] Update, maintenance, offline, first boot, and shader prep states are covered.
 
 ### Login / Account Link / EULA
 
-#### Player Intent
+**Player Intent**
 
 Enter the correct account, resolve sync/linking conflicts, and understand required legal consent before online play.
 
-#### Expanded ASCII Wireframe
+**Expanded ASCII Wireframe**
 
 ```
 +--------------------------------------------------------------------------------+
@@ -414,7 +414,7 @@ Enter the correct account, resolve sync/linking conflicts, and understand requir
 +--------------------------------------------------------------------------------+
 ```
 
-#### Layout Anatomy
+**Layout Anatomy**
 
 | Region | Requirement |
 | :--- | :--- |
@@ -423,7 +423,7 @@ Enter the correct account, resolve sync/linking conflicts, and understand requir
 | Conflict panel | compared accounts and choice impact |
 | Legal panel | required policy, region, accept/decline |
 
-#### Visual Hierarchy
+**Visual Hierarchy**
 
 | Priority | Element | Requirement |
 | :--- | :--- | :--- |
@@ -431,7 +431,7 @@ Enter the correct account, resolve sync/linking conflicts, and understand requir
 | 2 | Consequence/conflict | Before irreversible choice |
 | 3 | Support/legal links | Persistent footer |
 
-#### Component Requirements
+**Component Requirements**
 
 | Component | Requirement |
 | :--- | :--- |
@@ -439,7 +439,7 @@ Enter the correct account, resolve sync/linking conflicts, and understand requir
 | Conflict choice | local/cloud/merge label and timestamp |
 | Consent CTA | disabled until required terms acknowledged |
 
-#### States & Edge Cases
+**States & Edge Cases**
 
 | State | Behavior |
 | :--- | :--- |
@@ -449,7 +449,7 @@ Enter the correct account, resolve sync/linking conflicts, and understand requir
 | Age gate | region-appropriate blocked feature explanation |
 | Declined terms | explain online access consequence |
 
-#### Input / Focus / Touch
+**Input / Focus / Touch**
 
 | Action | PC | Console | Mobile |
 | :--- | :--- | :--- | :--- |
@@ -457,21 +457,21 @@ Enter the correct account, resolve sync/linking conflicts, and understand requir
 | Review legal | Link/click | Focus link | Tap link |
 | Choose conflict | Radio/click | D-pad + A | Tap option |
 
-#### Designer Notes
+**Designer Notes**
 
 - Do not compress account conflict copy; trust is more important than speed here.
 
-#### Acceptance Checklist
+**Acceptance Checklist**
 
 - [ ] Auth failure, account conflict, sync conflict, age gate, and declined terms are covered.
 
 ### First-Time Setup / Tutorial Gate
 
-#### Player Intent
+**Player Intent**
 
 Choose language, accessibility, controls, privacy, and tutorial path before entering the game loop.
 
-#### Expanded ASCII Wireframe
+**Expanded ASCII Wireframe**
 
 ```
 +--------------------------------------------------------------------------------+
@@ -484,7 +484,7 @@ Choose language, accessibility, controls, privacy, and tutorial path before ente
 +--------------------------------------------------------------------------------+
 ```
 
-#### Layout Anatomy
+**Layout Anatomy**
 
 | Region | Requirement |
 | :--- | :--- |
@@ -493,7 +493,7 @@ Choose language, accessibility, controls, privacy, and tutorial path before ente
 | Preview | shows impact before commit |
 | CTA row | back, preview, continue |
 
-#### Visual Hierarchy
+**Visual Hierarchy**
 
 | Priority | Element | Requirement |
 | :--- | :--- | :--- |
@@ -501,7 +501,7 @@ Choose language, accessibility, controls, privacy, and tutorial path before ente
 | 2 | Accessibility choices | Offered before gameplay |
 | 3 | Tutorial recommendation | Clear but not coercive unless required |
 
-#### Component Requirements
+**Component Requirements**
 
 | Component | Requirement |
 | :--- | :--- |
@@ -509,7 +509,7 @@ Choose language, accessibility, controls, privacy, and tutorial path before ente
 | Privacy preset | public/friends/private/streamer mode explanation |
 | Tutorial gate | start/skip/required states |
 
-#### States & Edge Cases
+**States & Edge Cases**
 
 | State | Behavior |
 | :--- | :--- |
@@ -518,7 +518,7 @@ Choose language, accessibility, controls, privacy, and tutorial path before ente
 | Tutorial required | start CTA only |
 | Returning player | skip to home with edit settings route |
 
-#### Input / Focus / Touch
+**Input / Focus / Touch**
 
 | Action | PC | Console | Mobile |
 | :--- | :--- | :--- | :--- |
@@ -526,21 +526,21 @@ Choose language, accessibility, controls, privacy, and tutorial path before ente
 | Preview | Click | Y / Triangle | Preview button |
 | Continue | Enter/click | A / Cross | Sticky CTA |
 
-#### Designer Notes
+**Designer Notes**
 
 - Accessibility is part of onboarding, not buried in settings.
 
-#### Acceptance Checklist
+**Acceptance Checklist**
 
 - [ ] Language, accessibility, control, privacy, and tutorial states are covered.
 
 ### Settings
 
-#### Player Intent
+**Player Intent**
 
 Find a setting, understand its effect, apply/revert safely, and know when platform/ranked locks prevent changes.
 
-#### Expanded ASCII Wireframe
+**Expanded ASCII Wireframe**
 
 ```
 +---------------------------------------------------------------------------------------------------------+
@@ -558,7 +558,7 @@ Find a setting, understand its effect, apply/revert safely, and know when platfo
 +---------------------------------------------------------------------------------------------------------+
 ```
 
-#### Layout Anatomy
+**Layout Anatomy**
 
 | Region | Requirement |
 | :--- | :--- |
@@ -567,7 +567,7 @@ Find a setting, understand its effect, apply/revert safely, and know when platfo
 | Help panel | selected setting explanation |
 | Apply bar | unsaved, revert, apply, reset |
 
-#### Visual Hierarchy
+**Visual Hierarchy**
 
 | Priority | Element | Requirement |
 | :--- | :--- | :--- |
@@ -575,7 +575,7 @@ Find a setting, understand its effect, apply/revert safely, and know when platfo
 | 2 | Selected setting and help | Clear relationship |
 | 3 | Locks/warnings | Visible before attempted change |
 
-#### Component Requirements
+**Component Requirements**
 
 | Component | Requirement |
 | :--- | :--- |
@@ -583,7 +583,7 @@ Find a setting, understand its effect, apply/revert safely, and know when platfo
 | Search result | category path and setting name |
 | Apply bar | changed count, apply/revert/reset |
 
-#### States & Edge Cases
+**States & Edge Cases**
 
 | State | Behavior |
 | :--- | :--- |
@@ -593,7 +593,7 @@ Find a setting, understand its effect, apply/revert safely, and know when platfo
 | Invalid value | error and revert |
 | Requires restart | flag before apply |
 
-#### Input / Focus / Touch
+**Input / Focus / Touch**
 
 | Action | PC | Console | Mobile |
 | :--- | :--- | :--- | :--- |
@@ -601,21 +601,21 @@ Find a setting, understand its effect, apply/revert safely, and know when platfo
 | Adjust value | Mouse/keys | D-pad/sticks | Slider/stepper |
 | Apply | Click | A / Cross | Sticky CTA |
 
-#### Designer Notes
+**Designer Notes**
 
 - Help copy should describe player-facing effect, not engine terms.
 
-#### Acceptance Checklist
+**Acceptance Checklist**
 
 - [ ] Unsaved, revert, platform lock, ranked lock, invalid, and restart states are covered.
 
 ### Account / Privacy / Safety
 
-#### Player Intent
+**Player Intent**
 
 Manage identity, cross-play, streamer mode, data/privacy, account links, and safety preferences with clear consequences.
 
-#### Expanded ASCII Wireframe
+**Expanded ASCII Wireframe**
 
 ```
 +--------------------------------------------------------------------------------+
@@ -627,7 +627,7 @@ Manage identity, cross-play, streamer mode, data/privacy, account links, and saf
 +--------------------------------------------------------------------------------+
 ```
 
-#### Layout Anatomy
+**Layout Anatomy**
 
 | Region | Requirement |
 | :--- | :--- |
@@ -636,7 +636,7 @@ Manage identity, cross-play, streamer mode, data/privacy, account links, and saf
 | Data controls | export/delete/support |
 | Safety | blocked users, muted users, communication filters |
 
-#### Visual Hierarchy
+**Visual Hierarchy**
 
 | Priority | Element | Requirement |
 | :--- | :--- | :--- |
@@ -644,7 +644,7 @@ Manage identity, cross-play, streamer mode, data/privacy, account links, and saf
 | 2 | Unlink/delete consequences | Before CTA |
 | 3 | Safety lists | Manageable and reversible |
 
-#### Component Requirements
+**Component Requirements**
 
 | Component | Requirement |
 | :--- | :--- |
@@ -652,7 +652,7 @@ Manage identity, cross-play, streamer mode, data/privacy, account links, and saf
 | Streamer toggle | names hidden fields |
 | Unlink CTA | consequence modal required |
 
-#### States & Edge Cases
+**States & Edge Cases**
 
 | State | Behavior |
 | :--- | :--- |
@@ -661,7 +661,7 @@ Manage identity, cross-play, streamer mode, data/privacy, account links, and saf
 | Unlink warning | name lost sync/purchase implications |
 | Delete request | cooldown/confirmation/support path |
 
-#### Input / Focus / Touch
+**Input / Focus / Touch**
 
 | Action | PC | Console | Mobile |
 | :--- | :--- | :--- | :--- |
@@ -669,21 +669,21 @@ Manage identity, cross-play, streamer mode, data/privacy, account links, and saf
 | Manage list | Click row | Focus row | Tap row |
 | Dangerous action | Hold/confirm | Hold confirm | Confirm sheet |
 
-#### Designer Notes
+**Designer Notes**
 
 - Dangerous account actions need calm, specific copy.
 
-#### Acceptance Checklist
+**Acceptance Checklist**
 
 - [ ] Privacy, streamer, unlink, delete, block/mute management states are covered.
 
 ### Diagnostics And Support
 
-#### Player Intent
+**Player Intent**
 
 See performance/network status, copy support information, submit logs, and understand permission/network failures.
 
-#### Expanded ASCII Wireframe
+**Expanded ASCII Wireframe**
 
 ```
 +--------------------------------------------------------------------------------+
@@ -695,7 +695,7 @@ See performance/network status, copy support information, submit logs, and under
 +--------------------------------------------------------------------------------+
 ```
 
-#### Layout Anatomy
+**Layout Anatomy**
 
 | Region | Requirement |
 | :--- | :--- |
@@ -704,7 +704,7 @@ See performance/network status, copy support information, submit logs, and under
 | Attachments | logs, screenshot, clip permissions |
 | Actions | copy, submit, known issues |
 
-#### Visual Hierarchy
+**Visual Hierarchy**
 
 | Priority | Element | Requirement |
 | :--- | :--- | :--- |
@@ -712,7 +712,7 @@ See performance/network status, copy support information, submit logs, and under
 | 2 | Network/performance health | Text values |
 | 3 | Attachment permission | Before submit |
 
-#### Component Requirements
+**Component Requirements**
 
 | Component | Requirement |
 | :--- | :--- |
@@ -720,7 +720,7 @@ See performance/network status, copy support information, submit logs, and under
 | Copy action | confirmation toast |
 | Submit report | privacy note and upload state |
 
-#### States & Edge Cases
+**States & Edge Cases**
 
 | State | Behavior |
 | :--- | :--- |
@@ -729,7 +729,7 @@ See performance/network status, copy support information, submit logs, and under
 | Report sent | confirmation and ticket/support ID |
 | Upload failed | retry and save local reference |
 
-#### Input / Focus / Touch
+**Input / Focus / Touch**
 
 | Action | PC | Console | Mobile |
 | :--- | :--- | :--- | :--- |
@@ -737,21 +737,21 @@ See performance/network status, copy support information, submit logs, and under
 | Run test | Click | Focus CTA | Tap |
 | Submit | Click | A / Cross | Sticky CTA |
 
-#### Designer Notes
+**Designer Notes**
 
 - Diagnostics should be readable by players and support staff.
 
-#### Acceptance Checklist
+**Acceptance Checklist**
 
 - [ ] Offline, permission denied, sent, and upload failed states are covered.
 
 ### System Dialogs
 
-#### Player Intent
+**Player Intent**
 
 Recover from errors, maintenance, version mismatch, network issues, save conflicts, or entitlement/service conflicts with clear choices.
 
-#### Expanded ASCII Wireframe
+**Expanded ASCII Wireframe**
 
 ```
 +--------------------------------------------------------------------------------+
@@ -763,7 +763,7 @@ Recover from errors, maintenance, version mismatch, network issues, save conflic
 +--------------------------------------------------------------------------------+
 ```
 
-#### Layout Anatomy
+**Layout Anatomy**
 
 | Region | Requirement |
 | :--- | :--- |
@@ -772,7 +772,7 @@ Recover from errors, maintenance, version mismatch, network issues, save conflic
 | Choices | retry/update/offline/exit/support |
 | Support | code, timestamp, status link where useful |
 
-#### Visual Hierarchy
+**Visual Hierarchy**
 
 | Priority | Element | Requirement |
 | :--- | :--- | :--- |
@@ -780,7 +780,7 @@ Recover from errors, maintenance, version mismatch, network issues, save conflic
 | 2 | Consequence | Before destructive/exit choice |
 | 3 | Support code | Copyable but secondary |
 
-#### Component Requirements
+**Component Requirements**
 
 | Component | Requirement |
 | :--- | :--- |
@@ -788,7 +788,7 @@ Recover from errors, maintenance, version mismatch, network issues, save conflic
 | CTA set | one primary, one safe cancel/exit, support if needed |
 | Error code | copyable for support |
 
-#### States & Edge Cases
+**States & Edge Cases**
 
 | State | Behavior |
 | :--- | :--- |
@@ -798,7 +798,7 @@ Recover from errors, maintenance, version mismatch, network issues, save conflic
 | Save conflict | source, timestamp, impact, choices |
 | Entitlement/service conflict | provider, sync status, support path; route purchase receipts to Commerce Screens |
 
-#### Input / Focus / Touch
+**Input / Focus / Touch**
 
 | Action | PC | Console | Mobile |
 | :--- | :--- | :--- | :--- |
@@ -806,11 +806,11 @@ Recover from errors, maintenance, version mismatch, network issues, save conflic
 | Cancel/exit | Esc/click | B / Circle | Secondary |
 | Copy code | Click | Focus action | Tap |
 
-#### Designer Notes
+**Designer Notes**
 
 - Never use "Something went wrong" as the only message.
 
-#### Acceptance Checklist
+**Acceptance Checklist**
 
 - [ ] Network, version, maintenance, save conflict, data corruption, and entitlement/service dialogs have recovery paths.
 

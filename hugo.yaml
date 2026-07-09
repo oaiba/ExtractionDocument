@@ -8,10 +8,12 @@ defaultContentLanguageInSubdir: false
 languages:
   en:
     label: English
+    languageName: English
     locale: en-US
     weight: 1
   vi:
     label: Tiếng Việt
+    languageName: Tiếng Việt
     locale: vi-VN
     weight: 2
 
@@ -53,7 +55,6 @@ menu:
       params:
         type: language-switch
         label: true
-        icon: translate
     - identifier: theme
       name: Theme
       weight: 9

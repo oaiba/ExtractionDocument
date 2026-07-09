@@ -1,20 +1,41 @@
-﻿---
-title: World Design
+---
+title: "World & Level Design"
+linkTitle: World
 type: docs
+weight: 12
 ---
 
-Trang nÃ y lÃ  báº£n tiáº¿ng Viá»‡t song song cho hub World Design. English váº«n lÃ  nguá»“n canonical cho map layout, loot distribution, vÃ  environmental narrative.
+> \[!IMPORTANT] **Thông Báo Di Chuyển Thư Mục:** Tài liệu Story & World đã được gộp vào section thống nhất [**NarrativeWorld/**](https://github.com/oaiba/ExtractionDocument/blob/main/content/GDD_Design/NarrativeWorld/README.md). Các file map design và environmental narrative bên dưới được giữ để tham khảo, nhưng **GDD canonical và mới nhất** nằm trong `NarrativeWorld/`. Work mới nên được thực hiện ở đó.
+>
+> **Tài liệu canonical mới:** [Map Design Bible](https://github.com/oaiba/ExtractionDocument/blob/main/content/GDD_Design/NarrativeWorld/MapBible/README.md) (gộp `MapDesign.md` + `EnvironmentalNarrative_Guidelines.md`), [Industrial Decay Map Lore](https://github.com/oaiba/ExtractionDocument/blob/main/content/GDD_Design/NarrativeWorld/MapLore_Industrial/README.md), [Urban Ruins Map Lore](https://github.com/oaiba/ExtractionDocument/blob/main/content/GDD_Design/NarrativeWorld/MapLore_Urban/README.md), [Faction Territories](https://github.com/oaiba/ExtractionDocument/blob/main/content/GDD_Design/NarrativeWorld/FactionTerritories/README.md).
 
-## Ná»™i Dung ChÃ­nh
+### Map Là Nhân Vật Chính
+
+Trong extraction shooter, hiểu biết về map là skill ceiling cao nhất. Level của chúng ta được thiết kế với **choke point**, **sniping lane**, và **flank route** cụ thể để buộc người chơi tương tác.
+
+#### Nguyên Tắc Level Design
+
+* **The Swiss Cheese:** Không có dead end. Mỗi phòng có ít nhất hai lối ra.
+* **Verticality:** Vị trí mạnh tồn tại nhưng luôn có counter.
+* **Landmarks:** Visual anchor rõ ràng để người chơi không cần compass vẫn biết mình đang ở đâu.
+
+***
+
+#### Core Maps & Zones
 
 {{< cards cols="3" >}}
-{{< card link="/GDD_Design/World/MapDesign" title="Map Design" icon="map" subtitle="Map philosophy, route, POI, extraction pressure, vÃ  readability." >}}
-{{< card link="/GDD_Design/World/MapLayouts" title="Map Layouts" icon="view-grid" subtitle="Layout structure, choke point, pathing, vÃ  encounter composition." >}}
-{{< card link="/GDD_Design/World/LootDistribution" title="Loot Distribution" icon="cube" subtitle="Loot heatmap, zone value, risk/reward, vÃ  container placement." >}}
+{{< card link="mapdesign_industrialzone.html" title="Industrial Zone" icon="cog" subtitle="Tập trung CQC. Nhà máy nhiều tầng. Mật độ loot cao." >}}
+{{< card link="mapdesign_neonslums.html" title="Neon Slums" icon="office-building" subtitle="Urban warfare. Hẻm hẹp và rooftop." >}}
+{{< card link="mapdesign_wilderness.html" title="The Wilderness" icon="cloud" subtitle="Tầm xa. Rừng và đồng mở." >}}
 {{< /cards >}}
 
-{{< cards cols="3" >}}
-{{< card link="/GDD_Design/World/EnvironmentalNarrative" title="Environmental Narrative" icon="book-open" subtitle="Storytelling qua prop, landmark, damage, vÃ  spatial clue." >}}
-{{< card link="/GDD_Design/World/MapDesign_IndustrialZone" title="Industrial Zone" icon="office-building" subtitle="Industrial map identity, POI, route, vÃ  loot pressure." >}}
-{{< card link="/GDD_Design/World/MapDesign_NeonSlums" title="Neon Slums" icon="home" subtitle="Urban density, vertical pressure, vÃ  social trace." >}}
+***
+
+#### Systems & Mechanics
+
+{{< cards cols="2" >}}
+{{< card link="lootdistribution.html" title="Loot Economy" icon="gift" subtitle="Spawning logic, container type, và heatmap." >}}
+{{< card link="maplayouts.html" title="Blueprints" icon="map" subtitle="Top-down view và tactical overlay." >}}
+{{< card link="environmentalnarrative.html" title="Storytelling" icon="book-open" subtitle="Kể chuyện không dùng lời." >}}
+{{< card link="environmentalnarrative_guidelines.html" title="Level Art Rules" icon="pencil" subtitle="Quy tắc đặt prop và decal." >}}
 {{< /cards >}}

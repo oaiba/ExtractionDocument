@@ -8,6 +8,6 @@ Tank lÃ  nhÃ³m operator giá»¯ tuyáº¿n Ä‘áº§u, che cháº¯n squa
 ## Operators
 
 {{< cards cols="2" >}}
-{{< card link="/GDD_Design/Characters/Tank/Bastion" title="Bastion" icon="shield" subtitle="Riot shield vÃ  frontal protection." >}}
+{{< card link="/GDD_Design/Characters/Tank/Bastion" title="Bastion" icon="shield-check" subtitle="Riot shield vÃ  frontal protection." >}}
 {{< card link="/GDD_Design/Characters/Tank/Goliath" title="Goliath" icon="server" subtitle="Armor overcharge vÃ  team defense." >}}
 {{< /cards >}}

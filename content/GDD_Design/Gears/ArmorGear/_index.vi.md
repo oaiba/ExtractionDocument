@@ -8,7 +8,7 @@ Armor Gear Ä‘á»‹nh nghÄ©a protection, durability, handling, progression
 ## Ná»™i Dung ChÃ­nh
 
 {{< cards cols="2" >}}
-{{< card link="/GDD_Design/Gears/ArmorGear/Armor" title="Armor" icon="shield" subtitle="Mapping armor class, zone protection, vÃ  damage reduction." >}}
+{{< card link="/GDD_Design/Gears/ArmorGear/Armor" title="Armor" icon="shield-check" subtitle="Mapping armor class, zone protection, vÃ  damage reduction." >}}
 {{< card link="/GDD_Design/Gears/ArmorGear/Armor_Master_Database" title="Armor Master Database" icon="database" subtitle="Canonical armor item list vÃ  stat fields." >}}
 {{< /cards >}}
 

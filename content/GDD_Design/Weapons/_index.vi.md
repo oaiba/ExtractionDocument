@@ -10,7 +10,7 @@ Trang nÃ y lÃ  báº£n tiáº¿ng Viá»‡t song song cho hub Weapons. Eng
 {{< cards cols="3" >}}
 {{< card link="/GDD_Design/Weapons/Weapon_Categories_Deep_Dive" title="Weapon Categories" icon="collection" subtitle="Role, doctrine, matchup, vÃ  build archetype theo weapon type." >}}
 {{< card link="/GDD_Design/Weapons/Weapon_Master_Database" title="Weapon Master Database" icon="database" subtitle="Canonical weapon stats, slot count, role, vÃ  modded comparison." >}}
-{{< card link="/GDD_Design/Weapons/Caliber_Ballistics_System" title="Caliber & Ballistics" icon="target" subtitle="Ammo type, penetration, damage, range, vÃ  ballistic behavior." >}}
+{{< card link="/GDD_Design/Weapons/Caliber_Ballistics_System" title="Caliber & Ballistics" icon="search-circle" subtitle="Ammo type, penetration, damage, range, vÃ  ballistic behavior." >}}
 {{< /cards >}}
 
 {{< cards cols="3" >}}

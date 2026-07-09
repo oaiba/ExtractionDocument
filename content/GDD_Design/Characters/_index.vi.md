@@ -14,7 +14,7 @@ Trang nÃ y lÃ  báº£n tiáº¿ng Viá»‡t song song cho hub Characters. 
 {{< /cards >}}
 
 {{< cards cols="2" >}}
-{{< card link="/GDD_Design/Characters/Tank" title="Tank" icon="shield" subtitle="Frontline durability, protection, vÃ  space control." >}}
+{{< card link="/GDD_Design/Characters/Tank" title="Tank" icon="shield-check" subtitle="Frontline durability, protection, vÃ  space control." >}}
 {{< card link="/GDD_Design/Characters/Specialist" title="Specialist" icon="chip" subtitle="Disruption, tech utility, vÃ  area control." >}}
 {{< /cards >}}
 

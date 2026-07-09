@@ -15,5 +15,5 @@ Trang nÃ y lÃ  báº£n tiáº¿ng Viá»‡t song song cho hub Narrative Wo
 
 {{< cards cols="2" >}}
 {{< card link="/GDD_Design/NarrativeWorld/MapLore_Urban" title="Urban Lore" icon="home" subtitle="Lore cho urban zone, civilian trace, vÃ  faction pressure." >}}
-{{< card link="/GDD_Design/NarrativeWorld/MapLore_Military" title="Military Lore" icon="shield" subtitle="Lore cho military zone, security layer, vÃ  escalation history." >}}
+{{< card link="/GDD_Design/NarrativeWorld/MapLore_Military" title="Military Lore" icon="shield-check" subtitle="Lore cho military zone, security layer, vÃ  escalation history." >}}
 {{< /cards >}}

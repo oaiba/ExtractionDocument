@@ -28,8 +28,10 @@
         {{- with .PageRef -}}
           {{- with $currentPage.Site.GetPage . -}}
             {{- $link = .RelPermalink -}}
-          {{- else if hasPrefix . "/" -}}
-            {{- $link = relLangURL (strings.TrimPrefix "/" .) -}}
+          {{- else -}}
+            {{- if hasPrefix . "/" -}}
+              {{- $link = relLangURL (strings.TrimPrefix "/" .) -}}
+            {{- end -}}
           {{- end -}}
         {{- end -}}
 

@@ -1,52 +1,18 @@
-/* Custom styles to apply Inter font and the Extraction Protocol docs palette. */
+/* Custom styles to apply Inter font for better readability in GDD */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
 
 :root {
     --font-inter: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     --font-jetbrains: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-
-    --exdoc-primary: #ff6b00;
-    --exdoc-secondary: #4a4e54;
-    --exdoc-tertiary: #1a1c1e;
-    --exdoc-neutral: #121212;
-    --exdoc-white: #ffffff;
-    --exdoc-text: var(--exdoc-white);
-    --exdoc-muted: color-mix(in srgb, var(--exdoc-white) 62%, var(--exdoc-secondary));
-    --exdoc-dim: color-mix(in srgb, var(--exdoc-white) 42%, var(--exdoc-secondary));
-    --exdoc-border: color-mix(in srgb, var(--exdoc-secondary) 78%, var(--exdoc-tertiary));
-    --exdoc-border-strong: var(--exdoc-secondary);
-    --exdoc-surface: var(--exdoc-tertiary);
-    --exdoc-surface-raised: color-mix(in srgb, var(--exdoc-tertiary) 88%, var(--exdoc-secondary));
-    --exdoc-surface-hover: color-mix(in srgb, var(--exdoc-tertiary) 78%, var(--exdoc-primary));
-    --exdoc-primary-soft: color-mix(in srgb, var(--exdoc-primary) 16%, var(--exdoc-tertiary));
-    --exdoc-primary-muted: color-mix(in srgb, var(--exdoc-primary) 72%, var(--exdoc-white));
-    --exdoc-shadow: color-mix(in srgb, var(--exdoc-neutral) 75%, transparent);
-
-    --primary-hue: 25deg;
-    --primary-saturation: 100%;
-    --primary-lightness: 50%;
-    color-scheme: dark;
-}
-
-.dark {
-    --primary-hue: 25deg;
-    --primary-saturation: 100%;
-    --primary-lightness: 50%;
 }
 
 html,
 body {
-    min-height: 100%;
-    background: var(--exdoc-neutral) !important;
-    color: var(--exdoc-text) !important;
     font-family: var(--font-inter) !important;
     font-feature-settings: "rlig" 1, "calt" 1;
+    /* Improved legibility */
     line-height: 1.6;
-}
-
-body,
-.dark body {
-    background: var(--exdoc-neutral) !important;
+    /* Better line height for reading */
 }
 
 /* Headings */
@@ -56,7 +22,6 @@ h3,
 h4,
 h5,
 h6 {
-    color: var(--exdoc-white) !important;
     font-family: var(--font-inter) !important;
     font-weight: 600;
     letter-spacing: -0.02em;
@@ -71,97 +36,17 @@ samp {
     font-variant-ligatures: normal;
 }
 
-/* Theme chrome and primary navigation */
-.hextra-navbar,
-.hextra-sidebar-container,
-.hextra-toc,
-.hextra-nav-container,
-.hextra-breadcrumb,
-.hextra-footer,
-[class*="hx:bg-white"],
-[class*="hx:dark:bg-dark"] {
-    background: var(--exdoc-neutral) !important;
-    color: var(--exdoc-text) !important;
-    border-color: var(--exdoc-border) !important;
-}
-
+/* Sidebar and Navbar titles */
 .hextra-sidebar-container,
 .hextra-navbar {
     font-family: var(--font-inter) !important;
 }
 
-.hextra-navbar,
-.hextra-nav-container {
-    border-bottom: 1px solid var(--exdoc-border) !important;
-}
-
-.hextra-sidebar-container {
-    border-right: 1px solid var(--exdoc-border) !important;
-}
-
-.hextra-toc {
-    order: 0 !important;
-    width: 20rem !important;
-    border-color: var(--exdoc-border) !important;
-}
-
-.hextra-sidebar-container a,
-.hextra-navbar a,
-.hextra-toc a,
-aside a,
-nav a {
-    color: var(--exdoc-muted) !important;
-}
-
-.hextra-sidebar-container a:hover,
-.hextra-navbar a:hover,
-.hextra-toc a:hover,
-aside a:hover,
-nav a:hover {
-    background: var(--exdoc-primary-soft) !important;
-    color: var(--exdoc-white) !important;
-}
-
-.hextra-sidebar-active-item,
-.hextra-toc a.hextra-toc-active {
-    background: var(--exdoc-primary-soft) !important;
-    color: var(--exdoc-primary) !important;
-    border-color: var(--exdoc-primary) !important;
-}
-
-:where(a, button, [role="tab"], [role="menuitem"], [role="menuitemradio"], input, select, textarea, [tabindex="0"]):focus-visible {
-    outline: 2px solid var(--exdoc-primary) !important;
-    outline-offset: 2px !important;
-    box-shadow: 0 0 0 4px var(--exdoc-primary-soft) !important;
-}
-
 /* Enhance readability for documentation content */
 article {
+    /* max-width: 90ch; Optional: limit line length for better reading experience */
     margin: 0 auto;
-    width: 100% !important;
-    max-width: 100% !important;
-    color: var(--exdoc-text) !important;
-}
-
-article a,
-.content a {
-    color: var(--exdoc-primary-muted) !important;
-    text-decoration-color: var(--exdoc-primary) !important;
-}
-
-article a:hover,
-.content a:hover {
-    color: var(--exdoc-primary) !important;
-}
-
-article strong,
-.content strong {
-    color: var(--exdoc-white);
-}
-
-article hr,
-.content hr {
-    border-color: var(--exdoc-border) !important;
+    width: 100%;
 }
 
 /* Adjust main content container to take more space */
@@ -169,10 +54,24 @@ article hr,
 .hextra-max-page-width,
 .hextra-nav-container nav {
     max-width: 95% !important;
+    /* Widen the main container */
     width: 95% !important;
 }
 
 .hextra-max-content-width {
+    max-width: 100% !important;
+    /* Let content fill the widened container */
+}
+
+/* Place the page table of contents in the left column on docs pages. */
+.hextra-toc {
+    order: 0 !important;
+    width: 20rem !important;
+}
+
+/* Ensure article takes remaining space */
+article {
+    width: 100% !important;
     max-width: 100% !important;
 }
 
@@ -185,92 +84,8 @@ article hr,
     }
 }
 
-/* Tables */
-article table,
-.content table {
+article table {
     width: 100%;
-    color: var(--exdoc-text);
-}
-
-article table th,
-article table td,
-.content table th,
-.content table td {
-    border-color: var(--exdoc-border) !important;
-}
-
-article table thead,
-.content table thead {
-    background: var(--exdoc-surface-raised) !important;
-    color: var(--exdoc-white) !important;
-}
-
-article table tbody tr:nth-child(2n),
-.content table tbody tr:nth-child(2n) {
-    background: color-mix(in srgb, var(--exdoc-tertiary) 78%, var(--exdoc-neutral)) !important;
-}
-
-article table tbody tr:hover,
-.content table tbody tr:hover {
-    background: var(--exdoc-primary-soft) !important;
-}
-
-/* Cards and shortcodes */
-.hextra-card {
-    background: var(--exdoc-surface) !important;
-    border-color: var(--exdoc-border) !important;
-    color: var(--exdoc-text) !important;
-    box-shadow: 0 12px 28px var(--exdoc-shadow) !important;
-}
-
-.hextra-card:hover {
-    background: var(--exdoc-surface-hover) !important;
-    border-color: var(--exdoc-primary) !important;
-    box-shadow: 0 18px 38px var(--exdoc-shadow) !important;
-}
-
-.hextra-card-icon {
-    color: var(--exdoc-white) !important;
-}
-
-.hextra-card-icon svg {
-    color: var(--exdoc-primary) !important;
-}
-
-.hextra-card-subtitle {
-    color: var(--exdoc-muted) !important;
-}
-
-/* Normalize Hextra utility colors that otherwise keep default gray/slate surfaces. */
-[class*="hx:text-gray"],
-[class*="hx:text-neutral"],
-[class*="hx:text-slate"] {
-    color: var(--exdoc-muted) !important;
-}
-
-[class*="hx:border-gray"],
-[class*="hx:border-neutral"],
-[class*="hx:border-slate"] {
-    border-color: var(--exdoc-border) !important;
-}
-
-[class*="hx:bg-gray"],
-[class*="hx:bg-neutral"],
-[class*="hx:bg-slate"] {
-    background: var(--exdoc-surface) !important;
-}
-
-[class*="hx:hover:bg-gray"]:hover,
-[class*="hx:hover:bg-neutral"]:hover,
-[class*="hx:hover:bg-slate"]:hover,
-[class*="hx:dark:hover:bg-primary"]:hover {
-    background: var(--exdoc-primary-soft) !important;
-}
-
-[class*="hx:hover:text-gray"]:hover,
-[class*="hx:hover:text-neutral"]:hover,
-[class*="hx:dark:hover:text-gray"]:hover {
-    color: var(--exdoc-white) !important;
 }
 
 .extraction-ascii-banner {
@@ -279,20 +94,19 @@ article table tbody tr:hover,
     max-width: 900px;
     height: auto;
     margin: 0.5rem 0 1.75rem;
-    border: 1px solid var(--exdoc-border);
     border-radius: 0.5rem;
-    box-shadow: 0 14px 32px var(--exdoc-shadow);
+    box-shadow: 0 14px 32px rgba(15, 23, 42, 0.08);
 }
 
 /* Keep fenced code blocks aligned with the docs surface while making them stand out. */
 .hextra-code-block pre,
 .hextra-code-block .chroma {
-    background: linear-gradient(180deg, var(--exdoc-tertiary) 0%, var(--exdoc-neutral) 100%) !important;
-    color: var(--exdoc-white) !important;
-    border: 1px solid var(--exdoc-border);
-    border-left: 4px solid var(--exdoc-primary);
+    background: linear-gradient(180deg, #f8fbff 0%, #f3f7fc 100%) !important;
+    color: #14213d !important;
+    border: 1px solid #cbd5e1;
+    border-left: 4px solid #3b82f6;
     border-radius: 0.5rem !important;
-    box-shadow: 0 10px 28px var(--exdoc-shadow);
+    box-shadow: 0 10px 28px rgba(15, 23, 42, 0.08);
 }
 
 .hextra-code-block pre:not(.lntable pre) {
@@ -300,10 +114,10 @@ article table tbody tr:hover,
 }
 
 .hextra-code-block .hextra-code-filename {
-    background: var(--exdoc-surface-raised) !important;
-    color: var(--exdoc-white) !important;
-    border: 1px solid var(--exdoc-border);
-    border-left: 4px solid var(--exdoc-primary);
+    background: #edf4ff !important;
+    color: #1e3a8a !important;
+    border: 1px solid #cbd5e1;
+    border-left: 4px solid #3b82f6;
     border-bottom: 0;
     border-radius: 0.5rem 0.5rem 0 0 !important;
     font-weight: 600;
@@ -322,14 +136,8 @@ article table tbody tr:hover,
 .hextra-code-block .chroma .kp,
 .hextra-code-block .chroma .kr,
 .hextra-code-block .chroma .o,
-.hextra-code-block .chroma .ow,
-.hextra-code-block .chroma .m,
-.hextra-code-block .chroma .mb,
-.hextra-code-block .chroma .mf,
-.hextra-code-block .chroma .mh,
-.hextra-code-block .chroma .mi,
-.hextra-code-block .chroma .mo {
-    color: var(--exdoc-primary) !important;
+.hextra-code-block .chroma .ow {
+    color: #7c3aed !important;
 }
 
 .hextra-code-block .chroma .s,
@@ -337,11 +145,17 @@ article table tbody tr:hover,
 .hextra-code-block .chroma .s2,
 .hextra-code-block .chroma .se,
 .hextra-code-block .chroma .sh,
-.hextra-code-block .chroma .sx,
-.hextra-code-block .chroma .nf,
-.hextra-code-block .chroma .nc,
-.hextra-code-block .chroma .nt {
-    color: var(--exdoc-white) !important;
+.hextra-code-block .chroma .sx {
+    color: #047857 !important;
+}
+
+.hextra-code-block .chroma .m,
+.hextra-code-block .chroma .mb,
+.hextra-code-block .chroma .mf,
+.hextra-code-block .chroma .mh,
+.hextra-code-block .chroma .mi,
+.hextra-code-block .chroma .mo {
+    color: #b45309 !important;
 }
 
 .hextra-code-block .chroma .c,
@@ -349,34 +163,72 @@ article table tbody tr:hover,
 .hextra-code-block .chroma .ch,
 .hextra-code-block .chroma .cm,
 .hextra-code-block .chroma .cs {
-    color: var(--exdoc-muted) !important;
+    color: #64748b !important;
 }
 
-.hextra-code-block button,
-.hextra-code-block .hextra-code-copy-btn {
-    color: var(--exdoc-muted) !important;
+.hextra-code-block .chroma .nf,
+.hextra-code-block .chroma .nc,
+.hextra-code-block .chroma .nt {
+    color: #0369a1 !important;
 }
 
-.hextra-code-block button:hover,
-.hextra-code-block .hextra-code-copy-btn:hover {
-    color: var(--exdoc-primary) !important;
+.dark .hextra-code-block pre,
+.dark .hextra-code-block .chroma {
+    background: linear-gradient(180deg, #111827 0%, #0f172a 100%) !important;
+    color: #e5e7eb !important;
+    border-color: #334155;
+    border-left-color: #60a5fa;
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.35);
 }
 
-/* Search surfaces */
-.search-wrapper,
-.hextra-search,
-.hextra-search input,
-.hextra-search-result,
-[class*="search"] input {
-    background: var(--exdoc-surface) !important;
-    color: var(--exdoc-text) !important;
-    border-color: var(--exdoc-border) !important;
+.dark .hextra-code-block .hextra-code-filename {
+    background: #172033 !important;
+    color: #e5e7eb !important;
+    border-color: #334155;
+    border-left-color: #60a5fa;
 }
 
-.hextra-search-result:hover,
-[class*="search"] a:hover {
-    background: var(--exdoc-primary-soft) !important;
-    color: var(--exdoc-white) !important;
+.dark .hextra-code-block .chroma .k,
+.dark .hextra-code-block .chroma .kc,
+.dark .hextra-code-block .chroma .kd,
+.dark .hextra-code-block .chroma .kn,
+.dark .hextra-code-block .chroma .kp,
+.dark .hextra-code-block .chroma .kr,
+.dark .hextra-code-block .chroma .o,
+.dark .hextra-code-block .chroma .ow {
+    color: #c084fc !important;
+}
+
+.dark .hextra-code-block .chroma .s,
+.dark .hextra-code-block .chroma .s1,
+.dark .hextra-code-block .chroma .s2,
+.dark .hextra-code-block .chroma .se,
+.dark .hextra-code-block .chroma .sh,
+.dark .hextra-code-block .chroma .sx {
+    color: #86efac !important;
+}
+
+.dark .hextra-code-block .chroma .m,
+.dark .hextra-code-block .chroma .mb,
+.dark .hextra-code-block .chroma .mf,
+.dark .hextra-code-block .chroma .mh,
+.dark .hextra-code-block .chroma .mi,
+.dark .hextra-code-block .chroma .mo {
+    color: #fbbf24 !important;
+}
+
+.dark .hextra-code-block .chroma .c,
+.dark .hextra-code-block .chroma .c1,
+.dark .hextra-code-block .chroma .ch,
+.dark .hextra-code-block .chroma .cm,
+.dark .hextra-code-block .chroma .cs {
+    color: #94a3b8 !important;
+}
+
+.dark .hextra-code-block .chroma .nf,
+.dark .hextra-code-block .chroma .nc,
+.dark .hextra-code-block .chroma .nt {
+    color: #7dd3fc !important;
 }
 
 /* Render lab charts and Mermaid diagrams. */
@@ -387,7 +239,7 @@ article table tbody tr:hover,
 
 .exdoc-chart-frame figcaption {
     margin-top: 0.5rem;
-    color: var(--exdoc-muted);
+    color: #64748b;
     font-size: 0.9rem;
     text-align: center;
 }
@@ -396,14 +248,14 @@ article table tbody tr:hover,
     width: 100%;
     max-height: min(72vh, 640px);
     overflow: auto;
-    border: 1px solid var(--exdoc-border);
+    border: 1px solid #dbe3ef;
     border-radius: 0.5rem;
-    background: var(--exdoc-surface);
-    box-shadow: 0 12px 28px var(--exdoc-shadow);
+    background: #ffffff;
+    box-shadow: 0 12px 28px rgba(15, 23, 42, 0.07);
 }
 
 .exdoc-chart-viewport:focus-visible {
-    outline: 2px solid var(--exdoc-primary);
+    outline: 2px solid #2563eb;
     outline-offset: 2px;
 }
 
@@ -412,7 +264,7 @@ article table tbody tr:hover,
     min-height: 280px;
     border: 0;
     border-radius: 0;
-    background: var(--exdoc-surface);
+    background: #ffffff;
     box-shadow: none;
 }
 
@@ -421,7 +273,7 @@ article table tbody tr:hover,
     align-items: center;
     justify-content: center;
     padding: 1rem;
-    color: var(--exdoc-primary);
+    color: #b91c1c;
     font-family: var(--font-jetbrains);
     font-size: 0.875rem;
 }
@@ -431,10 +283,10 @@ article table tbody tr:hover,
     margin: 1.5rem 0;
     padding: 1rem;
     overflow-x: auto;
-    border: 1px solid var(--exdoc-border);
+    border: 1px solid #dbe3ef;
     border-radius: 0.5rem;
-    background: var(--exdoc-surface);
-    box-shadow: 0 12px 28px var(--exdoc-shadow);
+    background: #ffffff;
+    box-shadow: 0 12px 28px rgba(15, 23, 42, 0.07);
 }
 
 .content .exdoc-mermaid-fill {
@@ -447,4 +299,23 @@ article table tbody tr:hover,
     max-width: none !important;
     height: auto !important;
     margin: 0 auto;
+}
+
+.dark .exdoc-chart-frame figcaption {
+    color: #94a3b8;
+}
+
+.dark .exdoc-chart-viewport,
+.dark .content .mermaid {
+    border-color: #334155;
+    background: #0f172a;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
+}
+
+.dark .exdoc-echarts {
+    background: #0f172a;
+}
+
+.dark .exdoc-echarts-error {
+    color: #fca5a5;
 }

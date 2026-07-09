@@ -1,8 +1,9 @@
-/* Custom styles to apply Oxanium and Roboto Mono fonts for GDD */
+/* Custom styles to apply Inter font for better readability in GDD */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
 
 :root {
-    --font-oxanium: "Oxanium", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    --font-roboto-mono: "Roboto Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    --font-inter: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    --font-jetbrains: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
     --exdoc-primary: #ff6b00;
     --primary-hue: 25deg;
     --primary-saturation: 100%;
@@ -17,7 +18,7 @@
 
 html,
 body {
-    font-family: var(--font-oxanium) !important;
+    font-family: var(--font-inter) !important;
     font-feature-settings: "rlig" 1, "calt" 1;
     /* Improved legibility */
     line-height: 1.6;
@@ -31,7 +32,7 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: var(--font-oxanium) !important;
+    font-family: var(--font-inter) !important;
     font-weight: 600;
     letter-spacing: -0.02em;
 }
@@ -41,14 +42,14 @@ code,
 pre,
 kbd,
 samp {
-    font-family: var(--font-roboto-mono) !important;
+    font-family: var(--font-jetbrains) !important;
     font-variant-ligatures: normal;
 }
 
 /* Sidebar and Navbar titles */
 .hextra-sidebar-container,
 .hextra-navbar {
-    font-family: var(--font-oxanium) !important;
+    font-family: var(--font-inter) !important;
 }
 
 .hextra-sidebar-active-item {
@@ -314,7 +315,7 @@ article table {
     justify-content: center;
     padding: 1rem;
     color: #b91c1c;
-    font-family: var(--font-roboto-mono);
+    font-family: var(--font-jetbrains);
     font-size: 0.875rem;
 }
 

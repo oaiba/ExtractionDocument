@@ -14,11 +14,22 @@ These rules govern how AI agents should write and format GDD documentation, tech
 
 | Rule | Description |
 |:-----|:------------|
-| **Language** | All documentation must be in **English** (U.S. spelling) |
+| **Language** | English is the canonical source of truth. Vietnamese companion translations are allowed as `*.vi.md` files when needed. |
 | **Format** | All documents use **Markdown** (`.md` files) |
 | **Tone** | Professional, concise, technical. No fluff or filler |
 | **Audience** | Assume the reader is a game developer with UE5 experience |
 | **Tense** | Use present tense for describing systems, past tense for changelogs |
+
+---
+
+### Translation Rules
+
+| Rule | Description |
+|:-----|:------------|
+| **Canonical Source** | English pages remain authoritative when English and Vietnamese content disagree. |
+| **File Pattern** | Vietnamese companion pages use Hugo filename translations, for example `_index.vi.md` beside `_index.md`. |
+| **Structure Parity** | Translations preserve frontmatter intent, heading hierarchy, shortcodes, tables, ASCII/code fences, and key links. |
+| **Scope Control** | Translate complete pages, not mixed-language fragments inside the canonical English page. |
 
 ---
 

@@ -2,6 +2,18 @@ baseURL: 'https://oaiba.github.io/ExtractionDocument/'
 languageCode: 'en-us'
 title: 'Extraction Document'
 theme: 'hextra'
+defaultContentLanguage: en
+defaultContentLanguageInSubdir: false
+
+languages:
+  en:
+    label: English
+    locale: en-US
+    weight: 1
+  vi:
+    label: Tiếng Việt
+    locale: vi-VN
+    weight: 2
 
 markup:
   goldmark:
@@ -23,20 +35,32 @@ params:
 
 menu:
   main:
-    - name: Agents
-      pageRef: /GDD_Agents
+    - identifier: agents
+      name: Agents
+      url: /ExtractionDocument/GDD_Agents.html
       weight: 1
-    - name: Design
-      pageRef: /GDD_Design
+    - identifier: design
+      name: Design
+      url: /ExtractionDocument/GDD_Design.html
       weight: 2
-    - name: Technical
-      pageRef: /GDD_Technical
+    - identifier: technical
+      name: Technical
+      url: /ExtractionDocument/GDD_Technical.html
       weight: 3
-    - name: Theme
+    - identifier: language
+      name: Language
+      weight: 8
+      params:
+        type: language-switch
+        label: true
+        icon: translate
+    - identifier: theme
+      name: Theme
       weight: 9
       params:
         type: theme-toggle
-    - name: Search
+    - identifier: search
+      name: Search
       weight: 10
       params:
         type: search

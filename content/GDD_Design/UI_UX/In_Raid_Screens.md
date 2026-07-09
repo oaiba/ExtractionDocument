@@ -72,7 +72,7 @@ The detailed element catalog lives in [HUD Design](HUD_Design.md). This page def
 
 ## Tactical Map
 
-#### Layout (PC/Console)
+Layout (PC/Console)
 
 ```
 +------------------------------------------------------------------+
@@ -112,7 +112,7 @@ The detailed element catalog lives in [HUD Design](HUD_Design.md). This page def
 
 ## Looting Overlay
 
-#### Layout (PC/Console)
+Layout (PC/Console)
 
 ```
 +------------------------------------------------------------------+
@@ -153,7 +153,7 @@ The detailed element catalog lives in [HUD Design](HUD_Design.md). This page def
 
 ## Inventory Overlay
 
-#### Layout (PC/Console)
+Layout (PC/Console)
 
 ```
 +------------------------------------------------------------------+
@@ -191,7 +191,7 @@ The detailed element catalog lives in [HUD Design](HUD_Design.md). This page def
 
 ## Pause Overlay
 
-#### Layout (PC/Console)
+Layout (PC/Console)
 
 ```
 +------------------------------------------------------------------+
@@ -229,7 +229,7 @@ The detailed element catalog lives in [HUD Design](HUD_Design.md). This page def
 
 ## Spectator View
 
-#### Layout (PC/Console)
+Layout (PC/Console)
 
 ```
 +------------------------------------------------------------------+
@@ -256,7 +256,7 @@ The detailed element catalog lives in [HUD Design](HUD_Design.md). This page def
 
 ## Reconnect Overlay
 
-#### Layout (PC/Console)
+Layout (PC/Console)
 
 ```
 +------------------------------------------------------------------+

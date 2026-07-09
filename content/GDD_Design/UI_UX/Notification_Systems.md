@@ -71,7 +71,7 @@ Queue by priority -> Show if visible slots < 3 -> Drop low priority if queue > 5
 | Font | Inter Regular, 14px |
 | Scroll | Newest entries push older ones up |
 
-#### Layout (PC/Console)
+Layout (PC/Console)
 
 ```
 +------------------------------------------------------------------+
@@ -207,7 +207,7 @@ Status effects appear as small icons below the health bar, stacking horizontally
 
 ---
 
-#### Layout (PC/Console)
+Layout (PC/Console)
 
 ```
 +-------------------------------+
@@ -298,7 +298,7 @@ Appear when the player is near an interactable object:
 
 Visual and audio cues that communicate danger without directly revealing enemy positions:
 
-#### Layout (PC/Console)
+Layout (PC/Console)
 
 ```
 +------------------------------------------------------------------+

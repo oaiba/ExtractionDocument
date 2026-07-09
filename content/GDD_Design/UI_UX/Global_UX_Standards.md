@@ -83,7 +83,7 @@ Global UX standards define the reusable interaction rules that every UI screen m
 
 ## Responsive Layout Rules
 
-#### Layout (PC/Console)
+Layout (PC/Console)
 
 ```
 +-------------------------------------------------------------------+
@@ -135,7 +135,7 @@ Mobile-specific and portrait-only layouts are out of scope for this standard. If
 
 ## Modal And Dialog Standards
 
-#### Layout (PC/Console)
+Layout (PC/Console)
 
 ```
 +------------------------------------------------------------------+

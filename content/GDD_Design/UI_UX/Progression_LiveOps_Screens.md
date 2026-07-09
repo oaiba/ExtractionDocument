@@ -49,7 +49,7 @@ Primary references:
 
 ## Battle Pass
 
-#### Layout (PC/Console)
+Layout (PC/Console)
 
 ```
 +------------------------------------------------------------------+
@@ -89,7 +89,7 @@ Primary references:
 
 ## Event Hub
 
-#### Layout (PC/Console)
+Layout (PC/Console)
 
 ```
 +------------------------------------------------------------------+
@@ -128,7 +128,7 @@ Primary references:
 
 ## Daily And Weekly Tasks
 
-#### Layout (PC/Console)
+Layout (PC/Console)
 
 ```
 +------------------------------------------------------------------+
@@ -158,7 +158,7 @@ Expired tasks must not silently disappear if a reward was claimable; move claima
 
 ## Reward Inbox
 
-#### Layout (PC/Console)
+Layout (PC/Console)
 
 ```
 +-------------------------------------------------------------------+
@@ -185,7 +185,7 @@ Expired tasks must not silently disappear if a reward was claimable; move claima
 
 ## Ranked Overview
 
-#### Layout (PC/Console)
+Layout (PC/Console)
 
 ```
 +------------------------------------------------------------------+
@@ -225,7 +225,7 @@ Expired tasks must not silently disappear if a reward was claimable; move claima
 
 ## Leaderboards
 
-#### Layout (PC/Console)
+Layout (PC/Console)
 
 ```
 +-------------------------------------------------------------------+
@@ -254,7 +254,7 @@ Leaderboards must avoid implying exact hidden MMR if the ranked design does not 
 
 ## Patch Notes And News
 
-#### Layout (PC/Console)
+Layout (PC/Console)
 
 ```
 +------------------------------------------------------------------+
@@ -270,7 +270,7 @@ Leaderboards must avoid implying exact hidden MMR if the ranked design does not 
 +------------------------------------------------------------------+
 ```
 
-#### Layout (PC/Console)
+Layout (PC/Console)
 
 ```
 +------------------------------------------------------------------+

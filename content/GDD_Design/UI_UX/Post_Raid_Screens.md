@@ -50,7 +50,7 @@ Primary references:
 
 The AAR is the most important post-raid screen. It should be calm, readable, and fast to exit.
 
-#### Layout (PC/Console)
+Layout (PC/Console)
 
 ```
 +------------------------------------------------------------------+
@@ -69,7 +69,7 @@ The AAR is the most important post-raid screen. It should be calm, readable, and
 +------------------------------------------------------------------+
 ```
 
-#### Layout (PC/Console)
+Layout (PC/Console)
 
 ```
 +------------------------------------------------------------------+
@@ -112,7 +112,7 @@ The AAR is the most important post-raid screen. It should be calm, readable, and
 
 ## Death Replay
 
-#### Layout (PC/Console)
+Layout (PC/Console)
 
 ```
 +------------------------------------------------------------------+
@@ -152,7 +152,7 @@ The AAR is the most important post-raid screen. It should be calm, readable, and
 
 ## Loot Transfer
 
-#### Layout (PC/Console)
+Layout (PC/Console)
 
 ```
 +------------------------------------------------------------------+
@@ -185,7 +185,7 @@ Loot transfer must never make the player wonder whether items were saved. The fi
 
 ## Quest Progress
 
-#### Layout (PC/Console)
+Layout (PC/Console)
 
 ```
 +------------------------------------------------------------------+
@@ -216,7 +216,7 @@ Loot transfer must never make the player wonder whether items were saved. The fi
 
 ## Squad Summary And Social Actions
 
-#### Layout (PC/Console)
+Layout (PC/Console)
 
 ```
 +------------------------------------------------------------------+

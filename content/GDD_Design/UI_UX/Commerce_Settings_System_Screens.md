@@ -53,7 +53,7 @@ Primary references:
 
 Boot and splash screens should stay minimal. Loading taxonomy lives in [Loading Screen Design](LoadingScreen_Design.md); this section owns the system-facing states.
 
-#### Layout (PC/Console)
+Layout (PC/Console)
 
 ```
 +------------------------------------------------------------------+
@@ -80,7 +80,7 @@ Boot and splash screens should stay minimal. Loading taxonomy lives in [Loading 
 
 ## Login And Account Link
 
-#### Layout (PC/Console)
+Layout (PC/Console)
 
 ```
 +------------------------------------------------------------------+
@@ -120,7 +120,7 @@ Boot and splash screens should stay minimal. Loading taxonomy lives in [Loading 
 
 ## First-Time Setup
 
-#### Layout (PC/Console)
+Layout (PC/Console)
 
 ```
 +------------------------------------------------------------------+
@@ -138,7 +138,7 @@ Boot and splash screens should stay minimal. Loading taxonomy lives in [Loading 
 +------------------------------------------------------------------+
 ```
 
-#### Layout (PC/Console)
+Layout (PC/Console)
 
 ```
 +--------------------------------------------------------------------+
@@ -165,7 +165,7 @@ Boot and splash screens should stay minimal. Loading taxonomy lives in [Loading 
 
 First-time setup must be short. Advanced settings should be reachable but not forced before first play.
 
-#### Layout (PC/Console)
+Layout (PC/Console)
 
 ```
 +-------------------------------------------------------------------+
@@ -185,7 +185,7 @@ First-time setup must be short. Advanced settings should be reachable but not fo
 
 Settings categories follow [User Settings](../GameDesign/UserSettings.md) and the detailed [Settings Matrix](../GameDesign/UserSettings_Matrix.md).
 
-#### Layout (PC/Console)
+Layout (PC/Console)
 
 ```
 +-----------------------------------------------------------------------------------------------+
@@ -231,7 +231,7 @@ Settings categories follow [User Settings](../GameDesign/UserSettings.md) and th
 
 ## Account, Privacy, And Safety
 
-#### Layout (PC/Console)
+Layout (PC/Console)
 
 ```
 +------------------------------------------------------------------+
@@ -261,7 +261,7 @@ Privacy changes should apply immediately when possible and show restart/session 
 
 ## Diagnostics And Support
 
-#### Layout (PC/Console)
+Layout (PC/Console)
 
 ```
 +------------------------------------------------------------------+
@@ -293,7 +293,7 @@ Diagnostics should avoid exposing sensitive tokens, IPs, or private account info
 
 ## System Dialogs
 
-#### Layout (PC/Console)
+Layout (PC/Console)
 
 ```
 +------------------------------------------------------------------+

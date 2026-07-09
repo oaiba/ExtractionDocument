@@ -182,7 +182,7 @@ Mobile-specific:
 
 <!-- REF_IMAGE: Minimap specification diagram — showing icon legend, zoom level comparison, and terrain rendering style -->
 
-#### Layout (PC/Console)
+Layout (PC/Console)
 
 ```
 +----------------------+
@@ -219,7 +219,7 @@ Legend: o squad | ! objective | H open extract | x closed extract
 | Audio cues | Subtle tick sound starts at 5 minutes. Urgent alarm at 2 minutes |
 | Overtime | If timer hits 0:00, "EMERGENCY EXTRACT" flashes. 60-second grace period begins |
 
-#### Layout (PC/Console)
+Layout (PC/Console)
 
 ```
 +------------------------------------------------------------------+

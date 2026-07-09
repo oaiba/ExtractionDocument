@@ -49,7 +49,7 @@ Primary references:
 
 ## Social Panel
 
-#### Layout (PC/Console)
+Layout (PC/Console)
 
 ```
 +------------------------------------------------------------------+
@@ -90,7 +90,7 @@ Primary references:
 
 ## Friends List
 
-#### Layout (PC/Console)
+Layout (PC/Console)
 
 ```
 +------------------------------------------------------------------+
@@ -130,7 +130,7 @@ Primary references:
 
 The party panel overlaps with [Pre-Raid Screens](Pre_Raid_Screens.md), but this screen owns persistent social party management outside the deploy flow.
 
-#### Layout (PC/Console)
+Layout (PC/Console)
 
 ```
 +------------------------------------------------------------------+
@@ -191,7 +191,7 @@ Mobile invite flow must support share code and QR/deep link if platform policy a
 
 ## LFG Board
 
-#### Layout (PC/Console)
+Layout (PC/Console)
 
 ```
 +--------------------------------------------------------------------+
@@ -228,7 +228,7 @@ Mobile invite flow must support share code and QR/deep link if platform policy a
 
 ## Clan Hub
 
-#### Layout (PC/Console)
+Layout (PC/Console)
 
 ```
 +-------------------------------------------------------------------+
@@ -259,7 +259,7 @@ Players without a clan should see Join Clan, Create Clan, and Browse recommendat
 
 ## Chat And Voice
 
-#### Layout (PC/Console)
+Layout (PC/Console)
 
 ```
 +------------------------------------------------------------------+
@@ -296,7 +296,7 @@ Players without a clan should see Join Clan, Create Clan, and Browse recommendat
 
 ## Report And Block
 
-#### Layout (PC/Console)
+Layout (PC/Console)
 
 ```
 +------------------------------------------------------------------+

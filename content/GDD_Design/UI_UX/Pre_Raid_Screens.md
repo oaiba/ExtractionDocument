@@ -46,7 +46,7 @@ Primary references:
 
 ## Mode Select
 
-#### Layout (PC/Console)
+Layout (PC/Console)
 
 ```
 +------------------------------------------------------------------+
@@ -88,7 +88,7 @@ Primary references:
 
 ## Map Select
 
-#### Layout (PC/Console)
+Layout (PC/Console)
 
 ```
 +------------------------------------------------------------------+
@@ -131,7 +131,7 @@ Primary references:
 
 Deploy confirmation is the final trust checkpoint. It should be quick for valid kits and explicit for risky kits.
 
-#### Layout (PC/Console)
+Layout (PC/Console)
 
 ```
 +------------------------------------------------------------------+
@@ -175,7 +175,7 @@ Deploy confirmation is the final trust checkpoint. It should be quick for valid 
 
 ## Squad Lobby
 
-#### Layout (PC/Console)
+Layout (PC/Console)
 
 ```
 +------------------------------------------------------------------+
@@ -227,7 +227,7 @@ Deploy confirmation is the final trust checkpoint. It should be quick for valid 
 
 ## Matchmaking
 
-#### Layout (PC/Console)
+Layout (PC/Console)
 
 ```
 +------------------------------------------------------------------+
@@ -254,7 +254,7 @@ Searching -> Expanding Search -> Match Found -> L4 Loading -> In Raid
  Cancelled      Server Error     Player Declined
 ```
 
-#### Layout (PC/Console)
+Layout (PC/Console)
 
 ```
 +------------------------------------------------------------------+

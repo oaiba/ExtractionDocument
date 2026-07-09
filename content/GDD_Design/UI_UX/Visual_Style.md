@@ -355,7 +355,7 @@ ASCII wireframes in the screen group pages define hierarchy, region ownership, s
 - [ ] Icons and colors are backed by labels, shape, position, or pattern.
 - [ ] Primary CTA placement is stable between default, warning, and blocked states.
 
-#### Layout (PC/Console)
+Layout (PC/Console)
 
 ```
 +------------------------------------------------------------------+

@@ -211,6 +211,31 @@ An item does **not** have FIR status nếu:
 
 ***
 
+### FIR And Extraction Resolution
+
+FIR được resolve ở raid outcome, không chỉ lúc pickup. Item tile có thể show provisional FIR badge trong raid, nhưng debrief sở hữu final result.
+
+| Item Path | Extraction Result | FIR Result | UI Requirement |
+| :--- | :--- | :--- | :--- |
+| World item picked up and extracted | `EXTRACTED` | FIR retained | Show FIR badge trong loot summary và stash |
+| World item picked up and player dies | `KIA` / `MIA_TIMEOUT` | FIR removed nếu protected item được giữ; unprotected item lost | Debrief explain "FIR lost on failed extraction" |
+| Quest item extracted | `EXTRACTED` | Quest rule quyết định FIR/turn-in eligibility | Show linked quest name |
+| Item crafted in Safe House | Out-of-raid | FIR retained nếu recipe grant | Show craft source |
+| Trader/market purchase brought into raid | Any | Không bao giờ thành FIR chỉ nhờ extraction | Không show provisional FIR |
+| Server rollback | `SERVER_ROLLBACK` | Revert về pre-raid item state | Dùng rollback copy, không dùng death copy |
+
+### Loot Progress And Loss Rules
+
+| State | Rule | Player-Facing Copy |
+| :--- | :--- | :--- |
+| Provisional loot | Item ở backpack trong raid nhưng chưa banked | "Extract to secure value." |
+| Protected loot | Item ở secure container hoặc protected tutorial state | "Kept on death; FIR may be removed." |
+| Quest-critical loot | Item required cho active quest | Show quest badge và extraction requirement |
+| Overflow loot | Extracted loot vượt stash capacity | Move vào overflow lane trước deploy-again |
+| Pending sync | Server chưa confirm transfer | Disable destructive actions và show retry/support route |
+
+***
+
 ### Barter Items
 
 #### Categories

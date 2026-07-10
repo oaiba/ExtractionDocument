@@ -10,6 +10,18 @@ Vòng lặp engagement cốt lõi được thiết kế để tạo a "Hero's Jo
 
 > Xem [cốt lõi Gameplay cơ chế](https://github.com/oaiba/ExtractionDocument/blob/main/content/GameDesign/CoreGameplay/README.md) để xem chi tiết per-minute match timeline, combat hệ thống thông số, và control sơ đồ specifications.
 
+#### Phase Contract
+
+Core Loop dùng cùng phase vocabulary với [Core Gameplay Mechanics](../GameDesign/CoreGameplay.md). Bất kỳ feature nào thay đổi một phase đều phải nói rõ nó cải thiện câu hỏi nào của player.
+
+| Phase | Player Question | Must Provide | Must Not Do |
+| :--- | :--- | :--- | :--- |
+| Preparation | Tôi đang risk gì và vì sao? | Loadout validity, objective, mode rules, squad readiness, insurance state | Giấu blocker đến tận matchmaking |
+| Infiltration | Tôi đang ở đâu và gần đó có gì? | Spawn orientation, extraction options, objective marker, first cover route | Spawn player vào danger không đọc được |
+| Execution | Value này có đáng exposure không? | Loot value, threat cues, objective progress, ammo/health/squad status | Reward blind looting hơn route reading |
+| Extraction | Tôi có thể bank value này ngay không? | Extract distance, timer, activation rule, contest risk, squad state | Đổi extraction rules mà không cảnh báo |
+| Recovery | Chuyện gì xảy ra và tôi làm gì tiếp? | Lost/kept/insured items, XP, quest state, death cause, next CTA | Để player kẹt không có rebuild/redeploy path |
+
 #### Session Length & Pacing
 
 **Target session:** 15–20 minutes (mobile-friendly). Standard raid timer is 25–30 minutes so that a typical run (infiltrate, loot, extract) fits within one session; người chơi who extract early hoặc die early can queue again within the target window. An optional **Quick Raid** mode (e.g. 15-minute raid timer, smaller map hoặc reduced objectives) may be offered for người chơi who want a guaranteed short session. Design pillars: [Design Pillars](https://github.com/oaiba/ExtractionDocument/blob/main/content/ProjectScope/design-pillars-enhanced.md). cơ chế benchmark: [Gameplay Review checklist](Gameplay_Review_Checklist.md).

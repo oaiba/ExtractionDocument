@@ -48,6 +48,22 @@ The matchmaking and lobby system is the gateway between the stash (out-of-raid h
 | **Training / Tutorial** | AI-only server. No other players. Tutorial-exclusive.                                                                                                    | Forced for first-timer     |
 | **Ranked**              | Rated matchmaking pool (separate from casual). See [RankedMode](https://github.com/oaiba/ExtractionDocument/blob/main/content/GameDesign/RankedMode.md). | Separate pool              |
 
+#### Matchmaking Assumptions
+
+Matchmaking is a design contract, not only a technical queue. The player should know what rules they are entering before the server is reserved.
+
+| Assumption | Rule | Player-Facing Requirement |
+| :--- | :--- | :--- |
+| Regional-first queue | Best-ping region is preferred before expansion | Show region and estimated latency when queue starts |
+| Soft new-player protection | First raids can be weighted toward lower-density or tutorial-safe pools | Do not label this as easy mode; present it as onboarding protection only if needed |
+| Gear value is not MMR | Expensive kits do not force high-skill lobbies | Avoid implying paid or expensive gear changes matchmaking |
+| Party leader owns queue selection | Leader chooses mode, map, squad fill, and region | Squad members see the selected contract before readying |
+| Low-pop fallback is allowed | Queue may start lower-density rather than wait indefinitely | Show "lower-density raid" if it changes expected player count materially |
+| Ranked and event pools are separate | Ranked/event rules do not silently mix with casual rules | Mode card must show pool, penalties, rewards, and special extraction rules |
+| Tutorial pool is protected | First tutorial is AI-only unless explicitly replaying with a squad | Standard queue remains locked until tutorial exit condition is met |
+| Reconnect before loss | Disconnect creates a reconnect window before MIA resolution | Loading/reconnect UI must show remaining window and consequence |
+| Server crash rollback | Invalid server result restores pre-raid loadout snapshot | Debrief uses rollback copy, not KIA/MIA copy |
+
 #### Matchmaking Algorithm
 
 The standard queue uses **regional pool matching** with a progressive expansion timeout:

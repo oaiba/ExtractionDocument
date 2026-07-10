@@ -183,6 +183,36 @@ The moment the debrief loads, item transfer is immediate:
 
 ***
 
+### Raid Outcome Reconciliation
+
+The debrief is the player-facing view of server reconciliation. It must separate gameplay failure from technical failure, and it must show why each item, quest, and reward changed state.
+
+| Result Code | Header Outcome | Loot Treatment | Progress Treatment | Required CTA |
+| :--- | :--- | :--- | :--- | :--- |
+| `EXTRACTED` | Extracted | Extracted items transfer to stash or overflow | XP, FIR, quest, and reward rules apply | Continue, manage stash, deploy again |
+| `KIA` | K.I.A. | Equipped and backpack items are lost unless protected or later insured | Allowed XP and quest progress apply | Watch replay, rebuild, report if needed |
+| `MIA_TIMEOUT` | MIA | Failed extraction item loss rules apply | Limited progress only where objective rules allow | Review timer/extract distance, rebuild |
+| `MIA_DISCONNECT` | MIA | Failed extraction after reconnect window expires | No extra penalty beyond MIA | Show reconnect expiry and support route if suspicious |
+| `SERVER_ROLLBACK` | Raid Invalidated | Pre-raid loadout snapshot restored | No raid rewards; compensation may be separate | Return to stash, view support note |
+| `PARTIAL_EXTRACT` | Squad Split | Local player result resolves independently | Squad summary shows each member separately | Continue if alive, debrief if extracted/dead |
+| `OBJECTIVE_UNSECURED` | Objective Unsecured | Objective item lost unless protected | Objective progress depends on extraction requirement | View quest requirement and next route |
+
+#### Lost / Kept / Insured / FIR Display
+
+| Item State | Display Rule | Interaction |
+| :--- | :--- | :--- |
+| Lost | Show in lost item list with reason: KIA, MIA, looted, expired, destroyed | No action unless insurance was active |
+| Kept | Show in kept/protected list with source: secure container, protected quest rule, rollback | Allow move to stash if applicable |
+| Insured pending | Show return provider, chance/rule, and ETA | Link to insurance inbox or trader |
+| FIR retained | Show FIR badge only if extraction and item rules preserve it | Explain if FIR was removed |
+| Overflow | Show stash overflow lane and required transfer action | Block deploy-again until resolved if stash is invalid |
+
+#### Deploy Again Eligibility
+
+Deploy Again is enabled only when the account has a valid operator, valid loadout, no blocking overflow, no unresolved reward sync, and the selected mode remains available. If disabled, the button must show the first blocking reason and a direct action such as `Repair Gear`, `Resolve Overflow`, `Equip Ammo`, or `Return to Stash`.
+
+***
+
 ### Cross-References
 
 * [Core Gameplay Loop](CoreLoop.md) — Phase 5 Recovery; debrief as start of next loop.

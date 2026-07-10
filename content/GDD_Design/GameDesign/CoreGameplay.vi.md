@@ -22,6 +22,42 @@ Mỗi raid nên kể một câu chuyện nhỏ. Người chơi cẩn trọng có
 | Primary tension | Gear mang vào và loot tìm được có thể mất trước extraction |
 | Safety net | Account progress, stash items, quest progress, và secured items persist |
 
+## Raid System Model
+
+Core Gameplay sở hữu contract kết quả của raid. Các trang chuyên sâu có thể tune combat, economy, inventory, map, UI, và matchmaking, nhưng không được định nghĩa lại raid là gì, player đang risk gì, hoặc outcome được resolve như thế nào.
+
+| Entity | Định nghĩa | Design Owner |
+| :--- | :--- | :--- |
+| `RaidSession` | Một match instance server-authoritative từ matchmaking lock đến result reconciliation | Core Gameplay |
+| `RaidPhase` | Phase hiện tại của loop: preparation, matchmaking, loading, spawn, route, execution, extraction, recovery | Core Gameplay |
+| `Spawn` | Trạng thái entry ban đầu: map edge, squad position, threat gần đó, extraction options | Maps / Matchmaking |
+| `Objective` | Goal do player chọn hoặc system assign để tạo hướng đi ngoài looting | Quest / Game Modes |
+| `LootState` | Current value, FIR status, protected items, inventory pressure, và stash transfer result | Inventory / Economy |
+| `ThreatState` | Danger có thể đọc được từ AI, players, sound, objectives, hotspots, và extraction pressure | Gameplay |
+| `ExtractionPoint` | Escape route với availability, activation rule, timer, contest rule, và outcome code | Extraction |
+| `RaidTimer` | Match clock điều khiển urgency, late-raid behavior, và timeout failure | Core Gameplay |
+| `DeathState` | KIA, downed, revived, executed, disconnected, hoặc MIA outcome trước reconciliation | Combat / Extraction |
+| `FailState` | Mọi non-extracted result, gồm death, timeout, disconnect expiry, hoặc invalid session | Core Gameplay |
+| `RewardState` | XP, quest progress, loot transfer, insurance scheduling, và post-raid grants | Progression / Inventory |
+| `SquadState` | Party membership, alive/downed/extracted state, partial extraction, và reconnect state | Matchmaking / Social |
+
+## Full Raid Loop Contract
+
+Full raid loop dài hơn in-match timer. Một run bắt đầu khi player commit risk và kết thúc khi họ hiểu outcome cũng như có next action thực tế.
+
+| Step | Phase | Player Commitment | System Contract | Exit Condition |
+| :--- | :--- | :--- | :--- | :--- |
+| 1 | Loadout commit | Gear, operator, objective, insurance, squad, và mode | Validate readiness và summarize risk | Deploy confirmed |
+| 2 | Matchmaking | Time và squad readiness | Tìm pool hợp lệ mà không che giấu mode rules | Server reserved |
+| 3 | Loading | Attention và anticipation | Hiển thị map, region, squad, risk tip, reconnect-safe transition | Spawn ready |
+| 4 | Spawn / orientation | First route choice | Cung cấp map, extracts, objective, local threat, và squad status | Player rời spawn pocket |
+| 5 | Route choice | Safety vs value | Làm route readable qua map, audio, loot density, và objective signals | Player commit direction |
+| 6 | Loot / objective / combat | Exposure để lấy value | Ghép reward với danger, travel cost, hoặc noise | Player gain value hoặc mất tempo |
+| 7 | Extraction decision | Bank value hoặc push sâu hơn | Giữ extract options readable và time pressure honest | Extract selected hoặc timer ép hành động |
+| 8 | Extraction hold / contest | Final vulnerability | Resolve activation, interruption, squad state, và contest rules rõ ràng | Extracted, interrupted, hoặc killed |
+| 9 | Outcome reconciliation | Trust in result | Resolve loot, XP, quest, FIR, insurance, death, và reconnect rules server-side | Debrief data ready |
+| 10 | Debrief / recovery | Learning và next action | Giải thích chuyện gì xảy ra, state nào đổi, và làm gì tiếp | Stash, redeploy, hoặc recovery mode |
+
 ## Raid Loop
 
 Raid loop đủ ngắn cho mobile session nhưng đủ dày để có mastery. Preparation tạo commitment, match tạo tension, post-match chuyển kết quả thành learning và progression. Loop không được có cảm giác arcade disposable vì người chơi luôn mang thứ gì đó vào raid và luôn mang consequence ra ngoài.
@@ -35,6 +71,37 @@ Raid loop đủ ngắn cho mobile session nhưng đủ dày để có mastery. P
 | 5 | Decide whether to extract | Lựa chọn an toàn bank current value; lựa chọn risky tìm thêm value |
 | 6 | Resolve extraction | Extract thành công bank loot và XP; thất bại mất raid inventory |
 | 7 | Rebuild or upgrade | Player repair, sell, upgrade, re-equip, và queue lại |
+
+## Player Intent Per Phase
+
+Mỗi phase cần một câu hỏi player rõ ràng. Nếu UI hoặc system không trả lời câu hỏi đó, player phải đoán, và đoán sai làm loss có cảm giác arbitrary.
+
+| Phase | Player Intent | Required Information | Primary Decision | Common Failure |
+| :--- | :--- | :--- | :--- | :--- |
+| Preparation | Build một plan đáng để risk | Loadout validity, mode rules, insurance, objective, squad readiness | Mang bao nhiêu value vào raid | Deploy khi thiếu ammo, durability thấp, hoặc objective không rõ |
+| Matchmaking | Tin rằng queue đủ công bằng | Queue type, region, cancel state, squad ready state | Chờ, cancel, hoặc chỉnh party | Hidden rule mismatch hoặc long queue không rõ lý do |
+| Loading | Hiểu mình đang đi đâu và vì sao | Map, weather, squad, tip, server region | Chuẩn bị route trong đầu | Loading không có tactical context |
+| Spawn | Định hướng mà không bị phạt tức thì | Spawn location, extracts, objective marker, nearby cover | Move, scout, hoặc regroup | Spawn confusion hoặc death sớm không readable |
+| Route | Chọn safety, value, hoặc objective speed | Loot density, sound, timer, squad health, route risk | Avoid, flank, push, hoặc loot | Đi theo route mà không đọc risk |
+| Execution | Chuyển opportunity thành value | Enemy cues, container value, objective status, ammo/health | Fight, loot, disengage, hoặc reposition | Greed sau khi mất tempo |
+| Extraction | Bank value trước khi risk vượt reward | Extract distance, timer, noise, contest risk, squad state | Leave now hoặc tiếp tục | Đợi quá lâu hoặc hiểu sai extract rules |
+| Recovery | Learn và quay lại loop | Lost/kept items, XP, quest, insurance, death cause | Rebuild, sell, claim, hoặc redeploy | Debrief không giải thích consequence |
+
+## Risk / Reward Rules
+
+Risk nên có cảm giác do player tự chọn. Game có thể tạo pressure, nhưng hiếm khi được gây consequence mà player không thể đọc trước.
+
+| Risk Driver | Tăng Khi | Player-Facing Tell | Reward Pairing |
+| :--- | :--- | :--- | :--- |
+| Time in raid | Raid timer chạy và safe routes đóng dần | Timer color, ambient pressure, late-raid VO, extract distance | Loot contested tốt hơn và late objective windows |
+| Loot value | Backpack value tăng hoặc player mang rare item | Value summary, rarity/FIR badges, weight changes | Sell, quest, craft, hoặc progression value cao hơn |
+| Noise | Gunfire, sprinting, alarm, extraction call, heavy gear | Audio falloff, ping, map notification khi phù hợp | Loot nhanh hơn, combat opportunity, hoặc extraction progress |
+| Weight | Inventory và armor vượt threshold | Movement penalty, stamina drain, weight warning | Mang được nhiều value về hơn |
+| Distance to extract | Route đi qua hotspot hoặc sightline mở | Extract marker, route danger, known sound zones | Thêm thời gian lấy value trước khi rời |
+| Squad health | Teammate downed, split, ít meds, hoặc disconnected | Squad status, revive timer, reconnect state | Team survival, revive XP, shared extraction |
+| Objective commitment | Player mang quest item hoặc vào objective zone | Objective badge, extraction requirement, loss warning | Quest progress, reputation, unlocks |
+
+Reward không được miễn phí khỏi exposure. Nếu reward không có travel cost, sound cost, time cost, resource cost, hoặc combat risk, reward đó phải low value, tutorial-only, hoặc bị cap rõ ràng.
 
 ## Pre-Match Phase
 
@@ -97,6 +164,20 @@ Loss được phép đau, nhưng không được opaque. Raid thất bại phả
 | Death in raid | Brought gear, backpack loot, unprotected items | Account XP, stash at home, secure container contents, quest knowledge | Death recap, insurance wait, rebuild |
 | Timeout | Treated as failed extraction | Account progress và protected systems | Clear warning và recap |
 
+## Raid Outcome Matrix
+
+Outcome reconciliation phải deterministic và server-authoritative. Debrief có thể trình bày đơn giản hơn, nhưng vocabulary state phía backend phải ổn định.
+
+| Outcome | Result Code | Loot Result | Progress Result | Player Message |
+| :--- | :--- | :--- | :--- | :--- |
+| Successful extraction | `EXTRACTED` | Extracted items chuyển vào stash; consumables vẫn đã dùng | XP, quest, FIR, và reward rules áp dụng bình thường | "Extracted. Loot secured." |
+| Killed in raid | `KIA` | Equipped và backpack items mất trừ khi protected hoặc insured về sau | Account XP và allowed quest progress áp dụng | "Killed in action. Review how you died." |
+| Timer expired | `MIA_TIMEOUT` | Treat như failed extraction; secure/protected rules vẫn áp dụng | Limited progress chỉ khi rule cho phép | "Missing in action. You did not extract before time expired." |
+| Disconnect unresolved | `MIA_DISCONNECT` | Slot được giữ trong reconnect window, sau đó failed extraction nếu không reconnect | Không thêm penalty ngoài MIA rules | "Connection lost. Reconnect window expired." |
+| Server rollback | `SERVER_ROLLBACK` | Trả về pre-raid loadout snapshot | Không có raid rewards; compensation có thể grant riêng | "Raid could not be validated. Gear restored." |
+| Squad partial extraction | `PARTIAL_EXTRACT` | Member đã extract bank loot; member còn lại tiếp tục risk | Mỗi player resolve độc lập | "Squadmate extracted. Your raid continues." |
+| Objective complete, failed extract | `OBJECTIVE_UNSECURED` | Objective item mất trừ khi protected; progress phụ thuộc objective rule | Non-extraction objectives có thể persist nếu mark rõ | "Objective progress requires extraction." |
+
 ## Post-Match Flow
 
 | Step | Extracted Run | Failed Run |
@@ -155,6 +236,32 @@ Metric là design health signal, không phải truth cố định. Nếu extract
 | Average raid length | 10-15 minutes | Tránh PC-scale session bloat |
 | Menu time per session | Under 20% | Loadout prep phải meaningful, không slow |
 | Death recap usefulness | High qualitative score | Player phải biết nên cải thiện gì |
+
+## Raid Telemetry
+
+Telemetry nên giải thích loop có readable không, không chỉ đo player thắng hay thua.
+
+| Signal | Question Answered |
+| :--- | :--- |
+| Phase duration by skill bracket | Player đang kẹt, rush, hoặc disengage ở đâu? |
+| Spawn-to-first-contact time | Spawn có fair và readable không? |
+| Hotspot collision rate | Valuable zones có tạo conflict đúng ý không? |
+| Loot value carried vs extracted | Greed pressure có hiệu quả mà không vô vọng không? |
+| Extraction activation / interruption / success rate | Extraction contest có dramatic nhưng không bất khả thi không? |
+| Death reason clarity rating | Player có hiểu vì sao họ mất không? |
+| Disconnect reconnect success rate | Technical failure có được tách khỏi gameplay loss không? |
+| Tutorial completion to first standard raid | Onboarding có chuyển hóa thành real play không? |
+
+## Core Gameplay QA Checklist
+
+- New player có thể giải thích raid goal sau một tutorial và một debrief.
+- Mọi deploy path hiển thị mode rules, gear loss, insurance, squad, map, và objective trước queue start.
+- Mọi extraction outcome có result code ổn định và player-facing message rõ ràng.
+- Death, MIA, disconnect, partial extraction, và server rollback không dùng copy mơ hồ giống nhau.
+- Reward giá trị cao cần exposure qua time, sound, travel, resources, hoặc combat risk.
+- Quest và loot progress nói rõ extraction có bắt buộc không.
+- Reconnect được thử trước khi unresolved disconnect thành MIA.
+- Debrief luôn có ít nhất một next action thực tế: redeploy, rebuild, claim, sell, repair, hoặc learn.
 
 ## Cross-References
 

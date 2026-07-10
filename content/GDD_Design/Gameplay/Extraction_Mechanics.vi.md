@@ -216,6 +216,38 @@ This three-way dynamic tạo emergent gameplay. A camper might be ambushed by a 
 
 ***
 
+### Extraction Timing And Outcome Contract
+
+Extraction timing phải readable trước khi player commit. Player có thể thua fight ở extraction, nhưng không nên thua vì rule bị giấu.
+
+| State | Trigger | Timer Behavior | Result Code | Player-Facing Rule |
+| :--- | :--- | :--- | :--- | :--- |
+| Available | Zone active và player eligible | Chưa chạy timer | `EXTRACT_AVAILABLE` | "Enter zone to start extraction." |
+| Activating | Player hold interact đủ commit time | Chỉ fill commit | `EXTRACT_ACTIVATING` | "Hold to call extraction." |
+| Holding | Timer chạy và player vẫn eligible | Countdown visible | `EXTRACT_HOLDING` | "Stay in zone. Damage or leaving resets extraction." |
+| Contested | Enemy pressure, damage, ability denial, hoặc hazard ảnh hưởng hold | Timer reset hoặc pause theo zone rule | `EXTRACT_CONTESTED` | "Extraction interrupted." |
+| Blocked | Thiếu key, payment, squad state, quest state, vehicle seat, hoặc faction condition | Timer không start | `EXTRACT_BLOCKED` | Hiển thị requirement còn thiếu. |
+| Late raid | Raid timer gần hết | Extraction timer vẫn phải hoàn tất trước raid end trừ khi mode nói khác | `EXTRACT_LATE` | "Not enough time" phải hiện trước activation nếu đúng. |
+| Completed | Timer xong khi eligibility còn hợp lệ | Timer complete | `EXTRACTED` | Fade sang result và bank eligible value. |
+
+#### Squad And Downed Extraction
+
+| Scenario | Rule | UX Requirement |
+| :--- | :--- | :--- |
+| Squad extracts together | Tất cả extracting members phải ở trong zone và eligible | Show từng member: Ready / Outside / Downed / Dead / Disconnected |
+| Squad partial extraction | Member có thể extract một mình chỉ trong mode cho phép individual extraction | Member còn lại tiếp tục raid theo risk bình thường |
+| Downed player in zone | Downed extraction disabled trừ khi mode hỗ trợ carry extraction | Show "Revive required" hoặc "Carry required" bằng text |
+| Teammate dies during hold | Squad extraction reset nếu member đó required cho group extraction | Banner nêu rõ member state gây fail |
+| Disconnected squadmate | Disconnected character không block individual extraction; group extraction cần reconnect hoặc abandon | Show reconnect timer và consequence khi extract without squadmate |
+
+#### Disconnect During Extraction
+
+Nếu player disconnect trong lúc extraction đang activating hoặc holding, server giữ character ở last validated position đến khi reconnect window hết hạn. Nếu extraction timer hoàn tất khi character vẫn eligible, result là `EXTRACTED`. Nếu character nhận damage, mất eligibility do server movement correction, hoặc reconnect window hết trước, áp dụng interruption hoặc MIA rules bình thường.
+
+Debrief phải nói rõ event nào resolve trước: extraction complete, interruption, death, hay reconnect timeout.
+
+***
+
 ### Cooperative Extraction Design
 
 #### Scav-PMC Cooperation

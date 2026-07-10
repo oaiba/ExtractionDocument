@@ -217,6 +217,38 @@ This three-way dynamic creates emergent gameplay. A camper might be ambushed by 
 
 ***
 
+### Extraction Timing And Outcome Contract
+
+Extraction timing must be readable before the player commits. A player can lose the fight for extraction, but they should never lose because the rules were hidden.
+
+| State | Trigger | Timer Behavior | Result Code | Player-Facing Rule |
+| :--- | :--- | :--- | :--- | :--- |
+| Available | Zone is active and player is eligible | No timer yet | `EXTRACT_AVAILABLE` | "Enter zone to start extraction." |
+| Activating | Player holds interact for required commit time | Commit fill only | `EXTRACT_ACTIVATING` | "Hold to call extraction." |
+| Holding | Timer is running and player remains eligible | Countdown visible | `EXTRACT_HOLDING` | "Stay in zone. Damage or leaving resets extraction." |
+| Contested | Enemy pressure, incoming damage, ability denial, or zone hazard affects the hold | Timer resets or pauses per zone rule | `EXTRACT_CONTESTED` | "Extraction interrupted." |
+| Blocked | Required key, payment, squad state, quest state, vehicle seat, or faction condition missing | Timer cannot start | `EXTRACT_BLOCKED` | Show exact missing requirement. |
+| Late raid | Raid timer is near expiration | Extraction timer still must complete before raid end unless mode says otherwise | `EXTRACT_LATE` | "Not enough time" must appear before activation if true. |
+| Completed | Timer finishes while eligibility remains true | Timer completes | `EXTRACTED` | Fade to result and bank eligible value. |
+
+#### Squad And Downed Extraction
+
+| Scenario | Rule | UX Requirement |
+| :--- | :--- | :--- |
+| Squad extracts together | All extracting members must be inside the zone and eligible | Show each member as Ready / Outside / Downed / Dead / Disconnected |
+| Squad partial extraction | A member can extract alone only in modes that allow individual extraction | Remaining members continue raid under normal risk |
+| Downed player in zone | Downed extraction is disabled unless a mode explicitly supports carry extraction | Show "Revive required" or "Carry required" as text |
+| Teammate dies during hold | Squad extraction resets if that member was required for group extraction | Banner names the failed member state |
+| Disconnected squadmate | Disconnected character does not block individual extraction; group extraction requires reconnect or abandon | Show reconnect timer and "extract without squadmate" consequence |
+
+#### Disconnect During Extraction
+
+If a player disconnects while extraction is activating or holding, the server keeps the character in the last validated position until the reconnect window expires. If the extraction timer completes while the character remains eligible, the result is `EXTRACTED`. If the character takes damage, leaves eligibility due to server movement correction, or the reconnect window expires first, normal interruption or MIA rules apply.
+
+The debrief must state which event resolved first: extraction complete, interruption, death, or reconnect timeout.
+
+***
+
 ### Cooperative Extraction Design
 
 #### Scav-PMC Cooperation

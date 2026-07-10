@@ -11,6 +11,18 @@ The core engagement loop is designed to create a "Hero's Journey" in miniature, 
 
 > See [Core Gameplay Mechanics](https://github.com/oaiba/ExtractionDocument/blob/main/content/GameDesign/CoreGameplay/README.md) for the detailed per-minute match timeline, combat system numbers, and control scheme specifications.
 
+#### Phase Contract
+
+Core Loop uses the same phase vocabulary as [Core Gameplay Mechanics](../GameDesign/CoreGameplay.md). Any feature that changes a phase must state which player question it improves.
+
+| Phase | Player Question | Must Provide | Must Not Do |
+| :--- | :--- | :--- | :--- |
+| Preparation | What am I risking and why? | Loadout validity, objective, mode rules, squad readiness, insurance state | Hide blockers until matchmaking |
+| Infiltration | Where am I and what is nearby? | Spawn orientation, extraction options, objective marker, first cover route | Spawn players into immediate unreadable danger |
+| Execution | Is this value worth the exposure? | Loot value, threat cues, objective progress, ammo/health/squad status | Reward blind looting more than route reading |
+| Extraction | Can I bank this value now? | Extract distance, timer, activation rule, contest risk, squad state | Change extraction rules without warning |
+| Recovery | What happened and what do I do next? | Lost/kept/insured items, XP, quest state, death cause, next CTA | Leave players stuck without rebuild or redeploy path |
+
 #### Session Length & Pacing
 
 **Target session:** 15–20 minutes (mobile-friendly). Standard raid timer is 25–30 minutes so that a typical run (infiltrate, loot, extract) fits within one session; players who extract early or die early can queue again within the target window. An optional **Quick Raid** mode (e.g. 15-minute raid timer, smaller map or reduced objectives) may be offered for players who want a guaranteed short session. Design pillars: [Design Pillars](https://github.com/oaiba/ExtractionDocument/blob/main/content/ProjectScope/design-pillars-enhanced.md). Mechanics benchmark: [Gameplay Review Checklist](Gameplay_Review_Checklist.md).

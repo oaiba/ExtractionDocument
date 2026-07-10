@@ -36,6 +36,35 @@ Selection flow phải show risk trước matchmaking. Player không nên load xo
 | Co-op Training | Low-pressure mastery | Low | Solo, Duo, Trio | PvE learning, no premium rewards |
 | Featured Mode | Live Ops variety | Variable | Event-defined | Rotates through seasonal rules |
 
+## Mode Rule Contract
+
+Mỗi mode card và deploy confirmation phải show rule contract trước khi matchmaking starts. Nếu mode thay đổi loss, insurance, quest progress, extraction timing, hoặc rewards, player phải thấy trước khi bấm Deploy.
+
+| Mode | Timer | Squad Size | Player Density | AI Density | Gear Loss | Insurance | Quest Progress | Reward Cap | Extraction Modifier | Matchmaking Pool |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| The Raid | 10-15 min target run | Solo/Duo/Trio | Standard | Standard | Enabled | Enabled | Full | None | Standard extraction rules | Casual regional |
+| Scavenger Run | Standard hoặc ngắn hơn | Solo/Duo | Standard hoặc lower | Standard | Temporary scav kit only | Disabled | Limited | Lower loot ceiling | Standard, nhưng lower-value extracts allowed | Recovery-weighted casual |
+| Blitz | Short | Solo/Duo/Trio | Medium-high | Reduced hoặc focused | Enabled | Enabled trừ khi event nói khác | Limited hoặc full theo map | Lower raid value ceiling | Faster late pressure và shorter extract windows | Casual quick-play |
+| Ranked Operations | Season-defined | Solo/Duo/Trio | Competitive target | Standard | Enabled | Restricted hoặc disabled | Ranked-safe only | Ranked rewards và cosmetics | Standard trừ khi season rule explicit | Ranked pool |
+| Co-op Training | Flexible | Solo/Duo/Trio | None PvP | Tutorial/training | Disabled hoặc restored | Not needed | Tutorial/training only | No premium/economy farming | Guided extraction và retry support | PvE training |
+| Featured Mode | Event-defined | Event-defined | Event-defined | Event-defined | Must be disclosed | Must be disclosed | Must be disclosed | Event-defined | Modifier nào cũng phải disclosed | LiveOps event pool |
+
+## Mode Compatibility Matrix
+
+Mode variants có thể adjust pressure, nhưng không được dạy thói quen làm hỏng core raid loop.
+
+| Core Skill | The Raid | Scavenger Run | Blitz | Ranked | Co-op Training | Featured |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| Route reading | Primary | Practice | Compressed | Primary | Guided | Depends on event |
+| Loot risk | Primary | Low-stakes | Faster decisions | High-stakes | Tutorial only | Event-defined |
+| Combat judgment | Primary | Practice | Frequent | Competitive | AI-focused | Event-defined |
+| Extraction timing | Primary | Practice | Faster | Primary | Guided | Must be explicit |
+| Gear fear | Primary | Reduced | Medium | High | Disabled | Event-defined |
+| Economy impact | Full | Capped | Reduced hoặc full | Full với ranked rules | Minimal | Explicitly capped |
+| Tutorial value | Moderate | High for recovery | Low | Low | Primary | Contextual |
+
+Nếu một mode bỏ cả gear risk và extraction pressure, nó phải được frame là training hoặc event novelty, không phải recommendation chính.
+
 ## Core Mode Rules
 
 ### The Raid

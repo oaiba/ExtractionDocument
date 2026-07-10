@@ -22,6 +22,42 @@ Every raid should tell a small story. A cautious player can survive by reading t
 | Primary tension | Brought gear and found loot can be lost before extraction |
 | Safety net | Account progress, stash items, quest progress, and secured items persist |
 
+## Raid System Model
+
+Core Gameplay owns the raid outcome contract. Specialist pages can tune combat, economy, inventory, maps, UI, and matchmaking, but they should not redefine what a raid is, what the player risks, or how an outcome is resolved.
+
+| Entity | Definition | Design Owner |
+| :--- | :--- | :--- |
+| `RaidSession` | One server-authoritative match instance from matchmaking lock to result reconciliation | Core Gameplay |
+| `RaidPhase` | Current phase of the loop: preparation, matchmaking, loading, spawn, route, execution, extraction, recovery | Core Gameplay |
+| `Spawn` | Initial player entry state: map edge, squad position, nearby threat, extraction options | Maps / Matchmaking |
+| `Objective` | Player-selected or system-assigned goal that gives direction beyond looting | Quest / Game Modes |
+| `LootState` | Current value, FIR status, protected items, inventory pressure, and stash transfer result | Inventory / Economy |
+| `ThreatState` | Readable danger from AI, players, sound, objectives, hotspots, and extraction pressure | Gameplay |
+| `ExtractionPoint` | Escape route with availability, activation rule, timer, contest rule, and outcome code | Extraction |
+| `RaidTimer` | Match clock that controls urgency, late-raid behavior, and timeout failure | Core Gameplay |
+| `DeathState` | KIA, downed, revived, executed, disconnected, or MIA outcome before reconciliation | Combat / Extraction |
+| `FailState` | Any non-extracted result, including death, timeout, disconnect expiry, or invalid session | Core Gameplay |
+| `RewardState` | XP, quest progress, loot transfer, insurance scheduling, and post-raid grants | Progression / Inventory |
+| `SquadState` | Party membership, alive/downed/extracted state, partial extraction, and reconnect state | Matchmaking / Social |
+
+## Full Raid Loop Contract
+
+The full raid loop is longer than the in-match timer. A run starts when the player commits risk and ends when they understand the outcome and have a practical next action.
+
+| Step | Phase | Player Commitment | System Contract | Exit Condition |
+| :--- | :--- | :--- | :--- | :--- |
+| 1 | Loadout commit | Gear, operator, objective, insurance, squad, and mode | Validate readiness and summarize risk | Deploy confirmed |
+| 2 | Matchmaking | Time and squad readiness | Find a valid pool without hiding mode rules | Server reserved |
+| 3 | Loading | Attention and anticipation | Show map, region, squad, risk tip, reconnect-safe transition | Spawn ready |
+| 4 | Spawn / orientation | First route choice | Provide map, extracts, objective, local threat, and squad status | Player leaves spawn pocket |
+| 5 | Route choice | Safety vs value | Make routes readable through map, audio, loot density, and objective signals | Player commits direction |
+| 6 | Loot / objective / combat | Exposure for value | Pair reward with danger, travel cost, or noise | Player gains value or loses tempo |
+| 7 | Extraction decision | Bank value or push deeper | Keep extract options readable and time pressure honest | Extract selected or timer forces action |
+| 8 | Extraction hold / contest | Final vulnerability | Resolve activation, interruption, squad state, and contest rules clearly | Extracted, interrupted, or killed |
+| 9 | Outcome reconciliation | Trust in result | Resolve loot, XP, quest, FIR, insurance, death, and reconnect rules server-side | Debrief data ready |
+| 10 | Debrief / recovery | Learning and next action | Explain what happened, what changed, and what to do next | Stash, redeploy, or recovery mode |
+
 ## Raid Loop
 
 The raid loop is intentionally short enough for mobile sessions but dense enough to support mastery. Preparation creates commitment, the match creates tension, and the post-match phase converts the result into learning and progression. The loop should never feel like a disposable arcade match because the player always brings something into the raid and always carries a consequence out.
@@ -35,6 +71,37 @@ The raid loop is intentionally short enough for mobile sessions but dense enough
 | 5 | Decide whether to extract | Safe choice banks current value; risky choice seeks more value |
 | 6 | Resolve extraction | Successful extraction banks loot and XP; failure causes raid inventory loss |
 | 7 | Rebuild or upgrade | Player repairs, sells, upgrades, re-equips, and queues again |
+
+## Player Intent Per Phase
+
+Every phase needs a clear player question. If the UI or systems do not answer that question, players must guess, and guesswork makes loss feel arbitrary.
+
+| Phase | Player Intent | Required Information | Primary Decision | Common Failure |
+| :--- | :--- | :--- | :--- | :--- |
+| Preparation | Build a plan worth risking | Loadout validity, mode rules, insurance, objective, squad readiness | How much value to bring | Deploying with missing ammo, low durability, or unclear objective |
+| Matchmaking | Trust that the queue is fair enough | Queue type, region, cancel state, squad ready state | Wait, cancel, or adjust party | Hidden rule mismatch or unclear long queue |
+| Loading | Understand where and why they are going | Map, weather, squad, tip, server region | Mentally prepare route | Loading with no tactical context |
+| Spawn | Get oriented without instant punishment | Spawn location, extracts, objective marker, nearby cover | Move, scout, or regroup | Spawn confusion or early unfair death |
+| Route | Choose safety, value, or objective speed | Loot density, sound, timer, squad health, route risk | Avoid, flank, push, or loot | Following a route with no risk read |
+| Execution | Convert opportunity into value | Enemy cues, container value, objective status, ammo/health | Fight, loot, disengage, or reposition | Greed after tempo is lost |
+| Extraction | Bank value before risk exceeds reward | Extract distance, timer, noise, contest risk, squad state | Leave now or continue | Waiting too long or misreading extract rules |
+| Recovery | Learn and re-enter the loop | Lost/kept items, XP, quest, insurance, death cause | Rebuild, sell, claim, or redeploy | Debrief does not explain the consequence |
+
+## Risk / Reward Rules
+
+Risk should feel self-chosen. The game can pressure players, but it should rarely surprise them with a consequence that was impossible to read.
+
+| Risk Driver | Increases When | Player-Facing Tell | Reward Pairing |
+| :--- | :--- | :--- | :--- |
+| Time in raid | Raid timer advances and safe routes close | Timer color, ambient pressure, late-raid VO, extract distance | Better contested loot and late objective windows |
+| Loot value | Backpack value rises or rare items are carried | Value summary, rarity/FIR badges, weight changes | Higher sell, quest, craft, or progression value |
+| Noise | Gunfire, sprinting, alarms, extraction calls, heavy gear | Audio falloff, ping, map notification where applicable | Faster looting, combat opportunity, or extraction progress |
+| Weight | Inventory and armor exceed thresholds | Movement penalty, stamina drain, weight warning | More value carried home |
+| Distance to extract | Route crosses hotspots or open sightlines | Extract marker, route danger, known sound zones | More time to gather value before leaving |
+| Squad health | Teammates are downed, split, low on meds, or disconnected | Squad status, revive timer, reconnect state | Team survival, revive XP, shared extraction |
+| Objective commitment | Player carries quest item or enters objective zone | Objective badge, extraction requirement, loss warning | Quest progress, reputation, unlocks |
+
+Rewards must not be free of exposure. If a reward has no travel cost, sound cost, time cost, resource cost, or combat risk, it should be low value, tutorial-only, or explicitly capped.
 
 ## Pre-Match Phase
 
@@ -97,6 +164,20 @@ Loss is allowed to hurt, but it should not feel opaque. A failed raid must clear
 | Death in raid | Brought gear, backpack loot, unprotected items | Account XP, stash at home, secure container contents, quest knowledge | Death recap, insurance wait, rebuild |
 | Timeout | Treated as failed extraction | Account progress and protected systems | Clear warning and recap |
 
+## Raid Outcome Matrix
+
+Outcome reconciliation must be deterministic and server-authoritative. The debrief can simplify presentation, but the backend state vocabulary should remain stable.
+
+| Outcome | Result Code | Loot Result | Progress Result | Player Message |
+| :--- | :--- | :--- | :--- | :--- |
+| Successful extraction | `EXTRACTED` | Extracted items transfer to stash; consumables remain consumed | XP, quest, FIR, and reward rules apply normally | "Extracted. Loot secured." |
+| Killed in raid | `KIA` | Equipped and backpack items lost unless protected or later insured | Account XP and allowed quest progress apply | "Killed in action. Review how you died." |
+| Timer expired | `MIA_TIMEOUT` | Treated as failed extraction; secure/protected rules still apply | Limited progress only where rules allow | "Missing in action. You did not extract before time expired." |
+| Disconnect unresolved | `MIA_DISCONNECT` | Slot held during reconnect window, then failed extraction if unresolved | No extra penalty beyond normal MIA rules | "Connection lost. Reconnect window expired." |
+| Server rollback | `SERVER_ROLLBACK` | Return to pre-raid loadout snapshot | No raid rewards; compensation may be granted separately | "Raid could not be validated. Gear restored." |
+| Squad partial extraction | `PARTIAL_EXTRACT` | Extracted members bank loot; remaining members continue risk | Each player resolves independently | "Squadmate extracted. Your raid continues." |
+| Objective complete, failed extract | `OBJECTIVE_UNSECURED` | Objective item lost unless protected; progress depends on objective rule | Non-extraction objectives may persist if explicitly marked | "Objective progress requires extraction." |
+
 ## Post-Match Flow
 
 | Step | Extracted Run | Failed Run |
@@ -155,6 +236,32 @@ Metrics should be read as design health signals, not fixed truths. If extraction
 | Average raid length | 10-15 minutes | Avoid PC-scale session bloat |
 | Menu time per session | Under 20% | Loadout prep should feel meaningful, not slow |
 | Death recap usefulness | High qualitative score | Players should know what to improve |
+
+## Raid Telemetry
+
+Telemetry should explain whether the loop is readable, not just whether players win or lose.
+
+| Signal | Question Answered |
+| :--- | :--- |
+| Phase duration by skill bracket | Where do players stall, rush, or disengage? |
+| Spawn-to-first-contact time | Are spawns fair and readable? |
+| Hotspot collision rate | Are valuable zones creating the intended conflict? |
+| Loot value carried vs extracted | Is greed pressure working without feeling futile? |
+| Extraction activation / interruption / success rate | Are extraction contests dramatic but not impossible? |
+| Death reason clarity rating | Do players understand why they lost? |
+| Disconnect reconnect success rate | Are technical failures separated from gameplay loss? |
+| Tutorial completion to first standard raid | Does onboarding convert into real play? |
+
+## Core Gameplay QA Checklist
+
+- A new player can explain the raid goal after one tutorial and one debrief.
+- Every deploy path shows mode rules, gear loss, insurance, squad, map, and objective before queue start.
+- Every extraction outcome has a stable result code and a clear player-facing message.
+- Death, MIA, disconnect, partial extraction, and server rollback never share ambiguous copy.
+- Valuable rewards require exposure through time, sound, travel, resources, or combat risk.
+- Quest and loot progress clearly state whether extraction is required.
+- Reconnect is attempted before unresolved disconnects become MIA.
+- Debrief always gives at least one practical next action: redeploy, rebuild, claim, sell, repair, or learn.
 
 ## Cross-References
 

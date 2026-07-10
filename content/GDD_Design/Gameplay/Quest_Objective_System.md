@@ -151,6 +151,20 @@ COMPLETED ←──────────────────────�
 | Reach location    |  Yes                   | "Visited" flag set server-side on arrival                 |
 | Extract from zone |  No                    | Must complete extraction                                  |
 
+#### Extraction Requirement Rules
+
+Each objective must explicitly state whether extraction is required. The quest UI, in-raid tracker, and debrief must use the same wording.
+
+| Requirement Type | Example Objective | Death / MIA Result | Debrief Copy Requirement |
+| :--- | :--- | :--- | :--- |
+| Server-registered | Mark a crate, scan a terminal, discover a location | Progress persists once the interaction is confirmed | "Progress saved." |
+| Extraction-required | Recover a physical quest item, extract from a named zone | Progress fails if the player does not extract with the required state | "Extraction required. Objective unsecured." |
+| Partial credit | Survive time, deal damage, assist squad, scout area | Earned portion persists if allowed by quest tuning | Show exact saved amount |
+| Raid-bound | Complete multiple steps in one raid | Death or extraction before completion resets the chain step | Show reset reason |
+| Protected tutorial | Tutorial-only objective | Failure resets to checkpoint and does not affect account inventory | "Tutorial checkpoint restored." |
+
+Quest designers must avoid hidden extraction requirements. If an objective item, scan, escort, or location visit requires extraction, the accepted quest card and HUD tracker must include that text before the player enters raid.
+
 ***
 
 ### Quest Chain Design

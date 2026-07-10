@@ -212,6 +212,31 @@ An item does **not** have FIR status if:
 
 ***
 
+### FIR And Extraction Resolution
+
+FIR is resolved at raid outcome, not only at pickup. The item tile can show a provisional FIR badge in raid, but the debrief owns the final result.
+
+| Item Path | Extraction Result | FIR Result | UI Requirement |
+| :--- | :--- | :--- | :--- |
+| World item picked up and extracted | `EXTRACTED` | FIR retained | Show FIR badge in loot summary and stash |
+| World item picked up and player dies | `KIA` / `MIA_TIMEOUT` | FIR removed if protected item is kept; unprotected item is lost | Debrief explains "FIR lost on failed extraction" |
+| Quest item extracted | `EXTRACTED` | Quest rule decides FIR/turn-in eligibility | Show linked quest name |
+| Item crafted in Safe House | Out-of-raid | FIR retained if recipe grants it | Show craft source |
+| Trader/market purchase brought into raid | Any | Never becomes FIR through extraction alone | Do not show provisional FIR |
+| Server rollback | `SERVER_ROLLBACK` | Revert to pre-raid item state | Use rollback copy, not death copy |
+
+### Loot Progress And Loss Rules
+
+| State | Rule | Player-Facing Copy |
+| :--- | :--- | :--- |
+| Provisional loot | Item is in backpack during raid but not banked | "Extract to secure value." |
+| Protected loot | Item is in secure container or protected tutorial state | "Kept on death; FIR may be removed." |
+| Quest-critical loot | Item is required for active quest | Show quest badge and extraction requirement |
+| Overflow loot | Extracted loot exceeds stash capacity | Move to overflow lane before deploy-again |
+| Pending sync | Server has not confirmed transfer | Disable destructive actions and show retry/support route |
+
+***
+
 ### Barter Items
 
 #### Categories

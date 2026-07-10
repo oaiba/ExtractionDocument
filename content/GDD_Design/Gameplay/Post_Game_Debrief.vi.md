@@ -182,6 +182,36 @@ The moment the debrief loads, item transfer is immediate:
 
 ***
 
+### Raid Outcome Reconciliation
+
+Debrief là player-facing view của server reconciliation. Nó phải tách gameplay failure khỏi technical failure, và phải cho biết vì sao mỗi item, quest, reward đổi state.
+
+| Result Code | Header Outcome | Loot Treatment | Progress Treatment | Required CTA |
+| :--- | :--- | :--- | :--- | :--- |
+| `EXTRACTED` | Extracted | Extracted items chuyển vào stash hoặc overflow | XP, FIR, quest, và reward rules áp dụng | Continue, manage stash, deploy again |
+| `KIA` | K.I.A. | Equipped và backpack items mất trừ khi protected hoặc later insured | Allowed XP và quest progress áp dụng | Watch replay, rebuild, report nếu cần |
+| `MIA_TIMEOUT` | MIA | Failed extraction item loss rules áp dụng | Limited progress chỉ khi objective rules cho phép | Review timer/extract distance, rebuild |
+| `MIA_DISCONNECT` | MIA | Failed extraction sau khi reconnect window hết hạn | Không thêm penalty ngoài MIA | Show reconnect expiry và support route nếu đáng ngờ |
+| `SERVER_ROLLBACK` | Raid Invalidated | Pre-raid loadout snapshot restored | Không có raid rewards; compensation có thể riêng | Return to stash, view support note |
+| `PARTIAL_EXTRACT` | Squad Split | Local player result resolve độc lập | Squad summary show từng member riêng | Continue nếu alive, debrief nếu extracted/dead |
+| `OBJECTIVE_UNSECURED` | Objective Unsecured | Objective item mất trừ khi protected | Objective progress phụ thuộc extraction requirement | View quest requirement và next route |
+
+#### Lost / Kept / Insured / FIR Display
+
+| Item State | Display Rule | Interaction |
+| :--- | :--- | :--- |
+| Lost | Show trong lost item list với reason: KIA, MIA, looted, expired, destroyed | Không có action trừ khi insurance active |
+| Kept | Show trong kept/protected list với source: secure container, protected quest rule, rollback | Cho move to stash nếu applicable |
+| Insured pending | Show return provider, chance/rule, và ETA | Link tới insurance inbox hoặc trader |
+| FIR retained | Show FIR badge chỉ khi extraction và item rules giữ nó | Explain nếu FIR bị removed |
+| Overflow | Show stash overflow lane và required transfer action | Block deploy-again đến khi stash valid |
+
+#### Deploy Again Eligibility
+
+Deploy Again chỉ enabled khi account có operator hợp lệ, loadout hợp lệ, không có blocking overflow, không có reward sync chưa resolve, và selected mode vẫn available. Nếu disabled, button phải show blocking reason đầu tiên và direct action như `Repair Gear`, `Resolve Overflow`, `Equip Ammo`, hoặc `Return to Stash`.
+
+***
+
 ### Tham Chiếu Chéo
 
 * [cốt lõi Gameplay Loop](CoreLoop.md) — Phase 5 Recovery; debrief as start of next loop.

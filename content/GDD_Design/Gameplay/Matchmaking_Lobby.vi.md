@@ -47,6 +47,22 @@ The matchmaking và lobby hệ thống is the gateway between the stash (out-of-
 | **Training / Tutorial** | AI-only server. No other người chơi. Tutorial-exclusive.                                                                                                    | Forced for first-timer     |
 | **Ranked**              | Rated matchmaking pool (separate from casual). Xem [RankedMode](https://github.com/oaiba/ExtractionDocument/blob/main/content/GameDesign/RankedMode.md). | Separate pool              |
 
+#### Matchmaking Assumptions
+
+Matchmaking là design contract, không chỉ là technical queue. Player phải biết rule nào họ đang vào trước khi server được reserve.
+
+| Assumption | Rule | Player-Facing Requirement |
+| :--- | :--- | :--- |
+| Regional-first queue | Ưu tiên best-ping region trước khi expand | Show region và estimated latency khi queue starts |
+| Soft new-player protection | Những raid đầu có thể weighted về lower-density hoặc tutorial-safe pools | Không gọi là easy mode; chỉ present như onboarding protection khi cần |
+| Gear value is not MMR | Kit đắt không ép player vào high-skill lobby | Tránh imply paid/expensive gear đổi matchmaking |
+| Party leader owns queue selection | Leader chọn mode, map, squad fill, và region | Squad members thấy selected contract trước khi ready |
+| Low-pop fallback is allowed | Queue có thể start lower-density thay vì chờ quá lâu | Show "lower-density raid" nếu expected player count đổi đáng kể |
+| Ranked and event pools are separate | Ranked/event rules không silently mix với casual rules | Mode card phải show pool, penalties, rewards, và special extraction rules |
+| Tutorial pool is protected | First tutorial là AI-only trừ khi replay rõ ràng với squad | Standard queue vẫn locked đến khi tutorial exit condition đạt |
+| Reconnect before loss | Disconnect tạo reconnect window trước MIA resolution | Loading/reconnect UI phải show remaining window và consequence |
+| Server crash rollback | Invalid server result restore pre-raid loadout snapshot | Debrief dùng rollback copy, không dùng KIA/MIA copy |
+
 #### Matchmaking Algorithm
 
 The standard queue uses **regional pool matching** với a progressive expansion timeout:

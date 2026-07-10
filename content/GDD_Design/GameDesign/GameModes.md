@@ -36,6 +36,35 @@ The selection flow should make risk visible before matchmaking starts. Players s
 | Co-op Training | Low-pressure mastery | Low | Solo, Duo, Trio | PvE learning, no premium rewards |
 | Featured Mode | Live Ops variety | Variable | Event-defined | Rotates through seasonal rules |
 
+## Mode Rule Contract
+
+Each mode card and deploy confirmation must show the rule contract before matchmaking starts. If a mode changes loss, insurance, quest progress, extraction timing, or rewards, the player must see that before pressing Deploy.
+
+| Mode | Timer | Squad Size | Player Density | AI Density | Gear Loss | Insurance | Quest Progress | Reward Cap | Extraction Modifier | Matchmaking Pool |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| The Raid | 10-15 min target run | Solo/Duo/Trio | Standard | Standard | Enabled | Enabled | Full | None | Standard extraction rules | Casual regional |
+| Scavenger Run | Standard or shorter | Solo/Duo | Standard or lower | Standard | Temporary scav kit only | Disabled | Limited | Lower loot ceiling | Standard, but lower-value extracts allowed | Recovery-weighted casual |
+| Blitz | Short | Solo/Duo/Trio | Medium-high | Reduced or focused | Enabled | Enabled unless event says otherwise | Limited or full per map | Lower raid value ceiling | Faster late pressure and shorter extract windows | Casual quick-play |
+| Ranked Operations | Season-defined | Solo/Duo/Trio | Competitive target | Standard | Enabled | Restricted or disabled | Ranked-safe only | Ranked rewards and cosmetics | Standard unless season rule is explicit | Ranked pool |
+| Co-op Training | Flexible | Solo/Duo/Trio | None PvP | Tutorial/training | Disabled or restored | Not needed | Tutorial/training only | No premium/economy farming | Guided extraction and retry support | PvE training |
+| Featured Mode | Event-defined | Event-defined | Event-defined | Event-defined | Must be disclosed | Must be disclosed | Must be disclosed | Event-defined | Any modifier must be disclosed | LiveOps event pool |
+
+## Mode Compatibility Matrix
+
+Mode variants can adjust pressure, but they should not teach habits that fail in the core raid.
+
+| Core Skill | The Raid | Scavenger Run | Blitz | Ranked | Co-op Training | Featured |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| Route reading | Primary | Practice | Compressed | Primary | Guided | Depends on event |
+| Loot risk | Primary | Low-stakes | Faster decisions | High-stakes | Tutorial only | Event-defined |
+| Combat judgment | Primary | Practice | Frequent | Competitive | AI-focused | Event-defined |
+| Extraction timing | Primary | Practice | Faster | Primary | Guided | Must be explicit |
+| Gear fear | Primary | Reduced | Medium | High | Disabled | Event-defined |
+| Economy impact | Full | Capped | Reduced or full | Full with ranked rules | Minimal | Explicitly capped |
+| Tutorial value | Moderate | High for recovery | Low | Low | Primary | Contextual |
+
+If a mode removes both gear risk and extraction pressure, it must be framed as training or event novelty, not as the primary recommendation.
+
 ## Core Mode Rules
 
 ### The Raid

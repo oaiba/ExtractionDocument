@@ -152,6 +152,22 @@ COMPLETED ←──────────────────────�
 
 ***
 
+#### Extraction Requirement Rules
+
+Mỗi objective phải nói rõ extraction có bắt buộc không. Quest UI, in-raid tracker, và debrief phải dùng cùng wording.
+
+| Requirement Type | Example Objective | Death / MIA Result | Debrief Copy Requirement |
+| :--- | :--- | :--- | :--- |
+| Server-registered | Mark crate, scan terminal, discover location | Progress persist khi interaction được confirm | "Progress saved." |
+| Extraction-required | Recover physical quest item, extract from named zone | Progress fail nếu player không extract với required state | "Extraction required. Objective unsecured." |
+| Partial credit | Survive time, deal damage, assist squad, scout area | Earned portion persist nếu quest tuning cho phép | Show exact saved amount |
+| Raid-bound | Complete nhiều step trong một raid | Death hoặc extraction trước completion reset chain step | Show reset reason |
+| Protected tutorial | Tutorial-only objective | Failure reset về checkpoint và không ảnh hưởng account inventory | "Tutorial checkpoint restored." |
+
+Quest designers không được giấu extraction requirement. Nếu objective item, scan, escort, hoặc location visit cần extraction, accepted quest card và HUD tracker phải ghi rõ trước khi player vào raid.
+
+***
+
 ### Quest Chain Design
 
 #### Chain Structure

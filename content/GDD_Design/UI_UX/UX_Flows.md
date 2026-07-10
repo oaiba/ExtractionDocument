@@ -466,6 +466,30 @@ Use this page to understand journey order and transition intent. Use the linked 
 | Commerce Purchase | [Commerce Screens](Commerce_Screens.md), [Progression & LiveOps Screens](Progression_LiveOps_Screens.md) | offer, preview, price, confirmation, receipt, and upgrade routes are explicit |
 | Settings Recovery | [Settings & System Screens](Commerce_Settings_System_Screens.md), [Global UX Standards](Global_UX_Standards.md) | apply/revert, locks, errors, and support routes are explicit |
 
+### Commerce Purchase Journey
+
+```
+Entry
+  Home Shop tab / Battle Pass Upgrade / Event Store / Insufficient Balance / Redeem Link
+    -> Offer Card or Deep Link Target
+    -> Offer Detail / Bundle Detail / Item Preview
+    -> Optional Currency Top-Up
+    -> Purchase Confirmation
+    -> Platform Checkout Handoff when required
+    -> Purchase Result / Receipt
+    -> Equip / View Owned / Back to Shop / Purchase Help
+```
+
+| Step | Required Trust State |
+| :--- | :--- |
+| Entry | Source context preserved so Back returns to Home, Battle Pass, Event, or blocked offer |
+| Offer | Price, ownership, timer, restriction, and non-power context visible |
+| Preview | Compatibility and variant limits visible before purchase |
+| Top-up | Localized provider price and platform handoff shown before leaving game UI |
+| Confirmation | Final price, balance impact, contents, refund/platform note, and hold-to-confirm when required |
+| Provider handoff | Pending/cancelled/failed/succeeded states return to a receipt/result surface |
+| Receipt | Granted items, provider/reference id, support route, and duplicate-charge-safe copy visible |
+
 ### Flow QA Checklist
 
 - [ ] Each journey transition has a clear source screen, destination screen, and failure state.

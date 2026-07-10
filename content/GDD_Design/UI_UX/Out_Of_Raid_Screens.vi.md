@@ -510,10 +510,10 @@ The người chơi wants to mua, sell, barter, và turn in items while understan
 
 ```
 +----------------------------------------------------------------------------------+
-| < Back                              TRADERS             Wallet 425K  Rep 3       |
+| < Back                              TRADERS             Credits 425K Rep 3       |
 |----------------------------------------------------------------------------------|
 | TRADER LIST        | OFFERS / INVENTORY                         | YOUR OFFER     |
-| > Viktor Koval     | Mode Tabs: [Buy] [Sell] [Barter] [Turn-in] | Wallet 425K    |
+| > Viktor Koval     | Mode Tabs: [Buy] [Sell] [Barter] [Turn-in] | Credits 425K   |
 |   Dr. Sera         | Search [________] Filter: Ammo v Sort Price| Stash 145/200  |
 |   Scrap Union      |--------------------------------------------|----------------|
 |--------------------| AK-74M Rifle        45,000   In stock 3    | Selected: 2    |

@@ -67,6 +67,20 @@ Every screen group must answer four questions:
 
 ---
 
+### Commerce Coverage Checklist
+
+Commerce screen coverage is complete only when the canonical page defines offer information architecture, offer card anatomy, checkout trust states, receipt/support routes, and platform/region restrictions.
+
+| Coverage Area | Requirement |
+| :--- | :--- |
+| Offer IA | Entry points, tabs, section priority, and empty/offline fallback are explicit |
+| Checkout trust | Price, currency type, ownership, balance impact, provider handoff, and confirmation are visible |
+| Receipt/support | Success, pending, failed, refunded, duplicate, and missing entitlement states expose support routes |
+| Platform restrictions | Region, age, account, provider, and spending-limit blocks show readable reasons |
+| No wallet drift | Premium balance is a component only; no standalone Wallet destination is introduced |
+
+---
+
 ## Screen Spec Template
 
 Use this template for every new screen spec. Keep it short enough to update, but complete enough for designer layout, UX review, and implementation planning. [Out-of-Raid Screens](Out_Of_Raid_Screens.md) is the baseline example for the full designer-ready format.

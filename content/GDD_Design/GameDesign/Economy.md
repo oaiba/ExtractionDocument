@@ -58,6 +58,8 @@ Monetization must be boring in the right places. The store can be visually excit
 | Loot boxes | No | Avoid paid RNG power perception |
 | Better weapons or armor | No | Violates no pay-to-win |
 
+Commerce UI, offer taxonomy, purchase confirmation, provider handoff, receipt, refund, and entitlement states live in [Commerce Screens](../UI_UX/Commerce_Screens.md). Economy owns what can be sold and why; Commerce owns how offers, checkout trust, and support-sensitive states are presented.
+
 ## Marketplace Rules
 
 Marketplace design should support player agency without letting the market become the main game. Trading is useful when it helps players convert unwanted value into useful value. It becomes harmful when bots, price manipulation, or real-money trading make normal raid rewards feel irrelevant.
@@ -114,6 +116,7 @@ A player on a loss streak uses Scavenger Run, budget presets, and low-cost insur
 | :--- | :--- |
 | Progression and battle pass XP | [Progression](progression.html) |
 | Seasonal economy events | [Live Operations](liveops.html) |
+| Shop UX and purchase states | [Commerce Screens](../UI_UX/Commerce_Screens.md) |
 | Insurance costs | [Insurance System](insurancesystem.html) |
 | Safe House upgrade sinks | [Safe House Design](safe_house_design.html) |
 | Loadout value display | [Loadout Preparation](loadoutpreparation.html) |

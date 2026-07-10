@@ -14,7 +14,7 @@ Tham chiếu chính:
 | :--- | :--- |
 | Economy | [Economy & Monetization Design](../GameDesign/Economy.md) |
 | Progression / Battle Pass | [Progression & LiveOps màn hình](Progression_LiveOps_Screens.md) |
-| global UX | [global UX Standards](Global_UX_Standards.md) |
+| Global UX | [Global UX Standards](Global_UX_Standards.md) |
 | Visual style | [Visual Style & Art Guidelines](Visual_Style.md) |
 | Settings và hệ thống trạng thái | [Settings & hệ thống màn hình](Commerce_Settings_System_Screens.md) |
 
@@ -22,21 +22,21 @@ Tham chiếu chính:
 
 | điểm đến | cách dùng |
 | :--- | :--- |
-| [UI/UX Index](_index.md) | Full UI/UX documentation hub |
-| [màn hình Groups Overview](Screen_Groups_Overview.md) | Lifecycle taxonomy và designer-ready spec template |
+| [UI/UX Index](_index.md) | Hub tài liệu UI/UX đầy đủ |
+| [Screen Groups Overview](Screen_Groups_Overview.md) | Taxonomy vòng đời màn hình và template spec cho designer |
 | [Progression & LiveOps màn hình](Progression_LiveOps_Screens.md) | Battle pass progress, event progress, ranked, rewards, và news |
 | [Settings & hệ thống màn hình](Commerce_Settings_System_Screens.md) | Auth, setup, settings, privacy, diagnostics, và hệ thống dialogs |
-| [global UX Standards](Global_UX_Standards.md) | shared navigation, focus, trạng thái, modal, và accessibility rules |
+| [Global UX Standards](Global_UX_Standards.md) | Quy tắc chung cho navigation, focus, trạng thái, modal, và accessibility |
 
 ---
 
 ## Inventory Màn Hình
 
-| màn hình | mục tiêu | primary CTA | chính trạng thái |
+| màn hình | mục tiêu | CTA chính | trạng thái chính |
 | :--- | :--- | :--- | :--- |
-| Shop Home | Browse hiện tại shop sections và highlighted offer | View offer / preview | loading, empty rotation, offline, platform restricted |
+| Shop Home | Duyệt các section hiện tại của shop và offer nổi bật | Xem offer / preview | loading, empty rotation, offline, platform restricted |
 | Featured offer / Rotating Store | Scan daily/weekly offer, discounts, và owned items | kiểm tra / mua | owned, discounted, expires soon, unavailable |
-| Bundle chi tiết | Understand bundle contents và adjusted giá trị | preview Bundle / purchase | partially owned, discounted, insufficient balance |
+| Bundle chi tiết | Hiểu nội dung bundle và giá đã điều chỉnh | Preview Bundle / mua | partially owned, discounted, insufficient balance |
 | Item chi tiết / 3D preview | kiểm tra a cosmetic trước purchase | Rotate / Equip preview / mua | incompatible item, selectable variants, owned |
 | Event / Collection Store | Track limited collection progress và event rewards | View Reward / mua Item | event ended, collection complete, timer cảnh báo |
 | Battle Pass upgrade | upgrade free pass to premium hoặc premium bundle | upgrade Pass | already premium, season ending, insufficient balance |
@@ -45,20 +45,120 @@ Tham chiếu chính:
 | purchase kết quả / Receipt | Show success, failure, pending, refund, và next action | Equip / View / Retry | success, pending, failed, refunded |
 | Redeem Code / Entitlement claim | claim promo codes, founders packs, và platform entitlements | Redeem / claim | duplicate, expired, region locked, already owned |
 
-Commerce does not define a standalone Wallet màn hình. Currency balance appears only as a component in shop headers, currency top-up, confirmations, và receipts.
+Commerce không định nghĩa màn hình Wallet riêng. Currency balance chỉ xuất hiện như một component trong shop header, currency top-up, confirmation, và receipt.
 
 ---
 
 ## Commerce Rules
 
-| Rule | yêu cầu |
+| Rule | Yêu cầu |
 | :--- | :--- |
-| No gameplay advantage | offer phải được cosmetic, account dịch vụ, hoặc clearly non-power. nếu an item changes presentation only, say so near purchase. |
-| giá clarity | Final giá, discounted giá, original giá, tax/platform handoff, và currency type phải được hiển thị rõ trước confirmation. |
-| Ownership clarity | Owned, partially owned, duplicate, và bundle-adjusted trạng thái must cách dùng dễ đọc labels, not color alone. |
-| Timer clarity | Daily, weekly, event, và season timers must show exact remaining thời gian và a plain expired trạng thái. |
-| Confirmation | Premium currency và real-money actions require a confirmation trạng thái. Expensive hoặc irreversible actions cách dùng hold-to-confirm. |
-| Failure safety | pending/failed purchase copy must say not to retry nếu the transaction may still complete, và must expose support. |
+| No gameplay advantage | Offer phải là cosmetic, account service, hoặc non-power rõ ràng. Nếu item chỉ đổi presentation, hãy nói rõ gần purchase CTA. |
+| Price clarity | Final price, discounted price, original price, tax/platform handoff, và currency type phải hiển thị trước confirmation. |
+| Ownership clarity | Owned, partially owned, duplicate, và bundle-adjusted states phải dùng label đọc được, không chỉ dựa vào màu. |
+| Timer clarity | Daily, weekly, event, và season timer phải show exact remaining time và expired state rõ ràng. |
+| Confirmation | Premium currency và real-money action luôn cần confirmation. Purchase đắt hoặc irreversible dùng hold-to-confirm. |
+| Failure safety | Pending/failed purchase copy phải cảnh báo không spam retry nếu transaction có thể vẫn hoàn tất, đồng thời expose support. |
+
+---
+
+## Commerce System Model
+
+Commerce là hệ thống nhạy cảm về niềm tin. UI phải giúp người chơi hiểu họ đang mua gì, vì sao offer khả dụng, họ đã sở hữu gì, payment rời game như thế nào, và support có thể kiểm chứng gì sau đó.
+
+| Entity | Định nghĩa | Yêu cầu UI |
+| :--- | :--- | :--- |
+| `Offer` | Cách merchandised một hoặc nhiều product có thể mua | Hiển thị title, visual, price, timer, ownership, restriction, và CTA |
+| `SKU` | Đơn vị mua hàng của platform/provider | Không phải primary UI; chỉ hiện trong receipt/help khi cần support |
+| `Product` | Item hoặc service được grant sau purchase | Hiển thị category, rarity, compatibility, và non-power context |
+| `Bundle` | Offer gồm nhiều product | Hiển thị từng product và owned-item adjustment |
+| `Entitlement` | Quyền sở hữu được grant sau purchase, redeem, event, hoặc platform claim | Hiển thị destination, status, duplicate state, và support route |
+| `CurrencyPack` | Real-money purchase grant premium currency | Hiển thị amount, bonus, localized price, provider, và handoff state |
+| `Receipt` | Bằng chứng transaction hoặc entitlement sync cho player | Hiển thị status, provider/reference id, timestamp nếu có, và granted items |
+| `PlatformProvider` | Steam, PlayStation, Xbox, Epic, App Store, Google Play, hoặc provider tương đương | Hiển thị availability, account/region restriction, và provider handoff copy |
+| `OwnershipState` | Quan hệ giữa player và product/bundle | `new`, `owned`, `partially owned`, `duplicate`, `incompatible`, `locked`, `pending` |
+
+### Offer Data Contract
+
+| Field | Dùng cho | Display rule |
+| :--- | :--- | :--- |
+| Offer id / SKU id | support, analytics, provider handoff | Không phải primary UI; dùng trong receipt/help khi cần |
+| Title và short description | mọi offer | Fit trong card/detail header, không phụ thuộc hover |
+| Product category | mọi product | Operator skin, weapon skin, emote, banner, charm, service, currency pack |
+| Rarity / collection | cosmetic và event item | Text label cộng icon/color treatment |
+| Price và currency type | mọi purchasable offer | Final price gần CTA; original price khi có discount |
+| Timer / availability | rotating, event, seasonal offer | Exact remaining time cộng expired fallback |
+| Ownership state | mọi product và bundle | Label đọc được trên card, detail, confirmation, receipt |
+| Compatibility | item detail và bundle | Supported operator/weapon/class hoặc limitation rõ |
+| Platform / region restriction | offer bị restriction | Disabled CTA với exact reason và support/account route |
+| Non-power label | cosmetic/service | Plain copy gần price hoặc confirmation |
+
+### Product / SKU Taxonomy
+
+| Type | Allowed | Commerce rule |
+| :--- | :--- | :--- |
+| Operator cosmetics | Yes | Không stat, hitbox, visibility, audio, hoặc ability advantage |
+| Weapon skins | Yes | Không recoil, sight clarity, silhouette, tracer, sound, hoặc hit readability advantage |
+| Emotes / banners / charms | Yes | Cosmetic only; không ảnh hưởng combat timing hoặc visibility |
+| Battle pass upgrade | Yes | Purchase UX ở đây; reward/progress view ở Progression/LiveOps |
+| Currency pack | Yes | Top-up only; không ledger hoặc standalone Wallet screen |
+| Convenience service | Conditional | Phải earnable/capped và không đổi combat certainty |
+| Paid RNG / loot box | No | Không hỗ trợ randomized real-money purchase |
+| Combat power | No | Không bán weapon, armor, stat, protected combat slot, hoặc better matchmaking |
+
+### Checkout, Entitlement, Và Compliance Rules
+
+| Topic | Requirement |
+| :--- | :--- |
+| Ownership | Owned/duplicate purchase bị block; partially owned bundle show adjusted price |
+| Price stale | Block confirmation, refresh price, và yêu cầu confirm lại |
+| Provider handoff | Show provider name/localized price; game không assume success trước provider result |
+| Pending charge | Copy phải nói không retry vì transaction có thể vẫn hoàn tất |
+| Refund/removal | Explain entitlement removal hoặc balance restoration |
+| Minor/region/spending limit | CTA disabled với exact requirement và platform/account route |
+| Random rewards | Paid RNG không supported; deterministic purchase phải nói chính xác item được grant |
+
+---
+
+## Shop Information Architecture
+
+Commerce entry point phải giữ context: global Shop nav, Battle Pass upgrade, Event Store, insufficient balance route, redeem/deep link, hoặc receipt/support route.
+
+| Entry Point | Hành vi landing |
+| :--- | :--- |
+| Horizontal global nav: Shop | Mở Shop Home với curated/featured sections |
+| Battle Pass upgrade | Mở Battle Pass Upgrade và có return link về Battle Pass progress |
+| Event purchase CTA | Mở Event / Collection Store scoped theo active event |
+| Insufficient balance | Mở Currency Top-Up với return context về blocked offer |
+| Redeem/deep link | Mở Redeem / Entitlement Claim hoặc target offer nếu valid |
+| Receipt/support | Mở Purchase Result / Receipt với support context |
+
+### Commerce Tabs Và Shop Home Priority
+
+| Tab / Section | Purpose / Rule |
+| :--- | :--- |
+| Home | Curated overview và hero offer |
+| Featured | Daily/weekly rotating offers |
+| Bundles | Bundle value, content count, owned adjustment |
+| Event | Event collection, deterministic rewards, event timer |
+| Battle Pass | Upgrade purchase surface only |
+| Currency | Premium currency pack top-up, không Wallet |
+| Redeem | Code entry và entitlement claim |
+
+Thứ tự ưu tiên của Shop Home: hero offer, daily/weekly featured, bundles, event offers, Battle Pass upsell, currency top-up, redeem/claim. Personalized row có thể đổi thứ tự card, nhưng thứ tự tab và vocabulary của section phải ổn định.
+
+### Offer Card Anatomy Và Merchandising Guardrails
+
+| Element / Rule | Requirement |
+| :--- | :--- |
+| Card image | Stable 4:5 hoặc 16:9 ratio theo section; không layout shift |
+| Title/category/rarity | Text label readable; color alone không đủ |
+| Price/discount | Final price + currency type; original price khi discounted |
+| Timer | Exact remaining time; không flashing pressure animation |
+| Badge stack | Priority: `Owned`, `Platform Locked`, `Ends Soon`, `Discount`, `New`, `Event`; tối đa 3 badge |
+| Best value | Chỉ dùng nếu value-per-price thật sự cao nhất trong set hiển thị |
+| Bundle value | Phải show content count và owned-item adjustment |
+| Cosmetic trust | Non-power copy gần price ở detail và confirmation |
 
 ---
 
@@ -68,7 +168,7 @@ Commerce does not define a standalone Wallet màn hình. Currency balance appear
 
 **người chơi Intent**
 
-See what is new, understand hiện tại balance và platform status, và choose a shop section mà không losing context.
+Xem nội dung mới, hiểu balance và platform status hiện tại, rồi chọn shop section mà không mất ngữ cảnh.
 
 **Expanded ASCII Wireframe**
 
@@ -132,19 +232,19 @@ PC focus starts on hero CTA, then tabs, card rows, trust links. Console shoulder
 
 **Designer ghi chú**
 
-The trang must feel like a store, not a wallet. Balance is a utility chip; offer và previews carry the surface.
+Trang này phải cho cảm giác là một cửa hàng, không phải ví. Balance chỉ là utility chip; offer và preview mới là trọng tâm của surface.
 
 **Acceptance checklist**
 
 - [ ] Hero offer has giá, discount, timer, ownership, và preview CTA.
 - [ ] Every purchase-disabled trạng thái has a dễ đọc reason.
-- [ ] Balance is hiển thị rõ mà không tạo a Wallet điểm đến.
+- [ ] Balance hiển thị rõ mà không tạo điểm đến Wallet riêng.
 
 ### Featured offer / Rotating Store
 
 **người chơi Intent**
 
-Scan many timed offer quickly và decide which item hoặc bundle deserves inspection.
+Scan nhanh nhiều offer có thời hạn và quyết định item hoặc bundle nào đáng xem kỹ.
 
 **Expanded ASCII Wireframe**
 
@@ -215,7 +315,7 @@ Do not hide quan trọng giá information in hover-only UI. Console và touch mu
 
 **người chơi Intent**
 
-Understand what the bundle includes, what they already own, và whether the adjusted giá is fair.
+Hiểu bundle gồm gì, người chơi đã sở hữu gì, và giá đã điều chỉnh có hợp lý không.
 
 **Expanded ASCII Wireframe**
 
@@ -353,13 +453,13 @@ preview controls must feel optional; the purchase facts must remain dễ đọc 
 
 - [ ] Compatibility và variants are hiển thị rõ trước purchase.
 - [ ] preview failure has a fallback that does not block purchase facts.
-- [ ] Owned trạng thái does not show mua as the primary CTA.
+- [ ] Trạng thái owned không hiển thị mua như CTA chính.
 
 ### Event / Collection Store
 
 **người chơi Intent**
 
-Understand limited-thời gian event offer, collection completion, và what reward unlocks at completion.
+Hiểu offer sự kiện có thời hạn, tiến độ hoàn tất collection, và reward được mở khi hoàn tất.
 
 **Expanded ASCII Wireframe**
 
@@ -549,7 +649,7 @@ Choose a premium currency pack và understand platform checkout trước leaving
 | trạng thái | Behavior |
 | :--- | :--- |
 | Platform checkout unavailable | disable continue và show provider reason |
-| pending checkout | show pending receipt và do not offer repeated checkout blindly |
+| pending checkout | hiển thị receipt pending và không khuyến khích checkout lặp lại một cách mù quáng |
 | Age/region restricted | block purchase với account/platform yêu cầu |
 | Bonus promotion ended | refresh pack data và require reselection |
 
@@ -559,19 +659,19 @@ Pack cards are a horizontal row on PC/console và a two-column grid on mobile. C
 
 **Designer ghi chú**
 
-This is not a Wallet. Do not add history, ledger, hoặc balance management here.
+Đây không phải Wallet. Không thêm history, ledger, hoặc balance management ở đây.
 
 **Acceptance checklist**
 
 - [ ] No standalone wallet/history UI exists.
 - [ ] Platform provider và localized giá are hiển thị rõ trước checkout.
-- [ ] pending checkout prevents accidental repeated purchase.
+- [ ] Pending checkout ngăn purchase lặp lại ngoài ý muốn.
 
 ### purchase Confirmation
 
 **người chơi Intent**
 
-Make a final informed quyết định với exact contents, giá, balance impact, và refund/platform note.
+Đưa ra quyết định cuối cùng với đầy đủ nội dung, giá, tác động tới balance, và ghi chú refund/platform.
 
 **Expanded ASCII Wireframe**
 
@@ -779,23 +879,54 @@ Do not bury error chi tiết in a toast. claim failures are support-sensitive.
 
 ## Analytics
 
-| Signal | cách dùng |
+| Signal | Cách dùng |
 | :--- | :--- |
-| Shop section impressions | Measure which rows và tabs người chơi Xem |
-| offer kiểm tra rate | Tune card clarity và hero placement |
-| preview interaction | Understand cosmetic inspection behavior |
-| Confirmation cancel | Identify unclear pricing hoặc trust issues |
-| purchase pending/failure rate | Detect platform hoặc provider issues |
-| Top-up entry source | Separate direct top-up from insufficient-balance recovery |
-| Redeem failure reason | Improve code formatting và support copy |
+| Shop impression | Đo volume vào shop theo source và platform |
+| Tab / section impression | Đo row và tab nào player thật sự thấy |
+| Offer card selected | Tune card clarity, badging, và hero placement |
+| Preview opened / interacted | Hiểu hành vi inspect cosmetic và lỗi asset |
+| Purchase intent | Track Buy/Upgrade/Top-Up CTA trước confirmation |
+| Top-up started / completed / cancelled | Tách direct top-up khỏi insufficient-balance recovery |
+| Confirmation shown / confirmed / cancelled | Tìm vấn đề pricing clarity, trust, hoặc accidental entry |
+| Platform checkout pending / failed / succeeded | Detect provider, region, và account issues |
+| Receipt viewed / refreshed | Đo result state có giải quyết uncertainty không |
+| Support opened | Tìm purchase trust hoặc entitlement problem areas |
+| Redeem failure reason | Cải thiện code formatting, entitlement sync, và support copy |
+
+Analytics không được log full payment detail, personal data, hoặc raw redemption code. Dùng offer id, reason enum, provider class, và safe receipt reference.
+
+---
+
+## Commerce QA Checklist
+
+| Scenario | Expected Result |
+| :--- | :--- |
+| Price changes while confirmation is open | Confirm bị block, price refresh, và player phải confirm lại |
+| Offer expires while selected | Buy disabled với expired copy và refresh/back route |
+| Owned item purchase attempt | Purchase bị block và route tới Equip/View Owned |
+| Partially owned bundle | Adjusted price và per-item owned labels hiển thị rõ |
+| Fully owned bundle | Purchase disabled; bundle route tới owned items |
+| Insufficient balance | Exact shortfall và Currency Top-Up route hiển thị |
+| Platform checkout unavailable | Checkout disabled với provider/account reason |
+| Pending transaction | Receipt cảnh báo không retry và có refresh/support |
+| Refund/removal | Entitlement removal hoặc balance restoration được giải thích |
+| Region/minor/spending restriction | CTA disabled với exact requirement và platform/account route |
+| Offline/cached shop | Chỉ browse phần an toàn; purchase disabled với reason |
+| Duplicate entitlement | Already claimed/owned destination và support route hiển thị |
+| Missing entitlement | Receipt/provider/account context và support route hiển thị |
+| Preview asset failure | Fallback visual xuất hiện mà không che price hoặc compatibility |
 
 ---
 
 ## checklist Nghiệm Thu
 
-- [ ] Commerce has no standalone Wallet màn hình.
-- [ ] Shop Home, Featured offer, Bundle chi tiết, Item chi tiết, Event Store, Battle Pass upgrade, Currency Top-Up, purchase Confirmation, purchase kết quả, và Redeem claim are covered.
-- [ ] Every purchasable item shows giá, currency type, ownership, platform restriction, và non-power/cosmetic context khi relevant.
-- [ ] Balance appears only as a component in commerce header, top-up, confirmation, hoặc receipt.
-- [ ] purchase failures và pending trạng thái include duplicate-charge-safe copy và support route.
-- [ ] Battle Pass purchase UX links to Progression/LiveOps for reward progress instead of duplicating it.
+- [ ] Commerce không có standalone Wallet screen.
+- [ ] Shop Home, Featured Offers, Bundle Detail, Item Detail, Event Store, Battle Pass Upgrade, Currency Top-Up, Purchase Confirmation, Purchase Result, và Redeem Claim đều covered.
+- [ ] Mọi purchasable item show price, currency type, ownership, platform restriction, và non-power/cosmetic context khi relevant.
+- [ ] Balance chỉ xuất hiện như component trong commerce header, top-up, confirmation, hoặc receipt.
+- [ ] Purchase failure và pending state có duplicate-charge-safe copy và support route.
+- [ ] Battle Pass purchase UX link sang Progression/LiveOps cho reward progress thay vì duplicate.
+- [ ] Offer data contract, SKU/product taxonomy, ownership states, pricing rules, và checkout provider states đã defined.
+- [ ] Shop IA cover entry points, tab structure, section priority, empty/offline fallback, và offer card anatomy.
+- [ ] Analytics cover full commerce funnel mà không log raw payment data hoặc redemption code.
+- [ ] QA checklist cover stale price, expired offer, pending transaction, refund, minor/region restriction, và missing entitlement.

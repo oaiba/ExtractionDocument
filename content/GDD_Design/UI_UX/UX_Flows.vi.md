@@ -466,6 +466,30 @@ Dùng trang này để understand journey order và transition intent. cách dù
 | Commerce purchase | [Commerce màn hình](Commerce_Screens.md), [Progression & LiveOps màn hình](Progression_LiveOps_Screens.md) | offer, preview, giá, confirmation, receipt, và upgrade routes are explicit |
 | Settings Recovery | [Settings & hệ thống màn hình](Commerce_Settings_System_Screens.md), [global UX Standards](Global_UX_Standards.md) | apply/revert, locks, errors, và support routes are explicit |
 
+### Commerce Purchase Journey
+
+```
+Entry
+  Home Shop tab / Battle Pass Upgrade / Event Store / Insufficient Balance / Redeem Link
+    -> Offer Card or Deep Link Target
+    -> Offer Detail / Bundle Detail / Item Preview
+    -> Optional Currency Top-Up
+    -> Purchase Confirmation
+    -> Platform Checkout Handoff when required
+    -> Purchase Result / Receipt
+    -> Equip / View Owned / Back to Shop / Purchase Help
+```
+
+| Step | Required Trust State |
+| :--- | :--- |
+| Entry | Source context preserved để Back quay về Home, Battle Pass, Event, hoặc blocked offer |
+| Offer | Price, ownership, timer, restriction, và non-power context visible |
+| Preview | Compatibility và variant limits visible trước purchase |
+| Top-up | Localized provider price và platform handoff shown trước khi rời game UI |
+| Confirmation | Final price, balance impact, contents, refund/platform note, và hold-to-confirm khi required |
+| Provider handoff | Pending/cancelled/failed/succeeded states quay về receipt/result surface |
+| Receipt | Granted items, provider/reference id, support route, và duplicate-charge-safe copy visible |
+
 ### flow QA checklist
 
 - [ ] Each journey transition has a rõ source màn hình, điểm đến màn hình, và failure trạng thái.

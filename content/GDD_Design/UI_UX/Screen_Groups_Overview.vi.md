@@ -67,6 +67,20 @@ Mỗi screen group phải trả lời bốn câu hỏi:
 
 ---
 
+### Commerce Coverage Checklist
+
+Commerce screen coverage chỉ hoàn chỉnh khi canonical page định nghĩa rõ offer information architecture, offer card anatomy, checkout trust states, receipt/support routes, và platform/region restrictions.
+
+| Coverage Area | Requirement |
+| :--- | :--- |
+| Offer IA | Entry points, tabs, section priority, và empty/offline fallback explicit |
+| Checkout trust | Price, currency type, ownership, balance impact, provider handoff, và confirmation visible |
+| Receipt/support | Success, pending, failed, refunded, duplicate, và missing entitlement states expose support routes |
+| Platform restrictions | Region, age, account, provider, và spending-limit blocks có readable reasons |
+| No wallet drift | Premium balance chỉ là component; không tạo standalone Wallet destination |
+
+---
+
 ## Screen Spec Template
 
 Dùng template này cho mọi screen spec mới. Giữ đủ ngắn để update được, nhưng đủ hoàn chỉnh cho designer layout, UX review, và implementation planning. [Out-of-Raid Screens](Out_Of_Raid_Screens.md) là baseline example cho format designer-ready đầy đủ.

@@ -58,6 +58,8 @@ Monetization phải "boring" ở đúng chỗ. Store có thể exciting về vis
 | Loot boxes | No | Avoid paid RNG power perception |
 | Better weapons or armor | No | Violates no pay-to-win |
 
+Commerce UI, offer taxonomy, purchase confirmation, provider handoff, receipt, refund, và entitlement states nằm ở [Commerce Screens](../UI_UX/Commerce_Screens.md). Economy quyết định thứ gì được bán và vì sao; Commerce quyết định cách trình bày offer, checkout trust, và các state nhạy cảm với support.
+
 ## Marketplace Rules
 
 Marketplace design nên support player agency mà không để market thành main game. Trading hữu ích khi giúp player chuyển unwanted value thành useful value. Nó harmful khi bot, price manipulation, hoặc real-money trading làm raid reward bình thường trở nên irrelevant.
@@ -114,6 +116,7 @@ Player đang loss streak dùng Scavenger Run, budget preset, và low-cost insura
 | :--- | :--- |
 | Progression and battle pass XP | [Progression](progression.html) |
 | Seasonal economy events | [Live Operations](liveops.html) |
+| Shop UX và purchase states | [Commerce Screens](../UI_UX/Commerce_Screens.md) |
 | Insurance costs | [Insurance System](insurancesystem.html) |
 | Safe House upgrade sinks | [Safe House Design](safe_house_design.html) |
 | Loadout value display | [Loadout Preparation](loadoutpreparation.html) |

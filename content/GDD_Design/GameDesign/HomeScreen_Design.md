@@ -39,12 +39,13 @@ The operator showcase gives the player a visible identity between raids. It shou
 
 ## PC / Console Layout
 
-PC and console layouts can show more simultaneous information, but they should still preserve one dominant action. The right panel should lead toward deploy, while the rail and supporting widgets remain stable. Avoid moving navigation between sessions because muscle memory matters for repeated raid prep.
+PC and console layouts can show more simultaneous information, but they should still preserve one dominant action. The right panel should lead toward deploy, while the horizontal global nav and supporting widgets remain stable. Avoid moving navigation between sessions because muscle memory matters for repeated raid prep.
 
 | Region | Content | Purpose |
 | :--- | :--- | :--- |
+| Horizontal global nav | Home, Armory, Stash, Safe House, Traders, Ranked, Shop, Settings | Stable primary navigation |
 | Center | Operator showcase, stance, selected skin, weapon preview | Identity and readiness |
-| Left rail | Home, Armory, Stash, Safe House, Traders, Ranked, Shop, Settings | Stable global navigation |
+| Local/secondary rail | Contextual shortcuts only when a hub needs local categories | Secondary navigation, never primary Shop access |
 | Right panel | Mode card, squad status, quick deploy, queue estimate | Fast path to play |
 | Top bar | Currency, notifications, profile, season timer | Account state |
 | Bottom strip | Last raid, active quests, event reminder | Contextual next actions |

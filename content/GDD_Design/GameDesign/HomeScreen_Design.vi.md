@@ -44,7 +44,8 @@ PC và console layouts can show more simultaneous information, nhưng they shoul
 | Region | Content | mục đích |
 | :--- | :--- | :--- |
 | Center | Operator showcase, stance, selected skin, vũ khí preview | Identity và readiness |
-| Left rail | Home, Armory, Stash, Safe House, Traders, Ranked, Shop, Settings | Stable global navigation |
+| Horizontal global nav | Home, Armory, Stash, Safe House, Traders, Ranked, Shop, Settings | Stable primary navigation |
+| Local/secondary rail | Contextual shortcuts only when a hub needs local categories | Secondary navigation, never primary Shop access |
 | Right panel | Mode card, squad status, quick deploy, queue estimate | Fast path to play |
 | Top bar | Currency, notifications, profile, season timer | Account trạng thái |
 | Bottom strip | Last raid, active quests, event reminder | Contextual next actions |

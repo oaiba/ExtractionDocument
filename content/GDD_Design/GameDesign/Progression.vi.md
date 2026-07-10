@@ -49,6 +49,8 @@ Progression là long-term memory của nỗ lực player. Mỗi progression obje
 | Battle pass | Seasonal reward track và return goals | Trở thành core power spine hoặc che free value | Battle Pass, Reward Inbox, Commerce upgrade route |
 | Achievements / prestige | Long-term mastery và bragging rights | Reset meaningful player access mà không có consent | Profile, Season Summary |
 
+Progression có thể unlock access, knowledge, cosmetic identity, trader stock, và quest chains, nhưng không được imply premium gear power. Nếu progression reward grant physical gear, nó là earned item instance với durability, insurance, loss, stash, và lifecycle rules bình thường.
+
 ## Account Levels
 
 Account level đại diện familiarity rộng với game. Nó có thể unlock system và reward, nhưng không được tạo permanent combat stat gap. Player level 50 có nhiều option và knowledge hơn; họ không nên đơn giản có nhiều health, damage, hoặc hidden power hơn.
@@ -197,3 +199,5 @@ Seasonal player quay lại vì event. Battle pass, faction objective, và live q
 | Player stats and achievements | [Player Profile](playerprofile.html) |
 | Tutorial goals | [Tutorial Raid](tutorialraid.html) |
 | Clan missions | [Clan System](clansystem.html) |
+| Inventory item lifecycle | [Inventory System](../Inventory_System/) |
+| Gear tier and rarity rules | [Gear Tier System](../Gears/Gear_Tier_System.md) |

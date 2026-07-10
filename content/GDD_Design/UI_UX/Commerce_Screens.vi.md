@@ -118,6 +118,8 @@ Commerce là hệ thống nhạy cảm về niềm tin. UI phải giúp người
 | Minor/region/spending limit | CTA disabled với exact requirement và platform/account route |
 | Random rewards | Paid RNG không supported; deterministic purchase phải nói chính xác item được grant |
 
+Commerce grant account entitlements, cosmetics, premium currency packs, battle pass upgrades, và non-power services. Commerce không được grant paid physical combat-power item instances như weapons, armor, ammo, high-tier storage, protected combat slots, hoặc stat-bearing gear. Nếu purchase unlock cosmetic cho gear, gameplay-bearing item instance vẫn theo Inventory/Gear lifecycle rules.
+
 ---
 
 ## Shop Information Architecture

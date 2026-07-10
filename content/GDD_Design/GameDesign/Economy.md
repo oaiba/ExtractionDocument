@@ -142,6 +142,17 @@ Economy telemetry should be segmented by account age, skill bracket, mode, and p
 | Premium token earn rate | Protects perceived fairness around premium currency grants | Per season and event |
 | Event currency earn/spend ratio | Prevents event store under-demand or impossible completion | Daily during active events |
 
+## Gear Value And Item Sinks
+
+Physical gear value is created and removed through play. Gear enters through raids, traders, crafting, quests, events, and compensation; it leaves through death, sale, crafting, repair loss, quest turn-in, discard, and wipe/reset rules. Commerce may sell cosmetic entitlements or non-power services, but it does not create paid combat-power item instances.
+
+| Gear Economy Concept | Requirement |
+| :--- | :--- |
+| Gear value | UI should explain value through combat role, durability, weight, rarity/tier, repair cost, insurance cost, and trader/quest relevance |
+| Item sink | Sell, repair, craft, quest turn-in, discard, death loss, and durability degradation must be visible and auditable |
+| Premium boundary | Premium purchases may unlock cosmetics or capped convenience, not weapons, armor, ammo, stat power, or protected combat slots |
+| Contraband/restricted gear | Restricted sale, trade, insurance, or deploy behavior must show a readable reason |
+
 ## Ethical Monetization Rules
 
 | Promise | Implementation |
@@ -191,3 +202,5 @@ A player on a loss streak uses Scavenger Run, budget presets, and low-cost insur
 | Insurance costs | [Insurance System](insurancesystem.html) |
 | Safe House upgrade sinks | [Safe House Design](safe_house_design.html) |
 | Loadout value display | [Loadout Preparation](loadoutpreparation.html) |
+| Inventory item lifecycle | [Inventory System](../Inventory_System/) |
+| Gear tier and rarity | [Gear Tier System](../Gears/Gear_Tier_System.md) |

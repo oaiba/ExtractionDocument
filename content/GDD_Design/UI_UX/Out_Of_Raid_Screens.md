@@ -338,8 +338,9 @@ The player wants to build a valid raid kit, understand risk, resolve blockers, a
 | Component | Requirement |
 | :--- | :--- |
 | Gear slot | Shows item name, durability/ammo if relevant, slot restriction, and warning state |
-| Stash item tile | Shows footprint, category icon, stack count, FIR/quest/protected badge, compatibility marker |
-| Selected item summary | Shows stats delta, value, weight, compatibility, and allowed actions |
+| Stash item tile | Shows footprint, category icon, stack count, durability if relevant, rarity/tier, FIR, quest, protected, insured, contraband, locked, equipped, and compatibility marker |
+| Selected item summary | Shows stats delta, value, weight, durability, compatibility, insurance eligibility, quest/FIR/protected flags, and allowed actions |
+| Gear comparison panel | Names the trade-off in text: capacity vs weight, armor class vs mobility, durability vs repair cost, insured vs ineligible |
 | Warning lane | Orders blockers first, warnings second, suggestions third; max 3 visible with View All |
 | Preset control | Shows Save, Apply, Rename, Delete; overwrite/delete require confirmation |
 | Ready CTA | Active only when required rules pass; disabled label names first blocker |
@@ -356,6 +357,12 @@ The player wants to build a valid raid kit, understand risk, resolve blockers, a
 | Quest item missing | Warning with quest detail and stash/trader/map deep link |
 | Stash full during move | Reject move, show capacity, offer stash upgrade/sell junk |
 | Empty stash | Explain source paths: traders, starter kit, raid, quest rewards |
+| Broken required gear | Block Ready; route to repair, replacement, or remove item |
+| Low durability weapon | Warning with malfunction/durability risk and repair route |
+| Contraband item | Show restricted deploy/sell/insurance behavior before Ready |
+| Locked item | Disable invalid action and show unlock or protection reason |
+| Invalid container item | Block Ready/move; show container restriction and valid target |
+| Preset apply failure | List missing items, substitutions, cost, and stash capacity result |
 
 **Input / Focus / Touch**
 
@@ -379,6 +386,9 @@ Mobile layout uses tabs: Operator, Stash, Mission. The risk summary and Ready CT
 **Acceptance Checklist**
 
 - [ ] Missing weapon, missing ammo, overweight, uninsured value, and quest item missing states are represented.
+- [ ] Blocker, warning, and advisory severities are visually distinct and text-labeled.
+- [ ] Broken gear, low durability, contraband, locked, insured/uninsured, and invalid container states are represented.
+- [ ] Gear comparison explains trade-offs in text, not only green/red deltas.
 - [ ] Stash grid supports item movement without precision-only interactions.
 - [ ] Ready CTA never activates while a blocking validation state is present.
 - [ ] Risk summary remains visible while browsing stash items.
@@ -398,6 +408,17 @@ The player wants to store, sort, search, move, sell, and inspect items quickly w
 | Primary CTA | Contextual: Equip, Move, Sell, Use, Turn In, or Inspect |
 | Secondary actions | Auto-sort, filter, search, favorite, tag junk, split stack, rotate, lock item |
 | Destructive actions | Discard and sell protected/quest/high-value items require confirmation |
+
+**Stash Information Architecture**
+
+| Surface | Requirement |
+| :--- | :--- |
+| Filter rail | Category, rarity/tier, FIR, quest, protected, insured, contraband, damaged, value, and saved filters |
+| Grid | Stable cells, item footprints, stacks, empty cells, valid target preview, rotate-needed preview |
+| Selected item panel | Name, category, tier/rarity, durability, value, weight, footprint, ownership flags, related quest/trader/craft |
+| Capacity summary | Used/total cells, incoming overflow, large-item pressure, locked/protected count, stash value |
+| Overflow / reward inbox lane | Temporary holding for post-raid, support, reward, or sync items with source context |
+| Action bar | Move, equip, sell, use, inspect, split, rotate, protect, discard; destructive actions visually separated |
 
 **Expanded ASCII Wireframe**
 
@@ -445,12 +466,13 @@ The player wants to store, sort, search, move, sell, and inspect items quickly w
 
 | Component | Requirement |
 | :--- | :--- |
-| Item tile | Shows footprint, stack count, category shape/icon, and badges for FIR, quest, locked, insured |
+| Item tile | Shows footprint, stack count, category shape/icon, durability when relevant, rarity/tier, and badges for FIR, quest, protected, insured, contraband, locked, equipped |
 | Grid target preview | Shows valid, invalid, rotate-needed, and blocked-by-item states |
 | Info panel | Gives enough detail to decide keep/sell/equip without opening inspect modal |
 | Sell junk | Lists estimated value and excludes quest/protected/favorited items by default |
 | Search | Searches item name, category, ammo caliber, quest tag, and trader relevance |
 | Full stash warning | Offers specific actions: sell junk, use container, upgrade, filter large items |
+| Destructive confirmation | Names item, value, flags, and consequence for protected, quest, high-value, insured, or contraband items |
 
 **States & Edge Cases**
 
@@ -463,6 +485,9 @@ The player wants to store, sort, search, move, sell, and inspect items quickly w
 | Quest item selected | Show related quest, turn-in state, and whether FIR is required |
 | Incoming loot overflow | Show temporary holding lane and required resolution before exit |
 | Loading | Grid skeleton preserves cell dimensions and filter rail width |
+| Pending sync | Disable duplicate move/sell/claim actions and show finalizing state |
+| Contraband selected | Show sale, trade, insurance, deploy, or mode restriction in info panel |
+| Damaged/broken item | Show repair route, effective value, and deploy restriction if applicable |
 
 **Input / Focus / Touch**
 
@@ -486,7 +511,8 @@ Focus order: search, filter rail, grid, info panel actions, quick tools, action 
 **Acceptance Checklist**
 
 - [ ] Empty, full, filter-empty, locked item, and quest item states are designed.
-- [ ] Item info panel shows value, footprint, FIR/protected state, and allowed actions.
+- [ ] Item info panel shows value, footprint, tier/rarity, durability, FIR/protected/insured/contraband state, and allowed actions.
+- [ ] Overflow, pending sync, damaged/broken item, and contraband states are designed.
 - [ ] Mouse, controller, and touch can move and rotate items.
 - [ ] Destructive actions warn for protected, quest, or high-value items.
 
@@ -537,7 +563,7 @@ The player wants to buy, sell, barter, and turn in items while understanding pri
 | Trader profile | Explain access and progression | rep level, next unlock requirement, reset timer, flavor line |
 | Offer list | Browse buy/sell/barter/turn-in candidates | mode tabs, search, filters, item row, price, stock, lock reason |
 | Detail strip | Explain selected offer | stats, compatibility, limits, barter checklist, item warnings |
-| Your offer | Confirm transaction summary | wallet, selected items, total, stash after transaction |
+| Your offer | Confirm transaction summary | credits/funds, selected items, total, stash after transaction |
 | Warning lane | Prevent failed or regretted transaction | stash full, insufficient funds, protected item, missing barter |
 
 **Visual Hierarchy**
@@ -555,7 +581,7 @@ The player wants to buy, sell, barter, and turn in items while understanding pri
 | :--- | :--- |
 | Offer row | Shows name, category, price/value, stock/limit, lock state, and compatibility tag |
 | Mode tabs | Persist selected mode; changing mode clears incompatible selections after warning if needed |
-| Your offer panel | Shows selected count, total, wallet delta, stash capacity result, and CTA |
+| Your offer panel | Shows selected count, total, credits/funds delta, stash capacity result, and CTA |
 | Barter checklist | Shows required items, owned count, FIR requirement, and missing item pin action |
 | Sell warning | Flags protected, quest, insured, equipped, or high-value items before sale |
 | Confirmation dialog | Required for premium currency, high-value gear, quest-critical items, and irreversible trades |
@@ -564,7 +590,7 @@ The player wants to buy, sell, barter, and turn in items while understanding pri
 
 | State | UI Behavior |
 | :--- | :--- |
-| Insufficient funds | CTA disabled; wallet shortage shown in Your Offer panel |
+| Insufficient funds | CTA disabled; credits/funds shortage shown in Your Offer panel |
 | Rep locked | Row disabled; requirement and unlock route visible |
 | Stash full | CTA disabled or warning per transaction; show capacity after transaction |
 | Barter missing items | Checklist highlights missing item and offers stash/trader/quest route |
@@ -934,8 +960,15 @@ These metrics validate whether the screen designs reduce friction and clarify ri
 | Time from Home to matchmaking | Detect excessive prep friction |
 | Deploy blocker frequency | Tune validation clarity |
 | Blocker fix completion rate | Verify blocker copy and deep links solve the problem |
+| Loadout severity distribution | Check blocker/warning/advisory tuning |
+| Item comparison opened | Verify gear trade-offs are discoverable before equip |
+| Insurance selection and skipped items | Tune insurance value, ineligible copy, and Insure All behavior |
+| Preset apply failure | Catch missing item, substitution, cost, or capacity confusion |
 | Stash full encounters | Tune stash progression and sell tools |
 | Stash invalid move rate | Catch unclear grid/rotation feedback |
+| Stash overflow resolution | Tune post-raid/reward inbox holding lane clarity |
+| Sell/discard confirmation cancel | Identify protected, quest, insured, contraband, or high-value warning usefulness |
+| Pending sync action attempt | Catch duplicate move/sell/claim prevention issues |
 | Trader purchase cancellation | Identify pricing, stash capacity, or confirmation confusion |
 | Barter missing item route usage | Check whether missing material flows are discoverable |
 | Quest turn-in failure | Catch unclear item, FIR, or reward capacity requirements |

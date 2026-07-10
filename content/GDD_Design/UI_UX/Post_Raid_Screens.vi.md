@@ -120,6 +120,8 @@ Layout (PC/Console)
 | Reward blocked | Name blocker: stash full, cap reached, offline, premium locked, duplicate, hoặc expired |
 | Server reconciliation | Dùng pending/finalizing state và tránh duplicate reward claim CTAs |
 
+Post-raid item transfer phải preserve inventory lifecycle. FIR, quest-critical, protected, insured, contraband, damaged, broken, attachment, stack, và container-parent states tiếp tục tồn tại khi item vào stash, overflow, reward inbox, trader turn-in, hoặc support reconciliation.
+
 ---
 
 ## Death Replay

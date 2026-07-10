@@ -28,6 +28,114 @@ Inventory & Gear design centers on **meaningful choices**, **spatial puzzle-solv
 
 ***
 
+### Inventory System Model
+
+The inventory model defines how physical items exist across world loot, stash, loadout, containers, traders, rewards, and post-raid transfer. It is intentionally separate from Commerce entitlements: paid cosmetic ownership can unlock presentation, but combat gear power remains physical, earned, found, crafted, traded, or quest-granted.
+
+| Entity | Definition | UI / Design Requirement |
+| ------ | ---------- | ----------------------- |
+| `Item` | Any player-visible object that can be inspected, moved, equipped, consumed, sold, turned in, or granted | Always has a category, display name, footprint or slot rule, value context, and allowed actions |
+| `ItemTemplate` | Static data shared by all copies of an item | Defines category, base weight, footprint, max durability, rarity, tier, tags, valid containers, valid slots |
+| `ItemInstance` | A specific owned or world-spawned copy of an item | Carries durability, ammo count, FIR, insurance, ownership, lock, attachment, and location state |
+| `Container` | A parent space that can hold item instances | Defines grid size, allowed categories, nesting rules, access speed, and persistence |
+| `Slot` | A loadout or container position with restrictions | Names accepted item categories, required/optional status, hotkey behavior, and validation blockers |
+| `Stack` | Multiple countable items represented by one instance | Shows current count, max count, split/merge rules, and cap behavior |
+| `Attachment` | Item instance mounted to another item | Must preserve compatibility, stats delta, durability/ammo where relevant, and parent item identity |
+| `OwnershipState` | Relationship between player/account and an item/entitlement | Distinguishes physical ownership, entitlement unlock, temporary grant, lost item, and pending sync |
+| `PlacementState` | Validity of an item position or move | Shows valid, invalid, blocked, rotate-needed, no-space, category-restricted, or server-pending |
+| `ItemFlag` | A visible state modifier on an item instance | Includes FIR, quest, protected, insured, contraband, locked, equipped, damaged, broken, favorited |
+
+### Item Taxonomy
+
+| Category | Examples | Core Rules |
+| -------- | -------- | ---------- |
+| Weapons | Primary, sidearm, melee | Physical combat items; never granted directly by premium purchase |
+| Armor | Body armor, helmets, visors, armored rigs | Durability, zones, class, material, repairability, weight all matter |
+| Headsets | Audio profile gear | Compared by audio profile and availability, not armor class |
+| Storage gear | Tactical rigs, backpacks, secure containers, stash cases | Defines capacity, access, mobility cost, restrictions, and persistence |
+| Ammunition | Loose ammo and boxed ammo | Stackable; caliber compatibility must be explicit |
+| Magazines | Loaded or empty mags | Holds ammo count and caliber/weapon compatibility |
+| Medical | Bandage, medkit, surgery, stim | Can be hotkeyed if in valid accessible storage |
+| Survival | Food, water, tools, utility | May interact with energy, hydration, crafting, or quest requirements |
+| Keys | Physical keys, cards, access devices | Quest/location relevance and secure-container rules must be visible |
+| Quest items | Delivery, proof, intel, marked items | FIR and turn-in requirements take priority over sell/discard actions |
+| Crafting materials | Components, tools, barter items | Show recipe/trader relevance and stack/space behavior |
+| Valuables | Sellable loot, rare tech, trophies | Show value-per-cell and quest/trader relevance before bulk sell |
+| Cosmetics / entitlements | Skins, charms, banners, profile items | Account unlocks; do not become combat-power physical gear instances |
+
+### Ownership vs Entitlement Rules
+
+| Concept | Meaning | Rule |
+| ------- | ------- | ---- |
+| Owned item instance | A physical item in stash, loadout, world, trader transaction, reward inbox, or overflow | Can be lost, damaged, moved, insured, sold, crafted, turned in, or destroyed according to item rules |
+| Entitlement | Account-level unlock from Commerce, redeem, event, support, battle pass, or achievement | Unlocks cosmetic/profile/service access; does not create paid combat-power gear |
+| Cosmetic application | Visual override or account presentation applied to a compatible item/operator/profile | Must not change hitbox, recoil, audio readability, visibility advantage, or armor/storage stats |
+| Temporary grant | Support/event/compensation item or reward not yet claimed | Must show source, expiry, claim destination, and duplicate/overflow handling |
+| Pending sync | Item or entitlement waiting for backend confirmation | UI must prevent duplicate claim/sell/equip actions until state is final |
+
+### Item Lifecycle
+
+```
+spawned -> discovered/examined -> looted -> found-in-raid -> extracted -> stashed
+   -> equipped -> insured -> damaged -> repaired
+   -> traded / sold / crafted / turned-in / consumed
+   -> lost / destroyed / expired / converted
+```
+
+| Lifecycle Step | Requirement |
+| -------------- | ----------- |
+| Spawned / discovered | Unknown items may show placeholder until examined; reveal must not break grid layout |
+| Looted / FIR | FIR state is attached to the item instance and must survive transfer until consumed by a rule |
+| Extracted / stashed | Post-raid transfer must preserve item flags, attachments, durability, stack count, and container parent |
+| Equipped | Slot validation and loadout risk summary update immediately |
+| Insured | Eligible items show insured provider/rule; ineligible items show reason |
+| Damaged / repaired | Current and max durability are preserved; repair previews cost and max durability loss |
+| Traded / sold / crafted / turned-in | Destructive or irreversible actions show item name, flags, value, and consequence |
+| Lost / destroyed / expired / converted | Result state must explain why the item left ownership and whether support/reward inbox applies |
+
+### Item State Matrix
+
+| State | Meaning | Required UI Behavior |
+| ----- | ------- | -------------------- |
+| Locked | Player cannot use/move/sell/equip due to rule | Show exact lock reason and unlock route |
+| Protected | Player intentionally protected the item from bulk sell/discard | Exclude from bulk destructive actions by default |
+| Insured | Item is covered by insurance rules | Show provider/rule, return window, and ineligible modes |
+| Uninsured | Eligible item has no insurance | Warn in loadout when value threshold is high |
+| Contraband | Item has restricted trade/deploy/insurance behavior | Show readable restriction before equip, sell, or queue |
+| FIR | Item was found in raid and extracted under valid rules | Badge must be text-supported and visible in stash, trader, quest, and AAR |
+| Quest-critical | Item is required by an active/nearby quest | Sell/discard/turn-in actions must explain consequence |
+| Equipped | Item is currently in loadout | Bulk stash actions must not move/sell without confirmation |
+| Damaged | Durability below ideal state | Show repair route and effect on combat/storage value |
+| Broken | Below usable threshold | Block deploy/equip if required by loadout rule |
+| Stacked / split | Countable item grouped or separated | Split/merge must preserve caps, flags, and valid containers |
+| Overflow | Item exists outside normal stash capacity | Require resolution path before risky exits if design requires |
+| Pending sync | Awaiting server confirmation | Disable duplicate destructive/claim actions and show finalizing state |
+
+### Stash IA Model
+
+| Surface | Owns | Required Behavior |
+| ------- | ---- | ----------------- |
+| Persistent stash | Long-term item storage | Shows capacity, value, filters, search, protected item count, and overflow status |
+| Equipment slots | Loadout-bound items | Mirrors loadout validity and prevents accidental movement of equipped items |
+| Cases / containers | Organized sub-storage | Shows category restrictions, capacity, nesting/flat-storage rules, and valid targets |
+| Filter rail | Fast item discovery | Supports category, rarity/tier, FIR, quest, protected, insured, contraband, damaged, value |
+| Search | Direct retrieval | Searches name, category, caliber, quest tag, trader relevance, and container contents |
+| Capacity summary | Stash health | Shows used/total cells, incoming overflow, large-item pressure, and suggested fixes |
+| Overflow lane | Items waiting for player resolution | Preserves reward/AAR/support source and blocks duplicate claim |
+| Destructive action bar | Sell/discard/turn-in/craft decisions | Shows protected/quest/high-value/insured/contraband warnings before commit |
+
+### Inventory QA Checklist
+
+- [ ] Every item move has a server-valid placement state: valid, invalid, blocked, rotate-needed, no-space, or pending.
+- [ ] Item instance state cannot duplicate or desync across stash, loadout, reward inbox, trader, and post-raid transfer.
+- [ ] Ownership and entitlement are visibly separate; paid cosmetic entitlement never grants combat-power item instances.
+- [ ] FIR, quest, protected, insured, contraband, damaged, broken, equipped, and pending states have readable labels.
+- [ ] Sell, discard, craft, turn-in, overwrite, and bulk actions confirm protected, quest, high-value, insured, or contraband items.
+- [ ] Full stash, overflow, filter-empty, invalid placement, pending sync, and missing capacity states show direct next actions.
+- [ ] Controller and touch users can move, rotate, split, inspect, and confirm items without precision-only interaction.
+
+***
+
 ### 1. Design Philosophy & Core Pillars
 
 #### 1.1 Core Design Pillars

@@ -27,6 +27,114 @@ Thiết kế Inventory & Gear xoay quanh **lựa chọn có ý nghĩa**, **giả
 
 ***
 
+### Inventory System Model
+
+Inventory model định nghĩa cách physical item tồn tại qua world loot, stash, loadout, containers, traders, rewards, và post-raid transfer. Model này tách khỏi Commerce entitlement: cosmetic ownership có thể unlock presentation, nhưng combat gear power vẫn là physical, earned, found, crafted, traded, hoặc quest-granted.
+
+| Entity | Định nghĩa | Yêu cầu UI / Design |
+| ------ | ---------- | ------------------- |
+| `Item` | Object player thấy được và có thể inspect, move, equip, consume, sell, turn in, hoặc grant | Luôn có category, display name, footprint/slot rule, value context, allowed actions |
+| `ItemTemplate` | Static data dùng chung cho mọi copy của item | Định nghĩa category, base weight, footprint, max durability, rarity, tier, tags, valid containers, valid slots |
+| `ItemInstance` | Một copy cụ thể owned hoặc world-spawned | Mang durability, ammo count, FIR, insurance, ownership, lock, attachment, location state |
+| `Container` | Parent space chứa item instances | Định nghĩa grid size, allowed categories, nesting rules, access speed, persistence |
+| `Slot` | Loadout/container position có restriction | Nêu accepted categories, required/optional status, hotkey behavior, validation blockers |
+| `Stack` | Nhiều countable items trong một instance | Show current count, max count, split/merge rules, cap behavior |
+| `Attachment` | Item instance gắn vào item khác | Preserve compatibility, stats delta, durability/ammo nếu relevant, parent identity |
+| `OwnershipState` | Quan hệ giữa player/account và item/entitlement | Tách physical ownership, entitlement unlock, temporary grant, lost item, pending sync |
+| `PlacementState` | Tính hợp lệ của item position/move | Show valid, invalid, blocked, rotate-needed, no-space, category-restricted, server-pending |
+| `ItemFlag` | State modifier visible trên item instance | Gồm FIR, quest, protected, insured, contraband, locked, equipped, damaged, broken, favorited |
+
+### Item Taxonomy
+
+| Category | Examples | Core Rules |
+| -------- | -------- | ---------- |
+| Weapons | Primary, sidearm, melee | Physical combat items; không grant trực tiếp bằng premium purchase |
+| Armor | Body armor, helmets, visors, armored rigs | Durability, zones, class, material, repairability, weight đều quan trọng |
+| Headsets | Audio profile gear | Compare bằng audio profile và availability, không dùng armor class |
+| Storage gear | Tactical rigs, backpacks, secure containers, stash cases | Định nghĩa capacity, access, mobility cost, restrictions, persistence |
+| Ammunition | Loose ammo, boxed ammo | Stackable; caliber compatibility phải explicit |
+| Magazines | Loaded hoặc empty mags | Giữ ammo count và caliber/weapon compatibility |
+| Medical | Bandage, medkit, surgery, stim | Có thể hotkey nếu nằm trong valid accessible storage |
+| Survival | Food, water, tools, utility | Có thể liên quan energy, hydration, crafting, quest requirements |
+| Keys | Physical keys, cards, access devices | Quest/location relevance và secure-container rules phải visible |
+| Quest items | Delivery, proof, intel, marked items | FIR và turn-in requirements ưu tiên hơn sell/discard |
+| Crafting materials | Components, tools, barter items | Show recipe/trader relevance và stack/space behavior |
+| Valuables | Sellable loot, rare tech, trophies | Show value-per-cell và quest/trader relevance trước bulk sell |
+| Cosmetics / entitlements | Skins, charms, banners, profile items | Account unlocks; không trở thành combat-power physical gear instances |
+
+### Ownership vs Entitlement Rules
+
+| Concept | Meaning | Rule |
+| ------- | ------- | ---- |
+| Owned item instance | Physical item trong stash, loadout, world, trader transaction, reward inbox, hoặc overflow | Có thể lost, damaged, moved, insured, sold, crafted, turned in, destroyed theo item rules |
+| Entitlement | Account-level unlock từ Commerce, redeem, event, support, battle pass, achievement | Unlock cosmetic/profile/service access; không tạo paid combat-power gear |
+| Cosmetic application | Visual override/account presentation áp dụng lên compatible item/operator/profile | Không đổi hitbox, recoil, audio readability, visibility advantage, armor/storage stats |
+| Temporary grant | Support/event/compensation item hoặc reward chưa claim | Show source, expiry, claim destination, duplicate/overflow handling |
+| Pending sync | Item hoặc entitlement đang chờ backend confirmation | UI chặn duplicate claim/sell/equip cho tới khi state final |
+
+### Item Lifecycle
+
+```
+spawned -> discovered/examined -> looted -> found-in-raid -> extracted -> stashed
+   -> equipped -> insured -> damaged -> repaired
+   -> traded / sold / crafted / turned-in / consumed
+   -> lost / destroyed / expired / converted
+```
+
+| Lifecycle Step | Requirement |
+| -------------- | ----------- |
+| Spawned / discovered | Unknown items có thể show placeholder tới khi examined; reveal không phá grid layout |
+| Looted / FIR | FIR state gắn với item instance và tồn tại tới khi rule tiêu thụ nó |
+| Extracted / stashed | Post-raid transfer preserve flags, attachments, durability, stack count, container parent |
+| Equipped | Slot validation và loadout risk summary update ngay |
+| Insured | Eligible items show insured provider/rule; ineligible items show reason |
+| Damaged / repaired | Current/max durability được preserve; repair preview cost và max durability loss |
+| Traded / sold / crafted / turned-in | Destructive/irreversible actions show item name, flags, value, consequence |
+| Lost / destroyed / expired / converted | Result state giải thích vì sao item rời ownership và support/reward inbox có áp dụng không |
+
+### Item State Matrix
+
+| State | Meaning | Required UI Behavior |
+| ----- | ------- | -------------------- |
+| Locked | Player không thể use/move/sell/equip vì rule | Show exact lock reason và unlock route |
+| Protected | Player protect item khỏi bulk sell/discard | Exclude khỏi bulk destructive actions mặc định |
+| Insured | Item được bảo hiểm theo rules | Show provider/rule, return window, ineligible modes |
+| Uninsured | Eligible item chưa có insurance | Warn trong loadout khi value threshold cao |
+| Contraband | Item có restricted trade/deploy/insurance behavior | Show readable restriction trước equip, sell, queue |
+| FIR | Item found in raid và extracted hợp lệ | Badge có text support trong stash, trader, quest, AAR |
+| Quest-critical | Item cần cho active/nearby quest | Sell/discard/turn-in actions explain consequence |
+| Equipped | Item đang trong loadout | Bulk stash actions không move/sell nếu chưa confirm |
+| Damaged | Durability dưới ideal state | Show repair route và impact lên combat/storage value |
+| Broken | Dưới usable threshold | Block deploy/equip nếu rule yêu cầu |
+| Stacked / split | Countable item grouped hoặc separated | Split/merge preserve caps, flags, valid containers |
+| Overflow | Item nằm ngoài normal stash capacity | Require resolution path trước risky exits nếu design cần |
+| Pending sync | Chờ server confirmation | Disable duplicate destructive/claim actions và show finalizing state |
+
+### Stash IA Model
+
+| Surface | Owns | Required Behavior |
+| ------- | ---- | ----------------- |
+| Persistent stash | Long-term item storage | Show capacity, value, filters, search, protected item count, overflow status |
+| Equipment slots | Loadout-bound items | Mirror loadout validity và tránh accidental movement of equipped items |
+| Cases / containers | Organized sub-storage | Show category restrictions, capacity, nesting/flat-storage rules, valid targets |
+| Filter rail | Fast item discovery | Support category, rarity/tier, FIR, quest, protected, insured, contraband, damaged, value |
+| Search | Direct retrieval | Search name, category, caliber, quest tag, trader relevance, container contents |
+| Capacity summary | Stash health | Show used/total cells, incoming overflow, large-item pressure, suggested fixes |
+| Overflow lane | Items waiting for resolution | Preserve reward/AAR/support source và block duplicate claim |
+| Destructive action bar | Sell/discard/turn-in/craft decisions | Show protected/quest/high-value/insured/contraband warnings trước commit |
+
+### Inventory QA Checklist
+
+- [ ] Mọi item move có server-valid placement state: valid, invalid, blocked, rotate-needed, no-space, pending.
+- [ ] Item instance state không duplicate/desync giữa stash, loadout, reward inbox, trader, post-raid transfer.
+- [ ] Ownership và entitlement tách rõ; paid cosmetic entitlement không grant combat-power item instances.
+- [ ] FIR, quest, protected, insured, contraband, damaged, broken, equipped, pending states có readable labels.
+- [ ] Sell, discard, craft, turn-in, overwrite, bulk actions confirm protected, quest, high-value, insured, contraband items.
+- [ ] Full stash, overflow, filter-empty, invalid placement, pending sync, missing capacity states show direct next actions.
+- [ ] Controller/touch users có thể move, rotate, split, inspect, confirm items không cần precision-only interaction.
+
+***
+
 ### 1. Design Philosophy & Core Pillars
 
 #### 1.1 Core Design Pillars

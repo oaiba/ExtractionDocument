@@ -142,6 +142,17 @@ Economy telemetry phải segmented theo account age, skill bracket, mode, và pl
 | Premium token earn rate | Bảo vệ perceived fairness quanh premium currency grants | Mỗi season và event |
 | Event currency earn/spend ratio | Tránh event store thiếu demand hoặc impossible completion | Daily trong active events |
 
+## Gear Value And Item Sinks
+
+Physical gear value được tạo và bị lấy khỏi economy thông qua play. Gear vào hệ thống qua raids, traders, crafting, quests, events, và compensation; gear rời hệ thống qua death, sale, crafting, repair loss, quest turn-in, discard, wipe/reset rules. Commerce có thể bán cosmetic entitlements hoặc non-power services, nhưng không tạo paid combat-power item instances.
+
+| Gear Economy Concept | Requirement |
+| :--- | :--- |
+| Gear value | UI nên giải thích value qua combat role, durability, weight, rarity/tier, repair cost, insurance cost, trader/quest relevance |
+| Item sink | Sell, repair, craft, quest turn-in, discard, death loss, và durability degradation phải visible và auditable |
+| Premium boundary | Premium purchases có thể unlock cosmetics hoặc capped convenience, không unlock weapons, armor, ammo, stat power, hoặc protected combat slots |
+| Contraband/restricted gear | Restricted sale, trade, insurance, hoặc deploy behavior phải show readable reason |
+
 ## Ethical Monetization Rules
 
 | Promise | Implementation |
@@ -191,3 +202,5 @@ Player đang loss streak dùng Scavenger Run, budget preset, và low-cost insura
 | Insurance costs | [Insurance System](insurancesystem.html) |
 | Safe House upgrade sinks | [Safe House Design](safe_house_design.html) |
 | Loadout value display | [Loadout Preparation](loadoutpreparation.html) |
+| Inventory item lifecycle | [Inventory System](../Inventory_System/) |
+| Gear tier and rarity | [Gear Tier System](../Gears/Gear_Tier_System.md) |

@@ -49,6 +49,8 @@ Progression is the long-term memory of player effort. Each progression object mu
 | Battle pass | Seasonal reward track and return goals | Become the core power spine or hide free value | Battle Pass, Reward Inbox, Commerce upgrade route |
 | Achievements / prestige | Long-term mastery and bragging rights | Reset meaningful player access without consent | Profile, Season Summary |
 
+Progression can unlock access, knowledge, cosmetic identity, trader stock, and quest chains, but it must not imply premium gear power. If a progression reward grants physical gear, it is treated as an earned item instance with normal durability, insurance, loss, stash, and lifecycle rules.
+
 ## Account Levels
 
 Account levels represent broad familiarity with the game. They can unlock systems and rewards, but they should not create a permanent combat stat gap. A level 50 player can have more options and knowledge; they should not simply have more health, damage, or hidden power.
@@ -197,3 +199,5 @@ A seasonal player returns for an event. Battle pass, faction objectives, and liv
 | Player stats and achievements | [Player Profile](playerprofile.html) |
 | Tutorial goals | [Tutorial Raid](tutorialraid.html) |
 | Clan missions | [Clan System](clansystem.html) |
+| Inventory item lifecycle | [Inventory System](../Inventory_System/) |
+| Gear tier and rarity rules | [Gear Tier System](../Gears/Gear_Tier_System.md) |

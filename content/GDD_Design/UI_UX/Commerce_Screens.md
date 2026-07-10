@@ -164,6 +164,8 @@ Commerce is a trust-sensitive system. The UI must expose enough system state tha
 | Region restriction | Show region/account mismatch, not generic "unavailable" |
 | Random rewards | Paid RNG is not supported; deterministic purchases must say exactly what is granted |
 
+Commerce grants account entitlements, cosmetics, premium currency packs, battle pass upgrades, and non-power services. It must not grant paid physical combat-power item instances such as weapons, armor, ammo, high-tier storage, protected combat slots, or stat-bearing gear. If a purchase unlocks a cosmetic for gear, the gameplay-bearing item instance still follows Inventory/Gear lifecycle rules.
+
 ---
 
 ## Shop Information Architecture

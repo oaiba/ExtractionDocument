@@ -338,8 +338,9 @@ The người chơi wants to build a valid raid kit, understand risk, resolve blo
 | Component | yêu cầu |
 | :--- | :--- |
 | Gear slot | Shows item name, durability/đạn nếu relevant, slot restriction, và cảnh báo trạng thái |
-| Stash item tile | Shows footprint, category icon, stack count, FIR/quest/protected badge, compatibility marker |
-| Selected item summary | Shows stats delta, giá trị, weight, compatibility, và allowed actions |
+| Stash item tile | Shows footprint, category icon, stack count, durability nếu relevant, rarity/tier, FIR, quest, protected, insured, contraband, locked, equipped, và compatibility marker |
+| Selected item summary | Shows stats delta, giá trị, weight, durability, compatibility, insurance eligibility, quest/FIR/protected flags, và allowed actions |
+| Gear comparison panel | Gọi tên trade-off bằng text: capacity vs weight, armor class vs mobility, durability vs repair cost, insured vs ineligible |
 | cảnh báo lane | Orders blockers first, cảnh báo second, suggestions third; max 3 hiển thị rõ với View All |
 | Preset control | Shows Save, Apply, Rename, Delete; overwrite/delete require confirmation |
 | Ready CTA | Active only khi required rules pass; disabled label names first blocker |
@@ -356,6 +357,12 @@ The người chơi wants to build a valid raid kit, understand risk, resolve blo
 | Quest item missing | cảnh báo với quest chi tiết và stash/trader/map deep link |
 | Stash full trong khi move | Reject move, show capacity, offer stash upgrade/sell junk |
 | empty stash | Explain source paths: traders, starter kit, raid, quest rewards |
+| Broken required gear | Block Ready; route tới repair, replacement, hoặc remove item |
+| Low durability weapon | Warning với malfunction/durability risk và repair route |
+| Contraband item | Show restricted deploy/sell/insurance behavior trước Ready |
+| Locked item | Disable invalid action và show unlock/protection reason |
+| Invalid container item | Block Ready/move; show container restriction và valid target |
+| Preset apply failure | List missing items, substitutions, cost, và stash capacity result |
 
 **Input / Focus / Touch**
 
@@ -379,6 +386,9 @@ Mobile layout uses tabs: Operator, Stash, Mission. The risk summary và Ready CT
 **Acceptance checklist**
 
 - [ ] Missing vũ khí, missing đạn, overweight, uninsured giá trị, và quest item missing trạng thái are represented.
+- [ ] Blocker, warning, và advisory severities are visually distinct and text-labeled.
+- [ ] Broken gear, low durability, contraband, locked, insured/uninsured, và invalid container states are represented.
+- [ ] Gear comparison explains trade-offs bằng text, không chỉ green/red deltas.
 - [ ] Stash grid supports item movement mà không precision-only interactions.
 - [ ] Ready CTA never activates while a blocking validation trạng thái is present.
 - [ ] Risk summary remains hiển thị rõ while duyệt stash items.
@@ -398,6 +408,17 @@ The người chơi wants to store, sort, search, move, sell, và kiểm tra item
 | primary CTA | Contextual: Equip, Move, Sell, cách dùng, Turn In, hoặc kiểm tra |
 | secondary actions | Auto-sort, filter, search, favorite, tag junk, split stack, rotate, lock item |
 | Destructive actions | Discard và sell protected/quest/high-giá trị items require confirmation |
+
+**Stash Information Architecture**
+
+| Surface | Requirement |
+| :--- | :--- |
+| Filter rail | Category, rarity/tier, FIR, quest, protected, insured, contraband, damaged, value, saved filters |
+| Grid | Stable cells, item footprints, stacks, empty cells, valid target preview, rotate-needed preview |
+| Selected item panel | Name, category, tier/rarity, durability, value, weight, footprint, ownership flags, related quest/trader/craft |
+| Capacity summary | Used/total cells, incoming overflow, large-item pressure, locked/protected count, stash value |
+| Overflow / reward inbox lane | Temporary holding cho post-raid, support, reward, hoặc sync items với source context |
+| Action bar | Move, equip, sell, use, inspect, split, rotate, protect, discard; destructive actions visually separated |
 
 **Expanded ASCII Wireframe**
 
@@ -445,12 +466,13 @@ The người chơi wants to store, sort, search, move, sell, và kiểm tra item
 
 | Component | yêu cầu |
 | :--- | :--- |
-| Item tile | Shows footprint, stack count, category shape/icon, và badges for FIR, quest, locked, insured |
+| Item tile | Shows footprint, stack count, category shape/icon, durability nếu relevant, rarity/tier, và badges for FIR, quest, protected, insured, contraband, locked, equipped |
 | Grid target preview | Shows valid, invalid, rotate-needed, và blocked-by-item trạng thái |
 | Info panel | Gives enough chi tiết to decide keep/sell/equip mà không opening kiểm tra modal |
 | Sell junk | Lists estimated giá trị và excludes quest/protected/favorited items by default |
 | Search | Searches item name, category, đạn caliber, quest tag, và trader relevance |
 | Full stash cảnh báo | offer cụ thể actions: sell junk, cách dùng container, upgrade, filter large items |
+| Destructive confirmation | Names item, value, flags, và consequence for protected, quest, high-value, insured, hoặc contraband items |
 
 **trạng thái & Edge Cases**
 
@@ -463,6 +485,9 @@ The người chơi wants to store, sort, search, move, sell, và kiểm tra item
 | Quest item selected | Show related quest, turn-in trạng thái, và whether FIR is required |
 | Incoming loot overflow | Show temporary holding lane và required resolution trước exit |
 | loading | Grid skeleton preserves cell dimensions và filter rail width |
+| Pending sync | Disable duplicate move/sell/claim actions và show finalizing state |
+| Contraband selected | Show sale, trade, insurance, deploy, hoặc mode restriction trong info panel |
+| Damaged/broken item | Show repair route, effective value, và deploy restriction nếu applicable |
 
 **Input / Focus / Touch**
 
@@ -486,7 +511,8 @@ Focus order: search, filter rail, grid, info panel actions, quick tools, action 
 **Acceptance checklist**
 
 - [ ] empty, full, filter-empty, locked item, và quest item trạng thái are designed.
-- [ ] Item info panel shows giá trị, footprint, FIR/protected trạng thái, và allowed actions.
+- [ ] Item info panel shows giá trị, footprint, tier/rarity, durability, FIR/protected/insured/contraband state, và allowed actions.
+- [ ] Overflow, pending sync, damaged/broken item, và contraband states are designed.
 - [ ] Mouse, controller, và touch can move và rotate items.
 - [ ] Destructive actions warn for protected, quest, hoặc high-giá trị items.
 
@@ -537,7 +563,7 @@ The người chơi wants to mua, sell, barter, và turn in items while understan
 | Trader profile | Explain access và progression | rep level, next unlock yêu cầu, reset timer, flavor line |
 | offer list | Browse mua/sell/barter/turn-in candidates | mode tabs, search, filters, item row, giá, stock, lock reason |
 | chi tiết strip | Explain selected offer | stats, compatibility, limits, barter checklist, item cảnh báo |
-| Your offer | Confirm transaction summary | wallet, selected items, total, stash sau transaction |
+| Your offer | Confirm transaction summary | credits/funds, selected items, total, stash sau transaction |
 | cảnh báo lane | Prevent failed hoặc regretted transaction | stash full, insufficient funds, protected item, missing barter |
 
 **Visual Hierarchy**
@@ -555,7 +581,7 @@ The người chơi wants to mua, sell, barter, và turn in items while understan
 | :--- | :--- |
 | offer row | Shows name, category, giá/giá trị, stock/limit, lock trạng thái, và compatibility tag |
 | Mode tabs | Persist selected mode; changing mode clears incompatible selections sau cảnh báo nếu needed |
-| Your offer panel | Shows selected count, total, wallet delta, stash capacity kết quả, và CTA |
+| Your offer panel | Shows selected count, total, credits/funds delta, stash capacity kết quả, và CTA |
 | Barter checklist | Shows required items, owned count, FIR yêu cầu, và missing item pin action |
 | Sell cảnh báo | Flags protected, quest, insured, equipped, hoặc high-giá trị items trước sale |
 | Confirmation dialog | Required for premium currency, high-giá trị gear, quest-critical items, và irreversible trades |
@@ -564,7 +590,7 @@ The người chơi wants to mua, sell, barter, và turn in items while understan
 
 | trạng thái | UI Behavior |
 | :--- | :--- |
-| Insufficient funds | CTA disabled; wallet shortage shown in Your offer panel |
+| Insufficient funds | CTA disabled; credits/funds shortage shown in Your offer panel |
 | Rep locked | Row disabled; yêu cầu và unlock route hiển thị rõ |
 | Stash full | CTA disabled hoặc cảnh báo per transaction; show capacity sau transaction |
 | Barter missing items | checklist highlights missing item và offer stash/trader/quest route |
@@ -934,8 +960,15 @@ These metrics validate whether the màn hình designs reduce friction và clarif
 | thời gian from Home to matchmaking | Detect excessive prep friction |
 | Deploy blocker frequency | Tune validation clarity |
 | Blocker fix completion rate | Verify blocker copy và deep links solve the problem |
+| Loadout severity distribution | Check blocker/warning/advisory tuning |
+| Item comparison opened | Verify gear trade-offs are discoverable trước equip |
+| Insurance selection and skipped items | Tune insurance value, ineligible copy, và Insure All behavior |
+| Preset apply failure | Catch missing item, substitution, cost, hoặc capacity confusion |
 | Stash full encounters | Tune stash progression và sell tools |
 | Stash invalid move rate | Catch unclear grid/rotation feedback |
+| Stash overflow resolution | Tune post-raid/reward inbox holding lane clarity |
+| Sell/discard confirmation cancel | Identify protected, quest, insured, contraband, hoặc high-value warning usefulness |
+| Pending sync action attempt | Catch duplicate move/sell/claim prevention issues |
 | Trader purchase cancellation | Identify pricing, stash capacity, hoặc confirmation confusion |
 | Barter missing item route usage | Check whether missing material flow are discoverable |
 | Quest turn-in failure | Catch unclear item, FIR, hoặc reward capacity yêu cầu |

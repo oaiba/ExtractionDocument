@@ -18,6 +18,69 @@ Tài liệu này định nghĩa the **canonical Gear Tier** for giáp Gear và S
 
 ---
 
+## Tier vs Rarity vs Power
+
+Tier, rarity, và practical power có liên quan nhưng không giống nhau. UI không được khiến player hiểu rằng item hiếm hơn luôn mạnh hơn tuyệt đối hoặc gear có upgrade level.
+
+| Concept | Meaning | What It Controls | What It Must Not Imply |
+| ------- | ------- | ---------------- | ---------------------- |
+| Tier | Balance/progression bracket | Loot table bands, trader access, cost curve, optional raid brackets | Per-item level hoặc upgrade stage |
+| Rarity | Availability, presentation, economy signal | Drop frequency, badge treatment, collection feel, trader scarcity | Automatic combat superiority |
+| Practical power | Tác động thực tế của stats trong context | Armor class, zones, durability, weight, capacity, access speed, repairability | Một item best trong mọi loadout |
+| Player/trader level | Access gate cho system và stock | Unlock timing và shop/trader availability | Stat scaling trên gear item |
+
+Armor class, durability, material, coverage zones, storage capacity, access speed, weight, và repairability mới định nghĩa real gear value. Tier và rarity giúp đọc progression/scarcity, nhưng comparison UI vẫn phải giải thích trade-off thực tế.
+
+## Rarity Meaning Table
+
+| Rarity | Availability Meaning | UI Meaning | Design Expectation |
+| ------ | -------------------- | ---------- | ------------------ |
+| Common | Early access, frequent loot, basic trader stock | Low-intensity badge, plain label | Baseline đáng tin, không mặc định là rác |
+| Uncommon | Slightly gated, specialized hơn | Clear badge và filter support | Có một lợi thế đáng chú ý hoặc efficiency tốt hơn |
+| Rare | Mid-progression, contested loot, reputation gates | Strong badge, đáng compare | Trade-off rõ với weight/cost/repair |
+| Epic | Late stock, event/quest/crafting relevance | Premium-looking non-commerce badge | Strong situational role, không universally best |
+| Legendary | Endgame, rare event, high-risk hoặc prestige | Highest scarcity badge với text label | Aspirational, expensive, heavy/risky, hoặc khó repair |
+
+Rarity không phải monetization promise. Paid offers có thể bán cosmetic có presentation giống rarity, nhưng paid rarity không được grant armor class, storage capacity, recoil, audio, visibility, hoặc durability advantage.
+
+## Gear Value Model
+
+| Value Type | Applies To | Meaning |
+| ---------- | ---------- | ------- |
+| Combat value | Armor, helmets, weapons, ammo-related gear | Survival/lethality contribution trong match rules hiện tại |
+| Survival value | Medical, armor, storage, utility | Giúp player endure, extract, hoặc recover |
+| Mobility cost | Armor, rigs, backpacks, carried loot | Weight, speed penalty, stamina, inertia, noise, silhouette |
+| Economic value | All physical items | Credits, trader value, repair cost, crafting demand, insurance risk |
+| Slot value | Storage and loot | Value per cell, access speed, valid container restrictions |
+| Repair value | Durability gear | Useful life còn lại sau damage và repair loss |
+| Insurance value | Insurable gear | Expected return value, return timer, mode eligibility, loss mitigation |
+
+## Comparison Rules
+
+| Comparison Surface | Must Compare | Must Explain |
+| ------------------ | ------------ | ------------ |
+| Armor vs armor | Class, zones, current/max durability, material, weight, repairability, mobility penalty | Vì sao gear class cao/nặng hơn vẫn có thể tệ hơn cho stealth, stamina, repair economy |
+| Helmet/visor/headset | Protection zones, ricochet, visibility, hearing profile, weight, compatibility | Player được gì và sensory/readability cost đổi ra sao |
+| Rig vs rig | Slots, hotkey access, armored/unarmored status, weight, layout, restriction | Reload/heal access có tốt hơn không và armor slot có conflict không |
+| Backpack vs backpack | Cells, layout shape, weight, speed/noise penalty, collapse behavior | Capacity gain có đáng mobility/extraction risk không |
+| Secure container/case | Capacity, allowed categories, persistence, unlock route | Cái gì survives death và cái gì bị rule block |
+| Damaged vs repaired item | Current durability, max durability, repair cost, effective class/value | Repair có đáng không hay replacement rõ hơn |
+
+Comparison UI không chỉ dựa vào green/red deltas. Nó phải gọi tên trade-off bằng text: "more capacity, heavier", "better class, lower repairability", "faster access, less armor", hoặc "insured but ineligible in this mode".
+
+## Locked / Contraband / Insured Gear Rules
+
+| State | Meaning | UI Requirement |
+| ----- | ------- | -------------- |
+| Trader locked | Trader/player/faction/quest requirement chưa đạt | Show requirement, progress, unlock route |
+| Quest locked | Item cần cho active quest hoặc hand-in | Warn trước sell/discard/craft và route tới quest |
+| Contraband | Item bị restricted sale, trade, insurance, deployment, hoặc mode behavior | Badge với exact restriction và affected actions |
+| Insured | Item được bảo hiểm theo rules | Show provider/rule, return timer, mode exceptions |
+| Insurance ineligible | Item không thể insure vì type, mode, ownership, hoặc contraband rule | Disable insurance CTA với readable reason |
+| Protected/favorited | Player đánh dấu item an toàn khỏi bulk actions | Exclude khỏi bulk sell/discard trừ khi explicitly included |
+
+---
+
 ## giáp Gear Tier (1–5)
 
 **source:** giáp Class (1–6, GOST) + Rarity (Common / Uncommon / Rare / Epic / Legendary).

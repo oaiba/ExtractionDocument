@@ -35,14 +35,47 @@ Currency flow nên tạo friction lành mạnh. Credits rời economy qua gear, 
 | Faction quests | Reputation | Trader access and quest unlocks | Long-term specialization |
 | Events | Event currency | Event cosmetics and limited rewards | Seasonal engagement |
 
+## Economy System Model
+
+Economy model tạo vocabulary chung cho designer và engineer về cách value di chuyển. Mọi reward, purchase, repair, insurance fee, event grant, và compensation package nên map vào một object rõ ràng để UI copy và telemetry cùng giải thích một sự thật.
+
+| Entity | Định nghĩa | Yêu cầu UI / Design |
+| :--- | :--- | :--- |
+| `Currency` | Giá trị đếm được dùng cho purchase, upgrade, claim, hoặc event exchange | Luôn hiển thị tên, số lượng, source, và loại earnable/premium/seasonal/reputation-like |
+| `Source` | System thêm value vào account hoặc stash | Phải giải thích vì sao player nhận value và value đi tới đâu |
+| `Sink` | System lấy value khỏi account hoặc stash | Phải giải thích cost, consequence, và spend có reversible không |
+| `Reward` | Value được grant từ raid, quest, event, battle pass, compensation, hoặc purchase | Phải khai báo type, destination, claim state, expiry, và gameplay impact |
+| `TraderPrice` | Giá gear, service, repair, crafting input, hoặc trade offer | Phải show reputation requirement, stock state, và lý do đổi giá nếu dynamic |
+| `RepairCost` | Cost để restore durability/readiness của item | Phải preview trước commit và show durability before/after |
+| `InsuranceCost` | Cost bảo hiểm loadout item theo insurance rules | Phải show return chance/rule, return window, và blocked conditions |
+| `EventCurrency` | Seasonal value kiếm trong limited window | Phải show expiry, cap, conversion, và event store destination |
+| `PremiumToken` | Premium currency mua hoặc grant qua non-power route | Không bao giờ dùng để mua combat certainty; purchase UX thuộc Commerce |
+| `InflationSignal` | Telemetry báo value growth không lành mạnh | Phải segment theo account age, skill, mode, platform, và season phase |
+
 ## Currency Types
 
 | Currency | Source | Sink | Can Be Bought? | Design Notes |
 | :--- | :--- | :--- | :--- | :--- |
-| Credits | Loot sales, quests, events | Gear, insurance, repairs, upgrades | No direct power purchase | Core soft economy |
-| Tokens | Purchases, battle pass rewards | Cosmetics, battle pass, convenience | Yes | Must not buy combat power |
-| Reputation | Faction quests and events | Trader unlocks, quest access | No | Long-term trust and specialization |
-| Event Currency | Limited-time events | Event cosmetics and rewards | Event-defined | Expires or converts by policy |
+| Credits | Loot sales, quests, tasks, compensation, trader payouts | Gear, repair, insurance, crafting, Safe House upgrades, trader fees | No direct premium purchase | Core soft economy; không bypass mastery hoặc reputation locks |
+| Tokens | Premium purchase, battle pass grants, event grants, compensation | Cosmetics, battle pass, capped non-power convenience | Yes | Không mua weapon, armor, stat advantage, protected combat slot, hoặc matchmaking advantage |
+| Reputation | Faction quests, event alignment, trader tasks | Trader unlocks, quest access, faction identity | No | Không là spendable power currency; mất reputation phải hiếm và rõ |
+| Event Currency | Limited-time events and seasonal objectives | Event cosmetics, deterministic rewards, event collection progress | Event-defined | Expire hoặc convert theo policy; không silently disappear nếu reward đã claimable |
+
+## Sources And Sinks Matrix
+
+| Value Source | Grants | Required Context | Primary Sink / Follow-Up |
+| :--- | :--- | :--- | :--- |
+| Extracted loot | Items, credits sau khi bán, crafting inputs | Found-in-raid state, rarity, trader value | Sell, equip, craft, quest turn-in, stash |
+| Quest reward | Credits, XP, reputation, items, unlocks | Quest source, completion reason, claim state | Progression tracks, traders, loadout recovery |
+| Daily / weekly task | XP, credits, items, rep, battle pass XP | Reset timer, progress, reward destination | Short-term return loop |
+| Event objective | Event currency, cosmetics, XP, credits | Event name, expiry, conversion policy | Event store, reward ladder, inbox |
+| Battle pass free track | Cosmetics, currency, materials | Tier, free/premium lane, claim state | Identity, progression, economy support nhẹ |
+| Battle pass premium track | Cosmetics, premium tokens, non-power boosts | Premium state, Commerce upgrade route | Identity và seasonal value |
+| Compensation grant | Items, credits, tokens, inbox entries | Reason, affected window, support reference | Recovery và trust repair |
+| Gear purchase | Gear item | Trader, stock, reputation, price | Raid loadout và risk |
+| Repair / insurance | Restored durability hoặc protected item | Item state, cost, rules, timer | Loss mitigation |
+| Crafting / Safe House | Crafted items, module upgrades | Inputs, time, unlock requirement | Long-term sinks và planning |
+| Cosmetic purchase | Cosmetic entitlement | Offer, ownership, confirmation, receipt | Purchase UX thuộc Commerce |
 
 ## Monetization Structure
 
@@ -84,6 +117,31 @@ Economy telemetry phải segmented theo account age, skill bracket, mode, và pl
 | Gear tier distribution | Overpowered meta or stagnant progression | Tune trader unlocks and item availability |
 | New player bankruptcy | Onboarding failure | Increase tutorial rewards or recovery quests |
 
+## Inflation / Poverty / Hoarding Guardrails
+
+| Risk | Trigger Signal | Guardrail |
+| :--- | :--- | :--- |
+| New-player bankruptcy | Account mới không afford basic kit sau nhiều raid thất bại | Tăng tutorial/recovery rewards, surface budget presets, giảm early repair pressure |
+| Veteran hoarding | Player lâu năm giữ quá nhiều credits/items nhưng ít dùng sink | Thêm prestige cosmetics, crafting sinks, Safe House goals, hoặc vanity sinks không tạo power |
+| High-tier saturation | Quá nhiều raid có top-tier kits so với extraction risk | Tune trader stock, repair cost, insurance return, rarity, và high-tier loot spawn |
+| Event currency flood | Event currency nhiều hơn nhu cầu event store hoặc conversion policy | Thêm caps, deterministic sinks, conversion limits, và end-of-event messaging rõ |
+| Compensation abuse | Grant lặp lại tạo farming incentive hoặc market distortion | Dùng targeted grants, eligibility windows, và receipt IDs audit được |
+| Market manipulation | Price volatility vượt scarcity bình thường | Dùng listing fees, price bands, trade limits, provenance checks, suspicious trade detection |
+
+## Economy Tuning Inputs
+
+| Input | Vì sao quan trọng | Cadence review |
+| :--- | :--- | :--- |
+| Extraction rate | Xác định value raid sống sót thường xuyên thế nào | Daily khi launch, weekly khi ổn |
+| Average raid value | Cho biết risk có tạo reward đủ ý nghĩa không | Weekly theo map/mode/skill |
+| Average kit cost | Đo normal play có affordable không | Weekly theo account age và rank |
+| Repair cost ratio | Đo durability có fair hay punitive không | Weekly sau balance patch |
+| Insurance use and return rate | Đo loss mitigation có trusted hoặc quá mạnh không | Weekly theo item tier |
+| Stash pressure | Reveal hoarding, confusion, hoặc thiếu item sinks | Weekly theo account age |
+| Trader unlock pace | Validate reputation và quest economy pacing | Mỗi season và major quest update |
+| Premium token earn rate | Bảo vệ perceived fairness quanh premium currency grants | Mỗi season và event |
+| Event currency earn/spend ratio | Tránh event store thiếu demand hoặc impossible completion | Daily trong active events |
+
 ## Ethical Monetization Rules
 
 | Promise | Implementation |
@@ -93,6 +151,19 @@ Economy telemetry phải segmented theo account age, skill bracket, mode, và pl
 | Never sell power | No paid stat advantage |
 | Be clear about value | Show contents, duration, and refund rules |
 | Protect minors | Spending controls and platform compliance |
+
+## Economy QA Checklist
+
+- [ ] Không paid product nào grant weapon, armor, stat, protected combat slot, visibility advantage, recoil advantage, hoặc matchmaking advantage.
+- [ ] Credits không bypass mastery, reputation, tutorial gates, ranked eligibility, hoặc quest knowledge checks.
+- [ ] Event reward không flood core market supply hoặc làm raid reward bình thường mất giá trị.
+- [ ] Premium tokens chỉ dùng cho cosmetics, battle pass, và capped non-power convenience.
+- [ ] Mọi source giải thích vì sao value được grant và đi tới đâu.
+- [ ] Mọi sink preview cost, consequence, và blocked state trước commit.
+- [ ] New-player recovery tồn tại nhưng không khiến failure profitable hơn success.
+- [ ] Veteran sinks tạo aspiration mà không ép unhealthy grind.
+- [ ] Compensation grants audit được và không khuyến khích retry/spam.
+- [ ] UI text phân biệt earned, premium, seasonal, reputation, claimable, expired, và converted value.
 
 ## Economy Examples
 

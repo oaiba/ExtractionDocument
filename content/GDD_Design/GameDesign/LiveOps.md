@@ -22,30 +22,50 @@ Cadence should be predictable enough for players to plan around and flexible eno
 | Seasonal | Battle pass, theme, ranked reset, major event | Long-term return |
 | Yearly | Major map, feature, or expansion | Reposition and re-engage |
 
+## LiveOps System Model
+
+LiveOps is the operating layer that schedules temporary goals without weakening the core raid loop. Every live beat should name its time window, player action, reward implication, communication surface, and end behavior before it ships.
+
+| Entity | Definition | UI / Design Requirement |
+| :--- | :--- | :--- |
+| `Season` | A multi-week content and progression period | Shows theme, dates, battle pass, ranked reset, major events, and recap/archive state |
+| `Event` | A limited-time objective, mode, modifier, collection, or community beat | Shows rules, expiry, objective progress, reward ladder, and play route |
+| `FeaturedMode` | Temporarily promoted mode or rule variant | Shows exact modifier, risk, eligibility, and whether ranked/economy rules differ |
+| `Objective` | Player or community task feeding event/progression | Shows count, source, progress, reward, tracking, and reset/expiry |
+| `RewardTrack` | Ordered reward ladder for event, season, battle pass, or faction war | Shows free/premium/event distinction, claim states, and reward destinations |
+| `EventCurrency` | Seasonal currency earned and spent during an event | Shows cap, expiry, conversion, and store destination |
+| `PatchBeat` | Balance/content/update communication unit | Shows affected systems, reason, player impact, and deep links |
+| `CompensationGrant` | Targeted grant for incident recovery | Shows reason, eligibility window, claim destination, and support reference |
+| `SeasonReset` | End-of-season transition for rank, event, battle pass, and rewards | Shows retained, reset, archived, converted, and claim-grace rules |
+
 ## Season Flow
 
 Each season needs a readable arc: announcement, launch, mastery, disruption, final push, and recap. Players should know what is new, what is temporary, what they can still complete, and what happens when the season ends.
 
-| Phase | Timing | Purpose |
-| :--- | :--- | :--- |
-| Pre-season reveal | Before launch | Tease theme, rewards, and major rule changes |
-| Season launch | Week 1 | Introduce battle pass, ranked reset, and onboarding quests |
-| Mid-season event | Middle weeks | Add a major event beat and renewed goals |
-| Balance patch | After live data review | Adjust meta, economy, and event friction |
-| Final event push | Last weeks | Increase urgency and completion focus |
-| Season recap and reset | End of season | Award rewards, summarize progress, prepare next season |
+| Phase | Timing | Player Message | UI Destination | Reward / Backend State |
+| :--- | :--- | :--- | :--- | :--- |
+| Pre-season reveal | Before launch | Theme, dates, major rules, rewards preview | News, Season Summary preview | No progression; wish-list/preview only |
+| Season launch | Week 1 | New goals are live | Battle Pass, Event Hub, Ranked Overview | Battle pass active, ranked reset applied, launch tasks active |
+| Early progression | Weeks 1-3 | Learn the season loop | Daily/Weekly Tasks, Quest Board | Normal earn rates, onboarding/catch-up off or light |
+| Mid-season event | Middle weeks | New disruption and renewed goals | Event Hub, News, Map/Mode deep links | Event currency/reward ladder active |
+| Balance patch | After live data review | What changed and why | Patch Notes, known issues, affected screens | Economy/meta values updated with migration notes if needed |
+| Final push | Last weeks | What can still be completed | Battle Pass, Event Hub, Reward Inbox | Claim reminders, catch-up missions, expiry labels promoted |
+| End grace period | After season end | Claim remaining earned rewards | Reward Inbox, Season Summary | Progression disabled; earned claims/conversions remain |
+| Recap/archive | End of grace | What was achieved and retained | Season Summary archive | Final grants delivered; archive becomes read-only |
 
 ## Event Types
 
 Events should change player behavior in a targeted way. A boss hunt pulls squads into a hotspot. A faction war changes objective priority. A double XP weekend changes progression pacing. If an event does not create a different decision inside the raid, it is probably just a reward multiplier.
 
-| Event | Duration | Gameplay Impact | Reward Type |
-| :--- | :--- | :--- | :--- |
-| Double XP / Credits | Weekend | Progress acceleration | XP, credits |
-| Limited-Time Mode | 1-2 weeks | New mode rules | Cosmetics, event currency |
-| Faction Wars | 2-4 weeks | Community alignment and clan goals | Banners, titles, faction cosmetics |
-| Boss Hunt | 1-2 weeks | Hotspot objective and rare loot | Unique cosmetics, trophies |
-| Collection Event | 2 weeks | Collect event currency through raids | Themed cosmetics |
+| Event | Duration | Objective Pattern | Reward Pattern | Risk / Expiry Rule |
+| :--- | :--- | :--- | :--- | :--- |
+| Double XP / Credits | Weekend | Play normal raids with boosted eligible sources | XP or credits only | Must not become best way to print wealth; exact boost window shown |
+| Limited-Time Mode | 1-2 weeks | Queue into explicit modified rules | Cosmetics, event currency, titles | Opt-in unless modifier is safe for new players |
+| Faction Wars | 2-4 weeks | Choose faction, complete personal/clan/community objectives | Banners, titles, faction cosmetics | Winning faction affects presentation, not permanent combat power |
+| Boss Hunt | 1-2 weeks | Push into hotspot, defeat boss, extract proof/reward | Unique cosmetics, trophies, event currency | Boss rewards deterministic or clearly tabled; extraction risk visible |
+| Collection Event | 2 weeks | Earn/spend event currency toward collection completion | Themed cosmetics and collection reward | Collection progress, owned count, and end grace are explicit |
+| Ranked Event | 1-2 weeks | Compete under announced scoring/rule window | Titles, badges, cosmetic frames | Ranked integrity rules published before event starts |
+| Community Challenge | 1-3 weeks | Contribute global objectives through normal play | Account-wide grants, banners, event story | Personal contribution and final grant policy visible |
 
 ## Featured Mode Rules
 
@@ -80,6 +100,42 @@ Guardrails protect trust. Players are more willing to engage with temporary cont
 | Maintain economy health | Event rewards must respect item supply and currency sinks |
 | Protect ranked integrity | Ranked rule changes must be announced and measurable |
 | Keep content readable | Event modifiers must not break mobile clarity |
+
+## Event Reward And Currency Rules
+
+| Rule | Requirement |
+| :--- | :--- |
+| Event currency cap | If currency can be earned repeatedly, show cap, reset, and whether overflow is lost, blocked, or converted |
+| Conversion policy | Event currency expiry must show exact conversion or deletion rule before the event ends |
+| Claim grace | Earned but unclaimed rewards should move to inbox or grace period, not silently disappear |
+| Deterministic clarity | Purchasable or claimable event rewards must show exact contents; no paid RNG |
+| No event-only permanent power | Event rewards can change identity, story, cosmetics, or temporary opt-in rules, not permanent combat superiority |
+| Store split | Event progress/rewards live in LiveOps; event purchases and checkout live in Commerce |
+| Ranked protection | Ranked events must preserve matchmaking, input, exploit, and eligibility rules |
+
+## Patch / Communication Rules
+
+| Communication Type | Requirement |
+| :--- | :--- |
+| Balance patch | State affected systems, reason, player impact, and whether loadouts/economy values changed |
+| Economy adjustment | Explain why values changed and whether existing player inventory is affected |
+| Event announcement | Show start/end dates, rules, rewards, restrictions, and playable route |
+| Known issue | Include severity, affected platforms, workaround, and next update expectation |
+| Compensation | Show reason, eligibility window, grant contents, claim route, and support reference |
+| Mandatory update | Use system modal only for version/security blockers; otherwise use News/Patch Notes |
+
+## LiveOps QA Checklist
+
+- [ ] Season reveal, launch, final push, end grace, recap, and archive states are defined.
+- [ ] Event end behavior covers objectives, unclaimed rewards, event currency, store access, and archive copy.
+- [ ] Reward claims route through Battle Pass, Event Hub, or Reward Inbox with no silent disappearance.
+- [ ] Expired objectives explain whether progress was lost, converted, or moved to inbox.
+- [ ] Ranked reset and ranked event rules are visible before queue.
+- [ ] Compensation grants are targeted, auditable, and duplicate-safe.
+- [ ] Offline/cached news states do not show stale playable CTAs.
+- [ ] Event modifiers do not break accessibility, mobile readability, or new-player comprehension.
+- [ ] Economy-affecting events have caps, sinks, or conversion policies.
+- [ ] Commerce purchase routes are linked but not duplicated in LiveOps specs.
 
 ## Event Design Examples
 

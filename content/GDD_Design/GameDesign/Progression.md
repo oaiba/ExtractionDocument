@@ -23,6 +23,32 @@ Progression layers should be readable from the Home Screen and post-match recap.
 | Daily / weekly goals | Quest progress | Directed goals and regular return hooks |
 | Seasonal challenges | Battle pass | Seasonal cosmetics and event rewards |
 
+## Progression System Model
+
+Progression is the long-term memory of player effort. Each progression object must explain what moved, why it moved, what unlocked, and whether the reward is claimable now or waiting behind a capacity, season, or premium-state rule.
+
+| Entity | Definition | UI / Design Requirement |
+| :--- | :--- | :--- |
+| `AccountLevel` | Broad player familiarity and system access | Unlocks systems and rewards; never grants hidden combat stats |
+| `XPEvent` | Atomic reason XP was earned | Must show source category, amount, cap status, and whether it was boosted |
+| `OperatorMastery` | Identity progression for a specific operator | Rewards role commitment with cosmetics/profile treatment, not mandatory stat grind |
+| `FactionReputation` | Trust and access track for factions/traders | Unlocks trader access, quest chains, and faction identity |
+| `QuestProgress` | Objective completion across tutorial, daily, weekly, faction, story, seasonal, repeatable quests | Must show objective, progress count, reset/expiry, reward, and route |
+| `BattlePassXP` | Seasonal XP feeding battle pass tiers | Comes from raids, quests, events, and catch-up missions; purchase route lives in Commerce |
+| `SeasonTier` | A tier on a free/premium seasonal reward track | Must show free/premium lane, reward type, locked/earned/claimed state |
+| `RewardClaim` | Claimable grant produced by progression, event, inbox, battle pass, or compensation | Must show source, destination, expiry, blockers, and overflow behavior |
+
+## Progression Layer Spec
+
+| Layer | Owns | Cannot Do | Primary UI Surfaces |
+| :--- | :--- | :--- | :--- |
+| Account level | System access, broad rewards, onboarding milestones | Add hidden health, damage, armor, aim, audio, or matchmaking advantage | Home, AAR, Profile, Tutorial gates |
+| Operator mastery | Role identity, cosmetics, tips, profile treatment | Make one operator statistically mandatory through grind | Operator Select, Profile, AAR |
+| Faction reputation | Trader access, quest chains, faction status | Sell reputation directly for premium currency | Quest Board, Traders, Profile |
+| Quest system | Directed goals, map learning, repeatable motivation | Depend on repetitive chores that ignore extraction decisions | Quest Board, HUD tracker, AAR |
+| Battle pass | Seasonal reward track and return goals | Become the core power spine or hide free value | Battle Pass, Reward Inbox, Commerce upgrade route |
+| Achievements / prestige | Long-term mastery and bragging rights | Reset meaningful player access without consent | Profile, Season Summary |
+
 ## Account Levels
 
 Account levels represent broad familiarity with the game. They can unlock systems and rewards, but they should not create a permanent combat stat gap. A level 50 player can have more options and knowledge; they should not simply have more health, damage, or hidden power.
@@ -73,6 +99,46 @@ The battle pass is a seasonal checklist, not the core progression spine. It shou
 | Catch-up | Late-season missions or boosted objectives |
 | Integrity | No paid combat advantage |
 
+## XP And Reward Rules
+
+| Rule | Requirement |
+| :--- | :--- |
+| Extraction and objectives matter most | Extraction, quest completion, squad support, and meaningful objective play should outweigh raw kill volume |
+| Failed raids can still teach | Failed raids may grant limited account/operator/quest learning when the player made meaningful progress |
+| Raw kill farming is capped | Repeated trivial AI kills, spawn camping, or low-risk loops hit diminishing returns |
+| Catch-up respects early players | Catch-up accelerates late players without invalidating early-season participation or paid/free fairness |
+| Boosts are non-power | XP boosts cannot create combat certainty and must disclose duration/source |
+| Reward destination is explicit | Rewards state whether they go to stash, inbox, profile, currency balance, battle pass, trader, or claim screen |
+| Claim blockers are named | Stash full, premium locked, expired, capped, duplicate, and offline states must show a direct next action |
+
+## Reward Taxonomy
+
+| Reward Type | Player-Facing? | Gameplay-Affecting? | Seasonal? | Claim Behavior |
+| :--- | :--- | :--- | :--- | :--- |
+| Cosmetic | Yes | No | Optional | Claim/equip/view; preview supported |
+| Profile item | Yes | No | Optional | Claim to profile inventory |
+| Credits | Yes | Economy-affecting, not power by itself | Optional | Add to balance or inbox if capped |
+| Premium token grant | Yes | No combat power | Optional | Add to balance with source/receipt |
+| Material / crafting input | Yes | Indirect economy value | Optional | Requires stash/capacity handling |
+| Convenience unlock | Yes | Conditional non-power | Usually persistent | Must be earnable/capped and never combat certainty |
+| Access unlock | Yes | System access, not stat power | Persistent | Shows requirement and unlocked destination |
+| Title / badge | Yes | No | Optional | Profile destination |
+| Account service | Yes | No | Persistent or limited | Must describe consequence and reversibility |
+
+## Progression State Matrix
+
+| State | Meaning | Required UI Behavior |
+| :--- | :--- | :--- |
+| Locked | Requirement not met | Show exact requirement, progress, and route |
+| In progress | Player has partial progress | Show count, percentage, next step, and reset/expiry if any |
+| Claimable | Reward is earned but not claimed | Promote claim action and show destination |
+| Claimed | Reward already granted | Mark complete and avoid duplicate CTA |
+| Expired | Time window ended | Explain what happened, whether claim grace exists, and whether value converted |
+| Converted | Expired/seasonal value changed into another value | Show conversion amount and policy |
+| Capped | Progress or reward hit a limit | Explain cap and when it resets |
+| Overflow | Reward cannot fit destination | Route to inbox/stash/capacity fix and preserve reward |
+| Retroactive grant | Player qualifies after purchase, fix, or rule change | Show source, receipt/support context, and claim destination |
+
 ## Retention Loops
 
 Retention should come from confidence and aspiration, not fear of missing out alone. The player should return because they have a plan: finish a trader chain, master an operator, recover from a failed raid, push ranked, or unlock a cosmetic that reflects how they play.
@@ -108,6 +174,19 @@ A seasonal player returns for an event. Battle pass, faction objectives, and liv
 - Catch-up should reduce late-season pressure without invalidating early participation.
 - Quest chains should vary route, item, and behavior requirements to avoid grind fatigue.
 - Prestige should be cosmetic-first until long-term balance is proven.
+
+## Progression Analytics
+
+| Signal | Use |
+| :--- | :--- |
+| XP source distribution | Detect kill farming, objective under-rewarding, or event over-rewarding |
+| Quest abandon and reroll rate | Identify unclear, tedious, or poorly routed objectives |
+| Reward claim latency | Reveal hidden claim surfaces or unclear reward destinations |
+| Battle pass tier velocity | Tune season length, catch-up missions, and reward cadence |
+| Catch-up use and completion | Check whether late-season support is helpful without becoming mandatory |
+| Operator mastery concentration | Detect role imbalance or rewards that over-pull one operator |
+| Faction reputation pace | Tune trader access and quest chain length |
+| Overflow/blocked claim rate | Improve stash, inbox, or reward routing UX |
 
 ## Cross-References
 

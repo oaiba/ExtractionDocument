@@ -305,8 +305,43 @@ Home event card -> Event Hub -> Track Objective -> Raid -> AAR
  Battle Pass     Reward Inbox    Quest Board    Claim / Redeploy
        |
        v
- Ranked Overview -> Leaderboard -> Season Summary
+Ranked Overview -> Leaderboard -> Season Summary
 ```
+
+#### Progression / Reward Claim Journey
+
+```
++--------------------------------------------------------------------------------+
+| Entry: Home Badge / AAR Row / Battle Pass Tile / Event Objective / Inbox       |
+|--------------------------------------------------------------------------------|
+| 1. Source Context -> 2. Progress Detail -> 3. Claim / Track / Play / Upgrade    |
+| 4. Capacity + Expiry Check -> 5. Reward Destination -> 6. Return / Next Goal    |
++--------------------------------------------------------------------------------+
+```
+
+| Step | Required Behavior |
+| :--- | :--- |
+| Source context | Preserve player đến từ AAR, Battle Pass, Event Hub, Quest Board, Ranked, News, hoặc Inbox |
+| Progress detail | Show objective, XP/tier progress, free/premium status, timer, reward, và blocker |
+| Action | Claim, Track, Play, View Rules, hoặc Commerce Upgrade phải rõ ràng và không lẫn nhau |
+| Capacity/expiry check | Stash full, cap reached, expired, offline, premium locked, hoặc duplicate states show next action |
+| Destination | Reward đi tới stash, inbox, profile, currency balance, battle pass, trader unlock, hoặc season archive |
+| Return | Back quay về source screen; next goal gợi ý deploy, track, claim next, hoặc view summary |
+
+#### Season / Event Participation Journey
+
+```
+News/Home -> Event Hub -> Rule Review -> Track Objective -> Queue/Raid
+    -> AAR Progress -> Reward Claim -> Grace/Archive/Season Summary
+```
+
+| Phase | Required Behavior |
+| :--- | :--- |
+| Announcement | Show start/end, rules, rewards, affected maps/modes, và restrictions |
+| Participation | Deep link tới exact playable route với event rules applied |
+| Progress | AAR và Event Hub thống nhất objective count, reward state, và event currency |
+| Ending | Promote unclaimed rewards, conversion policy, và claim grace |
+| Archive | Read-only recap giữ achievements/rewards dễ hiểu sau reset |
 
 ### 7. Settings / hệ thống Error flow
 

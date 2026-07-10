@@ -23,6 +23,32 @@ Progression layer phải readable từ Home Screen và post-match recap. Player 
 | Daily / weekly goals | Quest progress | Directed goals and regular return hooks |
 | Seasonal challenges | Battle pass | Seasonal cosmetics and event rewards |
 
+## Progression System Model
+
+Progression là long-term memory của nỗ lực player. Mỗi progression object phải giải thích track nào tăng, vì sao tăng, unlock gì, và reward có claim được ngay hay đang bị chặn bởi capacity, season, hoặc premium-state rule.
+
+| Entity | Định nghĩa | Yêu cầu UI / Design |
+| :--- | :--- | :--- |
+| `AccountLevel` | Mức familiarity rộng và system access | Unlock system và reward; không grant hidden combat stats |
+| `XPEvent` | Lý do atomic khiến XP được earned | Phải show source category, amount, cap status, và boost state |
+| `OperatorMastery` | Identity progression cho một operator cụ thể | Reward role commitment bằng cosmetics/profile treatment, không tạo mandatory stat grind |
+| `FactionReputation` | Trust/access track cho faction/trader | Unlock trader access, quest chains, và faction identity |
+| `QuestProgress` | Objective completion cho tutorial, daily, weekly, faction, story, seasonal, repeatable quests | Phải show objective, progress count, reset/expiry, reward, và route |
+| `BattlePassXP` | Seasonal XP đưa vào battle pass tiers | Đến từ raids, quests, events, catch-up missions; purchase route thuộc Commerce |
+| `SeasonTier` | Tier trong free/premium seasonal reward track | Phải show free/premium lane, reward type, locked/earned/claimed state |
+| `RewardClaim` | Claimable grant từ progression, event, inbox, battle pass, hoặc compensation | Phải show source, destination, expiry, blockers, và overflow behavior |
+
+## Progression Layer Spec
+
+| Layer | Owns | Cannot Do | Primary UI Surfaces |
+| :--- | :--- | :--- | :--- |
+| Account level | System access, broad rewards, onboarding milestones | Add hidden health, damage, armor, aim, audio, hoặc matchmaking advantage | Home, AAR, Profile, Tutorial gates |
+| Operator mastery | Role identity, cosmetics, tips, profile treatment | Khiến một operator statistically mandatory thông qua grind | Operator Select, Profile, AAR |
+| Faction reputation | Trader access, quest chains, faction status | Bán reputation trực tiếp bằng premium currency | Quest Board, Traders, Profile |
+| Quest system | Directed goals, map learning, repeatable motivation | Dựa vào repetitive chores bỏ qua extraction decisions | Quest Board, HUD tracker, AAR |
+| Battle pass | Seasonal reward track và return goals | Trở thành core power spine hoặc che free value | Battle Pass, Reward Inbox, Commerce upgrade route |
+| Achievements / prestige | Long-term mastery và bragging rights | Reset meaningful player access mà không có consent | Profile, Season Summary |
+
 ## Account Levels
 
 Account level đại diện familiarity rộng với game. Nó có thể unlock system và reward, nhưng không được tạo permanent combat stat gap. Player level 50 có nhiều option và knowledge hơn; họ không nên đơn giản có nhiều health, damage, hoặc hidden power hơn.
@@ -73,6 +99,46 @@ Battle pass là seasonal checklist, không phải core progression spine. Nó n�
 | Catch-up | Late-season missions or boosted objectives |
 | Integrity | No paid combat advantage |
 
+## XP And Reward Rules
+
+| Rule | Requirement |
+| :--- | :--- |
+| Extraction and objectives matter most | Extraction, quest completion, squad support, và meaningful objective play nên nặng hơn raw kill volume |
+| Failed raids can still teach | Failed raid có thể grant limited account/operator/quest learning nếu player có meaningful progress |
+| Raw kill farming is capped | Repeated trivial AI kills, spawn camping, hoặc low-risk loops bị diminishing returns |
+| Catch-up respects early players | Catch-up tăng tốc late player mà không phủ nhận early-season participation hoặc paid/free fairness |
+| Boosts are non-power | XP boosts không tạo combat certainty và phải disclose duration/source |
+| Reward destination is explicit | Reward nói rõ đi tới stash, inbox, profile, currency balance, battle pass, trader, hoặc claim screen |
+| Claim blockers are named | Stash full, premium locked, expired, capped, duplicate, và offline states phải có direct next action |
+
+## Reward Taxonomy
+
+| Reward Type | Player-Facing? | Gameplay-Affecting? | Seasonal? | Claim Behavior |
+| :--- | :--- | :--- | :--- | :--- |
+| Cosmetic | Yes | No | Optional | Claim/equip/view; có preview |
+| Profile item | Yes | No | Optional | Claim vào profile inventory |
+| Credits | Yes | Economy-affecting, không tự nó là power | Optional | Add vào balance hoặc inbox nếu capped |
+| Premium token grant | Yes | No combat power | Optional | Add vào balance kèm source/receipt |
+| Material / crafting input | Yes | Indirect economy value | Optional | Cần xử lý stash/capacity |
+| Convenience unlock | Yes | Conditional non-power | Usually persistent | Phải earnable/capped và không tạo combat certainty |
+| Access unlock | Yes | System access, không stat power | Persistent | Show requirement và unlocked destination |
+| Title / badge | Yes | No | Optional | Profile destination |
+| Account service | Yes | No | Persistent hoặc limited | Mô tả consequence và reversibility |
+
+## Progression State Matrix
+
+| State | Meaning | Required UI Behavior |
+| :--- | :--- | :--- |
+| Locked | Chưa đạt requirement | Show exact requirement, progress, và route |
+| In progress | Player có partial progress | Show count, percentage, next step, và reset/expiry nếu có |
+| Claimable | Reward earned nhưng chưa claim | Promote claim action và show destination |
+| Claimed | Reward đã grant | Mark complete và tránh duplicate CTA |
+| Expired | Time window kết thúc | Explain claim grace, conversion, hoặc lost state |
+| Converted | Seasonal/expired value đổi thành value khác | Show conversion amount và policy |
+| Capped | Progress/reward chạm limit | Explain cap và khi nào reset |
+| Overflow | Reward không fit destination | Route tới inbox/stash/capacity fix và preserve reward |
+| Retroactive grant | Player qualify sau purchase, fix, hoặc rule change | Show source, receipt/support context, và claim destination |
+
 ## Retention Loops
 
 Retention nên đến từ confidence và aspiration, không chỉ fear of missing out. Player nên quay lại vì họ có plan: hoàn thành trader chain, master operator, recover sau raid thất bại, push ranked, hoặc unlock cosmetic phản ánh cách họ chơi.
@@ -108,6 +174,19 @@ Seasonal player quay lại vì event. Battle pass, faction objective, và live q
 - Catch-up nên giảm late-season pressure mà không phủ nhận early participation.
 - Quest chain nên đổi route, item, behavior requirement để tránh grind fatigue.
 - Prestige nên cosmetic-first cho đến khi long-term balance được chứng minh.
+
+## Progression Analytics
+
+| Signal | Use |
+| :--- | :--- |
+| XP source distribution | Detect kill farming, objective under-rewarding, hoặc event over-rewarding |
+| Quest abandon and reroll rate | Tìm objective không rõ, tẻ nhạt, hoặc routing kém |
+| Reward claim latency | Reveal claim surfaces ẩn hoặc reward destination không rõ |
+| Battle pass tier velocity | Tune season length, catch-up missions, và reward cadence |
+| Catch-up use and completion | Kiểm tra late-season support có hữu ích mà không thành mandatory |
+| Operator mastery concentration | Detect role imbalance hoặc reward kéo quá mạnh về một operator |
+| Faction reputation pace | Tune trader access và quest chain length |
+| Overflow/blocked claim rate | Improve stash, inbox, hoặc reward routing UX |
 
 ## Cross-References
 

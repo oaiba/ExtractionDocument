@@ -81,6 +81,20 @@ Commerce screen coverage chỉ hoàn chỉnh khi canonical page định nghĩa r
 
 ---
 
+### Progression / LiveOps Coverage Checklist
+
+Progression và LiveOps coverage chỉ hoàn chỉnh khi canonical page định nghĩa reward claim states, season/event timing, deep links, expiry/conversion behavior, và boundary với Commerce.
+
+| Coverage Area | Requirement |
+| :--- | :--- |
+| Reward model | Locked, earned, claimable, claimed, blocked, overflow, expired, converted, và retroactive grants explicit |
+| Season state | Preseason, active, ending, grace, archived, và offline/cached states có UI behavior |
+| Event clarity | Event rules, modifiers, objectives, reward ladder, event currency, expiry, và playable route visible |
+| Claim trust | Rewards show source, destination, expiry, blocker, claim-all leftovers, và support route khi cần |
+| Commerce boundary | Battle pass/event purchase CTAs route tới Commerce; reward/progress context ở Progression/LiveOps |
+
+---
+
 ## Screen Spec Template
 
 Dùng template này cho mọi screen spec mới. Giữ đủ ngắn để update được, nhưng đủ hoàn chỉnh cho designer layout, UX review, và implementation planning. [Out-of-Raid Screens](Out_Of_Raid_Screens.md) là baseline example cho format designer-ready đầy đủ.

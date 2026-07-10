@@ -108,6 +108,18 @@ Layout (PC/Console)
 | Server issue | Explain compensation hoặc pending reconciliation nếu applicable |
 | Data delayed | Show partial report và "finalizing results" trạng thái |
 
+### AAR Progression / Reward Rules
+
+| Result Type | Required Behavior |
+| :--- | :--- |
+| XP gained | Show source breakdown và progression tracks nào advanced |
+| Battle pass progress | Show tier/XP delta và claimable reward link, không purchase confirmation |
+| Quest progress | Show advanced, completed, failed, lost-item, và ready-to-turn-in states |
+| Event objective progress | Show event name, objective count, event currency, và Event Hub route |
+| Reward claimable | Route tới Reward Inbox hoặc exact source screen, preserve source context |
+| Reward blocked | Name blocker: stash full, cap reached, offline, premium locked, duplicate, hoặc expired |
+| Server reconciliation | Dùng pending/finalizing state và tránh duplicate reward claim CTAs |
+
 ---
 
 ## Death Replay

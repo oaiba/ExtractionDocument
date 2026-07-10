@@ -108,6 +108,18 @@ Layout (PC/Console)
 | Server issue | Explain compensation or pending reconciliation if applicable |
 | Data delayed | Show partial report and "finalizing results" state |
 
+### AAR Progression / Reward Rules
+
+| Result Type | Required Behavior |
+| :--- | :--- |
+| XP gained | Show source breakdown and which progression tracks advanced |
+| Battle pass progress | Show tier/XP delta and claimable reward link, not purchase confirmation |
+| Quest progress | Show advanced, completed, failed, lost-item, and ready-to-turn-in states |
+| Event objective progress | Show event name, objective count, event currency, and Event Hub route |
+| Reward claimable | Route to Reward Inbox or exact source screen with source context preserved |
+| Reward blocked | Name blocker: stash full, cap reached, offline, premium locked, duplicate, or expired |
+| Server reconciliation | Use pending/finalizing state and avoid duplicate reward claim CTAs |
+
 ---
 
 ## Death Replay

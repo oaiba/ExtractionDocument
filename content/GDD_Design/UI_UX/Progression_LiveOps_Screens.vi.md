@@ -298,6 +298,62 @@ Layout (PC/Console)
 
 ---
 
+## Progression / LiveOps Information Architecture
+
+Progression và LiveOps navigation phải tách rõ long-term progress, temporary events, competitive status, và reward claims nhưng vẫn giữ deep link có đường quay lại. Player đi vào từ Home, AAR, Quest Board, Battle Pass, Event Hub, News, hoặc Reward Inbox luôn phải hiểu họ đến từ đâu và next playable action là gì.
+
+| Destination | Owns | Entry Points | Exit / Return Behavior |
+| :--- | :--- | :--- | :--- |
+| Battle Pass | Season tier progress, free/premium rewards, claimable tiers | Home notification, Season Summary, Reward Inbox, Commerce upgrade return | Quay về màn trước hoặc mở Commerce chỉ cho upgrade/checkout |
+| Event Hub | Event rules, objectives, reward ladder, playable route | Home event strip, News, Map Select, Tasks, Reward Inbox | Quay lại exact event route hoặc mở playable map/mode |
+| Daily / Weekly Tasks | Short-term objectives, tracking, reset, reroll | Home, Quest Board, AAR, HUD tracker | Track objective tới Home/HUD/map; claim route tới Inbox nếu blocked |
+| Reward Inbox | Grants, compensation, overflow, claim-all leftovers | Global notification, AAR, Battle Pass, Event Hub, support grant | Quay về source screen hoặc destination inventory/profile |
+| Ranked Overview | Competitive rules, eligibility, season reward, queue | Home, Mode Select, Leaderboards, Season Summary | Chỉ queue ranked khi mọi blocker pass |
+| Leaderboards | Competitive/event comparison và privacy-safe profiles | Ranked Overview, Event Hub, Profile | Giữ filters khi quay lại |
+| Season Summary | Season timing, reset, retained rewards, archive | Home, News, Battle Pass, Ranked | Link tới claimable rewards, recap, archive |
+| Patch Notes / News | Live communication, known issues, deep links | Home, mandatory update, settings/help | Chỉ dismiss khi noncritical; deep links show disabled reason nếu unavailable |
+
+## Reward Claim Model
+
+Mọi reward UI dùng cùng claim vocabulary để player không phải học rule riêng cho battle pass, events, tasks, compensation, và ranked rewards.
+
+| Claim State | Meaning | Required UI Behavior |
+| :--- | :--- | :--- |
+| Locked | Requirement chưa đạt | Show exact requirement, progress, và route |
+| Earned | Player qualify nhưng reward chưa claim | Promote Claim và show destination |
+| Claimed | Reward delivered | Mark complete và remove duplicate CTA |
+| Blocked | Reward chưa deliver được | Name blocker: stash full, cap reached, offline, premium locked, account restriction |
+| Overflow | Reward không fit destination | Preserve reward trong inbox và show required capacity/action |
+| Expiring | Reward hoặc claim window sắp hết hạn | Sort/promote và show exact time remaining |
+| Expired | Claim window ended | Show reward lost, converted, archived, hoặc support-eligible |
+| Converted | Seasonal value đổi thành value khác | Show conversion amount và policy |
+| Retroactive | Player qualify sau purchase, fix, hoặc rule change | Show source, grant reason, và support-safe reference |
+
+## Season And Event State Model
+
+| State | Battle Pass | Event Hub | Tasks | Reward Inbox | News / Summary |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| Preseason | Preview rewards/rules, no XP | Tease event nếu announced | Normal tasks | Normal grants | Season preview |
+| Active | XP, claim, upgrade route active | Play/track/claim active | Track/claim active | Claim active | Featured live update |
+| Ending soon | Exact timer, claim reminders | Timer và unclaimed rewards promoted | Reset warning | Expiring sort | Final push copy |
+| Grace period | XP disabled, earned claim active | Play disabled, claim/conversion active | Expired tasks resolved | Earned claims preserved | Ended copy |
+| Archived | Read-only recap | Read-only rules/rewards | Hidden hoặc history only | Claimed/history only | Archive/recap |
+| Offline/cached | Show cached state và disable risky claims | Disable play/purchase links | Track local only if safe | Disable claim hoặc queue sync | Cached news with timestamp |
+
+## Cross-Screen Deep Link Rules
+
+| Source | Target | Rule |
+| :--- | :--- | :--- |
+| AAR reward row | Reward Inbox hoặc exact source screen | Preserve source context và show why reward claimable/blocked |
+| Battle Pass upgrade CTA | Commerce Battle Pass Upgrade | Commerce owns purchase, confirmation, receipt, và return |
+| Event store CTA | Commerce Event / Collection Store | Event Hub owns progress; Commerce owns purchase |
+| Insufficient balance | Commerce Currency Top-Up | Return tới exact offer hoặc reward context sau checkout |
+| Task track | Home, HUD tracker, map, hoặc Quest Board | Track state phải visible trên ít nhất một pre-raid và in-raid surface |
+| Ranked reward | Ranked Overview hoặc Reward Inbox | Show season eligibility và reset timing trước claim |
+| Patch note item | Affected setting, event, map, mode, hoặc known issue | Disable với reason nếu target unavailable hoặc offline |
+
+---
+
 ## Designer-Ready màn hình Specs
 
 Progression và LiveOps màn hình should tạo long-term motivation mà không burying the path back to raid. Rewards, expiry, premium/free status, và claim blockers must always be explicit.
@@ -778,12 +834,35 @@ See the one most quan trọng update, learn what changed, dismiss noncritical ne
 
 | Metric | cách dùng |
 | :--- | :--- |
-| Reward claim latency | Identify hidden rewards |
-| Event objective tracking | Measure event clarity |
-| Battle pass upgrade context | Ensure monetization prompts are not overbearing |
-| Ranked queue eligibility failures | Improve restriction messaging |
-| News dismissal và click-thông qua | Tune Home surface priority |
-| Daily task completion | Tune task difficulty và thời gian windows |
+| Battle pass viewed | Đo reach của season surface |
+| Reward selected | Xác định reward clarity và preview interest |
+| Reward claim attempted / succeeded / blocked | Tìm capacity, premium, expiry, và routing blockers |
+| Battle pass upgrade CTA opened | Đảm bảo monetization prompt contextual và không quá áp lực |
+| Event objective tracked | Đo event clarity và route usefulness |
+| Event CTA used | Detect event có convert thành playable activity không |
+| Event reward claimed | Tune reward visibility và completion pacing |
+| Daily/weekly task tracked | Xác định objective relevance |
+| Daily/weekly task claimed / expired / rerolled | Tune difficulty, reset timing, và anti-frustration |
+| Reward inbox claim all leftovers | Reveal capacity hoặc duplicate grant confusion |
+| Ranked queue eligibility failure | Improve restriction messaging |
+| Leaderboard filter changed | Hiểu competitive comparison behavior |
+| Season recap viewed | Đo season closure comprehension |
+| News dismissal and click-through | Tune Home surface priority |
+
+---
+
+## Progression / LiveOps QA Checklist
+
+- [ ] Battle Pass free, premium, claimable, locked, claimed, retroactive, season-ended, và grace-period states are visible.
+- [ ] Battle Pass upgrade và tier-skip actions route tới Commerce cho purchase, confirmation, receipt, và return.
+- [ ] Event Hub giải thích modifiers, expiry, objectives, deterministic rewards, event currency, và playable route trước queue.
+- [ ] Event end behavior cover play disabled, claim grace, event currency conversion, archive, và owned rewards.
+- [ ] Daily/weekly tasks show reset, reroll cost/limit, claimable-at-reset behavior, và objective route.
+- [ ] Reward Inbox preserve blocked/overflow rewards và explain claim-all leftovers.
+- [ ] Ranked Overview show eligibility, demotion risk, season reset, reward eligibility, và party blockers trước queue.
+- [ ] Leaderboards respect privacy, platform/input filters, archived seasons, và reward thresholds.
+- [ ] Patch Notes / News disable stale play/claim CTAs khi offline hoặc cached.
+- [ ] All reward claims show source, destination, expiry, blocker, và support route khi cần.
 
 ---
 
@@ -795,3 +874,5 @@ See the one most quan trọng update, learn what changed, dismiss noncritical ne
 - [ ] Reward inbox handles stash-full và expiry trạng thái.
 - [ ] News does not compete với deploy as the main Home action.
 - [ ] Privacy settings are honored in leaderboards và profiles.
+- [ ] Season reset, claim grace, reward conversion, và archive states are covered.
+- [ ] Commerce purchase routes are linked without duplicating checkout UX.

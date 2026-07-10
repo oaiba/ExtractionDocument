@@ -81,6 +81,20 @@ Commerce screen coverage is complete only when the canonical page defines offer 
 
 ---
 
+### Progression / LiveOps Coverage Checklist
+
+Progression and LiveOps coverage is complete only when the canonical page defines reward claim states, season/event timing, deep links, expiry/conversion behavior, and Commerce handoff boundaries.
+
+| Coverage Area | Requirement |
+| :--- | :--- |
+| Reward model | Locked, earned, claimable, claimed, blocked, overflow, expired, converted, and retroactive grants are explicit |
+| Season state | Preseason, active, ending, grace, archived, and offline/cached states have UI behavior |
+| Event clarity | Event rules, modifiers, objectives, reward ladder, event currency, expiry, and playable route are visible |
+| Claim trust | Rewards show source, destination, expiry, blocker, claim-all leftovers, and support route when needed |
+| Commerce boundary | Battle pass/event purchase CTAs route to Commerce; reward/progress context stays in Progression/LiveOps |
+
+---
+
 ## Screen Spec Template
 
 Use this template for every new screen spec. Keep it short enough to update, but complete enough for designer layout, UX review, and implementation planning. [Out-of-Raid Screens](Out_Of_Raid_Screens.md) is the baseline example for the full designer-ready format.

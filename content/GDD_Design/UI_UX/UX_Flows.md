@@ -305,8 +305,43 @@ Home event card -> Event Hub -> Track Objective -> Raid -> AAR
  Battle Pass     Reward Inbox    Quest Board    Claim / Redeploy
        |
        v
- Ranked Overview -> Leaderboard -> Season Summary
+Ranked Overview -> Leaderboard -> Season Summary
 ```
+
+#### Progression / Reward Claim Journey
+
+```
++--------------------------------------------------------------------------------+
+| Entry: Home Badge / AAR Row / Battle Pass Tile / Event Objective / Inbox       |
+|--------------------------------------------------------------------------------|
+| 1. Source Context -> 2. Progress Detail -> 3. Claim / Track / Play / Upgrade    |
+| 4. Capacity + Expiry Check -> 5. Reward Destination -> 6. Return / Next Goal    |
++--------------------------------------------------------------------------------+
+```
+
+| Step | Required Behavior |
+| :--- | :--- |
+| Source context | Preserve whether the player came from AAR, Battle Pass, Event Hub, Quest Board, Ranked, News, or Inbox |
+| Progress detail | Show objective, XP/tier progress, free/premium status, timer, reward, and blocker |
+| Action | Claim, Track, Play, View Rules, or Commerce Upgrade must be mutually clear |
+| Capacity/expiry check | Stash full, cap reached, expired, offline, premium locked, or duplicate states show next action |
+| Destination | Reward lands in stash, inbox, profile, currency balance, battle pass, trader unlock, or season archive |
+| Return | Back returns to the source screen; next goal suggests deploy, track, claim next, or view summary |
+
+#### Season / Event Participation Journey
+
+```
+News/Home -> Event Hub -> Rule Review -> Track Objective -> Queue/Raid
+    -> AAR Progress -> Reward Claim -> Grace/Archive/Season Summary
+```
+
+| Phase | Required Behavior |
+| :--- | :--- |
+| Announcement | Show start/end, rules, rewards, affected maps/modes, and restrictions |
+| Participation | Deep link to exact playable route with event rules applied |
+| Progress | AAR and Event Hub agree on objective count, reward state, and event currency |
+| Ending | Promote unclaimed rewards, conversion policy, and claim grace |
+| Archive | Read-only recap keeps achievements/rewards understandable after reset |
 
 ### 7. Settings / System Error Flow
 

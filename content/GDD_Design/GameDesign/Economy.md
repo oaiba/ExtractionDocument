@@ -35,14 +35,47 @@ Currency flow should create healthy friction. Credits leave the economy through 
 | Faction quests | Reputation | Trader access and quest unlocks | Long-term specialization |
 | Events | Event currency | Event cosmetics and limited rewards | Seasonal engagement |
 
+## Economy System Model
+
+The economy model gives designers and engineers a shared vocabulary for value movement. Every reward, purchase, repair, insurance fee, event grant, and compensation package should map to one of these objects so UI copy and telemetry can explain the same truth.
+
+| Entity | Definition | UI / Design Requirement |
+| :--- | :--- | :--- |
+| `Currency` | A countable value used for purchases, upgrades, claims, or event exchange | Always show name, amount, source, and whether it is earnable, premium, seasonal, or reputation-like |
+| `Source` | A system that adds value to the player account or stash | Must explain why the player received value and where it landed |
+| `Sink` | A system that removes value from the player account or stash | Must explain cost, consequence, and whether the spend is reversible |
+| `Reward` | Any value granted by raid, quest, event, battle pass, compensation, or purchase | Must declare type, destination, claim state, expiry, and gameplay impact |
+| `TraderPrice` | Price for gear, services, repairs, crafting inputs, or trade offers | Must show reputation requirement, stock state, and price change reason when dynamic |
+| `RepairCost` | Cost to restore item durability or readiness | Must preview before commit and show before/after durability |
+| `InsuranceCost` | Cost paid to protect a loadout item from permanent loss under insurance rules | Must show return chance/rule, return window, and blocked conditions |
+| `EventCurrency` | Seasonal value earned during a limited window | Must show expiry, cap, conversion, and event store destination |
+| `PremiumToken` | Premium currency bought or granted through non-power routes | Must never be required for combat certainty; purchase UX lives in Commerce |
+| `InflationSignal` | Telemetry that indicates value growth is unhealthy | Must be segmented by account age, skill, mode, platform, and season phase |
+
 ## Currency Types
 
 | Currency | Source | Sink | Can Be Bought? | Design Notes |
 | :--- | :--- | :--- | :--- | :--- |
-| Credits | Loot sales, quests, events | Gear, insurance, repairs, upgrades | No direct power purchase | Core soft economy |
-| Tokens | Purchases, battle pass rewards | Cosmetics, battle pass, convenience | Yes | Must not buy combat power |
-| Reputation | Faction quests and events | Trader unlocks, quest access | No | Long-term trust and specialization |
-| Event Currency | Limited-time events | Event cosmetics and rewards | Event-defined | Expires or converts by policy |
+| Credits | Loot sales, quests, tasks, compensation, trader payouts | Gear, repair, insurance, crafting, Safe House upgrades, trader fees | No direct premium purchase | Core soft economy; cannot bypass mastery or reputation locks |
+| Tokens | Premium purchase, battle pass grants, event grants, compensation | Cosmetics, battle pass, capped non-power convenience | Yes | Must not buy weapons, armor, stat advantage, protected combat slots, or matchmaking advantage |
+| Reputation | Faction quests, event alignment, trader tasks | Trader unlocks, quest access, faction identity | No | Not a spendable power currency; losing reputation should be rare and explicit |
+| Event Currency | Limited-time events and seasonal objectives | Event cosmetics, deterministic rewards, event collection progress | Event-defined | Expires or converts by policy; never silently disappears if reward was claimable |
+
+## Sources And Sinks Matrix
+
+| Value Source | Grants | Required Context | Primary Sink / Follow-Up |
+| :--- | :--- | :--- | :--- |
+| Extracted loot | Items, credits after sale, crafting inputs | Found-in-raid state, rarity, trader value | Sell, equip, craft, quest turn-in, stash |
+| Quest reward | Credits, XP, reputation, items, unlocks | Quest source, completion reason, claim state | Progression tracks, traders, loadout recovery |
+| Daily / weekly task | XP, credits, items, rep, battle pass XP | Reset timer, progress, reward destination | Short-term return loop |
+| Event objective | Event currency, cosmetics, XP, credits | Event name, expiry, conversion policy | Event store, reward ladder, inbox |
+| Battle pass free track | Cosmetics, currency, materials | Tier, free/premium lane, claim state | Identity, progression, light economy support |
+| Battle pass premium track | Cosmetics, premium tokens, non-power boosts | Premium state, Commerce upgrade route | Identity and seasonal value |
+| Compensation grant | Items, credits, tokens, inbox entries | Reason, affected window, support reference | Recovery and trust repair |
+| Gear purchase | Gear item | Trader, stock, reputation, price | Raid loadout and risk |
+| Repair / insurance | Restored durability or protected item | Item state, cost, rules, timer | Loss mitigation |
+| Crafting / Safe House | Crafted items, module upgrades | Inputs, time, unlock requirement | Long-term sinks and planning |
+| Cosmetic purchase | Cosmetic entitlement | Offer, ownership, confirmation, receipt | Commerce-owned purchase UX |
 
 ## Monetization Structure
 
@@ -84,6 +117,31 @@ Economy telemetry should be segmented by account age, skill bracket, mode, and p
 | Gear tier distribution | Overpowered meta or stagnant progression | Tune trader unlocks and item availability |
 | New player bankruptcy | Onboarding failure | Increase tutorial rewards or recovery quests |
 
+## Inflation / Poverty / Hoarding Guardrails
+
+| Risk | Trigger Signal | Guardrail |
+| :--- | :--- | :--- |
+| New-player bankruptcy | New accounts cannot afford a basic kit after repeated failed raids | Increase tutorial/recovery rewards, surface budget presets, reduce early repair pressure |
+| Veteran hoarding | High-account-age players hold excessive credits/items with low sink usage | Add prestige cosmetics, crafting sinks, Safe House goals, or limited non-power vanity sinks |
+| High-tier saturation | Too many raids contain top-tier kits compared with extraction risk | Tune trader stock, repair cost, insurance return, rarity, and high-tier loot spawn |
+| Event currency flood | Event currency outpaces event store demand or conversion policy | Add caps, deterministic sinks, conversion limits, and clear end-of-event messaging |
+| Compensation abuse | Repeated grants create farming incentives or market distortion | Use targeted grants, account eligibility windows, and support-auditable receipt IDs |
+| Market manipulation | Price volatility exceeds normal scarcity patterns | Apply listing fees, price bands, trade limits, provenance checks, and suspicious trade detection |
+
+## Economy Tuning Inputs
+
+| Input | Why It Matters | Review Cadence |
+| :--- | :--- | :--- |
+| Extraction rate | Defines how often raid value survives | Daily during launch, weekly once stable |
+| Average raid value | Shows whether risk produces meaningful reward | Weekly by map/mode/skill |
+| Average kit cost | Measures whether normal play is affordable | Weekly by account age and rank |
+| Repair cost ratio | Indicates whether durability feels fair or punitive | Weekly after balance patches |
+| Insurance use and return rate | Shows whether loss mitigation is trusted or too strong | Weekly by item tier |
+| Stash pressure | Reveals hoarding, confusion, or insufficient item sinks | Weekly by account age |
+| Trader unlock pace | Validates reputation and quest economy pacing | Per season and major quest update |
+| Premium token earn rate | Protects perceived fairness around premium currency grants | Per season and event |
+| Event currency earn/spend ratio | Prevents event store under-demand or impossible completion | Daily during active events |
+
 ## Ethical Monetization Rules
 
 | Promise | Implementation |
@@ -93,6 +151,19 @@ Economy telemetry should be segmented by account age, skill bracket, mode, and p
 | Never sell power | No paid stat advantage |
 | Be clear about value | Show contents, duration, and refund rules |
 | Protect minors | Spending controls and platform compliance |
+
+## Economy QA Checklist
+
+- [ ] No paid product grants weapons, armor, stats, protected combat slots, visibility advantage, recoil advantage, or matchmaking advantage.
+- [ ] Credits cannot bypass mastery, reputation, tutorial gates, ranked eligibility, or quest knowledge checks.
+- [ ] Event rewards do not flood core market supply or make normal raid rewards feel irrelevant.
+- [ ] Premium tokens are used only for cosmetics, battle pass, and capped non-power convenience.
+- [ ] Every source explains why value was granted and where it landed.
+- [ ] Every sink previews cost, consequence, and blocked state before commit.
+- [ ] New-player recovery exists without making failure more profitable than success.
+- [ ] Veteran sinks create aspiration without forcing unhealthy grind.
+- [ ] Compensation grants are auditable and do not encourage repeated retry/spam behavior.
+- [ ] UI text distinguishes earned, premium, seasonal, reputation, claimable, expired, and converted value.
 
 ## Economy Examples
 

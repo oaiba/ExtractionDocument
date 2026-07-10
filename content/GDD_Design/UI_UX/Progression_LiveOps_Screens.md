@@ -298,6 +298,62 @@ Layout (PC/Console)
 
 ---
 
+## Progression / LiveOps Information Architecture
+
+Progression and LiveOps navigation should separate long-term progress, temporary events, competitive status, and reward claims while keeping deep links reversible. A player who enters from Home, AAR, Quest Board, Battle Pass, Event Hub, News, or Reward Inbox should always understand where they came from and what the next playable action is.
+
+| Destination | Owns | Entry Points | Exit / Return Behavior |
+| :--- | :--- | :--- | :--- |
+| Battle Pass | Season tier progress, free/premium rewards, claimable tiers | Home notification, Season Summary, Reward Inbox, Commerce upgrade return | Return to previous screen or open Commerce only for upgrade/checkout |
+| Event Hub | Event rules, objectives, reward ladder, playable route | Home event strip, News, Map Select, Tasks, Reward Inbox | Return to exact event route or open playable map/mode |
+| Daily / Weekly Tasks | Short-term objectives, tracking, reset, reroll | Home, Quest Board, AAR, HUD tracker | Track objective to Home/HUD/map; claim routes to Inbox if blocked |
+| Reward Inbox | Grants, compensation, overflow, claim-all leftovers | Global notification, AAR, Battle Pass, Event Hub, support grant | Return to source screen or destination inventory/profile |
+| Ranked Overview | Competitive rules, eligibility, season reward, queue | Home, Mode Select, Leaderboards, Season Summary | Queue ranked only when all blockers pass |
+| Leaderboards | Competitive/event comparison and privacy-safe profiles | Ranked Overview, Event Hub, Profile | Preserve filters when returning |
+| Season Summary | Season timing, reset, retained rewards, archive | Home, News, Battle Pass, Ranked | Link to claimable rewards, recap, archive |
+| Patch Notes / News | Live communication, known issues, deep links | Home, mandatory update, settings/help | Dismiss only when noncritical; deep links show disabled reason if unavailable |
+
+## Reward Claim Model
+
+All reward UI should share the same claim vocabulary so players do not need to learn separate rules for battle pass, events, tasks, compensation, and ranked rewards.
+
+| Claim State | Meaning | Required UI Behavior |
+| :--- | :--- | :--- |
+| Locked | Requirement not met | Show exact requirement, progress, and route |
+| Earned | Player qualifies but reward is not claimed | Promote Claim and show destination |
+| Claimed | Reward delivered | Mark complete and remove duplicate CTA |
+| Blocked | Reward cannot be delivered now | Name blocker: stash full, cap reached, offline, premium locked, account restriction |
+| Overflow | Reward does not fit destination | Preserve reward in inbox and show required capacity/action |
+| Expiring | Reward or claim window is near expiry | Sort/promote and show exact time remaining |
+| Expired | Claim window ended | Show whether reward was lost, converted, archived, or support-eligible |
+| Converted | Seasonal value became another value | Show conversion amount and policy |
+| Retroactive | Player qualifies after purchase, fix, or rule change | Show source, grant reason, and support-safe reference |
+
+## Season And Event State Model
+
+| State | Battle Pass | Event Hub | Tasks | Reward Inbox | News / Summary |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| Preseason | Preview rewards and rules, no XP | Tease event if announced | Normal tasks | Normal grants | Season preview |
+| Active | XP, claim, upgrade route active | Play/track/claim active | Track/claim active | Claim active | Featured live update |
+| Ending soon | Exact timer, claim reminders | Timer and unclaimed rewards promoted | Reset warning | Expiring sort | Final push copy |
+| Grace period | XP disabled, earned claim active | Play disabled, claim/conversion active | Expired tasks resolved | Earned claims preserved | Ended copy |
+| Archived | Read-only recap | Read-only rules/rewards | Hidden or history only | Claimed/history only | Archive/recap |
+| Offline/cached | Show cached state and disable risky claims | Disable play/purchase links | Track local only if safe | Disable claim or queue sync | Cached news with timestamp |
+
+## Cross-Screen Deep Link Rules
+
+| Source | Target | Rule |
+| :--- | :--- | :--- |
+| AAR reward row | Reward Inbox or exact source screen | Preserve source context and show why reward is claimable/blocked |
+| Battle Pass upgrade CTA | Commerce Battle Pass Upgrade | Commerce owns purchase, confirmation, receipt, and return |
+| Event store CTA | Commerce Event / Collection Store | Event Hub owns progress; Commerce owns purchase |
+| Insufficient balance | Commerce Currency Top-Up | Return to exact offer or reward context after checkout |
+| Task track | Home, HUD tracker, map, or Quest Board | Track state must be visible on at least one pre-raid and in-raid surface |
+| Ranked reward | Ranked Overview or Reward Inbox | Show season eligibility and reset timing before claim |
+| Patch note item | Affected setting, event, map, mode, or known issue | Disable with reason if target is unavailable or offline |
+
+---
+
 ## Designer-Ready Screen Specs
 
 Progression and LiveOps screens should create long-term motivation without burying the path back to raid. Rewards, expiry, premium/free status, and claim blockers must always be explicit.
@@ -346,6 +402,9 @@ Check seasonal progress, understand free/premium rewards, claim earned items, an
 | Reward tile | level, free/premium, type, claimed/earned/locked |
 | Upgrade prompt | cosmetic/value framing; never implies power advantage |
 | Claim CTA | checks inventory/stash capacity where relevant |
+| Claim all | claims eligible rewards only and explains blocked leftovers |
+| Tier skip route | opens Commerce upgrade/top-up only; this screen does not confirm purchase |
+| Retroactive premium banner | explains premium rewards unlocked after upgrade and routes to claim |
 
 **States & Edge Cases**
 
@@ -356,6 +415,9 @@ Check seasonal progress, understand free/premium rewards, claim earned items, an
 | Premium locked | Show premium requirement without hiding free rewards |
 | Season ending | Show exact remaining time |
 | Stash full | Block item claim and route to Reward Inbox/Stash |
+| Season ended grace | XP disabled; earned rewards remain claimable until grace timer ends |
+| Retroactive premium | Premium upgrade grants already-earned premium rewards into claimable state |
+| Tier skip purchased | Refresh tier track, show newly claimable rewards, and preserve Commerce receipt route |
 
 **Input / Focus / Touch**
 
@@ -416,6 +478,9 @@ Understand active event rules, objectives, rewards, expiry, and the exact playab
 | Event card | modifier, expiry, affected maps/modes |
 | Objective row | count, condition, reward, track action |
 | Play CTA | deep links to exact mode/map with rules applied |
+| Reward ladder | shows deterministic rewards, claim state, event currency, and owned state |
+| Rule card | names modifiers, insurance/economy changes, ranked impact, and accessibility notes |
+| Event store link | opens Commerce only for purchase; progress stays on Event Hub |
 
 **States & Edge Cases**
 
@@ -426,6 +491,9 @@ Understand active event rules, objectives, rewards, expiry, and the exact playab
 | Completed | Claim rewards and show replayable status |
 | Locked | Show requirement |
 | Ended | Move to archive/claim grace if supported |
+| Grace period | Play disabled, earned rewards/event currency conversion remain visible |
+| Currency conversion | Show conversion amount, timing, and destination |
+| Objective conflict | If map/mode unavailable, disable route with reason and alternate task |
 
 **Input / Focus / Touch**
 
@@ -483,6 +551,8 @@ Pick achievable tasks, track progress, claim rewards, and understand reset windo
 | Task row | title, progress, reset, reward, route |
 | Claim CTA | checks reward capacity |
 | Track action | pins objective to relevant screens |
+| Reroll control | shows cost, reroll limit, protected categories, and confirmation |
+| Reset warning | appears before reset when progress or claimable reward would be affected |
 
 **States & Edge Cases**
 
@@ -492,6 +562,9 @@ Pick achievable tasks, track progress, claim rewards, and understand reset windo
 | Complete | Claim promoted |
 | Expired | Move to expired/removed with explanation |
 | Reward blocked | route to inbox/stash |
+| Rerolled | Show previous task removed and new task reason; do not reroll completed claimable rewards silently |
+| Claimable at reset | Move earned reward to inbox or show final claim policy |
+| Anti-frustration alternate | Offer suggested map/mode when objective has narrow requirements |
 
 **Input / Focus / Touch**
 
@@ -551,6 +624,8 @@ Claim pending rewards safely while understanding expiry, source, capacity, and d
 | Reward row | source, item, expiry, destination, state |
 | Claim all | excludes blocked rewards and explains leftovers |
 | Capacity warning | needed cells or currency cap |
+| Source trail | opens Battle Pass, Event Hub, Ranked, support grant, or AAR source |
+| Duplicate grant state | shows already-owned/already-claimed outcome and support route |
 
 **States & Edge Cases**
 
@@ -560,6 +635,9 @@ Claim pending rewards safely while understanding expiry, source, capacity, and d
 | Expiring soon | expiry label promoted |
 | Stash full | block item claim and route to stash |
 | Already claimed | remove or show history |
+| Overflow | Keep reward in inbox and show exact capacity needed |
+| Partial claim all | Claim eligible rewards and summarize blocked leftovers |
+| Compensation grant | Show reason, eligibility window, and support-safe reference |
 
 **Input / Focus / Touch**
 
@@ -617,6 +695,8 @@ Understand rank, progress, rules, restrictions, rewards, and consequences before
 | Requirement row | pass/fail label and fix route |
 | RP bar | current, next, demotion threshold |
 | Queue CTA | names first blocker when disabled |
+| Season reset card | shows reset date, retained rewards, soft reset rule, and eligibility |
+| Reward eligibility | shows current achieved rank, required games, and claim timing |
 
 **States & Edge Cases**
 
@@ -626,6 +706,9 @@ Understand rank, progress, rules, restrictions, rewards, and consequences before
 | Level locked | show level requirement |
 | Penalty cooldown | show exact timer |
 | Party mismatch | show member blocker |
+| Demotion risk | Warn before queue and show consequence |
+| Season ending | Promote reset timing and reward eligibility |
+| Placement | Show matches remaining and provisional messaging |
 
 **Input / Focus / Touch**
 
@@ -681,6 +764,8 @@ Compare rank safely by season, region, friends, and platform while respecting pr
 | Leaderboard row | rank, alias, tier, stats, privacy-safe action |
 | Filter | clear current scope |
 | Empty state | no data explanation |
+| Reward threshold | shows cutoff, current player distance, and season/event expiry |
+| Archived selector | allows previous season view when data is available |
 
 **States & Edge Cases**
 
@@ -690,6 +775,8 @@ Compare rank safely by season, region, friends, and platform while respecting pr
 | No ranking | explain placement requirement |
 | Loading page | skeleton rows |
 | Filter empty | broaden filters action |
+| Archived season | read-only data with final reward thresholds |
+| Platform/input filter | clear current scope and whether crossplay data is included |
 
 **Input / Focus / Touch**
 
@@ -747,6 +834,8 @@ See the one most important update, learn what changed, dismiss noncritical news,
 | News card | title, category, date, primary action |
 | Patch row | version, summary, known issues |
 | Dismiss | persists until content changes |
+| Known issue link | opens issue detail with affected platforms, workaround, and status |
+| Compensation route | opens Reward Inbox or support grant detail when relevant |
 
 **States & Edge Cases**
 
@@ -756,6 +845,8 @@ See the one most important update, learn what changed, dismiss noncritical news,
 | Dismissed | stays hidden until changed |
 | Offline | cached notes or unavailable message |
 | Deep link unavailable | disable with reason |
+| Stale cached news | show last updated timestamp and disable play/claim CTAs |
+| Patch affects settings | deep link to exact setting or mode rule with back route |
 
 **Input / Focus / Touch**
 
@@ -778,12 +869,35 @@ See the one most important update, learn what changed, dismiss noncritical news,
 
 | Metric | Use |
 | :--- | :--- |
-| Reward claim latency | Identify hidden rewards |
-| Event objective tracking | Measure event clarity |
-| Battle pass upgrade context | Ensure monetization prompts are not overbearing |
-| Ranked queue eligibility failures | Improve restriction messaging |
+| Battle pass viewed | Measure season surface reach |
+| Reward selected | Identify reward clarity and preview interest |
+| Reward claim attempted / succeeded / blocked | Find capacity, premium, expiry, and routing blockers |
+| Battle pass upgrade CTA opened | Ensure monetization prompts are contextual and not overbearing |
+| Event objective tracked | Measure event clarity and route usefulness |
+| Event CTA used | Detect whether events convert to playable activity |
+| Event reward claimed | Tune event reward visibility and completion pacing |
+| Daily/weekly task tracked | Identify objective relevance |
+| Daily/weekly task claimed / expired / rerolled | Tune difficulty, reset timing, and anti-frustration |
+| Reward inbox claim all leftovers | Reveal capacity or duplicate grant confusion |
+| Ranked queue eligibility failure | Improve restriction messaging |
+| Leaderboard filter changed | Understand competitive comparison behavior |
+| Season recap viewed | Measure season closure comprehension |
 | News dismissal and click-through | Tune Home surface priority |
-| Daily task completion | Tune task difficulty and time windows |
+
+---
+
+## Progression / LiveOps QA Checklist
+
+- [ ] Battle Pass free, premium, claimable, locked, claimed, retroactive, season-ended, and grace-period states are visible.
+- [ ] Battle Pass upgrade and tier-skip actions route to Commerce for purchase, confirmation, receipt, and return.
+- [ ] Event Hub explains modifiers, expiry, objectives, deterministic rewards, event currency, and playable route before queue.
+- [ ] Event end behavior covers play disabled, claim grace, event currency conversion, archive, and owned rewards.
+- [ ] Daily/weekly tasks show reset, reroll cost/limit, claimable-at-reset behavior, and objective route.
+- [ ] Reward Inbox preserves blocked/overflow rewards and explains claim-all leftovers.
+- [ ] Ranked Overview shows eligibility, demotion risk, season reset, reward eligibility, and party blockers before queue.
+- [ ] Leaderboards respect privacy, platform/input filters, archived seasons, and reward thresholds.
+- [ ] Patch Notes / News disable stale play/claim CTAs when offline or cached.
+- [ ] All reward claims show source, destination, expiry, blocker, and support route when needed.
 
 ---
 
@@ -795,3 +909,5 @@ See the one most important update, learn what changed, dismiss noncritical news,
 - [ ] Reward inbox handles stash-full and expiry states.
 - [ ] News does not compete with deploy as the main Home action.
 - [ ] Privacy settings are honored in leaderboards and profiles.
+- [ ] Season reset, claim grace, reward conversion, and archive states are covered.
+- [ ] Commerce purchase routes are linked without duplicating checkout UX.

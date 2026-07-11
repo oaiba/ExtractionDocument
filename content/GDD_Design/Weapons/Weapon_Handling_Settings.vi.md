@@ -12,6 +12,35 @@ vũ khí handling defines how quickly và smoothly Người chơi có thể read
 
 ---
 
+## Recoil / Spread / Handling Contract
+
+Handling là biểu hiện moment-to-moment của weapon role. Nó phải làm intended range và counterplay readable trước khi damage math resolve.
+
+| Behavior | Rule | Player-Facing Feedback |
+| :--- | :--- | :--- |
+| First-shot accuracy | Cao cho precision weapons, vừa cho AR, thấp hơn từ sprint/hip-fire | Reticle settle, ADS readiness, movement bloom |
+| Sustained recoil | Tăng khi bắn liên tục; recovery theo role | Muzzle climb, reticle expansion, audio cadence |
+| Spread bloom | Hip-fire và movement expand spread nhanh nhất | Reticle size và bullet impact pattern |
+| Recovery | Burst discipline trả accuracy nhanh hơn spray | Reticle contract rõ sau pause |
+| Movement penalty | Sprint, strafe, vault, overweight, suppression giảm handling | Movement icon, stamina/weight linkage |
+| Stance / cover | Stable stance hoặc cover giảm sway/spread nếu support | Reticle stability và animation subtle |
+| Suppression impact | Incoming volume disrupt aim/focus nhưng không mất agency | Short aim pressure, audio ducking, duration readable |
+
+## Attachment Trade-Off Rules
+
+Attachment modify handling nhưng không được tạo pure upgrade stack.
+
+| Attachment Family | Can Improve | Must Trade Against |
+| :--- | :--- | :--- |
+| Muzzle / suppressor | Noise, recoil, flash | Length, cost, weight, durability, bullet crack limits |
+| Grip / handguard | Recoil recovery, hip control | Weight, ADS time, slot conflict |
+| Stock | Stability, recoil, shoulder speed | Mobility, draw time, storage footprint |
+| Optic | Target readability, precision | ADS time, close-range clutter, glint/visibility cho high magnification |
+| Magazine | Capacity, reload cadence | Weight, reload speed, handling, stash footprint |
+| Barrel | Range, velocity, spread | Weight, ADS, noise, CQB handling |
+
+---
+
 ## Draw & Holster Times
 
 thời gian to switch to a vũ khí (draw) hoặc stow it (holster). Affects vũ khí-swap và sidearm usage in CQB.

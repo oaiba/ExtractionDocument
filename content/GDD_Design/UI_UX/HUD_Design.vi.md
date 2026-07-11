@@ -421,6 +421,42 @@ Read lethal trạng thái, navigation, objective, và interaction information m�
 
 ---
 
+## HUD Production State Matrix
+
+| Element | Normal | Warning | Critical / Error | Offline / Reconnect | Accessibility Requirement |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| Health / armor | current values and armor zone | low HP, armor damaged | downed, bleed, armor broken | reconnect banner overrides non-critical motion | text/icon plus color |
+| Ammo / weapon | ammo, fire mode, weapon name | low ammo, reload needed | empty, jam/broken nếu supported | weapon action disabled while reconnecting | audio + icon + number |
+| Stamina / weight | stamina and weight tier | encumbered, exhausted | cannot sprint/carry blocker | preserve last known state as stale | label weight tier |
+| Extraction | available extract, timer, distance | late raid, contested | interrupted, blocked, not enough time | reconnect window result priority | countdown text and sound |
+| Squad | alive/downed/extracted state | low health, split, disconnected | dead/MIA/abandoned | reconnect grace timer | state text, not color only |
+| Interaction prompt | action, hold/tap progress | invalid tool/key/item | blocked action reason | disabled while server state unknown | readable button glyph and text |
+
+## Combat Feedback Requirements
+
+| Feedback | HUD / Notification Rule |
+| :--- | :--- |
+| Flesh hit | short hit marker and optional damage number if enabled |
+| Armor hit | distinct marker/sound and armor interaction recap support |
+| No penetration / ricochet | blocked/deflected marker; never silent zero damage |
+| Suppression | brief directional stress and aim pressure indicator with reduced-motion setting |
+| Low ammo / reload | ammo counter warning before empty, reload progress readable |
+| Extraction interrupt | timer reset reason shown immediately with audio cue |
+| Death cause | concise cause passes to post-raid debrief and death replay |
+
+## HUD Analytics And QA
+
+| Signal | Purpose |
+| :--- | :--- |
+| `hud_critical_state_shown` | health, armor, ammo, extraction, downed, reconnect |
+| `hud_prompt_blocked` | interaction, blocker, input method |
+| `hud_customization_changed` | element, visibility, scale, platform |
+
+- Critical HUD states remain visible over maps, looting, pause, spectator, and reconnect surfaces.
+- Combat feedback không rely vào color alone.
+- HUD customization không được hide required raid outcome hoặc extraction consequence states.
+- Mobile HUD giữ touch-safe combat center và tránh overlap fire/aim controls.
+
 ## Performance Budget
 
 ### HUD Rendering Rules

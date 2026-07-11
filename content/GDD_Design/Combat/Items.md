@@ -16,6 +16,22 @@ type: docs
 
 ***
 
+### Combat Item Source-Of-Truth Boundary
+
+This page describes combat-facing item usage and economic intent. It does not redefine item instance ownership, stash placement, entitlement, FIR, contraband, durability lifecycle, or overflow rules; those live in [Inventory System](../Inventory_System/_index.md), [Gear Tier System](../Gears/Gear_Tier_System.md), and [Economy](../GameDesign/Economy.md).
+
+| Item Family | Combat Contract | Source-Of-Truth Link |
+| :--- | :--- | :--- |
+| Weapons / ammo | Damage, handling, role, feedback, ammo/armor interaction | [Weapons](../Weapons/_index.md) |
+| Armor | Protection, movement cost, durability, readable failure | [Armor Gear](../Gears/ArmorGear/Armor.md) |
+| Medical | Recovery timing, vulnerability, status clarity | [Medical System](../Gameplay/Medical_System.md) |
+| Tactical equipment | Sound, vision, denial, extraction counterplay | [Combat Feel](../Gameplay/Combat_Feel_Topdown.md) |
+| Loot / barter | Value and risk context only | [Inventory System](../Inventory_System/_index.md) |
+
+Combat items must preserve the no-paid-power rule: premium purchases may grant cosmetic entitlement, but not superior combat item instances.
+
+***
+
 ### Item Categories
 
 #### 1. Weapons & Attachments

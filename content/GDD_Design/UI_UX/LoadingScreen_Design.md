@@ -421,7 +421,36 @@ Loading screens must tell the truth about wait, preserve trust, and route recove
 
 ***
 
-### 9. Cross-References
+### 9. Loading Truthfulness And Failure States
+
+Loading screens must be honest about what is happening. Decorative progress is allowed only when paired with a truthful operation label or state.
+
+| State | Player Message | Required Action |
+| :--- | :--- | :--- |
+| Normal progress | operation label plus progress or spinner | continue waiting |
+| Long load | after threshold, show current operation and reassurance | keep waiting or cancel only if safe |
+| Timeout | state which service/transition failed | retry, cancel, support |
+| Offline | explain unavailable destination | offline-safe route or retry |
+| Update required | version mismatch and platform route | update / exit |
+| Reconnect | attempt count, remaining window, gear consequence | continue, cancel with consequence |
+| Server rollback | raid invalidated, gear restored if applicable | return to stash / support |
+
+### 10. Loading Analytics And QA
+
+| Signal | Purpose |
+| :--- | :--- |
+| `loading_started` | type, source, destination, platform |
+| `loading_state_changed` | type, state, elapsed_ms |
+| `loading_retry_selected` | type, error_reason |
+| `loading_cancel_selected` | type, consequence_shown |
+| `reconnect_loading_result` | attempts, timeout_remaining, result |
+
+- L4 LobbyToMatch must show mode, map, region, squad, and reconnect-safe transition state.
+- L5 IngameToResult must align with raid result codes from Core Gameplay.
+- L8 Reconnect must show remaining reconnect window and MIA consequence before cancel.
+- Mobile loading must keep progress, operation label, and retry/cancel actions above OS gesture area.
+
+### 11. Cross-References
 
 * [Matchmaking & Lobby](../Gameplay/Matchmaking_Lobby.md) — L4 loading in deploy flow
 * [Lore Delivery](https://github.com/oaiba/ExtractionDocument/blob/main/content/Story/Lore_Delivery.md) — Loading screen tip format and attribution

@@ -12,6 +12,35 @@ Weapon handling defines how quickly and smoothly players can ready, aim, and fir
 
 ---
 
+## Recoil / Spread / Handling Contract
+
+Handling is the moment-to-moment expression of weapon role. It should make the intended range and counterplay readable before damage math resolves.
+
+| Behavior | Rule | Player-Facing Feedback |
+| :--- | :--- | :--- |
+| First-shot accuracy | High for precision weapons, moderate for AR, lower from sprint/hip-fire | Reticle settle, ADS readiness, movement bloom |
+| Sustained recoil | Increases with continuous fire; role-specific recovery | Muzzle climb, reticle expansion, audio cadence |
+| Spread bloom | Hip-fire and movement expand spread fastest | Reticle size and bullet impact pattern |
+| Recovery | Burst discipline returns accuracy faster than spray | Reticle contracts visibly after pause |
+| Movement penalty | Sprint, strafe, vault, overweight, and suppression reduce handling | Movement icon, stamina/weight linkage |
+| Stance / cover | Stable stance or cover should reduce sway/spread where supported | Subtle reticle stability and animation |
+| Suppression impact | Incoming volume disrupts aim and focus without removing agency | Short aim pressure, audio ducking, readable duration |
+
+## Attachment Trade-Off Rules
+
+Attachments modify handling but should not create a pure upgrade stack.
+
+| Attachment Family | Can Improve | Must Trade Against |
+| :--- | :--- | :--- |
+| Muzzle / suppressor | Noise, recoil, flash | Length, cost, weight, durability, bullet crack limits |
+| Grip / handguard | Recoil recovery, hip control | Weight, ADS time, slot conflict |
+| Stock | Stability, recoil, shoulder speed | Mobility, draw time, storage footprint |
+| Optic | Target readability, precision | ADS time, close-range clutter, glint/visibility for high magnification |
+| Magazine | Capacity, reload cadence | Weight, reload speed, handling, stash footprint |
+| Barrel | Range, velocity, spread | Weight, ADS, noise, CQB handling |
+
+---
+
 ## Draw & Holster Times
 
 Time to switch to a weapon (draw) or stow it (holster). Affects weapon-swap and sidearm usage in CQB.

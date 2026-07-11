@@ -804,6 +804,43 @@ Understand reconnection progress, attempts, timeout, and the consequence of canc
 
 ---
 
+## Production State Matrix
+
+| Surface | Loading / Pending | Disabled / Locked | Invalid / Error | Offline / Reconnect | Success / Recovery |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| HUD | late-bound squad/objective widgets skeleton | hidden only by explicit HUD setting | missing data uses safe fallback icon/text | reconnect banner and timer take priority | restored widgets animate minimally |
+| Tactical Map | map tiles/objective pins stream in | unavailable intel says why | route/ping fail names blocked reason | last known map cached with stale label | ping/route confirmed with text and icon |
+| Looting Overlay | container search progress | locked container shows key/tool requirement | invalid transfer, full bag, protected item | pending sync blocks destructive actions | item moved with source/destination toast |
+| Inventory Overlay | item details pending | invalid slots show compatibility reason | split/drop/use failure names rule | reconnect freezes move/discard | server confirms placement |
+| Pause Overlay | online status checking | abandon/report/settings gated with reason | failed report/settings save retry | raid not paused warning remains persistent | resume returns focus to last state |
+| Spectator View | replay/spectator target loading | enemy info locked by fairness rule | unavailable camera names reason | reconnect CTA prioritized while eligible | target switch confirms |
+| Reconnect Overlay | attempt count and timeout visible | cancel disabled only during server lock | failed attempt shows retry/support | primary state by definition | resume or MIA transition explained |
+
+## Platform Behavior And Input
+
+| Platform | Rule |
+| :--- | :--- |
+| PC | Overlay open state owns keyboard focus; Esc/back closes non-destructive overlays first. |
+| Console | Radial/bumper shortcuts must not hide extraction, downed, or reconnect warnings. |
+| Mobile | Touch targets stay outside combat-critical center when possible; bottom sheets never cover lethal state without dimmed combat pause indication. |
+
+## Analytics Funnel
+
+| Event | Required Properties |
+| :--- | :--- |
+| `in_raid_surface_opened` | surface, raid_phase, platform |
+| `in_raid_action_attempted` | surface, action, item_id_or_target, input_method |
+| `in_raid_action_blocked` | blocker_type, severity, player_state |
+| `reconnect_attempt_result` | attempt_index, remaining_window, result |
+| `overlay_closed` | surface, reason, duration |
+
+## In-Raid QA Checklist
+
+- No overlay hides death, extraction, downed, reconnect, or critical health state without an alternate persistent indicator.
+- Every blocked item/action/ping explains the rule in text, not color only.
+- Controller focus returns to the triggering element when overlays close.
+- Pending sync disables destructive item actions until server confirms state.
+
 ## Analytics
 
 | Metric | Use |

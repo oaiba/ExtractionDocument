@@ -420,7 +420,36 @@ loading màn hình must tell the truth about wait, preserve trust, và route rec
 
 ***
 
-### 9. Cross-References
+### 9. Loading Truthfulness And Failure States
+
+Loading screen phải honest về chuyện đang xảy ra. Decorative progress chỉ được dùng khi đi kèm operation label hoặc state thật.
+
+| State | Player Message | Required Action |
+| :--- | :--- | :--- |
+| Normal progress | operation label plus progress hoặc spinner | continue waiting |
+| Long load | sau threshold, show current operation và reassurance | keep waiting hoặc cancel nếu safe |
+| Timeout | nói service/transition nào failed | retry, cancel, support |
+| Offline | explain unavailable destination | offline-safe route hoặc retry |
+| Update required | version mismatch và platform route | update / exit |
+| Reconnect | attempt count, remaining window, gear consequence | continue, cancel with consequence |
+| Server rollback | raid invalidated, gear restored nếu applicable | return to stash / support |
+
+### 10. Loading Analytics And QA
+
+| Signal | Purpose |
+| :--- | :--- |
+| `loading_started` | type, source, destination, platform |
+| `loading_state_changed` | type, state, elapsed_ms |
+| `loading_retry_selected` | type, error_reason |
+| `loading_cancel_selected` | type, consequence_shown |
+| `reconnect_loading_result` | attempts, timeout_remaining, result |
+
+- L4 LobbyToMatch phải show mode, map, region, squad, và reconnect-safe transition state.
+- L5 IngameToResult phải align với raid result codes từ Core Gameplay.
+- L8 Reconnect phải show remaining reconnect window và MIA consequence trước cancel.
+- Mobile loading giữ progress, operation label, và retry/cancel actions phía trên OS gesture area.
+
+### 11. Cross-References
 
 * [Matchmaking & Lobby](../Gameplay/Matchmaking_Lobby.md) — L4 loading in deploy flow
 * [Lore Delivery](https://github.com/oaiba/ExtractionDocument/blob/main/content/Story/Lore_Delivery.md) — loading màn hình tip format và attribution

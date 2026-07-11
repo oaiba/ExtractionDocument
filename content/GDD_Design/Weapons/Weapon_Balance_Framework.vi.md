@@ -12,6 +12,37 @@ Tài liệu này định nghĩa how vũ khí balance is measured, tuned, và mai
 
 ---
 
+## Balance Contract
+
+Weapon balance được đánh giá bằng role health, readability, và economy pressure, không chỉ DPS. Mỗi weapon cần có job rõ, counter readable, và lý do tồn tại ở cost của nó.
+
+| Contract | Requirement |
+| :--- | :--- |
+| Role clarity | Mỗi weapon có preferred range band, handling identity, ammo posture, và counterplay. |
+| TTK readability | Death nhanh phải giải thích được qua range, hit zone, armor state, ammo, hoặc positioning. |
+| Armor integrity | Armor cao hơn phải đổi survival odds nhưng không tạo invincible state. |
+| Economy integrity | Gear đắt có thể mở rộng option nhưng không được xóa tactical mistake. |
+| Attachment integrity | Attachment tune role expression; không phải pure upgrade ladder. |
+| No paid combat power | Commerce chỉ grant cosmetics/entitlements, không grant superior combat item instances. |
+
+## TTK Guardrails
+
+TTK target là design band, không phải constant cứng. Dùng chúng để bắt outlier trước playtest.
+
+| Scenario | Target Feel | Guardrail |
+| :--- | :--- | :--- |
+| Close-range SMG vs light armor | Dangerous nhưng phụ thuộc route | Rất nhanh chỉ trong close band |
+| AR vs mid armor | Stable baseline | Reward burst control và cover hơn spray luck |
+| Shotgun vs unarmored close target | Lethal ambush | One-shot potential phải giảm mạnh ngoài close band |
+| DMR vs armor | Precision pressure | Follow-up cadence cho reaction trừ headshot/low armor |
+| Sniper headshot | High commitment lethal | Cần setup, sightline, sway/ADS cost, và recap rõ |
+| LMG suppression | Area control | High volume trade mobility, reload, visibility |
+| Pistol backup | Emergency tool | Có thể finish fight, không thay primary role |
+
+Balance review phải xem chest, head, limb, armor class, durability, range, và squad context.
+
+---
+
 ## DPS Calculations
 
 **Formula:** `DPS = (Damage × RPM) / 60`
@@ -138,6 +169,28 @@ KPIs for vũ khí balance (targets per season):
 | Win rate delta (vũ khí) | No vũ khí > +5% vs average | Reduce overperformer effectiveness |
 | TTK spread (within class) | No vũ khí 2× faster TTK than same-class median | Tighten damage/RPM spread |
 | chi phí-efficiency spread | Top giá trị pick not > 3× bottom in same class | Adjust chi phí hoặc base stats |
+
+---
+
+## Outlier Rules
+
+| Signal | Warning Threshold | Review Action |
+| :--- | :--- | :--- |
+| Single weapon pick rate | >55% trong intended competitive pool | Check role overlap và attachment dependency |
+| Kill share | >2x category median trong 2 tuần | Review TTK, ammo availability, và map bias |
+| Armor bypass rate | High-tier armor fail quá thường xuyên trước common ammo | Review penetration và armor degradation |
+| Attachment mandatory rate | Một attachment xuất hiện trên >70% build của class | Add trade-off hoặc buff alternatives |
+| Low-skill frustration | New player report unclear deaths từ cùng weapon | Improve feedback hoặc giảm unreadable burst |
+| Economy distortion | Budget weapon dominate high-cost alternatives | Tune cost, availability, hoặc role ceiling |
+
+## Patch Review Checklist
+
+- Patch notes nói player-facing problem, không chỉ numbers.
+- TTK, recoil/spread, ammo availability, và attachment builds được review cùng nhau.
+- Armor interaction được check với Gear và Inventory rules hiện tại.
+- Change không tạo paid power hoặc Commerce-only combat advantage.
+- Buff có expected counterplay; nerf vẫn giữ intended role của weapon.
+- LiveOps/event modifiers không dạy habits làm hỏng The Raid.
 
 ---
 

@@ -12,6 +12,24 @@ This document defines how bullets interact with armor, durability, distance, and
 
 ---
 
+## Player-Readable Ballistics Contract
+
+Ballistics can use server math, but the player-facing result must stay understandable. If a shot deals less damage than expected, the game must provide a readable reason through HUD, audio, VFX, or death recap.
+
+| Result | System Cause | Required Feedback |
+| :--- | :--- | :--- |
+| Penetration | Ammo penetration beats effective armor class | Flesh hit marker plus armor damage cue if armor was involved |
+| Partial penetration | Armor reduces energy but damage passes through | Muted hit marker, armor spark, reduced damage recap line |
+| Block | Armor stops health damage; blunt may apply | Hard armor impact, blocked/no-penetration marker, durability feedback |
+| Ricochet | Glancing hit on helmet/armor | Deflect sound, brief spark, concussion if applicable |
+| Falloff | Range exceeds effective band | Death recap and weapon detail show reduced damage at range |
+| Material penetration | Cover reduces or stops bullet | Impact on material, pass-through cue only if damage applies |
+| Armor break | Durability reaches unusable state | Armor warning on victim HUD and debrief item condition |
+
+Armor interaction must never be hidden math only. A player does not need the formula during combat, but they do need to know whether the problem was aim, range, ammo, armor, cover, or durability.
+
+---
+
 ## Penetration Chance Formula
 
 When a bullet hits an armored zone, the server resolves:

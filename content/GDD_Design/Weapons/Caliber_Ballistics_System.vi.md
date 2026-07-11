@@ -12,6 +12,24 @@ Tài liệu này định nghĩa how bullets interact với giáp, durability, di
 
 ---
 
+## Player-Readable Ballistics Contract
+
+Ballistics có thể dùng server math, nhưng player-facing result phải dễ hiểu. Nếu shot gây ít damage hơn kỳ vọng, game phải cho lý do readable qua HUD, audio, VFX, hoặc death recap.
+
+| Result | System Cause | Required Feedback |
+| :--- | :--- | :--- |
+| Penetration | Ammo penetration vượt effective armor class | Flesh hit marker cộng armor damage cue nếu có armor |
+| Partial penetration | Armor giảm energy nhưng damage vẫn đi qua | Muted hit marker, armor spark, reduced damage recap line |
+| Block | Armor chặn health damage; blunt có thể apply | Hard armor impact, blocked/no-penetration marker, durability feedback |
+| Ricochet | Glancing hit trên helmet/armor | Deflect sound, spark ngắn, concussion nếu applicable |
+| Falloff | Range vượt effective band | Death recap và weapon detail show reduced damage at range |
+| Material penetration | Cover giảm hoặc chặn bullet | Impact trên material, pass-through cue chỉ khi damage apply |
+| Armor break | Durability xuống unusable state | Armor warning trên victim HUD và debrief item condition |
+
+Armor interaction không được chỉ là hidden math. Player không cần formula trong combat, nhưng cần biết vấn đề là aim, range, ammo, armor, cover, hay durability.
+
+---
+
 ## Penetration Chance Formula
 
 khi a bullet hits an armored zone, the server resolves:

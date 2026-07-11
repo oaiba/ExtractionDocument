@@ -700,6 +700,41 @@ Understand queue progress, cancel rules, match found countdown, and reconnect/de
 
 ---
 
+## Production State Matrix
+
+| Screen | Loading / Pending | Disabled / Locked | Invalid / Error | Offline / Reconnect | Success |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| Mode Select | mode cards skeleton, rule chips delayed | ranked/event locked with visible requirement | unavailable mode names service reason | offline allows training only if cached | selected mode persists to map step |
+| Map Select | thumbnails and loot/weather placeholders | map locked by level/quest/event | missing map data shows retry | region outage disables affected maps | selected map summary moves forward |
+| Deploy Confirmation | loadout validation pending | deploy disabled with first blocker focused | missing weapon/ammo/durability/insurance warning | reconnecting squad member state shown | deploy starts matchmaking |
+| Squad Lobby | member cards pending | ready disabled for invalid member state | invite fail, privacy block, party mismatch | disconnected member grace timer | all ready or leader deploys partial if allowed |
+| Matchmaking / Match Found | queue timer, phase, region | cancel disabled only during final lock | timeout, declined, server reserve fail | reconnect/resume route visible | match locks and transitions to loading |
+
+## Platform Behavior And Input
+
+| Platform | Rule |
+| :--- | :--- |
+| PC | Mouse can jump between cards; keyboard focus order follows mode -> map -> loadout blockers -> primary CTA. |
+| Console | Shoulder tabs move between major steps; D-pad/left stick moves card focus; destructive/cancel actions require confirmation. |
+| Mobile | Single-column stepper, bottom pinned CTA, long tables collapse into expandable rows, blockers scroll into view automatically. |
+
+## Analytics Funnel
+
+| Event | Required Properties |
+| :--- | :--- |
+| `pre_raid_screen_viewed` | screen, mode, platform, party_size |
+| `pre_raid_primary_cta_selected` | screen, cta, selected_mode, selected_map |
+| `pre_raid_blocker_shown` | blocker_type, slot, severity, resolved |
+| `matchmaking_started` | mode, map, region, party_size, fill_enabled |
+| `match_found_result` | accepted, declined, timeout, server_error, reconnect |
+
+## Pre-Raid QA Checklist
+
+- Every disabled Deploy/Ready state names the blocker and direct next action.
+- Console focus never lands first on cancel/leave/destructive actions.
+- Mobile layout keeps selected mode, queue status, and primary CTA visible without horizontal scroll.
+- Offline and reconnect states do not silently discard selected loadout or squad state.
+
 ## Analytics
 
 | Metric | Use |

@@ -12,6 +12,31 @@ This document specifies how weapons are read from the top-down camera: silhouett
 
 ---
 
+## Combat Readability Feedback Contract
+
+Weapon presentation must communicate role and combat result under pressure. Visual/audio identity is not only flavor; it is how players learn what happened.
+
+| Feedback Family | Required Signal | Accessibility Requirement |
+| :--- | :--- | :--- |
+| Weapon class identity | Silhouette, cadence, muzzle flash scale, reload sound | Must remain readable with colorblind-safe labels/icons in inspect UI |
+| Flesh hit | Soft impact, short hit marker, blood/cloth VFX | Distinct from armor hit by sound/shape, not color alone |
+| Armor hit | Hard plate sound, spark/debris, armor marker | Death recap names armor zone if relevant |
+| No penetration / ricochet | Deflect sound, glancing VFX, no-pen marker | Do not use silence as feedback |
+| Suppression | Directional audio pressure, slight visual stress | Duration and intensity limited; settings reduce motion/flash |
+| Low ammo / reload | Click, mag animation, ammo counter state | Text or icon state supports audio cue |
+| Kill confirmation | Clean confirmation appropriate to mode | Never hides ongoing threats or extraction state |
+
+## UX Tell Priority
+
+| Priority | Tell | Reason |
+| :--- | :--- | :--- |
+| 1 | Incoming lethal damage / downed / death cause | Survival and learning |
+| 2 | Armor blocked / armor broke / no penetration | Trust in ammo and gear systems |
+| 3 | Suppression / low ammo / reload | Moment-to-moment combat decisions |
+| 4 | Weapon rarity / cosmetic flourish | Flavor only; must not obscure combat |
+
+---
+
 ## Weapon Silhouette Guide
 
 From the top-down camera, each weapon class must be distinguishable by **length**, **width**, and **profile** so players can identify threats at a glance.

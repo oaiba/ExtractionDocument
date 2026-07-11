@@ -12,6 +12,35 @@ This document expands each weapon genre with design identity, engagement doctrin
 
 ---
 
+## Category Requirement Template
+
+Every weapon category must answer the same production questions so balance, UI, audio, and loot placement can evaluate it consistently.
+
+| Requirement | Definition |
+| :--- | :--- |
+| Role | The combat job: entry, flank, precision, suppression, backup, or ambush |
+| Range band | The distance where the category should feel trusted |
+| Skill ask | What the player must do well: burst, lead, flank, reload, aim, hold lane |
+| Handling tax | Mobility, ADS, recoil, spread, sway, reload, or draw cost |
+| Attachment posture | Which stats attachments may improve and what trade-off they must add |
+| Counterplay | How opponents read and respond to the weapon |
+| UX tells | Audio/VFX/HUD cues that make hits, misses, suppression, and armor interaction readable |
+
+## Role / Counterplay Summary
+
+| Category | Role | Preferred Range | Main Counterplay | Required UX Tell |
+| :--- | :--- | :--- | :--- | :--- |
+| AR | Flexible baseline | Close-mid / mid | Force reloads, break line, out-specialize | Burst cadence and armor/flesh hit clarity |
+| SMG | Fast flank and CQB | Close | Keep distance, armor, pre-aim choke | High RPM audio, falloff, hip-spread bloom |
+| Shotgun | Ambush and breach | Very close | Stay outside burst range, bait shot | Pellet impact, spread, reload vulnerability |
+| Sniper | Long sightline denial | Long | Smoke, flank, close gap, force movement | Scope glint/sightline cue, lethal recap |
+| LMG | Suppression and lane hold | Mid | Rotate, punish reload, flank setup | Suppression audio, tracer/volume cue |
+| DMR | Precision pressure | Mid-long | Break sightline, force cadence | Semi-auto rhythm and hit zone clarity |
+| Pistol | Backup / recovery | Close | Primary weapon advantage, armor | Fast draw cue, low capacity warning |
+| Melee | Silent desperation | Contact | Spacing, awareness, light | Contact-only range and stealth tell |
+
+---
+
 ## 1. Assault Rifles (AR)
 
 ### Design Identity

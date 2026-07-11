@@ -12,6 +12,31 @@ This tài liệu specifies how vũ khí are read from the top-down camera: silho
 
 ---
 
+## Combat Readability Feedback Contract
+
+Weapon presentation phải communicate role và combat result dưới pressure. Visual/audio identity không chỉ là flavor; nó là cách player học chuyện gì vừa xảy ra.
+
+| Feedback Family | Required Signal | Accessibility Requirement |
+| :--- | :--- | :--- |
+| Weapon class identity | Silhouette, cadence, muzzle flash scale, reload sound | Vẫn readable với colorblind-safe labels/icons trong inspect UI |
+| Flesh hit | Soft impact, short hit marker, blood/cloth VFX | Khác armor hit bằng sound/shape, không chỉ color |
+| Armor hit | Hard plate sound, spark/debris, armor marker | Death recap nêu armor zone nếu relevant |
+| No penetration / ricochet | Deflect sound, glancing VFX, no-pen marker | Không dùng silence làm feedback |
+| Suppression | Directional audio pressure, slight visual stress | Duration/intensity giới hạn; settings giảm motion/flash |
+| Low ammo / reload | Click, mag animation, ammo counter state | Text/icon state hỗ trợ audio cue |
+| Kill confirmation | Clean confirmation phù hợp mode | Không che ongoing threats hoặc extraction state |
+
+## UX Tell Priority
+
+| Priority | Tell | Reason |
+| :--- | :--- | :--- |
+| 1 | Incoming lethal damage / downed / death cause | Survival và learning |
+| 2 | Armor blocked / armor broke / no penetration | Trust in ammo and gear systems |
+| 3 | Suppression / low ammo / reload | Moment-to-moment combat decisions |
+| 4 | Weapon rarity / cosmetic flourish | Flavor only; không được che combat |
+
+---
+
 ## vũ khí Silhouette Guide
 
 From the top-down camera, each vũ khí class phải được distinguishable by **length**, **width**, và **profile** so Người chơi có thể identify threats trong một nhịp nhìn.

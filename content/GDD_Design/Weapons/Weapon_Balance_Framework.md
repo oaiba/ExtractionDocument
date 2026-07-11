@@ -12,6 +12,37 @@ This document defines how weapon balance is measured, tuned, and maintained: DPS
 
 ---
 
+## Balance Contract
+
+Weapon balance is evaluated by role health, readability, and economy pressure, not DPS alone. Every weapon must have a job, a readable counter, and a reason to exist at its cost.
+
+| Contract | Requirement |
+| :--- | :--- |
+| Role clarity | Each weapon has a preferred range band, handling identity, ammo posture, and counterplay. |
+| TTK readability | Fast deaths must be explainable through range, hit zone, armor state, ammo, or positioning. |
+| Armor integrity | Higher armor should change survival odds without creating invincible states. |
+| Economy integrity | Expensive gear can widen options but must not erase tactical mistakes. |
+| Attachment integrity | Attachments tune role expression; they are not pure upgrade ladders. |
+| No paid combat power | Commerce can grant cosmetics/entitlements, never superior combat item instances. |
+
+## TTK Guardrails
+
+TTK targets are design bands, not hard constants. Use them to catch outliers before playtest.
+
+| Scenario | Target Feel | Guardrail |
+| :--- | :--- | :--- |
+| Close-range SMG vs light armor | Dangerous but route-dependent | Very fast only inside intended close band |
+| AR vs mid armor | Stable baseline | Should reward burst control and cover more than spray luck |
+| Shotgun vs unarmored close target | Lethal ambush | One-shot potential must collapse outside close band |
+| DMR vs armor | Precision pressure | Follow-up cadence must allow reaction unless headshot/low armor |
+| Sniper headshot | High commitment lethal | Requires setup, sightline, sway/ADS cost, and clear recap |
+| LMG suppression | Area control | High volume should trade mobility, reload, and visibility |
+| Pistol backup | Emergency tool | Can finish fights, should not replace primary role |
+
+Balance reviews must include chest, head, limb, armor class, durability, range, and squad context. A weapon that is fair in solo play can be oppressive when three players stack the same role.
+
+---
+
 ## DPS Calculations
 
 **Formula:** `DPS = (Damage × RPM) / 60`
@@ -138,6 +169,28 @@ KPIs for weapon balance (targets per season):
 | Win rate delta (weapon) | No weapon > +5% vs average | Reduce overperformer effectiveness |
 | TTK spread (within class) | No weapon 2× faster TTK than same-class median | Tighten damage/RPM spread |
 | Cost-efficiency spread | Top value pick not > 3× bottom in same class | Adjust cost or base stats |
+
+---
+
+## Outlier Rules
+
+| Signal | Warning Threshold | Review Action |
+| :--- | :--- | :--- |
+| Single weapon pick rate | >55% in intended competitive pool | Check role overlap and attachment dependency |
+| Kill share | >2x category median over 2 weeks | Review TTK, ammo availability, and map bias |
+| Armor bypass rate | High-tier armor fails too often to common ammo | Review penetration and armor degradation |
+| Attachment mandatory rate | One attachment appears on >70% of builds for a class | Add trade-off or buff alternatives |
+| Low-skill frustration | New players report unclear deaths from same weapon | Improve feedback or reduce unreadable burst |
+| Economy distortion | Budget weapon dominates high-cost alternatives | Tune cost, availability, or role ceiling |
+
+## Patch Review Checklist
+
+- Patch notes state the player-facing problem, not only numbers.
+- TTK, recoil/spread, ammo availability, and attachment builds are reviewed together.
+- Armor interaction is checked against current Gear and Inventory rules.
+- Changes do not introduce paid power or Commerce-only combat advantage.
+- A buff includes expected counterplay; a nerf preserves the weapon's intended role.
+- LiveOps/event modifiers do not train habits that fail in The Raid.
 
 ---
 

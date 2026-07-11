@@ -12,6 +12,35 @@ This tài liệu expands each vũ khí genre với design identity, engagement d
 
 ---
 
+## Category Requirement Template
+
+Mỗi weapon category phải trả lời cùng bộ câu hỏi production để balance, UI, audio, và loot placement đánh giá nhất quán.
+
+| Requirement | Definition |
+| :--- | :--- |
+| Role | Combat job: entry, flank, precision, suppression, backup, hoặc ambush |
+| Range band | Khoảng cách mà category nên đáng tin |
+| Skill ask | Player phải làm tốt gì: burst, lead, flank, reload, aim, hold lane |
+| Handling tax | Mobility, ADS, recoil, spread, sway, reload, hoặc draw cost |
+| Attachment posture | Stat nào attachment được cải thiện và trade-off cần thêm |
+| Counterplay | Opponent đọc và phản ứng với weapon như thế nào |
+| UX tells | Audio/VFX/HUD cues làm hit, miss, suppression, armor interaction readable |
+
+## Role / Counterplay Summary
+
+| Category | Role | Preferred Range | Main Counterplay | Required UX Tell |
+| :--- | :--- | :--- | :--- | :--- |
+| AR | Flexible baseline | Close-mid / mid | Force reloads, break line, out-specialize | Burst cadence và armor/flesh hit clarity |
+| SMG | Fast flank và CQB | Close | Keep distance, armor, pre-aim choke | High RPM audio, falloff, hip-spread bloom |
+| Shotgun | Ambush và breach | Very close | Stay outside burst range, bait shot | Pellet impact, spread, reload vulnerability |
+| Sniper | Long sightline denial | Long | Smoke, flank, close gap, force movement | Scope glint/sightline cue, lethal recap |
+| LMG | Suppression và lane hold | Mid | Rotate, punish reload, flank setup | Suppression audio, tracer/volume cue |
+| DMR | Precision pressure | Mid-long | Break sightline, force cadence | Semi-auto rhythm và hit zone clarity |
+| Pistol | Backup / recovery | Close | Primary weapon advantage, armor | Fast draw cue, low capacity warning |
+| Melee | Silent desperation | Contact | Spacing, awareness, light | Contact-only range và stealth tell |
+
+---
+
 ## 1. Assault Rifles (AR)
 
 ### Design Identity

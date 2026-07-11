@@ -432,6 +432,41 @@ Receive the right signal at the right urgency mà không losing combat readabili
 
 ---
 
+## Production Queue And Interruption Rules
+
+| Priority | Family | Interrupts Lower Priority? | Queue Rule | Accessibility Requirement |
+| :--- | :--- | :--- | :--- | :--- |
+| 1 | Lethal damage, downed, extraction interrupted, reconnect timeout | Yes | immediate, no batching | text + audio + icon |
+| 2 | Objective critical, squad downed, armor broken, low ammo empty | Yes | show within 0.25s | non-color cue required |
+| 3 | Loot, quest progress, invite, party state | No | batch by family, max 3 visible | readable source label |
+| 4 | Rewards, social, economy, cosmetic | No | queue/toast stack | dismissible where safe |
+| 5 | Flavor/news/reminders | Never | defer during combat/extraction | can be muted |
+
+Critical combat notifications có thể interrupt flavor, social, và reward toasts. Chúng không được interrupt mandatory confirmation dialogs hoặc hide extraction/death/reconnect state.
+
+## Error / Offline / Reconnect Notifications
+
+| State | Format | Required Action |
+| :--- | :--- | :--- |
+| Offline | persistent status strip hoặc modal ngoài combat | retry, go offline-safe, hoặc support |
+| Reconnecting | persistent banner với attempt count và timeout | continue attempts, cancel consequence |
+| Pending sync | compact toast plus disabled risky actions | wait, retry, support after timeout |
+| Service degraded | non-blocking toast với affected feature | explain what is disabled |
+| Action failed | toast gần action origin | retry hoặc direct fix |
+
+## Notification Analytics And QA
+
+| Signal | Purpose |
+| :--- | :--- |
+| `notification_enqueued` | family, priority, source, raid_phase |
+| `notification_interrupted` | interrupted_family, interrupting_family |
+| `notification_action_selected` | action, result, input_method |
+| `notification_error_seen` | error_type, retry_selected, support_opened |
+
+- Không quá một priority-1 notification cạnh tranh cùng screen region; combine nếu simultaneous.
+- Toast copy phải có subject + state + next action khi blocked hoặc failed.
+- Audio và visual timing nên khớp trong cùng perceived event window cho hit, armor, extraction, reconnect cues.
+
 ## Audio-Visual Sync Reference
 
 Every notification type has paired audio-visual feedback:

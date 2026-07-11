@@ -732,6 +732,42 @@ Return to the next raid quickly if valid, or understand exactly what must be fix
 
 ---
 
+## Production State Matrix
+
+| Screen | Loading / Pending | Disabled / Locked | Invalid / Error | Offline / Reconnect | Success |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| After Action Report | outcome, XP, and item reconciliation pending | claim/deploy disabled until reconciliation | invalid result uses support/rollback copy | reconnect result explains final state | summary shows extracted/KIA/MIA/rollback |
+| Death Replay | replay clip loading | unavailable for MIA/server rollback with reason | replay corrupt or expired names fallback | offline saves report draft locally if allowed | replay watched/skipped returns to AAR |
+| Loot Transfer | item grid pending | blocked by overflow/protected/pending sync | invalid move names slot/capacity/rule | offline prevents final transfer actions | stash/overflow placement confirmed |
+| Quest Progress | quest rows resolving | claim disabled by extraction requirement/cap | duplicate/expired reward shows reason | cached progress labelled stale | claim/turn-in path visible |
+| Squad Summary | squad stats pending | social actions gated by privacy/platform | invite/report fail shows retry | disconnected players show final outcome | invite/report/commend confirmed |
+| Redeploy Flow | readiness validation pending | deploy disabled by loadout/stash/mode blocker | selected mode unavailable names alternative | reconnecting party member state preserved | queue starts or stash action focused |
+
+## Platform Behavior And Input
+
+| Platform | Rule |
+| :--- | :--- |
+| PC | Tables support row focus and quick sort; primary CTA stays visible above fold on common laptop height. |
+| Console | Summary cards are focusable; dense data opens detail panels instead of requiring tiny columns. |
+| Mobile | AAR uses tabs/sections with pinned next CTA; loot transfer uses large item rows and batch actions. |
+
+## Analytics Funnel
+
+| Event | Required Properties |
+| :--- | :--- |
+| `post_raid_result_viewed` | result_code, mode, survived_time, party_size |
+| `death_replay_action` | available, watched, skipped, saved, reported |
+| `loot_transfer_action` | action, item_count, overflow, blocked_reason |
+| `reward_claim_attempted` | source, result, blocked_reason |
+| `redeploy_attempted` | same_loadout, blockers, mode_available |
+
+## Post-Raid QA Checklist
+
+- Result code, loot result, quest result, and insurance result never contradict each other.
+- Deploy Again is disabled only with a visible blocker and direct fix route.
+- Death Replay unavailable states explain why without implying missing data is player fault.
+- Offline/pending sync states prevent duplicate claims, duplicate transfers, and destructive item loss.
+
 ## Analytics
 
 | Metric | Use |

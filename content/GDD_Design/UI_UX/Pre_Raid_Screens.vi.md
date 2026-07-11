@@ -700,6 +700,41 @@ Understand queue progress, cancel rules, match found countdown, và reconnect/de
 
 ---
 
+## Production State Matrix
+
+| Screen | Loading / Pending | Disabled / Locked | Invalid / Error | Offline / Reconnect | Success |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| Mode Select | mode cards skeleton, rule chips delayed | ranked/event locked với visible requirement | unavailable mode nêu service reason | offline chỉ cho training nếu cached | selected mode persist sang map step |
+| Map Select | thumbnails và loot/weather placeholders | map locked bởi level/quest/event | missing map data có retry | region outage disable affected maps | selected map summary đi tiếp |
+| Deploy Confirmation | loadout validation pending | deploy disabled với first blocker focused | missing weapon/ammo/durability/insurance warning | reconnecting squad member state shown | deploy starts matchmaking |
+| Squad Lobby | member cards pending | ready disabled cho invalid member state | invite fail, privacy block, party mismatch | disconnected member grace timer | all ready hoặc leader deploy partial nếu allowed |
+| Matchmaking / Match Found | queue timer, phase, region | cancel disabled chỉ trong final lock | timeout, declined, server reserve fail | reconnect/resume route visible | match locks và chuyển loading |
+
+## Platform Behavior And Input
+
+| Platform | Rule |
+| :--- | :--- |
+| PC | Mouse jump giữa cards; keyboard focus order theo mode -> map -> loadout blockers -> primary CTA. |
+| Console | Shoulder tabs đổi major step; D-pad/left stick move card focus; destructive/cancel actions cần confirmation. |
+| Mobile | Single-column stepper, bottom pinned CTA, long tables collapse thành expandable rows, blockers scroll into view. |
+
+## Analytics Funnel
+
+| Event | Required Properties |
+| :--- | :--- |
+| `pre_raid_screen_viewed` | screen, mode, platform, party_size |
+| `pre_raid_primary_cta_selected` | screen, cta, selected_mode, selected_map |
+| `pre_raid_blocker_shown` | blocker_type, slot, severity, resolved |
+| `matchmaking_started` | mode, map, region, party_size, fill_enabled |
+| `match_found_result` | accepted, declined, timeout, server_error, reconnect |
+
+## Pre-Raid QA Checklist
+
+- Mọi disabled Deploy/Ready state nêu blocker và direct next action.
+- Console focus không bao giờ land đầu tiên trên cancel/leave/destructive actions.
+- Mobile layout giữ selected mode, queue status, và primary CTA visible không horizontal scroll.
+- Offline/reconnect states không silently discard selected loadout hoặc squad state.
+
 ## Analytics
 
 | Metric | cách dùng |

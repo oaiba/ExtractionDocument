@@ -874,6 +874,44 @@ Take a safety action with enough context, clear consequence, and no exposure of 
 
 ---
 
+## Production State Matrix
+
+| Screen | Loading / Pending | Disabled / Locked | Invalid / Error | Offline / Reconnect | Success |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| Social Panel | presence and invites pending | hidden by privacy with label | service error shows retry | platform offline state persistent | panel opens focused on last tab |
+| Friends List | row skeletons | invite/message disabled by privacy/block | search fail or stale presence | offline shows cached friends as stale | action toast with target name |
+| Party Panel | ready/member states pending | leader-only actions labelled | party mismatch, full party, mode lock | reconnect grace on disconnected member | ready/deploy state confirmed |
+| Invite Flow | invite sending | target unavailable/privacy locked | expired/declined/duplicate invite reason | queued invite if supported | accepted joins party or opens details |
+| LFG Board | listings loading | post/join locked by level/privacy | listing expired/full/moderated | offline hides join/post with reason | joined or post created |
+| Clan Hub | roster/tasks pending | role permissions labelled | rank/edit/moderation error | offline read-only mode | role/task/action confirmed |
+| Chat And Voice | channel connect pending | muted/blocked/parental locked | mic denied, voice service fail | reconnecting voice indicator | channel connected |
+| Report And Block | evidence upload pending | submit disabled until required fields | upload/submit fail retry | offline draft saved if allowed | receipt/support route shown |
+
+## Platform Behavior And Input
+
+| Platform | Rule |
+| :--- | :--- |
+| PC | Search and list navigation support keyboard focus, enter action, and escape close. |
+| Console | Tabs and rows must have predictable D-pad order; destructive social actions require confirmation. |
+| Mobile | Social panels use full-screen or bottom-sheet layout; voice/chat controls avoid tiny inline icons. |
+
+## Analytics Funnel
+
+| Event | Required Properties |
+| :--- | :--- |
+| `social_surface_viewed` | surface, entry_point, platform |
+| `social_action_attempted` | action, target_type, privacy_state |
+| `social_action_blocked` | action, blocked_reason, direct_fix_shown |
+| `voice_state_changed` | channel, state, error_reason |
+| `report_submitted` | category, evidence_attached, result |
+
+## Social QA Checklist
+
+- Presence, privacy, block, platform restriction, and parental lock states have readable text labels.
+- Report/block/destructive actions require confirmation and show post-action receipt.
+- Offline social surfaces clearly distinguish cached data from live presence.
+- Console and mobile never rely on hover-only affordances.
+
 ## Analytics
 
 | Metric | Use |

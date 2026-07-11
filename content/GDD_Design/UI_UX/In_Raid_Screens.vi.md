@@ -804,6 +804,43 @@ Understand reconnection progress, attempts, timeout, và the consequence of canc
 
 ---
 
+## Production State Matrix
+
+| Surface | Loading / Pending | Disabled / Locked | Invalid / Error | Offline / Reconnect | Success / Recovery |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| HUD | late-bound squad/objective widgets skeleton | hidden chỉ bởi explicit HUD setting | missing data dùng safe fallback icon/text | reconnect banner/timer priority | restored widgets animate tối thiểu |
+| Tactical Map | map tiles/objective pins stream in | unavailable intel nói lý do | route/ping fail nêu blocked reason | cached map có stale label | ping/route confirmed với text/icon |
+| Looting Overlay | container search progress | locked container show key/tool requirement | invalid transfer, full bag, protected item | pending sync block destructive actions | item moved với source/destination toast |
+| Inventory Overlay | item details pending | invalid slots show compatibility reason | split/drop/use failure nêu rule | reconnect freezes move/discard | server confirms placement |
+| Pause Overlay | online status checking | abandon/report/settings gated with reason | failed report/settings save retry | raid not paused warning persistent | resume returns focus |
+| Spectator View | replay/spectator target loading | enemy info locked by fairness rule | unavailable camera names reason | reconnect CTA prioritized while eligible | target switch confirms |
+| Reconnect Overlay | attempt count and timeout visible | cancel disabled only during server lock | failed attempt shows retry/support | primary reconnect state | resume hoặc MIA transition explained |
+
+## Platform Behavior And Input
+
+| Platform | Rule |
+| :--- | :--- |
+| PC | Overlay open state owns keyboard focus; Esc/back closes non-destructive overlays first. |
+| Console | Radial/bumper shortcuts không được hide extraction, downed, hoặc reconnect warnings. |
+| Mobile | Touch targets tránh combat-critical center khi có thể; bottom sheets không cover lethal state nếu không có indicator. |
+
+## Analytics Funnel
+
+| Event | Required Properties |
+| :--- | :--- |
+| `in_raid_surface_opened` | surface, raid_phase, platform |
+| `in_raid_action_attempted` | surface, action, item_id_or_target, input_method |
+| `in_raid_action_blocked` | blocker_type, severity, player_state |
+| `reconnect_attempt_result` | attempt_index, remaining_window, result |
+| `overlay_closed` | surface, reason, duration |
+
+## In-Raid QA Checklist
+
+- Không overlay nào hide death, extraction, downed, reconnect, hoặc critical health state nếu không có persistent indicator khác.
+- Mọi blocked item/action/ping giải thích rule bằng text, không chỉ color.
+- Controller focus quay về triggering element khi overlay đóng.
+- Pending sync disables destructive item actions đến khi server confirm.
+
 ## Analytics
 
 | Metric | cách dùng |

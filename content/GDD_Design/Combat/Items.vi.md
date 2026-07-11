@@ -15,6 +15,22 @@ type: docs
 
 ***
 
+### Combat Item Source-Of-Truth Boundary
+
+Trang này mô tả combat-facing item usage và economic intent. Nó không định nghĩa lại item instance ownership, stash placement, entitlement, FIR, contraband, durability lifecycle, hoặc overflow rules; các phần đó thuộc [Inventory System](../Inventory_System/_index.md), [Gear Tier System](../Gears/Gear_Tier_System.md), và [Economy](../GameDesign/Economy.md).
+
+| Item Family | Combat Contract | Source-Of-Truth Link |
+| :--- | :--- | :--- |
+| Weapons / ammo | Damage, handling, role, feedback, ammo/armor interaction | [Weapons](../Weapons/_index.md) |
+| Armor | Protection, movement cost, durability, readable failure | [Armor Gear](../Gears/ArmorGear/Armor.md) |
+| Medical | Recovery timing, vulnerability, status clarity | [Medical System](../Gameplay/Medical_System.md) |
+| Tactical equipment | Sound, vision, denial, extraction counterplay | [Combat Feel](../Gameplay/Combat_Feel_Topdown.md) |
+| Loot / barter | Chỉ value và risk context | [Inventory System](../Inventory_System/_index.md) |
+
+Combat items phải giữ no-paid-power rule: premium purchase có thể grant cosmetic entitlement, nhưng không grant superior combat item instances.
+
+***
+
 ### Item Categories
 
 #### 1. vũ khí & Attachments

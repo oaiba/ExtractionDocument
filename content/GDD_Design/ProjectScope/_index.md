@@ -36,3 +36,13 @@ Benchmarks and scope planning aligned with the genre.
 {{< card link="competitive-analysis-extraction-shooters.html" title="Competitive Analysis" icon="search" subtitle="Extraction shooter market & inventory benchmarks." >}}
 {{< card link="project-scope-review-and-planning.html" title="Scope Review & Planning" icon="map" subtitle="Review, benchmarks, and quarterly planning." >}}
 {{< /cards >}}
+
+## Production Readiness
+
+Use these pages to track unresolved cross-domain decisions, ownership boundaries, and MVP review status.
+{{< cards cols="3" >}}
+{{< card link="design-decision-register.html" title="Design Decision Register" icon="clipboard-list" subtitle="Open, approved, rejected, and deferred design decisions." >}}
+{{< card link="cross-system-traceability.html" title="Cross-System Traceability" icon="link" subtitle="Player journey ownership, states, failure behavior, and telemetry." >}}
+{{< card link="mvp-readiness-review.html" title="MVP Readiness Review" icon="check-circle" subtitle="Domain readiness, missing decisions, and MVP gate criteria." >}}
+{{< card link="design-glossary.html" title="Design Glossary" icon="book-open" subtitle="Canonical game and technical terminology for English and Vietnamese docs." >}}
+{{< /cards >}}

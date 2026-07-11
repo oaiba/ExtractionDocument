@@ -19,6 +19,8 @@ Trang này là screen inventory canonical cho package UI/UX design. Nó nhóm sc
 | [In-Raid Screens](In_Raid_Screens.md) | HUD, tactical map, looting, inventory overlay, pause, spectator |
 | [Post-Raid Screens](Post_Raid_Screens.md) | AAR, death replay, loot transfer, quest progress, redeploy |
 
+Để kiểm tra ownership liên domain, decision còn mở và readiness MVP, xem [Cross-System Traceability](../ProjectScope/Cross_System_Traceability.vi.md), [Design Decision Register](../ProjectScope/Design_Decision_Register.vi.md) và [MVP Readiness Review](../ProjectScope/MVP_Readiness_Review.vi.md).
+
 Mỗi screen group phải trả lời bốn câu hỏi:
 
 | Question | Requirement |

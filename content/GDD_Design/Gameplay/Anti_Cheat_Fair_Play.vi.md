@@ -174,6 +174,29 @@ Rather than banning immediately (which reveals detection methods to cheat develo
 
 ***
 
+### Fair Play Production Contract
+
+Anti-cheat phải đủ rõ để tạo niềm tin nhưng không làm lộ implementation detection. Contract này áp dụng cho mọi system networked và enforcement flow hướng người chơi.
+
+| Khu vực | Rule bắt buộc |
+| :--- | :--- |
+| Server authority | Position, damage, visibility, extraction, item transfer, reward và entitlement do server quyết định |
+| Evidence | Hành vi đáng ngờ phải có session, action và confidence context; một signal nhiễu không tự động tạo permanent ban |
+| Player communication | Kick, restriction, rollback và compensation phải giải thích ở mức dễ hiểu và có support route |
+| Recovery | Crash, rollback, disconnect và false positive phải giữ audit trail deterministic |
+| Privacy | Report và telemetry chỉ thu thập dữ liệu cần cho enforcement, safety và appeal |
+| Economy safety | Duplication, RMT, boosting và abuse không tạo item, currency hoặc progression không giới hạn |
+
+#### Enforcement QA Checklist
+
+- [ ] Người chơi kỹ năng cao không bị phạt bởi một anomaly signal đơn lẻ.
+- [ ] Mọi restriction tự động có audit record và appeal path.
+- [ ] Rollback item, currency, reward và insurance là idempotent.
+- [ ] Report hoạt động từ death, debrief và encounter history.
+- [ ] Error, offline và reconnect không âm thầm làm mất report hoặc appeal.
+- [ ] Ban communication không tiết lộ threshold hoặc cách bypass detection.
+- [ ] Transparency report dùng dữ liệu aggregate và bảo vệ privacy.
+
 ### Tham Chiếu Chéo
 
 * [LOS, Fog & Visibility](LOS_Fog_Visibility.md) — Server-authoritative LOS, anti-wallhack design.

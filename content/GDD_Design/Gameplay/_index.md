@@ -70,6 +70,13 @@ This section details the specific **interaction mechanics** — how players phys
 {{< card link="Gameplay_Review_Checklist" title="Review Checklist & Benchmark" icon="check" subtitle="Pillar alignment, competitor benchmark, cross-platform review, and consistency fixes." >}}
 {{< /cards >}}
 
+## Production Readiness References
+
+{{< cards cols="2" >}}
+{{< card link="AI_Enemy_Behavior" title="AI Production Contract" icon="chip" subtitle="Enemy roles, counterplay, detection tells, anti-frustration, loot, and telemetry." >}}
+{{< card link="Anti_Cheat_Fair_Play" title="Fair Play Production Contract" icon="lock-closed" subtitle="Server authority, evidence, enforcement, recovery, privacy, and QA." >}}
+{{< /cards >}}
+
 {{< cards cols="2" >}}
 {{< card link="WeaponArsenal" title="Weapon Arsenal" icon="adjustments" subtitle="Full weapon bible: 5 primary categories, ammo caliber tables, attachment reference, damage/recoil/TTK mechanics." >}}
 {{< card link="ItemsAndGear" title="Items & Gear Catalogue" icon="archive" subtitle="Armor, medical, consumables, tactical gear, keys, crafting materials — all item specs, values, and grid sizes." >}}

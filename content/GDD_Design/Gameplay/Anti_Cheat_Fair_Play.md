@@ -175,6 +175,29 @@ Rather than banning immediately (which reveals detection methods to cheat develo
 
 ***
 
+### Fair Play Production Contract
+
+Anti-cheat behavior must be visible enough to build trust without exposing detection implementation. The following contract applies to every networked system and player-facing enforcement flow.
+
+| Area | Required rule |
+| :--- | :--- |
+| Server authority | Position, damage, visibility, extraction, item transfer, reward, and entitlement are server-authoritative |
+| Evidence | Suspicious behavior is recorded with session, action, and confidence context; a single noisy signal is not an automatic permanent ban |
+| Player communication | Kicks, restrictions, rollbacks, and compensation explain the outcome at a readable level and provide the correct support route |
+| Recovery | Crash, rollback, disconnect, and false-positive handling preserve a deterministic audit trail |
+| Privacy | Reports and telemetry collect only data needed for enforcement, safety, and appeal review |
+| Economy safety | Duplication, RMT, boosting, and abuse cannot create unbounded items, currency, or progression |
+
+#### Enforcement QA Checklist
+
+- [ ] A legitimate high-skill player is not punished by a single anomaly signal.
+- [ ] Every automatic restriction has an audit record and appeal path.
+- [ ] Item, currency, reward, and insurance rollback is idempotent.
+- [ ] Report submission works from death, debrief, and encounter history surfaces.
+- [ ] Error, offline, and reconnect states do not silently discard a report or appeal.
+- [ ] Ban communication does not reveal detection thresholds or bypass methods.
+- [ ] Monthly transparency reporting uses aggregate data and preserves player privacy.
+
 ### Cross-References
 
 * [LOS, Fog & Visibility](LOS_Fog_Visibility.md) — Server-authoritative LOS, anti-wallhack design.

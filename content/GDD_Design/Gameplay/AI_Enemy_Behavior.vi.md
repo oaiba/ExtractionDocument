@@ -436,6 +436,63 @@ To prevent AI from feeling unfair hoặc cheap, the following design limits appl
 
 ***
 
+### AI Production Contract
+
+Các bảng enemy hiện có mô tả roster. Section này định nghĩa contract chung mà mọi enemy, boss hoặc event AI mới phải đáp ứng trước khi đưa vào raid.
+
+#### AI System Model
+
+| Entity | Trách nhiệm bắt buộc |
+| :--- | :--- |
+| `EnemyAgent` | Actor runtime có health, equipment, faction, threat tier và intent hiện tại |
+| `Faction` | Quyết định patrol territory, visual/audio identity, loot profile và ally rule |
+| `ThreatTier` | Giới hạn accuracy, armor, coordination, reinforcement và reward |
+| `DetectionState` | Unknown, suspicious, alerted, visual contact, searching hoặc de-escalating |
+| `AlertState` | Lan truyền alert theo local với source, age, confidence và expiry |
+| `PatrolRoute` | Vùng di chuyển và anchor bị giới hạn, không search toàn map |
+| `CombatIntent` | Hold, advance, suppress, flank, retreat, investigate, heal hoặc call support |
+| `ReinforcementRequest` | Request theo faction có cooldown, distance, cap và reason |
+| `BossEncounter` | Owner, phase rule, arena boundary, reward profile và reset policy |
+| `AIRewardProfile` | Loot source, tier, economy value và anti-farming limit |
+| `PlayerAsScavState` | Spawn context, objective, extraction rule và reputation impact |
+
+#### Enemy Role Và Counterplay Contract
+
+Mỗi role phải có gameplay purpose, range/threat profile, detection, movement/cover behavior, combat behavior, counterplay, loot contribution và audio/visual tell. Basic scavenger, patrol guard, objective guard, elite/rogue, boss crew, event AI và Player-as-Scav đều phải đáp ứng contract này.
+
+Không role nào được tạo độ khó chỉ bằng hidden accuracy hoặc damage cao hơn. Difficulty phải đến từ positioning, timing, coordination, resource pressure hoặc route control có thể đọc được.
+
+#### Detection Và Alert Rules
+
+- Detection dùng sight, hearing và contextual evidence; AI không biết vị trí player nếu không có source hợp lệ.
+- Sound event phải có source type, vị trí không chắc chắn, age và intensity; AI điều tra một vùng hợp lý thay vì snap thẳng tới player.
+- Alert propagation có giới hạn theo faction, distance và expiry.
+- Mất line of sight chuyển AI sang search có thời lượng giới hạn, không tracking vĩnh viễn.
+- Reinforcement có cooldown, local cap, travel time và audio/visual signal.
+- Spawn protection, reconnect recovery và safe interaction không bị ngắt bởi hidden aggro tức thời.
+
+#### Combat Readability Contract
+
+Player phải nhận biết được vì sao pressure tăng. AI phải có feedback cho detection, search, reinforcement, suppression, flank, retreat, heal, boss phase change và mất target bằng ít nhất hai trong audio, animation, VFX, world-space message hoặc HUD. Hidden difficulty modifier không thay thế tell.
+
+#### AI Loot Và Economy Rules
+
+- Faction và role chọn loot profile có giới hạn; AI không tạo item ngoài faucet đã cấu hình.
+- Boss và event reward phải có risk, exposure hoặc objective cost rõ ràng và không tạo paid combat power.
+- AI reward farming bị giới hạn bằng spawn, repeat-kill hoặc session cap khi cần.
+- Loot tuân theo item lifecycle canonical và được server reconcile khi death, extraction, rollback hoặc disconnect.
+
+#### Anti-Frustration Và Exploit Rules
+
+- Không spawn enemy trong active interaction, extraction hold hoặc protected reconnect state.
+- Giới hạn cross-zone aggro, reinforcement chain và số threat tier cao đồng thời.
+- Có cooldown cho repeated pressure và recovery route sau khi squad disengage.
+- Movement, damage, loot và reward của AI phải được validate server-side.
+
+#### AI Telemetry Và QA
+
+Theo dõi time to first threat, detection false positive/negative, reinforcement frequency/chain length, player death reason, boss completion/escape, AI loot value, repeat-kill farming và frustration report. Mỗi AI feature mới phải có role, counterplay, detection tell, reward profile, failure behavior và telemetry owner.
+
 ### Tham Chiếu Chéo
 
 * [cốt lõi Gameplay Loop](CoreLoop.md) — Scav Mode economy faucet, AI in infiltration phase.

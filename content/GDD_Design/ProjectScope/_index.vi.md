@@ -21,6 +21,16 @@ Các trụ cột cốt lõi mà mọi feature phải hỗ trợ.
 {{< card link="design-pillars-enhanced.html" title="Design Pillars" icon="scale" subtitle="Những luật bất biến của game design." >}}
 {{< /cards >}}
 
+## Production Readiness
+
+Các trang này theo dõi decision liên domain, ownership boundary và trạng thái sẵn sàng MVP.
+{{< cards cols="3" >}}
+{{< card link="design-decision-register.html" title="Design Decision Register" icon="clipboard-list" subtitle="Các quyết định đang mở, đã approve, reject hoặc defer." >}}
+{{< card link="cross-system-traceability.html" title="Cross-System Traceability" icon="link" subtitle="Ownership, state, failure behavior và telemetry của player journey." >}}
+{{< card link="mvp-readiness-review.html" title="MVP Readiness Review" icon="check-circle" subtitle="Readiness theo domain, decision còn thiếu và MVP gate." >}}
+{{< card link="design-glossary.html" title="Design Glossary" icon="book-open" subtitle="Thuật ngữ game và technical canonical cho docs English/Vietnamese." >}}
+{{< /cards >}}
+
 ## Scope Management
 
 Những gì chúng ta đang xây, và những gì chủ động cắt bỏ.

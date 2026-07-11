@@ -19,6 +19,8 @@ This page is the canonical screen inventory for the UI/UX design package. It gro
 | [In-Raid Screens](In_Raid_Screens.md) | HUD, tactical map, looting, inventory overlay, pause, spectator |
 | [Post-Raid Screens](Post_Raid_Screens.md) | AAR, death replay, loot transfer, quest progress, redeploy |
 
+For cross-domain ownership, unresolved decisions, and MVP readiness, use [Cross-System Traceability](../ProjectScope/Cross_System_Traceability.md), [Design Decision Register](../ProjectScope/Design_Decision_Register.md), and [MVP Readiness Review](../ProjectScope/MVP_Readiness_Review.md).
+
 Every screen group must answer four questions:
 
 | Question | Requirement |

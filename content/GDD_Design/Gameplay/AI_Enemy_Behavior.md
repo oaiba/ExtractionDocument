@@ -437,6 +437,81 @@ To prevent AI from feeling unfair or cheap, the following design limits apply:
 
 ***
 
+### AI Production Contract
+
+The existing enemy tables define the roster. This section defines the shared contract that every new enemy, boss, or event AI must satisfy before it is added to a raid.
+
+#### AI System Model
+
+| Entity | Required responsibility |
+| :--- | :--- |
+| `EnemyAgent` | Runtime actor with health, equipment, faction, threat tier, and current intent |
+| `Faction` | Controls patrol territory, visual/audio identity, loot profile, and ally rules |
+| `ThreatTier` | Bounds accuracy, armor, coordination, reinforcement access, and reward value |
+| `DetectionState` | Unknown, suspicious, alerted, visual contact, searching, or de-escalating |
+| `AlertState` | Local alert propagation with source, age, confidence, and expiry |
+| `PatrolRoute` | Bounded movement area and anchor points; never an unrestricted global search |
+| `CombatIntent` | Hold, advance, suppress, flank, retreat, investigate, heal, or call support |
+| `ReinforcementRequest` | Faction-local request with cooldown, distance, cap, and reason |
+| `BossEncounter` | Encounter owner, phase rules, arena boundaries, reward profile, and reset policy |
+| `AIRewardProfile` | Loot source, tier, economy value, and anti-farming limits |
+| `PlayerAsScavState` | Spawn context, objective, extraction rule, and reputation impact |
+
+#### Enemy Role And Counterplay Contract
+
+| Role | Gameplay purpose | Player counterplay | Required tell |
+| :--- | :--- | :--- | :--- |
+| Basic scavenger | Populate routes and create low-level pressure | Break line of sight, reposition, or take a clean fight | Search voice, weapon raise, visible hesitation |
+| Patrol guard | Protect a route or building | Observe patrol timing, bypass, or isolate | Patrol callout, cone movement, radio ping |
+| Objective guard | Make valuable objectives costly | Scout, use cover, split the group, or disengage | Objective warning, coordinated formation |
+| Elite / rogue | Create high-risk roaming pressure | Avoid, outplay cover, or use resource advantage | Distinct audio signature and tactical intent |
+| Boss crew | Support a boss encounter | Remove support, interrupt phases, or escape | Phase callout and reinforcement tell |
+| Event AI | Make a limited-time rule legible | Follow event counter-rule and risk/reward route | Event icon, world cue, explicit objective text |
+
+No role may be defined only by higher hidden accuracy or damage. Difficulty must come from readable positioning, timing, coordination, resource pressure, or route control.
+
+#### Detection And Alert Rules
+
+- Detection uses sight, hearing, and contextual evidence; no AI receives player knowledge without a valid source.
+- Sound events include source type, location uncertainty, age, and intensity. AI should investigate a plausible area rather than snap directly to the player.
+- Alert propagation stays faction-local, has a maximum distance, and expires unless refreshed by new evidence.
+- Losing line of sight moves the AI into search behavior with a bounded search duration, not permanent tracking.
+- Reinforcement requests have a cooldown, local cap, travel time, and visible/audio signal.
+- Spawn protection, reconnect recovery, and safe interactions must not be interrupted by an immediate hidden aggro event.
+
+#### Combat Readability Contract
+
+The player must be able to identify why pressure is increasing. The AI must expose feedback for detection, search, reinforcement, suppression, flank, retreat, heal, boss phase change, and loss of target through at least two of audio, animation, VFX, world-space messaging, or readable HUD support. Hidden difficulty modifiers are not a substitute for tells.
+
+#### AI Loot And Economy Rules
+
+- Faction and role select a bounded loot profile; AI cannot generate items outside the configured faucet.
+- Boss and event rewards must have an explicit risk, exposure, or objective cost and cannot create paid combat power.
+- AI reward farming is limited by spawn, repeat-kill, and session-level caps where needed.
+- Loot follows the canonical item lifecycle and is reconciled by the server on death, extraction, rollback, or disconnect.
+
+#### Anti-Frustration And Exploit Rules
+
+- Never spawn an enemy inside an active interaction, extraction hold, or protected reconnect state.
+- Bound cross-zone aggro, reinforcement chains, and simultaneous high-tier threats.
+- Apply cooldowns to repeated pressure and provide a recovery route after a squad disengages.
+- Validate AI movement, damage, loot, and reward server-side; client visuals cannot create rewards or bypass threat rules.
+
+#### AI Telemetry And QA
+
+| Signal | Review question |
+| :--- | :--- |
+| Time to first threat | Does the raid establish pressure without deleting orientation time? |
+| Detection false positive/negative | Is stealth predictable and fair? |
+| Reinforcement frequency and chain length | Are local alerts escalating without snowballing? |
+| Player death by AI reason | Can the death be explained by the feedback shown? |
+| Boss completion and escape rate | Is the encounter risky without becoming a mandatory power check? |
+| AI loot value by tier | Does AI reward support the economy without flooding it? |
+| Repeat-kill and farming rate | Are players exploiting predictable spawns or reward loops? |
+| Frustration reports | Which role, phase, or behavior needs tuning? |
+
+Every new AI feature requires a role, counterplay, detection tell, reward profile, failure behavior, and telemetry owner before implementation review.
+
 ### Cross-References
 
 * [Core Gameplay Loop](CoreLoop.md) — Scav Mode economy faucet, AI in infiltration phase.

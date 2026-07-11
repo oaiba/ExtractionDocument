@@ -1,5 +1,5 @@
 ---
-title: "Stash Design"
+title: "Thiết Kế Stash"
 linkTitle: "Stash"
 type: docs
 weight: 25
@@ -7,178 +7,179 @@ weight: 25
 
 ## Tổng Quan
 
-The **Stash** is the người chơi's permanent out-of-raid storage for all items extracted from Raid Extraction. Items in the Stash are never lost on death — only gear brought into raid can be lost. The Stash is the central inventory repository that bridges raids và enables the preparation phase.
+**Stash** là kho lưu trữ lâu dài ngoài raid của người chơi, dùng để giữ toàn bộ vật phẩm đã extraction thành công. Vật phẩm đã đưa vào Stash sẽ không bị mất khi người chơi chết; chỉ trang bị đã mang vào raid mới có thể bị mất. Stash là kho inventory trung tâm nối các raid với giai đoạn chuẩn bị Loadout.
 
-> **tài liệu Status:** Independent design tài liệu — not part of Inventory_System section.  
-> **Location:** Stash is physically housed in the **Stash Room** within the [Safe House](GameDesign/Safe_House_Design.md). Access from Loadout Preparation và Safe House.
-
----
-
-## 1. Design Philosophy
-
-- **Permanent storage:** Extracted loot is safe; death only affects gear brought into raid
-- **Spatial constraint:** Grid-based Tetris-style management tạo meaningful organization quyết định
-- **Progression gate:** Stash size scales với edition và Safe House level
-- **giá trị-per-slot meta:** người chơi optimize what to keep vs. sell based on space efficiency
+> **Trạng thái tài liệu:** Tài liệu thiết kế độc lập, không thuộc section `Inventory_System`.
+> **Vị trí trong game:** Stash được đặt trong **Stash Room** của [Safe House](GameDesign/Safe_House_Design.md). Người chơi có thể truy cập Stash từ Loadout Preparation và Safe House.
 
 ---
 
-## 2. Grid hệ thống
+## 1. Triết Lý Thiết Kế
 
-### 2.1 Dimensions & Capacity
-
-Stash capacity = **total cells** in a single grid. All items occupy cells based on width × height.
-
-| Property | giá trị |
-| :------- | :---- |
-| **Base grid** | 10 columns × variable rows |
-| **Rotation** | 90° (R chính while dragging) |
-| **Stacking** | đạn, currency, crafting materials stack; vũ khí, giáp, keys do not |
-
-### 2.2 Item Dimensions (Reference)
-
-| Category | Typical Size | Examples |
-| :------- | :----------- | :------- |
-| Consumables | 1×1 | Bandage, pills, đạn stack |
-| Magazines | 1×2 | AR mags, pistol mags |
-| Grenades | 1×2 | Frag, flash, smoke |
-| Pistols | 2×1 | Handguns |
-| Rifles | 4×1 – 5×2 | M4, AK-74 |
-| Helmets | 2×2 | Tactical helmets |
-| giáp Vests | 3×3 – 4×4 | Plate carriers |
-| Backpacks | 3×3 – 7×8 | Collapsed vs deployed |
-
-Full item dimensions: [Gears — Storage Master Database](Gears/StorageGear/Storage_Master_Database.md).
-
-### 2.3 Flat Storage & Folding
-
-- **No bag-in-bag:** Each container has a single flat grid; items inside are at the same level
-- **Backpack collapse:** empty backpacks can collapse to smaller footprint
-- Rules: [Storage: Flat Storage & Folding](Gears/StorageGear/Storage_Flat_Storage_Folding.md)
+- **Lưu trữ lâu dài:** Loot đã extraction thành công được bảo toàn; khi chết, chỉ trang bị đã mang vào raid bị ảnh hưởng.
+- **Giới hạn không gian:** Lưới kiểu Tetris tạo ra quyết định tổ chức và đánh đổi có ý nghĩa.
+- **Cổng tiến trình:** Kích thước Stash tăng theo phiên bản game hoặc cấp độ Safe House.
+- **Meta giá trị trên mỗi ô:** Người chơi tối ưu vật phẩm nên giữ hay bán dựa trên hiệu quả sử dụng không gian.
 
 ---
 
-## 3. Stash Size Progression
+## 2. Hệ Thống Lưới
 
-Stash capacity increases với **edition** hoặc **Safe House level** upgrades.
+### 2.1 Kích Thước Và Sức Chứa
 
-| Edition / source | Stash Grid | Total Cells | Unlock chi phí / Note |
-| :--------------- | :--------- | :---------: | :----------------- |
-| Standard Edition | 10×28 | 280 | Free |
-| Safe House Lvl 2 | 10×38 | 380 | 3.5M + materials |
-| Safe House Lvl 3 | 10×48 | 480 | 8.5M + materials |
-| Safe House Lvl 4 | 10×68 | 680 | 15M + materials |
-| Premium Edition | 10×48 | 480 | Free (start) |
-| Ultimate Edition | 10×68 | 680 | Free (start) |
+Sức chứa của Stash bằng **tổng số ô** trong một lưới duy nhất. Mỗi vật phẩm chiếm số ô dựa trên chiều rộng × chiều cao.
 
-All editions can reach the same maximum (10×68) via Safe House upgrades. Full progression: [Stash & Container Progression](Gears/StorageGear/Stash_Container_Progression.md).
+| Thuộc tính | Giá trị |
+| :--- | :--- |
+| **Lưới cơ bản** | 10 cột × số hàng thay đổi theo cấp độ |
+| **Xoay vật phẩm** | 90° bằng phím `R` khi đang kéo vật phẩm |
+| **Xếp chồng** | Đạn, tiền tệ và nguyên liệu chế tạo có thể xếp chồng; vũ khí, giáp và chìa khóa không xếp chồng |
 
----
+### 2.2 Kích Thước Vật Phẩm Tham Chiếu
 
-## 4. Container Progression
+| Danh mục | Kích thước thường gặp | Ví dụ |
+| :--- | :--- | :--- |
+| Vật phẩm tiêu hao | 1×1 | Bandage, pills, đạn theo stack |
+| Băng đạn | 1×2 | Băng đạn AR, băng đạn pistol |
+| Lựu đạn | 1×2 | Frag, flash, smoke |
+| Súng ngắn | 2×1 | Handgun |
+| Súng trường | 4×1 – 5×2 | M4, AK-74 |
+| Mũ bảo hộ | 2×2 | Tactical helmet |
+| Áo giáp | 3×3 – 4×4 | Plate carrier |
+| Ba lô | 3×3 – 7×8 | Ba lô ở trạng thái gấp hoặc mở |
 
-### 4.1 Stash-Only Containers
+Xem kích thước đầy đủ của từng vật phẩm trong [Gears — Storage Master Database](Gears/StorageGear/Storage_Master_Database.md).
 
-Specialized containers for the global Stash (not carried in-raid):
+### 2.3 Storage Phẳng Và Gấp Backpack
 
-| Phase | Container (Examples) | How to Unlock | Estimated Level |
-| :---- | :------------------- | :------------- | :-------------- |
-| Early | Keytool, Docs Case | Trader Lvl 1 purchase | 1–5 |
-| Early–Mid | đạn Case, Scav Junkbox | Trader Lvl 2 hoặc craft | 10–15 |
-| Mid | Med Case, Magazine Case | Trader Lvl 2 / quest | 15–20 |
-| Mid–Late | vũ khí Case | Trader Lvl 3 / quest chain | 20–30 |
-| Late | Items Case | Trader Lvl 3 / barter | 30–40 |
-| Endgame | THICC Items, THICC vũ khí | Trader Lvl 4 / quest chain | 40+ |
-
-### 4.2 Secure Container upgrade Path
-
-Secure containers survive death. upgrade via quests hoặc edition:
-
-| Container | Grid | Cells | Unlock Method |
-| :-------- | :--: | :---: | :------------ |
-| Alpha | 2×2 | 4 | Default (all editions) |
-| Beta | 2×3 | 6 | Quest (mid-game) |
-| Gamma | 3×3 | 9 | Premium Edition hoặc quest (late-game) |
-| Kappa | 3×4 | 12 | Quest: complete all main quests (endgame) |
-
-**In-raid restrictions:** Cannot place guns, thermal scopes, hoặc night vision inside trong khi raid. Can place keys, meds, đạn, valuables.
+- **Không có bag-in-bag:** Mỗi container dùng một lưới phẳng; vật phẩm bên trong được quản lý ở cùng một cấp lưu trữ.
+- **Gấp Backpack:** Backpack rỗng có thể được gấp lại để chiếm diện tích nhỏ hơn.
+- Quy tắc chi tiết: [Storage: Flat Storage & Folding](Gears/StorageGear/Storage_Flat_Storage_Folding.md).
 
 ---
 
-## 5. Organization Zones
+## 3. Tiến Trình Mở Rộng Stash
 
-Recommended layout for efficient stash management:
+Sức chứa Stash tăng thông qua **phiên bản game** hoặc nâng cấp **Safe House**.
 
-| Zone | Rows | mục đích |
-| :--- | :--- | :------ |
-| **Top (Active Gear)** | 1–10 | Ready-to-raid vũ khí, giáp, rigs; frequently used items |
-| **Middle (Containers)** | 11–40 | Storage cases (Scav Junkbox, đạn Case, Med Case, etc.); grouped by type |
-| **Bottom (Long-term)** | 41+ | Quest items, Safe House upgrade materials, rarely used items |
+| Phiên bản / Nguồn | Lưới Stash | Tổng số ô | Chi phí mở khóa / Ghi chú |
+| :--- | :--- | :---: | :--- |
+| Standard Edition | 10×28 | 280 | Miễn phí |
+| Safe House cấp 2 | 10×38 | 380 | 3.5M + nguyên liệu |
+| Safe House cấp 3 | 10×48 | 480 | 8.5M + nguyên liệu |
+| Safe House cấp 4 | 10×68 | 680 | 15M + nguyên liệu |
+| Premium Edition | 10×48 | 480 | Có sẵn khi bắt đầu |
+| Ultimate Edition | 10×68 | 680 | Có sẵn khi bắt đầu |
 
-**giá trị-per-slot priority:** Quest items → high giá trị/slot → keys → AP đạn → meta parts → barter → vũ khí → low giá trị (drop).
+Mọi phiên bản game đều có thể đạt mức tối đa 10×68 thông qua nâng cấp Safe House. Xem lộ trình đầy đủ tại [Stash & Container Progression](Gears/StorageGear/Stash_Container_Progression.md).
 
 ---
 
-## 6. Stash Room Integration
+## 4. Tiến Trình Container
 
-The Stash is located in the **Stash Room** within the [Safe House](GameDesign/Safe_House_Design.md). Integration points:
+### 4.1 Container Chỉ Dùng Trong Stash
 
-- **Loadout Preparation:** Quick-access panel shows filtered stash; drag items to equip
-- **Safe House:** Full stash grid accessible from Stash Room; Operator stamina/energy/hydration recovery logic uses items from stash
-- **Trading Post:** Sell items to traders; Flea Market access
+Đây là các container chuyên dụng cho Stash, không thể mang vào raid:
+
+| Giai đoạn | Container ví dụ | Cách mở khóa | Cấp độ dự kiến |
+| :--- | :--- | :--- | :--- |
+| Đầu game | Keytool, Docs Case | Mua từ Trader cấp 1 | 1–5 |
+| Đầu – giữa game | Ammo Case, Scav Junkbox | Trader cấp 2 hoặc craft | 10–15 |
+| Giữa game | Med Case, Magazine Case | Trader cấp 2 hoặc nhiệm vụ | 15–20 |
+| Giữa – cuối game | Weapon Case | Trader cấp 3 hoặc chuỗi nhiệm vụ | 20–30 |
+| Cuối game | Items Case | Trader cấp 3 hoặc barter | 30–40 |
+| Endgame | THICC Items, THICC Weapon | Trader cấp 4 hoặc chuỗi nhiệm vụ | 40+ |
+
+### 4.2 Lộ Trình Nâng Cấp Secure Container
+
+**Secure Container** là container an toàn giúp giữ vật phẩm bên trong sau khi người chơi chết. Có thể nâng cấp thông qua nhiệm vụ hoặc phiên bản game:
+
+| Container | Lưới | Số ô | Cách mở khóa |
+| :--- | :---: | :---: | :--- |
+| Alpha | 2×2 | 4 | Mặc định cho mọi edition |
+| Beta | 2×3 | 6 | Nhiệm vụ giữa game |
+| Gamma | 3×3 | 9 | Premium Edition hoặc nhiệm vụ cuối game |
+| Kappa | 3×4 | 12 | Nhiệm vụ: hoàn thành toàn bộ nhiệm vụ chính ở cuối game |
+
+**Giới hạn trong raid:** Không thể đặt vũ khí, thermal scope hoặc night vision vào Secure Container khi đang ở trong raid. Có thể đặt key, vật phẩm y tế, đạn và vật phẩm có giá trị.
+
+---
+
+## 5. Các Khu Vực Tổ Chức
+
+Bố cục được khuyến nghị để quản lý Stash hiệu quả:
+
+| Khu vực | Hàng | Mục đích |
+| :--- | :--- | :--- |
+| **Trên cùng — Trang bị đang dùng** | 1–10 | Vũ khí, giáp, rig sẵn sàng cho raid và các vật phẩm dùng thường xuyên |
+| **Ở giữa — Container** | 11–40 | Case lưu trữ như Scav Junkbox, Ammo Case, Med Case; nhóm theo loại |
+| **Bên dưới — Vật phẩm dài hạn** | 41+ | Vật phẩm nhiệm vụ, nguyên liệu nâng cấp Safe House và vật phẩm ít dùng |
+
+**Thứ tự ưu tiên theo giá trị trên mỗi ô:** Vật phẩm nhiệm vụ → vật phẩm có giá trị trên mỗi ô cao → chìa khóa → AP ammo → meta part → barter item → vũ khí → vật phẩm có giá trị thấp cần bỏ.
+
+---
+
+## 6. Tích Hợp Với Stash Room
+
+Stash nằm trong **Stash Room** của [Safe House](GameDesign/Safe_House_Design.md). Các điểm tích hợp gồm:
+
+- **Loadout Preparation:** Panel truy cập nhanh hiển thị Stash đã lọc; người chơi có thể kéo vật phẩm vào slot trang bị.
+- **Safe House:** Toàn bộ lưới Stash có thể mở từ Stash Room; logic hồi phục stamina, energy và hydration của Operator sử dụng vật phẩm từ Stash.
+- **Trading Post:** Bán vật phẩm cho Trader và truy cập Flea Market.
 
 ---
 
 ## 7. UI/UX
 
-### 7.1 Layout (Full Stash màn hình)
+### 7.1 Bố Cục Màn Hình Stash
 
 ```
 +------------------------------------------------------------------+
-|  < BACK          STASH            [Search] [Filter ▼] [Sort ▼]   |
+|  < QUAY LẠI       STASH       [Tìm kiếm] [Bộ lọc ▼] [Sắp xếp ▼]   |
 |------------------------------------------------------------------|
-|  GRID VIEW (12 columns x N rows)                                  |
-|  CAPACITY: 145 / 200 slots       TOTAL VALUE: 2,450,000 credits  |
-|  ACTIONS: [Auto-Sort] [Sell Junk] [Move to Loadout] [Discard]     |
+|  LƯỚI STASH (12 cột x N hàng)                                    |
+|  SỨC CHỨA: 145 / 200 ô       TỔNG GIÁ TRỊ: 2,450,000 Credits     |
+|  THAO TÁC: [Tự động sắp xếp] [Bán đồ đánh dấu] [Chuyển vào Loadout]|
+|           [Bỏ vật phẩm]                                         |
 +------------------------------------------------------------------+
 ```
 
-### 7.2 Grid cơ chế
+### 7.2 Cơ Chế Lưới
 
-| cơ chế | Description | Platform Input |
-| :------- | :---------- | :------------- |
-| Item placement | Items occupy grid cells based on size | PC: drag-drop. Console: cursor + A. Mobile: tap-to-select then tap-to-place |
-| Rotation | Rotate items 90° to optimize space | PC: R. Console: Y while holding. Mobile: rotate button |
-| Stacking | Same đạn/consumables stack | Automatic khi placed on matching stack |
-| Quick transfer | Move to equipped loadout slot | PC: Ctrl+Click. Console: hold A. Mobile: double-tap |
-| Search | Text filter highlights matching items | PC: Ctrl+F. Console: Y → virtual keyboard |
-| Auto-Sort | Reorganize for optimal space | Single button press. Maintains category grouping |
-| Quick-Sell | Mark items for sale, batch sell | PC: middle-click. Console: X. Mobile: swipe-left |
+| Cơ chế | Mô tả | Input theo nền tảng |
+| :--- | :--- | :--- |
+| Đặt vật phẩm | Vật phẩm chiếm các ô theo kích thước của nó | PC: kéo và thả. Console: di chuyển con trỏ và nhấn `A`. Mobile: chạm để chọn rồi chạm vị trí đặt |
+| Xoay vật phẩm | Xoay vật phẩm 90° để tối ưu không gian | PC: nhấn `R`. Console: nhấn `Y` khi đang giữ vật phẩm. Mobile: dùng nút xoay |
+| Xếp chồng | Đạn và vật phẩm tiêu hao cùng loại được xếp chồng | Tự động khi đặt lên chồng vật phẩm tương ứng |
+| Chuyển nhanh | Chuyển vật phẩm vào slot Loadout đang trang bị | PC: `Ctrl+Click`. Console: giữ `A`. Mobile: chạm hai lần |
+| Tìm kiếm | Lọc theo chữ và làm nổi bật vật phẩm phù hợp | PC: `Ctrl+F`. Console: nhấn `Y` để mở bàn phím ảo |
+| Tự động sắp xếp | Tổ chức lại vật phẩm để tối ưu không gian | Nhấn một lần; vẫn giữ nhóm danh mục |
+| Bán nhanh | Đánh dấu vật phẩm để bán theo lô | PC: nhấn chuột giữa. Console: `X`. Mobile: vuốt sang trái |
 
-### 7.3 Keybinds (Examples)
+### 7.3 Keybind Tham Chiếu
 
-| Action | Keybind | cách dùng |
-| :----- | :------ | :-- |
-| Quick Move | Ctrl + Click | First free space |
-| Quick Equip | Alt + Click | Correct slot |
-| Discard | Del | Drop |
-| Rotate | R | 90° while dragging |
+| Hành động | Keybind | Cách dùng |
+| :--- | :--- | :--- |
+| Chuyển nhanh | `Ctrl + Click` | Chuyển vào vị trí trống đầu tiên |
+| Trang bị nhanh | `Alt + Click` | Chuyển vào slot phù hợp |
+| Bỏ vật phẩm | `Del` | Đưa vật phẩm ra khỏi Stash |
+| Xoay vật phẩm | `R` | Xoay 90° khi đang kéo vật phẩm |
 
 ---
 
 ## 8. Economy
 
-- **giá trị-per-slot** = giá ÷ (W×H). High giá trị-per-slot items prioritized for limited space
-- **Sell vs. Keep:** vũ khí (keep nếu meta/quest), giáp (keep nếu Class 5+ >60%), barter (keep nếu Safe House/craft needed)
-- **Capacity vs edition/Safe House level:** Standard starts 280 cells; max 680 cells for all editions
+- **Giá trị trên mỗi ô** = `Price / (W × H)`. Chỉ số này cho biết vật phẩm nào đáng ưu tiên khi không gian Stash bị giới hạn.
+- **Bán hay giữ:** Giữ vũ khí nếu đang thuộc meta hoặc cần cho nhiệm vụ; giữ giáp nếu thuộc Class 5+ và độ bền trên 60%; giữ vật phẩm barter nếu cần cho Safe House hoặc chế tạo.
+- **Sức chứa theo phiên bản và Safe House:** Standard Edition bắt đầu với 280 ô; mọi phiên bản game đều có thể đạt tối đa 680 ô thông qua nâng cấp Safe House.
 
 ---
 
-## 9. Cross-References
+## 9. Tham Chiếu Chéo
 
-- [Stash & Container Progression](Gears/StorageGear/Stash_Container_Progression.md) — Full tables, unlock costs
-- [Safe House Design](GameDesign/Safe_House_Design.md) — Stash Room, Operator trạng thái recovery
-- [Storage Master Database](Gears/StorageGear/Storage_Master_Database.md) — Container specs, stash-only cases
-- [Menus — Stash / Inventory Management](UI_UX/Menus.md) — UI layout chi tiết
-- [Loadout Preparation](GameDesign/LoadoutPreparation.md) — Quick Stash Access panel
-- [Inventory hệ thống](Inventory_System/_index.md) — Paper doll, equipment slots, looting UX
+- [Stash & Container Progression](Gears/StorageGear/Stash_Container_Progression.md) — Bảng đầy đủ và chi phí mở khóa.
+- [Safe House Design](GameDesign/Safe_House_Design.md) — Stash Room và trạng thái hồi phục của Operator.
+- [Storage Master Database](Gears/StorageGear/Storage_Master_Database.md) — Thông số container và các case chỉ dùng trong Stash.
+- [Menus — Stash / Inventory Management](UI_UX/Menus.md) — Chi tiết bố cục UI.
+- [Loadout Preparation](GameDesign/LoadoutPreparation.md) — Panel truy cập nhanh Stash.
+- [Inventory System](Inventory_System/_index.md) — Paper doll, slot trang bị và trải nghiệm looting.

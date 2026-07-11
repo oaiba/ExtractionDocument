@@ -131,7 +131,7 @@ A hot zone should tạo a dễ đọc promise: rare giá trị is present, nhưn
 
 | Topic | trang |
 | :--- | :--- |
-| Raid pacing | [cốt lõi Gameplay](coregameplay.html) |
-| Map UI và pings | [Navigation & Map](navigationandmap.html) |
-| Mode variations | [Game Modes](gamemodes.html) |
-| Loadout map selection | [Loadout Preparation](loadoutpreparation.html) |
+| Raid pacing | [cốt lõi Gameplay](coregameplay/index.html) |
+| Map UI và pings | [Navigation & Map](navigationandmap/index.html) |
+| Mode variations | [Game Modes](gamemodes/index.html) |
+| Loadout map selection | [Loadout Preparation](loadoutpreparation/index.html) |

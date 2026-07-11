@@ -47,7 +47,7 @@ Every entry must include a stable ID, decision statement, owner, affected system
 
 ## Cross-References
 
-- [Project Scope](_index.md)
-- [MVP](MVP.md)
-- [Cross-System Traceability](Cross_System_Traceability.md)
-- [MVP Readiness Review](MVP_Readiness_Review.md)
+- [Project Scope](_index/index.html)
+- [MVP](mvp/index.html)
+- [Cross-System Traceability](cross_system_traceability/index.html)
+- [MVP Readiness Review](mvp_readiness_review/index.html)

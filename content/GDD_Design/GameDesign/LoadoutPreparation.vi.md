@@ -176,8 +176,8 @@ A người chơi equips a quest item nhưng forgets compatible đạn. The deplo
 
 | Topic | trang |
 | :--- | :--- |
-| cốt lõi raid loop | [cốt lõi Gameplay](coregameplay.html) |
-| Insurance | [Insurance hệ thống](insurancesystem.html) |
-| Economy và gear giá trị | [Economy](economy.html) |
-| Controls và mobile input | [Controls](controls.html) |
-| Map và mode choice | [Map Design](mapdesign.html), [Game Modes](gamemodes.html) |
+| cốt lõi raid loop | [cốt lõi Gameplay](coregameplay/index.html) |
+| Insurance | [Insurance hệ thống](insurancesystem/index.html) |
+| Economy và gear giá trị | [Economy](economy/index.html) |
+| Controls và mobile input | [Controls](controls/index.html) |
+| Map và mode choice | [Map Design](mapdesign/index.html), [Game Modes](gamemodes/index.html) |

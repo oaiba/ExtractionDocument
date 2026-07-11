@@ -101,7 +101,7 @@ Comparison UI should not rely on green/red deltas alone. It must name the trade-
 - **Headsets:** No armor Class; assign Tier by Rarity (Uncommon = 2, Rare = 3).
 - **Armored rigs:** Use the rig's Armor Class; Tier follows the same mapping as body armor.
 
-Every armor item in [Armor Master Database](ArmorGear/Armor_Master_Database.md) has a single Tier (1–5) per this table.
+Every armor item in [Armor Master Database](armorgear/armor_master_database/index.html) has a single Tier (1–5) per this table.
 
 ---
 
@@ -133,7 +133,7 @@ Every armor item in [Armor Master Database](ArmorGear/Armor_Master_Database.md) 
 
 Assign Tier by unlock phase and capacity: early (Keytool, Docs Case) = 1; mid (Ammo, Med, Magazine Case) = 2; late (Weapon Case, Items Case) = 3; endgame (THICC cases) = 4.
 
-Every storage item in [Storage Master Database](StorageGear/Storage_Master_Database.md) has a single Tier (1–4) per this table.
+Every storage item in [Storage Master Database](storagegear/storage_master_database/index.html) has a single Tier (1–4) per this table.
 
 ---
 
@@ -143,7 +143,7 @@ Every storage item in [Storage Master Database](StorageGear/Storage_Master_Datab
 | :----- | :---- |
 | **Loot table** | Tier (+ Rarity) determines drop pool by zone/raid/event. |
 | **Crafting** | Tier of output; recipes may require Tier/Rarity of materials. |
-| **Economy / Trader** | Price, restock, availability by Tier; unlock by **player level + trader level** (see [Armor Progression](ArmorGear/Armor_Progression.md), [Stash & Container Progression](StorageGear/Stash_Container_Progression.md)). |
+| **Economy / Trader** | Price, restock, availability by Tier; unlock by **player level + trader level** (see [Armor Progression](armorgear/armor_progression/index.html), [Stash & Container Progression](storagegear/stash_container_progression/index.html)). |
 | **UI / Tooltip** | Display Tier consistently (icon, number, color); Rarity as today. |
 | **Balance / Matchmaking** | If gear brackets exist for raids, use Tier (+ Rarity); no item level. |
 
@@ -157,10 +157,10 @@ Similar games (Relic Hunters Legend, Project Ethos, ARC Raiders, EFT Arena, Risk
 
 ## Cross-References
 
-- [Armor & Ballistics](ArmorGear/Armor.md) — Class system, zones, materials.
-- [Armor Master Database](ArmorGear/Armor_Master_Database.md) — Per-item Tier column.
-- [Armor Progression](ArmorGear/Armor_Progression.md) — Trader/quest/player level gates.
-- [Armor Balance Framework](ArmorGear/Armor_Balance_Framework.md) — EHP, cost-efficiency.
-- [Storage Master Database](StorageGear/Storage_Master_Database.md) — Per-item Tier column.
-- [Stash & Container Progression](StorageGear/Stash_Container_Progression.md) — Unlock phase, secure path.
-- [Progression](../GameDesign/Progression.md) — Player and trader level framework.
+- [Armor & Ballistics](armorgear/armor/index.html) — Class system, zones, materials.
+- [Armor Master Database](armorgear/armor_master_database/index.html) — Per-item Tier column.
+- [Armor Progression](armorgear/armor_progression/index.html) — Trader/quest/player level gates.
+- [Armor Balance Framework](armorgear/armor_balance_framework/index.html) — EHP, cost-efficiency.
+- [Storage Master Database](storagegear/storage_master_database/index.html) — Per-item Tier column.
+- [Stash & Container Progression](storagegear/stash_container_progression/index.html) — Unlock phase, secure path.
+- [Progression](../gamedesign/progression/index.html) — Player and trader level framework.

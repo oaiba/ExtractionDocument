@@ -6,7 +6,7 @@ weight: 3
 
 ## Overview
 
-This document defines **flat storage** (no bag-in-bag), **backpack collapse** when empty, and how weapons with attachments are stored. For item list see [Storage Master Database](Storage_Master_Database.md).
+This document defines **flat storage** (no bag-in-bag), **backpack collapse** when empty, and how weapons with attachments are stored. For item list see [Storage Master Database](storage_master_database/index.html).
 
 ---
 
@@ -40,12 +40,12 @@ Design intent: reward bringing an extra empty bag to fill with loot; collapsed b
 
 ## Weapon and Item Grid Size
 
-Weapons are always in their **default state** in inventory. **Weapon grid size (W×H)** is **fixed per weapon type** (e.g. M4A1 always 5×2). Adding or removing **attachments** does **not** change a weapon's inventory size — the weapon always uses its default cell dimensions. When a weapon (with or without attachments) is **stored in a backpack** (or any Storage), it **keeps all attachments** and its **size remains unchanged** (the default W×H for that weapon type). For item size tables see [Inventory & Gear — Grid System](../../Inventory_System/_index.md) and [Weapon Arsenal](../../Gameplay/WeaponArsenal.md).
+Weapons are always in their **default state** in inventory. **Weapon grid size (W×H)** is **fixed per weapon type** (e.g. M4A1 always 5×2). Adding or removing **attachments** does **not** change a weapon's inventory size — the weapon always uses its default cell dimensions. When a weapon (with or without attachments) is **stored in a backpack** (or any Storage), it **keeps all attachments** and its **size remains unchanged** (the default W×H for that weapon type). For item size tables see [Inventory & Gear — Grid System](../../inventory_system/_index/index.html) and [Weapon Arsenal](../../gameplay/weaponarsenal/index.html).
 
 ---
 
 ## Cross-References
 
-- [Storage Master Database](Storage_Master_Database.md) — Backpack list, collapsed sizes, flat storage.
-- [Inventory & Gear — Grid System](../../Inventory_System/_index.md) — Grid overview, item dimensions.
-- [Weapon Progression & Mastery](../../Weapons/Weapon_Progression_Mastery.md) — Weapon list.
+- [Storage Master Database](storage_master_database/index.html) — Backpack list, collapsed sizes, flat storage.
+- [Inventory & Gear — Grid System](../../inventory_system/_index/index.html) — Grid overview, item dimensions.
+- [Weapon Progression & Mastery](../../weapons/weapon_progression_mastery/index.html) — Weapon list.

@@ -25,22 +25,22 @@ Trang này là góc nhìn readiness của bộ design docs cho MVP. Nó ghi nh�
 
 | Domain | Trạng thái | Evidence | Decision/risk còn thiếu | Owner |
 | :--- | :--- | :--- | :--- | :--- |
-| Project Scope | Needs Engineering Decision | [MVP](MVP.vi.md), [Risks](Risks.vi.md) | Chốt launch và Season 3 | Production |
-| Core Gameplay | Needs Balancing | [Core Gameplay](../GameDesign/CoreGameplay.vi.md), [Extraction](../Gameplay/Extraction_Mechanics.vi.md) | Validate raid length, extraction rate, recovery | Game Design |
-| AI | Needs Balancing | [AI & Enemy Behavior](../Gameplay/AI_Enemy_Behavior.vi.md) | Validate threat band, reinforcement, frustration | AI / Combat |
-| Combat / Weapons | Needs Balancing | [Weapons](../Combat/Weapons.vi.md), [Weapon Balance](../Weapons/Weapon_Balance_Framework.vi.md) | Chốt TTK band và outlier threshold | Combat |
-| Inventory / Gear / Loadout | Needs UX Validation | [Inventory](../Inventory_System/_index.vi.md), [Loadout](../GameDesign/LoadoutPreparation.vi.md) | Validate stash pressure, comparison, blocker | Inventory / UX |
-| Economy | Needs Balancing | [Economy](../GameDesign/Economy.vi.md), [Commerce](../UI_UX/Commerce_Screens.vi.md) | Chốt kit cost, repair và recovery | Economy |
-| Progression / LiveOps | Needs Engineering Decision | [Progression](../GameDesign/Progression.vi.md), [LiveOps](../GameDesign/LiveOps.vi.md) | Chốt reset, expiry và reward service | Progression / LiveOps |
-| Commerce | Needs Engineering Decision | [Commerce Screens](../UI_UX/Commerce_Screens.vi.md) | Chốt provider, region, refund, entitlement | Commerce |
-| UI/UX | Needs UX Validation | [Global UX Standards](../UI_UX/Global_UX_Standards.vi.md), screen groups | Validate focus, mobile và offline | UX |
-| Social / Multiplayer | Needs Engineering Decision | [Matchmaking](../Gameplay/Matchmaking_Lobby.vi.md), [Social Screens](../UI_UX/Social_Screens.vi.md) | Chốt party, reconnect, moderation, voice | Multiplayer |
-| Characters / Abilities | Placeholder | [Hero Abilities](../Gameplay/Hero_Abilities.vi.md) | Approve ability numbers và counterplay | Characters / Combat |
-| World / Maps | Placeholder | [World](../World/_index.vi.md), [Project Scope](_index.vi.md) | Chốt zone và Season 3 content | World |
-| Narrative | Needs UX Validation | [Story](../Story/_index.vi.md), [Narrative World](../NarrativeWorld/_index.vi.md) | Validate delivery với onboarding/LiveOps | Narrative |
-| Audio / Visuals | Needs UX Validation | [Audio](../Audio/_index.vi.md), [Visuals](../Visuals/_index.vi.md) | Validate cue/readability cross-platform | Audio / Visuals |
-| Accessibility | Needs UX Validation | [Accessibility](../GameDesign/Accessibility.vi.md) | Hoàn thiện input, contrast, caption, motion | UX |
-| Anti-Cheat / Fair Play | Needs Engineering Decision | [Anti-Cheat](../Gameplay/Anti_Cheat_Fair_Play.vi.md) | Chốt provider và enforcement operation | Engineering |
+| Project Scope | Needs Engineering Decision | [MVP](mvp.vi/index.html), [Risks](risks.vi/index.html) | Chốt launch và Season 3 | Production |
+| Core Gameplay | Needs Balancing | [Core Gameplay](../gamedesign/coregameplay.vi/index.html), [Extraction](../gameplay/extraction_mechanics.vi/index.html) | Validate raid length, extraction rate, recovery | Game Design |
+| AI | Needs Balancing | [AI & Enemy Behavior](../gameplay/ai_enemy_behavior.vi/index.html) | Validate threat band, reinforcement, frustration | AI / Combat |
+| Combat / Weapons | Needs Balancing | [Weapons](../combat/weapons.vi/index.html), [Weapon Balance](../weapons/weapon_balance_framework.vi/index.html) | Chốt TTK band và outlier threshold | Combat |
+| Inventory / Gear / Loadout | Needs UX Validation | [Inventory](../inventory_system/_index.vi/index.html), [Loadout](../gamedesign/loadoutpreparation.vi/index.html) | Validate stash pressure, comparison, blocker | Inventory / UX |
+| Economy | Needs Balancing | [Economy](../gamedesign/economy.vi/index.html), [Commerce](../ui_ux/commerce_screens.vi/index.html) | Chốt kit cost, repair và recovery | Economy |
+| Progression / LiveOps | Needs Engineering Decision | [Progression](../gamedesign/progression.vi/index.html), [LiveOps](../gamedesign/liveops.vi/index.html) | Chốt reset, expiry và reward service | Progression / LiveOps |
+| Commerce | Needs Engineering Decision | [Commerce Screens](../ui_ux/commerce_screens.vi/index.html) | Chốt provider, region, refund, entitlement | Commerce |
+| UI/UX | Needs UX Validation | [Global UX Standards](../ui_ux/global_ux_standards.vi/index.html), screen groups | Validate focus, mobile và offline | UX |
+| Social / Multiplayer | Needs Engineering Decision | [Matchmaking](../gameplay/matchmaking_lobby.vi/index.html), [Social Screens](../ui_ux/social_screens.vi/index.html) | Chốt party, reconnect, moderation, voice | Multiplayer |
+| Characters / Abilities | Placeholder | [Hero Abilities](../gameplay/hero_abilities.vi/index.html) | Approve ability numbers và counterplay | Characters / Combat |
+| World / Maps | Placeholder | [World](../world/_index.vi/index.html), [Project Scope](_index.vi/index.html) | Chốt zone và Season 3 content | World |
+| Narrative | Needs UX Validation | [Story](../story/_index.vi/index.html), [Narrative World](../narrativeworld/_index.vi/index.html) | Validate delivery với onboarding/LiveOps | Narrative |
+| Audio / Visuals | Needs UX Validation | [Audio](../audio/_index.vi/index.html), [Visuals](../visuals/_index.vi/index.html) | Validate cue/readability cross-platform | Audio / Visuals |
+| Accessibility | Needs UX Validation | [Accessibility](../gamedesign/accessibility.vi/index.html) | Hoàn thiện input, contrast, caption, motion | UX |
+| Anti-Cheat / Fair Play | Needs Engineering Decision | [Anti-Cheat](../gameplay/anti_cheat_fair_play.vi/index.html) | Chốt provider và enforcement operation | Engineering |
 
 ## Điều Kiện MVP Gate
 
@@ -56,10 +56,10 @@ Trang này là góc nhìn readiness của bộ design docs cho MVP. Nó ghi nh�
 
 ## Nhịp Review
 
-Review trang này sau mỗi design wave lớn, trước external playtest, content lock và MVP sign-off. Mọi item `Blocked` hoặc `Needs Engineering Decision` phải link tới [Design Decision Register](Design_Decision_Register.vi.md).
+Review trang này sau mỗi design wave lớn, trước external playtest, content lock và MVP sign-off. Mọi item `Blocked` hoặc `Needs Engineering Decision` phải link tới [Design Decision Register](design_decision_register.vi/index.html).
 
 ## Tham Chiếu Chéo
 
-- [Design Decision Register](Design_Decision_Register.vi.md)
-- [Cross-System Traceability](Cross_System_Traceability.vi.md)
-- [MVP](MVP.vi.md)
+- [Design Decision Register](design_decision_register.vi/index.html)
+- [Cross-System Traceability](cross_system_traceability.vi/index.html)
+- [MVP](mvp.vi/index.html)

@@ -194,10 +194,10 @@ A seasonal player returns for an event. Battle pass, faction objectives, and liv
 
 | Topic | Page |
 | :--- | :--- |
-| Economy and monetization ethics | [Economy](economy.html) |
-| Event cadence | [Live Operations](liveops.html) |
-| Player stats and achievements | [Player Profile](playerprofile.html) |
-| Tutorial goals | [Tutorial Raid](tutorialraid.html) |
-| Clan missions | [Clan System](clansystem.html) |
+| Economy and monetization ethics | [Economy](economy/index.html) |
+| Event cadence | [Live Operations](liveops/index.html) |
+| Player stats and achievements | [Player Profile](playerprofile/index.html) |
+| Tutorial goals | [Tutorial Raid](tutorialraid/index.html) |
+| Clan missions | [Clan System](clansystem/index.html) |
 | Inventory item lifecycle | [Inventory System](../Inventory_System/) |
-| Gear tier and rarity rules | [Gear Tier System](../Gears/Gear_Tier_System.md) |
+| Gear tier and rarity rules | [Gear Tier System](../gears/gear_tier_system/index.html) |

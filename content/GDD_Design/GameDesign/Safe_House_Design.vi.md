@@ -82,7 +82,7 @@ trong khi a season event, the Radio can surface faction updates và event object
 
 | Topic | trang |
 | :--- | :--- |
-| Economy sinks | [Economy](economy.html) |
-| Insurance inbox | [Insurance hệ thống](insurancesystem.html) |
-| Home màn hình relation | [Home màn hình & Lobby](homescreen_design.html) |
-| Progression unlocks | [Progression](progression.html) |
+| Economy sinks | [Economy](economy/index.html) |
+| Insurance inbox | [Insurance hệ thống](insurancesystem/index.html) |
+| Home màn hình relation | [Home màn hình & Lobby](homescreen_design/index.html) |
+| Progression unlocks | [Progression](progression/index.html) |

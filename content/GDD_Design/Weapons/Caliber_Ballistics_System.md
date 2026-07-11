@@ -6,9 +6,9 @@ weight: 4
 
 ## Overview
 
-This document defines how bullets interact with armor, durability, distance, and materials: penetration chance, damage falloff, armor degradation, blunt damage, ricochet, and caliber sharing. Armor classes and zones are in [Gears — Armor & Ballistics](../Gears/ArmorGear/Armor.md).
+This document defines how bullets interact with armor, durability, distance, and materials: penetration chance, damage falloff, armor degradation, blunt damage, ricochet, and caliber sharing. Armor classes and zones are in [Gears — Armor & Ballistics](../gears/armorgear/armor/index.html).
 
-> **Cross-References:** [Weapon Arsenal](../Gameplay/WeaponArsenal.md) — ammo tables by caliber; [Weapon Balance Framework](Weapon_Balance_Framework.md) — TTK and balance; [Gears — Armor & Ballistics](../Gears/ArmorGear/Armor.md) — armor classes 1–6, zones, materials; [Armor Master Database](../Gears/ArmorGear/Armor_Master_Database.md) — per-item coverage and class.
+> **Cross-References:** [Weapon Arsenal](../gameplay/weaponarsenal/index.html) — ammo tables by caliber; [Weapon Balance Framework](weapon_balance_framework/index.html) — TTK and balance; [Gears — Armor & Ballistics](../gears/armorgear/armor/index.html) — armor classes 1–6, zones, materials; [Armor Master Database](../gears/armorgear/armor_master_database/index.html) — per-item coverage and class.
 
 ---
 
@@ -34,7 +34,7 @@ Armor interaction must never be hidden math only. A player does not need the for
 
 When a bullet hits an armored zone, the server resolves:
 
-**Penetration Power (PP):** Each ammo type has a numeric penetration class (0–8) matching the ammo table in [Weapon Arsenal](../Gameplay/WeaponArsenal.md) (e.g. FMJ Low = 2, AP High = 5, .338 Ultimate = 7).
+**Penetration Power (PP):** Each ammo type has a numeric penetration class (0–8) matching the ammo table in [Weapon Arsenal](../gameplay/weaponarsenal/index.html) (e.g. FMJ Low = 2, AP High = 5, .338 Ultimate = 7).
 
 **Effective Armor Class (EAC):**  
 `EAC = ArmorClass + (1 - DurabilityPercent) × 2`  
@@ -86,7 +86,7 @@ Capped per hit (e.g. max 8% per shot). Higher penetration vs lower armor = less 
 `DurabilityLoss = BaseDmg × 0.025 × (1 + (PP - EAC))`  
 Capped per hit (e.g. max 12%). Stopped rounds dump more energy into the plate.
 
-**Effective class reduction:** As durability drops, EAC increases (see Penetration Chance). At 50% durability, armor is treated as roughly one class worse; at 25%, two classes worse. At 0% the armor is destroyed (no protection; weight remains until dropped). See [Gear Mechanics](../Gameplay/Gear_Mechanics.md) for gameplay impact.
+**Effective class reduction:** As durability drops, EAC increases (see Penetration Chance). At 50% durability, armor is treated as roughly one class worse; at 25%, two classes worse. At 0% the armor is destroyed (no protection; weight remains until dropped). See [Gear Mechanics](../gameplay/gear_mechanics/index.html) for gameplay impact.
 
 ---
 
@@ -94,7 +94,7 @@ Capped per hit (e.g. max 12%). Stopped rounds dump more energy into the plate.
 
 When a bullet is **blocked** by armor, the wearer still takes blunt trauma.
 
-**Formula (from [Gears — Armor](../Gears/ArmorGear/Armor.md)):**  
+**Formula (from [Gears — Armor](../gears/armorgear/armor/index.html)):**
 `BluntDmg = BaseDmg × BluntFactor × (1 - DurabilityPercent)`
 
 **BluntFactor** by caliber family (example values):
@@ -134,7 +134,7 @@ Helmets (and some body armor) have a ricochet chance. At shallow impact angles, 
 
 **Subsonic rounds:** No crack; only muzzle report (and impact). Used by VSS, suppressed 9mm/.45 with subsonic ammo. Trade-off: lower velocity, more drop/falloff in games that model it; in our top-down, subsonic mainly affects audio signature and effective range (velocity still used for falloff).
 
-**Suppressor interaction:** Suppressor reduces muzzle report range (see [Weapon Attachment System](../Gameplay/Weapon_Attachment_System.md)). It does not remove bullet crack for supersonic ammo. Subsonic + suppressor = minimal audio signature.
+**Suppressor interaction:** Suppressor reduces muzzle report range (see [Weapon Attachment System](../gameplay/weapon_attachment_system/index.html)). It does not remove bullet crack for supersonic ammo. Subsonic + suppressor = minimal audio signature.
 
 ---
 
@@ -182,7 +182,7 @@ Weapons that share the same caliber share ammo pools. Strategic implication: one
 
 ## Cross-References
 
-- [Weapon Arsenal](../Gameplay/WeaponArsenal.md) — Ammo types, penetration class, velocity per caliber.
-- [Gears — Armor & Ballistics](../Gears/ArmorGear/Armor.md) — Armor classes, zones, materials, damage mechanics; [Armor Master Database](../Gears/ArmorGear/Armor_Master_Database.md) — per-item specs.
-- [Weapon Balance Framework](Weapon_Balance_Framework.md) — TTK and balance targets.
-- [Gear Mechanics](../Gameplay/Gear_Mechanics.md) — Armor durability and weight tier.
+- [Weapon Arsenal](../gameplay/weaponarsenal/index.html) — Ammo types, penetration class, velocity per caliber.
+- [Gears — Armor & Ballistics](../gears/armorgear/armor/index.html) — Armor classes, zones, materials, damage mechanics; [Armor Master Database](../gears/armorgear/armor_master_database/index.html) — per-item specs.
+- [Weapon Balance Framework](weapon_balance_framework/index.html) — TTK and balance targets.
+- [Gear Mechanics](../gameplay/gear_mechanics/index.html) — Armor durability and weight tier.

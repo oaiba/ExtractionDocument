@@ -150,7 +150,7 @@ Các mảng Art/Audio, Narrative, Social ưu tiên sau.
 
 | Tần suất | Nội dung |
 |:---------|:---------|
-| Hàng tuần | Risk owners cập nhật status (Risks.md). |
+| Hàng tuần | Risk owners cập nhật status (risks/index.html). |
 | Hàng tháng | So sánh tiến độ thực tế với MVP roadmap; cập nhật Non-Goals nếu có quyết định defer/new. |
 | Theo quý | Review competitive (roadmap HAWKED, Arena Breakout, Delta Force); cập nhật Competitive Analysis nếu cần; review Design Pillars (đã có quarterly trong design-pillars-enhanced). |
 
@@ -197,7 +197,7 @@ Có thể thêm cột “Content themes” (ví dụ Q3 = “Economy & Quests”
 
 | Version | Date | Author | Changes |
 |:--------|:-----|:-------|:--------|
-| 1.1 | 2026-02-12 | — | Applied planning to group: genre positioning (_index), MVP↔Q1–Q4 (MVP.md), Owner+Review for D4/B3 (Risks.md), top-down/hero in Design Pillars. |
+| 1.1 | 2026-02-12 | — | Applied planning to group: genre positioning (_index), MVP↔Q1–Q4 (mvp/index.html), Owner+Review for D4/B3 (risks/index.html), top-down/hero in Design Pillars. |
 | 1.0 | 2026-02-12 | — | Initial: review ProjectScope, benchmark roadmaps/GDD, planning phases, recommendations. |
 
 **Owner:** Lead Producer / Suture maintainer.  

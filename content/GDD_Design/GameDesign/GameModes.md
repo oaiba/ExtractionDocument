@@ -97,7 +97,7 @@ This mode should feel useful but not optimal. It is a pressure release valve for
 
 ### Ranked Operations
 
-Ranked Operations uses the core extraction loop with stricter competitive rules. Full RP design lives in [Ranked Mode](rankedmode.html).
+Ranked Operations uses the core extraction loop with stricter competitive rules. Full RP design lives in [Ranked Mode](rankedmode/index.html).
 
 Ranked should test extraction mastery, not only elimination skill. The best ranked players should know when to avoid a fight, when to secure value, when to pressure another squad, and when to leave. Rewards should celebrate consistency, discipline, and clutch decisions.
 
@@ -144,8 +144,8 @@ Featured Mode should be visually distinct but rules-transparent. If an event mod
 
 | Topic | Page |
 | :--- | :--- |
-| Prep screen integration | [Loadout Preparation](loadoutpreparation.html) |
-| Ranked rules | [Ranked Mode](rankedmode.html) |
-| Event rotations | [Live Operations](liveops.html) |
-| Map rules | [Map Design](mapdesign.html) |
-| Insurance mode differences | [Insurance System](insurancesystem.html) |
+| Prep screen integration | [Loadout Preparation](loadoutpreparation/index.html) |
+| Ranked rules | [Ranked Mode](rankedmode/index.html) |
+| Event rotations | [Live Operations](liveops/index.html) |
+| Map rules | [Map Design](mapdesign/index.html) |
+| Insurance mode differences | [Insurance System](insurancesystem/index.html) |

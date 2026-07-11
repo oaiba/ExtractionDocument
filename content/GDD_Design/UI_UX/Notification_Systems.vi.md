@@ -8,12 +8,12 @@ weight: 23
 
 | điểm đến | cách dùng |
 | :--- | :--- |
-| [UI/UX Index](_index.md) | Full UI/UX documentation hub |
-| [màn hình Groups Overview](Screen_Groups_Overview.md) | Lifecycle taxonomy và designer-ready spec template |
-| [global UX Standards](Global_UX_Standards.md) | shared navigation, focus, trạng thái, modal, và accessibility rules |
-| [HUD Design](HUD_Design.md) | HUD placement và element visibility rules |
-| [In-Raid màn hình](In_Raid_Screens.md) | Notification behavior in raid overlays và combat trạng thái |
-| [UX flow](UX_Flows.md) | flow-level feedback và trạng thái machine references |
+| [UI/UX Index](_index/index.html) | Full UI/UX documentation hub |
+| [màn hình Groups Overview](screen_groups_overview/index.html) | Lifecycle taxonomy và designer-ready spec template |
+| [global UX Standards](global_ux_standards/index.html) | shared navigation, focus, trạng thái, modal, và accessibility rules |
+| [HUD Design](hud_design/index.html) | HUD placement và element visibility rules |
+| [In-Raid màn hình](in_raid_screens/index.html) | Notification behavior in raid overlays và combat trạng thái |
+| [UX flow](ux_flows/index.html) | flow-level feedback và trạng thái machine references |
 
 ---
 

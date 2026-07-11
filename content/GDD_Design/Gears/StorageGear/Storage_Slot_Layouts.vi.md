@@ -6,7 +6,7 @@ weight: 2
 
 ## Tổng Quan
 
-Tài liệu này định nghĩa **per-rig grid layouts**, the **reload-from-rig rule**, **hotkey mapping** (PC và mobile), và **secure container** access. Full item list: [Storage Master Database](Storage_Master_Database.md).
+Tài liệu này định nghĩa **per-rig grid layouts**, the **reload-from-rig rule**, **hotkey mapping** (PC và mobile), và **secure container** access. Full item list: [Storage Master Database](storage_master_database/index.html).
 
 ---
 
@@ -15,7 +15,7 @@ Tài liệu này định nghĩa **per-rig grid layouts**, the **reload-from-rig 
 A container is made of **one hoặc more subgrids**. Each subgrid has dimensions (W×H) và optional **slot-type constraints** (e.g. 1×1 only, hoặc allows 1×2, 2×2).
 
 - **Placement:** An item can be placed only nếu it **fits in at least one subgrid** — i.e. the item’s width và height do not exceed that subgrid’s W và H, và the subgrid’s slot-type rules allow that item size (e.g. 1×2 mag in a subgrid that allows 1×2).
-- **Hotkey:** Hotkeys are assigned only to cells in **quick-access subgrids** (e.g. rig: mag pouch và utility subgrids = hotkey; main compartment may have no hotkey hoặc hotkey in a second row). Which subgrids are “quick access” is per container in [Storage Master Database](Storage_Master_Database.md).
+- **Hotkey:** Hotkeys are assigned only to cells in **quick-access subgrids** (e.g. rig: mag pouch và utility subgrids = hotkey; main compartment may have no hotkey hoặc hotkey in a second row). Which subgrids are “quick access” is per container in [Storage Master Database](storage_master_database/index.html).
 
 ---
 
@@ -29,7 +29,7 @@ A container is made of **one hoặc more subgrids**. Each subgrid has dimensions
 
 ## Rig Slot Layouts (Examples)
 
-Layouts are defined by **subgrids**; each subgrid has W×H và optional slot-type (1×1, 1×2, 2×2, 1×3). **Total capacity = sum of all subgrid cells.** Hotkey slots map to quick-access subgrids (Xem [Storage Master Database](Storage_Master_Database.md)).
+Layouts are defined by **subgrids**; each subgrid has W×H và optional slot-type (1×1, 1×2, 2×2, 1×3). **Total capacity = sum of all subgrid cells.** Hotkey slots map to quick-access subgrids (Xem [Storage Master Database](storage_master_database/index.html)).
 
 ### Standard Rig — Total capacity 9 cells
 
@@ -65,7 +65,7 @@ Hotkey: 6 slots — e.g. top row (4) + first two 1×2 (2)
 
 **Total capacity = 12 cells.** Reload can be from any rig cell (hoặc, as a design option, restricted to a dedicated “Mag Pouch” subgrid khi the rig has one).
 
-Exact layout per rig (Chest Harness, Light, Recon, Assault, Heavy, Blackrock, each armored rig) is in [Storage Master Database](Storage_Master_Database.md); the above illustrates the subgrid pattern. Slot type (1×1, 1×2, 2×2, 1×3) determines what items can be placed (e.g. 1×2 = standard mags, 2×2 = drum mag hoặc large med).
+Exact layout per rig (Chest Harness, Light, Recon, Assault, Heavy, Blackrock, each armored rig) is in [Storage Master Database](storage_master_database/index.html); the above illustrates the subgrid pattern. Slot type (1×1, 1×2, 2×2, 1×3) determines what items can be placed (e.g. 1×2 = standard mags, 2×2 = drum mag hoặc large med).
 
 ---
 
@@ -79,7 +79,7 @@ Exact layout per rig (Chest Harness, Light, Recon, Assault, Heavy, Blackrock, ea
 | Rig slots 4–6 | 7–9 hoặc 0 | Quick slots 4–6 | per cell | Mags, meds, nades |
 | Pockets 1–4 | 7–0 (configurable) | Quick slots 7+ | 1×1 | Keys, pills, cash |
 
-Number of hotkey slots depends on the rig (Xem [Storage Master Database](Storage_Master_Database.md)). Same cooldown/animation on PC và mobile for parity.
+Number of hotkey slots depends on the rig (Xem [Storage Master Database](storage_master_database/index.html)). Same cooldown/animation on PC và mobile for parity.
 
 ---
 
@@ -93,6 +93,6 @@ Number of hotkey slots depends on the rig (Xem [Storage Master Database](Storage
 
 ## Tham Chiếu Chéo
 
-- [Storage Master Database](Storage_Master_Database.md) — Rig list, slot counts, hotkey slots.
-- [Gear cơ chế](../../Gameplay/Gear_Mechanics.md) — Quick-access vs grid-access bảng, access times.
-- [Looting & Inventory](../../Gameplay/Looting_Interactions.md) — Grid dimensions, container interaction flow.
+- [Storage Master Database](storage_master_database/index.html) — Rig list, slot counts, hotkey slots.
+- [Gear cơ chế](../../gameplay/gear_mechanics/index.html) — Quick-access vs grid-access bảng, access times.
+- [Looting & Inventory](../../gameplay/looting_interactions/index.html) — Grid dimensions, container interaction flow.

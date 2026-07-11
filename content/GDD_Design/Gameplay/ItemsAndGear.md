@@ -9,7 +9,7 @@ weight: 26
 
 This document is the **authoritative item catalogue** for all equipable, consumable, and deployable items in the game. All items listed here exist in the game's loot economy and stash — they can be found in-raid, purchased from traders, or crafted in the Safe House.
 
-> **Cross-References:** [Weapon Arsenal](WeaponArsenal.md) — weapons and attachments as items; [Gear Mechanics](Gear_Mechanics.md) — how armor condition, weight, and encumbrance rules work; [Medical System](Medical_System.md) — full medical healing rules, body-part HP, toxicity; [Loot Table Design](Loot_Table_Design.md) — where these items spawn per zone tier; [Looting & Inventory](Looting_Interactions.md) — inventory grid, secure container, FIR status, marketplace; [Safe House Design](../GameDesign/Safe_House_Design.md) — crafting recipes using crafting materials.
+> **Cross-References:** [Weapon Arsenal](weaponarsenal/index.html) — weapons and attachments as items; [Gear Mechanics](gear_mechanics/index.html) — how armor condition, weight, and encumbrance rules work; [Medical System](medical_system/index.html) — full medical healing rules, body-part HP, toxicity; [Loot Table Design](loot_table_design/index.html) — where these items spawn per zone tier; [Looting & Inventory](looting_interactions/index.html) — inventory grid, secure container, FIR status, marketplace; [Safe House Design](../gamedesign/safe_house_design/index.html) — crafting recipes using crafting materials.
 
 ***
 
@@ -25,7 +25,7 @@ Helmets reduce headshot damage multiplier based on **Armor Class** (1–6) and d
 | ITEM\_HELM\_TACTICAL | Tactical Helmet   | Epic     |   5   |         60%        |     1.5     |  2×2 |    12,000 | Built-in night vision |
 | ITEM\_HELM\_SPEC     | Specialist Helmet | Rare     |   3   |         45%        |     1.0     |  2×2 |     4,500 | +10% hearing range    |
 
-**Full spec** (zones, material, ricochet, durability): [Gears — Armor Master Database](../Gears/ArmorGear/Armor_Master_Database.md). **Headshot multiplier system:** [Weapon Arsenal — Hit Location Multipliers](WeaponArsenal.md#hit-location-multipliers).
+**Full spec** (zones, material, ricochet, durability): [Gears — Armor Master Database](../gears/armorgear/armor_master_database/index.html). **Headshot multiplier system:** [Weapon Arsenal — Hit Location Multipliers](WeaponArsenal.md#hit-location-multipliers).
 
 ***
 
@@ -41,7 +41,7 @@ Body vests absorb damage to the chest/torso. **Armor Class** (1–6) and durabil
 | ITEM\_VEST\_TACTICAL | Tactical Rig  | Epic     |   5   | Full torso + arms |     −15%     |     6.0     |  2×3 |    15,000 |
 | ITEM\_VEST\_CARRIER  | Plate Carrier | Rare     |   4   | Full torso        |      −8%     |     4.8     |  2×3 |    10,000 |
 
-**Full spec** (zones, material, durability, repair): [Gears — Armor Master Database](../Gears/ArmorGear/Armor_Master_Database.md).
+**Full spec** (zones, material, durability, repair): [Gears — Armor Master Database](../gears/armorgear/armor_master_database/index.html).
 
 ***
 
@@ -57,13 +57,13 @@ Backpacks increase inventory capacity. All backpack contents are **lost on death
 | ITEM\_BAG\_TACTICAL | Tactical Backpack | Epic     |  +30  |     5×6     |      −5%     |     2.0     |    10,000 |
 | ITEM\_BAG\_ASSAULT  | Assault Pack      | Uncommon |  +15  |     3×5     |      0%      |     1.2     |     2,500 |
 
-**Full spec** (rigs, backpacks, secure containers, slot layouts): [Gears — Storage Gear](https://github.com/oaiba/ExtractionDocument/blob/main/content/GDD_Design/Gears/StorageGear/README.md) and [Storage Master Database](../Gears/StorageGear/Storage_Master_Database.md). **Weight and Encumbrance:** [Gear Mechanics](Gear_Mechanics.md).
+**Full spec** (rigs, backpacks, secure containers, slot layouts): [Gears — Storage Gear](https://github.com/oaiba/ExtractionDocument/blob/main/content/GDD_Design/Gears/StorageGear/README.md) and [Storage Master Database](../gears/storagegear/storage_master_database/index.html). **Weight and Encumbrance:** [Gear Mechanics](gear_mechanics/index.html).
 
 ***
 
 ### 4. Medical Supplies
 
-> For full healing rules, body part HP system, bleed treatment, and toxicity → see [Medical System](Medical_System.md).
+> For full healing rules, body part HP system, bleed treatment, and toxicity → see [Medical System](medical_system/index.html).
 
 This table provides the **item specs** for economic and looting purposes.
 
@@ -142,7 +142,7 @@ Keys unlock gated loot areas. Single-use keys are permanently destroyed after us
 
 Materials used in Safe House crafting recipes. High-value bulk trade items on the marketplace.
 
-> See [Safe House Design](../GameDesign/Safe_House_Design.md) for full crafting recipes, Safe House module requirements, and crafting timers.
+> See [Safe House Design](../gamedesign/safe_house_design/index.html) for full crafting recipes, Safe House module requirements, and crafting timers.
 
 | Code Name                | Display Name    | Rarity    | Use                     | Stack | Weight (kg) | Grid | Value ($) | Found In           |
 | ------------------------ | --------------- | --------- | ----------------------- | :---: | :---------: | :--: | --------: | ------------------ |
@@ -223,11 +223,11 @@ Understanding where items enter and leave the economy is critical for balance.
 
 ### Cross-References
 
-* [Weapon Arsenal](WeaponArsenal.md) — Weapons and attachments as their own item catalogue section.
-* [Gear Mechanics](Gear_Mechanics.md) — Item condition system, weight encumbrance thresholds, armor repair rules.
-* [Medical System](Medical_System.md) — Full healing rules; medical item interactions with body-part HP, toxicity, bleed.
-* [Loot Table Design](Loot_Table_Design.md) — Container types, zone loot tables, and where each category spawns.
-* [Looting & Inventory](Looting_Interactions.md) — Grid inventory system, Secure Container rules, FIR status, marketplace/auction house.
-* [Safe House Design](../GameDesign/Safe_House_Design.md) — Crafting material consumption; Safe House module unlock gates; crafting recipe list.
+* [Weapon Arsenal](weaponarsenal/index.html) — Weapons and attachments as their own item catalogue section.
+* [Gear Mechanics](gear_mechanics/index.html) — Item condition system, weight encumbrance thresholds, armor repair rules.
+* [Medical System](medical_system/index.html) — Full healing rules; medical item interactions with body-part HP, toxicity, bleed.
+* [Loot Table Design](loot_table_design/index.html) — Container types, zone loot tables, and where each category spawns.
+* [Looting & Inventory](looting_interactions/index.html) — Grid inventory system, Secure Container rules, FIR status, marketplace/auction house.
+* [Safe House Design](../gamedesign/safe_house_design/index.html) — Crafting material consumption; Safe House module unlock gates; crafting recipe list.
 * [GameDesign/Economy](https://github.com/oaiba/ExtractionDocument/blob/main/content/GameDesign/Economy.md) — Macro economy design: flea market, trader tiers, inflation control.
 * [GameDesign/Insurance System](https://github.com/oaiba/ExtractionDocument/blob/main/content/GameDesign/InsuranceSystem.md) — Insurance cost formula and which items are insurable.

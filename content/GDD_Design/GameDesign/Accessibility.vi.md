@@ -99,7 +99,7 @@ Player nhạy với motion nên giảm được camera shake, flash intensity, v
 
 | Topic | Page |
 | :--- | :--- |
-| Settings options | [User Settings](usersettings.html), [Settings Matrix](usersettings_matrix.html) |
-| Controls | [Controls](controls.html) |
-| Navigation signals | [Navigation & Map](navigationandmap.html) |
-| Tutorial | [Tutorial Raid](tutorialraid.html) |
+| Settings options | [User Settings](usersettings/index.html), [Settings Matrix](usersettings_matrix/index.html) |
+| Controls | [Controls](controls/index.html) |
+| Navigation signals | [Navigation & Map](navigationandmap/index.html) |
+| Tutorial | [Tutorial Raid](tutorialraid/index.html) |

@@ -23,7 +23,7 @@ We follow a 6-tier classification system (GOST standard equivalent):
 
 ### Mapping Armor Class to Display Value
 
-For UI, economy, and legacy compatibility, armor class maps to a **display value** and **headshot reduction**. Ballistics and penetration use **Class** and durability; display/tooltips can show Value. See [Caliber & Ballistics System](../../Weapons/Caliber_Ballistics_System.md) for penetration math.
+For UI, economy, and legacy compatibility, armor class maps to a **display value** and **headshot reduction**. Ballistics and penetration use **Class** and durability; display/tooltips can show Value. See [Caliber & Ballistics System](../../weapons/caliber_ballistics_system/index.html) for penetration math.
 
 | Class | Armor Value (Display) | Headshot Reduction | Typical Pen Threshold (PP) |
 | :---- | :-------------------: | :----------------: | :-----------------------: |
@@ -34,7 +34,7 @@ For UI, economy, and legacy compatibility, armor class maps to a **display value
 | 5     | 90                    | 55%                | PP &lt; 55                |
 | 6     | 100                   | 60%                | PP &lt; 65                |
 
-Full item specs (per-vest, per-helmet) are in [Armor Master Database](Armor_Master_Database.md).
+Full item specs (per-vest, per-helmet) are in [Armor Master Database](armor_master_database/index.html).
 
 ## Hitboxes & Coverage Zones
 
@@ -83,4 +83,4 @@ Helmets (and some armor) have a `Ricochet Chance` (Low/Med/High). Even a high-pe
 
 ## Armored Rigs
 
-Some **tactical rigs** include built-in armor (armored rigs). They occupy the rig slot and provide both storage and body protection; they replace a separate body armor vest. For grid layout, slot count, and hotkey mapping see [Storage Gear — Storage Master Database](../StorageGear/Storage_Master_Database.md) and [Storage Slot Layouts](../StorageGear/Storage_Slot_Layouts.md). For armor class, zones, and material of each armored rig, see [Armor Master Database](Armor_Master_Database.md#armored-rigs).
+Some **tactical rigs** include built-in armor (armored rigs). They occupy the rig slot and provide both storage and body protection; they replace a separate body armor vest. For grid layout, slot count, and hotkey mapping see [Storage Gear — Storage Master Database](../storagegear/storage_master_database/index.html) and [Storage Slot Layouts](../storagegear/storage_slot_layouts/index.html). For armor class, zones, and material of each armored rig, see [Armor Master Database](Armor_Master_Database.md#armored-rigs).

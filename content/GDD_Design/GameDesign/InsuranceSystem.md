@@ -118,8 +118,8 @@ A ranked season disables insurance. The loadout screen should show that rule bef
 
 | Topic | Page |
 | :--- | :--- |
-| Pre-raid insurance UI | [Loadout Preparation](loadoutpreparation.html) |
-| Gear loss rules | [Core Gameplay](coregameplay.html) |
-| Credit sinks | [Economy](economy.html) |
-| Safe House inbox | [Safe House Design](safe_house_design.html) |
-| Ranked restrictions | [Ranked Mode](rankedmode.html) |
+| Pre-raid insurance UI | [Loadout Preparation](loadoutpreparation/index.html) |
+| Gear loss rules | [Core Gameplay](coregameplay/index.html) |
+| Credit sinks | [Economy](economy/index.html) |
+| Safe House inbox | [Safe House Design](safe_house_design/index.html) |
+| Ranked restrictions | [Ranked Mode](rankedmode/index.html) |

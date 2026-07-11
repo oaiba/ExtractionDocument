@@ -255,7 +255,7 @@ The UI visual design supports the **Cyberpunk Neo-Industrial** art direction. In
 
 #### cốt lõi HUD Layout
 
-For chi tiết functional specifications, Xem [HUD Design](../UI_UX/HUD_Design.md).
+For chi tiết functional specifications, Xem [HUD Design](../ui_ux/hud_design/index.html).
 
 ```
 ┌─────────────────────────────────────────┐
@@ -415,7 +415,7 @@ For chi tiết functional specifications, Xem [HUD Design](../UI_UX/HUD_Design.m
 
 ### Settings UI Overview
 
-For chi tiết settings specifications, Xem [User Settings documentation](../GameDesign/UserSettings.md).
+For chi tiết settings specifications, Xem [User Settings documentation](../gamedesign/usersettings/index.html).
 
 #### Settings Panel Layout
 

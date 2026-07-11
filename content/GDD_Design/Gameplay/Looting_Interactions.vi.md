@@ -134,7 +134,7 @@ The Secure Container is the single most quan trọng item in the game. Everythin
 
 #### Cross-Platform
 
-Grid rules, search times, và container behavior are identical on PC, console, và mobile. **Input:** PC uses drag-và-drop và shortcuts (Ctrl+Click, Alt+Click); mobile uses tap-to-transfer và optional auto-sort; console uses cursor hoặc d-pad selection. Same vulnerability window và noise rules apply. Xem [Controls](https://github.com/oaiba/ExtractionDocument/blob/main/content/GameDesign/Controls.md) và [Gear cơ chế](Gear_Mechanics.md) for platform input và inventory UX.
+Grid rules, search times, và container behavior are identical on PC, console, và mobile. **Input:** PC uses drag-và-drop và shortcuts (Ctrl+Click, Alt+Click); mobile uses tap-to-transfer và optional auto-sort; console uses cursor hoặc d-pad selection. Same vulnerability window và noise rules apply. Xem [Controls](https://github.com/oaiba/ExtractionDocument/blob/main/content/GameDesign/Controls.md) và [Gear cơ chế](gear_mechanics/index.html) for platform input và inventory UX.
 
 ***
 
@@ -258,7 +258,7 @@ FIR được resolve ở raid outcome, không chỉ lúc pickup. Item tile có t
 
 ### Marketplace & người chơi Trading
 
-> **Item Catalogue:** For all item specs, values, và grid sizes, Xem [Items & Gear](ItemsAndGear.md). This section covers the _trading mechanics_ — how items move between người chơi.
+> **Item Catalogue:** For all item specs, values, và grid sizes, Xem [Items & Gear](itemsandgear/index.html). This section covers the _trading mechanics_ — how items move between người chơi.
 
 #### Face-to-Face Trading (Lobby)
 
@@ -337,11 +337,11 @@ A high-risk premium vendor concept — an AI trader that spawns in the contamina
 
 ### Tham Chiếu Chéo
 
-* [Items & Gear](ItemsAndGear.md) — Full item catalogue với values, grid sizes, weights, và cách dùng descriptions.
+* [Items & Gear](itemsandgear/index.html) — Full item catalogue với values, grid sizes, weights, và cách dùng descriptions.
 * [Gears — Storage Gear](https://github.com/oaiba/ExtractionDocument/blob/main/content/Gears/StorageGear/README.md) — Storage Master Database, Slot Layouts (reload rule, hotkeys), Flat Storage & Folding, Secure Container restrictions.
-* [Loot bảng Design](Loot_Table_Design.md) — What spawns in each container type và zone; supply drop loot.
-* [Gear cơ chế](Gear_Mechanics.md) — Weight encumbrance, item condition, và giáp repair.
-* [Safe House Design](../GameDesign/Safe_House_Design.md) — Crafting recipes; Safe House upgrades that expand marketplace listing slots.
-* [Quest & Objectives](Quest_Objective_System.md) — Quest items require FIR; some quests require buying from traders.
+* [Loot bảng Design](loot_table_design/index.html) — What spawns in each container type và zone; supply drop loot.
+* [Gear cơ chế](gear_mechanics/index.html) — Weight encumbrance, item condition, và giáp repair.
+* [Safe House Design](../gamedesign/safe_house_design/index.html) — Crafting recipes; Safe House upgrades that expand marketplace listing slots.
+* [Quest & Objectives](quest_objective_system/index.html) — Quest items require FIR; some quests require buying from traders.
 * [GameDesign/Economy](https://github.com/oaiba/ExtractionDocument/blob/main/content/GameDesign/Economy.md) — Macro economy design: trader tiers, credit sinks, inflation control.
 * [GameDesign/Insurance hệ thống](https://github.com/oaiba/ExtractionDocument/blob/main/content/GameDesign/InsuranceSystem.md) — Insurance pre-checkout as part of pre-raid loadout flow.

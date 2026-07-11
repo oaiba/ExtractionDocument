@@ -13,7 +13,7 @@ The core engagement loop is designed to create a "Hero's Journey" in miniature, 
 
 #### Phase Contract
 
-Core Loop uses the same phase vocabulary as [Core Gameplay Mechanics](../GameDesign/CoreGameplay.md). Any feature that changes a phase must state which player question it improves.
+Core Loop uses the same phase vocabulary as [Core Gameplay Mechanics](../gamedesign/coregameplay/index.html). Any feature that changes a phase must state which player question it improves.
 
 | Phase | Player Question | Must Provide | Must Not Do |
 | :--- | :--- | :--- | :--- |
@@ -25,11 +25,11 @@ Core Loop uses the same phase vocabulary as [Core Gameplay Mechanics](../GameDes
 
 #### Session Length & Pacing
 
-**Target session:** 15–20 minutes (mobile-friendly). Standard raid timer is 25–30 minutes so that a typical run (infiltrate, loot, extract) fits within one session; players who extract early or die early can queue again within the target window. An optional **Quick Raid** mode (e.g. 15-minute raid timer, smaller map or reduced objectives) may be offered for players who want a guaranteed short session. Design pillars: [Design Pillars](https://github.com/oaiba/ExtractionDocument/blob/main/content/ProjectScope/design-pillars-enhanced.md). Mechanics benchmark: [Gameplay Review Checklist](Gameplay_Review_Checklist.md).
+**Target session:** 15–20 minutes (mobile-friendly). Standard raid timer is 25–30 minutes so that a typical run (infiltrate, loot, extract) fits within one session; players who extract early or die early can queue again within the target window. An optional **Quick Raid** mode (e.g. 15-minute raid timer, smaller map or reduced objectives) may be offered for players who want a guaranteed short session. Design pillars: [Design Pillars](https://github.com/oaiba/ExtractionDocument/blob/main/content/ProjectScope/design-pillars-enhanced.md). Mechanics benchmark: [Gameplay Review Checklist](gameplay_review_checklist/index.html).
 
 **Design decisions (re-planning):** Medical depth is kept (full body-part health, bleed, fracture, pain, blacked limb) for tactical identity. Operator abilities use cooldowns only (no per-raid charge limit); maximum \~2 signature uses per 20-minute raid.
 
-**Cross-platform:** Same rules on all platforms (PC, console, mobile). Input and UX vary by device (e.g. hold E vs tap-and-hold for extract, keybinds vs touch layout); see [Controls](https://github.com/oaiba/ExtractionDocument/blob/main/content/GameDesign/Controls.md) and [Gameplay Review Checklist](Gameplay_Review_Checklist.md).
+**Cross-platform:** Same rules on all platforms (PC, console, mobile). Input and UX vary by device (e.g. hold E vs tap-and-hold for extract, keybinds vs touch layout); see [Controls](https://github.com/oaiba/ExtractionDocument/blob/main/content/GameDesign/Controls.md) and [Gameplay Review Checklist](gameplay_review_checklist/index.html).
 
 ***
 
@@ -109,9 +109,9 @@ Sound is the most critical information tool in the infiltration phase:
 | Looting sounds          | 5-10m         | Medium      | None — passive                   |
 | Loot beam (Rare+ items) | 30m           | High        | Reveals your position if looting |
 
-**Squad shared vision:** The minimap uses merged visibility from the whole squad — any area seen by at least one teammate (or by intel abilities like Spotter Drone, Tactical Overlay) is revealed for the team. Fog of war shows explored-but-unseen areas; pings and marks from teammates persist in fog as last-known info. See [LOS, Fog of War & Visibility](LOS_Fog_Visibility.md) for full specification.
+**Squad shared vision:** The minimap uses merged visibility from the whole squad — any area seen by at least one teammate (or by intel abilities like Spotter Drone, Tactical Overlay) is revealed for the team. Fog of war shows explored-but-unseen areas; pings and marks from teammates persist in fog as last-known info. See [LOS, Fog of War & Visibility](los_fog_visibility/index.html) for full specification.
 
-**Operator intel roles:** Hawk (Scout) and Glitch (Specialist) provide vision proxies and intel (drone, sensor, overlay) to clear fog and reveal enemies for the whole team; smoke (Obsidian/Recon) and deployable cover (Bastion) can block LOS. Details in [LOS, Fog of War & Visibility](LOS_Fog_Visibility.md) and [Hero Abilities](Hero_Abilities.md).
+**Operator intel roles:** Hawk (Scout) and Glitch (Specialist) provide vision proxies and intel (drone, sensor, overlay) to clear fog and reveal enemies for the whole team; smoke (Obsidian/Recon) and deployable cover (Bastion) can block LOS. Details in [LOS, Fog of War & Visibility](los_fog_visibility/index.html) and [Hero Abilities](hero_abilities/index.html).
 
 **Design Intent**: The infiltration phase teaches players that information is more valuable than firepower. A player who listens carefully has a significant advantage over one who sprints carelessly. Shared team vision rewards coordination: one scout can clear fog for the squad and feed intel without everyone being in the same room.
 

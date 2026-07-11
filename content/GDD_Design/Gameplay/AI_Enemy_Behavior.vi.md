@@ -8,14 +8,14 @@ weight: 12
 
 AI địch are the **primary source of non-người chơi danger** in every raid. They tạo environmental pressure, punish noisy play, reward tactical movement, và generate loot that drives the economy. This tài liệu specifies địch types, detection trạng thái, patrol behaviors, escalation, AI boss patterns, và the **người chơi-as-Scav** hệ thống.
 
-> **Cross-References:** [cốt lõi Gameplay Loop](CoreLoop.md) — economy faucets (Scav Mode), phase-by-phase AI presence; [Environmental Hazards](Environmental_Hazards.md) — AI Boss spawn, Scav Raid wave event; [LOS, Fog of War & Visibility](LOS_Fog_Visibility.md) — AI detection vs LOS hệ thống; [Movement & Stamina](Movement_and_Stamina.md) — sound ranges that AI react to; [Camera hệ thống](Camera_System.md) — AI detection circles hiển thị rõ to người chơi.
+> **Cross-References:** [cốt lõi Gameplay Loop](coreloop/index.html) — economy faucets (Scav Mode), phase-by-phase AI presence; [Environmental Hazards](environmental_hazards/index.html) — AI Boss spawn, Scav Raid wave event; [LOS, Fog of War & Visibility](los_fog_visibility/index.html) — AI detection vs LOS hệ thống; [Movement & Stamina](movement_and_stamina/index.html) — sound ranges that AI react to; [Camera hệ thống](camera_system/index.html) — AI detection circles hiển thị rõ to người chơi.
 
 ***
 
 ### Design Pillars
 
 * **Pressure, not omniscience:** AI tạo danger thông qua predictable-nhưng-punishing behaviors, not perfect aim hoặc wallhacking. Người chơi có thể learn và outmaneuver them.
-* **Sound-driven detection:** AI react primarily to sound (footsteps, gunshots, looting). Matching sound ranges from [Movement & Stamina](Movement_and_Stamina.md) is mandatory.
+* **Sound-driven detection:** AI react primarily to sound (footsteps, gunshots, looting). Matching sound ranges from [Movement & Stamina](movement_and_stamina/index.html) is mandatory.
 * **Escalation, not respawn:** Killed AI do not respawn trong khi a raid. However, AI can call reinforcements. Engagement escalates in area, not globally.
 * **Top-down visibility balance:** From a top-down view, Người chơi có thể see AI patrol paths. AI detection phải được adjusted so stealth remains viable despite the overhead perspective.
 * **Loot consistency:** All AI carry contextually appropriate loot. Their gear reflects their faction và role.
@@ -106,7 +106,7 @@ Elite roaming AI. Highest threat. Spawn in 1–2 locations per raid, not at obje
 | **Grenade usage**     | Yes — throws frag grenades into cover positions                                       |
 | **Retreat threshold** | 40% HP — tactical withdraw to better position, not flight                             |
 | **Loot**              | Elite vũ khí, Class 4–5 giáp, rare barter items, keycard                            |
-| **Spawn chance**      | 25% per raid (Xem [Environmental Hazards](Environmental_Hazards.md) — dynamic events) |
+| **Spawn chance**      | 25% per raid (Xem [Environmental Hazards](environmental_hazards/index.html) — dynamic events) |
 
 ***
 
@@ -154,7 +154,7 @@ By design, top-down camera gives người chơi awareness of AI positions. To ma
 
 #### Hearing Multipliers
 
-AI hearing is directly coupled to [Movement & Stamina](Movement_and_Stamina.md) sound ranges:
+AI hearing is directly coupled to [Movement & Stamina](movement_and_stamina/index.html) sound ranges:
 
 | người chơi Action        | Sound Range | AI Reaction nếu in Range          |
 | -------------------- | ----------- | -------------------------------- |
@@ -337,7 +337,7 @@ Bosses are unique high-difficulty spawns that award the best loot in the game. E
 
 ### người chơi-as-Scav (Scav Mode)
 
-Scav Mode allows người chơi to run zero-chi phí raids using randomized AI-grade gear. This is documented in [cốt lõi Gameplay Loop](CoreLoop.md) (economy faucet) nhưng behavior specifics are defined here.
+Scav Mode allows người chơi to run zero-chi phí raids using randomized AI-grade gear. This is documented in [cốt lõi Gameplay Loop](coreloop/index.html) (economy faucet) nhưng behavior specifics are defined here.
 
 #### Scav Spawn Rules
 
@@ -367,7 +367,7 @@ Scav Mode allows người chơi to run zero-chi phí raids using randomized AI-g
 | Kill AI Scav                             | −0.5              | AI Scavs become suspicious of người chơi                |
 | Kill người chơi-Scav (team kill)             | −1.0              | AI Scavs go hostile at −1.5 reputation              |
 | Kill PMC người chơi                          | +0.2              | Rewarded for PvP                                    |
-| Complete Cooperative Extraction với PMC | +0.5              | Xem [Extraction cơ chế](Extraction_Mechanics.md) |
+| Complete Cooperative Extraction với PMC | +0.5              | Xem [Extraction cơ chế](extraction_mechanics/index.html) |
 
 **Reputation floor:** At −2.0 reputation, ALL AI Scavs (even Tier 1 wanderers) attack người chơi-Scav on sight. Recovery requires 10 clean Scav runs mà không incident.
 
@@ -375,7 +375,7 @@ Scav Mode allows người chơi to run zero-chi phí raids using randomized AI-g
 
 ### AI Scav Raid Event
 
-Distinct from người chơi-as-Scav. Referenced in [Environmental Hazards](Environmental_Hazards.md) và expanded here:
+Distinct from người chơi-as-Scav. Referenced in [Environmental Hazards](environmental_hazards/index.html) và expanded here:
 
 | Property                 | giá trị                                                                                          |
 | ------------------------ | ---------------------------------------------------------------------------------------------- |
@@ -391,7 +391,7 @@ Distinct from người chơi-as-Scav. Referenced in [Environmental Hazards](Envi
 
 ### AI Audio Design Brief
 
-All AI sounds nên được directional (3D spatialized) và nhất quán với the distances in [Movement & Stamina](Movement_and_Stamina.md). chính SFX yêu cầu:
+All AI sounds nên được directional (3D spatialized) và nhất quán với the distances in [Movement & Stamina](movement_and_stamina/index.html). chính SFX yêu cầu:
 
 | Sound                                        |                            Audible at                           | Priority                                   |
 | -------------------------------------------- | :-------------------------------------------------------------: | ------------------------------------------ |
@@ -402,7 +402,7 @@ All AI sounds nên được directional (3D spatialized) và nhất quán với 
 | Radio crackle (Sec-Force reinforcement call) |                               25m                               | High — warns người chơi of incoming            |
 | Boss audio tell (unique per boss)            |                              100m+                              | Critical — announces boss presence         |
 | Grenade pin-pull (Rogue PMC)                 |                               15m                               | High — survival critical signal            |
-| AI movement sounds (footsteps)               | per [Movement & Stamina](Movement_and_Stamina.md) surface bảng | High                                       |
+| AI movement sounds (footsteps)               | per [Movement & Stamina](movement_and_stamina/index.html) surface bảng | High                                       |
 
 ***
 
@@ -495,11 +495,11 @@ Theo dõi time to first threat, detection false positive/negative, reinforcement
 
 ### Tham Chiếu Chéo
 
-* [cốt lõi Gameplay Loop](CoreLoop.md) — Scav Mode economy faucet, AI in infiltration phase.
-* [Environmental Hazards](Environmental_Hazards.md) — Boss spawn conditions, Scav Raid wave event.
-* [LOS, Fog of War & Visibility](LOS_Fog_Visibility.md) — AI detect using same LOS rules as người chơi.
-* [Movement & Stamina](Movement_and_Stamina.md) — Sound ranges that AI hearing reacts to.
-* [Camera hệ thống](Camera_System.md) — AI detection arc hiển thị rõ to người chơi in top-down view.
-* [Extraction cơ chế](Extraction_Mechanics.md) — Scav cooperative extraction và trust cơ chế.
-* [Hero Abilities](Hero_Abilities.md) — Motion Sensor và Drone interact với AI alert trạng thái.
+* [cốt lõi Gameplay Loop](coreloop/index.html) — Scav Mode economy faucet, AI in infiltration phase.
+* [Environmental Hazards](environmental_hazards/index.html) — Boss spawn conditions, Scav Raid wave event.
+* [LOS, Fog of War & Visibility](los_fog_visibility/index.html) — AI detect using same LOS rules as người chơi.
+* [Movement & Stamina](movement_and_stamina/index.html) — Sound ranges that AI hearing reacts to.
+* [Camera hệ thống](camera_system/index.html) — AI detection arc hiển thị rõ to người chơi in top-down view.
+* [Extraction cơ chế](extraction_mechanics/index.html) — Scav cooperative extraction và trust cơ chế.
+* [Hero Abilities](hero_abilities/index.html) — Motion Sensor và Drone interact với AI alert trạng thái.
 * [Story](https://github.com/oaiba/ExtractionDocument/blob/main/content/Story/README.md) — Faction lore và world context for AI địch factions.

@@ -15,7 +15,7 @@ last_updated: 2026-03-04T00:00:00.000Z
 
 ### Scope: Inventory vs Gears
 
-**Gears** ([../Gears/](https://github.com/oaiba/ExtractionDocument/blob/main/content/GDD_Design/Gears/README.md)) = trang bị vật lý Operator **mặc hoặc mang** vào raid: body armor, helmet, tactical rig, backpack, secure container. Toàn bộ **spec** armor và storage (class, material, slot layout, balance) nằm trong **Gears/ArmorGear** và **Gears/StorageGear**.
+**Gears** ([../gears/](https://github.com/oaiba/extractiondocument/blob/main/content/gdd_design/gears/readme/index.html)) = trang bị vật lý Operator **mặc hoặc mang** vào raid: body armor, helmet, tactical rig, backpack, secure container. Toàn bộ **spec** armor và storage (class, material, slot layout, balance) nằm trong **Gears/ArmorGear** và **Gears/StorageGear**.
 
 **Inventory_System** (section này) = **hệ inventory tổng quát**: grid mechanic, paper doll, equipment slot, encumbrance overview, looting UX. Expansion sau này có thể thêm: Vehicle_Inventory, Global_Stash_System, Crate_System, v.v.
 
@@ -168,7 +168,7 @@ Pre-raid screen: 3D character model (xoay được), equipment slot quanh model,
 | **Headset** | 1x1 | No | N/A | Audio mix (nén gunfire, khuếch đại footstep). EQ thay đổi theo model. Xem [Gears - Armor Master Database](../Gears/ArmorGear/Armor_Master_Database.md#headsets). |
 | **Helmet** | 2x2 | No | Yes | Zone protection (Top, Nape, Ears, Eyes, Jaws). Class 1-6. Xem [Gears/ArmorGear](https://github.com/oaiba/ExtractionDocument/blob/main/content/GDD_Design/Gears/ArmorGear/README.md). |
 | **Face Cover** | 1x1 | No | Some | Concealment + optional Class 1-2. |
-| **Body Armor** | Variable | No | Yes | Chỉ dùng khi không dùng Armored Rig. Thorax/Stomach. Class 1-6. [Gears - Armor](../Gears/ArmorGear/Armor.md). |
+| **Body Armor** | Variable | No | Yes | Chỉ dùng khi không dùng Armored Rig. Thorax/Stomach. Class 1-6. [Gears - Armor](../gears/armorgear/armor/index.html). |
 | **Tactical Rig** | Variable | **YES** | Varies | **Reload source.** Unarmored hoặc Armored (thay body armor). Thường 12-24 slot. [Gears/StorageGear](https://github.com/oaiba/ExtractionDocument/blob/main/content/GDD_Design/Gears/StorageGear/README.md). |
 | **Primary 1 / 2** | Weapon | **1** / **2** | Yes | Chest / back. |
 | **Sidearm** | Weapon | **3** | Yes | Holster, swap nhanh nhất. |
@@ -186,9 +186,9 @@ Grid drag-drop, color coding (green/red/yellow), tooltip (name, weight, size, va
 
 ### 3. Equipment Overview (Armor & Storage)
 
-**Armor & ballistics** - Class 1-6, zone, material, penetration, blunt, ricochet: [Gears - Armor & Ballistics](../Gears/ArmorGear/Armor.md). Danh sách item đầy đủ: [Armor Master Database](../Gears/ArmorGear/Armor_Master_Database.md).
+**Armor & ballistics** - Class 1-6, zone, material, penetration, blunt, ricochet: [Gears - Armor & Ballistics](../gears/armorgear/armor/index.html). Danh sách item đầy đủ: [Armor Master Database](../gears/armorgear/armor_master_database/index.html).
 
-**Tactical rigs vs armored rigs** - Unarmored rig = nhiều slot hơn, không protection; armored rig = ít slot hơn + Class 3-5. Decision matrix và loadout example: [Gears - Storage Gear](https://github.com/oaiba/ExtractionDocument/blob/main/content/GDD_Design/Gears/StorageGear/README.md) và [Gear Mechanics](../Gameplay/Gear_Mechanics.md).
+**Tactical rigs vs armored rigs** - Unarmored rig = nhiều slot hơn, không protection; armored rig = ít slot hơn + Class 3-5. Decision matrix và loadout example: [Gears - Storage Gear](https://github.com/oaiba/ExtractionDocument/blob/main/content/GDD_Design/Gears/StorageGear/README.md) và [Gear Mechanics](../gameplay/gear_mechanics/index.html).
 
 **Headsets** - ANC/ASA, EQ profile (ComTac, GSSH, Peltor, Sordin, MSA). Liệt kê trong [Armor Master Database - Headsets](../Gears/ArmorGear/Armor_Master_Database.md#headsets).
 
@@ -211,7 +211,7 @@ Mọi item: Width x Height trong cell 1x1. Rotation: 90 độ (R khi kéo). **We
 | Sniper | 5x2 - 6x2 | SVD, M700 |
 | Helmets | 2x2 | Tactical helmets |
 | Armor Vests | 3x3 - 4x4 | Plate carriers |
-| Backpacks | 3x3 - 7x8 | Collapsed vs deployed; capacity = tổng cell theo container (xem [Storage Master Database](../Gears/StorageGear/Storage_Master_Database.md)) |
+| Backpacks | 3x3 - 7x8 | Collapsed vs deployed; capacity = tổng cell theo container (xem [Storage Master Database](../gears/storagegear/storage_master_database/index.html)) |
 
 #### 4.2 Stacking
 
@@ -219,13 +219,13 @@ Stackable: ammo (ví dụ 60/stack), currency, crafting material. Non-stackable:
 
 #### 4.3 Flat Storage & Folding
 
-**Không bag-in-bag:** Mỗi Storage Gear có một Storage duy nhất; tất cả item bên trong cùng cấp (flat). Bag, rig, armor, weapon, và attachment đặt trong container là item bình thường (chỉ có footprint). **Backpack collapse:** Backpack trống có thể collapse về size nhỏ hơn. Full rule: [Gears - Flat Storage & Folding](../Gears/StorageGear/Storage_Flat_Storage_Folding.md).
+**Không bag-in-bag:** Mỗi Storage Gear có một Storage duy nhất; tất cả item bên trong cùng cấp (flat). Bag, rig, armor, weapon, và attachment đặt trong container là item bình thường (chỉ có footprint). **Backpack collapse:** Backpack trống có thể collapse về size nhỏ hơn. Full rule: [Gears - Flat Storage & Folding](../gears/storagegear/storage_flat_storage_folding/index.html).
 
 ***
 
 ### 5. Encumbrance & Movement
 
-Total weight = equipped gear + inventory (toàn bộ item trong mọi Storage Gear và slot). Weight tier (Light -> Medium -> Heavy -> Critical -> Overweight) ảnh hưởng movement speed, sprint, inertia, jump, noise. Full formula, threshold, inertia, stamina regen: [Gear Mechanics](../Gameplay/Gear_Mechanics.md) và [Movement & Stamina](../Gameplay/Movement_and_Stamina.md).
+Total weight = equipped gear + inventory (toàn bộ item trong mọi Storage Gear và slot). Weight tier (Light -> Medium -> Heavy -> Critical -> Overweight) ảnh hưởng movement speed, sprint, inertia, jump, noise. Full formula, threshold, inertia, stamina regen: [Gear Mechanics](../gameplay/gear_mechanics/index.html) và [Movement & Stamina](../gameplay/movement_and_stamina/index.html).
 
 ***
 
@@ -255,13 +255,13 @@ Value/slot = Price / (W x H). Priority: quest items -> high value/slot -> keys -
 
 ### 7. Weapon Modding (Gunsmith)
 
-Weapon là platform với 40-100+ attachment trên mỗi family. Node-based build (receiver, barrel, handguard, optics, stock, v.v.); live stat comparison; preset và sharing. Full UI và compatibility: [Gunsmith System](Gunsmith_System.md). Weapon spec: [Weapon Arsenal](../Gameplay/WeaponArsenal.md) và section [Weapons](https://github.com/oaiba/ExtractionDocument/blob/main/content/GDD_Design/Weapons/README.md).
+Weapon là platform với 40-100+ attachment trên mỗi family. Node-based build (receiver, barrel, handguard, optics, stock, v.v.); live stat comparison; preset và sharing. Full UI và compatibility: [Gunsmith System](gunsmith_system/index.html). Weapon spec: [Weapon Arsenal](../gameplay/weaponarsenal/index.html) và section [Weapons](https://github.com/oaiba/ExtractionDocument/blob/main/content/GDD_Design/Weapons/README.md).
 
 ***
 
 ### 8. Stash & Containers
 
-Xem [**Stash Design**](../Stash_Design.md) cho full Stash specification (grid, container, progression, UI/UX). Stash size theo edition và Safe House level; container unlock path (Scav Junkbox, Ammo/Med/Weapon Case, Items Case, THICC); secure container upgrade (Alpha -> Beta -> Gamma/Kappa). Full table: [Gears - Stash & Container Progression](../Gears/StorageGear/Stash_Container_Progression.md).
+Xem [**Stash Design**](../stash_design/index.html) cho full Stash specification (grid, container, progression, UI/UX). Stash size theo edition và Safe House level; container unlock path (Scav Junkbox, Ammo/Med/Weapon Case, Items Case, THICC); secure container upgrade (Alpha -> Beta -> Gamma/Kappa). Full table: [Gears - Stash & Container Progression](../gears/storagegear/stash_container_progression/index.html).
 
 ***
 
@@ -281,11 +281,11 @@ Xem [**Stash Design**](../Stash_Design.md) cho full Stash specification (grid, c
 
 ### Appendix B: Related Docs
 
-* [**Stash Design**](../Stash_Design.md) - Full Stash specification (independent document).
+* [**Stash Design**](../stash_design/index.html) - Full Stash specification (independent document).
 * [**Gears**](https://github.com/oaiba/ExtractionDocument/blob/main/content/GDD_Design/Gears/README.md) - Armor & Storage gear spec (ArmorGear, StorageGear).
-* [**Gameplay - Gear Mechanics**](../Gameplay/Gear_Mechanics.md) - Weight tier, loadout philosophy, extraction.
-* [**Gameplay - Looting & Inventory**](../Gameplay/Looting_Interactions.md) - Container search time, grid dimension.
-* [**Container Mechanics**](Container_Mechanics.md) - High-level container type và mechanic (secure container, nesting).
-* [**Looting & FIR Rules**](Looting_And_FIR_Rules.md) - Loot loop, FIR status, corpse looting.
-* [**Medical & Survival Systems**](Medical_And_Survival_Systems.md) - Injury type, med, stimulant, hydration/energy.
-* [**Gunsmith System**](Gunsmith_System.md) - Weapon modding, ergonomics, malfunction, overheating.
+* [**Gameplay - Gear Mechanics**](../gameplay/gear_mechanics/index.html) - Weight tier, loadout philosophy, extraction.
+* [**Gameplay - Looting & Inventory**](../gameplay/looting_interactions/index.html) - Container search time, grid dimension.
+* [**Container Mechanics**](container_mechanics/index.html) - High-level container type và mechanic (secure container, nesting).
+* [**Looting & FIR Rules**](looting_and_fir_rules/index.html) - Loot loop, FIR status, corpse looting.
+* [**Medical & Survival Systems**](medical_and_survival_systems/index.html) - Injury type, med, stimulant, hydration/energy.
+* [**Gunsmith System**](gunsmith_system/index.html) - Weapon modding, ergonomics, malfunction, overheating.

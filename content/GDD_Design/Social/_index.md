@@ -27,5 +27,5 @@ Extraction shooters thrive on player interaction. It's not just about PvP — it
 - **Loot Sharing:** No "need/greed" rolls. Drop it on the ground — trust-based economy.
 
 {{< cards >}}
-  {{< card link="multiplayer.html" title="Multiplayer Systems" icon="users" subtitle="Squads, matchmaking, karma, communication, emotes, LFG, and social hub." >}}
+  {{< card link="multiplayer/index.html" title="Multiplayer Systems" icon="users" subtitle="Squads, matchmaking, karma, communication, emotes, LFG, and social hub." >}}
 {{< /cards >}}

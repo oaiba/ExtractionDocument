@@ -8,7 +8,7 @@ weight: 1
 
 These rules are **mandatory** for all AI agents generating C++ or Blueprint code for this Unreal Engine 5 project. Violations will cause build failures, UHT errors, or inconsistency with the team's codebase.
 
-> **Pre-requisite:** Read [Coding & Asset Standards](../../GDD_Technical/CodingStandards.md) before proceeding.
+> **Pre-requisite:** Read [Coding & Asset Standards](../../gdd_technical/codingstandards/index.html) before proceeding.
 
 ---
 

@@ -12,24 +12,24 @@ Tham chiếu chính:
 
 | hệ thống | source |
 | :--- | :--- |
-| User settings | [User Settings & Configuration](../GameDesign/UserSettings.md) |
-| Settings matrix | [Settings matrix](../GameDesign/UserSettings_Matrix.md) |
-| Accessibility | [Accessibility Design](../GameDesign/Accessibility.md) |
-| loading màn hình | [Async loading màn hình Design](LoadingScreen_Design.md) |
-| Commerce | [Commerce màn hình](Commerce_Screens.md) |
+| User settings | [User Settings & Configuration](../gamedesign/usersettings/index.html) |
+| Settings matrix | [Settings matrix](../gamedesign/usersettings_matrix/index.html) |
+| Accessibility | [Accessibility Design](../gamedesign/accessibility/index.html) |
+| loading màn hình | [Async loading màn hình Design](loadingscreen_design/index.html) |
+| Commerce | [Commerce màn hình](commerce_screens/index.html) |
 | Settings technical hệ thống | [Settings hệ thống](../../GDD_Technical/hệ thống/SettingsSystem.md) |
 
 ## Điều Hướng Nhanh
 
 | điểm đến | cách dùng |
 | :--- | :--- |
-| [UI/UX Index](_index.md) | Full UI/UX documentation hub |
-| [màn hình Groups Overview](Screen_Groups_Overview.md) | Lifecycle taxonomy và designer-ready spec template |
-| [global UX Standards](Global_UX_Standards.md) | shared navigation, focus, trạng thái, modal, và accessibility rules |
-| [Commerce màn hình](Commerce_Screens.md) | Shop, offer, currency top-up, purchase confirmation, receipts, và entitlement claim |
-| [loading màn hình Design](LoadingScreen_Design.md) | Boot, splash, lobby, kết quả, và reconnect loading rules |
-| [Progression & LiveOps màn hình](Progression_LiveOps_Screens.md) | Battle pass, rewards, ranked, news, và LiveOps goals |
-| [Social màn hình](Social_Screens.md) | Privacy, safety, report/block, và communication settings |
+| [UI/UX Index](_index/index.html) | Full UI/UX documentation hub |
+| [màn hình Groups Overview](screen_groups_overview/index.html) | Lifecycle taxonomy và designer-ready spec template |
+| [global UX Standards](global_ux_standards/index.html) | shared navigation, focus, trạng thái, modal, và accessibility rules |
+| [Commerce màn hình](commerce_screens/index.html) | Shop, offer, currency top-up, purchase confirmation, receipts, và entitlement claim |
+| [loading màn hình Design](loadingscreen_design/index.html) | Boot, splash, lobby, kết quả, và reconnect loading rules |
+| [Progression & LiveOps màn hình](progression_liveops_screens/index.html) | Battle pass, rewards, ranked, news, và LiveOps goals |
+| [Social màn hình](social_screens/index.html) | Privacy, safety, report/block, và communication settings |
 
 ---
 
@@ -51,7 +51,7 @@ Tham chiếu chính:
 
 ## Boot, Splash, và loading
 
-Boot và splash màn hình should stay minimal. loading taxonomy lives in [loading màn hình Design](LoadingScreen_Design.md); this section owns the hệ thống-facing trạng thái.
+Boot và splash màn hình should stay minimal. loading taxonomy lives in [loading màn hình Design](loadingscreen_design/index.html); this section owns the hệ thống-facing trạng thái.
 
 Layout (PC/Console)
 
@@ -113,7 +113,7 @@ Layout (PC/Console)
 | No account | Show sign-in providers và privacy note |
 | Auth failed | Show provider, retry, và support |
 | Account conflict | Compare account names, timestamps, và progression summaries |
-| Cloud sync conflict | cách dùng local/cloud/merge choices from [User Settings](../GameDesign/UserSettings.md) |
+| Cloud sync conflict | cách dùng local/cloud/merge choices from [User Settings](../gamedesign/usersettings/index.html) |
 | Age gate | Region-appropriate messaging và blocked tính năng explanation |
 
 ---
@@ -183,7 +183,7 @@ Layout (PC/Console)
 
 ## Settings
 
-Settings categories follow [User Settings](../GameDesign/UserSettings.md) và the chi tiết [Settings matrix](../GameDesign/UserSettings_Matrix.md).
+Settings categories follow [User Settings](../gamedesign/usersettings/index.html) và the chi tiết [Settings matrix](../gamedesign/usersettings_matrix/index.html).
 
 Layout (PC/Console)
 
@@ -319,7 +319,7 @@ Layout (PC/Console)
 | Server full/queue | Queue position hoặc retry timing |
 | Save conflict | source, timestamp, impact, choices |
 | Data corruption | What is recoverable và support path |
-| Entitlement/dịch vụ conflict | Account provider, sync status, support path; purchase receipts live in [Commerce màn hình](Commerce_Screens.md) |
+| Entitlement/dịch vụ conflict | Account provider, sync status, support path; purchase receipts live in [Commerce màn hình](commerce_screens/index.html) |
 
 ---
 

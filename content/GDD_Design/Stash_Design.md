@@ -10,7 +10,7 @@ weight: 25
 The **Stash** is the player's permanent out-of-raid storage for all items extracted from Raid Extraction. Items in the Stash are never lost on death — only gear brought into raid can be lost. The Stash is the central inventory repository that bridges raids and enables the preparation phase.
 
 > **Document Status:** Independent design document — not part of Inventory_System section.  
-> **Location:** Stash is physically housed in the **Stash Room** within the [Safe House](GameDesign/Safe_House_Design.md). Access from Loadout Preparation and Safe House.
+> **Location:** Stash is physically housed in the **Stash Room** within the [Safe House](gamedesign/safe_house_design/index.html). Access from Loadout Preparation and Safe House.
 
 ---
 
@@ -48,13 +48,13 @@ Stash capacity = **total cells** in a single grid. All items occupy cells based 
 | Armor Vests | 3×3 – 4×4 | Plate carriers |
 | Backpacks | 3×3 – 7×8 | Collapsed vs deployed |
 
-Full item dimensions: [Gears — Storage Master Database](Gears/StorageGear/Storage_Master_Database.md).
+Full item dimensions: [Gears — Storage Master Database](gears/storagegear/storage_master_database/index.html).
 
 ### 2.3 Flat Storage & Folding
 
 - **No bag-in-bag:** Each container has a single flat grid; items inside are at the same level
 - **Backpack collapse:** Empty backpacks can collapse to smaller footprint
-- Rules: [Storage: Flat Storage & Folding](Gears/StorageGear/Storage_Flat_Storage_Folding.md)
+- Rules: [Storage: Flat Storage & Folding](gears/storagegear/storage_flat_storage_folding/index.html)
 
 ---
 
@@ -71,7 +71,7 @@ Stash capacity increases with **edition** or **Safe House level** upgrades.
 | Premium Edition | 10×48 | 480 | Free (start) |
 | Ultimate Edition | 10×68 | 680 | Free (start) |
 
-All editions can reach the same maximum (10×68) via Safe House upgrades. Full progression: [Stash & Container Progression](Gears/StorageGear/Stash_Container_Progression.md).
+All editions can reach the same maximum (10×68) via Safe House upgrades. Full progression: [Stash & Container Progression](gears/storagegear/stash_container_progression/index.html).
 
 ---
 
@@ -121,7 +121,7 @@ Recommended layout for efficient stash management:
 
 ## 6. Stash Room Integration
 
-The Stash is located in the **Stash Room** within the [Safe House](GameDesign/Safe_House_Design.md). Integration points:
+The Stash is located in the **Stash Room** within the [Safe House](gamedesign/safe_house_design/index.html). Integration points:
 
 - **Loadout Preparation:** Quick-access panel shows filtered stash; drag items to equip
 - **Safe House:** Full stash grid accessible from Stash Room; Operator stamina/energy/hydration recovery logic uses items from stash
@@ -176,9 +176,9 @@ The Stash is located in the **Stash Room** within the [Safe House](GameDesign/Sa
 
 ## 9. Cross-References
 
-- [Stash & Container Progression](Gears/StorageGear/Stash_Container_Progression.md) — Full tables, unlock costs
-- [Safe House Design](GameDesign/Safe_House_Design.md) — Stash Room, Operator state recovery
-- [Storage Master Database](Gears/StorageGear/Storage_Master_Database.md) — Container specs, stash-only cases
-- [Menus — Stash / Inventory Management](UI_UX/Menus.md) — UI layout details
-- [Loadout Preparation](GameDesign/LoadoutPreparation.md) — Quick Stash Access panel
-- [Inventory System](Inventory_System/_index.md) — Paper doll, equipment slots, looting UX
+- [Stash & Container Progression](gears/storagegear/stash_container_progression/index.html) — Full tables, unlock costs
+- [Safe House Design](gamedesign/safe_house_design/index.html) — Stash Room, Operator state recovery
+- [Storage Master Database](gears/storagegear/storage_master_database/index.html) — Container specs, stash-only cases
+- [Menus — Stash / Inventory Management](ui_ux/menus/index.html) — UI layout details
+- [Loadout Preparation](gamedesign/loadoutpreparation/index.html) — Quick Stash Access panel
+- [Inventory System](inventory_system/_index/index.html) — Paper doll, equipment slots, looting UX

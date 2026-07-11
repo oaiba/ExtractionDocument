@@ -94,7 +94,7 @@ A clan recruiter should quickly see activity, preferred modes, operator mastery,
 
 | Topic | trang |
 | :--- | :--- |
-| Ranked data | [Ranked Mode](rankedmode.html) |
-| Clan identity | [Clan hệ thống](clansystem.html) |
-| Progression | [Progression](progression.html) |
-| Privacy settings | [User Settings](usersettings.html) |
+| Ranked data | [Ranked Mode](rankedmode/index.html) |
+| Clan identity | [Clan hệ thống](clansystem/index.html) |
+| Progression | [Progression](progression/index.html) |
+| Privacy settings | [User Settings](usersettings/index.html) |

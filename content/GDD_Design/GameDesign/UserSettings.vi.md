@@ -5,7 +5,7 @@ type: docs
 
 ## Tổng Quan
 
-User Settings defines how người chơi configure controls, video, audio, gameplay, accessibility, privacy, và diagnostics. This trang is the UX và policy hub. The full option list lives in [Settings matrix](usersettings_matrix.html), và technical tags live in [Settings Tags](usersettings_tags.html).
+User Settings defines how người chơi configure controls, video, audio, gameplay, accessibility, privacy, và diagnostics. This trang is the UX và policy hub. The full option list lives in [Settings matrix](usersettings_matrix/index.html), và technical tags live in [Settings Tags](usersettings_tags/index.html).
 
 Settings should feel powerful mà không feeling hostile. Competitive người chơi need precision, creators need privacy tools, mobile người chơi need battery và touch controls, và accessibility users need support trước play begins. The trang should group choices by người chơi intent rather than expose every technical variable at the same level.
 
@@ -30,13 +30,13 @@ Categories should stay stable across platforms even khi individual options diffe
 
 | Category | Owns | chi tiết |
 | :--- | :--- | :--- |
-| Controls | Input device, sensitivity, remap, gyro, aim assist | [Controls](controls.html) |
-| Graphics | Display, quality, post-processing, performance profile | [Settings matrix](usersettings_matrix.html) |
-| Audio | Volumes, output device, voice chat, subtitles | [Communication](communication.html) |
-| Gameplay & HUD | Reticle, minimap, hit feedback, loot prompts | [Navigation & Map](navigationandmap.html) |
-| Accessibility | Color, motion, timing, input assist, text size | [Accessibility](accessibility.html) |
-| Social & Privacy | Invites, presence, chat, matchmaking privacy | [người chơi Profile](playerprofile.html) |
-| Language & Region | Text, audio, region, units, date format | [Localization](localization.html) |
+| Controls | Input device, sensitivity, remap, gyro, aim assist | [Controls](controls/index.html) |
+| Graphics | Display, quality, post-processing, performance profile | [Settings matrix](usersettings_matrix/index.html) |
+| Audio | Volumes, output device, voice chat, subtitles | [Communication](communication/index.html) |
+| Gameplay & HUD | Reticle, minimap, hit feedback, loot prompts | [Navigation & Map](navigationandmap/index.html) |
+| Accessibility | Color, motion, timing, input assist, text size | [Accessibility](accessibility/index.html) |
+| Social & Privacy | Invites, presence, chat, matchmaking privacy | [người chơi Profile](playerprofile/index.html) |
+| Language & Region | Text, audio, region, units, date format | [Localization](localization/index.html) |
 | Diagnostics | FPS, network, telemetry, crash reporting | Technical hệ thống |
 
 ## Presets
@@ -97,8 +97,8 @@ A streamer applies Streamer mode. The preset should hide names, invite codes, v�
 
 | Topic | trang |
 | :--- | :--- |
-| Full option bảng | [Settings matrix](usersettings_matrix.html) |
-| Technical tags | [Settings Tags](usersettings_tags.html) |
-| Controls | [Controls](controls.html) |
-| Accessibility | [Accessibility](accessibility.html) |
-| Localization | [Localization](localization.html) |
+| Full option bảng | [Settings matrix](usersettings_matrix/index.html) |
+| Technical tags | [Settings Tags](usersettings_tags/index.html) |
+| Controls | [Controls](controls/index.html) |
+| Accessibility | [Accessibility](accessibility/index.html) |
+| Localization | [Localization](localization/index.html) |

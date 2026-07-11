@@ -102,7 +102,7 @@ Player disconnect trong fight đang thua và không reconnect. System nên áp e
 
 | Topic | Page |
 | :--- | :--- |
-| Core ranked mode rules | [Game Modes](gamemodes.html) |
-| Profile display | [Player Profile](playerprofile.html) |
-| Communication restrictions | [Communication](communication.html) |
-| Economy guardrails | [Economy](economy.html) |
+| Core ranked mode rules | [Game Modes](gamemodes/index.html) |
+| Profile display | [Player Profile](playerprofile/index.html) |
+| Communication restrictions | [Communication](communication/index.html) |
+| Economy guardrails | [Economy](economy/index.html) |

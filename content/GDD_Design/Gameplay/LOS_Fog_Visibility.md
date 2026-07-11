@@ -9,7 +9,7 @@ weight: 7
 
 This document defines the **Line of Sight (LOS)**, **Fog of War**, and **Visibility** systems for the multiplayer hero shooter top-down extraction game. A core pillar is **shared team vision**: any information one squad member sees (or gains via abilities) is shared with the whole team for minimap fog, pings, and enemy/loot awareness. The system supports tactical tension (explored-but-unseen areas), fair combat (enemies only revealed when in LOS or via counterable abilities), and operator identity (Scout/Specialist intel, smoke blockers).
 
-> **Cross-References:** [Core Gameplay Loop](CoreLoop.md) (Information Gathering, infiltration phase), [Hero Abilities](Hero_Abilities.md) (drone, overlay, smoke), [Extraction Mechanics](Extraction_Mechanics.md) (extraction notifications), [Design Pillars](https://github.com/oaiba/ExtractionDocument/blob/main/content/ProjectScope/design-pillars-enhanced.md) (enemy visibility must be fair).
+> **Cross-References:** [Core Gameplay Loop](coreloop/index.html) (Information Gathering, infiltration phase), [Hero Abilities](hero_abilities/index.html) (drone, overlay, smoke), [Extraction Mechanics](extraction_mechanics/index.html) (extraction notifications), [Design Pillars](https://github.com/oaiba/ExtractionDocument/blob/main/content/ProjectScope/design-pillars-enhanced.md) (enemy visibility must be fair).
 
 ***
 
@@ -100,7 +100,7 @@ A point **B** is "in LOS" of viewer **A** if there exists an unobstructed ray fr
 | Tech Savvy (Glitch)                     | Exception (traps) | 8 m               | No              | No (self)        | Yes (traps only)               | N/A                                    |
 | Ghost Cloak (Hawk)                      | Self-conceal      | 8 m shimmer       | No              | No               | N/A                            | Shimmer visible 8 m; damage breaks     |
 
-See [Hero Abilities](Hero_Abilities.md) for full specs and the "Interaction with LOS/Visibility" section in that doc.
+See [Hero Abilities](hero_abilities/index.html) for full specs and the "Interaction with LOS/Visibility" section in that doc.
 
 #### Passives and Minor Effects
 
@@ -175,7 +175,7 @@ Spotter Drone (Hawk), Motion Sensor (Hawk), and Tactical Overlay (Glitch) add vi
 | **Weather (fog, rain)**         | Can reduce sight range and/or audio range (e.g. "fog reduces sightlines," "rain muffles footsteps" per design pillars). |
 | **Green Fog (chemical hazard)** | Reduced visibility; applies to all viewers (players and abilities as defined).                                          |
 
-See [Environmental Hazards](Environmental_Hazards.md) for full hazard and weather specs.
+See [Environmental Hazards](environmental_hazards/index.html) for full hazard and weather specs.
 
 ***
 
@@ -206,8 +206,8 @@ These points are for downstream technical design and implementation.
 
 ### Cross-References
 
-* [Core Gameplay Loop](CoreLoop.md) — Phase 2 Information Gathering, squad shared vision and minimap fog.
-* [Hero Abilities](Hero_Abilities.md) — Operator specs and Interaction with LOS/Visibility.
-* [Extraction Mechanics](Extraction_Mechanics.md) — Extraction notifications and information asymmetry.
-* [Environmental Hazards](Environmental_Hazards.md) — Weather and hazard effects on visibility.
+* [Core Gameplay Loop](coreloop/index.html) — Phase 2 Information Gathering, squad shared vision and minimap fog.
+* [Hero Abilities](hero_abilities/index.html) — Operator specs and Interaction with LOS/Visibility.
+* [Extraction Mechanics](extraction_mechanics/index.html) — Extraction notifications and information asymmetry.
+* [Environmental Hazards](environmental_hazards/index.html) — Weather and hazard effects on visibility.
 * [Design Pillars](https://github.com/oaiba/ExtractionDocument/blob/main/content/ProjectScope/design-pillars-enhanced.md) — Fair visibility, no unclear threats.

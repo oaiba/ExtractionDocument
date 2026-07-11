@@ -12,14 +12,14 @@ This page is the canonical screen inventory for the UI/UX design package. It gro
 
 | Destination | Use |
 | :--- | :--- |
-| [UI/UX Index](_index.md) | Full UI/UX documentation hub |
-| [Global UX Standards](Global_UX_Standards.md) | Shared navigation, focus, state, modal, and accessibility rules |
-| [Out-of-Raid Screens](Out_Of_Raid_Screens.md) | Home, loadout, stash, traders, safe house, quests, profile |
-| [Pre-Raid Screens](Pre_Raid_Screens.md) | Mode, map, deploy confirmation, squad lobby, matchmaking |
-| [In-Raid Screens](In_Raid_Screens.md) | HUD, tactical map, looting, inventory overlay, pause, spectator |
-| [Post-Raid Screens](Post_Raid_Screens.md) | AAR, death replay, loot transfer, quest progress, redeploy |
+| [UI/UX Index](_index/index.html) | Full UI/UX documentation hub |
+| [Global UX Standards](global_ux_standards/index.html) | Shared navigation, focus, state, modal, and accessibility rules |
+| [Out-of-Raid Screens](out_of_raid_screens/index.html) | Home, loadout, stash, traders, safe house, quests, profile |
+| [Pre-Raid Screens](pre_raid_screens/index.html) | Mode, map, deploy confirmation, squad lobby, matchmaking |
+| [In-Raid Screens](in_raid_screens/index.html) | HUD, tactical map, looting, inventory overlay, pause, spectator |
+| [Post-Raid Screens](post_raid_screens/index.html) | AAR, death replay, loot transfer, quest progress, redeploy |
 
-For cross-domain ownership, unresolved decisions, and MVP readiness, use [Cross-System Traceability](../ProjectScope/Cross_System_Traceability.md), [Design Decision Register](../ProjectScope/Design_Decision_Register.md), and [MVP Readiness Review](../ProjectScope/MVP_Readiness_Review.md).
+For cross-domain ownership, unresolved decisions, and MVP readiness, use [Cross-System Traceability](../projectscope/cross_system_traceability/index.html), [Design Decision Register](../projectscope/design_decision_register/index.html), and [MVP Readiness Review](../projectscope/mvp_readiness_review/index.html).
 
 Every screen group must answer four questions:
 
@@ -57,15 +57,15 @@ Every screen group must answer four questions:
 
 | Phase | Screen Group | Primary Job | Key Pages |
 | :--- | :--- | :--- | :--- |
-| Boot and account | Onboarding / Auth | Get the player safely into a valid account and tutorial state | [Settings & System Screens](Commerce_Settings_System_Screens.md), [Loading Screen Design](LoadingScreen_Design.md) |
-| Out of raid | Home, profile, stash, traders, safe house, quests | Prepare, recover, progress, and manage risk | [Out-of-Raid Screens](Out_Of_Raid_Screens.md) |
-| Pre-raid | Mode, map, squad, deploy, matchmaking | Confirm rules, risk, party readiness, and queue state | [Pre-Raid Screens](Pre_Raid_Screens.md) |
-| In raid | HUD, map, looting, overlays, pause, spectator | Keep survival-critical information clear during pressure | [In-Raid Screens](In_Raid_Screens.md), [HUD Design](HUD_Design.md) |
-| Post-raid | AAR, death replay, loot transfer, report, redeploy | Explain outcome and route the player into the next loop | [Post-Raid Screens](Post_Raid_Screens.md) |
-| Social | Friends, party, clan, LFG, communication, moderation | Help players coordinate while limiting abuse | [Social Screens](Social_Screens.md) |
-| Progression and LiveOps | Battle pass, events, ranked, rewards, inbox | Surface long-term goals without burying raid flow | [Progression & LiveOps Screens](Progression_LiveOps_Screens.md) |
-| Commerce | Shop, offers, bundles, item preview, currency top-up, confirmation, receipts, redeem | Handle cosmetic purchase browsing and checkout trust states | [Commerce Screens](Commerce_Screens.md) |
-| Settings and system | Settings, account, privacy, diagnostics, dialogs | Handle configuration, account, platform, and system states | [Settings & System Screens](Commerce_Settings_System_Screens.md) |
+| Boot and account | Onboarding / Auth | Get the player safely into a valid account and tutorial state | [Settings & System Screens](commerce_settings_system_screens/index.html), [Loading Screen Design](loadingscreen_design/index.html) |
+| Out of raid | Home, profile, stash, traders, safe house, quests | Prepare, recover, progress, and manage risk | [Out-of-Raid Screens](out_of_raid_screens/index.html) |
+| Pre-raid | Mode, map, squad, deploy, matchmaking | Confirm rules, risk, party readiness, and queue state | [Pre-Raid Screens](pre_raid_screens/index.html) |
+| In raid | HUD, map, looting, overlays, pause, spectator | Keep survival-critical information clear during pressure | [In-Raid Screens](in_raid_screens/index.html), [HUD Design](hud_design/index.html) |
+| Post-raid | AAR, death replay, loot transfer, report, redeploy | Explain outcome and route the player into the next loop | [Post-Raid Screens](post_raid_screens/index.html) |
+| Social | Friends, party, clan, LFG, communication, moderation | Help players coordinate while limiting abuse | [Social Screens](social_screens/index.html) |
+| Progression and LiveOps | Battle pass, events, ranked, rewards, inbox | Surface long-term goals without burying raid flow | [Progression & LiveOps Screens](progression_liveops_screens/index.html) |
+| Commerce | Shop, offers, bundles, item preview, currency top-up, confirmation, receipts, redeem | Handle cosmetic purchase browsing and checkout trust states | [Commerce Screens](commerce_screens/index.html) |
+| Settings and system | Settings, account, privacy, diagnostics, dialogs | Handle configuration, account, platform, and system states | [Settings & System Screens](commerce_settings_system_screens/index.html) |
 
 ---
 
@@ -99,7 +99,7 @@ Progression and LiveOps coverage is complete only when the canonical page define
 
 ## Screen Spec Template
 
-Use this template for every new screen spec. Keep it short enough to update, but complete enough for designer layout, UX review, and implementation planning. [Out-of-Raid Screens](Out_Of_Raid_Screens.md) is the baseline example for the full designer-ready format.
+Use this template for every new screen spec. Keep it short enough to update, but complete enough for designer layout, UX review, and implementation planning. [Out-of-Raid Screens](out_of_raid_screens/index.html) is the baseline example for the full designer-ready format.
 
 #### Spec Template Layout
 
@@ -187,4 +187,4 @@ Use this template for every new screen spec. Keep it short enough to update, but
 - [ ] Every group defines blocked, empty, locked, loading, offline, and error states.
 - [ ] Every major game system has a UI owner or cross-reference.
 - [ ] No single document owns unrelated screens that should live in separate groups.
-- [ ] Technical terms match [UI System](../../GDD_Technical/Systems/UISystem.md) where code-facing names are needed.
+- [ ] Technical terms match [UI System](../../gdd_technical/systems/uisystem/index.html) where code-facing names are needed.

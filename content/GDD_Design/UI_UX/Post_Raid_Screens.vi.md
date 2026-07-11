@@ -12,22 +12,22 @@ Tham chiếu chính:
 
 | hệ thống | source |
 | :--- | :--- |
-| Debrief | [Post-Game Debrief & Replay](../Gameplay/Post_Game_Debrief.md) |
-| Extraction outcomes | [Extraction cơ chế](../Gameplay/Extraction_Mechanics.md) |
-| Progression | [Progression & Monetization](../GameDesign/Progression.md) |
-| Quest objectives | [Quest & Objective hệ thống](../Gameplay/Quest_Objective_System.md) |
-| Fair play | [Anti-Cheat & Fair Play](../Gameplay/Anti_Cheat_Fair_Play.md) |
+| Debrief | [Post-Game Debrief & Replay](../gameplay/post_game_debrief/index.html) |
+| Extraction outcomes | [Extraction cơ chế](../gameplay/extraction_mechanics/index.html) |
+| Progression | [Progression & Monetization](../gamedesign/progression/index.html) |
+| Quest objectives | [Quest & Objective hệ thống](../gameplay/quest_objective_system/index.html) |
+| Fair play | [Anti-Cheat & Fair Play](../gameplay/anti_cheat_fair_play/index.html) |
 
 ## Điều Hướng Nhanh
 
 | điểm đến | cách dùng |
 | :--- | :--- |
-| [UI/UX Index](_index.md) | Full UI/UX documentation hub |
-| [màn hình Groups Overview](Screen_Groups_Overview.md) | Lifecycle taxonomy và designer-ready spec template |
-| [global UX Standards](Global_UX_Standards.md) | shared navigation, focus, trạng thái, modal, và accessibility rules |
-| [In-Raid màn hình](In_Raid_Screens.md) | Raid overlays và reconnect trước results |
-| [Out-of-Raid màn hình](Out_Of_Raid_Screens.md) | Stash, quests, profile, và recovery actions sau results |
-| [Social màn hình](Social_Screens.md) | Commend, report, add friend, và squad continuation |
+| [UI/UX Index](_index/index.html) | Full UI/UX documentation hub |
+| [màn hình Groups Overview](screen_groups_overview/index.html) | Lifecycle taxonomy và designer-ready spec template |
+| [global UX Standards](global_ux_standards/index.html) | shared navigation, focus, trạng thái, modal, và accessibility rules |
+| [In-Raid màn hình](in_raid_screens/index.html) | Raid overlays và reconnect trước results |
+| [Out-of-Raid màn hình](out_of_raid_screens/index.html) | Stash, quests, profile, và recovery actions sau results |
+| [Social màn hình](social_screens/index.html) | Commend, report, add friend, và squad continuation |
 
 ---
 

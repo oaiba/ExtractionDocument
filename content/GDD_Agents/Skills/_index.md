@@ -8,4 +8,4 @@ weight: 3
 
 Specialized UE5 competencies for AI agents.
 
-- **[Unreal Engine Skills](./UnrealEngine.md)** — GAS (Gameplay Ability System), Enhanced Input, Replication & Networking, UMG widgets, Subsystem patterns, and Data-Driven Design with code examples
+- **[Unreal Engine Skills](./unrealengine/index.html)** — GAS (Gameplay Ability System), Enhanced Input, Replication & Networking, UMG widgets, Subsystem patterns, and Data-Driven Design with code examples

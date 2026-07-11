@@ -1034,11 +1034,11 @@ Use this checklist for **every new feature request**. If a feature fails 3+ chec
 * [Project Scope & Vision](https://github.com/oaiba/ExtractionDocument/blob/main/content/GDD_Design/ProjectScope/project-scope-enhanced.md) - High-level game definition
 * [MVP Scope](https://github.com/oaiba/ExtractionDocument/blob/main/content/GDD_Design/ProjectScope/mvp-enhanced.md) - What we're building first
 * [Non-Goals](https://github.com/oaiba/ExtractionDocument/blob/main/content/GDD_Design/ProjectScope/non-goals-enhanced.md) - What we're explicitly NOT doing
-* [Inventory & Gear Systems](inventory-gear-systems-enhanced.md) - Deep dive on loot mechanics
+* [Inventory & Gear Systems](inventory-gear-systems-enhanced/index.html) - Deep dive on loot mechanics
 
 **Implementation Guides:**
 
-* [Competitive Analysis](competitive-analysis-extraction-shooters.md) - Market positioning
+* [Competitive Analysis](competitive-analysis-extraction-shooters/index.html) - Market positioning
 
 **Player-Facing:**
 

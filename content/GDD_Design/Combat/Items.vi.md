@@ -17,15 +17,15 @@ type: docs
 
 ### Combat Item Source-Of-Truth Boundary
 
-Trang này mô tả combat-facing item usage và economic intent. Nó không định nghĩa lại item instance ownership, stash placement, entitlement, FIR, contraband, durability lifecycle, hoặc overflow rules; các phần đó thuộc [Inventory System](../Inventory_System/_index.md), [Gear Tier System](../Gears/Gear_Tier_System.md), và [Economy](../GameDesign/Economy.md).
+Trang này mô tả combat-facing item usage và economic intent. Nó không định nghĩa lại item instance ownership, stash placement, entitlement, FIR, contraband, durability lifecycle, hoặc overflow rules; các phần đó thuộc [Inventory System](../inventory_system/_index/index.html), [Gear Tier System](../gears/gear_tier_system/index.html), và [Economy](../gamedesign/economy/index.html).
 
 | Item Family | Combat Contract | Source-Of-Truth Link |
 | :--- | :--- | :--- |
-| Weapons / ammo | Damage, handling, role, feedback, ammo/armor interaction | [Weapons](../Weapons/_index.md) |
-| Armor | Protection, movement cost, durability, readable failure | [Armor Gear](../Gears/ArmorGear/Armor.md) |
-| Medical | Recovery timing, vulnerability, status clarity | [Medical System](../Gameplay/Medical_System.md) |
-| Tactical equipment | Sound, vision, denial, extraction counterplay | [Combat Feel](../Gameplay/Combat_Feel_Topdown.md) |
-| Loot / barter | Chỉ value và risk context | [Inventory System](../Inventory_System/_index.md) |
+| Weapons / ammo | Damage, handling, role, feedback, ammo/armor interaction | [Weapons](../weapons/_index/index.html) |
+| Armor | Protection, movement cost, durability, readable failure | [Armor Gear](../gears/armorgear/armor/index.html) |
+| Medical | Recovery timing, vulnerability, status clarity | [Medical System](../gameplay/medical_system/index.html) |
+| Tactical equipment | Sound, vision, denial, extraction counterplay | [Combat Feel](../gameplay/combat_feel_topdown/index.html) |
+| Loot / barter | Chỉ value và risk context | [Inventory System](../inventory_system/_index/index.html) |
 
 Combat items phải giữ no-paid-power rule: premium purchase có thể grant cosmetic entitlement, nhưng không grant superior combat item instances.
 
@@ -47,7 +47,7 @@ _See:_ [_Weapons & Combat_](vũ khí.md) _for chi tiết on vũ khí, Attachment
 
 #### 2. giáp & Protection
 
-giáp uses **Class 1–6** (GOST-style) với zone-based protection. Display values và headshot reduction map from class; Xem [Gears — giáp & Ballistics](../Gears/ArmorGear/giáp.md) for mapping và [Gears — giáp Master Database](../Gears/ArmorGear/Armor_Master_Database.md) for full spec, materials, và zone coverage per item.
+giáp uses **Class 1–6** (GOST-style) với zone-based protection. Display values và headshot reduction map from class; Xem [Gears — giáp & Ballistics](../gears/armorgear/armor/index.html) for mapping và [Gears — giáp Master Database](../gears/armorgear/armor_master_database/index.html) for full spec, materials, và zone coverage per item.
 
 | Type           | Class (example) | Coverage (example)     | Move penalty | giá trị range      |
 | -------------- | :-------------: | ---------------------- | ------------ | ---------------- |
@@ -60,7 +60,7 @@ giáp uses **Class 1–6** (GOST-style) với zone-based protection. Display val
 
 #### 3. Backpacks & Storage
 
-Backpacks và tactical rigs define carry capacity và hotkey access. Full list và grid layouts: [Gears — Storage Gear](https://github.com/oaiba/ExtractionDocument/blob/main/content/GDD_Design/Gears/StorageGear/README.md) và [Storage Master Database](../Gears/StorageGear/Storage_Master_Database.md).
+Backpacks và tactical rigs define carry capacity và hotkey access. Full list và grid layouts: [Gears — Storage Gear](https://github.com/oaiba/ExtractionDocument/blob/main/content/GDD_Design/Gears/StorageGear/README.md) và [Storage Master Database](../gears/storagegear/storage_master_database/index.html).
 
 | Tier   | Slots (example) | Move penalty | giá trị range     |
 | ------ | :-------------: | ------------ | --------------- |
@@ -233,11 +233,11 @@ Backpacks và tactical rigs define carry capacity và hotkey access. Full list v
 
 #### giáp & Protection - Complete Specifications
 
-Full spec (per-item class, zones, material, durability, giá trị): [**Gears — giáp Master Database**](../Gears/ArmorGear/Armor_Master_Database.md). Hit locations và damage model: [vũ khí Arsenal](../Gameplay/WeaponArsenal.md#hit-location-multipliers).
+Full spec (per-item class, zones, material, durability, giá trị): [**Gears — giáp Master Database**](../gears/armorgear/armor_master_database/index.html). Hit locations và damage model: [vũ khí Arsenal](../Gameplay/WeaponArsenal.md#hit-location-multipliers).
 
 #### Backpacks & Storage
 
-Full spec (rigs, backpacks, secure containers, stash cases): [**Gears — Storage Master Database**](../Gears/StorageGear/Storage_Master_Database.md).
+Full spec (rigs, backpacks, secure containers, stash cases): [**Gears — Storage Master Database**](../gears/storagegear/storage_master_database/index.html).
 
 ***
 

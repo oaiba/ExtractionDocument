@@ -8,7 +8,7 @@ weight: 3
 
 This document defines how weapon balance is measured, tuned, and maintained: DPS and TTK math, cost-efficiency, balance levers, patch process, meta health metrics, and seasonal rotation. Design reference: Helldivers 2 faction-specific effectiveness, Delta Force seasonal TTK rebalancing.
 
-> **Cross-References:** [Weapon Arsenal](../Gameplay/WeaponArsenal.md) — base stats; [Caliber & Ballistics System](Caliber_Ballistics_System.md) — penetration and damage application; [Gears — Armor & Ballistics](../Gears/ArmorGear/Armor.md) — armor classes 1–6.
+> **Cross-References:** [Weapon Arsenal](../gameplay/weaponarsenal/index.html) — base stats; [Caliber & Ballistics System](caliber_ballistics_system/index.html) — penetration and damage application; [Gears — Armor & Ballistics](../gears/armorgear/armor/index.html) — armor classes 1–6.
 
 ---
 
@@ -76,7 +76,7 @@ Damage is per-shot base damage (before armor). RPM is rounds per minute. Shotgun
 
 ## TTK Matrix vs Armor Class
 
-TTK = time to kill (100 HP target). Armor classes 1–6 from [Gears — Armor](../Gears/ArmorGear/Armor.md). Shots to kill depend on penetration and body part; below assumes chest, no penetration failure.
+TTK = time to kill (100 HP target). Armor classes 1–6 from [Gears — Armor](../gears/armorgear/armor/index.html). Shots to kill depend on penetration and body part; below assumes chest, no penetration failure.
 
 **Simplified TTK (seconds) — Chest, 100 HP + Armor**
 
@@ -92,7 +92,7 @@ TTK = time to kill (100 HP target). Armor classes 1–6 from [Gears — Armor](.
 
 *0 = one-shot kill. "+" = marginal or requires many shots / AP ammo.*
 
-Full TTK depends on [Caliber & Ballistics System](Caliber_Ballistics_System.md) penetration chance and damage falloff. This matrix is for high-level balance targets.
+Full TTK depends on [Caliber & Ballistics System](caliber_ballistics_system/index.html) penetration chance and damage falloff. This matrix is for high-level balance targets.
 
 ---
 
@@ -212,7 +212,7 @@ Rotation does not remove base weapons from the game; it changes their visibility
 
 ## Cross-References
 
-- [Weapon Arsenal](../Gameplay/WeaponArsenal.md) — Base damage, RPM, cost.
-- [Caliber & Ballistics System](Caliber_Ballistics_System.md) — Penetration, falloff, armor interaction.
-- [Gears — Armor & Ballistics](../Gears/ArmorGear/Armor.md) — Armor classes 1–6; [Armor Master Database](../Gears/ArmorGear/Armor_Master_Database.md) — per-item specs.
-- [Weapon Categories Deep Dive](Weapon_Categories_Deep_Dive.md) — Role per genre.
+- [Weapon Arsenal](../gameplay/weaponarsenal/index.html) — Base damage, RPM, cost.
+- [Caliber & Ballistics System](caliber_ballistics_system/index.html) — Penetration, falloff, armor interaction.
+- [Gears — Armor & Ballistics](../gears/armorgear/armor/index.html) — Armor classes 1–6; [Armor Master Database](../gears/armorgear/armor_master_database/index.html) — per-item specs.
+- [Weapon Categories Deep Dive](weapon_categories_deep_dive/index.html) — Role per genre.

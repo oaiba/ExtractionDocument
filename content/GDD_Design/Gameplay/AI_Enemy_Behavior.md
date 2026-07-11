@@ -9,14 +9,14 @@ weight: 12
 
 AI enemies are the **primary source of non-player danger** in every raid. They create environmental pressure, punish noisy play, reward tactical movement, and generate loot that drives the economy. This document specifies enemy types, detection states, patrol behaviors, escalation, AI boss patterns, and the **Player-as-Scav** system.
 
-> **Cross-References:** [Core Gameplay Loop](CoreLoop.md) — economy faucets (Scav Mode), phase-by-phase AI presence; [Environmental Hazards](Environmental_Hazards.md) — AI Boss spawn, Scav Raid wave event; [LOS, Fog of War & Visibility](LOS_Fog_Visibility.md) — AI detection vs LOS system; [Movement & Stamina](Movement_and_Stamina.md) — sound ranges that AI react to; [Camera System](Camera_System.md) — AI detection circles visible to player.
+> **Cross-References:** [Core Gameplay Loop](coreloop/index.html) — economy faucets (Scav Mode), phase-by-phase AI presence; [Environmental Hazards](environmental_hazards/index.html) — AI Boss spawn, Scav Raid wave event; [LOS, Fog of War & Visibility](los_fog_visibility/index.html) — AI detection vs LOS system; [Movement & Stamina](movement_and_stamina/index.html) — sound ranges that AI react to; [Camera System](camera_system/index.html) — AI detection circles visible to player.
 
 ***
 
 ### Design Pillars
 
 * **Pressure, not omniscience:** AI creates danger through predictable-but-punishing behaviors, not perfect aim or wallhacking. Players can learn and outmaneuver them.
-* **Sound-driven detection:** AI react primarily to sound (footsteps, gunshots, looting). Matching sound ranges from [Movement & Stamina](Movement_and_Stamina.md) is mandatory.
+* **Sound-driven detection:** AI react primarily to sound (footsteps, gunshots, looting). Matching sound ranges from [Movement & Stamina](movement_and_stamina/index.html) is mandatory.
 * **Escalation, not respawn:** Killed AI do not respawn during a raid. However, AI can call reinforcements. Engagement escalates in area, not globally.
 * **Top-down visibility balance:** From a top-down view, players can see AI patrol paths. AI detection must be adjusted so stealth remains viable despite the overhead perspective.
 * **Loot consistency:** All AI carry contextually appropriate loot. Their gear reflects their faction and role.
@@ -107,7 +107,7 @@ Elite roaming AI. Highest threat. Spawn in 1–2 locations per raid, not at obje
 | **Grenade usage**     | Yes — throws frag grenades into cover positions                                       |
 | **Retreat threshold** | 40% HP — tactical withdraw to better position, not flight                             |
 | **Loot**              | Elite weapons, Class 4–5 armor, rare barter items, keycard                            |
-| **Spawn chance**      | 25% per raid (see [Environmental Hazards](Environmental_Hazards.md) — dynamic events) |
+| **Spawn chance**      | 25% per raid (see [Environmental Hazards](environmental_hazards/index.html) — dynamic events) |
 
 ***
 
@@ -155,7 +155,7 @@ By design, top-down camera gives players awareness of AI positions. To maintain 
 
 #### Hearing Multipliers
 
-AI hearing is directly coupled to [Movement & Stamina](Movement_and_Stamina.md) sound ranges:
+AI hearing is directly coupled to [Movement & Stamina](movement_and_stamina/index.html) sound ranges:
 
 | Player Action        | Sound Range | AI Reaction if in Range          |
 | -------------------- | ----------- | -------------------------------- |
@@ -338,7 +338,7 @@ Bosses are unique high-difficulty spawns that award the best loot in the game. E
 
 ### Player-as-Scav (Scav Mode)
 
-Scav Mode allows players to run zero-cost raids using randomized AI-grade gear. This is documented in [Core Gameplay Loop](CoreLoop.md) (economy faucet) but behavior specifics are defined here.
+Scav Mode allows players to run zero-cost raids using randomized AI-grade gear. This is documented in [Core Gameplay Loop](coreloop/index.html) (economy faucet) but behavior specifics are defined here.
 
 #### Scav Spawn Rules
 
@@ -368,7 +368,7 @@ Scav Mode allows players to run zero-cost raids using randomized AI-grade gear. 
 | Kill AI Scav                             | −0.5              | AI Scavs become suspicious of player                |
 | Kill Player-Scav (team kill)             | −1.0              | AI Scavs go hostile at −1.5 reputation              |
 | Kill PMC player                          | +0.2              | Rewarded for PvP                                    |
-| Complete Cooperative Extraction with PMC | +0.5              | See [Extraction Mechanics](Extraction_Mechanics.md) |
+| Complete Cooperative Extraction with PMC | +0.5              | See [Extraction Mechanics](extraction_mechanics/index.html) |
 
 **Reputation floor:** At −2.0 reputation, ALL AI Scavs (even Tier 1 wanderers) attack Player-Scav on sight. Recovery requires 10 clean Scav runs without incident.
 
@@ -376,7 +376,7 @@ Scav Mode allows players to run zero-cost raids using randomized AI-grade gear. 
 
 ### AI Scav Raid Event
 
-Distinct from Player-as-Scav. Referenced in [Environmental Hazards](Environmental_Hazards.md) and expanded here:
+Distinct from Player-as-Scav. Referenced in [Environmental Hazards](environmental_hazards/index.html) and expanded here:
 
 | Property                 | Value                                                                                          |
 | ------------------------ | ---------------------------------------------------------------------------------------------- |
@@ -392,7 +392,7 @@ Distinct from Player-as-Scav. Referenced in [Environmental Hazards](Environmenta
 
 ### AI Audio Design Brief
 
-All AI sounds should be directional (3D spatialized) and consistent with the distances in [Movement & Stamina](Movement_and_Stamina.md). Key SFX requirements:
+All AI sounds should be directional (3D spatialized) and consistent with the distances in [Movement & Stamina](movement_and_stamina/index.html). Key SFX requirements:
 
 | Sound                                        |                            Audible at                           | Priority                                   |
 | -------------------------------------------- | :-------------------------------------------------------------: | ------------------------------------------ |
@@ -403,7 +403,7 @@ All AI sounds should be directional (3D spatialized) and consistent with the dis
 | Radio crackle (Sec-Force reinforcement call) |                               25m                               | High — warns player of incoming            |
 | Boss audio tell (unique per boss)            |                              100m+                              | Critical — announces boss presence         |
 | Grenade pin-pull (Rogue PMC)                 |                               15m                               | High — survival critical signal            |
-| AI movement sounds (footsteps)               | per [Movement & Stamina](Movement_and_Stamina.md) surface table | High                                       |
+| AI movement sounds (footsteps)               | per [Movement & Stamina](movement_and_stamina/index.html) surface table | High                                       |
 
 ***
 
@@ -514,11 +514,11 @@ Every new AI feature requires a role, counterplay, detection tell, reward profil
 
 ### Cross-References
 
-* [Core Gameplay Loop](CoreLoop.md) — Scav Mode economy faucet, AI in infiltration phase.
-* [Environmental Hazards](Environmental_Hazards.md) — Boss spawn conditions, Scav Raid wave event.
-* [LOS, Fog of War & Visibility](LOS_Fog_Visibility.md) — AI detect using same LOS rules as players.
-* [Movement & Stamina](Movement_and_Stamina.md) — Sound ranges that AI hearing reacts to.
-* [Camera System](Camera_System.md) — AI detection arc visible to player in top-down view.
-* [Extraction Mechanics](Extraction_Mechanics.md) — Scav cooperative extraction and trust mechanics.
-* [Hero Abilities](Hero_Abilities.md) — Motion Sensor and Drone interact with AI alert states.
+* [Core Gameplay Loop](coreloop/index.html) — Scav Mode economy faucet, AI in infiltration phase.
+* [Environmental Hazards](environmental_hazards/index.html) — Boss spawn conditions, Scav Raid wave event.
+* [LOS, Fog of War & Visibility](los_fog_visibility/index.html) — AI detect using same LOS rules as players.
+* [Movement & Stamina](movement_and_stamina/index.html) — Sound ranges that AI hearing reacts to.
+* [Camera System](camera_system/index.html) — AI detection arc visible to player in top-down view.
+* [Extraction Mechanics](extraction_mechanics/index.html) — Scav cooperative extraction and trust mechanics.
+* [Hero Abilities](hero_abilities/index.html) — Motion Sensor and Drone interact with AI alert states.
 * [Story](https://github.com/oaiba/ExtractionDocument/blob/main/content/Story/README.md) — Faction lore and world context for AI enemy factions.

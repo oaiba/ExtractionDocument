@@ -9,7 +9,7 @@ weight: 21
 
 The **Async Loading Screen** system provides a unified, context-aware loading experience across all game transitions. Loading screens are not merely technical necessities—they are strategic design tools that shape player mood, manage expectations, and build immersion. This document defines the taxonomy, content specifications, layouts, and technical requirements.
 
-> **Cross-References:** [Matchmaking & Lobby](../Gameplay/Matchmaking_Lobby.md) — L4 loading flow; [Lore Delivery](https://github.com/oaiba/ExtractionDocument/blob/main/content/Story/Lore_Delivery.md) — Loading screen tips format; [Loadout Preparation](https://github.com/oaiba/ExtractionDocument/blob/main/content/GameDesign/LoadoutPreparation.md) — Loading tip rotation; [Home Screen Design](https://github.com/oaiba/ExtractionDocument/blob/main/content/GameDesign/HomeScreen_Design.md) — L3 post-login state.
+> **Cross-References:** [Matchmaking & Lobby](../gameplay/matchmaking_lobby/index.html) — L4 loading flow; [Lore Delivery](https://github.com/oaiba/ExtractionDocument/blob/main/content/Story/Lore_Delivery.md) — Loading screen tips format; [Loadout Preparation](https://github.com/oaiba/ExtractionDocument/blob/main/content/GameDesign/LoadoutPreparation.md) — Loading tip rotation; [Home Screen Design](https://github.com/oaiba/ExtractionDocument/blob/main/content/GameDesign/HomeScreen_Design.md) — L3 post-login state.
 
 ***
 
@@ -17,12 +17,12 @@ The **Async Loading Screen** system provides a unified, context-aware loading ex
 
 | Destination | Use |
 | :--- | :--- |
-| [UI/UX Index](_index.md) | Full UI/UX documentation hub |
-| [Screen Groups Overview](Screen_Groups_Overview.md) | Lifecycle taxonomy and designer-ready spec template |
-| [Global UX Standards](Global_UX_Standards.md) | Shared navigation, focus, state, modal, and accessibility rules |
-| [Settings & System Screens](Commerce_Settings_System_Screens.md) | Boot, splash, login, version mismatch, diagnostics |
-| [Pre-Raid Screens](Pre_Raid_Screens.md) | Lobby-to-match and matchmaking transition context |
-| [Post-Raid Screens](Post_Raid_Screens.md) | Result-to-main and post-raid transition context |
+| [UI/UX Index](_index/index.html) | Full UI/UX documentation hub |
+| [Screen Groups Overview](screen_groups_overview/index.html) | Lifecycle taxonomy and designer-ready spec template |
+| [Global UX Standards](global_ux_standards/index.html) | Shared navigation, focus, state, modal, and accessibility rules |
+| [Settings & System Screens](commerce_settings_system_screens/index.html) | Boot, splash, login, version mismatch, diagnostics |
+| [Pre-Raid Screens](pre_raid_screens/index.html) | Lobby-to-match and matchmaking transition context |
+| [Post-Raid Screens](post_raid_screens/index.html) | Result-to-main and post-raid transition context |
 
 ***
 
@@ -257,7 +257,7 @@ flowchart TB
 ```
 
 * **Background:** Dark, minimal
-* **Cancel:** Returns to main menu (gear lost per [Extraction Mechanics](../Gameplay/Extraction_Mechanics.md))
+* **Cancel:** Returns to main menu (gear lost per [Extraction Mechanics](../gameplay/extraction_mechanics/index.html))
 
 #### 4.8 L7\_MapTransition
 
@@ -329,7 +329,7 @@ LoadingManager (Singleton)
 
 ### 7. Data References
 
-* **LoadingTip / LoadingContent:** See [Loading Screen Data Schema](../../GDD_Technical/Data/LoadingScreen_DataSchema.md)
+* **LoadingTip / LoadingContent:** See [Loading Screen Data Schema](../../gdd_technical/data/loadingscreen_dataschema/index.html)
 * **LoadingScreenConfig:** Per-loading-type configuration (min display time, asset pools, etc.)
 
 ***
@@ -452,9 +452,9 @@ Loading screens must be honest about what is happening. Decorative progress is a
 
 ### 11. Cross-References
 
-* [Matchmaking & Lobby](../Gameplay/Matchmaking_Lobby.md) — L4 loading in deploy flow
+* [Matchmaking & Lobby](../gameplay/matchmaking_lobby/index.html) — L4 loading in deploy flow
 * [Lore Delivery](https://github.com/oaiba/ExtractionDocument/blob/main/content/Story/Lore_Delivery.md) — Loading screen tip format and attribution
 * [Loadout Preparation](https://github.com/oaiba/ExtractionDocument/blob/main/content/GameDesign/LoadoutPreparation.md) — Loading tip rotation (8s)
 * [Home Screen Design](https://github.com/oaiba/ExtractionDocument/blob/main/content/GameDesign/HomeScreen_Design.md) — L3 operator showcase, loading state
-* [UI System](../../GDD_Technical/Systems/UISystem.md) — ScreenType enum for loading phases
-* [UX Flows](UX_Flows.md) — Player journey with loading nodes
+* [UI System](../../gdd_technical/systems/uisystem/index.html) — ScreenType enum for loading phases
+* [UX Flows](ux_flows/index.html) — Player journey with loading nodes

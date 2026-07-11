@@ -9,7 +9,7 @@ weight: 6
 
 This document bridges **Factions** and **Maps** — defining which factions operate where, how territory control affects gameplay, and how seasonal community events shift the power balance.
 
-> **Cross-References:** [Factions](https://github.com/oaiba/ExtractionDocument/blob/main/content/GDD_Design/NarrativeWorld/Factions.md) — full faction profiles, reputation systems; [MapBible](MapBible.md) — zone type definitions; [MapLore\_Industrial](MapLore_Industrial.md) and [MapLore\_Urban](MapLore_Urban.md) — per-map lore and spatial detail; [Quest Lines](https://github.com/oaiba/ExtractionDocument/blob/main/content/GDD_Design/NarrativeWorld/QuestLines.md) — quests are faction-gated by territory.
+> **Cross-References:** [Factions](https://github.com/oaiba/ExtractionDocument/blob/main/content/GDD_Design/NarrativeWorld/Factions.md) — full faction profiles, reputation systems; [MapBible](mapbible/index.html) — zone type definitions; [MapLore\_Industrial](maplore_industrial/index.html) and [MapLore\_Urban](maplore_urban/index.html) — per-map lore and spatial detail; [Quest Lines](https://github.com/oaiba/ExtractionDocument/blob/main/content/GDD_Design/NarrativeWorld/QuestLines.md) — quests are faction-gated by territory.
 
 ***
 
@@ -199,8 +199,8 @@ How individual player reputation interacts with faction territory:
 ### Cross-References
 
 * [Factions](https://github.com/oaiba/ExtractionDocument/blob/main/content/GDD_Design/NarrativeWorld/Factions.md) — Full faction profiles, NPC details, reputation progression system.
-* [MapBible](MapBible.md) — Zone type definitions, how Hot/Mid/Edge zones are designed.
-* [MapLore\_Industrial](MapLore_Industrial.md) — Industrial Decay detailed lore + POI-level faction presence.
-* [MapLore\_Urban](MapLore_Urban.md) — Urban Ruins detailed lore + faction presence per location.
+* [MapBible](mapbible/index.html) — Zone type definitions, how Hot/Mid/Edge zones are designed.
+* [MapLore\_Industrial](maplore_industrial/index.html) — Industrial Decay detailed lore + POI-level faction presence.
+* [MapLore\_Urban](maplore_urban/index.html) — Urban Ruins detailed lore + faction presence per location.
 * [Quest Lines](https://github.com/oaiba/ExtractionDocument/blob/main/content/GDD_Design/NarrativeWorld/QuestLines.md) — How faction territory controls which quest types are available.
 * [Backstory](https://github.com/oaiba/ExtractionDocument/blob/main/content/GDD_Design/NarrativeWorld/Backstory.md) — Historical reasons why each faction controls the zones they do.

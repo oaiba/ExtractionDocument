@@ -3,7 +3,7 @@ title: "Weapons & Combat Systems"
 type: docs
 ---
 
-> **Canonical source:** Full weapon categories, stats, ammo, attachments, damage model, TTK, and combat mechanics are documented in **[Weapon Arsenal & Combat Systems](../Gameplay/WeaponArsenal.md)**. This page retains combat philosophy only.
+> **Canonical source:** Full weapon categories, stats, ammo, attachments, damage model, TTK, and combat mechanics are documented in **[Weapon Arsenal & Combat Systems](../gameplay/weaponarsenal/index.html)**. This page retains combat philosophy only.
 
 ---
 
@@ -17,7 +17,7 @@ type: docs
 4. **Skill Expression** — High skill ceiling with recoil control and positioning.
 5. **Mobile Optimized** — Controls and mechanics designed for touch screens.
 
-For weapon categories, specifications, ammunition, attachments, damage system, ballistics, and time-to-kill data, see [Weapon Arsenal & Combat Systems](../Gameplay/WeaponArsenal.md).
+For weapon categories, specifications, ammunition, attachments, damage system, ballistics, and time-to-kill data, see [Weapon Arsenal & Combat Systems](../gameplay/weaponarsenal/index.html).
 
 ## Combat-Facing Weapon Role Taxonomy
 
@@ -64,4 +64,4 @@ Players must understand why a shot hit, missed, failed to penetrate, staggered t
 - No weapon is best at close, mid, long, mobility, recoil, cost, and armor penetration simultaneously.
 - Armor hit, flesh hit, ricochet, blocked shot, suppression, headshot, and low ammo feedback are distinguishable by more than color.
 - Death recap can name weapon, hit zone, armor interaction, and key cause without exposing unfair enemy inventory data.
-- Tuning changes link back to [Weapon Balance Framework](../Weapons/Weapon_Balance_Framework.md) rather than inventing one-off rules here.
+- Tuning changes link back to [Weapon Balance Framework](../weapons/weapon_balance_framework/index.html) rather than inventing one-off rules here.

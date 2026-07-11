@@ -8,7 +8,7 @@ weight: 13
 
 The matchmaking và lobby hệ thống is the gateway between the stash (out-of-raid hub) và the live raid. It determines how người chơi are grouped, how servers are allocated, how the pre-raid preparation flow works, và how failure cases (disconnections, low population) are handled. A good matchmaking trải nghiệm is invisible — người chơi simply press "Deploy" và find themselves in a balanced, fair raid mà không waiting.
 
-> **Cross-References:** [cốt lõi Gameplay Loop](CoreLoop.md) — Phase 1 Preparation; [Extraction cơ chế](Extraction_Mechanics.md) — disconnection timeout rule; [Controls](https://github.com/oaiba/ExtractionDocument/blob/main/content/GameDesign/Controls.md) — platform-cụ thể lobby UI input; [Hero Abilities](Hero_Abilities.md) — operator selection trước khi deploy.
+> **Cross-References:** [cốt lõi Gameplay Loop](coreloop/index.html) — Phase 1 Preparation; [Extraction cơ chế](extraction_mechanics/index.html) — disconnection timeout rule; [Controls](https://github.com/oaiba/ExtractionDocument/blob/main/content/GameDesign/Controls.md) — platform-cụ thể lobby UI input; [Hero Abilities](hero_abilities/index.html) — operator selection trước khi deploy.
 
 ***
 
@@ -22,7 +22,7 @@ The matchmaking và lobby hệ thống is the gateway between the stash (out-of-
 | **Duo**   | 2           | 2           | Friends only (no solo fill into duo)            |
 | **Squad** | 2           | 3           | Standard team size. Can deploy với 2/3 filled. |
 
-**Design quyết định:** No 4- hoặc 5-người chơi squads. The 3-người chơi maximum is deliberate — balances cooperation mà không tạo overwhelming firepower asymmetry against solo người chơi. Xem [cốt lõi Gameplay Loop](CoreLoop.md) for squad philosophy.
+**Design quyết định:** No 4- hoặc 5-người chơi squads. The 3-người chơi maximum is deliberate — balances cooperation mà không tạo overwhelming firepower asymmetry against solo người chơi. Xem [cốt lõi Gameplay Loop](coreloop/index.html) for squad philosophy.
 
 #### người chơi per Server Instance
 
@@ -127,7 +127,7 @@ MAIN STASH SCREEN
      - 10-second countdown before deployment (can cancel in this window)
     |
  [6] LOADING SCREEN (L4_LobbyToMatch)
-     - Loading type: L4_LobbyToMatch per [Loading Screen Design](../UI_UX/LoadingScreen_Design.md)
+     - Loading type: L4_LobbyToMatch per [Loading Screen Design](../ui_ux/loadingscreen_design/index.html)
      - Map-specific loading screen art (full-bleed background)
      - Tactical tips, fun facts, lore (rotate every 8s; manual paging)
      - Map intro text (e.g., "Sector 7 — Industrial Decay")
@@ -147,7 +147,7 @@ MAIN STASH SCREEN
 | **Loadout visibility**      | Squad members CAN see each other's operator choice nhưng NOT chi tiết gear/inventory (privacy).                                         |
 | **Ready-up**                | Required from all members trước departure. nếu one member is not ready sau 60s, deploy continues mà không them (partial squad join). |
 | **Squad communication**     | Voice và text chat active in lobby. Same channels as in-raid.                                                                        |
-| **Operator duplicate rule** | Same operator CAN be used by multiple squad members. Ability stacking rule applies in-raid per [Hero Abilities](Hero_Abilities.md).   |
+| **Operator duplicate rule** | Same operator CAN be used by multiple squad members. Ability stacking rule applies in-raid per [Hero Abilities](hero_abilities/index.html).   |
 
 ***
 
@@ -155,7 +155,7 @@ MAIN STASH SCREEN
 
 #### Disconnection Behavior
 
-Per [Extraction cơ chế](Extraction_Mechanics.md): disconnect → 5-minute MIA timeout → gear lost. The lobby hệ thống augments this:
+Per [Extraction cơ chế](extraction_mechanics/index.html): disconnect → 5-minute MIA timeout → gear lost. The lobby hệ thống augments this:
 
 | Scenario                      | Behavior                                                                                                          |
 | ----------------------------- | ----------------------------------------------------------------------------------------------------------------- |
@@ -177,7 +177,7 @@ The game targets PC, Console, và Mobile người chơi in shared pools:
 | Scenario                               | Design Choice                                                                                                                                                |
 | -------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | **PC + Console + Mobile in same raid** | Yes — same rules, same server. No cơ chế difference.                                                                                                     |
-| **Aim assist on mobile**               | Mobile receives aim assist on ability targeting per [Hero Abilities](Hero_Abilities.md). Regular vũ khí aiming: aim assist enabled (adjustable in settings). |
+| **Aim assist on mobile**               | Mobile receives aim assist on ability targeting per [Hero Abilities](hero_abilities/index.html). Regular vũ khí aiming: aim assist enabled (adjustable in settings). |
 | **PC người chơi vs Mobile**               | No automatic separation. Người chơi có thể opt-in to "Platform Restricted" mode (only own platform), accepting potentially longer queues.                          |
 | **Input detection**                    | Server identifies input type for metrics only. Not used for matchmaking quyết định.                                                                           |
 | **Performance parity**                 | Server-authoritative validation prevents client-side advantage. Mobile và PC are identical in hit registration và LOS outcomes.                            |
@@ -277,11 +277,11 @@ New accounts (0 raids) are routed differently:
 
 ### Tham Chiếu Chéo
 
-* [loading màn hình Design](../UI_UX/LoadingScreen_Design.md) — L4\_LobbyToMatch taxonomy, content types, layout.
-* [cốt lõi Gameplay Loop](CoreLoop.md) — Preparation phase; loadout philosophy.
-* [Extraction cơ chế](Extraction_Mechanics.md) — Disconnection MIA rule; reconnect behavior.
-* [Hero Abilities](Hero_Abilities.md) — Operator selection; ability stacking rule for same-class duplicates.
-* [Environmental Hazards](Environmental_Hazards.md) — Weather shown at briefing màn hình.
+* [loading màn hình Design](../ui_ux/loadingscreen_design/index.html) — L4\_LobbyToMatch taxonomy, content types, layout.
+* [cốt lõi Gameplay Loop](coreloop/index.html) — Preparation phase; loadout philosophy.
+* [Extraction cơ chế](extraction_mechanics/index.html) — Disconnection MIA rule; reconnect behavior.
+* [Hero Abilities](hero_abilities/index.html) — Operator selection; ability stacking rule for same-class duplicates.
+* [Environmental Hazards](environmental_hazards/index.html) — Weather shown at briefing màn hình.
 * [Controls](https://github.com/oaiba/ExtractionDocument/blob/main/content/GameDesign/Controls.md) — Platform-cụ thể lobby input.
 * [GameDesign/RankedMode](https://github.com/oaiba/ExtractionDocument/blob/main/content/GameDesign/RankedMode.md) — Ranked queue pool và yêu cầu.
 * [GameDesign/TutorialRaid](https://github.com/oaiba/ExtractionDocument/blob/main/content/GameDesign/TutorialRaid.md) — First-thời gian người chơi routing.

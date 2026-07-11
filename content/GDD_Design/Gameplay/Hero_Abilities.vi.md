@@ -16,7 +16,7 @@ Operators are the hero layer of the extraction shooter: each has a **class**, a 
 * **Extraction-aware:** Ability rules change near extraction zones (healing abilities cancel extract timer).
 * **Cross-platform parity:** Abilities work identically on PC và mobile; only input method differs.
 
-For high-level operator choice in pre-raid planning, Xem [cốt lõi Gameplay Loop](CoreLoop.md). For scope (Alpha 3 operators, Beta 5), Xem [MVP Scope](https://github.com/oaiba/ExtractionDocument/blob/main/content/ProjectScope/MVP.md). For pillar alignment (Task-Driven Agency, Persistent Progression), Xem [Design Pillars](https://github.com/oaiba/ExtractionDocument/blob/main/content/ProjectScope/design-pillars-enhanced.md).
+For high-level operator choice in pre-raid planning, Xem [cốt lõi Gameplay Loop](coreloop/index.html). For scope (Alpha 3 operators, Beta 5), Xem [MVP Scope](https://github.com/oaiba/ExtractionDocument/blob/main/content/ProjectScope/MVP.md). For pillar alignment (Task-Driven Agency, Persistent Progression), Xem [Design Pillars](https://github.com/oaiba/ExtractionDocument/blob/main/content/ProjectScope/design-pillars-enhanced.md).
 
 ***
 
@@ -196,7 +196,7 @@ Each operator has three layers of abilities. thông số below are first-pass de
 
 #### trong khi Extraction
 
-Per [Extraction cơ chế](Extraction_Mechanics.md):
+Per [Extraction cơ chế](extraction_mechanics/index.html):
 
 | Ability type                                                                      | Usable trong khi extract? | Cancels extract timer?    |
 | --------------------------------------------------------------------------------- | ---------------------- | ------------------------- |
@@ -211,7 +211,7 @@ Per [Extraction cơ chế](Extraction_Mechanics.md):
 
 #### Interaction với Medical hệ thống
 
-Operator healing abilities interact với the [Medical hệ thống](Medical_System.md):
+Operator healing abilities interact với the [Medical hệ thống](medical_system/index.html):
 
 | Interaction                       | Rule                                                                                                         |
 | --------------------------------- | ------------------------------------------------------------------------------------------------------------ |
@@ -222,7 +222,7 @@ Operator healing abilities interact với the [Medical hệ thống](Medical_Sys
 
 #### Interaction với Gear Weight
 
-Per [Gear cơ chế](Gear_Mechanics.md), some operators have gear constraints:
+Per [Gear cơ chế](gear_mechanics/index.html), some operators have gear constraints:
 
 | Operator                             | Gear constraint                                                                                  | Reason                                                                    |
 | ------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------- |
@@ -233,7 +233,7 @@ Per [Gear cơ chế](Gear_Mechanics.md), some operators have gear constraints:
 
 #### Interaction với LOS/Visibility
 
-Per [LOS, Fog of War & Visibility](LOS_Fog_Visibility.md), abilities that reveal hoặc block vision integrate với the shared team vision hệ thống. Summary:
+Per [LOS, Fog of War & Visibility](los_fog_visibility/index.html), abilities that reveal hoặc block vision integrate với the shared team vision hệ thống. Summary:
 
 | Operator         | Ability          | LOS/Visibility role | Range/Radius | Fog clearing?   | shared to squad?       | Counterplay                        |
 | ---------------- | ---------------- | ------------------- | ------------ | --------------- | ---------------------- | ---------------------------------- |
@@ -435,7 +435,7 @@ Every ability has at least one hard counter và one soft counter:
 | Layer         | Ability                                                                                                                                                     | chi tiết                                                                                                                                                                                                   |
 | ------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Passive**   | Triage Instinct                                                                                                                                             | Automatically identifies teammates' most critical status effect (bleed, fracture, etc.) khi within 5m — overlaid HUD icon. Hands never shake trong khi medical cách dùng (no aim penalty while eating/drinking). |
-| **Active 1**  | Field Medic                                                                                                                                                 | Revive speed reduced 8s → 5s. Second revive per session available trước 90s cooldown kicks in. (chính differentiator vs all other classes — Xem [Downstate & Revive](Downstate_Revive.md))                |
+| **Active 1**  | Field Medic                                                                                                                                                 | Revive speed reduced 8s → 5s. Second revive per session available trước 90s cooldown kicks in. (chính differentiator vs all other classes — Xem [Downstate & Revive](downstate_revive/index.html))                |
 | **Active 2**  | Med Pack Toss                                                                                                                                               | Throws a medical item from inventory to a teammate (up to 8m range). No animation lock — can throw while crouching. 20s cooldown (per cách dùng).                                                              |
 | **Signature** | Mass Stabilize                                                                                                                                              | 12m radius pulse: all squad members within range immediately have any Bleed status stopped (no healing, just bleed halt). Removes Pain briefly. 150s cooldown.                                           |
 | **Counter**   | Ghost has lowest offensive capability of any operator. Reliant on squad proximity. Isolation = weakness. Bastion's aggression pushes Ghost out of position. |                                                                                                                                                                                                          |
@@ -480,7 +480,7 @@ Every ability has at least one hard counter và one soft counter:
 | Layer              | Ability                                                                                                                                                                                                                              | chi tiết                                                                                                                                                                                                |
 | ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Passive**        | Ghost Step                                                                                                                                                                                                                           | Slow-walking produces zero sound (0m audible range vs standard 4m). Moving thông qua foliage và soft surfaces produces no extra noise.                                                                 |
-| **Active 1**       | Smoke Grenade                                                                                                                                                                                                                        | Throws a smoke grenade (8m cloud, 20s duration). Blocks LOS thông qua smoke per [LOS, Fog & Visibility](LOS_Fog_Visibility.md). Shoot-thông qua possible nhưng at −3° aim cone penalty. 35s cooldown.       |
+| **Active 1**       | Smoke Grenade                                                                                                                                                                                                                        | Throws a smoke grenade (8m cloud, 20s duration). Blocks LOS thông qua smoke per [LOS, Fog & Visibility](los_fog_visibility/index.html). Shoot-thông qua possible nhưng at −3° aim cone penalty. 35s cooldown.       |
 | **Active 2**       | Decoy Ping                                                                                                                                                                                                                           | Places a fake người chơi-signature ping on the minimap at a target location (within 15m). Appears as a "người chơi detected" blip on địch' minimaps for 8s. 50s cooldown.                                  |
 | **Signature**      | Phase Shift                                                                                                                                                                                                                          | Becomes fully invisible và silent for 6s. Any attack (shooting, using abilities) breaks cloak immediately. Movement speed is 90% while cloaked. 180s cooldown. màn hình effect: shimmer hiển thị rõ at 8m. |
 | **Counter**        | Emerging from smoke hoặc cloak produces a brief shimmer (hiển thị rõ 8m top-down). Fuse's Trip Mines: Obsidian still triggers them (Phase Shift does not prevent mine trigger). Motion Sensor (Hawk) detects Obsidian thông qua Phase Shift. |                                                                                                                                                                                                       |
@@ -493,12 +493,12 @@ Every ability has at least one hard counter và one soft counter:
 
 ### Tham Chiếu Chéo
 
-* [cốt lõi Gameplay Loop](CoreLoop.md) — Operator choice in pre-raid preparation, loadout philosophy.
-* [Extraction cơ chế](Extraction_Mechanics.md) — Rules trong khi extract (ability cách dùng allowed; healing cancels extract).
-* [Medical hệ thống](Medical_System.md) — Healing items và triage; heal abilities interact với same body-part và status rules.
-* [Gear cơ chế](Gear_Mechanics.md) — Loadout và weight; operators have different rig/weight constraints.
-* [Movement & Stamina](Movement_and_Stamina.md) — Speed modifiers, stamina interaction, inertia.
-* [Downstate & Revive](Downstate_Revive.md) — Ghost's Field Medic unique revive cơ chế.
-* [LOS, Fog & Visibility](LOS_Fog_Visibility.md) — Obsidian smoke, Phase Shift shimmer, Hawk detection.
+* [cốt lõi Gameplay Loop](coreloop/index.html) — Operator choice in pre-raid preparation, loadout philosophy.
+* [Extraction cơ chế](extraction_mechanics/index.html) — Rules trong khi extract (ability cách dùng allowed; healing cancels extract).
+* [Medical hệ thống](medical_system/index.html) — Healing items và triage; heal abilities interact với same body-part và status rules.
+* [Gear cơ chế](gear_mechanics/index.html) — Loadout và weight; operators have different rig/weight constraints.
+* [Movement & Stamina](movement_and_stamina/index.html) — Speed modifiers, stamina interaction, inertia.
+* [Downstate & Revive](downstate_revive/index.html) — Ghost's Field Medic unique revive cơ chế.
+* [LOS, Fog & Visibility](los_fog_visibility/index.html) — Obsidian smoke, Phase Shift shimmer, Hawk detection.
 * [Design Pillars](https://github.com/oaiba/ExtractionDocument/blob/main/content/ProjectScope/design-pillars-enhanced.md) — Operator Choice (Task-Driven Agency), Operator Mastery (Persistent Progression).
 * [MVP Scope](https://github.com/oaiba/ExtractionDocument/blob/main/content/ProjectScope/MVP.md) — 3 operators Alpha, 5 Beta, 8+ Launch.

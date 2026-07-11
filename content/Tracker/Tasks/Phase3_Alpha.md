@@ -77,7 +77,7 @@ weight: 30
 | Estimate   | 2 days                                                                                                                                                                                          |
 | Owner      | Game Designer                                                                                                                                                                                   |
 | Output     | Updated WeaponSystem.md reflecting expansion specifications for 15+ weapons alongside intricate attachment system logic design                                                                  |
-| Refs       | [Gameplay/WeaponSystem.md](https://github.com/oaiba/ExtractionDocument/blob/main/content/Tracker/Gameplay/WeaponSystem.md), [GDD\_Design/Combat/Weapons.md](../../GDD_Design/Combat/Weapons.md) |
+| Refs       | [Gameplay/WeaponSystem.md](https://github.com/oaiba/ExtractionDocument/blob/main/content/Tracker/Gameplay/WeaponSystem.md), [GDD\_Design/Combat/Weapons.md](../../gdd_design/combat/weapons/index.html) |
 
 </details>
 
@@ -115,7 +115,7 @@ weight: 30
 | Estimate   | 3 days                                                                                                                                                                                                                                                                                                               |
 | Owner      | UI/UX Designer                                                                                                                                                                                                                                                                                                       |
 | Output     | Finalize UISystem.md including high-fidelity wireframes encompassing: Main Menu, combat HUD, full Inventory screen setup, and final Post-match results screen                                                                                                                                                        |
-| Refs       | [Systems/UISystem.md](https://github.com/oaiba/ExtractionDocument/blob/main/content/Tracker/Systems/UISystem.md), [GDD\_Design/UI\_UX/](https://github.com/oaiba/ExtractionDocument/blob/main/content/GDD_Design/UI_UX/README.md), [GDD\_Design/Visuals/UserInterface.md](../../GDD_Design/Visuals/UserInterface.md) |
+| Refs       | [Systems/UISystem.md](https://github.com/oaiba/ExtractionDocument/blob/main/content/Tracker/Systems/UISystem.md), [GDD\_Design/UI\_UX/](https://github.com/oaiba/ExtractionDocument/blob/main/content/GDD_Design/UI_UX/README.md), [GDD\_Design/Visuals/UserInterface.md](../../gdd_design/visuals/userinterface/index.html) |
 
 </details>
 
@@ -168,7 +168,7 @@ weight: 30
 | Estimate   | 3 days                                                                                                                                                                                                                                                           |
 | Owner      | Team Lead + Dedicated QA                                                                                                                                                                                                                                         |
 | Review     | `[ ]` Map fully operational utilizing basic art pass `[ ]` All 3 feature Operators playable effectively `[ ]` Arsenal confirms 10+ Weapons functional `[ ]` Complete on-screen HUD `[ ]` Full internal team playtest over a 1-week period completes successfully |
-| Refs       | [ProjectScope/MVP.md](../../GDD_Design/ProjectScope/MVP.md)                                                                                                                                                                                                      |
+| Refs       | [ProjectScope/MVP.md](../../gdd_design/projectscope/mvp/index.html)                                                                                                                                                                                                      |
 
 </details>
 

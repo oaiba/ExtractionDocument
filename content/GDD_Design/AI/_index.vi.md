@@ -15,8 +15,8 @@ Hệ thống được xây trên hai thành phần chính:
 2. **Sinh Thái Faction:** Các nhóm AI tương tác với thế giới và với nhau như thế nào.
 
 {{< cards cols="2" >}}
-{{< card link="enemybehavior.html" title="Hành Vi Kẻ Địch" icon="chip" subtitle="Archetype, state, chiến thuật combat, và difficulty scaling." >}}
-{{< card link="factionbehaviors.html" title="Sinh Thái Faction" icon="users" subtitle="Quan hệ giữa Scavengers, Syndicate, UN-PK, và Wildlife." >}}
+{{< card link="enemybehavior/index.html" title="Hành Vi Kẻ Địch" icon="chip" subtitle="Archetype, state, chiến thuật combat, và difficulty scaling." >}}
+{{< card link="factionbehaviors/index.html" title="Sinh Thái Faction" icon="users" subtitle="Quan hệ giữa Scavengers, Syndicate, UN-PK, và Wildlife." >}}
 {{< /cards >}}
 
 ***

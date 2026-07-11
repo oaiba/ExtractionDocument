@@ -8,7 +8,7 @@ weight: 16
 
 Quests are the **primary structured mục tiêu layer** on top of free-form looting và extraction. They direct người chơi movement toward cụ thể map areas, reward faction reputation, unlock trader tiers, và provide narrative context for each raid. Unlike open-world quest hệ thống, all extraction shooter quests must function within the high-stakes raid context — partial completion, death, và extraction failures are built-in risk elements.
 
-> **Cross-References:** [cốt lõi Gameplay Loop](CoreLoop.md) — Quest Turn-In in Phase 5 Recovery; [Looting & Inventory](Looting_Interactions.md) — "Found-in-Raid" status for quest items; [AI địch Behavior](AI_Enemy_Behavior.md) — AI faction affiliations; [Extraction cơ chế](Extraction_Mechanics.md) — quest-gated extraction zones; [Matchmaking & Lobby](Matchmaking_Lobby.md) — private raids disable quest completion; [GameDesign/Progression](https://github.com/oaiba/ExtractionDocument/blob/main/content/GameDesign/Progression.md) — quest chains as progression gates.
+> **Cross-References:** [cốt lõi Gameplay Loop](coreloop/index.html) — Quest Turn-In in Phase 5 Recovery; [Looting & Inventory](looting_interactions/index.html) — "Found-in-Raid" status for quest items; [AI địch Behavior](ai_enemy_behavior/index.html) — AI faction affiliations; [Extraction cơ chế](extraction_mechanics/index.html) — quest-gated extraction zones; [Matchmaking & Lobby](matchmaking_lobby/index.html) — private raids disable quest completion; [GameDesign/Progression](https://github.com/oaiba/ExtractionDocument/blob/main/content/GameDesign/Progression.md) — quest chains as progression gates.
 
 ***
 
@@ -68,7 +68,7 @@ Retrieve cụ thể items và extract với them. These are the most common ques
 | Crafted item       | "Extract với 1 Purified Water (crafted)"               | Links Safe House crafting to quest      |
 | Item condition     | "Extract với a vũ khí in >60% durability"              | No degraded war trophies                |
 
-**FIR yêu cầu:** All collection quests require items to have "Found-in-Raid" status per [Looting & Inventory](Looting_Interactions.md). Items purchased from traders hoặc the flea market cannot be used.
+**FIR yêu cầu:** All collection quests require items to have "Found-in-Raid" status per [Looting & Inventory](looting_interactions/index.html). Items purchased from traders hoặc the flea market cannot be used.
 
 ***
 
@@ -108,8 +108,8 @@ Work với allies hoặc other người chơi (even from different factions) to 
 | Sub-type               | Example                                           | ghi chú                                                                                |
 | ---------------------- | ------------------------------------------------- | ------------------------------------------------------------------------------------ |
 | Squad extraction       | "Extract với your full 3-người chơi squad intact"    | All members must extract to count                                                    |
-| Revive quest           | "Successfully revive a downed teammate 3 times"   | Links to [Downstate & Revive](Downstate_Revive.md)                                   |
-| Cooperative extraction | "Extract với a người chơi from the opposing faction" | Uses Cooperative Extraction zone per [Extraction cơ chế](Extraction_Mechanics.md) |
+| Revive quest           | "Successfully revive a downed teammate 3 times"   | Links to [Downstate & Revive](downstate_revive/index.html)                                   |
+| Cooperative extraction | "Extract với a người chơi from the opposing faction" | Uses Cooperative Extraction zone per [Extraction cơ chế](extraction_mechanics/index.html) |
 
 > **Post-Beta:** Escort/cooperative quests introduce social trust cơ chế và are intentionally held back from early access to let the community establish playstyle norms.
 
@@ -254,11 +254,11 @@ In addition to main chains, dynamic quests refresh on a timer:
 
 ### Tham Chiếu Chéo
 
-* [cốt lõi Gameplay Loop](CoreLoop.md) — Quest turn-in in Phase 5; Quest XP as non-extraction reward.
-* [Looting & Inventory](Looting_Interactions.md) — "Found-in-Raid" status gate for collection quests.
-* [AI địch Behavior](AI_Enemy_Behavior.md) — AI faction affiliations; boss kill quests.
-* [Extraction cơ chế](Extraction_Mechanics.md) — Cooperative extraction zone quest; zone-cụ thể extraction quests.
-* [Matchmaking & Lobby](Matchmaking_Lobby.md) — Private raid disables quest completion.
-* [Safe House Design](../GameDesign/Safe_House_Design.md) — Safe House upgrades gated behind trader quest chain completion.
+* [cốt lõi Gameplay Loop](coreloop/index.html) — Quest turn-in in Phase 5; Quest XP as non-extraction reward.
+* [Looting & Inventory](looting_interactions/index.html) — "Found-in-Raid" status gate for collection quests.
+* [AI địch Behavior](ai_enemy_behavior/index.html) — AI faction affiliations; boss kill quests.
+* [Extraction cơ chế](extraction_mechanics/index.html) — Cooperative extraction zone quest; zone-cụ thể extraction quests.
+* [Matchmaking & Lobby](matchmaking_lobby/index.html) — Private raid disables quest completion.
+* [Safe House Design](../gamedesign/safe_house_design/index.html) — Safe House upgrades gated behind trader quest chain completion.
 * [GameDesign/Progression](https://github.com/oaiba/ExtractionDocument/blob/main/content/GameDesign/Progression.md) — Loyalty Level hệ thống; quest XP integration.
 * [GameDesign/Economy](https://github.com/oaiba/ExtractionDocument/blob/main/content/GameDesign/Economy.md) — Quest cash rewards as economy faucet.

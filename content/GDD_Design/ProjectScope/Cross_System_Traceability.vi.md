@@ -27,21 +27,21 @@ Ma trận này map hành trình chính của người chơi với owner gameplay
 
 | Hành động | Owner | UI surface | State bắt buộc | Hành vi lỗi | Telemetry | Tài liệu canonical |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| Vào account | Settings/System | Login, setup, tutorial gate | loading, linked, blocked, offline | Hiện lý do và route recovery | auth success/failure | [Settings/System](../UI_UX/Commerce_Settings_System_Screens.vi.md) |
-| Tutorial | Core Gameplay | Tutorial HUD và debrief | checkpoint, hint, pass, retry | Reset checkpoint, không mất vĩnh viễn | tutorial conversion | [Tutorial Raid](../GameDesign/TutorialRaid.vi.md) |
-| Home / chuẩn bị | Core Gameplay | Home, loadout, stash | valid, pending sync, blocked | Giữ Deploy disabled kèm lý do | home impression, deploy intent | [Out-of-Raid](../UI_UX/Out_Of_Raid_Screens.vi.md) |
-| Commit loadout | Inventory / Economy | Loadout Workbench | ready, warning, blocker | Hiện item thiếu hoặc không tương thích | blocker frequency | [Loadout](../GameDesign/LoadoutPreparation.vi.md) |
-| Matchmaking | Matchmaking | Lobby, queue, loading | queued, found, reconnecting | Retry, rời queue hoặc fallback | queue time, cancel, reconnect | [Matchmaking](../Gameplay/Matchmaking_Lobby.vi.md) |
-| Spawn / orientation | Core Gameplay / AI | HUD, loading | protected spawn, active | Recovery hoặc rollback spawn lỗi | spawn-to-action time | [Core Gameplay](../GameDesign/CoreGameplay.vi.md) |
-| Loot | Inventory / Economy | Looting overlay, item detail | available, protected, FIR, full | Overflow hoặc decline với lý do | loot interaction, pickup failure | [Looting](../Gameplay/Looting_Interactions.vi.md) |
-| Combat | Combat / AI | HUD, hit feedback | damage, armor hit, suppression, downed | Hiện cause và lựa chọn tiếp theo | hit, death reason, TTK | [Weapons](../Combat/Weapons.vi.md) |
-| Objective | Progression / Core Gameplay | Objective tracker | active, complete, extraction-required | Giữ hoặc mất progress theo rule | objective completion | [Quest](../Gameplay/Quest_Objective_System.vi.md) |
-| Extraction | Core Gameplay | Extraction UI | available, holding, contested, blocked | Hiện cancel/contest/outcome rõ ràng | extraction attempt/result | [Extraction](../Gameplay/Extraction_Mechanics.vi.md) |
-| Death / success | Core Gameplay / Inventory | Debrief, death replay | extracted, KIA, MIA, rollback | Reconcile deterministic | outcome reason | [Debrief](../Gameplay/Post_Game_Debrief.vi.md) |
-| Loot transfer | Inventory / Economy | Loot transfer, stash, inbox | accepted, overflow, pending | Retry hoặc support, không duplicate | transfer success/failure | [Inventory](../Inventory_System/_index.vi.md) |
-| Claim reward | Progression / LiveOps | Inbox, battle pass, event | claimable, claimed, expired, converted | Giữ source và support path | claim funnel | [Progression](../GameDesign/Progression.vi.md) |
-| Mua Commerce | Commerce | Shop, confirmation, receipt | confirm, provider pending, success | Không charge hai lần; support route | purchase funnel | [Commerce](../UI_UX/Commerce_Screens.vi.md) |
-| Redeploy | Core Gameplay / Inventory | Home, loadout | ready, blocked, recovery | Trả về blocker đầu tiên | redeploy conversion | [Pre-Raid](../UI_UX/Pre_Raid_Screens.vi.md) |
+| Vào account | Settings/System | Login, setup, tutorial gate | loading, linked, blocked, offline | Hiện lý do và route recovery | auth success/failure | [Settings/System](../ui_ux/commerce_settings_system_screens.vi/index.html) |
+| Tutorial | Core Gameplay | Tutorial HUD và debrief | checkpoint, hint, pass, retry | Reset checkpoint, không mất vĩnh viễn | tutorial conversion | [Tutorial Raid](../gamedesign/tutorialraid.vi/index.html) |
+| Home / chuẩn bị | Core Gameplay | Home, loadout, stash | valid, pending sync, blocked | Giữ Deploy disabled kèm lý do | home impression, deploy intent | [Out-of-Raid](../ui_ux/out_of_raid_screens.vi/index.html) |
+| Commit loadout | Inventory / Economy | Loadout Workbench | ready, warning, blocker | Hiện item thiếu hoặc không tương thích | blocker frequency | [Loadout](../gamedesign/loadoutpreparation.vi/index.html) |
+| Matchmaking | Matchmaking | Lobby, queue, loading | queued, found, reconnecting | Retry, rời queue hoặc fallback | queue time, cancel, reconnect | [Matchmaking](../gameplay/matchmaking_lobby.vi/index.html) |
+| Spawn / orientation | Core Gameplay / AI | HUD, loading | protected spawn, active | Recovery hoặc rollback spawn lỗi | spawn-to-action time | [Core Gameplay](../gamedesign/coregameplay.vi/index.html) |
+| Loot | Inventory / Economy | Looting overlay, item detail | available, protected, FIR, full | Overflow hoặc decline với lý do | loot interaction, pickup failure | [Looting](../gameplay/looting_interactions.vi/index.html) |
+| Combat | Combat / AI | HUD, hit feedback | damage, armor hit, suppression, downed | Hiện cause và lựa chọn tiếp theo | hit, death reason, TTK | [Weapons](../combat/weapons.vi/index.html) |
+| Objective | Progression / Core Gameplay | Objective tracker | active, complete, extraction-required | Giữ hoặc mất progress theo rule | objective completion | [Quest](../gameplay/quest_objective_system.vi/index.html) |
+| Extraction | Core Gameplay | Extraction UI | available, holding, contested, blocked | Hiện cancel/contest/outcome rõ ràng | extraction attempt/result | [Extraction](../gameplay/extraction_mechanics.vi/index.html) |
+| Death / success | Core Gameplay / Inventory | Debrief, death replay | extracted, KIA, MIA, rollback | Reconcile deterministic | outcome reason | [Debrief](../gameplay/post_game_debrief.vi/index.html) |
+| Loot transfer | Inventory / Economy | Loot transfer, stash, inbox | accepted, overflow, pending | Retry hoặc support, không duplicate | transfer success/failure | [Inventory](../inventory_system/_index.vi/index.html) |
+| Claim reward | Progression / LiveOps | Inbox, battle pass, event | claimable, claimed, expired, converted | Giữ source và support path | claim funnel | [Progression](../gamedesign/progression.vi/index.html) |
+| Mua Commerce | Commerce | Shop, confirmation, receipt | confirm, provider pending, success | Không charge hai lần; support route | purchase funnel | [Commerce](../ui_ux/commerce_screens.vi/index.html) |
+| Redeploy | Core Gameplay / Inventory | Home, loadout | ready, blocked, recovery | Trả về blocker đầu tiên | redeploy conversion | [Pre-Raid](../ui_ux/pre_raid_screens.vi/index.html) |
 
 ## Quy Tắc Review
 
@@ -61,6 +61,6 @@ Ma trận này map hành trình chính của người chơi với owner gameplay
 
 ## Tham Chiếu Chéo
 
-- [Design Decision Register](Design_Decision_Register.vi.md)
-- [MVP Readiness Review](MVP_Readiness_Review.vi.md)
-- [Screen Groups Overview](../UI_UX/Screen_Groups_Overview.vi.md)
+- [Design Decision Register](design_decision_register.vi/index.html)
+- [MVP Readiness Review](mvp_readiness_review.vi/index.html)
+- [Screen Groups Overview](../ui_ux/screen_groups_overview.vi/index.html)

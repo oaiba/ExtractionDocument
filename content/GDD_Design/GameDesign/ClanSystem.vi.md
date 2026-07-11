@@ -88,7 +88,7 @@ A new recruit should have limited permissions until trusted. This protects the b
 
 | Topic | trang |
 | :--- | :--- |
-| Faction Wars | [Live Operations](liveops.html) |
-| Profile clan display | [người chơi Profile](playerprofile.html) |
-| Ranked clan leaderboard | [Ranked Mode](rankedmode.html) |
-| Clan economy | [Economy](economy.html) |
+| Faction Wars | [Live Operations](liveops/index.html) |
+| Profile clan display | [người chơi Profile](playerprofile/index.html) |
+| Ranked clan leaderboard | [Ranked Mode](rankedmode/index.html) |
+| Clan economy | [Economy](economy/index.html) |

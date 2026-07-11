@@ -12,22 +12,22 @@ Primary references:
 
 | System | Source |
 | :--- | :--- |
-| Debrief | [Post-Game Debrief & Replay](../Gameplay/Post_Game_Debrief.md) |
-| Extraction outcomes | [Extraction Mechanics](../Gameplay/Extraction_Mechanics.md) |
-| Progression | [Progression & Monetization](../GameDesign/Progression.md) |
-| Quest objectives | [Quest & Objective System](../Gameplay/Quest_Objective_System.md) |
-| Fair play | [Anti-Cheat & Fair Play](../Gameplay/Anti_Cheat_Fair_Play.md) |
+| Debrief | [Post-Game Debrief & Replay](../gameplay/post_game_debrief/index.html) |
+| Extraction outcomes | [Extraction Mechanics](../gameplay/extraction_mechanics/index.html) |
+| Progression | [Progression & Monetization](../gamedesign/progression/index.html) |
+| Quest objectives | [Quest & Objective System](../gameplay/quest_objective_system/index.html) |
+| Fair play | [Anti-Cheat & Fair Play](../gameplay/anti_cheat_fair_play/index.html) |
 
 ## Quick Navigation
 
 | Destination | Use |
 | :--- | :--- |
-| [UI/UX Index](_index.md) | Full UI/UX documentation hub |
-| [Screen Groups Overview](Screen_Groups_Overview.md) | Lifecycle taxonomy and designer-ready spec template |
-| [Global UX Standards](Global_UX_Standards.md) | Shared navigation, focus, state, modal, and accessibility rules |
-| [In-Raid Screens](In_Raid_Screens.md) | Raid overlays and reconnect before results |
-| [Out-of-Raid Screens](Out_Of_Raid_Screens.md) | Stash, quests, profile, and recovery actions after results |
-| [Social Screens](Social_Screens.md) | Commend, report, add friend, and squad continuation |
+| [UI/UX Index](_index/index.html) | Full UI/UX documentation hub |
+| [Screen Groups Overview](screen_groups_overview/index.html) | Lifecycle taxonomy and designer-ready spec template |
+| [Global UX Standards](global_ux_standards/index.html) | Shared navigation, focus, state, modal, and accessibility rules |
+| [In-Raid Screens](in_raid_screens/index.html) | Raid overlays and reconnect before results |
+| [Out-of-Raid Screens](out_of_raid_screens/index.html) | Stash, quests, profile, and recovery actions after results |
+| [Social Screens](social_screens/index.html) | Commend, report, add friend, and squad continuation |
 
 ---
 

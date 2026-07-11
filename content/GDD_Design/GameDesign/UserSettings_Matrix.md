@@ -8,7 +8,7 @@ weight: 18
 
 This matrix lists player-facing settings by category. It is intentionally table-first so design, UI, engineering, QA, and localization can audit settings without reading the UX hub.
 
-Use this page as the canonical checklist for settings coverage, default values, platform behavior, and QA review. Player-facing explanation, category philosophy, presets, cloud sync, and competitive lock policy live in [User Settings](usersettings.html).
+Use this page as the canonical checklist for settings coverage, default values, platform behavior, and QA review. Player-facing explanation, category philosophy, presets, cloud sync, and competitive lock policy live in [User Settings](usersettings/index.html).
 
 The matrix should stay concise. If an option needs a long rationale, keep the option here and place the reasoning in the hub or the owning feature page. This keeps the table useful for implementation and localization review.
 

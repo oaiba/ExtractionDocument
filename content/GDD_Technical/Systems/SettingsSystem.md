@@ -3,7 +3,7 @@ title: "Settings System - Technical Specification"
 type: docs
 ---
 
-**[↔ View Design GDD: User Settings](../../GDD_Design/GameDesign/UserSettings.md)**
+**[↔ View Design GDD: User Settings](../../gdd_design/gamedesign/usersettings/index.html)**
 
 ##  Overview
 

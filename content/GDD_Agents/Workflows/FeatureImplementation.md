@@ -24,7 +24,7 @@ graph LR
 
 1. **Read the GDD** — Find the relevant design document in `GDD_Design/`
 2. **Read the Technical Spec** — Check `GDD_Technical/` for related system docs
-3. **Read Coding Standards** — Review [CodingStandards.md](../../GDD_Technical/CodingStandards.md)
+3. **Read Coding Standards** — Review [CodingStandards.md](../../gdd_technical/codingstandards/index.html)
 4. **Identify module** — Determine which module/plugin this feature belongs to
 5. **List dependencies** — What existing classes/systems does this feature need?
 6. **Check for conflicts** — Will this break existing systems?

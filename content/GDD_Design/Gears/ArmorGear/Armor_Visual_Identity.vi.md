@@ -6,7 +6,7 @@ weight: 6
 
 ## Tổng Quan
 
-Tài liệu này định nghĩa **top-down silhouette**, **rarity color-coding**, **damage trạng thái visuals**, và **UI icons** for giáp so that class và condition are dễ đọc in a top-down extraction shooter. For class và item list Xem [giáp & Ballistics](giáp.md) và [giáp Master Database](Armor_Master_Database.md).
+Tài liệu này định nghĩa **top-down silhouette**, **rarity color-coding**, **damage trạng thái visuals**, và **UI icons** for giáp so that class và condition are dễ đọc in a top-down extraction shooter. For class và item list Xem [giáp & Ballistics](armor/index.html) và [giáp Master Database](armor_master_database/index.html).
 
 ---
 
@@ -47,7 +47,7 @@ giáp condition (durability %) nên được hiển thị rõ on the nhân vật
 | 49–25% | hiển thị rõ cracks/tears, darker | Clearly damaged |
 | 24–0% | Heavy damage, red/dark overlay | Near-destroyed |
 
-Helmets: visor cracks at low durability can obscure vision (Xem [giáp & Ballistics](giáp.md) — visors). Vests: torn fabric hoặc plate damage on the model.
+Helmets: visor cracks at low durability can obscure vision (Xem [giáp & Ballistics](armor/index.html) — visors). Vests: torn fabric hoặc plate damage on the model.
 
 ---
 
@@ -62,6 +62,6 @@ Icons nên được nhất quán in size và style với vũ khí và other gear
 
 ## Tham Chiếu Chéo
 
-- [giáp Master Database](Armor_Master_Database.md) — Per-item class, weight, rarity.
+- [giáp Master Database](armor_master_database/index.html) — Per-item class, weight, rarity.
 - [vũ khí Visual & Audio Identity](../../vũ khí/Weapon_Visual_Audio_Identity.md) — Rarity và readability standards (align với vũ khí).
-- [Visuals — Style Guide](../../Visuals/StyleGuide.md) — Color và UI consistency nếu present.
+- [Visuals — Style Guide](../../visuals/styleguide/index.html) — Color và UI consistency nếu present.

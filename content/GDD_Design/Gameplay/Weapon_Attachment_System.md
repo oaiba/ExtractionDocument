@@ -8,7 +8,7 @@ weight: 23
 
 The Weapon Attachment System allows players to modify their weapons before raids (in the Stash and Workbench) and — to a limited degree — in-raid with found attachments. Attachments create meaningful gear customization that reinforces the game's **Preparation Phase** and provides value for high-tier loot found during raids.
 
-> **Cross-References:** [Gear Mechanics](Gear_Mechanics.md) — weapon weight contribution to encumbrance; [Looting & Inventory](Looting_Interactions.md) — attachments as loot category (FIR status); [Safe House Design](../GameDesign/Safe_House_Design.md) — Workbench crafting of attachments; [Loot Table Design](Loot_Table_Design.md) — attachment spawn rates by zone tier; [Combat Feel (Top-Down)](Combat_Feel_Topdown.md) — aim cone, recoil system that attachments directly modify; [Quest & Objective System](Quest_Objective_System.md) — Viktor quest chain unlocks weapon mod blueprints.
+> **Cross-References:** [Gear Mechanics](gear_mechanics/index.html) — weapon weight contribution to encumbrance; [Looting & Inventory](looting_interactions/index.html) — attachments as loot category (FIR status); [Safe House Design](../gamedesign/safe_house_design/index.html) — Workbench crafting of attachments; [Loot Table Design](loot_table_design/index.html) — attachment spawn rates by zone tier; [Combat Feel (Top-Down)](combat_feel_topdown/index.html) — aim cone, recoil system that attachments directly modify; [Quest & Objective System](quest_objective_system/index.html) — Viktor quest chain unlocks weapon mod blueprints.
 
 ---
 
@@ -90,10 +90,10 @@ Not all weapons have all slots. Slot availability is per weapon type and model.
 | **Red Dot Sight** | ×1.2 | Clear | 0.2s | +0.1 kg | Best all-round; no magnification |
 | **Holographic** | ×1.3 | Very clear | 0.2s | +0.15 kg | Wider field; premium clarity |
 | **ACOG (×4)** | ×4.0 | Magnified | 0.35s | +0.3 kg | Mid-long range; tunnel-vision close |
-| **Sniper Scope (×8)** | ×8.0 | Full zoom | 0.5s | +0.4 kg | Sniper-only; see [Camera System](Camera_System.md) zoom interaction |
+| **Sniper Scope (×8)** | ×8.0 | Full zoom | 0.5s | +0.4 kg | Sniper-only; see [Camera System](camera_system/index.html) zoom interaction |
 | **Night Vision Scope** | ×2.0 / NV | NV-only at night | 0.4s | +0.5 kg | Night raids only; useless in daylight |
 
-> **Top-down ADS:** In top-down perspective, "ADS" functions as the player entering "precision aim" mode. The camera does not zoom in like FPS. Instead, the aim cone tightens and the cursor anchors more firmly. Optic zoom affects the weapon overlay reticle and a slight camera zoom (+1 level) per [Camera System](Camera_System.md).
+> **Top-down ADS:** In top-down perspective, "ADS" functions as the player entering "precision aim" mode. The camera does not zoom in like FPS. Instead, the aim cone tightens and the cursor anchors more firmly. Optic zoom affects the weapon overlay reticle and a slight camera zoom (+1 level) per [Camera System](camera_system/index.html).
 
 ---
 
@@ -153,7 +153,7 @@ Players can save **named weapon presets** in the stash:
 
 ## Crafting Attachments (Workbench)
 
-Per [Safe House Design](../GameDesign/Safe_House_Design.md) Workbench recipes:
+Per [Safe House Design](../gamedesign/safe_house_design/index.html) Workbench recipes:
 
 | Workbench Level | Craftable Attachments |
 | :-------------- | :-------------------- |
@@ -161,7 +161,7 @@ Per [Safe House Design](../GameDesign/Safe_House_Design.md) Workbench recipes:
 | **Level 2** | Compensator, Extended magazines, Red Dot Sight, Vertical Grip |
 | **Level 3** | Heavy Barrel, ACOG scope, Drum Magazine, Grenade Launcher, Night Vision Scope |
 
-Attachment crafting consumes specific materials per [Loot Table Design](Loot_Table_Design.md) — mechanical parts, wires, metal pipes, springs.
+Attachment crafting consumes specific materials per [Loot Table Design](loot_table_design/index.html) — mechanical parts, wires, metal pipes, springs.
 
 ---
 
@@ -180,7 +180,7 @@ Attachment crafting consumes specific materials per [Loot Table Design](Loot_Tab
 
 ## Weight Contribution to Loadout
 
-All attachments add weight to the weapon, which counts toward total encumbrance per [Gear Mechanics](Gear_Mechanics.md):
+All attachments add weight to the weapon, which counts toward total encumbrance per [Gear Mechanics](gear_mechanics/index.html):
 
 | Build Type | Typical Attachment Weight | Total Weapon Weight (AR) |
 | :--------- | :------------------------: | :----------------------: |
@@ -196,10 +196,10 @@ A heavy-modded weapon can push a player from Tier 2 (moderate) to Tier 3 (heavy)
 
 ## Cross-References
 
-- [Gear Mechanics](Gear_Mechanics.md) — Weapon weight contribution to total encumbrance and weight tier.
-- [Combat Feel (Top-Down)](Combat_Feel_Topdown.md) — Aim cone bloom, recoil recovery rates modified by attachments.
-- [Looting & Inventory](Looting_Interactions.md) — Attachments as separate loot items; FIR status; inventory slots.
-- [Safe House Design](../GameDesign/Safe_House_Design.md) — Workbench crafting of attachments; level gates.
-- [Loot Table Design](Loot_Table_Design.md) — Attachment spawn rates; tier 3/4 zones for rare attachments.
-- [Quest & Objective System](Quest_Objective_System.md) — Viktor quest chain unlocks weapon mod blueprints.
-- [Camera System](Camera_System.md) — Weapon zoom interaction with optics in top-down perspective.
+- [Gear Mechanics](gear_mechanics/index.html) — Weapon weight contribution to total encumbrance and weight tier.
+- [Combat Feel (Top-Down)](combat_feel_topdown/index.html) — Aim cone bloom, recoil recovery rates modified by attachments.
+- [Looting & Inventory](looting_interactions/index.html) — Attachments as separate loot items; FIR status; inventory slots.
+- [Safe House Design](../gamedesign/safe_house_design/index.html) — Workbench crafting of attachments; level gates.
+- [Loot Table Design](loot_table_design/index.html) — Attachment spawn rates; tier 3/4 zones for rare attachments.
+- [Quest & Objective System](quest_objective_system/index.html) — Viktor quest chain unlocks weapon mod blueprints.
+- [Camera System](camera_system/index.html) — Weapon zoom interaction with optics in top-down perspective.

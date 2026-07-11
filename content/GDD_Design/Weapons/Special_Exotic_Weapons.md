@@ -6,9 +6,9 @@ weight: 6
 
 ## Overview
 
-Special and exotic weapons are variants or unique models obtained through bosses, quests, seasons, or crafting. They offer distinct traits, cosmetics, or stat tweaks without replacing the core weapon roster. For base weapon stats see [Weapon Arsenal](../Gameplay/WeaponArsenal.md) and [Weapon Master Database](Weapon_Master_Database.md).
+Special and exotic weapons are variants or unique models obtained through bosses, quests, seasons, or crafting. They offer distinct traits, cosmetics, or stat tweaks without replacing the core weapon roster. For base weapon stats see [Weapon Arsenal](../gameplay/weaponarsenal/index.html) and [Weapon Master Database](weapon_master_database/index.html).
 
-> **Cross-References:** [Loot Table Design](../Gameplay/Loot_Table_Design.md) — boss and zone loot; [Quest & Objective System](../Gameplay/Quest_Objective_System.md) — quest rewards; [Safe House Design](../GameDesign/Safe_House_Design.md) — Workbench crafting.
+> **Cross-References:** [Loot Table Design](../gameplay/loot_table_design/index.html) — boss and zone loot; [Quest & Objective System](../gameplay/quest_objective_system/index.html) — quest rewards; [Safe House Design](../gamedesign/safe_house_design/index.html) — Workbench crafting.
 
 ---
 
@@ -56,7 +56,7 @@ Weapons or variants introduced for a limited time (e.g. one season). They may ro
 
 ## Crafted Weapons
 
-Weapon variants or base models that can be crafted at the Safe House Workbench. See [Safe House Design](../GameDesign/Safe_House_Design.md) for Workbench levels and recipes.
+Weapon variants or base models that can be crafted at the Safe House Workbench. See [Safe House Design](../gamedesign/safe_house_design/index.html) for Workbench levels and recipes.
 
 | Workbench Level | Craftable Weapon (example) | Materials |
 | :-------------- | :------------------------- | :-------- |
@@ -71,7 +71,7 @@ Crafted weapons have **no inherent stat bonus** over vendor or loot versions; th
 
 ## Weapon Condition (Found-in-Raid)
 
-Weapons found in raid (loot, AI, bosses) spawn with a **durability range**. This affects performance (see [Weapon Modding](../Inventory_System/Gunsmith_System.md) — MOA degrades at low durability) and value.
+Weapons found in raid (loot, AI, bosses) spawn with a **durability range**. This affects performance (see [Weapon Modding](../inventory_system/gunsmith_system/index.html) — MOA degrades at low durability) and value.
 
 | Source | Durability Range (typical) | Notes |
 | :----- | :------------------------- | :---- |
@@ -89,9 +89,9 @@ Weapons found in raid (loot, AI, bosses) spawn with a **durability range**. This
 
 ## Cross-References
 
-- [Weapon Arsenal](../Gameplay/WeaponArsenal.md) — Base weapon list and stats.
-- [Weapon Master Database](Weapon_Master_Database.md) — Per-weapon base and modded stats.
-- [Loot Table Design](../Gameplay/Loot_Table_Design.md) — Boss and zone loot tables.
-- [Quest & Objective System](../Gameplay/Quest_Objective_System.md) — Quest rewards and FIR.
-- [Safe House Design](../GameDesign/Safe_House_Design.md) — Workbench and crafting recipes.
-- [Inventory & Gear — Weapon Modding](../Inventory_System/Gunsmith_System.md) — Durability and MOA.
+- [Weapon Arsenal](../gameplay/weaponarsenal/index.html) — Base weapon list and stats.
+- [Weapon Master Database](weapon_master_database/index.html) — Per-weapon base and modded stats.
+- [Loot Table Design](../gameplay/loot_table_design/index.html) — Boss and zone loot tables.
+- [Quest & Objective System](../gameplay/quest_objective_system/index.html) — Quest rewards and FIR.
+- [Safe House Design](../gamedesign/safe_house_design/index.html) — Workbench and crafting recipes.
+- [Inventory & Gear — Weapon Modding](../inventory_system/gunsmith_system/index.html) — Durability and MOA.

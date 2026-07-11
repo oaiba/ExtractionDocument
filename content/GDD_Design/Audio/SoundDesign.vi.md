@@ -9,7 +9,7 @@ In an Extraction Shooter, **Sound is Information**.
 
 *   **Tactical Priority:** Every sound must have a gameplay mục đích. nếu it doesn't giúp the người chơi survive, it's noise.
 *   **Occlusion & Propagation:** Sounds must react realistically to walls, floors, và distance.
-*   **Mobile Enhancement:** Since many play mà không headphones, we cách dùng **Visual Sound Indicators** (Xem [Navigation Map](../GameDesign/NavigationAndMap.md)) to complement the audio.
+*   **Mobile Enhancement:** Since many play mà không headphones, we cách dùng **Visual Sound Indicators** (Xem [Navigation Map](../gamedesign/navigationandmap/index.html)) to complement the audio.
 
 ---
 

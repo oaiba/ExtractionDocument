@@ -11,9 +11,9 @@ Gear is a primary gameplay lever: every loadout choice affects mobility, capacit
 
 **Core principles:**
 
-* **Weight has consequences:** Heavier loadouts reduce speed and increase stamina drain; see [Movement & Stamina](Movement_and_Stamina.md).
-* **Tactical ergonomics:** Where you store items (rig vs backpack) determines hotkey access and search speed; see [Looting & Inventory](Looting_Interactions.md).
-* **Loadout philosophy:** Rat, Standard, and Chad playstyles map to distinct gear choices and extraction behavior; see [Core Gameplay Loop](CoreLoop.md).
+* **Weight has consequences:** Heavier loadouts reduce speed and increase stamina drain; see [Movement & Stamina](movement_and_stamina/index.html).
+* **Tactical ergonomics:** Where you store items (rig vs backpack) determines hotkey access and search speed; see [Looting & Inventory](looting_interactions/index.html).
+* **Loadout philosophy:** Rat, Standard, and Chad playstyles map to distinct gear choices and extraction behavior; see [Core Gameplay Loop](coreloop/index.html).
 * **Gear rarity and economy:** Higher-tier gear costs more, offers better stats, but amplifies loss on death — the risk/reward engine.
 
 Design pillars behind this: _Weight Has Consequences_ and _Tactical Ergonomics_ from the [Inventory & Gear design philosophy](https://github.com/oaiba/ExtractionDocument/blob/main/content/Inventory_System/README.md).
@@ -22,7 +22,7 @@ Design pillars behind this: _Weight Has Consequences_ and _Tactical Ergonomics_ 
 
 ### Weight and Mobility
 
-Total carried weight (rig, armor, backpack, weapons, ammo, meds, loot) directly affects movement speed, stamina drain, noise, and combat capability. Exact numbers are defined in [Movement & Stamina](Movement_and_Stamina.md); this section shows how they translate into gameplay.
+Total carried weight (rig, armor, backpack, weapons, ammo, meds, loot) directly affects movement speed, stamina drain, noise, and combat capability. Exact numbers are defined in [Movement & Stamina](movement_and_stamina/index.html); this section shows how they translate into gameplay.
 
 #### Weight Tiers
 
@@ -274,12 +274,12 @@ Since the game targets cross-platform (PC + mobile), gear mechanics must account
 
 ### Cross-References
 
-* [Core Gameplay Loop](CoreLoop.md) — Loadout philosophy, preparation phase, risk tolerance.
-* [Movement & Stamina](Movement_and_Stamina.md) — Weight thresholds, speed and stamina numbers, inertia, exhaustion.
-* [Looting & Inventory](Looting_Interactions.md) — Grid dimensions, rig/backpack sizes, secure container.
-* [Extraction Mechanics](Extraction_Mechanics.md) — Extraction process, timer, rules during extract.
-* [Hero Abilities](Hero_Abilities.md) — Operator-specific gear constraints (Scout light rig only, Tank armor affinity).
-* [Medical System](Medical_System.md) — Med item weights, heal timing, animation lock.
+* [Core Gameplay Loop](coreloop/index.html) — Loadout philosophy, preparation phase, risk tolerance.
+* [Movement & Stamina](movement_and_stamina/index.html) — Weight thresholds, speed and stamina numbers, inertia, exhaustion.
+* [Looting & Inventory](looting_interactions/index.html) — Grid dimensions, rig/backpack sizes, secure container.
+* [Extraction Mechanics](extraction_mechanics/index.html) — Extraction process, timer, rules during extract.
+* [Hero Abilities](hero_abilities/index.html) — Operator-specific gear constraints (Scout light rig only, Tank armor affinity).
+* [Medical System](medical_system/index.html) — Med item weights, heal timing, animation lock.
 * [Gears](https://github.com/oaiba/ExtractionDocument/blob/main/content/Gears/README.md) — Armor and storage gear specs: [ArmorGear](https://github.com/oaiba/ExtractionDocument/blob/main/content/Gears/ArmorGear/README.md) (classes, zones, materials, master database), [StorageGear](https://github.com/oaiba/ExtractionDocument/blob/main/content/Gears/StorageGear/README.md) (rigs, backpacks, secure containers, slot layouts).
 * [Inventory & Gear](https://github.com/oaiba/ExtractionDocument/blob/main/content/Inventory_System/README.md) — Inventory system overview, paper doll, grid, encumbrance.
 

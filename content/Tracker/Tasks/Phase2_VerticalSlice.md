@@ -27,7 +27,7 @@ Inventory, Loot & AI
 | Estimate   | 3 days                                                                                                                                                                                                                                                                                                                                   |
 | Owner      | Game Designer                                                                                                                                                                                                                                                                                                                            |
 | Output     | Detailed InventorySystem.md and Items.md: grid parameters, item types, specific weight values, and slot restriction rules                                                                                                                                                                                                                |
-| Refs       | [Gameplay/InventorySystem.md](https://github.com/oaiba/ExtractionDocument/blob/main/content/Tracker/Gameplay/InventorySystem.md), [GDD\_Design/Inventory\_System/](https://github.com/oaiba/ExtractionDocument/blob/main/content/GDD_Design/Inventory_System/README.md), [GDD\_Design/Combat/Items.md](../../GDD_Design/Combat/Items.md) |
+| Refs       | [Gameplay/InventorySystem.md](https://github.com/oaiba/ExtractionDocument/blob/main/content/Tracker/Gameplay/InventorySystem.md), [GDD\_Design/Inventory\_System/](https://github.com/oaiba/ExtractionDocument/blob/main/content/GDD_Design/Inventory_System/README.md), [GDD\_Design/Combat/Items.md](../../gdd_design/combat/items/index.html) |
 
 </details>
 
@@ -45,7 +45,7 @@ Inventory, Loot & AI
 | Owner        | Senior Programmer                                                                                                                                                                                     |
 | Dependencies | DOC-009                                                                                                                                                                                               |
 | Review       | `[ ]` Correct item insertion/removal `[ ]` Exact overlap detection `[ ]` Weight limit tracking works `[ ]` Secure container functions properly `[ ]` Code review pass `[ ]` QA stress test completion |
-| Refs         | [Gameplay/InventorySystem.md](https://github.com/oaiba/ExtractionDocument/blob/main/content/Tracker/Gameplay/InventorySystem.md), [GDD\_Design/Combat/Items.md](../../GDD_Design/Combat/Items.md)     |
+| Refs         | [Gameplay/InventorySystem.md](https://github.com/oaiba/ExtractionDocument/blob/main/content/Tracker/Gameplay/InventorySystem.md), [GDD\_Design/Combat/Items.md](../../gdd_design/combat/items/index.html)     |
 
 **Description:**
 
@@ -102,7 +102,7 @@ Inventory, Loot & AI
 | Estimate   | 2 days                                                                                                                                                                                                                                                                                                                           |
 | Owner      | Game Designer                                                                                                                                                                                                                                                                                                                    |
 | Output     | Finalize loot tables representing the Alpha map, assign specific rarity weights, and detail zone-based distribution rules                                                                                                                                                                                                        |
-| Refs       | [Systems/MapSystem.md](https://github.com/oaiba/ExtractionDocument/blob/main/content/Tracker/Systems/MapSystem.md), [GDD\_Design/Inventory\_System/](https://github.com/oaiba/ExtractionDocument/blob/main/content/GDD_Design/Inventory_System/README.md), [GDD\_Design/World/MapDesign.md](../../GDD_Design/World/MapDesign.md) |
+| Refs       | [Systems/MapSystem.md](https://github.com/oaiba/ExtractionDocument/blob/main/content/Tracker/Systems/MapSystem.md), [GDD\_Design/Inventory\_System/](https://github.com/oaiba/ExtractionDocument/blob/main/content/GDD_Design/Inventory_System/README.md), [GDD\_Design/World/MapDesign.md](../../gdd_design/world/mapdesign/index.html) |
 
 </details>
 
@@ -120,7 +120,7 @@ Inventory, Loot & AI
 | Owner        | Programmer + Game Designer                                                                                                                                                                               |
 | Dependencies | DOC-010, TASK-012                                                                                                                                                                                        |
 | Review       | `[ ]` Items correctly spawn in assigned zones `[ ]` Rarity weighting probabilities function accurately `[ ]` Container generation eliminates empty containers `[ ]` Full inventory insertion integration |
-| Refs         | [Systems/MapSystem.md](https://github.com/oaiba/ExtractionDocument/blob/main/content/Tracker/Systems/MapSystem.md), [GDD\_Design/Combat/Items.md](../../GDD_Design/Combat/Items.md)                      |
+| Refs         | [Systems/MapSystem.md](https://github.com/oaiba/ExtractionDocument/blob/main/content/Tracker/Systems/MapSystem.md), [GDD\_Design/Combat/Items.md](../../gdd_design/combat/items/index.html)                      |
 
 **Description:**
 
@@ -148,7 +148,7 @@ Inventory, Loot & AI
 | Estimate   | 3 days                                                                                                                                                                          |
 | Owner      | Game Designer + AI Programmer                                                                                                                                                   |
 | Output     | Detailed AISystem.md and EnemyBehavior.md: precise behavior states, defined perception ranges, and combat stats required for Alpha Scav enemies                                 |
-| Refs       | [AI/AISystem.md](https://github.com/oaiba/ExtractionDocument/blob/main/content/Tracker/AI/AISystem.md), [GDD\_Design/AI/EnemyBehavior.md](../../GDD_Design/AI/EnemyBehavior.md) |
+| Refs       | [AI/AISystem.md](https://github.com/oaiba/ExtractionDocument/blob/main/content/Tracker/AI/AISystem.md), [GDD\_Design/AI/EnemyBehavior.md](../../gdd_design/ai/enemybehavior/index.html) |
 
 </details>
 
@@ -166,7 +166,7 @@ Inventory, Loot & AI
 | Owner        | AI Programmer                                                                                                                                                                                                                                       |
 | Dependencies | DOC-011, TASK-003                                                                                                                                                                                                                                   |
 | Review       | `[ ]` Routine patrol follows waypoints accurately `[ ]` Player detection works within specific ranges `[ ]` Chase state triggers properly `[ ]` Active combat state (firing accurately at player) `[ ]` Utilizes cover logic `[ ]` Code review pass |
-| Refs         | [AI/AISystem.md](https://github.com/oaiba/ExtractionDocument/blob/main/content/Tracker/AI/AISystem.md), [GDD\_Design/AI/EnemyBehavior.md](../../GDD_Design/AI/EnemyBehavior.md)                                                                     |
+| Refs         | [AI/AISystem.md](https://github.com/oaiba/ExtractionDocument/blob/main/content/Tracker/AI/AISystem.md), [GDD\_Design/AI/EnemyBehavior.md](../../gdd_design/ai/enemybehavior/index.html)                                                                     |
 
 **Description:**
 
@@ -206,7 +206,7 @@ Inventory, Loot & AI
 | Estimate   | 2 days                                                                                                                                                                                                                                                                           |
 | Owner      | Game Designer                                                                                                                                                                                                                                                                    |
 | Output     | Updated MapSystem.md and CoreGameplay.md explicitly defining rules for extraction zones, contamination spreading mechanics, and logic for supply drops                                                                                                                           |
-| Refs       | [Systems/MapSystem.md](https://github.com/oaiba/ExtractionDocument/blob/main/content/Tracker/Systems/MapSystem.md), [GDD\_Design/World/MapDesign.md](../../GDD_Design/World/MapDesign.md), [GDD\_Design/GameDesign/CoreGameplay.md](../../GDD_Design/GameDesign/CoreGameplay.md) |
+| Refs       | [Systems/MapSystem.md](https://github.com/oaiba/ExtractionDocument/blob/main/content/Tracker/Systems/MapSystem.md), [GDD\_Design/World/MapDesign.md](../../gdd_design/world/mapdesign/index.html), [GDD\_Design/GameDesign/CoreGameplay.md](../../gdd_design/gamedesign/coregameplay/index.html) |
 
 </details>
 
@@ -224,7 +224,7 @@ Inventory, Loot & AI
 | Owner        | Programmer                                                                                                                                                                                                |
 | Dependencies | DOC-012, TASK-011                                                                                                                                                                                         |
 | Review       | `[ ]` Proper Zone activation delays `[ ]` Accurate extraction countdown timers `[ ]` Player successfully extracts state change `[ ]` Immediate timer interruption when hit `[ ]` Code review pass         |
-| Refs         | [Systems/MapSystem.md](https://github.com/oaiba/ExtractionDocument/blob/main/content/Tracker/Systems/MapSystem.md), [GDD\_Design/GameDesign/CoreGameplay.md](../../GDD_Design/GameDesign/CoreGameplay.md) |
+| Refs         | [Systems/MapSystem.md](https://github.com/oaiba/ExtractionDocument/blob/main/content/Tracker/Systems/MapSystem.md), [GDD\_Design/GameDesign/CoreGameplay.md](../../gdd_design/gamedesign/coregameplay/index.html) |
 
 **Description:**
 
@@ -251,7 +251,7 @@ Inventory, Loot & AI
 | Owner        | Programmer                                                                                                                                                 |
 | Dependencies | TASK-016                                                                                                                                                   |
 | Review       | `[ ]` Supply drops correctly spawn at predefined locations `[ ]` Contained loot properly populates `[ ]` Server-wide audio/UI event announcement broadcast |
-| Refs         | [GDD\_Design/GameDesign/CoreGameplay.md](../../GDD_Design/GameDesign/CoreGameplay.md)                                                                      |
+| Refs         | [GDD\_Design/GameDesign/CoreGameplay.md](../../gdd_design/gamedesign/coregameplay/index.html)                                                                      |
 
 </details>
 
@@ -271,7 +271,7 @@ Inventory, Loot & AI
 | Estimate   | 3 days                                                                                                                                                                                                  |
 | Owner      | Level Designer + Game Designer                                                                                                                                                                          |
 | Output     | Final MapDesign.md specifically for the "Industrial Zone": detailed layout, tier-based zone division, exact extraction points, designated AI spawn locations, and a comprehensive loot density heat-map |
-| Refs       | [GDD\_Design/World/MapDesign.md](../../GDD_Design/World/MapDesign.md), [Systems/MapSystem.md](https://github.com/oaiba/ExtractionDocument/blob/main/content/Tracker/Systems/MapSystem.md)               |
+| Refs       | [GDD\_Design/World/MapDesign.md](../../gdd_design/world/mapdesign/index.html), [Systems/MapSystem.md](https://github.com/oaiba/ExtractionDocument/blob/main/content/Tracker/Systems/MapSystem.md)               |
 
 </details>
 
@@ -289,7 +289,7 @@ Inventory, Loot & AI
 | Owner        | Level Designer                                                                                                                                                                                                                     |
 | Dependencies | DOC-013, TASK-016, TASK-014, TASK-015                                                                                                                                                                                              |
 | Review       | `[ ]` Map compiles flawlessly `[ ]` Adequate player spawn points `[ ]` 3 Extraction Zones accurately placed `[ ]` AI spawn points function under test `[ ]` Loot spawns correlate to density map `[ ]` Full internal playtest pass |
-| Refs         | [GDD\_Design/World/MapDesign.md](../../GDD_Design/World/MapDesign.md), [ProjectScope/MVP.md](../../GDD_Design/ProjectScope/MVP.md)                                                                                                 |
+| Refs         | [GDD\_Design/World/MapDesign.md](../../gdd_design/world/mapdesign/index.html), [ProjectScope/MVP.md](../../gdd_design/projectscope/mvp/index.html)                                                                                                 |
 
 **Description:**
 
@@ -317,7 +317,7 @@ Inventory, Loot & AI
 | Owner        | Team Lead + Project Stakeholders                                                                                                                                                                                                                                                                                        |
 | Dependencies | TASK-018 and all preceding Phase 1 TASKs                                                                                                                                                                                                                                                                                |
 | Review       | `[ ]` Successful full match sequence: Spawn → Loot → Combat → Extract `[ ]` AI Scavs functional and lethal `[ ]` 2 connected players without technical crashes `[ ]` Fully functional inventory interaction `[ ]` Baseline performance maintains > 30 FPS on minimum target devices `[ ]` Official Stakeholder sign-off |
-| Refs         | [ProjectScope/MVP.md](../../GDD_Design/ProjectScope/MVP.md), [DevelopmentRoadmap.md](https://github.com/oaiba/ExtractionDocument/blob/main/content/Tracker/Core/DevelopmentRoadmap.md)                                                                                                                                  |
+| Refs         | [ProjectScope/MVP.md](../../gdd_design/projectscope/mvp/index.html), [DevelopmentRoadmap.md](https://github.com/oaiba/ExtractionDocument/blob/main/content/Tracker/Core/DevelopmentRoadmap.md)                                                                                                                                  |
 
 </details>
 

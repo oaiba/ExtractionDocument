@@ -12,21 +12,21 @@ Tham chiếu chính:
 
 | hệ thống | source |
 | :--- | :--- |
-| Economy | [Economy & Monetization Design](../GameDesign/Economy.md) |
-| Progression / Battle Pass | [Progression & LiveOps màn hình](Progression_LiveOps_Screens.md) |
-| Global UX | [Global UX Standards](Global_UX_Standards.md) |
-| Visual style | [Visual Style & Art Guidelines](Visual_Style.md) |
-| Settings và hệ thống trạng thái | [Settings & hệ thống màn hình](Commerce_Settings_System_Screens.md) |
+| Economy | [Economy & Monetization Design](../gamedesign/economy/index.html) |
+| Progression / Battle Pass | [Progression & LiveOps màn hình](progression_liveops_screens/index.html) |
+| Global UX | [Global UX Standards](global_ux_standards/index.html) |
+| Visual style | [Visual Style & Art Guidelines](visual_style/index.html) |
+| Settings và hệ thống trạng thái | [Settings & hệ thống màn hình](commerce_settings_system_screens/index.html) |
 
 ## Điều Hướng Nhanh
 
 | điểm đến | cách dùng |
 | :--- | :--- |
-| [UI/UX Index](_index.md) | Hub tài liệu UI/UX đầy đủ |
-| [Screen Groups Overview](Screen_Groups_Overview.md) | Taxonomy vòng đời màn hình và template spec cho designer |
-| [Progression & LiveOps màn hình](Progression_LiveOps_Screens.md) | Battle pass progress, event progress, ranked, rewards, và news |
-| [Settings & hệ thống màn hình](Commerce_Settings_System_Screens.md) | Auth, setup, settings, privacy, diagnostics, và hệ thống dialogs |
-| [Global UX Standards](Global_UX_Standards.md) | Quy tắc chung cho navigation, focus, trạng thái, modal, và accessibility |
+| [UI/UX Index](_index/index.html) | Hub tài liệu UI/UX đầy đủ |
+| [Screen Groups Overview](screen_groups_overview/index.html) | Taxonomy vòng đời màn hình và template spec cho designer |
+| [Progression & LiveOps màn hình](progression_liveops_screens/index.html) | Battle pass progress, event progress, ranked, rewards, và news |
+| [Settings & hệ thống màn hình](commerce_settings_system_screens/index.html) | Auth, setup, settings, privacy, diagnostics, và hệ thống dialogs |
+| [Global UX Standards](global_ux_standards/index.html) | Quy tắc chung cho navigation, focus, trạng thái, modal, và accessibility |
 
 ---
 

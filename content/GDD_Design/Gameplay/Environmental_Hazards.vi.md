@@ -90,7 +90,7 @@ Contamination is the primary end-of-raid pressure hệ thống. It replaces a tr
 | 14:30                  | **Final Push (Phase 3)**: Almost entire map is contaminated             | 50 HP/sec. Only extraction zone interiors are safe                     |
 | 15:00                  | **Match Ends**: All remaining người chơi die                               | Total loss of gear. No extraction possible                             |
 
-For **standard raids** (25–30 min, Xem [cốt lõi Gameplay Loop](CoreLoop.md)), contamination triggers in the final third of the raid; phases scale proportionally. The bảng above is for a **15-min Quick Raid** hoặc reference scale.
+For **standard raids** (25–30 min, Xem [cốt lõi Gameplay Loop](coreloop/index.html)), contamination triggers in the final third of the raid; phases scale proportionally. The bảng above is for a **15-min Quick Raid** hoặc reference scale.
 
 #### Contamination Visual và Audio Design
 

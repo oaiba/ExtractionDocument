@@ -8,14 +8,14 @@ weight: 18
 
 The Downstate & Revive hệ thống determines what happens khi a người chơi's HP reaches zero. Instead of instant death, người chơi enter a vulnerable "Downed" trạng thái from which squadmates can rescue them. This hệ thống adds a critical cooperation cơ chế — và a strategic quyết định for địch: finish the downed người chơi hoặc push forward? It is one of the most team game–feel moments in the entire raid loop.
 
-> **Cross-References:** [Medical hệ thống](Medical_System.md) — HP và body part rules; [Hero Abilities](Hero_Abilities.md) — operator-cụ thể revive interactions; [Extraction cơ chế](Extraction_Mechanics.md) — downed trạng thái trong khi extraction; [Camera hệ thống](Camera_System.md) — downed camera behavior; [Quest & Objective hệ thống](Quest_Objective_System.md) — "Revive 3 teammates" quest type.
+> **Cross-References:** [Medical hệ thống](medical_system/index.html) — HP và body part rules; [Hero Abilities](hero_abilities/index.html) — operator-cụ thể revive interactions; [Extraction cơ chế](extraction_mechanics/index.html) — downed trạng thái trong khi extraction; [Camera hệ thống](camera_system/index.html) — downed camera behavior; [Quest & Objective hệ thống](quest_objective_system/index.html) — "Revive 3 teammates" quest type.
 
 ---
 
 ## Design Philosophy
 
 - **Revive is earned, not automatic.** Getting a teammate up requires physical proximity, thời gian, và vulnerability. Both the reviver và the downed người chơi are exposed.
-- **Solo người chơi still have a meaningful death.** Solo queue người chơi go to the standard [death sequence](Camera_System.md) — no self-revive. This maintains consequence parity.
+- **Solo người chơi still have a meaningful death.** Solo queue người chơi go to the standard [death sequence](camera_system/index.html) — no self-revive. This maintains consequence parity.
 - **The downed trạng thái is a team moment, not a spectator trạng thái.** The downed người chơi can shoot back, slow their bleed, và communicate — they are not helpless.
 - **địch have meaningful choices.** Leaving a downed người chơi is a valid tactic (they will die eventually); finishing them is faster nhưng takes thời gian và exposure.
 
@@ -138,7 +138,7 @@ sau being revived, the same người chơi can be downed again và revived again
 
 Solo người chơi die instantly at 0 HP. To compensate for no revive:
 - Solo người chơi receive a **10% HP max boost** (per operator passive, scaled for solo queue).
-- Solo-cụ thể operator skill — see Operators 6–10 expansion in [Hero Abilities](Hero_Abilities.md).
+- Solo-cụ thể operator skill — see Operators 6–10 expansion in [Hero Abilities](hero_abilities/index.html).
 - Solo debrief màn hình triggers immediately showing cause of death, damage received, loot lost.
 
 ---
@@ -195,9 +195,9 @@ Player HP → 0
 
 ## Tham Chiếu Chéo
 
-- [Medical hệ thống](Medical_System.md) — Body part HP; Bleed status effect while downed.
-- [Hero Abilities](Hero_Abilities.md) — Operator-cụ thể downstate và revive abilities.
-- [Extraction cơ chế](Extraction_Mechanics.md) — Downed người chơi cannot extract mà không revive.
-- [Camera hệ thống](Camera_System.md) — Low-altitude camera trong khi downstate; spectator sau death.
-- [Quest & Objective hệ thống](Quest_Objective_System.md) — "Revive 3 teammates" quest type.
-- [Movement & Stamina](Movement_and_Stamina.md) — Crawl speed as a movement trạng thái.
+- [Medical hệ thống](medical_system/index.html) — Body part HP; Bleed status effect while downed.
+- [Hero Abilities](hero_abilities/index.html) — Operator-cụ thể downstate và revive abilities.
+- [Extraction cơ chế](extraction_mechanics/index.html) — Downed người chơi cannot extract mà không revive.
+- [Camera hệ thống](camera_system/index.html) — Low-altitude camera trong khi downstate; spectator sau death.
+- [Quest & Objective hệ thống](quest_objective_system/index.html) — "Revive 3 teammates" quest type.
+- [Movement & Stamina](movement_and_stamina/index.html) — Crawl speed as a movement trạng thái.

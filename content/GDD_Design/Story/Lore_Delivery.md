@@ -231,7 +231,7 @@ Every item in the game has two description lines:
 
 Loading screen tips are **in-character statements** attributed to specific factions or individuals. They serve as passive lore delivery and atmosphere reinforcement.
 
-> **Full specification:** See [Loading Screen Design](../UI_UX/LoadingScreen_Design.md) for loading type taxonomy, content type mapping, and layout mockups.
+> **Full specification:** See [Loading Screen Design](../ui_ux/loadingscreen_design/index.html) for loading type taxonomy, content type mapping, and layout mockups.
 
 #### Content Types (by Loading Screen)
 

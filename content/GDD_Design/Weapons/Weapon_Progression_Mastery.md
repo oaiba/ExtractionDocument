@@ -8,7 +8,7 @@ weight: 5
 
 Weapon progression gives players long-term goals per weapon model: proficiency levels, attachment unlocks, mastery challenges, and seasonal weapon pass integration. Design reference: Delta Force per-weapon attachment unlock progression, Arena Breakout weapon mastery.
 
-> **Cross-References:** [Weapon Arsenal](../Gameplay/WeaponArsenal.md) — weapon list; [Weapon Attachment System](../Gameplay/Weapon_Attachment_System.md) — attachment unlocks; [Safe House Design](../GameDesign/Safe_House_Design.md) — Workbench and crafting; [Quest & Objective System](../Gameplay/Quest_Objective_System.md) — quest-gated unlocks.
+> **Cross-References:** [Weapon Arsenal](../gameplay/weaponarsenal/index.html) — weapon list; [Weapon Attachment System](../gameplay/weapon_attachment_system/index.html) — attachment unlocks; [Safe House Design](../gamedesign/safe_house_design/index.html) — Workbench and crafting; [Quest & Objective System](../gameplay/quest_objective_system/index.html) — quest-gated unlocks.
 
 ---
 
@@ -84,7 +84,7 @@ Not all weapons are available at account level 1. Gating ensures progression and
 | 3 | SCAR-H, HK416, AUG, Vector, P90, MP7, SPAS-12, Saiga-12, M24, PKM, RPK |
 | 4 | AA-12, AWP, VSS, M249, MG42, M107, Deagle, Revolver, melee (Axe, Machete, Baton) |
 
-**Quest-gated weapons:** Certain weapons or variants unlock only after completing specific quests (e.g. Viktor quest chain for a mod blueprint or a named weapon). See [Quest & Objective System](../Gameplay/Quest_Objective_System.md).
+**Quest-gated weapons:** Certain weapons or variants unlock only after completing specific quests (e.g. Viktor quest chain for a mod blueprint or a named weapon). See [Quest & Objective System](../gameplay/quest_objective_system/index.html).
 
 ---
 
@@ -107,7 +107,7 @@ Challenges are **per weapon** and one-time (or repeatable for cosmetic-only rewa
 
 ## Seasonal Weapon Pass
 
-The battle pass includes weapon-related rewards to align with [Weapon Balance Framework](Weapon_Balance_Framework.md) seasonal rotation.
+The battle pass includes weapon-related rewards to align with [Weapon Balance Framework](weapon_balance_framework/index.html) seasonal rotation.
 
 **Typical seasonal weapon pass content:**
 
@@ -125,8 +125,8 @@ Seasonal weapons or variants do not replace base weapons; they add choice or fla
 
 ## Cross-References
 
-- [Weapon Arsenal](../Gameplay/WeaponArsenal.md) — Weapon list and categories.
-- [Weapon Attachment System](../Gameplay/Weapon_Attachment_System.md) — Attachment slots and crafting.
-- [Safe House Design](../GameDesign/Safe_House_Design.md) — Workbench levels and recipes.
-- [Quest & Objective System](../Gameplay/Quest_Objective_System.md) — Quest-gated weapon and blueprint unlocks.
-- [Weapon Balance Framework](Weapon_Balance_Framework.md) — Seasonal rotation and meta.
+- [Weapon Arsenal](../gameplay/weaponarsenal/index.html) — Weapon list and categories.
+- [Weapon Attachment System](../gameplay/weapon_attachment_system/index.html) — Attachment slots and crafting.
+- [Safe House Design](../gamedesign/safe_house_design/index.html) — Workbench levels and recipes.
+- [Quest & Objective System](../gameplay/quest_objective_system/index.html) — Quest-gated weapon and blueprint unlocks.
+- [Weapon Balance Framework](weapon_balance_framework/index.html) — Seasonal rotation and meta.

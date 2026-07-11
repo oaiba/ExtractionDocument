@@ -133,7 +133,7 @@ weight: 10
 | Estimate   | 1 day                                                                                                                                                    |
 | Owner      | Tech Lead                                                                                                                                                |
 | Output     | Architecture.md features a clear class hierarchy and is ready for development                                                                            |
-| Refs       | [Architecture.md](https://github.com/oaiba/ExtractionDocument/blob/main/content/Tracker/Core/Architecture.md), [GDD\_Technical/\_index.md](../_index.md) |
+| Refs       | [Architecture.md](https://github.com/oaiba/ExtractionDocument/blob/main/content/Tracker/Core/Architecture.md), [GDD\_Technical/\_index.md](../_index/index.html) |
 
 **Description:**
 
@@ -217,7 +217,7 @@ weight: 10
 | Estimate   | 2 days                                                                                                                                                                                                                                                                                                                                            |
 | Owner      | Game Designer + Tech Lead                                                                                                                                                                                                                                                                                                                         |
 | Output     | CharacterSystem.md includes complete stats (HP, Speed, Stamina), movement specs, and animation states                                                                                                                                                                                                                                             |
-| Refs       | [Gameplay/CharacterSystem.md](https://github.com/oaiba/ExtractionDocument/blob/main/content/Tracker/Gameplay/CharacterSystem.md), [GDD\_Design/Characters/](https://github.com/oaiba/ExtractionDocument/blob/main/content/GDD_Design/Characters/README.md), [GDD\_Design/GameDesign/CoreGameplay.md](../../GDD_Design/GameDesign/CoreGameplay.md) |
+| Refs       | [Gameplay/CharacterSystem.md](https://github.com/oaiba/ExtractionDocument/blob/main/content/Tracker/Gameplay/CharacterSystem.md), [GDD\_Design/Characters/](https://github.com/oaiba/ExtractionDocument/blob/main/content/GDD_Design/Characters/README.md), [GDD\_Design/GameDesign/CoreGameplay.md](../../gdd_design/gamedesign/coregameplay/index.html) |
 
 **Description:**
 
@@ -273,7 +273,7 @@ weight: 10
 | Owner        | Senior Programmer                                                                                                                                                                                           |
 | Dependencies | DOC-003, TASK-003                                                                                                                                                                                           |
 | Review       | `[ ]` WASD / joystick movement works `[ ]` Mouse aiming works `[ ]` Aim assist functions properly `[ ]` Code review pass                                                                                    |
-| Refs         | [Gameplay/ControlSystem.md](https://github.com/oaiba/ExtractionDocument/blob/main/content/Tracker/Gameplay/ControlSystem.md), [GDD\_Design/GameDesign/Controls.md](../../GDD_Design/GameDesign/Controls.md) |
+| Refs         | [Gameplay/ControlSystem.md](https://github.com/oaiba/ExtractionDocument/blob/main/content/Tracker/Gameplay/ControlSystem.md), [GDD\_Design/GameDesign/Controls.md](../../gdd_design/gamedesign/controls/index.html) |
 
 **Description:**
 
@@ -303,7 +303,7 @@ weight: 10
 | Estimate   | 1 day                                                                                                                                                                                                             |
 | Owner      | Tech Artist + Game Designer                                                                                                                                                                                       |
 | Output     | Comprehensive definition of all animation states and transition rules                                                                                                                                             |
-| Refs       | [Gameplay/CharacterSystem.md](https://github.com/oaiba/ExtractionDocument/blob/main/content/Tracker/Gameplay/CharacterSystem.md), [GDD\_Design/Visuals/ArtDirection.md](../../GDD_Design/Visuals/ArtDirection.md) |
+| Refs       | [Gameplay/CharacterSystem.md](https://github.com/oaiba/ExtractionDocument/blob/main/content/Tracker/Gameplay/CharacterSystem.md), [GDD\_Design/Visuals/ArtDirection.md](../../gdd_design/visuals/artdirection/index.html) |
 
 </details>
 
@@ -347,7 +347,7 @@ weight: 10
 | Owner        | Team Lead + QA                                                                                                                                                                         |
 | Dependencies | TASK-001 through TASK-005                                                                                                                                                              |
 | Review       | `[ ]` All INFRA passes `[ ]` Character moves correctly `[ ]` CI Build succeeds `[ ]` Team retrospective completed                                                                      |
-| Refs         | [DevelopmentRoadmap.md](https://github.com/oaiba/ExtractionDocument/blob/main/content/Tracker/Core/DevelopmentRoadmap.md), [ProjectScope/MVP.md](../../GDD_Design/ProjectScope/MVP.md) |
+| Refs         | [DevelopmentRoadmap.md](https://github.com/oaiba/ExtractionDocument/blob/main/content/Tracker/Core/DevelopmentRoadmap.md), [ProjectScope/MVP.md](../../gdd_design/projectscope/mvp/index.html) |
 
 **Description:**
 
@@ -380,7 +380,7 @@ weight: 10
 | Estimate   | 2 days                                                                                                                                                                                          |
 | Owner      | Game Designer                                                                                                                                                                                   |
 | Output     | WeaponSystem.md includes complete details: weapon classes, stats, ballistics, and recoil patterns for Alpha weapons (AK47, M4A1, MP5, Glock)                                                    |
-| Refs       | [Gameplay/WeaponSystem.md](https://github.com/oaiba/ExtractionDocument/blob/main/content/Tracker/Gameplay/WeaponSystem.md), [GDD\_Design/Combat/Weapons.md](../../GDD_Design/Combat/Weapons.md) |
+| Refs       | [Gameplay/WeaponSystem.md](https://github.com/oaiba/ExtractionDocument/blob/main/content/Tracker/Gameplay/WeaponSystem.md), [GDD\_Design/Combat/Weapons.md](../../gdd_design/combat/weapons/index.html) |
 
 </details>
 
@@ -398,7 +398,7 @@ weight: 10
 | Owner        | Senior Programmer                                                                                                                                                                               |
 | Dependencies | DOC-005, TASK-003                                                                                                                                                                               |
 | Review       | `[ ]` Firing logic works `[ ]` Ammo tracked correctly `[ ]` Reload functions properly `[ ]` Weapon equip/unequip works `[ ]` Code review pass                                                   |
-| Refs         | [Gameplay/WeaponSystem.md](https://github.com/oaiba/ExtractionDocument/blob/main/content/Tracker/Gameplay/WeaponSystem.md), [GDD\_Design/Combat/Weapons.md](../../GDD_Design/Combat/Weapons.md) |
+| Refs         | [Gameplay/WeaponSystem.md](https://github.com/oaiba/ExtractionDocument/blob/main/content/Tracker/Gameplay/WeaponSystem.md), [GDD\_Design/Combat/Weapons.md](../../gdd_design/combat/weapons/index.html) |
 
 **Description:**
 
@@ -428,7 +428,7 @@ weight: 10
 | Owner        | Programmer + Game Designer                                                                                                                                                                      |
 | Dependencies | TASK-006, DOC-005                                                                                                                                                                               |
 | Review       | `[ ]` All 4 weapons fire using correct stats `[ ]` Recoil visuals align `[ ]` Damage values match DataTable specifications `[ ]` QA test pass                                                   |
-| Refs         | [Gameplay/WeaponSystem.md](https://github.com/oaiba/ExtractionDocument/blob/main/content/Tracker/Gameplay/WeaponSystem.md), [GDD\_Design/Combat/Weapons.md](../../GDD_Design/Combat/Weapons.md) |
+| Refs         | [Gameplay/WeaponSystem.md](https://github.com/oaiba/ExtractionDocument/blob/main/content/Tracker/Gameplay/WeaponSystem.md), [GDD\_Design/Combat/Weapons.md](../../gdd_design/combat/weapons/index.html) |
 
 **Description:**
 
@@ -460,7 +460,7 @@ weight: 10
 | Owner        | Senior Programmer                                                                                                                                                                                          |
 | Dependencies | TASK-006, TASK-003                                                                                                                                                                                         |
 | Review       | `[ ]` Line trace correctly hits zones `[ ]` Damage multipliers apply correctly (Head 2x, Thorax 1x, Limb 0.7x) `[ ]` Server validates all hits `[ ]` Zero false-positive test cases `[ ]` Code review pass |
-| Refs         | [Gameplay/CharacterSystem.md](https://github.com/oaiba/ExtractionDocument/blob/main/content/Tracker/Gameplay/CharacterSystem.md), [GDD\_Design/Combat/Weapons.md](../../GDD_Design/Combat/Weapons.md)      |
+| Refs         | [Gameplay/CharacterSystem.md](https://github.com/oaiba/ExtractionDocument/blob/main/content/Tracker/Gameplay/CharacterSystem.md), [GDD\_Design/Combat/Weapons.md](../../gdd_design/combat/weapons/index.html)      |
 
 **Description:**
 
@@ -485,7 +485,7 @@ weight: 10
 | Estimate   | 1 day                                                                                                                                                                                                                   |
 | Owner      | Game Designer                                                                                                                                                                                                           |
 | Output     | Health states fully defined for Alpha (HP, Death); beta states (Bleeding, Fractures) documented but queued for later implementation                                                                                     |
-| Refs       | [GDD\_Design/GameDesign/CoreGameplay.md](../../GDD_Design/GameDesign/CoreGameplay.md), [Gameplay/CharacterSystem.md](https://github.com/oaiba/ExtractionDocument/blob/main/content/Tracker/Gameplay/CharacterSystem.md) |
+| Refs       | [GDD\_Design/GameDesign/CoreGameplay.md](../../gdd_design/gamedesign/coregameplay/index.html), [Gameplay/CharacterSystem.md](https://github.com/oaiba/ExtractionDocument/blob/main/content/Tracker/Gameplay/CharacterSystem.md) |
 
 </details>
 
@@ -577,7 +577,7 @@ weight: 10
 | Estimate   | 1 day                                                                                                                                                                                                     |
 | Owner      | Game Designer                                                                                                                                                                                             |
 | Output     | Clear match lifecycle defined: WaitingForPlayers → InProgress → Ended                                                                                                                                     |
-| Refs       | [GDD\_Design/GameDesign/CoreGameplay.md](../../GDD_Design/GameDesign/CoreGameplay.md), [Core/Architecture.md](https://github.com/oaiba/ExtractionDocument/blob/main/content/Tracker/Core/Architecture.md) |
+| Refs       | [GDD\_Design/GameDesign/CoreGameplay.md](../../gdd_design/gamedesign/coregameplay/index.html), [Core/Architecture.md](https://github.com/oaiba/ExtractionDocument/blob/main/content/Tracker/Core/Architecture.md) |
 
 </details>
 
@@ -595,7 +595,7 @@ weight: 10
 | Owner        | Programmer                                                                                                                              |
 | Dependencies | DOC-008, TASK-009                                                                                                                       |
 | Review       | `[ ]` Proper match start/end triggers `[ ]` Players appropriately spawned `[ ]` Win conditions trigger correctly `[ ]` Code review pass |
-| Refs         | [GDD\_Design/GameDesign/CoreGameplay.md](../../GDD_Design/GameDesign/CoreGameplay.md)                                                   |
+| Refs         | [GDD\_Design/GameDesign/CoreGameplay.md](../../gdd_design/gamedesign/coregameplay/index.html)                                                   |
 
 **Description:**
 
@@ -620,7 +620,7 @@ weight: 10
 | Owner        | Team Lead                                                                                                                                                                                              |
 | Dependencies | All tasks from Weeks 5-7                                                                                                                                                                               |
 | Review       | `[ ]` 2 connected players online `[ ]` Combat engagements possible `[ ]` Accurate damage registration `[ ]` Complete match start/end cycle `[ ]` Zero critical crashes during a 30-minute play session |
-| Refs         | [ProjectScope/MVP.md](../../GDD_Design/ProjectScope/MVP.md), [DevelopmentRoadmap.md](https://github.com/oaiba/ExtractionDocument/blob/main/content/Tracker/Core/DevelopmentRoadmap.md)                 |
+| Refs         | [ProjectScope/MVP.md](../../gdd_design/projectscope/mvp/index.html), [DevelopmentRoadmap.md](https://github.com/oaiba/ExtractionDocument/blob/main/content/Tracker/Core/DevelopmentRoadmap.md)                 |
 
 </details>
 

@@ -101,7 +101,7 @@ A teammate pings rare loot and then changes their mind. The ping should be cance
 
 | Topic | Page |
 | :--- | :--- |
-| Map rules | [Map Design](mapdesign.html) |
-| Communication and pings | [Communication](communication.html) |
-| Controls | [Controls](controls.html) |
-| Accessibility alternatives | [Accessibility](accessibility.html) |
+| Map rules | [Map Design](mapdesign/index.html) |
+| Communication and pings | [Communication](communication/index.html) |
+| Controls | [Controls](controls/index.html) |
+| Accessibility alternatives | [Accessibility](accessibility/index.html) |

@@ -131,8 +131,8 @@ Extraction finale nên làm player mang thứ đáng giữ. Timer, marker, và a
 
 | Topic | Page |
 | :--- | :--- |
-| Core loop | [Core Gameplay](coregameplay.html) |
-| Controls | [Controls](controls.html) |
-| Loadout onboarding | [Loadout Preparation](loadoutpreparation.html) |
-| Safe House | [Safe House Design](safe_house_design.html) |
-| Accessibility | [Accessibility](accessibility.html) |
+| Core loop | [Core Gameplay](coregameplay/index.html) |
+| Controls | [Controls](controls/index.html) |
+| Loadout onboarding | [Loadout Preparation](loadoutpreparation/index.html) |
+| Safe House | [Safe House Design](safe_house_design/index.html) |
+| Accessibility | [Accessibility](accessibility/index.html) |

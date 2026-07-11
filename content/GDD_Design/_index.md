@@ -10,16 +10,16 @@ aliases:
   - /GDD_Design/index.html
 ---
 
-This hub owns the creative and player-facing design of Extraction: game loops, player experience, art direction, audio, worldbuilding, characters, UI/UX, and design scope. Technical implementation, architecture, code standards, and engine details belong in [Technical GDD](/GDD_Technical.html).
+This hub owns the creative and player-facing design of Extraction: game loops, player experience, art direction, audio, worldbuilding, characters, UI/UX, and design scope. Technical implementation, architecture, code standards, and engine details belong in [Technical GDD](/gdd_technical/index.html).
 
 Use this page as the entry point for design intent and navigation. Deep specifications live in the linked section pages.
 
 ## Start Here
 
 {{< cards cols="3" >}}
-{{< card link="/GDD_Design/GameDesign/Overview.html" title="Design Overview" icon="light-bulb" subtitle="Game concept, pillars, target audience, market positioning, and competitive context." >}}
-{{< card link="/GDD_Design/GameDesign/CoreGameplay.html" title="Core Gameplay" icon="refresh" subtitle="Primary gameplay loop, raid phases, player psychology, and session flow." >}}
-{{< card link="/GDD_Design/ProjectScope/MVP.html" title="MVP Scope" icon="flag" subtitle="Current feature boundaries, launch requirements, and scope guardrails." >}}
+{{< card link="/gdd_design/gamedesign/overview/index.html" title="Design Overview" icon="light-bulb" subtitle="Game concept, pillars, target audience, market positioning, and competitive context." >}}
+{{< card link="/gdd_design/gamedesign/coregameplay/index.html" title="Core Gameplay" icon="refresh" subtitle="Primary gameplay loop, raid phases, player psychology, and session flow." >}}
+{{< card link="/gdd_design/projectscope/mvp/index.html" title="MVP Scope" icon="flag" subtitle="Current feature boundaries, launch requirements, and scope guardrails." >}}
 {{< /cards >}}
 
 ## Design Domains
@@ -58,11 +58,11 @@ Use this page as the entry point for design intent and navigation. Deep specific
 
 | Role | Primary Use | Start With |
 | --- | --- | --- |
-| Game Designer | Define mechanics, balance, progression, and player-facing systems. | [Overview](/GDD_Design/GameDesign/Overview.html), [Core Gameplay](/GDD_Design/GameDesign/CoreGameplay.html) |
-| Artist | Align assets with visual style, character identity, environments, and UI tone. | [Visual Design](/GDD_Design/Visuals.html), [Characters](/GDD_Design/Characters.html), [World Design](/GDD_Design/World.html) |
-| Level Designer | Build maps around extraction flow, loot pressure, routes, and encounter pacing. | [World Design](/GDD_Design/World.html), [Core Gameplay](/GDD_Design/GameDesign/CoreGameplay.html) |
-| Audio Designer | Match audio cues to tactical needs, ambience, feedback, and narrative tone. | [Audio Design](/GDD_Design/Audio.html), [Core Gameplay](/GDD_Design/GameDesign/CoreGameplay.html) |
-| UI/UX Designer | Shape player flows, controls, menus, HUD, accessibility, and feedback systems. | [UI/UX](/GDD_Design/UI_UX.html), [Controls](/GDD_Design/GameDesign/Controls.html) |
+| Game Designer | Define mechanics, balance, progression, and player-facing systems. | [Overview](/gdd_design/gamedesign/overview/index.html), [Core Gameplay](/gdd_design/gamedesign/coregameplay/index.html) |
+| Artist | Align assets with visual style, character identity, environments, and UI tone. | [Visual Design](/gdd_design/visuals/index.html), [Characters](/gdd_design/characters/index.html), [World Design](/gdd_design/world/index.html) |
+| Level Designer | Build maps around extraction flow, loot pressure, routes, and encounter pacing. | [World Design](/gdd_design/world/index.html), [Core Gameplay](/gdd_design/gamedesign/coregameplay/index.html) |
+| Audio Designer | Match audio cues to tactical needs, ambience, feedback, and narrative tone. | [Audio Design](/gdd_design/audio/index.html), [Core Gameplay](/gdd_design/gamedesign/coregameplay/index.html) |
+| UI/UX Designer | Shape player flows, controls, menus, HUD, accessibility, and feedback systems. | [UI/UX](/gdd_design/ui_ux/index.html), [Controls](/gdd_design/gamedesign/controls/index.html) |
 
 ## Design Principles
 
@@ -87,4 +87,4 @@ Use this page as the entry point for design intent and navigation. Deep specific
 
 ## Maintenance
 
-Use [Project Scope](/GDD_Design/ProjectScope.html) for current boundaries, MVP decisions, risks, and non-goals. Historical documentation changes are tracked in [Update Log](/GDD_Design/UpdateLog.html).
+Use [Project Scope](/gdd_design/projectscope/index.html) for current boundaries, MVP decisions, risks, and non-goals. Historical documentation changes are tracked in [Update Log](/gdd_design/updatelog/index.html).

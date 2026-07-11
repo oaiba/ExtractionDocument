@@ -6,13 +6,13 @@ weight: 3
 
 ## Overview
 
-This document defines **movement and ergonomics penalties** and **audio penalties** for armor. These values drive gameplay feel and the trade-off between protection and mobility. For class and zone definitions see [Armor & Ballistics](Armor.md); for balance context see [Armor Balance Framework](Armor_Balance_Framework.md).
+This document defines **movement and ergonomics penalties** and **audio penalties** for armor. These values drive gameplay feel and the trade-off between protection and mobility. For class and zone definitions see [Armor & Ballistics](armor/index.html); for balance context see [Armor Balance Framework](armor_balance_framework/index.html).
 
 ---
 
 ## Movement Penalties (Per Item)
 
-Penalties apply in addition to **total weight tier** (see [Gear Mechanics](../../Gameplay/Gear_Mechanics.md)). Values are per-piece for body armor; helmet penalties stack.
+Penalties apply in addition to **total weight tier** (see [Gear Mechanics](../../gameplay/gear_mechanics/index.html)). Values are per-piece for body armor; helmet penalties stack.
 
 
 | Armor example | Class | Base move penalty | Sprint penalty | Turn speed | ADS speed |
@@ -36,7 +36,7 @@ Penalties apply in addition to **total weight tier** (see [Gear Mechanics](../..
 - **Arm stamina drain** while ADSing increases as EffectiveErgo drops.
 - **Weapon sway** (e.g. when standing or moving) worsens with lower EffectiveErgo.
 
-Armor ergo penalties are per [Armor Master Database](Armor_Master_Database.md) (Ergo column). Heavy vests (Class 5–6) typically apply −18 to −25; light vests (Class 1–2) −3 to −4. Helmets add roughly −2 to −8 depending on coverage and weight.
+Armor ergo penalties are per [Armor Master Database](armor_master_database/index.html) (Ergo column). Heavy vests (Class 5–6) typically apply −18 to −25; light vests (Class 1–2) −3 to −4. Helmets add roughly −2 to −8 depending on coverage and weight.
 
 ---
 
@@ -62,7 +62,7 @@ In top-down view, **rotation speed** (turning the character to face a direction)
 
 ## Cross-References
 
-- [Armor & Ballistics](Armor.md) — Class and zones.
-- [Armor Master Database](Armor_Master_Database.md) — Per-item weight and ergo.
-- [Gear Mechanics](../../Gameplay/Gear_Mechanics.md) — Weight tiers, inertia, loadout examples.
-- [Movement & Stamina](../../Gameplay/Movement_and_Stamina.md) — Speed and stamina numbers.
+- [Armor & Ballistics](armor/index.html) — Class and zones.
+- [Armor Master Database](armor_master_database/index.html) — Per-item weight and ergo.
+- [Gear Mechanics](../../gameplay/gear_mechanics/index.html) — Weight tiers, inertia, loadout examples.
+- [Movement & Stamina](../../gameplay/movement_and_stamina/index.html) — Speed and stamina numbers.

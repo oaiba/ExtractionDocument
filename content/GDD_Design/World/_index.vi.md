@@ -24,9 +24,9 @@ Trong extraction shooter, hiểu biết về map là skill ceiling cao nhất. L
 #### Core Maps & Zones
 
 {{< cards cols="3" >}}
-{{< card link="mapdesign_industrialzone.html" title="Industrial Zone" icon="cog" subtitle="Tập trung CQC. Nhà máy nhiều tầng. Mật độ loot cao." >}}
-{{< card link="mapdesign_neonslums.html" title="Neon Slums" icon="office-building" subtitle="Urban warfare. Hẻm hẹp và rooftop." >}}
-{{< card link="mapdesign_wilderness.html" title="The Wilderness" icon="cloud" subtitle="Tầm xa. Rừng và đồng mở." >}}
+{{< card link="mapdesign_industrialzone/index.html" title="Industrial Zone" icon="cog" subtitle="Tập trung CQC. Nhà máy nhiều tầng. Mật độ loot cao." >}}
+{{< card link="mapdesign_neonslums/index.html" title="Neon Slums" icon="office-building" subtitle="Urban warfare. Hẻm hẹp và rooftop." >}}
+{{< card link="mapdesign_wilderness/index.html" title="The Wilderness" icon="cloud" subtitle="Tầm xa. Rừng và đồng mở." >}}
 {{< /cards >}}
 
 ***
@@ -34,8 +34,8 @@ Trong extraction shooter, hiểu biết về map là skill ceiling cao nhất. L
 #### Systems & Mechanics
 
 {{< cards cols="2" >}}
-{{< card link="lootdistribution.html" title="Loot Economy" icon="gift" subtitle="Spawning logic, container type, và heatmap." >}}
-{{< card link="maplayouts.html" title="Blueprints" icon="map" subtitle="Top-down view và tactical overlay." >}}
-{{< card link="environmentalnarrative.html" title="Storytelling" icon="book-open" subtitle="Kể chuyện không dùng lời." >}}
-{{< card link="environmentalnarrative_guidelines.html" title="Level Art Rules" icon="pencil" subtitle="Quy tắc đặt prop và decal." >}}
+{{< card link="lootdistribution/index.html" title="Loot Economy" icon="gift" subtitle="Spawning logic, container type, và heatmap." >}}
+{{< card link="maplayouts/index.html" title="Blueprints" icon="map" subtitle="Top-down view và tactical overlay." >}}
+{{< card link="environmentalnarrative/index.html" title="Storytelling" icon="book-open" subtitle="Kể chuyện không dùng lời." >}}
+{{< card link="environmentalnarrative_guidelines/index.html" title="Level Art Rules" icon="pencil" subtitle="Quy tắc đặt prop và decal." >}}
 {{< /cards >}}

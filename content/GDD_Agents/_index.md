@@ -21,8 +21,8 @@ This section provides **rules, workflows, skills, and knowledge references** for
 
 Mandatory constraints and standards that agents must follow in every interaction.
 
-* [**Code Generation Rules**](Rules/CodeGeneration.md) — C++ code generation constraints, UE5 patterns, UPROPERTY/UFUNCTION usage
-* [**Documentation Standards**](Rules/DocumentationStandards.md) — Markdown formatting, GDD structure, language, and image placeholders
+* [**Code Generation Rules**](rules/codegeneration/index.html) — C++ code generation constraints, UE5 patterns, UPROPERTY/UFUNCTION usage
+* [**Documentation Standards**](rules/documentationstandards/index.html) — Markdown formatting, GDD structure, language, and image placeholders
 
 ***
 
@@ -30,8 +30,8 @@ Mandatory constraints and standards that agents must follow in every interaction
 
 Step-by-step procedures for common development tasks.
 
-* [**Feature Implementation**](Workflows/FeatureImplementation.md) — End-to-end workflow for adding a new gameplay feature
-* [**Bug Fix Workflow**](Workflows/BugFix.md) — Systematic approach to diagnosing and fixing bugs
+* [**Feature Implementation**](workflows/featureimplementation/index.html) — End-to-end workflow for adding a new gameplay feature
+* [**Bug Fix Workflow**](workflows/bugfix/index.html) — Systematic approach to diagnosing and fixing bugs
 
 ***
 
@@ -39,7 +39,7 @@ Step-by-step procedures for common development tasks.
 
 Specialized competencies and UE5-specific knowledge for agents.
 
-* [**Unreal Engine Skills**](Skills/UnrealEngine.md) — UE5-specific patterns, GAS, Enhanced Input, replication, UMG
+* [**Unreal Engine Skills**](skills/unrealengine/index.html) — UE5-specific patterns, GAS, Enhanced Input, replication, UMG
 
 ***
 
@@ -47,7 +47,7 @@ Specialized competencies and UE5-specific knowledge for agents.
 
 Reference documentation and key links for research.
 
-* [**Source References**](Knowledge/SourceReferences.md) — Official docs, style guides, GDC talks, and community resources
+* [**Source References**](knowledge/sourcereferences/index.html) — Official docs, style guides, GDC talks, and community resources
 
 ***
 
@@ -57,7 +57,7 @@ Agents **must** read and follow these documents before generating any code or do
 
 | Document                     | Path                                                               | Priority  |
 | ---------------------------- | ------------------------------------------------------------------ | --------- |
-| **Coding & Asset Standards** | [CodingStandards.md](../GDD_Technical/CodingStandards.md)          | CRITICAL  |
+| **Coding & Asset Standards** | [CodingStandards.md](../gdd_technical/codingstandards/index.html)          | CRITICAL  |
 | **GDD Documentation Guide**  | [GDD\_Documentation\_Guide.md](/broken/pages/TB2kA98NBUMqvdPpAsVj) | HIGH      |
-| **GDD Technical Index**      | [GDD\_Technical/\_index.md](../GDD_Technical/_index.md)            | HIGH      |
-| **GDD Design Index**         | [GDD\_Design/\_index.md](../GDD_Design/_index.md)                  | REFERENCE |
+| **GDD Technical Index**      | [GDD\_Technical/\_index.md](../gdd_technical/_index/index.html)            | HIGH      |
+| **GDD Design Index**         | [GDD\_Design/\_index.md](../gdd_design/_index/index.html)                  | REFERENCE |

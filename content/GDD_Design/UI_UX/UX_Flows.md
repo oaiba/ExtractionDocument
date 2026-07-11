@@ -8,12 +8,12 @@ weight: 22
 
 | Destination | Use |
 | :--- | :--- |
-| [UI/UX Index](_index.md) | Full UI/UX documentation hub |
-| [Screen Groups Overview](Screen_Groups_Overview.md) | Lifecycle taxonomy and designer-ready spec template |
-| [Global UX Standards](Global_UX_Standards.md) | Shared navigation, focus, state, modal, and accessibility rules |
-| [Out-of-Raid Screens](Out_Of_Raid_Screens.md) | Home, loadout, stash, quests, profile |
-| [Pre-Raid Screens](Pre_Raid_Screens.md) | Mode/map/deploy/squad/matchmaking flow |
-| [Post-Raid Screens](Post_Raid_Screens.md) | Result, loot, replay, redeploy flow |
+| [UI/UX Index](_index/index.html) | Full UI/UX documentation hub |
+| [Screen Groups Overview](screen_groups_overview/index.html) | Lifecycle taxonomy and designer-ready spec template |
+| [Global UX Standards](global_ux_standards/index.html) | Shared navigation, focus, state, modal, and accessibility rules |
+| [Out-of-Raid Screens](out_of_raid_screens/index.html) | Home, loadout, stash, quests, profile |
+| [Pre-Raid Screens](pre_raid_screens/index.html) | Mode/map/deploy/squad/matchmaking flow |
+| [Post-Raid Screens](post_raid_screens/index.html) | Result, loot, replay, redeploy flow |
 
 ---
 
@@ -63,7 +63,7 @@ graph TD
     L6 --> MainMenu
 ```
 
-**Loading nodes (L1–L8):** See [Loading Screen Design](LoadingScreen_Design.md) for full taxonomy. L7 (Map Transition) and L8 (Reconnect) apply to multi-zone raids and disconnect recovery respectively.
+**Loading nodes (L1–L8):** See [Loading Screen Design](loadingscreen_design/index.html) for full taxonomy. L7 (Map Transition) and L8 (Reconnect) apply to multi-zone raids and disconnect recovery respectively.
 
 <!-- REF_IMAGE: Player session flow diagram — full-color version of the mermaid chart above with visual polish and game-specific artwork -->
 
@@ -491,15 +491,15 @@ Use this page to understand journey order and transition intent. Use the linked 
 
 | Flow | Canonical Detail Page | Designer Check |
 | :--- | :--- | :--- |
-| Boot to Home | [Settings & System Screens](Commerce_Settings_System_Screens.md), [Loading Screen Design](LoadingScreen_Design.md) | loading/account errors and setup states are explicit |
-| Home to Queue | [Out-of-Raid Screens](Out_Of_Raid_Screens.md), [Pre-Raid Screens](Pre_Raid_Screens.md) | deploy blockers and risk confirmation are preserved |
-| Queue to Raid | [Pre-Raid Screens](Pre_Raid_Screens.md), [Loading Screen Design](LoadingScreen_Design.md) | match found, cancel lock, and L4 loading states align |
-| In-Raid Action | [HUD Design](HUD_Design.md), [In-Raid Screens](In_Raid_Screens.md), [Notification Systems](Notification_Systems.md) | overlays preserve combat readability and audio awareness |
-| Raid to Results | [Post-Raid Screens](Post_Raid_Screens.md), [Loading Screen Design](LoadingScreen_Design.md) | outcome, loot, replay, and redeploy validation are clear |
-| Social Coordination | [Social Screens](Social_Screens.md) | invite, voice, privacy, and safety states are respected |
-| LiveOps Progression | [Progression & LiveOps Screens](Progression_LiveOps_Screens.md) | rewards, expiry, premium/free, and claim blockers are visible |
-| Commerce Purchase | [Commerce Screens](Commerce_Screens.md), [Progression & LiveOps Screens](Progression_LiveOps_Screens.md) | offer, preview, price, confirmation, receipt, and upgrade routes are explicit |
-| Settings Recovery | [Settings & System Screens](Commerce_Settings_System_Screens.md), [Global UX Standards](Global_UX_Standards.md) | apply/revert, locks, errors, and support routes are explicit |
+| Boot to Home | [Settings & System Screens](commerce_settings_system_screens/index.html), [Loading Screen Design](loadingscreen_design/index.html) | loading/account errors and setup states are explicit |
+| Home to Queue | [Out-of-Raid Screens](out_of_raid_screens/index.html), [Pre-Raid Screens](pre_raid_screens/index.html) | deploy blockers and risk confirmation are preserved |
+| Queue to Raid | [Pre-Raid Screens](pre_raid_screens/index.html), [Loading Screen Design](loadingscreen_design/index.html) | match found, cancel lock, and L4 loading states align |
+| In-Raid Action | [HUD Design](hud_design/index.html), [In-Raid Screens](in_raid_screens/index.html), [Notification Systems](notification_systems/index.html) | overlays preserve combat readability and audio awareness |
+| Raid to Results | [Post-Raid Screens](post_raid_screens/index.html), [Loading Screen Design](loadingscreen_design/index.html) | outcome, loot, replay, and redeploy validation are clear |
+| Social Coordination | [Social Screens](social_screens/index.html) | invite, voice, privacy, and safety states are respected |
+| LiveOps Progression | [Progression & LiveOps Screens](progression_liveops_screens/index.html) | rewards, expiry, premium/free, and claim blockers are visible |
+| Commerce Purchase | [Commerce Screens](commerce_screens/index.html), [Progression & LiveOps Screens](progression_liveops_screens/index.html) | offer, preview, price, confirmation, receipt, and upgrade routes are explicit |
+| Settings Recovery | [Settings & System Screens](commerce_settings_system_screens/index.html), [Global UX Standards](global_ux_standards/index.html) | apply/revert, locks, errors, and support routes are explicit |
 
 ### Commerce Purchase Journey
 

@@ -28,5 +28,5 @@ Extraction shooter sống nhờ tương tác giữa người chơi. Nó không c
 - **Loot Sharing:** Không có roll "need/greed". Thả xuống đất - economy dựa trên niềm tin.
 
 {{< cards >}}
-  {{< card link="multiplayer.html" title="Multiplayer Systems" icon="users" subtitle="Squad, matchmaking, karma, communication, emote, LFG, và social hub." >}}
+  {{< card link="multiplayer/index.html" title="Multiplayer Systems" icon="users" subtitle="Squad, matchmaking, karma, communication, emote, LFG, và social hub." >}}
 {{< /cards >}}

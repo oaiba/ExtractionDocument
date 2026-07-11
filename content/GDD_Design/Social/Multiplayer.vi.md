@@ -648,7 +648,7 @@ Weekly objectives that all clan members contribute toward collectively:
 
 ### Hub Overview
 
-The **Safe House** is a personal instanced space that serves as the người chơi's home base. It can also be opened to friends for **social visits**. Full specification: [Safe House Design](../GameDesign/Safe_House_Design.md).
+The **Safe House** is a personal instanced space that serves as the người chơi's home base. It can also be opened to friends for **social visits**. Full specification: [Safe House Design](../gamedesign/safe_house_design/index.html).
 
 **Functions:**
 | Area              | Function                                              |

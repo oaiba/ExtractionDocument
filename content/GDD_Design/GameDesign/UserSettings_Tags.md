@@ -6,7 +6,7 @@ weight: 19
 
 ## Overview
 
-This page lists technical setting keys used by design and engineering. The UX owner is [User Settings](usersettings.html), and the player-facing option matrix is [Settings Matrix](usersettings_matrix.html).
+This page lists technical setting keys used by design and engineering. The UX owner is [User Settings](usersettings/index.html), and the player-facing option matrix is [Settings Matrix](usersettings_matrix/index.html).
 
 ## Tag Reference
 

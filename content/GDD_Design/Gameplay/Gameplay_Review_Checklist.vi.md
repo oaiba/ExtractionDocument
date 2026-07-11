@@ -68,12 +68,12 @@ This tài liệu supports the review và re-planning of Gameplay cơ chế for t
 
 ### 4. Cross-References
 
-* [cốt lõi Gameplay Loop](CoreLoop.md) — Session length & pacing, extraction flow.
+* [cốt lõi Gameplay Loop](coreloop/index.html) — Session length & pacing, extraction flow.
 * [Design Pillars](https://github.com/oaiba/ExtractionDocument/blob/main/content/ProjectScope/design-pillars-enhanced.md) — Genre pillars, our positioning, target session.
 * [Controls](https://github.com/oaiba/ExtractionDocument/blob/main/content/GameDesign/Controls.md) — Input và UX by platform (PC, Mobile, Console).
 * [Competitive Analysis](https://github.com/oaiba/ExtractionDocument/blob/main/content/Inventory_System/Competitive_Analysis_Inventory.md) — Market và competitor cơ chế.
-* [Camera hệ thống](Camera_System.md) — Top-down camera design, altitude, FOV.
-* [AI địch Behavior](AI_Enemy_Behavior.md) — địch types, detection, bosses, Scav karma.
-* [Matchmaking & Lobby](Matchmaking_Lobby.md) — Queue, squad, reconnect.
-* [Hydration & Energy](Hydration_Energy.md) — Survival resource bars.
-* [Safe House Design](../GameDesign/Safe_House_Design.md) — Module tree, passive income.
+* [Camera hệ thống](camera_system/index.html) — Top-down camera design, altitude, FOV.
+* [AI địch Behavior](ai_enemy_behavior/index.html) — địch types, detection, bosses, Scav karma.
+* [Matchmaking & Lobby](matchmaking_lobby/index.html) — Queue, squad, reconnect.
+* [Hydration & Energy](hydration_energy/index.html) — Survival resource bars.
+* [Safe House Design](../gamedesign/safe_house_design/index.html) — Module tree, passive income.

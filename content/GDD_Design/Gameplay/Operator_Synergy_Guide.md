@@ -8,7 +8,7 @@ weight: 22
 
 This document defines how the 10 operators interact with each other — both within a squad (**synergies**) and against opponents (**counters**). A deep synergy and counter system is the foundation of a meta-game that stays fresh across seasons. Players should be able to say "I want to try Hawk + Ghost + Glitch combo" and have that feel meaningfully different from "Mamba + Bastion + Fuse."
 
-> **Cross-References:** [Hero Abilities](Hero_Abilities.md) — full ability specs for all 10 operators; [Downstate & Revive](Downstate_Revive.md) — Ghost's Field Medic revive mechanic; [LOS, Fog & Visibility](LOS_Fog_Visibility.md) — Hawk/Glitch vision abilities referenced throughout; [Combat Feel](Combat_Feel_Topdown.md) — suppression, aim cone interactions with abilities.
+> **Cross-References:** [Hero Abilities](hero_abilities/index.html) — full ability specs for all 10 operators; [Downstate & Revive](downstate_revive/index.html) — Ghost's Field Medic revive mechanic; [LOS, Fog & Visibility](los_fog_visibility/index.html) — Hawk/Glitch vision abilities referenced throughout; [Combat Feel](combat_feel_topdown/index.html) — suppression, aim cone interactions with abilities.
 
 ---
 
@@ -199,9 +199,9 @@ To prevent meta lock-in:
 
 ## Cross-References
 
-- [Hero Abilities](Hero_Abilities.md) — Full ability specs with cooldowns, ranges, and counterplay for all 10 operators.
-- [Downstate & Revive](Downstate_Revive.md) — Ghost's Field Medic revive mechanic; escalating bleedout.
-- [Combat Feel (Top-Down)](Combat_Feel_Topdown.md) — Suppression, aim cone interactions with abilities.
-- [LOS, Fog & Visibility](LOS_Fog_Visibility.md) — Hawk drone LOS, Glitch overlay, Obsidian Phase Shift shimmer.
-- [Extraction Mechanics](Extraction_Mechanics.md) — Bastion + Fuse extraction fortification interaction rules.
-- [AI Enemy Behavior](AI_Enemy_Behavior.md) — Boss fights: which operator combos best handle each boss.
+- [Hero Abilities](hero_abilities/index.html) — Full ability specs with cooldowns, ranges, and counterplay for all 10 operators.
+- [Downstate & Revive](downstate_revive/index.html) — Ghost's Field Medic revive mechanic; escalating bleedout.
+- [Combat Feel (Top-Down)](combat_feel_topdown/index.html) — Suppression, aim cone interactions with abilities.
+- [LOS, Fog & Visibility](los_fog_visibility/index.html) — Hawk drone LOS, Glitch overlay, Obsidian Phase Shift shimmer.
+- [Extraction Mechanics](extraction_mechanics/index.html) — Bastion + Fuse extraction fortification interaction rules.
+- [AI Enemy Behavior](ai_enemy_behavior/index.html) — Boss fights: which operator combos best handle each boss.

@@ -14,23 +14,23 @@ Primary references:
 
 | System | Source |
 | :--- | :--- |
-| Home hub | [Home Screen & Main Lobby Design](../GameDesign/HomeScreen_Design.md) |
-| Loadout preparation | [Pre-Raid Loadout & Preparation Screen](../GameDesign/LoadoutPreparation.md) |
-| Safe House | [Safe House Design](../GameDesign/Safe_House_Design.md) |
-| Stash | [Stash Design](../Stash_Design.md) |
-| Profile | [Player Profile & Career Stats](../GameDesign/PlayerProfile.md) |
-| Quests | [Quest & Objective System](../Gameplay/Quest_Objective_System.md) |
+| Home hub | [Home Screen & Main Lobby Design](../gamedesign/homescreen_design/index.html) |
+| Loadout preparation | [Pre-Raid Loadout & Preparation Screen](../gamedesign/loadoutpreparation/index.html) |
+| Safe House | [Safe House Design](../gamedesign/safe_house_design/index.html) |
+| Stash | [Stash Design](../stash_design/index.html) |
+| Profile | [Player Profile & Career Stats](../gamedesign/playerprofile/index.html) |
+| Quests | [Quest & Objective System](../gameplay/quest_objective_system/index.html) |
 
 ## Quick Navigation
 
 | Destination | Use |
 | :--- | :--- |
-| [UI/UX Index](_index.md) | Full UI/UX documentation hub |
-| [Screen Groups Overview](Screen_Groups_Overview.md) | Lifecycle taxonomy and designer-ready spec template |
-| [Global UX Standards](Global_UX_Standards.md) | Shared navigation, focus, state, modal, and accessibility rules |
-| [Pre-Raid Screens](Pre_Raid_Screens.md) | Mode, map, deploy confirmation, squad lobby, matchmaking |
-| [Post-Raid Screens](Post_Raid_Screens.md) | AAR, death replay, loot transfer, redeploy |
-| [UX Flows](UX_Flows.md) | End-to-end journey mapping |
+| [UI/UX Index](_index/index.html) | Full UI/UX documentation hub |
+| [Screen Groups Overview](screen_groups_overview/index.html) | Lifecycle taxonomy and designer-ready spec template |
+| [Global UX Standards](global_ux_standards/index.html) | Shared navigation, focus, state, modal, and accessibility rules |
+| [Pre-Raid Screens](pre_raid_screens/index.html) | Mode, map, deploy confirmation, squad lobby, matchmaking |
+| [Post-Raid Screens](post_raid_screens/index.html) | AAR, death replay, loot transfer, redeploy |
+| [UX Flows](ux_flows/index.html) | End-to-end journey mapping |
 
 ---
 
@@ -276,7 +276,7 @@ Focus order: roster, selected preview, ability panel, squad fit, action bar.
 
 ## Loadout Workbench
 
-The detailed preparation rules live in [Loadout Preparation](../GameDesign/LoadoutPreparation.md). This UI group owns the screen state contract and platform layout.
+The detailed preparation rules live in [Loadout Preparation](../gamedesign/loadoutpreparation/index.html). This UI group owns the screen state contract and platform layout.
 
 **Player Intent**
 

@@ -101,7 +101,7 @@ A teammate pings rare loot và then changes their mind. The ping nên được c
 
 | Topic | trang |
 | :--- | :--- |
-| Map rules | [Map Design](mapdesign.html) |
-| Communication và pings | [Communication](communication.html) |
-| Controls | [Controls](controls.html) |
-| Accessibility alternatives | [Accessibility](accessibility.html) |
+| Map rules | [Map Design](mapdesign/index.html) |
+| Communication và pings | [Communication](communication/index.html) |
+| Controls | [Controls](controls/index.html) |
+| Accessibility alternatives | [Accessibility](accessibility/index.html) |

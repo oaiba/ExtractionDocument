@@ -6,7 +6,7 @@ weight: 2
 
 ## Overview
 
-This document defines **per-rig grid layouts**, the **reload-from-rig rule**, **hotkey mapping** (PC and mobile), and **secure container** access. Full item list: [Storage Master Database](Storage_Master_Database.md).
+This document defines **per-rig grid layouts**, the **reload-from-rig rule**, **hotkey mapping** (PC and mobile), and **secure container** access. Full item list: [Storage Master Database](storage_master_database/index.html).
 
 ---
 
@@ -15,7 +15,7 @@ This document defines **per-rig grid layouts**, the **reload-from-rig rule**, **
 A container is made of **one or more subgrids**. Each subgrid has dimensions (W×H) and optional **slot-type constraints** (e.g. 1×1 only, or allows 1×2, 2×2).
 
 - **Placement:** An item can be placed only if it **fits in at least one subgrid** — i.e. the item’s width and height do not exceed that subgrid’s W and H, and the subgrid’s slot-type rules allow that item size (e.g. 1×2 mag in a subgrid that allows 1×2).
-- **Hotkey:** Hotkeys are assigned only to cells in **quick-access subgrids** (e.g. rig: mag pouch and utility subgrids = hotkey; main compartment may have no hotkey or hotkey in a second row). Which subgrids are “quick access” is per container in [Storage Master Database](Storage_Master_Database.md).
+- **Hotkey:** Hotkeys are assigned only to cells in **quick-access subgrids** (e.g. rig: mag pouch and utility subgrids = hotkey; main compartment may have no hotkey or hotkey in a second row). Which subgrids are “quick access” is per container in [Storage Master Database](storage_master_database/index.html).
 
 ---
 
@@ -29,7 +29,7 @@ A container is made of **one or more subgrids**. Each subgrid has dimensions (W�
 
 ## Rig Slot Layouts (Examples)
 
-Layouts are defined by **subgrids**; each subgrid has W×H and optional slot-type (1×1, 1×2, 2×2, 1×3). **Total capacity = sum of all subgrid cells.** Hotkey slots map to quick-access subgrids (see [Storage Master Database](Storage_Master_Database.md)).
+Layouts are defined by **subgrids**; each subgrid has W×H and optional slot-type (1×1, 1×2, 2×2, 1×3). **Total capacity = sum of all subgrid cells.** Hotkey slots map to quick-access subgrids (see [Storage Master Database](storage_master_database/index.html)).
 
 ### Standard Rig — Total capacity 9 cells
 
@@ -65,7 +65,7 @@ Hotkey: 6 slots — e.g. top row (4) + first two 1×2 (2)
 
 **Total capacity = 12 cells.** Reload can be from any rig cell (or, as a design option, restricted to a dedicated “Mag Pouch” subgrid when the rig has one).
 
-Exact layout per rig (Chest Harness, Light, Recon, Assault, Heavy, Blackrock, each armored rig) is in [Storage Master Database](Storage_Master_Database.md); the above illustrates the subgrid pattern. Slot type (1×1, 1×2, 2×2, 1×3) determines what items can be placed (e.g. 1×2 = standard mags, 2×2 = drum mag or large med).
+Exact layout per rig (Chest Harness, Light, Recon, Assault, Heavy, Blackrock, each armored rig) is in [Storage Master Database](storage_master_database/index.html); the above illustrates the subgrid pattern. Slot type (1×1, 1×2, 2×2, 1×3) determines what items can be placed (e.g. 1×2 = standard mags, 2×2 = drum mag or large med).
 
 ---
 
@@ -79,7 +79,7 @@ Exact layout per rig (Chest Harness, Light, Recon, Assault, Heavy, Blackrock, ea
 | Rig slots 4–6 | 7–9 or 0 | Quick slots 4–6 | per cell | Mags, meds, nades |
 | Pockets 1–4 | 7–0 (configurable) | Quick slots 7+ | 1×1 | Keys, pills, cash |
 
-Number of hotkey slots depends on the rig (see [Storage Master Database](Storage_Master_Database.md)). Same cooldown/animation on PC and mobile for parity.
+Number of hotkey slots depends on the rig (see [Storage Master Database](storage_master_database/index.html)). Same cooldown/animation on PC and mobile for parity.
 
 ---
 
@@ -93,6 +93,6 @@ Number of hotkey slots depends on the rig (see [Storage Master Database](Storage
 
 ## Cross-References
 
-- [Storage Master Database](Storage_Master_Database.md) — Rig list, slot counts, hotkey slots.
-- [Gear Mechanics](../../Gameplay/Gear_Mechanics.md) — Quick-access vs grid-access table, access times.
-- [Looting & Inventory](../../Gameplay/Looting_Interactions.md) — Grid dimensions, container interaction flow.
+- [Storage Master Database](storage_master_database/index.html) — Rig list, slot counts, hotkey slots.
+- [Gear Mechanics](../../gameplay/gear_mechanics/index.html) — Quick-access vs grid-access table, access times.
+- [Looting & Inventory](../../gameplay/looting_interactions/index.html) — Grid dimensions, container interaction flow.

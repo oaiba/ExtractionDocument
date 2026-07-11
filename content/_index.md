@@ -24,9 +24,9 @@ This is the central repository and gateway for all documentation related to the 
 Use these entry points when you need to move quickly between planning, design intent, and implementation details.
 
 {{< cards cols="3" >}}
-{{< card link="/Tracker.html" title="Project Tracker" icon="clipboard-list" subtitle="Milestones, phase planning, sprint notes, and project coordination." >}}
-{{< card link="/Tracker/Tasks.html" title="Tasks & Milestones" icon="flag" subtitle="Phase-by-phase roadmap from core prototype through launch." >}}
-{{< card link="/GDD_Design/ProjectScope/MVP.html" title="MVP Scope" icon="sparkles" subtitle="Launch boundaries, required features, non-goals, and risk framing." >}}
+{{< card link="/tracker/index.html" title="Project Tracker" icon="clipboard-list" subtitle="Milestones, phase planning, sprint notes, and project coordination." >}}
+{{< card link="/tracker/tasks/index.html" title="Tasks & Milestones" icon="flag" subtitle="Phase-by-phase roadmap from core prototype through launch." >}}
+{{< card link="/gdd_design/projectscope/mvp/index.html" title="MVP Scope" icon="sparkles" subtitle="Launch boundaries, required features, non-goals, and risk framing." >}}
 {{< /cards >}}
 
 ## Documentation Hubs
@@ -39,16 +39,16 @@ Access the specialized documentation portals based on your role and current task
 {{< /cards >}}
 
 {{< cards cols="2" >}}
-{{< card link="/Tracker.html" title="Project Tracker" icon="clipboard-list" subtitle="Milestones, tasks, delivery phases, and production planning." >}}
+{{< card link="/tracker/index.html" title="Project Tracker" icon="clipboard-list" subtitle="Milestones, tasks, delivery phases, and production planning." >}}
 {{< card link="/GDD_Agents" title="AI Agent Guidelines" icon="chip" subtitle="Rules, workflows, and skills for AI coding agents." >}}
 {{< /cards >}}
 
 ## Project Scope & Progress
 
 {{< cards cols="3" >}}
-{{< card link="/GDD_Design/ProjectScope/MVP.html" title="MVP Definition" icon="flag" subtitle="Minimum Viable Product features and scope boundaries." >}}
-{{< card link="/GDD_Design/ProjectScope/NonGoals.html" title="Non-Goals" icon="x-circle" subtitle="Features explicitly out of current scope." >}}
-{{< card link="/GDD_Design/ProjectScope/Risks.html" title="Risk Assessment" icon="exclamation-circle" subtitle="Known challenges and mitigation strategies." >}}
+{{< card link="/gdd_design/projectscope/mvp/index.html" title="MVP Definition" icon="flag" subtitle="Minimum Viable Product features and scope boundaries." >}}
+{{< card link="/gdd_design/projectscope/nongoals/index.html" title="Non-Goals" icon="x-circle" subtitle="Features explicitly out of current scope." >}}
+{{< card link="/gdd_design/projectscope/risks/index.html" title="Risk Assessment" icon="exclamation-circle" subtitle="Known challenges and mitigation strategies." >}}
 {{< /cards >}}
 
 ### Recent Milestones
@@ -64,32 +64,32 @@ Access the specialized documentation portals based on your role and current task
 ### For Design & Art Teams
 
 * **Single Source of Truth**: Start from the [Design Hub](/GDD_Design) before creative work.
-* **Visual Consistency**: Follow the [Style Guide](/GDD_Design/Visuals/StyleGuide.html) for cross-platform fidelity.
-* **Core Loop**: Keep the [Core Gameplay](/GDD_Design/GameDesign/CoreGameplay.html) aligned with mechanic changes.
-* **Asset Submission**: Use [Asset Guidelines](/GDD_Design/Visuals/AssetGuidelines.html) for UE5-ready specs.
+* **Visual Consistency**: Follow the [Style Guide](/gdd_design/visuals/styleguide/index.html) for cross-platform fidelity.
+* **Core Loop**: Keep the [Core Gameplay](/gdd_design/gamedesign/coregameplay/index.html) aligned with mechanic changes.
+* **Asset Submission**: Use [Asset Guidelines](/gdd_design/visuals/assetguidelines/index.html) for UE5-ready specs.
 
 ### For Technical & Dev Teams
 
 * **Implementation Specs**: Systems architecture and engineering notes live in the [Technical Hub](/GDD_Technical).
-* **Performance First**: Adhere to [Performance Budgets](/GDD_Technical/Performance/Budgets.html).
-* **Task Management**: Follow the [Development Roadmap](/GDD_Technical/Core/DevelopmentRoadmap.html) and [Tasks & Milestones](/Tracker/Tasks.html).
-* **Code Standards**: Maintain modularity per [Architecture](/GDD_Technical/Core/Architecture.html).
+* **Performance First**: Adhere to [Performance Budgets](/gdd_technical/performance/budgets/index.html).
+* **Task Management**: Follow the [Development Roadmap](/gdd_technical/core/developmentroadmap/index.html) and [Tasks & Milestones](/tracker/tasks/index.html).
+* **Code Standards**: Maintain modularity per [Architecture](/gdd_technical/core/architecture/index.html).
 
 ## Quick Navigation
 
 ### New to the Project?
 
-1. **Read the** [**MVP Scope**](/GDD_Design/ProjectScope/MVP.html) to understand the current focus.
-2. **Explore the** [**Core Gameplay**](/GDD_Design/GameDesign/CoreGameplay.html) to grasp the game's heartbeat.
-3. **Review the** [**Tasks & Milestones**](/Tracker/Tasks.html) to understand the current delivery plan.
+1. **Read the** [**MVP Scope**](/gdd_design/projectscope/mvp/index.html) to understand the current focus.
+2. **Explore the** [**Core Gameplay**](/gdd_design/gamedesign/coregameplay/index.html) to grasp the game's heartbeat.
+3. **Review the** [**Tasks & Milestones**](/tracker/tasks/index.html) to understand the current delivery plan.
 
 ### Key Systems Documentation
 
-* **Task Tracker** -> [Tasks & Milestones](/Tracker/Tasks.html)
-* **World & Maps** -> [Map Design](/GDD_Design/World/MapDesign.html)
-* **Combat & Weapons** -> [Weapon System](/GDD_Technical/Gameplay/WeaponSystem.html)
-* **Inventory & Loot** -> [Inventory System](/GDD_Technical/Gameplay/InventorySystem.html)
-* **Networking** -> [Networking System](/GDD_Technical/Core/NetworkingSystem.html)
-* **AI Behavior** -> [AI System](/GDD_Technical/Systems/AISystem.html)
+* **Task Tracker** -> [Tasks & Milestones](/tracker/tasks/index.html)
+* **World & Maps** -> [Map Design](/gdd_design/world/mapdesign/index.html)
+* **Combat & Weapons** -> [Weapon System](/gdd_technical/gameplay/weaponsystem/index.html)
+* **Inventory & Loot** -> [Inventory System](/gdd_technical/gameplay/inventorysystem/index.html)
+* **Networking** -> [Networking System](/gdd_technical/core/networkingsystem/index.html)
+* **AI Behavior** -> [AI System](/gdd_technical/systems/aisystem/index.html)
 
 _Last Updated: February 13, 2026_

@@ -9,7 +9,7 @@ weight: 7
 
 This document is the single authoritative reference for level design principles, environmental storytelling standards, and world feel. It merges **map design systems** with **narrative art direction** — because in extraction shooters, the two cannot be separated.
 
-> **Cross-References:** [MapLayouts](https://github.com/oaiba/ExtractionDocument/blob/main/content/GDD_Design/NarrativeWorld/MapLayouts.md) — choke points, extraction points, POI combat data; [LootDistribution](https://github.com/oaiba/ExtractionDocument/blob/main/content/GDD_Design/NarrativeWorld/LootDistribution.md) — heatmaps and container tables; Per-map lore in [MapLore\_Industrial](MapLore_Industrial.md) and [MapLore\_Urban](MapLore_Urban.md).
+> **Cross-References:** [MapLayouts](https://github.com/oaiba/ExtractionDocument/blob/main/content/GDD_Design/NarrativeWorld/MapLayouts.md) — choke points, extraction points, POI combat data; [LootDistribution](https://github.com/oaiba/ExtractionDocument/blob/main/content/GDD_Design/NarrativeWorld/LootDistribution.md) — heatmaps and container tables; Per-map lore in [MapLore\_Industrial](maplore_industrial/index.html) and [MapLore\_Urban](maplore_urban/index.html).
 
 ***
 
@@ -299,7 +299,7 @@ Static daytime lighting on all maps.
 
 ### Environmental Storytelling Principles
 
-> These principles govern how **level art direction and prop placement** deliver narrative. For full per-map implementations, see [MapLore\_Industrial](MapLore_Industrial.md) and [MapLore\_Urban](MapLore_Urban.md). For lore delivery channels (audio logs, codex, etc.), see [Lore Delivery Systems](https://github.com/oaiba/ExtractionDocument/blob/main/content/GDD_Design/NarrativeWorld/Lore_Delivery.md).
+> These principles govern how **level art direction and prop placement** deliver narrative. For full per-map implementations, see [MapLore\_Industrial](maplore_industrial/index.html) and [MapLore\_Urban](maplore_urban/index.html). For lore delivery channels (audio logs, codex, etc.), see [Lore Delivery Systems](https://github.com/oaiba/ExtractionDocument/blob/main/content/GDD_Design/NarrativeWorld/Lore_Delivery.md).
 
 #### Core Principle: "The Aftermath"
 

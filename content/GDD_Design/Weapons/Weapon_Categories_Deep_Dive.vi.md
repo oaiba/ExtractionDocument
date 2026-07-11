@@ -6,9 +6,9 @@ weight: 2
 
 ## Tổng Quan
 
-This tài liệu expands each vũ khí genre với design identity, engagement doctrine, hero synergy, build archetypes, matchup matrices, và top-down-cụ thể ghi chú. For full vũ khí stats và tables Xem [vũ khí Arsenal](../Gameplay/WeaponArsenal.md) và [vũ khí Master Database](Weapon_Master_Database.md).
+This tài liệu expands each vũ khí genre với design identity, engagement doctrine, hero synergy, build archetypes, matchup matrices, và top-down-cụ thể ghi chú. For full vũ khí stats và tables Xem [vũ khí Arsenal](../gameplay/weaponarsenal/index.html) và [vũ khí Master Database](weapon_master_database/index.html).
 
-> **Cross-References:** [vũ khí Handling Settings](Weapon_Handling_Settings.md) — draw, ADS, movement modifiers; [vũ khí Balance Framework](Weapon_Balance_Framework.md) — DPS và TTK; [nhân vật & Operators](../nhân vật/_index.md) — class roster for synergy.
+> **Cross-References:** [vũ khí Handling Settings](weapon_handling_settings/index.html) — draw, ADS, movement modifiers; [vũ khí Balance Framework](weapon_balance_framework/index.html) — DPS và TTK; [nhân vật & Operators](../nhân vật/_index.md) — class roster for synergy.
 
 ---
 
@@ -431,8 +431,8 @@ Melee is silent và lethal at touch range: backstab multiplier, no đạn, high 
 
 ## Tham Chiếu Chéo
 
-- [vũ khí Arsenal](../Gameplay/WeaponArsenal.md) — Full stats và đạn.
-- [vũ khí Master Database](Weapon_Master_Database.md) — Per-vũ khí base và modded stats.
-- [vũ khí Handling Settings](Weapon_Handling_Settings.md) — Draw, ADS, movement.
-- [vũ khí Balance Framework](Weapon_Balance_Framework.md) — DPS, TTK, balance levers.
+- [vũ khí Arsenal](../gameplay/weaponarsenal/index.html) — Full stats và đạn.
+- [vũ khí Master Database](weapon_master_database/index.html) — Per-vũ khí base và modded stats.
+- [vũ khí Handling Settings](weapon_handling_settings/index.html) — Draw, ADS, movement.
+- [vũ khí Balance Framework](weapon_balance_framework/index.html) — DPS, TTK, balance levers.
 - [nhân vật & Operators](../nhân vật/_index.md) — Hero classes và abilities.

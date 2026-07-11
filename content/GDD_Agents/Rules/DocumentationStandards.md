@@ -167,8 +167,8 @@ Available types: `info`, `warning`, `error`
 Link to other documents using relative paths:
 
 ```markdown
-See [Inventory System](../Systems/InventorySystem.md) for item data structures.
-Refer to [Coding Standards](../../GDD_Technical/CodingStandards.md) for naming rules.
+See [Inventory System](../systems/inventorysystem/index.html) for item data structures.
+Refer to [Coding Standards](../../gdd_technical/codingstandards/index.html) for naming rules.
 ```
 
 **Rules:**

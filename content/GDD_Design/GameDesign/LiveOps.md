@@ -156,8 +156,8 @@ A Boss Hunt should create a hotspot with readable danger. Players should know wh
 
 | Topic | Page |
 | :--- | :--- |
-| Battle pass progression | [Progression](progression.html) |
-| Economy rewards | [Economy](economy.html) |
-| Featured modes | [Game Modes](gamemodes.html) |
-| Ranked seasons | [Ranked Mode](rankedmode.html) |
-| Clan competition | [Clan System](clansystem.html) |
+| Battle pass progression | [Progression](progression/index.html) |
+| Economy rewards | [Economy](economy/index.html) |
+| Featured modes | [Game Modes](gamemodes/index.html) |
+| Ranked seasons | [Ranked Mode](rankedmode/index.html) |
+| Clan competition | [Clan System](clansystem/index.html) |

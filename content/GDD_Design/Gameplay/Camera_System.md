@@ -9,7 +9,7 @@ weight: 11
 
 The camera system defines how players perceive the game world and is one of the most critical design elements unique to this top-down extraction shooter. Unlike FPS or third-person games, the top-down perspective creates a **natural information asymmetry** — players see more of the environment but less of the third axis (vertical). Every camera parameter affects tactical decision-making, spatial awareness, and the emotional intensity of each raid.
 
-> **Cross-References:** [LOS, Fog of War & Visibility](LOS_Fog_Visibility.md) — field of view and fog clearing; [Gear Mechanics](Gear_Mechanics.md) — inertia and weight; [Movement & Stamina](Movement_and_Stamina.md) — movement states affecting zoom; [Controls](https://github.com/oaiba/ExtractionDocument/blob/main/content/GameDesign/Controls.md) — platform-specific camera input.
+> **Cross-References:** [LOS, Fog of War & Visibility](los_fog_visibility/index.html) — field of view and fog clearing; [Gear Mechanics](gear_mechanics/index.html) — inertia and weight; [Movement & Stamina](movement_and_stamina/index.html) — movement states affecting zoom; [Controls](https://github.com/oaiba/ExtractionDocument/blob/main/content/GameDesign/Controls.md) — platform-specific camera input.
 
 ***
 
@@ -73,7 +73,7 @@ The camera always centers on the **local player character** as anchor. The camer
 
 #### Inertia Integration
 
-Per [Gear Mechanics](Gear_Mechanics.md), heavier players have movement inertia. Camera follow dampening scales slightly with weight:
+Per [Gear Mechanics](gear_mechanics/index.html), heavier players have movement inertia. Camera follow dampening scales slightly with weight:
 
 | Weight Tier | Extra camera lag | Effect                                                  |
 | ----------- | ---------------- | ------------------------------------------------------- |
@@ -161,7 +161,7 @@ Certain game events temporarily override normal camera behavior:
 | Supply drop (approach)        | No override (informational ping only)                        | —                                        | Map mark is enough                        |
 | Contamination entering        | Screen edges pulse red (vignette); camera unchanged          | Per phase                                | Visual pressure without camera disruption |
 
-**Death cam:** After 2 s fade, transitions to passive spectator mode. Player can observe surviving squadmates from the same top-down perspective, with fog-of-war based on that teammate's LOS — not a free-camera ghost view. See [Extraction Mechanics](Extraction_Mechanics.md) for spectator post-death rules.
+**Death cam:** After 2 s fade, transitions to passive spectator mode. Player can observe surviving squadmates from the same top-down perspective, with fog-of-war based on that teammate's LOS — not a free-camera ghost view. See [Extraction Mechanics](extraction_mechanics/index.html) for spectator post-death rules.
 
 ***
 
@@ -210,7 +210,7 @@ When a player dies:
 | -------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
 | **LOS / Fog of War** | LOS is calculated server-side from player position, not from camera position. Wider zoom does not reveal more.                               |
 | **Inertia (Gear)**   | Camera lag scales with weight tier (see above).                                                                                              |
-| **Weather**          | Rain, fog, and night reduce _render_ distance (visual only). LOS range is unchanged — see [Environmental Hazards](Environmental_Hazards.md). |
+| **Weather**          | Rain, fog, and night reduce _render_ distance (visual only). LOS range is unchanged — see [Environmental Hazards](environmental_hazards/index.html). |
 | **Minimap**          | Minimap uses merged squad vision — different from the camera view. Camera shows local viewport; minimap shows full explored state.           |
 | **Hero Abilities**   | Ability effects (flashbang, cloak shimmer, smoke) render in the player's viewport at current camera altitude.                                |
 | **Extraction**       | Camera zooms-in during extraction timer for increased tension (altitude −1 m).                                                               |
@@ -234,10 +234,10 @@ When a player dies:
 
 ### Cross-References
 
-* [LOS, Fog of War & Visibility](LOS_Fog_Visibility.md) — LOS is independent of camera; server-authoritative.
-* [Gear Mechanics](Gear_Mechanics.md) — Inertia system; camera lag couples with weight tier.
-* [Environmental Hazards](Environmental_Hazards.md) — Weather effects on visual render (not LOS).
-* [Hero Abilities](Hero_Abilities.md) — Flashbang/smoke vision effects in viewport.
-* [Extraction Mechanics](Extraction_Mechanics.md) — Extraction camera override; spectator post-death.
-* [Movement & Stamina](Movement_and_Stamina.md) — Movement states driving altitude changes.
+* [LOS, Fog of War & Visibility](los_fog_visibility/index.html) — LOS is independent of camera; server-authoritative.
+* [Gear Mechanics](gear_mechanics/index.html) — Inertia system; camera lag couples with weight tier.
+* [Environmental Hazards](environmental_hazards/index.html) — Weather effects on visual render (not LOS).
+* [Hero Abilities](hero_abilities/index.html) — Flashbang/smoke vision effects in viewport.
+* [Extraction Mechanics](extraction_mechanics/index.html) — Extraction camera override; spectator post-death.
+* [Movement & Stamina](movement_and_stamina/index.html) — Movement states driving altitude changes.
 * [Controls](https://github.com/oaiba/ExtractionDocument/blob/main/content/GameDesign/Controls.md) — Platform-specific camera input bindings.

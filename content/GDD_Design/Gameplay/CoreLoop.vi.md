@@ -12,7 +12,7 @@ Vòng lặp engagement cốt lõi được thiết kế để tạo a "Hero's Jo
 
 #### Phase Contract
 
-Core Loop dùng cùng phase vocabulary với [Core Gameplay Mechanics](../GameDesign/CoreGameplay.md). Bất kỳ feature nào thay đổi một phase đều phải nói rõ nó cải thiện câu hỏi nào của player.
+Core Loop dùng cùng phase vocabulary với [Core Gameplay Mechanics](../gamedesign/coregameplay/index.html). Bất kỳ feature nào thay đổi một phase đều phải nói rõ nó cải thiện câu hỏi nào của player.
 
 | Phase | Player Question | Must Provide | Must Not Do |
 | :--- | :--- | :--- | :--- |
@@ -24,11 +24,11 @@ Core Loop dùng cùng phase vocabulary với [Core Gameplay Mechanics](../GameDe
 
 #### Session Length & Pacing
 
-**Target session:** 15–20 minutes (mobile-friendly). Standard raid timer is 25–30 minutes so that a typical run (infiltrate, loot, extract) fits within one session; người chơi who extract early hoặc die early can queue again within the target window. An optional **Quick Raid** mode (e.g. 15-minute raid timer, smaller map hoặc reduced objectives) may be offered for người chơi who want a guaranteed short session. Design pillars: [Design Pillars](https://github.com/oaiba/ExtractionDocument/blob/main/content/ProjectScope/design-pillars-enhanced.md). cơ chế benchmark: [Gameplay Review checklist](Gameplay_Review_Checklist.md).
+**Target session:** 15–20 minutes (mobile-friendly). Standard raid timer is 25–30 minutes so that a typical run (infiltrate, loot, extract) fits within one session; người chơi who extract early hoặc die early can queue again within the target window. An optional **Quick Raid** mode (e.g. 15-minute raid timer, smaller map hoặc reduced objectives) may be offered for người chơi who want a guaranteed short session. Design pillars: [Design Pillars](https://github.com/oaiba/ExtractionDocument/blob/main/content/ProjectScope/design-pillars-enhanced.md). cơ chế benchmark: [Gameplay Review checklist](gameplay_review_checklist/index.html).
 
 **Design quyết định (re-planning):** Medical depth is kept (full body-part máu, bleed, fracture, pain, blacked limb) for tactical identity. Operator abilities cách dùng cooldowns only (no per-raid charge limit); maximum \~2 signature uses per 20-minute raid.
 
-**Cross-platform:** Same rules on all platforms (PC, console, mobile). Input và UX vary by device (e.g. hold E vs tap-và-hold for extract, keybinds vs touch layout); Xem [Controls](https://github.com/oaiba/ExtractionDocument/blob/main/content/GameDesign/Controls.md) và [Gameplay Review checklist](Gameplay_Review_Checklist.md).
+**Cross-platform:** Same rules on all platforms (PC, console, mobile). Input và UX vary by device (e.g. hold E vs tap-và-hold for extract, keybinds vs touch layout); Xem [Controls](https://github.com/oaiba/ExtractionDocument/blob/main/content/GameDesign/Controls.md) và [Gameplay Review checklist](gameplay_review_checklist/index.html).
 
 ***
 
@@ -108,9 +108,9 @@ Sound is the most critical information tool in the infiltration phase:
 | Looting sounds          | 5-10m         | Medium      | None — passive                   |
 | Loot beam (Rare+ items) | 30m           | High        | Reveals your position nếu looting |
 
-**Squad shared vision:** The minimap uses merged visibility from the whole squad — any area seen by at least one teammate (hoặc by intel abilities like Spotter Drone, Tactical Overlay) is revealed for the team. Fog of war shows explored-nhưng-unseen areas; pings và marks from teammates persist in fog as last-known info. Xem [LOS, Fog of War & Visibility](LOS_Fog_Visibility.md) for full specification.
+**Squad shared vision:** The minimap uses merged visibility from the whole squad — any area seen by at least one teammate (hoặc by intel abilities like Spotter Drone, Tactical Overlay) is revealed for the team. Fog of war shows explored-nhưng-unseen areas; pings và marks from teammates persist in fog as last-known info. Xem [LOS, Fog of War & Visibility](los_fog_visibility/index.html) for full specification.
 
-**Operator intel roles:** Hawk (Scout) và Glitch (Specialist) provide vision proxies và intel (drone, sensor, overlay) to rõ fog và reveal địch for the whole team; smoke (Obsidian/Recon) và deployable cover (Bastion) can block LOS. chi tiết in [LOS, Fog of War & Visibility](LOS_Fog_Visibility.md) và [Hero Abilities](Hero_Abilities.md).
+**Operator intel roles:** Hawk (Scout) và Glitch (Specialist) provide vision proxies và intel (drone, sensor, overlay) to rõ fog và reveal địch for the whole team; smoke (Obsidian/Recon) và deployable cover (Bastion) can block LOS. chi tiết in [LOS, Fog of War & Visibility](los_fog_visibility/index.html) và [Hero Abilities](hero_abilities/index.html).
 
 **Design Intent**: The infiltration phase teaches người chơi that information is more valuable than firepower. A người chơi who listens carefully has a significant advantage over one who sprints carelessly. shared team vision rewards coordination: one scout can rõ fog for the squad và feed intel mà không everyone being in the same room.
 

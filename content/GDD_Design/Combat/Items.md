@@ -18,15 +18,15 @@ type: docs
 
 ### Combat Item Source-Of-Truth Boundary
 
-This page describes combat-facing item usage and economic intent. It does not redefine item instance ownership, stash placement, entitlement, FIR, contraband, durability lifecycle, or overflow rules; those live in [Inventory System](../Inventory_System/_index.md), [Gear Tier System](../Gears/Gear_Tier_System.md), and [Economy](../GameDesign/Economy.md).
+This page describes combat-facing item usage and economic intent. It does not redefine item instance ownership, stash placement, entitlement, FIR, contraband, durability lifecycle, or overflow rules; those live in [Inventory System](../inventory_system/_index/index.html), [Gear Tier System](../gears/gear_tier_system/index.html), and [Economy](../gamedesign/economy/index.html).
 
 | Item Family | Combat Contract | Source-Of-Truth Link |
 | :--- | :--- | :--- |
-| Weapons / ammo | Damage, handling, role, feedback, ammo/armor interaction | [Weapons](../Weapons/_index.md) |
-| Armor | Protection, movement cost, durability, readable failure | [Armor Gear](../Gears/ArmorGear/Armor.md) |
-| Medical | Recovery timing, vulnerability, status clarity | [Medical System](../Gameplay/Medical_System.md) |
-| Tactical equipment | Sound, vision, denial, extraction counterplay | [Combat Feel](../Gameplay/Combat_Feel_Topdown.md) |
-| Loot / barter | Value and risk context only | [Inventory System](../Inventory_System/_index.md) |
+| Weapons / ammo | Damage, handling, role, feedback, ammo/armor interaction | [Weapons](../weapons/_index/index.html) |
+| Armor | Protection, movement cost, durability, readable failure | [Armor Gear](../gears/armorgear/armor/index.html) |
+| Medical | Recovery timing, vulnerability, status clarity | [Medical System](../gameplay/medical_system/index.html) |
+| Tactical equipment | Sound, vision, denial, extraction counterplay | [Combat Feel](../gameplay/combat_feel_topdown/index.html) |
+| Loot / barter | Value and risk context only | [Inventory System](../inventory_system/_index/index.html) |
 
 Combat items must preserve the no-paid-power rule: premium purchases may grant cosmetic entitlement, but not superior combat item instances.
 
@@ -36,7 +36,7 @@ Combat items must preserve the no-paid-power rule: premium purchases may grant c
 
 #### 1. Weapons & Attachments
 
-_See:_ [_Weapons & Combat_](Weapons.md) _for details on Weapons, Attachments, and Ammunition types_
+_See:_ [_Weapons & Combat_](weapons/index.html) _for details on Weapons, Attachments, and Ammunition types_
 
 **Economic Role:**
 
@@ -48,7 +48,7 @@ _See:_ [_Weapons & Combat_](Weapons.md) _for details on Weapons, Attachments, an
 
 #### 2. Armor & Protection
 
-Armor uses **Class 1–6** (GOST-style) with zone-based protection. Display values and headshot reduction map from class; see [Gears — Armor & Ballistics](../Gears/ArmorGear/Armor.md) for mapping and [Gears — Armor Master Database](../Gears/ArmorGear/Armor_Master_Database.md) for full spec, materials, and zone coverage per item.
+Armor uses **Class 1–6** (GOST-style) with zone-based protection. Display values and headshot reduction map from class; see [Gears — Armor & Ballistics](../gears/armorgear/armor/index.html) for mapping and [Gears — Armor Master Database](../gears/armorgear/armor_master_database/index.html) for full spec, materials, and zone coverage per item.
 
 | Type           | Class (example) | Coverage (example)     | Move penalty | Value range      |
 | -------------- | :-------------: | ---------------------- | ------------ | ---------------- |
@@ -61,7 +61,7 @@ Armor uses **Class 1–6** (GOST-style) with zone-based protection. Display valu
 
 #### 3. Backpacks & Storage
 
-Backpacks and tactical rigs define carry capacity and hotkey access. Full list and grid layouts: [Gears — Storage Gear](https://github.com/oaiba/ExtractionDocument/blob/main/content/GDD_Design/Gears/StorageGear/README.md) and [Storage Master Database](../Gears/StorageGear/Storage_Master_Database.md).
+Backpacks and tactical rigs define carry capacity and hotkey access. Full list and grid layouts: [Gears — Storage Gear](https://github.com/oaiba/ExtractionDocument/blob/main/content/GDD_Design/Gears/StorageGear/README.md) and [Storage Master Database](../gears/storagegear/storage_master_database/index.html).
 
 | Tier   | Slots (example) | Move penalty | Value range     |
 | ------ | :-------------: | ------------ | --------------- |
@@ -234,11 +234,11 @@ Backpacks and tactical rigs define carry capacity and hotkey access. Full list a
 
 #### Armor & Protection - Complete Specifications
 
-Full spec (per-item class, zones, material, durability, value): [**Gears — Armor Master Database**](../Gears/ArmorGear/Armor_Master_Database.md). Hit locations and damage model: [Weapon Arsenal](../Gameplay/WeaponArsenal.md#hit-location-multipliers).
+Full spec (per-item class, zones, material, durability, value): [**Gears — Armor Master Database**](../gears/armorgear/armor_master_database/index.html). Hit locations and damage model: [Weapon Arsenal](../Gameplay/WeaponArsenal.md#hit-location-multipliers).
 
 #### Backpacks & Storage
 
-Full spec (rigs, backpacks, secure containers, stash cases): [**Gears — Storage Master Database**](../Gears/StorageGear/Storage_Master_Database.md).
+Full spec (rigs, backpacks, secure containers, stash cases): [**Gears — Storage Master Database**](../gears/storagegear/storage_master_database/index.html).
 
 ***
 

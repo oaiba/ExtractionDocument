@@ -26,9 +26,9 @@ sidebar:
 Dùng các lối vào nhanh này khi cần chuyển giữa kế hoạch, ý đồ thiết kế, và chi tiết triển khai.
 
 {{< cards cols="3" >}}
-{{< card link="/Tracker.html" title="Project Tracker" icon="clipboard-list" subtitle="Milestone, kế hoạch phase, ghi chú sprint, và điều phối dự án." >}}
-{{< card link="/Tracker/Tasks.html" title="Tasks & Milestones" icon="flag" subtitle="Roadmap theo từng phase từ core prototype đến launch." >}}
-{{< card link="/GDD_Design/ProjectScope/MVP.html" title="MVP Scope" icon="sparkles" subtitle="Ranh giới launch, feature bắt buộc, non-goal, và rủi ro chính." >}}
+{{< card link="/tracker/index.html" title="Project Tracker" icon="clipboard-list" subtitle="Milestone, kế hoạch phase, ghi chú sprint, và điều phối dự án." >}}
+{{< card link="/tracker/tasks/index.html" title="Tasks & Milestones" icon="flag" subtitle="Roadmap theo từng phase từ core prototype đến launch." >}}
+{{< card link="/gdd_design/projectscope/mvp/index.html" title="MVP Scope" icon="sparkles" subtitle="Ranh giới launch, feature bắt buộc, non-goal, và rủi ro chính." >}}
 {{< /cards >}}
 
 ## Cổng Tài Liệu
@@ -36,21 +36,21 @@ Dùng các lối vào nhanh này khi cần chuyển giữa kế hoạch, ý đ�
 Truy cập các hub tài liệu chuyên biệt theo vai trò và công việc hiện tại.
 
 {{< cards cols="2" >}}
-{{< card link="/GDD_Design" title="Design & Creative Hub" icon="sparkles" subtitle="Trải nghiệm người chơi, world-building, visual/audio, và narrative." >}}
-{{< card link="/GDD_Technical" title="Technical & Engineering Hub" icon="terminal" subtitle="Spec triển khai, kiến trúc hệ thống, networking, và performance." >}}
+{{< card link="/gdd_design/index.html" title="Design & Creative Hub" icon="sparkles" subtitle="Trải nghiệm người chơi, world-building, visual/audio, và narrative." >}}
+{{< card link="/gdd_technical/index.html" title="Technical & Engineering Hub" icon="terminal" subtitle="Spec triển khai, kiến trúc hệ thống, networking, và performance." >}}
 {{< /cards >}}
 
 {{< cards cols="2" >}}
-{{< card link="/Tracker.html" title="Project Tracker" icon="clipboard-list" subtitle="Milestone, task, delivery phase, và production planning." >}}
-{{< card link="/GDD_Agents" title="AI Agent Guidelines" icon="chip" subtitle="Rule, workflow, và skill dành cho AI coding agents." >}}
+{{< card link="/tracker/index.html" title="Project Tracker" icon="clipboard-list" subtitle="Milestone, task, delivery phase, và production planning." >}}
+{{< card link="/gdd_agents/index.html" title="AI Agent Guidelines" icon="chip" subtitle="Rule, workflow, và skill dành cho AI coding agents." >}}
 {{< /cards >}}
 
 ## Phạm Vi & Tiến Độ
 
 {{< cards cols="3" >}}
-{{< card link="/GDD_Design/ProjectScope/MVP.html" title="MVP Definition" icon="flag" subtitle="Feature tối thiểu và ranh giới scope của sản phẩm." >}}
-{{< card link="/GDD_Design/ProjectScope/NonGoals.html" title="Non-Goals" icon="x-circle" subtitle="Những feature chủ động loại khỏi scope hiện tại." >}}
-{{< card link="/GDD_Design/ProjectScope/Risks.html" title="Risk Assessment" icon="exclamation-circle" subtitle="Rủi ro đã biết và hướng giảm thiểu." >}}
+{{< card link="/gdd_design/projectscope/mvp/index.html" title="MVP Definition" icon="flag" subtitle="Feature tối thiểu và ranh giới scope của sản phẩm." >}}
+{{< card link="/gdd_design/projectscope/nongoals/index.html" title="Non-Goals" icon="x-circle" subtitle="Những feature chủ động loại khỏi scope hiện tại." >}}
+{{< card link="/gdd_design/projectscope/risks/index.html" title="Risk Assessment" icon="exclamation-circle" subtitle="Rủi ro đã biết và hướng giảm thiểu." >}}
 {{< /cards >}}
 
 ### Milestone Gần Đây
@@ -66,32 +66,32 @@ Truy cập các hub tài liệu chuyên biệt theo vai trò và công việc hi
 ### Cho Design & Art Teams
 
 * **Nguồn tham chiếu chính**: Bắt đầu từ [Design Hub](/GDD_Design) trước khi làm creative work.
-* **Visual Consistency**: Theo [Style Guide](/GDD_Design/Visuals/StyleGuide.html) để giữ chất lượng cross-platform.
-* **Core Loop**: Giữ [Core Gameplay](/GDD_Design/GameDesign/CoreGameplay.html) đồng bộ với mọi thay đổi cơ chế.
-* **Asset Submission**: Dùng [Asset Guidelines](/GDD_Design/Visuals/AssetGuidelines.html) cho spec asset sẵn sàng đưa vào UE5.
+* **Visual Consistency**: Theo [Style Guide](/gdd_design/visuals/styleguide/index.html) để giữ chất lượng cross-platform.
+* **Core Loop**: Giữ [Core Gameplay](/gdd_design/gamedesign/coregameplay/index.html) đồng bộ với mọi thay đổi cơ chế.
+* **Asset Submission**: Dùng [Asset Guidelines](/gdd_design/visuals/assetguidelines/index.html) cho spec asset sẵn sàng đưa vào UE5.
 
 ### Cho Technical & Dev Teams
 
 * **Implementation Specs**: System architecture và engineering notes nằm trong [Technical Hub](/GDD_Technical).
-* **Performance First**: Bám theo [Performance Budgets](/GDD_Technical/Performance/Budgets.html).
-* **Task Management**: Theo [Development Roadmap](/GDD_Technical/Core/DevelopmentRoadmap.html) và [Tasks & Milestones](/Tracker/Tasks.html).
-* **Code Standards**: Giữ modularity theo [Architecture](/GDD_Technical/Core/Architecture.html).
+* **Performance First**: Bám theo [Performance Budgets](/gdd_technical/performance/budgets/index.html).
+* **Task Management**: Theo [Development Roadmap](/gdd_technical/core/developmentroadmap/index.html) và [Tasks & Milestones](/tracker/tasks/index.html).
+* **Code Standards**: Giữ modularity theo [Architecture](/gdd_technical/core/architecture/index.html).
 
 ## Điều Hướng Nhanh
 
 ### Mới Tham Gia Dự Án?
 
-1. **Đọc** [**MVP Scope**](/GDD_Design/ProjectScope/MVP.html) để hiểu trọng tâm hiện tại.
-2. **Xem** [**Core Gameplay**](/GDD_Design/GameDesign/CoreGameplay.html) để nắm nhịp gameplay chính.
-3. **Review** [**Tasks & Milestones**](/Tracker/Tasks.html) để hiểu kế hoạch delivery hiện tại.
+1. **Đọc** [**MVP Scope**](/gdd_design/projectscope/mvp/index.html) để hiểu trọng tâm hiện tại.
+2. **Xem** [**Core Gameplay**](/gdd_design/gamedesign/coregameplay/index.html) để nắm nhịp gameplay chính.
+3. **Review** [**Tasks & Milestones**](/tracker/tasks/index.html) để hiểu kế hoạch delivery hiện tại.
 
 ### Tài Liệu Hệ Thống Chính
 
-* **Task Tracker** -> [Tasks & Milestones](/Tracker/Tasks.html)
-* **World & Maps** -> [Map Design](/GDD_Design/World/MapDesign.html)
-* **Combat & Weapons** -> [Weapon System](/GDD_Technical/Gameplay/WeaponSystem.html)
-* **Inventory & Loot** -> [Inventory System](/GDD_Technical/Gameplay/InventorySystem.html)
-* **Networking** -> [Networking System](/GDD_Technical/Core/NetworkingSystem.html)
-* **AI Behavior** -> [AI System](/GDD_Technical/Systems/AISystem.html)
+* **Task Tracker** -> [Tasks & Milestones](/tracker/tasks/index.html)
+* **World & Maps** -> [Map Design](/gdd_design/world/mapdesign/index.html)
+* **Combat & Weapons** -> [Weapon System](/gdd_technical/gameplay/weaponsystem/index.html)
+* **Inventory & Loot** -> [Inventory System](/gdd_technical/gameplay/inventorysystem/index.html)
+* **Networking** -> [Networking System](/gdd_technical/core/networkingsystem/index.html)
+* **AI Behavior** -> [AI System](/gdd_technical/systems/aisystem/index.html)
 
 _Cập nhật lần cuối: February 13, 2026_

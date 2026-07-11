@@ -12,22 +12,22 @@ Primary references:
 
 | System | Source |
 | :--- | :--- |
-| Social design | [Social & Multiplayer Systems](../Social/Multiplayer.md) |
-| Clan design | [Clan & Guild System](../GameDesign/ClanSystem.md) |
-| Communication | [In-Game Communication](../GameDesign/Communication.md) |
-| Privacy/settings | [User Settings](../GameDesign/UserSettings.md) |
-| Social technical system | [Social System](../../GDD_Technical/Systems/SocialSystem.md) |
+| Social design | [Social & Multiplayer Systems](../social/multiplayer/index.html) |
+| Clan design | [Clan & Guild System](../gamedesign/clansystem/index.html) |
+| Communication | [In-Game Communication](../gamedesign/communication/index.html) |
+| Privacy/settings | [User Settings](../gamedesign/usersettings/index.html) |
+| Social technical system | [Social System](../../gdd_technical/systems/socialsystem/index.html) |
 
 ## Quick Navigation
 
 | Destination | Use |
 | :--- | :--- |
-| [UI/UX Index](_index.md) | Full UI/UX documentation hub |
-| [Screen Groups Overview](Screen_Groups_Overview.md) | Lifecycle taxonomy and designer-ready spec template |
-| [Global UX Standards](Global_UX_Standards.md) | Shared navigation, focus, state, modal, and accessibility rules |
-| [Pre-Raid Screens](Pre_Raid_Screens.md) | Squad lobby, readiness, matchmaking, and party blockers |
-| [Post-Raid Screens](Post_Raid_Screens.md) | Squad summary, commend, report, and add-friend routes |
-| [Settings & System Screens](Commerce_Settings_System_Screens.md) | Privacy, streamer mode, account, and safety settings |
+| [UI/UX Index](_index/index.html) | Full UI/UX documentation hub |
+| [Screen Groups Overview](screen_groups_overview/index.html) | Lifecycle taxonomy and designer-ready spec template |
+| [Global UX Standards](global_ux_standards/index.html) | Shared navigation, focus, state, modal, and accessibility rules |
+| [Pre-Raid Screens](pre_raid_screens/index.html) | Squad lobby, readiness, matchmaking, and party blockers |
+| [Post-Raid Screens](post_raid_screens/index.html) | Squad summary, commend, report, and add-friend routes |
+| [Settings & System Screens](commerce_settings_system_screens/index.html) | Privacy, streamer mode, account, and safety settings |
 
 ---
 
@@ -128,7 +128,7 @@ Layout (PC/Console)
 
 ## Party Panel
 
-The party panel overlaps with [Pre-Raid Screens](Pre_Raid_Screens.md), but this screen owns persistent social party management outside the deploy flow.
+The party panel overlaps with [Pre-Raid Screens](pre_raid_screens/index.html), but this screen owns persistent social party management outside the deploy flow.
 
 Layout (PC/Console)
 

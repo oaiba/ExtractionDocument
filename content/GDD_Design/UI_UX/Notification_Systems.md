@@ -8,12 +8,12 @@ weight: 23
 
 | Destination | Use |
 | :--- | :--- |
-| [UI/UX Index](_index.md) | Full UI/UX documentation hub |
-| [Screen Groups Overview](Screen_Groups_Overview.md) | Lifecycle taxonomy and designer-ready spec template |
-| [Global UX Standards](Global_UX_Standards.md) | Shared navigation, focus, state, modal, and accessibility rules |
-| [HUD Design](HUD_Design.md) | HUD placement and element visibility rules |
-| [In-Raid Screens](In_Raid_Screens.md) | Notification behavior in raid overlays and combat states |
-| [UX Flows](UX_Flows.md) | Flow-level feedback and state machine references |
+| [UI/UX Index](_index/index.html) | Full UI/UX documentation hub |
+| [Screen Groups Overview](screen_groups_overview/index.html) | Lifecycle taxonomy and designer-ready spec template |
+| [Global UX Standards](global_ux_standards/index.html) | Shared navigation, focus, state, modal, and accessibility rules |
+| [HUD Design](hud_design/index.html) | HUD placement and element visibility rules |
+| [In-Raid Screens](in_raid_screens/index.html) | Notification behavior in raid overlays and combat states |
+| [UX Flows](ux_flows/index.html) | Flow-level feedback and state machine references |
 
 ---
 

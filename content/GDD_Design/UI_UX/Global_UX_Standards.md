@@ -12,11 +12,11 @@ Global UX standards define the reusable interaction rules that every UI screen m
 
 | Destination | Use |
 | :--- | :--- |
-| [UI/UX Index](_index.md) | Full UI/UX documentation hub |
-| [Screen Groups Overview](Screen_Groups_Overview.md) | Lifecycle taxonomy and designer-ready spec template |
-| [Visual Style](Visual_Style.md) | Visual, typography, iconography, and mockup rules |
-| [UX Flows](UX_Flows.md) | Journey-level navigation and handoff mapping |
-| [Menus & Screens Legacy](Menus.md) | Compatibility mapping for old screen links |
+| [UI/UX Index](_index/index.html) | Full UI/UX documentation hub |
+| [Screen Groups Overview](screen_groups_overview/index.html) | Lifecycle taxonomy and designer-ready spec template |
+| [Visual Style](visual_style/index.html) | Visual, typography, iconography, and mockup rules |
+| [UX Flows](ux_flows/index.html) | Journey-level navigation and handoff mapping |
+| [Menus & Screens Legacy](menus/index.html) | Compatibility mapping for old screen links |
 
 ---
 

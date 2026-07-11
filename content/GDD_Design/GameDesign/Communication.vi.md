@@ -89,7 +89,7 @@ A người chơi dealing với harassment nên được able to mute, report, v�
 
 | Topic | trang |
 | :--- | :--- |
-| Ping display | [Navigation & Map](navigationandmap.html) |
-| Accessibility alternatives | [Accessibility](accessibility.html) |
-| Ranked restrictions | [Ranked Mode](rankedmode.html) |
-| Loadout squad voice | [Loadout Preparation](loadoutpreparation.html) |
+| Ping display | [Navigation & Map](navigationandmap/index.html) |
+| Accessibility alternatives | [Accessibility](accessibility/index.html) |
+| Ranked restrictions | [Ranked Mode](rankedmode/index.html) |
+| Loadout squad voice | [Loadout Preparation](loadoutpreparation/index.html) |

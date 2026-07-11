@@ -119,9 +119,9 @@ A first-session người chơi should see Tutorial Raid as the hành động ch�
 
 | Topic | trang |
 | :--- | :--- |
-| Deploy flow | [Loadout Preparation](loadoutpreparation.html) |
-| Modes | [Game Modes](gamemodes.html) |
-| Progress summary | [Progression](progression.html) |
-| Events feed | [Live Operations](liveops.html) |
-| Safe House | [Safe House Design](safe_house_design.html) |
-| Settings | [User Settings](usersettings.html) |
+| Deploy flow | [Loadout Preparation](loadoutpreparation/index.html) |
+| Modes | [Game Modes](gamemodes/index.html) |
+| Progress summary | [Progression](progression/index.html) |
+| Events feed | [Live Operations](liveops/index.html) |
+| Safe House | [Safe House Design](safe_house_design/index.html) |
+| Settings | [User Settings](usersettings/index.html) |

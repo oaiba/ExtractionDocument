@@ -32,6 +32,6 @@ Không dịch technical identifier, enum value, analytics event, file path, clas
 
 ## Tham Chiếu Liên Quan
 
-- [Design Decision Register](Design_Decision_Register.vi.md)
-- [Cross-System Traceability](Cross_System_Traceability.vi.md)
-- [MVP Readiness Review](MVP_Readiness_Review.vi.md)
+- [Design Decision Register](design_decision_register.vi/index.html)
+- [Cross-System Traceability](cross_system_traceability.vi/index.html)
+- [MVP Readiness Review](mvp_readiness_review.vi/index.html)

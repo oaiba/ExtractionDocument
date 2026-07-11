@@ -7,7 +7,7 @@ type: docs
 
 This document defines the data structures for the Async Loading Screen system. Used by LoadingManager and ContentProvider to serve tips, fun facts, and configuration per loading type.
 
-> **Design reference:** [Loading Screen Design](../../GDD_Design/UI_UX/LoadingScreen_Design.md)
+> **Design reference:** [Loading Screen Design](../../gdd_design/ui_ux/loadingscreen_design/index.html)
 
 ---
 
@@ -140,6 +140,6 @@ Per-loading-type configuration. One row per LoadingType.
 
 ## 4. Cross-References
 
-- [Loading Screen Design](../../GDD_Design/UI_UX/LoadingScreen_Design.md) — Taxonomy, layouts, content mapping
-- [Lore Delivery](../../GDD_Design/Story/Lore_Delivery.md) — Loading screen tip format and examples
-- [UI System](../Systems/UISystem.md) — LoadingType enum, ScreenType mapping
+- [Loading Screen Design](../../gdd_design/ui_ux/loadingscreen_design/index.html) — Taxonomy, layouts, content mapping
+- [Lore Delivery](../../gdd_design/story/lore_delivery/index.html) — Loading screen tip format and examples
+- [UI System](../systems/uisystem/index.html) — LoadingType enum, ScreenType mapping

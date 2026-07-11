@@ -21,13 +21,13 @@ This is distinct from [**Inventory & Gear**](https://github.com/oaiba/Extraction
 
 | Section                                                                                                              | Description                                                                                                                                                                    |
 | -------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| [Gear Tier System](Gear_Tier_System.md)                                                                              | Canonical Gear Tier for Armor (1–5) and Storage (1–4). Progression = Tier + Rarity + player/trader level; no item level. Used for loot, craft, economy, UI.                    |
+| [Gear Tier System](gear_tier_system/index.html)                                                                              | Canonical Gear Tier for Armor (1–5) and Storage (1–4). Progression = Tier + Rarity + player/trader level; no item level. Used for loot, craft, economy, UI.                    |
 | [Armor Gear](https://github.com/oaiba/ExtractionDocument/blob/main/content/GDD_Design/Gears/ArmorGear/README.md)     | Body armor, helmets, face shields, headsets: classes, zones, materials, penetration, blunt damage, ricochet. Master database, handling, balance, progression, visual identity. |
 | [Storage Gear](https://github.com/oaiba/ExtractionDocument/blob/main/content/GDD_Design/Gears/StorageGear/README.md) | Tactical rigs, backpacks, secure containers, stash-only cases: grid layouts, reload rule, flat storage and backpack collapse, balance, stash progression.                      |
 
 ## Related Sections
 
 * [**Inventory & Gear**](https://github.com/oaiba/ExtractionDocument/blob/main/content/GDD_Design/Inventory_System/README.md) — Grid system, paper doll, equipment slots, encumbrance overview, looting UX.
-* [**Gameplay — Gear Mechanics**](../Gameplay/Gear_Mechanics.md) — How gear affects raid: weight tiers, inertia, rig/backpack gameplay, loadout philosophy.
-* [**Gameplay — Looting & Inventory**](../Gameplay/Looting_Interactions.md) — Container interaction flow, search times, grid dimensions.
-* [**Weapons — Caliber & Ballistics**](../Weapons/Caliber_Ballistics_System.md) — Penetration vs armor class, blunt damage formula, armor degradation.
+* [**Gameplay — Gear Mechanics**](../gameplay/gear_mechanics/index.html) — How gear affects raid: weight tiers, inertia, rig/backpack gameplay, loadout philosophy.
+* [**Gameplay — Looting & Inventory**](../gameplay/looting_interactions/index.html) — Container interaction flow, search times, grid dimensions.
+* [**Weapons — Caliber & Ballistics**](../weapons/caliber_ballistics_system/index.html) — Penetration vs armor class, blunt damage formula, armor degradation.

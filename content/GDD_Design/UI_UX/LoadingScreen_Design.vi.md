@@ -8,7 +8,7 @@ weight: 21
 
 The **Async loading màn hình** hệ thống provides a unified, context-aware loading trải nghiệm across all game transitions. loading màn hình are not merely technical necessities—they are strategic design tools that shape người chơi mood, manage expectations, và build immersion. Tài liệu này định nghĩa the taxonomy, content specifications, layouts, và technical yêu cầu.
 
-> **Cross-References:** [Matchmaking & Lobby](../Gameplay/Matchmaking_Lobby.md) — L4 loading flow; [Lore Delivery](https://github.com/oaiba/ExtractionDocument/blob/main/content/Story/Lore_Delivery.md) — loading màn hình tips format; [Loadout Preparation](https://github.com/oaiba/ExtractionDocument/blob/main/content/GameDesign/LoadoutPreparation.md) — loading tip rotation; [Home màn hình Design](https://github.com/oaiba/ExtractionDocument/blob/main/content/GameDesign/HomeScreen_Design.md) — L3 post-login trạng thái.
+> **Cross-References:** [Matchmaking & Lobby](../gameplay/matchmaking_lobby/index.html) — L4 loading flow; [Lore Delivery](https://github.com/oaiba/ExtractionDocument/blob/main/content/Story/Lore_Delivery.md) — loading màn hình tips format; [Loadout Preparation](https://github.com/oaiba/ExtractionDocument/blob/main/content/GameDesign/LoadoutPreparation.md) — loading tip rotation; [Home màn hình Design](https://github.com/oaiba/ExtractionDocument/blob/main/content/GameDesign/HomeScreen_Design.md) — L3 post-login trạng thái.
 
 ***
 
@@ -16,12 +16,12 @@ The **Async loading màn hình** hệ thống provides a unified, context-aware 
 
 | điểm đến | cách dùng |
 | :--- | :--- |
-| [UI/UX Index](_index.md) | Full UI/UX documentation hub |
-| [màn hình Groups Overview](Screen_Groups_Overview.md) | Lifecycle taxonomy và designer-ready spec template |
-| [global UX Standards](Global_UX_Standards.md) | shared navigation, focus, trạng thái, modal, và accessibility rules |
-| [Settings & hệ thống màn hình](Commerce_Settings_System_Screens.md) | Boot, splash, login, version mismatch, diagnostics |
-| [Pre-Raid màn hình](Pre_Raid_Screens.md) | Lobby-to-match và matchmaking transition context |
-| [Post-Raid màn hình](Post_Raid_Screens.md) | kết quả-to-main và post-raid transition context |
+| [UI/UX Index](_index/index.html) | Full UI/UX documentation hub |
+| [màn hình Groups Overview](screen_groups_overview/index.html) | Lifecycle taxonomy và designer-ready spec template |
+| [global UX Standards](global_ux_standards/index.html) | shared navigation, focus, trạng thái, modal, và accessibility rules |
+| [Settings & hệ thống màn hình](commerce_settings_system_screens/index.html) | Boot, splash, login, version mismatch, diagnostics |
+| [Pre-Raid màn hình](pre_raid_screens/index.html) | Lobby-to-match và matchmaking transition context |
+| [Post-Raid màn hình](post_raid_screens/index.html) | kết quả-to-main và post-raid transition context |
 
 ***
 
@@ -256,7 +256,7 @@ flowchart TB
 ```
 
 * **Background:** Dark, minimal
-* **Cancel:** Returns to main menu (gear lost per [Extraction cơ chế](../Gameplay/Extraction_Mechanics.md))
+* **Cancel:** Returns to main menu (gear lost per [Extraction cơ chế](../gameplay/extraction_mechanics/index.html))
 
 #### 4.8 L7\_MapTransition
 
@@ -328,7 +328,7 @@ LoadingManager (Singleton)
 
 ### 7. Data References
 
-* **LoadingTip / LoadingContent:** Xem [loading màn hình Data Schema](../../GDD_Technical/Data/LoadingScreen_DataSchema.md)
+* **LoadingTip / LoadingContent:** Xem [loading màn hình Data Schema](../../gdd_technical/data/loadingscreen_dataschema/index.html)
 * **LoadingScreenConfig:** Per-loading-type configuration (min display thời gian, asset pools, etc.)
 
 ***
@@ -451,9 +451,9 @@ Loading screen phải honest về chuyện đang xảy ra. Decorative progress c
 
 ### 11. Cross-References
 
-* [Matchmaking & Lobby](../Gameplay/Matchmaking_Lobby.md) — L4 loading in deploy flow
+* [Matchmaking & Lobby](../gameplay/matchmaking_lobby/index.html) — L4 loading in deploy flow
 * [Lore Delivery](https://github.com/oaiba/ExtractionDocument/blob/main/content/Story/Lore_Delivery.md) — loading màn hình tip format và attribution
 * [Loadout Preparation](https://github.com/oaiba/ExtractionDocument/blob/main/content/GameDesign/LoadoutPreparation.md) — loading tip rotation (8s)
 * [Home màn hình Design](https://github.com/oaiba/ExtractionDocument/blob/main/content/GameDesign/HomeScreen_Design.md) — L3 operator showcase, loading trạng thái
 * [UI hệ thống](../../GDD_Technical/hệ thống/UISystem.md) — ScreenType enum for loading phases
-* [UX flow](UX_Flows.md) — người chơi journey với loading nodes
+* [UX flow](ux_flows/index.html) — người chơi journey với loading nodes

@@ -528,4 +528,4 @@ All cosmetics are purely visual — no gameplay advantage. See [Art Direction](h
 | Character style   | [Style Guide](https://github.com/oaiba/ExtractionDocument/blob/main/content/GDD_Design/Visuals/StyleGuide/README.md)     | Class color coding, gear layering system, top-down readability           |
 | Audio design      | [Audio Design](https://github.com/oaiba/ExtractionDocument/blob/main/content/GDD_Design/Audio/README.md)                 | Voice line recording specs, combat callout systems                       |
 | Gameplay balance  | [Gameplay](https://github.com/oaiba/ExtractionDocument/blob/main/content/GDD_Design/Gameplay/README.md)                  | TTK, damage formulas, ability cooldown framework                         |
-| UI representation | [HUD Design](../UI_UX/HUD_Design.md)        | How operators display on HUD, teammate status panels                     |
+| UI representation | [HUD Design](../ui_ux/hud_design/index.html)        | How operators display on HUD, teammate status panels                     |

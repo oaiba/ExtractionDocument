@@ -129,14 +129,14 @@ Keyboard and mouse players need precision, remapping, and quick access to invent
 
 ## Settings Ownership
 
-This page owns control feel and input behavior. The complete settings matrix belongs in [User Settings](usersettings.html) and [Settings Matrix](usersettings_matrix.html).
+This page owns control feel and input behavior. The complete settings matrix belongs in [User Settings](usersettings/index.html) and [Settings Matrix](usersettings_matrix/index.html).
 
 ## Cross-References
 
 | Topic | Page |
 | :--- | :--- |
-| Raid flow | [Core Gameplay](coregameplay.html) |
-| HUD and map controls | [Navigation & Map](navigationandmap.html) |
-| Settings UX | [User Settings](usersettings.html) |
-| Accessibility options | [Accessibility](accessibility.html) |
-| Tutorial prompts | [Tutorial Raid](tutorialraid.html) |
+| Raid flow | [Core Gameplay](coregameplay/index.html) |
+| HUD and map controls | [Navigation & Map](navigationandmap/index.html) |
+| Settings UX | [User Settings](usersettings/index.html) |
+| Accessibility options | [Accessibility](accessibility/index.html) |
+| Tutorial prompts | [Tutorial Raid](tutorialraid/index.html) |

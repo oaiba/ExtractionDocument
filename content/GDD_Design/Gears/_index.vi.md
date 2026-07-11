@@ -21,13 +21,13 @@ Nó khác với [**Inventory & Gear**](https://github.com/oaiba/ExtractionDocume
 
 | Section | Mô Tả |
 | -------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| [Gear Tier System](Gear_Tier_System.md) | Gear Tier canonical cho Armor (1-5) và Storage (1-4). Progression = Tier + Rarity + player/trader level; không có item level. Dùng cho loot, craft, economy, UI. |
+| [Gear Tier System](gear_tier_system/index.html) | Gear Tier canonical cho Armor (1-5) và Storage (1-4). Progression = Tier + Rarity + player/trader level; không có item level. Dùng cho loot, craft, economy, UI. |
 | [Armor Gear](https://github.com/oaiba/ExtractionDocument/blob/main/content/GDD_Design/Gears/ArmorGear/README.md) | Body armor, helmet, face shield, headset: class, zone, material, penetration, blunt damage, ricochet. Master database, handling, balance, progression, visual identity. |
 | [Storage Gear](https://github.com/oaiba/ExtractionDocument/blob/main/content/GDD_Design/Gears/StorageGear/README.md) | Tactical rig, backpack, secure container, stash-only case: grid layout, reload rule, flat storage và backpack collapse, balance, stash progression. |
 
 ## Section Liên Quan
 
 * [**Inventory & Gear**](https://github.com/oaiba/ExtractionDocument/blob/main/content/GDD_Design/Inventory_System/README.md) - Grid system, paper doll, equipment slot, encumbrance overview, looting UX.
-* [**Gameplay - Gear Mechanics**](../Gameplay/Gear_Mechanics.md) - Gear ảnh hưởng raid như thế nào: weight tier, inertia, rig/backpack gameplay, loadout philosophy.
-* [**Gameplay - Looting & Inventory**](../Gameplay/Looting_Interactions.md) - Container interaction flow, search time, grid dimension.
-* [**Weapons - Caliber & Ballistics**](../Weapons/Caliber_Ballistics_System.md) - Penetration vs armor class, blunt damage formula, armor degradation.
+* [**Gameplay - Gear Mechanics**](../gameplay/gear_mechanics/index.html) - Gear ảnh hưởng raid như thế nào: weight tier, inertia, rig/backpack gameplay, loadout philosophy.
+* [**Gameplay - Looting & Inventory**](../gameplay/looting_interactions/index.html) - Container interaction flow, search time, grid dimension.
+* [**Weapons - Caliber & Ballistics**](../weapons/caliber_ballistics_system/index.html) - Penetration vs armor class, blunt damage formula, armor degradation.

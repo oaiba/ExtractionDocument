@@ -6,7 +6,7 @@ weight: 3
 
 ## Tổng Quan
 
-Tài liệu này định nghĩa **flat storage** (no bag-in-bag), **backpack collapse** khi empty, và how vũ khí với attachments are stored. For item list Xem [Storage Master Database](Storage_Master_Database.md).
+Tài liệu này định nghĩa **flat storage** (no bag-in-bag), **backpack collapse** khi empty, và how vũ khí với attachments are stored. For item list Xem [Storage Master Database](storage_master_database/index.html).
 
 ---
 
@@ -40,12 +40,12 @@ Design intent: reward bringing an extra empty bag to fill với loot; collapsed 
 
 ## vũ khí và Item Grid Size
 
-vũ khí are always in their **default trạng thái** in inventory. **vũ khí grid size (W×H)** is **fixed per vũ khí type** (e.g. M4A1 always 5×2). Adding hoặc removing **attachments** does **not** change a vũ khí's inventory size — the vũ khí always uses its default cell dimensions. khi a vũ khí (với hoặc mà không attachments) is **stored in a backpack** (hoặc any Storage), it **keeps all attachments** và its **size remains unchanged** (the default W×H for that vũ khí type). For item size tables Xem [Inventory & Gear — Grid hệ thống](../../Inventory_System/_index.md) và [vũ khí Arsenal](../../Gameplay/WeaponArsenal.md).
+vũ khí are always in their **default trạng thái** in inventory. **vũ khí grid size (W×H)** is **fixed per vũ khí type** (e.g. M4A1 always 5×2). Adding hoặc removing **attachments** does **not** change a vũ khí's inventory size — the vũ khí always uses its default cell dimensions. khi a vũ khí (với hoặc mà không attachments) is **stored in a backpack** (hoặc any Storage), it **keeps all attachments** và its **size remains unchanged** (the default W×H for that vũ khí type). For item size tables Xem [Inventory & Gear — Grid hệ thống](../../inventory_system/_index/index.html) và [vũ khí Arsenal](../../gameplay/weaponarsenal/index.html).
 
 ---
 
 ## Tham Chiếu Chéo
 
-- [Storage Master Database](Storage_Master_Database.md) — Backpack list, collapsed sizes, flat storage.
-- [Inventory & Gear — Grid hệ thống](../../Inventory_System/_index.md) — Grid overview, item dimensions.
+- [Storage Master Database](storage_master_database/index.html) — Backpack list, collapsed sizes, flat storage.
+- [Inventory & Gear — Grid hệ thống](../../inventory_system/_index/index.html) — Grid overview, item dimensions.
 - [vũ khí Progression & Mastery](../../vũ khí/Weapon_Progression_Mastery.md) — vũ khí list.

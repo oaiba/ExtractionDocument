@@ -9,9 +9,9 @@ type: docs
 | Sutureument          | Relationship           | Link                                                                                                                                |
 | -------------------- | ---------------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
 | **Items Design**     | High-level item design | [GDD\_HighLevel/Combat/Items.md](https://github.com/oaiba/ExtractionDocument/blob/main/content/GDD_HighLevel/Combat/Items.md)       |
-| **Weapon System**    | Weapon storage         | [WeaponSystem.md](WeaponSystem.md)                                                                                                  |
-| **Character System** | Equipped items         | [CharacterSystem.md](CharacterSystem.md)                                                                                            |
-| **UI System**        | Inventory UI           | [../Systems/UISystem.md](../Systems/UISystem.md)                                                                                    |
+| **Weapon System**    | Weapon storage         | [WeaponSystem.md](weaponsystem/index.html)                                                                                                  |
+| **Character System** | Equipped items         | [CharacterSystem.md](charactersystem/index.html)                                                                                            |
+| **UI System**        | Inventory UI           | [../Systems/UISystem.md](../systems/uisystem/index.html)                                                                                    |
 | **Trading System**   | Item exchange          | [../Systems/TradingSystem.md](https://github.com/oaiba/ExtractionDocument/blob/main/content/GDD_Technical/Systems/TradingSystem.md) |
 
 ***

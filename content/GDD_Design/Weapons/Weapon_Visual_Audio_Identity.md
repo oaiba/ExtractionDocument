@@ -6,9 +6,9 @@ weight: 7
 
 ## Overview
 
-This document specifies how weapons are read from the top-down camera: silhouettes, muzzle flash, attachment visibility, audio signatures, kill feedback, and rarity presentation. Design goal: every combat action is readable and distinct from overhead. See [Combat Feel (Top-Down)](../Gameplay/Combat_Feel_Topdown.md) for aim cone and feedback systems.
+This document specifies how weapons are read from the top-down camera: silhouettes, muzzle flash, attachment visibility, audio signatures, kill feedback, and rarity presentation. Design goal: every combat action is readable and distinct from overhead. See [Combat Feel (Top-Down)](../gameplay/combat_feel_topdown/index.html) for aim cone and feedback systems.
 
-> **Cross-References:** [Weapon Arsenal](../Gameplay/WeaponArsenal.md) — weapon list; [Weapon Attachment System](../Gameplay/Weapon_Attachment_System.md) — attachment types; [Audio — Sound Design](../Audio/SoundDesign.md) — overall audio philosophy.
+> **Cross-References:** [Weapon Arsenal](../gameplay/weaponarsenal/index.html) — weapon list; [Weapon Attachment System](../gameplay/weapon_attachment_system/index.html) — attachment types; [Audio — Sound Design](../audio/sounddesign/index.html) — overall audio philosophy.
 
 ---
 
@@ -70,7 +70,7 @@ Muzzle flash reveals shooter position. Size and duration scale by weapon class a
 | Sniper | 0.65 m | 3 frames | 80% reduction |
 | LMG | 0.75 m | 3 frames | 75% reduction |
 
-**Visibility range:** Muzzle flash is visible to other players within LOS up to 80 m (or per [Movement & Stamina](../Gameplay/Movement_and_Stamina.md) audio/visual range). Night or dark zones: flash visible at 2× range per [Environmental Hazards](../Gameplay/Environmental_Hazards.md). Suppressor reduces both sound and flash to avoid contradicting stealth.
+**Visibility range:** Muzzle flash is visible to other players within LOS up to 80 m (or per [Movement & Stamina](../gameplay/movement_and_stamina/index.html) audio/visual range). Night or dark zones: flash visible at 2× range per [Environmental Hazards](../gameplay/environmental_hazards/index.html). Suppressor reduces both sound and flash to avoid contradicting stealth.
 
 ---
 
@@ -105,7 +105,7 @@ Each weapon (or caliber family) has a **distinct report** so players can identif
 | .338 / .50 | Very heavy; long tail | 90 m | 28–35 m |
 | 12 Gauge | Boom; short tail | 50 m | 15–20 m |
 
-**Rules:** Same caliber can share base sound with pitch/body variation per weapon (e.g. M4 vs HK416 slightly different). Reload, bolt cycle, and empty click are also distinct per weapon class. See [Audio — Sound Design](../Audio/SoundDesign.md) and [Tactical Audio](../Audio/TacticalAudio.md) for integration.
+**Rules:** Same caliber can share base sound with pitch/body variation per weapon (e.g. M4 vs HK416 slightly different). Reload, bolt cycle, and empty click are also distinct per weapon class. See [Audio — Sound Design](../audio/sounddesign/index.html) and [Tactical Audio](../audio/tacticalaudio/index.html) for integration.
 
 ---
 
@@ -148,8 +148,8 @@ Death animation and feedback vary by **killing weapon class** to reinforce weapo
 
 ## Cross-References
 
-- [Combat Feel (Top-Down)](../Gameplay/Combat_Feel_Topdown.md) — Hit markers, tracers, aim cone, suppression.
-- [Weapon Arsenal](../Gameplay/WeaponArsenal.md) — Weapon list and categories.
-- [Weapon Attachment System](../Gameplay/Weapon_Attachment_System.md) — Attachment types and slots.
-- [Audio — Sound Design](../Audio/SoundDesign.md) — Gunshot and combat audio.
-- [Environmental Hazards](../Gameplay/Environmental_Hazards.md) — Night and weather effects on visibility.
+- [Combat Feel (Top-Down)](../gameplay/combat_feel_topdown/index.html) — Hit markers, tracers, aim cone, suppression.
+- [Weapon Arsenal](../gameplay/weaponarsenal/index.html) — Weapon list and categories.
+- [Weapon Attachment System](../gameplay/weapon_attachment_system/index.html) — Attachment types and slots.
+- [Audio — Sound Design](../audio/sounddesign/index.html) — Gunshot and combat audio.
+- [Environmental Hazards](../gameplay/environmental_hazards/index.html) — Night and weather effects on visibility.

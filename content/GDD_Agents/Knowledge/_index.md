@@ -8,4 +8,4 @@ weight: 4
 
 Reference documentation and learning resources.
 
-- **[Source References](./SourceReferences.md)** — Official UE5 docs, coding standards, game design resources, extraction shooter references, and development tools
+- **[Source References](./sourcereferences/index.html)** — Official UE5 docs, coding standards, game design resources, extraction shooter references, and development tools

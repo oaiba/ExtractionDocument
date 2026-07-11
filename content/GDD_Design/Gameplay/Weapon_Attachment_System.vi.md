@@ -8,7 +8,7 @@ weight: 23
 
 The vũ khí Attachment hệ thống allows người chơi to modify their vũ khí trước raids (in the Stash và Workbench) và — to a limited degree — in-raid với found attachments. Attachments tạo meaningful gear customization that reinforces the game's **Preparation Phase** và provides giá trị for high-tier loot found trong khi raids.
 
-> **Cross-References:** [Gear cơ chế](Gear_Mechanics.md) — vũ khí weight contribution to encumbrance; [Looting & Inventory](Looting_Interactions.md) — attachments as loot category (FIR status); [Safe House Design](../GameDesign/Safe_House_Design.md) — Workbench crafting of attachments; [Loot bảng Design](Loot_Table_Design.md) — attachment spawn rates by zone tier; [Combat Feel (Top-Down)](Combat_Feel_Topdown.md) — aim cone, recoil hệ thống that attachments directly modify; [Quest & Objective hệ thống](Quest_Objective_System.md) — Viktor quest chain unlocks vũ khí mod blueprints.
+> **Cross-References:** [Gear cơ chế](gear_mechanics/index.html) — vũ khí weight contribution to encumbrance; [Looting & Inventory](looting_interactions/index.html) — attachments as loot category (FIR status); [Safe House Design](../gamedesign/safe_house_design/index.html) — Workbench crafting of attachments; [Loot bảng Design](loot_table_design/index.html) — attachment spawn rates by zone tier; [Combat Feel (Top-Down)](combat_feel_topdown/index.html) — aim cone, recoil hệ thống that attachments directly modify; [Quest & Objective hệ thống](quest_objective_system/index.html) — Viktor quest chain unlocks vũ khí mod blueprints.
 
 ---
 
@@ -90,10 +90,10 @@ Not all vũ khí have all slots. Slot availability is per vũ khí type và mode
 | **Red Dot Sight** | ×1.2 | rõ | 0.2s | +0.1 kg | Best all-round; no magnification |
 | **Holographic** | ×1.3 | Very rõ | 0.2s | +0.15 kg | Wider field; premium clarity |
 | **ACOG (×4)** | ×4.0 | Magnified | 0.35s | +0.3 kg | Mid-long range; tunnel-vision close |
-| **Sniper Scope (×8)** | ×8.0 | Full zoom | 0.5s | +0.4 kg | Sniper-only; Xem [Camera hệ thống](Camera_System.md) zoom interaction |
+| **Sniper Scope (×8)** | ×8.0 | Full zoom | 0.5s | +0.4 kg | Sniper-only; Xem [Camera hệ thống](camera_system/index.html) zoom interaction |
 | **Night Vision Scope** | ×2.0 / NV | NV-only at night | 0.4s | +0.5 kg | Night raids only; useless in daylight |
 
-> **Top-down ADS:** In top-down perspective, "ADS" functions as the người chơi entering "precision aim" mode. The camera does not zoom in like FPS. Instead, the aim cone tightens và the cursor anchors more firmly. Optic zoom affects the vũ khí overlay reticle và a slight camera zoom (+1 level) per [Camera hệ thống](Camera_System.md).
+> **Top-down ADS:** In top-down perspective, "ADS" functions as the người chơi entering "precision aim" mode. The camera does not zoom in like FPS. Instead, the aim cone tightens và the cursor anchors more firmly. Optic zoom affects the vũ khí overlay reticle và a slight camera zoom (+1 level) per [Camera hệ thống](camera_system/index.html).
 
 ---
 
@@ -153,7 +153,7 @@ Người chơi có thể save **named vũ khí presets** in the stash:
 
 ## Crafting Attachments (Workbench)
 
-Per [Safe House Design](../GameDesign/Safe_House_Design.md) Workbench recipes:
+Per [Safe House Design](../gamedesign/safe_house_design/index.html) Workbench recipes:
 
 | Workbench Level | Craftable Attachments |
 | :-------------- | :-------------------- |
@@ -161,7 +161,7 @@ Per [Safe House Design](../GameDesign/Safe_House_Design.md) Workbench recipes:
 | **Level 2** | Compensator, Extended magazines, Red Dot Sight, Vertical Grip |
 | **Level 3** | Heavy Barrel, ACOG scope, Drum Magazine, Grenade Launcher, Night Vision Scope |
 
-Attachment crafting consumes cụ thể materials per [Loot bảng Design](Loot_Table_Design.md) — cơ chế parts, wires, metal pipes, springs.
+Attachment crafting consumes cụ thể materials per [Loot bảng Design](loot_table_design/index.html) — cơ chế parts, wires, metal pipes, springs.
 
 ---
 
@@ -180,7 +180,7 @@ Attachment crafting consumes cụ thể materials per [Loot bảng Design](Loot_
 
 ## Weight Contribution to Loadout
 
-All attachments add weight to the vũ khí, which counts toward total encumbrance per [Gear cơ chế](Gear_Mechanics.md):
+All attachments add weight to the vũ khí, which counts toward total encumbrance per [Gear cơ chế](gear_mechanics/index.html):
 
 | Build Type | Typical Attachment Weight | Total vũ khí Weight (AR) |
 | :--------- | :------------------------: | :----------------------: |
@@ -196,10 +196,10 @@ A heavy-modded vũ khí can push a người chơi from Tier 2 (moderate) to Tier
 
 ## Tham Chiếu Chéo
 
-- [Gear cơ chế](Gear_Mechanics.md) — vũ khí weight contribution to total encumbrance và weight tier.
-- [Combat Feel (Top-Down)](Combat_Feel_Topdown.md) — Aim cone bloom, recoil recovery rates modified by attachments.
-- [Looting & Inventory](Looting_Interactions.md) — Attachments as separate loot items; FIR status; inventory slots.
-- [Safe House Design](../GameDesign/Safe_House_Design.md) — Workbench crafting of attachments; level gates.
-- [Loot bảng Design](Loot_Table_Design.md) — Attachment spawn rates; tier 3/4 zones for rare attachments.
-- [Quest & Objective hệ thống](Quest_Objective_System.md) — Viktor quest chain unlocks vũ khí mod blueprints.
-- [Camera hệ thống](Camera_System.md) — vũ khí zoom interaction với optics in top-down perspective.
+- [Gear cơ chế](gear_mechanics/index.html) — vũ khí weight contribution to total encumbrance và weight tier.
+- [Combat Feel (Top-Down)](combat_feel_topdown/index.html) — Aim cone bloom, recoil recovery rates modified by attachments.
+- [Looting & Inventory](looting_interactions/index.html) — Attachments as separate loot items; FIR status; inventory slots.
+- [Safe House Design](../gamedesign/safe_house_design/index.html) — Workbench crafting of attachments; level gates.
+- [Loot bảng Design](loot_table_design/index.html) — Attachment spawn rates; tier 3/4 zones for rare attachments.
+- [Quest & Objective hệ thống](quest_objective_system/index.html) — Viktor quest chain unlocks vũ khí mod blueprints.
+- [Camera hệ thống](camera_system/index.html) — vũ khí zoom interaction với optics in top-down perspective.

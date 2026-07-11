@@ -8,12 +8,12 @@ weight: 22
 
 | điểm đến | cách dùng |
 | :--- | :--- |
-| [UI/UX Index](_index.md) | Full UI/UX documentation hub |
-| [màn hình Groups Overview](Screen_Groups_Overview.md) | Lifecycle taxonomy và designer-ready spec template |
-| [global UX Standards](Global_UX_Standards.md) | shared navigation, focus, trạng thái, modal, và accessibility rules |
-| [Out-of-Raid màn hình](Out_Of_Raid_Screens.md) | Home, loadout, stash, quests, profile |
-| [Pre-Raid màn hình](Pre_Raid_Screens.md) | Mode/map/deploy/squad/matchmaking flow |
-| [Post-Raid màn hình](Post_Raid_Screens.md) | kết quả, loot, replay, redeploy flow |
+| [UI/UX Index](_index/index.html) | Full UI/UX documentation hub |
+| [màn hình Groups Overview](screen_groups_overview/index.html) | Lifecycle taxonomy và designer-ready spec template |
+| [global UX Standards](global_ux_standards/index.html) | shared navigation, focus, trạng thái, modal, và accessibility rules |
+| [Out-of-Raid màn hình](out_of_raid_screens/index.html) | Home, loadout, stash, quests, profile |
+| [Pre-Raid màn hình](pre_raid_screens/index.html) | Mode/map/deploy/squad/matchmaking flow |
+| [Post-Raid màn hình](post_raid_screens/index.html) | kết quả, loot, replay, redeploy flow |
 
 ---
 
@@ -63,7 +63,7 @@ graph TD
     L6 --> MainMenu
 ```
 
-**loading nodes (L1–L8):** Xem [loading màn hình Design](LoadingScreen_Design.md) for full taxonomy. L7 (Map Transition) và L8 (Reconnect) apply to multi-zone raids và disconnect recovery respectively.
+**loading nodes (L1–L8):** Xem [loading màn hình Design](loadingscreen_design/index.html) for full taxonomy. L7 (Map Transition) và L8 (Reconnect) apply to multi-zone raids và disconnect recovery respectively.
 
 <!-- REF_IMAGE: người chơi session flow diagram — full-color version of the mermaid chart above với visual polish và game-cụ thể artwork -->
 
@@ -491,15 +491,15 @@ Dùng trang này để understand journey order và transition intent. cách dù
 
 | flow | Canonical chi tiết trang | Designer Check |
 | :--- | :--- | :--- |
-| Boot to Home | [Settings & hệ thống màn hình](Commerce_Settings_System_Screens.md), [loading màn hình Design](LoadingScreen_Design.md) | loading/account errors và setup trạng thái are explicit |
-| Home to Queue | [Out-of-Raid màn hình](Out_Of_Raid_Screens.md), [Pre-Raid màn hình](Pre_Raid_Screens.md) | deploy blockers và risk confirmation are preserved |
-| Queue to Raid | [Pre-Raid màn hình](Pre_Raid_Screens.md), [loading màn hình Design](LoadingScreen_Design.md) | match found, cancel lock, và L4 loading trạng thái align |
-| In-Raid Action | [HUD Design](HUD_Design.md), [In-Raid màn hình](In_Raid_Screens.md), [Notification hệ thống](Notification_Systems.md) | overlays preserve combat readability và audio awareness |
-| Raid to Results | [Post-Raid màn hình](Post_Raid_Screens.md), [loading màn hình Design](LoadingScreen_Design.md) | outcome, loot, replay, và redeploy validation are rõ |
-| Social Coordination | [Social màn hình](Social_Screens.md) | invite, voice, privacy, và safety trạng thái are respected |
-| LiveOps Progression | [Progression & LiveOps màn hình](Progression_LiveOps_Screens.md) | rewards, expiry, premium/free, và claim blockers are hiển thị rõ |
-| Commerce purchase | [Commerce màn hình](Commerce_Screens.md), [Progression & LiveOps màn hình](Progression_LiveOps_Screens.md) | offer, preview, giá, confirmation, receipt, và upgrade routes are explicit |
-| Settings Recovery | [Settings & hệ thống màn hình](Commerce_Settings_System_Screens.md), [global UX Standards](Global_UX_Standards.md) | apply/revert, locks, errors, và support routes are explicit |
+| Boot to Home | [Settings & hệ thống màn hình](commerce_settings_system_screens/index.html), [loading màn hình Design](loadingscreen_design/index.html) | loading/account errors và setup trạng thái are explicit |
+| Home to Queue | [Out-of-Raid màn hình](out_of_raid_screens/index.html), [Pre-Raid màn hình](pre_raid_screens/index.html) | deploy blockers và risk confirmation are preserved |
+| Queue to Raid | [Pre-Raid màn hình](pre_raid_screens/index.html), [loading màn hình Design](loadingscreen_design/index.html) | match found, cancel lock, và L4 loading trạng thái align |
+| In-Raid Action | [HUD Design](hud_design/index.html), [In-Raid màn hình](in_raid_screens/index.html), [Notification hệ thống](notification_systems/index.html) | overlays preserve combat readability và audio awareness |
+| Raid to Results | [Post-Raid màn hình](post_raid_screens/index.html), [loading màn hình Design](loadingscreen_design/index.html) | outcome, loot, replay, và redeploy validation are rõ |
+| Social Coordination | [Social màn hình](social_screens/index.html) | invite, voice, privacy, và safety trạng thái are respected |
+| LiveOps Progression | [Progression & LiveOps màn hình](progression_liveops_screens/index.html) | rewards, expiry, premium/free, và claim blockers are hiển thị rõ |
+| Commerce purchase | [Commerce màn hình](commerce_screens/index.html), [Progression & LiveOps màn hình](progression_liveops_screens/index.html) | offer, preview, giá, confirmation, receipt, và upgrade routes are explicit |
+| Settings Recovery | [Settings & hệ thống màn hình](commerce_settings_system_screens/index.html), [global UX Standards](global_ux_standards/index.html) | apply/revert, locks, errors, và support routes are explicit |
 
 ### Commerce Purchase Journey
 

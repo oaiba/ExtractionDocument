@@ -94,14 +94,14 @@ khi tuning giáp in patches, cách dùng these levers:
 
 **Rule:** No single item nên được strictly best in every stat. E.g. Class 6 Steel (very heavy) vs Class 5 UHMWPE (almost as good protection, much lighter) — situational và loadout-dependent.
 
-**Tier** (per [Gear Tier hệ thống](../Gear_Tier_System.md)) is used for balance bracket và chi phí curve; progression = Tier + Rarity + người chơi/trader level.
+**Tier** (per [Gear Tier hệ thống](../gear_tier_system/index.html)) is used for balance bracket và chi phí curve; progression = Tier + Rarity + người chơi/trader level.
 
 ---
 
 ## Tham Chiếu Chéo
 
-- [Gear Tier hệ thống](../Gear_Tier_System.md) — giáp Tier (1–5) định nghĩa; balance bracket, chi phí curve.
-- [giáp & Ballistics](giáp.md) — Penetration check, blunt, material bảng.
+- [Gear Tier hệ thống](../gear_tier_system/index.html) — giáp Tier (1–5) định nghĩa; balance bracket, chi phí curve.
+- [giáp & Ballistics](armor/index.html) — Penetration check, blunt, material bảng.
 - [Caliber & Ballistics hệ thống](../../vũ khí/Caliber_Ballistics_System.md) — Penetration power, giáp degradation formula.
 - [vũ khí Balance Framework](../../vũ khí/Weapon_Balance_Framework.md) — TTK matrix, DPS, chi phí-efficiency.
-- [giáp Master Database](Armor_Master_Database.md) — Per-item durability, material, giá trị.
+- [giáp Master Database](armor_master_database/index.html) — Per-item durability, material, giá trị.

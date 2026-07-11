@@ -135,7 +135,7 @@ The Secure Container is the single most important item in the game. Everything p
 
 #### Cross-Platform
 
-Grid rules, search times, and container behavior are identical on PC, console, and mobile. **Input:** PC uses drag-and-drop and shortcuts (Ctrl+Click, Alt+Click); mobile uses tap-to-transfer and optional auto-sort; console uses cursor or d-pad selection. Same vulnerability window and noise rules apply. See [Controls](https://github.com/oaiba/ExtractionDocument/blob/main/content/GameDesign/Controls.md) and [Gear Mechanics](Gear_Mechanics.md) for platform input and inventory UX.
+Grid rules, search times, and container behavior are identical on PC, console, and mobile. **Input:** PC uses drag-and-drop and shortcuts (Ctrl+Click, Alt+Click); mobile uses tap-to-transfer and optional auto-sort; console uses cursor or d-pad selection. Same vulnerability window and noise rules apply. See [Controls](https://github.com/oaiba/ExtractionDocument/blob/main/content/GameDesign/Controls.md) and [Gear Mechanics](gear_mechanics/index.html) for platform input and inventory UX.
 
 ***
 
@@ -259,7 +259,7 @@ FIR is resolved at raid outcome, not only at pickup. The item tile can show a pr
 
 ### Marketplace & Player Trading
 
-> **Item Catalogue:** For all item specs, values, and grid sizes, see [Items & Gear](ItemsAndGear.md). This section covers the _trading mechanics_ — how items move between players.
+> **Item Catalogue:** For all item specs, values, and grid sizes, see [Items & Gear](itemsandgear/index.html). This section covers the _trading mechanics_ — how items move between players.
 
 #### Face-to-Face Trading (Lobby)
 
@@ -338,11 +338,11 @@ A high-risk premium vendor concept — an AI trader that spawns in the contamina
 
 ### Cross-References
 
-* [Items & Gear](ItemsAndGear.md) — Full item catalogue with values, grid sizes, weights, and use descriptions.
+* [Items & Gear](itemsandgear/index.html) — Full item catalogue with values, grid sizes, weights, and use descriptions.
 * [Gears — Storage Gear](https://github.com/oaiba/ExtractionDocument/blob/main/content/Gears/StorageGear/README.md) — Storage Master Database, Slot Layouts (reload rule, hotkeys), Flat Storage & Folding, Secure Container restrictions.
-* [Loot Table Design](Loot_Table_Design.md) — What spawns in each container type and zone; supply drop loot.
-* [Gear Mechanics](Gear_Mechanics.md) — Weight encumbrance, item condition, and armor repair.
-* [Safe House Design](../GameDesign/Safe_House_Design.md) — Crafting recipes; Safe House upgrades that expand marketplace listing slots.
-* [Quest & Objectives](Quest_Objective_System.md) — Quest items require FIR; some quests require buying from traders.
+* [Loot Table Design](loot_table_design/index.html) — What spawns in each container type and zone; supply drop loot.
+* [Gear Mechanics](gear_mechanics/index.html) — Weight encumbrance, item condition, and armor repair.
+* [Safe House Design](../gamedesign/safe_house_design/index.html) — Crafting recipes; Safe House upgrades that expand marketplace listing slots.
+* [Quest & Objectives](quest_objective_system/index.html) — Quest items require FIR; some quests require buying from traders.
 * [GameDesign/Economy](https://github.com/oaiba/ExtractionDocument/blob/main/content/GameDesign/Economy.md) — Macro economy design: trader tiers, credit sinks, inflation control.
 * [GameDesign/Insurance System](https://github.com/oaiba/ExtractionDocument/blob/main/content/GameDesign/InsuranceSystem.md) — Insurance pre-checkout as part of pre-raid loadout flow.

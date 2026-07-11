@@ -6,9 +6,9 @@ weight: 2
 
 ## Overview
 
-This document expands each weapon genre with design identity, engagement doctrine, hero synergy, build archetypes, matchup matrices, and top-down-specific notes. For full weapon stats and tables see [Weapon Arsenal](../Gameplay/WeaponArsenal.md) and [Weapon Master Database](Weapon_Master_Database.md).
+This document expands each weapon genre with design identity, engagement doctrine, hero synergy, build archetypes, matchup matrices, and top-down-specific notes. For full weapon stats and tables see [Weapon Arsenal](../gameplay/weaponarsenal/index.html) and [Weapon Master Database](weapon_master_database/index.html).
 
-> **Cross-References:** [Weapon Handling Settings](Weapon_Handling_Settings.md) — draw, ADS, movement modifiers; [Weapon Balance Framework](Weapon_Balance_Framework.md) — DPS and TTK; [Characters & Operators](../Characters/_index.md) — class roster for synergy.
+> **Cross-References:** [Weapon Handling Settings](weapon_handling_settings/index.html) — draw, ADS, movement modifiers; [Weapon Balance Framework](weapon_balance_framework/index.html) — DPS and TTK; [Characters & Operators](../characters/_index/index.html) — class roster for synergy.
 
 ---
 
@@ -431,8 +431,8 @@ Melee is silent and lethal at touch range: backstab multiplier, no ammo, high ri
 
 ## Cross-References
 
-- [Weapon Arsenal](../Gameplay/WeaponArsenal.md) — Full stats and ammo.
-- [Weapon Master Database](Weapon_Master_Database.md) — Per-weapon base and modded stats.
-- [Weapon Handling Settings](Weapon_Handling_Settings.md) — Draw, ADS, movement.
-- [Weapon Balance Framework](Weapon_Balance_Framework.md) — DPS, TTK, balance levers.
-- [Characters & Operators](../Characters/_index.md) — Hero classes and abilities.
+- [Weapon Arsenal](../gameplay/weaponarsenal/index.html) — Full stats and ammo.
+- [Weapon Master Database](weapon_master_database/index.html) — Per-weapon base and modded stats.
+- [Weapon Handling Settings](weapon_handling_settings/index.html) — Draw, ADS, movement.
+- [Weapon Balance Framework](weapon_balance_framework/index.html) — DPS, TTK, balance levers.
+- [Characters & Operators](../characters/_index/index.html) — Hero classes and abilities.

@@ -8,12 +8,12 @@ weight: 0
 
 Weapons follow a "Realism-Lite" approach. Key stats:
 
-- **Recoil:** Vertical (climb) and horizontal (bounce). Lower is better. See [Combat Feel (Top-Down)](../Gameplay/Combat_Feel_Topdown.md).
-- **Ergonomics:** ADS speed, stamina drain, noise. Higher (0–100) is better. See [Weapon Modding](../Inventory_System/Gunsmith_System.md).
+- **Recoil:** Vertical (climb) and horizontal (bounce). Lower is better. See [Combat Feel (Top-Down)](../gameplay/combat_feel_topdown/index.html).
+- **Ergonomics:** ADS speed, stamina drain, noise. Higher (0–100) is better. See [Weapon Modding](../inventory_system/gunsmith_system/index.html).
 - **Fire Rate (RPM):** Fixed per receiver; not changed by mods.
 - **MOA (Accuracy):** Dispersion at 100 m. Lower is better.
 
-Full category design: [Weapon Categories Deep Dive](Weapon_Categories_Deep_Dive.md). Full stats and ammo: [Weapon Arsenal](../Gameplay/WeaponArsenal.md).
+Full category design: [Weapon Categories Deep Dive](weapon_categories_deep_dive/index.html). Full stats and ammo: [Weapon Arsenal](../gameplay/weaponarsenal/index.html).
 
 ---
 
@@ -128,9 +128,9 @@ Full category design: [Weapon Categories Deep Dive](Weapon_Categories_Deep_Dive.
 
 ## Cross-References
 
-- [Weapon Arsenal](../Gameplay/WeaponArsenal.md) — Full specs, ammo tables, attachment reference.
-- [Weapon Categories Deep Dive](Weapon_Categories_Deep_Dive.md) — Role, doctrine, hero synergy, matchups.
-- [Weapon Balance Framework](Weapon_Balance_Framework.md) — DPS, TTK, cost-efficiency.
-- [Weapon Modding (Gunsmith)](../Inventory_System/Gunsmith_System.md) — Ergonomics, recoil, MOA, malfunctions.
-- [Weapon Attachment System](../Gameplay/Weapon_Attachment_System.md) — Slot types and compatibility.
+- [Weapon Arsenal](../gameplay/weaponarsenal/index.html) — Full specs, ammo tables, attachment reference.
+- [Weapon Categories Deep Dive](weapon_categories_deep_dive/index.html) — Role, doctrine, hero synergy, matchups.
+- [Weapon Balance Framework](weapon_balance_framework/index.html) — DPS, TTK, cost-efficiency.
+- [Weapon Modding (Gunsmith)](../inventory_system/gunsmith_system/index.html) — Ergonomics, recoil, MOA, malfunctions.
+- [Weapon Attachment System](../gameplay/weapon_attachment_system/index.html) — Slot types and compatibility.
 

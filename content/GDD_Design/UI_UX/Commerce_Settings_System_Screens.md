@@ -12,24 +12,24 @@ Primary references:
 
 | System | Source |
 | :--- | :--- |
-| User settings | [User Settings & Configuration](../GameDesign/UserSettings.md) |
-| Settings matrix | [Settings Matrix](../GameDesign/UserSettings_Matrix.md) |
-| Accessibility | [Accessibility Design](../GameDesign/Accessibility.md) |
-| Loading screens | [Async Loading Screen Design](LoadingScreen_Design.md) |
-| Commerce | [Commerce Screens](Commerce_Screens.md) |
-| Settings technical system | [Settings System](../../GDD_Technical/Systems/SettingsSystem.md) |
+| User settings | [User Settings & Configuration](../gamedesign/usersettings/index.html) |
+| Settings matrix | [Settings Matrix](../gamedesign/usersettings_matrix/index.html) |
+| Accessibility | [Accessibility Design](../gamedesign/accessibility/index.html) |
+| Loading screens | [Async Loading Screen Design](loadingscreen_design/index.html) |
+| Commerce | [Commerce Screens](commerce_screens/index.html) |
+| Settings technical system | [Settings System](../../gdd_technical/systems/settingssystem/index.html) |
 
 ## Quick Navigation
 
 | Destination | Use |
 | :--- | :--- |
-| [UI/UX Index](_index.md) | Full UI/UX documentation hub |
-| [Screen Groups Overview](Screen_Groups_Overview.md) | Lifecycle taxonomy and designer-ready spec template |
-| [Global UX Standards](Global_UX_Standards.md) | Shared navigation, focus, state, modal, and accessibility rules |
-| [Commerce Screens](Commerce_Screens.md) | Shop, offers, currency top-up, purchase confirmation, receipts, and entitlement claim |
-| [Loading Screen Design](LoadingScreen_Design.md) | Boot, splash, lobby, result, and reconnect loading rules |
-| [Progression & LiveOps Screens](Progression_LiveOps_Screens.md) | Battle pass, rewards, ranked, news, and LiveOps goals |
-| [Social Screens](Social_Screens.md) | Privacy, safety, report/block, and communication settings |
+| [UI/UX Index](_index/index.html) | Full UI/UX documentation hub |
+| [Screen Groups Overview](screen_groups_overview/index.html) | Lifecycle taxonomy and designer-ready spec template |
+| [Global UX Standards](global_ux_standards/index.html) | Shared navigation, focus, state, modal, and accessibility rules |
+| [Commerce Screens](commerce_screens/index.html) | Shop, offers, currency top-up, purchase confirmation, receipts, and entitlement claim |
+| [Loading Screen Design](loadingscreen_design/index.html) | Boot, splash, lobby, result, and reconnect loading rules |
+| [Progression & LiveOps Screens](progression_liveops_screens/index.html) | Battle pass, rewards, ranked, news, and LiveOps goals |
+| [Social Screens](social_screens/index.html) | Privacy, safety, report/block, and communication settings |
 
 ---
 
@@ -51,7 +51,7 @@ Primary references:
 
 ## Boot, Splash, And Loading
 
-Boot and splash screens should stay minimal. Loading taxonomy lives in [Loading Screen Design](LoadingScreen_Design.md); this section owns the system-facing states.
+Boot and splash screens should stay minimal. Loading taxonomy lives in [Loading Screen Design](loadingscreen_design/index.html); this section owns the system-facing states.
 
 Layout (PC/Console)
 
@@ -113,7 +113,7 @@ Layout (PC/Console)
 | No account | Show sign-in providers and privacy note |
 | Auth failed | Show provider, retry, and support |
 | Account conflict | Compare account names, timestamps, and progression summaries |
-| Cloud sync conflict | Use local/cloud/merge choices from [User Settings](../GameDesign/UserSettings.md) |
+| Cloud sync conflict | Use local/cloud/merge choices from [User Settings](../gamedesign/usersettings/index.html) |
 | Age gate | Region-appropriate messaging and blocked feature explanation |
 
 ---
@@ -183,7 +183,7 @@ Layout (PC/Console)
 
 ## Settings
 
-Settings categories follow [User Settings](../GameDesign/UserSettings.md) and the detailed [Settings Matrix](../GameDesign/UserSettings_Matrix.md).
+Settings categories follow [User Settings](../gamedesign/usersettings/index.html) and the detailed [Settings Matrix](../gamedesign/usersettings_matrix/index.html).
 
 Layout (PC/Console)
 
@@ -319,7 +319,7 @@ Layout (PC/Console)
 | Server full/queue | Queue position or retry timing |
 | Save conflict | Source, timestamp, impact, choices |
 | Data corruption | What is recoverable and support path |
-| Entitlement/service conflict | Account provider, sync status, support path; purchase receipts live in [Commerce Screens](Commerce_Screens.md) |
+| Entitlement/service conflict | Account provider, sync status, support path; purchase receipts live in [Commerce Screens](commerce_screens/index.html) |
 
 ---
 

@@ -12,23 +12,23 @@ Tham chiếu chính:
 
 | hệ thống | source |
 | :--- | :--- |
-| Progression | [Progression & Monetization](../GameDesign/Progression.md) |
-| LiveOps | [Live Operations & Events](../GameDesign/LiveOps.md) |
-| Ranked | [Ranked Mode & Competitive hệ thống](../GameDesign/RankedMode.md) |
-| Economy | [Economy & Monetization Design](../GameDesign/Economy.md) |
-| Quest hệ thống | [Quest & Objective hệ thống](../Gameplay/Quest_Objective_System.md) |
+| Progression | [Progression & Monetization](../gamedesign/progression/index.html) |
+| LiveOps | [Live Operations & Events](../gamedesign/liveops/index.html) |
+| Ranked | [Ranked Mode & Competitive hệ thống](../gamedesign/rankedmode/index.html) |
+| Economy | [Economy & Monetization Design](../gamedesign/economy/index.html) |
+| Quest hệ thống | [Quest & Objective hệ thống](../gameplay/quest_objective_system/index.html) |
 
 ## Điều Hướng Nhanh
 
 | điểm đến | cách dùng |
 | :--- | :--- |
-| [UI/UX Index](_index.md) | Full UI/UX documentation hub |
-| [màn hình Groups Overview](Screen_Groups_Overview.md) | Lifecycle taxonomy và designer-ready spec template |
-| [global UX Standards](Global_UX_Standards.md) | shared navigation, focus, trạng thái, modal, và accessibility rules |
-| [Out-of-Raid màn hình](Out_Of_Raid_Screens.md) | Quest board, profile, home hub, và reward routes |
-| [Pre-Raid màn hình](Pre_Raid_Screens.md) | Event/ranked queue commitment và restrictions |
-| [Commerce màn hình](Commerce_Screens.md) | Battle pass upgrade, event store purchase routes, currency top-up, confirmation, và receipts |
-| [Settings & hệ thống màn hình](Commerce_Settings_System_Screens.md) | Privacy, account, và hệ thống dialogs |
+| [UI/UX Index](_index/index.html) | Full UI/UX documentation hub |
+| [màn hình Groups Overview](screen_groups_overview/index.html) | Lifecycle taxonomy và designer-ready spec template |
+| [global UX Standards](global_ux_standards/index.html) | shared navigation, focus, trạng thái, modal, và accessibility rules |
+| [Out-of-Raid màn hình](out_of_raid_screens/index.html) | Quest board, profile, home hub, và reward routes |
+| [Pre-Raid màn hình](pre_raid_screens/index.html) | Event/ranked queue commitment và restrictions |
+| [Commerce màn hình](commerce_screens/index.html) | Battle pass upgrade, event store purchase routes, currency top-up, confirmation, và receipts |
+| [Settings & hệ thống màn hình](commerce_settings_system_screens/index.html) | Privacy, account, và hệ thống dialogs |
 
 ---
 
@@ -73,7 +73,7 @@ Layout (PC/Console)
 | Layout | Tier track, selected reward chi tiết, hiện tại XP, thời gian remaining, free/premium distinction |
 | primary CTA | claim Reward; upgrade Pass only khi a premium reward is selected hoặc trang context supports it |
 | secondary actions | View all rewards, kiểm tra cosmetic, filter claimable, preview season |
-| Monetization rule | Reward/progress context lives here; premium upgrade purchase và confirmation live in [Commerce màn hình](Commerce_Screens.md) |
+| Monetization rule | Reward/progress context lives here; premium upgrade purchase và confirmation live in [Commerce màn hình](commerce_screens/index.html) |
 
 ### Battle Pass trạng thái
 

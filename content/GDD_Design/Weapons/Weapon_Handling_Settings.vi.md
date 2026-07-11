@@ -6,9 +6,9 @@ weight: 1
 
 ## Tổng Quan
 
-vũ khí handling defines how quickly và smoothly Người chơi có thể ready, aim, và fire their vũ khí. These parameters are tuned per vũ khí class và are modified by attachments (ergonomics) và [Gear cơ chế](../Gameplay/Gear_Mechanics.md) (weight tier). Design reference: Tarkov ergonomics, Arena Breakout handling stats, Delta Force per-vũ khí progression.
+vũ khí handling defines how quickly và smoothly Người chơi có thể ready, aim, và fire their vũ khí. These parameters are tuned per vũ khí class và are modified by attachments (ergonomics) và [Gear cơ chế](../gameplay/gear_mechanics/index.html) (weight tier). Design reference: Tarkov ergonomics, Arena Breakout handling stats, Delta Force per-vũ khí progression.
 
-> **Cross-References:** [vũ khí Modding (Gunsmith)](../Inventory_System/Gunsmith_System.md) — ergonomics stat affecting ADS và stamina; [vũ khí Attachment hệ thống](../Gameplay/Weapon_Attachment_System.md) — attachment weight và stat modifiers; [Combat Feel (Top-Down)](../Gameplay/Combat_Feel_Topdown.md) — aim cone và recoil recovery.
+> **Cross-References:** [vũ khí Modding (Gunsmith)](../inventory_system/gunsmith_system/index.html) — ergonomics stat affecting ADS và stamina; [vũ khí Attachment hệ thống](../gameplay/weapon_attachment_system/index.html) — attachment weight và stat modifiers; [Combat Feel (Top-Down)](../gameplay/combat_feel_topdown/index.html) — aim cone và recoil recovery.
 
 ---
 
@@ -56,13 +56,13 @@ thời gian to switch to a vũ khí (draw) hoặc stow it (holster). Affects vũ
 | Sniper Rifle | 0.70 s | 0.60 s | Long barrel, scope |
 | LMG | 1.20 s | 1.00 s | Heavy; deliberate swap |
 
-**Modifiers:** Ergonomics from [vũ khí Modding](../Inventory_System/Gunsmith_System.md) adjusts draw/holster by ±10%. Weight tier (Heavy/Critical) adds +0.1–0.2 s to LMG và Sniper.
+**Modifiers:** Ergonomics from [vũ khí Modding](../inventory_system/gunsmith_system/index.html) adjusts draw/holster by ±10%. Weight tier (Heavy/Critical) adds +0.1–0.2 s to LMG và Sniper.
 
 ---
 
 ## ADS Timing
 
-thời gian from hip-fire trạng thái to fully aimed (precision aim mode). In top-down, ADS tightens aim cone và may apply a slight camera zoom per [Camera hệ thống](../Gameplay/Camera_System.md).
+thời gian from hip-fire trạng thái to fully aimed (precision aim mode). In top-down, ADS tightens aim cone và may apply a slight camera zoom per [Camera hệ thống](../gameplay/camera_system/index.html).
 
 | vũ khí Class | Base ADS thời gian | với High Ergo (est) | với Low Ergo (est) |
 | :----------- | :------------: | :------------------: | :-----------------: |
@@ -74,13 +74,13 @@ thời gian from hip-fire trạng thái to fully aimed (precision aim mode). In 
 | Sniper Rifle | 0.45 s | 0.36 s | 0.55 s |
 | LMG | 0.40 s | 0.32 s | 0.50 s |
 
-Optics add a fixed ADS penalty (e.g. ACOG +0.10 s, 8× Sniper +0.15 s) as defined in [vũ khí Attachment hệ thống](../Gameplay/Weapon_Attachment_System.md).
+Optics add a fixed ADS penalty (e.g. ACOG +0.10 s, 8× Sniper +0.15 s) as defined in [vũ khí Attachment hệ thống](../gameplay/weapon_attachment_system/index.html).
 
 ---
 
 ## Movement Speed Modifiers
 
-Percentage speed reduction while the vũ khí is wielded (not stowed). Base movement from [Movement & Stamina](../Gameplay/Movement_and_Stamina.md).
+Percentage speed reduction while the vũ khí is wielded (not stowed). Base movement from [Movement & Stamina](../gameplay/movement_and_stamina/index.html).
 
 | vũ khí Class | Speed Modifier | ghi chú |
 | :----------- | :------------: | :---- |
@@ -93,7 +93,7 @@ Percentage speed reduction while the vũ khí is wielded (not stowed). Base move
 | Sniper Rifle | −10% | Long, heavy |
 | LMG | −15% | Heavy vũ khí |
 
-Modifiers stack với weight tier from [Gear cơ chế](../Gameplay/Gear_Mechanics.md). A người chơi in Heavy tier với an LMG has compounded slowdown.
+Modifiers stack với weight tier from [Gear cơ chế](../gameplay/gear_mechanics/index.html). A người chơi in Heavy tier với an LMG has compounded slowdown.
 
 ---
 
@@ -117,7 +117,7 @@ Bipod (khi prone/crouched) sets sway to 0.1° for LMG và Sniper. Sway is applie
 
 ## Hip-Fire vs ADS Behavior
 
-Hip-fire uses a wider aim cone; ADS tightens it. Values align với [Combat Feel (Top-Down)](../Gameplay/Combat_Feel_Topdown.md).
+Hip-fire uses a wider aim cone; ADS tightens it. Values align với [Combat Feel (Top-Down)](../gameplay/combat_feel_topdown/index.html).
 
 | vũ khí Class | Hip-Fire Cone Multiplier | ADS Cone Multiplier | ghi chú |
 | :----------- | :----------------------: | :-----------------: | :---- |
@@ -147,7 +147,7 @@ Full reload = empty mag replaced. Tactical reload = mag replaced với round in 
 | Sniper Rifle | 2.2 s | 1.6 s | 5–10 rd |
 | LMG | 6.0 s | 5.0 s | Belt/box; long animation |
 
-Extended và drum magazines add +0.3–1.5 s to full reload per [vũ khí Attachment hệ thống](../Gameplay/Weapon_Attachment_System.md). Fast Mag attachment reduces times by the documented percentage.
+Extended và drum magazines add +0.3–1.5 s to full reload per [vũ khí Attachment hệ thống](../gameplay/weapon_attachment_system/index.html). Fast Mag attachment reduces times by the documented percentage.
 
 ---
 
@@ -215,7 +215,7 @@ Mobile uses the same draw, ADS, và reload times as PC; only input và feedback 
 
 ## Tham Chiếu Chéo
 
-- [vũ khí Modding (Gunsmith)](../Inventory_System/Gunsmith_System.md) — Ergonomics, recoil control, MOA.
-- [vũ khí Attachment hệ thống](../Gameplay/Weapon_Attachment_System.md) — Attachment effects on weight và handling.
-- [Gear cơ chế](../Gameplay/Gear_Mechanics.md) — Weight tier và mobility.
-- [Combat Feel (Top-Down)](../Gameplay/Combat_Feel_Topdown.md) — Aim cone, recoil bloom, recovery.
+- [vũ khí Modding (Gunsmith)](../inventory_system/gunsmith_system/index.html) — Ergonomics, recoil control, MOA.
+- [vũ khí Attachment hệ thống](../gameplay/weapon_attachment_system/index.html) — Attachment effects on weight và handling.
+- [Gear cơ chế](../gameplay/gear_mechanics/index.html) — Weight tier và mobility.
+- [Combat Feel (Top-Down)](../gameplay/combat_feel_topdown/index.html) — Aim cone, recoil bloom, recovery.

@@ -8,12 +8,12 @@ weight: 20
 
 | điểm đến | cách dùng |
 | :--- | :--- |
-| [UI/UX Index](_index.md) | Full UI/UX documentation hub |
-| [màn hình Groups Overview](Screen_Groups_Overview.md) | Lifecycle taxonomy và designer-ready spec template |
-| [global UX Standards](Global_UX_Standards.md) | shared navigation, focus, trạng thái, modal, và accessibility rules |
-| [In-Raid màn hình](In_Raid_Screens.md) | HUD in context với tactical map, looting, pause, spectator, reconnect |
-| [Notification hệ thống](Notification_Systems.md) | Combat feedback, damage, status effects, toasts, danger communication |
-| [UX flow](UX_Flows.md) | người chơi journeys that reference HUD và overlays |
+| [UI/UX Index](_index/index.html) | Full UI/UX documentation hub |
+| [màn hình Groups Overview](screen_groups_overview/index.html) | Lifecycle taxonomy và designer-ready spec template |
+| [global UX Standards](global_ux_standards/index.html) | shared navigation, focus, trạng thái, modal, và accessibility rules |
+| [In-Raid màn hình](in_raid_screens/index.html) | HUD in context với tactical map, looting, pause, spectator, reconnect |
+| [Notification hệ thống](notification_systems/index.html) | Combat feedback, damage, status effects, toasts, danger communication |
+| [UX flow](ux_flows/index.html) | người chơi journeys that reference HUD và overlays |
 
 ---
 

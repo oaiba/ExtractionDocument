@@ -8,7 +8,7 @@ weight: 3
 
 Tài liệu này định nghĩa how vũ khí balance is measured, tuned, và maintained: DPS và TTK math, chi phí-efficiency, balance levers, patch process, meta máu metrics, và seasonal rotation. Design reference: Helldivers 2 faction-cụ thể effectiveness, Delta Force seasonal TTK rebalancing.
 
-> **Cross-References:** [vũ khí Arsenal](../Gameplay/WeaponArsenal.md) — base stats; [Caliber & Ballistics hệ thống](Caliber_Ballistics_System.md) — penetration và damage application; [Gears — giáp & Ballistics](../Gears/ArmorGear/giáp.md) — giáp classes 1–6.
+> **Cross-References:** [vũ khí Arsenal](../gameplay/weaponarsenal/index.html) — base stats; [Caliber & Ballistics hệ thống](caliber_ballistics_system/index.html) — penetration và damage application; [Gears — giáp & Ballistics](../gears/armorgear/armor/index.html) — giáp classes 1–6.
 
 ---
 
@@ -76,7 +76,7 @@ Damage is per-shot base damage (trước giáp). RPM is rounds per minute. Shotg
 
 ## TTK matrix vs giáp Class
 
-TTK = thời gian to kill (100 HP target). giáp classes 1–6 from [Gears — giáp](../Gears/ArmorGear/giáp.md). Shots to kill depend on penetration và body part; below assumes chest, no penetration failure.
+TTK = thời gian to kill (100 HP target). giáp classes 1–6 from [Gears — giáp](../gears/armorgear/armor/index.html). Shots to kill depend on penetration và body part; below assumes chest, no penetration failure.
 
 **Simplified TTK (seconds) — Chest, 100 HP + giáp**
 
@@ -92,7 +92,7 @@ TTK = thời gian to kill (100 HP target). giáp classes 1–6 from [Gears — g
 
 *0 = one-shot kill. "+" = marginal hoặc requires many shots / AP đạn.*
 
-Full TTK depends on [Caliber & Ballistics hệ thống](Caliber_Ballistics_System.md) penetration chance và damage falloff. This matrix is for high-level balance targets.
+Full TTK depends on [Caliber & Ballistics hệ thống](caliber_ballistics_system/index.html) penetration chance và damage falloff. This matrix is for high-level balance targets.
 
 ---
 
@@ -212,7 +212,7 @@ Rotation does not remove base vũ khí from the game; it changes their visibilit
 
 ## Tham Chiếu Chéo
 
-- [vũ khí Arsenal](../Gameplay/WeaponArsenal.md) — Base damage, RPM, chi phí.
-- [Caliber & Ballistics hệ thống](Caliber_Ballistics_System.md) — Penetration, falloff, giáp interaction.
-- [Gears — giáp & Ballistics](../Gears/ArmorGear/giáp.md) — giáp classes 1–6; [giáp Master Database](../Gears/ArmorGear/Armor_Master_Database.md) — per-item specs.
-- [vũ khí Categories Deep Dive](Weapon_Categories_Deep_Dive.md) — Role per genre.
+- [vũ khí Arsenal](../gameplay/weaponarsenal/index.html) — Base damage, RPM, chi phí.
+- [Caliber & Ballistics hệ thống](caliber_ballistics_system/index.html) — Penetration, falloff, giáp interaction.
+- [Gears — giáp & Ballistics](../gears/armorgear/armor/index.html) — giáp classes 1–6; [giáp Master Database](../gears/armorgear/armor_master_database/index.html) — per-item specs.
+- [vũ khí Categories Deep Dive](weapon_categories_deep_dive/index.html) — Role per genre.

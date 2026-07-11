@@ -6,7 +6,7 @@ weight: 4
 
 ## Overview
 
-This document defines **capacity vs mobility** trade-offs, **cost per slot**, **balance levers**, and **value-per-slot meta** for storage gear. For item list see [Storage Master Database](Storage_Master_Database.md); for progression see [Stash & Container Progression](Stash_Container_Progression.md).
+This document defines **capacity vs mobility** trade-offs, **cost per slot**, **balance levers**, and **value-per-slot meta** for storage gear. For item list see [Storage Master Database](storage_master_database/index.html); for progression see [Stash & Container Progression](stash_container_progression/index.html).
 
 ---
 
@@ -23,7 +23,7 @@ This document defines **capacity vs mobility** trade-offs, **cost per slot**, **
 | Large BP | 25 | 2.0 kg | −5% | 12 m | 12.5 | ~880 |
 | Raid Pack | 30 | 2.5 kg | −8% | 15 m | 12.0 | ~1,333 |
 
-Rigs add no speed penalty by themselves but add weight (and thus contribute to weight tier in [Gear Mechanics](../../Gameplay/Gear_Mechanics.md)). Backpacks add both weight and a direct speed penalty and noise radius.
+Rigs add no speed penalty by themselves but add weight (and thus contribute to weight tier in [Gear Mechanics](../../gameplay/gear_mechanics/index.html)). Backpacks add both weight and a direct speed penalty and noise radius.
 
 ---
 
@@ -51,6 +51,6 @@ When tuning storage in patches:
 
 ## Cross-References
 
-- [Storage Master Database](Storage_Master_Database.md) — Per-item total capacity (cells), subgrids, weight, cost.
-- [Gear Mechanics](../../Gameplay/Gear_Mechanics.md) — Weight tiers, rig vs backpack access times.
-- [Stash & Container Progression](Stash_Container_Progression.md) — Unlock order, stash size.
+- [Storage Master Database](storage_master_database/index.html) — Per-item total capacity (cells), subgrids, weight, cost.
+- [Gear Mechanics](../../gameplay/gear_mechanics/index.html) — Weight tiers, rig vs backpack access times.
+- [Stash & Container Progression](stash_container_progression/index.html) — Unlock order, stash size.

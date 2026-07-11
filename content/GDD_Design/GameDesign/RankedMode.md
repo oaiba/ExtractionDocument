@@ -102,7 +102,7 @@ A player disconnects during a losing fight and fails to reconnect. The system sh
 
 | Topic | Page |
 | :--- | :--- |
-| Core ranked mode rules | [Game Modes](gamemodes.html) |
-| Profile display | [Player Profile](playerprofile.html) |
-| Communication restrictions | [Communication](communication.html) |
-| Economy guardrails | [Economy](economy.html) |
+| Core ranked mode rules | [Game Modes](gamemodes/index.html) |
+| Profile display | [Player Profile](playerprofile/index.html) |
+| Communication restrictions | [Communication](communication/index.html) |
+| Economy guardrails | [Economy](economy/index.html) |

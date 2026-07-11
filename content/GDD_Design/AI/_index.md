@@ -16,8 +16,8 @@ The system is built on two main components:
 2. **Faction Ecology:** How groups of AI interact with the world and each other.
 
 {{< cards cols="2" >}}
-{{< card link="enemybehavior.html" title="Enemy Behaviors" icon="chip" subtitle="Archetypes, states, combat tactics, and difficulty scaling." >}}
-{{< card link="factionbehaviors.html" title="Faction Ecology" icon="users" subtitle="Relationships between Scavengers, Syndicate, UN-PK, and Wildlife." >}}
+{{< card link="enemybehavior/index.html" title="Enemy Behaviors" icon="chip" subtitle="Archetypes, states, combat tactics, and difficulty scaling." >}}
+{{< card link="factionbehaviors/index.html" title="Faction Ecology" icon="users" subtitle="Relationships between Scavengers, Syndicate, UN-PK, and Wildlife." >}}
 {{< /cards >}}
 
 ***

@@ -8,7 +8,7 @@ weight: 19
 
 Combat in a top-down extraction shooter presents unique design challenges not present in FPS hoặc third-person games. The overhead perspective changes how người chơi perceive distance, cover, aim direction, và bullet travel. This tài liệu specifies the visual feedback hệ thống, recoil model, cover interactions, suppression, và the overall combat feel targets that distinguish this game from its competitors.
 
-> **Cross-References:** [Movement & Stamina](Movement_and_Stamina.md) — movement trạng thái trong khi combat; [Gear cơ chế](Gear_Mechanics.md) — giáp penetration, vũ khí tiers; [Hero Abilities](Hero_Abilities.md) — ability interactions với combat; [LOS, Fog & Visibility](LOS_Fog_Visibility.md) — LOS trong khi combat; [Camera hệ thống](Camera_System.md) — combat camera altitude (+1m boost); [Environmental Hazards](Environmental_Hazards.md) — weather effects on combat visibility.
+> **Cross-References:** [Movement & Stamina](movement_and_stamina/index.html) — movement trạng thái trong khi combat; [Gear cơ chế](gear_mechanics/index.html) — giáp penetration, vũ khí tiers; [Hero Abilities](hero_abilities/index.html) — ability interactions với combat; [LOS, Fog & Visibility](los_fog_visibility/index.html) — LOS trong khi combat; [Camera hệ thống](camera_system/index.html) — combat camera altitude (+1m boost); [Environmental Hazards](environmental_hazards/index.html) — weather effects on combat visibility.
 
 ---
 
@@ -120,7 +120,7 @@ Enemy (E)           Cover Object
 ```
 
 **Cover rules:**
-- LOS from any point is calculated per [LOS, Fog & Visibility](LOS_Fog_Visibility.md). Cover blocks LOS và shots.
+- LOS from any point is calculated per [LOS, Fog & Visibility](los_fog_visibility/index.html). Cover blocks LOS và shots.
 - Any object với collision (walls, crates, vehicles, debris) can be used as cover.
 - người chơi in cover behind a **3m+ wall** segment receive a **movement speed boost of +5%** khi crouching behind it (crouch-walk parallel to wall).
 - Cover does NOT automatically protect nếu the người chơi is taller than the cover object. người chơi height is modeled in top-down: standing behind a low crate only protects legs/torso, not head.
@@ -182,11 +182,11 @@ In top-down, "range" is the 2D horizontal distance between người chơi và ta
 
 | Environment | Combat Effect | source |
 | :---------- | :------------ | :----- |
-| **Rain** | Footstep audio range −30%; suppression sound reduced | [Environmental Hazards](Environmental_Hazards.md) |
-| **Night** | LOS range −20%; muzzle flashes are hiển thị rõ at 2× range (tactical tell) | [Environmental Hazards](Environmental_Hazards.md) |
-| **Storm** | Aim cone +1° (wind); all sound range −50% | [Environmental Hazards](Environmental_Hazards.md) |
-| **Smoke** | Aim cone +3° khi shooting into smoke; own accuracy unaffected | [LOS, Fog & Visibility](LOS_Fog_Visibility.md) |
-| **Radiation Zone** | No combat penalty; contamination tick while fighting | [Environmental Hazards](Environmental_Hazards.md) |
+| **Rain** | Footstep audio range −30%; suppression sound reduced | [Environmental Hazards](environmental_hazards/index.html) |
+| **Night** | LOS range −20%; muzzle flashes are hiển thị rõ at 2× range (tactical tell) | [Environmental Hazards](environmental_hazards/index.html) |
+| **Storm** | Aim cone +1° (wind); all sound range −50% | [Environmental Hazards](environmental_hazards/index.html) |
+| **Smoke** | Aim cone +3° khi shooting into smoke; own accuracy unaffected | [LOS, Fog & Visibility](los_fog_visibility/index.html) |
+| **Radiation Zone** | No combat penalty; contamination tick while fighting | [Environmental Hazards](environmental_hazards/index.html) |
 
 ---
 
@@ -195,7 +195,7 @@ In top-down, "range" is the 2D horizontal distance between người chơi và ta
 | Sound | Distance | Priority |
 | :---- | :------- | :------- |
 | Own vũ khí fire | — | Critical — must feel punchy và distinct |
-| địch vũ khí fire | 80m+ (per [Movement & Stamina](Movement_and_Stamina.md)) | Critical — directional 3D |
+| địch vũ khí fire | 80m+ (per [Movement & Stamina](movement_and_stamina/index.html)) | Critical — directional 3D |
 | Bullet crack overhead (near-miss) | 15m | High — signals suppression |
 | Body hit impact | — | High — distinct per material (giáp clank vs. flesh thud) |
 | Kill audio sting | — | High — satisfying short tail |
@@ -206,9 +206,9 @@ In top-down, "range" is the 2D horizontal distance between người chơi và ta
 
 ## Tham Chiếu Chéo
 
-- [Movement & Stamina](Movement_and_Stamina.md) — Movement trạng thái trong khi combat; surface sounds.
-- [Gear cơ chế](Gear_Mechanics.md) — giáp class, penetration, weight penalty trong khi combat.
-- [Camera hệ thống](Camera_System.md) — Combat camera altitude shift (+1m trong khi active fire).
-- [LOS, Fog & Visibility](LOS_Fog_Visibility.md) — LOS calculation for cover; smoke effects.
-- [Hero Abilities](Hero_Abilities.md) — Flashbang (white-out), smoke, suppression interactions với abilities.
-- [Environmental Hazards](Environmental_Hazards.md) — Weather modifiers on combat visibility và accuracy.
+- [Movement & Stamina](movement_and_stamina/index.html) — Movement trạng thái trong khi combat; surface sounds.
+- [Gear cơ chế](gear_mechanics/index.html) — giáp class, penetration, weight penalty trong khi combat.
+- [Camera hệ thống](camera_system/index.html) — Combat camera altitude shift (+1m trong khi active fire).
+- [LOS, Fog & Visibility](los_fog_visibility/index.html) — LOS calculation for cover; smoke effects.
+- [Hero Abilities](hero_abilities/index.html) — Flashbang (white-out), smoke, suppression interactions với abilities.
+- [Environmental Hazards](environmental_hazards/index.html) — Weather modifiers on combat visibility và accuracy.

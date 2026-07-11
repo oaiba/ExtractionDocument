@@ -230,7 +230,7 @@ Every item in the game has two description lines:
 
 loading màn hình tips are **in-nhân vật statements** attributed to cụ thể factions hoặc individuals. They serve as passive lore delivery và atmosphere reinforcement.
 
-> **Full specification:** Xem [loading màn hình Design](../UI_UX/LoadingScreen_Design.md) for loading type taxonomy, content type mapping, và layout mockups.
+> **Full specification:** Xem [loading màn hình Design](../ui_ux/loadingscreen_design/index.html) for loading type taxonomy, content type mapping, và layout mockups.
 
 #### Content Types (by loading màn hình)
 

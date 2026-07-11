@@ -2,8 +2,8 @@
 title: "GDD Technical"
 type: docs
 aliases:
-  - /gdd_technical.html
-  - /GDD_Technical.html
+  - /gdd_technical/index.html
+  - /GDD_Technical/index.html
 ---
 
 ## Purpose
@@ -21,7 +21,7 @@ This document focuses on **technical implementation, enums, codenames, and featu
 ###  Standards & Conventions
 Coding patterns, naming rules, and project organization
 
-- **[Coding & Asset Standards](./CodingStandards.md)** - C++ naming conventions (Epic standard), UE5 asset naming, content folder structure, module architecture, UPROPERTY/UFUNCTION guidelines, Gameplay Tags, Blueprint standards, source control conventions
+- **[Coding & Asset Standards](./codingstandards/index.html)** - C++ naming conventions (Epic standard), UE5 asset naming, content folder structure, module architecture, UPROPERTY/UFUNCTION guidelines, Gameplay Tags, Blueprint standards, source control conventions
 
 ---
 
@@ -176,14 +176,14 @@ ATT_OPTIC_REDDOT     // Attachment - Optic - RedDot
 ##  Quick Navigation
 
 **Start Here:**
-- New developer? → [Architecture](./Core/Architecture.md)
-- Setting up networking? → [Networking System](./Core/NetworkingSystem.md)
-- Implementing gameplay? → [Character System](./Gameplay/CharacterSystem.md)
+- New developer? → [Architecture](./core/architecture/index.html)
+- Setting up networking? → [Networking System](./core/networkingsystem/index.html)
+- Implementing gameplay? → [Character System](./gameplay/charactersystem/index.html)
 
 **Common Tasks:**
-- Adding new weapon → [Weapon System](./Gameplay/WeaponSystem.md)
-- Adding new item → [Inventory System](./Gameplay/InventorySystem.md)
-- Optimizing performance → [Optimization](./Performance/Optimization.md)
+- Adding new weapon → [Weapon System](./gameplay/weaponsystem/index.html)
+- Adding new item → [Inventory System](./gameplay/inventorysystem/index.html)
+- Optimizing performance → [Optimization](./performance/optimization/index.html)
 
 ---
 

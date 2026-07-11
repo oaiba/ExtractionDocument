@@ -12,22 +12,22 @@ Primary references:
 
 | System | Source |
 | :--- | :--- |
-| Matchmaking | [Matchmaking & Lobby System](../Gameplay/Matchmaking_Lobby.md) |
-| Loadout | [Loadout Preparation](../GameDesign/LoadoutPreparation.md) |
-| Modes | [Game Modes Design](../GameDesign/GameModes.md) |
-| Maps | [Map Design](../GameDesign/MapDesign.md) |
-| Insurance | [Insurance System Design](../GameDesign/InsuranceSystem.md) |
+| Matchmaking | [Matchmaking & Lobby System](../gameplay/matchmaking_lobby/index.html) |
+| Loadout | [Loadout Preparation](../gamedesign/loadoutpreparation/index.html) |
+| Modes | [Game Modes Design](../gamedesign/gamemodes/index.html) |
+| Maps | [Map Design](../gamedesign/mapdesign/index.html) |
+| Insurance | [Insurance System Design](../gamedesign/insurancesystem/index.html) |
 
 ## Quick Navigation
 
 | Destination | Use |
 | :--- | :--- |
-| [UI/UX Index](_index.md) | Full UI/UX documentation hub |
-| [Screen Groups Overview](Screen_Groups_Overview.md) | Lifecycle taxonomy and designer-ready spec template |
-| [Global UX Standards](Global_UX_Standards.md) | Shared navigation, focus, state, modal, and accessibility rules |
-| [Out-of-Raid Screens](Out_Of_Raid_Screens.md) | Loadout, stash, quests, traders, safe house |
-| [In-Raid Screens](In_Raid_Screens.md) | HUD, tactical map, looting, pause, reconnect |
-| [Loading Screen Design](LoadingScreen_Design.md) | L4 lobby-to-match loading and reconnect transitions |
+| [UI/UX Index](_index/index.html) | Full UI/UX documentation hub |
+| [Screen Groups Overview](screen_groups_overview/index.html) | Lifecycle taxonomy and designer-ready spec template |
+| [Global UX Standards](global_ux_standards/index.html) | Shared navigation, focus, state, modal, and accessibility rules |
+| [Out-of-Raid Screens](out_of_raid_screens/index.html) | Loadout, stash, quests, traders, safe house |
+| [In-Raid Screens](in_raid_screens/index.html) | HUD, tactical map, looting, pause, reconnect |
+| [Loading Screen Design](loadingscreen_design/index.html) | L4 lobby-to-match loading and reconnect transitions |
 
 ---
 
@@ -279,7 +279,7 @@ Layout (PC/Console)
 | Layout | Selected mission summary, squad status, queue timer, region/ping, tips |
 | Primary CTA | Cancel Queue until match lock |
 | Secondary actions | Voice/chat, inspect mission rules, settings shortcut |
-| Loading link | Uses `LT_LobbyToMatch` when match begins; see [Loading Screen Design](LoadingScreen_Design.md) |
+| Loading link | Uses `LT_LobbyToMatch` when match begins; see [Loading Screen Design](loadingscreen_design/index.html) |
 
 ### Matchmaking States
 

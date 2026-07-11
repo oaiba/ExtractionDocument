@@ -8,7 +8,7 @@ weight: 7
 
 This tài liệu is the single authoritative reference for level design principles, environmental storytelling standards, và world feel. It merges **map design hệ thống** với **narrative art direction** — vì in extraction shooters, the two cannot be separated.
 
-> **Cross-References:** [MapLayouts](https://github.com/oaiba/ExtractionDocument/blob/main/content/GDD_Design/NarrativeWorld/MapLayouts.md) — choke points, extraction points, POI combat data; [LootDistribution](https://github.com/oaiba/ExtractionDocument/blob/main/content/GDD_Design/NarrativeWorld/LootDistribution.md) — heatmaps và container tables; Per-map lore in [MapLore\_Industrial](MapLore_Industrial.md) và [MapLore\_Urban](MapLore_Urban.md).
+> **Cross-References:** [MapLayouts](https://github.com/oaiba/ExtractionDocument/blob/main/content/GDD_Design/NarrativeWorld/MapLayouts.md) — choke points, extraction points, POI combat data; [LootDistribution](https://github.com/oaiba/ExtractionDocument/blob/main/content/GDD_Design/NarrativeWorld/LootDistribution.md) — heatmaps và container tables; Per-map lore in [MapLore\_Industrial](maplore_industrial/index.html) và [MapLore\_Urban](maplore_urban/index.html).
 
 ***
 
@@ -298,7 +298,7 @@ Static daytime lighting on all maps.
 
 ### Environmental Storytelling Principles
 
-> These principles govern how **level art direction và prop placement** deliver narrative. For full per-map implementations, Xem [MapLore\_Industrial](MapLore_Industrial.md) và [MapLore\_Urban](MapLore_Urban.md). For lore delivery channels (audio logs, codex, etc.), Xem [Lore Delivery hệ thống](https://github.com/oaiba/ExtractionDocument/blob/main/content/GDD_Design/NarrativeWorld/Lore_Delivery.md).
+> These principles govern how **level art direction và prop placement** deliver narrative. For full per-map implementations, Xem [MapLore\_Industrial](maplore_industrial/index.html) và [MapLore\_Urban](maplore_urban/index.html). For lore delivery channels (audio logs, codex, etc.), Xem [Lore Delivery hệ thống](https://github.com/oaiba/ExtractionDocument/blob/main/content/GDD_Design/NarrativeWorld/Lore_Delivery.md).
 
 #### cốt lõi Principle: "The Aftermath"
 

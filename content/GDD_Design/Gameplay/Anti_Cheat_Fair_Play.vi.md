@@ -8,7 +8,7 @@ weight: 20
 
 An extraction shooter với persistent economy và PvP stakes is a high-giá trị target for cheating. A single cheater in a raid affects 15–20 other người chơi' session và economy. This tài liệu specifies the anti-cheat architecture, exploit prevention design patterns, người chơi reporting hệ thống, và escalating punishment model. Anti-cheat is not only a technical hệ thống — it is a cốt lõi design philosophy embedded in the game's server architecture.
 
-> **Cross-References:** [LOS, Fog & Visibility](LOS_Fog_Visibility.md) — server-authoritative LOS (anti-wallhack); [Matchmaking & Lobby](Matchmaking_Lobby.md) — suspect matchmaking isolation pool; [Camera hệ thống](Camera_System.md) — altitude cap prevents client-side reveal; [Looting & Inventory](Looting_Interactions.md) — item duplication prevention; [GameDesign/LiveOps](https://github.com/oaiba/ExtractionDocument/blob/main/content/GameDesign/LiveOps.md) — ban waves và community communication.
+> **Cross-References:** [LOS, Fog & Visibility](los_fog_visibility/index.html) — server-authoritative LOS (anti-wallhack); [Matchmaking & Lobby](matchmaking_lobby/index.html) — suspect matchmaking isolation pool; [Camera hệ thống](camera_system/index.html) — altitude cap prevents client-side reveal; [Looting & Inventory](looting_interactions/index.html) — item duplication prevention; [GameDesign/LiveOps](https://github.com/oaiba/ExtractionDocument/blob/main/content/GameDesign/LiveOps.md) — ban waves và community communication.
 
 ***
 
@@ -31,7 +31,7 @@ Every critical game action is server-validated trước taking effect:
 | ----------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **người chơi position**           | Server maintains authoritative position. Client sends input; server moves nhân vật và confirms. Client prediction for latency compensation only.                                |
 | **Bullet hit registration**   | Server calculates hit geometry using server-side nhân vật positions, not client-reported positions. Lag compensation applied within ±150ms tolerance.                            |
-| **LOS / Visibility**          | Server calculates which objects và người chơi are hiển thị rõ to each client. Client receives only data it is authorized to render. Xem [LOS, Fog & Visibility](LOS_Fog_Visibility.md). |
+| **LOS / Visibility**          | Server calculates which objects và người chơi are hiển thị rõ to each client. Client receives only data it is authorized to render. Xem [LOS, Fog & Visibility](los_fog_visibility/index.html). |
 | **Item pickup / interaction** | Server confirms item still exists at location trước authorizing pickup. No client-side item trạng thái.                                                                               |
 | **Ability cách dùng**               | Server validates cooldown, range, và target eligibility trước applying effects. Client animation plays optimistically; server corrects nếu invalid.                              |
 | **Extraction**                | Server runs timer và validates người chơi presence in zone at each tick. Client cannot self-report extraction success.                                                               |
@@ -47,7 +47,7 @@ Every critical game action is server-validated trước taking effect:
 | ------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Server-side entity culling** | Clients only receive position data for entities within their LOS. địch not in LOS are not transmitted to client (no data to hack).                                       |
 | **LOS check frequency**        | Every 50ms per người chơi. chi phí is managed server-side; client receives kết quả.                                                                                                 |
-| **Camera altitude gate**       | Server caps maximum world-trạng thái transmission to altitude-equivalent zone (26m). Client cannot request world trạng thái beyond that range. Xem [Camera hệ thống](Camera_System.md). |
+| **Camera altitude gate**       | Server caps maximum world-trạng thái transmission to altitude-equivalent zone (26m). Client cannot request world trạng thái beyond that range. Xem [Camera hệ thống](camera_system/index.html). |
 | **Encrypted entity payloads**  | Position và máu data packets are encrypted và session-keyed. Packet injection cannot fabricate valid position data.                                                    |
 
 #### Aimbot Prevention
@@ -96,7 +96,7 @@ Teaming is khi solo-queue người chơi coordinate với supposed địch to fa
 | **Anti-tamper**                  | Runtime memory scanning via third-party kernel-level AC (e.g., BattlEye hoặc equivalent). Hooks và injectors detected.            |
 | **Kernel-level AC scope**        | Only active trong khi session (not background khi game is not running). Opt-out = cannot join online sessions.                     |
 | **Screenshot/replay validation** | nếu người chơi reports death replay, server-side replay is canonical. Client cannot submit modified death replay.                     |
-| **VPN detection**                | Ping-based region validation (not IP-based). VPN cannot fake low-ping access as per [Matchmaking & Lobby](Matchmaking_Lobby.md). |
+| **VPN detection**                | Ping-based region validation (not IP-based). VPN cannot fake low-ping access as per [Matchmaking & Lobby](matchmaking_lobby/index.html). |
 
 ***
 
@@ -199,8 +199,8 @@ Anti-cheat phải đủ rõ để tạo niềm tin nhưng không làm lộ imple
 
 ### Tham Chiếu Chéo
 
-* [LOS, Fog & Visibility](LOS_Fog_Visibility.md) — Server-authoritative LOS, anti-wallhack design.
-* [Matchmaking & Lobby](Matchmaking_Lobby.md) — Soft isolation pool integration; flag trong khi queue.
-* [Camera hệ thống](Camera_System.md) — Server-side altitude gate prevents world-trạng thái reveal.
-* [Looting & Inventory](Looting_Interactions.md) — Item unique IDs; duplication prevention.
+* [LOS, Fog & Visibility](los_fog_visibility/index.html) — Server-authoritative LOS, anti-wallhack design.
+* [Matchmaking & Lobby](matchmaking_lobby/index.html) — Soft isolation pool integration; flag trong khi queue.
+* [Camera hệ thống](camera_system/index.html) — Server-side altitude gate prevents world-trạng thái reveal.
+* [Looting & Inventory](looting_interactions/index.html) — Item unique IDs; duplication prevention.
 * [GameDesign/LiveOps](https://github.com/oaiba/ExtractionDocument/blob/main/content/GameDesign/LiveOps.md) — Monthly ban transparency reports.

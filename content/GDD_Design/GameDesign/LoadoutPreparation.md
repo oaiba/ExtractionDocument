@@ -176,8 +176,8 @@ A player equips a quest item but forgets compatible ammo. The deploy gate should
 
 | Topic | Page |
 | :--- | :--- |
-| Core raid loop | [Core Gameplay](coregameplay.html) |
-| Insurance | [Insurance System](insurancesystem.html) |
-| Economy and gear value | [Economy](economy.html) |
-| Controls and mobile input | [Controls](controls.html) |
-| Map and mode choice | [Map Design](mapdesign.html), [Game Modes](gamemodes.html) |
+| Core raid loop | [Core Gameplay](coregameplay/index.html) |
+| Insurance | [Insurance System](insurancesystem/index.html) |
+| Economy and gear value | [Economy](economy/index.html) |
+| Controls and mobile input | [Controls](controls/index.html) |
+| Map and mode choice | [Map Design](mapdesign/index.html), [Game Modes](gamemodes/index.html) |

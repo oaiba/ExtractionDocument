@@ -8,7 +8,7 @@ weight: 11
 
 The camera hệ thống defines how người chơi perceive the game world và is one of the most critical design elements unique to this top-down extraction shooter. Unlike FPS hoặc third-person games, the top-down perspective tạo a **natural information asymmetry** — người chơi see more of the environment nhưng less of the third axis (vertical). Every camera parameter affects tactical quyết định-making, spatial awareness, và the cảm xúc intensity of each raid.
 
-> **Cross-References:** [LOS, Fog of War & Visibility](LOS_Fog_Visibility.md) — field of view và fog clearing; [Gear cơ chế](Gear_Mechanics.md) — inertia và weight; [Movement & Stamina](Movement_and_Stamina.md) — movement trạng thái affecting zoom; [Controls](https://github.com/oaiba/ExtractionDocument/blob/main/content/GameDesign/Controls.md) — platform-cụ thể camera input.
+> **Cross-References:** [LOS, Fog of War & Visibility](los_fog_visibility/index.html) — field of view và fog clearing; [Gear cơ chế](gear_mechanics/index.html) — inertia và weight; [Movement & Stamina](movement_and_stamina/index.html) — movement trạng thái affecting zoom; [Controls](https://github.com/oaiba/ExtractionDocument/blob/main/content/GameDesign/Controls.md) — platform-cụ thể camera input.
 
 ***
 
@@ -72,7 +72,7 @@ The camera always centers on the **local người chơi nhân vật** as anchor.
 
 #### Inertia Integration
 
-Per [Gear cơ chế](Gear_Mechanics.md), heavier người chơi have movement inertia. Camera follow dampening scales slightly với weight:
+Per [Gear cơ chế](gear_mechanics/index.html), heavier người chơi have movement inertia. Camera follow dampening scales slightly với weight:
 
 | Weight Tier | Extra camera lag | Effect                                                  |
 | ----------- | ---------------- | ------------------------------------------------------- |
@@ -160,7 +160,7 @@ Certain game events temporarily override normal camera behavior:
 | Supply drop (approach)        | No override (informational ping only)                        | —                                        | Map mark is enough                        |
 | Contamination entering        | màn hình edges pulse red (vignette); camera unchanged          | Per phase                                | Visual pressure mà không camera disruption |
 
-**Death cam:** sau 2 s fade, transitions to passive spectator mode. người chơi can observe surviving squadmates from the same top-down perspective, với fog-of-war based on that teammate's LOS — not a free-camera ghost view. Xem [Extraction cơ chế](Extraction_Mechanics.md) for spectator post-death rules.
+**Death cam:** sau 2 s fade, transitions to passive spectator mode. người chơi can observe surviving squadmates from the same top-down perspective, với fog-of-war based on that teammate's LOS — not a free-camera ghost view. Xem [Extraction cơ chế](extraction_mechanics/index.html) for spectator post-death rules.
 
 ***
 
@@ -209,7 +209,7 @@ khi a người chơi dies:
 | -------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
 | **LOS / Fog of War** | LOS is calculated server-side from người chơi position, not from camera position. Wider zoom does not reveal more.                               |
 | **Inertia (Gear)**   | Camera lag scales với weight tier (see above).                                                                                              |
-| **Weather**          | Rain, fog, và night reduce _render_ distance (visual only). LOS range is unchanged — Xem [Environmental Hazards](Environmental_Hazards.md). |
+| **Weather**          | Rain, fog, và night reduce _render_ distance (visual only). LOS range is unchanged — Xem [Environmental Hazards](environmental_hazards/index.html). |
 | **Minimap**          | Minimap uses merged squad vision — different from the camera view. Camera shows local viewport; minimap shows full explored trạng thái.           |
 | **Hero Abilities**   | Ability effects (flashbang, cloak shimmer, smoke) render in the người chơi's viewport at hiện tại camera altitude.                                |
 | **Extraction**       | Camera zooms-in trong khi extraction timer for increased tension (altitude −1 m).                                                               |
@@ -233,10 +233,10 @@ khi a người chơi dies:
 
 ### Tham Chiếu Chéo
 
-* [LOS, Fog of War & Visibility](LOS_Fog_Visibility.md) — LOS is independent of camera; server-authoritative.
-* [Gear cơ chế](Gear_Mechanics.md) — Inertia hệ thống; camera lag couples với weight tier.
-* [Environmental Hazards](Environmental_Hazards.md) — Weather effects on visual render (not LOS).
-* [Hero Abilities](Hero_Abilities.md) — Flashbang/smoke vision effects in viewport.
-* [Extraction cơ chế](Extraction_Mechanics.md) — Extraction camera override; spectator post-death.
-* [Movement & Stamina](Movement_and_Stamina.md) — Movement trạng thái driving altitude changes.
+* [LOS, Fog of War & Visibility](los_fog_visibility/index.html) — LOS is independent of camera; server-authoritative.
+* [Gear cơ chế](gear_mechanics/index.html) — Inertia hệ thống; camera lag couples với weight tier.
+* [Environmental Hazards](environmental_hazards/index.html) — Weather effects on visual render (not LOS).
+* [Hero Abilities](hero_abilities/index.html) — Flashbang/smoke vision effects in viewport.
+* [Extraction cơ chế](extraction_mechanics/index.html) — Extraction camera override; spectator post-death.
+* [Movement & Stamina](movement_and_stamina/index.html) — Movement trạng thái driving altitude changes.
 * [Controls](https://github.com/oaiba/ExtractionDocument/blob/main/content/GameDesign/Controls.md) — Platform-cụ thể camera input bindings.

@@ -12,22 +12,22 @@ Tham chiếu chính:
 
 | hệ thống | source |
 | :--- | :--- |
-| Social design | [Social & Multiplayer hệ thống](../Social/Multiplayer.md) |
-| Clan design | [Clan & Guild hệ thống](../GameDesign/ClanSystem.md) |
-| Communication | [In-Game Communication](../GameDesign/Communication.md) |
-| Privacy/settings | [User Settings](../GameDesign/UserSettings.md) |
+| Social design | [Social & Multiplayer hệ thống](../social/multiplayer/index.html) |
+| Clan design | [Clan & Guild hệ thống](../gamedesign/clansystem/index.html) |
+| Communication | [In-Game Communication](../gamedesign/communication/index.html) |
+| Privacy/settings | [User Settings](../gamedesign/usersettings/index.html) |
 | Social technical hệ thống | [Social hệ thống](../../GDD_Technical/hệ thống/SocialSystem.md) |
 
 ## Điều Hướng Nhanh
 
 | điểm đến | cách dùng |
 | :--- | :--- |
-| [UI/UX Index](_index.md) | Full UI/UX documentation hub |
-| [màn hình Groups Overview](Screen_Groups_Overview.md) | Lifecycle taxonomy và designer-ready spec template |
-| [global UX Standards](Global_UX_Standards.md) | shared navigation, focus, trạng thái, modal, và accessibility rules |
-| [Pre-Raid màn hình](Pre_Raid_Screens.md) | Squad lobby, readiness, matchmaking, và party blockers |
-| [Post-Raid màn hình](Post_Raid_Screens.md) | Squad summary, commend, report, và add-friend routes |
-| [Settings & hệ thống màn hình](Commerce_Settings_System_Screens.md) | Privacy, streamer mode, account, và safety settings |
+| [UI/UX Index](_index/index.html) | Full UI/UX documentation hub |
+| [màn hình Groups Overview](screen_groups_overview/index.html) | Lifecycle taxonomy và designer-ready spec template |
+| [global UX Standards](global_ux_standards/index.html) | shared navigation, focus, trạng thái, modal, và accessibility rules |
+| [Pre-Raid màn hình](pre_raid_screens/index.html) | Squad lobby, readiness, matchmaking, và party blockers |
+| [Post-Raid màn hình](post_raid_screens/index.html) | Squad summary, commend, report, và add-friend routes |
+| [Settings & hệ thống màn hình](commerce_settings_system_screens/index.html) | Privacy, streamer mode, account, và safety settings |
 
 ---
 
@@ -128,7 +128,7 @@ Layout (PC/Console)
 
 ## Party Panel
 
-The party panel overlaps với [Pre-Raid màn hình](Pre_Raid_Screens.md), nhưng this màn hình owns persistent social party management outside the deploy flow.
+The party panel overlaps với [Pre-Raid màn hình](pre_raid_screens/index.html), nhưng this màn hình owns persistent social party management outside the deploy flow.
 
 Layout (PC/Console)
 

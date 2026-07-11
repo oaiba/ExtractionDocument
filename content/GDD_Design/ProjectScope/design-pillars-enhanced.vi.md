@@ -1037,7 +1037,7 @@ cách dùng this checklist for **every new tính năng request**. nếu a tính 
 
 **Implementation Guides:**
 
-* [Competitive Analysis](competitive-analysis-extraction-shooters.md) - Market positioning
+* [Competitive Analysis](competitive-analysis-extraction-shooters/index.html) - Market positioning
 
 **người chơi-Facing:**
 

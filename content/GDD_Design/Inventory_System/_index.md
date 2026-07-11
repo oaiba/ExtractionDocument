@@ -16,7 +16,7 @@ last_updated: 2026-03-04T00:00:00.000Z
 
 ### Scope: Inventory vs Gears
 
-**Gears** ([../Gears/](https://github.com/oaiba/ExtractionDocument/blob/main/content/GDD_Design/Gears/README.md)) = physical equipment the Operator **wears or carries** in-raid: body armor, helmets, tactical rigs, backpacks, secure containers. All armor and storage **specs** (classes, materials, slot layouts, balance) live under **Gears/ArmorGear** and **Gears/StorageGear**.
+**Gears** ([../gears/](https://github.com/oaiba/extractiondocument/blob/main/content/gdd_design/gears/readme/index.html)) = physical equipment the Operator **wears or carries** in-raid: body armor, helmets, tactical rigs, backpacks, secure containers. All armor and storage **specs** (classes, materials, slot layouts, balance) live under **Gears/ArmorGear** and **Gears/StorageGear**.
 
 **Inventory\_System** (this section) = **general inventory system**: grid mechanics, paper doll, equipment slots, encumbrance overview, looting UX. Later expansion may add: Vehicle\_Inventory, Global\_Stash\_System, Crate\_System, etc.
 
@@ -169,7 +169,7 @@ Pre-raid screen: 3D character model (rotatable), equipment slots around model, r
 | **Headset**          | 1×1       | No            | N/A        | Audio mix (compress gunfire, amplify footsteps). EQ varies by model. See [Gears — Armor Master Database](../Gears/ArmorGear/Armor_Master_Database.md#headsets).                                                |
 | **Helmet**           | 2×2       | No            | Yes        | Zone protection (Top, Nape, Ears, Eyes, Jaws). Class 1–6. See [Gears/ArmorGear](https://github.com/oaiba/ExtractionDocument/blob/main/content/GDD_Design/Gears/ArmorGear/README.md).                           |
 | **Face Cover**       | 1×1       | No            | Some       | Concealment + optional Class 1–2.                                                                                                                                                                              |
-| **Body Armor**       | Variable  | No            | Yes        | Only when not using Armored Rig. Thorax/Stomach. Class 1–6. [Gears — Armor](../Gears/ArmorGear/Armor.md).                                                                                                      |
+| **Body Armor**       | Variable  | No            | Yes        | Only when not using Armored Rig. Thorax/Stomach. Class 1–6. [Gears — Armor](../gears/armorgear/armor/index.html).                                                                                                      |
 | **Tactical Rig**     | Variable  | **YES**       | Varies     | **Reload source.** Unarmored or Armored (replaces body armor). 12–24 slots typical. [Gears/StorageGear](https://github.com/oaiba/ExtractionDocument/blob/main/content/GDD_Design/Gears/StorageGear/README.md). |
 | **Primary 1 / 2**    | Weapon    | **1** / **2** | Yes        | Chest / back.                                                                                                                                                                                                  |
 | **Sidearm**          | Weapon    | **3**         | Yes        | Holster, fastest swap.                                                                                                                                                                                         |
@@ -187,9 +187,9 @@ Grid drag-drop, color coding (green/red/yellow), tooltips (name, weight, size, v
 
 ### 3. Equipment Overview (Armor & Storage)
 
-**Armor & ballistics** — Class 1–6, zones, materials, penetration, blunt, ricochet: [Gears — Armor & Ballistics](../Gears/ArmorGear/Armor.md). Full item list: [Armor Master Database](../Gears/ArmorGear/Armor_Master_Database.md).
+**Armor & ballistics** — Class 1–6, zones, materials, penetration, blunt, ricochet: [Gears — Armor & Ballistics](../gears/armorgear/armor/index.html). Full item list: [Armor Master Database](../gears/armorgear/armor_master_database/index.html).
 
-**Tactical rigs vs armored rigs** — Unarmored rig = more slots, no protection; armored rig = fewer slots + Class 3–5. Decision matrix and loadout examples: [Gears — Storage Gear](https://github.com/oaiba/ExtractionDocument/blob/main/content/GDD_Design/Gears/StorageGear/README.md) and [Gear Mechanics](../Gameplay/Gear_Mechanics.md).
+**Tactical rigs vs armored rigs** — Unarmored rig = more slots, no protection; armored rig = fewer slots + Class 3–5. Decision matrix and loadout examples: [Gears — Storage Gear](https://github.com/oaiba/ExtractionDocument/blob/main/content/GDD_Design/Gears/StorageGear/README.md) and [Gear Mechanics](../gameplay/gear_mechanics/index.html).
 
 **Headsets** — ANC/ASA, EQ profiles (ComTac, GSSH, Peltor, Sordin, MSA). Listed in [Armor Master Database — Headsets](../Gears/ArmorGear/Armor_Master_Database.md#headsets).
 
@@ -212,7 +212,7 @@ All items: Width × Height in 1×1 cells. Rotation: 90° (R while dragging). **W
 | Sniper      | 5×2 – 6×2    | SVD, M700                                                                                                                                    |
 | Helmets     | 2×2          | Tactical helmets                                                                                                                             |
 | Armor Vests | 3×3 – 4×4    | Plate carriers                                                                                                                               |
-| Backpacks   | 3×3 – 7×8    | Collapsed vs deployed; capacity = total cells per container (see [Storage Master Database](../Gears/StorageGear/Storage_Master_Database.md)) |
+| Backpacks   | 3×3 – 7×8    | Collapsed vs deployed; capacity = total cells per container (see [Storage Master Database](../gears/storagegear/storage_master_database/index.html)) |
 
 #### 4.2 Stacking
 
@@ -220,13 +220,13 @@ Stackable: ammo (e.g. 60/stack), currency, crafting materials. Non-stackable: we
 
 #### 4.3 Flat Storage & Folding
 
-**No bag-in-bag:** Each Storage Gear has a single Storage; all items in it are at the same level (flat). Bags, rigs, armor, weapons, and attachments placed in a container are normal items (footprint only). **Backpack collapse:** Empty backpacks can collapse to smaller size. Full rules: [Gears — Flat Storage & Folding](../Gears/StorageGear/Storage_Flat_Storage_Folding.md).
+**No bag-in-bag:** Each Storage Gear has a single Storage; all items in it are at the same level (flat). Bags, rigs, armor, weapons, and attachments placed in a container are normal items (footprint only). **Backpack collapse:** Empty backpacks can collapse to smaller size. Full rules: [Gears — Flat Storage & Folding](../gears/storagegear/storage_flat_storage_folding/index.html).
 
 ***
 
 ### 5. Encumbrance & Movement
 
-Total weight = equipped gear + inventory (all items in all Storage Gears and slots). Weight tiers (Light → Medium → Heavy → Critical → Overweight) affect movement speed, sprint, inertia, jump, noise. Full formula, thresholds, inertia, stamina regen: [Gear Mechanics](../Gameplay/Gear_Mechanics.md) and [Movement & Stamina](../Gameplay/Movement_and_Stamina.md).
+Total weight = equipped gear + inventory (all items in all Storage Gears and slots). Weight tiers (Light → Medium → Heavy → Critical → Overweight) affect movement speed, sprint, inertia, jump, noise. Full formula, thresholds, inertia, stamina regen: [Gear Mechanics](../gameplay/gear_mechanics/index.html) and [Movement & Stamina](../gameplay/movement_and_stamina/index.html).
 
 ***
 
@@ -256,13 +256,13 @@ Value/slot = Price ÷ (W×H). Priority: quest items → high value/slot → keys
 
 ### 7. Weapon Modding (Gunsmith)
 
-Weapons are platforms with 40–100+ attachments per family. Node-based build (receiver, barrel, handguard, optics, stock, etc.); live stat comparison; presets and sharing. Full UI and compatibility: [Gunsmith System](Gunsmith_System.md). Weapon specs: [Weapon Arsenal](../Gameplay/WeaponArsenal.md) and [Weapons](https://github.com/oaiba/ExtractionDocument/blob/main/content/GDD_Design/Weapons/README.md) section.
+Weapons are platforms with 40–100+ attachments per family. Node-based build (receiver, barrel, handguard, optics, stock, etc.); live stat comparison; presets and sharing. Full UI and compatibility: [Gunsmith System](gunsmith_system/index.html). Weapon specs: [Weapon Arsenal](../gameplay/weaponarsenal/index.html) and [Weapons](https://github.com/oaiba/ExtractionDocument/blob/main/content/GDD_Design/Weapons/README.md) section.
 
 ***
 
 ### 8. Stash & Containers
 
-See [**Stash Design**](../Stash_Design.md) for the full Stash specification (grid, containers, progression, UI/UX). Stash size by edition and Safe House level; container unlock path (Scav Junkbox, Ammo/Med/Weapon Case, Items Case, THICC); secure container upgrade (Alpha → Beta → Gamma/Kappa). Full tables: [Gears — Stash & Container Progression](../Gears/StorageGear/Stash_Container_Progression.md).
+See [**Stash Design**](../stash_design/index.html) for the full Stash specification (grid, containers, progression, UI/UX). Stash size by edition and Safe House level; container unlock path (Scav Junkbox, Ammo/Med/Weapon Case, Items Case, THICC); secure container upgrade (Alpha → Beta → Gamma/Kappa). Full tables: [Gears — Stash & Container Progression](../gears/storagegear/stash_container_progression/index.html).
 
 ***
 
@@ -282,11 +282,11 @@ See [**Stash Design**](../Stash_Design.md) for the full Stash specification (gri
 
 ### Appendix B: Related Docs
 
-* [**Stash Design**](../Stash_Design.md) — Full Stash specification (independent document).
+* [**Stash Design**](../stash_design/index.html) — Full Stash specification (independent document).
 * [**Gears**](https://github.com/oaiba/ExtractionDocument/blob/main/content/GDD_Design/Gears/README.md) — Armor & Storage gear specs (ArmorGear, StorageGear).
-* [**Gameplay — Gear Mechanics**](../Gameplay/Gear_Mechanics.md) — Weight tiers, loadout philosophy, extraction.
-* [**Gameplay — Looting & Inventory**](../Gameplay/Looting_Interactions.md) — Container search times, grid dimensions.
-* [**Container Mechanics**](Container_Mechanics.md) — High-level container types and mechanics (secure containers, nesting).
-* [**Looting & FIR Rules**](Looting_And_FIR_Rules.md) — Loot loop, FIR status, corpse looting.
-* [**Medical & Survival Systems**](Medical_And_Survival_Systems.md) — Injury types, meds, stimulants, hydration/energy.
-* [**Gunsmith System**](Gunsmith_System.md) — Weapon modding, ergonomics, malfunctions, overheating.
+* [**Gameplay — Gear Mechanics**](../gameplay/gear_mechanics/index.html) — Weight tiers, loadout philosophy, extraction.
+* [**Gameplay — Looting & Inventory**](../gameplay/looting_interactions/index.html) — Container search times, grid dimensions.
+* [**Container Mechanics**](container_mechanics/index.html) — High-level container types and mechanics (secure containers, nesting).
+* [**Looting & FIR Rules**](looting_and_fir_rules/index.html) — Loot loop, FIR status, corpse looting.
+* [**Medical & Survival Systems**](medical_and_survival_systems/index.html) — Injury types, meds, stimulants, hydration/energy.
+* [**Gunsmith System**](gunsmith_system/index.html) — Weapon modding, ergonomics, malfunctions, overheating.

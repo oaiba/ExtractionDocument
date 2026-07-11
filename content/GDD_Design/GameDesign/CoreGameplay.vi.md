@@ -111,11 +111,11 @@ Phase này nên có cảm giác như nạp đạn trước khi mở một cánh 
 
 | Step | Player Question | Canonical Detail |
 | :--- | :--- | :--- |
-| Select objective | Raid này tôi đang cố làm gì? | [Game Modes](gamemodes.html) |
+| Select objective | Raid này tôi đang cố làm gì? | [Game Modes](gamemodes/index.html) |
 | Select operator | Ability và role nào khớp goal? | Character docs |
-| Build loadout | Tôi sẵn sàng risk bao nhiêu? | [Loadout Preparation](loadoutpreparation.html) |
-| Choose insurance | Item nào đáng recovery protection? | [Insurance System](insurancesystem.html) |
-| Choose map and squad | Đi đâu, với ai? | [Map Design](mapdesign.html), [Communication](communication.html) |
+| Build loadout | Tôi sẵn sàng risk bao nhiêu? | [Loadout Preparation](loadoutpreparation/index.html) |
+| Choose insurance | Item nào đáng recovery protection? | [Insurance System](insurancesystem/index.html) |
+| Choose map and squad | Đi đâu, với ai? | [Map Design](mapdesign/index.html), [Communication](communication/index.html) |
 | Confirm deploy | Expected reward có đáng risk không? | This page |
 
 ## In-Match Phase
@@ -193,11 +193,11 @@ Advanced mechanics nên thêm decision expressive mà không đổi promise cơ 
 
 | Mechanic | Purpose | Detail Owner |
 | :--- | :--- | :--- |
-| Squad coordination | Cho team shared information mà không xóa tension | [Communication](communication.html) |
-| Information warfare | Làm sensor, ping, và sound có ý nghĩa | [Navigation & Map](navigationandmap.html) |
-| Insurance | Giảm loss frustration mà không xóa risk | [Insurance System](insurancesystem.html) |
-| Ranked rule changes | Bảo vệ competitive integrity | [Ranked Mode](rankedmode.html) |
-| Scavenger runs | Low-stakes recovery và practice | [Game Modes](gamemodes.html) |
+| Squad coordination | Cho team shared information mà không xóa tension | [Communication](communication/index.html) |
+| Information warfare | Làm sensor, ping, và sound có ý nghĩa | [Navigation & Map](navigationandmap/index.html) |
+| Insurance | Giảm loss frustration mà không xóa risk | [Insurance System](insurancesystem/index.html) |
+| Ranked rule changes | Bảo vệ competitive integrity | [Ranked Mode](rankedmode/index.html) |
+| Scavenger runs | Low-stakes recovery và practice | [Game Modes](gamemodes/index.html) |
 
 ## Player Experience Examples
 
@@ -267,9 +267,9 @@ Telemetry nên giải thích loop có readable không, không chỉ đo player t
 
 | Topic | Page |
 | :--- | :--- |
-| Loadout UI | [Loadout Preparation](loadoutpreparation.html) |
-| Input and camera | [Controls](controls.html) |
-| Map routes and extraction placement | [Map Design](mapdesign.html) |
-| Insurance rules | [Insurance System](insurancesystem.html) |
-| Economy impact | [Economy](economy.html) |
-| Onboarding | [Tutorial Raid](tutorialraid.html) |
+| Loadout UI | [Loadout Preparation](loadoutpreparation/index.html) |
+| Input and camera | [Controls](controls/index.html) |
+| Map routes and extraction placement | [Map Design](mapdesign/index.html) |
+| Insurance rules | [Insurance System](insurancesystem/index.html) |
+| Economy impact | [Economy](economy/index.html) |
+| Onboarding | [Tutorial Raid](tutorialraid/index.html) |

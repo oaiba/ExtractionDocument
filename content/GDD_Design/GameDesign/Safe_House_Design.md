@@ -82,7 +82,7 @@ During a season event, the Radio can surface faction updates and event objective
 
 | Topic | Page |
 | :--- | :--- |
-| Economy sinks | [Economy](economy.html) |
-| Insurance inbox | [Insurance System](insurancesystem.html) |
-| Home Screen relation | [Home Screen & Lobby](homescreen_design.html) |
-| Progression unlocks | [Progression](progression.html) |
+| Economy sinks | [Economy](economy/index.html) |
+| Insurance inbox | [Insurance System](insurancesystem/index.html) |
+| Home Screen relation | [Home Screen & Lobby](homescreen_design/index.html) |
+| Progression unlocks | [Progression](progression/index.html) |

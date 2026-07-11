@@ -3,7 +3,7 @@ title: "GDD Design"
 type: docs
 ---
 
-Hub này sở hữu phần thiết kế sáng tạo và player-facing của Extraction: game loop, player experience, art direction, audio, worldbuilding, characters, UI/UX, và design scope. Technical implementation, architecture, code standard, và engine detail thuộc về [Technical GDD](/GDD_Technical.html).
+Hub này sở hữu phần thiết kế sáng tạo và player-facing của Extraction: game loop, player experience, art direction, audio, worldbuilding, characters, UI/UX, và design scope. Technical implementation, architecture, code standard, và engine detail thuộc về [Technical GDD](/gdd_technical/index.html).
 
 Dùng trang này làm entry point cho design intent và navigation. Spec sâu nằm trong các section page được link.
 
@@ -12,9 +12,9 @@ Dùng trang này làm entry point cho design intent và navigation. Spec sâu n�
 ## Bắt Đầu
 
 {{< cards cols="3" >}}
-{{< card link="/GDD_Design/GameDesign/Overview.html" title="Design Overview" icon="light-bulb" subtitle="Game concept, pillar, target audience, market positioning, và competitive context." >}}
-{{< card link="/GDD_Design/GameDesign/CoreGameplay.html" title="Core Gameplay" icon="refresh" subtitle="Primary gameplay loop, raid phase, player psychology, và session flow." >}}
-{{< card link="/GDD_Design/ProjectScope/MVP.html" title="MVP Scope" icon="flag" subtitle="Feature boundary hiện tại, launch requirement, và scope guardrail." >}}
+{{< card link="/gdd_design/gamedesign/overview/index.html" title="Design Overview" icon="light-bulb" subtitle="Game concept, pillar, target audience, market positioning, và competitive context." >}}
+{{< card link="/gdd_design/gamedesign/coregameplay/index.html" title="Core Gameplay" icon="refresh" subtitle="Primary gameplay loop, raid phase, player psychology, và session flow." >}}
+{{< card link="/gdd_design/projectscope/mvp/index.html" title="MVP Scope" icon="flag" subtitle="Feature boundary hiện tại, launch requirement, và scope guardrail." >}}
 {{< /cards >}}
 
 ## Design Domains
@@ -53,11 +53,11 @@ Dùng trang này làm entry point cho design intent và navigation. Spec sâu n�
 
 | Role | Mục Đích Chính | Bắt Đầu Với |
 | --- | --- | --- |
-| Game Designer | Định nghĩa mechanic, balance, progression, và player-facing system. | [Overview](/GDD_Design/GameDesign/Overview.html), [Core Gameplay](/GDD_Design/GameDesign/CoreGameplay.html) |
-| Artist | Canh asset với visual style, character identity, environment, và UI tone. | [Visual Design](/GDD_Design/Visuals.html), [Characters](/GDD_Design/Characters.html), [World Design](/GDD_Design/World.html) |
-| Level Designer | Xây map quanh extraction flow, loot pressure, route, và encounter pacing. | [World Design](/GDD_Design/World.html), [Core Gameplay](/GDD_Design/GameDesign/CoreGameplay.html) |
-| Audio Designer | Match audio cue với tactical need, ambience, feedback, và narrative tone. | [Audio Design](/GDD_Design/Audio.html), [Core Gameplay](/GDD_Design/GameDesign/CoreGameplay.html) |
-| UI/UX Designer | Định hình player flow, control, menu, HUD, accessibility, và feedback system. | [UI/UX](/GDD_Design/UI_UX.html), [Controls](/GDD_Design/GameDesign/Controls.html) |
+| Game Designer | Định nghĩa mechanic, balance, progression, và player-facing system. | [Overview](/gdd_design/gamedesign/overview/index.html), [Core Gameplay](/gdd_design/gamedesign/coregameplay/index.html) |
+| Artist | Canh asset với visual style, character identity, environment, và UI tone. | [Visual Design](/gdd_design/visuals/index.html), [Characters](/gdd_design/characters/index.html), [World Design](/gdd_design/world/index.html) |
+| Level Designer | Xây map quanh extraction flow, loot pressure, route, và encounter pacing. | [World Design](/gdd_design/world/index.html), [Core Gameplay](/gdd_design/gamedesign/coregameplay/index.html) |
+| Audio Designer | Match audio cue với tactical need, ambience, feedback, và narrative tone. | [Audio Design](/gdd_design/audio/index.html), [Core Gameplay](/gdd_design/gamedesign/coregameplay/index.html) |
+| UI/UX Designer | Định hình player flow, control, menu, HUD, accessibility, và feedback system. | [UI/UX](/gdd_design/ui_ux/index.html), [Controls](/gdd_design/gamedesign/controls/index.html) |
 
 ## Design Principles
 
@@ -82,4 +82,4 @@ Dùng trang này làm entry point cho design intent và navigation. Spec sâu n�
 
 ## Maintenance
 
-Dùng [Project Scope](/GDD_Design/ProjectScope.html) cho boundary hiện tại, MVP decision, risk, và non-goal. Lịch sử thay đổi tài liệu được theo dõi trong [Update Log](/GDD_Design/UpdateLog.html).
+Dùng [Project Scope](/gdd_design/projectscope/index.html) cho boundary hiện tại, MVP decision, risk, và non-goal. Lịch sử thay đổi tài liệu được theo dõi trong [Update Log](/gdd_design/updatelog/index.html).

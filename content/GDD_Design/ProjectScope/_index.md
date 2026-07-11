@@ -17,32 +17,32 @@ Defining what the game **IS** is as important as defining what it is **NOT**. Th
 
 The core pillars that every feature must support.
 {{< cards >}}
-{{< card link="design-pillars-enhanced.html" title="Design Pillars" icon="scale" subtitle="The immutable laws of our game design." >}}
+{{< card link="design-pillars-enhanced/index.html" title="Design Pillars" icon="scale" subtitle="The immutable laws of our game design." >}}
 {{< /cards >}}
 
 ## Scope Management
 
 What we are building, and what we are explicitly cutting.
 {{< cards cols="3" >}}
-{{< card link="mvp.html" title="Minimum Viable Product" icon="badge-check" subtitle="Day 1 feature set requirements." >}}
-{{< card link="nongoals.html" title="Non-Goals" icon="x-circle" subtitle="Explicit exclusions to avoid scope creep." >}}
-{{< card link="risks.html" title="Risk Assessment" icon="exclamation" subtitle="Technical and design challenges to mitigate." >}}
+{{< card link="mvp/index.html" title="Minimum Viable Product" icon="badge-check" subtitle="Day 1 feature set requirements." >}}
+{{< card link="nongoals/index.html" title="Non-Goals" icon="x-circle" subtitle="Explicit exclusions to avoid scope creep." >}}
+{{< card link="risks/index.html" title="Risk Assessment" icon="exclamation" subtitle="Technical and design challenges to mitigate." >}}
 {{< /cards >}}
 
 ## Research & Planning
 
 Benchmarks and scope planning aligned with the genre.
 {{< cards cols="2" >}}
-{{< card link="competitive-analysis-extraction-shooters.html" title="Competitive Analysis" icon="search" subtitle="Extraction shooter market & inventory benchmarks." >}}
-{{< card link="project-scope-review-and-planning.html" title="Scope Review & Planning" icon="map" subtitle="Review, benchmarks, and quarterly planning." >}}
+{{< card link="competitive-analysis-extraction-shooters/index.html" title="Competitive Analysis" icon="search" subtitle="Extraction shooter market & inventory benchmarks." >}}
+{{< card link="project-scope-review-and-planning/index.html" title="Scope Review & Planning" icon="map" subtitle="Review, benchmarks, and quarterly planning." >}}
 {{< /cards >}}
 
 ## Production Readiness
 
 Use these pages to track unresolved cross-domain decisions, ownership boundaries, and MVP review status.
 {{< cards cols="3" >}}
-{{< card link="design-decision-register.html" title="Design Decision Register" icon="clipboard-list" subtitle="Open, approved, rejected, and deferred design decisions." >}}
-{{< card link="cross-system-traceability.html" title="Cross-System Traceability" icon="link" subtitle="Player journey ownership, states, failure behavior, and telemetry." >}}
-{{< card link="mvp-readiness-review.html" title="MVP Readiness Review" icon="check-circle" subtitle="Domain readiness, missing decisions, and MVP gate criteria." >}}
-{{< card link="design-glossary.html" title="Design Glossary" icon="book-open" subtitle="Canonical game and technical terminology for English and Vietnamese docs." >}}
+{{< card link="design-decision-register/index.html" title="Design Decision Register" icon="clipboard-list" subtitle="Open, approved, rejected, and deferred design decisions." >}}
+{{< card link="cross-system-traceability/index.html" title="Cross-System Traceability" icon="link" subtitle="Player journey ownership, states, failure behavior, and telemetry." >}}
+{{< card link="mvp-readiness-review/index.html" title="MVP Readiness Review" icon="check-circle" subtitle="Domain readiness, missing decisions, and MVP gate criteria." >}}
+{{< card link="design-glossary/index.html" title="Design Glossary" icon="book-open" subtitle="Canonical game and technical terminology for English and Vietnamese docs." >}}
 {{< /cards >}}

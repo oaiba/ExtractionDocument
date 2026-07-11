@@ -8,12 +8,12 @@ weight: 24
 
 | Destination | Use |
 | :--- | :--- |
-| [UI/UX Index](_index.md) | Full UI/UX documentation hub |
-| [Screen Groups Overview](Screen_Groups_Overview.md) | Lifecycle taxonomy and designer-ready spec template |
-| [Global UX Standards](Global_UX_Standards.md) | Shared navigation, focus, state, modal, and accessibility rules |
-| [HUD Design](HUD_Design.md) | In-raid HUD element placement and visual constraints |
-| [Notification Systems](Notification_Systems.md) | Feedback, danger, toast, and status visual treatment |
-| [UX Flows](UX_Flows.md) | Journey and wireframe context for visual handoff |
+| [UI/UX Index](_index/index.html) | Full UI/UX documentation hub |
+| [Screen Groups Overview](screen_groups_overview/index.html) | Lifecycle taxonomy and designer-ready spec template |
+| [Global UX Standards](global_ux_standards/index.html) | Shared navigation, focus, state, modal, and accessibility rules |
+| [HUD Design](hud_design/index.html) | In-raid HUD element placement and visual constraints |
+| [Notification Systems](notification_systems/index.html) | Feedback, danger, toast, and status visual treatment |
+| [UX Flows](ux_flows/index.html) | Journey and wireframe context for visual handoff |
 
 ---
 

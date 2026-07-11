@@ -16,9 +16,9 @@ Gears defines physical equipment the operator wears or carries in raid: armor, h
 
 | Page | Owns |
 | ---- | ---- |
-| [Gear Tier System](Gear_Tier_System.md) | Tier, rarity, value, comparison, locked/contraband/insured rules |
+| [Gear Tier System](gear_tier_system/index.html) | Tier, rarity, value, comparison, locked/contraband/insured rules |
 | [Armor Gear](ArmorGear/) | Armor classes, zones, durability, repair, visual identity, progression, balance |
 | [Storage Gear](StorageGear/) | Rigs, backpacks, secure containers, stash cases, layout, capacity, balance |
 | [Inventory System](../Inventory_System/) | Item instance lifecycle, stash IA, placement, ownership vs entitlement |
-| [Loadout Preparation](../GameDesign/LoadoutPreparation.md) | Gear validation, comparison, insurance, presets, risk summary |
+| [Loadout Preparation](../gamedesign/loadoutpreparation/index.html) | Gear validation, comparison, insurance, presets, risk summary |
 

@@ -6,9 +6,9 @@ weight: 4
 
 ## Tổng Quan
 
-Tài liệu này định nghĩa how bullets interact với giáp, durability, distance, và materials: penetration chance, damage falloff, giáp degradation, blunt damage, ricochet, và caliber sharing. giáp classes và zones are in [Gears — giáp & Ballistics](../Gears/ArmorGear/giáp.md).
+Tài liệu này định nghĩa how bullets interact với giáp, durability, distance, và materials: penetration chance, damage falloff, giáp degradation, blunt damage, ricochet, và caliber sharing. giáp classes và zones are in [Gears — giáp & Ballistics](../gears/armorgear/armor/index.html).
 
-> **Cross-References:** [vũ khí Arsenal](../Gameplay/WeaponArsenal.md) — đạn tables by caliber; [vũ khí Balance Framework](Weapon_Balance_Framework.md) — TTK và balance; [Gears — giáp & Ballistics](../Gears/ArmorGear/giáp.md) — giáp classes 1–6, zones, materials; [giáp Master Database](../Gears/ArmorGear/Armor_Master_Database.md) — per-item coverage và class.
+> **Cross-References:** [vũ khí Arsenal](../gameplay/weaponarsenal/index.html) — đạn tables by caliber; [vũ khí Balance Framework](weapon_balance_framework/index.html) — TTK và balance; [Gears — giáp & Ballistics](../gears/armorgear/armor/index.html) — giáp classes 1–6, zones, materials; [giáp Master Database](../gears/armorgear/armor_master_database/index.html) — per-item coverage và class.
 
 ---
 
@@ -34,7 +34,7 @@ Armor interaction không được chỉ là hidden math. Player không cần for
 
 khi a bullet hits an armored zone, the server resolves:
 
-**Penetration Power (PP):** Each đạn type has a numeric penetration class (0–8) matching the đạn bảng in [vũ khí Arsenal](../Gameplay/WeaponArsenal.md) (e.g. FMJ Low = 2, AP High = 5, .338 Ultimate = 7).
+**Penetration Power (PP):** Each đạn type has a numeric penetration class (0–8) matching the đạn bảng in [vũ khí Arsenal](../gameplay/weaponarsenal/index.html) (e.g. FMJ Low = 2, AP High = 5, .338 Ultimate = 7).
 
 **Effective giáp Class (EAC):**  
 `EAC = ArmorClass + (1 - DurabilityPercent) × 2`  
@@ -86,7 +86,7 @@ Capped per hit (e.g. max 8% per shot). Higher penetration vs lower giáp = less 
 `DurabilityLoss = BaseDmg × 0.025 × (1 + (PP - EAC))`  
 Capped per hit (e.g. max 12%). Stopped rounds dump more energy into the plate.
 
-**Effective class reduction:** As durability drops, EAC increases (see Penetration Chance). At 50% durability, giáp is treated as roughly one class worse; at 25%, two classes worse. At 0% the giáp is destroyed (no protection; weight remains until dropped). Xem [Gear cơ chế](../Gameplay/Gear_Mechanics.md) for gameplay impact.
+**Effective class reduction:** As durability drops, EAC increases (see Penetration Chance). At 50% durability, giáp is treated as roughly one class worse; at 25%, two classes worse. At 0% the giáp is destroyed (no protection; weight remains until dropped). Xem [Gear cơ chế](../gameplay/gear_mechanics/index.html) for gameplay impact.
 
 ---
 
@@ -94,7 +94,7 @@ Capped per hit (e.g. max 12%). Stopped rounds dump more energy into the plate.
 
 khi a bullet is **blocked** by giáp, the wearer still takes blunt trauma.
 
-**Formula (from [Gears — giáp](../Gears/ArmorGear/giáp.md)):**  
+**Formula (from [Gears — giáp](../gears/armorgear/armor/index.html)):**
 `BluntDmg = BaseDmg × BluntFactor × (1 - DurabilityPercent)`
 
 **BluntFactor** by caliber family (example values):
@@ -134,7 +134,7 @@ Helmets (và some body giáp) have a ricochet chance. At shallow impact angles, 
 
 **Subsonic rounds:** No crack; only muzzle report (và impact). Used by VSS, suppressed 9mm/.45 với subsonic đạn. Trade-off: lower velocity, more drop/falloff in games that model it; in our top-down, subsonic mainly affects audio signature và effective range (velocity still used for falloff).
 
-**Suppressor interaction:** Suppressor reduces muzzle report range (Xem [vũ khí Attachment hệ thống](../Gameplay/Weapon_Attachment_System.md)). It does not remove bullet crack for supersonic đạn. Subsonic + suppressor = minimal audio signature.
+**Suppressor interaction:** Suppressor reduces muzzle report range (Xem [vũ khí Attachment hệ thống](../gameplay/weapon_attachment_system/index.html)). It does not remove bullet crack for supersonic đạn. Subsonic + suppressor = minimal audio signature.
 
 ---
 
@@ -182,7 +182,7 @@ vũ khí that share the same caliber share đạn pools. Strategic implication: 
 
 ## Tham Chiếu Chéo
 
-- [vũ khí Arsenal](../Gameplay/WeaponArsenal.md) — đạn types, penetration class, velocity per caliber.
-- [Gears — giáp & Ballistics](../Gears/ArmorGear/giáp.md) — giáp classes, zones, materials, damage cơ chế; [giáp Master Database](../Gears/ArmorGear/Armor_Master_Database.md) — per-item specs.
-- [vũ khí Balance Framework](Weapon_Balance_Framework.md) — TTK và balance targets.
-- [Gear cơ chế](../Gameplay/Gear_Mechanics.md) — giáp durability và weight tier.
+- [vũ khí Arsenal](../gameplay/weaponarsenal/index.html) — đạn types, penetration class, velocity per caliber.
+- [Gears — giáp & Ballistics](../gears/armorgear/armor/index.html) — giáp classes, zones, materials, damage cơ chế; [giáp Master Database](../gears/armorgear/armor_master_database/index.html) — per-item specs.
+- [vũ khí Balance Framework](weapon_balance_framework/index.html) — TTK và balance targets.
+- [Gear cơ chế](../gameplay/gear_mechanics/index.html) — giáp durability và weight tier.

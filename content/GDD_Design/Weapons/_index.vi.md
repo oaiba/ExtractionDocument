@@ -7,7 +7,7 @@ weight: 8
 
 # Tài Liệu Weapons
 
-Section này là hub canonical cho **thiết kế weapon system**: category, handling, balance, ballistics, progression, và weapon database đầy đủ. Danh sách weapon và combat mechanics phục vụ gameplay nằm trong [Gameplay - Weapon Arsenal](../Gameplay/WeaponArsenal.md) và [Weapon Attachment System](../Gameplay/Weapon_Attachment_System.md).
+Section này là hub canonical cho **thiết kế weapon system**: category, handling, balance, ballistics, progression, và weapon database đầy đủ. Danh sách weapon và combat mechanics phục vụ gameplay nằm trong [Gameplay - Weapon Arsenal](../gameplay/weaponarsenal/index.html) và [Weapon Attachment System](../gameplay/weapon_attachment_system/index.html).
 
 ## Cây Tài Liệu
 
@@ -24,7 +24,7 @@ Section này là hub canonical cho **thiết kế weapon system**: category, han
 
 ## Section Liên Quan
 
-* [**Gameplay - Weapon Arsenal**](../Gameplay/WeaponArsenal.md) - Primary weapon category, ammo table, attachment reference, damage model, TTK.
-* [**Gameplay - Weapon Attachment System**](../Gameplay/Weapon_Attachment_System.md) - Attachment slot, in-raid swap, preset, Workbench crafting.
-* [**Inventory System - Gunsmith System**](../Inventory_System/Gunsmith_System.md) - Gunsmith anatomy, ergonomics, recoil, malfunction.
-* [**Combat - Weapons**](../Combat/Weapons.md) - Combat philosophy (canonical weapon content nằm trong Weapon Arsenal).
+* [**Gameplay - Weapon Arsenal**](../gameplay/weaponarsenal/index.html) - Primary weapon category, ammo table, attachment reference, damage model, TTK.
+* [**Gameplay - Weapon Attachment System**](../gameplay/weapon_attachment_system/index.html) - Attachment slot, in-raid swap, preset, Workbench crafting.
+* [**Inventory System - Gunsmith System**](../inventory_system/gunsmith_system/index.html) - Gunsmith anatomy, ergonomics, recoil, malfunction.
+* [**Combat - Weapons**](../combat/weapons/index.html) - Combat philosophy (canonical weapon content nằm trong Weapon Arsenal).

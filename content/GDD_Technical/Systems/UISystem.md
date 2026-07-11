@@ -40,7 +40,7 @@ Main screen type classification.
 | `ST_InGame`         | In Game         | No    | None       | No       | HUD during match           |
 | `ST_PostMatch`      | Post Match      | No    | Fade       | No       | Victory/defeat results     |
 
-> **Loading Screen Types:** For full taxonomy (L1–L8), content types, and layouts, see [Loading Screen Design](../../GDD_Design/UI_UX/LoadingScreen_Design.md).
+> **Loading Screen Types:** For full taxonomy (L1–L8), content types, and layouts, see [Loading Screen Design](../../gdd_design/ui_ux/loadingscreen_design/index.html).
 
 ### LoadingType
 Loading phase classification. Maps to Loading Screen Design taxonomy.

@@ -12,23 +12,23 @@ Primary references:
 
 | System | Source |
 | :--- | :--- |
-| Progression | [Progression & Monetization](../GameDesign/Progression.md) |
-| LiveOps | [Live Operations & Events](../GameDesign/LiveOps.md) |
-| Ranked | [Ranked Mode & Competitive Systems](../GameDesign/RankedMode.md) |
-| Economy | [Economy & Monetization Design](../GameDesign/Economy.md) |
-| Quest system | [Quest & Objective System](../Gameplay/Quest_Objective_System.md) |
+| Progression | [Progression & Monetization](../gamedesign/progression/index.html) |
+| LiveOps | [Live Operations & Events](../gamedesign/liveops/index.html) |
+| Ranked | [Ranked Mode & Competitive Systems](../gamedesign/rankedmode/index.html) |
+| Economy | [Economy & Monetization Design](../gamedesign/economy/index.html) |
+| Quest system | [Quest & Objective System](../gameplay/quest_objective_system/index.html) |
 
 ## Quick Navigation
 
 | Destination | Use |
 | :--- | :--- |
-| [UI/UX Index](_index.md) | Full UI/UX documentation hub |
-| [Screen Groups Overview](Screen_Groups_Overview.md) | Lifecycle taxonomy and designer-ready spec template |
-| [Global UX Standards](Global_UX_Standards.md) | Shared navigation, focus, state, modal, and accessibility rules |
-| [Out-of-Raid Screens](Out_Of_Raid_Screens.md) | Quest board, profile, home hub, and reward routes |
-| [Pre-Raid Screens](Pre_Raid_Screens.md) | Event/ranked queue commitment and restrictions |
-| [Commerce Screens](Commerce_Screens.md) | Battle pass upgrade, event store purchase routes, currency top-up, confirmation, and receipts |
-| [Settings & System Screens](Commerce_Settings_System_Screens.md) | Privacy, account, and system dialogs |
+| [UI/UX Index](_index/index.html) | Full UI/UX documentation hub |
+| [Screen Groups Overview](screen_groups_overview/index.html) | Lifecycle taxonomy and designer-ready spec template |
+| [Global UX Standards](global_ux_standards/index.html) | Shared navigation, focus, state, modal, and accessibility rules |
+| [Out-of-Raid Screens](out_of_raid_screens/index.html) | Quest board, profile, home hub, and reward routes |
+| [Pre-Raid Screens](pre_raid_screens/index.html) | Event/ranked queue commitment and restrictions |
+| [Commerce Screens](commerce_screens/index.html) | Battle pass upgrade, event store purchase routes, currency top-up, confirmation, and receipts |
+| [Settings & System Screens](commerce_settings_system_screens/index.html) | Privacy, account, and system dialogs |
 
 ---
 
@@ -73,7 +73,7 @@ Layout (PC/Console)
 | Layout | Tier track, selected reward detail, current XP, time remaining, free/premium distinction |
 | Primary CTA | Claim Reward; Upgrade Pass only when a premium reward is selected or page context supports it |
 | Secondary actions | View all rewards, inspect cosmetic, filter claimable, preview season |
-| Monetization rule | Reward/progress context lives here; premium upgrade purchase and confirmation live in [Commerce Screens](Commerce_Screens.md) |
+| Monetization rule | Reward/progress context lives here; premium upgrade purchase and confirmation live in [Commerce Screens](commerce_screens/index.html) |
 
 ### Battle Pass States
 

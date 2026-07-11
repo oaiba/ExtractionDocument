@@ -21,7 +21,7 @@ weight: 9
 | **Season Availability** | Launch                                                                                          |
 | **Unique Feature**      | Dynamic Day/Night Cycle — raid starts at dusk, ends in full night; flashlights become necessary |
 
-> **Cross-References:** Faction control per zone → [Faction Territories](FactionTerritories.md); loot tables → [Loot Distribution](https://github.com/oaiba/ExtractionDocument/blob/main/content/GDD_Design/NarrativeWorld/LootDistribution.md); full Backstory context → [World History & Backstory](https://github.com/oaiba/ExtractionDocument/blob/main/content/GDD_Design/NarrativeWorld/Backstory.md#district-14-urban-ruins-raid-map).
+> **Cross-References:** Faction control per zone → [Faction Territories](factionterritories/index.html); loot tables → [Loot Distribution](https://github.com/oaiba/ExtractionDocument/blob/main/content/GDD_Design/NarrativeWorld/LootDistribution.md); full Backstory context → [World History & Backstory](https://github.com/oaiba/ExtractionDocument/blob/main/content/GDD_Design/NarrativeWorld/Backstory.md#district-14-urban-ruins-raid-map).
 
 ***
 
@@ -354,7 +354,7 @@ Full container tables → [Loot Distribution](https://github.com/oaiba/Extractio
 
 ### Cross-References
 
-* [Faction Territories](FactionTerritories.md) — Underground vs. Peacekeeper zone control, civilian neutrality rules.
+* [Faction Territories](factionterritories/index.html) — Underground vs. Peacekeeper zone control, civilian neutrality rules.
 * [World History & Backstory](https://github.com/oaiba/ExtractionDocument/blob/main/content/GDD_Design/NarrativeWorld/Backstory.md) — District 14 timeline sections, "Nurse Fatima" NPC reference.
 * [Factions](https://github.com/oaiba/ExtractionDocument/blob/main/content/GDD_Design/NarrativeWorld/Factions.md) — Peacekeeper structure (Dr. Wells, Commander Vance); Underground structure (Rat King).
 * [Loot Distribution](https://github.com/oaiba/ExtractionDocument/blob/main/content/GDD_Design/NarrativeWorld/LootDistribution.md) — Full container tables for this map.

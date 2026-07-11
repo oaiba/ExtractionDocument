@@ -12,22 +12,22 @@ Tham chiếu chính:
 
 | hệ thống | source |
 | :--- | :--- |
-| Matchmaking | [Matchmaking & Lobby hệ thống](../Gameplay/Matchmaking_Lobby.md) |
-| Loadout | [Loadout Preparation](../GameDesign/LoadoutPreparation.md) |
-| Modes | [Game Modes Design](../GameDesign/GameModes.md) |
-| Maps | [Map Design](../GameDesign/MapDesign.md) |
-| Insurance | [Insurance hệ thống Design](../GameDesign/InsuranceSystem.md) |
+| Matchmaking | [Matchmaking & Lobby hệ thống](../gameplay/matchmaking_lobby/index.html) |
+| Loadout | [Loadout Preparation](../gamedesign/loadoutpreparation/index.html) |
+| Modes | [Game Modes Design](../gamedesign/gamemodes/index.html) |
+| Maps | [Map Design](../gamedesign/mapdesign/index.html) |
+| Insurance | [Insurance hệ thống Design](../gamedesign/insurancesystem/index.html) |
 
 ## Điều Hướng Nhanh
 
 | điểm đến | cách dùng |
 | :--- | :--- |
-| [UI/UX Index](_index.md) | Full UI/UX documentation hub |
-| [màn hình Groups Overview](Screen_Groups_Overview.md) | Lifecycle taxonomy và designer-ready spec template |
-| [global UX Standards](Global_UX_Standards.md) | shared navigation, focus, trạng thái, modal, và accessibility rules |
-| [Out-of-Raid màn hình](Out_Of_Raid_Screens.md) | Loadout, stash, quests, traders, safe house |
-| [In-Raid màn hình](In_Raid_Screens.md) | HUD, tactical map, looting, pause, reconnect |
-| [loading màn hình Design](LoadingScreen_Design.md) | L4 lobby-to-match loading và reconnect transitions |
+| [UI/UX Index](_index/index.html) | Full UI/UX documentation hub |
+| [màn hình Groups Overview](screen_groups_overview/index.html) | Lifecycle taxonomy và designer-ready spec template |
+| [global UX Standards](global_ux_standards/index.html) | shared navigation, focus, trạng thái, modal, và accessibility rules |
+| [Out-of-Raid màn hình](out_of_raid_screens/index.html) | Loadout, stash, quests, traders, safe house |
+| [In-Raid màn hình](in_raid_screens/index.html) | HUD, tactical map, looting, pause, reconnect |
+| [loading màn hình Design](loadingscreen_design/index.html) | L4 lobby-to-match loading và reconnect transitions |
 
 ---
 
@@ -279,7 +279,7 @@ Layout (PC/Console)
 | Layout | Selected mission summary, squad status, queue timer, region/ping, tips |
 | primary CTA | Cancel Queue until match lock |
 | secondary actions | Voice/chat, kiểm tra mission rules, settings shortcut |
-| loading link | Uses `LT_LobbyToMatch` khi match begins; Xem [loading màn hình Design](LoadingScreen_Design.md) |
+| loading link | Uses `LT_LobbyToMatch` khi match begins; Xem [loading màn hình Design](loadingscreen_design/index.html) |
 
 ### Matchmaking trạng thái
 

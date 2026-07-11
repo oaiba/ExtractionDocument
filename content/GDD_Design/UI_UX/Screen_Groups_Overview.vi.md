@@ -12,14 +12,14 @@ Trang này là screen inventory canonical cho package UI/UX design. Nó nhóm sc
 
 | Destination | Use |
 | :--- | :--- |
-| [UI/UX Index](_index.md) | Hub tài liệu UI/UX đầy đủ |
-| [Global UX Standards](Global_UX_Standards.md) | Rule chung cho navigation, focus, state, modal, accessibility |
-| [Out-of-Raid Screens](Out_Of_Raid_Screens.md) | Home, loadout, stash, traders, safe house, quests, profile |
-| [Pre-Raid Screens](Pre_Raid_Screens.md) | Mode, map, deploy confirmation, squad lobby, matchmaking |
-| [In-Raid Screens](In_Raid_Screens.md) | HUD, tactical map, looting, inventory overlay, pause, spectator |
-| [Post-Raid Screens](Post_Raid_Screens.md) | AAR, death replay, loot transfer, quest progress, redeploy |
+| [UI/UX Index](_index/index.html) | Hub tài liệu UI/UX đầy đủ |
+| [Global UX Standards](global_ux_standards/index.html) | Rule chung cho navigation, focus, state, modal, accessibility |
+| [Out-of-Raid Screens](out_of_raid_screens/index.html) | Home, loadout, stash, traders, safe house, quests, profile |
+| [Pre-Raid Screens](pre_raid_screens/index.html) | Mode, map, deploy confirmation, squad lobby, matchmaking |
+| [In-Raid Screens](in_raid_screens/index.html) | HUD, tactical map, looting, inventory overlay, pause, spectator |
+| [Post-Raid Screens](post_raid_screens/index.html) | AAR, death replay, loot transfer, quest progress, redeploy |
 
-Để kiểm tra ownership liên domain, decision còn mở và readiness MVP, xem [Cross-System Traceability](../ProjectScope/Cross_System_Traceability.vi.md), [Design Decision Register](../ProjectScope/Design_Decision_Register.vi.md) và [MVP Readiness Review](../ProjectScope/MVP_Readiness_Review.vi.md).
+Để kiểm tra ownership liên domain, decision còn mở và readiness MVP, xem [Cross-System Traceability](../projectscope/cross_system_traceability.vi/index.html), [Design Decision Register](../projectscope/design_decision_register.vi/index.html) và [MVP Readiness Review](../projectscope/mvp_readiness_review.vi/index.html).
 
 Mỗi screen group phải trả lời bốn câu hỏi:
 
@@ -57,15 +57,15 @@ Mỗi screen group phải trả lời bốn câu hỏi:
 
 | Phase | Screen Group | Primary Job | Key Pages |
 | :--- | :--- | :--- | :--- |
-| Boot and account | Onboarding / Auth | Đưa player an toàn vào valid account và tutorial state | [Settings & System Screens](Commerce_Settings_System_Screens.md), [Loading Screen Design](LoadingScreen_Design.md) |
-| Out of raid | Home, profile, stash, traders, safe house, quests | Prepare, recover, progress, và manage risk | [Out-of-Raid Screens](Out_Of_Raid_Screens.md) |
-| Pre-raid | Mode, map, squad, deploy, matchmaking | Confirm rules, risk, party readiness, và queue state | [Pre-Raid Screens](Pre_Raid_Screens.md) |
-| In raid | HUD, map, looting, overlays, pause, spectator | Giữ survival-critical information rõ khi có pressure | [In-Raid Screens](In_Raid_Screens.md), [HUD Design](HUD_Design.md) |
-| Post-raid | AAR, death replay, loot transfer, report, redeploy | Giải thích outcome và route player vào loop tiếp theo | [Post-Raid Screens](Post_Raid_Screens.md) |
-| Social | Friends, party, clan, LFG, communication, moderation | Giúp player coordinate trong khi hạn chế abuse | [Social Screens](Social_Screens.md) |
-| Progression and LiveOps | Battle pass, events, ranked, rewards, inbox | Surface long-term goals mà không bury raid flow | [Progression & LiveOps Screens](Progression_LiveOps_Screens.md) |
-| Commerce | Shop, offers, bundles, item preview, currency top-up, confirmation, receipts, redeem | Xử lý cosmetic browsing và checkout trust states | [Commerce Screens](Commerce_Screens.md) |
-| Settings and system | Settings, account, privacy, diagnostics, dialogs | Xử lý configuration, account, platform, và system states | [Settings & System Screens](Commerce_Settings_System_Screens.md) |
+| Boot and account | Onboarding / Auth | Đưa player an toàn vào valid account và tutorial state | [Settings & System Screens](commerce_settings_system_screens/index.html), [Loading Screen Design](loadingscreen_design/index.html) |
+| Out of raid | Home, profile, stash, traders, safe house, quests | Prepare, recover, progress, và manage risk | [Out-of-Raid Screens](out_of_raid_screens/index.html) |
+| Pre-raid | Mode, map, squad, deploy, matchmaking | Confirm rules, risk, party readiness, và queue state | [Pre-Raid Screens](pre_raid_screens/index.html) |
+| In raid | HUD, map, looting, overlays, pause, spectator | Giữ survival-critical information rõ khi có pressure | [In-Raid Screens](in_raid_screens/index.html), [HUD Design](hud_design/index.html) |
+| Post-raid | AAR, death replay, loot transfer, report, redeploy | Giải thích outcome và route player vào loop tiếp theo | [Post-Raid Screens](post_raid_screens/index.html) |
+| Social | Friends, party, clan, LFG, communication, moderation | Giúp player coordinate trong khi hạn chế abuse | [Social Screens](social_screens/index.html) |
+| Progression and LiveOps | Battle pass, events, ranked, rewards, inbox | Surface long-term goals mà không bury raid flow | [Progression & LiveOps Screens](progression_liveops_screens/index.html) |
+| Commerce | Shop, offers, bundles, item preview, currency top-up, confirmation, receipts, redeem | Xử lý cosmetic browsing và checkout trust states | [Commerce Screens](commerce_screens/index.html) |
+| Settings and system | Settings, account, privacy, diagnostics, dialogs | Xử lý configuration, account, platform, và system states | [Settings & System Screens](commerce_settings_system_screens/index.html) |
 
 ---
 
@@ -99,7 +99,7 @@ Progression và LiveOps coverage chỉ hoàn chỉnh khi canonical page định 
 
 ## Screen Spec Template
 
-Dùng template này cho mọi screen spec mới. Giữ đủ ngắn để update được, nhưng đủ hoàn chỉnh cho designer layout, UX review, và implementation planning. [Out-of-Raid Screens](Out_Of_Raid_Screens.md) là baseline example cho format designer-ready đầy đủ.
+Dùng template này cho mọi screen spec mới. Giữ đủ ngắn để update được, nhưng đủ hoàn chỉnh cho designer layout, UX review, và implementation planning. [Out-of-Raid Screens](out_of_raid_screens/index.html) là baseline example cho format designer-ready đầy đủ.
 
 #### Spec Template Layout
 
@@ -187,4 +187,4 @@ Dùng template này cho mọi screen spec mới. Giữ đủ ngắn để update
 - [ ] Mọi group định nghĩa blocked, empty, locked, loading, offline, error states.
 - [ ] Mọi major game system có UI owner hoặc cross-reference.
 - [ ] Không một document nào sở hữu unrelated screens đáng ra thuộc group khác.
-- [ ] Technical terms khớp [UI System](../../GDD_Technical/Systems/UISystem.md) khi cần code-facing name.
+- [ ] Technical terms khớp [UI System](../../gdd_technical/systems/uisystem/index.html) khi cần code-facing name.

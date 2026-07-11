@@ -12,10 +12,10 @@ Trong extraction shooter, âm thanh là **sinh tồn**. Sound design phải truy
 Các trụ cột audio tập trung vào **độ rõ**, **độ chính xác vị trí**, và **phản hồi chiến thuật**.
 
 {{< cards cols="2" >}}
-  {{< card link="sounddesign.html" title="Audio Guidelines" icon="music-note" subtitle="Trụ cột cốt lõi, chuẩn mix, và giới hạn kỹ thuật." >}}
-  {{< card link="tacticalaudio.html" title="Tactical Audio" icon="bell" subtitle="Footstep, weapon foley, và combat feedback cue." >}}
-  {{< card link="soundscape.html" title="World Ambience" icon="globe-alt" subtitle="Bản sắc âm thanh theo zone và environmental storytelling." >}}
-  {{< card link="voicelines.html" title="Voice & Dialogue" icon="chat-alt-2" subtitle="Operator bark, announcer line, và narrative voiceover." >}}
+  {{< card link="sounddesign/index.html" title="Audio Guidelines" icon="music-note" subtitle="Trụ cột cốt lõi, chuẩn mix, và giới hạn kỹ thuật." >}}
+  {{< card link="tacticalaudio/index.html" title="Tactical Audio" icon="bell" subtitle="Footstep, weapon foley, và combat feedback cue." >}}
+  {{< card link="soundscape/index.html" title="World Ambience" icon="globe-alt" subtitle="Bản sắc âm thanh theo zone và environmental storytelling." >}}
+  {{< card link="voicelines/index.html" title="Voice & Dialogue" icon="chat-alt-2" subtitle="Operator bark, announcer line, và narrative voiceover." >}}
 {{< /cards >}}
 
 ---

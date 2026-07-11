@@ -17,7 +17,7 @@ Operators are the hero layer of the extraction shooter: each has a **class**, a 
 * **Extraction-aware:** Ability rules change near extraction zones (healing abilities cancel extract timer).
 * **Cross-platform parity:** Abilities work identically on PC and mobile; only input method differs.
 
-For high-level operator choice in pre-raid planning, see [Core Gameplay Loop](CoreLoop.md). For scope (Alpha 3 operators, Beta 5), see [MVP Scope](https://github.com/oaiba/ExtractionDocument/blob/main/content/ProjectScope/MVP.md). For pillar alignment (Task-Driven Agency, Persistent Progression), see [Design Pillars](https://github.com/oaiba/ExtractionDocument/blob/main/content/ProjectScope/design-pillars-enhanced.md).
+For high-level operator choice in pre-raid planning, see [Core Gameplay Loop](coreloop/index.html). For scope (Alpha 3 operators, Beta 5), see [MVP Scope](https://github.com/oaiba/ExtractionDocument/blob/main/content/ProjectScope/MVP.md). For pillar alignment (Task-Driven Agency, Persistent Progression), see [Design Pillars](https://github.com/oaiba/ExtractionDocument/blob/main/content/ProjectScope/design-pillars-enhanced.md).
 
 ***
 
@@ -197,7 +197,7 @@ Each operator has three layers of abilities. Numbers below are first-pass design
 
 #### During Extraction
 
-Per [Extraction Mechanics](Extraction_Mechanics.md):
+Per [Extraction Mechanics](extraction_mechanics/index.html):
 
 | Ability type                                                                      | Usable during extract? | Cancels extract timer?    |
 | --------------------------------------------------------------------------------- | ---------------------- | ------------------------- |
@@ -212,7 +212,7 @@ Per [Extraction Mechanics](Extraction_Mechanics.md):
 
 #### Interaction with Medical System
 
-Operator healing abilities interact with the [Medical System](Medical_System.md):
+Operator healing abilities interact with the [Medical System](medical_system/index.html):
 
 | Interaction                       | Rule                                                                                                         |
 | --------------------------------- | ------------------------------------------------------------------------------------------------------------ |
@@ -223,7 +223,7 @@ Operator healing abilities interact with the [Medical System](Medical_System.md)
 
 #### Interaction with Gear Weight
 
-Per [Gear Mechanics](Gear_Mechanics.md), some operators have gear constraints:
+Per [Gear Mechanics](gear_mechanics/index.html), some operators have gear constraints:
 
 | Operator                             | Gear constraint                                                                                  | Reason                                                                    |
 | ------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------- |
@@ -234,7 +234,7 @@ Per [Gear Mechanics](Gear_Mechanics.md), some operators have gear constraints:
 
 #### Interaction with LOS/Visibility
 
-Per [LOS, Fog of War & Visibility](LOS_Fog_Visibility.md), abilities that reveal or block vision integrate with the shared team vision system. Summary:
+Per [LOS, Fog of War & Visibility](los_fog_visibility/index.html), abilities that reveal or block vision integrate with the shared team vision system. Summary:
 
 | Operator         | Ability          | LOS/Visibility role | Range/Radius | Fog clearing?   | Shared to squad?       | Counterplay                        |
 | ---------------- | ---------------- | ------------------- | ------------ | --------------- | ---------------------- | ---------------------------------- |
@@ -436,7 +436,7 @@ Every ability has at least one hard counter and one soft counter:
 | Layer         | Ability                                                                                                                                                     | Detail                                                                                                                                                                                                   |
 | ------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Passive**   | Triage Instinct                                                                                                                                             | Automatically identifies teammates' most critical status effect (bleed, fracture, etc.) when within 5m — overlaid HUD icon. Hands never shake during medical use (no aim penalty while eating/drinking). |
-| **Active 1**  | Field Medic                                                                                                                                                 | Revive speed reduced 8s → 5s. Second revive per session available before 90s cooldown kicks in. (Key differentiator vs all other classes — see [Downstate & Revive](Downstate_Revive.md))                |
+| **Active 1**  | Field Medic                                                                                                                                                 | Revive speed reduced 8s → 5s. Second revive per session available before 90s cooldown kicks in. (Key differentiator vs all other classes — see [Downstate & Revive](downstate_revive/index.html))                |
 | **Active 2**  | Med Pack Toss                                                                                                                                               | Throws a medical item from inventory to a teammate (up to 8m range). No animation lock — can throw while crouching. 20s cooldown (per use).                                                              |
 | **Signature** | Mass Stabilize                                                                                                                                              | 12m radius pulse: all squad members within range immediately have any Bleed status stopped (no healing, just bleed halt). Removes Pain briefly. 150s cooldown.                                           |
 | **Counter**   | Ghost has lowest offensive capability of any operator. Reliant on squad proximity. Isolation = weakness. Bastion's aggression pushes Ghost out of position. |                                                                                                                                                                                                          |
@@ -481,7 +481,7 @@ Every ability has at least one hard counter and one soft counter:
 | Layer              | Ability                                                                                                                                                                                                                              | Detail                                                                                                                                                                                                |
 | ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Passive**        | Ghost Step                                                                                                                                                                                                                           | Slow-walking produces zero sound (0m audible range vs standard 4m). Moving through foliage and soft surfaces produces no extra noise.                                                                 |
-| **Active 1**       | Smoke Grenade                                                                                                                                                                                                                        | Throws a smoke grenade (8m cloud, 20s duration). Blocks LOS through smoke per [LOS, Fog & Visibility](LOS_Fog_Visibility.md). Shoot-through possible but at −3° aim cone penalty. 35s cooldown.       |
+| **Active 1**       | Smoke Grenade                                                                                                                                                                                                                        | Throws a smoke grenade (8m cloud, 20s duration). Blocks LOS through smoke per [LOS, Fog & Visibility](los_fog_visibility/index.html). Shoot-through possible but at −3° aim cone penalty. 35s cooldown.       |
 | **Active 2**       | Decoy Ping                                                                                                                                                                                                                           | Places a fake player-signature ping on the minimap at a target location (within 15m). Appears as a "player detected" blip on enemies' minimaps for 8s. 50s cooldown.                                  |
 | **Signature**      | Phase Shift                                                                                                                                                                                                                          | Becomes fully invisible and silent for 6s. Any attack (shooting, using abilities) breaks cloak immediately. Movement speed is 90% while cloaked. 180s cooldown. Screen effect: shimmer visible at 8m. |
 | **Counter**        | Emerging from smoke or cloak produces a brief shimmer (visible 8m top-down). Fuse's Trip Mines: Obsidian still triggers them (Phase Shift does not prevent mine trigger). Motion Sensor (Hawk) detects Obsidian through Phase Shift. |                                                                                                                                                                                                       |
@@ -494,12 +494,12 @@ Every ability has at least one hard counter and one soft counter:
 
 ### Cross-References
 
-* [Core Gameplay Loop](CoreLoop.md) — Operator choice in pre-raid preparation, loadout philosophy.
-* [Extraction Mechanics](Extraction_Mechanics.md) — Rules during extract (ability use allowed; healing cancels extract).
-* [Medical System](Medical_System.md) — Healing items and triage; heal abilities interact with same body-part and status rules.
-* [Gear Mechanics](Gear_Mechanics.md) — Loadout and weight; operators have different rig/weight constraints.
-* [Movement & Stamina](Movement_and_Stamina.md) — Speed modifiers, stamina interaction, inertia.
-* [Downstate & Revive](Downstate_Revive.md) — Ghost's Field Medic unique revive mechanic.
-* [LOS, Fog & Visibility](LOS_Fog_Visibility.md) — Obsidian smoke, Phase Shift shimmer, Hawk detection.
+* [Core Gameplay Loop](coreloop/index.html) — Operator choice in pre-raid preparation, loadout philosophy.
+* [Extraction Mechanics](extraction_mechanics/index.html) — Rules during extract (ability use allowed; healing cancels extract).
+* [Medical System](medical_system/index.html) — Healing items and triage; heal abilities interact with same body-part and status rules.
+* [Gear Mechanics](gear_mechanics/index.html) — Loadout and weight; operators have different rig/weight constraints.
+* [Movement & Stamina](movement_and_stamina/index.html) — Speed modifiers, stamina interaction, inertia.
+* [Downstate & Revive](downstate_revive/index.html) — Ghost's Field Medic unique revive mechanic.
+* [LOS, Fog & Visibility](los_fog_visibility/index.html) — Obsidian smoke, Phase Shift shimmer, Hawk detection.
 * [Design Pillars](https://github.com/oaiba/ExtractionDocument/blob/main/content/ProjectScope/design-pillars-enhanced.md) — Operator Choice (Task-Driven Agency), Operator Mastery (Persistent Progression).
 * [MVP Scope](https://github.com/oaiba/ExtractionDocument/blob/main/content/ProjectScope/MVP.md) — 3 operators Alpha, 5 Beta, 8+ Launch.

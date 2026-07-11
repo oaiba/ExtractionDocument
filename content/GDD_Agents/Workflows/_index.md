@@ -8,5 +8,5 @@ weight: 2
 
 Step-by-step procedures for common development tasks.
 
-- **[Feature Implementation](./FeatureImplementation.md)** — End-to-end workflow: requirements → data layer → core logic → replication → UI → testing → documentation
-- **[Bug Fix Workflow](./BugFix.md)** — Systematic approach: reproduce → diagnose → fix → verify → commit
+- **[Feature Implementation](./featureimplementation/index.html)** — End-to-end workflow: requirements → data layer → core logic → replication → UI → testing → documentation
+- **[Bug Fix Workflow](./bugfix/index.html)** — Systematic approach: reproduce → diagnose → fix → verify → commit

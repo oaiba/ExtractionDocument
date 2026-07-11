@@ -86,6 +86,6 @@ A seasonal event name can be creative, but objective instructions should stay pl
 
 | Topic | Page |
 | :--- | :--- |
-| Settings language options | [User Settings](usersettings.html) |
-| Tutorial text | [Tutorial Raid](tutorialraid.html) |
-| Accessibility text scale | [Accessibility](accessibility.html) |
+| Settings language options | [User Settings](usersettings/index.html) |
+| Tutorial text | [Tutorial Raid](tutorialraid/index.html) |
+| Accessibility text scale | [Accessibility](accessibility/index.html) |

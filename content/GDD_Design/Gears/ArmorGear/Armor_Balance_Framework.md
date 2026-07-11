@@ -6,7 +6,7 @@ weight: 4
 
 ## Overview
 
-This document defines **Effective HP (EHP)**, **TTK impact**, **cost-efficiency**, **durability and repair math**, and **balance levers** for armor. It aligns with the weapon-side [Weapon Balance Framework](../../Weapons/Weapon_Balance_Framework.md) and [Caliber & Ballistics](../../Weapons/Caliber_Ballistics_System.md).
+This document defines **Effective HP (EHP)**, **TTK impact**, **cost-efficiency**, **durability and repair math**, and **balance levers** for armor. It aligns with the weapon-side [Weapon Balance Framework](../../weapons/weapon_balance_framework/index.html) and [Caliber & Ballistics](../../weapons/caliber_ballistics_system/index.html).
 
 ---
 
@@ -94,14 +94,14 @@ When tuning armor in patches, use these levers:
 
 **Rule:** No single item should be strictly best in every stat. E.g. Class 6 Steel (very heavy) vs Class 5 UHMWPE (almost as good protection, much lighter) — situational and loadout-dependent.
 
-**Tier** (per [Gear Tier System](../Gear_Tier_System.md)) is used for balance bracket and cost curve; progression = Tier + Rarity + player/trader level.
+**Tier** (per [Gear Tier System](../gear_tier_system/index.html)) is used for balance bracket and cost curve; progression = Tier + Rarity + player/trader level.
 
 ---
 
 ## Cross-References
 
-- [Gear Tier System](../Gear_Tier_System.md) — Armor Tier (1–5) definition; balance bracket, cost curve.
-- [Armor & Ballistics](Armor.md) — Penetration check, blunt, material table.
-- [Caliber & Ballistics System](../../Weapons/Caliber_Ballistics_System.md) — Penetration power, armor degradation formula.
-- [Weapon Balance Framework](../../Weapons/Weapon_Balance_Framework.md) — TTK matrix, DPS, cost-efficiency.
-- [Armor Master Database](Armor_Master_Database.md) — Per-item durability, material, value.
+- [Gear Tier System](../gear_tier_system/index.html) — Armor Tier (1–5) definition; balance bracket, cost curve.
+- [Armor & Ballistics](armor/index.html) — Penetration check, blunt, material table.
+- [Caliber & Ballistics System](../../weapons/caliber_ballistics_system/index.html) — Penetration power, armor degradation formula.
+- [Weapon Balance Framework](../../weapons/weapon_balance_framework/index.html) — TTK matrix, DPS, cost-efficiency.
+- [Armor Master Database](armor_master_database/index.html) — Per-item durability, material, value.

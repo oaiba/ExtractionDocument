@@ -12,11 +12,11 @@ Global UX standards định nghĩa các interaction rules tái sử dụng mà m
 
 | Destination | Use |
 | :--- | :--- |
-| [UI/UX Index](_index.md) | Hub tài liệu UI/UX đầy đủ |
-| [Screen Groups Overview](Screen_Groups_Overview.md) | Lifecycle taxonomy và designer-ready spec template |
-| [Visual Style](Visual_Style.md) | Rule visual, typography, iconography, mockup |
-| [UX Flows](UX_Flows.md) | Journey-level navigation và handoff mapping |
-| [Menus & Screens Legacy](Menus.md) | Compatibility mapping cho old screen links |
+| [UI/UX Index](_index/index.html) | Hub tài liệu UI/UX đầy đủ |
+| [Screen Groups Overview](screen_groups_overview/index.html) | Lifecycle taxonomy và designer-ready spec template |
+| [Visual Style](visual_style/index.html) | Rule visual, typography, iconography, mockup |
+| [UX Flows](ux_flows/index.html) | Journey-level navigation và handoff mapping |
+| [Menus & Screens Legacy](menus/index.html) | Compatibility mapping cho old screen links |
 
 ---
 

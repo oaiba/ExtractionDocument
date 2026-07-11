@@ -9,9 +9,9 @@ type: docs
 | Sutureument          | Relationship             | Link                                                                                                                              |
 | -------------------- | ------------------------ | --------------------------------------------------------------------------------------------------------------------------------- |
 | **Weapons Design**   | High-level weapon design | [GDD\_HighLevel/Combat/Weapons.md](https://github.com/oaiba/ExtractionDocument/blob/main/content/GDD_HighLevel/Combat/Weapons.md) |
-| **Character System** | Weapon equipping         | [CharacterSystem.md](CharacterSystem.md)                                                                                          |
-| **Inventory System** | Weapon storage           | [InventorySystem.md](InventorySystem.md)                                                                                          |
-| **Audio System**     | Weapon sounds            | [../Systems/AudioSystem.md](../Systems/AudioSystem.md)                                                                            |
+| **Character System** | Weapon equipping         | [CharacterSystem.md](charactersystem/index.html)                                                                                          |
+| **Inventory System** | Weapon storage           | [InventorySystem.md](inventorysystem/index.html)                                                                                          |
+| **Audio System**     | Weapon sounds            | [../Systems/AudioSystem.md](../systems/audiosystem/index.html)                                                                            |
 
 ***
 

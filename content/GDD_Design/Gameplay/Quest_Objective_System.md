@@ -9,7 +9,7 @@ weight: 16
 
 Quests are the **primary structured goal layer** on top of free-form looting and extraction. They direct player movement toward specific map areas, reward faction reputation, unlock trader tiers, and provide narrative context for each raid. Unlike open-world quest systems, all extraction shooter quests must function within the high-stakes raid context — partial completion, death, and extraction failures are built-in risk elements.
 
-> **Cross-References:** [Core Gameplay Loop](CoreLoop.md) — Quest Turn-In in Phase 5 Recovery; [Looting & Inventory](Looting_Interactions.md) — "Found-in-Raid" status for quest items; [AI Enemy Behavior](AI_Enemy_Behavior.md) — AI faction affiliations; [Extraction Mechanics](Extraction_Mechanics.md) — quest-gated extraction zones; [Matchmaking & Lobby](Matchmaking_Lobby.md) — private raids disable quest completion; [GameDesign/Progression](https://github.com/oaiba/ExtractionDocument/blob/main/content/GameDesign/Progression.md) — quest chains as progression gates.
+> **Cross-References:** [Core Gameplay Loop](coreloop/index.html) — Quest Turn-In in Phase 5 Recovery; [Looting & Inventory](looting_interactions/index.html) — "Found-in-Raid" status for quest items; [AI Enemy Behavior](ai_enemy_behavior/index.html) — AI faction affiliations; [Extraction Mechanics](extraction_mechanics/index.html) — quest-gated extraction zones; [Matchmaking & Lobby](matchmaking_lobby/index.html) — private raids disable quest completion; [GameDesign/Progression](https://github.com/oaiba/ExtractionDocument/blob/main/content/GameDesign/Progression.md) — quest chains as progression gates.
 
 ***
 
@@ -69,7 +69,7 @@ Retrieve specific items and extract with them. These are the most common quest t
 | Crafted item       | "Extract with 1 Purified Water (crafted)"               | Links Safe House crafting to quest      |
 | Item condition     | "Extract with a weapon in >60% durability"              | No degraded war trophies                |
 
-**FIR requirement:** All collection quests require items to have "Found-in-Raid" status per [Looting & Inventory](Looting_Interactions.md). Items purchased from traders or the flea market cannot be used.
+**FIR requirement:** All collection quests require items to have "Found-in-Raid" status per [Looting & Inventory](looting_interactions/index.html). Items purchased from traders or the flea market cannot be used.
 
 ***
 
@@ -109,8 +109,8 @@ Work with allies or other players (even from different factions) to complete a s
 | Sub-type               | Example                                           | Notes                                                                                |
 | ---------------------- | ------------------------------------------------- | ------------------------------------------------------------------------------------ |
 | Squad extraction       | "Extract with your full 3-player squad intact"    | All members must extract to count                                                    |
-| Revive quest           | "Successfully revive a downed teammate 3 times"   | Links to [Downstate & Revive](Downstate_Revive.md)                                   |
-| Cooperative extraction | "Extract with a player from the opposing faction" | Uses Cooperative Extraction zone per [Extraction Mechanics](Extraction_Mechanics.md) |
+| Revive quest           | "Successfully revive a downed teammate 3 times"   | Links to [Downstate & Revive](downstate_revive/index.html)                                   |
+| Cooperative extraction | "Extract with a player from the opposing faction" | Uses Cooperative Extraction zone per [Extraction Mechanics](extraction_mechanics/index.html) |
 
 > **Post-Beta:** Escort/cooperative quests introduce social trust mechanics and are intentionally held back from early access to let the community establish playstyle norms.
 
@@ -253,11 +253,11 @@ In addition to main chains, dynamic quests refresh on a timer:
 
 ### Cross-References
 
-* [Core Gameplay Loop](CoreLoop.md) — Quest turn-in in Phase 5; Quest XP as non-extraction reward.
-* [Looting & Inventory](Looting_Interactions.md) — "Found-in-Raid" status gate for collection quests.
-* [AI Enemy Behavior](AI_Enemy_Behavior.md) — AI faction affiliations; boss kill quests.
-* [Extraction Mechanics](Extraction_Mechanics.md) — Cooperative extraction zone quest; zone-specific extraction quests.
-* [Matchmaking & Lobby](Matchmaking_Lobby.md) — Private raid disables quest completion.
-* [Safe House Design](../GameDesign/Safe_House_Design.md) — Safe House upgrades gated behind trader quest chain completion.
+* [Core Gameplay Loop](coreloop/index.html) — Quest turn-in in Phase 5; Quest XP as non-extraction reward.
+* [Looting & Inventory](looting_interactions/index.html) — "Found-in-Raid" status gate for collection quests.
+* [AI Enemy Behavior](ai_enemy_behavior/index.html) — AI faction affiliations; boss kill quests.
+* [Extraction Mechanics](extraction_mechanics/index.html) — Cooperative extraction zone quest; zone-specific extraction quests.
+* [Matchmaking & Lobby](matchmaking_lobby/index.html) — Private raid disables quest completion.
+* [Safe House Design](../gamedesign/safe_house_design/index.html) — Safe House upgrades gated behind trader quest chain completion.
 * [GameDesign/Progression](https://github.com/oaiba/ExtractionDocument/blob/main/content/GameDesign/Progression.md) — Loyalty Level system; quest XP integration.
 * [GameDesign/Economy](https://github.com/oaiba/ExtractionDocument/blob/main/content/GameDesign/Economy.md) — Quest cash rewards as economy faucet.

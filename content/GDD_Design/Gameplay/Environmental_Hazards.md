@@ -91,7 +91,7 @@ Contamination is the primary end-of-raid pressure system. It replaces a traditio
 | 14:30                  | **Final Push (Phase 3)**: Almost entire map is contaminated             | 50 HP/sec. Only extraction zone interiors are safe                     |
 | 15:00                  | **Match Ends**: All remaining players die                               | Total loss of gear. No extraction possible                             |
 
-For **standard raids** (25–30 min, see [Core Gameplay Loop](CoreLoop.md)), contamination triggers in the final third of the raid; phases scale proportionally. The table above is for a **15-min Quick Raid** or reference scale.
+For **standard raids** (25–30 min, see [Core Gameplay Loop](coreloop/index.html)), contamination triggers in the final third of the raid; phases scale proportionally. The table above is for a **15-min Quick Raid** or reference scale.
 
 #### Contamination Visual and Audio Design
 

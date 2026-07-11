@@ -5,7 +5,7 @@ type: docs
 
 ## Overview
 
-User Settings defines how players configure controls, video, audio, gameplay, accessibility, privacy, and diagnostics. This page is the UX and policy hub. The full option list lives in [Settings Matrix](usersettings_matrix.html), and technical tags live in [Settings Tags](usersettings_tags.html).
+User Settings defines how players configure controls, video, audio, gameplay, accessibility, privacy, and diagnostics. This page is the UX and policy hub. The full option list lives in [Settings Matrix](usersettings_matrix/index.html), and technical tags live in [Settings Tags](usersettings_tags/index.html).
 
 Settings should feel powerful without feeling hostile. Competitive players need precision, creators need privacy tools, mobile players need battery and touch controls, and accessibility users need support before play begins. The page should group choices by player intent rather than expose every technical variable at the same level.
 
@@ -30,13 +30,13 @@ Categories should stay stable across platforms even when individual options diff
 
 | Category | Owns | Detail |
 | :--- | :--- | :--- |
-| Controls | Input device, sensitivity, remap, gyro, aim assist | [Controls](controls.html) |
-| Graphics | Display, quality, post-processing, performance profile | [Settings Matrix](usersettings_matrix.html) |
-| Audio | Volumes, output device, voice chat, subtitles | [Communication](communication.html) |
-| Gameplay & HUD | Reticle, minimap, hit feedback, loot prompts | [Navigation & Map](navigationandmap.html) |
-| Accessibility | Color, motion, timing, input assist, text size | [Accessibility](accessibility.html) |
-| Social & Privacy | Invites, presence, chat, matchmaking privacy | [Player Profile](playerprofile.html) |
-| Language & Region | Text, audio, region, units, date format | [Localization](localization.html) |
+| Controls | Input device, sensitivity, remap, gyro, aim assist | [Controls](controls/index.html) |
+| Graphics | Display, quality, post-processing, performance profile | [Settings Matrix](usersettings_matrix/index.html) |
+| Audio | Volumes, output device, voice chat, subtitles | [Communication](communication/index.html) |
+| Gameplay & HUD | Reticle, minimap, hit feedback, loot prompts | [Navigation & Map](navigationandmap/index.html) |
+| Accessibility | Color, motion, timing, input assist, text size | [Accessibility](accessibility/index.html) |
+| Social & Privacy | Invites, presence, chat, matchmaking privacy | [Player Profile](playerprofile/index.html) |
+| Language & Region | Text, audio, region, units, date format | [Localization](localization/index.html) |
 | Diagnostics | FPS, network, telemetry, crash reporting | Technical systems |
 
 ## Presets
@@ -97,8 +97,8 @@ A streamer applies Streamer mode. The preset should hide names, invite codes, an
 
 | Topic | Page |
 | :--- | :--- |
-| Full option table | [Settings Matrix](usersettings_matrix.html) |
-| Technical tags | [Settings Tags](usersettings_tags.html) |
-| Controls | [Controls](controls.html) |
-| Accessibility | [Accessibility](accessibility.html) |
-| Localization | [Localization](localization.html) |
+| Full option table | [Settings Matrix](usersettings_matrix/index.html) |
+| Technical tags | [Settings Tags](usersettings_tags/index.html) |
+| Controls | [Controls](controls/index.html) |
+| Accessibility | [Accessibility](accessibility/index.html) |
+| Localization | [Localization](localization/index.html) |

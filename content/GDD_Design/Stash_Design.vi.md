@@ -10,7 +10,7 @@ weight: 25
 **Stash** là kho lưu trữ lâu dài ngoài raid của người chơi, dùng để giữ toàn bộ vật phẩm đã extraction thành công. Vật phẩm đã đưa vào Stash sẽ không bị mất khi người chơi chết; chỉ trang bị đã mang vào raid mới có thể bị mất. Stash là kho inventory trung tâm nối các raid với giai đoạn chuẩn bị Loadout.
 
 > **Trạng thái tài liệu:** Tài liệu thiết kế độc lập, không thuộc section `Inventory_System`.
-> **Vị trí trong game:** Stash được đặt trong **Stash Room** của [Safe House](GameDesign/Safe_House_Design.md). Người chơi có thể truy cập Stash từ Loadout Preparation và Safe House.
+> **Vị trí trong game:** Stash được đặt trong **Stash Room** của [Safe House](gamedesign/safe_house_design/index.html). Người chơi có thể truy cập Stash từ Loadout Preparation và Safe House.
 
 ---
 
@@ -48,13 +48,13 @@ Sức chứa của Stash bằng **tổng số ô** trong một lưới duy nhấ
 | Áo giáp | 3×3 – 4×4 | Plate carrier |
 | Ba lô | 3×3 – 7×8 | Ba lô ở trạng thái gấp hoặc mở |
 
-Xem kích thước đầy đủ của từng vật phẩm trong [Gears — Storage Master Database](Gears/StorageGear/Storage_Master_Database.md).
+Xem kích thước đầy đủ của từng vật phẩm trong [Gears — Storage Master Database](gears/storagegear/storage_master_database/index.html).
 
 ### 2.3 Storage Phẳng Và Gấp Backpack
 
 - **Không có bag-in-bag:** Mỗi container dùng một lưới phẳng; vật phẩm bên trong được quản lý ở cùng một cấp lưu trữ.
 - **Gấp Backpack:** Backpack rỗng có thể được gấp lại để chiếm diện tích nhỏ hơn.
-- Quy tắc chi tiết: [Storage: Flat Storage & Folding](Gears/StorageGear/Storage_Flat_Storage_Folding.md).
+- Quy tắc chi tiết: [Storage: Flat Storage & Folding](gears/storagegear/storage_flat_storage_folding/index.html).
 
 ---
 
@@ -71,7 +71,7 @@ Sức chứa Stash tăng thông qua **phiên bản game** hoặc nâng cấp **S
 | Premium Edition | 10×48 | 480 | Có sẵn khi bắt đầu |
 | Ultimate Edition | 10×68 | 680 | Có sẵn khi bắt đầu |
 
-Mọi phiên bản game đều có thể đạt mức tối đa 10×68 thông qua nâng cấp Safe House. Xem lộ trình đầy đủ tại [Stash & Container Progression](Gears/StorageGear/Stash_Container_Progression.md).
+Mọi phiên bản game đều có thể đạt mức tối đa 10×68 thông qua nâng cấp Safe House. Xem lộ trình đầy đủ tại [Stash & Container Progression](gears/storagegear/stash_container_progression/index.html).
 
 ---
 
@@ -121,7 +121,7 @@ Bố cục được khuyến nghị để quản lý Stash hiệu quả:
 
 ## 6. Tích Hợp Với Stash Room
 
-Stash nằm trong **Stash Room** của [Safe House](GameDesign/Safe_House_Design.md). Các điểm tích hợp gồm:
+Stash nằm trong **Stash Room** của [Safe House](gamedesign/safe_house_design/index.html). Các điểm tích hợp gồm:
 
 - **Loadout Preparation:** Panel truy cập nhanh hiển thị Stash đã lọc; người chơi có thể kéo vật phẩm vào slot trang bị.
 - **Safe House:** Toàn bộ lưới Stash có thể mở từ Stash Room; logic hồi phục stamina, energy và hydration của Operator sử dụng vật phẩm từ Stash.
@@ -177,9 +177,9 @@ Stash nằm trong **Stash Room** của [Safe House](GameDesign/Safe_House_Design
 
 ## 9. Tham Chiếu Chéo
 
-- [Stash & Container Progression](Gears/StorageGear/Stash_Container_Progression.md) — Bảng đầy đủ và chi phí mở khóa.
-- [Safe House Design](GameDesign/Safe_House_Design.md) — Stash Room và trạng thái hồi phục của Operator.
-- [Storage Master Database](Gears/StorageGear/Storage_Master_Database.md) — Thông số container và các case chỉ dùng trong Stash.
-- [Menus — Stash / Inventory Management](UI_UX/Menus.md) — Chi tiết bố cục UI.
-- [Loadout Preparation](GameDesign/LoadoutPreparation.md) — Panel truy cập nhanh Stash.
-- [Inventory System](Inventory_System/_index.md) — Paper doll, slot trang bị và trải nghiệm looting.
+- [Stash & Container Progression](gears/storagegear/stash_container_progression/index.html) — Bảng đầy đủ và chi phí mở khóa.
+- [Safe House Design](gamedesign/safe_house_design/index.html) — Stash Room và trạng thái hồi phục của Operator.
+- [Storage Master Database](gears/storagegear/storage_master_database/index.html) — Thông số container và các case chỉ dùng trong Stash.
+- [Menus — Stash / Inventory Management](ui_ux/menus/index.html) — Chi tiết bố cục UI.
+- [Loadout Preparation](gamedesign/loadoutpreparation/index.html) — Panel truy cập nhanh Stash.
+- [Inventory System](inventory_system/_index/index.html) — Paper doll, slot trang bị và trải nghiệm looting.

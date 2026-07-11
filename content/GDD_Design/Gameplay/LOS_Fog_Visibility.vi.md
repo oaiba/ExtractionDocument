@@ -8,7 +8,7 @@ weight: 7
 
 Tài liệu này định nghĩa the **Line of Sight (LOS)**, **Fog of War**, và **Visibility** hệ thống for the multiplayer hero shooter top-down extraction game. A cốt lõi pillar is **shared team vision**: any information one squad member sees (hoặc gains via abilities) is shared với the whole team for minimap fog, pings, và địch/loot awareness. The hệ thống supports tactical tension (explored-nhưng-unseen areas), fair combat (địch only revealed khi in LOS hoặc via counterable abilities), và operator identity (Scout/Specialist intel, smoke blockers).
 
-> **Cross-References:** [cốt lõi Gameplay Loop](CoreLoop.md) (Information Gathering, infiltration phase), [Hero Abilities](Hero_Abilities.md) (drone, overlay, smoke), [Extraction cơ chế](Extraction_Mechanics.md) (extraction notifications), [Design Pillars](https://github.com/oaiba/ExtractionDocument/blob/main/content/ProjectScope/design-pillars-enhanced.md) (địch visibility phải được fair).
+> **Cross-References:** [cốt lõi Gameplay Loop](coreloop/index.html) (Information Gathering, infiltration phase), [Hero Abilities](hero_abilities/index.html) (drone, overlay, smoke), [Extraction cơ chế](extraction_mechanics/index.html) (extraction notifications), [Design Pillars](https://github.com/oaiba/ExtractionDocument/blob/main/content/ProjectScope/design-pillars-enhanced.md) (địch visibility phải được fair).
 
 ***
 
@@ -99,7 +99,7 @@ A point **B** is "in LOS" of viewer **A** nếu there exists an unobstructed ray
 | Tech Savvy (Glitch)                     | Exception (traps) | 8 m               | No              | No (self)        | Yes (traps only)               | N/A                                    |
 | Ghost Cloak (Hawk)                      | Self-conceal      | 8 m shimmer       | No              | No               | N/A                            | Shimmer hiển thị rõ 8 m; damage breaks     |
 
-Xem [Hero Abilities](Hero_Abilities.md) for full specs và the "Interaction với LOS/Visibility" section in that doc.
+Xem [Hero Abilities](hero_abilities/index.html) for full specs và the "Interaction với LOS/Visibility" section in that doc.
 
 #### Passives và Minor Effects
 
@@ -174,7 +174,7 @@ Spotter Drone (Hawk), Motion Sensor (Hawk), và Tactical Overlay (Glitch) add vi
 | **Weather (fog, rain)**         | Can reduce sight range và/hoặc audio range (e.g. "fog reduces sightlines," "rain muffles footsteps" per design pillars). |
 | **Green Fog (chemical hazard)** | Reduced visibility; applies to all viewers (người chơi và abilities as defined).                                          |
 
-Xem [Environmental Hazards](Environmental_Hazards.md) for full hazard và weather specs.
+Xem [Environmental Hazards](environmental_hazards/index.html) for full hazard và weather specs.
 
 ***
 
@@ -205,8 +205,8 @@ These points are for downstream technical design và implementation.
 
 ### Tham Chiếu Chéo
 
-* [cốt lõi Gameplay Loop](CoreLoop.md) — Phase 2 Information Gathering, squad shared vision và minimap fog.
-* [Hero Abilities](Hero_Abilities.md) — Operator specs và Interaction với LOS/Visibility.
-* [Extraction cơ chế](Extraction_Mechanics.md) — Extraction notifications và information asymmetry.
-* [Environmental Hazards](Environmental_Hazards.md) — Weather và hazard effects on visibility.
+* [cốt lõi Gameplay Loop](coreloop/index.html) — Phase 2 Information Gathering, squad shared vision và minimap fog.
+* [Hero Abilities](hero_abilities/index.html) — Operator specs và Interaction với LOS/Visibility.
+* [Extraction cơ chế](extraction_mechanics/index.html) — Extraction notifications và information asymmetry.
+* [Environmental Hazards](environmental_hazards/index.html) — Weather và hazard effects on visibility.
 * [Design Pillars](https://github.com/oaiba/ExtractionDocument/blob/main/content/ProjectScope/design-pillars-enhanced.md) — Fair visibility, no unclear threats.

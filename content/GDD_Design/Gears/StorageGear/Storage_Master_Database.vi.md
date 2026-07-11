@@ -6,7 +6,7 @@ weight: 1
 
 ## Tổng Quan
 
-This tài liệu is the **canonical list** of all storage gear: tactical rigs (unarmored và armored), backpacks, secure containers, và stash-only cases. For slot layouts và reload rule Xem [Storage Slot Layouts](Storage_Slot_Layouts.md); for flat storage (no bag-in-bag) và backpack collapse Xem [Storage: Flat Storage & Folding](Storage_Flat_Storage_Folding.md); for balance Xem [Storage Balance Framework](Storage_Balance_Framework.md) và [Stash & Container Progression](Stash_Container_Progression.md).
+This tài liệu is the **canonical list** of all storage gear: tactical rigs (unarmored và armored), backpacks, secure containers, và stash-only cases. For slot layouts và reload rule Xem [Storage Slot Layouts](storage_slot_layouts/index.html); for flat storage (no bag-in-bag) và backpack collapse Xem [Storage: Flat Storage & Folding](storage_flat_storage_folding/index.html); for balance Xem [Storage Balance Framework](storage_balance_framework/index.html) và [Stash & Container Progression](stash_container_progression/index.html).
 
 ### Grid Inventory & Subgrid Model
 
@@ -19,7 +19,7 @@ Storage is **grid inventory** nhưng a container can have **one hoặc more subg
 
 ## Tactical Rigs
 
-Rigs are worn on the chest. **vũ khí can only reload from the tactical rig (hoặc pockets);** backpack does not count. Each rig is defined by **total capacity (cells)** và **subgrids**; exact layout in [Storage Slot Layouts](Storage_Slot_Layouts.md). **Tier** per [Gear Tier hệ thống](../Gear_Tier_System.md).
+Rigs are worn on the chest. **vũ khí can only reload from the tactical rig (hoặc pockets);** backpack does not count. Each rig is defined by **total capacity (cells)** và **subgrids**; exact layout in [Storage Slot Layouts](storage_slot_layouts/index.html). **Tier** per [Gear Tier hệ thống](../gear_tier_system/index.html).
 
 ### Unarmored Rigs
 
@@ -37,7 +37,7 @@ Rigs are worn on the chest. **vũ khí can only reload from the tactical rig (ho
 
 ### Armored Rigs
 
-Armored rigs provide built-in body giáp và **replace** a separate vest. giáp stats: [giáp Master Database — Armored Rigs](../ArmorGear/Armor_Master_Database.md#armored-rigs). **Tier** per [Gear Tier hệ thống](../Gear_Tier_System.md).
+Armored rigs provide built-in body giáp và **replace** a separate vest. giáp stats: [giáp Master Database — Armored Rigs](../ArmorGear/Armor_Master_Database.md#armored-rigs). **Tier** per [Gear Tier hệ thống](../gear_tier_system/index.html).
 
 
 | Code         | Display Name          | Tier | Total capacity (cells) | Subgrids                                     | Hotkey | Weight (kg) | giáp class | giá trị ($) | Rarity   |
@@ -52,7 +52,7 @@ Armored rigs provide built-in body giáp và **replace** a separate vest. giáp 
 
 ## Backpacks
 
-Backpacks provide grid storage only; no hotkey. Contents lost on death (except as insured). **Capacity** = total cells (sum of subgrids). Grid (external) = footprint khi worn hoặc collapsed size reference; Xem [Storage: Flat Storage & Folding](Storage_Flat_Storage_Folding.md) (flat storage, collapse). **Tier** per [Gear Tier hệ thống](../Gear_Tier_System.md).
+Backpacks provide grid storage only; no hotkey. Contents lost on death (except as insured). **Capacity** = total cells (sum of subgrids). Grid (external) = footprint khi worn hoặc collapsed size reference; Xem [Storage: Flat Storage & Folding](storage_flat_storage_folding/index.html) (flat storage, collapse). **Tier** per [Gear Tier hệ thống](../gear_tier_system/index.html).
 
 
 | Code         | Display Name      | Tier | Grid (external) | Capacity (cells) | Subgrids                      | Weight (empty) | Speed penalty | Noise radius | Collapsed size | giá trị ($) | Trader | Rarity           |
@@ -72,7 +72,7 @@ Backpacks provide grid storage only; no hotkey. Contents lost on death (except a
 
 ## Secure Containers
 
-Unlootable; contents **kept sau death**. **Cells** = total capacity (primary number). In-raid placement restrictions apply: Xem [Storage Slot Layouts](Storage_Slot_Layouts.md) và below. Unlock path: [Stash & Container Progression](Stash_Container_Progression.md#secure-container-upgrade-path). **Tier** per [Gear Tier hệ thống](../Gear_Tier_System.md).
+Unlootable; contents **kept sau death**. **Cells** = total capacity (primary number). In-raid placement restrictions apply: Xem [Storage Slot Layouts](storage_slot_layouts/index.html) và below. Unlock path: [Stash & Container Progression](Stash_Container_Progression.md#secure-container-upgrade-path). **Tier** per [Gear Tier hệ thống](../gear_tier_system/index.html).
 
 
 | Code         | Display Name | Tier | Grid | Cells (total capacity) | Subgrids           | Unlock method                                 | giá trị (nếu buyable) |
@@ -99,7 +99,7 @@ Unlootable; contents **kept sau death**. **Cells** = total capacity (primary num
 
 ## Stash-Only Containers
 
-Used only in the global Stash (not carried in-raid). **External size** = cells taken in stash; **Internal capacity (cells)** = total cells inside the container (sum of subgrids; stash-only cases are typically one internal grid). Efficiency = internal capacity ÷ external cells. **Tier** per [Gear Tier hệ thống](../Gear_Tier_System.md) (by unlock phase).
+Used only in the global Stash (not carried in-raid). **External size** = cells taken in stash; **Internal capacity (cells)** = total cells inside the container (sum of subgrids; stash-only cases are typically one internal grid). Efficiency = internal capacity ÷ external cells. **Tier** per [Gear Tier hệ thống](../gear_tier_system/index.html) (by unlock phase).
 
 
 | Code              | Display Name       | Tier | External size | Internal capacity (cells) | Internal grid (ref) | Efficiency | Item restriction           | giá trị ($)  | Unlock           |
@@ -122,9 +122,9 @@ Used only in the global Stash (not carried in-raid). **External size** = cells t
 
 ## Tham Chiếu Chéo
 
-- [Gear Tier hệ thống](../Gear_Tier_System.md) — Storage Tier (1–4) định nghĩa; progression = Tier + Rarity + người chơi/trader level.
-- [Storage Slot Layouts](Storage_Slot_Layouts.md) — Per-rig grid diagrams, reload rule, hotkey mapping.
-- [Storage: Flat Storage & Folding](Storage_Flat_Storage_Folding.md) — Flat storage, backpack collapse.
-- [Storage Balance Framework](Storage_Balance_Framework.md) — Capacity vs mobility, chi phí per slot.
-- [Stash & Container Progression](Stash_Container_Progression.md) — Stash size, unlock order, secure path.
+- [Gear Tier hệ thống](../gear_tier_system/index.html) — Storage Tier (1–4) định nghĩa; progression = Tier + Rarity + người chơi/trader level.
+- [Storage Slot Layouts](storage_slot_layouts/index.html) — Per-rig grid diagrams, reload rule, hotkey mapping.
+- [Storage: Flat Storage & Folding](storage_flat_storage_folding/index.html) — Flat storage, backpack collapse.
+- [Storage Balance Framework](storage_balance_framework/index.html) — Capacity vs mobility, chi phí per slot.
+- [Stash & Container Progression](stash_container_progression/index.html) — Stash size, unlock order, secure path.
 - [giáp Master Database — Armored Rigs](../ArmorGear/Armor_Master_Database.md#armored-rigs) — giáp class và zones for armored rigs.

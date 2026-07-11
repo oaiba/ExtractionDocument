@@ -8,7 +8,7 @@ weight: 21
 
 The Post-Game Debrief is the màn hình that appears immediately sau a raid ends — whether thông qua successful extraction, death, disconnection, hoặc server end. It is the **most read màn hình in the game** sau the stash: người chơi spend significant thời gian reviewing their performance, examining loot giá trị, và understanding how they died. A well-designed debrief provides closure, learning, và motivation to queue again.
 
-> **Cross-References:** [cốt lõi Gameplay Loop](CoreLoop.md) — Phase 5 Recovery; [Extraction cơ chế](Extraction_Mechanics.md) — extraction kết quả codes; [Medical hệ thống](Medical_System.md) — body part HP summary in debrief; [Camera hệ thống](Camera_System.md) — death cam into debrief transition; [GameDesign/Progression](https://github.com/oaiba/ExtractionDocument/blob/main/content/GameDesign/Progression.md) — XP gains displayed in debrief.
+> **Cross-References:** [cốt lõi Gameplay Loop](coreloop/index.html) — Phase 5 Recovery; [Extraction cơ chế](extraction_mechanics/index.html) — extraction kết quả codes; [Medical hệ thống](medical_system/index.html) — body part HP summary in debrief; [Camera hệ thống](camera_system/index.html) — death cam into debrief transition; [GameDesign/Progression](https://github.com/oaiba/ExtractionDocument/blob/main/content/GameDesign/Progression.md) — XP gains displayed in debrief.
 
 ***
 
@@ -214,10 +214,10 @@ Deploy Again chỉ enabled khi account có operator hợp lệ, loadout hợp l�
 
 ### Tham Chiếu Chéo
 
-* [cốt lõi Gameplay Loop](CoreLoop.md) — Phase 5 Recovery; debrief as start of next loop.
-* [Extraction cơ chế](Extraction_Mechanics.md) — Extraction outcome codes; MIA rule.
-* [Medical hệ thống](Medical_System.md) — Body part damage summary (in death context).
-* [Camera hệ thống](Camera_System.md) — Death cam transition into debrief màn hình.
+* [cốt lõi Gameplay Loop](coreloop/index.html) — Phase 5 Recovery; debrief as start of next loop.
+* [Extraction cơ chế](extraction_mechanics/index.html) — Extraction outcome codes; MIA rule.
+* [Medical hệ thống](medical_system/index.html) — Body part damage summary (in death context).
+* [Camera hệ thống](camera_system/index.html) — Death cam transition into debrief màn hình.
 * [GameDesign/Progression](https://github.com/oaiba/ExtractionDocument/blob/main/content/GameDesign/Progression.md) — XP values, level thresholds, XP bar.
-* [Quest & Objective hệ thống](Quest_Objective_System.md) — Quest objectives flagged in debrief loot list.
-* [Anti-Cheat & Fair Play](Anti_Cheat_Fair_Play.md) — Report người chơi button in debrief.
+* [Quest & Objective hệ thống](quest_objective_system/index.html) — Quest objectives flagged in debrief loot list.
+* [Anti-Cheat & Fair Play](anti_cheat_fair_play/index.html) — Report người chơi button in debrief.

@@ -56,7 +56,7 @@ Saved/Crashes/                   ← Crash dumps
 ### Phase 3: Fix
 
 1. **Make the minimal fix** — Change as little code as possible
-2. **Follow coding standards** — [CodingStandards.md](../../GDD_Technical/CodingStandards.md)
+2. **Follow coding standards** — [CodingStandards.md](../../gdd_technical/codingstandards/index.html)
 3. **Add a guard/check** — Prevent the root cause, not just the symptom
 4. **Add logging** — Log warnings for edge cases that should not happen
 5. **Update comments** — Explain *why* the fix is needed

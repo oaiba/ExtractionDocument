@@ -8,14 +8,14 @@ weight: 18
 
 The Downstate & Revive system determines what happens when a player's HP reaches zero. Instead of instant death, players enter a vulnerable "Downed" state from which squadmates can rescue them. This system adds a critical cooperation mechanic — and a strategic decision for enemies: finish the downed player or push forward? It is one of the most team game–feel moments in the entire raid loop.
 
-> **Cross-References:** [Medical System](Medical_System.md) — HP and body part rules; [Hero Abilities](Hero_Abilities.md) — operator-specific revive interactions; [Extraction Mechanics](Extraction_Mechanics.md) — downed state during extraction; [Camera System](Camera_System.md) — downed camera behavior; [Quest & Objective System](Quest_Objective_System.md) — "Revive 3 teammates" quest type.
+> **Cross-References:** [Medical System](medical_system/index.html) — HP and body part rules; [Hero Abilities](hero_abilities/index.html) — operator-specific revive interactions; [Extraction Mechanics](extraction_mechanics/index.html) — downed state during extraction; [Camera System](camera_system/index.html) — downed camera behavior; [Quest & Objective System](quest_objective_system/index.html) — "Revive 3 teammates" quest type.
 
 ---
 
 ## Design Philosophy
 
 - **Revive is earned, not automatic.** Getting a teammate up requires physical proximity, time, and vulnerability. Both the reviver and the downed player are exposed.
-- **Solo players still have a meaningful death.** Solo queue players go to the standard [death sequence](Camera_System.md) — no self-revive. This maintains consequence parity.
+- **Solo players still have a meaningful death.** Solo queue players go to the standard [death sequence](camera_system/index.html) — no self-revive. This maintains consequence parity.
 - **The downed state is a team moment, not a spectator state.** The downed player can shoot back, slow their bleed, and communicate — they are not helpless.
 - **Enemies have meaningful choices.** Leaving a downed player is a valid tactic (they will die eventually); finishing them is faster but takes time and exposure.
 
@@ -138,7 +138,7 @@ After being revived, the same player can be downed again and revived again — w
 
 Solo players die instantly at 0 HP. To compensate for no revive:
 - Solo players receive a **10% HP max boost** (per operator passive, scaled for solo queue).
-- Solo-specific operator skill — see Operators 6–10 expansion in [Hero Abilities](Hero_Abilities.md).
+- Solo-specific operator skill — see Operators 6–10 expansion in [Hero Abilities](hero_abilities/index.html).
 - Solo debrief screen triggers immediately showing cause of death, damage received, loot lost.
 
 ---
@@ -195,9 +195,9 @@ Player HP → 0
 
 ## Cross-References
 
-- [Medical System](Medical_System.md) — Body part HP; Bleed status effect while downed.
-- [Hero Abilities](Hero_Abilities.md) — Operator-specific downstate and revive abilities.
-- [Extraction Mechanics](Extraction_Mechanics.md) — Downed player cannot extract without revive.
-- [Camera System](Camera_System.md) — Low-altitude camera during downstate; spectator after death.
-- [Quest & Objective System](Quest_Objective_System.md) — "Revive 3 teammates" quest type.
-- [Movement & Stamina](Movement_and_Stamina.md) — Crawl speed as a movement state.
+- [Medical System](medical_system/index.html) — Body part HP; Bleed status effect while downed.
+- [Hero Abilities](hero_abilities/index.html) — Operator-specific downstate and revive abilities.
+- [Extraction Mechanics](extraction_mechanics/index.html) — Downed player cannot extract without revive.
+- [Camera System](camera_system/index.html) — Low-altitude camera during downstate; spectator after death.
+- [Quest & Objective System](quest_objective_system/index.html) — "Revive 3 teammates" quest type.
+- [Movement & Stamina](movement_and_stamina/index.html) — Crawl speed as a movement state.

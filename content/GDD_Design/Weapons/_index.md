@@ -7,7 +7,7 @@ weight: 8
 
 # Weapons Documentation
 
-This section is the canonical hub for **weapon system design** — categories, handling, balance, ballistics, progression, and the full weapon database. Gameplay-facing weapon lists and combat mechanics live in [Gameplay — Weapon Arsenal](../Gameplay/WeaponArsenal.md) and [Weapon Attachment System](../Gameplay/Weapon_Attachment_System.md).
+This section is the canonical hub for **weapon system design** — categories, handling, balance, ballistics, progression, and the full weapon database. Gameplay-facing weapon lists and combat mechanics live in [Gameplay — Weapon Arsenal](../gameplay/weaponarsenal/index.html) and [Weapon Attachment System](../gameplay/weapon_attachment_system/index.html).
 
 ## Documentation Tree
 
@@ -24,7 +24,7 @@ This section is the canonical hub for **weapon system design** — categories, h
 
 ## Related Sections
 
-* [**Gameplay — Weapon Arsenal**](../Gameplay/WeaponArsenal.md) — Primary weapon categories, ammo tables, attachment reference, damage model, TTK.
-* [**Gameplay — Weapon Attachment System**](../Gameplay/Weapon_Attachment_System.md) — Attachment slots, in-raid swap, presets, Workbench crafting.
-* [**Inventory System — Gunsmith System**](../Inventory_System/Gunsmith_System.md) — Gunsmith anatomy, ergonomics, recoil, malfunctions.
-* [**Combat — Weapons**](../Combat/Weapons.md) — Combat philosophy (canonical weapon content in Weapon Arsenal).
+* [**Gameplay — Weapon Arsenal**](../gameplay/weaponarsenal/index.html) — Primary weapon categories, ammo tables, attachment reference, damage model, TTK.
+* [**Gameplay — Weapon Attachment System**](../gameplay/weapon_attachment_system/index.html) — Attachment slots, in-raid swap, presets, Workbench crafting.
+* [**Inventory System — Gunsmith System**](../inventory_system/gunsmith_system/index.html) — Gunsmith anatomy, ergonomics, recoil, malfunctions.
+* [**Combat — Weapons**](../combat/weapons/index.html) — Combat philosophy (canonical weapon content in Weapon Arsenal).

@@ -8,7 +8,7 @@ weight: 5
 
 vũ khí progression gives người chơi long-term goals per vũ khí model: proficiency levels, attachment unlocks, mastery challenges, và seasonal vũ khí pass integration. Design reference: Delta Force per-vũ khí attachment unlock progression, Arena Breakout vũ khí mastery.
 
-> **Cross-References:** [vũ khí Arsenal](../Gameplay/WeaponArsenal.md) — vũ khí list; [vũ khí Attachment hệ thống](../Gameplay/Weapon_Attachment_System.md) — attachment unlocks; [Safe House Design](../GameDesign/Safe_House_Design.md) — Workbench và crafting; [Quest & Objective hệ thống](../Gameplay/Quest_Objective_System.md) — quest-gated unlocks.
+> **Cross-References:** [vũ khí Arsenal](../gameplay/weaponarsenal/index.html) — vũ khí list; [vũ khí Attachment hệ thống](../gameplay/weapon_attachment_system/index.html) — attachment unlocks; [Safe House Design](../gamedesign/safe_house_design/index.html) — Workbench và crafting; [Quest & Objective hệ thống](../gameplay/quest_objective_system/index.html) — quest-gated unlocks.
 
 ---
 
@@ -84,7 +84,7 @@ Not all vũ khí are available at account level 1. Gating ensures progression v�
 | 3 | SCAR-H, HK416, AUG, Vector, P90, MP7, SPAS-12, Saiga-12, M24, PKM, RPK |
 | 4 | AA-12, AWP, VSS, M249, MG42, M107, Deagle, Revolver, melee (Axe, Machete, Baton) |
 
-**Quest-gated vũ khí:** Certain vũ khí hoặc variants unlock only sau completing cụ thể quests (e.g. Viktor quest chain for a mod blueprint hoặc a named vũ khí). Xem [Quest & Objective hệ thống](../Gameplay/Quest_Objective_System.md).
+**Quest-gated vũ khí:** Certain vũ khí hoặc variants unlock only sau completing cụ thể quests (e.g. Viktor quest chain for a mod blueprint hoặc a named vũ khí). Xem [Quest & Objective hệ thống](../gameplay/quest_objective_system/index.html).
 
 ---
 
@@ -107,7 +107,7 @@ Challenges are **per vũ khí** và one-thời gian (hoặc repeatable for cosme
 
 ## Seasonal vũ khí Pass
 
-The battle pass includes vũ khí-related rewards to align với [vũ khí Balance Framework](Weapon_Balance_Framework.md) seasonal rotation.
+The battle pass includes vũ khí-related rewards to align với [vũ khí Balance Framework](weapon_balance_framework/index.html) seasonal rotation.
 
 **Typical seasonal vũ khí pass content:**
 
@@ -125,8 +125,8 @@ Seasonal vũ khí hoặc variants do not replace base vũ khí; they add choice 
 
 ## Tham Chiếu Chéo
 
-- [vũ khí Arsenal](../Gameplay/WeaponArsenal.md) — vũ khí list và categories.
-- [vũ khí Attachment hệ thống](../Gameplay/Weapon_Attachment_System.md) — Attachment slots và crafting.
-- [Safe House Design](../GameDesign/Safe_House_Design.md) — Workbench levels và recipes.
-- [Quest & Objective hệ thống](../Gameplay/Quest_Objective_System.md) — Quest-gated vũ khí và blueprint unlocks.
-- [vũ khí Balance Framework](Weapon_Balance_Framework.md) — Seasonal rotation và meta.
+- [vũ khí Arsenal](../gameplay/weaponarsenal/index.html) — vũ khí list và categories.
+- [vũ khí Attachment hệ thống](../gameplay/weapon_attachment_system/index.html) — Attachment slots và crafting.
+- [Safe House Design](../gamedesign/safe_house_design/index.html) — Workbench levels và recipes.
+- [Quest & Objective hệ thống](../gameplay/quest_objective_system/index.html) — Quest-gated vũ khí và blueprint unlocks.
+- [vũ khí Balance Framework](weapon_balance_framework/index.html) — Seasonal rotation và meta.

@@ -14,7 +14,7 @@ Combat in Extraction Shooter is built on five principles:
 4. **Skill Expression** — High skill ceiling with recoil pattern control, ammo selection, and positional play.
 5. **Mobile Optimized** — All mechanics designed with touch controls in mind: gyro recoil assist, large hit targets, haptic feedback.
 
-> **Cross-References:** [Weapon Attachment System](Weapon_Attachment_System.md) — in-depth attachment slot rules, stat trade-offs, and in-raid swap system; [Combat Feel (Top-Down)](Combat_Feel_Topdown.md) — recoil cone model, suppression, cover footprint; [Items & Gear](ItemsAndGear.md) — armor, ammo stacks, throwables as loot items; [Loot Table Design](Loot_Table_Design.md) — weapon rarity spawn rates per zone; [Gear Mechanics](Gear_Mechanics.md) — how weapon weight affects loadout.
+> **Cross-References:** [Weapon Attachment System](weapon_attachment_system/index.html) — in-depth attachment slot rules, stat trade-offs, and in-raid swap system; [Combat Feel (Top-Down)](combat_feel_topdown/index.html) — recoil cone model, suppression, cover footprint; [Items & Gear](itemsandgear/index.html) — armor, ammo stacks, throwables as loot items; [Loot Table Design](loot_table_design/index.html) — weapon rarity spawn rates per zone; [Gear Mechanics](gear_mechanics/index.html) — how weapon weight affects loadout.
 
 ---
 
@@ -108,7 +108,7 @@ Combat in Extraction Shooter is built on five principles:
 | Effective Range | 40–80 m |
 | Magazine | 10–20 rounds |
 
-**Tactical Notes:** 2–3 shot kills at optimal range. Reposition between shots; use cover for reload. Best used from positions between AR and Sniper engagement ranges. See [Weapon Categories Deep Dive](../Weapons/Weapon_Categories_Deep_Dive.md) for DMR doctrine and matchups.
+**Tactical Notes:** 2–3 shot kills at optimal range. Reposition between shots; use cover for reload. Best used from positions between AR and Sniper engagement ranges. See [Weapon Categories Deep Dive](../weapons/weapon_categories_deep_dive/index.html) for DMR doctrine and matchups.
 
 #### DMR Full Reference
 
@@ -242,7 +242,7 @@ Ammunition is the bridge between weapon and target. While the gun dictates handl
 
 ## Attachment System
 
-> **Full attachment slot system, conflict rules, and in-raid swapping** → see [Weapon Attachment System](Weapon_Attachment_System.md).
+> **Full attachment slot system, conflict rules, and in-raid swapping** → see [Weapon Attachment System](weapon_attachment_system/index.html).
 
 This section provides the **complete item reference** for attaching gear to weapons.
 
@@ -322,9 +322,9 @@ Base Damage → Armor Absorption → Health Damage
 
 **Health Model:**
 - Base: 100 HP
-- No auto-regeneration — heals require medical items (see [Items & Gear](ItemsAndGear.md))
+- No auto-regeneration — heals require medical items (see [Items & Gear](itemsandgear/index.html))
 - Bleeds if struck (slow HP drain until bandaged)
-- Body-part-specific HP tracked internally (see [Medical System](Medical_System.md) for detail)
+- Body-part-specific HP tracked internally (see [Medical System](medical_system/index.html) for detail)
 
 ### Hit Location Multipliers
 
@@ -380,7 +380,7 @@ Base Damage → Armor Absorption → Health Damage
 
 ## Throwables & Equipment
 
-See [Items & Gear](ItemsAndGear.md) for full item tables with stack sizes, weights, and grid dimensions.
+See [Items & Gear](itemsandgear/index.html) for full item tables with stack sizes, weights, and grid dimensions.
 
 ### Grenade Quick Reference
 
@@ -475,11 +475,11 @@ See [Items & Gear](ItemsAndGear.md) for full item tables with stack sizes, weigh
 
 ## Cross-References
 
-- [Weapon Attachment System](Weapon_Attachment_System.md) — Full attachment slot rules, stat modifiers per attach slot, in-raid swap system.
-- [Weapons — Weapon Categories Deep Dive](../Weapons/Weapon_Categories_Deep_Dive.md) — Per-genre doctrine, hero synergy, build archetypes, matchup matrices (includes DMR).
-- [Weapons — Weapon Master Database](../Weapons/Weapon_Master_Database.md) — Base and fully modded stats, mod slot counts, role per weapon.
-- [Combat Feel (Top-Down)](Combat_Feel_Topdown.md) — Recoil cone model for top-down perspective, suppression, cover footprint.
-- [Items & Gear](ItemsAndGear.md) — Armor tiers, throwable item tables, ammo stack sizes and weights.
-- [Loot Table Design](Loot_Table_Design.md) — Spawn rates by zone tier; which weapons are in which container tables.
-- [Gear Mechanics](Gear_Mechanics.md) — Encumbrance from weapon weight, durability/condition system.
-- [Medical System](Medical_System.md) — Body part HP pool; bleed mechanics tie to weapon damage output.
+- [Weapon Attachment System](weapon_attachment_system/index.html) — Full attachment slot rules, stat modifiers per attach slot, in-raid swap system.
+- [Weapons — Weapon Categories Deep Dive](../weapons/weapon_categories_deep_dive/index.html) — Per-genre doctrine, hero synergy, build archetypes, matchup matrices (includes DMR).
+- [Weapons — Weapon Master Database](../weapons/weapon_master_database/index.html) — Base and fully modded stats, mod slot counts, role per weapon.
+- [Combat Feel (Top-Down)](combat_feel_topdown/index.html) — Recoil cone model for top-down perspective, suppression, cover footprint.
+- [Items & Gear](itemsandgear/index.html) — Armor tiers, throwable item tables, ammo stack sizes and weights.
+- [Loot Table Design](loot_table_design/index.html) — Spawn rates by zone tier; which weapons are in which container tables.
+- [Gear Mechanics](gear_mechanics/index.html) — Encumbrance from weapon weight, durability/condition system.
+- [Medical System](medical_system/index.html) — Body part HP pool; bleed mechanics tie to weapon damage output.

@@ -6,13 +6,13 @@ weight: 3
 
 ## Tổng Quan
 
-Tài liệu này định nghĩa **movement và ergonomics penalties** và **audio penalties** for giáp. These values drive gameplay feel và the trade-off between protection và mobility. For class và zone definitions Xem [giáp & Ballistics](giáp.md); for balance context Xem [giáp Balance Framework](Armor_Balance_Framework.md).
+Tài liệu này định nghĩa **movement và ergonomics penalties** và **audio penalties** for giáp. These values drive gameplay feel và the trade-off between protection và mobility. For class và zone definitions Xem [giáp & Ballistics](armor/index.html); for balance context Xem [giáp Balance Framework](armor_balance_framework/index.html).
 
 ---
 
 ## Movement Penalties (Per Item)
 
-Penalties apply in addition to **total weight tier** (Xem [Gear cơ chế](../../Gameplay/Gear_Mechanics.md)). Values are per-piece for body giáp; helmet penalties stack.
+Penalties apply in addition to **total weight tier** (Xem [Gear cơ chế](../../gameplay/gear_mechanics/index.html)). Values are per-piece for body giáp; helmet penalties stack.
 
 
 | giáp example | Class | Base move penalty | Sprint penalty | Turn speed | ADS speed |
@@ -36,7 +36,7 @@ Penalties apply in addition to **total weight tier** (Xem [Gear cơ chế](../..
 - **Arm stamina drain** while ADSing increases as EffectiveErgo drops.
 - **vũ khí sway** (e.g. khi standing hoặc moving) worsens với lower EffectiveErgo.
 
-giáp ergo penalties are per [giáp Master Database](Armor_Master_Database.md) (Ergo column). Heavy vests (Class 5–6) typically apply −18 to −25; light vests (Class 1–2) −3 to −4. Helmets add roughly −2 to −8 depending on coverage và weight.
+giáp ergo penalties are per [giáp Master Database](armor_master_database/index.html) (Ergo column). Heavy vests (Class 5–6) typically apply −18 to −25; light vests (Class 1–2) −3 to −4. Helmets add roughly −2 to −8 depending on coverage và weight.
 
 ---
 
@@ -62,7 +62,7 @@ In top-down view, **rotation speed** (turning the nhân vật to face a directio
 
 ## Tham Chiếu Chéo
 
-- [giáp & Ballistics](giáp.md) — Class và zones.
-- [giáp Master Database](Armor_Master_Database.md) — Per-item weight và ergo.
-- [Gear cơ chế](../../Gameplay/Gear_Mechanics.md) — Weight tiers, inertia, loadout examples.
-- [Movement & Stamina](../../Gameplay/Movement_and_Stamina.md) — Speed và stamina thông số.
+- [giáp & Ballistics](armor/index.html) — Class và zones.
+- [giáp Master Database](armor_master_database/index.html) — Per-item weight và ergo.
+- [Gear cơ chế](../../gameplay/gear_mechanics/index.html) — Weight tiers, inertia, loadout examples.
+- [Movement & Stamina](../../gameplay/movement_and_stamina/index.html) — Speed và stamina thông số.

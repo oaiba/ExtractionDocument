@@ -25,22 +25,22 @@ This page is the release-readiness view of the design package. It records whethe
 
 | Domain | Status | Evidence | Missing decision / risk | Owner |
 | :--- | :--- | :--- | :--- | :--- |
-| Project Scope | Needs Engineering Decision | [MVP](MVP.md), [Risks](Risks.md) | Confirm launch vs Season 3 boundaries | Production |
-| Core Gameplay | Needs Balancing | [Core Gameplay](../GameDesign/CoreGameplay.md), [Extraction](../Gameplay/Extraction_Mechanics.md) | Validate raid length, extraction rate, and outcome recovery | Game Design |
-| AI | Needs Balancing | [AI & Enemy Behavior](../Gameplay/AI_Enemy_Behavior.md) | Validate threat bands, reinforcement, and frustration limits | AI / Combat |
-| Combat / Weapons | Needs Balancing | [Weapons](../Combat/Weapons.md), [Weapon Balance](../Weapons/Weapon_Balance_Framework.md) | Confirm TTK bands and outlier thresholds | Combat |
-| Inventory / Gear / Loadout | Needs UX Validation | [Inventory](../Inventory_System/_index.md), [Loadout](../GameDesign/LoadoutPreparation.md) | Validate stash pressure, comparison, and loadout blockers | Inventory / UX |
-| Economy | Needs Balancing | [Economy](../GameDesign/Economy.md), [Commerce](../UI_UX/Commerce_Screens.md) | Set target kit cost, repair, and recovery bands | Economy |
-| Progression / LiveOps | Needs Engineering Decision | [Progression](../GameDesign/Progression.md), [LiveOps](../GameDesign/LiveOps.md) | Confirm reset, expiry, and reward delivery services | Progression / LiveOps |
-| Commerce | Needs Engineering Decision | [Commerce Screens](../UI_UX/Commerce_Screens.md) | Confirm provider, region, refund, and entitlement behavior | Commerce |
-| UI/UX | Needs UX Validation | [Global UX Standards](../UI_UX/Global_UX_Standards.md), screen groups | Validate platform focus, mobile layout, and offline states | UX |
-| Social / Multiplayer | Needs Engineering Decision | [Matchmaking](../Gameplay/Matchmaking_Lobby.md), [Social Screens](../UI_UX/Social_Screens.md) | Confirm party, reconnect, moderation, and voice services | Multiplayer |
-| Characters / Abilities | Placeholder | [Hero Abilities](../Gameplay/Hero_Abilities.md) | Approve ability numbers and counterplay | Characters / Combat |
-| World / Maps | Placeholder | [World](../World/_index.md), [Project Scope](_index.md) | Confirm named zones and Season 3 content | World |
-| Narrative | Needs UX Validation | [Story](../Story/_index.md), [Narrative World](../NarrativeWorld/_index.md) | Validate delivery beats against onboarding and LiveOps | Narrative |
-| Audio / Visuals | Needs UX Validation | [Audio](../Audio/_index.md), [Visuals](../Visuals/_index.md) | Validate combat/readability cues across platforms | Audio / Visuals |
-| Accessibility | Needs UX Validation | [Accessibility](../GameDesign/Accessibility.md) | Complete input, contrast, captions, and motion review | UX |
-| Anti-Cheat / Fair Play | Needs Engineering Decision | [Anti-Cheat](../Gameplay/Anti_Cheat_Fair_Play.md) | Confirm service provider and enforcement operations | Engineering |
+| Project Scope | Needs Engineering Decision | [MVP](mvp/index.html), [Risks](risks/index.html) | Confirm launch vs Season 3 boundaries | Production |
+| Core Gameplay | Needs Balancing | [Core Gameplay](../gamedesign/coregameplay/index.html), [Extraction](../gameplay/extraction_mechanics/index.html) | Validate raid length, extraction rate, and outcome recovery | Game Design |
+| AI | Needs Balancing | [AI & Enemy Behavior](../gameplay/ai_enemy_behavior/index.html) | Validate threat bands, reinforcement, and frustration limits | AI / Combat |
+| Combat / Weapons | Needs Balancing | [Weapons](../combat/weapons/index.html), [Weapon Balance](../weapons/weapon_balance_framework/index.html) | Confirm TTK bands and outlier thresholds | Combat |
+| Inventory / Gear / Loadout | Needs UX Validation | [Inventory](../inventory_system/_index/index.html), [Loadout](../gamedesign/loadoutpreparation/index.html) | Validate stash pressure, comparison, and loadout blockers | Inventory / UX |
+| Economy | Needs Balancing | [Economy](../gamedesign/economy/index.html), [Commerce](../ui_ux/commerce_screens/index.html) | Set target kit cost, repair, and recovery bands | Economy |
+| Progression / LiveOps | Needs Engineering Decision | [Progression](../gamedesign/progression/index.html), [LiveOps](../gamedesign/liveops/index.html) | Confirm reset, expiry, and reward delivery services | Progression / LiveOps |
+| Commerce | Needs Engineering Decision | [Commerce Screens](../ui_ux/commerce_screens/index.html) | Confirm provider, region, refund, and entitlement behavior | Commerce |
+| UI/UX | Needs UX Validation | [Global UX Standards](../ui_ux/global_ux_standards/index.html), screen groups | Validate platform focus, mobile layout, and offline states | UX |
+| Social / Multiplayer | Needs Engineering Decision | [Matchmaking](../gameplay/matchmaking_lobby/index.html), [Social Screens](../ui_ux/social_screens/index.html) | Confirm party, reconnect, moderation, and voice services | Multiplayer |
+| Characters / Abilities | Placeholder | [Hero Abilities](../gameplay/hero_abilities/index.html) | Approve ability numbers and counterplay | Characters / Combat |
+| World / Maps | Placeholder | [World](../world/_index/index.html), [Project Scope](_index/index.html) | Confirm named zones and Season 3 content | World |
+| Narrative | Needs UX Validation | [Story](../story/_index/index.html), [Narrative World](../narrativeworld/_index/index.html) | Validate delivery beats against onboarding and LiveOps | Narrative |
+| Audio / Visuals | Needs UX Validation | [Audio](../audio/_index/index.html), [Visuals](../visuals/_index/index.html) | Validate combat/readability cues across platforms | Audio / Visuals |
+| Accessibility | Needs UX Validation | [Accessibility](../gamedesign/accessibility/index.html) | Complete input, contrast, captions, and motion review | UX |
+| Anti-Cheat / Fair Play | Needs Engineering Decision | [Anti-Cheat](../gameplay/anti_cheat_fair_play/index.html) | Confirm service provider and enforcement operations | Engineering |
 
 ## MVP Gate Criteria
 
@@ -56,10 +56,10 @@ This page is the release-readiness view of the design package. It records whethe
 
 ## Review Cadence
 
-Review this page at the end of each major design wave, before external playtest, before content lock, and before MVP sign-off. Any `Blocked` or `Needs Engineering Decision` item must link to the [Design Decision Register](Design_Decision_Register.md).
+Review this page at the end of each major design wave, before external playtest, before content lock, and before MVP sign-off. Any `Blocked` or `Needs Engineering Decision` item must link to the [Design Decision Register](design_decision_register/index.html).
 
 ## Cross-References
 
-- [Design Decision Register](Design_Decision_Register.md)
-- [Cross-System Traceability](Cross_System_Traceability.md)
-- [MVP](MVP.md)
+- [Design Decision Register](design_decision_register/index.html)
+- [Cross-System Traceability](cross_system_traceability/index.html)
+- [MVP](mvp/index.html)

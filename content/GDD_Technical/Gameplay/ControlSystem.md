@@ -9,11 +9,11 @@ type: docs
 | Sutureument              | Relationship            | Link                                                                                                                                        |
 | ------------------------ | ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Controls Design**      | High-level input design | [GDD\_HighLevel/GameDesign/Controls.md](https://github.com/oaiba/ExtractionDocument/blob/main/content/GDD_HighLevel/GameDesign/Controls.md) |
-| **Character System**     | Movement implementation | [CharacterSystem.md](CharacterSystem.md)                                                                                                    |
-| **Weapon System**        | Combat input handling   | [WeaponSystem.md](WeaponSystem.md)                                                                                                          |
-| **UI System**            | HUD input prompts       | [../Systems/UISystem.md](../Systems/UISystem.md)                                                                                            |
-| **Accessibility System** | Input accessibility     | [../Systems/AccessibilitySystem.md](../Systems/AccessibilitySystem.md)                                                                      |
-| **Mobile Optimization**  | Touch performance       | [../Performance/Optimization.md](../Performance/Optimization.md)                                                                            |
+| **Character System**     | Movement implementation | [CharacterSystem.md](charactersystem/index.html)                                                                                                    |
+| **Weapon System**        | Combat input handling   | [WeaponSystem.md](weaponsystem/index.html)                                                                                                          |
+| **UI System**            | HUD input prompts       | [../Systems/UISystem.md](../systems/uisystem/index.html)                                                                                            |
+| **Accessibility System** | Input accessibility     | [../Systems/AccessibilitySystem.md](../systems/accessibilitysystem/index.html)                                                                      |
+| **Mobile Optimization**  | Touch performance       | [../Performance/Optimization.md](../performance/optimization/index.html)                                                                            |
 
 ***
 

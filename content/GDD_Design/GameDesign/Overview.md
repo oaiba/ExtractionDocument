@@ -14,12 +14,12 @@ This page defines the creative foundation. Detailed system rules live in the lin
 ## Start Here
 
 {{< cards cols="3" >}}
-{{< card link="coregameplay.html" title="Core Gameplay" icon="refresh" subtitle="Raid loop, extraction rhythm, death pressure, and match flow." >}}
-{{< card link="controls.html" title="Controls" icon="cursor-click" subtitle="Touch input, aiming, movement, camera, and mobile combat ergonomics." >}}
-{{< card link="gamemodes.html" title="Game Modes" icon="puzzle" subtitle="Raid variants, ranked play, co-op concepts, and mode selection." >}}
-{{< card link="economy.html" title="Economy" icon="currency-dollar" subtitle="Loot value, traders, money sinks, inflation controls, and item flow." >}}
-{{< card link="progression.html" title="Progression" icon="chart-bar" subtitle="Account growth, operators, mastery, reputation, and long-term goals." >}}
-{{< card link="mapdesign.html" title="Map Design" icon="location-marker" subtitle="Zone layout, extraction placement, hotspots, routes, and readability." >}}
+{{< card link="coregameplay/index.html" title="Core Gameplay" icon="refresh" subtitle="Raid loop, extraction rhythm, death pressure, and match flow." >}}
+{{< card link="controls/index.html" title="Controls" icon="cursor-click" subtitle="Touch input, aiming, movement, camera, and mobile combat ergonomics." >}}
+{{< card link="gamemodes/index.html" title="Game Modes" icon="puzzle" subtitle="Raid variants, ranked play, co-op concepts, and mode selection." >}}
+{{< card link="economy/index.html" title="Economy" icon="currency-dollar" subtitle="Loot value, traders, money sinks, inflation controls, and item flow." >}}
+{{< card link="progression/index.html" title="Progression" icon="chart-bar" subtitle="Account growth, operators, mastery, reputation, and long-term goals." >}}
+{{< card link="mapdesign/index.html" title="Map Design" icon="location-marker" subtitle="Zone layout, extraction placement, hotspots, routes, and readability." >}}
 {{< /cards >}}
 
 ## Design Snapshot
@@ -100,14 +100,14 @@ This page defines the creative foundation. Detailed system rules live in the lin
 
 | Topic | Canonical Page |
 | :--- | :--- |
-| Raid loop and match rhythm | [Core Gameplay](coregameplay.html) |
-| Loadout decisions and pre-raid flow | [Loadout Preparation](loadoutpreparation.html) |
-| Gear loss and insurance recovery | [Insurance System](insurancesystem.html) |
-| Economy, traders, sinks, and value flow | [Economy](economy.html) |
-| Account, operator, and reputation growth | [Progression](progression.html) |
-| Map layout, hotspots, and extraction logic | [Map Design](mapdesign.html) |
-| Live events, battle pass, and seasonal cadence | [Live Operations](liveops.html) |
-| First-time user experience | [Onboarding](tutorialraid.html) |
+| Raid loop and match rhythm | [Core Gameplay](coregameplay/index.html) |
+| Loadout decisions and pre-raid flow | [Loadout Preparation](loadoutpreparation/index.html) |
+| Gear loss and insurance recovery | [Insurance System](insurancesystem/index.html) |
+| Economy, traders, sinks, and value flow | [Economy](economy/index.html) |
+| Account, operator, and reputation growth | [Progression](progression/index.html) |
+| Map layout, hotspots, and extraction logic | [Map Design](mapdesign/index.html) |
+| Live events, battle pass, and seasonal cadence | [Live Operations](liveops/index.html) |
+| First-time user experience | [Onboarding](tutorialraid/index.html) |
 
 ## Ownership & Maintenance
 

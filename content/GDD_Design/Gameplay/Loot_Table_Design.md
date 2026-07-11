@@ -9,7 +9,7 @@ weight: 17
 
 The loot table system governs what items spawn in the world, at what rarity, and in which containers per map zone. It is the **most direct lever for economic balance** — loot tables set the volume of items flowing into the game each raid, directly affecting prices on the flea market and trader stock. This document specifies container types, zone loot tiers, item category weights, and spawn density rules.
 
-> **Cross-References:** [Looting & Inventory](Looting_Interactions.md) — container interaction mechanic, grid inventory, FIR status; [AI Enemy Behavior](AI_Enemy_Behavior.md) — AI corpse loot; [Environmental Hazards](Environmental_Hazards.md) — supply drop loot, boss loot tables; [Safe House Design](../GameDesign/Safe_House_Design.md) — crafting materials as loot category; [GameDesign/Economy](https://github.com/oaiba/ExtractionDocument/blob/main/content/GameDesign/Economy.md) — faucet/sink calibration.
+> **Cross-References:** [Looting & Inventory](looting_interactions/index.html) — container interaction mechanic, grid inventory, FIR status; [AI Enemy Behavior](ai_enemy_behavior/index.html) — AI corpse loot; [Environmental Hazards](environmental_hazards/index.html) — supply drop loot, boss loot tables; [Safe House Design](../gamedesign/safe_house_design/index.html) — crafting materials as loot category; [GameDesign/Economy](https://github.com/oaiba/ExtractionDocument/blob/main/content/GameDesign/Economy.md) — faucet/sink calibration.
 
 ***
 
@@ -165,7 +165,7 @@ Each map has 4-5 named zones. Zone tier determines which loot tables are used.
 
 | Property           | Value                                                                              |
 | ------------------ | ---------------------------------------------------------------------------------- |
-| **Trigger**        | Dynamic event per [Environmental Hazards](Environmental_Hazards.md)                |
+| **Trigger**        | Dynamic event per [Environmental Hazards](environmental_hazards/index.html)                |
 | **Container**      | One 4×5 Super Crate                                                                |
 | **Loot table**     | Tier 3 only — guaranteed at least 1 Tier 4 item, 3–5 Tier 3 items, $10,000–$20,000 |
 | **AI guard**       | 4 Militia Raiders spawn at crate on landing                                        |
@@ -220,13 +220,13 @@ To prevent farming predictability, each server instance shuffles loot:
 
 ### Cross-References
 
-* [Looting & Inventory](Looting_Interactions.md) — Container interaction, FIR status, grid inventory.
-* [AI Enemy Behavior](AI_Enemy_Behavior.md) — AI corpse loot tables; boss loot.
-* [Environmental Hazards](Environmental_Hazards.md) — Supply drop event and Scav Raid wave loot.
-* [Quest & Objective System](Quest_Objective_System.md) — Quest items and their container spawn rules.
-* [Safe House Design](../GameDesign/Safe_House_Design.md) — Crafting materials as primary Tier 2 loot category.
+* [Looting & Inventory](looting_interactions/index.html) — Container interaction, FIR status, grid inventory.
+* [AI Enemy Behavior](ai_enemy_behavior/index.html) — AI corpse loot tables; boss loot.
+* [Environmental Hazards](environmental_hazards/index.html) — Supply drop event and Scav Raid wave loot.
+* [Quest & Objective System](quest_objective_system/index.html) — Quest items and their container spawn rules.
+* [Safe House Design](../gamedesign/safe_house_design/index.html) — Crafting materials as primary Tier 2 loot category.
 * [GameDesign/Economy](https://github.com/oaiba/ExtractionDocument/blob/main/content/GameDesign/Economy.md) — Macro economy calibration; loot as primary faucet.
-* [Items & Gear](ItemsAndGear.md) — Full item catalogue with values, weights, and drop categories.
+* [Items & Gear](itemsandgear/index.html) — Full item catalogue with values, weights, and drop categories.
 
 ***
 

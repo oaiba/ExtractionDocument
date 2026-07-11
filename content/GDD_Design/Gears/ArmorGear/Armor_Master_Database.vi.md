@@ -6,13 +6,13 @@ weight: 2
 
 ## Tổng Quan
 
-This tài liệu is the **canonical list** of all giáp items: body vests, helmets, face shields, headsets, và armored rigs. For class hệ thống, zones, materials, và damage cơ chế Xem [giáp & Ballistics](giáp.md). For handling và balance Xem [giáp Handling Settings](Armor_Handling_Settings.md) và [giáp Balance Framework](Armor_Balance_Framework.md).
+This tài liệu is the **canonical list** of all giáp items: body vests, helmets, face shields, headsets, và armored rigs. For class hệ thống, zones, materials, và damage cơ chế Xem [giáp & Ballistics](armor/index.html). For handling và balance Xem [giáp Handling Settings](armor_handling_settings/index.html) và [giáp Balance Framework](armor_balance_framework/index.html).
 
 ---
 
 ## Body giáp / Vests
 
-Class 1–6 (GOST-style). Zones: Thorax (T), Stomach (S), Sides (A), Neck (N), Arms (R). Material determines durability loss và repair efficiency. **Tier** per [Gear Tier hệ thống](../Gear_Tier_System.md).
+Class 1–6 (GOST-style). Zones: Thorax (T), Stomach (S), Sides (A), Neck (N), Arms (R). Material determines durability loss và repair efficiency. **Tier** per [Gear Tier hệ thống](../gear_tier_system/index.html).
 
 ### Tier 1 (Class 1–2)
 
@@ -70,7 +70,7 @@ Class 1–6 (GOST-style). Zones: Thorax (T), Stomach (S), Sides (A), Neck (N), A
 
 ## Helmets
 
-Zones: Top (Top), Nape (N), Ears (E), Eyes (Ey), Jaws (J). Ricochet: Low / Med / High. Blocks Headset: some helmets prevent equipping headsets. **Tier** per [Gear Tier hệ thống](../Gear_Tier_System.md).
+Zones: Top (Top), Nape (N), Ears (E), Eyes (Ey), Jaws (J). Ricochet: Low / Med / High. Blocks Headset: some helmets prevent equipping headsets. **Tier** per [Gear Tier hệ thống](../gear_tier_system/index.html).
 
 
 | Code          | Display Name      | Tier | Class | Zones            | Material | Weight (kg) | Ricochet | Durability | Grid | Blocks Headset | NVG Mount | giá trị ($) | Rarity   | ghi chú                 |
@@ -92,7 +92,7 @@ Zones: Top (Top), Nape (N), Ears (E), Eyes (Ey), Jaws (J). Ricochet: Low / Med /
 
 ## Face Shields & Visors
 
-Attach to compatible helmets hoặc are standalone. Zone: Eyes (Ey) hoặc Jaws (J). Vision Penalty: % reduction to visual clarity khi equipped. **Tier** per [Gear Tier hệ thống](../Gear_Tier_System.md).
+Attach to compatible helmets hoặc are standalone. Zone: Eyes (Ey) hoặc Jaws (J). Vision Penalty: % reduction to visual clarity khi equipped. **Tier** per [Gear Tier hệ thống](../gear_tier_system/index.html).
 
 
 | Code           | Display Name        | Tier | Class | Zone  | Material | Durability | Vision Penalty | giá trị ($) | Rarity   |
@@ -107,7 +107,7 @@ Attach to compatible helmets hoặc are standalone. Zone: Eyes (Ey) hoặc Jaws 
 
 ## Headsets
 
-No giáp giá trị. Modify audio: compress loud sounds (gunfire), amplify ambient (footsteps). EQ profile affects tactical clarity. Xem [giáp & Ballistics](giáp.md) for gameplay impact; helmets that block ears cannot cách dùng headsets. **Tier** per [Gear Tier hệ thống](../Gear_Tier_System.md) (by Rarity: Uncommon = 2, Rare = 3).
+No giáp giá trị. Modify audio: compress loud sounds (gunfire), amplify ambient (footsteps). EQ profile affects tactical clarity. Xem [giáp & Ballistics](armor/index.html) for gameplay impact; helmets that block ears cannot cách dùng headsets. **Tier** per [Gear Tier hệ thống](../gear_tier_system/index.html) (by Rarity: Uncommon = 2, Rare = 3).
 
 
 | Code        | Display Name   | Tier | EQ Profile        | Weight (kg) | Grid | giá trị ($) | Trader | Rarity   |
@@ -123,7 +123,7 @@ No giáp giá trị. Modify audio: compress loud sounds (gunfire), amplify ambie
 
 ## Armored Rigs
 
-Rigs that provide both storage và body giáp. They **replace** a separate body giáp vest. For grid layout, slot count, và hotkey mapping Xem [Storage Master Database](../StorageGear/Storage_Master_Database.md). giáp stats below. **Tier** per [Gear Tier hệ thống](../Gear_Tier_System.md) (by giáp Class).
+Rigs that provide both storage và body giáp. They **replace** a separate body giáp vest. For grid layout, slot count, và hotkey mapping Xem [Storage Master Database](../storagegear/storage_master_database/index.html). giáp stats below. **Tier** per [Gear Tier hệ thống](../gear_tier_system/index.html) (by giáp Class).
 
 
 | Code         | Display Name          | Tier | giáp Class | Zones   | Material | Grid Layout | Slots | Hotkey Slots | Weight (kg) | giá trị ($) | Rarity   |
@@ -138,8 +138,8 @@ Rigs that provide both storage và body giáp. They **replace** a separate body 
 
 ## Tham Chiếu Chéo
 
-- [Gear Tier hệ thống](../Gear_Tier_System.md) — giáp Tier (1–5) định nghĩa; progression = Tier + Rarity + người chơi/trader level.
-- [giáp & Ballistics](giáp.md) — Class hệ thống, zones, materials, penetration, blunt, ricochet.
-- [giáp Handling Settings](Armor_Handling_Settings.md) — Equip times, movement/ergo/audio penalties.
-- [giáp Balance Framework](Armor_Balance_Framework.md) — EHP, chi phí-efficiency, durability math.
-- [Storage Master Database](../StorageGear/Storage_Master_Database.md) — Tactical rigs (unarmored + armored), slot layouts.
+- [Gear Tier hệ thống](../gear_tier_system/index.html) — giáp Tier (1–5) định nghĩa; progression = Tier + Rarity + người chơi/trader level.
+- [giáp & Ballistics](armor/index.html) — Class hệ thống, zones, materials, penetration, blunt, ricochet.
+- [giáp Handling Settings](armor_handling_settings/index.html) — Equip times, movement/ergo/audio penalties.
+- [giáp Balance Framework](armor_balance_framework/index.html) — EHP, chi phí-efficiency, durability math.
+- [Storage Master Database](../storagegear/storage_master_database/index.html) — Tactical rigs (unarmored + armored), slot layouts.

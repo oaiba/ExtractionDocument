@@ -224,7 +224,7 @@ Stairs are navigated as flat ramps in gameplay (no step-over animation per stair
 | Movement speed on stairs | 80% of flat speed (upward), 90% (downward)                                                           |
 | Stamina drain on stairs  | +20% upward; normal downward                                                                         |
 | Noise generation         | Same surface type as floor material connected to stairs                                              |
-| Camera on stairs         | Smooth altitude transition between floors (0.5s interpolation per [Camera hệ thống](Camera_System.md)) |
+| Camera on stairs         | Smooth altitude transition between floors (0.5s interpolation per [Camera hệ thống](camera_system/index.html)) |
 | Prone on stairs          | Not allowed — nhân vật auto-stands khi entering stair zone                                         |
 
 #### Ladders
@@ -271,6 +271,6 @@ Ladders provide vertical access between floors in cụ thể buildings.
 | **Depth threshold**      | Shallow water (≤0.5m): normal walk speed, minor splash noise. Deep water (>0.5m): swimming trạng thái activates.                                              |
 | **Camera in water**      | Standard top-down altitude; water surface rendered semi-transparent to show nhân vật underneath.                                                        |
 | **Drowning**             | nếu Arm và Leg Stamina both reach 0 while swimming: −10 HP/sec until one stamina bar recovers. Not instantly lethal — nhưng tạo extreme urgency.       |
-| **Contaminated water**   | Flooded areas trong khi Chemical Spill hazard: −5 HP/sec in addition to normal contamination damage. Xem [Environmental Hazards](Environmental_Hazards.md). |
+| **Contaminated water**   | Flooded areas trong khi Chemical Spill hazard: −5 HP/sec in addition to normal contamination damage. Xem [Environmental Hazards](environmental_hazards/index.html). |
 
 ***

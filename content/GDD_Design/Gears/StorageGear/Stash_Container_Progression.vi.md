@@ -6,7 +6,7 @@ weight: 5
 
 ## Tổng Quan
 
-Tài liệu này định nghĩa **stash size** by edition và Safe House level, **container unlock path** (order và method), và **secure container upgrade path**. For container specs Xem [Storage Master Database](Storage_Master_Database.md). For full Stash design Xem [Stash Design](../../Stash_Design.md).
+Tài liệu này định nghĩa **stash size** by edition và Safe House level, **container unlock path** (order và method), và **secure container upgrade path**. For container specs Xem [Storage Master Database](storage_master_database/index.html). For full Stash design Xem [Stash Design](../../stash_design/index.html).
 
 ---
 
@@ -29,7 +29,7 @@ All editions can reach the same maximum (e.g. 10×68) via Safe House; premium/ul
 
 ## Container Unlock Path
 
-Order in which stash-only containers và chính tools become available. Exact levels và quest names are placeholders. Container unlock phase maps to **Storage Tier** in [Gear Tier hệ thống](../Gear_Tier_System.md) for consistency với loot và economy.
+Order in which stash-only containers và chính tools become available. Exact levels và quest names are placeholders. Container unlock phase maps to **Storage Tier** in [Gear Tier hệ thống](../gear_tier_system/index.html) for consistency với loot và economy.
 
 | Phase | Container (examples) | How to unlock | Estimated level |
 | :---- | :------------------- | :------------ | :-------------- |
@@ -44,7 +44,7 @@ Order in which stash-only containers và chính tools become available. Exact le
 
 ## Secure Container upgrade Path
 
-Secure container size is upgraded via quests hoặc edition; it is not purchased as a consumable. **Cells** in the bảng below = **total capacity** (Xem [Storage Master Database](Storage_Master_Database.md)).
+Secure container size is upgraded via quests hoặc edition; it is not purchased as a consumable. **Cells** in the bảng below = **total capacity** (Xem [Storage Master Database](storage_master_database/index.html)).
 
 | Container | Grid | Cells (total capacity) | Unlock method |
 | :-------- | :--: | :---: | :------------ |
@@ -59,9 +59,9 @@ Standard-edition Người chơi có thể reach Gamma/Kappa by progression; prem
 
 ## Tham Chiếu Chéo
 
-- [Gear Tier hệ thống](../Gear_Tier_System.md) — Storage Tier (1–4) định nghĩa; container unlock phase maps to Tier.
-- [Storage Master Database](Storage_Master_Database.md) — Secure containers, stash-only cases, values.
+- [Gear Tier hệ thống](../gear_tier_system/index.html) — Storage Tier (1–4) định nghĩa; container unlock phase maps to Tier.
+- [Storage Master Database](storage_master_database/index.html) — Secure containers, stash-only cases, values.
 - [Inventory & Gear — Stash](../../Inventory_System/_index.md#8-stash--containers) — Stash overview, organization tips.
-- [Safe House Design](../../GameDesign/Safe_House_Design.md) — Safe House levels, upgrade costs.
-- [Progression](../../GameDesign/Progression.md) — người chơi và trader level framework.
-- [Quest Objective hệ thống](../../Gameplay/Quest_Objective_System.md) — Quest gates for containers và secure upgrades.
+- [Safe House Design](../../gamedesign/safe_house_design/index.html) — Safe House levels, upgrade costs.
+- [Progression](../../gamedesign/progression/index.html) — người chơi và trader level framework.
+- [Quest Objective hệ thống](../../gameplay/quest_objective_system/index.html) — Quest gates for containers và secure upgrades.

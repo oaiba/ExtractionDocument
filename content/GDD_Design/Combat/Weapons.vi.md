@@ -3,7 +3,7 @@ title: "vũ khí & Combat hệ thống"
 type: docs
 ---
 
-> **Canonical source:** Full vũ khí categories, stats, đạn, attachments, damage model, TTK, và combat cơ chế are documented in **[vũ khí Arsenal & Combat hệ thống](../Gameplay/WeaponArsenal.md)**. This trang retains combat philosophy only.
+> **Canonical source:** Full vũ khí categories, stats, đạn, attachments, damage model, TTK, và combat cơ chế are documented in **[vũ khí Arsenal & Combat hệ thống](../gameplay/weaponarsenal/index.html)**. This trang retains combat philosophy only.
 
 ---
 
@@ -52,7 +52,7 @@ Player phải hiểu vì sao shot hit, miss, không penetrate, stagger, suppress
 - Không weapon nào best ở close, mid, long, mobility, recoil, cost, và armor penetration cùng lúc.
 - Armor hit, flesh hit, ricochet, blocked shot, suppression, headshot, và low ammo feedback phân biệt bằng hơn color.
 - Death recap có thể nêu weapon, hit zone, armor interaction, và key cause mà không expose unfair enemy inventory data.
-- Tuning changes link về [Weapon Balance Framework](../Weapons/Weapon_Balance_Framework.md), không tạo one-off rule ở đây.
+- Tuning changes link về [Weapon Balance Framework](../weapons/weapon_balance_framework/index.html), không tạo one-off rule ở đây.
 
 ## Combat Philosophy
 
@@ -64,4 +64,4 @@ Player phải hiểu vì sao shot hit, miss, không penetrate, stagger, suppress
 4. **Skill Expression** — High skill ceiling với recoil control và positioning.
 5. **Mobile Optimized** — Controls và cơ chế designed for touch màn hình.
 
-For vũ khí categories, specifications, ammunition, attachments, damage hệ thống, ballistics, và thời gian-to-kill data, Xem [vũ khí Arsenal & Combat hệ thống](../Gameplay/WeaponArsenal.md).
+For vũ khí categories, specifications, ammunition, attachments, damage hệ thống, ballistics, và thời gian-to-kill data, Xem [vũ khí Arsenal & Combat hệ thống](../gameplay/weaponarsenal/index.html).

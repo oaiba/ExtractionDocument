@@ -22,7 +22,7 @@ markup:
     renderer:
       unsafe: true
 
-uglyURLs: true
+uglyURLs: false
 
 params:
   theme:

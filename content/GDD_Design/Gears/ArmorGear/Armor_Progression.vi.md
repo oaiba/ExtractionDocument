@@ -6,13 +6,13 @@ weight: 5
 
 ## Tổng Quan
 
-This tài liệu covers **trader unlock gating**, **Safe House repair bench progression**, **giáp crafting**, và **Found-in-Raid (FIR) giáp** rules. For item list Xem [giáp Master Database](Armor_Master_Database.md); for balance Xem [giáp Balance Framework](Armor_Balance_Framework.md).
+This tài liệu covers **trader unlock gating**, **Safe House repair bench progression**, **giáp crafting**, và **Found-in-Raid (FIR) giáp** rules. For item list Xem [giáp Master Database](armor_master_database/index.html); for balance Xem [giáp Balance Framework](armor_balance_framework/index.html).
 
 ---
 
 ## Trader Unlock Gating
 
-giáp tier (per [Gear Tier hệ thống](../Gear_Tier_System.md)) is gated by trader level, quests, và người chơi level so that early game is not dominated by top-tier giáp.
+giáp tier (per [Gear Tier hệ thống](../gear_tier_system/index.html)) is gated by trader level, quests, và người chơi level so that early game is not dominated by top-tier giáp.
 
 | giáp tier | Trader level required | Quest gate | Level gate |
 | :--------- | :-------------------: | :--------- | :--------: |
@@ -22,7 +22,7 @@ giáp tier (per [Gear Tier hệ thống](../Gear_Tier_System.md)) is gated by tr
 | Class 5 | Trader Lvl 4 | e.g. "Forged in Fire" | 35 |
 | Class 6 | Trader Lvl 4 (Exalted) | e.g. Boss kill / endgame quest | 45 |
 
-Exact quest names và level thông số are placeholders; adjust to match [Progression](../../GameDesign/Progression.md) và quest design.
+Exact quest names và level thông số are placeholders; adjust to match [Progression](../../gamedesign/progression/index.html) và quest design.
 
 ---
 
@@ -49,7 +49,7 @@ Selected giáp pieces can be crafted at the Safe House. Recipes consume material
 - **Class 3 vest:** 5× Polymer + 3× Rare Components + 2 h → 1× Ceramic Carrier (80% durability).
 - **Class 2 vest:** 3× Aramid + 2× Scrap Metal + 30 min → 1× Press Vest (90% durability).
 
-Crafting provides an alternative to trader purchase và FIR loot, và consumes barter/crafting materials. Full recipe list should live in [Safe House Design](../../GameDesign/Safe_House_Design.md) với references here.
+Crafting provides an alternative to trader purchase và FIR loot, và consumes barter/crafting materials. Full recipe list should live in [Safe House Design](../../gamedesign/safe_house_design/index.html) với references here.
 
 ---
 
@@ -57,14 +57,14 @@ Crafting provides an alternative to trader purchase và FIR loot, và consumes b
 
 - **FIR giáp** spawns in-raid với **durability in a range** (e.g. 60–100% of max). This avoids “free” full-durability top-tier giáp from loot only.
 - FIR giáp is often the **only way** to obtain certain rare hoặc high-class pieces trước unlocking the corresponding trader level hoặc quest.
-- FIR status is lost nếu the item is brought into raid by the người chơi (e.g. re-equipped). Marketplace và FIR rules: Xem [Looting & Inventory](../../Gameplay/Looting_Interactions.md) và economy docs.
+- FIR status is lost nếu the item is brought into raid by the người chơi (e.g. re-equipped). Marketplace và FIR rules: Xem [Looting & Inventory](../../gameplay/looting_interactions/index.html) và economy docs.
 
 ---
 
 ## Tham Chiếu Chéo
 
-- [Gear Tier hệ thống](../Gear_Tier_System.md) — giáp Tier (1–5) định nghĩa; progression = Tier + Rarity + người chơi/trader level.
-- [giáp Master Database](Armor_Master_Database.md) — Trader column per item.
-- [Safe House Design](../../GameDesign/Safe_House_Design.md) — Crafting recipes, bench yêu cầu.
-- [Progression](../../GameDesign/Progression.md) — người chơi và trader progression framework.
-- [Quest Objective hệ thống](../../Gameplay/Quest_Objective_System.md) — Quest gates for giáp unlocks.
+- [Gear Tier hệ thống](../gear_tier_system/index.html) — giáp Tier (1–5) định nghĩa; progression = Tier + Rarity + người chơi/trader level.
+- [giáp Master Database](armor_master_database/index.html) — Trader column per item.
+- [Safe House Design](../../gamedesign/safe_house_design/index.html) — Crafting recipes, bench yêu cầu.
+- [Progression](../../gamedesign/progression/index.html) — người chơi và trader progression framework.
+- [Quest Objective hệ thống](../../gameplay/quest_objective_system/index.html) — Quest gates for giáp unlocks.

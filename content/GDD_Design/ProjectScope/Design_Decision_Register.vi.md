@@ -47,7 +47,7 @@ Mỗi entry phải có ID ổn định, nội dung quyết định, owner, syste
 
 ## Tham Chiếu Chéo
 
-- [Project Scope](_index.vi.md)
-- [MVP](MVP.vi.md)
-- [Cross-System Traceability](Cross_System_Traceability.vi.md)
-- [MVP Readiness Review](MVP_Readiness_Review.vi.md)
+- [Project Scope](_index.vi/index.html)
+- [MVP](mvp.vi/index.html)
+- [Cross-System Traceability](cross_system_traceability.vi/index.html)
+- [MVP Readiness Review](mvp_readiness_review.vi/index.html)

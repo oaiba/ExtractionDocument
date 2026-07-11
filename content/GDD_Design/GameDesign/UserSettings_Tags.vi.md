@@ -6,7 +6,7 @@ weight: 19
 
 ## Tổng Quan
 
-This trang lists technical setting keys used by design và engineering. The UX owner is [User Settings](usersettings.html), và the người chơi-facing option matrix is [Settings matrix](usersettings_matrix.html).
+This trang lists technical setting keys used by design và engineering. The UX owner is [User Settings](usersettings/index.html), và the người chơi-facing option matrix is [Settings matrix](usersettings_matrix/index.html).
 
 ## Tag Reference
 

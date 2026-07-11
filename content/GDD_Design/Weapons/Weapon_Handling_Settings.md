@@ -6,9 +6,9 @@ weight: 1
 
 ## Overview
 
-Weapon handling defines how quickly and smoothly players can ready, aim, and fire their weapons. These parameters are tuned per weapon class and are modified by attachments (ergonomics) and [Gear Mechanics](../Gameplay/Gear_Mechanics.md) (weight tier). Design reference: Tarkov ergonomics, Arena Breakout handling stats, Delta Force per-weapon progression.
+Weapon handling defines how quickly and smoothly players can ready, aim, and fire their weapons. These parameters are tuned per weapon class and are modified by attachments (ergonomics) and [Gear Mechanics](../gameplay/gear_mechanics/index.html) (weight tier). Design reference: Tarkov ergonomics, Arena Breakout handling stats, Delta Force per-weapon progression.
 
-> **Cross-References:** [Weapon Modding (Gunsmith)](../Inventory_System/Gunsmith_System.md) — ergonomics stat affecting ADS and stamina; [Weapon Attachment System](../Gameplay/Weapon_Attachment_System.md) — attachment weight and stat modifiers; [Combat Feel (Top-Down)](../Gameplay/Combat_Feel_Topdown.md) — aim cone and recoil recovery.
+> **Cross-References:** [Weapon Modding (Gunsmith)](../inventory_system/gunsmith_system/index.html) — ergonomics stat affecting ADS and stamina; [Weapon Attachment System](../gameplay/weapon_attachment_system/index.html) — attachment weight and stat modifiers; [Combat Feel (Top-Down)](../gameplay/combat_feel_topdown/index.html) — aim cone and recoil recovery.
 
 ---
 
@@ -56,13 +56,13 @@ Time to switch to a weapon (draw) or stow it (holster). Affects weapon-swap and 
 | Sniper Rifle | 0.70 s | 0.60 s | Long barrel, scope |
 | LMG | 1.20 s | 1.00 s | Heavy; deliberate swap |
 
-**Modifiers:** Ergonomics from [Weapon Modding](../Inventory_System/Gunsmith_System.md) adjusts draw/holster by ±10%. Weight tier (Heavy/Critical) adds +0.1–0.2 s to LMG and Sniper.
+**Modifiers:** Ergonomics from [Weapon Modding](../inventory_system/gunsmith_system/index.html) adjusts draw/holster by ±10%. Weight tier (Heavy/Critical) adds +0.1–0.2 s to LMG and Sniper.
 
 ---
 
 ## ADS Timing
 
-Time from hip-fire state to fully aimed (precision aim mode). In top-down, ADS tightens aim cone and may apply a slight camera zoom per [Camera System](../Gameplay/Camera_System.md).
+Time from hip-fire state to fully aimed (precision aim mode). In top-down, ADS tightens aim cone and may apply a slight camera zoom per [Camera System](../gameplay/camera_system/index.html).
 
 | Weapon Class | Base ADS Time | With High Ergo (est) | With Low Ergo (est) |
 | :----------- | :------------: | :------------------: | :-----------------: |
@@ -74,13 +74,13 @@ Time from hip-fire state to fully aimed (precision aim mode). In top-down, ADS t
 | Sniper Rifle | 0.45 s | 0.36 s | 0.55 s |
 | LMG | 0.40 s | 0.32 s | 0.50 s |
 
-Optics add a fixed ADS penalty (e.g. ACOG +0.10 s, 8× Sniper +0.15 s) as defined in [Weapon Attachment System](../Gameplay/Weapon_Attachment_System.md).
+Optics add a fixed ADS penalty (e.g. ACOG +0.10 s, 8× Sniper +0.15 s) as defined in [Weapon Attachment System](../gameplay/weapon_attachment_system/index.html).
 
 ---
 
 ## Movement Speed Modifiers
 
-Percentage speed reduction while the weapon is wielded (not stowed). Base movement from [Movement & Stamina](../Gameplay/Movement_and_Stamina.md).
+Percentage speed reduction while the weapon is wielded (not stowed). Base movement from [Movement & Stamina](../gameplay/movement_and_stamina/index.html).
 
 | Weapon Class | Speed Modifier | Notes |
 | :----------- | :------------: | :---- |
@@ -93,7 +93,7 @@ Percentage speed reduction while the weapon is wielded (not stowed). Base moveme
 | Sniper Rifle | −10% | Long, heavy |
 | LMG | −15% | Heavy weapon |
 
-Modifiers stack with weight tier from [Gear Mechanics](../Gameplay/Gear_Mechanics.md). A player in Heavy tier with an LMG has compounded slowdown.
+Modifiers stack with weight tier from [Gear Mechanics](../gameplay/gear_mechanics/index.html). A player in Heavy tier with an LMG has compounded slowdown.
 
 ---
 
@@ -117,7 +117,7 @@ Bipod (when prone/crouched) sets sway to 0.1° for LMG and Sniper. Sway is appli
 
 ## Hip-Fire vs ADS Behavior
 
-Hip-fire uses a wider aim cone; ADS tightens it. Values align with [Combat Feel (Top-Down)](../Gameplay/Combat_Feel_Topdown.md).
+Hip-fire uses a wider aim cone; ADS tightens it. Values align with [Combat Feel (Top-Down)](../gameplay/combat_feel_topdown/index.html).
 
 | Weapon Class | Hip-Fire Cone Multiplier | ADS Cone Multiplier | Notes |
 | :----------- | :----------------------: | :-----------------: | :---- |
@@ -147,7 +147,7 @@ Full reload = empty mag replaced. Tactical reload = mag replaced with round in c
 | Sniper Rifle | 2.2 s | 1.6 s | 5–10 rd |
 | LMG | 6.0 s | 5.0 s | Belt/box; long animation |
 
-Extended and drum magazines add +0.3–1.5 s to full reload per [Weapon Attachment System](../Gameplay/Weapon_Attachment_System.md). Fast Mag attachment reduces times by the documented percentage.
+Extended and drum magazines add +0.3–1.5 s to full reload per [Weapon Attachment System](../gameplay/weapon_attachment_system/index.html). Fast Mag attachment reduces times by the documented percentage.
 
 ---
 
@@ -215,7 +215,7 @@ Mobile uses the same draw, ADS, and reload times as PC; only input and feedback 
 
 ## Cross-References
 
-- [Weapon Modding (Gunsmith)](../Inventory_System/Gunsmith_System.md) — Ergonomics, recoil control, MOA.
-- [Weapon Attachment System](../Gameplay/Weapon_Attachment_System.md) — Attachment effects on weight and handling.
-- [Gear Mechanics](../Gameplay/Gear_Mechanics.md) — Weight tier and mobility.
-- [Combat Feel (Top-Down)](../Gameplay/Combat_Feel_Topdown.md) — Aim cone, recoil bloom, recovery.
+- [Weapon Modding (Gunsmith)](../inventory_system/gunsmith_system/index.html) — Ergonomics, recoil control, MOA.
+- [Weapon Attachment System](../gameplay/weapon_attachment_system/index.html) — Attachment effects on weight and handling.
+- [Gear Mechanics](../gameplay/gear_mechanics/index.html) — Weight tier and mobility.
+- [Combat Feel (Top-Down)](../gameplay/combat_feel_topdown/index.html) — Aim cone, recoil bloom, recovery.

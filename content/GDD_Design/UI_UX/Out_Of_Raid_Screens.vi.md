@@ -14,23 +14,23 @@ Tham chiếu chính:
 
 | hệ thống | source |
 | :--- | :--- |
-| Home hub | [Home màn hình & Main Lobby Design](../GameDesign/HomeScreen_Design.md) |
-| Loadout preparation | [Pre-Raid Loadout & Preparation màn hình](../GameDesign/LoadoutPreparation.md) |
-| Safe House | [Safe House Design](../GameDesign/Safe_House_Design.md) |
-| Stash | [Stash Design](../Stash_Design.md) |
-| Profile | [người chơi Profile & Career Stats](../GameDesign/PlayerProfile.md) |
-| Quests | [Quest & Objective hệ thống](../Gameplay/Quest_Objective_System.md) |
+| Home hub | [Home màn hình & Main Lobby Design](../gamedesign/homescreen_design/index.html) |
+| Loadout preparation | [Pre-Raid Loadout & Preparation màn hình](../gamedesign/loadoutpreparation/index.html) |
+| Safe House | [Safe House Design](../gamedesign/safe_house_design/index.html) |
+| Stash | [Stash Design](../stash_design/index.html) |
+| Profile | [người chơi Profile & Career Stats](../gamedesign/playerprofile/index.html) |
+| Quests | [Quest & Objective hệ thống](../gameplay/quest_objective_system/index.html) |
 
 ## Điều Hướng Nhanh
 
 | điểm đến | cách dùng |
 | :--- | :--- |
-| [UI/UX Index](_index.md) | Full UI/UX documentation hub |
-| [màn hình Groups Overview](Screen_Groups_Overview.md) | Lifecycle taxonomy và designer-ready spec template |
-| [global UX Standards](Global_UX_Standards.md) | shared navigation, focus, trạng thái, modal, và accessibility rules |
-| [Pre-Raid màn hình](Pre_Raid_Screens.md) | Mode, map, deploy confirmation, squad lobby, matchmaking |
-| [Post-Raid màn hình](Post_Raid_Screens.md) | AAR, death replay, loot transfer, redeploy |
-| [UX flow](UX_Flows.md) | End-to-end journey mapping |
+| [UI/UX Index](_index/index.html) | Full UI/UX documentation hub |
+| [màn hình Groups Overview](screen_groups_overview/index.html) | Lifecycle taxonomy và designer-ready spec template |
+| [global UX Standards](global_ux_standards/index.html) | shared navigation, focus, trạng thái, modal, và accessibility rules |
+| [Pre-Raid màn hình](pre_raid_screens/index.html) | Mode, map, deploy confirmation, squad lobby, matchmaking |
+| [Post-Raid màn hình](post_raid_screens/index.html) | AAR, death replay, loot transfer, redeploy |
+| [UX flow](ux_flows/index.html) | End-to-end journey mapping |
 
 ---
 
@@ -276,7 +276,7 @@ Focus order: roster, selected preview, ability panel, squad fit, action bar.
 
 ## Loadout Workbench
 
-The chi tiết preparation rules live in [Loadout Preparation](../GameDesign/LoadoutPreparation.md). This UI group owns the màn hình trạng thái contract và platform layout.
+The chi tiết preparation rules live in [Loadout Preparation](../gamedesign/loadoutpreparation/index.html). This UI group owns the màn hình trạng thái contract và platform layout.
 
 **người chơi Intent**
 

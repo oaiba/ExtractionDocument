@@ -12,23 +12,23 @@ Primary references:
 
 | System | Source |
 | :--- | :--- |
-| HUD | [In-Raid HUD Design](HUD_Design.md) |
-| Notifications | [Notification & Feedback Systems](Notification_Systems.md) |
-| Navigation map | [Navigation & Map System Design](../GameDesign/NavigationAndMap.md) |
-| Looting | [Looting & Inventory Interactions](../Gameplay/Looting_Interactions.md) |
-| Extraction | [Extraction Mechanics](../Gameplay/Extraction_Mechanics.md) |
-| Downstate | [Downstate & Revive System](../Gameplay/Downstate_Revive.md) |
+| HUD | [In-Raid HUD Design](hud_design/index.html) |
+| Notifications | [Notification & Feedback Systems](notification_systems/index.html) |
+| Navigation map | [Navigation & Map System Design](../gamedesign/navigationandmap/index.html) |
+| Looting | [Looting & Inventory Interactions](../gameplay/looting_interactions/index.html) |
+| Extraction | [Extraction Mechanics](../gameplay/extraction_mechanics/index.html) |
+| Downstate | [Downstate & Revive System](../gameplay/downstate_revive/index.html) |
 
 ## Quick Navigation
 
 | Destination | Use |
 | :--- | :--- |
-| [UI/UX Index](_index.md) | Full UI/UX documentation hub |
-| [Screen Groups Overview](Screen_Groups_Overview.md) | Lifecycle taxonomy and designer-ready spec template |
-| [Global UX Standards](Global_UX_Standards.md) | Shared navigation, focus, state, modal, and accessibility rules |
-| [HUD Design](HUD_Design.md) | HUD element placement, visibility, and performance rules |
-| [Notification Systems](Notification_Systems.md) | Combat feedback, toasts, danger communication |
-| [Post-Raid Screens](Post_Raid_Screens.md) | AAR, replay, loot transfer, redeploy after raid |
+| [UI/UX Index](_index/index.html) | Full UI/UX documentation hub |
+| [Screen Groups Overview](screen_groups_overview/index.html) | Lifecycle taxonomy and designer-ready spec template |
+| [Global UX Standards](global_ux_standards/index.html) | Shared navigation, focus, state, modal, and accessibility rules |
+| [HUD Design](hud_design/index.html) | HUD element placement, visibility, and performance rules |
+| [Notification Systems](notification_systems/index.html) | Combat feedback, toasts, danger communication |
+| [Post-Raid Screens](post_raid_screens/index.html) | AAR, replay, loot transfer, redeploy after raid |
 
 ---
 
@@ -49,7 +49,7 @@ Primary references:
 
 ## HUD
 
-The detailed element catalog lives in [HUD Design](HUD_Design.md). This page defines how HUD participates in the broader in-raid screen group.
+The detailed element catalog lives in [HUD Design](hud_design/index.html). This page defines how HUD participates in the broader in-raid screen group.
 
 | State | HUD Behavior |
 | :--- | :--- |

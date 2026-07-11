@@ -9,7 +9,7 @@ weight: 21
 
 The Post-Game Debrief is the screen that appears immediately after a raid ends — whether through successful extraction, death, disconnection, or server end. It is the **most read screen in the game** after the stash: players spend significant time reviewing their performance, examining loot value, and understanding how they died. A well-designed debrief provides closure, learning, and motivation to queue again.
 
-> **Cross-References:** [Core Gameplay Loop](CoreLoop.md) — Phase 5 Recovery; [Extraction Mechanics](Extraction_Mechanics.md) — extraction result codes; [Medical System](Medical_System.md) — body part HP summary in debrief; [Camera System](Camera_System.md) — death cam into debrief transition; [GameDesign/Progression](https://github.com/oaiba/ExtractionDocument/blob/main/content/GameDesign/Progression.md) — XP gains displayed in debrief.
+> **Cross-References:** [Core Gameplay Loop](coreloop/index.html) — Phase 5 Recovery; [Extraction Mechanics](extraction_mechanics/index.html) — extraction result codes; [Medical System](medical_system/index.html) — body part HP summary in debrief; [Camera System](camera_system/index.html) — death cam into debrief transition; [GameDesign/Progression](https://github.com/oaiba/ExtractionDocument/blob/main/content/GameDesign/Progression.md) — XP gains displayed in debrief.
 
 ***
 
@@ -215,10 +215,10 @@ Deploy Again is enabled only when the account has a valid operator, valid loadou
 
 ### Cross-References
 
-* [Core Gameplay Loop](CoreLoop.md) — Phase 5 Recovery; debrief as start of next loop.
-* [Extraction Mechanics](Extraction_Mechanics.md) — Extraction outcome codes; MIA rule.
-* [Medical System](Medical_System.md) — Body part damage summary (in death context).
-* [Camera System](Camera_System.md) — Death cam transition into debrief screen.
+* [Core Gameplay Loop](coreloop/index.html) — Phase 5 Recovery; debrief as start of next loop.
+* [Extraction Mechanics](extraction_mechanics/index.html) — Extraction outcome codes; MIA rule.
+* [Medical System](medical_system/index.html) — Body part damage summary (in death context).
+* [Camera System](camera_system/index.html) — Death cam transition into debrief screen.
 * [GameDesign/Progression](https://github.com/oaiba/ExtractionDocument/blob/main/content/GameDesign/Progression.md) — XP values, level thresholds, XP bar.
-* [Quest & Objective System](Quest_Objective_System.md) — Quest objectives flagged in debrief loot list.
-* [Anti-Cheat & Fair Play](Anti_Cheat_Fair_Play.md) — Report player button in debrief.
+* [Quest & Objective System](quest_objective_system/index.html) — Quest objectives flagged in debrief loot list.
+* [Anti-Cheat & Fair Play](anti_cheat_fair_play/index.html) — Report player button in debrief.

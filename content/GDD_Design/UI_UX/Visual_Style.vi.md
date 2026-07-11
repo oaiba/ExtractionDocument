@@ -8,12 +8,12 @@ weight: 24
 
 | điểm đến | cách dùng |
 | :--- | :--- |
-| [UI/UX Index](_index.md) | Full UI/UX documentation hub |
-| [màn hình Groups Overview](Screen_Groups_Overview.md) | Lifecycle taxonomy và designer-ready spec template |
-| [global UX Standards](Global_UX_Standards.md) | shared navigation, focus, trạng thái, modal, và accessibility rules |
-| [HUD Design](HUD_Design.md) | In-raid HUD element placement và visual constraints |
-| [Notification hệ thống](Notification_Systems.md) | Feedback, danger, toast, và status visual treatment |
-| [UX flow](UX_Flows.md) | Journey và wireframe context for visual handoff |
+| [UI/UX Index](_index/index.html) | Full UI/UX documentation hub |
+| [màn hình Groups Overview](screen_groups_overview/index.html) | Lifecycle taxonomy và designer-ready spec template |
+| [global UX Standards](global_ux_standards/index.html) | shared navigation, focus, trạng thái, modal, và accessibility rules |
+| [HUD Design](hud_design/index.html) | In-raid HUD element placement và visual constraints |
+| [Notification hệ thống](notification_systems/index.html) | Feedback, danger, toast, và status visual treatment |
+| [UX flow](ux_flows/index.html) | Journey và wireframe context for visual handoff |
 
 ---
 

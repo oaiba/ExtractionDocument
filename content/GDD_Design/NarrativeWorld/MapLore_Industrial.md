@@ -20,7 +20,7 @@ weight: 8
 | **Dominant Faction**    | Contested (Salvage Corps + Tech Syndicate; Reactor is ungoverned)                                            |
 | **Season Availability** | Launch                                                                                                       |
 
-> **Cross-References:** Faction control per zone → [Faction Territories](FactionTerritories.md); loot container tables and heatmap → [Loot Distribution](https://github.com/oaiba/ExtractionDocument/blob/main/content/GDD_Design/NarrativeWorld/LootDistribution.md); POI choke points and extraction data → [MapLayouts](https://github.com/oaiba/ExtractionDocument/blob/main/content/GDD_Design/NarrativeWorld/MapLayouts.md); backstory source → [World History & Backstory](https://github.com/oaiba/ExtractionDocument/blob/main/content/GDD_Design/NarrativeWorld/Backstory.md).
+> **Cross-References:** Faction control per zone → [Faction Territories](factionterritories/index.html); loot container tables and heatmap → [Loot Distribution](https://github.com/oaiba/ExtractionDocument/blob/main/content/GDD_Design/NarrativeWorld/LootDistribution.md); POI choke points and extraction data → [MapLayouts](https://github.com/oaiba/ExtractionDocument/blob/main/content/GDD_Design/NarrativeWorld/MapLayouts.md); backstory source → [World History & Backstory](https://github.com/oaiba/ExtractionDocument/blob/main/content/GDD_Design/NarrativeWorld/Backstory.md).
 
 ***
 
@@ -540,7 +540,7 @@ Full container tables per zone → [Loot Distribution](https://github.com/oaiba/
 
 ### Cross-References
 
-* [Faction Territories](FactionTerritories.md) — Salvage vs. Tech Syndicate contested zones on this map.
+* [Faction Territories](factionterritories/index.html) — Salvage vs. Tech Syndicate contested zones on this map.
 * [Loot Distribution](https://github.com/oaiba/ExtractionDocument/blob/main/content/GDD_Design/NarrativeWorld/LootDistribution.md) — Full container tables, heatmap detail, and skill-based route loot values.
 * [MapLayouts](https://github.com/oaiba/ExtractionDocument/blob/main/content/GDD_Design/NarrativeWorld/MapLayouts.md) — Choke point data (CH-1 to CH-6), extraction point specs (EX-1 to EX-5), hotspot heat ratings.
 * [World History & Backstory](https://github.com/oaiba/ExtractionDocument/blob/main/content/GDD_Design/NarrativeWorld/Backstory.md) — Full Project Prometheus timeline, Subject classification table.

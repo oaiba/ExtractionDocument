@@ -9,10 +9,10 @@ type: docs
 | Sutureument           | Relationship                | Link                                                                                                                                          |
 | --------------------- | --------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Operators Design**  | High-level character design | [GDD\_HighLevel/Characters/Operators.md](https://github.com/oaiba/ExtractionDocument/blob/main/content/GDD_HighLevel/Characters/Operators.md) |
-| **Control System**    | Input handling              | [ControlSystem.md](ControlSystem.md)                                                                                                          |
-| **Weapon System**     | Weapon integration          | [WeaponSystem.md](WeaponSystem.md)                                                                                                            |
-| **Inventory System**  | Equipment & weight          | [InventorySystem.md](InventorySystem.md)                                                                                                      |
-| **Networking System** | Character sync              | [../Core/NetworkingSystem.md](../Core/NetworkingSystem.md)                                                                                    |
+| **Control System**    | Input handling              | [ControlSystem.md](controlsystem/index.html)                                                                                                          |
+| **Weapon System**     | Weapon integration          | [WeaponSystem.md](weaponsystem/index.html)                                                                                                            |
+| **Inventory System**  | Equipment & weight          | [InventorySystem.md](inventorysystem/index.html)                                                                                                      |
+| **Networking System** | Character sync              | [../Core/NetworkingSystem.md](../core/networkingsystem/index.html)                                                                                    |
 
 ***
 

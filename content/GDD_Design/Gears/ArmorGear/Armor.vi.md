@@ -34,7 +34,7 @@ For UI, economy, và legacy compatibility, giáp class maps to a **display giá 
 | 5     | 90                    | 55%                | PP &lt; 55                |
 | 6     | 100                   | 60%                | PP &lt; 65                |
 
-Full item specs (per-vest, per-helmet) are in [giáp Master Database](Armor_Master_Database.md).
+Full item specs (per-vest, per-helmet) are in [giáp Master Database](armor_master_database/index.html).
 
 ## Hitboxes & Coverage Zones
 
@@ -83,4 +83,4 @@ Helmets (và some giáp) have a `Ricochet Chance` (Low/Med/High). Even a high-pe
 
 ## Armored Rigs
 
-Some **tactical rigs** include built-in giáp (armored rigs). They occupy the rig slot và provide both storage và body protection; they replace a separate body giáp vest. For grid layout, slot count, và hotkey mapping Xem [Storage Gear — Storage Master Database](../StorageGear/Storage_Master_Database.md) và [Storage Slot Layouts](../StorageGear/Storage_Slot_Layouts.md). For giáp class, zones, và material of each armored rig, Xem [giáp Master Database](Armor_Master_Database.md#armored-rigs).
+Some **tactical rigs** include built-in giáp (armored rigs). They occupy the rig slot và provide both storage và body protection; they replace a separate body giáp vest. For grid layout, slot count, và hotkey mapping Xem [Storage Gear — Storage Master Database](../storagegear/storage_master_database/index.html) và [Storage Slot Layouts](../storagegear/storage_slot_layouts/index.html). For giáp class, zones, và material of each armored rig, Xem [giáp Master Database](Armor_Master_Database.md#armored-rigs).

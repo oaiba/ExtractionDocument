@@ -27,21 +27,21 @@ This matrix maps the primary player journey to its gameplay owner, state present
 
 | Player Action | Gameplay Owner | UI Surface | Required State | Failure Behavior | Telemetry | Canonical References |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| Account entry | Settings/System | Login, setup, tutorial gate | loading, linked, blocked, offline | show reason and recovery route | auth success/failure | [Settings/System](../UI_UX/Commerce_Settings_System_Screens.md) |
-| Tutorial | Core Gameplay | Tutorial HUD and debrief | checkpoint, hint, pass, retry | reset checkpoint without permanent loss | tutorial conversion | [Tutorial Raid](../GameDesign/TutorialRaid.md) |
-| Home / preparation | Core Gameplay | Home, loadout, stash | valid, pending sync, blocked | keep deploy unavailable with reason | home impression, deploy intent | [Out-of-Raid](../UI_UX/Out_Of_Raid_Screens.md) |
-| Loadout commit | Inventory / Economy | Loadout Workbench | ready, warning, blocker | explain missing/incompatible item | blocker frequency | [Loadout Preparation](../GameDesign/LoadoutPreparation.md) |
-| Matchmaking | Matchmaking | Lobby, queue, loading | queued, found, reconnecting | retry, leave queue, fallback | queue time, cancel, reconnect | [Matchmaking](../Gameplay/Matchmaking_Lobby.md) |
-| Spawn / orientation | Core Gameplay / AI | HUD, loading | spawn protected, active | recover or rollback invalid spawn | spawn-to-action time | [Core Gameplay](../GameDesign/CoreGameplay.md) |
-| Loot | Inventory / Economy | Looting overlay, item detail | available, protected, FIR, full | overflow or decline with clear reason | loot interaction, pickup failure | [Looting](../Gameplay/Looting_Interactions.md) |
-| Combat | Combat / AI | HUD, hit feedback | damage, armor hit, suppression, downed | show readable cause and next option | hit, death reason, TTK | [Weapons](../Combat/Weapons.md) |
-| Objective | Progression / Core Gameplay | Objective tracker | active, complete, extraction-required | preserve or remove progress by rule | objective completion | [Quest Objectives](../Gameplay/Quest_Objective_System.md) |
-| Extraction | Core Gameplay | Extraction UI | available, holding, contested, blocked | clear cancel/contest/outcome state | extraction attempt/result | [Extraction](../Gameplay/Extraction_Mechanics.md) |
-| Death / success | Core Gameplay / Inventory | Debrief, death replay | extracted, KIA, MIA, rollback | deterministic reconciliation | outcome reason | [Post-Game Debrief](../Gameplay/Post_Game_Debrief.md) |
-| Loot transfer | Inventory / Economy | Loot transfer, stash, inbox | accepted, overflow, pending | retry or support without duplication | transfer success/failure | [Inventory System](../Inventory_System/_index.md) |
-| Reward claim | Progression / LiveOps | Reward inbox, battle pass, event | claimable, claimed, expired, converted | preserve source and support path | claim funnel | [Progression/LiveOps](../GameDesign/Progression.md) |
-| Commerce purchase | Commerce | Shop, confirmation, receipt | confirm, provider pending, success | do not double charge; support route | purchase funnel | [Commerce Screens](../UI_UX/Commerce_Screens.md) |
-| Redeploy | Core Gameplay / Inventory | Home, loadout | ready, blocked, recovery | return to first actionable blocker | redeploy conversion | [Pre-Raid](../UI_UX/Pre_Raid_Screens.md) |
+| Account entry | Settings/System | Login, setup, tutorial gate | loading, linked, blocked, offline | show reason and recovery route | auth success/failure | [Settings/System](../ui_ux/commerce_settings_system_screens/index.html) |
+| Tutorial | Core Gameplay | Tutorial HUD and debrief | checkpoint, hint, pass, retry | reset checkpoint without permanent loss | tutorial conversion | [Tutorial Raid](../gamedesign/tutorialraid/index.html) |
+| Home / preparation | Core Gameplay | Home, loadout, stash | valid, pending sync, blocked | keep deploy unavailable with reason | home impression, deploy intent | [Out-of-Raid](../ui_ux/out_of_raid_screens/index.html) |
+| Loadout commit | Inventory / Economy | Loadout Workbench | ready, warning, blocker | explain missing/incompatible item | blocker frequency | [Loadout Preparation](../gamedesign/loadoutpreparation/index.html) |
+| Matchmaking | Matchmaking | Lobby, queue, loading | queued, found, reconnecting | retry, leave queue, fallback | queue time, cancel, reconnect | [Matchmaking](../gameplay/matchmaking_lobby/index.html) |
+| Spawn / orientation | Core Gameplay / AI | HUD, loading | spawn protected, active | recover or rollback invalid spawn | spawn-to-action time | [Core Gameplay](../gamedesign/coregameplay/index.html) |
+| Loot | Inventory / Economy | Looting overlay, item detail | available, protected, FIR, full | overflow or decline with clear reason | loot interaction, pickup failure | [Looting](../gameplay/looting_interactions/index.html) |
+| Combat | Combat / AI | HUD, hit feedback | damage, armor hit, suppression, downed | show readable cause and next option | hit, death reason, TTK | [Weapons](../combat/weapons/index.html) |
+| Objective | Progression / Core Gameplay | Objective tracker | active, complete, extraction-required | preserve or remove progress by rule | objective completion | [Quest Objectives](../gameplay/quest_objective_system/index.html) |
+| Extraction | Core Gameplay | Extraction UI | available, holding, contested, blocked | clear cancel/contest/outcome state | extraction attempt/result | [Extraction](../gameplay/extraction_mechanics/index.html) |
+| Death / success | Core Gameplay / Inventory | Debrief, death replay | extracted, KIA, MIA, rollback | deterministic reconciliation | outcome reason | [Post-Game Debrief](../gameplay/post_game_debrief/index.html) |
+| Loot transfer | Inventory / Economy | Loot transfer, stash, inbox | accepted, overflow, pending | retry or support without duplication | transfer success/failure | [Inventory System](../inventory_system/_index/index.html) |
+| Reward claim | Progression / LiveOps | Reward inbox, battle pass, event | claimable, claimed, expired, converted | preserve source and support path | claim funnel | [Progression/LiveOps](../gamedesign/progression/index.html) |
+| Commerce purchase | Commerce | Shop, confirmation, receipt | confirm, provider pending, success | do not double charge; support route | purchase funnel | [Commerce Screens](../ui_ux/commerce_screens/index.html) |
+| Redeploy | Core Gameplay / Inventory | Home, loadout | ready, blocked, recovery | return to first actionable blocker | redeploy conversion | [Pre-Raid](../ui_ux/pre_raid_screens/index.html) |
 
 ## Traceability Review Rules
 
@@ -61,6 +61,6 @@ This matrix maps the primary player journey to its gameplay owner, state present
 
 ## Cross-References
 
-- [Design Decision Register](Design_Decision_Register.md)
-- [MVP Readiness Review](MVP_Readiness_Review.md)
-- [Screen Groups Overview](../UI_UX/Screen_Groups_Overview.md)
+- [Design Decision Register](design_decision_register/index.html)
+- [MVP Readiness Review](mvp_readiness_review/index.html)
+- [Screen Groups Overview](../ui_ux/screen_groups_overview/index.html)

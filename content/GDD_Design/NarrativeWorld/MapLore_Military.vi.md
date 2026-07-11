@@ -24,7 +24,7 @@ weight: 10
 | **Unique tính năng**      | Automated turret hệ thống — still operational, non-faction (attack ALL người chơi)                               |
 | **Season Availability** | Season 3                                                                                                     |
 
-> **Cross-References:** Faction territory projections → [Faction Territories](FactionTerritories.md); full backstory → [World History & Backstory](https://github.com/oaiba/ExtractionDocument/blob/main/content/GDD_Design/NarrativeWorld/Backstory.md#firebase-delta-military-outpost-future-map); relevant faction motivations → [Factions](https://github.com/oaiba/ExtractionDocument/blob/main/content/GDD_Design/NarrativeWorld/Factions.md).
+> **Cross-References:** Faction territory projections → [Faction Territories](factionterritories/index.html); full backstory → [World History & Backstory](https://github.com/oaiba/ExtractionDocument/blob/main/content/GDD_Design/NarrativeWorld/Backstory.md#firebase-delta-military-outpost-future-map); relevant faction motivations → [Factions](https://github.com/oaiba/ExtractionDocument/blob/main/content/GDD_Design/NarrativeWorld/Factions.md).
 
 ***
 
@@ -206,8 +206,8 @@ Zone Types: [FULL DETAIL TO BE ADDED IN S3]
 
 ### Tham Chiếu Chéo
 
-* [Faction Territories](FactionTerritories.md) — Firebase Delta territorial design intent; Season 3 opening scenario.
+* [Faction Territories](factionterritories/index.html) — Firebase Delta territorial design intent; Season 3 opening scenario.
 * [World History & Backstory](https://github.com/oaiba/ExtractionDocument/blob/main/content/GDD_Design/NarrativeWorld/Backstory.md) — Full Firebase Delta timeline; General Li Wei profile; nuclear option context.
 * [Factions](https://github.com/oaiba/ExtractionDocument/blob/main/content/GDD_Design/NarrativeWorld/Factions.md) — Commander Vance's Firebase Delta motivation; Tech Syndicate data mission.
 * [Quest Lines](https://github.com/oaiba/ExtractionDocument/blob/main/content/GDD_Design/NarrativeWorld/QuestLines.md) — Season 3 quest dependency chains linking District 14 to Firebase Delta.
-* [MapBible](MapBible.md) — Zone type hệ thống; automated turret as environmental hazard.
+* [MapBible](mapbible/index.html) — Zone type hệ thống; automated turret as environmental hazard.

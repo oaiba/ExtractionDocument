@@ -48,7 +48,12 @@
     {{- end -}}
   {{- end -}}
   {{- if not $resolved -}}
-    {{- $href = cond (strings.HasPrefix $link "/") ($link | relURL) $link -}}
+    {{- if strings.HasPrefix $link "/" -}}
+      {{- /* Root-relative links must still include the repository subpath on GitHub Pages. */ -}}
+      {{- $href = absURL (strings.ToLower (strings.TrimPrefix "/" $link)) -}}
+    {{- else -}}
+      {{- $href = $link -}}
+    {{- end -}}
   {{- end -}}
 {{- end -}}
 

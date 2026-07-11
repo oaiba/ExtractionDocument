@@ -12,23 +12,23 @@ Tham chiếu chính:
 
 | hệ thống | source |
 | :--- | :--- |
-| HUD | [In-Raid HUD Design](HUD_Design.md) |
-| Notifications | [Notification & Feedback hệ thống](Notification_Systems.md) |
-| Navigation map | [Navigation & Map hệ thống Design](../GameDesign/NavigationAndMap.md) |
-| Looting | [Looting & Inventory Interactions](../Gameplay/Looting_Interactions.md) |
-| Extraction | [Extraction cơ chế](../Gameplay/Extraction_Mechanics.md) |
-| Downstate | [Downstate & Revive hệ thống](../Gameplay/Downstate_Revive.md) |
+| HUD | [In-Raid HUD Design](hud_design/index.html) |
+| Notifications | [Notification & Feedback hệ thống](notification_systems/index.html) |
+| Navigation map | [Navigation & Map hệ thống Design](../gamedesign/navigationandmap/index.html) |
+| Looting | [Looting & Inventory Interactions](../gameplay/looting_interactions/index.html) |
+| Extraction | [Extraction cơ chế](../gameplay/extraction_mechanics/index.html) |
+| Downstate | [Downstate & Revive hệ thống](../gameplay/downstate_revive/index.html) |
 
 ## Điều Hướng Nhanh
 
 | điểm đến | cách dùng |
 | :--- | :--- |
-| [UI/UX Index](_index.md) | Full UI/UX documentation hub |
-| [màn hình Groups Overview](Screen_Groups_Overview.md) | Lifecycle taxonomy và designer-ready spec template |
-| [global UX Standards](Global_UX_Standards.md) | shared navigation, focus, trạng thái, modal, và accessibility rules |
-| [HUD Design](HUD_Design.md) | HUD element placement, visibility, và performance rules |
-| [Notification hệ thống](Notification_Systems.md) | Combat feedback, toasts, danger communication |
-| [Post-Raid màn hình](Post_Raid_Screens.md) | AAR, replay, loot transfer, redeploy sau raid |
+| [UI/UX Index](_index/index.html) | Full UI/UX documentation hub |
+| [màn hình Groups Overview](screen_groups_overview/index.html) | Lifecycle taxonomy và designer-ready spec template |
+| [global UX Standards](global_ux_standards/index.html) | shared navigation, focus, trạng thái, modal, và accessibility rules |
+| [HUD Design](hud_design/index.html) | HUD element placement, visibility, và performance rules |
+| [Notification hệ thống](notification_systems/index.html) | Combat feedback, toasts, danger communication |
+| [Post-Raid màn hình](post_raid_screens/index.html) | AAR, replay, loot transfer, redeploy sau raid |
 
 ---
 
@@ -49,7 +49,7 @@ Tham chiếu chính:
 
 ## HUD
 
-The chi tiết element catalog lives in [HUD Design](HUD_Design.md). Trang này định nghĩa how HUD participates in the broader in-raid màn hình group.
+The chi tiết element catalog lives in [HUD Design](hud_design/index.html). Trang này định nghĩa how HUD participates in the broader in-raid màn hình group.
 
 | trạng thái | HUD Behavior |
 | :--- | :--- |

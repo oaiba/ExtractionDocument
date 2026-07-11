@@ -32,6 +32,6 @@ Technical identifiers, enum values, analytics events, file paths, class names, a
 
 ## Related References
 
-- [Design Decision Register](Design_Decision_Register.md)
-- [Cross-System Traceability](Cross_System_Traceability.md)
-- [MVP Readiness Review](MVP_Readiness_Review.md)
+- [Design Decision Register](design_decision_register/index.html)
+- [Cross-System Traceability](cross_system_traceability/index.html)
+- [MVP Readiness Review](mvp_readiness_review/index.html)

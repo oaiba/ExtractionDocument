@@ -6,13 +6,13 @@ weight: 2
 
 ## Overview
 
-This document is the **canonical list** of all armor items: body vests, helmets, face shields, headsets, and armored rigs. For class system, zones, materials, and damage mechanics see [Armor & Ballistics](Armor.md). For handling and balance see [Armor Handling Settings](Armor_Handling_Settings.md) and [Armor Balance Framework](Armor_Balance_Framework.md).
+This document is the **canonical list** of all armor items: body vests, helmets, face shields, headsets, and armored rigs. For class system, zones, materials, and damage mechanics see [Armor & Ballistics](armor/index.html). For handling and balance see [Armor Handling Settings](armor_handling_settings/index.html) and [Armor Balance Framework](armor_balance_framework/index.html).
 
 ---
 
 ## Body Armor / Vests
 
-Class 1–6 (GOST-style). Zones: Thorax (T), Stomach (S), Sides (A), Neck (N), Arms (R). Material determines durability loss and repair efficiency. **Tier** per [Gear Tier System](../Gear_Tier_System.md).
+Class 1–6 (GOST-style). Zones: Thorax (T), Stomach (S), Sides (A), Neck (N), Arms (R). Material determines durability loss and repair efficiency. **Tier** per [Gear Tier System](../gear_tier_system/index.html).
 
 ### Tier 1 (Class 1–2)
 
@@ -70,7 +70,7 @@ Class 1–6 (GOST-style). Zones: Thorax (T), Stomach (S), Sides (A), Neck (N), A
 
 ## Helmets
 
-Zones: Top (Top), Nape (N), Ears (E), Eyes (Ey), Jaws (J). Ricochet: Low / Med / High. Blocks Headset: some helmets prevent equipping headsets. **Tier** per [Gear Tier System](../Gear_Tier_System.md).
+Zones: Top (Top), Nape (N), Ears (E), Eyes (Ey), Jaws (J). Ricochet: Low / Med / High. Blocks Headset: some helmets prevent equipping headsets. **Tier** per [Gear Tier System](../gear_tier_system/index.html).
 
 
 | Code          | Display Name      | Tier | Class | Zones            | Material | Weight (kg) | Ricochet | Durability | Grid | Blocks Headset | NVG Mount | Value ($) | Rarity   | Notes                 |
@@ -92,7 +92,7 @@ Zones: Top (Top), Nape (N), Ears (E), Eyes (Ey), Jaws (J). Ricochet: Low / Med /
 
 ## Face Shields & Visors
 
-Attach to compatible helmets or are standalone. Zone: Eyes (Ey) or Jaws (J). Vision Penalty: % reduction to visual clarity when equipped. **Tier** per [Gear Tier System](../Gear_Tier_System.md).
+Attach to compatible helmets or are standalone. Zone: Eyes (Ey) or Jaws (J). Vision Penalty: % reduction to visual clarity when equipped. **Tier** per [Gear Tier System](../gear_tier_system/index.html).
 
 
 | Code           | Display Name        | Tier | Class | Zone  | Material | Durability | Vision Penalty | Value ($) | Rarity   |
@@ -107,7 +107,7 @@ Attach to compatible helmets or are standalone. Zone: Eyes (Ey) or Jaws (J). Vis
 
 ## Headsets
 
-No armor value. Modify audio: compress loud sounds (gunfire), amplify ambient (footsteps). EQ profile affects tactical clarity. See [Armor & Ballistics](Armor.md) for gameplay impact; helmets that block ears cannot use headsets. **Tier** per [Gear Tier System](../Gear_Tier_System.md) (by Rarity: Uncommon = 2, Rare = 3).
+No armor value. Modify audio: compress loud sounds (gunfire), amplify ambient (footsteps). EQ profile affects tactical clarity. See [Armor & Ballistics](armor/index.html) for gameplay impact; helmets that block ears cannot use headsets. **Tier** per [Gear Tier System](../gear_tier_system/index.html) (by Rarity: Uncommon = 2, Rare = 3).
 
 
 | Code        | Display Name   | Tier | EQ Profile        | Weight (kg) | Grid | Value ($) | Trader | Rarity   |
@@ -123,7 +123,7 @@ No armor value. Modify audio: compress loud sounds (gunfire), amplify ambient (f
 
 ## Armored Rigs
 
-Rigs that provide both storage and body armor. They **replace** a separate body armor vest. For grid layout, slot count, and hotkey mapping see [Storage Master Database](../StorageGear/Storage_Master_Database.md). Armor stats below. **Tier** per [Gear Tier System](../Gear_Tier_System.md) (by Armor Class).
+Rigs that provide both storage and body armor. They **replace** a separate body armor vest. For grid layout, slot count, and hotkey mapping see [Storage Master Database](../storagegear/storage_master_database/index.html). Armor stats below. **Tier** per [Gear Tier System](../gear_tier_system/index.html) (by Armor Class).
 
 
 | Code         | Display Name          | Tier | Armor Class | Zones   | Material | Grid Layout | Slots | Hotkey Slots | Weight (kg) | Value ($) | Rarity   |
@@ -138,9 +138,9 @@ Rigs that provide both storage and body armor. They **replace** a separate body 
 
 ## Cross-References
 
-- [Gear Tier System](../Gear_Tier_System.md) — Armor Tier (1–5) definition; progression = Tier + Rarity + player/trader level.
-- [Armor & Ballistics](Armor.md) — Class system, zones, materials, penetration, blunt, ricochet.
-- [Armor Handling Settings](Armor_Handling_Settings.md) — Equip times, movement/ergo/audio penalties.
-- [Armor Balance Framework](Armor_Balance_Framework.md) — EHP, cost-efficiency, durability math.
-- [Storage Master Database](../StorageGear/Storage_Master_Database.md) — Tactical rigs (unarmored + armored), slot layouts.
+- [Gear Tier System](../gear_tier_system/index.html) — Armor Tier (1–5) definition; progression = Tier + Rarity + player/trader level.
+- [Armor & Ballistics](armor/index.html) — Class system, zones, materials, penetration, blunt, ricochet.
+- [Armor Handling Settings](armor_handling_settings/index.html) — Equip times, movement/ergo/audio penalties.
+- [Armor Balance Framework](armor_balance_framework/index.html) — EHP, cost-efficiency, durability math.
+- [Storage Master Database](../storagegear/storage_master_database/index.html) — Tactical rigs (unarmored + armored), slot layouts.
 

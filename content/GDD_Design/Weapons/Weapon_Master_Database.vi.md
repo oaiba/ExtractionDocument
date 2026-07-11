@@ -8,12 +8,12 @@ weight: 0
 
 vũ khí follow a "Realism-Lite" approach. chính stats:
 
-- **Recoil:** Vertical (climb) và horizontal (bounce). Lower is better. Xem [Combat Feel (Top-Down)](../Gameplay/Combat_Feel_Topdown.md).
-- **Ergonomics:** ADS speed, stamina drain, noise. Higher (0–100) is better. Xem [vũ khí Modding](../Inventory_System/Gunsmith_System.md).
+- **Recoil:** Vertical (climb) và horizontal (bounce). Lower is better. Xem [Combat Feel (Top-Down)](../gameplay/combat_feel_topdown/index.html).
+- **Ergonomics:** ADS speed, stamina drain, noise. Higher (0–100) is better. Xem [vũ khí Modding](../inventory_system/gunsmith_system/index.html).
 - **Fire Rate (RPM):** Fixed per receiver; not changed by mods.
 - **MOA (Accuracy):** Dispersion at 100 m. Lower is better.
 
-Full category design: [vũ khí Categories Deep Dive](Weapon_Categories_Deep_Dive.md). Full stats và đạn: [vũ khí Arsenal](../Gameplay/WeaponArsenal.md).
+Full category design: [vũ khí Categories Deep Dive](weapon_categories_deep_dive/index.html). Full stats và đạn: [vũ khí Arsenal](../gameplay/weaponarsenal/index.html).
 
 ---
 
@@ -128,8 +128,8 @@ Full category design: [vũ khí Categories Deep Dive](Weapon_Categories_Deep_Div
 
 ## Tham Chiếu Chéo
 
-- [vũ khí Arsenal](../Gameplay/WeaponArsenal.md) — Full specs, đạn tables, attachment reference.
-- [vũ khí Categories Deep Dive](Weapon_Categories_Deep_Dive.md) — Role, doctrine, hero synergy, matchups.
-- [vũ khí Balance Framework](Weapon_Balance_Framework.md) — DPS, TTK, chi phí-efficiency.
-- [vũ khí Modding (Gunsmith)](../Inventory_System/Gunsmith_System.md) — Ergonomics, recoil, MOA, malfunctions.
-- [vũ khí Attachment hệ thống](../Gameplay/Weapon_Attachment_System.md) — Slot types và compatibility.
+- [vũ khí Arsenal](../gameplay/weaponarsenal/index.html) — Full specs, đạn tables, attachment reference.
+- [vũ khí Categories Deep Dive](weapon_categories_deep_dive/index.html) — Role, doctrine, hero synergy, matchups.
+- [vũ khí Balance Framework](weapon_balance_framework/index.html) — DPS, TTK, chi phí-efficiency.
+- [vũ khí Modding (Gunsmith)](../inventory_system/gunsmith_system/index.html) — Ergonomics, recoil, MOA, malfunctions.
+- [vũ khí Attachment hệ thống](../gameplay/weapon_attachment_system/index.html) — Slot types và compatibility.

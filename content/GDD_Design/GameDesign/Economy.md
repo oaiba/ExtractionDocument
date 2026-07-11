@@ -91,7 +91,7 @@ Monetization must be boring in the right places. The store can be visually excit
 | Loot boxes | No | Avoid paid RNG power perception |
 | Better weapons or armor | No | Violates no pay-to-win |
 
-Commerce UI, offer taxonomy, purchase confirmation, provider handoff, receipt, refund, and entitlement states live in [Commerce Screens](../UI_UX/Commerce_Screens.md). Economy owns what can be sold and why; Commerce owns how offers, checkout trust, and support-sensitive states are presented.
+Commerce UI, offer taxonomy, purchase confirmation, provider handoff, receipt, refund, and entitlement states live in [Commerce Screens](../ui_ux/commerce_screens/index.html). Economy owns what can be sold and why; Commerce owns how offers, checkout trust, and support-sensitive states are presented.
 
 ## Marketplace Rules
 
@@ -196,11 +196,11 @@ A player on a loss streak uses Scavenger Run, budget presets, and low-cost insur
 
 | Topic | Page |
 | :--- | :--- |
-| Progression and battle pass XP | [Progression](progression.html) |
-| Seasonal economy events | [Live Operations](liveops.html) |
-| Shop UX and purchase states | [Commerce Screens](../UI_UX/Commerce_Screens.md) |
-| Insurance costs | [Insurance System](insurancesystem.html) |
-| Safe House upgrade sinks | [Safe House Design](safe_house_design.html) |
-| Loadout value display | [Loadout Preparation](loadoutpreparation.html) |
+| Progression and battle pass XP | [Progression](progression/index.html) |
+| Seasonal economy events | [Live Operations](liveops/index.html) |
+| Shop UX and purchase states | [Commerce Screens](../ui_ux/commerce_screens/index.html) |
+| Insurance costs | [Insurance System](insurancesystem/index.html) |
+| Safe House upgrade sinks | [Safe House Design](safe_house_design/index.html) |
+| Loadout value display | [Loadout Preparation](loadoutpreparation/index.html) |
 | Inventory item lifecycle | [Inventory System](../Inventory_System/) |
-| Gear tier and rarity | [Gear Tier System](../Gears/Gear_Tier_System.md) |
+| Gear tier and rarity | [Gear Tier System](../gears/gear_tier_system/index.html) |

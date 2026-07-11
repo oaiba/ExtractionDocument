@@ -14,7 +14,7 @@ Combat in Extraction Shooter is built on five principles:
 4. **Skill Expression** — High skill ceiling với recoil pattern control, đạn selection, và positional play.
 5. **Mobile Optimized** — All cơ chế designed với touch controls in mind: gyro recoil assist, large hit targets, haptic feedback.
 
-> **Cross-References:** [vũ khí Attachment hệ thống](Weapon_Attachment_System.md) — in-depth attachment slot rules, stat trade-offs, và in-raid swap hệ thống; [Combat Feel (Top-Down)](Combat_Feel_Topdown.md) — recoil cone model, suppression, cover footprint; [Items & Gear](ItemsAndGear.md) — giáp, đạn stacks, throwables as loot items; [Loot bảng Design](Loot_Table_Design.md) — vũ khí rarity spawn rates per zone; [Gear cơ chế](Gear_Mechanics.md) — how vũ khí weight affects loadout.
+> **Cross-References:** [vũ khí Attachment hệ thống](weapon_attachment_system/index.html) — in-depth attachment slot rules, stat trade-offs, và in-raid swap hệ thống; [Combat Feel (Top-Down)](combat_feel_topdown/index.html) — recoil cone model, suppression, cover footprint; [Items & Gear](itemsandgear/index.html) — giáp, đạn stacks, throwables as loot items; [Loot bảng Design](loot_table_design/index.html) — vũ khí rarity spawn rates per zone; [Gear cơ chế](gear_mechanics/index.html) — how vũ khí weight affects loadout.
 
 ---
 
@@ -242,7 +242,7 @@ Ammunition is the bridge between vũ khí và target. While the gun dictates han
 
 ## Attachment hệ thống
 
-> **Full attachment slot hệ thống, conflict rules, và in-raid swapping** → Xem [vũ khí Attachment hệ thống](Weapon_Attachment_System.md).
+> **Full attachment slot hệ thống, conflict rules, và in-raid swapping** → Xem [vũ khí Attachment hệ thống](weapon_attachment_system/index.html).
 
 This section provides the **complete item reference** for attaching gear to vũ khí.
 
@@ -322,9 +322,9 @@ Base Damage → Armor Absorption → Health Damage
 
 **máu Model:**
 - Base: 100 HP
-- No auto-regeneration — heals require medical items (Xem [Items & Gear](ItemsAndGear.md))
+- No auto-regeneration — heals require medical items (Xem [Items & Gear](itemsandgear/index.html))
 - Bleeds nếu struck (slow HP drain until bandaged)
-- Body-part-cụ thể HP tracked internally (Xem [Medical hệ thống](Medical_System.md) for chi tiết)
+- Body-part-cụ thể HP tracked internally (Xem [Medical hệ thống](medical_system/index.html) for chi tiết)
 
 ### Hit Location Multipliers
 
@@ -380,7 +380,7 @@ Base Damage → Armor Absorption → Health Damage
 
 ## Throwables & Equipment
 
-Xem [Items & Gear](ItemsAndGear.md) for full item tables với stack sizes, weights, và grid dimensions.
+Xem [Items & Gear](itemsandgear/index.html) for full item tables với stack sizes, weights, và grid dimensions.
 
 ### Grenade Quick Reference
 
@@ -475,11 +475,11 @@ Xem [Items & Gear](ItemsAndGear.md) for full item tables với stack sizes, weig
 
 ## Tham Chiếu Chéo
 
-- [vũ khí Attachment hệ thống](Weapon_Attachment_System.md) — Full attachment slot rules, stat modifiers per attach slot, in-raid swap hệ thống.
+- [vũ khí Attachment hệ thống](weapon_attachment_system/index.html) — Full attachment slot rules, stat modifiers per attach slot, in-raid swap hệ thống.
 - [vũ khí — vũ khí Categories Deep Dive](../vũ khí/Weapon_Categories_Deep_Dive.md) — Per-genre doctrine, hero synergy, build archetypes, matchup matrices (includes DMR).
 - [vũ khí — vũ khí Master Database](../vũ khí/Weapon_Master_Database.md) — Base và fully modded stats, mod slot counts, role per vũ khí.
-- [Combat Feel (Top-Down)](Combat_Feel_Topdown.md) — Recoil cone model for top-down perspective, suppression, cover footprint.
-- [Items & Gear](ItemsAndGear.md) — giáp tiers, throwable item tables, đạn stack sizes và weights.
-- [Loot bảng Design](Loot_Table_Design.md) — Spawn rates by zone tier; which vũ khí are in which container tables.
-- [Gear cơ chế](Gear_Mechanics.md) — Encumbrance from vũ khí weight, durability/condition hệ thống.
-- [Medical hệ thống](Medical_System.md) — Body part HP pool; bleed cơ chế tie to vũ khí damage output.
+- [Combat Feel (Top-Down)](combat_feel_topdown/index.html) — Recoil cone model for top-down perspective, suppression, cover footprint.
+- [Items & Gear](itemsandgear/index.html) — giáp tiers, throwable item tables, đạn stack sizes và weights.
+- [Loot bảng Design](loot_table_design/index.html) — Spawn rates by zone tier; which vũ khí are in which container tables.
+- [Gear cơ chế](gear_mechanics/index.html) — Encumbrance from vũ khí weight, durability/condition hệ thống.
+- [Medical hệ thống](medical_system/index.html) — Body part HP pool; bleed cơ chế tie to vũ khí damage output.

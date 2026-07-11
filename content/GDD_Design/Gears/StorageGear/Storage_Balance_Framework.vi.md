@@ -6,7 +6,7 @@ weight: 4
 
 ## Tổng Quan
 
-Tài liệu này định nghĩa **capacity vs mobility** trade-offs, **chi phí per slot**, **balance levers**, và **giá trị-per-slot meta** for storage gear. For item list Xem [Storage Master Database](Storage_Master_Database.md); for progression Xem [Stash & Container Progression](Stash_Container_Progression.md).
+Tài liệu này định nghĩa **capacity vs mobility** trade-offs, **chi phí per slot**, **balance levers**, và **giá trị-per-slot meta** for storage gear. For item list Xem [Storage Master Database](storage_master_database/index.html); for progression Xem [Stash & Container Progression](stash_container_progression/index.html).
 
 ---
 
@@ -23,7 +23,7 @@ Tài liệu này định nghĩa **capacity vs mobility** trade-offs, **chi phí 
 | Large BP | 25 | 2.0 kg | −5% | 12 m | 12.5 | ~880 |
 | Raid Pack | 30 | 2.5 kg | −8% | 15 m | 12.0 | ~1,333 |
 
-Rigs add no speed penalty by themselves nhưng add weight (và thus contribute to weight tier in [Gear cơ chế](../../Gameplay/Gear_Mechanics.md)). Backpacks add both weight và a direct speed penalty và noise radius.
+Rigs add no speed penalty by themselves nhưng add weight (và thus contribute to weight tier in [Gear cơ chế](../../gameplay/gear_mechanics/index.html)). Backpacks add both weight và a direct speed penalty và noise radius.
 
 ---
 
@@ -51,6 +51,6 @@ khi tuning storage in patches:
 
 ## Tham Chiếu Chéo
 
-- [Storage Master Database](Storage_Master_Database.md) — Per-item total capacity (cells), subgrids, weight, chi phí.
-- [Gear cơ chế](../../Gameplay/Gear_Mechanics.md) — Weight tiers, rig vs backpack access times.
-- [Stash & Container Progression](Stash_Container_Progression.md) — Unlock order, stash size.
+- [Storage Master Database](storage_master_database/index.html) — Per-item total capacity (cells), subgrids, weight, chi phí.
+- [Gear cơ chế](../../gameplay/gear_mechanics/index.html) — Weight tiers, rig vs backpack access times.
+- [Stash & Container Progression](stash_container_progression/index.html) — Unlock order, stash size.

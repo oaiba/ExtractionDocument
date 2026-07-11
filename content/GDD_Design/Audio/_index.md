@@ -12,10 +12,10 @@ In an extraction shooter, audio is **survival**. Sound design must communicate i
 Our audio pillars focus on **clarity**, **positional accuracy**, and **tactical feedback**.
 
 {{< cards cols="2" >}}
-  {{< card link="sounddesign.html" title="Audio Guidelines" icon="music-note" subtitle="Core pillars, mixing standards, and technical constraints." >}}
-  {{< card link="tacticalaudio.html" title="Tactical Audio" icon="bell" subtitle="Footsteps, weapon foley, and combat feedback cues." >}}
-  {{< card link="soundscape.html" title="World Ambience" icon="globe-alt" subtitle="Zone-specific audio identities and environmental storytelling." >}}
-  {{< card link="voicelines.html" title="Voice & Dialogue" icon="chat-alt-2" subtitle="Operator barks, announcer lines, and narrative voiceovers." >}}
+  {{< card link="sounddesign/index.html" title="Audio Guidelines" icon="music-note" subtitle="Core pillars, mixing standards, and technical constraints." >}}
+  {{< card link="tacticalaudio/index.html" title="Tactical Audio" icon="bell" subtitle="Footsteps, weapon foley, and combat feedback cues." >}}
+  {{< card link="soundscape/index.html" title="World Ambience" icon="globe-alt" subtitle="Zone-specific audio identities and environmental storytelling." >}}
+  {{< card link="voicelines/index.html" title="Voice & Dialogue" icon="chat-alt-2" subtitle="Operator barks, announcer lines, and narrative voiceovers." >}}
 {{< /cards >}}
 
 ---

@@ -10,9 +10,9 @@ Gear is a primary gameplay lever: every loadout choice affects mobility, capacit
 
 **cốt lõi principles:**
 
-* **Weight has consequences:** Heavier loadouts reduce speed và increase stamina drain; Xem [Movement & Stamina](Movement_and_Stamina.md).
-* **Tactical ergonomics:** Where you store items (rig vs backpack) determines hotkey access và search speed; Xem [Looting & Inventory](Looting_Interactions.md).
-* **Loadout philosophy:** Rat, Standard, và Chad playstyles map to distinct gear choices và extraction behavior; Xem [cốt lõi Gameplay Loop](CoreLoop.md).
+* **Weight has consequences:** Heavier loadouts reduce speed và increase stamina drain; Xem [Movement & Stamina](movement_and_stamina/index.html).
+* **Tactical ergonomics:** Where you store items (rig vs backpack) determines hotkey access và search speed; Xem [Looting & Inventory](looting_interactions/index.html).
+* **Loadout philosophy:** Rat, Standard, và Chad playstyles map to distinct gear choices và extraction behavior; Xem [cốt lõi Gameplay Loop](coreloop/index.html).
 * **Gear rarity và economy:** Higher-tier gear costs more, offer better stats, nhưng amplifies loss on death — the risk/reward engine.
 
 Design pillars behind this: _Weight Has Consequences_ và _Tactical Ergonomics_ from the [Inventory & Gear design philosophy](https://github.com/oaiba/ExtractionDocument/blob/main/content/Inventory_System/README.md).
@@ -21,7 +21,7 @@ Design pillars behind this: _Weight Has Consequences_ và _Tactical Ergonomics_ 
 
 ### Weight và Mobility
 
-Total carried weight (rig, giáp, backpack, vũ khí, đạn, meds, loot) directly affects movement speed, stamina drain, noise, và combat capability. Exact thông số are defined in [Movement & Stamina](Movement_and_Stamina.md); this section shows how they translate into gameplay.
+Total carried weight (rig, giáp, backpack, vũ khí, đạn, meds, loot) directly affects movement speed, stamina drain, noise, và combat capability. Exact thông số are defined in [Movement & Stamina](movement_and_stamina/index.html); this section shows how they translate into gameplay.
 
 #### Weight Tiers
 
@@ -273,12 +273,12 @@ Since the game targets cross-platform (PC + mobile), gear cơ chế must account
 
 ### Tham Chiếu Chéo
 
-* [cốt lõi Gameplay Loop](CoreLoop.md) — Loadout philosophy, preparation phase, risk tolerance.
-* [Movement & Stamina](Movement_and_Stamina.md) — Weight thresholds, speed và stamina thông số, inertia, exhaustion.
-* [Looting & Inventory](Looting_Interactions.md) — Grid dimensions, rig/backpack sizes, secure container.
-* [Extraction cơ chế](Extraction_Mechanics.md) — Extraction process, timer, rules trong khi extract.
-* [Hero Abilities](Hero_Abilities.md) — Operator-cụ thể gear constraints (Scout light rig only, Tank giáp affinity).
-* [Medical hệ thống](Medical_System.md) — Med item weights, heal timing, animation lock.
+* [cốt lõi Gameplay Loop](coreloop/index.html) — Loadout philosophy, preparation phase, risk tolerance.
+* [Movement & Stamina](movement_and_stamina/index.html) — Weight thresholds, speed và stamina thông số, inertia, exhaustion.
+* [Looting & Inventory](looting_interactions/index.html) — Grid dimensions, rig/backpack sizes, secure container.
+* [Extraction cơ chế](extraction_mechanics/index.html) — Extraction process, timer, rules trong khi extract.
+* [Hero Abilities](hero_abilities/index.html) — Operator-cụ thể gear constraints (Scout light rig only, Tank giáp affinity).
+* [Medical hệ thống](medical_system/index.html) — Med item weights, heal timing, animation lock.
 * [Gears](https://github.com/oaiba/ExtractionDocument/blob/main/content/Gears/README.md) — giáp và storage gear specs: [ArmorGear](https://github.com/oaiba/ExtractionDocument/blob/main/content/Gears/ArmorGear/README.md) (classes, zones, materials, master database), [StorageGear](https://github.com/oaiba/ExtractionDocument/blob/main/content/Gears/StorageGear/README.md) (rigs, backpacks, secure containers, slot layouts).
 * [Inventory & Gear](https://github.com/oaiba/ExtractionDocument/blob/main/content/Inventory_System/README.md) — Inventory hệ thống overview, paper doll, grid, encumbrance.
 

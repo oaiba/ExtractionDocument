@@ -6,7 +6,7 @@ weight: 1
 
 ## Overview
 
-This document is the **canonical list** of all storage gear: tactical rigs (unarmored and armored), backpacks, secure containers, and stash-only cases. For slot layouts and reload rule see [Storage Slot Layouts](Storage_Slot_Layouts.md); for flat storage (no bag-in-bag) and backpack collapse see [Storage: Flat Storage & Folding](Storage_Flat_Storage_Folding.md); for balance see [Storage Balance Framework](Storage_Balance_Framework.md) and [Stash & Container Progression](Stash_Container_Progression.md).
+This document is the **canonical list** of all storage gear: tactical rigs (unarmored and armored), backpacks, secure containers, and stash-only cases. For slot layouts and reload rule see [Storage Slot Layouts](storage_slot_layouts/index.html); for flat storage (no bag-in-bag) and backpack collapse see [Storage: Flat Storage & Folding](storage_flat_storage_folding/index.html); for balance see [Storage Balance Framework](storage_balance_framework/index.html) and [Stash & Container Progression](stash_container_progression/index.html).
 
 ### Grid Inventory & Subgrid Model
 
@@ -19,7 +19,7 @@ Storage is **grid inventory** but a container can have **one or more subgrids** 
 
 ## Tactical Rigs
 
-Rigs are worn on the chest. **Weapons can only reload from the tactical rig (or pockets);** backpack does not count. Each rig is defined by **total capacity (cells)** and **subgrids**; exact layout in [Storage Slot Layouts](Storage_Slot_Layouts.md). **Tier** per [Gear Tier System](../Gear_Tier_System.md).
+Rigs are worn on the chest. **Weapons can only reload from the tactical rig (or pockets);** backpack does not count. Each rig is defined by **total capacity (cells)** and **subgrids**; exact layout in [Storage Slot Layouts](storage_slot_layouts/index.html). **Tier** per [Gear Tier System](../gear_tier_system/index.html).
 
 ### Unarmored Rigs
 
@@ -37,7 +37,7 @@ Rigs are worn on the chest. **Weapons can only reload from the tactical rig (or 
 
 ### Armored Rigs
 
-Armored rigs provide built-in body armor and **replace** a separate vest. Armor stats: [Armor Master Database — Armored Rigs](../ArmorGear/Armor_Master_Database.md#armored-rigs). **Tier** per [Gear Tier System](../Gear_Tier_System.md).
+Armored rigs provide built-in body armor and **replace** a separate vest. Armor stats: [Armor Master Database — Armored Rigs](../ArmorGear/Armor_Master_Database.md#armored-rigs). **Tier** per [Gear Tier System](../gear_tier_system/index.html).
 
 
 | Code         | Display Name          | Tier | Total capacity (cells) | Subgrids                                     | Hotkey | Weight (kg) | Armor class | Value ($) | Rarity   |
@@ -52,7 +52,7 @@ Armored rigs provide built-in body armor and **replace** a separate vest. Armor 
 
 ## Backpacks
 
-Backpacks provide grid storage only; no hotkey. Contents lost on death (except as insured). **Capacity** = total cells (sum of subgrids). Grid (external) = footprint when worn or collapsed size reference; see [Storage: Flat Storage & Folding](Storage_Flat_Storage_Folding.md) (flat storage, collapse). **Tier** per [Gear Tier System](../Gear_Tier_System.md).
+Backpacks provide grid storage only; no hotkey. Contents lost on death (except as insured). **Capacity** = total cells (sum of subgrids). Grid (external) = footprint when worn or collapsed size reference; see [Storage: Flat Storage & Folding](storage_flat_storage_folding/index.html) (flat storage, collapse). **Tier** per [Gear Tier System](../gear_tier_system/index.html).
 
 
 | Code         | Display Name      | Tier | Grid (external) | Capacity (cells) | Subgrids                      | Weight (empty) | Speed penalty | Noise radius | Collapsed size | Value ($) | Trader | Rarity           |
@@ -72,7 +72,7 @@ Backpacks provide grid storage only; no hotkey. Contents lost on death (except a
 
 ## Secure Containers
 
-Unlootable; contents **kept after death**. **Cells** = total capacity (primary number). In-raid placement restrictions apply: see [Storage Slot Layouts](Storage_Slot_Layouts.md) and below. Unlock path: [Stash & Container Progression](Stash_Container_Progression.md#secure-container-upgrade-path). **Tier** per [Gear Tier System](../Gear_Tier_System.md).
+Unlootable; contents **kept after death**. **Cells** = total capacity (primary number). In-raid placement restrictions apply: see [Storage Slot Layouts](storage_slot_layouts/index.html) and below. Unlock path: [Stash & Container Progression](Stash_Container_Progression.md#secure-container-upgrade-path). **Tier** per [Gear Tier System](../gear_tier_system/index.html).
 
 
 | Code         | Display Name | Tier | Grid | Cells (total capacity) | Subgrids           | Unlock method                                 | Value (if buyable) |
@@ -99,7 +99,7 @@ Unlootable; contents **kept after death**. **Cells** = total capacity (primary n
 
 ## Stash-Only Containers
 
-Used only in the global Stash (not carried in-raid). **External size** = cells taken in stash; **Internal capacity (cells)** = total cells inside the container (sum of subgrids; stash-only cases are typically one internal grid). Efficiency = internal capacity ÷ external cells. **Tier** per [Gear Tier System](../Gear_Tier_System.md) (by unlock phase).
+Used only in the global Stash (not carried in-raid). **External size** = cells taken in stash; **Internal capacity (cells)** = total cells inside the container (sum of subgrids; stash-only cases are typically one internal grid). Efficiency = internal capacity ÷ external cells. **Tier** per [Gear Tier System](../gear_tier_system/index.html) (by unlock phase).
 
 
 | Code              | Display Name       | Tier | External size | Internal capacity (cells) | Internal grid (ref) | Efficiency | Item restriction           | Value ($)  | Unlock           |
@@ -122,10 +122,10 @@ Used only in the global Stash (not carried in-raid). **External size** = cells t
 
 ## Cross-References
 
-- [Gear Tier System](../Gear_Tier_System.md) — Storage Tier (1–4) definition; progression = Tier + Rarity + player/trader level.
-- [Storage Slot Layouts](Storage_Slot_Layouts.md) — Per-rig grid diagrams, reload rule, hotkey mapping.
-- [Storage: Flat Storage & Folding](Storage_Flat_Storage_Folding.md) — Flat storage, backpack collapse.
-- [Storage Balance Framework](Storage_Balance_Framework.md) — Capacity vs mobility, cost per slot.
-- [Stash & Container Progression](Stash_Container_Progression.md) — Stash size, unlock order, secure path.
+- [Gear Tier System](../gear_tier_system/index.html) — Storage Tier (1–4) definition; progression = Tier + Rarity + player/trader level.
+- [Storage Slot Layouts](storage_slot_layouts/index.html) — Per-rig grid diagrams, reload rule, hotkey mapping.
+- [Storage: Flat Storage & Folding](storage_flat_storage_folding/index.html) — Flat storage, backpack collapse.
+- [Storage Balance Framework](storage_balance_framework/index.html) — Capacity vs mobility, cost per slot.
+- [Stash & Container Progression](stash_container_progression/index.html) — Stash size, unlock order, secure path.
 - [Armor Master Database — Armored Rigs](../ArmorGear/Armor_Master_Database.md#armored-rigs) — Armor class and zones for armored rigs.
 

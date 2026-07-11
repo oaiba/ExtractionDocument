@@ -8,12 +8,12 @@ weight: 20
 
 | Destination | Use |
 | :--- | :--- |
-| [UI/UX Index](_index.md) | Full UI/UX documentation hub |
-| [Screen Groups Overview](Screen_Groups_Overview.md) | Lifecycle taxonomy and designer-ready spec template |
-| [Global UX Standards](Global_UX_Standards.md) | Shared navigation, focus, state, modal, and accessibility rules |
-| [In-Raid Screens](In_Raid_Screens.md) | HUD in context with tactical map, looting, pause, spectator, reconnect |
-| [Notification Systems](Notification_Systems.md) | Combat feedback, damage, status effects, toasts, danger communication |
-| [UX Flows](UX_Flows.md) | Player journeys that reference HUD and overlays |
+| [UI/UX Index](_index/index.html) | Full UI/UX documentation hub |
+| [Screen Groups Overview](screen_groups_overview/index.html) | Lifecycle taxonomy and designer-ready spec template |
+| [Global UX Standards](global_ux_standards/index.html) | Shared navigation, focus, state, modal, and accessibility rules |
+| [In-Raid Screens](in_raid_screens/index.html) | HUD in context with tactical map, looting, pause, spectator, reconnect |
+| [Notification Systems](notification_systems/index.html) | Combat feedback, damage, status effects, toasts, danger communication |
+| [UX Flows](ux_flows/index.html) | Player journeys that reference HUD and overlays |
 
 ---
 

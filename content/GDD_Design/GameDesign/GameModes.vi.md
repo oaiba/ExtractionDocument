@@ -97,7 +97,7 @@ Mode này nên hữu ích nhưng không tối ưu nhất. Nó là pressure relea
 
 ### Ranked Operations
 
-Ranked Operations dùng core extraction loop với competitive rules chặt hơn. Full RP design nằm trong [Ranked Mode](rankedmode.html).
+Ranked Operations dùng core extraction loop với competitive rules chặt hơn. Full RP design nằm trong [Ranked Mode](rankedmode/index.html).
 
 Ranked phải test extraction mastery, không chỉ elimination skill. Ranked player giỏi nhất phải biết khi nào tránh fight, khi nào secure value, khi nào pressure squad khác, và khi nào leave. Reward nên tôn vinh consistency, discipline, và clutch decision.
 
@@ -144,8 +144,8 @@ Featured Mode nên distinct về visual nhưng transparent về rule. Nếu even
 
 | Topic | Page |
 | :--- | :--- |
-| Prep screen integration | [Loadout Preparation](loadoutpreparation.html) |
-| Ranked rules | [Ranked Mode](rankedmode.html) |
-| Event rotations | [Live Operations](liveops.html) |
-| Map rules | [Map Design](mapdesign.html) |
-| Insurance mode differences | [Insurance System](insurancesystem.html) |
+| Prep screen integration | [Loadout Preparation](loadoutpreparation/index.html) |
+| Ranked rules | [Ranked Mode](rankedmode/index.html) |
+| Event rotations | [Live Operations](liveops/index.html) |
+| Map rules | [Map Design](mapdesign/index.html) |
+| Insurance mode differences | [Insurance System](insurancesystem/index.html) |

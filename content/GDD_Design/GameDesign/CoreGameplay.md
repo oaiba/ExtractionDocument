@@ -111,11 +111,11 @@ This phase should feel like loading a weapon before opening a dangerous door. Th
 
 | Step | Player Question | Canonical Detail |
 | :--- | :--- | :--- |
-| Select objective | What am I trying to accomplish this raid? | [Game Modes](gamemodes.html) |
+| Select objective | What am I trying to accomplish this raid? | [Game Modes](gamemodes/index.html) |
 | Select operator | Which ability and role fits the goal? | Character docs |
-| Build loadout | How much am I willing to risk? | [Loadout Preparation](loadoutpreparation.html) |
-| Choose insurance | Which items deserve recovery protection? | [Insurance System](insurancesystem.html) |
-| Choose map and squad | Where are we going, and with whom? | [Map Design](mapdesign.html), [Communication](communication.html) |
+| Build loadout | How much am I willing to risk? | [Loadout Preparation](loadoutpreparation/index.html) |
+| Choose insurance | Which items deserve recovery protection? | [Insurance System](insurancesystem/index.html) |
+| Choose map and squad | Where are we going, and with whom? | [Map Design](mapdesign/index.html), [Communication](communication/index.html) |
 | Confirm deploy | Does the expected reward justify the risk? | This page |
 
 ## In-Match Phase
@@ -193,11 +193,11 @@ Advanced mechanics should add expressive decisions without changing the basic pr
 
 | Mechanic | Purpose | Detail Owner |
 | :--- | :--- | :--- |
-| Squad coordination | Give teams shared information without removing tension | [Communication](communication.html) |
-| Information warfare | Make sensors, pings, and sound meaningful | [Navigation & Map](navigationandmap.html) |
-| Insurance | Reduce loss frustration without deleting risk | [Insurance System](insurancesystem.html) |
-| Ranked rule changes | Preserve competitive integrity | [Ranked Mode](rankedmode.html) |
-| Scavenger runs | Provide low-stakes recovery and practice | [Game Modes](gamemodes.html) |
+| Squad coordination | Give teams shared information without removing tension | [Communication](communication/index.html) |
+| Information warfare | Make sensors, pings, and sound meaningful | [Navigation & Map](navigationandmap/index.html) |
+| Insurance | Reduce loss frustration without deleting risk | [Insurance System](insurancesystem/index.html) |
+| Ranked rule changes | Preserve competitive integrity | [Ranked Mode](rankedmode/index.html) |
+| Scavenger runs | Provide low-stakes recovery and practice | [Game Modes](gamemodes/index.html) |
 
 ## Player Experience Examples
 
@@ -267,9 +267,9 @@ Telemetry should explain whether the loop is readable, not just whether players 
 
 | Topic | Page |
 | :--- | :--- |
-| Loadout UI | [Loadout Preparation](loadoutpreparation.html) |
-| Input and camera | [Controls](controls.html) |
-| Map routes and extraction placement | [Map Design](mapdesign.html) |
-| Insurance rules | [Insurance System](insurancesystem.html) |
-| Economy impact | [Economy](economy.html) |
-| Onboarding | [Tutorial Raid](tutorialraid.html) |
+| Loadout UI | [Loadout Preparation](loadoutpreparation/index.html) |
+| Input and camera | [Controls](controls/index.html) |
+| Map routes and extraction placement | [Map Design](mapdesign/index.html) |
+| Insurance rules | [Insurance System](insurancesystem/index.html) |
+| Economy impact | [Economy](economy/index.html) |
+| Onboarding | [Tutorial Raid](tutorialraid/index.html) |

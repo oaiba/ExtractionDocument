@@ -129,14 +129,14 @@ Keyboard/mouse players cần precision, remapping, và quick access tới invent
 
 ## Settings Ownership
 
-Trang này sở hữu control feel và input behavior. Complete settings matrix thuộc về [User Settings](usersettings.html) và [Settings Matrix](usersettings_matrix.html).
+Trang này sở hữu control feel và input behavior. Complete settings matrix thuộc về [User Settings](usersettings/index.html) và [Settings Matrix](usersettings_matrix/index.html).
 
 ## Cross-References
 
 | Topic | Page |
 | :--- | :--- |
-| Raid flow | [Core Gameplay](coregameplay.html) |
-| HUD and map controls | [Navigation & Map](navigationandmap.html) |
-| Settings UX | [User Settings](usersettings.html) |
-| Accessibility options | [Accessibility](accessibility.html) |
-| Tutorial prompts | [Tutorial Raid](tutorialraid.html) |
+| Raid flow | [Core Gameplay](coregameplay/index.html) |
+| HUD and map controls | [Navigation & Map](navigationandmap/index.html) |
+| Settings UX | [User Settings](usersettings/index.html) |
+| Accessibility options | [Accessibility](accessibility/index.html) |
+| Tutorial prompts | [Tutorial Raid](tutorialraid/index.html) |

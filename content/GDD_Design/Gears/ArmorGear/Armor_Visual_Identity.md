@@ -6,7 +6,7 @@ weight: 6
 
 ## Overview
 
-This document defines **top-down silhouette**, **rarity color-coding**, **damage state visuals**, and **UI icons** for armor so that class and condition are readable in a top-down extraction shooter. For class and item list see [Armor & Ballistics](Armor.md) and [Armor Master Database](Armor_Master_Database.md).
+This document defines **top-down silhouette**, **rarity color-coding**, **damage state visuals**, and **UI icons** for armor so that class and condition are readable in a top-down extraction shooter. For class and item list see [Armor & Ballistics](armor/index.html) and [Armor Master Database](armor_master_database/index.html).
 
 ---
 
@@ -47,7 +47,7 @@ Armor condition (durability %) should be visible on the character and in UI.
 | 49–25% | Visible cracks/tears, darker | Clearly damaged |
 | 24–0% | Heavy damage, red/dark overlay | Near-destroyed |
 
-Helmets: visor cracks at low durability can obscure vision (see [Armor & Ballistics](Armor.md) — visors). Vests: torn fabric or plate damage on the model.
+Helmets: visor cracks at low durability can obscure vision (see [Armor & Ballistics](armor/index.html) — visors). Vests: torn fabric or plate damage on the model.
 
 ---
 
@@ -62,6 +62,6 @@ Icons should be consistent in size and style with weapons and other gear; class 
 
 ## Cross-References
 
-- [Armor Master Database](Armor_Master_Database.md) — Per-item class, weight, rarity.
-- [Weapon Visual & Audio Identity](../../Weapons/Weapon_Visual_Audio_Identity.md) — Rarity and readability standards (align with weapons).
-- [Visuals — Style Guide](../../Visuals/StyleGuide.md) — Color and UI consistency if present.
+- [Armor Master Database](armor_master_database/index.html) — Per-item class, weight, rarity.
+- [Weapon Visual & Audio Identity](../../weapons/weapon_visual_audio_identity/index.html) — Rarity and readability standards (align with weapons).
+- [Visuals — Style Guide](../../visuals/styleguide/index.html) — Color and UI consistency if present.

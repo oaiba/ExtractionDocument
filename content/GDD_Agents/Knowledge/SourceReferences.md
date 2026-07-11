@@ -14,13 +14,13 @@ This document organizes all key reference materials, documentation links, and le
 
 | Document | Path | Priority |
 |:---------|:-----|:---------|
-| **Coding & Asset Standards** | [GDD_Technical/CodingStandards.md](../../GDD_Technical/CodingStandards.md) | CRITICAL |
-| **Code Generation Rules** | [GDD_Agents/Rules/CodeGeneration.md](../Rules/CodeGeneration.md) | CRITICAL |
-| **Documentation Standards** | [GDD_Agents/Rules/DocumentationStandards.md](../Rules/DocumentationStandards.md) | CRITICAL |
-| **GDD Technical Index** | [GDD_Technical/_index.md](../../GDD_Technical/_index.md) | HIGH |
-| **GDD Design Index** | [GDD_Design/_index.md](../../GDD_Design/_index.md) | HIGH |
-| **Feature Workflow** | [GDD_Agents/Workflows/FeatureImplementation.md](../Workflows/FeatureImplementation.md) | HIGH |
-| **UE5 Skills** | [GDD_Agents/Skills/UnrealEngine.md](../Skills/UnrealEngine.md) | HIGH |
+| **Coding & Asset Standards** | [GDD_Technical/CodingStandards.md](../../gdd_technical/codingstandards/index.html) | CRITICAL |
+| **Code Generation Rules** | [GDD_Agents/Rules/CodeGeneration.md](../rules/codegeneration/index.html) | CRITICAL |
+| **Documentation Standards** | [GDD_Agents/Rules/DocumentationStandards.md](../rules/documentationstandards/index.html) | CRITICAL |
+| **GDD Technical Index** | [GDD_Technical/_index.md](../../gdd_technical/_index/index.html) | HIGH |
+| **GDD Design Index** | [GDD_Design/_index.md](../../gdd_design/_index/index.html) | HIGH |
+| **Feature Workflow** | [GDD_Agents/Workflows/FeatureImplementation.md](../workflows/featureimplementation/index.html) | HIGH |
+| **UE5 Skills** | [GDD_Agents/Skills/UnrealEngine.md](../skills/unrealengine/index.html) | HIGH |
 
 ---
 

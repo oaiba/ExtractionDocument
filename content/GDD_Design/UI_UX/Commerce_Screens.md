@@ -12,21 +12,21 @@ Primary references:
 
 | System | Source |
 | :--- | :--- |
-| Economy | [Economy & Monetization Design](../GameDesign/Economy.md) |
-| Progression / Battle Pass | [Progression & LiveOps Screens](Progression_LiveOps_Screens.md) |
-| Global UX | [Global UX Standards](Global_UX_Standards.md) |
-| Visual style | [Visual Style & Art Guidelines](Visual_Style.md) |
-| Settings and system states | [Settings & System Screens](Commerce_Settings_System_Screens.md) |
+| Economy | [Economy & Monetization Design](../gamedesign/economy/index.html) |
+| Progression / Battle Pass | [Progression & LiveOps Screens](progression_liveops_screens/index.html) |
+| Global UX | [Global UX Standards](global_ux_standards/index.html) |
+| Visual style | [Visual Style & Art Guidelines](visual_style/index.html) |
+| Settings and system states | [Settings & System Screens](commerce_settings_system_screens/index.html) |
 
 ## Quick Navigation
 
 | Destination | Use |
 | :--- | :--- |
-| [UI/UX Index](_index.md) | Full UI/UX documentation hub |
-| [Screen Groups Overview](Screen_Groups_Overview.md) | Lifecycle taxonomy and designer-ready spec template |
-| [Progression & LiveOps Screens](Progression_LiveOps_Screens.md) | Battle pass progress, event progress, ranked, rewards, and news |
-| [Settings & System Screens](Commerce_Settings_System_Screens.md) | Auth, setup, settings, privacy, diagnostics, and system dialogs |
-| [Global UX Standards](Global_UX_Standards.md) | Shared navigation, focus, state, modal, and accessibility rules |
+| [UI/UX Index](_index/index.html) | Full UI/UX documentation hub |
+| [Screen Groups Overview](screen_groups_overview/index.html) | Lifecycle taxonomy and designer-ready spec template |
+| [Progression & LiveOps Screens](progression_liveops_screens/index.html) | Battle pass progress, event progress, ranked, rewards, and news |
+| [Settings & System Screens](commerce_settings_system_screens/index.html) | Auth, setup, settings, privacy, diagnostics, and system dialogs |
+| [Global UX Standards](global_ux_standards/index.html) | Shared navigation, focus, state, modal, and accessibility rules |
 
 ---
 

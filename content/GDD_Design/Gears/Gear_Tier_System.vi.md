@@ -101,7 +101,7 @@ Comparison UI không chỉ dựa vào green/red deltas. Nó phải gọi tên tr
 - **Headsets:** No giáp Class; assign Tier by Rarity (Uncommon = 2, Rare = 3).
 - **Armored rigs:** cách dùng the rig's giáp Class; Tier follows the same mapping as body giáp.
 
-Every giáp item in [giáp Master Database](ArmorGear/Armor_Master_Database.md) has a single Tier (1–5) per this bảng.
+Every giáp item in [giáp Master Database](armorgear/armor_master_database/index.html) has a single Tier (1–5) per this bảng.
 
 ---
 
@@ -133,7 +133,7 @@ Every giáp item in [giáp Master Database](ArmorGear/Armor_Master_Database.md) 
 
 Assign Tier by unlock phase và capacity: early (Keytool, Docs Case) = 1; mid (đạn, Med, Magazine Case) = 2; late (vũ khí Case, Items Case) = 3; endgame (THICC cases) = 4.
 
-Every storage item in [Storage Master Database](StorageGear/Storage_Master_Database.md) has a single Tier (1–4) per this bảng.
+Every storage item in [Storage Master Database](storagegear/storage_master_database/index.html) has a single Tier (1–4) per this bảng.
 
 ---
 
@@ -143,7 +143,7 @@ Every storage item in [Storage Master Database](StorageGear/Storage_Master_Datab
 | :----- | :---- |
 | **Loot bảng** | Tier (+ Rarity) determines drop pool by zone/raid/event. |
 | **Crafting** | Tier of output; recipes may require Tier/Rarity of materials. |
-| **Economy / Trader** | giá, restock, availability by Tier; unlock by **người chơi level + trader level** (Xem [giáp Progression](ArmorGear/Armor_Progression.md), [Stash & Container Progression](StorageGear/Stash_Container_Progression.md)). |
+| **Economy / Trader** | giá, restock, availability by Tier; unlock by **người chơi level + trader level** (Xem [giáp Progression](armorgear/armor_progression/index.html), [Stash & Container Progression](storagegear/stash_container_progression/index.html)). |
 | **UI / Tooltip** | Display Tier consistently (icon, number, color); Rarity as today. |
 | **Balance / Matchmaking** | nếu gear brackets exist for raids, cách dùng Tier (+ Rarity); no item level. |
 
@@ -157,10 +157,10 @@ Similar games (Relic Hunters Legend, Project Ethos, ARC Raiders, EFT Arena, Risk
 
 ## Tham Chiếu Chéo
 
-- [giáp & Ballistics](ArmorGear/giáp.md) — Class hệ thống, zones, materials.
-- [giáp Master Database](ArmorGear/Armor_Master_Database.md) — Per-item Tier column.
-- [giáp Progression](ArmorGear/Armor_Progression.md) — Trader/quest/người chơi level gates.
-- [giáp Balance Framework](ArmorGear/Armor_Balance_Framework.md) — EHP, chi phí-efficiency.
-- [Storage Master Database](StorageGear/Storage_Master_Database.md) — Per-item Tier column.
-- [Stash & Container Progression](StorageGear/Stash_Container_Progression.md) — Unlock phase, secure path.
-- [Progression](../GameDesign/Progression.md) — người chơi và trader level framework.
+- [giáp & Ballistics](armorgear/armor/index.html) — Class hệ thống, zones, materials.
+- [giáp Master Database](armorgear/armor_master_database/index.html) — Per-item Tier column.
+- [giáp Progression](armorgear/armor_progression/index.html) — Trader/quest/người chơi level gates.
+- [giáp Balance Framework](armorgear/armor_balance_framework/index.html) — EHP, chi phí-efficiency.
+- [Storage Master Database](storagegear/storage_master_database/index.html) — Per-item Tier column.
+- [Stash & Container Progression](storagegear/stash_container_progression/index.html) — Unlock phase, secure path.
+- [Progression](../gamedesign/progression/index.html) — người chơi và trader level framework.

@@ -6,9 +6,9 @@ weight: 6
 
 ## Tổng Quan
 
-Special và exotic vũ khí are variants hoặc unique models obtained thông qua bosses, quests, seasons, hoặc crafting. They offer distinct traits, cosmetics, hoặc stat tweaks mà không replacing the cốt lõi vũ khí roster. For base vũ khí stats Xem [vũ khí Arsenal](../Gameplay/WeaponArsenal.md) và [vũ khí Master Database](Weapon_Master_Database.md).
+Special và exotic vũ khí are variants hoặc unique models obtained thông qua bosses, quests, seasons, hoặc crafting. They offer distinct traits, cosmetics, hoặc stat tweaks mà không replacing the cốt lõi vũ khí roster. For base vũ khí stats Xem [vũ khí Arsenal](../gameplay/weaponarsenal/index.html) và [vũ khí Master Database](weapon_master_database/index.html).
 
-> **Cross-References:** [Loot bảng Design](../Gameplay/Loot_Table_Design.md) — boss và zone loot; [Quest & Objective hệ thống](../Gameplay/Quest_Objective_System.md) — quest rewards; [Safe House Design](../GameDesign/Safe_House_Design.md) — Workbench crafting.
+> **Cross-References:** [Loot bảng Design](../gameplay/loot_table_design/index.html) — boss và zone loot; [Quest & Objective hệ thống](../gameplay/quest_objective_system/index.html) — quest rewards; [Safe House Design](../gamedesign/safe_house_design/index.html) — Workbench crafting.
 
 ---
 
@@ -56,7 +56,7 @@ vũ khí hoặc variants introduced for a limited thời gian (e.g. one season).
 
 ## Crafted vũ khí
 
-vũ khí variants hoặc base models that can be crafted at the Safe House Workbench. Xem [Safe House Design](../GameDesign/Safe_House_Design.md) for Workbench levels và recipes.
+vũ khí variants hoặc base models that can be crafted at the Safe House Workbench. Xem [Safe House Design](../gamedesign/safe_house_design/index.html) for Workbench levels và recipes.
 
 | Workbench Level | Craftable vũ khí (example) | Materials |
 | :-------------- | :------------------------- | :-------- |
@@ -71,7 +71,7 @@ Crafted vũ khí have **no inherent stat bonus** over vendor hoặc loot version
 
 ## vũ khí Condition (Found-in-Raid)
 
-vũ khí found in raid (loot, AI, bosses) spawn với a **durability range**. This affects performance (Xem [vũ khí Modding](../Inventory_System/Gunsmith_System.md) — MOA degrades at low durability) và giá trị.
+vũ khí found in raid (loot, AI, bosses) spawn với a **durability range**. This affects performance (Xem [vũ khí Modding](../inventory_system/gunsmith_system/index.html) — MOA degrades at low durability) và giá trị.
 
 | source | Durability Range (typical) | ghi chú |
 | :----- | :------------------------- | :---- |
@@ -89,9 +89,9 @@ vũ khí found in raid (loot, AI, bosses) spawn với a **durability range**. Th
 
 ## Tham Chiếu Chéo
 
-- [vũ khí Arsenal](../Gameplay/WeaponArsenal.md) — Base vũ khí list và stats.
-- [vũ khí Master Database](Weapon_Master_Database.md) — Per-vũ khí base và modded stats.
-- [Loot bảng Design](../Gameplay/Loot_Table_Design.md) — Boss và zone loot tables.
-- [Quest & Objective hệ thống](../Gameplay/Quest_Objective_System.md) — Quest rewards và FIR.
-- [Safe House Design](../GameDesign/Safe_House_Design.md) — Workbench và crafting recipes.
-- [Inventory & Gear — vũ khí Modding](../Inventory_System/Gunsmith_System.md) — Durability và MOA.
+- [vũ khí Arsenal](../gameplay/weaponarsenal/index.html) — Base vũ khí list và stats.
+- [vũ khí Master Database](weapon_master_database/index.html) — Per-vũ khí base và modded stats.
+- [Loot bảng Design](../gameplay/loot_table_design/index.html) — Boss và zone loot tables.
+- [Quest & Objective hệ thống](../gameplay/quest_objective_system/index.html) — Quest rewards và FIR.
+- [Safe House Design](../gamedesign/safe_house_design/index.html) — Workbench và crafting recipes.
+- [Inventory & Gear — vũ khí Modding](../inventory_system/gunsmith_system/index.html) — Durability và MOA.

@@ -8,7 +8,7 @@ weight: 18
 
 This matrix lists người chơi-facing settings by category. It is intentionally bảng-first so design, UI, engineering, QA, và localization can audit settings mà không reading the UX hub.
 
-cách dùng this trang as the canonical checklist for settings coverage, default values, platform behavior, và QA review. người chơi-facing explanation, category philosophy, presets, cloud sync, và competitive lock policy live in [User Settings](usersettings.html).
+cách dùng this trang as the canonical checklist for settings coverage, default values, platform behavior, và QA review. người chơi-facing explanation, category philosophy, presets, cloud sync, và competitive lock policy live in [User Settings](usersettings/index.html).
 
 The matrix should stay concise. nếu an option needs a long rationale, keep the option here và place the reasoning in the hub hoặc the owning tính năng trang. This keeps the bảng useful for implementation và localization review.
 

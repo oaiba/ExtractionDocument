@@ -131,7 +131,7 @@ A hot zone should create a readable promise: rare value is present, but the rout
 
 | Topic | Page |
 | :--- | :--- |
-| Raid pacing | [Core Gameplay](coregameplay.html) |
-| Map UI and pings | [Navigation & Map](navigationandmap.html) |
-| Mode variations | [Game Modes](gamemodes.html) |
-| Loadout map selection | [Loadout Preparation](loadoutpreparation.html) |
+| Raid pacing | [Core Gameplay](coregameplay/index.html) |
+| Map UI and pings | [Navigation & Map](navigationandmap/index.html) |
+| Mode variations | [Game Modes](gamemodes/index.html) |
+| Loadout map selection | [Loadout Preparation](loadoutpreparation/index.html) |

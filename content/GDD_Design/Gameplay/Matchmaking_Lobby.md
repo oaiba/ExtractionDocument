@@ -9,7 +9,7 @@ weight: 13
 
 The matchmaking and lobby system is the gateway between the stash (out-of-raid hub) and the live raid. It determines how players are grouped, how servers are allocated, how the pre-raid preparation flow works, and how failure cases (disconnections, low population) are handled. A good matchmaking experience is invisible — players simply press "Deploy" and find themselves in a balanced, fair raid without waiting.
 
-> **Cross-References:** [Core Gameplay Loop](CoreLoop.md) — Phase 1 Preparation; [Extraction Mechanics](Extraction_Mechanics.md) — disconnection timeout rule; [Controls](https://github.com/oaiba/ExtractionDocument/blob/main/content/GameDesign/Controls.md) — platform-specific lobby UI input; [Hero Abilities](Hero_Abilities.md) — operator selection before deploy.
+> **Cross-References:** [Core Gameplay Loop](coreloop/index.html) — Phase 1 Preparation; [Extraction Mechanics](extraction_mechanics/index.html) — disconnection timeout rule; [Controls](https://github.com/oaiba/ExtractionDocument/blob/main/content/GameDesign/Controls.md) — platform-specific lobby UI input; [Hero Abilities](hero_abilities/index.html) — operator selection before deploy.
 
 ***
 
@@ -23,7 +23,7 @@ The matchmaking and lobby system is the gateway between the stash (out-of-raid h
 | **Duo**   | 2           | 2           | Friends only (no solo fill into duo)            |
 | **Squad** | 2           | 3           | Standard team size. Can deploy with 2/3 filled. |
 
-**Design decision:** No 4- or 5-player squads. The 3-player maximum is deliberate — balances cooperation without creating overwhelming firepower asymmetry against solo players. See [Core Gameplay Loop](CoreLoop.md) for squad philosophy.
+**Design decision:** No 4- or 5-player squads. The 3-player maximum is deliberate — balances cooperation without creating overwhelming firepower asymmetry against solo players. See [Core Gameplay Loop](coreloop/index.html) for squad philosophy.
 
 #### Players per Server Instance
 
@@ -128,7 +128,7 @@ MAIN STASH SCREEN
      - 10-second countdown before deployment (can cancel in this window)
     |
  [6] LOADING SCREEN (L4_LobbyToMatch)
-     - Loading type: L4_LobbyToMatch per [Loading Screen Design](../UI_UX/LoadingScreen_Design.md)
+     - Loading type: L4_LobbyToMatch per [Loading Screen Design](../ui_ux/loadingscreen_design/index.html)
      - Map-specific loading screen art (full-bleed background)
      - Tactical tips, fun facts, lore (rotate every 8s; manual paging)
      - Map intro text (e.g., "Sector 7 — Industrial Decay")
@@ -148,7 +148,7 @@ MAIN STASH SCREEN
 | **Loadout visibility**      | Squad members CAN see each other's operator choice but NOT detailed gear/inventory (privacy).                                         |
 | **Ready-up**                | Required from all members before departure. If one member is not ready after 60s, deploy continues without them (partial squad join). |
 | **Squad communication**     | Voice and text chat active in lobby. Same channels as in-raid.                                                                        |
-| **Operator duplicate rule** | Same operator CAN be used by multiple squad members. Ability stacking rule applies in-raid per [Hero Abilities](Hero_Abilities.md).   |
+| **Operator duplicate rule** | Same operator CAN be used by multiple squad members. Ability stacking rule applies in-raid per [Hero Abilities](hero_abilities/index.html).   |
 
 ***
 
@@ -156,7 +156,7 @@ MAIN STASH SCREEN
 
 #### Disconnection Behavior
 
-Per [Extraction Mechanics](Extraction_Mechanics.md): disconnect → 5-minute MIA timeout → gear lost. The lobby system augments this:
+Per [Extraction Mechanics](extraction_mechanics/index.html): disconnect → 5-minute MIA timeout → gear lost. The lobby system augments this:
 
 | Scenario                      | Behavior                                                                                                          |
 | ----------------------------- | ----------------------------------------------------------------------------------------------------------------- |
@@ -178,7 +178,7 @@ The game targets PC, Console, and Mobile players in shared pools:
 | Scenario                               | Design Choice                                                                                                                                                |
 | -------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | **PC + Console + Mobile in same raid** | Yes — same rules, same server. No mechanical difference.                                                                                                     |
-| **Aim assist on mobile**               | Mobile receives aim assist on ability targeting per [Hero Abilities](Hero_Abilities.md). Regular weapon aiming: aim assist enabled (adjustable in settings). |
+| **Aim assist on mobile**               | Mobile receives aim assist on ability targeting per [Hero Abilities](hero_abilities/index.html). Regular weapon aiming: aim assist enabled (adjustable in settings). |
 | **PC players vs Mobile**               | No automatic separation. Players can opt-in to "Platform Restricted" mode (only own platform), accepting potentially longer queues.                          |
 | **Input detection**                    | Server identifies input type for metrics only. Not used for matchmaking decisions.                                                                           |
 | **Performance parity**                 | Server-authoritative validation prevents client-side advantage. Mobile and PC are identical in hit registration and LOS outcomes.                            |
@@ -278,11 +278,11 @@ New accounts (0 raids) are routed differently:
 
 ### Cross-References
 
-* [Loading Screen Design](../UI_UX/LoadingScreen_Design.md) — L4\_LobbyToMatch taxonomy, content types, layout.
-* [Core Gameplay Loop](CoreLoop.md) — Preparation phase; loadout philosophy.
-* [Extraction Mechanics](Extraction_Mechanics.md) — Disconnection MIA rule; reconnect behavior.
-* [Hero Abilities](Hero_Abilities.md) — Operator selection; ability stacking rule for same-class duplicates.
-* [Environmental Hazards](Environmental_Hazards.md) — Weather shown at briefing screen.
+* [Loading Screen Design](../ui_ux/loadingscreen_design/index.html) — L4\_LobbyToMatch taxonomy, content types, layout.
+* [Core Gameplay Loop](coreloop/index.html) — Preparation phase; loadout philosophy.
+* [Extraction Mechanics](extraction_mechanics/index.html) — Disconnection MIA rule; reconnect behavior.
+* [Hero Abilities](hero_abilities/index.html) — Operator selection; ability stacking rule for same-class duplicates.
+* [Environmental Hazards](environmental_hazards/index.html) — Weather shown at briefing screen.
 * [Controls](https://github.com/oaiba/ExtractionDocument/blob/main/content/GameDesign/Controls.md) — Platform-specific lobby input.
 * [GameDesign/RankedMode](https://github.com/oaiba/ExtractionDocument/blob/main/content/GameDesign/RankedMode.md) — Ranked queue pool and requirements.
 * [GameDesign/TutorialRaid](https://github.com/oaiba/ExtractionDocument/blob/main/content/GameDesign/TutorialRaid.md) — First-time player routing.

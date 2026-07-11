@@ -6,9 +6,9 @@ weight: 7
 
 ## Tổng Quan
 
-This tài liệu specifies how vũ khí are read from the top-down camera: silhouettes, muzzle flash, attachment visibility, audio signatures, kill feedback, và rarity presentation. Design mục tiêu: every combat action is dễ đọc và distinct from overhead. Xem [Combat Feel (Top-Down)](../Gameplay/Combat_Feel_Topdown.md) for aim cone và feedback hệ thống.
+This tài liệu specifies how vũ khí are read from the top-down camera: silhouettes, muzzle flash, attachment visibility, audio signatures, kill feedback, và rarity presentation. Design mục tiêu: every combat action is dễ đọc và distinct from overhead. Xem [Combat Feel (Top-Down)](../gameplay/combat_feel_topdown/index.html) for aim cone và feedback hệ thống.
 
-> **Cross-References:** [vũ khí Arsenal](../Gameplay/WeaponArsenal.md) — vũ khí list; [vũ khí Attachment hệ thống](../Gameplay/Weapon_Attachment_System.md) — attachment types; [Audio — Sound Design](../Audio/SoundDesign.md) — overall audio philosophy.
+> **Cross-References:** [vũ khí Arsenal](../gameplay/weaponarsenal/index.html) — vũ khí list; [vũ khí Attachment hệ thống](../gameplay/weapon_attachment_system/index.html) — attachment types; [Audio — Sound Design](../audio/sounddesign/index.html) — overall audio philosophy.
 
 ---
 
@@ -70,7 +70,7 @@ Muzzle flash reveals shooter position. Size và duration scale by vũ khí class
 | Sniper | 0.65 m | 3 frames | 80% reduction |
 | LMG | 0.75 m | 3 frames | 75% reduction |
 
-**Visibility range:** Muzzle flash is hiển thị rõ to other người chơi within LOS up to 80 m (hoặc per [Movement & Stamina](../Gameplay/Movement_and_Stamina.md) audio/visual range). Night hoặc dark zones: flash hiển thị rõ at 2× range per [Environmental Hazards](../Gameplay/Environmental_Hazards.md). Suppressor reduces both sound và flash to avoid contradicting stealth.
+**Visibility range:** Muzzle flash is hiển thị rõ to other người chơi within LOS up to 80 m (hoặc per [Movement & Stamina](../gameplay/movement_and_stamina/index.html) audio/visual range). Night hoặc dark zones: flash hiển thị rõ at 2× range per [Environmental Hazards](../gameplay/environmental_hazards/index.html). Suppressor reduces both sound và flash to avoid contradicting stealth.
 
 ---
 
@@ -105,7 +105,7 @@ Each vũ khí (hoặc caliber family) has a **distinct report** so Người chơ
 | .338 / .50 | Very heavy; long tail | 90 m | 28–35 m |
 | 12 Gauge | Boom; short tail | 50 m | 15–20 m |
 
-**Rules:** Same caliber can share base sound với pitch/body variation per vũ khí (e.g. M4 vs HK416 slightly different). Reload, bolt cycle, và empty click are also distinct per vũ khí class. Xem [Audio — Sound Design](../Audio/SoundDesign.md) và [Tactical Audio](../Audio/TacticalAudio.md) for integration.
+**Rules:** Same caliber can share base sound với pitch/body variation per vũ khí (e.g. M4 vs HK416 slightly different). Reload, bolt cycle, và empty click are also distinct per vũ khí class. Xem [Audio — Sound Design](../audio/sounddesign/index.html) và [Tactical Audio](../audio/tacticalaudio/index.html) for integration.
 
 ---
 
@@ -148,8 +148,8 @@ Death animation và feedback vary by **killing vũ khí class** to reinforce vũ
 
 ## Tham Chiếu Chéo
 
-- [Combat Feel (Top-Down)](../Gameplay/Combat_Feel_Topdown.md) — Hit markers, tracers, aim cone, suppression.
-- [vũ khí Arsenal](../Gameplay/WeaponArsenal.md) — vũ khí list và categories.
-- [vũ khí Attachment hệ thống](../Gameplay/Weapon_Attachment_System.md) — Attachment types và slots.
-- [Audio — Sound Design](../Audio/SoundDesign.md) — Gunshot và combat audio.
-- [Environmental Hazards](../Gameplay/Environmental_Hazards.md) — Night và weather effects on visibility.
+- [Combat Feel (Top-Down)](../gameplay/combat_feel_topdown/index.html) — Hit markers, tracers, aim cone, suppression.
+- [vũ khí Arsenal](../gameplay/weaponarsenal/index.html) — vũ khí list và categories.
+- [vũ khí Attachment hệ thống](../gameplay/weapon_attachment_system/index.html) — Attachment types và slots.
+- [Audio — Sound Design](../audio/sounddesign/index.html) — Gunshot và combat audio.
+- [Environmental Hazards](../gameplay/environmental_hazards/index.html) — Night và weather effects on visibility.

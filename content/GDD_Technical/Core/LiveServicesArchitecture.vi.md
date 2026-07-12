@@ -7,20 +7,20 @@ weight: 3
 
 > Bản mirror song song của `_files/UE_Multiplayer_Live_Services_Architecture_Go_RedpointEOS.md`. File nguồn được giữ nguyên; code, API, SQL, YAML/JSON và Mermaid được giữ nguyên để đối chiếu kỹ thuật.
 
-# Unreal Engine Multiplayer Live Services
-## Architecture, Technology Stack, Delivery Workflow, and Implementation Phases
+# Live Services Multiplayer trên Unreal Engine
+## Kiến trúc, công nghệ, quy trình bàn giao và các phase triển khai
 
-**Primary audience:** Unreal Engine developers, backend developers, DevOps engineers, technical leads, QA, and AI coding agents  
-**Current development environment:** macOS on Apple Silicon  
-**Current test topology:** Mac runs Unreal Dedicated Server + Go backend; physical iPhone and Android devices are game clients  
-**Online services integration:** Redpoint EOS + Epic Online Services  
-**Recommended production direction:** Linux-hosted Go backend and Linux Unreal Dedicated Servers
+**Đối tượng chính:** lập trình viên Unreal Engine, backend, DevOps, technical lead, QA và AI coding agent
+**Môi trường phát triển hiện tại:** macOS trên Apple Silicon
+**Topology kiểm thử hiện tại:** Mac chạy Unreal Dedicated Server + Go backend; iPhone và Android thật là game client
+**Tích hợp online services:** Redpoint EOS + Epic Online Services
+**Hướng production khuyến nghị:** Go backend chạy Linux và Unreal Dedicated Server chạy Linux
 
 ---
 
-# 1. Purpose
+# 1. Mục đích
 
-This document defines a practical technical foundation for building a multiplayer live-service game with:
+Tài liệu này định nghĩa nền tảng kỹ thuật thực tế để xây dựng game multiplayer live-service với:
 
 - Unreal Engine C++
 - Unreal Dedicated Server
@@ -33,7 +33,7 @@ This document defines a practical technical foundation for building a multiplaye
 - macOS development and test infrastructure
 - Linux production deployment
 
-The document is intended to act as:
+Tài liệu này được dùng như:
 
 - the technical source of truth for the team;
 - an architecture baseline;
@@ -41,21 +41,21 @@ The document is intended to act as:
 - a guide for AI agents generating plans, code, tests, migrations, and infrastructure;
 - a guardrail against premature complexity.
 
-The main principle is:
+Nguyên tắc chính:
 
-> EOS and Redpoint provide online platform capabilities.  
-> The custom backend owns authoritative live-service data.  
-> The Unreal Dedicated Server owns real-time gameplay authority.
+> EOS và Redpoint cung cấp capability của nền tảng online.
+> Backend tùy chỉnh sở hữu dữ liệu live-service có thẩm quyền.
+> Unreal Dedicated Server sở hữu authority của gameplay real-time.
 
 ---
 
-# 2. Core Architecture Decision
+# 2. Quyết định kiến trúc cốt lõi
 
-The system is divided into three authority layers.
+Hệ thống được chia thành ba tầng authority.
 
-## 2.1 Unreal Client
+## 2.1 Client Unreal
 
-Responsibilities:
+Trách nhiệm:
 
 - player input;
 - UI and presentation;
@@ -67,7 +67,7 @@ Responsibilities:
 - matchmaking requests;
 - sending gameplay intentions to the Dedicated Server.
 
-The client must never be authoritative for:
+Client tuyệt đối không được là authority cho:
 
 - currency;
 - inventory ownership;
@@ -97,7 +97,7 @@ Responsibilities:
 - server registration and heartbeat;
 - authoritative result commit to backend.
 
-The Dedicated Server must be the trusted writer for match outcome data.
+Dedicated Server là writer được tin cậy duy nhất cho dữ liệu kết quả match.
 
 Examples:
 
@@ -109,11 +109,11 @@ Examples:
 - match finished;
 - result commit.
 
-The Dedicated Server must not directly modify database tables. It calls protected backend APIs using mTLS and a short-lived, server-scoped token. Redpoint transport authentication proves the connecting EOS Product User ID; the backend join ticket proves that this player is authorized for this specific match.
+Dedicated Server không được sửa trực tiếp các bảng database. Nó gọi protected backend API bằng mTLS và short-lived token giới hạn theo server. Xác thực transport của Redpoint chứng minh EOS Product User ID đang kết nối; join ticket từ backend chứng minh người chơi được phép vào match cụ thể này.
 
 ---
 
-## 2.3 Custom Go Backend
+## 2.3 Go Backend tùy chỉnh
 
 Responsibilities:
 
@@ -136,11 +136,11 @@ Responsibilities:
 - persistence;
 - analytics event publishing.
 
-The backend is the source of truth for persistent live-service data and match admission. Redpoint EOS does not become a second persistent matchmaker.
+Backend là source of truth cho dữ liệu live-service lâu dài và admission của match. Redpoint EOS không trở thành một matchmaker persistent thứ hai.
 
 ---
 
-# 3. High-Level System Diagram
+# 3. Sơ đồ hệ thống cấp cao
 
 ```text
                          Epic Online Services
@@ -167,9 +167,9 @@ The backend is the source of truth for persistent live-service data and match ad
 
 ---
 
-# 4. Recommended Technology Stack
+# 4. Stack công nghệ khuyến nghị
 
-## 4.1 Unreal Layer
+## 4.1 Tầng Unreal
 
 | Area | Technology |
 |---|---|
@@ -188,7 +188,7 @@ The backend is the source of truth for persistent live-service data and match ad
 
 ---
 
-## 4.2 Backend Layer
+## 4.2 Tầng Backend
 
 | Area | Recommended choice |
 |---|---|
@@ -216,9 +216,9 @@ The backend is the source of truth for persistent live-service data and match ad
 
 ---
 
-## 4.3 Deployment Layer
+## 4.3 Tầng triển khai
 
-### Development
+### Phát triển
 
 ```text
 macOS native:
@@ -256,7 +256,7 @@ Do not begin with Kubernetes unless the project already requires:
 
 ---
 
-# 5. Why Go Is Suitable
+# 5. Vì sao Go phù hợp
 
 Go is appropriate for this project because it provides:
 
@@ -282,11 +282,11 @@ Avoid the following mistakes:
 
 ---
 
-# 6. Backend Architecture
+# 6. Kiến trúc Backend
 
 Use a **modular monolith** first.
 
-## 6.1 Suggested Repository Layout
+## 6.1 Cấu trúc repository đề xuất
 
 ```text
 game-backend/
@@ -364,9 +364,9 @@ for the entire application, because feature code becomes scattered.
 
 ---
 
-# 7. Identity and Authentication
+# 7. Identity và xác thực
 
-## 7.1 Identity Model
+## 7.1 Mô hình identity
 
 Do not use EOS Product User ID as the only primary key for the entire backend.
 
@@ -410,7 +410,7 @@ UNIQUE(provider, provider_user_id)
 
 ---
 
-## 7.2 Client Login Flow
+## 7.2 Luồng đăng nhập client
 
 ```text
 1. Client calls `IIdentitySystem::Login` through Redpoint EOS.
@@ -472,7 +472,7 @@ sequenceDiagram
 
 ---
 
-## 7.3 Token Policy
+## 7.3 Chính sách token
 
 Recommended baseline:
 
@@ -503,7 +503,7 @@ sequenceDiagram
 
 ---
 
-# 8. Dedicated Server Authentication
+# 8. Xác thực Dedicated Server
 
 Dedicated Server credentials must be separate from player tokens.
 
@@ -571,7 +571,7 @@ sequenceDiagram
 
 ---
 
-# 9. EOS and Redpoint Responsibility Boundary
+# 9. Ranh giới trách nhiệm của EOS và Redpoint
 
 Use Redpoint EOS and EOS for:
 
@@ -614,13 +614,13 @@ Use the custom backend for:
 
 EOS is not a replacement for a transactional authoritative database.
 
-Do **not** invoke `IMatchmakingEngine` or the `Matchmaking` / `MatchmakingMatchmaker` modules in the production runtime path. Those modules maintain their own queue, timeout, candidate matching, dedicated-server beacon reservation, and session-join lifecycle. Running them alongside the Go matchmaking worker would create conflicting allocation authority. They may be used as a development reference only.
+**Không** gọi `IMatchmakingEngine` hoặc module `Matchmaking` / `MatchmakingMatchmaker` trong runtime production. Các module này có queue, timeout, candidate matching, dedicated-server beacon reservation và lifecycle join session riêng. Chạy chúng cùng Go matchmaking worker sẽ tạo ra hai authority allocation xung đột. Chỉ được dùng chúng làm tài liệu tham khảo khi phát triển.
 
 ---
 
-# 10. Data Ownership Rules
+# 10. Quy tắc ownership dữ liệu
 
-## 10.1 PostgreSQL Is the Source of Truth
+## 10.1 PostgreSQL là nguồn dữ liệu chuẩn
 
 Use PostgreSQL for:
 
@@ -638,7 +638,7 @@ Use PostgreSQL for:
 - server registrations;
 - audit logs.
 
-## 10.2 Redis Is Ephemeral
+## 10.2 Redis là dữ liệu tạm thời
 
 Use Redis for:
 
@@ -675,9 +675,9 @@ Use object storage for:
 
 ---
 
-# 11. Inventory and Economy Model
+# 11. Mô hình inventory và economy
 
-The client must never directly state authoritative reward outcomes.
+Client không bao giờ được tự khai báo kết quả reward có thẩm quyền.
 
 Incorrect:
 
@@ -702,7 +702,7 @@ Authoritative match result with:
 
 ---
 
-## 11.1 Recommended Tables
+## 11.1 Các bảng khuyến nghị
 
 ```text
 inventory_containers
@@ -742,7 +742,7 @@ If a server retries the same request because of timeout, the backend must return
 
 ---
 
-## 11.3 Revisions and Optimistic Concurrency
+## 11.3 Revision và optimistic concurrency
 
 Every player aggregate should have a revision.
 
@@ -763,7 +763,7 @@ This prevents concurrent devices or servers from overwriting state.
 
 ---
 
-# 12. Match Lifecycle
+# 12. Vòng đời match
 
 Recommended end-to-end flow:
 
@@ -817,7 +817,7 @@ sequenceDiagram
 
 ---
 
-# 13. Matchmaking and Sessions
+# 13. Matchmaking và session
 
 Use:
 
@@ -855,7 +855,7 @@ The session only needs a compatibility hash.
 
 ---
 
-# 14. API Design
+# 14. Thiết kế API
 
 Use REST + JSON over HTTPS initially.
 
@@ -896,7 +896,7 @@ Use gRPC only later for internal service-to-service communication if justified.
 
 ---
 
-# 15. API Contract Rules
+# 15. Quy tắc API contract
 
 Every request and response should include explicit versioning where applicable.
 
@@ -944,11 +944,11 @@ Suggested error format:
 
 ---
 
-# 16. Real-Time Gameplay Boundary
+# 16. Ranh giới gameplay real-time
 
-Do not route gameplay simulation through the backend API.
+Không đưa mô phỏng gameplay qua backend API.
 
-The following stays inside Unreal networking:
+Các phần sau phải nằm trong Unreal networking:
 
 - movement;
 - fire;
@@ -959,7 +959,7 @@ The following stays inside Unreal networking:
 - replication;
 - short-lived match state.
 
-The backend is called at lifecycle boundaries:
+Backend chỉ được gọi tại các lifecycle boundary:
 
 - login;
 - profile load;
@@ -973,11 +973,11 @@ The backend is called at lifecycle boundaries:
 - purchase;
 - moderation.
 
-For a Dedicated Server join, the order is mandatory: Redpoint EOS encrypted transport and Connect ID-token verification first; then GameMode/PreLogin admission calls Go with the verified Product User ID and join ticket; only a successful one-time backend admission may create the playable participant. Do not accept an internal player ID, Product User ID, ticket, or match result from a client RPC as authoritative input.
+Đối với việc join Dedicated Server, thứ tự là bắt buộc: trước hết là encrypted transport và Connect ID-token verification của Redpoint EOS; sau đó GameMode/PreLogin gọi Go bằng Product User ID đã xác minh và join ticket; chỉ admission one-time thành công từ backend mới được tạo playable participant. Không chấp nhận internal player ID, Product User ID, ticket hoặc match result từ client RPC làm input có thẩm quyền.
 
 ---
 
-# 17. macOS Development Topology
+# 17. Topology phát triển trên macOS
 
 Recommended local setup:
 
@@ -1014,7 +1014,7 @@ Dedicated Server:
 
 ---
 
-# 18. Mobile Client Considerations
+# 18. Lưu ý cho mobile client
 
 ## 18.1 iOS
 
@@ -1032,7 +1032,7 @@ For local HTTP testing:
 - allow cleartext only in Development configuration;
 - Shipping builds must use HTTPS.
 
-## 18.3 Firewall and LAN
+## 18.3 Firewall và LAN
 
 Allow inbound access for:
 
@@ -1044,7 +1044,7 @@ Ensure the Mac does not sleep during tests.
 
 ---
 
-# 19. Docker Compose Baseline
+# 19. Baseline Docker Compose
 
 ```yaml
 services:
@@ -1149,7 +1149,7 @@ Do not log:
 
 ---
 
-# 21. Background Jobs and Outbox
+# 21. Background jobs và Outbox
 
 Do not add RabbitMQ, NATS, or Kafka at the start unless the project already needs them.
 
@@ -1202,7 +1202,7 @@ Add a message broker only when scaling requirements are proven.
 
 ---
 
-# 22. Security Rules
+# 22. Quy tắc bảo mật
 
 Mandatory rules:
 
@@ -1228,9 +1228,9 @@ Committed configuration must contain only non-secret identifiers and environment
 
 ---
 
-# 23. Testing Strategy
+# 23. Chiến lược kiểm thử
 
-## 23.1 Unit Tests
+## 23.1 Unit test
 
 Focus on:
 
@@ -1243,7 +1243,7 @@ Focus on:
 - quest progression;
 - insurance timing.
 
-## 23.2 Integration Tests
+## 23.2 Integration test
 
 Use Testcontainers for:
 
@@ -1265,7 +1265,7 @@ Important integration tests:
 - an expired, revoked, wrong-match, wrong-PUID, or previously consumed join ticket is rejected;
 - concurrent admission requests consume one ticket exactly once;
 
-## 23.3 End-to-End Tests
+## 23.3 End-to-end test
 
 Required scenarios:
 
@@ -1284,7 +1284,7 @@ Required scenarios:
 - inventory refresh;
 - disconnect and reconnect.
 
-## 23.4 Load Tests
+## 23.4 Load test
 
 Use k6.
 
@@ -1304,9 +1304,9 @@ Measure:
 
 ---
 
-# 24. CI/CD Workflow
+# 24. Quy trình CI/CD
 
-## 24.1 Backend Pipeline
+## 24.1 Pipeline Backend
 
 ```text
 1. Format and lint.
@@ -1337,7 +1337,7 @@ Optional:
 golangci-lint run
 ```
 
-## 24.2 Unreal Pipeline
+## 24.2 Pipeline Unreal
 
 ```text
 1. Compile game modules.
@@ -1350,7 +1350,7 @@ golangci-lint run
 8. Publish artifacts.
 ```
 
-## 24.3 Database Migration Rules
+## 24.3 Quy tắc database migration
 
 - migrations are immutable after merge;
 - every schema change is reviewed;
@@ -1361,11 +1361,11 @@ golangci-lint run
 
 ---
 
-# 25. Implementation Phases
+# 25. Các phase triển khai
 
 ## Phase 0 — Technical Proof of Concept
 
-### Goal
+### Mục tiêu
 
 Prove the critical platform path before building business systems.
 
@@ -1383,7 +1383,7 @@ Prove the critical platform path before building business systems.
 - mobile clients call the Go API over LAN;
 - ports and firewall are documented.
 
-### Exit criteria
+### Tiêu chí hoàn tất
 
 - one repeatable end-to-end test;
 - no unresolved platform blocker;
@@ -1748,11 +1748,11 @@ Prepare for external players.
 
 ---
 
-# 26. Work Breakdown Rules for AI Agents
+# 26. Quy tắc phân rã công việc cho AI agent
 
 AI agents working on this project must follow these constraints.
 
-## 26.1 Planning Rules
+## 26.1 Quy tắc lập kế hoạch
 
 Every implementation plan must include:
 
@@ -1771,7 +1771,7 @@ Every implementation plan must include:
 - rollout and rollback;
 - acceptance criteria.
 
-## 26.2 Coding Rules
+## 26.2 Quy tắc coding
 
 AI-generated code must:
 
@@ -1788,7 +1788,7 @@ AI-generated code must:
 - preserve module boundaries;
 - avoid adding infrastructure without justification.
 
-## 26.3 Database Rules
+## 26.3 Quy tắc database
 
 AI agents must not:
 
@@ -1800,7 +1800,7 @@ AI agents must not:
 - omit indexes for high-frequency queries;
 - use unbounded queries.
 
-## 26.4 Unreal Rules
+## 26.4 Quy tắc Unreal
 
 AI agents must:
 
@@ -1844,7 +1844,7 @@ A multiplayer feature is done only when:
 
 ---
 
-# 28. Non-Goals for the Initial Release
+# 28. Non-goal cho bản release đầu tiên
 
 Do not implement these prematurely:
 
@@ -1865,7 +1865,7 @@ These may be added only when justified by measured scale or clear product requir
 
 ---
 
-# 29. Initial Milestone Recommendation
+# 29. Milestone đầu tiên khuyến nghị
 
 The first meaningful milestone should be:
 
@@ -1895,7 +1895,7 @@ This vertical slice validates the complete architecture before large feature inv
 
 ---
 
-# 30. Final Recommended Baseline
+# 30. Baseline khuyến nghị cuối cùng
 
 ```text
 Client:
@@ -1940,7 +1940,7 @@ The architecture should evolve from one complete, secure vertical slice rather t
 
 ---
 
-# 31. Suggested Next Planning Documents
+# 31. Các planning document tiếp theo
 
 The team should derive the following documents from this baseline:
 
@@ -1962,7 +1962,7 @@ Each document should reference this file as the top-level architecture source of
 
 ---
 
-# 32. Core Database DDL
+# 32. DDL database cốt lõi
 
 This schema is the v1 PostgreSQL baseline. Use UUIDs generated by the application or `gen_random_uuid()`, UTC timestamps, `BIGINT` minor units for money, and immutable migrations. `updated_at` is changed by a shared trigger in the migration; event and ledger rows are intentionally append-only.
 
@@ -2124,7 +2124,7 @@ CREATE INDEX outbox_events_pending_idx ON outbox_events(available_at, created_at
 
 Run a scheduled cleanup for expired `idempotency_keys` (retain at least 24 hours for player writes and 7 days for match commits). Add foreign keys that depend on later sections only in their own migration; do not create circular dependencies.
 
-# 33. OpenAPI Contract Baseline
+# 33. Baseline OpenAPI contract
 
 `openapi/v1.yaml` is the executable contract and is the only source used to generate Go and Unreal DTOs. All JSON uses lower camel case. Every error has the envelope below and a stable `code` from Section 34.
 
@@ -2154,7 +2154,7 @@ Run a scheduled cleanup for expired `idempotency_keys` (retain at least 24 hours
 
 For all mutating public endpoints, require `Idempotency-Key`; return the stored original status/body for a duplicate key with an identical request hash. Reject a duplicate key used with a different payload. Internal commit requests use a key derived from `matchId + commitVersion` and must never accept client-supplied item ownership.
 
-## 33.1 Representative Schemas
+## 33.1 Schema đại diện
 
 ```yaml
 AuthEOSRequest:
@@ -2179,7 +2179,7 @@ MatchAdmissionRequest:
     eosProductUserId: {type: string, minLength: 1}
 ```
 
-# 34. Error Catalog and Retry Rules
+# 34. Catalog lỗi và quy tắc retry
 
 | Family | Codes | Client action |
 |---|---|---|
@@ -2192,7 +2192,7 @@ MatchAdmissionRequest:
 
 Player API retry: exponential backoff 1, 2, 4, 8 seconds, then up to 30 seconds, with full jitter. Dedicated Server retry: immediately once, then 500 ms, 1 s, 2 s up to 10 seconds. Retry only connection failures, 408, 429, and 5xx explicitly marked `retryable`; never retry validation/authorization errors. Stop retries when the game world or request owner is destroyed.
 
-# 35. Rate Limiting Policy
+# 35. Chính sách rate limiting
 
 Implement Redis token buckets with a PostgreSQL-independent fallback that fails closed for auth and fails soft for non-sensitive reads during a Redis outage. Return `X-RateLimit-Limit`, `X-RateLimit-Remaining`, `X-RateLimit-Reset`, and `429` with `Retry-After`.
 
@@ -2208,7 +2208,7 @@ Implement Redis token buckets with a PostgreSQL-independent fallback that fails 
 
 ---
 
-# 36. Extraction Shooter Core Mechanics
+# 36. Cơ chế cốt lõi của Extraction Shooter
 
 The authoritative raid state machine is `lobby -> deploying -> in_raid -> extracting -> extracted | dead | mia -> committing -> complete`. The Dedicated Server owns every transition and emits a signed authoritative result. The backend only persists a valid transition for registered match participants.
 
@@ -2233,7 +2233,7 @@ stateDiagram-v2
 - Durability, ammunition, attachments, and item metadata are DS changes. The client sends intent only.
 - Hideout and Scav modes are optional product systems; keep their persistent changes in the same ledger/inventory transaction model.
 
-# 37. Insurance System
+# 37. Hệ thống insurance
 
 Insurance is purchased before a raid for eligible owned instances. Tiers define price, return delay, and eligible categories. States are `insured -> claim_pending -> returned | lost | expired`.
 
@@ -2246,7 +2246,7 @@ Create `insurance_policies(id, player_id, provider_id, item_instance_id, premium
 
 At match commit, the backend creates claims only for insured instances which were not extracted by any participant. Do not model “who looted it” from untrusted client events: the DS result supplies item custody. To limit collusion, flag rapid teammate handoffs, repeated mutual deaths, abnormal same-party recovery, and insure/drop/extract patterns for review; do not automatically remove valid returns solely from a heuristic.
 
-# 38. Loot Tables and Item Spawning
+# 38. Loot table và spawn item
 
 The backend versions and signs the selected loot configuration; the DS deterministically generates loot from `match.loot_seed`, map, table version, and spawn zone. The client never receives a seed or can request a roll.
 
@@ -2254,25 +2254,25 @@ Use `loot_tables(id, map_id, version, active_from, active_to)`, `loot_zones(id, 
 
 Dynamic modifiers may adjust weights by event, map, or player population, but must be resolved at match start and written to the match metadata. The DS validates container opens, capacity, one-time spawn use, and every transfer; it reports only final authoritative item changes.
 
-# 39. Premium Currency and Shop
+# 39. Premium currency và shop
 
 Supported currency classes are soft earned currency, premium purchased currency, and non-currency entitlements. Never use floating point. The mobile client obtains a store transaction/receipt, backend verifies it server-side with the relevant store provider, persists a unique external transaction ID, credits premium currency in the immutable ledger, and returns the updated wallet.
 
 Use `shop_items`, `shop_bundles`, `shop_rotations`, `purchase_receipts`, and `entitlements`; each price references a catalog version. `GET /v1/shop/catalog` returns a signed/ETagged active catalog. `POST /v1/shop/purchase` accepts a catalog item/version plus idempotency key, locks the wallet, writes debit/credit ledger entries and grants atomically. Refund webhooks reverse or freeze a specific entitlement/credit according to product policy; they never delete audit rows.
 
-# 40. Gacha / Lootbox System
+# 40. Hệ thống gacha / lootbox
 
 All rolls run server-side. The active pool and its probability disclosure are versioned and retained with each roll. Use `gacha_pools`, `gacha_pool_entries`, `gacha_pity_counters`, and append-only `gacha_rolls` containing pool version, roll sequence, result, pity state before/after, and transaction reference.
 
 `POST /v1/gacha/open` requires pool ID, count, and idempotency key; it locks wallet and pity counter, validates cost, generates cryptographically secure server randomness, writes the ledger and grants in one transaction. `GET /v1/gacha/pools` exposes item probabilities, guarantee rules, and jurisdictionally required disclosures. Product/legal review must approve availability, age gates, receipts, and disclosure wording in every launch territory before release.
 
-# 41. Quest and Progression
+# 41. Quest và progression
 
 Use versioned `quest_definitions`, `quest_objectives`, `quest_progress`, `trader_standings`, and immutable reward grants. Quest types: daily, weekly, seasonal, and storyline/trader. Objective types: kill, extract, find-in-raid, deliver, survive.
 
 The DS reports normalized gameplay events at match commit; the backend validates participant, mode, item provenance, and duplicate event IDs before updating progress. Offline UI is advisory only. `GET /v1/quests` returns active definitions/progress; `POST /v1/quests/{id}/complete` only claims a backend-validated completed quest and uses idempotency. Rewards (items, XP, soft currency, reputation) share one transaction and outbox event.
 
-# 42. Battle Pass and Seasons
+# 42. Battle pass và season
 
 Create `seasons`, `season_tiers`, `season_tier_rewards`, `player_season_progress`, and `season_reward_claims`. A season has start/end timestamps, status, XP rules, free/premium tracks, and a frozen content version. XP derives from trusted raid/quest completion records only.
 
@@ -2280,13 +2280,13 @@ Create `seasons`, `season_tiers`, `season_tier_rewards`, `player_season_progress
 
 ---
 
-# 43. Notifications and Inbox
+# 43. Notification và inbox
 
 Use `inbox_messages(id, player_id, type, subject_key, payload, state, expires_at, claimed_at)` and `push_registrations(id, player_id, platform, token_hash, enabled_at, revoked_at)`. Inbox state is `created -> read -> claimed | expired`; a reward-bearing message cannot be claimed twice.
 
 `GET /v1/inbox` is paginated. `POST /v1/inbox/{id}/claim` is idempotent and grants attached rewards in the same transaction. Outbox workers send APNS/FCM as best-effort notification only; the inbox is the source of truth. Do not put rewards or sensitive player data in push payloads. Expire stale messages with a worker and retain a minimal audit record.
 
-# 44. Reconnection and Session Recovery
+# 44. Reconnect và khôi phục session
 
 On a transient disconnect, DS marks a participant `disconnected` and preserves its server state for a **three-minute** reconnect window. Client reauthenticates, calls `POST /v1/matches/rejoin`, and receives assignment only if token, build, player, match state, and DS reconnect window all match. DS finally admits the reconnecting EOS identity.
 
@@ -2307,13 +2307,13 @@ sequenceDiagram
 
 If DS crashes, do not pretend a live raid can safely resume unless durable state snapshots, compatible process recovery, and playtesting prove it. For v1, mark the match `abandoned`, preserve auditable server logs, release unconsumed reserved loadouts by a controlled recovery job, and apply a documented compensation policy. Persistent inventory changes still occur only at commit.
 
-# 45. Anti-Cheat and Trust
+# 45. Anti-cheat và trust
 
 Integrate EAC where the platform/device supports it and keep platform-specific capability documentation current. EAC is one signal, not a replacement for authoritative gameplay. DS validates movement envelopes, fire rate, damage inputs, line-of-sight where relevant, inventory transfer rules, loot counts, extraction conditions, and signed backend assignments.
 
 The pipeline is report -> evidence collection -> investigation -> sanction -> appeal/audit. Store `player_reports`, `sanctions`, and immutable moderation audit records. Reports require reporter identity, target, category, match, and bounded evidence metadata. Sanctions have scope, reason code, actor, start/end, and review state. Never automatically ban solely from one client report; reserve automatic immediate action for high-confidence server/EAC signals approved by policy.
 
-# 46. Scaling Strategy: Initial 1K CCU
+# 46. Chiến lược scale: 1K CCU ban đầu
 
 For approximately 1,000 CCU, use one PostgreSQL primary with backups, standalone persistent Redis, one or more stateless Go API instances behind a reverse proxy, and a manually operated Linux DS pool. PgBouncer is recommended before connection pressure appears. Keep a single region and measure before adding components.
 
@@ -2326,37 +2326,37 @@ For approximately 1,000 CCU, use one PostgreSQL primary with backups, standalone
 
 Capacity work is driven by load tests representing login bursts, ticket creation, server heartbeats, commit spikes, and inbox workers. Track per-environment infrastructure cost, DS instance-hour, database storage/IOPS, egress, and alert on budget variance. Cost estimates must be obtained from the selected provider at purchase time, not embedded as stale architecture facts.
 
-# 47. Disaster Recovery and Backup
+# 47. Disaster recovery và backup
 
 Initial targets: RTO under four hours, RPO under one hour. PostgreSQL uses daily logical backup plus continuous WAL archiving; periodically test physical/base backups if data size makes logical recovery too slow. Redis uses AOF plus RDB snapshots but is rebuilt as cache when necessary. Object storage buckets are versioned and lifecycle-managed.
 
 Monthly restore drill: (1) select a backup and target timestamp, (2) restore to isolated environment, (3) apply WAL, (4) run integrity and row-count checks, (5) verify a sampled ledger/inventory/match relationship, (6) rotate temporary credentials and destroy drill data, (7) record actual RTO/RPO and corrective work. Maintain a current contact-free solo runbook with backup locations, access procedure, DNS/reverse-proxy rollback, and customer communication templates.
 
-# 48. Data Retention and Privacy
+# 48. Lưu trữ dữ liệu và privacy
 
 Define the player-facing privacy notice and jurisdictional requirements with qualified legal review before collecting data. Baseline retention: match records one year; economy ledger permanently or for the legally required financial/audit period; admin audit logs two years; raw analytics 90 days then anonymized/aggregated; chat logs 30 days unless a valid investigation hold applies.
 
 `GET /v1/admin/players/{id}/export` creates an audited, access-controlled export job; never synchronously return a large data package. `DELETE /v1/admin/players/{id}/gdpr` starts a verified deletion/anonymization workflow, not an unaudited hard delete. Replace direct identifiers with irreversible surrogate values where records must be retained for fraud, financial, or legal obligations, revoke sessions/tokens, and retain only the documented minimum. Track requests, decisions, legal holds, and completion evidence.
 
-# 49. Flea Market / Player Marketplace (Roadmap)
+# 49. Flea Market / player marketplace (roadmap)
 
 Do not implement before item locking, ledger, audit, fraud detection, and load tests are proven. The model is listing -> escrow -> buy/bid -> settlement -> delivery/expiry. At listing, lock and escrow the exact item instances in a transaction. At purchase, lock the buyer wallet and listing, debit price plus fee/tax sink, credit seller, transfer item or create inbox delivery, and write all ledger/audit rows atomically.
 
 Initial controls: seller reputation/trader-level gate, quantity/price bounds, listing caps, cooldowns, anomaly review, immutable item provenance, and no trust in display prices supplied by the client. Design the data model later; avoid premature full DDL.
 
-# 50. Content Delivery and Patching (Roadmap)
+# 50. Content delivery và patching (roadmap)
 
 Use signed build manifests containing app version, content version, compatibility hash, minimum supported version, required chunks, and expiry. Distribute large mobile content through platform/CDN-supported delivery. Backend LiveOps config can gate queues by compatibility hash; it cannot safely replace a signed client patch system.
 
 Maintain a compatibility matrix for client, DS, backend API, schema, and content. Forced updates block login before matchmaking when a critical version is unsupported. Hot fixes are restricted to pre-approved data/config changes; native code, anti-cheat, and security changes follow platform release rules.
 
-# 51. Real-Time Backend Updates (Roadmap)
+# 51. Backend update real-time (roadmap)
 
 Start with REST polling: ticket status every 2–5 seconds while the queue UI is visible, inbox refresh on foreground/login, and ETag polling for LiveOps. Add WebSocket or SSE only when measured polling cost or product UX requires it. WebSocket is appropriate for ticket assignments, inbox badge updates, and LiveOps invalidation—not real-time combat.
 
 Authenticate the connection with a short-lived backend token, authorize every subscribed topic, enforce connection/message limits, refresh before expiry, and reconnect with jitter. Mobile clients must fall back to polling when backgrounding, captive portals, or unreliable networks break a long-lived connection.
 
-# 52. Multi-Region Roadmap
+# 52. Roadmap multi-region
 
 Consider multi-region only for sustained latency/product/regulatory needs, normally above 10K CCU. Start with regional DS fleets and matchmaking affinity while retaining a clearly defined primary persistence region. Avoid active-active inventory/economy writes until the team can operate conflict-free ownership boundaries and recovery procedures.
 
@@ -2364,7 +2364,7 @@ Future phases may add regional read replicas for safe reads, a global server reg
 
 ---
 
-# 53. Expanded Sequential Delivery Plan
+# 53. Delivery plan tuần tự mở rộng
 
 For a solo developer, complete and verify work in this order; do not parallelize dependent persistent-state work.
 
@@ -2373,7 +2373,7 @@ For a solo developer, complete and verify work in this order; do not parallelize
 3. **Phase C — Operational readiness:** Sections 43–48 plus the Section 24 runbook. Exit after reconnect, backup restore, abuse, and 1K-CCU load scenarios are tested.
 4. **Phase D — Roadmap:** Sections 49–52 are design-only until measured scale/product evidence authorizes implementation.
 
-## 53.1 Deployment Runbook Addendum
+## 53.1 Phụ lục deployment runbook
 
 Before deployment: confirm target environment, clean migration status, backup freshness, error budget, compatible DS/client builds, and rollback artifact. Deploy backend to a small canary (or one instance), run health/auth/inventory/commit smoke tests with synthetic data, then progress 10% -> 50% -> 100% while watching error rate, latency, DB locks, and queue/heartbeat health. Roll back application binaries/config immediately for behavioral failure; use forward-fix migrations unless the migration has a tested, safe rollback. Record incident timeline, impact, mitigation, and follow-up actions.
 
@@ -2383,7 +2383,7 @@ Before deployment: confirm target environment, clean migration status, backup fr
 
 This section records the selected integration boundary against the Redpoint EOS Online Framework source bundled with the project. It is normative for runtime implementation.
 
-## 54.1 Fact, Rule, and Owner
+## 54.1 Fact, rule và owner
 
 | Redpoint EOS fact | Architecture rule | Owner |
 |---|---|---|
@@ -2394,7 +2394,7 @@ This section records the selected integration boundary against the Redpoint EOS 
 
 Source references: `Docs/RedpointEOS/docs/systems/identity.md`, `Docs/RedpointEOS/docs/systems/user_id.md`, `RedpointEOSNetworking/.../IdTokenAuthNetworkingLayer.cpp`, and the plugin `Matchmaking` documentation/source.
 
-## 54.2 Hybrid Admission Flow
+## 54.2 Luồng admission hybrid
 
 ```mermaid
 sequenceDiagram
@@ -2425,7 +2425,7 @@ sequenceDiagram
 
 The join ticket claims are `matchId`, `playerId`, `eosProductUserId`, `jti`, `exp`, `buildId` when applicable, and `region` when applicable. The DS obtains the verified Product User ID from the Redpoint-authenticated connection, not from untrusted game RPC input. A ticket expiry of 60 seconds is the v1 default; refresh/reissue is allowed only while the backend assignment is active.
 
-## 54.3 Admission and Failure Matrix
+## 54.3 Ma trận admission và failure
 
 | Condition | Required behavior | Stable error / operational action |
 |---|---|---|
@@ -2437,7 +2437,7 @@ The join ticket claims are `matchId`, `playerId`, `eosProductUserId`, `jti`, `ex
 | Duplicate commit | Return the original commit receipt without a second inventory/economy write. | `match_already_committed` with matching receipt. |
 | DS crash before commit | Mark match abandoned; run controlled reservation recovery/compensation policy. | No client-side reward inference. |
 
-## 54.4 Required Delivery Order
+## 54.4 Thứ tự delivery bắt buộc
 
 1. Verify `IIdentitySystem` login, Product User ID conversion, and backend token exchange on client platforms.
 2. Verify Redpoint encrypted DS transport and EOS ID-token verification before any custom admission logic.

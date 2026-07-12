@@ -52,6 +52,7 @@ Responsibilities:
 - UI and presentation;
 - local prediction;
 - EOS login flow through Redpoint;
+- obtain the EOS Connect ID token through `IIdentitySystem` / `FIdentityUser::GetIdToken`;
 - party, lobby, session discovery;
 - profile and inventory display;
 - matchmaking requests;
@@ -82,6 +83,7 @@ Responsibilities:
 - loot and extraction validation;
 - authoritative match state;
 - authoritative player participation;
+- verify the backend-issued join ticket after Redpoint has verified EOS transport identity;
 - match result generation;
 - server registration and heartbeat;
 - authoritative result commit to backend.
@@ -98,7 +100,7 @@ Examples:
 - match finished;
 - result commit.
 
-The Dedicated Server must not directly modify database tables. It calls protected backend APIs.
+The Dedicated Server must not directly modify database tables. It calls protected backend APIs using mTLS and a short-lived, server-scoped token. Redpoint transport authentication proves the connecting EOS Product User ID; the backend join ticket proves that this player is authorized for this specific match.
 
 ---
 
@@ -114,6 +116,7 @@ Responsibilities:
 - item ownership;
 - progression and quests;
 - matchmaking tickets;
+- matchmaking decisions, server allocation, and join-ticket issuance;
 - server registry;
 - match records;
 - live operations configuration;
@@ -124,7 +127,7 @@ Responsibilities:
 - persistence;
 - analytics event publishing.
 
-The backend is the source of truth for persistent live-service data.
+The backend is the source of truth for persistent live-service data and match admission. Redpoint EOS does not become a second persistent matchmaker.
 
 ---
 
@@ -360,6 +363,8 @@ Do not use EOS Product User ID as the only primary key for the entire backend.
 
 Use an internal UUID.
 
+In Redpoint EOS, the runtime user representation is `UE::Online::FAccountId`. Convert it to/from the EOS Product User ID only at the Unreal/EOS boundary using `RedpointEOSCore` helpers. Store the Product User ID as `player_identities.provider_user_id` with provider `eos_connect`; do not make an Epic Games Account ID the gameplay primary key because it is optional and not portable across identity providers.
+
 ```text
 InternalPlayerID
     ├── EOS ProductUserId
@@ -399,8 +404,8 @@ UNIQUE(provider, provider_user_id)
 ## 7.2 Client Login Flow
 
 ```text
-1. Client logs in through Redpoint EOS.
-2. Client obtains an EOS identity token.
+1. Client calls `IIdentitySystem::Login` through Redpoint EOS.
+2. Client obtains its EOS Connect ID token from `FIdentityUser::GetIdToken`.
 3. Client sends the EOS token to the Go backend.
 4. Backend verifies the token.
 5. Backend extracts EOS identity.
@@ -449,7 +454,7 @@ sequenceDiagram
     C->>R: Login / obtain EOS identity token
     R-->>C: Product User ID + identity token
     C->>B: POST /v1/auth/eos (token, deviceId, build)
-    B->>R: Verify token and issuer/audience
+    B->>R: Verify EOS Connect token and Product User ID
     R-->>B: Verified EOS identity
     B->>DB: Find or create player + identity + session
     DB-->>B: Internal player ID
@@ -497,9 +502,10 @@ Recommended model:
 
 ```text
 Server process
-    -> workload identity
-    -> short-lived server access token
-    -> protected internal backend endpoints
+    -> mTLS bootstrap credential (development: local CA; production: secret manager)
+    -> POST /internal/servers/register
+    -> server ID + short-lived scoped server token
+    -> protected internal backend endpoints over mTLS
 ```
 
 Suggested scopes:
@@ -515,6 +521,7 @@ game-server:
     server.heartbeat
     match.start
     match.commit
+    match.admit_player
     inventory.authoritative_write
 
 admin:
@@ -530,9 +537,10 @@ POST /v1/internal/servers/register
 POST /v1/internal/servers/{serverId}/heartbeat
 POST /v1/internal/matches/start
 POST /v1/internal/matches/{matchId}/commit
+POST /v1/internal/matches/{matchId}/admit-player
 ```
 
-Never reuse client credentials for server actions.
+The bootstrap credential is used only for registration and rotation. The issued token is bound to the registered `serverId`, expiry, certificate identity, and scopes; heartbeat, admission, start, and commit reject expired/revoked tokens or non-active servers. Never reuse client credentials for server actions.
 
 ```mermaid
 sequenceDiagram
@@ -541,8 +549,8 @@ sequenceDiagram
     participant I as Workload Identity / Secret Store
     participant B as Go Backend
     participant DB as PostgreSQL
-    DS->>I: Obtain server credential
-    DS->>B: POST /internal/servers/register
+    DS->>I: Obtain mTLS bootstrap credential
+    DS->>B: POST /internal/servers/register over mTLS
     B->>DB: Register server and issue short-lived server token
     B-->>DS: serverId + scoped token
     loop Every 2 seconds
@@ -572,6 +580,8 @@ Use Redpoint EOS and EOS for:
 - sanctions;
 - anti-cheat integration.
 
+For the selected hybrid model, Redpoint provides EOS identity, party/lobby, session discovery, and encrypted Unreal transport. The Redpoint networking layer on a Dedicated Server requests the client EOS Connect ID token over the encrypted control channel and verifies it against the connecting Product User ID. This is required transport identity verification, not persistent match authorization.
+
 Use the custom backend for:
 
 - internal account model;
@@ -594,6 +604,8 @@ Use the custom backend for:
 - audit and fraud analysis.
 
 EOS is not a replacement for a transactional authoritative database.
+
+Do **not** invoke `IMatchmakingEngine` or the `Matchmaking` / `MatchmakingMatchmaker` modules in the production runtime path. Those modules maintain their own queue, timeout, candidate matching, dedicated-server beacon reservation, and session-join lifecycle. Running them alongside the Go matchmaking worker would create conflicting allocation authority. They may be used as a development reference only.
 
 ---
 
@@ -753,34 +765,40 @@ Recommended end-to-end flow:
 4. Client forms or joins a party through EOS Lobby.
 5. Client creates a matchmaking ticket with the backend.
 6. Matchmaker groups compatible players.
-7. Backend selects or allocates a Dedicated Server.
-8. Dedicated Server registers an EOS Session.
-9. Backend assigns players to the session.
-10. Clients join through Redpoint EOS.
-11. Dedicated Server loads authoritative player loadouts.
-12. Gameplay runs through Unreal networking.
-13. Dedicated Server produces authoritative results.
-14. Dedicated Server commits match results to backend.
-15. Backend applies database transaction.
-16. Client refreshes profile or receives a delta.
+7. Go backend selects or allocates a Dedicated Server and creates the match record.
+8. Dedicated Server publishes a small EOS Session discovery record.
+9. Go reserves the participants' loadouts and issues a one-time, short-lived join ticket for each participant.
+10. Client joins the EOS Session through Redpoint EOS.
+11. Redpoint's Dedicated Server NetDriver verifies the client's EOS Connect ID token over the encrypted control channel.
+12. Dedicated Server calls Go to consume and validate the join ticket against the match, internal player ID, and EOS Product User ID.
+13. Dedicated Server loads the authoritative reserved loadout and admits gameplay.
+14. Gameplay runs through Unreal networking; the Dedicated Server produces authoritative results.
+15. Dedicated Server commits match results with idempotency.
+16. Backend applies inventory/economy/outbox changes in one transaction; client refreshes state.
 ```
 
 ```mermaid
 sequenceDiagram
     autonumber
     participant C as Client / Party
-    participant MM as Matchmaker
+    participant RP as Redpoint EOS
+    participant MM as Go Matchmaker
     participant DS as Dedicated Server
     participant B as Go Backend
     participant DB as PostgreSQL
     C->>B: Create matchmaking ticket
     B->>DB: Persist ticket
     MM->>DB: Claim compatible tickets
-    MM->>DS: Select or allocate capacity
-    DS->>B: Register EOS Session details
+    MM->>DS: Allocate capacity and create match
+    DS->>RP: Publish EOS Session discovery metadata
     B->>DB: Create match + participants + assignments
-    B-->>C: Ticket assigned (session join data)
-    C->>DS: Join EOS Session
+    B-->>C: Assignment + one-time join ticket
+    C->>RP: Join EOS Session
+    RP->>DS: Encrypted Unreal connection
+    Note over DS: Redpoint requests and verifies EOS Connect ID token
+    DS->>B: Consume join ticket; validate PUID + match
+    B->>DB: Atomically mark ticket consumed and participant joined
+    B-->>DS: Admission approved + internal player ID
     DS->>B: Start match
     Note over DS: Server validates all real-time gameplay
     DS->>B: Commit result with idempotency key
@@ -798,6 +816,8 @@ Use:
 - backend matchmaking tickets for queue decisions;
 - EOS Sessions for active match instances.
 
+Go owns ticket creation/cancellation, party eligibility, compatibility, grouping, server selection, reservation, assignment, and all state transitions. The client calls Go for queue state; it does not call Redpoint's matchmaking engine. Redpoint EOS is used only after Go has selected an assignment, to discover and join the selected session.
+
 Do not put large content manifests or long arrays into Session Settings.
 
 Session metadata should remain small:
@@ -811,6 +831,8 @@ MAP_ID
 REGION
 COMPATIBILITY_HASH
 ```
+
+Do not put player lists, join tickets, loadouts, inventory identifiers, or authoritative match state in EOS Session Settings. A session ID is discovery/transport metadata only. Go stores the participant list and issues a signed, one-time ticket bound to `matchId`, internal `playerId`, EOS Product User ID, nonce/JTI, expiry, and optional build/region constraints.
 
 The backend or CDN should expose content requirements.
 
@@ -858,6 +880,7 @@ POST /v1/internal/servers/register
 POST /v1/internal/servers/{serverId}/heartbeat
 POST /v1/internal/matches/start
 POST /v1/internal/matches/{matchId}/commit
+POST /v1/internal/matches/{matchId}/admit-player
 ```
 
 Use gRPC only later for internal service-to-service communication if justified.
@@ -878,6 +901,8 @@ Example:
   "players": []
 }
 ```
+
+The admission endpoint is called only by the assigned Dedicated Server after Redpoint transport identity verification. It accepts the server-authenticated context plus the join ticket; it does not trust a client-provided player ID. It validates server/match assignment, ticket signature, JTI, expiry, Product User ID, internal player ID, and build/region claims, then atomically consumes the JTI and marks the participant joined. A repeated consumption returns a stable `match_join_ticket_consumed` response and must not admit a second connection.
 
 Rules:
 
@@ -938,6 +963,8 @@ The backend is called at lifecycle boundaries:
 - progression commit;
 - purchase;
 - moderation.
+
+For a Dedicated Server join, the order is mandatory: Redpoint EOS encrypted transport and Connect ID-token verification first; then GameMode/PreLogin admission calls Go with the verified Product User ID and join ticket; only a successful one-time backend admission may create the playable participant. Do not accept an internal player ID, Product User ID, ticket, or match result from a client RPC as authoritative input.
 
 ---
 
@@ -1173,6 +1200,9 @@ Mandatory rules:
 - all production APIs use HTTPS;
 - clients never contain backend secrets;
 - server credentials are isolated;
+- Dedicated Server internal traffic uses mTLS and a short-lived token bound to `serverId`, certificate identity, and scope;
+- Redpoint EOS transport verification and backend join-ticket authorization are both required before gameplay admission;
+- join tickets are signed, match/PUID-bound, short-lived, and atomically consumed once;
 - server APIs require server scope;
 - client APIs require player scope;
 - admin APIs require strong authentication and audit;
@@ -1184,6 +1214,8 @@ Mandatory rules:
 - maintain Dev, Stage, and Production environments;
 - never trust IDs sent by the client without authorization checks;
 - never let the client directly grant currency or items.
+
+Committed configuration must contain only non-secret identifiers and environment-independent defaults. Store EOS client secrets, backend server bootstrap credentials, mTLS private keys, signing keys, and production endpoints in environment-specific secret management. Maintain separate Dev, Stage, and Production EOS deployments and certificate authorities.
 
 ---
 
@@ -1220,6 +1252,9 @@ Important integration tests:
 - transaction rollback occurs if one inventory operation fails;
 - server heartbeat expiry removes stale assignment;
 - failed match commit can be retried safely.
+- a player token cannot call a server endpoint, and a server token cannot exceed its server/match scope;
+- an expired, revoked, wrong-match, wrong-PUID, or previously consumed join ticket is rejected;
+- concurrent admission requests consume one ticket exactly once;
 
 ## 23.3 End-to-End Tests
 
@@ -1233,6 +1268,8 @@ Required scenarios:
 - server allocation;
 - EOS Session registration;
 - both mobile clients join the Mac Dedicated Server;
+- Redpoint rejects an unencrypted or invalid EOS Connect ID-token transport handshake;
+- a Redpoint-authenticated client is rejected when its Go join ticket does not match the assigned raid;
 - authoritative match completion;
 - backend result commit;
 - inventory refresh;
@@ -1332,6 +1369,7 @@ Prove the critical platform path before building business systems.
 - Android client logs in;
 - Mac Dedicated Server registers a session;
 - iPhone and Android join the session;
+- Redpoint encrypted DS transport verifies an EOS Connect ID token for a joining mobile client;
 - Dedicated Server calls a minimal Go API;
 - mobile clients call the Go API over LAN;
 - ports and firewall are documented.
@@ -1391,6 +1429,8 @@ Create a secure player identity chain.
 
 - EOS token exchange endpoint;
 - EOS token verification;
+- `IIdentitySystem::Login` and `FIdentityUser::GetIdToken` integration on each target platform;
+- Product User ID conversion and persistence as the `eos_connect` identity;
 - InternalPlayerID;
 - player and identity tables;
 - first-login player creation;
@@ -1467,6 +1507,8 @@ Allow the backend to know which servers are available.
 ### Deliverables
 
 - server authentication;
+- mTLS bootstrap and certificate identity validation;
+- short-lived server token issuance, rotation, revocation, and scope checks;
 - register endpoint;
 - heartbeat endpoint;
 - server status;
@@ -1498,6 +1540,7 @@ Create authoritative match records.
 - player reservation;
 - match start;
 - player participation records;
+- one-time match join-ticket issuance and atomic admission consumption;
 - match end;
 - authoritative commit;
 - idempotency;
@@ -1530,6 +1573,8 @@ Connect party formation to server assignment.
 - server selection;
 - assignment response;
 - EOS Session linkage;
+- Go is the sole queue/allocation authority; Redpoint Matchmaking runtime modules are not invoked;
+- signed, match/PUID-bound join-ticket delivery;
 - timeout and retry logic.
 
 ### Exit criteria
@@ -1537,6 +1582,7 @@ Connect party formation to server assignment.
 - iPhone and Android can enter queue;
 - both receive the same match assignment;
 - both join the correct session.
+- both are admitted only after Redpoint token verification and Go join-ticket consumption.
 
 ---
 
@@ -1825,7 +1871,9 @@ Matchmaking Ticket
     ->
 Mac Dedicated Server Assignment
     ->
-EOS Session Join
+EOS Session Join + Redpoint Transport Verification
+    ->
+Go One-Time Join-Ticket Admission
     ->
 Authoritative Match Finish
     ->
@@ -1864,8 +1912,10 @@ Architecture:
     Modular monolith
     REST + JSON
     Server-authoritative gameplay
-    Backend-authoritative persistence
-    EOS for online platform services
+    Go-authoritative matchmaking, allocation, admission, and persistence
+    Redpoint EOS for identity, party/lobby, session discovery, and encrypted transport
+    Backend-issued one-time join tickets
+    mTLS + short-lived scoped Dedicated Server tokens
 
 Local environment:
     Native Unreal Dedicated Server
@@ -2022,11 +2072,30 @@ CREATE INDEX match_records_server_state_idx ON match_records(server_id, state);
 
 CREATE TABLE match_participants (
   match_id UUID NOT NULL REFERENCES match_records(id), player_id UUID NOT NULL REFERENCES players(id),
+  eos_product_user_id TEXT NOT NULL,
   state TEXT NOT NULL DEFAULT 'reserved' CHECK(state IN ('reserved','joined','disconnected','dead','extracted','mia')),
   extracted_at TIMESTAMPTZ, joined_at TIMESTAMPTZ, revision BIGINT NOT NULL DEFAULT 1,
   created_at TIMESTAMPTZ NOT NULL DEFAULT now(), updated_at TIMESTAMPTZ NOT NULL DEFAULT now(), PRIMARY KEY(match_id, player_id)
 );
 CREATE INDEX match_participants_player_idx ON match_participants(player_id, created_at DESC);
+CREATE UNIQUE INDEX match_participants_match_puid_uq ON match_participants(match_id, eos_product_user_id);
+
+CREATE TABLE match_join_tickets (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(), match_id UUID NOT NULL REFERENCES match_records(id),
+  player_id UUID NOT NULL REFERENCES players(id), eos_product_user_id TEXT NOT NULL, jti UUID NOT NULL UNIQUE,
+  token_hash BYTEA NOT NULL, build_id TEXT, region TEXT, expires_at TIMESTAMPTZ NOT NULL,
+  consumed_at TIMESTAMPTZ, consumed_by_server_id UUID REFERENCES server_registrations(id),
+  created_at TIMESTAMPTZ NOT NULL DEFAULT now(),
+  UNIQUE(match_id, player_id, jti)
+);
+CREATE INDEX match_join_tickets_pending_idx ON match_join_tickets(match_id, expires_at) WHERE consumed_at IS NULL;
+
+CREATE TABLE server_credential_audit (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(), server_id UUID NOT NULL REFERENCES server_registrations(id),
+  certificate_subject TEXT NOT NULL, token_jti UUID NOT NULL, token_expires_at TIMESTAMPTZ NOT NULL,
+  revoked_at TIMESTAMPTZ, reason TEXT, created_at TIMESTAMPTZ NOT NULL DEFAULT now(), UNIQUE(token_jti)
+);
+CREATE INDEX server_credential_audit_active_idx ON server_credential_audit(server_id, token_expires_at) WHERE revoked_at IS NULL;
 
 CREATE TABLE match_item_changes (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(), match_id UUID NOT NULL REFERENCES match_records(id), player_id UUID NOT NULL REFERENCES players(id),
@@ -2061,16 +2130,17 @@ Run a scheduled cleanup for expired `idempotency_keys` (retain at least 24 hours
 | `GET /v1/profile` | — | player, `revision` | 401, 404 |
 | `GET /v1/inventory` | — | containers, items, revision | 401, 404 |
 | `POST /v1/loadouts/reserve` | `loadoutId`, `matchId`, expected revision | reservation and inventory revision | 400, 401, 409, 423 |
-| `POST /v1/matchmaking/tickets` | `mode`, `region`, optional `partyId` | ticket ID and status | 400, 401, 429 |
+| `POST /v1/matchmaking/tickets` | `mode`, `region`, optional `partyId`, build compatibility | ticket ID and status | 400, 401, 409, 429 |
 | `GET /v1/matchmaking/tickets/{id}` | — | status and optional assignment | 401, 404 |
 | `DELETE /v1/matchmaking/tickets/{id}` | — | no content | 401, 404 |
 | `GET /v1/liveops/config` | `If-None-Match` optional | config, ETag | 304, 401 |
 
 | Internal endpoint | Request | Success response | Primary errors |
 |---|---|---|---|
-| `POST /v1/internal/servers/register` | region, build, endpoint, capacity | server ID, server token, expiry | 400, 401, 403 |
+| `POST /v1/internal/servers/register` | region, build, endpoint, capacity; mTLS client certificate | server ID, scoped token, expiry | 400, 401, 403 |
 | `POST /v1/internal/servers/{id}/heartbeat` | status, currentPlayers, match IDs | acknowledgement | 401, 404 |
 | `POST /v1/internal/matches/start` | server ID, player IDs, mode, map, loot seed | match ID, reservations | 400, 401, 403 |
+| `POST /v1/internal/matches/{id}/admit-player` | signed join ticket; verified EOS Product User ID | player admission and reserved loadout reference | 401, 403, 404, 409, 422 |
 | `POST /v1/internal/matches/{id}/commit` | participant outcomes, item changes, `idempotencyKey` | committed revision and receipt | 400, 401, 403, 409, 422 |
 
 For all mutating public endpoints, require `Idempotency-Key`; return the stored original status/body for a duplicate key with an identical request hash. Reject a duplicate key used with a different payload. Internal commit requests use a key derived from `matchId + commitVersion` and must never accept client-supplied item ownership.
@@ -2092,6 +2162,12 @@ MatchCommitRequest:
     idempotencyKey: {type: string, format: uuid}
     results: {type: array, minItems: 1}
     itemChanges: {type: array}
+MatchAdmissionRequest:
+  type: object
+  required: [joinTicket, eosProductUserId]
+  properties:
+    joinTicket: {type: string, minLength: 1}
+    eosProductUserId: {type: string, minLength: 1}
 ```
 
 # 34. Error Catalog and Retry Rules
@@ -2291,3 +2367,73 @@ For a solo developer, complete and verify work in this order; do not parallelize
 ## 53.1 Deployment Runbook Addendum
 
 Before deployment: confirm target environment, clean migration status, backup freshness, error budget, compatible DS/client builds, and rollback artifact. Deploy backend to a small canary (or one instance), run health/auth/inventory/commit smoke tests with synthetic data, then progress 10% -> 50% -> 100% while watching error rate, latency, DB locks, and queue/heartbeat health. Roll back application binaries/config immediately for behavioral failure; use forward-fix migrations unless the migration has a tested, safe rollback. Record incident timeline, impact, mitigation, and follow-up actions.
+
+---
+
+# 54. Redpoint EOS Runtime Contract
+
+This section records the selected integration boundary against the Redpoint EOS Online Framework source bundled with the project. It is normative for runtime implementation.
+
+## 54.1 Fact, Rule, and Owner
+
+| Redpoint EOS fact | Architecture rule | Owner |
+|---|---|---|
+| `IIdentitySystem::Login` produces `FIdentityUser`; `GetIdToken` returns the EOS Connect ID token. | Client exchanges this token with Go; Go maps the verified EOS Product User ID to `players.id`. | Unreal client + Go auth |
+| Runtime identity is `UE::Online::FAccountId`; Redpoint core converts it to Product User ID. | Persist only the Product User ID as `eos_connect` identity; never use Epic Account ID as the gameplay primary key. | Unreal integration + DB |
+| `IdTokenAuthNetworkingLayer` requests/delivers a client token over encrypted DS transport and calls `VerifyIdToken`. | DS treats successful Redpoint verification as transport identity proof only. It must then request Go admission before spawning/admitting gameplay. | DS GameMode / PreLogin |
+| Redpoint Matchmaking contains queue state, candidate matching, dedicated-server beacon reservation, and client travel. | `IMatchmakingEngine`, `Matchmaking`, and `MatchmakingMatchmaker` are excluded from production runtime. Go owns all matchmaking and allocation state. | Unreal frontend + Go matchmaker |
+
+Source references: `Docs/RedpointEOS/docs/systems/identity.md`, `Docs/RedpointEOS/docs/systems/user_id.md`, `RedpointEOSNetworking/.../IdTokenAuthNetworkingLayer.cpp`, and the plugin `Matchmaking` documentation/source.
+
+## 54.2 Hybrid Admission Flow
+
+```mermaid
+sequenceDiagram
+    autonumber
+    participant C as Unreal Client
+    participant R as Redpoint EOS
+    participant B as Go Backend
+    participant DB as PostgreSQL
+    participant DS as Dedicated Server
+    C->>R: IIdentitySystem.Login
+    R-->>C: FIdentityUser + EOS Connect ID token
+    C->>B: Exchange EOS token for backend session
+    B->>DB: Verify/map PUID to InternalPlayerID
+    C->>B: Create matchmaking ticket
+    B->>DB: Match, reserve loadout, issue JTI-bound join ticket
+    DS->>R: Publish selected EOS Session
+    B-->>C: Session discovery + join ticket
+    C->>DS: Connect through Redpoint EOS
+    DS->>C: Request EOS Connect ID token over encrypted channel
+    C-->>DS: Deliver token
+    DS->>R: VerifyIdToken for connecting PUID
+    DS->>B: Admit player (ticket + verified PUID) over mTLS
+    B->>DB: Validate claims; consume JTI once; mark joined
+    B-->>DS: Admit with internal player ID
+    DS->>B: Idempotent match commit over mTLS
+    B->>DB: Inventory/economy/outbox transaction
+```
+
+The join ticket claims are `matchId`, `playerId`, `eosProductUserId`, `jti`, `exp`, `buildId` when applicable, and `region` when applicable. The DS obtains the verified Product User ID from the Redpoint-authenticated connection, not from untrusted game RPC input. A ticket expiry of 60 seconds is the v1 default; refresh/reissue is allowed only while the backend assignment is active.
+
+## 54.3 Admission and Failure Matrix
+
+| Condition | Required behavior | Stable error / operational action |
+|---|---|---|
+| EOS login or backend exchange fails | No backend session or queue access. | `auth_token_invalid` / show sign-in recovery. |
+| Transport is unencrypted or Redpoint token verification fails | DS disconnects before application admission. | Redpoint networking failure; record non-secret reason. |
+| Ticket expired, wrong match, wrong PUID, or wrong build/region | DS rejects admission; client refreshes assignment only if still queued/assigned. | `match_join_ticket_invalid`. |
+| Ticket JTI already consumed | Reject duplicate connection; never spawn a second participant. | `match_join_ticket_consumed`. |
+| Server heartbeat/token is expired or revoked | Backend denies admission/start/commit; allocator drains server. | `server_heartbeat_expired` or `server_token_invalid`. |
+| Duplicate commit | Return the original commit receipt without a second inventory/economy write. | `match_already_committed` with matching receipt. |
+| DS crash before commit | Mark match abandoned; run controlled reservation recovery/compensation policy. | No client-side reward inference. |
+
+## 54.4 Required Delivery Order
+
+1. Verify `IIdentitySystem` login, Product User ID conversion, and backend token exchange on client platforms.
+2. Verify Redpoint encrypted DS transport and EOS ID-token verification before any custom admission logic.
+3. Implement mTLS server registration, rotation, scoped token validation, and heartbeat drain behavior.
+4. Implement Go-owned ticket/allocation/session-publication flow; do not link the Redpoint matchmaking runtime modules.
+5. Implement signed one-time join ticket persistence and DS admission after Redpoint verification.
+6. Implement match start/commit and transactional inventory/economy/outbox processing.
+7. Run the Section 23 admission, duplicate-consumption, mTLS-scope, and end-to-end mobile-to-DS scenarios before enabling external players.

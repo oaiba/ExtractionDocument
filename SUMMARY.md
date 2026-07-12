@@ -218,6 +218,8 @@
       * [Development Roadmap & TODO Tracking](content/GDD_Technical/Core/DevelopmentRoadmap.md)
       * [Networking System - Technical Design Document](content/GDD_Technical/Core/NetworkingSystem.md)
       * [Security System - Technical Specification](content/GDD_Technical/Core/SecuritySystem.md)
+      * [Live Services Architecture](content/GDD_Technical/Core/LiveServicesArchitecture.md)
+      * [Live Services Architecture (Vietnamese Mirror)](content/GDD_Technical/Core/LiveServicesArchitecture.vi.md)
       * [Core Architecture & Foundation](content/GDD_Technical/Core/_index.md "Core")
     * [Data](content/gdd_technical/data/README.md)
       * [Loading Screen Data Schema](content/GDD_Technical/Data/LoadingScreen_DataSchema.md)

@@ -14,6 +14,7 @@ Technical hub tập trung vào implementation, enum, codename, feature TODO, arc
 {{< cards cols="3" >}}
 {{< card link="/GDD_Technical/AI/index.html" title="AI" icon="chip" subtitle="AI behavior, perception, and combat decision systems." >}}
 {{< card link="/GDD_Technical/Core/index.html" title="Core" icon="server" subtitle="Architecture, networking, security, and development foundation." >}}
+{{< card link="/GDD_Technical/Core/LiveServicesArchitecture/index.html" title="Live Services Architecture" icon="server" subtitle="Kiến trúc chính thức cho Go, Redpoint EOS, Dedicated Server và database." >}}
 {{< card link="/GDD_Technical/Data/index.html" title="Data" icon="database" subtitle="Data schemas and runtime content contracts." >}}
 {{< card link="/GDD_Technical/Gameplay/index.html" title="Gameplay" icon="fire" subtitle="Character, weapon, inventory, and input systems." >}}
 {{< card link="/GDD_Technical/Networking/index.html" title="Networking" icon="globe" subtitle="Replication, latency, bandwidth, and multiplayer infrastructure." >}}

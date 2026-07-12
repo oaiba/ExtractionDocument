@@ -34,6 +34,7 @@ Foundation architecture and networking
   {{< card link="Core/Architecture" title="Architecture" icon="server" subtitle="System architecture, tech stack, module structure" >}}
   {{< card link="Core/NetworkingSystem" title="Networking" icon="globe" subtitle="Client-server model, sync, matchmaking" >}}
   {{< card link="Core/DevelopmentRoadmap" title="Roadmap" icon="map" subtitle="Sprint planning, milestones, priorities" >}}
+  {{< card link="Core/LiveServicesArchitecture" title="Live Services Architecture" icon="server" subtitle="Official Go, Redpoint EOS, DS, database, API, and operations architecture." >}}
 {{< /cards >}}
 
 ---
@@ -209,5 +210,4 @@ ATT_OPTIC_REDDOT     // Attachment - Optic - RedDot
 | 2026-02-06 | Structure | Reorganized to folder-based system | Team       |
 | 2026-02-06 | All       | Focused on enums, codenames, TODOs | Team       |
 | 2026-02-06 | Core      | Initial documentation              | Team       |
-
 

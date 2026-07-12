@@ -439,6 +439,23 @@ Backend response:
 }
 ```
 
+```mermaid
+sequenceDiagram
+    autonumber
+    participant C as Unreal Client
+    participant R as Redpoint EOS / EOS Connect
+    participant B as Go Backend
+    participant DB as PostgreSQL
+    C->>R: Login / obtain EOS identity token
+    R-->>C: Product User ID + identity token
+    C->>B: POST /v1/auth/eos (token, deviceId, build)
+    B->>R: Verify token and issuer/audience
+    R-->>B: Verified EOS identity
+    B->>DB: Find or create player + identity + session
+    DB-->>B: Internal player ID
+    B-->>C: Access token + rotating refresh token + player
+```
+
 ---
 
 ## 7.3 Token Policy
@@ -452,6 +469,23 @@ Recommended baseline:
 - server credentials separate from player credentials;
 - secrets stored in environment variables or a secret manager;
 - no client secret embedded in the mobile build.
+
+```mermaid
+sequenceDiagram
+    autonumber
+    participant C as Client
+    participant B as Go Backend
+    participant DB as PostgreSQL
+    C->>B: POST /v1/auth/refresh (refresh token)
+    B->>DB: Lock active session and compare token hash
+    alt Valid, active session
+        B->>DB: Replace hash; revoke previous refresh token
+        B-->>C: New access token and refresh token
+    else Invalid, expired, reused, or revoked
+        B->>DB: Revoke session when reuse is detected
+        B-->>C: 401 auth_session_revoked or auth_token_invalid
+    end
+```
 
 ---
 
@@ -499,6 +533,24 @@ POST /v1/internal/matches/{matchId}/commit
 ```
 
 Never reuse client credentials for server actions.
+
+```mermaid
+sequenceDiagram
+    autonumber
+    participant DS as Dedicated Server
+    participant I as Workload Identity / Secret Store
+    participant B as Go Backend
+    participant DB as PostgreSQL
+    DS->>I: Obtain server credential
+    DS->>B: POST /internal/servers/register
+    B->>DB: Register server and issue short-lived server token
+    B-->>DS: serverId + scoped token
+    loop Every 2 seconds
+        DS->>B: Heartbeat (capacity, match state)
+        B->>DB: Update last_heartbeat_at
+        B-->>DS: Acknowledgement
+    end
+```
 
 ---
 
@@ -711,6 +763,29 @@ Recommended end-to-end flow:
 14. Dedicated Server commits match results to backend.
 15. Backend applies database transaction.
 16. Client refreshes profile or receives a delta.
+```
+
+```mermaid
+sequenceDiagram
+    autonumber
+    participant C as Client / Party
+    participant MM as Matchmaker
+    participant DS as Dedicated Server
+    participant B as Go Backend
+    participant DB as PostgreSQL
+    C->>B: Create matchmaking ticket
+    B->>DB: Persist ticket
+    MM->>DB: Claim compatible tickets
+    MM->>DS: Select or allocate capacity
+    DS->>B: Register EOS Session details
+    B->>DB: Create match + participants + assignments
+    B-->>C: Ticket assigned (session join data)
+    C->>DS: Join EOS Session
+    DS->>B: Start match
+    Note over DS: Server validates all real-time gameplay
+    DS->>B: Commit result with idempotency key
+    B->>DB: Apply result and write outbox event atomically
+    B-->>C: Profile/inventory revision changed
 ```
 
 ---
@@ -1064,6 +1139,28 @@ Use this for:
 - retrying external callbacks;
 - archival;
 - delayed rewards.
+
+```mermaid
+sequenceDiagram
+    autonumber
+    participant S as Domain Service
+    participant DB as PostgreSQL
+    participant W as Outbox Worker
+    participant X as External Service / Inbox
+    S->>DB: Begin transaction
+    S->>DB: Write authoritative state
+    S->>DB: Insert outbox event
+    S->>DB: Commit
+    W->>DB: Claim pending events (FOR UPDATE SKIP LOCKED)
+    W->>X: Process event with event ID
+    alt Success
+        W->>DB: Mark processed_at
+    else Retryable failure
+        W->>DB: Increment attempts; set available_at backoff
+    else Terminal failure
+        W->>DB: Mark failed; alert operator
+    end
+```
 
 Add a message broker only when scaling requirements are proven.
 
@@ -1462,6 +1559,25 @@ Protect inventory during a match.
 - abandoned match recovery;
 - conflict handling.
 
+```mermaid
+sequenceDiagram
+    autonumber
+    participant C as Client
+    participant B as Backend
+    participant DB as PostgreSQL
+    participant DS as Dedicated Server
+    C->>B: Reserve loadout (match ID, expected revision)
+    B->>DB: Lock eligible instances and create reservation
+    B-->>C: Reservation confirmed
+    DS->>B: Start match / validate reservations
+    Note over DS: Items are authoritative in raid
+    DS->>B: Commit results + idempotency key
+    B->>DB: Atomically apply deltas, release locks, outbox event
+    alt Commit fails before transaction completion
+        B->>DB: Roll back; reservation recovery job evaluates expiry
+    end
+```
+
 ### Exit criteria
 
 - a loadout cannot be used in two simultaneous matches;
@@ -1784,3 +1900,394 @@ The team should derive the following documents from this baseline:
 13. `PRODUCTION_READINESS_CHECKLIST.md`
 
 Each document should reference this file as the top-level architecture source of truth.
+
+---
+
+# 32. Core Database DDL
+
+This schema is the v1 PostgreSQL baseline. Use UUIDs generated by the application or `gen_random_uuid()`, UTC timestamps, `BIGINT` minor units for money, and immutable migrations. `updated_at` is changed by a shared trigger in the migration; event and ledger rows are intentionally append-only.
+
+```sql
+CREATE EXTENSION IF NOT EXISTS pgcrypto;
+
+CREATE TABLE players (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  display_name TEXT NOT NULL CHECK (char_length(display_name) BETWEEN 3 AND 32),
+  status TEXT NOT NULL DEFAULT 'active' CHECK (status IN ('active','suspended','deleted')),
+  revision BIGINT NOT NULL DEFAULT 1 CHECK (revision > 0),
+  created_at TIMESTAMPTZ NOT NULL DEFAULT now(), updated_at TIMESTAMPTZ NOT NULL DEFAULT now()
+);
+CREATE UNIQUE INDEX players_display_name_ci_uq ON players (lower(display_name));
+
+CREATE TABLE player_identities (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(), player_id UUID NOT NULL REFERENCES players(id),
+  provider TEXT NOT NULL, provider_user_id TEXT NOT NULL, linked_at TIMESTAMPTZ NOT NULL DEFAULT now(),
+  last_login_at TIMESTAMPTZ, created_at TIMESTAMPTZ NOT NULL DEFAULT now(), updated_at TIMESTAMPTZ NOT NULL DEFAULT now(),
+  UNIQUE (provider, provider_user_id), UNIQUE (player_id, provider)
+);
+CREATE INDEX player_identities_player_idx ON player_identities(player_id);
+
+CREATE TABLE player_sessions (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(), player_id UUID NOT NULL REFERENCES players(id),
+  device_id TEXT NOT NULL, refresh_token_hash BYTEA NOT NULL, client_build TEXT NOT NULL,
+  expires_at TIMESTAMPTZ NOT NULL, revoked_at TIMESTAMPTZ, last_used_at TIMESTAMPTZ NOT NULL DEFAULT now(),
+  created_at TIMESTAMPTZ NOT NULL DEFAULT now(), updated_at TIMESTAMPTZ NOT NULL DEFAULT now()
+);
+CREATE INDEX player_sessions_active_idx ON player_sessions(player_id, expires_at) WHERE revoked_at IS NULL;
+
+CREATE TABLE idempotency_keys (
+  scope TEXT NOT NULL, key TEXT NOT NULL, request_hash BYTEA NOT NULL, response_code INT NOT NULL,
+  response_body JSONB NOT NULL, expires_at TIMESTAMPTZ NOT NULL,
+  created_at TIMESTAMPTZ NOT NULL DEFAULT now(), PRIMARY KEY (scope, key)
+);
+CREATE INDEX idempotency_keys_expiry_idx ON idempotency_keys(expires_at);
+
+CREATE TABLE item_definitions (
+  id TEXT PRIMARY KEY, category TEXT NOT NULL, display_key TEXT NOT NULL, max_stack INT NOT NULL DEFAULT 1 CHECK(max_stack > 0),
+  base_value BIGINT NOT NULL DEFAULT 0 CHECK(base_value >= 0), is_insurable BOOLEAN NOT NULL DEFAULT TRUE,
+  config JSONB NOT NULL DEFAULT '{}'::jsonb, revision BIGINT NOT NULL DEFAULT 1,
+  created_at TIMESTAMPTZ NOT NULL DEFAULT now(), updated_at TIMESTAMPTZ NOT NULL DEFAULT now()
+);
+
+CREATE TABLE inventory_containers (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(), player_id UUID NOT NULL REFERENCES players(id),
+  kind TEXT NOT NULL CHECK(kind IN ('stash','secure','equipped','mail','loadout')), width INT NOT NULL CHECK(width > 0),
+  height INT NOT NULL CHECK(height > 0), revision BIGINT NOT NULL DEFAULT 1,
+  created_at TIMESTAMPTZ NOT NULL DEFAULT now(), updated_at TIMESTAMPTZ NOT NULL DEFAULT now(), UNIQUE(player_id, kind)
+);
+CREATE INDEX inventory_containers_player_idx ON inventory_containers(player_id);
+
+CREATE TABLE item_instances (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(), definition_id TEXT NOT NULL REFERENCES item_definitions(id),
+  owner_player_id UUID REFERENCES players(id), container_id UUID REFERENCES inventory_containers(id),
+  stack_count INT NOT NULL DEFAULT 1 CHECK(stack_count > 0), durability NUMERIC(7,2), position_x INT, position_y INT,
+  rotation SMALLINT NOT NULL DEFAULT 0 CHECK(rotation IN (0,90)), state TEXT NOT NULL DEFAULT 'owned'
+    CHECK(state IN ('owned','reserved','in_raid','destroyed','escrow')),
+  locked_by_match_id UUID, revision BIGINT NOT NULL DEFAULT 1,
+  created_at TIMESTAMPTZ NOT NULL DEFAULT now(), updated_at TIMESTAMPTZ NOT NULL DEFAULT now(),
+  CHECK ((container_id IS NULL) = (state IN ('in_raid','destroyed')))
+);
+CREATE INDEX item_instances_owner_state_idx ON item_instances(owner_player_id, state);
+CREATE INDEX item_instances_container_idx ON item_instances(container_id) WHERE container_id IS NOT NULL;
+
+CREATE TABLE item_properties (
+  item_instance_id UUID PRIMARY KEY REFERENCES item_instances(id) ON DELETE CASCADE,
+  properties JSONB NOT NULL DEFAULT '{}'::jsonb, created_at TIMESTAMPTZ NOT NULL DEFAULT now(), updated_at TIMESTAMPTZ NOT NULL DEFAULT now()
+);
+
+CREATE TABLE wallets (
+  player_id UUID NOT NULL REFERENCES players(id), currency_code TEXT NOT NULL,
+  balance BIGINT NOT NULL DEFAULT 0 CHECK(balance >= 0), revision BIGINT NOT NULL DEFAULT 1,
+  created_at TIMESTAMPTZ NOT NULL DEFAULT now(), updated_at TIMESTAMPTZ NOT NULL DEFAULT now(), PRIMARY KEY(player_id, currency_code)
+);
+
+CREATE TABLE economy_transactions (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(), player_id UUID NOT NULL REFERENCES players(id), currency_code TEXT NOT NULL,
+  amount BIGINT NOT NULL CHECK(amount <> 0), balance_after BIGINT NOT NULL CHECK(balance_after >= 0),
+  reason TEXT NOT NULL, reference_type TEXT NOT NULL, reference_id TEXT NOT NULL, idempotency_key TEXT NOT NULL,
+  metadata JSONB NOT NULL DEFAULT '{}'::jsonb, created_at TIMESTAMPTZ NOT NULL DEFAULT now(),
+  UNIQUE(player_id, idempotency_key)
+);
+CREATE INDEX economy_transactions_player_created_idx ON economy_transactions(player_id, created_at DESC);
+
+CREATE TABLE loadouts (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(), player_id UUID NOT NULL REFERENCES players(id), name TEXT NOT NULL,
+  revision BIGINT NOT NULL DEFAULT 1, created_at TIMESTAMPTZ NOT NULL DEFAULT now(), updated_at TIMESTAMPTZ NOT NULL DEFAULT now()
+);
+CREATE INDEX loadouts_player_idx ON loadouts(player_id);
+CREATE TABLE loadout_items (
+  loadout_id UUID NOT NULL REFERENCES loadouts(id) ON DELETE CASCADE, item_instance_id UUID NOT NULL REFERENCES item_instances(id),
+  slot TEXT NOT NULL, reservation_state TEXT NOT NULL DEFAULT 'available' CHECK(reservation_state IN ('available','reserved','committed','released')),
+  reserved_match_id UUID, reserved_at TIMESTAMPTZ, created_at TIMESTAMPTZ NOT NULL DEFAULT now(), updated_at TIMESTAMPTZ NOT NULL DEFAULT now(),
+  PRIMARY KEY(loadout_id, item_instance_id), UNIQUE(loadout_id, slot)
+);
+CREATE INDEX loadout_items_reservation_idx ON loadout_items(reserved_match_id) WHERE reserved_match_id IS NOT NULL;
+
+CREATE TABLE server_registrations (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(), region TEXT NOT NULL, build_id TEXT NOT NULL, endpoint TEXT NOT NULL,
+  capacity INT NOT NULL CHECK(capacity > 0), current_players INT NOT NULL DEFAULT 0 CHECK(current_players >= 0),
+  status TEXT NOT NULL CHECK(status IN ('ready','allocated','draining','offline')), token_hash BYTEA NOT NULL,
+  last_heartbeat_at TIMESTAMPTZ NOT NULL DEFAULT now(), revision BIGINT NOT NULL DEFAULT 1,
+  created_at TIMESTAMPTZ NOT NULL DEFAULT now(), updated_at TIMESTAMPTZ NOT NULL DEFAULT now()
+);
+CREATE INDEX server_registrations_select_idx ON server_registrations(region, build_id, status, last_heartbeat_at);
+
+CREATE TABLE match_records (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(), server_id UUID NOT NULL REFERENCES server_registrations(id), mode_id TEXT NOT NULL, map_id TEXT NOT NULL,
+  state TEXT NOT NULL CHECK(state IN ('created','starting','in_progress','committing','committed','abandoned','failed')),
+  loot_seed BIGINT NOT NULL, started_at TIMESTAMPTZ, ended_at TIMESTAMPTZ, committed_at TIMESTAMPTZ,
+  revision BIGINT NOT NULL DEFAULT 1, created_at TIMESTAMPTZ NOT NULL DEFAULT now(), updated_at TIMESTAMPTZ NOT NULL DEFAULT now()
+);
+CREATE INDEX match_records_server_state_idx ON match_records(server_id, state);
+
+CREATE TABLE match_participants (
+  match_id UUID NOT NULL REFERENCES match_records(id), player_id UUID NOT NULL REFERENCES players(id),
+  state TEXT NOT NULL DEFAULT 'reserved' CHECK(state IN ('reserved','joined','disconnected','dead','extracted','mia')),
+  extracted_at TIMESTAMPTZ, joined_at TIMESTAMPTZ, revision BIGINT NOT NULL DEFAULT 1,
+  created_at TIMESTAMPTZ NOT NULL DEFAULT now(), updated_at TIMESTAMPTZ NOT NULL DEFAULT now(), PRIMARY KEY(match_id, player_id)
+);
+CREATE INDEX match_participants_player_idx ON match_participants(player_id, created_at DESC);
+
+CREATE TABLE match_item_changes (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(), match_id UUID NOT NULL REFERENCES match_records(id), player_id UUID NOT NULL REFERENCES players(id),
+  item_instance_id UUID REFERENCES item_instances(id), change_type TEXT NOT NULL CHECK(change_type IN ('bring_in','acquire','consume','extract','lose','destroy')),
+  definition_id TEXT, quantity INT NOT NULL DEFAULT 1 CHECK(quantity > 0), payload JSONB NOT NULL DEFAULT '{}'::jsonb,
+  created_at TIMESTAMPTZ NOT NULL DEFAULT now()
+);
+CREATE INDEX match_item_changes_match_player_idx ON match_item_changes(match_id, player_id);
+
+CREATE TABLE outbox_events (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(), aggregate_type TEXT NOT NULL, aggregate_id TEXT NOT NULL, event_type TEXT NOT NULL,
+  payload JSONB NOT NULL, available_at TIMESTAMPTZ NOT NULL DEFAULT now(), attempts INT NOT NULL DEFAULT 0,
+  processed_at TIMESTAMPTZ, failed_at TIMESTAMPTZ, last_error TEXT, created_at TIMESTAMPTZ NOT NULL DEFAULT now()
+);
+CREATE INDEX outbox_events_pending_idx ON outbox_events(available_at, created_at) WHERE processed_at IS NULL AND failed_at IS NULL;
+```
+
+Run a scheduled cleanup for expired `idempotency_keys` (retain at least 24 hours for player writes and 7 days for match commits). Add foreign keys that depend on later sections only in their own migration; do not create circular dependencies.
+
+# 33. OpenAPI Contract Baseline
+
+`openapi/v1.yaml` is the executable contract and is the only source used to generate Go and Unreal DTOs. All JSON uses lower camel case. Every error has the envelope below and a stable `code` from Section 34.
+
+```json
+{"error":{"code":"inventory_revision_conflict","message":"Inventory has changed","requestId":"01J...","retryable":true}}
+```
+
+| Endpoint | Request | Success response | Primary errors |
+|---|---|---|---|
+| `POST /v1/auth/eos` | `token`, `deviceId`, `clientBuild` | access/refresh token, expiry, player | 400, 401, 403, 429 |
+| `POST /v1/auth/refresh` | `refreshToken` | rotated token pair, expiry | 400, 401 |
+| `GET /v1/profile` | — | player, `revision` | 401, 404 |
+| `GET /v1/inventory` | — | containers, items, revision | 401, 404 |
+| `POST /v1/loadouts/reserve` | `loadoutId`, `matchId`, expected revision | reservation and inventory revision | 400, 401, 409, 423 |
+| `POST /v1/matchmaking/tickets` | `mode`, `region`, optional `partyId` | ticket ID and status | 400, 401, 429 |
+| `GET /v1/matchmaking/tickets/{id}` | — | status and optional assignment | 401, 404 |
+| `DELETE /v1/matchmaking/tickets/{id}` | — | no content | 401, 404 |
+| `GET /v1/liveops/config` | `If-None-Match` optional | config, ETag | 304, 401 |
+
+| Internal endpoint | Request | Success response | Primary errors |
+|---|---|---|---|
+| `POST /v1/internal/servers/register` | region, build, endpoint, capacity | server ID, server token, expiry | 400, 401, 403 |
+| `POST /v1/internal/servers/{id}/heartbeat` | status, currentPlayers, match IDs | acknowledgement | 401, 404 |
+| `POST /v1/internal/matches/start` | server ID, player IDs, mode, map, loot seed | match ID, reservations | 400, 401, 403 |
+| `POST /v1/internal/matches/{id}/commit` | participant outcomes, item changes, `idempotencyKey` | committed revision and receipt | 400, 401, 403, 409, 422 |
+
+For all mutating public endpoints, require `Idempotency-Key`; return the stored original status/body for a duplicate key with an identical request hash. Reject a duplicate key used with a different payload. Internal commit requests use a key derived from `matchId + commitVersion` and must never accept client-supplied item ownership.
+
+## 33.1 Representative Schemas
+
+```yaml
+AuthEOSRequest:
+  type: object
+  required: [token, deviceId, clientBuild]
+  properties:
+    token: {type: string, minLength: 1}
+    deviceId: {type: string, minLength: 8, maxLength: 256}
+    clientBuild: {type: string, maxLength: 64}
+MatchCommitRequest:
+  type: object
+  required: [results, itemChanges, idempotencyKey]
+  properties:
+    idempotencyKey: {type: string, format: uuid}
+    results: {type: array, minItems: 1}
+    itemChanges: {type: array}
+```
+
+# 34. Error Catalog and Retry Rules
+
+| Family | Codes | Client action |
+|---|---|---|
+| Auth | `auth_token_expired`, `auth_token_invalid`, `auth_session_revoked`, `auth_device_mismatch` | Refresh once for expiry; otherwise sign in again. |
+| Inventory | `inventory_revision_conflict`, `inventory_item_not_found`, `inventory_container_full`, `inventory_item_locked` | Refresh state; do not guess a correction. |
+| Economy | `economy_insufficient_funds`, `economy_duplicate_transaction`, `economy_ledger_mismatch` | Never retry a failed purchase without its idempotency key; alert on mismatch. |
+| Matchmaking | `matchmaking_queue_full`, `matchmaking_ticket_expired`, `matchmaking_already_in_queue`, `matchmaking_incompatible_build` | Show clear UI; retry only queue-full after a delay. |
+| Server | `server_capacity_exceeded`, `server_not_registered`, `server_heartbeat_expired` | Re-register or drain; do not assign more players. |
+| Match | `match_already_committed`, `match_invalid_state`, `match_player_not_in_match` | Treat already committed as success only when receipt matches. |
+
+Player API retry: exponential backoff 1, 2, 4, 8 seconds, then up to 30 seconds, with full jitter. Dedicated Server retry: immediately once, then 500 ms, 1 s, 2 s up to 10 seconds. Retry only connection failures, 408, 429, and 5xx explicitly marked `retryable`; never retry validation/authorization errors. Stop retries when the game world or request owner is destroyed.
+
+# 35. Rate Limiting Policy
+
+Implement Redis token buckets with a PostgreSQL-independent fallback that fails closed for auth and fails soft for non-sensitive reads during a Redis outage. Return `X-RateLimit-Limit`, `X-RateLimit-Remaining`, `X-RateLimit-Reset`, and `429` with `Retry-After`.
+
+| Category | Limit / window | Scope |
+|---|---:|---|
+| Auth | 10 / 60 s | IP; additionally 20 / hour per device |
+| Profile read | 60 / 60 s | player |
+| Inventory read | 60 / 60 s | player |
+| Matchmaking create | 5 / 60 s | player |
+| Server heartbeat | 30 / 60 s | server |
+| Match commit | 10 / 60 s | server |
+| Admin | 120 / 60 s | admin identity |
+
+---
+
+# 36. Extraction Shooter Core Mechanics
+
+The authoritative raid state machine is `lobby -> deploying -> in_raid -> extracting -> extracted | dead | mia -> committing -> complete`. The Dedicated Server owns every transition and emits a signed authoritative result. The backend only persists a valid transition for registered match participants.
+
+```mermaid
+stateDiagram-v2
+    [*] --> Lobby
+    Lobby --> Deploying: reservation accepted
+    Deploying --> InRaid: server start
+    InRaid --> Extracting: validates point/condition
+    Extracting --> Extracted: timer completes
+    InRaid --> Dead: lethal server event
+    InRaid --> MIA: raid timeout / unrecovered disconnect
+    Extracted --> Committing
+    Dead --> Committing
+    MIA --> Committing
+    Committing --> Complete: idempotent backend commit
+```
+
+- Use a **grid-based stash**: container width/height plus item footprint and rotation. Secure containers are dedicated, small grid containers with a server-defined allowlist.
+- Loadout items are locked before deployment. Items acquired in raid carry `found_in_raid=true` only when generated by the server seed/table or received from a valid in-raid action.
+- Extraction validates location volume, alive status, no disallowed combat condition, team rule, required item/payment, and uninterrupted timer. UI can predict the timer; only DS completion counts.
+- Durability, ammunition, attachments, and item metadata are DS changes. The client sends intent only.
+- Hideout and Scav modes are optional product systems; keep their persistent changes in the same ledger/inventory transaction model.
+
+# 37. Insurance System
+
+Insurance is purchased before a raid for eligible owned instances. Tiers define price, return delay, and eligible categories. States are `insured -> claim_pending -> returned | lost | expired`.
+
+```text
+Insure eligible item -> lock policy to match -> player dies/MIA -> commit checks item extraction
+ -> unextracted insured item becomes claim_pending -> delayed outbox job -> inbox return -> player claims
+```
+
+Create `insurance_policies(id, player_id, provider_id, item_instance_id, premium, status, expires_at)`, `insurance_claims(id, policy_id, match_id, state, return_after)`, and `insurance_returns(id, claim_id, inbox_message_id, claimed_at)`. A single item has at most one active policy. `POST /v1/insurance/insure` requires an idempotency key; `GET /v1/insurance/claims` is read-only.
+
+At match commit, the backend creates claims only for insured instances which were not extracted by any participant. Do not model “who looted it” from untrusted client events: the DS result supplies item custody. To limit collusion, flag rapid teammate handoffs, repeated mutual deaths, abnormal same-party recovery, and insure/drop/extract patterns for review; do not automatically remove valid returns solely from a heuristic.
+
+# 38. Loot Tables and Item Spawning
+
+The backend versions and signs the selected loot configuration; the DS deterministically generates loot from `match.loot_seed`, map, table version, and spawn zone. The client never receives a seed or can request a roll.
+
+Use `loot_tables(id, map_id, version, active_from, active_to)`, `loot_zones(id, table_id, zone_key, multiplier)`, and `loot_table_entries(id, zone_id, item_definition_id, min_quantity, max_quantity, weight, rarity, conditions)`. Publish table snapshots through LiveOps and retain every version used by a match for audit/replay.
+
+Dynamic modifiers may adjust weights by event, map, or player population, but must be resolved at match start and written to the match metadata. The DS validates container opens, capacity, one-time spawn use, and every transfer; it reports only final authoritative item changes.
+
+# 39. Premium Currency and Shop
+
+Supported currency classes are soft earned currency, premium purchased currency, and non-currency entitlements. Never use floating point. The mobile client obtains a store transaction/receipt, backend verifies it server-side with the relevant store provider, persists a unique external transaction ID, credits premium currency in the immutable ledger, and returns the updated wallet.
+
+Use `shop_items`, `shop_bundles`, `shop_rotations`, `purchase_receipts`, and `entitlements`; each price references a catalog version. `GET /v1/shop/catalog` returns a signed/ETagged active catalog. `POST /v1/shop/purchase` accepts a catalog item/version plus idempotency key, locks the wallet, writes debit/credit ledger entries and grants atomically. Refund webhooks reverse or freeze a specific entitlement/credit according to product policy; they never delete audit rows.
+
+# 40. Gacha / Lootbox System
+
+All rolls run server-side. The active pool and its probability disclosure are versioned and retained with each roll. Use `gacha_pools`, `gacha_pool_entries`, `gacha_pity_counters`, and append-only `gacha_rolls` containing pool version, roll sequence, result, pity state before/after, and transaction reference.
+
+`POST /v1/gacha/open` requires pool ID, count, and idempotency key; it locks wallet and pity counter, validates cost, generates cryptographically secure server randomness, writes the ledger and grants in one transaction. `GET /v1/gacha/pools` exposes item probabilities, guarantee rules, and jurisdictionally required disclosures. Product/legal review must approve availability, age gates, receipts, and disclosure wording in every launch territory before release.
+
+# 41. Quest and Progression
+
+Use versioned `quest_definitions`, `quest_objectives`, `quest_progress`, `trader_standings`, and immutable reward grants. Quest types: daily, weekly, seasonal, and storyline/trader. Objective types: kill, extract, find-in-raid, deliver, survive.
+
+The DS reports normalized gameplay events at match commit; the backend validates participant, mode, item provenance, and duplicate event IDs before updating progress. Offline UI is advisory only. `GET /v1/quests` returns active definitions/progress; `POST /v1/quests/{id}/complete` only claims a backend-validated completed quest and uses idempotency. Rewards (items, XP, soft currency, reputation) share one transaction and outbox event.
+
+# 42. Battle Pass and Seasons
+
+Create `seasons`, `season_tiers`, `season_tier_rewards`, `player_season_progress`, and `season_reward_claims`. A season has start/end timestamps, status, XP rules, free/premium tracks, and a frozen content version. XP derives from trusted raid/quest completion records only.
+
+`GET /v1/season/current` returns current season, tiers, ownership, progress, and claim states. `POST /v1/season/claim-tier` locks progress/claim row, validates track entitlement and required XP, then grants atomically. On season close, retain the frozen record, define a fixed grace window for claims, and use inbox grants for any explicitly approved automatic rewards. Never silently carry premium entitlements or unclaimed rewards across seasons without a product rule.
+
+---
+
+# 43. Notifications and Inbox
+
+Use `inbox_messages(id, player_id, type, subject_key, payload, state, expires_at, claimed_at)` and `push_registrations(id, player_id, platform, token_hash, enabled_at, revoked_at)`. Inbox state is `created -> read -> claimed | expired`; a reward-bearing message cannot be claimed twice.
+
+`GET /v1/inbox` is paginated. `POST /v1/inbox/{id}/claim` is idempotent and grants attached rewards in the same transaction. Outbox workers send APNS/FCM as best-effort notification only; the inbox is the source of truth. Do not put rewards or sensitive player data in push payloads. Expire stale messages with a worker and retain a minimal audit record.
+
+# 44. Reconnection and Session Recovery
+
+On a transient disconnect, DS marks a participant `disconnected` and preserves its server state for a **three-minute** reconnect window. Client reauthenticates, calls `POST /v1/matches/rejoin`, and receives assignment only if token, build, player, match state, and DS reconnect window all match. DS finally admits the reconnecting EOS identity.
+
+```mermaid
+sequenceDiagram
+    participant C as Client
+    participant DS as Dedicated Server
+    participant B as Backend
+    C-xDS: Network lost
+    DS->>B: Participant disconnected
+    Note over DS: Preserve state for 3 minutes
+    C->>B: POST /v1/matches/rejoin
+    B->>DS: Validate active reservation/window
+    DS-->>B: Join approved or rejected
+    B-->>C: EOS session join data or reason
+    C->>DS: Rejoin session
+```
+
+If DS crashes, do not pretend a live raid can safely resume unless durable state snapshots, compatible process recovery, and playtesting prove it. For v1, mark the match `abandoned`, preserve auditable server logs, release unconsumed reserved loadouts by a controlled recovery job, and apply a documented compensation policy. Persistent inventory changes still occur only at commit.
+
+# 45. Anti-Cheat and Trust
+
+Integrate EAC where the platform/device supports it and keep platform-specific capability documentation current. EAC is one signal, not a replacement for authoritative gameplay. DS validates movement envelopes, fire rate, damage inputs, line-of-sight where relevant, inventory transfer rules, loot counts, extraction conditions, and signed backend assignments.
+
+The pipeline is report -> evidence collection -> investigation -> sanction -> appeal/audit. Store `player_reports`, `sanctions`, and immutable moderation audit records. Reports require reporter identity, target, category, match, and bounded evidence metadata. Sanctions have scope, reason code, actor, start/end, and review state. Never automatically ban solely from one client report; reserve automatic immediate action for high-confidence server/EAC signals approved by policy.
+
+# 46. Scaling Strategy: Initial 1K CCU
+
+For approximately 1,000 CCU, use one PostgreSQL primary with backups, standalone persistent Redis, one or more stateless Go API instances behind a reverse proxy, and a manually operated Linux DS pool. PgBouncer is recommended before connection pressure appears. Keep a single region and measure before adding components.
+
+| Milestone | Change trigger | Next action |
+|---|---|---|
+| 1K CCU | DB CPU >60% sustained, p95 API >250 ms, pool >70% | tune queries/indexes; PgBouncer; second API replica |
+| 5K CCU | DS allocation delays, Redis >70% memory, DB read load high | automate DS allocator; read replica for safe reads; managed Redis review |
+| 10K CCU | regional latency or primary write pressure | regional DS pools; partition operational workloads; formal capacity tests |
+| 50K+ CCU | sustained multi-region demand | multi-region design, dedicated SRE/DBA review; do not lift-and-shift blindly |
+
+Capacity work is driven by load tests representing login bursts, ticket creation, server heartbeats, commit spikes, and inbox workers. Track per-environment infrastructure cost, DS instance-hour, database storage/IOPS, egress, and alert on budget variance. Cost estimates must be obtained from the selected provider at purchase time, not embedded as stale architecture facts.
+
+# 47. Disaster Recovery and Backup
+
+Initial targets: RTO under four hours, RPO under one hour. PostgreSQL uses daily logical backup plus continuous WAL archiving; periodically test physical/base backups if data size makes logical recovery too slow. Redis uses AOF plus RDB snapshots but is rebuilt as cache when necessary. Object storage buckets are versioned and lifecycle-managed.
+
+Monthly restore drill: (1) select a backup and target timestamp, (2) restore to isolated environment, (3) apply WAL, (4) run integrity and row-count checks, (5) verify a sampled ledger/inventory/match relationship, (6) rotate temporary credentials and destroy drill data, (7) record actual RTO/RPO and corrective work. Maintain a current contact-free solo runbook with backup locations, access procedure, DNS/reverse-proxy rollback, and customer communication templates.
+
+# 48. Data Retention and Privacy
+
+Define the player-facing privacy notice and jurisdictional requirements with qualified legal review before collecting data. Baseline retention: match records one year; economy ledger permanently or for the legally required financial/audit period; admin audit logs two years; raw analytics 90 days then anonymized/aggregated; chat logs 30 days unless a valid investigation hold applies.
+
+`GET /v1/admin/players/{id}/export` creates an audited, access-controlled export job; never synchronously return a large data package. `DELETE /v1/admin/players/{id}/gdpr` starts a verified deletion/anonymization workflow, not an unaudited hard delete. Replace direct identifiers with irreversible surrogate values where records must be retained for fraud, financial, or legal obligations, revoke sessions/tokens, and retain only the documented minimum. Track requests, decisions, legal holds, and completion evidence.
+
+# 49. Flea Market / Player Marketplace (Roadmap)
+
+Do not implement before item locking, ledger, audit, fraud detection, and load tests are proven. The model is listing -> escrow -> buy/bid -> settlement -> delivery/expiry. At listing, lock and escrow the exact item instances in a transaction. At purchase, lock the buyer wallet and listing, debit price plus fee/tax sink, credit seller, transfer item or create inbox delivery, and write all ledger/audit rows atomically.
+
+Initial controls: seller reputation/trader-level gate, quantity/price bounds, listing caps, cooldowns, anomaly review, immutable item provenance, and no trust in display prices supplied by the client. Design the data model later; avoid premature full DDL.
+
+# 50. Content Delivery and Patching (Roadmap)
+
+Use signed build manifests containing app version, content version, compatibility hash, minimum supported version, required chunks, and expiry. Distribute large mobile content through platform/CDN-supported delivery. Backend LiveOps config can gate queues by compatibility hash; it cannot safely replace a signed client patch system.
+
+Maintain a compatibility matrix for client, DS, backend API, schema, and content. Forced updates block login before matchmaking when a critical version is unsupported. Hot fixes are restricted to pre-approved data/config changes; native code, anti-cheat, and security changes follow platform release rules.
+
+# 51. Real-Time Backend Updates (Roadmap)
+
+Start with REST polling: ticket status every 2–5 seconds while the queue UI is visible, inbox refresh on foreground/login, and ETag polling for LiveOps. Add WebSocket or SSE only when measured polling cost or product UX requires it. WebSocket is appropriate for ticket assignments, inbox badge updates, and LiveOps invalidation—not real-time combat.
+
+Authenticate the connection with a short-lived backend token, authorize every subscribed topic, enforce connection/message limits, refresh before expiry, and reconnect with jitter. Mobile clients must fall back to polling when backgrounding, captive portals, or unreliable networks break a long-lived connection.
+
+# 52. Multi-Region Roadmap
+
+Consider multi-region only for sustained latency/product/regulatory needs, normally above 10K CCU. Start with regional DS fleets and matchmaking affinity while retaining a clearly defined primary persistence region. Avoid active-active inventory/economy writes until the team can operate conflict-free ownership boundaries and recovery procedures.
+
+Future phases may add regional read replicas for safe reads, a global server registry, region-aware queue rules, data residency controls, and separate disaster-recovery exercises. Each step requires latency measurements, failure-mode testing, cost model, data ownership decision, and an explicit rollback plan.
+
+---
+
+# 53. Expanded Sequential Delivery Plan
+
+For a solo developer, complete and verify work in this order; do not parallelize dependent persistent-state work.
+
+1. **Phase A — Core depth:** diagrams, DDL, OpenAPI, errors, rate limiting. Exit when migrations, contract validation, and all diagrams are reviewed together.
+2. **Phase B — Extraction and economy:** Sections 36–42. Exit when a simulated raid safely reserves, commits, rolls back, insures, rewards quests, and writes audit records.
+3. **Phase C — Operational readiness:** Sections 43–48 plus the Section 24 runbook. Exit after reconnect, backup restore, abuse, and 1K-CCU load scenarios are tested.
+4. **Phase D — Roadmap:** Sections 49–52 are design-only until measured scale/product evidence authorizes implementation.
+
+## 53.1 Deployment Runbook Addendum
+
+Before deployment: confirm target environment, clean migration status, backup freshness, error budget, compatible DS/client builds, and rollback artifact. Deploy backend to a small canary (or one instance), run health/auth/inventory/commit smoke tests with synthetic data, then progress 10% -> 50% -> 100% while watching error rate, latency, DB locks, and queue/heartbeat health. Roll back application binaries/config immediately for behavioral failure; use forward-fix migrations unless the migration has a tested, safe rollback. Record incident timeline, impact, mitigation, and follow-up actions.

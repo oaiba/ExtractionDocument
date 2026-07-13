@@ -47,17 +47,29 @@ paths:
   /v1/admin/incidents:
     get:
       tags: [Operations]
+      x-required-permission: incident.read
+      x-environment-scope: all
+      x-audit-action: incident.listed
+      x-danger-level: low
       security: [{oidcBearer: []}]
       parameters: [{$ref: '#/components/parameters/Limit'}, {$ref: '#/components/parameters/Cursor'}]
       responses: {'200': {$ref: '#/components/responses/PagedIncidents'}, '403': {$ref: '#/components/responses/Forbidden'}}
   /v1/admin/liveops/configs:
     get:
       tags: [LiveOps]
+      x-required-permission: config.read
+      x-environment-scope: all
+      x-audit-action: liveops.config.listed
+      x-danger-level: low
       security: [{oidcBearer: []}]
       parameters: [{$ref: '#/components/parameters/Limit'}, {$ref: '#/components/parameters/Cursor'}, {name: configType, in: query, schema: {type: string}}, {name: environment, in: query, schema: {$ref: '#/components/schemas/Environment'}}, {name: status, in: query, schema: {$ref: '#/components/schemas/ConfigStatus'}}]
       responses: {'200': {$ref: '#/components/responses/PagedConfigs'}, '403': {$ref: '#/components/responses/Forbidden'}}
     post:
       tags: [LiveOps]
+      x-required-permission: config.create
+      x-environment-scope: all
+      x-audit-action: liveops.config.created
+      x-danger-level: low
       security: [{oidcBearer: []}]
       parameters: [{$ref: '#/components/parameters/IdempotencyKey'}, {$ref: '#/components/parameters/RequestId'}]
       requestBody: {$ref: '#/components/requestBodies/Mutation'}
@@ -75,17 +87,17 @@ paths:
       requestBody: {$ref: '#/components/requestBodies/Mutation'}
       responses: {'200': {description: Draft updated, content: {application/json: {schema: {$ref: '#/components/schemas/LiveOpsConfig'}}}}, '409': {$ref: '#/components/responses/Conflict'}}
   /v1/admin/liveops/configs/{id}/validate:
-    post: {$ref: '#/components/pathItems/ValidateConfig'}
+    post: {tags: [LiveOps], x-required-permission: config.validate, x-environment-scope: all, x-audit-action: liveops.config.validated, x-danger-level: low, security: [{oidcBearer: []}], parameters: [{name: id, in: path, required: true, schema: {type: string}}, {$ref: '#/components/parameters/IdempotencyKey'}], responses: {'200': {description: Validation result, content: {application/json: {schema: {$ref: '#/components/schemas/ValidationResult'}}}}, '403': {$ref: '#/components/responses/Forbidden'}}}
   /v1/admin/liveops/configs/{id}/submit-review:
-    post: {$ref: '#/components/pathItems/SubmitReview'}
+    post: {tags: [LiveOps], x-required-permission: config.submit_review, x-environment-scope: all, x-audit-action: liveops.config.submitted, x-danger-level: medium, security: [{oidcBearer: []}], parameters: [{name: id, in: path, required: true, schema: {type: string}}, {$ref: '#/components/parameters/IdempotencyKey'}], requestBody: {$ref: '#/components/requestBodies/Mutation'}, responses: {'200': {description: Review, content: {application/json: {schema: {$ref: '#/components/schemas/ConfigReview'}}}}, '409': {$ref: '#/components/responses/Conflict'}}}
   /v1/admin/liveops/configs/{id}/approve:
-    post: {$ref: '#/components/pathItems/ApproveConfig'}
+    post: {tags: [LiveOps], x-required-permission: config.approve, x-environment-scope: production, x-audit-action: liveops.config.approved, x-danger-level: high, security: [{oidcBearer: []}], parameters: [{name: id, in: path, required: true, schema: {type: string}}, {$ref: '#/components/parameters/IdempotencyKey'}], requestBody: {$ref: '#/components/requestBodies/Mutation'}, responses: {'200': {description: Approval, content: {application/json: {schema: {$ref: '#/components/schemas/ConfigReview'}}}}, '403': {$ref: '#/components/responses/Forbidden'}, '409': {$ref: '#/components/responses/Conflict'}}}
   /v1/admin/liveops/configs/{id}/publish:
-    post: {$ref: '#/components/pathItems/PublishConfig'}
+    post: {tags: [LiveOps], x-required-permission: config.publish, x-environment-scope: production, x-audit-action: liveops.config.published, x-danger-level: critical, security: [{oidcBearer: []}], parameters: [{name: id, in: path, required: true, schema: {type: string}}, {$ref: '#/components/parameters/IdempotencyKey'}], requestBody: {$ref: '#/components/requestBodies/Mutation'}, responses: {'200': {description: Publication, content: {application/json: {schema: {$ref: '#/components/schemas/ConfigPublication'}}}}, '403': {$ref: '#/components/responses/Forbidden'}, '409': {$ref: '#/components/responses/Conflict'}}}
   /v1/admin/liveops/configs/{id}/rollback:
-    post: {$ref: '#/components/pathItems/RollbackConfig'}
+    post: {tags: [LiveOps], x-required-permission: config.rollback, x-environment-scope: production, x-audit-action: liveops.config.rolled_back, x-danger-level: critical, security: [{oidcBearer: []}], parameters: [{name: id, in: path, required: true, schema: {type: string}}, {$ref: '#/components/parameters/IdempotencyKey'}], requestBody: {$ref: '#/components/requestBodies/Mutation'}, responses: {'201': {description: Rollback config, content: {application/json: {schema: {$ref: '#/components/schemas/LiveOpsConfig'}}}}, '403': {$ref: '#/components/responses/Forbidden'}, '409': {$ref: '#/components/responses/Conflict'}}}
   /v1/admin/liveops/configs/{id}/diff:
-    get: {$ref: '#/components/pathItems/DiffConfig'}
+    get: {tags: [LiveOps], x-required-permission: config.read, x-environment-scope: all, x-audit-action: liveops.config.diff_viewed, x-danger-level: low, security: [{oidcBearer: []}], parameters: [{name: id, in: path, required: true, schema: {type: string}}, {name: compareVersion, in: query, required: true, schema: {type: integer}}], responses: {'200': {description: Diff, content: {application/json: {schema: {$ref: '#/components/schemas/ConfigDiff'}}}}, '404': {$ref: '#/components/responses/NotFound'}}}
   /v1/admin/players:
     get:
       tags: [Player Support]
@@ -99,21 +111,21 @@ paths:
       parameters: [{name: id, in: path, required: true, schema: {type: string, format: uuid}}]
       responses: {'200': {description: Player, content: {application/json: {schema: {$ref: '#/components/schemas/Player'}}}}, '404': {$ref: '#/components/responses/NotFound'}}
   /v1/admin/players/{id}/matches:
-    get: {$ref: '#/components/pathItems/PlayerMatches'}
+    get: {tags: [Player Support], x-required-permission: match.read, x-environment-scope: all, x-audit-action: player.matches_viewed, x-danger-level: low, security: [{oidcBearer: []}], parameters: [{name: id, in: path, required: true, schema: {type: string, format: uuid}}, {$ref: '#/components/parameters/Limit'}, {$ref: '#/components/parameters/Cursor'}], responses: {'200': {description: Matches, content: {application/json: {schema: {$ref: '#/components/schemas/PagedMatches'}}}}, '404': {$ref: '#/components/responses/NotFound'}}}
   /v1/admin/players/{id}/inventory-audit:
-    get: {$ref: '#/components/pathItems/InventoryAudit'}
+    get: {tags: [Player Support], x-required-permission: inventory.read, x-environment-scope: all, x-audit-action: player.inventory_audit_viewed, x-danger-level: low, security: [{oidcBearer: []}], parameters: [{name: id, in: path, required: true, schema: {type: string, format: uuid}}, {$ref: '#/components/parameters/Limit'}, {$ref: '#/components/parameters/Cursor'}], responses: {'200': {description: Inventory audit, content: {application/json: {schema: {$ref: '#/components/schemas/PagedAuditRows'}}}}, '404': {$ref: '#/components/responses/NotFound'}}}
   /v1/admin/players/{id}/wallet-ledger:
-    get: {$ref: '#/components/pathItems/WalletLedger'}
+    get: {tags: [Player Support], x-required-permission: ledger.read, x-environment-scope: all, x-audit-action: player.wallet_ledger_viewed, x-danger-level: low, security: [{oidcBearer: []}], parameters: [{name: id, in: path, required: true, schema: {type: string, format: uuid}}, {$ref: '#/components/parameters/Limit'}, {$ref: '#/components/parameters/Cursor'}], responses: {'200': {description: Wallet ledger, content: {application/json: {schema: {$ref: '#/components/schemas/PagedLedgerRows'}}}}, '404': {$ref: '#/components/responses/NotFound'}}}
   /v1/admin/players/{id}/revoke-sessions:
-    post: {$ref: '#/components/pathItems/RevokeSessions'}
+    post: {tags: [Player Support], x-required-permission: session.revoke, x-environment-scope: all, x-audit-action: admin.command.revoke_sessions, x-danger-level: medium, security: [{oidcBearer: []}], parameters: [{name: id, in: path, required: true, schema: {type: string, format: uuid}}, {$ref: '#/components/parameters/IdempotencyKey'}], requestBody: {$ref: '#/components/requestBodies/Mutation'}, responses: {'202': {description: Command, content: {application/json: {schema: {$ref: '#/components/schemas/AdminCommandResult'}}}}, '403': {$ref: '#/components/responses/Forbidden'}}}
   /v1/admin/players/{id}/grant:
-    post: {$ref: '#/components/pathItems/Grant'}
+    post: {tags: [Player Support], x-required-permission: grant.execute, x-environment-scope: all, x-audit-action: admin.command.grant, x-danger-level: high, security: [{oidcBearer: []}], parameters: [{name: id, in: path, required: true, schema: {type: string, format: uuid}}, {$ref: '#/components/parameters/IdempotencyKey'}], requestBody: {$ref: '#/components/requestBodies/Mutation'}, responses: {'202': {description: Command, content: {application/json: {schema: {$ref: '#/components/schemas/AdminCommandResult'}}}}, '403': {$ref: '#/components/responses/Forbidden'}, '409': {$ref: '#/components/responses/Conflict'}}}
   /v1/admin/players/{id}/revoke:
-    post: {$ref: '#/components/pathItems/Revoke'}
+    post: {tags: [Player Support], x-required-permission: revoke.execute, x-environment-scope: all, x-audit-action: admin.command.revoke, x-danger-level: high, security: [{oidcBearer: []}], parameters: [{name: id, in: path, required: true, schema: {type: string, format: uuid}}, {$ref: '#/components/parameters/IdempotencyKey'}], requestBody: {$ref: '#/components/requestBodies/Mutation'}, responses: {'202': {description: Command, content: {application/json: {schema: {$ref: '#/components/schemas/AdminCommandResult'}}}}, '403': {$ref: '#/components/responses/Forbidden'}, '409': {$ref: '#/components/responses/Conflict'}}}
   /v1/admin/players/{id}/sanctions:
-    post: {$ref: '#/components/pathItems/Sanction'}
+    post: {tags: [Player Support], x-required-permission: sanction.execute, x-environment-scope: all, x-audit-action: admin.command.sanction, x-danger-level: high, security: [{oidcBearer: []}], parameters: [{name: id, in: path, required: true, schema: {type: string, format: uuid}}, {$ref: '#/components/parameters/IdempotencyKey'}], requestBody: {$ref: '#/components/requestBodies/Mutation'}, responses: {'202': {description: Command, content: {application/json: {schema: {$ref: '#/components/schemas/AdminCommandResult'}}}}, '403': {$ref: '#/components/responses/Forbidden'}}}
   /v1/admin/players/{id}/unsanction:
-    post: {$ref: '#/components/pathItems/Unsanction'}
+    post: {tags: [Player Support], x-required-permission: sanction.execute, x-environment-scope: all, x-audit-action: admin.command.unsanction, x-danger-level: high, security: [{oidcBearer: []}], parameters: [{name: id, in: path, required: true, schema: {type: string, format: uuid}}, {$ref: '#/components/parameters/IdempotencyKey'}], requestBody: {$ref: '#/components/requestBodies/Mutation'}, responses: {'202': {description: Command, content: {application/json: {schema: {$ref: '#/components/schemas/AdminCommandResult'}}}}, '403': {$ref: '#/components/responses/Forbidden'}}}
   /v1/admin/audit-events:
     get:
       tags: [Audit]
@@ -126,6 +138,76 @@ paths:
       security: [{oidcBearer: []}]
       parameters: [{name: id, in: path, required: true, schema: {type: string, format: uuid}}]
       responses: {'200': {description: Audit event, content: {application/json: {schema: {$ref: '#/components/schemas/AuditEvent'}}}}, '404': {$ref: '#/components/responses/NotFound'}}
+  /v1/admin/incidents/{id}:
+    get:
+      tags: [Operations]
+      x-required-permission: incident.read
+      x-environment-scope: all
+      x-audit-action: incident.viewed
+      x-danger-level: low
+      security: [{oidcBearer: []}]
+      parameters: [{name: id, in: path, required: true, schema: {type: string, format: uuid}}]
+      responses: {'200': {description: Incident detail, content: {application/json: {schema: {$ref: '#/components/schemas/Incident'}}}}, '404': {$ref: '#/components/responses/NotFound'}}
+  /v1/admin/servers/{id}:
+    get:
+      tags: [Operations]
+      x-required-permission: server.read
+      x-environment-scope: all
+      x-audit-action: server.viewed
+      x-danger-level: low
+      security: [{oidcBearer: []}]
+      parameters: [{name: id, in: path, required: true, schema: {type: string, format: uuid}}]
+      responses: {'200': {description: Server detail, content: {application/json: {schema: {$ref: '#/components/schemas/Server'}}}}, '404': {$ref: '#/components/responses/NotFound'}}
+  /v1/admin/queues/{id}:
+    get:
+      tags: [Operations]
+      x-required-permission: queue.read
+      x-environment-scope: all
+      x-audit-action: queue.viewed
+      x-danger-level: low
+      security: [{oidcBearer: []}]
+      parameters: [{name: id, in: path, required: true, schema: {type: string}}]
+      responses: {'200': {description: Queue detail, content: {application/json: {schema: {$ref: '#/components/schemas/Queue'}}}}, '404': {$ref: '#/components/responses/NotFound'}}
+  /v1/admin/players/{id}/sanctions:
+    get:
+      tags: [Player Support]
+      x-required-permission: sanction.read
+      x-environment-scope: all
+      x-audit-action: sanction.listed
+      x-danger-level: low
+      security: [{oidcBearer: []}]
+      parameters: [{name: id, in: path, required: true, schema: {type: string, format: uuid}}, {$ref: '#/components/parameters/Limit'}, {$ref: '#/components/parameters/Cursor'}]
+      responses: {'200': {description: Sanctions, content: {application/json: {schema: {$ref: '#/components/schemas/PagedSanctions'}}}}, '404': {$ref: '#/components/responses/NotFound'}}
+  /v1/admin/liveops/configs/{id}/history:
+    get:
+      tags: [LiveOps]
+      x-required-permission: config.read
+      x-environment-scope: all
+      x-audit-action: liveops.config.history_viewed
+      x-danger-level: low
+      security: [{oidcBearer: []}]
+      parameters: [{name: id, in: path, required: true, schema: {type: string}}, {$ref: '#/components/parameters/Limit'}, {$ref: '#/components/parameters/Cursor'}]
+      responses: {'200': {description: Config history, content: {application/json: {schema: {$ref: '#/components/schemas/PagedConfigs'}}}}, '404': {$ref: '#/components/responses/NotFound'}}
+  /v1/admin/liveops/configs/{id}/projections:
+    get:
+      tags: [LiveOps]
+      x-required-permission: config.read
+      x-environment-scope: all
+      x-audit-action: liveops.config.projection_viewed
+      x-danger-level: medium
+      security: [{oidcBearer: []}]
+      parameters: [{name: id, in: path, required: true, schema: {type: string}}, {name: projection, in: query, required: true, schema: {type: string, enum: [client, server, admin]}}]
+      responses: {'200': {description: Filtered projection, content: {application/json: {schema: {$ref: '#/components/schemas/LiveOpsConfig'}}}}, '403': {$ref: '#/components/responses/Forbidden'}}
+  /v1/admin/commands/{commandId}:
+    get:
+      tags: [Player Support]
+      x-required-permission: command.read
+      x-environment-scope: all
+      x-audit-action: admin.command.viewed
+      x-danger-level: low
+      security: [{oidcBearer: []}]
+      parameters: [{name: commandId, in: path, required: true, schema: {type: string, format: uuid}}]
+      responses: {'200': {description: Command status, content: {application/json: {schema: {$ref: '#/components/schemas/AdminCommandResult'}}}}, '404': {$ref: '#/components/responses/NotFound'}}
 components:
   securitySchemes:
     oidcBearer: {type: http, scheme: bearer, bearerFormat: JWT}
@@ -150,21 +232,6 @@ components:
     BadRequest: {description: Invalid request, content: {application/json: {schema: {$ref: '#/components/schemas/ErrorEnvelope'}}}}
     Conflict: {description: Conflict, content: {application/json: {schema: {$ref: '#/components/schemas/ErrorEnvelope'}}}}
     NotFound: {description: Not found, content: {application/json: {schema: {$ref: '#/components/schemas/ErrorEnvelope'}}}}
-  pathItems:
-    ValidateConfig: {tags: [LiveOps], security: [{oidcBearer: []}], parameters: [{name: id, in: path, required: true, schema: {type: string}}, {$ref: '#/components/parameters/IdempotencyKey'}], responses: {'200': {description: Validation result, content: {application/json: {schema: {$ref: '#/components/schemas/ValidationResult'}}}}}}
-    SubmitReview: {tags: [LiveOps], security: [{oidcBearer: []}], parameters: [{name: id, in: path, required: true, schema: {type: string}}, {$ref: '#/components/parameters/IdempotencyKey'}], requestBody: {$ref: '#/components/requestBodies/Mutation'}, responses: {'200': {description: Review, content: {application/json: {schema: {$ref: '#/components/schemas/ConfigReview'}}}}}}
-    ApproveConfig: {tags: [LiveOps], security: [{oidcBearer: []}], parameters: [{name: id, in: path, required: true, schema: {type: string}}, {$ref: '#/components/parameters/IdempotencyKey'}], requestBody: {$ref: '#/components/requestBodies/Mutation'}, responses: {'200': {description: Approved, content: {application/json: {schema: {$ref: '#/components/schemas/ConfigReview'}}}}}}
-    PublishConfig: {tags: [LiveOps], security: [{oidcBearer: []}], parameters: [{name: id, in: path, required: true, schema: {type: string}}, {$ref: '#/components/parameters/IdempotencyKey'}], requestBody: {$ref: '#/components/requestBodies/Mutation'}, responses: {'200': {description: Publication, content: {application/json: {schema: {$ref: '#/components/schemas/ConfigPublication'}}}}}}
-    RollbackConfig: {tags: [LiveOps], security: [{oidcBearer: []}], parameters: [{name: id, in: path, required: true, schema: {type: string}}, {$ref: '#/components/parameters/IdempotencyKey'}], requestBody: {$ref: '#/components/requestBodies/Mutation'}, responses: {'201': {description: Rollback config, content: {application/json: {schema: {$ref: '#/components/schemas/LiveOpsConfig'}}}}}}
-    DiffConfig: {tags: [LiveOps], security: [{oidcBearer: []}], parameters: [{name: id, in: path, required: true, schema: {type: string}}, {name: compareVersion, in: query, required: true, schema: {type: integer}}], responses: {'200': {description: Diff, content: {application/json: {schema: {$ref: '#/components/schemas/ConfigDiff'}}}}}}
-    PlayerMatches: {tags: [Player Support], security: [{oidcBearer: []}], parameters: [{name: id, in: path, required: true, schema: {type: string, format: uuid}}, {$ref: '#/components/parameters/Limit'}, {$ref: '#/components/parameters/Cursor'}], responses: {'200': {description: Matches, content: {application/json: {schema: {$ref: '#/components/schemas/PagedMatches'}}}}}}
-    InventoryAudit: {tags: [Player Support], security: [{oidcBearer: []}], parameters: [{name: id, in: path, required: true, schema: {type: string, format: uuid}}, {$ref: '#/components/parameters/Limit'}, {$ref: '#/components/parameters/Cursor'}], responses: {'200': {description: Inventory audit, content: {application/json: {schema: {$ref: '#/components/schemas/PagedAuditRows'}}}}}}
-    WalletLedger: {tags: [Player Support], security: [{oidcBearer: []}], parameters: [{name: id, in: path, required: true, schema: {type: string, format: uuid}}, {$ref: '#/components/parameters/Limit'}, {$ref: '#/components/parameters/Cursor'}], responses: {'200': {description: Wallet ledger, content: {application/json: {schema: {$ref: '#/components/schemas/PagedLedgerRows'}}}}}}
-    RevokeSessions: {tags: [Player Support], security: [{oidcBearer: []}], parameters: [{name: id, in: path, required: true, schema: {type: string, format: uuid}}, {$ref: '#/components/parameters/IdempotencyKey'}], requestBody: {$ref: '#/components/requestBodies/Mutation'}, responses: {'202': {description: Command, content: {application/json: {schema: {$ref: '#/components/schemas/AdminCommandResult'}}}}}}
-    Grant: {tags: [Player Support], security: [{oidcBearer: []}], parameters: [{name: id, in: path, required: true, schema: {type: string, format: uuid}}, {$ref: '#/components/parameters/IdempotencyKey'}], requestBody: {$ref: '#/components/requestBodies/Mutation'}, responses: {'202': {description: Command, content: {application/json: {schema: {$ref: '#/components/schemas/AdminCommandResult'}}}}}}
-    Revoke: {tags: [Player Support], security: [{oidcBearer: []}], parameters: [{name: id, in: path, required: true, schema: {type: string, format: uuid}}, {$ref: '#/components/parameters/IdempotencyKey'}], requestBody: {$ref: '#/components/requestBodies/Mutation'}, responses: {'202': {description: Command, content: {application/json: {schema: {$ref: '#/components/schemas/AdminCommandResult'}}}}}}
-    Sanction: {tags: [Player Support], security: [{oidcBearer: []}], parameters: [{name: id, in: path, required: true, schema: {type: string, format: uuid}}, {$ref: '#/components/parameters/IdempotencyKey'}], requestBody: {$ref: '#/components/requestBodies/Mutation'}, responses: {'202': {description: Command, content: {application/json: {schema: {$ref: '#/components/schemas/AdminCommandResult'}}}}}}
-    Unsanction: {tags: [Player Support], security: [{oidcBearer: []}], parameters: [{name: id, in: path, required: true, schema: {type: string, format: uuid}}, {$ref: '#/components/parameters/IdempotencyKey'}], requestBody: {$ref: '#/components/requestBodies/Mutation'}, responses: {'202': {description: Command, content: {application/json: {schema: {$ref: '#/components/schemas/AdminCommandResult'}}}}}}
   schemas:
     Environment: {type: string, enum: [development, stage, production]}
     ConfigStatus: {type: string, enum: [draft, validated, in_review, approved, scheduled, published, active, rolled_back, archived, rejected, expired]}
@@ -188,6 +255,7 @@ components:
     Match: {type: object, properties: {matchId: {type: string}, mode: {type: string}, status: {type: string}, startedAt: {type: string, format: date-time}}}
     AuditRow: {type: object, properties: {id: {type: string}, action: {type: string}, occurredAt: {type: string, format: date-time}, requestId: {type: string}}}
     LedgerRow: {type: object, properties: {id: {type: string}, currencyCode: {type: string}, amountMinor: {type: integer}, transactionType: {type: string}, occurredAt: {type: string, format: date-time}}}
+    Sanction: {type: object, properties: {id: {type: string}, type: {type: string}, scope: {type: string}, reasonCode: {type: string}, startsAt: {type: string, format: date-time}, endsAt: {type: string, format: date-time, nullable: true}, status: {type: string}, appealState: {type: string}}}
     Paged: {type: object, properties: {items: {type: array, items: {}}, nextCursor: {type: string, nullable: true}}}
     PagedServers: {allOf: [{$ref: '#/components/schemas/Paged'}, {type: object, properties: {items: {type: array, items: {$ref: '#/components/schemas/Server'}}}}]}
     PagedQueues: {allOf: [{$ref: '#/components/schemas/Paged'}, {type: object, properties: {items: {type: array, items: {$ref: '#/components/schemas/Queue'}}}}]}
@@ -197,4 +265,5 @@ components:
     PagedMatches: {allOf: [{$ref: '#/components/schemas/Paged'}, {type: object, properties: {items: {type: array, items: {$ref: '#/components/schemas/Match'}}}}]}
     PagedAuditRows: {allOf: [{$ref: '#/components/schemas/Paged'}, {type: object, properties: {items: {type: array, items: {$ref: '#/components/schemas/AuditRow'}}}}]}
     PagedLedgerRows: {allOf: [{$ref: '#/components/schemas/Paged'}, {type: object, properties: {items: {type: array, items: {$ref: '#/components/schemas/LedgerRow'}}}}]}
+    PagedSanctions: {allOf: [{$ref: '#/components/schemas/Paged'}, {type: object, properties: {items: {type: array, items: {$ref: '#/components/schemas/Sanction'}}}}]}
     PagedAuditEvents: {allOf: [{$ref: '#/components/schemas/Paged'}, {type: object, properties: {items: {type: array, items: {$ref: '#/components/schemas/AuditEvent'}}}}]}

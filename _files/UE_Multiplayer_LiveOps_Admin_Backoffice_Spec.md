@@ -298,3 +298,13 @@ UE_Multiplayer_LiveOps_Observability_Catalog.md
 ```
 
 OpenAPI 3.1 YAML is the source for later DTO/code generation. SQL files are migration drafts and are not executed by this document phase. The UI page specification uses Mermaid and ASCII layout descriptions; it is not a production frontend implementation.
+
+## 18. Admin UI Contract Reference
+
+The complete page-level UI contract is maintained in:
+
+```text
+UE_Multiplayer_LiveOps_Admin_UI_Page_Spec.md
+```
+
+That document is the canonical source for Admin Web routes, page states, table/form fields, danger levels, confirmation requirements, audit metadata, and authoritative refresh behavior. It does not authorize direct database access or replace backend permission enforcement.

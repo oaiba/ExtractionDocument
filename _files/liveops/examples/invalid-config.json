@@ -1,0 +1,15 @@
+{
+  "configId": "invalid-queue",
+  "configType": "queue_availability",
+  "schemaVersion": 1,
+  "configVersion": 1,
+  "environment": "production",
+  "status": "draft",
+  "effectiveFrom": "not-a-date",
+  "effectiveTo": null,
+  "reason": "Invalid fixture",
+  "checksum": "sha256:invalid",
+  "clientBuildConstraints": [],
+  "serverBuildConstraints": [],
+  "payload": {"queues": [{"queueId": "raid", "enabled": "yes", "maxCapacity": -1}]}
+}

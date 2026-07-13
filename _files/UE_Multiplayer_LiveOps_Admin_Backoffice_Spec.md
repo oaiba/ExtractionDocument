@@ -264,3 +264,37 @@ Each alert links to an incident runbook and has an owner, severity, threshold, a
 - Epic Fortnite seasons: https://dev.epicgames.com/documentation/fortnite/chapter
 - Bungie Destiny 2 content: https://help.bungie.net/hc/en-us/articles/44243991218196--2-Available-Content-Expansions-Seasons-and-More
 - GDC Effective LiveOps Strategies: https://media.gdcvault.com/gdc2015/presentations/EffectiveLiveOps_Gwertzman_2015.03.01.pdf
+
+## 15. Contract Pack and Source of Truth
+
+The companion artifacts are:
+
+```text
+UE_Multiplayer_LiveOps_Data_Catalog.md
+UE_Multiplayer_LiveOps_Admin_OpenAPI.md
+UE_Multiplayer_LiveOps_Operations_Runbook.md
+liveops/*.schema.json
+liveops/examples/*.json
+```
+
+The data catalog defines domain meaning and ownership. The JSON schemas define payload shape. The OpenAPI-ready contract defines the HTTP interface. This document defines the Admin Backoffice behavior and security boundary. All timestamps are UTC; JSON uses lower camel case; PostgreSQL uses snake_case.
+
+## 16. Documentation Acceptance Gate
+
+The contract pack is ready for backend implementation only when every v1 domain has a catalog entry, schema, valid example, visibility projection, validation rule, rollback rule, and audit requirement. Every Admin API must have authentication, permission, request/response, error, idempotency, audit, and concurrency definitions.
+
+## 17. Contract Hardening Artifacts
+
+The executable contract and review artifacts are:
+
+```text
+liveops/openapi/liveops-admin-v1.yaml
+liveops/schemas/*.schema.json
+liveops/sql/*.sql
+UE_Multiplayer_LiveOps_Threat_Model.md
+UE_Multiplayer_LiveOps_Admin_UI_Page_Spec.md
+liveops/fixtures/contract-test-matrix.md
+UE_Multiplayer_LiveOps_Observability_Catalog.md
+```
+
+OpenAPI 3.1 YAML is the source for later DTO/code generation. SQL files are migration drafts and are not executed by this document phase. The UI page specification uses Mermaid and ASCII layout descriptions; it is not a production frontend implementation.

@@ -1,0 +1,15 @@
+{
+  "configId": "feature-flags",
+  "configType": "feature_flags",
+  "schemaVersion": 1,
+  "configVersion": 3,
+  "environment": "stage",
+  "status": "active",
+  "effectiveFrom": "2026-07-13T00:00:00Z",
+  "effectiveTo": null,
+  "reason": "Enable LiveOps dashboard trial",
+  "checksum": "sha256:example-feature-flags",
+  "clientBuildConstraints": [{"minimumBuild": "1.0.0"}],
+  "serverBuildConstraints": [],
+  "payload": {"flags": [{"key": "liveops.dashboard_preview", "valueType": "boolean", "defaultValue": false, "enabledPercentage": 100}]}
+}

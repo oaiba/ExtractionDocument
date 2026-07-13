@@ -2740,3 +2740,116 @@ Required Admin Web tests:
 - Epic Fortnite chapters and seasons: https://dev.epicgames.com/documentation/fortnite/chapter
 - Bungie Destiny 2 content and seasonal events: https://help.bungie.net/hc/en-us/articles/44243991218196--2-Available-Content-Expansions-Seasons-and-More
 - GDC Effective LiveOps Strategies: https://media.gdcvault.com/gdc2015/presentations/EffectiveLiveOps_Gwertzman_2015.03.01.pdf
+
+---
+
+# 64. LiveOps Documentation and Contract Pack
+
+The LiveOps contract pack is maintained under `_files/` and is English-canonical for technical implementation. The GDD and player-facing UI documents are intentionally not changed in this phase; they may consume this contract after the data model stabilizes.
+
+Canonical artifacts:
+
+```text
+_files/UE_Multiplayer_LiveOps_Data_Catalog.md
+_files/UE_Multiplayer_LiveOps_Admin_Backoffice_Spec.md
+_files/UE_Multiplayer_LiveOps_Admin_OpenAPI.md
+_files/UE_Multiplayer_LiveOps_Operations_Runbook.md
+_files/liveops/*.schema.json
+_files/liveops/examples/*.json
+```
+
+Naming rules:
+
+- conceptual/API names use lower camel case;
+- PostgreSQL names use snake_case;
+- timestamps are UTC ISO-8601 values;
+- configuration identifiers use stable domain names, not display names;
+- published versions are immutable;
+- examples and schemas must remain compatible with the Admin OpenAPI contract.
+
+The data catalog is the domain-level authority for LiveOps fields. JSON schemas are the machine-readable validation authority for payload shape. The architecture document remains the authority for system boundaries and security rules.
+
+# 65. LiveOps Data Authority and Projection Rules
+
+The following classes are mandatory:
+
+| Data class | Consumer | Client-visible | LiveOps editable |
+|---|---|---:|---:|
+| Client-safe config | Unreal Client | Yes | Yes, validated |
+| Server-only tuning | Backend / Dedicated Server | No | Yes, restricted |
+| Admin operational state | Admin API / Backoffice | No | Yes, permissioned |
+| Authoritative player state | Backend database | No | No direct edit |
+| Secret/security material | Secret manager | No | No |
+
+The client projection must exclude server-only and admin-only fields. The server projection must exclude secrets and must be bound to compatible backend/DS builds. A configuration read failure uses the last-known-safe or compiled default snapshot; authoritative operations fail closed when a required safe snapshot is unavailable.
+
+# 66. LiveOps Configuration Envelope and State Machine
+
+Every domain payload uses the common envelope below:
+
+```json
+{
+  "configId": "queue-availability",
+  "configType": "queue_availability",
+  "schemaVersion": 1,
+  "configVersion": 12,
+  "environment": "stage",
+  "status": "published",
+  "effectiveFrom": "2026-07-13T12:00:00Z",
+  "effectiveTo": null,
+  "createdBy": "admin-subject",
+  "publishedBy": "admin-subject",
+  "reason": "Enable raid queue for staging validation",
+  "checksum": "sha256:...",
+  "clientBuildConstraints": [],
+  "serverBuildConstraints": [],
+  "payload": {}
+}
+```
+
+Valid statuses are:
+
+```text
+draft -> validated -> in_review -> approved -> scheduled -> published -> active
+                                                                    -> rolled_back
+                                                                    -> archived
+                                                                    -> expired
+                                                                    -> rejected
+```
+
+Published versions cannot be edited in place. Rollback creates a new version with `rollbackOf`. Every transition emits an audit event. Publish revalidates the current database state, checks environment/build compatibility, and invalidates the relevant ETag/cache key.
+
+# 67. LiveOps Contract Review Gates
+
+Before a contract artifact is accepted:
+
+1. Every v1 domain exists in the data catalog.
+2. Every domain has a schema and at least one valid example.
+3. An invalid example is rejected by the documented validation rules.
+4. API endpoints, permissions, error codes, and state transitions agree.
+5. Database table names and field names agree with the catalog and API.
+6. Client and server projections are explicitly separated.
+7. Runbooks exist for publish, rollback, maintenance, queue disablement, and incident recovery.
+
+The contract pack is complete only when the architecture document, Admin Backoffice specification, data catalog, OpenAPI-ready contract, schemas, examples, and runbook pass a cross-document review.
+
+# 68. Contract Hardening Artifacts
+
+The next implementation-ready artifacts are maintained under `_files/liveops/`:
+
+```text
+liveops/openapi/liveops-admin-v1.yaml
+liveops/schemas/liveops-config-envelope.schema.json
+liveops/schemas/admin-mutation-request.schema.json
+liveops/schemas/admin-command-result.schema.json
+liveops/schemas/audit-event.schema.json
+liveops/sql/001_admin_identity.sql
+liveops/sql/002_liveops_config.sql
+liveops/sql/003_admin_commands.sql
+liveops/sql/004_audit_events.sql
+liveops/sql/005_incidents.sql
+```
+
+OpenAPI 3.1 YAML is the executable HTTP contract. The Markdown contract remains explanatory. SQL files are migration drafts and must be reviewed, tested against clean/upgraded databases, and adapted to the backend migration runner before execution.
+
+The contract-hardening phase also produces the STRIDE threat model, Admin UI page specification, fixture contract-test matrix, and observability catalog. Backend and Admin Web implementation must not begin until the contract, security, data, and operations review gates pass.

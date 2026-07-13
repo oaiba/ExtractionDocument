@@ -1,0 +1,9 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "liveops/inbox-template.schema.json",
+  "title": "Inbox Template Payload",
+  "type": "object",
+  "required": ["templateId", "subjectKey", "bodyKey", "expiresAfterDays"],
+  "properties": {"templateId": {"type": "string"}, "subjectKey": {"type": "string"}, "bodyKey": {"type": "string"}, "rewardPackageId": {"type": "string"}, "expiresAfterDays": {"type": "integer", "minimum": 1, "maximum": 3650}},
+  "additionalProperties": false
+}

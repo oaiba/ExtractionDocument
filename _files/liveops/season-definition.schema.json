@@ -1,0 +1,9 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "liveops/season-definition.schema.json",
+  "title": "Season Definition Payload",
+  "type": "object",
+  "required": ["seasonId", "startAt", "endAt", "tiers"],
+  "properties": {"seasonId": {"type": "string"}, "startAt": {"type": "string", "format": "date-time"}, "endAt": {"type": "string", "format": "date-time"}, "claimGraceEndsAt": {"type": "string", "format": "date-time"}, "tiers": {"type": "array", "minItems": 1, "items": {"type": "object", "required": ["tier", "xpRequired", "rewardPackageId"], "properties": {"tier": {"type": "integer", "minimum": 1}, "xpRequired": {"type": "integer", "minimum": 0}, "rewardPackageId": {"type": "string"}}}}},
+  "additionalProperties": false
+}

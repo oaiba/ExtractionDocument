@@ -1,0 +1,15 @@
+{
+  "configId": "queue-availability",
+  "configType": "queue_availability",
+  "schemaVersion": 1,
+  "configVersion": 12,
+  "environment": "stage",
+  "status": "active",
+  "effectiveFrom": "2026-07-13T00:00:00Z",
+  "effectiveTo": null,
+  "reason": "Disable raid queue during allocator validation",
+  "checksum": "sha256:example-queue",
+  "clientBuildConstraints": [],
+  "serverBuildConstraints": [{"minimumBuild": "ds-0.4.0"}],
+  "payload": {"queues": [{"queueId": "raid", "enabled": false, "regions": ["ap-southeast-1"], "minBuild": "1.0.0", "disableReason": "allocator_validation"}, {"queueId": "training", "enabled": true, "regions": ["ap-southeast-1"]}]}
+}

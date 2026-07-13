@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "audit-event.schema.json",
+  "title": "Admin Audit Event",
+  "type": "object",
+  "required": ["id", "actorSubject", "action", "target", "environment", "requestId", "occurredAt"],
+  "properties": {
+    "id": {"type": "string", "format": "uuid"},
+    "actorSubject": {"type": "string"},
+    "actorRole": {"type": "string"},
+    "action": {"type": "string"},
+    "target": {"type": "object"},
+    "before": {"type": ["object", "null"]},
+    "after": {"type": ["object", "null"]},
+    "reason": {"type": "string"},
+    "environment": {"type": "string", "enum": ["development", "stage", "production"]},
+    "requestId": {"type": "string"},
+    "occurredAt": {"type": "string", "format": "date-time"}
+  },
+  "additionalProperties": false
+}

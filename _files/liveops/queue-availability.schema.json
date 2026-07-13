@@ -1,0 +1,11 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "liveops/queue-availability.schema.json",
+  "title": "Queue Availability Payload",
+  "type": "object",
+  "required": ["queues"],
+  "properties": {
+    "queues": {"type": "array", "items": {"type": "object", "required": ["queueId", "enabled"], "properties": {"queueId": {"type": "string"}, "enabled": {"type": "boolean"}, "regions": {"type": "array", "items": {"type": "string"}}, "minBuild": {"type": "string"}, "maxCapacity": {"type": "integer", "minimum": 0}, "disableReason": {"type": "string"}}, "additionalProperties": false}}
+  },
+  "additionalProperties": false
+}

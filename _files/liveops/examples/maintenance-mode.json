@@ -1,0 +1,15 @@
+{
+  "configId": "maintenance-mode",
+  "configType": "maintenance_mode",
+  "schemaVersion": 1,
+  "configVersion": 5,
+  "environment": "stage",
+  "status": "scheduled",
+  "effectiveFrom": "2026-07-14T02:00:00Z",
+  "effectiveTo": "2026-07-14T03:00:00Z",
+  "reason": "Scheduled staging maintenance",
+  "checksum": "sha256:example-maintenance",
+  "clientBuildConstraints": [],
+  "serverBuildConstraints": [],
+  "payload": {"enabled": true, "messageKey": "maintenance.scheduled", "blockedOperations": ["matchmaking", "purchase"]}
+}

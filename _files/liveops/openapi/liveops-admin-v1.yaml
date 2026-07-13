@@ -1,0 +1,200 @@
+openapi: 3.1.0
+info:
+  title: LiveOps Admin API
+  version: 1.0.0
+  description: Executable Admin Backoffice contract. Actor identity is derived from OIDC.
+servers:
+  - url: https://api.example.invalid
+tags:
+  - {name: Identity}
+  - {name: Operations}
+  - {name: LiveOps}
+  - {name: Player Support}
+  - {name: Audit}
+paths:
+  /v1/admin/me:
+    get:
+      tags: [Identity]
+      security: [{oidcBearer: []}]
+      responses: {'200': {$ref: '#/components/responses/AdminIdentity'}, '401': {$ref: '#/components/responses/Unauthorized'}}
+  /v1/admin/roles:
+    get:
+      tags: [Identity]
+      security: [{oidcBearer: []}]
+      responses: {'200': {description: Roles, content: {application/json: {schema: {type: array, items: {$ref: '#/components/schemas/AdminRole'}}}}}, '403': {$ref: '#/components/responses/Forbidden'}}
+  /v1/admin/permissions:
+    get:
+      tags: [Identity]
+      security: [{oidcBearer: []}]
+      responses: {'200': {description: Permissions, content: {application/json: {schema: {type: array, items: {$ref: '#/components/schemas/Permission'}}}}}, '403': {$ref: '#/components/responses/Forbidden'}}
+  /v1/admin/dashboard/summary:
+    get:
+      tags: [Operations]
+      security: [{oidcBearer: []}]
+      responses: {'200': {description: Summary, content: {application/json: {schema: {$ref: '#/components/schemas/DashboardSummary'}}}}, '403': {$ref: '#/components/responses/Forbidden'}}
+  /v1/admin/servers:
+    get:
+      tags: [Operations]
+      security: [{oidcBearer: []}]
+      parameters: [{$ref: '#/components/parameters/Limit'}, {$ref: '#/components/parameters/Cursor'}]
+      responses: {'200': {$ref: '#/components/responses/PagedServers'}, '403': {$ref: '#/components/responses/Forbidden'}}
+  /v1/admin/queues:
+    get:
+      tags: [Operations]
+      security: [{oidcBearer: []}]
+      parameters: [{$ref: '#/components/parameters/Limit'}, {$ref: '#/components/parameters/Cursor'}]
+      responses: {'200': {$ref: '#/components/responses/PagedQueues'}, '403': {$ref: '#/components/responses/Forbidden'}}
+  /v1/admin/incidents:
+    get:
+      tags: [Operations]
+      security: [{oidcBearer: []}]
+      parameters: [{$ref: '#/components/parameters/Limit'}, {$ref: '#/components/parameters/Cursor'}]
+      responses: {'200': {$ref: '#/components/responses/PagedIncidents'}, '403': {$ref: '#/components/responses/Forbidden'}}
+  /v1/admin/liveops/configs:
+    get:
+      tags: [LiveOps]
+      security: [{oidcBearer: []}]
+      parameters: [{$ref: '#/components/parameters/Limit'}, {$ref: '#/components/parameters/Cursor'}, {name: configType, in: query, schema: {type: string}}, {name: environment, in: query, schema: {$ref: '#/components/schemas/Environment'}}, {name: status, in: query, schema: {$ref: '#/components/schemas/ConfigStatus'}}]
+      responses: {'200': {$ref: '#/components/responses/PagedConfigs'}, '403': {$ref: '#/components/responses/Forbidden'}}
+    post:
+      tags: [LiveOps]
+      security: [{oidcBearer: []}]
+      parameters: [{$ref: '#/components/parameters/IdempotencyKey'}, {$ref: '#/components/parameters/RequestId'}]
+      requestBody: {$ref: '#/components/requestBodies/Mutation'}
+      responses: {'201': {description: Draft created, content: {application/json: {schema: {$ref: '#/components/schemas/LiveOpsConfig'}}}}, '400': {$ref: '#/components/responses/BadRequest'}, '403': {$ref: '#/components/responses/Forbidden'}}
+  /v1/admin/liveops/configs/{id}:
+    parameters: [{name: id, in: path, required: true, schema: {type: string}}]
+    get:
+      tags: [LiveOps]
+      security: [{oidcBearer: []}]
+      responses: {'200': {description: Config, content: {application/json: {schema: {$ref: '#/components/schemas/LiveOpsConfig'}}}}, '404': {$ref: '#/components/responses/NotFound'}}
+    patch:
+      tags: [LiveOps]
+      security: [{oidcBearer: []}]
+      parameters: [{$ref: '#/components/parameters/IdempotencyKey'}, {$ref: '#/components/parameters/RequestId'}, {$ref: '#/components/parameters/IfMatch'}]
+      requestBody: {$ref: '#/components/requestBodies/Mutation'}
+      responses: {'200': {description: Draft updated, content: {application/json: {schema: {$ref: '#/components/schemas/LiveOpsConfig'}}}}, '409': {$ref: '#/components/responses/Conflict'}}
+  /v1/admin/liveops/configs/{id}/validate:
+    post: {$ref: '#/components/pathItems/ValidateConfig'}
+  /v1/admin/liveops/configs/{id}/submit-review:
+    post: {$ref: '#/components/pathItems/SubmitReview'}
+  /v1/admin/liveops/configs/{id}/approve:
+    post: {$ref: '#/components/pathItems/ApproveConfig'}
+  /v1/admin/liveops/configs/{id}/publish:
+    post: {$ref: '#/components/pathItems/PublishConfig'}
+  /v1/admin/liveops/configs/{id}/rollback:
+    post: {$ref: '#/components/pathItems/RollbackConfig'}
+  /v1/admin/liveops/configs/{id}/diff:
+    get: {$ref: '#/components/pathItems/DiffConfig'}
+  /v1/admin/players:
+    get:
+      tags: [Player Support]
+      security: [{oidcBearer: []}]
+      parameters: [{$ref: '#/components/parameters/Limit'}, {$ref: '#/components/parameters/Cursor'}, {name: query, in: query, schema: {type: string}}]
+      responses: {'200': {$ref: '#/components/responses/PagedPlayers'}, '403': {$ref: '#/components/responses/Forbidden'}}
+  /v1/admin/players/{id}:
+    get:
+      tags: [Player Support]
+      security: [{oidcBearer: []}]
+      parameters: [{name: id, in: path, required: true, schema: {type: string, format: uuid}}]
+      responses: {'200': {description: Player, content: {application/json: {schema: {$ref: '#/components/schemas/Player'}}}}, '404': {$ref: '#/components/responses/NotFound'}}
+  /v1/admin/players/{id}/matches:
+    get: {$ref: '#/components/pathItems/PlayerMatches'}
+  /v1/admin/players/{id}/inventory-audit:
+    get: {$ref: '#/components/pathItems/InventoryAudit'}
+  /v1/admin/players/{id}/wallet-ledger:
+    get: {$ref: '#/components/pathItems/WalletLedger'}
+  /v1/admin/players/{id}/revoke-sessions:
+    post: {$ref: '#/components/pathItems/RevokeSessions'}
+  /v1/admin/players/{id}/grant:
+    post: {$ref: '#/components/pathItems/Grant'}
+  /v1/admin/players/{id}/revoke:
+    post: {$ref: '#/components/pathItems/Revoke'}
+  /v1/admin/players/{id}/sanctions:
+    post: {$ref: '#/components/pathItems/Sanction'}
+  /v1/admin/players/{id}/unsanction:
+    post: {$ref: '#/components/pathItems/Unsanction'}
+  /v1/admin/audit-events:
+    get:
+      tags: [Audit]
+      security: [{oidcBearer: []}]
+      parameters: [{$ref: '#/components/parameters/Limit'}, {$ref: '#/components/parameters/Cursor'}, {name: actorSubject, in: query, schema: {type: string}}, {name: action, in: query, schema: {type: string}}, {name: targetId, in: query, schema: {type: string}}]
+      responses: {'200': {$ref: '#/components/responses/PagedAuditEvents'}, '403': {$ref: '#/components/responses/Forbidden'}}
+  /v1/admin/audit-events/{id}:
+    get:
+      tags: [Audit]
+      security: [{oidcBearer: []}]
+      parameters: [{name: id, in: path, required: true, schema: {type: string, format: uuid}}]
+      responses: {'200': {description: Audit event, content: {application/json: {schema: {$ref: '#/components/schemas/AuditEvent'}}}}, '404': {$ref: '#/components/responses/NotFound'}}
+components:
+  securitySchemes:
+    oidcBearer: {type: http, scheme: bearer, bearerFormat: JWT}
+  parameters:
+    Limit: {name: limit, in: query, schema: {type: integer, minimum: 1, maximum: 100, default: 50}}
+    Cursor: {name: cursor, in: query, schema: {type: string}}
+    IdempotencyKey: {name: Idempotency-Key, in: header, required: true, schema: {type: string, format: uuid}}
+    RequestId: {name: X-Request-Id, in: header, schema: {type: string}}
+    IfMatch: {name: If-Match, in: header, schema: {type: string}}
+  requestBodies:
+    Mutation: {required: true, content: {application/json: {schema: {$ref: '#/components/schemas/MutationRequest'}}}}
+  responses:
+    AdminIdentity: {description: Current identity, content: {application/json: {schema: {$ref: '#/components/schemas/AdminIdentity'}}}}
+    PagedServers: {description: Servers, content: {application/json: {schema: {$ref: '#/components/schemas/PagedServers'}}}}
+    PagedQueues: {description: Queues, content: {application/json: {schema: {$ref: '#/components/schemas/PagedQueues'}}}}
+    PagedIncidents: {description: Incidents, content: {application/json: {schema: {$ref: '#/components/schemas/PagedIncidents'}}}}
+    PagedConfigs: {description: Configs, content: {application/json: {schema: {$ref: '#/components/schemas/PagedConfigs'}}}}
+    PagedPlayers: {description: Players, content: {application/json: {schema: {$ref: '#/components/schemas/PagedPlayers'}}}}
+    PagedAuditEvents: {description: Audit events, content: {application/json: {schema: {$ref: '#/components/schemas/PagedAuditEvents'}}}}
+    Unauthorized: {description: Authentication required, content: {application/json: {schema: {$ref: '#/components/schemas/ErrorEnvelope'}}}}
+    Forbidden: {description: Permission denied, content: {application/json: {schema: {$ref: '#/components/schemas/ErrorEnvelope'}}}}
+    BadRequest: {description: Invalid request, content: {application/json: {schema: {$ref: '#/components/schemas/ErrorEnvelope'}}}}
+    Conflict: {description: Conflict, content: {application/json: {schema: {$ref: '#/components/schemas/ErrorEnvelope'}}}}
+    NotFound: {description: Not found, content: {application/json: {schema: {$ref: '#/components/schemas/ErrorEnvelope'}}}}
+  pathItems:
+    ValidateConfig: {tags: [LiveOps], security: [{oidcBearer: []}], parameters: [{name: id, in: path, required: true, schema: {type: string}}, {$ref: '#/components/parameters/IdempotencyKey'}], responses: {'200': {description: Validation result, content: {application/json: {schema: {$ref: '#/components/schemas/ValidationResult'}}}}}}
+    SubmitReview: {tags: [LiveOps], security: [{oidcBearer: []}], parameters: [{name: id, in: path, required: true, schema: {type: string}}, {$ref: '#/components/parameters/IdempotencyKey'}], requestBody: {$ref: '#/components/requestBodies/Mutation'}, responses: {'200': {description: Review, content: {application/json: {schema: {$ref: '#/components/schemas/ConfigReview'}}}}}}
+    ApproveConfig: {tags: [LiveOps], security: [{oidcBearer: []}], parameters: [{name: id, in: path, required: true, schema: {type: string}}, {$ref: '#/components/parameters/IdempotencyKey'}], requestBody: {$ref: '#/components/requestBodies/Mutation'}, responses: {'200': {description: Approved, content: {application/json: {schema: {$ref: '#/components/schemas/ConfigReview'}}}}}}
+    PublishConfig: {tags: [LiveOps], security: [{oidcBearer: []}], parameters: [{name: id, in: path, required: true, schema: {type: string}}, {$ref: '#/components/parameters/IdempotencyKey'}], requestBody: {$ref: '#/components/requestBodies/Mutation'}, responses: {'200': {description: Publication, content: {application/json: {schema: {$ref: '#/components/schemas/ConfigPublication'}}}}}}
+    RollbackConfig: {tags: [LiveOps], security: [{oidcBearer: []}], parameters: [{name: id, in: path, required: true, schema: {type: string}}, {$ref: '#/components/parameters/IdempotencyKey'}], requestBody: {$ref: '#/components/requestBodies/Mutation'}, responses: {'201': {description: Rollback config, content: {application/json: {schema: {$ref: '#/components/schemas/LiveOpsConfig'}}}}}}
+    DiffConfig: {tags: [LiveOps], security: [{oidcBearer: []}], parameters: [{name: id, in: path, required: true, schema: {type: string}}, {name: compareVersion, in: query, required: true, schema: {type: integer}}], responses: {'200': {description: Diff, content: {application/json: {schema: {$ref: '#/components/schemas/ConfigDiff'}}}}}}
+    PlayerMatches: {tags: [Player Support], security: [{oidcBearer: []}], parameters: [{name: id, in: path, required: true, schema: {type: string, format: uuid}}, {$ref: '#/components/parameters/Limit'}, {$ref: '#/components/parameters/Cursor'}], responses: {'200': {description: Matches, content: {application/json: {schema: {$ref: '#/components/schemas/PagedMatches'}}}}}}
+    InventoryAudit: {tags: [Player Support], security: [{oidcBearer: []}], parameters: [{name: id, in: path, required: true, schema: {type: string, format: uuid}}, {$ref: '#/components/parameters/Limit'}, {$ref: '#/components/parameters/Cursor'}], responses: {'200': {description: Inventory audit, content: {application/json: {schema: {$ref: '#/components/schemas/PagedAuditRows'}}}}}}
+    WalletLedger: {tags: [Player Support], security: [{oidcBearer: []}], parameters: [{name: id, in: path, required: true, schema: {type: string, format: uuid}}, {$ref: '#/components/parameters/Limit'}, {$ref: '#/components/parameters/Cursor'}], responses: {'200': {description: Wallet ledger, content: {application/json: {schema: {$ref: '#/components/schemas/PagedLedgerRows'}}}}}}
+    RevokeSessions: {tags: [Player Support], security: [{oidcBearer: []}], parameters: [{name: id, in: path, required: true, schema: {type: string, format: uuid}}, {$ref: '#/components/parameters/IdempotencyKey'}], requestBody: {$ref: '#/components/requestBodies/Mutation'}, responses: {'202': {description: Command, content: {application/json: {schema: {$ref: '#/components/schemas/AdminCommandResult'}}}}}}
+    Grant: {tags: [Player Support], security: [{oidcBearer: []}], parameters: [{name: id, in: path, required: true, schema: {type: string, format: uuid}}, {$ref: '#/components/parameters/IdempotencyKey'}], requestBody: {$ref: '#/components/requestBodies/Mutation'}, responses: {'202': {description: Command, content: {application/json: {schema: {$ref: '#/components/schemas/AdminCommandResult'}}}}}}
+    Revoke: {tags: [Player Support], security: [{oidcBearer: []}], parameters: [{name: id, in: path, required: true, schema: {type: string, format: uuid}}, {$ref: '#/components/parameters/IdempotencyKey'}], requestBody: {$ref: '#/components/requestBodies/Mutation'}, responses: {'202': {description: Command, content: {application/json: {schema: {$ref: '#/components/schemas/AdminCommandResult'}}}}}}
+    Sanction: {tags: [Player Support], security: [{oidcBearer: []}], parameters: [{name: id, in: path, required: true, schema: {type: string, format: uuid}}, {$ref: '#/components/parameters/IdempotencyKey'}], requestBody: {$ref: '#/components/requestBodies/Mutation'}, responses: {'202': {description: Command, content: {application/json: {schema: {$ref: '#/components/schemas/AdminCommandResult'}}}}}}
+    Unsanction: {tags: [Player Support], security: [{oidcBearer: []}], parameters: [{name: id, in: path, required: true, schema: {type: string, format: uuid}}, {$ref: '#/components/parameters/IdempotencyKey'}], requestBody: {$ref: '#/components/requestBodies/Mutation'}, responses: {'202': {description: Command, content: {application/json: {schema: {$ref: '#/components/schemas/AdminCommandResult'}}}}}}
+  schemas:
+    Environment: {type: string, enum: [development, stage, production]}
+    ConfigStatus: {type: string, enum: [draft, validated, in_review, approved, scheduled, published, active, rolled_back, archived, rejected, expired]}
+    Permission: {type: object, required: [name], properties: {name: {type: string}, description: {type: string}}}
+    AdminRole: {type: object, required: [name, permissions], properties: {name: {type: string}, permissions: {type: array, items: {type: string}}, environments: {type: array, items: {$ref: '#/components/schemas/Environment'}}}}
+    AdminIdentity: {type: object, required: [subject, email, roles, environments], properties: {subject: {type: string}, email: {type: string, format: email}, displayName: {type: string}, roles: {type: array, items: {type: string}}, environments: {type: array, items: {$ref: '#/components/schemas/Environment'}}}}
+    MutationRequest: {type: object, required: [idempotencyKey, reason, payload], properties: {idempotencyKey: {type: string, format: uuid}, reason: {type: string, minLength: 3, maxLength: 1000}, confirmation: {type: string, enum: [CONFIRM]}, payload: {type: object}}}
+    LiveOpsConfig: {type: object, required: [configId, configType, schemaVersion, configVersion, environment, status, payload], properties: {configId: {type: string}, configType: {type: string}, schemaVersion: {type: integer, minimum: 1}, configVersion: {type: integer, minimum: 1}, environment: {$ref: '#/components/schemas/Environment'}, status: {$ref: '#/components/schemas/ConfigStatus'}, effectiveFrom: {type: string, format: date-time}, effectiveTo: {type: string, format: date-time, nullable: true}, createdBy: {type: string}, publishedBy: {type: string, nullable: true}, reason: {type: string}, checksum: {type: string}, payload: {type: object}}}
+    ConfigReview: {type: object, required: [configId, status], properties: {configId: {type: string}, status: {type: string, enum: [in_review, approved, rejected]}, reviewerSubject: {type: string}, reason: {type: string}, reviewedAt: {type: string, format: date-time}}}
+    ConfigPublication: {type: object, required: [configId, version, publishedAt], properties: {configId: {type: string}, version: {type: integer}, publishedAt: {type: string, format: date-time}, checksum: {type: string}}}
+    ValidationResult: {type: object, required: [valid, errors], properties: {valid: {type: boolean}, errors: {type: array, items: {type: object, required: [code, path, message], properties: {code: {type: string}, path: {type: string}, message: {type: string}}}}}}
+    AdminCommandResult: {type: object, required: [commandId, status], properties: {commandId: {type: string, format: uuid}, status: {type: string, enum: [accepted, running, succeeded, failed, duplicate]}, result: {type: object}, failureCode: {type: string, nullable: true}}}
+    AuditEvent: {type: object, required: [id, actorSubject, action, target, environment, requestId, occurredAt], properties: {id: {type: string, format: uuid}, actorSubject: {type: string}, actorRole: {type: string}, action: {type: string}, target: {type: object}, before: {type: object, nullable: true}, after: {type: object, nullable: true}, reason: {type: string}, environment: {$ref: '#/components/schemas/Environment'}, requestId: {type: string}, occurredAt: {type: string, format: date-time}}}
+    ErrorEnvelope: {type: object, required: [error], properties: {error: {type: object, required: [code, message, requestId, retryable], properties: {code: {type: string}, message: {type: string}, requestId: {type: string}, retryable: {type: boolean}}}}}
+    DashboardSummary: {type: object, properties: {ccu: {type: integer}, apiP95Ms: {type: number}, queueDepth: {type: integer}, activeServers: {type: integer}, activeConfigVersion: {type: integer}, incidents: {type: integer}}}
+    Server: {type: object, properties: {id: {type: string}, region: {type: string}, buildId: {type: string}, status: {type: string}, lastHeartbeatAt: {type: string, format: date-time}, capacity: {type: integer}}}
+    Queue: {type: object, properties: {queueId: {type: string}, enabled: {type: boolean}, region: {type: string}, depth: {type: integer}, waitSeconds: {type: number}}}
+    Incident: {type: object, properties: {id: {type: string}, severity: {type: string}, status: {type: string}, title: {type: string}, startedAt: {type: string, format: date-time}}}
+    Player: {type: object, properties: {id: {type: string, format: uuid}, displayName: {type: string}, status: {type: string}, createdAt: {type: string, format: date-time}}}
+    ConfigDiff: {type: object, properties: {configId: {type: string}, fromVersion: {type: integer}, toVersion: {type: integer}, changes: {type: array, items: {type: object}}}}
+    Match: {type: object, properties: {matchId: {type: string}, mode: {type: string}, status: {type: string}, startedAt: {type: string, format: date-time}}}
+    AuditRow: {type: object, properties: {id: {type: string}, action: {type: string}, occurredAt: {type: string, format: date-time}, requestId: {type: string}}}
+    LedgerRow: {type: object, properties: {id: {type: string}, currencyCode: {type: string}, amountMinor: {type: integer}, transactionType: {type: string}, occurredAt: {type: string, format: date-time}}}
+    Paged: {type: object, properties: {items: {type: array, items: {}}, nextCursor: {type: string, nullable: true}}}
+    PagedServers: {allOf: [{$ref: '#/components/schemas/Paged'}, {type: object, properties: {items: {type: array, items: {$ref: '#/components/schemas/Server'}}}}]}
+    PagedQueues: {allOf: [{$ref: '#/components/schemas/Paged'}, {type: object, properties: {items: {type: array, items: {$ref: '#/components/schemas/Queue'}}}}]}
+    PagedIncidents: {allOf: [{$ref: '#/components/schemas/Paged'}, {type: object, properties: {items: {type: array, items: {$ref: '#/components/schemas/Incident'}}}}]}
+    PagedConfigs: {allOf: [{$ref: '#/components/schemas/Paged'}, {type: object, properties: {items: {type: array, items: {$ref: '#/components/schemas/LiveOpsConfig'}}}}]}
+    PagedPlayers: {allOf: [{$ref: '#/components/schemas/Paged'}, {type: object, properties: {items: {type: array, items: {$ref: '#/components/schemas/Player'}}}}]}
+    PagedMatches: {allOf: [{$ref: '#/components/schemas/Paged'}, {type: object, properties: {items: {type: array, items: {$ref: '#/components/schemas/Match'}}}}]}
+    PagedAuditRows: {allOf: [{$ref: '#/components/schemas/Paged'}, {type: object, properties: {items: {type: array, items: {$ref: '#/components/schemas/AuditRow'}}}}]}
+    PagedLedgerRows: {allOf: [{$ref: '#/components/schemas/Paged'}, {type: object, properties: {items: {type: array, items: {$ref: '#/components/schemas/LedgerRow'}}}}]}
+    PagedAuditEvents: {allOf: [{$ref: '#/components/schemas/Paged'}, {type: object, properties: {items: {type: array, items: {$ref: '#/components/schemas/AuditEvent'}}}}]}

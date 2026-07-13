@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "liveops/map-rotation.schema.json",
+  "title": "Map Rotation Payload",
+  "type": "object",
+  "required": ["rotationId", "entries"],
+  "properties": {
+    "rotationId": {"type": "string"},
+    "entries": {"type": "array", "minItems": 1, "items": {"type": "object", "required": ["mapId", "modeId", "weight"], "properties": {"mapId": {"type": "string"}, "modeId": {"type": "string"}, "weight": {"type": "number", "minimum": 0, "maximum": 100}, "regions": {"type": "array", "items": {"type": "string"}}}, "additionalProperties": false}}
+  },
+  "additionalProperties": false
+}

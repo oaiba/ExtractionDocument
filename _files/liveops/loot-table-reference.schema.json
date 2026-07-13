@@ -1,0 +1,9 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "liveops/loot-table-reference.schema.json",
+  "title": "Loot Table Reference Payload",
+  "type": "object",
+  "required": ["mapId", "modeId", "tableId", "tableVersion"],
+  "properties": {"mapId": {"type": "string"}, "modeId": {"type": "string"}, "tableId": {"type": "string"}, "tableVersion": {"type": "integer", "minimum": 1}, "modifiers": {"type": "object"}},
+  "additionalProperties": false
+}

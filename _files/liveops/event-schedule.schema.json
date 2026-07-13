@@ -1,0 +1,9 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "liveops/event-schedule.schema.json",
+  "title": "Event Schedule Payload",
+  "type": "object",
+  "required": ["eventId", "startAt", "endAt", "status"],
+  "properties": {"eventId": {"type": "string"}, "status": {"type": "string", "enum": ["teaser", "active", "ending", "completed", "archived"]}, "startAt": {"type": "string", "format": "date-time"}, "endAt": {"type": "string", "format": "date-time"}, "rewardPackageId": {"type": "string"}, "eligibility": {"type": "object"}},
+  "additionalProperties": false
+}

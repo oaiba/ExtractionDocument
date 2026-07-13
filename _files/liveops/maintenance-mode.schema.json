@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "liveops/maintenance-mode.schema.json",
+  "title": "Maintenance Mode Payload",
+  "type": "object",
+  "required": ["enabled", "messageKey", "blockedOperations"],
+  "properties": {
+    "enabled": {"type": "boolean"},
+    "messageKey": {"type": "string", "minLength": 1},
+    "blockedOperations": {"type": "array", "items": {"type": "string"}},
+    "allowedBuilds": {"type": "array", "items": {"type": "string"}}
+  },
+  "additionalProperties": false
+}

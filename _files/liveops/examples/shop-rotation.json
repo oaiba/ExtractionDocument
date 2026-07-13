@@ -1,0 +1,15 @@
+{
+  "configId": "shop-rotation",
+  "configType": "shop_rotation",
+  "schemaVersion": 1,
+  "configVersion": 4,
+  "environment": "stage",
+  "status": "active",
+  "effectiveFrom": "2026-07-13T00:00:00Z",
+  "effectiveTo": "2026-07-20T00:00:00Z",
+  "reason": "Weekly catalog rotation",
+  "checksum": "sha256:example-shop",
+  "clientBuildConstraints": [{"minimumBuild": "1.0.0"}],
+  "serverBuildConstraints": [],
+  "payload": {"catalogVersion": "catalog-2026-07-13", "region": "global", "items": [{"itemId": "skin_mamba_01", "priceMinor": 500, "currencyCode": "PREMIUM", "availableFrom": "2026-07-13T00:00:00Z", "availableTo": "2026-07-20T00:00:00Z"}]}
+}

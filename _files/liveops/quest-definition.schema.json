@@ -1,0 +1,9 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "liveops/quest-definition.schema.json",
+  "title": "Quest Definition Payload",
+  "type": "object",
+  "required": ["questId", "objectiveType", "threshold", "rewardPackageId"],
+  "properties": {"questId": {"type": "string"}, "objectiveType": {"type": "string", "enum": ["kill", "extract", "find_in_raid", "deliver", "survive"]}, "threshold": {"type": "integer", "minimum": 1}, "rewardPackageId": {"type": "string"}, "schedule": {"type": "object"}},
+  "additionalProperties": false
+}

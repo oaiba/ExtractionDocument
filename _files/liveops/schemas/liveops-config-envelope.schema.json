@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "liveops-config-envelope.schema.json",
+  "title": "LiveOps Config Envelope",
+  "type": "object",
+  "required": ["configId", "configType", "schemaVersion", "configVersion", "environment", "status", "effectiveFrom", "reason", "checksum", "payload"],
+  "properties": {
+    "configId": {"type": "string", "minLength": 1, "maxLength": 128},
+    "configType": {"type": "string", "pattern": "^[a-z][a-z0-9_]{1,127}$"},
+    "schemaVersion": {"type": "integer", "minimum": 1},
+    "configVersion": {"type": "integer", "minimum": 1},
+    "environment": {"type": "string", "enum": ["development", "stage", "production"]},
+    "status": {"type": "string", "enum": ["draft", "validated", "in_review", "approved", "scheduled", "published", "active", "rolled_back", "archived", "rejected", "expired"]},
+    "effectiveFrom": {"type": "string", "format": "date-time"},
+    "effectiveTo": {"type": ["string", "null"], "format": "date-time"},
+    "createdBy": {"type": "string"},
+    "publishedBy": {"type": ["string", "null"]},
+    "reason": {"type": "string", "minLength": 3, "maxLength": 1000},
+    "checksum": {"type": "string", "pattern": "^sha256:[A-Za-z0-9._:-]+$"},
+    "clientBuildConstraints": {"type": "array", "items": {"type": "object"}},
+    "serverBuildConstraints": {"type": "array", "items": {"type": "object"}},
+    "payload": {"type": "object"}
+  },
+  "additionalProperties": false
+}

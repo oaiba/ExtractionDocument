@@ -1,0 +1,15 @@
+{
+  "configId": "event-night-ops",
+  "configType": "event_schedule",
+  "schemaVersion": 1,
+  "configVersion": 2,
+  "environment": "stage",
+  "status": "expired",
+  "effectiveFrom": "2026-07-01T00:00:00Z",
+  "effectiveTo": "2026-07-07T00:00:00Z",
+  "reason": "Completed event fixture",
+  "checksum": "sha256:example-event",
+  "clientBuildConstraints": [],
+  "serverBuildConstraints": [],
+  "payload": {"eventId": "night-ops", "status": "completed", "startAt": "2026-07-01T00:00:00Z", "endAt": "2026-07-07T00:00:00Z", "rewardPackageId": "event-night-ops-rewards", "eligibility": {"region": "ap-southeast-1"}}
+}

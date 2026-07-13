@@ -1,0 +1,9 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "liveops/minimum-build.schema.json",
+  "title": "Minimum Build Payload",
+  "type": "object",
+  "required": ["client", "dedicatedServer"],
+  "properties": {"client": {"type": "array", "items": {"type": "object", "required": ["platform", "minimumBuild"], "properties": {"platform": {"type": "string"}, "minimumBuild": {"type": "string"}, "enforceAt": {"type": "string", "format": "date-time"}}}}, "dedicatedServer": {"type": "array", "items": {"type": "object", "required": ["region", "minimumBuild"], "properties": {"region": {"type": "string"}, "minimumBuild": {"type": "string"}}}}},
+  "additionalProperties": false
+}

@@ -1,0 +1,15 @@
+{
+  "configId": "season-1",
+  "configType": "season_definition",
+  "schemaVersion": 1,
+  "configVersion": 1,
+  "environment": "stage",
+  "status": "scheduled",
+  "effectiveFrom": "2026-08-01T00:00:00Z",
+  "effectiveTo": "2026-10-01T00:00:00Z",
+  "reason": "Season 1 staging preview",
+  "checksum": "sha256:example-season",
+  "clientBuildConstraints": [{"minimumBuild": "1.1.0"}],
+  "serverBuildConstraints": [{"minimumBuild": "ds-0.5.0"}],
+  "payload": {"seasonId": "season-1", "startAt": "2026-08-01T00:00:00Z", "endAt": "2026-10-01T00:00:00Z", "claimGraceEndsAt": "2026-10-08T00:00:00Z", "tiers": [{"tier": 1, "xpRequired": 0, "rewardPackageId": "season-1-tier-1"}, {"tier": 2, "xpRequired": 1000, "rewardPackageId": "season-1-tier-2"}]}
+}

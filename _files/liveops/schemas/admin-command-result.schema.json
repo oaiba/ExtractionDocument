@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "admin-command-result.schema.json",
+  "title": "Admin Command Result",
+  "type": "object",
+  "required": ["commandId", "status"],
+  "properties": {
+    "commandId": {"type": "string", "format": "uuid"},
+    "status": {"type": "string", "enum": ["accepted", "running", "succeeded", "failed", "duplicate"]},
+    "result": {"type": "object"},
+    "failureCode": {"type": ["string", "null"]}
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,9 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "liveops/content-compatibility.schema.json",
+  "title": "Content Compatibility Payload",
+  "type": "object",
+  "required": ["clientBuild", "dedicatedServerBuild", "backendApiVersion", "contentVersion", "compatibilityHash"],
+  "properties": {"clientBuild": {"type": "string"}, "dedicatedServerBuild": {"type": "string"}, "backendApiVersion": {"type": "string"}, "contentVersion": {"type": "string"}, "compatibilityHash": {"type": "string", "pattern": "^[A-Za-z0-9._:-]+$"}, "requiredChunks": {"type": "array", "items": {"type": "string"}}},
+  "additionalProperties": false
+}

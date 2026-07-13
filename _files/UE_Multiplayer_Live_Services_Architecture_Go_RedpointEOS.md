@@ -2437,3 +2437,306 @@ The join ticket claims are `matchId`, `playerId`, `eosProductUserId`, `jti`, `ex
 5. Implement signed one-time join ticket persistence and DS admission after Redpoint verification.
 6. Implement match start/commit and transactional inventory/economy/outbox processing.
 7. Run the Section 23 admission, duplicate-consumption, mTLS-scope, and end-to-end mobile-to-DS scenarios before enabling external players.
+
+---
+
+# 55. LiveOps Control Plane
+
+LiveOps is the operational control plane for changing approved game data and service behavior after launch without rebuilding the client. It does not replace signed client/content delivery, executable gameplay code, database migrations, or authoritative gameplay services.
+
+## 55.1 LiveOps Ownership Boundary
+
+The Go backend owns the active LiveOps configuration and its version history. The Admin Backoffice is an operator interface only; it never connects directly to PostgreSQL. Unreal clients and Dedicated Servers consume only the filtered configuration intended for their audience.
+
+Hot-updateable data may include:
+
+- feature flags;
+- maintenance mode;
+- queue and mode availability;
+- map and mode rotation;
+- event schedules;
+- loot-table versions and bounded tuning values;
+- shop/catalog rotation;
+- quest, season, and battle-pass definitions;
+- reward and inbox templates;
+- minimum client/Dedicated Server build and compatibility rules;
+- bounded economy tuning approved by product and economy policy.
+
+LiveOps must not directly edit:
+
+- player-owned inventory or item custody;
+- premium wallet balances or the economy ledger;
+- authoritative match results;
+- authentication secrets, signing keys, or certificates;
+- anti-cheat and security code;
+- PostgreSQL schema;
+- executable gameplay logic or unsigned client assets.
+
+Every value is classified as one of:
+
+```text
+client-visible     -> safe, non-secret data fetched by the client
+server-only        -> data consumed by backend workers or Dedicated Servers
+admin-only         -> operational state shown only to authorized operators
+sensitive           -> secrets and credentials, stored only in secret management
+```
+
+Never put secrets, credentials, authorization decisions, or privileged commands in client-visible configuration. Remote configuration is readable by a client that receives it; this is also an explicit constraint in Firebase Remote Config guidance.
+
+## 55.2 Configuration Delivery
+
+The public client endpoint remains:
+
+```text
+GET /v1/liveops/config
+```
+
+The response must be a filtered, signed or integrity-checked, versioned snapshot containing:
+
+- `configVersion`;
+- `schemaVersion`;
+- `environment`;
+- `generatedAt`;
+- `expiresAt` when applicable;
+- `clientBuildConstraints`;
+- safe payload only;
+- checksum/hash;
+- ETag-compatible representation.
+
+Server-only consumers use an authenticated backend path and receive a different projection. The backend must never return server-only values to a player client.
+
+The client and server use this fallback order:
+
+```text
+fresh active snapshot
+    -> last-known-safe cached snapshot
+    -> compiled/default safe values
+    -> fail closed for unsafe operations
+```
+
+Queue admission, purchases, rewards, and authoritative commits must fail closed when required configuration is missing or incompatible. Cosmetic-only or non-authoritative UI may use a stale snapshot with an explicit stale marker.
+
+# 56. Admin Backoffice Boundary
+
+The v1 Admin Backoffice is a Next.js + TypeScript web application with server-side session handling. It uses OIDC/SSO with MFA and calls Go Admin APIs over HTTPS. It does not access PostgreSQL, Redis, object storage, or Dedicated Server processes directly.
+
+## 56.1 Backoffice Areas
+
+| Area | Primary capabilities |
+|---|---|
+| Overview | CCU, API health, queues, servers, commit failures, economy anomalies, config version, incidents |
+| LiveOps | flags, maintenance, rotations, schedules, minimum builds, diff, publish, rollback |
+| Content/Economy | item definitions, loot tables, catalogs, currency rules, quests, seasons, inbox templates |
+| Player Support | player search, sessions, matches, inventory audit, wallet ledger, sanctions, session revoke |
+| Moderation | reports, evidence, sanctions, appeals, ban/unban workflow |
+| Infrastructure | server registry, heartbeat, capacity, queues, build compatibility |
+| Audit | actor, action, target, reason, before/after diff, request ID, environment, approval metadata |
+
+## 56.2 Admin Identity and RBAC
+
+Use OIDC/SSO + MFA. The backend stores the external subject mapping, roles, permissions, and environment access; it does not store admin passwords in v1.
+
+Default roles:
+
+```text
+support          player lookup, session revoke, read-only inventory/ledger
+moderator        reports, evidence, sanctions, appeals
+game_designer    draft/review content configuration; no currency grants
+economy_operator catalog, prices, rewards, loot configuration
+liveops_operator flags, schedules, rotations, maintenance
+ops_engineer     servers, queues, deployment and health
+admin            role management and approved privileged operations
+auditor          read-only configuration, commands, and audit history
+```
+
+Authorization is enforced in backend middleware and service methods, not only by hiding UI controls. All mutations require a reason and actor identity. Grants, revokes, bans, and production publishes require explicit confirmation. High-risk production actions require a separate creator/reviewer or two-person approval policy.
+
+# 57. LiveOps Configuration Lifecycle
+
+The lifecycle is:
+
+```text
+Draft -> Validated -> In Review -> Approved -> Scheduled -> Published -> Active
+                                                                    |
+                                                    Rolled Back / Archived
+```
+
+Published versions are immutable. A rollback creates a new version whose payload references the selected prior version; it does not mutate history.
+
+Each version stores:
+
+- `configId`, `environment`, `version`, and `schemaVersion`;
+- status and domain/type;
+- JSON payload and checksum/hash;
+- creator, reviewer, approver, and publisher identities;
+- reason and change summary;
+- `effectiveFrom` and `effectiveTo` in UTC;
+- build/content compatibility constraints;
+- timestamps and `rollbackOf` when applicable;
+- validation result and audit correlation ID.
+
+Required operations:
+
+- JSON-schema validation;
+- domain semantic validation;
+- environment preview;
+- before/after diff;
+- scheduled activation;
+- emergency publish with elevated permission;
+- ETag/cache invalidation;
+- client-safe and server-only projections;
+- rollback;
+- audit event for every transition.
+
+Condition priority and typed values must be deterministic. A configuration with multiple matching conditions must have an explicit priority order, and invalid or ambiguous conditions must be rejected before review. Version history must support retrieval, comparison, and rollback, following the versioning pattern used by Remote Config systems.
+
+# 58. Admin API Contract
+
+The following endpoints extend the OpenAPI baseline. All mutating endpoints require a backend admin token, permission, `Idempotency-Key`, request ID, and reason.
+
+```text
+GET    /v1/admin/me
+GET    /v1/admin/roles
+GET    /v1/admin/permissions
+
+GET    /v1/admin/dashboard/summary
+GET    /v1/admin/servers
+GET    /v1/admin/queues
+GET    /v1/admin/incidents
+
+GET    /v1/admin/liveops/configs
+POST   /v1/admin/liveops/configs
+GET    /v1/admin/liveops/configs/{id}
+PATCH  /v1/admin/liveops/configs/{id}
+POST   /v1/admin/liveops/configs/{id}/validate
+POST   /v1/admin/liveops/configs/{id}/submit-review
+POST   /v1/admin/liveops/configs/{id}/approve
+POST   /v1/admin/liveops/configs/{id}/publish
+POST   /v1/admin/liveops/configs/{id}/rollback
+GET    /v1/admin/liveops/configs/{id}/diff
+
+GET    /v1/admin/players
+GET    /v1/admin/players/{id}
+GET    /v1/admin/players/{id}/matches
+GET    /v1/admin/players/{id}/inventory-audit
+GET    /v1/admin/players/{id}/wallet-ledger
+POST   /v1/admin/players/{id}/revoke-sessions
+POST   /v1/admin/players/{id}/grant
+POST   /v1/admin/players/{id}/revoke
+POST   /v1/admin/players/{id}/sanctions
+POST   /v1/admin/players/{id}/unsanction
+
+GET    /v1/admin/audit-events
+GET    /v1/admin/audit-events/{id}
+```
+
+Admin mutations create safe commands handled transactionally by the backend. They must not accept arbitrary wallet balances, item ownership, or direct database updates. Grant/revoke operations use the existing economy ledger, idempotency, outbox, and audit rules.
+
+# 59. Admin and LiveOps Database Additions
+
+The v1 schema appendix must define migrations for:
+
+```text
+admin_identities
+admin_roles
+admin_permissions
+admin_role_bindings
+
+liveops_configs
+liveops_config_versions
+liveops_config_reviews
+liveops_config_publications
+liveops_config_targets
+
+admin_commands
+admin_command_results
+admin_audit_events
+
+incidents
+incident_updates
+```
+
+At minimum, `liveops_config_versions` stores immutable payloads and lifecycle metadata. `admin_commands` stores command type, target, payload hash, idempotency key, actor, reason, status, result, failure code, and timestamps. `admin_audit_events` stores actor, permission, action, target, environment, request ID, before/after diff, reason, and related command/config/version IDs.
+
+Do not expose direct write access to `wallets`, `item_instances`, or economy ledger tables from Admin Web. The command service is the only supported mutation path.
+
+# 60. Operational Dashboard and Alerts
+
+The dashboard must define an owner, threshold, severity, and runbook for each signal:
+
+- API p50/p95/p99 latency and 4xx/5xx rate;
+- authentication failures;
+- matchmaking queue depth and wait time;
+- server heartbeat age and capacity;
+- match start/commit success and failure;
+- duplicate/idempotency conflicts;
+- economy ledger mismatch;
+- purchase/refund failures;
+- grant/revoke volume;
+- sanctions volume;
+- config fetch failure and version adoption;
+- client/Dedicated Server incompatibility;
+- worker/outbox lag;
+- active incident and error-budget status.
+
+LiveOps analytics must include player/economy/content signals, not only infrastructure metrics. Events, offers/promotions, store/catalog, customer service, and business intelligence are treated as separate operational concerns, consistent with established LiveOps practice.
+
+# 61. LiveOps Delivery Phases
+
+Extend the existing Phase 9–12 plan with:
+
+1. **L0 — Contract and threat model:** domain config classification, RBAC, OIDC claims, audit fields, privileged-action policy.
+2. **L1 — Backend foundation:** migrations, Admin API, OIDC mapping, RBAC middleware, audit event service.
+3. **L2 — Config lifecycle:** draft/review/publish, schema and semantic validation, versioning, ETag, scheduled activation, rollback.
+4. **L3 — Admin Web MVP:** SSO, dashboard, LiveOps configuration, player lookup, audit viewer, server/queue status.
+5. **L4 — Safe player operations:** session revoke, grant/revoke, moderation, command processing, ledger and audit verification.
+6. **L5 — Content operations:** shop, loot, events, quests, seasons, inbox, rotations.
+7. **L6 — Production hardening:** staging promotion, restore test, access review, load test, incident runbooks, rollback drill.
+
+MVP exit requires the L0–L4 capabilities. L5 can be enabled domain by domain after each content schema has validation, preview, publish, rollback, and audit coverage.
+
+# 62. LiveOps Acceptance Tests
+
+Required backend tests:
+
+- OIDC identity without a role returns `403`;
+- revoked permission takes effect on the next request;
+- published configuration cannot be edited in place;
+- invalid configuration is rejected before publish;
+- concurrent publish cannot activate two versions;
+- rollback creates a new version;
+- scheduled activation uses UTC correctly;
+- unchanged ETag returns `304`;
+- client projection excludes server-only fields;
+- duplicate grant/revoke does not duplicate a ledger transaction;
+- every privileged action has actor, reason, before/after, and request ID;
+- Admin APIs cannot perform arbitrary database writes.
+
+Required operational tests:
+
+- configuration service outage uses last-known-safe or compiled defaults;
+- Redis outage fails closed for admin publish and sensitive actions;
+- worker failure during grant/revoke retries safely;
+- emergency maintenance can be enabled without a client update;
+- incompatible client/DS builds are blocked before matchmaking;
+- restored PostgreSQL preserves config versions, audit events, and ledger consistency;
+- an incorrect publish can be rolled back within the operational target.
+
+Required Admin Web tests:
+
+- role-based navigation and backend authorization agree;
+- diff is visible before publish;
+- publish and rollback require confirmation and reason;
+- expired SSO session returns to login;
+- audit details show complete metadata;
+- dashboard loading, empty, error, and stale-data states are explicit.
+
+# 63. LiveOps Documentation References
+
+- PlayFab Game Manager reference: https://learn.microsoft.com/en-us/xbox/playfab/live-service-management/gamemanager/reference
+- Firebase Remote Config parameters and conditions: https://firebase.google.com/docs/remote-config/parameters
+- Firebase Remote Config template versions and rollback: https://firebase.google.com/docs/remote-config/templates
+- Unity LiveOps services: https://docs.unity.com/en-us/liveops
+- Epic Fortnite chapters and seasons: https://dev.epicgames.com/documentation/fortnite/chapter
+- Bungie Destiny 2 content and seasonal events: https://help.bungie.net/hc/en-us/articles/44243991218196--2-Available-Content-Expansions-Seasons-and-More
+- GDC Effective LiveOps Strategies: https://media.gdcvault.com/gdc2015/presentations/EffectiveLiveOps_Gwertzman_2015.03.01.pdf

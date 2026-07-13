@@ -279,6 +279,8 @@ Use a **modular monolith** first.
 
 ## 6.1 Suggested Repository Layout
 
+The original `game-backend/` layout below is retained as the initial backend-domain reference. The canonical implementation repository layout is defined in Sections 69 and 70 and supersedes this layout when the repository is created.
+
 ```text
 game-backend/
 ├── cmd/
@@ -1350,6 +1352,35 @@ golangci-lint run
 - destructive changes use a staged rollout;
 - application code must tolerate rolling deployment when production scale requires it.
 
+## 24.4 LiveServices Monorepo Pipeline
+
+The repository pipeline must validate all implementation surfaces together:
+
+```text
+Pull Request
+  -> Go format/lint/unit tests
+  -> OpenAPI lint and schema validation
+  -> generated-code diff check
+  -> clean-install and upgrade migration tests
+  -> Admin Web typecheck/tests
+  -> security and secret scan
+  -> Docker build
+
+Main
+  -> publish immutable artifacts
+  -> deploy development/stage
+  -> run smoke tests
+
+Release tag
+  -> migration preflight
+  -> approval
+  -> canary/progressive deployment
+  -> health, auth, LiveOps and economy smoke tests
+  -> rollback readiness check
+```
+
+The pipeline must fail when the executable contract, generated code, migration state, security scan, or contract metadata is inconsistent.
+
 ---
 
 # 25. Implementation Phases
@@ -1391,6 +1422,11 @@ Create the backend foundation.
 ### Deliverables
 
 - Go repository structure;
+- `ob-multiplayer-live-services` monorepo bootstrap;
+- backend, Admin Web, contracts, database, deployment, scripts, tests, and documentation boundaries;
+- executable contract promotion from the approved ExDoc contract pack;
+- local PostgreSQL, Redis, and MinIO bootstrap;
+- initial CI checks for contracts, migrations, security, and Admin Web;
 - `chi` HTTP server;
 - configuration loading;
 - PostgreSQL;
@@ -1948,6 +1984,10 @@ The team should derive the following documents from this baseline:
 11. `SECURITY_CHECKLIST.md`
 12. `TEST_STRATEGY.md`
 13. `PRODUCTION_READINESS_CHECKLIST.md`
+14. `REPOSITORY_STRUCTURE.md`
+15. `CONTRIBUTING.md`
+16. `RELEASE_STRATEGY.md`
+17. `SUBMODULE_POLICY.md`
 
 Each document should reference this file as the top-level architecture source of truth.
 
@@ -2853,3 +2893,276 @@ liveops/sql/005_incidents.sql
 OpenAPI 3.1 YAML is the executable HTTP contract. The Markdown contract remains explanatory. SQL files are migration drafts and must be reviewed, tested against clean/upgraded databases, and adapted to the backend migration runner before execution.
 
 The contract-hardening phase also produces the STRIDE threat model, Admin UI page specification, fixture contract-test matrix, and observability catalog. Backend and Admin Web implementation must not begin until the contract, security, data, and operations review gates pass.
+
+After repository bootstrap, the approved executable artifacts map as follows:
+
+| ExDoc source | Implementation repository destination |
+|---|---|
+| _files/liveops/openapi/liveops-admin-v1.yaml | contracts/openapi/liveops-admin-v1.yaml |
+| _files/liveops/schemas/ | contracts/schemas/ |
+| _files/liveops/examples/ | contracts/examples/ |
+| _files/liveops/fixtures/ | tests/contract/ |
+| _files/liveops/sql/ | db/migrations/ after migration review |
+| _files/UE_Multiplayer_LiveOps_Operations_Runbook.md | docs/operations/ |
+| _files/UE_Multiplayer_LiveOps_Threat_Model.md | docs/security/ |
+| _files/UE_Multiplayer_LiveOps_Admin_UI_Page_Spec.md | docs/repository/ or admin-web/README.md |
+
+# 69. Repository Identity and Scope
+
+The canonical implementation repository name is:
+
+    ob-multiplayer-live-services
+
+The repository contains the LiveServices implementation platform: the Go backend, LiveOps Control Plane, future Admin Backoffice, executable contracts, database migrations, tests, and deployment artifacts.
+
+The repository does not contain Unreal game client source, Unreal game content source, Dedicated Server binaries, production secrets, EOS private keys, production database dumps, player PII exports, generated credentials, or temporary incident data. Unreal Client and Dedicated Server integrations use versioned API, DTO, build-compatibility, and content-compatibility contracts.
+
+The following names are intentionally not canonical repository names:
+
+    game-backend
+    liveops
+    backend
+    eos-backend
+    holomia-live-services
+
+The first four names are too generic or too narrow. The last name is not used because a product brand has not been confirmed in this architecture source.
+
+# 70. Monorepo Boundary and Canonical Layout
+
+Version 1 uses one monorepo so backend, Admin Web, executable contracts, migrations, deployment configuration, and tests can change atomically.
+
+    ob-multiplayer-live-services/
+    ├── backend/
+    ├── admin-web/
+    ├── contracts/
+    ├── db/
+    ├── deployments/
+    ├── scripts/
+    ├── tests/
+    ├── docs/
+    ├── CODEOWNERS
+    ├── CONTRIBUTING.md
+    ├── SECURITY.md
+    ├── Makefile
+    └── README.md
+
+The detailed canonical tree is:
+
+    backend/{cmd,internal,platform}
+    admin-web/{src,public,tests}
+    contracts/{openapi,schemas,examples,generated}
+    db/{migrations,queries,seeds,fixtures}
+    deployments/{docker,compose,environments,observability}
+    scripts/{contracts,database,local,seed,release}
+    tests/{contract,integration,security,e2e,load,migration}
+    docs/{repository,development,operations,security,release}
+
+Repository boundaries:
+
+- The backend directory is authoritative for server behavior and backend permission enforcement.
+- The admin-web directory is an API client and never connects directly to PostgreSQL.
+- The contracts directory is the executable contract source used for linting, validation, code generation, and contract tests.
+- The db/migrations directory is the schema authority after the implementation repository is bootstrapped.
+- The deployments directory contains manifests and references only; it must not contain secret values.
+- The docs directory contains implementation documentation. Architecture and design authority remains in the ExDoc _files source until an explicit documentation migration is approved.
+
+# 71. Documentation and Contract Promotion
+
+The project has two coordinated sources:
+
+    ExDoc _files
+      architecture and design authority
+
+    Git repository
+      executable contracts, implementation documentation, source code,
+      migrations, and tests
+
+The promotion workflow is:
+
+1. Review and approve the architecture and LiveOps contract artifacts in _files.
+2. Select the approved OpenAPI, schemas, examples, fixtures, and migration drafts for promotion.
+3. Copy or generate them into contracts/, tests/contract/, and db/migrations/.
+4. Record source document, source revision/date, owner, contract version, and compatibility status.
+5. Run contract, schema, generated-code, and migration validation in CI.
+6. Update the architecture reference and repository contract in the same release cycle when a contract changes.
+
+The repository must not contain duplicate Markdown documents that both claim to be the system-boundary source of truth.
+
+Promoted artifacts:
+
+    contracts/openapi/liveops-admin-v1.yaml
+    contracts/schemas/**/*.schema.json
+    contracts/examples/**/*.json
+    db/migrations/*.sql
+    tests/contract/contract-test-matrix.md
+
+OpenAPI is the executable HTTP authority, JSON Schema is the payload-shape authority, the Data Catalog is the domain-semantics authority during the ExDoc phase, and this architecture document is the authority for system boundaries and security rules. Generated code must be reproducible and must not be edited manually.
+
+# 72. Submodule Policy
+
+The default policy for version 1 is:
+
+    No submodules
+
+Backend domains, Admin Web, contracts, migrations, deployment manifests, OpenAPI, LiveOps schemas, and internal shared Go packages must remain in the monorepo. Submodules must not be used merely to split directories or reduce perceived repository size.
+
+A submodule is allowed only when the component has a separate repository, owner, release/tag lifecycle, compatibility contract, multi-project consumers, no requirement for atomic commits with LiveServices, and an independent security review process.
+
+Future candidates may include:
+
+    external/shared-contract-library
+    external/platform-observability
+    external/company-ci-templates
+    external/common-go-sdk
+
+If a submodule is introduced:
+
+- It must be placed under external/.
+- .gitmodules must use an approved repository URL.
+- The superproject must pin an immutable commit, not a branch.
+- CI must run git submodule update --init --recursive.
+- README metadata must identify owner, version, and commit.
+- Updates require a pull request and compatibility tests.
+- The pipeline must verify deterministic checkout and clean dependency state.
+
+# 73. Ownership and CODEOWNERS
+
+The initial ownership matrix is:
+
+| Path | Required owner |
+|---|---|
+| backend/ | Backend team |
+| backend/internal/liveops/ | Backend and LiveOps owners |
+| backend/internal/economy/ | Backend and Economy owners |
+| admin-web/ | Admin Web team |
+| contracts/ | Backend and API owner |
+| db/migrations/ | Backend and DBA/Platform owner |
+| deployments/ | Platform/Operations owner |
+| tests/security/ | Security and Backend owners |
+| external/ | Referenced component owner |
+
+CODEOWNERS is mandatory. Production deployment changes require Platform approval, economy mutations require Economy approval, breaking contract changes require Backend/API approval, production migrations require database owner approval, and security-sensitive changes require Security review.
+
+# 74. Git Workflow and Release Strategy
+
+The supported branch categories are:
+
+    main
+    ├── codex/*
+    ├── feature/*
+    ├── fix/*
+    ├── release/*
+    └── hotfix/*
+
+main must remain buildable and deployable to Stage. Direct commits to main are prohibited. All changes use pull requests, required review, and a consistent merge strategy. Branches must be current with main before merge. Migrations are immutable after merge and must never be rewritten to repair a production history.
+
+Production deployments originate from protected release branches or signed tags. The initial versioning policy is unified repository semantic versioning:
+
+    v0.1.0
+    v0.2.0
+    v1.0.0
+
+Component-specific versions are deferred until backend, Admin Web, contracts, or deployment artifacts demonstrate genuinely independent release cycles.
+
+# 75. CI/CD Repository Pipeline
+
+Pull requests must run:
+
+    Go format/lint/unit tests
+    OpenAPI lint
+    JSON Schema and example validation
+    Generated-code diff check
+    Clean-install migration test
+    Upgrade migration test
+    Security and secret scan
+    Admin Web typecheck/tests
+    Docker build
+
+The main branch publishes immutable artifacts, deploys to Development/Stage, and runs smoke tests. A release tag requires migration preflight, approval, canary or progressive deployment, health/auth/LiveOps/economy smoke tests, and rollback readiness.
+
+CI must fail when OpenAPI or schemas are invalid, examples do not validate, generated DTOs differ from committed output, migrations fail from an empty or upgraded database, secrets are detected, production approval metadata is missing, or contract version metadata is inconsistent.
+
+# 76. Local Development Bootstrap
+
+The supported local setup is:
+
+    1. Clone ob-multiplayer-live-services.
+    2. Copy .env.example to a local-only environment file.
+    3. Start PostgreSQL, Redis, and MinIO with Docker Compose.
+    4. Run migrations.
+    5. Seed non-sensitive development data.
+    6. Start the Go API.
+    7. Start the worker.
+    8. Start Admin Web against the local Admin API.
+    9. Run contract and integration tests.
+
+.env.example contains local development placeholders only. Production and Stage secrets come from the configured secret manager. Local LiveOps fixtures must never target Production. All timestamps in fixtures, logs, and test assertions use UTC.
+
+# 77. Repository Creation Checklist
+
+## Repository setup
+
+- Create ob-multiplayer-live-services.
+- Protect main and require pull-request review.
+- Add CODEOWNERS, issue templates, and pull-request templates.
+- Enable secret scanning and dependency scanning.
+- Enable signed release/tag verification where supported.
+
+## Initial commit
+
+- Create the canonical directory tree.
+- Add README, CONTRIBUTING, SECURITY, Makefile, .gitignore, and .env.example.
+- Add Go module and Admin Web placeholder.
+- Add promoted OpenAPI/schema/example snapshots.
+- Add migration baseline and local Docker Compose.
+- Add health endpoint contract and CI skeleton.
+
+## Contract promotion
+
+- Map approved _files artifacts into contracts/, db/, and tests/.
+- Record source revision, owner, and contract version.
+- Run schema, OpenAPI, generated-code, and migration validation.
+- Complete cross-review against the architecture source.
+- Create the first contract version.
+
+## First release
+
+- Create tag v0.1.0.
+- Deploy Development.
+- Run smoke tests.
+- Verify rollback artifacts.
+- Publish release notes.
+
+# 78. Repository Review Gates
+
+## Architecture gate
+
+- Repository boundary excludes Unreal client source and production binaries.
+- Backend remains the authority for server behavior and permissions.
+- Admin Web uses Admin API only.
+- Executable contracts have one repository source after promotion.
+- Submodules do not create circular ownership or split atomic changes.
+
+## Security gate
+
+- No secrets are committed.
+- Production environments are separated from local and Stage configuration.
+- CODEOWNERS protects contracts, migrations, deployments, and security tests.
+- Admin actor identity is derived from OIDC, not request payloads.
+- Audit and migration artifacts have retention and recovery rules.
+
+## Contract gate
+
+- OpenAPI, schemas, examples, and generated code are compatible.
+- API versioning and breaking-change handling are documented.
+- Generated artifacts are reproducible.
+- Migration and contract source revisions are recorded.
+
+## Operations gate
+
+- Local bootstrap is repeatable.
+- CI validates clean-install and upgrade migrations.
+- Releases include smoke tests and rollback readiness.
+- Optional submodule checkout is deterministic.
+
+The repository plan is complete when the name, monorepo boundary, canonical tree, contract promotion model, submodule policy, ownership, Git workflow, CI/CD pipeline, local bootstrap, and first-release checklist have all passed these gates.

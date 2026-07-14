@@ -2785,7 +2785,7 @@ Required Admin Web tests:
 
 # 64. LiveOps Documentation and Contract Pack
 
-The LiveOps contract pack is maintained under `_files/` and is English-canonical for technical implementation. The GDD and player-facing UI documents are intentionally not changed in this phase; they may consume this contract after the data model stabilizes.
+The LiveOps contract pack is maintained under `_files/` and is English-canonical for technical implementation. The GDD and player-facing UI documents are intentionally not changed in this phase; they may consume this contract after the data model stabilizes. The public marketing website is documented separately as a static, independently deployed surface and does not consume the LiveOps runtime.
 
 Canonical artifacts:
 
@@ -2796,6 +2796,12 @@ _files/UE_Multiplayer_LiveOps_Admin_OpenAPI.md
 _files/UE_Multiplayer_LiveOps_Operations_Runbook.md
 _files/liveops/*.schema.json
 _files/liveops/examples/*.json
+```
+
+Related public marketing artifact:
+
+```text
+_files/UE_Multiplayer_Public_Marketing_Landing_Page_Spec.md
 ```
 
 Naming rules:
@@ -2916,6 +2922,8 @@ The canonical implementation repository name is:
 The repository contains the LiveServices implementation platform: the Go backend, LiveOps Control Plane, future Admin Backoffice, executable contracts, database migrations, tests, and deployment artifacts.
 
 The repository does not contain Unreal game client source, Unreal game content source, Dedicated Server binaries, production secrets, EOS private keys, production database dumps, player PII exports, generated credentials, or temporary incident data. Unreal Client and Dedicated Server integrations use versioned API, DTO, build-compatibility, and content-compatibility contracts.
+
+The public marketing website is an independently owned and deployed web surface. It is outside the LiveServices runtime and must not call Admin, player, inventory, matchmaking, authentication, or LiveOps runtime endpoints. Its design authority is `_files/UE_Multiplayer_Public_Marketing_Landing_Page_Spec.md`.
 
 The following names are intentionally not canonical repository names:
 

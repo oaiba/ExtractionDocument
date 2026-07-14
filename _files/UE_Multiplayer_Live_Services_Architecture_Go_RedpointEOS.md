@@ -2958,6 +2958,7 @@ The detailed canonical tree is:
 
     backend/{cmd,internal,platform}
     admin-web/{src,public,tests}
+    marketing-web/{app,components,content,public,tests}
     contracts/{openapi,schemas,examples,generated}
     db/{migrations,queries,seeds,fixtures}
     deployments/{docker,compose,environments,observability}
@@ -2969,6 +2970,7 @@ Repository boundaries:
 
 - The backend directory is authoritative for server behavior and backend permission enforcement.
 - The admin-web directory is an API client and never connects directly to PostgreSQL.
+- The marketing-web directory is a static public marketing application. It is deployed independently, has no player/admin session, and must not call backend, Admin, authentication, matchmaking, or LiveOps runtime endpoints.
 - The contracts directory is the executable contract source used for linting, validation, code generation, and contract tests.
 - The db/migrations directory is the schema authority after the implementation repository is bootstrapped.
 - The deployments directory contains manifests and references only; it must not contain secret values.
@@ -3043,6 +3045,7 @@ The initial ownership matrix is:
 | backend/internal/liveops/ | Backend and LiveOps owners |
 | backend/internal/economy/ | Backend and Economy owners |
 | admin-web/ | Admin Web team |
+| marketing-web/ | Marketing Web and Product owners |
 | contracts/ | Backend and API owner |
 | db/migrations/ | Backend and DBA/Platform owner |
 | deployments/ | Platform/Operations owner |

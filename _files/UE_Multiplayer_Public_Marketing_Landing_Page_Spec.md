@@ -177,6 +177,72 @@ Content updates remain static editorial releases. A change to `releaseState`, CT
 - [ ] The page contains no placeholder URLs, unapproved claims, secrets, personal player data, or game-service credentials.
 - [ ] Production performance, consent, analytics, and hosting checks meet the web project's approved deployment criteria.
 
-## 11. Implementation Handoff
+## 11. Recommended Technical Baseline
 
-This specification is intentionally implementation-neutral. The marketing website should be deployed as an independently owned web project or hosting surface. It must not be added to the `ob-multiplayer-live-services` runtime path and must not use the Admin Web as its frontend foundation.
+The recommended implementation is a standalone Next.js application using TypeScript and React. This aligns with the proposed Admin Web frontend stack while preserving an independent build and deployment boundary.
+
+| Concern | Recommendation | Boundary |
+| --- | --- | --- |
+| Framework | Next.js | Separate application under `marketing-web/` |
+| Language | TypeScript | Strict type checking enabled |
+| UI | React components | Do not import Admin Web screens or runtime state |
+| Styling | Tailwind CSS or CSS Modules | Select one project-wide approach during bootstrap |
+| Content | Static Markdown/JSON/TypeScript content | Build-time only; no LiveServices runtime dependency |
+| Assets | Versioned files under `public/` | Approved media only; optimize before production |
+| Rendering | Static export or equivalent static hosting output | No server session or player request required |
+| Tests | Typecheck, lint, component/route checks, accessibility and link checks | Run in the marketing-web pipeline |
+
+### 11.1 Recommended repository layout
+
+```text
+ob-multiplayer-live-services/
+├── backend/
+├── admin-web/
+├── marketing-web/
+│   ├── app/
+│   ├── components/
+│   ├── content/
+│   │   ├── site.json
+│   │   ├── news/
+│   │   └── roadmap/
+│   ├── public/
+│   │   ├── images/
+│   │   ├── videos/
+│   │   └── social/
+│   ├── tests/
+│   ├── package.json
+│   └── README.md
+├── contracts/
+├── db/
+├── deployments/
+└── docs/
+```
+
+`marketing-web/` is a sibling application to `admin-web/`. It may share repository tooling and review rules, but it has its own `package.json`, build command, test command, deployment configuration, and ownership.
+
+### 11.2 Build-time content and configuration
+
+- `releaseState` is selected at build time as `preLaunch` or `launched`.
+- CTA labels and destinations, media, news/events, roadmap items, community URLs, legal URLs, and public metadata are static content inputs.
+- Public build variables may select approved environment-independent values; secrets must never be placed in the page bundle.
+- The app must not import backend packages, call Go APIs, reuse Admin Web authentication, or access PostgreSQL, Redis, object storage, player data, matchmaking, or LiveOps endpoints.
+
+### 11.3 Git and CI/CD integration
+
+The application remains in the `ob-multiplayer-live-services` Git repository but is deployed independently:
+
+```text
+Git push
+  -> detect marketing-web changes
+  -> install and validate marketing-web dependencies
+  -> typecheck + lint + tests
+  -> build static site
+  -> accessibility, URL, SEO, and asset checks
+  -> deploy to public hosting/CDN
+```
+
+Changes outside `marketing-web/` must not trigger a marketing deployment unless the shared toolchain or release workflow explicitly requires it. Changes to CTA destinations, release state, platform availability, or dated roadmap claims require Marketing and Product approval.
+
+## 12. Implementation Handoff
+
+The marketing website is an independently owned and deployed public web surface. It may live in the same Git monorepo for review and atomic documentation, but it must remain outside the `ob-multiplayer-live-services` runtime path and must not use the Admin Web as its frontend foundation.
